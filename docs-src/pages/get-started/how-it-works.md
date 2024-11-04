@@ -1,8 +1,5 @@
 ---
-title: How It Works
-permalink: /how-it-works
-icon: fa-map
-order: 2
+
 ---
 
 # cre8magic – How It Works
@@ -94,7 +91,7 @@ cre8magic will do a bunch of things in the background, such as:
     1. Use names to find the configuration for the theme
     1. Use further names to find the configuration for each part, such as Menus, Breadcrumbs etc.
     1. Flatten all to the current scenario
-1. Broadcast these flattened [Magic Settings](./magic-settings.md) from the Theme to all Controls
+1. Broadcast these flattened [Magic Settings](../system/magic-settings.md) from the Theme to all Controls
     1. Initialize the proper settings
     1. Broadcast these settings to all controls that are somewhere within the theme object tree
 1. Provide simple accessors
@@ -107,4 +104,4 @@ cre8magic will do a bunch of things in the background, such as:
 
 You got this far? Let's go back to home and start designing!
 
-👉🏾 [Home](../readme.md)
+👉🏾 [Home](../index.md)

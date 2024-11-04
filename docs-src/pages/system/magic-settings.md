@@ -1,8 +1,5 @@
 ---
-title: Magic Settings
-permalink: /magic-settings
-icon: fa-cog
-order: 20
+
 ---
 
 # cre8magic – Magic Settings
@@ -120,8 +117,9 @@ This will do a few things
 1. It will also ensure that the [MagicContext](./magic-context.md) is set on the page
 
 TODO:
+
 1. EXPLAIN SETTINGS MORE
 
 ## Continue...
 
-Then continue back to the 👉🏾 [Home](../readme.md)
+Then continue back to the 👉🏾 [Home](../index.md)

@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Projects/2shine-oqtane/cre8magic/docs-src-cre8magic",
+  "source_base_path": "C:/Projects/2shine-oqtane/cre8magic/docs-src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1105,46 +1105,6 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "assets/cre8magic-logo.svg",
-      "output": {
-        "resource": {
-          "relative_path": "assets/cre8magic-logo.svg"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "assets/cre8magic-logo50.svg",
-      "output": {
-        "resource": {
-          "relative_path": "assets/cre8magic-logo50.svg"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "assets/cre8magic-page.png",
-      "output": {
-        "resource": {
-          "relative_path": "assets/cre8magic-page.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "assets/cre8magic-stack.png",
-      "output": {
-        "resource": {
-          "relative_path": "assets/cre8magic-stack.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "assets/favicon.ico",
       "output": {
         "resource": {
@@ -1175,57 +1135,97 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "assets/jekyll-serve.png",
+      "source_relative_path": "pages/assets/cre8magic-logo.svg",
       "output": {
         "resource": {
-          "relative_path": "assets/jekyll-serve.png"
+          "relative_path": "pages/assets/cre8magic-logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/assets/cre8magic-logo50.svg",
+      "output": {
+        "resource": {
+          "relative_path": "pages/assets/cre8magic-logo50.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/assets/cre8magic-page.png",
+      "output": {
+        "resource": {
+          "relative_path": "pages/assets/cre8magic-page.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/assets/cre8magic-stack.png",
+      "output": {
+        "resource": {
+          "relative_path": "pages/assets/cre8magic-stack.png"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "changelog.md",
+      "source_relative_path": "pages/contribute/changelog.md",
       "output": {
         ".html": {
-          "relative_path": "changelog.html"
+          "relative_path": "contribute/changelog.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "get-started.md",
+      "source_relative_path": "pages/contribute/gh-pages.md",
       "output": {
         ".html": {
-          "relative_path": "get-started.html"
+          "relative_path": "contribute/gh-pages.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "gh-pages.md",
+      "source_relative_path": "pages/controls/magic-menu.md",
       "output": {
         ".html": {
-          "relative_path": "gh-pages.html"
+          "relative_path": "controls/magic-menu.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "how-it-works.md",
+      "source_relative_path": "pages/get-started/how-it-works.md",
       "output": {
         ".html": {
-          "relative_path": "how-it-works.html"
+          "relative_path": "get-started/how-it-works.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "index.md",
+      "source_relative_path": "pages/get-started/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "get-started/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/index.md",
       "output": {
         ".html": {
           "relative_path": "index.html"
@@ -1235,60 +1235,73 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "magic-context.md",
+      "source_relative_path": "pages/system/magic-context.md",
       "output": {
         ".html": {
-          "relative_path": "magic-context.html"
+          "relative_path": "system/magic-context.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "magic-languages.md",
+      "source_relative_path": "pages/system/magic-languages.md",
       "output": {
         ".html": {
-          "relative_path": "magic-languages.html"
+          "relative_path": "system/magic-languages.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "magic-menu.md",
+      "source_relative_path": "pages/system/magic-settings.md",
       "output": {
         ".html": {
-          "relative_path": "magic-menu.html"
+          "relative_path": "system/magic-settings.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "magic-settings.md",
+      "source_relative_path": "pages/system/magic-tokens.md",
       "output": {
         ".html": {
-          "relative_path": "magic-settings.html"
+          "relative_path": "system/magic-tokens.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "magic-tokens.md",
+      "source_relative_path": "pages/system/magic-values.md",
       "output": {
         ".html": {
-          "relative_path": "magic-tokens.html"
+          "relative_path": "system/magic-values.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "magic-values.md",
+      "source_relative_path": "pages/system/theme-json.md",
       "output": {
         ".html": {
-          "relative_path": "magic-values.html"
+          "relative_path": "system/theme-json.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
@@ -1369,29 +1382,6 @@
       "output": {
         "resource": {
           "relative_path": "schemas/2022-10/theme.json"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "theme-json.md",
-      "output": {
-        ".html": {
-          "relative_path": "theme-json.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
-        ".json": {
-          "relative_path": "toc.json"
         }
       },
       "version": ""

@@ -23,23 +23,62 @@
   "build": {
     "content": [
       {
+        // Note: new docfx convention places things in /pages
+        "src": "pages",
         "files": [
-          "**/*.{md,yml}"
+          "**.md",
+          "**.yml",
         ],
         "exclude": [
-          "_site/**"
+          // exclude _*.md files, as they are used for includes
+          "**/_*.md",
+          // exclude readme.md, which are meant for docs-admins
+          "**/readme.md",
         ]
       },
-      { "files": [ "api/**" ] }
+      // {
+      //   "files": [
+      //     "**/*.{md,yml}"
+      //   ],
+      //   "exclude": [
+      //     "_site/**"
+      //   ]
+      // },
+      {
+        "files": [
+          "api/**.yml"
+        ],
+      },
+      {
+        "files": [
+          "api/toc.yml",
+          "api/**/*.{md,yml}"
+        ]
+      }
     ],
     "resource": [
+      {
+        // Note: new docfx convention places things in /pages
+        "cwd": "pages",
+        "files": [
+          "**.jpg",
+          "**.png",
+          "**.jpeg",
+          "**.svg",
+          "**.gif"
+        ],
+      },
       {
         "files": [
           "images/**",
           "assets/**"
         ]
       },
-      { "files": ["schemas/**"] }
+      {
+        "files": [
+          "schemas/**"
+        ]
+      }
     ],
     "output": "../docs",
     "template": [
