@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: ToSic.Cre8magic.Client/Containers/Settings/MagicContainerSettings.cs
-      branch: feature/cre8magic-tests
+      branch: feature/v5
       repo: https://github.com/2sic/cre8magic.git
     id: MagicContainerSettings
     path: ../ToSic.Cre8magic.Client/Containers/Settings/MagicContainerSettings.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: ToSic.Cre8magic.Client/Containers/Settings/MagicContainerSettings.cs
-      branch: feature/cre8magic-tests
+      branch: feature/v5
       repo: https://github.com/2sic/cre8magic.git
     id: Custom
     path: ../ToSic.Cre8magic.Client/Containers/Settings/MagicContainerSettings.cs

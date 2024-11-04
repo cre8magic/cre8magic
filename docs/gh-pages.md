@@ -9,11 +9,16 @@ order: 100
 
 Public documentation: [https://cre8magic.blazor-cms.org](https://cre8magic.blazor-cms.org)
 
-GitHub Pages are powered by [Jekyll](https://jekyllrb.com/).
+GitHub Pages are powered by [docfx](https://dotnet.github.io/docfx/).
 
-Documentation use GitHub Pages supported theme: [Hacker](https://github.com/pages-themes/hacker).
+```cmd
+cd docs
+docfx --serve
+```
 
-## Prerequisites
+- browse http://localhost:8080/
+
+## OLD & Outdated  ...Prerequisites
 
 - [Install Ruby and Jekyll](https://jekyllrb.com/docs/installation/)
     - Download and install a Ruby+Devkit version from RubyInstaller Downloads, eg. `rubyinstaller-devkit-2.7.6-1-x64.exe` (or `winget install -e --id RubyInstallerTeam.RubyWithDevKit.2.7`, `ridk install`).

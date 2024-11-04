@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: ToSic.Cre8magic.Client/Settings/PairOnOff.cs
-      branch: feature/cre8magic-tests
+      branch: feature/v5
       repo: https://github.com/2sic/cre8magic.git
     id: PairOnOffExtensions
     path: ../ToSic.Cre8magic.Client/Settings/PairOnOff.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: ToSic.Cre8magic.Client/Settings/PairOnOff.cs
-      branch: feature/cre8magic-tests
+      branch: feature/v5
       repo: https://github.com/2sic/cre8magic.git
     id: Get
     path: ../ToSic.Cre8magic.Client/Settings/PairOnOff.cs
