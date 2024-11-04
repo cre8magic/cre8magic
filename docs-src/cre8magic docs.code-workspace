@@ -4,5 +4,23 @@
 			"path": "."
 		}
   ],
-  "settings": {}
+  "settings": {
+    "liveServer.settings.mount": [
+      [
+        "/",
+        "../docs"
+      ]
+    ],
+    "files.associations": {
+      "docfx.json": "jsonc"
+    },
+  },
+  "extensions": {
+    "recommendations": [
+      "DavidAnson.vscode-markdownlint",
+      "shd101wyy.markdown-preview-enhanced",
+      "ritwickdey.LiveServer"
+    ]
+  },
+
 }
