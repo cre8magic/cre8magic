@@ -30,14 +30,17 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Theme.Cre8magicTests.Package", "ToSic.Theme.Cre8magicTests\Package\ToSic.Theme.Cre8magicTests.Package.csproj", "{5F95E5FE-8B06-4FE2-9039-9A81593EF49F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeneratePages", "GeneratePages", "{0C0ED938-AC91-42F0-8323-8512FE9F116A}"
+	ProjectSection(SolutionItems) = preProject
+		ToSic.Module.PageTemplates\README.md = ToSic.Module.PageTemplates\README.md
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.Client", "..\ToSic.Module.PageTemplates\Client\ToSic.Module.PageTemplates.Client.csproj", "{9B03172E-27E2-476F-9831-D6DFDCCA7FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.Client", "ToSic.Module.PageTemplates\Client\ToSic.Module.PageTemplates.Client.csproj", "{9B03172E-27E2-476F-9831-D6DFDCCA7FD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.Package", "..\ToSic.Module.PageTemplates\Package\ToSic.Module.PageTemplates.Package.csproj", "{97A42E2D-B397-4BD2-93E2-81F12199E8A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.Package", "ToSic.Module.PageTemplates\Package\ToSic.Module.PageTemplates.Package.csproj", "{97A42E2D-B397-4BD2-93E2-81F12199E8A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.Server", "..\ToSic.Module.PageTemplates\Server\ToSic.Module.PageTemplates.Server.csproj", "{C4701B5E-9409-444A-A397-CC13EA9A8CD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.Server", "ToSic.Module.PageTemplates\Server\ToSic.Module.PageTemplates.Server.csproj", "{C4701B5E-9409-444A-A397-CC13EA9A8CD0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.Shared", "..\ToSic.Module.PageTemplates\Shared\ToSic.Module.PageTemplates.Shared.csproj", "{D477F169-0C7D-4747-99FE-76768D7C1E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.Shared", "ToSic.Module.PageTemplates\Shared\ToSic.Module.PageTemplates.Shared.csproj", "{D477F169-0C7D-4747-99FE-76768D7C1E91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
