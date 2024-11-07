@@ -2,6 +2,7 @@
 @using ToSic.Cre8magic.Client.Breadcrumbs
 @using ToSic.Cre8magic.Client.Menus
 @using ToSic.Cre8magic.Client.Models
+@using ToSic.Cre8magic.Client.Services
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeBase
 @inject ISettingService SettingService
@@ -12,7 +13,8 @@
     public IEnumerable<MagicPage> GetCustomMenuPages()
     {
         List<int> pageIds = [97, 98, 99];
-        return PageState.Pages.Where(p => pageIds.Contains(p.PageId)).ToMagicPages();
+        return new MagicPageFactory(PageState).Get(pageIds);
+        // return PageState.Pages.Where(p => pageIds.Contains(p.PageId)).ToMagicPages(PageState);
     }
 
     public const int PageWithDeepBreadcrumb = 308;

@@ -51,7 +51,7 @@ public class MagicSettingsService: IHasSettingsExceptions
 
         // Tokens engine for this specific PageState
         var tokens = new TokenEngine([
-            new PageTokens(pageState, null, bodyClasses),
+            new PageTokens(new MagicPageFactory(pageState), null, bodyClasses),
             new ThemeTokens(PackageSettings)
         ]);
 

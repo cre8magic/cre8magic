@@ -21,24 +21,16 @@ public class MagicMenuPage : MagicPage
     /// <param name="pageState">The page state.</param>
     /// <param name="tree">The magic menu tree.</param>
     /// <param name="debugPrefix">The debug prefix.</param>
-    protected MagicMenuPage(MagicPage page, int level, PageState pageState, MagicMenuTree tree = null, string debugPrefix = null) : base(page.OriginalPage)
+    protected MagicMenuPage(MagicPageFactory pageFactory, MagicPage page, int level, PageState pageState, MagicMenuTree tree = null, string debugPrefix = null) : base(page.OriginalPage, pageFactory)
     {
         Level = level; // menu level
         PageState = pageState;
-        MagicPageService = new MagicPageService(pageState);
 
         if (tree == null) return;
         Tree = tree;
         Log = tree.LogRoot.GetLog(debugPrefix);
         var _ = PageInfo;   // Access page info early on to make logging nicer
     }
-
-    /// <summary>
-    /// This service provides functionality for the menu control.
-    /// It is based on the core 'oqtane.framework\Oqtane.Client\Themes\Controls\Theme\MenuBase.cs'
-    /// but it favors composition over inheritance.
-    /// </summary>
-    private protected readonly MagicPageService MagicPageService;
 
     /// <summary>
     /// PageState id dependency that provides information about the current page,
@@ -123,16 +115,6 @@ public class MagicMenuPage : MagicPage
     public virtual string MenuId => Tree.MenuId;
 
     /// <summary>
-    /// Link to this page.
-    /// </summary>
-    public string Link => MagicPageService.GetUrl(this);
-
-    /// <summary>
-    /// Target for link to this page.
-    /// </summary>
-    public string? Target => MagicPageService.GetTarget(this).EmptyAsNull();
-
-    /// <summary>
     /// Get children of the current menu page.
     /// </summary>
     public IList<MagicMenuPage> Children => _children ??= GetChildren();
@@ -151,7 +133,7 @@ public class MagicMenuPage : MagicPage
             return l.Return([], "remaining levels 0 - return empty");
 
         var children = GetChildPages()
-            .Select(page => new MagicMenuPage(page, Level + 1, PageState, Tree, $"{Log.Prefix}>{PageId}"))
+            .Select(page => new MagicMenuPage(PageFactory, page, Level + 1, PageState, Tree, $"{Log.Prefix}>{PageId}"))
             .ToList();
         return l.Return(children, $"{children.Count}");
     }
@@ -177,5 +159,5 @@ public class MagicMenuPage : MagicPage
     //    => Tree.MenuPages.Where(p => pageIds.Contains(p.PageId)).ToList();
 
 
-    protected MagicPage ErrPage(int id, string message) => new(new() { PageId = id, Name = message });
+    protected MagicPage ErrPage(int id, string message) => new(new() { PageId = id, Name = message }, PageFactory);
 }

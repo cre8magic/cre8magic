@@ -7,6 +7,9 @@ public abstract class MagicMenuBase: Oqtane.Themes.Controls.MenuBase, IMagicCont
 {
     [CascadingParameter] public MagicSettings Settings { get; set; }
 
+    protected MagicPageFactory PageFactory => _pageFactory ??= new MagicPageFactory(PageState);
+    private MagicPageFactory? _pageFactory;
+
     private const string ErrMsg = "error calling {0} in {1}. Use the {0} method of the branch to get the expected result.";
 
     public string? Classes(string target) => string.Format(ErrMsg, nameof(Classes), nameof(MagicMenuBase));

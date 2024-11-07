@@ -1,28 +1,26 @@
-﻿using Oqtane.UI;
-using ToSic.Cre8magic.Client.Models;
+﻿using ToSic.Cre8magic.Client.Models;
 using static System.StringComparison;
 using static ToSic.Cre8magic.Client.MagicTokens;
 
 namespace ToSic.Cre8magic.Client.Tokens;
 
 internal class PageTokens(
-    PageState pageState,
+    MagicPageFactory pageFactory,
     MagicPage? page = null,
     string? bodyClasses = null,
     string? id = null)
     : ITokenReplace
 {
     public const string NameIdConstant = nameof(PageTokens);
-    public PageState PageState { get; } = pageState;
     public MagicPage? Page { get; } = page;
     public string NameId => NameIdConstant;
 
-    public PageTokens Modified(MagicPage page, string? menuId = null) => new(PageState, page, bodyClasses, menuId ?? id);
+    public PageTokens Clone(MagicPage page, string? menuId = null) => new(pageFactory, page, bodyClasses, menuId ?? id);
 
     public string Parse(string classes)
     {
         if (!classes.HasValue()) return classes;
-        var page = Page ?? PageState.Page.ToMagicPage();
+        var page = Page ?? pageFactory.Current;
         var result = classes
             .Replace(PageId, $"{page.PageId}", InvariantCultureIgnoreCase);
 
@@ -50,7 +48,7 @@ internal class PageTokens(
         {
             if (_pageRootAlreadyTried) return _pageRootId;
             _pageRootAlreadyTried = true;
-            _pageRootId = PageState.Breadcrumbs().FirstOrDefault()?.PageId;
+            _pageRootId = pageFactory.Breadcrumbs() /* PageState.Breadcrumbs() */.FirstOrDefault()?.PageId;
             return _pageRootId;
         }
     }

@@ -6,8 +6,10 @@ namespace ToSic.Cre8magic.Client.Models;
 /// Wrapper for the Oqtane Page.
 /// </summary>
 /// <param name="originalPage"></param>
-public class MagicPage(Page originalPage)
+public class MagicPage(Page originalPage, MagicPageFactory pageFactory)
 {
+    protected MagicPageFactory PageFactory => pageFactory;
+
     /// <summary>
     /// Original Oqtane page wrapped in MagicPage.
     /// </summary>
@@ -31,7 +33,7 @@ public class MagicPage(Page originalPage)
     /// <summary>
     /// Page Name.
     /// </summary>
-    public string Name => OriginalPage.Name;
+    public string Name => OriginalPage.Name + "xyz123";
 
     /// <summary>
     /// Full URL to this page.
@@ -52,4 +54,17 @@ public class MagicPage(Page originalPage)
     /// Determines if there are sub-pages. True if this page has sub-pages.
     /// </summary>
     public bool HasChildren => OriginalPage.HasChildren;
+
+    /// <summary>
+    /// Link to this page.
+    /// </summary>
+    public string Link => _link ??= pageFactory.PageHelpers.GetUrl(this);
+    private string? _link;
+
+    /// <summary>
+    /// Target for link to this page.
+    /// </summary>
+    public string? Target => _target ??= pageFactory.PageHelpers.GetTarget(this);
+    private string? _target;
+
 }

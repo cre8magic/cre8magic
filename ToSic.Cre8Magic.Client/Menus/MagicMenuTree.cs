@@ -7,14 +7,17 @@ public class MagicMenuTree : MagicMenuPage
 {
     public const char PageForced = '!';
 
-    public MagicMenuTree(PageState pageState) : base(pageState.Page.ToMagicPage(), 1, pageState)
+    public MagicMenuTree(PageState pageState) : this(new MagicPageFactory(pageState), pageState)
+    { }
+
+    public MagicMenuTree(MagicPageFactory pageFactory, PageState pageState) : base(pageFactory, pageFactory.Current, 1, pageState)
     {
         Log = LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{pageState.Page.PageId}; Level:1");
 
         // update dependent properties
-        AllPages = PageState.Pages.ToMagicPages().ToList();
-        MenuPages = MagicPageService.MenuPages; // Menu pages for the current user.
+        AllPages = PageFactory.All().ToList();
+        MenuPages = PageFactory.MenuPages;
         Settings = MagicMenuSettings.Defaults.Fallback;
         Design = new MenuDesigner(this, Settings);
         Debug = [];
@@ -72,18 +75,18 @@ public class MagicMenuTree : MagicMenuPage
         // fallback without MagicSettings return just TokenEngine with PageTokens
         if (MagicSettings == null)
             return new TokenEngine([
-                new PageTokens(PageState, page)
+                new PageTokens(PageFactory, page)
             ]);
 
         var originalPage = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
-        originalPage = originalPage.Modified(page, menuId: MenuId);
+        originalPage = originalPage.Clone(page, menuId: MenuId);
         return MagicSettings.Tokens.SwapParser(originalPage);
     }
 
     /// <summary>
     /// List of all pages - even these which would currently not be shown in the menu.
     /// </summary>
-    internal List<MagicPage> AllPages { get; private set; }
+    internal List<MagicPage> AllPages { get; }
 
     /// <summary>
     /// Pages in the menu according to Oqtane pre-processing
@@ -95,7 +98,7 @@ public class MagicMenuTree : MagicMenuPage
 
     internal IMenuDesigner Design { get; private set; }
 
-    internal List<MagicPage> Breadcrumb => _breadcrumb ??= AllPages.Breadcrumbs(this).ToList();
+    internal List<MagicPage> Breadcrumb => _breadcrumb ??= PageFactory.Breadcrumbs(this).ToList();
     private List<MagicPage>? _breadcrumb;
 
     public override string MenuId => _menuId ??= Settings?.MenuId ?? "error-menu-id";
@@ -175,13 +178,13 @@ public class MagicMenuTree : MagicMenuPage
             case StartMode.Current when n.Level > 0:
                 // If coming from the top, level 1 means top level, so skip one less
                 var skipDown = n.Level - 1;
-                var fromTop = source.Breadcrumbs(this).Skip(skipDown).FirstOrDefault();
+                var fromTop = PageFactory.Breadcrumbs(source, this) /*  source.Breadcrumbs(this) */.Skip(skipDown).FirstOrDefault();
                 var fromTopResult = fromTop == null ? [] : new List<MagicPage> { fromTop };
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
             case StartMode.Current when n.Level < 0:
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
-                var fromCurrent = source.GetAncestors(this).ToList().Skip(skipUp).FirstOrDefault();
+                var fromCurrent = PageFactory.GetAncestors(source, this) /* source.GetAncestors(this) */.ToList().Skip(skipUp).FirstOrDefault();
                 var result = fromCurrent == null ? [] : new List<MagicPage> { fromCurrent };
                 return l.Return(result, $"up the ancestors by {skipUp}");
             default:

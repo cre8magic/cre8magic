@@ -6,12 +6,9 @@ namespace ToSic.Cre8magic.Client.Breadcrumbs;
 
 public class MagicBreadcrumb : MagicBreadcrumbItem
 {
-    private readonly MagicPage _homePage;
-
-    public MagicBreadcrumb(PageState pageState) : base(pageState)
+    public MagicBreadcrumb(PageState pageState) : base(new MagicPageFactory(pageState))
     {
-        _homePage = pageState.Pages.First(p => p.Path == "").ToMagicPage();
-        StartPage = PageState.Page.ToMagicPage();
+        StartPage = PageFactory.Current;
         Settings = MagicBreadcrumbSettings.Defaults.Fallback;
         Design = new MagicBreadcrumbDesigner(this, Settings);
     }
@@ -26,8 +23,8 @@ public class MagicBreadcrumb : MagicBreadcrumbItem
     {
         Settings = settings;
         StartPage = Settings.Start.HasValue
-            ? PageState.Pages.FirstOrDefault(p => p.PageId == Settings.Start)?.ToMagicPage() ?? PageState.Page.ToMagicPage()
-            : PageState.Page.ToMagicPage();
+            ? PageFactory.GetOrNull(Settings.Start.Value) ?? PageFactory.Current
+            : PageFactory.Current;
         return this;
     }
 
@@ -51,16 +48,14 @@ public class MagicBreadcrumb : MagicBreadcrumbItem
 
     internal override MagicBreadcrumb Breadcrumb => this;
 
-    internal TokenEngine? PageTokenEngine(MagicPage page)
+    internal TokenEngine PageTokenEngine(MagicPage page)
     {
         // fallback without MagicSettings return just TokenEngine with PageTokens
         if (MagicSettings == null)
-            return new TokenEngine([
-                new PageTokens(PageState, page)
-            ]);
+            return new TokenEngine([new PageTokens(PageFactory, page)]);
 
         var originalPage = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
-        originalPage = originalPage.Modified(page);
+        originalPage = originalPage.Clone(page);
         return MagicSettings.Tokens.SwapParser(originalPage);
     }
 
@@ -69,17 +64,22 @@ public class MagicBreadcrumb : MagicBreadcrumbItem
     private List<MagicBreadcrumbItem> GetBreadcrumbs(MagicPage? page = null)
     {
         var currentPage = page ?? StartPage;
-        var breadcrumbs = new List<MagicBreadcrumbItem>() { new (PageState, currentPage, this) };
-
-        if (_homePage.PageId == currentPage.PageId) return breadcrumbs;
-
-        breadcrumbs.Insert(0, new (PageState, _homePage, this));
-
-        var parentPage = PageState.Pages.FirstOrDefault(p => p.PageId == currentPage.ParentId);
-        while (parentPage != null && _homePage.PageId != parentPage.PageId)
+        var breadcrumbs = new List<MagicBreadcrumbItem>
         {
-            breadcrumbs.Insert(1, new (PageState, parentPage!.ToMagicPage(), this));
-            parentPage = PageState.Pages.FirstOrDefault(p => p.PageId == parentPage.ParentId);
+            new (PageFactory, currentPage, this)
+        };
+
+        if (PageFactory.Home.PageId == currentPage.PageId)
+            return breadcrumbs;
+
+        breadcrumbs.Insert(0, new (PageFactory, PageFactory.Home, this));
+
+        var oqtPages = PageFactory.PageState.Pages;
+        var parentPage = oqtPages.FirstOrDefault(p => p.PageId == currentPage.ParentId);
+        while (parentPage != null && PageFactory.Home.PageId != parentPage.PageId)
+        {
+            breadcrumbs.Insert(1, new (PageFactory, PageFactory.Create(parentPage), this));
+            parentPage = oqtPages.FirstOrDefault(p => p.PageId == parentPage.ParentId);
         }
         return breadcrumbs;
     } 

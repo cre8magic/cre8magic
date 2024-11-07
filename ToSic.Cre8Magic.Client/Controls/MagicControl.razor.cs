@@ -10,6 +10,10 @@ public abstract class MagicControl: ThemeControlBase, IMagicControlWithSettings
 {
     [CascadingParameter] public MagicSettings Settings { get; set; }
 
+    protected MagicPageFactory PageFactory => _pageFactory ??= new MagicPageFactory(PageState);
+    private MagicPageFactory? _pageFactory;
+
+
     protected bool UserIsAdmin => PageState.UserIsAdmin();
 
     protected bool UserIsEditor => PageState.UserIsEditor();
