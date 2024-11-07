@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# 17
+# Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Oqtane.Server", "..\oqtane.framework\Oqtane.Server\Oqtane.Server.csproj", "{4F654965-B0C2-4663-8AE0-0D48CC9895E0}"
@@ -46,6 +46,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{B8DA868C-E
 	ProjectSection(SolutionItems) = preProject
 		docs\docfx.json = docs\docfx.json
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oqtane", "Oqtane", "{4DF7A8D7-C1B7-4D06-A454-A2F2DA2D046D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,6 +120,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{4F654965-B0C2-4663-8AE0-0D48CC9895E0} = {4DF7A8D7-C1B7-4D06-A454-A2F2DA2D046D}
+		{4ABC76F4-C186-440D-BD28-9A6721B6ECA4} = {4DF7A8D7-C1B7-4D06-A454-A2F2DA2D046D}
+		{F9DDCE29-CFA2-4F78-B47D-F483D4D736CA} = {4DF7A8D7-C1B7-4D06-A454-A2F2DA2D046D}
 		{08C0572F-852E-483A-98B6-68414436B413} = {824EF736-6C32-4362-8CCC-F72737A8361B}
 		{54670747-7E30-4006-BC49-E01F8C886302} = {824EF736-6C32-4362-8CCC-F72737A8361B}
 		{D1EB66B0-F9F6-4502-ADE6-481B3ADE379D} = {824EF736-6C32-4362-8CCC-F72737A8361B}
