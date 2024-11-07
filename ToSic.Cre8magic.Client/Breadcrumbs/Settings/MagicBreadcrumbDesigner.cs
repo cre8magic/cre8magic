@@ -7,12 +7,13 @@ namespace ToSic.Cre8magic.Client.Breadcrumbs.Settings;
 /// </summary>
 public class MagicBreadcrumbDesigner : IBreadcrumbDesigner
 {
-    public MagicBreadcrumbDesigner(MagicBreadcrumb breadcrumb, MagicBreadcrumbSettings breadcrumbConfig)
+    public MagicBreadcrumbDesigner(MagicBreadcrumbSettings breadcrumbConfig)
     {
         BreadcrumbSettings = breadcrumbConfig ?? throw new ArgumentException("BreadcrumbConfig must be real", nameof(BreadcrumbSettings));
 
         DesignSettingsList = [BreadcrumbSettings.DesignSettings!];
     }
+
     private MagicBreadcrumbSettings BreadcrumbSettings { get; }
     internal List<NamedSettings<MagicBreadcrumbDesign>> DesignSettingsList { get; }
 
@@ -53,7 +54,7 @@ public class MagicBreadcrumbDesigner : IBreadcrumbDesigner
 
         AddIfAny(configs.Select(c => c.Classes));
         AddIfAny(configs.Select(c => c.Classes));
-        AddIfAny(configs.Select(c => c.IsActive.Get(page.IsActive)));
+        AddIfAny(configs.Select(c => c.IsActive.Get(page.IsCurrent)));
         AddIfAny(configs.Select(c => c.HasChildren.Get(page.HasChildren)));
         AddIfAny(configs.Select(c => c.IsDisabled.Get(!page.IsClickable)));
         //AddIfAny(configs.Select(c => c.InBreadcrumb.Get(page.InBreadcrumb)));

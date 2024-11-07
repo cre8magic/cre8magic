@@ -29,7 +29,7 @@ public class MagicPageFactory(PageState pageState)
 
     private MagicPage? _current;
 
-    public MagicPage? GetOrNull(int? id) => CreateOrNull(pageState.Pages.FirstOrDefault(p => p.PageId == id));
+    public MagicPage? GetOrNull(int? id) => id == null ? null : CreateOrNull(pageState.Pages.FirstOrDefault(p => p.PageId == id));
 
     public IEnumerable<MagicPage> Get(IEnumerable<int> ids) =>
         pageState.Pages.Where(p => ids.Contains(p.PageId)).Select(Create);

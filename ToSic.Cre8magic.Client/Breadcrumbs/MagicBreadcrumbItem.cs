@@ -5,28 +5,16 @@ namespace ToSic.Cre8magic.Client.Breadcrumbs;
 public class MagicBreadcrumbItem : MagicPage
 {
     /// <param name="pageFactory"></param>
+    /// <param name="helper">The helper - or null in the first breadcrumb item</param>
     /// <param name="page">The original page.</param>
-    public MagicBreadcrumbItem(MagicPageFactory pageFactory, MagicPage? page = null, MagicBreadcrumb? breadcrumb = null) : base(page?.OriginalPage ?? pageFactory.PageState.Page, pageFactory)
+    internal MagicBreadcrumbItem(MagicPageFactory pageFactory, MagicBreadcrumbHelper? helper = null, MagicPage? page = null) : base(page?.OriginalPage ?? pageFactory.PageState.Page, pageFactory)
     {
-        Breadcrumb = breadcrumb;
-
-        if (page != null && breadcrumb != null)
-            IsActive = (page.PageId == breadcrumb.PageId);
-        else
-            IsActive = true;
+        Helper = helper ?? new MagicBreadcrumbHelper(pageFactory);
     }
 
-    /// <summary>
-    /// Root navigator object which has some data/logs for all navigators which spawned from it. 
-    /// </summary>
-    internal virtual MagicBreadcrumb Breadcrumb { get; }
+    internal MagicBreadcrumbHelper Helper { get; }
 
-    /// <summary>
-    /// Determine if the breadcrumb item is current page.
-    /// </summary>
-    public bool IsActive { get; }
-
-    private ITokenReplace NodeReplace => _nodeReplace ??= Breadcrumb.PageTokenEngine(this);
+    private ITokenReplace TokenReplace => _nodeReplace ??= Helper.PageTokenEngine(this);
     private ITokenReplace? _nodeReplace;
 
     /// <summary>
@@ -34,13 +22,13 @@ public class MagicBreadcrumbItem : MagicPage
     /// </summary>
     /// <param name="tag"></param>
     /// <returns></returns>
-    public string? Classes(string tag) => NodeReplace.Parse(Breadcrumb.Design.Classes(tag, this)).EmptyAsNull();
+    public string? Classes(string tag) => TokenReplace.Parse(Helper.Design.Classes(tag, this)).EmptyAsNull();
 
     /// <summary>
     /// Get attribute value.
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public string? Value(string key) => NodeReplace.Parse(Breadcrumb.Design.Value(key, this)).EmptyAsNull();
+    public string? Value(string key) => TokenReplace.Parse(Helper.Design.Value(key, this)).EmptyAsNull();
 
 }

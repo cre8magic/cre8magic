@@ -33,7 +33,7 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory)
     /// <summary>
     /// Page Name.
     /// </summary>
-    public string Name => OriginalPage.Name + "xyz123";
+    public string Name => OriginalPage.Name + "-test";
 
     /// <summary>
     /// Full URL to this page.
@@ -54,6 +54,11 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory)
     /// Determines if there are sub-pages. True if this page has sub-pages.
     /// </summary>
     public bool HasChildren => OriginalPage.HasChildren;
+
+    /// <summary>
+    /// True if this page is the current page which the user is viewing.
+    /// </summary>
+    public bool IsCurrent => OriginalPage.PageId == pageFactory.PageState.Page.PageId;
 
     /// <summary>
     /// Link to this page.

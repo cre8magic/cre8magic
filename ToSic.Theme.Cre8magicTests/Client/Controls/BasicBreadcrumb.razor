@@ -16,10 +16,11 @@
         @foreach (var item in Breadcrumb.Items)
         {
             <li class='@item.Classes("li")' aria-current='@item.Value("aria-current")'>
-                @if (item.IsActive)
+                @if (item.IsCurrent)
                 {
                     <span class='@item.Classes("span")'>@item.Name</span>
-                } else {
+                } else
+                {
                     <a href="@item.Link" class='@item.Classes("a")'>@item.Name</a>
                 }
             </li>

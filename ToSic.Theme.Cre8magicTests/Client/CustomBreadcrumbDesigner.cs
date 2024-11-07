@@ -24,7 +24,7 @@ internal class CustomBreadcrumbDesigner : IBreadcrumbDesigner
             case "li":
                 // Use 'breadcrumb-item' class from Bootstrap
                 classes.Add("breadcrumb-item");
-                if (item.IsActive) classes.Add("active");
+                if (item.IsCurrent) classes.Add("active");
                 break;
 
             case "a" or "span":
@@ -43,7 +43,7 @@ internal class CustomBreadcrumbDesigner : IBreadcrumbDesigner
     public string Value(string key, MagicBreadcrumbItem item) 
         => key.ToLower() switch
         {
-            "aria-current" => item.IsActive ? "page" : "",
+            "aria-current" => item.IsCurrent ? "page" : "",
             _ => ""
         };
 }

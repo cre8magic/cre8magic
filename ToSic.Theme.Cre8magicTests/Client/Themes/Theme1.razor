@@ -10,12 +10,7 @@
 @code {
     public const string TopLevelWithSubpagesId = "97";
 
-    public IEnumerable<MagicPage> GetCustomMenuPages()
-    {
-        List<int> pageIds = [97, 98, 99];
-        return new MagicPageFactory(PageState).Get(pageIds);
-        // return PageState.Pages.Where(p => pageIds.Contains(p.PageId)).ToMagicPages(PageState);
-    }
+    public IEnumerable<MagicPage> GetCustomMenuPages() => new MagicPageFactory(PageState).Get([97, 98, 99]);
 
     public const int PageWithDeepBreadcrumb = 308;
 }
