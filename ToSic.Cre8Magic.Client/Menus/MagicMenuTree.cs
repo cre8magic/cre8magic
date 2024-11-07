@@ -20,6 +20,10 @@ public class MagicMenuTree : MagicMenuPage
         // update dependent properties
         MenuPages = PageFactory.MenuPages;
         Settings = MagicMenuSettings.Defaults.Fallback;
+        // TODO: SOMETHING IS BUGGY HERE
+        // This code works, because it sets the designer with default settings
+        // but the main menu won't show if we use the configured settings
+        // WIP
         Design = new MenuDesigner(/*this,*/ Settings);
         Debug = [];
     }
@@ -28,8 +32,11 @@ public class MagicMenuTree : MagicMenuPage
     {
         Log.A($"Start with MagicSettings for Page:{PageId}; Level:1");
 
-        MagicSettings = magicSettings;
+        Helper.Set(magicSettings);
+        ((MagicMenuPageHelper)Helper).Set(settings);
+        //MagicSettings = magicSettings;
         Settings = settings;
+        //Design = new MenuDesigner(Settings);
         if (menuPages != null) SetMenuPages(menuPages);
         if (messages != null) SetMessages(messages);
     }
@@ -39,7 +46,11 @@ public class MagicMenuTree : MagicMenuPage
     public MagicMenuTree Setup(MagicMenuSettings? settings)
     {
         Log.A($"Init MagicMenuSettings Start:{settings?.Start}; Level:{settings?.Level}");
-        if (settings != null) Settings = settings;
+        if (settings != null)
+        {
+            ((MagicMenuPageHelper)Helper).Set(settings);
+            Settings = settings;
+        }
         return this;
     }
 
@@ -60,6 +71,7 @@ public class MagicMenuTree : MagicMenuPage
     public MagicMenuTree Designer(IPageDesigner pageDesigner)
     {
         Log.A($"Init MenuDesigner:{pageDesigner != null}");
+        Helper.Set(pageDesigner);
         Design = pageDesigner;
         return this;
     }
@@ -69,18 +81,18 @@ public class MagicMenuTree : MagicMenuPage
 
     public MagicMenuSettings Settings { get; private set; }
 
-    private MagicSettings? MagicSettings { get; set; } // TODO: stv move this to better place because it is MagicSettings part
+    //private MagicSettings? MagicSettings { get; set; } // TODO: stv move this to better place because it is MagicSettings part
 
-    internal TokenEngine PageTokenEngine(MagicPage page) // TODO: stv move this to better place because it is MagicSettings part
-    {
-        // fallback without MagicSettings return just TokenEngine with PageTokens
-        if (MagicSettings == null)
-            return new TokenEngine([new PageTokens(PageFactory, page)]);
+    //internal TokenEngine PageTokenEngine(MagicPage page) // TODO: stv move this to better place because it is MagicSettings part
+    //{
+    //    // fallback without MagicSettings return just TokenEngine with PageTokens
+    //    if (MagicSettings == null)
+    //        return new TokenEngine([new PageTokens(PageFactory, page)]);
 
-        var originalPage = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
-        originalPage = originalPage.Clone(page, menuId: MenuId);
-        return MagicSettings.Tokens.SwapParser(originalPage);
-    }
+    //    var originalPage = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
+    //    originalPage = originalPage.Clone(page, menuId: MenuId);
+    //    return MagicSettings.Tokens.SwapParser(originalPage);
+    //}
 
     /// <summary>
     /// Pages in the menu according to Oqtane pre-processing

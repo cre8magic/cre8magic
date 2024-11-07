@@ -33,7 +33,7 @@ public class MagicMenuPage : MagicPage
         var _ = PageInfo;   // Access page info early on to make logging nicer
     }
 
-    private MagicPageHelperBase Helper;
+    internal MagicPageHelperBase Helper;
 
     /// <summary>
     /// Menu Level relative to the start of the menu (always starts with 1)
@@ -48,7 +48,7 @@ public class MagicMenuPage : MagicPage
     /// </summary>
     internal virtual MagicMenuTree Tree { get; }
 
-    private ITokenReplace TakenReplace => _tokenReplace ??= Tree.PageTokenEngine(this);
+    private ITokenReplace TakenReplace => _tokenReplace ??= Helper.PageTokenEngine(this);
     private ITokenReplace? _tokenReplace;
 
     /// <summary>
