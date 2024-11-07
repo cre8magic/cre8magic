@@ -14,8 +14,8 @@ public class MagicPageFactory(PageState pageState)
 {
     internal PageState PageState => pageState;
 
-    internal MagicPageHelpers PageHelpers => _pageHelpers ??= new(this);
-    private MagicPageHelpers? _pageHelpers;
+    internal MagicPageProperties PageProperties => _pageProperties ??= new(this);
+    private MagicPageProperties? _pageProperties;
 
     public MagicPage Create(Page page) => new(page, this);
 
@@ -37,6 +37,9 @@ public class MagicPageFactory(PageState pageState)
     public IEnumerable<MagicPage> Get(IEnumerable<Page> pages) =>
         pages.Select(Create);
 
+    /// <summary>
+    /// List of all pages - even these which would currently not be shown in the menu.
+    /// </summary>
     public IEnumerable<MagicPage> All() => _all ??= pageState.Pages.Select(Create).ToList();
     private List<MagicPage>? _all;  // internally use list, so any further ToList() will be optimized
 

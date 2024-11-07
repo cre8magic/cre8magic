@@ -1,6 +1,7 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Client.Breadcrumbs.Settings;
 using ToSic.Cre8magic.Client.Models;
+using ToSic.Cre8magic.Client.Pages;
 
 namespace ToSic.Cre8magic.Client.Breadcrumbs;
 
@@ -20,7 +21,7 @@ public class MagicBreadcrumb(PageState pageState) : MagicBreadcrumbItem(new(page
         return this;
     }
 
-    public MagicBreadcrumb Designer(IBreadcrumbDesigner designer)
+    public MagicBreadcrumb Designer(IPageDesigner designer)
     {
         Helper.Set(designer);
         return this;

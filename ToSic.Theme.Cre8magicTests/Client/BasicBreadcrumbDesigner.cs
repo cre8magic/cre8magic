@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using ToSic.Cre8magic.Client.Breadcrumbs;
-using ToSic.Cre8magic.Client.Breadcrumbs.Settings;
+using ToSic.Cre8magic.Client.Models;
+using ToSic.Cre8magic.Client.Pages;
 
 namespace ToSic.Theme.Cre8magicTests.Client;
 
-internal class BasicBreadcrumbDesigner : IBreadcrumbDesigner
+internal class BasicBreadcrumbDesigner : IPageDesigner
 {
-    public string Classes(string tag, MagicBreadcrumbItem item)
+    public string Classes(string tag, MagicPage item)
     {
         // List to store CSS class names
         var classes = new List<string>();
@@ -34,7 +34,7 @@ internal class BasicBreadcrumbDesigner : IBreadcrumbDesigner
         return string.Join(" ", classes);
     }
 
-    public string Value(string key, MagicBreadcrumbItem item) 
+    public string Value(string key, MagicPage item) 
         => key.ToLower() switch
         {
             "aria-current" => item.IsCurrent ? "page" : "",

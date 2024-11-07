@@ -63,13 +63,13 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory)
     /// <summary>
     /// Link to this page.
     /// </summary>
-    public string Link => _link ??= pageFactory.PageHelpers.GetUrl(this);
+    public string Link => _link ??= pageFactory.PageProperties.GetUrl(this);
     private string? _link;
 
     /// <summary>
     /// Target for link to this page.
     /// </summary>
-    public string? Target => _target ??= pageFactory.PageHelpers.GetTarget(this);
+    public string? Target => _target ??= pageFactory.PageProperties.GetTarget(this);
     private string? _target;
 
 }

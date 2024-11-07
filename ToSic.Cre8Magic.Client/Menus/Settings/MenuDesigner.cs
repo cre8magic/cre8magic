@@ -1,25 +1,28 @@
 ﻿using System.Collections;
+using ToSic.Cre8magic.Client.Models;
+using ToSic.Cre8magic.Client.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus.Settings;
 
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MenuDesigner : IMenuDesigner
+public class MenuDesigner : IPageDesigner
 {
-    public MenuDesigner(MagicMenuTree tree, MagicMenuSettings menuConfig)
+    public MenuDesigner(/*MagicMenuTree tree,*/ MagicMenuSettings menuConfig)
     {
         MenuSettings = menuConfig ?? throw new ArgumentException("MenuConfig must be real", nameof(MenuSettings));
 
         DesignSettingsList = [MenuSettings.DesignSettings!];
 
-        Log = menuConfig.Debug?.Detailed == true ? tree.LogRoot.GetLog("MenuDesigner") : null;
+        // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
+        //Log = menuConfig.Debug?.Detailed == true ? tree.LogRoot.GetLog("MenuDesigner") : null;
     }
     private MagicMenuSettings MenuSettings { get; }
     internal List<NamedSettings<MagicMenuDesign>> DesignSettingsList { get; }
     private ILog? Log { get; }
 
-    public string Classes(string tag, MagicMenuPage page)
+    public string Classes(string tag, MagicPage page)
     {
         var l = Log.Fn<string>($"{nameof(tag)}: {tag}, page: {page.PageId} \"{page.Name}\"");
         var configsForTag = ConfigsForTag(tag);
@@ -29,7 +32,7 @@ public class MenuDesigner : IMenuDesigner
         return l.ReturnAndLog(result);
     }
 
-    public string Value(string key, MagicMenuPage page)
+    public string Value(string key, MagicPage page)
     {
         var l = Log.Fn<string>(key);
         var configsForKey = ConfigsForTag(key)
@@ -46,7 +49,7 @@ public class MenuDesigner : IMenuDesigner
             .Where(c => c is { })
             .ToList()!;
 
-    private List<string?> TagClasses(MagicMenuPage page, IReadOnlyCollection<MagicMenuDesign> configs)
+    private List<string?> TagClasses(MagicPage page, IReadOnlyCollection<MagicMenuDesign> configs)
     {
         var classes = new List<string?>();
 
@@ -58,10 +61,11 @@ public class MenuDesigner : IMenuDesigner
 
         AddIfAny(configs.Select(c => c.Classes));
         AddIfAny(configs.Select(c => c.Classes));
-        AddIfAny(configs.Select(c => c.IsActive.Get(page.IsActive)));
+        AddIfAny(configs.Select(c => c.IsActive.Get(page.IsCurrent)));
         AddIfAny(configs.Select(c => c.HasChildren.Get(page.HasChildren)));
         AddIfAny(configs.Select(c => c.IsDisabled.Get(!page.IsClickable)));
-        AddIfAny(configs.Select(c => c.InBreadcrumb.Get(page.InBreadcrumb)));
+        // TODO: this needs a cast to MagicMenuPage, should be improved; probably InBreadcrumb could become an official property?
+        AddIfAny(configs.Select(c => c.InBreadcrumb.Get((page as MagicMenuPage)?.InBreadcrumb)));
 
         // See if there are any css for this level or for not-specified levels
         var levelCss = configs

@@ -11,7 +11,7 @@ namespace ToSic.Cre8magic.Client.Models;
 /// <remarks>
 /// Can't provide PageState from DI because that breaks Oqtane.
 /// </remarks>
-internal class MagicPageHelpers(MagicPageFactory pageFactory)
+internal class MagicPageProperties(MagicPageFactory pageFactory)
 {
     /// <summary>
     /// Link to page.

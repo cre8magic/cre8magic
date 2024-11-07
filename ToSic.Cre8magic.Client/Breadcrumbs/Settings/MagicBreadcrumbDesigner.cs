@@ -1,11 +1,13 @@
 ﻿using System.Collections;
+using ToSic.Cre8magic.Client.Models;
+using ToSic.Cre8magic.Client.Pages;
 
 namespace ToSic.Cre8magic.Client.Breadcrumbs.Settings;
 
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MagicBreadcrumbDesigner : IBreadcrumbDesigner
+public class MagicBreadcrumbDesigner : IPageDesigner
 {
     public MagicBreadcrumbDesigner(MagicBreadcrumbSettings breadcrumbConfig)
     {
@@ -18,7 +20,7 @@ public class MagicBreadcrumbDesigner : IBreadcrumbDesigner
     internal List<NamedSettings<MagicBreadcrumbDesign>> DesignSettingsList { get; }
 
 
-    public string Classes(string tag, MagicBreadcrumbItem item)
+    public string Classes(string tag, MagicPage item)
     {
         var configsForTag = ConfigsForTag(tag);
         return configsForTag.Any()
@@ -26,7 +28,7 @@ public class MagicBreadcrumbDesigner : IBreadcrumbDesigner
             : "";
     }
 
-    public string Value(string key, MagicBreadcrumbItem item)
+    public string Value(string key, MagicPage item)
     {
         var configsForKey = ConfigsForTag(key)
             .Select(c => c.Value)
@@ -42,7 +44,7 @@ public class MagicBreadcrumbDesigner : IBreadcrumbDesigner
             .Where(c => c is { })
             .ToList()!;
 
-    private List<string?> TagClasses(MagicBreadcrumbItem page, IReadOnlyCollection<MagicBreadcrumbDesign> configs)
+    private List<string?> TagClasses(MagicPage page, IReadOnlyCollection<MagicBreadcrumbDesign> configs)
     {
         var classes = new List<string?>();
 

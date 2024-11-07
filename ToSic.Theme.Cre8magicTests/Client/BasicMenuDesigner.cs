@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using ToSic.Cre8magic.Client.Menus;
 using ToSic.Cre8magic.Client.Menus.Settings;
+using ToSic.Cre8magic.Client.Models;
+using ToSic.Cre8magic.Client.Pages;
 
 namespace ToSic.Theme.Cre8magicTests.Client;
 
-internal class BasicMenuDesigner : IMenuDesigner
+internal class BasicMenuDesigner : IPageDesigner
 {
-    public string Classes(string tag, MagicMenuPage page)
+    public string Classes(string tag, MagicPage page)
     {
         // List to store CSS class names
         var classes = new List<string>();
@@ -34,7 +36,7 @@ internal class BasicMenuDesigner : IMenuDesigner
                 // Use 'nav-link' class from Bootstrap
                 classes.Add("nav-link");
                 // If the page is active, add 'active' class
-                if (page.IsActive) classes.Add("active");
+                if (page.IsCurrent) classes.Add("active");
                 break;
 
             case "span":
@@ -53,7 +55,7 @@ internal class BasicMenuDesigner : IMenuDesigner
 
 
 
-    public string Value(string key, MagicMenuPage page)
+    public string Value(string key, MagicPage page)
     {
         return "yyy";
     }

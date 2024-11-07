@@ -1,5 +1,7 @@
 ﻿using Oqtane.UI;
+using ToSic.Cre8magic.Client.Breadcrumbs;
 using ToSic.Cre8magic.Client.Models;
+using ToSic.Cre8magic.Client.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
@@ -7,25 +9,24 @@ public class MagicMenuTree : MagicMenuPage
 {
     public const char PageForced = '!';
 
-    public MagicMenuTree(PageState pageState) : this(new MagicPageFactory(pageState), pageState)
+    public MagicMenuTree(PageState pageState) : this(new MagicPageFactory(pageState))
     { }
 
-    public MagicMenuTree(MagicPageFactory pageFactory, PageState pageState) : base(pageFactory, pageFactory.Current, 1, pageState)
+    public MagicMenuTree(MagicPageFactory pageFactory) : base(pageFactory, new MagicMenuPageHelper(pageFactory), pageFactory.Current, 1)
     {
         Log = LogRoot.GetLog("Root");
-        Log.A($"Start with PageState for Page:{pageState.Page.PageId}; Level:1");
+        Log.A($"Start with PageState for Page:{PageId}; Level:1");
 
         // update dependent properties
-        AllPages = PageFactory.All().ToList();
         MenuPages = PageFactory.MenuPages;
         Settings = MagicMenuSettings.Defaults.Fallback;
-        Design = new MenuDesigner(this, Settings);
+        Design = new MenuDesigner(/*this,*/ Settings);
         Debug = [];
     }
 
     internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<MagicPage>? menuPages = null, List<string>? messages = null) : this(magicSettings.PageState)
     {
-        Log.A($"Start with MagicSettings for Page:{PageState.Page.PageId}; Level:1");
+        Log.A($"Start with MagicSettings for Page:{PageId}; Level:1");
 
         MagicSettings = magicSettings;
         Settings = settings;
@@ -56,10 +57,10 @@ public class MagicMenuTree : MagicMenuPage
         return this;
     }
 
-    public MagicMenuTree Designer(IMenuDesigner menuDesigner)
+    public MagicMenuTree Designer(IPageDesigner pageDesigner)
     {
-        Log.A($"Init MenuDesigner:{menuDesigner != null}");
-        Design = menuDesigner;
+        Log.A($"Init MenuDesigner:{pageDesigner != null}");
+        Design = pageDesigner;
         return this;
     }
 
@@ -70,23 +71,16 @@ public class MagicMenuTree : MagicMenuPage
 
     private MagicSettings? MagicSettings { get; set; } // TODO: stv move this to better place because it is MagicSettings part
 
-    internal TokenEngine? PageTokenEngine(MagicPage page) // TODO: stv move this to better place because it is MagicSettings part
+    internal TokenEngine PageTokenEngine(MagicPage page) // TODO: stv move this to better place because it is MagicSettings part
     {
         // fallback without MagicSettings return just TokenEngine with PageTokens
         if (MagicSettings == null)
-            return new TokenEngine([
-                new PageTokens(PageFactory, page)
-            ]);
+            return new TokenEngine([new PageTokens(PageFactory, page)]);
 
         var originalPage = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
         originalPage = originalPage.Clone(page, menuId: MenuId);
         return MagicSettings.Tokens.SwapParser(originalPage);
     }
-
-    /// <summary>
-    /// List of all pages - even these which would currently not be shown in the menu.
-    /// </summary>
-    internal List<MagicPage> AllPages { get; }
 
     /// <summary>
     /// Pages in the menu according to Oqtane pre-processing
@@ -96,7 +90,7 @@ public class MagicMenuTree : MagicMenuPage
 
     internal override MagicMenuTree Tree => this;
 
-    internal IMenuDesigner Design { get; private set; }
+    internal IPageDesigner Design { get; private set; }
 
     internal List<MagicPage> Breadcrumb => _breadcrumb ??= PageFactory.Breadcrumbs(this).ToList();
     private List<MagicPage>? _breadcrumb;
@@ -161,7 +155,7 @@ public class MagicMenuTree : MagicMenuPage
     private List<MagicPage> FindInitialAnchorPages(StartNodeRule n)
     {
         var l = Log.Fn<List<MagicPage>>();
-        var source = n.Force ? Tree.AllPages : Tree.MenuPages.ToList();
+        var source = n.Force ? PageFactory.All().ToList() : Tree.MenuPages.ToList();
         switch (n.ModeInfo)
         {
             case StartMode.PageId:
