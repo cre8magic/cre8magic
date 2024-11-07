@@ -1,27 +1,17 @@
 ﻿namespace ToSic.Cre8magic.Client.Logging;
 
-internal class LogEntry
+internal class LogEntry(ILog? log, string message, int depth, CodeRef codeRef)
 {
+    public string Source { get; } = log?.Prefix ?? "";
 
-    public LogEntry(ILog? log, string message, int depth, CodeRef codeRef)
-    {
-        Depth = depth;
-        Source = log?.Prefix ?? "";
-        Log = log;
-        CodeRef = codeRef;
-        Message = message;
-    }
+    public string Message { get; } = message;
 
-    public string Source { get; }
-
-    public string Message { get; }
-
-    public ILog? Log { get; }
-    public CodeRef CodeRef { get; }
+    public ILog? Log { get; } = log;
+    public CodeRef CodeRef { get; } = codeRef;
 
     public string? Result { get; private set; }
 
-    public int Depth;
+    public int Depth = depth;
     
     public object? Data { get; set; }
 

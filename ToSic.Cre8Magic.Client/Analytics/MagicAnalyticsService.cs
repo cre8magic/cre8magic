@@ -3,14 +3,10 @@ using static ToSic.Cre8magic.Client.Services.DoStuff;
 
 namespace ToSic.Cre8magic.Client.Analytics;
 
-public class MagicAnalyticsService
+public class MagicAnalyticsService(IJSRuntime jsRuntime)
 {
     private const string GtmEvent = "event";
-    public MagicAnalyticsService(IJSRuntime jsRuntime)
-    {
-        JsRuntime = jsRuntime;
-    }
-    public IJSRuntime JsRuntime { get; }
+    public IJSRuntime JsRuntime { get; } = jsRuntime;
 
     /// <summary>
     /// Must run in OnAfterRenderAsync for now

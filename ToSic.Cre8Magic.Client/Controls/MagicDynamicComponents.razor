@@ -13,7 +13,7 @@
     private List<(Type Type, Dictionary<string, object> Parameters)> MyComponents()
     {
         if (_cache != null) return _cache;
-        if (Components == null) return _cache = new();
+        if (Components == null) return _cache = [];
         var optionalFiltered = Group.HasValue()
             ? Components.Where(c => c.Group == Group).ToList()
             : Components;

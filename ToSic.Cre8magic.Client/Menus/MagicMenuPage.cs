@@ -148,7 +148,7 @@ public class MagicMenuPage : MagicPage
         var l = Log.Fn<List<MagicMenuPage>>($"{nameof(Level)}: {Level}");
         var levelsRemaining = Tree.Depth - (Level - 1 /* Level is 1 based, so -1 */);
         if (levelsRemaining < 0)
-            return l.Return(new(), "remaining levels 0 - return empty");
+            return l.Return([], "remaining levels 0 - return empty");
 
         var children = GetChildPages()
             .Select(page => new MagicMenuPage(page, Level + 1, PageState, Tree, $"{Log.Prefix}>{PageId}"))

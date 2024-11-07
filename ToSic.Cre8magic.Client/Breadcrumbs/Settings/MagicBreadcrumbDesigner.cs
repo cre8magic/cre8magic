@@ -11,7 +11,7 @@ public class MagicBreadcrumbDesigner : IBreadcrumbDesigner
     {
         BreadcrumbSettings = breadcrumbConfig ?? throw new ArgumentException("BreadcrumbConfig must be real", nameof(BreadcrumbSettings));
 
-        DesignSettingsList = new() { BreadcrumbSettings.DesignSettings! };
+        DesignSettingsList = [BreadcrumbSettings.DesignSettings!];
     }
     private MagicBreadcrumbSettings BreadcrumbSettings { get; }
     internal List<NamedSettings<MagicBreadcrumbDesign>> DesignSettingsList { get; }

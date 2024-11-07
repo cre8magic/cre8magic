@@ -4,7 +4,7 @@ namespace ToSic.Cre8magic.Client.Tokens;
 
 /// <summary>
 /// Basic token engine which takes a list of token replacers and runs them.
-/// In future, should be a bit more modern using a token parser and token providers
+/// In the future, should be a bit more modern using a token parser and token providers
 /// similar to 2sxc.
 /// But ATM there are only ca. 10 tokens so the current model is probably sufficient
 /// </summary>

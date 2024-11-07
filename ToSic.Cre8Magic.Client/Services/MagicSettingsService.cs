@@ -50,11 +50,10 @@ public class MagicSettingsService: IHasSettingsExceptions
         if (cached != null) return cached;
 
         // Tokens engine for this specific PageState
-        var tokens = new TokenEngine(new()
-        {
+        var tokens = new TokenEngine([
             new PageTokens(pageState, null, bodyClasses),
             new ThemeTokens(PackageSettings)
-        });
+        ]);
 
         // Figure out real config-name, and get the initial layout
         var configDetails = FindConfigName(name, Default);
@@ -157,5 +156,5 @@ public class MagicSettingsService: IHasSettingsExceptions
     private List<MagicSettingsCatalog>? _configurationSources;
 
     public List<Exception> Exceptions => MyExceptions.Concat(Json.Exceptions).ToList();
-    private List<SettingsException> MyExceptions { get; } = new();
+    private List<SettingsException> MyExceptions { get; } = [];
 }

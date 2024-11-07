@@ -17,7 +17,7 @@ public class MagicMenuTree : MagicMenuPage
         MenuPages = MagicPageService.MenuPages; // Menu pages for the current user.
         Settings = MagicMenuSettings.Defaults.Fallback;
         Design = new MenuDesigner(this, Settings);
-        Debug = new();
+        Debug = [];
     }
 
     internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<MagicPage>? menuPages = null, List<string>? messages = null) : this(magicSettings.PageState)
@@ -115,7 +115,7 @@ public class MagicMenuTree : MagicMenuPage
         var l = Log.Fn<List<MagicPage>>($"{PageId}");
         // Give empty list if we shouldn't display it
         if (Settings.Display == false)
-            return l.Return(new(), "Display == false, don't show");
+            return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries
         var start = Settings.Start?.Trim();
@@ -167,7 +167,7 @@ public class MagicMenuTree : MagicMenuPage
                 return l.Return(source.Where(p => p.Level == 0).ToList(), "Home/root");
             // Level 0 means current level / current page
             case StartMode.Current when n.Level == 0:
-                return l.Return(new() { this }, "Current page");
+                return l.Return([this], "Current page");
             // Level 1 means top-level pages. If we don't want the level1 children, we want the top-level items
             // TODO: CHECK WHAT LEVEL Oqtane actually gives us, is 1 the top?
             case StartMode.Current when n.Level == 1 && !n.ShowChildren:
@@ -176,16 +176,16 @@ public class MagicMenuTree : MagicMenuPage
                 // If coming from the top, level 1 means top level, so skip one less
                 var skipDown = n.Level - 1;
                 var fromTop = source.Breadcrumbs(this).Skip(skipDown).FirstOrDefault();
-                var fromTopResult = fromTop == null ? new() : new List<MagicPage> { fromTop };
+                var fromTopResult = fromTop == null ? [] : new List<MagicPage> { fromTop };
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
             case StartMode.Current when n.Level < 0:
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
                 var fromCurrent = source.GetAncestors(this).ToList().Skip(skipUp).FirstOrDefault();
-                var result = fromCurrent == null ? new() : new List<MagicPage> { fromCurrent };
+                var result = fromCurrent == null ? [] : new List<MagicPage> { fromCurrent };
                 return l.Return(result, $"up the ancestors by {skipUp}");
             default:
-                return l.Return(new(), "nothing");
+                return l.Return([], "nothing");
         }
     }
 
@@ -200,15 +200,16 @@ public class MagicMenuTree : MagicMenuPage
                 result = ChildrenOf(referencePage.ParentId ?? 0);
                 return l.Return(result, "siblings - " + LogPageList(result));
             case 0:
-                result = new() { referencePage };
+                result = [referencePage];
                 return l.Return(result, "current page - " + LogPageList(result));
             case 1:
                 result = ChildrenOf(referencePage.PageId);
                 return l.Return(result, "children - " + LogPageList(result));
             case > 1:
-                return l.Return(new() { ErrPage(0, "Error: Create menu from current page but level > 1") }, "err");
+                return l.Return([ErrPage(0, "Error: Create menu from current page but level > 1")], "err");
             default:
-                return l.Return(new() { ErrPage(0, "Error: Create menu from current page but level < -1, not yet implemented") }, "err");
+                return l.Return(
+                    [ErrPage(0, "Error: Create menu from current page but level < -1, not yet implemented")], "err");
         }
     }
 
@@ -216,7 +217,7 @@ public class MagicMenuTree : MagicMenuPage
     {
         var l = Log.Fn<StartNodeRule[]>($"{nameof(value)}: '{value}'; {nameof(level)}: {level}; {nameof(showChildren)}: {showChildren}");
 
-        if (!value.HasText()) return l.Return(Array.Empty<StartNodeRule>(), "no value, empty list");
+        if (!value.HasText()) return l.Return([], "no value, empty list");
         var parts = value.Split(',');
         var result = parts
             .Select(fromNode =>

@@ -9,18 +9,8 @@ namespace ToSic.Cre8magic.Client.Services;
 /// It's just meant to support the AdminButtons,
 /// without placing the logic code inside that. 
 /// </summary>
-public class MagicPageEditService
+public class MagicPageEditService(IPageService pageService, NavigationManager navigationManager)
 {
-    public MagicPageEditService(IPageService pageService, NavigationManager navigationManager)
-    {
-        _pageService = pageService;
-        _navigationManager = navigationManager;
-    }
-
-    private readonly IPageService _pageService;
-    private readonly NavigationManager _navigationManager;
-
-
     // Code basically copied from ControlPanel.razor
     public async Task ToggleEditMode(PageState pageState)
     {
@@ -31,12 +21,12 @@ public class MagicPageEditService
             // Unclear what this is for, so just a guess
             // Probably the personalizable page is "virtual" so if he's on that page
             // He doesn't have a personalizable page yet, so it must be created.
-            // I assume afterwards he would always be on that page, so it wouldn't create it any more
-            await _pageService.AddPageAsync(pageState.Page.PageId, pageState.User.UserId);
+            // I assume afterward he would always be on that page, so it wouldn't create it any more
+            await pageService.AddPageAsync(pageState.Page.PageId, pageState.User.UserId);
             pageState.EditMode = !pageState.EditMode;
         }
         // Note: I assume that if the user had just created his own page, this would result in a redirect
-        _navigationManager.NavigateTo(Oqtane.Shared.Utilities.NavigateUrl(pageState.Alias.Path, pageState.Page.Path, "edit=" + (pageState.EditMode ? "1" : "0")));
+        navigationManager.NavigateTo(Oqtane.Shared.Utilities.NavigateUrl(pageState.Alias.Path, pageState.Page.Path, "edit=" + (pageState.EditMode ? "1" : "0")));
     }
 
 }

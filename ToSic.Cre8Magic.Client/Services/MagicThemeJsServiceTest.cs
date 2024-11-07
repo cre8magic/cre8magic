@@ -7,13 +7,9 @@ namespace ToSic.Cre8magic.Client.Services;
 /// Constants and helpers related to JS calls from the Theme to it's own JS libraries
 /// </summary>
 // TODO: SOME DAY move to Cre8magic, as soon as we know how to reliably include the js-assets in the final distribution
-public class MagicThemeJsServiceTest : MagicJsServiceBase, IMagicThemeJsService
+public class MagicThemeJsServiceTest(IJSRuntime jsRuntime)
+    : MagicJsServiceBase(jsRuntime, $"./_content/{MagicConstants.PackageId}/test.js"), IMagicThemeJsService
 {
-
-    public MagicThemeJsServiceTest(IJSRuntime jsRuntime) : base(jsRuntime, $"./_content/{MagicConstants.PackageId}/test.js")
-    {
-    }
-
     /// <inheritdoc />
     public async Task SetBodyClasses(string classes) 
     {

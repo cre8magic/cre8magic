@@ -2,12 +2,9 @@
 
 namespace ToSic.Cre8magic.Client.Containers.Settings;
 
-internal class ContainerDesigner: ThemeDesigner
+internal class ContainerDesigner(MagicSettings settings, Module module) : ThemeDesigner(settings)
 {
-    public ContainerDesigner(MagicSettings settings, Module module): base(settings) => _module = module;
-    private readonly Module _module;
-
-    protected override TokenEngine Tokens => _tokens1 ??= Settings.Tokens.Expanded(new ModuleTokens(_module));
+    protected override TokenEngine Tokens => _tokens1 ??= Settings.Tokens.Expanded(new ModuleTokens(module));
     private TokenEngine? _tokens1;
 
     public override string? Classes(string tag)
@@ -28,8 +25,8 @@ internal class ContainerDesigner: ThemeDesigner
         var value =  string.Join(" ", new[]
         {
             styles.Classes,
-            styles.IsPublished.Get(_module.IsPublished()),      // Info-Class if not published
-            styles.IsAdmin.Get(_module.ForceAdminContainer())   // Info-class if admin module
+            styles.IsPublished.Get(module.IsPublished()),      // Info-Class if not published
+            styles.IsAdmin.Get(module.ForceAdminContainer())   // Info-class if admin module
         }.Where(s => s.HasValue()));
 
         return value;

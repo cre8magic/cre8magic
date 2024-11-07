@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Client.Logging;
 internal class LogRoot
 {
     [JsonIgnore]
-    public readonly List<LogEntry> LogEntries = new();
+    public readonly List<LogEntry> LogEntries = [];
 
     public IEnumerable<object?> Entries => LogEntries.SelectMany(e =>
     {

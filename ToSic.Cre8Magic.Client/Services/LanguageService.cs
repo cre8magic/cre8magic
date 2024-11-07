@@ -14,20 +14,9 @@ namespace ToSic.Cre8magic.Client.Services;
  * - ...and only show these; possibly show more to admin?
  */
 
-public class LanguageService: MagicServiceWithSettingsBase
+public class LanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLanguages)
+    : MagicServiceWithSettingsBase
 {
-    public LanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLanguages)
-    {
-        _navigationManager = navigation;
-        _jsRuntime = jsRuntime;
-        _oqtLanguages = oqtLanguages;
-    }
-
-    private readonly NavigationManager _navigationManager;
-    private readonly IJSRuntime _jsRuntime;
-    private readonly ILanguageService _oqtLanguages;
-
-
     public async Task<bool> ShowMenu(int siteId)
     {
         var languages = await LanguagesToShow(siteId);
@@ -38,7 +27,7 @@ public class LanguageService: MagicServiceWithSettingsBase
     {
         if (_languages.TryGetValue(siteId, out var cached)) return cached;
 
-        var siteLanguages = await _oqtLanguages.GetLanguagesAsync(siteId);
+        var siteLanguages = await oqtLanguages.GetLanguagesAsync(siteId);
 
         var langSettings = Settings.Languages;
 
@@ -85,10 +74,10 @@ public class LanguageService: MagicServiceWithSettingsBase
     {
         if (culture == CultureInfo.CurrentUICulture.Name) return;
 
-        var interop = new Interop(_jsRuntime);
+        var interop = new Interop(jsRuntime);
         var localizationCookieValue = MakeCookieValue(new(culture));
         await interop.SetCookie(DefaultCookieName, localizationCookieValue, 360);
 
-        _navigationManager.NavigateTo(_navigationManager.Uri, forceLoad: true);
+        navigation.NavigateTo(navigation.Uri, forceLoad: true);
     }
 }

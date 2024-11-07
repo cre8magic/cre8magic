@@ -11,7 +11,7 @@ public class MenuDesigner : IMenuDesigner
     {
         MenuSettings = menuConfig ?? throw new ArgumentException("MenuConfig must be real", nameof(MenuSettings));
 
-        DesignSettingsList = new() { MenuSettings.DesignSettings! };
+        DesignSettingsList = [MenuSettings.DesignSettings!];
 
         Log = menuConfig.Debug?.Detailed == true ? tree.LogRoot.GetLog("MenuDesigner") : null;
     }

@@ -16,7 +16,7 @@ public class MagicThemeDesignSettings: SettingsWithInherit
     internal const string SettingFromDefaults = $"{MainPrefix}-warning-this-is-from-defaults-you-should-set-your-own-value";
 
     private static string[] MagicContextDefaults =
-    {
+    [
         //1.2 Set the page-### class
         $"{PagePrefixDefault}-{MagicTokens.PageId}",
         //1.4 Set the page-root-### class
@@ -35,10 +35,10 @@ public class MagicThemeDesignSettings: SettingsWithInherit
 
         // Debug info so we know the defaults were used
         SettingFromDefaults
-    };
+    ];
 
 
-    public string[] MagicContext { get; set; } = { };
+    public string[] MagicContext { get; set; } = [];
 
     public PairOnOff PageIsHome { get; set; }
 
@@ -81,7 +81,7 @@ public class MagicThemeDesignSettings: SettingsWithInherit
         },
         Foundation = new()
         {
-            MagicContext = Array.Empty<string>(),
+            MagicContext = [],
             PageIsHome = new(),
             PaneIsEmpty = new(),
             MagicContextTagId = BodyDivId,

@@ -1,9 +1,7 @@
 ﻿namespace ToSic.Cre8magic.Client.Languages.Settings;
 
-internal class LanguagesDesigner: ThemeDesigner
+internal class LanguagesDesigner(MagicSettings settings) : ThemeDesigner(settings)
 {
-    public LanguagesDesigner(MagicSettings settings): base(settings) { }
-
     internal string Classes(MagicLanguage? lang, string tag)
     {
         if (!tag.HasValue()) return "";

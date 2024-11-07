@@ -6,11 +6,9 @@ using Microsoft.Extensions.Logging;
 
 namespace ToSic.Cre8magic.Client.Settings.Json;
 
-public abstract class JsonConverterBase<T> : JsonConverter<T>
+public abstract class JsonConverterBase<T>(ILogger logger) : JsonConverter<T>
 {
-    public ILogger Logger { get; }
-
-    protected JsonConverterBase(ILogger logger) => Logger = logger;
+    public ILogger Logger { get; } = logger;
 
     private static readonly ConditionalWeakTable<JsonConverterBase<T>, BoxedBool> ConverterFlags = new();
 

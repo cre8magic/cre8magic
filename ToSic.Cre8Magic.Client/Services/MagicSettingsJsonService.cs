@@ -4,15 +4,10 @@ using ToSic.Cre8magic.Client.Settings.Json;
 
 namespace ToSic.Cre8magic.Client.Services;
 
-public class MagicSettingsJsonService : IHasSettingsExceptions
+public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger) : IHasSettingsExceptions
 {
-    public ILogger<MagicSettingsJsonService> Logger { get; }
+    public ILogger<MagicSettingsJsonService> Logger { get; } = logger;
 
-    public MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger)
-    {
-        Logger = logger;
-    }
-    
     public MagicSettingsCatalog LoadJson(MagicPackageSettings themeConfig)
     {
         var jsonFileName = $"{themeConfig.WwwRoot}/{themeConfig.Url}/{themeConfig.SettingsJsonFile}";
@@ -44,7 +39,7 @@ public class MagicSettingsJsonService : IHasSettingsExceptions
         }
     }
 
-    public List<Exception> Exceptions => _exceptions ??= new();
+    public List<Exception> Exceptions => _exceptions ??= [];
     private List<Exception>? _exceptions;
 
     private void AddException(MagicPackageSettings themeConfig, Exception ex)

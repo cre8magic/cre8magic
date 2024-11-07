@@ -3,10 +3,8 @@
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-internal class ThemeDesigner : MagicDesignerBase
+internal class ThemeDesigner(MagicSettings settings) : MagicDesignerBase(settings)
 {
-    public ThemeDesigner(MagicSettings settings) : base(settings) {}
-
     internal string? BodyClasses(ITokenReplace tokens)
     {
         var css = Settings?.ThemeDesign;
