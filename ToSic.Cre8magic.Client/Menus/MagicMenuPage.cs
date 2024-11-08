@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using ToSic.Cre8magic.Client.Models;
+﻿using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
 using Log = ToSic.Cre8magic.Client.Logging.Log;
 
@@ -37,14 +36,14 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
     /// Menu Level relative to the start of the menu (always starts with 1)
     /// </summary>
     /// <remarks>
-    /// This is not the same as Oqtane Page.Level (which exists in base class).
+    /// This is _not_ the same as Oqtane Page.Level (which exists in base class).
     /// </remarks>
     public override int MenuLevel { get; }
 
     /// <summary>
     /// Root navigator object which has some data/logs for all navigators which spawned from it. 
     /// </summary>
-    internal virtual MagicMenuTree Tree { get; }
+    internal MagicMenuTree Tree { get; }
 
     internal Log Log { get; }
     
@@ -77,14 +76,10 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
-        var children = GetChildPages()
+        var children = PageFactory.ChildrenOf(Tree.MenuPages, PageId)
             .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{PageId}"))
             .ToList();
         return l.Return(children, $"{children.Count}");
     }
-
-    private const string ErrPageNotFound = "Error: Page not found";
-
-    protected virtual List<MagicPage> GetChildPages() => PageFactory.ChildrenOf(Tree.MenuPages, PageId);
 
 }
