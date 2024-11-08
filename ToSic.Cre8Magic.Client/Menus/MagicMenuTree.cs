@@ -17,7 +17,7 @@ public class MagicMenuTree : MagicMenuPage
         Log.A($"Start with PageState for Page:{PageId}; Level:1");
 
         // update dependent properties
-        MenuPages = PageFactory.MenuPages;
+        MenuPages = PageFactory.UserPages;
         Debug = [];
     }
 
@@ -65,7 +65,7 @@ public class MagicMenuTree : MagicMenuPage
     #endregion
 
 
-    public MagicMenuSettings Settings => ((MagicMenuPageSetHelper)SetHelper).Settings; // { get; private set; }
+    public MagicMenuSettings Settings => ((MagicMenuPageSetHelper)SetHelper).Settings;
 
     /// <summary>
     /// Pages in the menu according to Oqtane pre-processing
@@ -85,8 +85,6 @@ public class MagicMenuTree : MagicMenuPage
     private int? _depth;
 
     public List<string> Debug { get; private set; }
-
-    //internal LogRoot LogRoot { get; } = new();
 
     protected override List<MagicPage> GetChildPages() => GetRootPages();
 

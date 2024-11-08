@@ -12,7 +12,7 @@ namespace ToSic.Cre8magic.Client.Menus;
 /// <remarks>
 /// Can't provide PageState from DI because that breaks Oqtane.
 /// </remarks>
-public class MagicMenuPage : MagicPage
+public class MagicMenuPage : MagicPageWithDesign
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MagicMenuPage"/> class.
@@ -22,9 +22,9 @@ public class MagicMenuPage : MagicPage
     /// <param name="level">The menu level.</param>
     /// <param name="tree">The magic menu tree.</param>
     /// <param name="debugPrefix">The debug prefix.</param>
-    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree = null, string debugPrefix = null) : base(page.OriginalPage, pageFactory)
+    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree = null, string debugPrefix = null) : base(pageFactory, setHelper, page)
     {
-        SetHelper = setHelper;
+        //SetHelper = setHelper;
         Level = level; // menu level
 
         Log = setHelper.LogRoot.GetLog(debugPrefix);
@@ -34,7 +34,7 @@ public class MagicMenuPage : MagicPage
         var _ = PageInfo;   // Access page info early on to make logging nicer
     }
 
-    internal MagicPageSetHelperBase SetHelper;
+    //internal MagicPageSetHelperBase SetHelper;
 
     /// <summary>
     /// Menu Level relative to the start of the menu (always starts with 1)
@@ -48,23 +48,6 @@ public class MagicMenuPage : MagicPage
     /// Root navigator object which has some data/logs for all navigators which spawned from it. 
     /// </summary>
     internal virtual MagicMenuTree Tree { get; }
-
-    private ITokenReplace TakenReplace => _tokenReplace ??= SetHelper.PageTokenEngine(this);
-    private ITokenReplace? _tokenReplace;
-
-    /// <summary>
-    /// Get css class for tag.
-    /// </summary>
-    /// <param name="tag"></param>
-    /// <returns></returns>
-    public string? Classes(string tag) => TakenReplace.Parse(SetHelper.Design.Classes(tag, this)).EmptyAsNull();
-
-    /// <summary>
-    /// Get attribute value.
-    /// </summary>
-    /// <param name="key"></param>
-    /// <returns></returns>
-    public string? Value(string key) => TakenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
 
     internal Log Log { get; set; }
 
@@ -152,9 +135,6 @@ public class MagicMenuPage : MagicPage
         var result = Tree.MenuPages.Where(p => p.ParentId == pageId).ToList();
         return l.Return(result, LogPageList(result));
     }
-
-    //protected List<Page> FindPages(int[] pageIds)
-    //    => Tree.MenuPages.Where(p => pageIds.Contains(p.PageId)).ToList();
 
 
     protected MagicPage ErrPage(int id, string message) => new(new() { PageId = id, Name = message }, PageFactory);

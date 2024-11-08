@@ -17,9 +17,18 @@ public class MagicPageFactory(PageState pageState)
     internal MagicPageProperties PageProperties => _pageProperties ??= new(this);
     private MagicPageProperties? _pageProperties;
 
-    public MagicPage Create(Page page) => new(page, this);
+    private readonly Dictionary<Page, MagicPage> _cache = new();
 
-    public MagicPage? CreateOrNull(Page? page) => page == null ? null : new(page, this);
+    public MagicPage Create(Page page)
+    {
+        if (_cache.TryGetValue(page, out var magicPage))
+            return magicPage;
+        var newPage = new MagicPage(page, this);
+        _cache[page] = newPage;
+        return newPage;
+    }
+
+    public MagicPage? CreateOrNull(Page? page) => page == null ? null : Create(page);
 
     public MagicPage Home => _home ??= Create(pageState.Pages.Find(p => p.Path == "") ?? throw new("Home page not found, no page with empty path"));
 
@@ -49,7 +58,7 @@ public class MagicPageFactory(PageState pageState)
     /// Pages in the menu according to Oqtane pre-processing
     /// Should be limited to pages which should be in the menu, visible and permissions ok. 
     /// </summary>
-    public IEnumerable<MagicPage> MenuPages => GetMenuPages();
+    public IEnumerable<MagicPage> UserPages => GetMenuPages();
 
     private IEnumerable<MagicPage> GetMenuPages()
     {
