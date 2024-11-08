@@ -6,57 +6,9 @@ namespace ToSic.Cre8magic.Client.Models;
 /// Wrapper for the Oqtane Page.
 /// </summary>
 /// <param name="originalPage"></param>
-public class MagicPage(Page originalPage, MagicPageFactory pageFactory)
+public class MagicPage(Page originalPage, MagicPageFactory pageFactory): MagicPageBase(originalPage)
 {
     protected MagicPageFactory PageFactory => pageFactory;
-
-    /// <summary>
-    /// Original Oqtane page wrapped in MagicPage.
-    /// </summary>
-    public Page OriginalPage { get; } = originalPage;
-
-    /// <summary>
-    /// Id of the Page
-    /// </summary>
-    public int PageId => OriginalPage.PageId;
-
-    /// <summary>
-    /// Reference to the parent <see cref="Page"/> if it has one.
-    /// </summary>
-    public int? ParentId => OriginalPage.ParentId;
-
-    /// <summary>
-    /// Path of the page.
-    /// </summary>
-    public string Path => OriginalPage.Path;
-
-    /// <summary>
-    /// Page Name.
-    /// </summary>
-    public string Name => OriginalPage.Name + "-test";
-
-    /// <summary>
-    /// Full URL to this page.
-    /// </summary>
-    public string Url => OriginalPage.Url;
-
-    /// <summary>
-    /// Link in site navigation is enabled or disabled.
-    /// </summary>
-    public bool IsClickable => OriginalPage.IsClickable;
-
-    /// <summary>
-    /// Current page level from the top of the Menu
-    /// </summary>
-    public int Level => OriginalPage.Level;
-
-    /// <summary>
-    /// Determines if there are sub-pages. True if this page has sub-pages.
-    /// </summary>
-    public bool HasChildren => OriginalPage.HasChildren;
-
-
-
 
     /// <summary>
     /// True if this page is the current page which the user is viewing.
@@ -75,9 +27,19 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory)
     public string? Target => _target ??= pageFactory.PageProperties.GetTarget(this);
     private string? _target;
 
+    /// <summary>
+    /// The current pages bread-crumb, going from the top-level to the current page.
+    /// Note that the "Home" page is usually not a parent, so it's not included.
+    /// </summary>
     public List<MagicPage> Breadcrumb => _breadcrumb ??= PageFactory.Breadcrumbs(this).ToList();
     private List<MagicPage>? _breadcrumb;
 
+
+    /// <summary>
+    /// Determine if the menu page is in the breadcrumb.
+    /// </summary>
+    public bool InBreadcrumb => _inBreadcrumb ??= PageFactory.Current.Breadcrumb.Contains(this);
+    private bool? _inBreadcrumb;
 
 
 }

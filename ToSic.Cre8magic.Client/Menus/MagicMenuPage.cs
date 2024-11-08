@@ -22,16 +22,13 @@ public class MagicMenuPage : MagicPageWithDesign
     /// <param name="level">The menu level.</param>
     /// <param name="tree">The magic menu tree.</param>
     /// <param name="debugPrefix">The debug prefix.</param>
-    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree = null, string debugPrefix = null) : base(pageFactory, setHelper, page)
+    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree = null, string? debugPrefix = null) : base(pageFactory, setHelper, page)
     {
-        //SetHelper = setHelper;
         Level = level; // menu level
 
-        Log = setHelper.LogRoot.GetLog(debugPrefix);
+        Log = setHelper.LogRoot.GetLog(debugPrefix ?? "Node");
 
-        if (tree == null) return;
         Tree = tree;
-        var _ = PageInfo;   // Access page info early on to make logging nicer
     }
 
     public MagicMenuSettings Settings => ((MagicMenuPageSetHelper)SetHelper).Settings;
@@ -49,38 +46,13 @@ public class MagicMenuPage : MagicPageWithDesign
     /// </summary>
     internal virtual MagicMenuTree Tree { get; }
 
-    internal Log Log { get; set; }
-
-    /// <summary>
-    /// Special central place to get, cache and log the special properties only once
-    /// </summary>
-    internal MagicPageInfo PageInfo
-    {
-        get
-        {
-            if (_pI != null) return _pI;
-            var l = Log.Fn<MagicPageInfo>($"Page: {PageId}");
-            _pI = new()
-            {
-                HasChildren = Children.Any(),
-                IsActive = PageId == Tree.PageId,
-                InBreadcrumb = Tree.Breadcrumb.Contains(this),
-            };
-            return l.Return(_pI, $"Name: '{Name}': {_pI.Log}");
-        }
-    }
-
-    private MagicPageInfo? _pI;
-
+    internal Log Log { get; }
+    
     /// <summary>
     /// Determines if there are sub-pages. True if this page has sub-pages.
     /// </summary>
-    public new bool HasChildren => PageInfo.HasChildren;
-
-    /// <summary>
-    /// Determine if the menu page is in the breadcrumb.
-    /// </summary>
-    public bool InBreadcrumb => PageInfo.InBreadcrumb;
+    public new bool HasChildren => _hasChildren ??= Children.Any();
+    private bool? _hasChildren;
 
     /// <summary>
     /// The ID of the menu item

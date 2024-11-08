@@ -6,19 +6,6 @@ namespace ToSic.Cre8magic.Client.Menus;
 
 public class MagicMenuTree : MagicMenuPage
 {
-    public MagicMenuTree(PageState pageState) : this(new MagicPageFactory(pageState))
-    { }
-
-    private MagicMenuTree(MagicPageFactory pageFactory) : base(pageFactory, new MagicMenuPageSetHelper(pageFactory), pageFactory.Current, 1)
-    {
-        Log = SetHelper.LogRoot.GetLog("Root");
-        Log.A($"Start with PageState for Page:{PageId}; Level:1");
-
-        // update dependent properties
-        MenuPages = PageFactory.UserPages.ToList();
-        Debug = [];
-    }
-
     internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<MagicPage>? menuPages = null, List<string>? messages = null) : this(magicSettings.PageState)
     {
         Log.A($"Start with MagicSettings for Page:{PageId}; Level:1");
@@ -28,6 +15,26 @@ public class MagicMenuTree : MagicMenuPage
         if (menuPages != null) SetMenuPages(menuPages);
         if (messages != null) SetMessages(messages);
     }
+
+    public MagicMenuTree(PageState pageState) : this(new MagicPageFactory(pageState))
+    { }
+
+    private MagicMenuTree(MagicPageFactory pageFactory) : base(pageFactory, new MagicMenuPageSetHelper(pageFactory), pageFactory.Current, 1, debugPrefix: "Root")
+    {
+        //SetHelper = new MagicMenuPageSetHelper(pageFactory);
+        //Log = SetHelper.LogRoot.GetLog("Root");
+        //Settings = SetHelper.Settings;
+        Log.A($"Start with PageState for Page:{PageId}; Level:1");
+
+        // update dependent properties
+        MenuPages = PageFactory.UserPages.ToList();
+        Debug = [];
+    }
+
+    //internal Log Log { get; }
+
+    //internal MagicMenuPageSetHelper SetHelper { get; }
+    //public MagicMenuSettings Settings { get; }
 
     #region Init
 
@@ -69,12 +76,6 @@ public class MagicMenuTree : MagicMenuPage
     internal IList<MagicPage> MenuPages { get; private set; }
 
     internal override MagicMenuTree Tree => this;
-
-    //internal List<MagicPage> Breadcrumb => _breadcrumb ??= PageFactory.Breadcrumbs(this).ToList();
-    //private List<MagicPage>? _breadcrumb;
-
-    //public override string MenuId => _menuId ??= Settings?.MenuId ?? "error-menu-id";
-    //private string? _menuId;
 
     public int Depth => _depth ??= Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
     private int? _depth;
