@@ -85,14 +85,14 @@ public class NodeRuleHelper
             case StartMode.PageId:
                 return l.Return(source.Where(p => p.PageId == n.Id).ToList(), $"Page with id {n.Id}");
             case StartMode.Root:
-                return l.Return(source.Where(p => p.Level == 0).ToList(), "Home/root");
+                return l.Return(source.Where(p => p.MenuLevel == 1).ToList(), "Home/root");
             // Level 0 means current level / current page
             case StartMode.Current when n.Level == 0:
                 return l.Return([Current], "Current page");
             // Level 1 means top-level pages. If we don't want the level1 children, we want the top-level items
             // TODO: CHECK WHAT LEVEL Oqtane actually gives us, is 1 the top?
             case StartMode.Current when n is { Level: 1, ShowChildren: false }:
-                return l.Return(source.Where(p => p.Level == 0).ToList(), "Current level 1?");
+                return l.Return(source.Where(p => p.MenuLevel == 1).ToList(), "Current level 1?");
             case StartMode.Current when n.Level > 0:
                 // If coming from the top, level 1 means top level, so skip one less
                 var skipDown = n.Level - 1;

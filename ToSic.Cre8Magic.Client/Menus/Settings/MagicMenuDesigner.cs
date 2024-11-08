@@ -73,11 +73,12 @@ public class MagicMenuDesigner : IPageDesigner
         var levelCss = configs
             .Select(c => c.ByLevel == null
                 ? null
-                : c.ByLevel.TryGetValue(page.Level, out var levelClasses)
+                : c.ByLevel.TryGetValue(page.MenuLevel, out var levelClasses)
                     ? levelClasses
                     : c.ByLevel.TryGetValue(MagicTokens.ByLevelOtherKey, out var levelClassesDefault)
                         ? levelClassesDefault
-                        : null);
+                        : null
+            );
         AddIfAny(levelCss);
 
         return classes;

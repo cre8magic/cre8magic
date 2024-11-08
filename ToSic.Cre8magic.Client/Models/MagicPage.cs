@@ -11,6 +11,12 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory): MagicPa
     protected MagicPageFactory PageFactory => pageFactory;
 
     /// <summary>
+    /// Level in the menu, starting from 1.
+    /// As different menus may start at other depths, this is not always the same as the Oqtane level.
+    /// </summary>
+    public virtual int MenuLevel => Level + 1;
+
+    /// <summary>
     /// True if this page is the current page which the user is viewing.
     /// </summary>
     public bool IsCurrent => OriginalPage.PageId == pageFactory.PageState.Page.PageId;

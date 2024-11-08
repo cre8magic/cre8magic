@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Client.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
-public class MagicMenuTree : MagicMenuPage
+public class MagicMenuTree : MagicMenuPage, IMagicPageList
 {
     internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<MagicPage>? menuPages = null, List<string>? messages = null)
         : this(magicSettings.PageState)
@@ -78,8 +78,8 @@ public class MagicMenuTree : MagicMenuPage
 
     internal override MagicMenuTree Tree => this;
 
-    public int Depth => _depth ??= Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
-    private int? _depth;
+    public int MaxDepth => _maxDepth ??= Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
+    private int? _maxDepth;
 
     public List<string> Debug { get; private set; }
 
@@ -93,5 +93,15 @@ public class MagicMenuTree : MagicMenuPage
         var result = new NodeRuleHelper(PageFactory, MenuPages, PageFactory.Current, Settings, Log).GetRootPages();
         return l.Return(result);
     }
+
+
+    //private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(this);
+    //private ITokenReplace? _nodeReplace;
+
+    ///// <inheritdoc cref="IMagicPageList.Classes" />
+    //public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, this)).EmptyAsNull();
+
+    ///// <inheritdoc cref="IMagicPageList.Value" />
+    //public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
 
 }

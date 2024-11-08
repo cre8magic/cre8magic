@@ -12,7 +12,7 @@ internal class BasicMenuDesigner : IPageDesigner
         var classes = new List<string>();
 
         // Base class for the current level
-        var levelClass = $"level{page.Level}";
+        var levelClass = $"level{page.MenuLevel}";
         classes.Add(levelClass);
 
         // Additional classes based on the HTML tag
@@ -22,7 +22,7 @@ internal class BasicMenuDesigner : IPageDesigner
                 // Use 'nav' class from Bootstrap
                 classes.Add("nav");
                 // For nested menus, add 'flex-column' to stack items vertically
-                if (page.Level > 1) classes.Add("flex-column");
+                if (page.MenuLevel > 1) classes.Add("flex-column");
                 break;
 
             case "li":

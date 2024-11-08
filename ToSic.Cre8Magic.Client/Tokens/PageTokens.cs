@@ -31,7 +31,7 @@ internal class PageTokens(
             .Replace(PageParentId, page.ParentId != null ? $"{page.ParentId}" : None)
             .Replace(SiteId, $"{page.OriginalPage.SiteId}", InvariantCultureIgnoreCase)
             .Replace(LayoutVariation, bodyClasses ?? None)
-            .Replace(MenuLevel, $"{page.Level + 1}")
+            .Replace(MenuLevel, $"{page.MenuLevel}")
             .Replace(MenuId, id ?? None);
 
         // Checking the breadcrumb is a bit more expensive, so be sure we need it

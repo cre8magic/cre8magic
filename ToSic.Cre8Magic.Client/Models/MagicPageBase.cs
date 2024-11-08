@@ -44,7 +44,8 @@ public class MagicPageBase(Page originalPage)
     public bool IsClickable => OriginalPage.IsClickable;
 
     /// <summary>
-    /// Current page level from the top of the Menu
+    /// Current page level from the top of the Menu.
+    /// As in Oqtane, it's 0 based.
     /// </summary>
     public int Level => OriginalPage.Level;
 

@@ -24,7 +24,7 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
     /// <param name="debugPrefix">The debug prefix.</param>
     internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree = null, string? debugPrefix = null) : base(pageFactory, setHelper, page)
     {
-        Level = level; // menu level
+        MenuLevel = level; // menu level
 
         Log = setHelper.LogRoot.GetLog(debugPrefix ?? "Node");
 
@@ -39,7 +39,7 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
     /// <remarks>
     /// This is not the same as Oqtane Page.Level (which exists in base class).
     /// </remarks>
-    public new int Level { get; init; }
+    public override int MenuLevel { get; }
 
     /// <summary>
     /// Root navigator object which has some data/logs for all navigators which spawned from it. 
@@ -73,13 +73,13 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
     [return: NotNull]
     protected List<MagicMenuPage> GetChildren()
     {
-        var l = Log.Fn<List<MagicMenuPage>>($"{nameof(Level)}: {Level}");
-        var levelsRemaining = Tree.Depth - (Level - 1 /* Level is 1 based, so -1 */);
+        var l = Log.Fn<List<MagicMenuPage>>($"{nameof(MenuLevel)}: {MenuLevel}");
+        var levelsRemaining = Tree.MaxDepth - (MenuLevel - 1 /* Level is 1 based, so -1 */);
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
         var children = GetChildPages()
-            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, Level + 1, Tree, $"{Log.Prefix}>{PageId}"))
+            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{PageId}"))
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

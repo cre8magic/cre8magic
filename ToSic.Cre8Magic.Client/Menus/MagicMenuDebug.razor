@@ -13,7 +13,7 @@
         { "Log", MenuTree?.SetHelper.LogRoot.Entries }
     };
 }
-@if (MenuTree?.Level == 1)
+@if (MenuTree?.MenuLevel == 1)
 {
     <MagicDebug Target="@MenuTree?.Tree.Settings" Title="Settings (Menu)" More="GetMore()">
         <Button>

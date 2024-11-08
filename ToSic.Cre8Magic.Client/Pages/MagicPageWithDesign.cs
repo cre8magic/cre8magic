@@ -17,18 +17,10 @@ public class MagicPageWithDesign : MagicPage
     private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(this);
     private ITokenReplace? _nodeReplace;
 
-    /// <summary>
-    /// Get css class for tag.
-    /// </summary>
-    /// <param name="tag"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IMagicPageList.Classes" />
     public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, this)).EmptyAsNull();
 
-    /// <summary>
-    /// Get attribute value.
-    /// </summary>
-    /// <param name="key"></param>
-    /// <returns></returns>
+    /// <inheritdoc cref="IMagicPageList.Value" />
     public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
 
 }
