@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using ToSic.Cre8magic.Client.Breadcrumbs;
 using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
 using Log = ToSic.Cre8magic.Client.Logging.Log;
@@ -18,6 +17,7 @@ public class MagicMenuPage : MagicPageWithDesign
     /// Initializes a new instance of the <see cref="MagicMenuPage"/> class.
     /// </summary>
     /// <param name="pageFactory"></param>
+    /// <param name="setHelper"></param>
     /// <param name="page">The original page.</param>
     /// <param name="level">The menu level.</param>
     /// <param name="tree">The magic menu tree.</param>
@@ -34,7 +34,7 @@ public class MagicMenuPage : MagicPageWithDesign
         var _ = PageInfo;   // Access page info early on to make logging nicer
     }
 
-    //internal MagicPageSetHelperBase SetHelper;
+    public MagicMenuSettings Settings => ((MagicMenuPageSetHelper)SetHelper).Settings;
 
     /// <summary>
     /// Menu Level relative to the start of the menu (always starts with 1)
@@ -50,9 +50,6 @@ public class MagicMenuPage : MagicPageWithDesign
     internal virtual MagicMenuTree Tree { get; }
 
     internal Log Log { get; set; }
-
-    protected string LogPageList(List<MagicPage>? pages) =>
-        pages?.Any() == true ? $"{pages.Count} pages [" + string.Join(",", pages.Select(p => p.PageId)) + "]" : "(no pages)";
 
     /// <summary>
     /// Special central place to get, cache and log the special properties only once
@@ -80,11 +77,6 @@ public class MagicMenuPage : MagicPageWithDesign
     /// </summary>
     public new bool HasChildren => PageInfo.HasChildren;
 
-    ///// <summary>
-    ///// Determine if the menu page is current page.
-    ///// </summary>
-    //public bool IsActive => PageInfo.IsActive;
-
     /// <summary>
     /// Determine if the menu page is in the breadcrumb.
     /// </summary>
@@ -93,7 +85,8 @@ public class MagicMenuPage : MagicPageWithDesign
     /// <summary>
     /// The ID of the menu item
     /// </summary>
-    public virtual string MenuId => Tree.MenuId;
+    public string MenuId => _menuId ??= Settings?.MenuId ?? "error-menu-id";
+    private string? _menuId;
 
     /// <summary>
     /// Get children of the current menu page.
@@ -121,21 +114,6 @@ public class MagicMenuPage : MagicPageWithDesign
 
     private const string ErrPageNotFound = "Error: Page not found";
 
-    protected virtual List<MagicPage> GetChildPages()
-    {
-        var l = Log.Fn<List<MagicPage>>();
+    protected virtual List<MagicPage> GetChildPages() => PageFactory.ChildrenOf(Tree.MenuPages, PageId);
 
-        var result = ChildrenOf(PageId);
-        return l.Return(result, LogPageList(result));
-    }
-
-    protected List<MagicPage> ChildrenOf(int pageId)
-    {
-        var l = Log.Fn<List<MagicPage>>(pageId.ToString());
-        var result = Tree.MenuPages.Where(p => p.ParentId == pageId).ToList();
-        return l.Return(result, LogPageList(result));
-    }
-
-
-    protected MagicPage ErrPage(int id, string message) => new(new() { PageId = id, Name = message }, PageFactory);
 }

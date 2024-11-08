@@ -3,6 +3,10 @@ using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
 using ToSic.Cre8magic.Client.Models;
+using ToSic.Cre8magic.Client.Pages;
+using Log = ToSic.Cre8magic.Client.Logging.Log;
+
+// using Log = Oqtane.Models.Log;
 
 namespace ToSic.Cre8magic.Client.Services;
 
@@ -12,6 +16,8 @@ namespace ToSic.Cre8magic.Client.Services;
 /// </summary>
 public class MagicPageFactory(PageState pageState)
 {
+    internal Log Log = new LogRoot().GetLog("pageFact");
+
     internal PageState PageState => pageState;
 
     internal MagicPageProperties PageProperties => _pageProperties ??= new(this);
@@ -88,7 +94,7 @@ public class MagicPageFactory(PageState pageState)
     internal List<MagicPage> Breadcrumbs(MagicPage? page = null)
         => GetAncestors(page).Reverse().ToList();
 
-    internal List<MagicPage> Breadcrumbs(List<MagicPage> pages, MagicPage page)
+    internal List<MagicPage> Breadcrumbs(IList<MagicPage> pages, MagicPage page)
         => GetAncestors(pages, page).Reverse().ToList();
 
     internal List<MagicPage> Ancestors(MagicPage? page = null)
@@ -98,7 +104,7 @@ public class MagicPageFactory(PageState pageState)
         => GetAncestors(All().ToList(), page ?? Current);
 
 
-    internal IEnumerable<MagicPage> GetAncestors(List<MagicPage> pages, MagicPage? page)
+    internal IEnumerable<MagicPage> GetAncestors(IList<MagicPage> pages, MagicPage? page)
     {
         while (page != null)
         {
@@ -109,4 +115,18 @@ public class MagicPageFactory(PageState pageState)
 
 
     #endregion
+
+    #region ChildrenOf
+
+    public List<MagicPage> ChildrenOf(IList<MagicPage> list, int pageId)
+    {
+        var l = Log.Fn<List<MagicPage>>(pageId.ToString());
+        var result = list.Where(p => p.ParentId == pageId).ToList();
+        return l.Return(result, result.LogPageList());
+    }
+
+
+    #endregion
+
+    internal MagicPage ErrPage(int id, string message) => new(new() { PageId = id, Name = message }, this);
 }

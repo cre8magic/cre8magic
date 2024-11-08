@@ -55,6 +55,9 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory)
     /// </summary>
     public bool HasChildren => OriginalPage.HasChildren;
 
+
+
+
     /// <summary>
     /// True if this page is the current page which the user is viewing.
     /// </summary>
@@ -71,5 +74,10 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory)
     /// </summary>
     public string? Target => _target ??= pageFactory.PageProperties.GetTarget(this);
     private string? _target;
+
+    public List<MagicPage> Breadcrumb => _breadcrumb ??= PageFactory.Breadcrumbs(this).ToList();
+    private List<MagicPage>? _breadcrumb;
+
+
 
 }
