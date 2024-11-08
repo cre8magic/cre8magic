@@ -22,9 +22,9 @@ public class MagicMenuPage : MagicPage
     /// <param name="level">The menu level.</param>
     /// <param name="tree">The magic menu tree.</param>
     /// <param name="debugPrefix">The debug prefix.</param>
-    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageHelperBase helper, MagicPage page, int level, MagicMenuTree tree = null, string debugPrefix = null) : base(page.OriginalPage, pageFactory)
+    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree = null, string debugPrefix = null) : base(page.OriginalPage, pageFactory)
     {
-        Helper = helper;
+        SetHelper = setHelper;
         Level = level; // menu level
 
         if (tree == null) return;
@@ -33,7 +33,7 @@ public class MagicMenuPage : MagicPage
         var _ = PageInfo;   // Access page info early on to make logging nicer
     }
 
-    internal MagicPageHelperBase Helper;
+    internal MagicPageSetHelperBase SetHelper;
 
     /// <summary>
     /// Menu Level relative to the start of the menu (always starts with 1)
@@ -48,7 +48,7 @@ public class MagicMenuPage : MagicPage
     /// </summary>
     internal virtual MagicMenuTree Tree { get; }
 
-    private ITokenReplace TakenReplace => _tokenReplace ??= Helper.PageTokenEngine(this);
+    private ITokenReplace TakenReplace => _tokenReplace ??= SetHelper.PageTokenEngine(this);
     private ITokenReplace? _tokenReplace;
 
     /// <summary>
@@ -130,7 +130,7 @@ public class MagicMenuPage : MagicPage
             return l.Return([], "remaining levels 0 - return empty");
 
         var children = GetChildPages()
-            .Select(page => new MagicMenuPage(PageFactory, Helper, page, Level + 1, Tree, $"{Log.Prefix}>{PageId}"))
+            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, Level + 1, Tree, $"{Log.Prefix}>{PageId}"))
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

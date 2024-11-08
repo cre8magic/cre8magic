@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Client.Pages;
 
 namespace ToSic.Cre8magic.Client.Breadcrumbs;
 
-internal class MagicBreadcrumbHelper(MagicPageFactory pageFactory): MagicPageHelperBase(pageFactory)
+internal class MagicBreadcrumbSetHelper(MagicPageFactory pageFactory): MagicPageSetHelperBase(pageFactory)
 {
     public void Set(MagicBreadcrumbSettings settings) => _settings = settings;
 

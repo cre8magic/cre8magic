@@ -19,7 +19,9 @@ public class MenuDesigner : IPageDesigner
         //Log = menuConfig.Debug?.Detailed == true ? tree.LogRoot.GetLog("MenuDesigner") : null;
     }
     private MagicMenuSettings MenuSettings { get; }
+
     internal List<NamedSettings<MagicMenuDesign>> DesignSettingsList { get; }
+
     private ILog? Log { get; }
 
     public string Classes(string tag, MagicPage page)
@@ -46,7 +48,7 @@ public class MenuDesigner : IPageDesigner
     private List<MagicMenuDesign> ConfigsForTag(string tag) =>
         DesignSettingsList
             .Select(c => c.FindInvariant(tag))
-            .Where(c => c is { })
+            .Where(c => c is not null)
             .ToList()!;
 
     private List<string?> TagClasses(MagicPage page, IReadOnlyCollection<MagicMenuDesign> configs)

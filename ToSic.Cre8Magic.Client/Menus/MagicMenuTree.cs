@@ -12,7 +12,7 @@ public class MagicMenuTree : MagicMenuPage
     public MagicMenuTree(PageState pageState) : this(new MagicPageFactory(pageState))
     { }
 
-    public MagicMenuTree(MagicPageFactory pageFactory) : base(pageFactory, new MagicMenuPageHelper(pageFactory), pageFactory.Current, 1)
+    public MagicMenuTree(MagicPageFactory pageFactory) : base(pageFactory, new MagicMenuPageSetHelper(pageFactory), pageFactory.Current, 1)
     {
         Log = LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{PageId}; Level:1");
@@ -32,8 +32,8 @@ public class MagicMenuTree : MagicMenuPage
     {
         Log.A($"Start with MagicSettings for Page:{PageId}; Level:1");
 
-        Helper.Set(magicSettings);
-        ((MagicMenuPageHelper)Helper).Set(settings);
+        SetHelper.Set(magicSettings);
+        ((MagicMenuPageSetHelper)SetHelper).Set(settings);
         //MagicSettings = magicSettings;
         Settings = settings;
         //Design = new MenuDesigner(Settings);
@@ -48,7 +48,7 @@ public class MagicMenuTree : MagicMenuPage
         Log.A($"Init MagicMenuSettings Start:{settings?.Start}; Level:{settings?.Level}");
         if (settings != null)
         {
-            ((MagicMenuPageHelper)Helper).Set(settings);
+            ((MagicMenuPageSetHelper)SetHelper).Set(settings);
             Settings = settings;
         }
         return this;
@@ -71,7 +71,7 @@ public class MagicMenuTree : MagicMenuPage
     public MagicMenuTree Designer(IPageDesigner pageDesigner)
     {
         Log.A($"Init MenuDesigner:{pageDesigner != null}");
-        Helper.Set(pageDesigner);
+        SetHelper.Set(pageDesigner);
         Design = pageDesigner;
         return this;
     }

@@ -5,16 +5,16 @@ namespace ToSic.Cre8magic.Client.Pages;
 public class MagicPageWithDesign : MagicPage
 {
     /// <param name="pageFactory"></param>
-    /// <param name="helper">The helper - or null in the first breadcrumb item</param>
+    /// <param name="setHelperhe helper - or null in the first breadcrumb item</param>
     /// <param name="page">The original page.</param>
-    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPageHelperBase helper, MagicPage? page = null) : base(page?.OriginalPage ?? pageFactory.PageState.Page, pageFactory)
+    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage? page = null) : base(page?.OriginalPage ?? pageFactory.PageState.Page, pageFactory)
     {
-        Helper = helper;
+        SetHelper = setHelper;
     }
 
-    internal MagicPageHelperBase Helper { get; }
+    internal MagicPageSetHelperBase SetHelper { get; }
 
-    private ITokenReplace TokenReplace => _nodeReplace ??= Helper.PageTokenEngine(this);
+    private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(this);
     private ITokenReplace? _nodeReplace;
 
     /// <summary>
@@ -22,13 +22,13 @@ public class MagicPageWithDesign : MagicPage
     /// </summary>
     /// <param name="tag"></param>
     /// <returns></returns>
-    public string? Classes(string tag) => TokenReplace.Parse(Helper.Design.Classes(tag, this)).EmptyAsNull();
+    public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, this)).EmptyAsNull();
 
     /// <summary>
     /// Get attribute value.
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public string? Value(string key) => TokenReplace.Parse(Helper.Design.Value(key, this)).EmptyAsNull();
+    public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
 
 }

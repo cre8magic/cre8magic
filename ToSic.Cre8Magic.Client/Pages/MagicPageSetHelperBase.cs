@@ -2,8 +2,14 @@
 
 namespace ToSic.Cre8magic.Client.Pages;
 
-internal abstract class MagicPageHelperBase(MagicPageFactory pageFactory)
+internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
 {
+    #region Logging
+
+    internal LogRoot LogRoot { get; } = new();
+
+    #endregion
+
     protected abstract IPageDesigner FallbackDesigner();
     public void Set(IPageDesigner designer) => _designer = designer;
 

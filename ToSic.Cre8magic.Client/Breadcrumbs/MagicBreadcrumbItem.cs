@@ -8,10 +8,10 @@ public class MagicBreadcrumbItem : MagicPageWithDesign
     /// <param name="pageFactory"></param>
     /// <param name="helper">The helper - or null in the first breadcrumb item</param>
     /// <param name="page">The original page.</param>
-    internal MagicBreadcrumbItem(MagicPageFactory pageFactory, MagicPageHelperBase? helper = null, MagicPage? page = null) : base(pageFactory, helper ?? new MagicBreadcrumbHelper(pageFactory), page)
+    internal MagicBreadcrumbItem(MagicPageFactory pageFactory, MagicPageSetHelperBase? helper = null, MagicPage? page = null) : base(pageFactory, helper ?? new MagicBreadcrumbSetHelper(pageFactory), page)
     {
     }
 
-    internal new MagicBreadcrumbHelper Helper => (MagicBreadcrumbHelper)base.Helper;
+    internal new MagicBreadcrumbSetHelper SetHelper => (MagicBreadcrumbSetHelper)base.SetHelper;
 
 }

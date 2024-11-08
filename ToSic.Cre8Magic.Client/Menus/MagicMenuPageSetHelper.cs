@@ -2,7 +2,7 @@
 
 namespace ToSic.Cre8magic.Client.Menus;
 
-internal class MagicMenuPageHelper(MagicPageFactory pageFactory): MagicPageHelperBase(pageFactory)
+internal class MagicMenuPageSetHelper(MagicPageFactory pageFactory): MagicPageSetHelperBase(pageFactory)
 {
     public void Set(MagicMenuSettings settings) => _settings = settings;
 
