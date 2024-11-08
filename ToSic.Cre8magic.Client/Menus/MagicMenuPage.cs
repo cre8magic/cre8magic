@@ -27,9 +27,10 @@ public class MagicMenuPage : MagicPage
         SetHelper = setHelper;
         Level = level; // menu level
 
+        Log = setHelper.LogRoot.GetLog(debugPrefix);
+
         if (tree == null) return;
         Tree = tree;
-        Log = tree.LogRoot.GetLog(debugPrefix);
         var _ = PageInfo;   // Access page info early on to make logging nicer
     }
 
@@ -56,14 +57,14 @@ public class MagicMenuPage : MagicPage
     /// </summary>
     /// <param name="tag"></param>
     /// <returns></returns>
-    public string? Classes(string tag) => TakenReplace.Parse(Tree.Design.Classes(tag, this)).EmptyAsNull();
+    public string? Classes(string tag) => TakenReplace.Parse(SetHelper.Design.Classes(tag, this)).EmptyAsNull();
 
     /// <summary>
     /// Get attribute value.
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public string? Value(string key) => TakenReplace.Parse(Tree.Design.Value(key, this)).EmptyAsNull();
+    public string? Value(string key) => TakenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
 
     internal Log Log { get; set; }
 

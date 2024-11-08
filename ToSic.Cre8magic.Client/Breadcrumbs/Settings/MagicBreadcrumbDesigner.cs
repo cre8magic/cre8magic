@@ -9,11 +9,13 @@ namespace ToSic.Cre8magic.Client.Breadcrumbs.Settings;
 /// </summary>
 public class MagicBreadcrumbDesigner : IPageDesigner
 {
-    public MagicBreadcrumbDesigner(MagicBreadcrumbSettings breadcrumbConfig)
+    internal MagicBreadcrumbDesigner(MagicPageSetHelperBase setHelper, MagicBreadcrumbSettings breadcrumbConfig)
     {
         BreadcrumbSettings = breadcrumbConfig ?? throw new ArgumentException("BreadcrumbConfig must be real", nameof(BreadcrumbSettings));
 
         DesignSettingsList = [BreadcrumbSettings.DesignSettings!];
+
+        // todo: add logging from set-helper
     }
 
     private MagicBreadcrumbSettings BreadcrumbSettings { get; }

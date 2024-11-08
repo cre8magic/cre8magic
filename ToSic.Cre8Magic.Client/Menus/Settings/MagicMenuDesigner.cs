@@ -7,16 +7,16 @@ namespace ToSic.Cre8magic.Client.Menus.Settings;
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MenuDesigner : IPageDesigner
+public class MagicMenuDesigner : IPageDesigner
 {
-    public MenuDesigner(/*MagicMenuTree tree,*/ MagicMenuSettings menuConfig)
+    internal MagicMenuDesigner(MagicPageSetHelperBase setHelper, MagicMenuSettings menuSettings)
     {
-        MenuSettings = menuConfig ?? throw new ArgumentException("MenuConfig must be real", nameof(MenuSettings));
+        MenuSettings = menuSettings ?? throw new ArgumentNullException(nameof(menuSettings));
 
         DesignSettingsList = [MenuSettings.DesignSettings!];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
-        //Log = menuConfig.Debug?.Detailed == true ? tree.LogRoot.GetLog("MenuDesigner") : null;
+        Log = menuSettings.Debug?.Detailed == true ? setHelper.LogRoot.GetLog("MenuDesigner") : null;
     }
     private MagicMenuSettings MenuSettings { get; }
 

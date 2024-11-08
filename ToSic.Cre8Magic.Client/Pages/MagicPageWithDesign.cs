@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Client.Pages;
 public class MagicPageWithDesign : MagicPage
 {
     /// <param name="pageFactory"></param>
-    /// <param name="setHelperhe helper - or null in the first breadcrumb item</param>
+    /// <param name="setHelper"></param>
     /// <param name="page">The original page.</param>
     internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage? page = null) : base(page?.OriginalPage ?? pageFactory.PageState.Page, pageFactory)
     {

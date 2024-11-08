@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using ToSic.Cre8magic.Client.Menus;
-using ToSic.Cre8magic.Client.Menus.Settings;
 using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
 

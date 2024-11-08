@@ -6,8 +6,11 @@ internal class MagicMenuPageSetHelper(MagicPageFactory pageFactory): MagicPageSe
 {
     public void Set(MagicMenuSettings settings) => _settings = settings;
 
+    /// <summary>
+    /// Settings - on first access takes the one given, or creates a default.
+    /// </summary>
     public MagicMenuSettings Settings => _settings ??= MagicMenuSettings.Defaults.Fallback;
     private MagicMenuSettings? _settings;
 
-    protected override IPageDesigner FallbackDesigner() => new MenuDesigner(/*this,*/ Settings);
+    protected override IPageDesigner FallbackDesigner() => new MagicMenuDesigner(this, Settings);
 }

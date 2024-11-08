@@ -1,5 +1,4 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Client.Breadcrumbs;
 using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
 
@@ -14,17 +13,11 @@ public class MagicMenuTree : MagicMenuPage
 
     public MagicMenuTree(MagicPageFactory pageFactory) : base(pageFactory, new MagicMenuPageSetHelper(pageFactory), pageFactory.Current, 1)
     {
-        Log = LogRoot.GetLog("Root");
+        Log = SetHelper.LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{PageId}; Level:1");
 
         // update dependent properties
         MenuPages = PageFactory.MenuPages;
-        Settings = MagicMenuSettings.Defaults.Fallback;
-        // TODO: SOMETHING IS BUGGY HERE
-        // This code works, because it sets the designer with default settings
-        // but the main menu won't show if we use the configured settings
-        // WIP
-        Design = new MenuDesigner(/*this,*/ Settings);
         Debug = [];
     }
 
@@ -34,9 +27,6 @@ public class MagicMenuTree : MagicMenuPage
 
         SetHelper.Set(magicSettings);
         ((MagicMenuPageSetHelper)SetHelper).Set(settings);
-        //MagicSettings = magicSettings;
-        Settings = settings;
-        //Design = new MenuDesigner(Settings);
         if (menuPages != null) SetMenuPages(menuPages);
         if (messages != null) SetMessages(messages);
     }
@@ -46,11 +36,8 @@ public class MagicMenuTree : MagicMenuPage
     public MagicMenuTree Setup(MagicMenuSettings? settings)
     {
         Log.A($"Init MagicMenuSettings Start:{settings?.Start}; Level:{settings?.Level}");
-        if (settings != null)
-        {
+        if (settings != null) 
             ((MagicMenuPageSetHelper)SetHelper).Set(settings);
-            Settings = settings;
-        }
         return this;
     }
 
@@ -72,27 +59,13 @@ public class MagicMenuTree : MagicMenuPage
     {
         Log.A($"Init MenuDesigner:{pageDesigner != null}");
         SetHelper.Set(pageDesigner);
-        Design = pageDesigner;
         return this;
     }
 
     #endregion
 
 
-    public MagicMenuSettings Settings { get; private set; }
-
-    //private MagicSettings? MagicSettings { get; set; } // TODO: stv move this to better place because it is MagicSettings part
-
-    //internal TokenEngine PageTokenEngine(MagicPage page) // TODO: stv move this to better place because it is MagicSettings part
-    //{
-    //    // fallback without MagicSettings return just TokenEngine with PageTokens
-    //    if (MagicSettings == null)
-    //        return new TokenEngine([new PageTokens(PageFactory, page)]);
-
-    //    var originalPage = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
-    //    originalPage = originalPage.Clone(page, menuId: MenuId);
-    //    return MagicSettings.Tokens.SwapParser(originalPage);
-    //}
+    public MagicMenuSettings Settings => ((MagicMenuPageSetHelper)SetHelper).Settings; // { get; private set; }
 
     /// <summary>
     /// Pages in the menu according to Oqtane pre-processing
@@ -101,8 +74,6 @@ public class MagicMenuTree : MagicMenuPage
     internal IEnumerable<MagicPage> MenuPages { get; private set; }
 
     internal override MagicMenuTree Tree => this;
-
-    internal IPageDesigner Design { get; private set; }
 
     internal List<MagicPage> Breadcrumb => _breadcrumb ??= PageFactory.Breadcrumbs(this).ToList();
     private List<MagicPage>? _breadcrumb;
@@ -115,7 +86,7 @@ public class MagicMenuTree : MagicMenuPage
 
     public List<string> Debug { get; private set; }
 
-    internal LogRoot LogRoot { get; } = new();
+    //internal LogRoot LogRoot { get; } = new();
 
     protected override List<MagicPage> GetChildPages() => GetRootPages();
 
@@ -123,15 +94,16 @@ public class MagicMenuTree : MagicMenuPage
     {
         var l = Log.Fn<List<MagicPage>>($"{PageId}");
         // Give empty list if we shouldn't display it
-        if (Settings.Display == false)
+        var s = Settings;
+        if (s.Display == false)
             return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries
-        var start = Settings.Start?.Trim();
+        var start = s.Start?.Trim();
 
         // Case 2: '.' - not yet tested
-        var startLevel = Settings.Level ?? MagicMenuSettings.StartLevelFallback;
-        var getChildren = Settings.Children ?? MagicMenuSettings.ChildrenFallback;
+        var startLevel = s.Level ?? MagicMenuSettings.StartLevelFallback;
+        var getChildren = s.Children ?? MagicMenuSettings.ChildrenFallback;
         var startingPoints = GetStartNodeRules(start, startLevel, getChildren);
         // Case 3: one or more IDs to start from
 
@@ -143,7 +115,8 @@ public class MagicMenuTree : MagicMenuPage
     internal List<MagicPage> FindStartPageOfManyRules(StartNodeRule[] startingPoints)
     {
         var l = Log.Fn<List<MagicPage>>(string.Join(',', startingPoints.Select(p => p.Id)));
-        var result = startingPoints.SelectMany(FindStartPagesOfOneRule)
+        var result = startingPoints
+            .SelectMany(FindStartPagesOfOneRule)
             .Where(p => p != null)
             .ToList();
         return l.Return(result, LogPageList(result));
@@ -167,7 +140,10 @@ public class MagicMenuTree : MagicMenuPage
     private List<MagicPage> FindInitialAnchorPages(StartNodeRule n)
     {
         var l = Log.Fn<List<MagicPage>>();
-        var source = n.Force ? PageFactory.All().ToList() : Tree.MenuPages.ToList();
+        var source = n.Force
+            ? PageFactory.All().ToList()
+            : Tree.MenuPages.ToList();
+
         switch (n.ModeInfo)
         {
             case StartMode.PageId:
@@ -179,20 +155,22 @@ public class MagicMenuTree : MagicMenuPage
                 return l.Return([this], "Current page");
             // Level 1 means top-level pages. If we don't want the level1 children, we want the top-level items
             // TODO: CHECK WHAT LEVEL Oqtane actually gives us, is 1 the top?
-            case StartMode.Current when n.Level == 1 && !n.ShowChildren:
+            case StartMode.Current when n is { Level: 1, ShowChildren: false }:
                 return l.Return(source.Where(p => p.Level == 0).ToList(), "Current level 1?");
             case StartMode.Current when n.Level > 0:
                 // If coming from the top, level 1 means top level, so skip one less
                 var skipDown = n.Level - 1;
-                var fromTop = PageFactory.Breadcrumbs(source, this) /*  source.Breadcrumbs(this) */.Skip(skipDown).FirstOrDefault();
+                var fromTop = PageFactory.Breadcrumbs(source, this).Skip(skipDown).FirstOrDefault();
                 var fromTopResult = fromTop == null ? [] : new List<MagicPage> { fromTop };
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
             case StartMode.Current when n.Level < 0:
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
-                var fromCurrent = PageFactory.GetAncestors(source, this) /* source.GetAncestors(this) */.ToList().Skip(skipUp).FirstOrDefault();
-                var result = fromCurrent == null ? [] : new List<MagicPage> { fromCurrent };
+                var fromCurrent = PageFactory.GetAncestors(source, this).ToList().Skip(skipUp).FirstOrDefault();
+                List<MagicPage> result = fromCurrent == null ? [] : [fromCurrent];
                 return l.Return(result, $"up the ancestors by {skipUp}");
+            case StartMode.Undefined:
+            case StartMode.Unknown:
             default:
                 return l.Return([], "nothing");
         }

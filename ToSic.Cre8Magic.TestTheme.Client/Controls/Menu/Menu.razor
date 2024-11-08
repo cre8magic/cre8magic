@@ -11,6 +11,21 @@ Nice to know:
     - If necessary, you can create another type of menu and just add it to the list below
     - WIP: Later it will also be able to load a config from the page/theme settings
 *@
+
+@* Special Debugging *@
+@if (true)
+{
+    <div>
+        ConfigName: @(Menu?.Settings.ConfigName) <br/>
+        HasChildren: @(Menu?.HasChildren) - @Menu?.Children.Count <br/>
+        This: @Menu?.Name (@Menu?.Link) <br/>
+        Direction: @(IsVertical ? "Vertical" : "Horizontal") <br/>
+        Ul-Classes: @Menu?.Classes("ul") <br/>
+        Li-Classes: @Menu?.Classes("li") <br/>
+        A-Classes: @Menu?.Classes("a") <br/>
+    </div>
+}
+
 @* Show the desired menu - in this setup we have 2 options. If you need more, change the conditions to check for Menu?.Settings.Template *@
 @if (IsVertical)
 {
@@ -24,4 +39,8 @@ else
 {
     @* Debug Information in cases where the menu doesn't even show *@
     <MagicMenuDebug Menu="@Menu" Standalone="true"></MagicMenuDebug>
+}
+@if (true)
+{
+    <div>End-Of-Menu-@(Menu?.Settings.ConfigName)</div>
 }
