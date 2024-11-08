@@ -6,10 +6,9 @@ namespace ToSic.Cre8magic.Client.Menus;
 
 public class MagicMenuTree : MagicMenuPage
 {
-    internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<MagicPage>? menuPages = null, List<string>? messages = null) : this(magicSettings.PageState)
+    internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<MagicPage>? menuPages = null, List<string>? messages = null)
+        : this(magicSettings.PageState)
     {
-        Log.A($"Start with MagicSettings for Page:{PageId}; Level:1");
-
         SetHelper.Set(magicSettings);
         ((MagicMenuPageSetHelper)SetHelper).Set(settings);
         if (menuPages != null) SetMenuPages(menuPages);
@@ -21,10 +20,11 @@ public class MagicMenuTree : MagicMenuPage
 
     private MagicMenuTree(MagicPageFactory pageFactory) : base(pageFactory, new MagicMenuPageSetHelper(pageFactory), pageFactory.Current, 1, debugPrefix: "Root")
     {
+        //PageFactory = pageFactory;
         //SetHelper = new MagicMenuPageSetHelper(pageFactory);
         //Log = SetHelper.LogRoot.GetLog("Root");
         //Settings = SetHelper.Settings;
-        Log.A($"Start with PageState for Page:{PageId}; Level:1");
+        Log.A($"Start with PageState for Page:{pageFactory.Current.PageId}; Level:1");
 
         // update dependent properties
         MenuPages = PageFactory.UserPages.ToList();
@@ -34,6 +34,7 @@ public class MagicMenuTree : MagicMenuPage
     //internal Log Log { get; }
 
     //internal MagicMenuPageSetHelper SetHelper { get; }
+    //internal MagicPageFactory PageFactory { get; }
     //public MagicMenuSettings Settings { get; }
 
     #region Init
@@ -87,9 +88,9 @@ public class MagicMenuTree : MagicMenuPage
 
     protected List<MagicPage> GetRootPages()
     {
-        var l = Log.Fn<List<MagicPage>>($"{PageId}");
+        var l = Log.Fn<List<MagicPage>>();
         // Give empty list if we shouldn't display it
-        var result = new NodeRuleHelper(PageFactory, MenuPages, this, Settings, Log).GetRootPages();
+        var result = new NodeRuleHelper(PageFactory, MenuPages, PageFactory.Current, Settings, Log).GetRootPages();
         return l.Return(result);
     }
 

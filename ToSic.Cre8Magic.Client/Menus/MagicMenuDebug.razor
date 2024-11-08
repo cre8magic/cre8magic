@@ -1,18 +1,21 @@
-﻿@code {
-    [Parameter, EditorRequired] public MagicMenuPage? Menu { get; set; }
+﻿@using ToSic.Cre8magic.Client.Pages
+@code {
+    [Parameter, EditorRequired] public IMagicPageList? Menu { get; set; }
+
+    private MagicMenuPage MenuTree => (MagicMenuPage)Menu;
 
     [Parameter] public bool Standalone { get; set; } = false;
 
     private Dictionary<string, object?> GetMore() => new()
     {
-        { "Menu Settings", Menu?.Tree.Settings },
-        { "Tree Build Messages", Menu?.Tree.Debug },
-        { "Log", Menu?.SetHelper.LogRoot.Entries }
+        { "Menu Settings", MenuTree?.Tree.Settings },
+        { "Tree Build Messages", MenuTree?.Tree.Debug },
+        { "Log", MenuTree?.SetHelper.LogRoot.Entries }
     };
 }
-@if (Menu?.Level == 1)
+@if (MenuTree?.Level == 1)
 {
-    <MagicDebug Target="@Menu?.Tree.Settings" Title="Settings (Menu)" More="GetMore()">
+    <MagicDebug Target="@MenuTree?.Tree.Settings" Title="Settings (Menu)" More="GetMore()">
         <Button>
             @if (Standalone)
             {
@@ -25,8 +28,8 @@
         </Button>
         <Content>
             <ul>
-                <li>Config Name:@Menu?.Tree.Settings.ConfigName</li>
-                <li>Template: @Menu?.Tree.Settings.Template</li>
+                <li>Config Name:@MenuTree?.Tree.Settings.ConfigName</li>
+                <li>Template: @MenuTree?.Tree.Settings.Template</li>
             </ul>
         </Content>
     </MagicDebug>
