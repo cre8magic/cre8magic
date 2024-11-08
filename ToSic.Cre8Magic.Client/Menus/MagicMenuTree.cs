@@ -1,16 +1,17 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
+using Log = ToSic.Cre8magic.Client.Logging.Log;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
-public class MagicMenuTree : MagicMenuPage, IMagicPageList
+public class MagicMenuTree : IMagicPageList
 {
     internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<MagicPage>? menuPages = null, List<string>? messages = null)
         : this(magicSettings.PageState)
     {
         SetHelper.Set(magicSettings);
-        ((MagicMenuPageSetHelper)SetHelper).Set(settings);
+        SetHelper.Set(settings);
         if (menuPages != null) SetMenuPages(menuPages);
         if (messages != null) SetMessages(messages);
     }
@@ -18,12 +19,11 @@ public class MagicMenuTree : MagicMenuPage, IMagicPageList
     public MagicMenuTree(PageState pageState) : this(new MagicPageFactory(pageState))
     { }
 
-    private MagicMenuTree(MagicPageFactory pageFactory) : base(pageFactory, new MagicMenuPageSetHelper(pageFactory), pageFactory.Current, 1, debugPrefix: "Root")
+    private MagicMenuTree(MagicPageFactory pageFactory)
     {
-        //PageFactory = pageFactory;
-        //SetHelper = new MagicMenuPageSetHelper(pageFactory);
-        //Log = SetHelper.LogRoot.GetLog("Root");
-        //Settings = SetHelper.Settings;
+        PageFactory = pageFactory;
+        SetHelper = new(pageFactory);
+        Log = SetHelper.LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{pageFactory.Current.PageId}; Level:1");
 
         // update dependent properties
@@ -31,19 +31,18 @@ public class MagicMenuTree : MagicMenuPage, IMagicPageList
         Debug = [];
     }
 
-    //internal Log Log { get; }
+    internal Log Log { get; }
 
-    //internal MagicMenuPageSetHelper SetHelper { get; }
-    //internal MagicPageFactory PageFactory { get; }
-    //public MagicMenuSettings Settings { get; }
+    internal MagicMenuPageSetHelper SetHelper { get; }
+    internal MagicPageFactory PageFactory { get; }
+    public MagicMenuSettings Settings => SetHelper.Settings;
 
     #region Init
 
     public MagicMenuTree Setup(MagicMenuSettings? settings)
     {
         Log.A($"Init MagicMenuSettings Start:{settings?.Start}; Level:{settings?.Level}");
-        if (settings != null) 
-            ((MagicMenuPageSetHelper)SetHelper).Set(settings);
+        SetHelper.Set(settings);
         return this;
     }
 
@@ -76,32 +75,48 @@ public class MagicMenuTree : MagicMenuPage, IMagicPageList
     /// </summary>
     internal IList<MagicPage> MenuPages { get; private set; }
 
-    internal override MagicMenuTree Tree => this;
+    internal /*override*/ MagicMenuTree Tree => this;
 
     public int MaxDepth => _maxDepth ??= Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
     private int? _maxDepth;
 
     public List<string> Debug { get; private set; }
 
-    protected override List<MagicPage> GetChildPages() => _rootPages ??= GetRootPages();
-    private List<MagicPage>? _rootPages;
+    public int MenuLevel => 1;
 
-    protected List<MagicPage> GetRootPages()
+    public bool HasChildren => Children.Any();
+
+    public IList<MagicMenuPage> Children => _children ??= GetChildren();
+    private IList<MagicMenuPage>? _children;
+
+    protected List<MagicMenuPage> GetChildren()
     {
-        var l = Log.Fn<List<MagicPage>>();
-        // Give empty list if we shouldn't display it
-        var result = new NodeRuleHelper(PageFactory, MenuPages, PageFactory.Current, Settings, Log).GetRootPages();
-        return l.Return(result);
+        var l = Log.Fn<List<MagicMenuPage>>($"{nameof(MenuLevel)}: {MenuLevel}");
+        var levelsRemaining = Tree.MaxDepth - (MenuLevel - 1 /* Level is 1 based, so -1 */);
+        if (levelsRemaining < 0)
+            return l.Return([], "remaining levels 0 - return empty");
+
+        var rootPages = new NodeRuleHelper(PageFactory, MenuPages, PageFactory.Current, Settings, Log).GetRootPages();
+        l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
+
+        var children = rootPages
+            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{PageFactory.Current.PageId}"))
+            .ToList();
+        return l.Return(children, $"{children.Count}");
     }
 
 
-    //private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(this);
-    //private ITokenReplace? _nodeReplace;
 
-    ///// <inheritdoc cref="IMagicPageList.Classes" />
-    //public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, this)).EmptyAsNull();
+    private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(VPageLevel1);
+    private ITokenReplace? _nodeReplace;
 
-    ///// <inheritdoc cref="IMagicPageList.Value" />
-    //public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
+    private MagicPage VPageLevel1 => _vPageLevel1 ??= new(new() { Level = 0 /* Level is 0, so MenuLevel will be 1 */ }, PageFactory);
+    private MagicPage? _vPageLevel1;
+
+    /// <inheritdoc cref="IMagicPageList.Classes" />
+    public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, VPageLevel1)).EmptyAsNull();
+
+    /// <inheritdoc cref="IMagicPageList.Value" />
+    public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, VPageLevel1)).EmptyAsNull();
 
 }

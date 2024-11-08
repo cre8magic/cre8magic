@@ -22,9 +22,9 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
     /// <param name="level">The menu level.</param>
     /// <param name="tree">The magic menu tree.</param>
     /// <param name="debugPrefix">The debug prefix.</param>
-    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree = null, string? debugPrefix = null) : base(pageFactory, setHelper, page)
+    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree, string? debugPrefix) : base(pageFactory, setHelper, page)
     {
-        MenuLevel = level; // menu level
+        MenuLevel = level;
 
         Log = setHelper.LogRoot.GetLog(debugPrefix ?? "Node");
 
@@ -70,7 +70,6 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
     /// Retrieve the children the first time it's needed.
     /// </summary>
     /// <returns></returns>
-    [return: NotNull]
     protected List<MagicMenuPage> GetChildren()
     {
         var l = Log.Fn<List<MagicMenuPage>>($"{nameof(MenuLevel)}: {MenuLevel}");

@@ -21,6 +21,11 @@ internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
 
     internal MagicSettings? MagicSettings { get; private set; }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="page">The page which would be used if any page property is requested</param>
+    /// <returns></returns>
     internal TokenEngine PageTokenEngine(MagicPage page)
     {
         // fallback without MagicSettings return just TokenEngine with PageTokens

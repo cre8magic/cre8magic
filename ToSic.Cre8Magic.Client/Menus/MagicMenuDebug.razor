@@ -2,7 +2,7 @@
 @code {
     [Parameter, EditorRequired] public IMagicPageList? Menu { get; set; }
 
-    private MagicMenuPage MenuTree => (MagicMenuPage)Menu;
+    private MagicMenuTree? MenuTree => Menu as MagicMenuTree;
 
     [Parameter] public bool Standalone { get; set; } = false;
 

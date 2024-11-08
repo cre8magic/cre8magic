@@ -2,22 +2,24 @@
 
 public interface IMagicPageList
 {
+    int MenuLevel { get; }
+
     bool HasChildren { get; }
 
-    public IList<MagicMenuPage> Children { get; }
+    IList<MagicMenuPage> Children { get; }
 
     /// <summary>
     /// Get css class for tag.
     /// </summary>
     /// <param name="tag"></param>
     /// <returns></returns>
-    public string? Classes(string tag);
+    string? Classes(string tag);
 
     /// <summary>
     /// Get attribute value.
     /// </summary>
     /// <param name="key"></param>
     /// <returns></returns>
-    public string? Value(string key);
+    string? Value(string key);
 
 }
