@@ -1,0 +1,36 @@
+@namespace ToSic.Theme.Cre8magicTests
+@using ToSic.Cre8magic.Client.Pages
+@inherits ThemeControlBase;
+
+@code{
+    [Parameter, EditorRequired]
+    public IMagicPageList Menu { get; set; }
+}
+
+@RenderMenu(Menu)
+
+@* Function creating a menu *@
+@code
+{
+    /// <summary>
+    /// Render a Menu - and recursively render sub-menus
+    /// </summary>
+    /// <param name="menu"></param>
+    /// <returns></returns>
+    RenderFragment RenderMenu(IMagicPageList menu) =>
+        @<ul class='@menu.Classes("li")'>
+            @foreach (var menuPage in menu.Children)
+            {
+                <li class='@menuPage.Classes("li")'>
+                    <a class='@menuPage.Classes("a")' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>
+                    @if (menuPage.HasChildren)
+                    {
+                        <span class='@menuPage.Classes("span")'></span>
+                        @* **RECURSION** *@
+                        @RenderMenu(menuPage)
+                    }
+                </li>
+            }
+        </ul>;
+ 
+}

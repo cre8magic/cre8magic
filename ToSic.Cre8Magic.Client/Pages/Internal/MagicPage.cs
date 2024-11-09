@@ -18,7 +18,7 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory): MagicPa
     public bool IsCurrent => OriginalPage.PageId == pageFactory.PageState.Page.PageId;
 
     /// <inheritdoc />
-    public string Link => _link ??= pageFactory.PageProperties.GetUrl(this);
+    public string Link => _link ??= pageFactory.PageProperties.GetLink(this);
     private string? _link;
 
     /// <inheritdoc />
@@ -26,12 +26,12 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory): MagicPa
     private string? _target;
 
     /// <inheritdoc />
-    public List<IMagicPage> Breadcrumb => _breadcrumb ??= pageFactory.Breadcrumbs(this).ToList();
-    private List<IMagicPage>? _breadcrumb;
+    public List<IMagicPage> Breadcrumbs => _breadcrumbs ??= pageFactory.Breadcrumbs(this).ToList();
+    private List<IMagicPage>? _breadcrumbs;
 
 
     /// <inheritdoc />
-    public bool InBreadcrumb => _inBreadcrumb ??= pageFactory.Current.Breadcrumb.Contains(this);
+    public bool InBreadcrumbs => _inBreadcrumb ??= pageFactory.Current.Breadcrumbs.Contains(this);
     private bool? _inBreadcrumb;
 
 

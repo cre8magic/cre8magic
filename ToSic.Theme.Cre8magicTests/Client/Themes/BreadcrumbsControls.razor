@@ -2,12 +2,21 @@
 @using ToSic.Cre8magic.Client.Breadcrumbs
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeBase
-@inject ISettingService SettingService
 
 @code {
+    // Theme Specs
+    public override string Name => "Breadcrumbs using Controls";
+    public override string Panes => PaneNames.Default;
+
+    // Test Parameters
     public const string TopLevelWithSubpagesId = "97";
 
     public const int PageWithDeepBreadcrumb = 308;
+
+    protected override void OnParametersSet()
+    {
+    
+    }
 }
 
 <main role="main">
@@ -15,24 +24,19 @@
         <Logo />
 
         <div class="controls ms-auto">
-            <div class="controls-group"><UserProfile ShowRegister="@_register" /> <Login ShowLogin="@_login"  /> <ControlPanel ButtonClass="btn-outline-light" /></div>
+            <div class="controls-group"><UserProfile /> <Login /> <ControlPanel ButtonClass="btn-outline-light" /></div>
         </div>
     </nav>
 
     <h1>MagicBreadcrumbs</h1>
-    <h2>No Data</h2>
-    <h3>just MagicBreadcrumbs</h3>
 
+    <h2>Oqtane standard Breadcrumbs</h2>
     <Breadcrumbs></Breadcrumbs>
 
-    <h1>BasicBreadcrumb</h1>
-
-    <h2>No Data</h2>
-    <h3>just BasicBreadcrumb</h3>
+    <h2>BasicBreadcrumb, no parameters</h2>
     <BasicBreadcrumb></BasicBreadcrumb>
 
-    <h2>No Settings</h2>
-    <h3>BasicBreadcrumb without Settings</h3>
+    <h2>BasicBreadcrumb with data, without Settings</h2>
     <BasicBreadcrumb Breadcrumb="new MagicBreadcrumb(PageState)"></BasicBreadcrumb>
 
     <hr/>
@@ -59,26 +63,3 @@
         </div>
     </div>
 </main>
-
-@code {
-    public override string Name => "Breadcrumbs using Controls";
-
-    public override string Panes => PaneNames.Default;
-    
-    private bool _login = true;
-    private bool _register = true;
-
-    protected override void OnParametersSet()
-    {
-        try
-        {
-            var settings = SettingService.MergeSettings(PageState.Site.Settings, PageState.Page.Settings);
-            _login = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Login", "true"));
-            _register = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Register", "true"));
-        }
-        catch
-        {
-            // error loading theme settings
-        }
-    }
-}

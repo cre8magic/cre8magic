@@ -22,7 +22,10 @@ internal class MagicPageService() : IMagicPageService
 
     #endregion
 
-    public IEnumerable<IMagicPage> GetAll(bool ignorePermissions = default) => ignorePermissions ? PageFactory.All() : PageFactory.GetUserPages();
+    public IEnumerable<IMagicPage> GetAll(bool ignorePermissions = default) =>
+        ignorePermissions
+            ? PageFactory.All()
+            : PageFactory.GetUserPages();
 
     public IMagicPage GetHome() => PageFactory.Home;
 
@@ -34,6 +37,8 @@ internal class MagicPageService() : IMagicPageService
 
 
     public IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds) => PageFactory.Get(pageIds);
+
+    public IEnumerable<IMagicPage> GetBreadcrumbs() => PageFactory.Current.Breadcrumbs;
 
     public IMagicPageList GetMenu() => new MagicMenuTree(PageState);
 

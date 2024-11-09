@@ -1,7 +1,18 @@
 ﻿using Oqtane.Models;
 
+// ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
 
+/// <summary>
+/// Magic Pages are smart wrappers around Oqtane Pages.
+/// They offer many benefits such as:
+///
+/// 1. Read-only properties (no accidental writing properties with unexpected side effects)
+/// 1. Improved naming, e.g. `.Id` instead of `.PageId`
+/// 1. Calculated properties such as `Target` (which becomes `"_blank"` for external links or `null` for normal links)
+/// 1. Corrected values - e.g. the `Link` property will be `javascript:void(0)` if the page is not clickable
+/// 1. Navigation properties such as `Parent` and `Breadcrumb`
+/// </summary>
 public interface IMagicPage
 {
     /// <summary>
@@ -29,12 +40,12 @@ public interface IMagicPage
     /// The current pages bread-crumb, going from the top-level to the current page.
     /// Note that the "Home" page is usually not a parent, so it's not included.
     /// </summary>
-    List<IMagicPage> Breadcrumb { get; }
+    List<IMagicPage> Breadcrumbs { get; }
 
     /// <summary>
     /// Determine if the menu page is in the breadcrumb.
     /// </summary>
-    bool InBreadcrumb { get; }
+    bool InBreadcrumbs { get; }
 
     /// <summary>
     /// Original Oqtane page wrapped in MagicPage.

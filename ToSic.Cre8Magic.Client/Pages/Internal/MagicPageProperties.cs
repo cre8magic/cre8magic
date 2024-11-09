@@ -16,8 +16,8 @@ internal class MagicPageProperties(MagicPageFactory pageFactory)
     /// <summary>
     /// Link to page.
     /// </summary>
-    public string GetUrl(IMagicPage page) 
-        => page.IsClickable
+    public string GetLink(IMagicPage page) =>
+        page.IsClickable
             ? string.IsNullOrEmpty(page.Url) ? NavigateUrl(page.Path) : page.Url
             : "javascript:void(0)";
 
@@ -26,11 +26,14 @@ internal class MagicPageProperties(MagicPageFactory pageFactory)
     /// </summary>
     /// <param name="page"></param>
     /// <returns></returns>
-    public string? GetTarget(IMagicPage page)
-        => page.Url?.StartsWith("http") == true ? "_blank" : null;
+    public string? GetTarget(IMagicPage page) =>
+        string.IsNullOrWhiteSpace(page.Url)
+            ? null
+            : page.Url.StartsWith("http") || page.Url.StartsWith("//")
+                ? "_blank"
+                : null;
 
 
-
-    private string NavigateUrl(string path, string? parameters = null)
-        => Utilities.NavigateUrl(pageFactory.PageState.Alias.Path, path, parameters);
+    private string NavigateUrl(string path, string? parameters = null) =>
+        Utilities.NavigateUrl(pageFactory.PageState.Alias.Path, path, parameters);
 }

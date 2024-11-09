@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Client.Menus.Settings;
+﻿using ToSic.Cre8magic.Client.Settings.Internal;
+
+namespace ToSic.Cre8magic.Client.Menus.Settings;
 
 public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings
 {
@@ -87,9 +89,7 @@ public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings
     // todo: name, maybe not on interface
     public NamedSettings<MagicMenuDesign>? DesignSettings { get; set; }
 
-    public string MenuId => _menuId ??= Id.HasText()
-        ? Id
-        : new Random().Next(100000, 1000000).ToString();
+    public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;
 
 

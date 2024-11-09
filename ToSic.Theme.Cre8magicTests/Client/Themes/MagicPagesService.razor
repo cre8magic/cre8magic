@@ -8,10 +8,13 @@
     public override string Name => "Magic Pages Service";
     public override string Panes => PaneNames.Default;
 
-    // Test Values
-    public const string TopLevelWithSubpagesId = "97";
+    // Test Values (none)
 
-    public const int PageWithDeepBreadcrumb = 308;
+    // Setup Page Service
+    protected override void OnParametersSet()
+    {
+        PageSvc.Setup(PageState);
+    }
 }
 
 <main role="main">
@@ -45,7 +48,26 @@
             <li>@aPage</li>
         }
     </ol>
-
+    
+    <hr/>
+    
+    <h2>Breadcrumb just list</h2>
+    <ol>
+        @foreach(var bc in PageSvc.GetBreadcrumbs())
+        {
+            <li>@bc</li>
+        }
+    </ol>
+    
+    <h2>Breadcrumb links</h2>
+    <ol>
+        @foreach(var bc in PageSvc.GetBreadcrumbs())
+        {
+            <li>
+                <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
+            </li>
+        }
+    </ol>
 
     <div class="content">
         <div class="container">
@@ -57,11 +79,3 @@
         </div>
     </div>
 </main>
-
-@code {
-    protected override void OnParametersSet()
-    {
-        PageSvc.Setup(PageState);
-    }
-
-}

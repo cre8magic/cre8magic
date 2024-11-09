@@ -35,13 +35,13 @@ public class MagicBreadcrumb(PageState pageState) : MagicBreadcrumbItem(new(page
     private IMagicPage CurrentPage => _currentPage ??= PageFactory.Current;
     private IMagicPage? _currentPage;
 
-    public IEnumerable<MagicBreadcrumbItem> Items => _items ??= GetBreadcrumbs();
+    public IEnumerable<MagicBreadcrumbItem> Items => _items ??= GetBreadcrumb();
     private IEnumerable<MagicBreadcrumbItem>? _items;
 
 
     #region Private Methods
 
-    private List<MagicBreadcrumbItem> GetBreadcrumbs(IMagicPage? page = null)
+    private List<MagicBreadcrumbItem> GetBreadcrumb(IMagicPage? page = null)
     {
         var currentPage = page ?? CurrentPage;
         var breadcrumbs = new List<MagicBreadcrumbItem>
@@ -49,6 +49,7 @@ public class MagicBreadcrumb(PageState pageState) : MagicBreadcrumbItem(new(page
             new (PageFactory, SetHelper, currentPage)
         };
 
+        // If we are on home, exit now.
         if (PageFactory.Home.Id == currentPage.Id)
             return breadcrumbs;
 

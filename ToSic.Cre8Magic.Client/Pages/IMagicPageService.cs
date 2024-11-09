@@ -27,4 +27,7 @@ public interface IMagicPageService
     IMagicPage? GetPage(Page? page);
 
     IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds);
+
+
+    IEnumerable<IMagicPage> GetBreadcrumbs();
 }
