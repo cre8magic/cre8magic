@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Settings.Json;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
@@ -13,7 +13,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger) : MagicServiceWi
 
     private const string MenuSettingPrefix = "menu-";
 
-    public MagicMenuTree GetTree(MagicMenuSettings config, List<MagicPage> menuPages)
+    public MagicMenuTree GetTree(MagicMenuSettings config, List<IMagicPage> menuPages)
     {
         var settingsSvc = Settings!.Service;
         var messages = new List<string>();

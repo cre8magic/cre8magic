@@ -1,5 +1,6 @@
 ﻿using ToSic.Cre8magic.Client.Breadcrumbs.Settings;
 using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Client.Pages.Internal;
 
 namespace ToSic.Cre8magic.Client.Breadcrumbs;
 

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Client.Analytics;
+using ToSic.Cre8magic.Client.Pages.Internal;
 using ToSic.Cre8magic.Client.Settings.Json;
 using static ToSic.Cre8magic.Client.MagicConstants;
 

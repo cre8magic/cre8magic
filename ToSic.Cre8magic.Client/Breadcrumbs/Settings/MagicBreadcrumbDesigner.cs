@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Breadcrumbs.Settings;
 
@@ -22,7 +22,7 @@ public class MagicBreadcrumbDesigner : IPageDesigner
     internal List<NamedSettings<MagicBreadcrumbDesign>> DesignSettingsList { get; }
 
 
-    public string Classes(string tag, MagicPage item)
+    public string Classes(string tag, IMagicPage item)
     {
         var configsForTag = ConfigsForTag(tag);
         return configsForTag.Any()
@@ -30,7 +30,7 @@ public class MagicBreadcrumbDesigner : IPageDesigner
             : "";
     }
 
-    public string Value(string key, MagicPage item)
+    public string Value(string key, IMagicPage item)
     {
         var configsForKey = ConfigsForTag(key)
             .Select(c => c.Value)
@@ -46,7 +46,7 @@ public class MagicBreadcrumbDesigner : IPageDesigner
             .Where(c => c is { })
             .ToList()!;
 
-    private List<string?> TagClasses(MagicPage page, IReadOnlyCollection<MagicBreadcrumbDesign> configs)
+    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbDesign> configs)
     {
         var classes = new List<string?>();
 

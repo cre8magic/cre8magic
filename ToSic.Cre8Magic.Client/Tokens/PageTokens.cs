@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Client.Models;
+﻿using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages;
 using static System.StringComparison;
 using static ToSic.Cre8magic.Client.MagicTokens;
 
@@ -6,16 +7,16 @@ namespace ToSic.Cre8magic.Client.Tokens;
 
 internal class PageTokens(
     MagicPageFactory pageFactory,
-    MagicPage? page = null,
+    IMagicPage? page = null,
     string? bodyClasses = null,
     string? id = null)
     : ITokenReplace
 {
     public const string NameIdConstant = nameof(PageTokens);
-    public MagicPage? Page { get; } = page;
+    public IMagicPage? Page { get; } = page;
     public string NameId => NameIdConstant;
 
-    public PageTokens Clone(MagicPage page, string? menuId = null) => new(pageFactory, page, bodyClasses, menuId ?? id);
+    public PageTokens Clone(IMagicPage page, string? menuId = null) => new(pageFactory, page, bodyClasses, menuId ?? id);
 
     public string Parse(string classes)
     {

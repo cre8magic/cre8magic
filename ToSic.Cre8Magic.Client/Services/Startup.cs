@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using ToSic.Cre8magic.Client.Analytics;
+using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Services;
 
@@ -29,5 +31,8 @@ public class Startup : Oqtane.Services.IClientStartup
 
         //services.TryAddTransient<MagicPageService>(); // Can't DI because of PageState dependency that breaks Oqtane 
         //services.TryAddTransient<MagicMenuTree>(); // Can't DI because of PageState dependency that breaks Oqtane 
+
+        // WIP v0.02.00
+        services.TryAddTransient<IMagicPageService, MagicPageService>();
     }
 }

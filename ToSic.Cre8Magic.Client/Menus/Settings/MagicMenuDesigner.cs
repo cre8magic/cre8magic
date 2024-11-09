@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus.Settings;
 
@@ -24,7 +24,7 @@ public class MagicMenuDesigner : IPageDesigner
 
     private ILog? Log { get; }
 
-    public string Classes(string tag, MagicPage page)
+    public string Classes(string tag, IMagicPage page)
     {
         var l = Log.Fn<string>($"{nameof(tag)}: {tag}, page: {page.PageId} \"{page.Name}\"");
         var configsForTag = ConfigsForTag(tag);
@@ -34,7 +34,7 @@ public class MagicMenuDesigner : IPageDesigner
         return l.ReturnAndLog(result);
     }
 
-    public string Value(string key, MagicPage page)
+    public string Value(string key, IMagicPage page)
     {
         var l = Log.Fn<string>(key);
         var configsForKey = ConfigsForTag(key)
@@ -51,7 +51,7 @@ public class MagicMenuDesigner : IPageDesigner
             .Where(c => c is not null)
             .ToList()!;
 
-    private List<string?> TagClasses(MagicPage page, IReadOnlyCollection<MagicMenuDesign> configs)
+    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuDesign> configs)
     {
         var classes = new List<string?>();
 

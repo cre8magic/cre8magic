@@ -2,13 +2,12 @@
 using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
-using ToSic.Cre8magic.Client.Models;
-using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Pages;
 using Log = ToSic.Cre8magic.Client.Logging.Log;
 
 // using Log = Oqtane.Models.Log;
 
-namespace ToSic.Cre8magic.Client.Services;
+namespace ToSic.Cre8magic.Client.Pages.Internal;
 
 /// <summary>
 /// Factory to create Magic Pages.
@@ -23,9 +22,9 @@ public class MagicPageFactory(PageState pageState)
     internal MagicPageProperties PageProperties => _pageProperties ??= new(this);
     private MagicPageProperties? _pageProperties;
 
-    private readonly Dictionary<Page, MagicPage> _cache = new();
+    private readonly Dictionary<Page, IMagicPage> _cache = new();
 
-    public MagicPage Create(Page page)
+    public IMagicPage Create(Page page)
     {
         if (_cache.TryGetValue(page, out var magicPage))
             return magicPage;
@@ -34,29 +33,27 @@ public class MagicPageFactory(PageState pageState)
         return newPage;
     }
 
-    public MagicPage? CreateOrNull(Page? page) => page == null ? null : Create(page);
+    public IMagicPage? CreateOrNull(Page? page) => page == null ? null : Create(page);
 
-    public MagicPage Home => _home ??= Create(pageState.Pages.Find(p => p.Path == "") ?? throw new("Home page not found, no page with empty path"));
+    public IMagicPage Home => _home ??= Create(pageState.Pages.Find(p => p.Path == "") ?? throw new("Home page not found, no page with empty path"));
+    private IMagicPage? _home;
 
-    private MagicPage? _home;
+    public IMagicPage Current => _current ??= Create(pageState.Page ?? throw new("Current Page not found"));
+    private IMagicPage? _current;
 
-    public MagicPage Current => _current ??= Create(pageState.Page ?? throw new("Current Page not found"));
+    public IMagicPage? GetOrNull(int? id) => id == null ? null : CreateOrNull(pageState.Pages.FirstOrDefault(p => p.PageId == id));
 
-    private MagicPage? _current;
-
-    public MagicPage? GetOrNull(int? id) => id == null ? null : CreateOrNull(pageState.Pages.FirstOrDefault(p => p.PageId == id));
-
-    public IEnumerable<MagicPage> Get(IEnumerable<int> ids) =>
+    public IEnumerable<IMagicPage> Get(IEnumerable<int> ids) =>
         pageState.Pages.Where(p => ids.Contains(p.PageId)).Select(Create);
 
-    public IEnumerable<MagicPage> Get(IEnumerable<Page> pages) =>
+    public IEnumerable<IMagicPage> Get(IEnumerable<Page> pages) =>
         pages.Select(Create);
 
     /// <summary>
     /// List of all pages - even these which would currently not be shown in the menu.
     /// </summary>
-    public IEnumerable<MagicPage> All() => _all ??= pageState.Pages.Select(Create).ToList();
-    private List<MagicPage>? _all;  // internally use list, so any further ToList() will be optimized
+    public IEnumerable<IMagicPage> All() => _all ??= pageState.Pages.Select(Create).ToList();
+    private List<IMagicPage>? _all;  // internally use list, so any further ToList() will be optimized
 
     #region Menu Pages - these are all the pages which the current user is allowed to see
 
@@ -64,9 +61,9 @@ public class MagicPageFactory(PageState pageState)
     /// Pages in the menu according to Oqtane pre-processing
     /// Should be limited to pages which should be in the menu, visible and permissions ok. 
     /// </summary>
-    public IEnumerable<MagicPage> UserPages => GetMenuPages();
+    public IEnumerable<IMagicPage> UserPages => GetMenuPages();
 
-    private IEnumerable<MagicPage> GetMenuPages()
+    private IEnumerable<IMagicPage> GetMenuPages()
     {
         if (pageState == null)
             throw new InvalidOperationException("PageState is null.");
@@ -91,20 +88,20 @@ public class MagicPageFactory(PageState pageState)
 
     #region Ancestors
 
-    internal List<MagicPage> Breadcrumbs(MagicPage? page = null)
+    internal List<IMagicPage> Breadcrumbs(IMagicPage? page = null)
         => GetAncestors(page).Reverse().ToList();
 
-    internal List<MagicPage> Breadcrumbs(IList<MagicPage> pages, MagicPage page)
+    internal List<IMagicPage> Breadcrumbs(IList<IMagicPage> pages, IMagicPage page)
         => GetAncestors(pages, page).Reverse().ToList();
 
-    internal List<MagicPage> Ancestors(MagicPage? page = null)
+    internal List<IMagicPage> Ancestors(IMagicPage? page = null)
         => GetAncestors(page).ToList();
 
-    private IEnumerable<MagicPage> GetAncestors(MagicPage? page = null)
+    private IEnumerable<IMagicPage> GetAncestors(IMagicPage? page = null)
         => GetAncestors(All().ToList(), page ?? Current);
 
 
-    internal IEnumerable<MagicPage> GetAncestors(IList<MagicPage> pages, MagicPage? page)
+    internal IEnumerable<IMagicPage> GetAncestors(IList<IMagicPage> pages, IMagicPage? page)
     {
         while (page != null)
         {
@@ -118,9 +115,9 @@ public class MagicPageFactory(PageState pageState)
 
     #region ChildrenOf
 
-    public List<MagicPage> ChildrenOf(IList<MagicPage> list, int pageId)
+    public List<IMagicPage> ChildrenOf(IList<IMagicPage> list, int pageId)
     {
-        var l = Log.Fn<List<MagicPage>>(pageId.ToString());
+        var l = Log.Fn<List<IMagicPage>>(pageId.ToString());
         var result = list.Where(p => p.ParentId == pageId).ToList();
         return l.Return(result, result.LogPageList());
     }
@@ -128,5 +125,5 @@ public class MagicPageFactory(PageState pageState)
 
     #endregion
 
-    internal MagicPage ErrPage(int id, string message) => new(new() { PageId = id, Name = message }, this);
+    internal IMagicPage ErrPage(int id, string message) => new MagicPage(new() { PageId = id, Name = message }, this);
 }

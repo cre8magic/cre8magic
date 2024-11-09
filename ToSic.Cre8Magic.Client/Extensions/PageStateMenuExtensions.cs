@@ -1,5 +1,4 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Client.Models;
 
 namespace ToSic.Cre8magic.Client;
 

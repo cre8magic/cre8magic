@@ -1,5 +1,6 @@
-﻿using ToSic.Cre8magic.Client.Models;
-using ToSic.Cre8magic.Client.Pages;
+﻿using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages;
 using Log = ToSic.Cre8magic.Client.Logging.Log;
 
 namespace ToSic.Cre8magic.Client.Menus;
@@ -21,7 +22,7 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
     /// <param name="level">The menu level.</param>
     /// <param name="tree">The magic menu tree.</param>
     /// <param name="debugPrefix">The debug prefix.</param>
-    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage page, int level, MagicMenuTree tree, string? debugPrefix) : base(pageFactory, setHelper, page)
+    internal MagicMenuPage(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, IMagicPage page, int level, MagicMenuTree tree, string? debugPrefix) : base(pageFactory, setHelper, page)
     {
         MenuLevel = level;
 

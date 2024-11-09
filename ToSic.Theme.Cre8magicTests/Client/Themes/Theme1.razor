@@ -1,8 +1,8 @@
 @namespace ToSic.Theme.Cre8magicTests
 @using ToSic.Cre8magic.Client.Breadcrumbs
 @using ToSic.Cre8magic.Client.Menus
-@using ToSic.Cre8magic.Client.Models
-@using ToSic.Cre8magic.Client.Services
+@using ToSic.Cre8magic.Client.Pages.Internal
+@using ToSic.Cre8magic.Pages
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeBase
 @inject ISettingService SettingService
@@ -10,7 +10,7 @@
 @code {
     public const string TopLevelWithSubpagesId = "97";
 
-    public IEnumerable<MagicPage> GetCustomMenuPages() => new MagicPageFactory(PageState).Get([97, 98, 99]);
+    public IEnumerable<IMagicPage> GetCustomMenuPages() => new MagicPageFactory(PageState).Get([97, 98, 99]);
 
     public const int PageWithDeepBreadcrumb = 308;
 }

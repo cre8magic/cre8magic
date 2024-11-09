@@ -1,7 +1,7 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Client.Breadcrumbs.Settings;
-using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Breadcrumbs;
 
@@ -32,8 +32,8 @@ public class MagicBreadcrumb(PageState pageState) : MagicBreadcrumbItem(new(page
     /// First page in the breadcrumb.
     /// Often the home page, but could be a different one.
     /// </summary>
-    private MagicPage CurrentPage => _currentPage ??= PageFactory.Current;
-    private MagicPage? _currentPage;
+    private IMagicPage CurrentPage => _currentPage ??= PageFactory.Current;
+    private IMagicPage? _currentPage;
 
     public IEnumerable<MagicBreadcrumbItem> Items => _items ??= GetBreadcrumbs();
     private IEnumerable<MagicBreadcrumbItem>? _items;
@@ -41,7 +41,7 @@ public class MagicBreadcrumb(PageState pageState) : MagicBreadcrumbItem(new(page
 
     #region Private Methods
 
-    private List<MagicBreadcrumbItem> GetBreadcrumbs(MagicPage? page = null)
+    private List<MagicBreadcrumbItem> GetBreadcrumbs(IMagicPage? page = null)
     {
         var currentPage = page ?? CurrentPage;
         var breadcrumbs = new List<MagicBreadcrumbItem>

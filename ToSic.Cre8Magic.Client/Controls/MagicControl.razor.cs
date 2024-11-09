@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.Themes;
+using ToSic.Cre8magic.Client.Pages.Internal;
 
 namespace ToSic.Cre8magic.Client.Controls;
 

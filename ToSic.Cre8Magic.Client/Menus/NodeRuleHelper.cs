@@ -1,5 +1,6 @@
-﻿using ToSic.Cre8magic.Client.Models;
-using ToSic.Cre8magic.Client.Pages;
+﻿using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
@@ -7,7 +8,7 @@ public class NodeRuleHelper
 {
     public const char PageForced = '!';
 
-    internal NodeRuleHelper(MagicPageFactory pageFactory, IList<MagicPage>? list, MagicPage current, MagicMenuSettings settings, Log log)
+    internal NodeRuleHelper(MagicPageFactory pageFactory, IList<IMagicPage>? list, IMagicPage current, MagicMenuSettings settings, Log log)
     {
         Log = log;
         PageFactory = pageFactory;
@@ -19,16 +20,16 @@ public class NodeRuleHelper
 
     internal MagicPageFactory PageFactory { get; }
 
-    internal IList<MagicPage> List { get; }
+    internal IList<IMagicPage> List { get; }
     
-    private MagicPage Current { get; }
+    private IMagicPage Current { get; }
 
     public MagicMenuSettings Settings { get; }
 
 
-    internal List<MagicPage> GetRootPages()
+    internal List<IMagicPage> GetRootPages()
     {
-        var l = Log.Fn<List<MagicPage>>($"{Current.PageId}");
+        var l = Log.Fn<List<IMagicPage>>($"{Current.PageId}");
         // Give empty list if we shouldn't display it
         var s = Settings;
         if (s.Display == false)
@@ -48,9 +49,9 @@ public class NodeRuleHelper
         return l.Return(startPages, startPages.LogPageList());
     }
 
-    internal List<MagicPage> FindStartPageOfManyRules(StartNodeRule[] startingPoints)
+    internal List<IMagicPage> FindStartPageOfManyRules(StartNodeRule[] startingPoints)
     {
-        var l = Log.Fn<List<MagicPage>>(string.Join(',', startingPoints.Select(p => p.Id)));
+        var l = Log.Fn<List<IMagicPage>>(string.Join(',', startingPoints.Select(p => p.Id)));
         var result = startingPoints
             .SelectMany(FindStartPagesOfOneRule)
             .Where(p => p != null)
@@ -58,9 +59,9 @@ public class NodeRuleHelper
         return l.Return(result, result.LogPageList());
     }
 
-    private List<MagicPage> FindStartPagesOfOneRule(StartNodeRule n)
+    private List<IMagicPage> FindStartPagesOfOneRule(StartNodeRule n)
     {
-        var l = Log.Fn<List<MagicPage>>($"Include hidden pages: {n.Force}; Mode: {n.ModeInfo}");
+        var l = Log.Fn<List<IMagicPage>>($"Include hidden pages: {n.Force}; Mode: {n.ModeInfo}");
 
         // Start by getting all the anchors - the pages to start from, before we know about children or not
         // Three cases: root, current, ...
@@ -73,9 +74,9 @@ public class NodeRuleHelper
         return l.Return(result, result.LogPageList());
     }
 
-    private List<MagicPage> FindInitialAnchorPages(StartNodeRule n)
+    private List<IMagicPage> FindInitialAnchorPages(StartNodeRule n)
     {
-        var l = Log.Fn<List<MagicPage>>();
+        var l = Log.Fn<List<IMagicPage>>();
         var source = n.Force
             ? PageFactory.All().ToList()
             : List;
@@ -97,13 +98,13 @@ public class NodeRuleHelper
                 // If coming from the top, level 1 means top level, so skip one less
                 var skipDown = n.Level - 1;
                 var fromTop = PageFactory.Breadcrumbs(source, Current).Skip(skipDown).FirstOrDefault();
-                var fromTopResult = fromTop == null ? [] : new List<MagicPage> { fromTop };
+                List<IMagicPage> fromTopResult = fromTop == null ? [] : [fromTop];
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
             case StartMode.Current when n.Level < 0:
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
                 var fromCurrent = PageFactory.GetAncestors(source, Current).ToList().Skip(skipUp).FirstOrDefault();
-                List<MagicPage> result = fromCurrent == null ? [] : [fromCurrent];
+                List<IMagicPage> result = fromCurrent == null ? [] : [fromCurrent];
                 return l.Return(result, $"up the ancestors by {skipUp}");
             case StartMode.Undefined:
             case StartMode.Unknown:
@@ -113,10 +114,10 @@ public class NodeRuleHelper
     }
 
 
-    private List<MagicPage> GetRelatedPagesByLevel(MagicPage referencePage, int level)
+    private List<IMagicPage> GetRelatedPagesByLevel(IMagicPage referencePage, int level)
     {
-        var l = Log.Fn<List<MagicPage>>($"{referencePage.PageId}; {level}");
-        List<MagicPage> result;
+        var l = Log.Fn<List<IMagicPage>>($"{referencePage.PageId}; {level}");
+        List<IMagicPage> result;
         switch (level)
         {
             case -1:

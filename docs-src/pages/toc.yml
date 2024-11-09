@@ -1,5 +1,12 @@
+- name: Home
+  href: index.md
 - name: Getting Started
   href: get-started/index.md
+- name: Roadmap
+  href: roadmap/index.md
+  items:
+    - name: History
+      href: roadmap/history.md
 - name: How it Works
   href: get-started/how-it-works.md
 - name: Magic Box

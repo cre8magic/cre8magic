@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
-using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Theme.Cre8magicTests.Client;
 
 internal class BasicMenuDesigner : IPageDesigner
 {
-    public string Classes(string tag, MagicPage page)
+    public string Classes(string tag, IMagicPage page)
     {
         // List to store CSS class names
         var classes = new List<string>();
@@ -53,7 +53,7 @@ internal class BasicMenuDesigner : IPageDesigner
 
 
 
-    public string Value(string key, MagicPage page)
+    public string Value(string key, IMagicPage page)
     {
         return "yyy";
     }

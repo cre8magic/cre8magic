@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Client.Models;
+﻿using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Pages;
 
@@ -7,7 +8,7 @@ public class MagicPageWithDesign : MagicPage
     /// <param name="pageFactory"></param>
     /// <param name="setHelper"></param>
     /// <param name="page">The original page.</param>
-    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, MagicPage? page = null) : base(page?.OriginalPage ?? pageFactory.PageState.Page, pageFactory)
+    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, IMagicPage? page = null) : base(page?.OriginalPage ?? pageFactory.PageState.Page, pageFactory)
     {
         SetHelper = setHelper;
     }

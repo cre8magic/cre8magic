@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Client.Models;
+﻿using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Pages;
 
@@ -26,7 +27,7 @@ internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
     /// </summary>
     /// <param name="page">The page which would be used if any page property is requested</param>
     /// <returns></returns>
-    internal TokenEngine PageTokenEngine(MagicPage page)
+    internal TokenEngine PageTokenEngine(IMagicPage page)
     {
         // fallback without MagicSettings return just TokenEngine with PageTokens
         if (MagicSettings == null)

@@ -1,13 +1,14 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Client.Models;
 using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages;
 using Log = ToSic.Cre8magic.Client.Logging.Log;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
 public class MagicMenuTree : IMagicPageList
 {
-    internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<MagicPage>? menuPages = null, List<string>? messages = null)
+    internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<IMagicPage>? menuPages = null, List<string>? messages = null)
         : this(magicSettings.PageState)
     {
         SetHelper.Set(magicSettings);
@@ -46,7 +47,7 @@ public class MagicMenuTree : IMagicPageList
         return this;
     }
 
-    public MagicMenuTree SetMenuPages(IEnumerable<MagicPage> menuPages)
+    public MagicMenuTree SetMenuPages(IEnumerable<IMagicPage> menuPages)
     {
         Log.A($"Init menuPages:{menuPages.Count()}");
         MenuPages = menuPages.ToList();
@@ -73,7 +74,7 @@ public class MagicMenuTree : IMagicPageList
     /// Pages in the menu according to Oqtane pre-processing
     /// Should be limited to pages which should be in the menu, visible and permissions ok. 
     /// </summary>
-    internal IList<MagicPage> MenuPages { get; private set; }
+    internal IList<IMagicPage> MenuPages { get; private set; }
 
     internal /*override*/ MagicMenuTree Tree => this;
 
@@ -110,8 +111,8 @@ public class MagicMenuTree : IMagicPageList
     private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(VPageLevel1);
     private ITokenReplace? _nodeReplace;
 
-    private MagicPage VPageLevel1 => _vPageLevel1 ??= new(new() { Level = 0 /* Level is 0, so MenuLevel will be 1 */ }, PageFactory);
-    private MagicPage? _vPageLevel1;
+    private IMagicPage VPageLevel1 => _vPageLevel1 ??= new MagicPage(new() { Level = 0 /* Level is 0, so MenuLevel will be 1 */ }, PageFactory);
+    private IMagicPage? _vPageLevel1;
 
     /// <inheritdoc cref="IMagicPageList.Classes" />
     public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, VPageLevel1)).EmptyAsNull();
