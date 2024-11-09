@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.Services
   commentId: N:ToSic.Cre8magic.Client.Services
-  id: ToSic.Cre8magic.Client.Services
+  id: Services
+  parent: ToSic.Cre8magic.Client
   children:
   - ToSic.Cre8magic.Client.Services.IMagicThemeJsService
   - ToSic.Cre8magic.Client.Services.LanguageService

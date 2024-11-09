@@ -7,11 +7,11 @@ items:
   children:
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.#ctor(Oqtane.Models.Page)
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.HasChildren
+  - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Id
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.IsClickable
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Level
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Name
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.OriginalPage
-  - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.PageId
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.ParentId
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Path
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Url
@@ -116,37 +116,37 @@ items:
       type: Oqtane.Models.Page
     content.vb: Public ReadOnly Property OriginalPage As Page
   overload: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.OriginalPage*
-- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.PageId
-  commentId: P:ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.PageId
-  id: PageId
+- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Id
+  commentId: P:ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Id
+  id: Id
   parent: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase
   langs:
   - csharp
   - vb
-  name: PageId
-  nameWithType: MagicPageBase.PageId
-  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.PageId
+  name: Id
+  nameWithType: MagicPageBase.Id
+  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Id
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Pages/Internal/MagicPageBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: PageId
+    id: Id
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageBase.cs
     startLine: 18
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Pages.Internal
-  summary: Id of the Page
+  summary: ID of the Page
   example: []
   syntax:
-    content: public int PageId { get; }
+    content: public int Id { get; }
     parameters: []
     return:
       type: System.Int32
-    content.vb: Public ReadOnly Property PageId As Integer
-  overload: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.PageId*
+    content.vb: Public ReadOnly Property Id As Integer
+  overload: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Id*
 - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.ParentId
   commentId: P:ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.ParentId
   id: ParentId
@@ -696,12 +696,12 @@ references:
   name: OriginalPage
   nameWithType: MagicPageBase.OriginalPage
   fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.OriginalPage
-- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.PageId*
-  commentId: Overload:ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.PageId
-  href: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_PageId
-  name: PageId
-  nameWithType: MagicPageBase.PageId
-  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.PageId
+- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Id*
+  commentId: Overload:ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Id
+  href: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Id
+  name: Id
+  nameWithType: MagicPageBase.Id
+  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.Id
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System

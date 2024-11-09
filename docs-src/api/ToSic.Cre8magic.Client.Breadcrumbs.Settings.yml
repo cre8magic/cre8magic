@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   commentId: N:ToSic.Cre8magic.Client.Breadcrumbs.Settings
-  id: ToSic.Cre8magic.Client.Breadcrumbs.Settings
+  id: Settings
+  parent: ToSic.Cre8magic.Client.Breadcrumbs
   children:
   - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesign
   - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner

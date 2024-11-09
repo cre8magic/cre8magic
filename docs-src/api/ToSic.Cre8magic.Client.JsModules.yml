@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.JsModules
   commentId: N:ToSic.Cre8magic.Client.JsModules
-  id: ToSic.Cre8magic.Client.JsModules
+  id: JsModules
+  parent: ToSic.Cre8magic.Client
   children:
   - ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
   langs:

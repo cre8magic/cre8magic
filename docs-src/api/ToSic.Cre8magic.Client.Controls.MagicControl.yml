@@ -45,7 +45,12 @@ items:
   - Oqtane.Themes.ThemeControlBase
   derivedClasses:
   - ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs
+  - ToSic.Cre8magic.Client.Controls.MagicDebug
+  - ToSic.Cre8magic.Client.Controls.MagicExceptions
+  - ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
+  - ToSic.Cre8magic.Client.Languages.MagicLanguageDebug
   - ToSic.Cre8magic.Client.Languages.MagicLanguageMenu
+  - ToSic.Cre8magic.Client.Themes.MagicThemeDebug
   implements:
   - Microsoft.AspNetCore.Components.IComponent
   - Microsoft.AspNetCore.Components.IHandleEvent

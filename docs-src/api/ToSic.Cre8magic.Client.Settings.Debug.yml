@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.Settings.Debug
   commentId: N:ToSic.Cre8magic.Client.Settings.Debug
-  id: ToSic.Cre8magic.Client.Settings.Debug
+  id: Debug
+  parent: ToSic.Cre8magic.Client.Settings
   children:
   - ToSic.Cre8magic.Client.Settings.Debug.MagicDebugSettings
   - ToSic.Cre8magic.Client.Settings.Debug.MagicDebugState

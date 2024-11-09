@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.Logging
   commentId: N:ToSic.Cre8magic.Client.Logging
-  id: ToSic.Cre8magic.Client.Logging
+  id: Logging
+  parent: ToSic.Cre8magic.Client
   children:
   - ToSic.Cre8magic.Client.Logging.CodeRef
   - ToSic.Cre8magic.Client.Logging.LogCall

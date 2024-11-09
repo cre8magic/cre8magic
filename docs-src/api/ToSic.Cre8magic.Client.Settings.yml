@@ -2,12 +2,15 @@
 items:
 - uid: ToSic.Cre8magic.Client.Settings
   commentId: N:ToSic.Cre8magic.Client.Settings
-  id: ToSic.Cre8magic.Client.Settings
+  id: Settings
+  parent: ToSic.Cre8magic.Client
   children:
+  - ToSic.Cre8magic.Client.Settings.Debug
   - ToSic.Cre8magic.Client.Settings.DesignSetting
   - ToSic.Cre8magic.Client.Settings.DesignSettingsJsonConverter`1
   - ToSic.Cre8magic.Client.Settings.IHasMagicSettings
   - ToSic.Cre8magic.Client.Settings.IHasSettingsExceptions
+  - ToSic.Cre8magic.Client.Settings.Json
   - ToSic.Cre8magic.Client.Settings.MagicPackageSettings
   - ToSic.Cre8magic.Client.Settings.MagicSettings
   - ToSic.Cre8magic.Client.Settings.MagicSettingsCatalog
@@ -27,6 +30,98 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Client.Settings.Debug
+  commentId: N:ToSic.Cre8magic.Client.Settings.Debug
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Settings.Debug
+  nameWithType: ToSic.Cre8magic.Client.Settings.Debug
+  fullName: ToSic.Cre8magic.Client.Settings.Debug
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Client.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Settings.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Client.Settings.Debug.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Client.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Settings.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Client.Settings.Debug.html
+- uid: ToSic.Cre8magic.Client.Settings.Json
+  commentId: N:ToSic.Cre8magic.Client.Settings.Json
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Settings.Json
+  nameWithType: ToSic.Cre8magic.Client.Settings.Json
+  fullName: ToSic.Cre8magic.Client.Settings.Json
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Client.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Settings.Json
+    name: Json
+    href: ToSic.Cre8magic.Client.Settings.Json.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Client.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Settings.Json
+    name: Json
+    href: ToSic.Cre8magic.Client.Settings.Json.html
 - uid: ToSic.Cre8magic.Client.Settings.DesignSetting
   commentId: T:ToSic.Cre8magic.Client.Settings.DesignSetting
   parent: ToSic.Cre8magic.Client.Settings

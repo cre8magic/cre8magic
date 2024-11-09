@@ -14,8 +14,8 @@ items:
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.Get(System.Collections.Generic.IEnumerable{Oqtane.Models.Page})
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.Get(System.Collections.Generic.IEnumerable{System.Int32})
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetOrNull(System.Nullable{System.Int32})
+  - ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetUserPages
   - ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.Home
-  - ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.UserPages
   langs:
   - csharp
   - vb
@@ -344,23 +344,23 @@ items:
       type: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
     content.vb: Public Function All() As IEnumerable(Of IMagicPage)
   overload: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.All*
-- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.UserPages
-  commentId: P:ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.UserPages
-  id: UserPages
+- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetUserPages
+  commentId: M:ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetUserPages
+  id: GetUserPages
   parent: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
   langs:
   - csharp
   - vb
-  name: UserPages
-  nameWithType: MagicPageFactory.UserPages
-  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.UserPages
-  type: Property
+  name: GetUserPages()
+  nameWithType: MagicPageFactory.GetUserPages()
+  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetUserPages()
+  type: Method
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: UserPages
+    id: GetUserPages
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
     startLine: 63
   assemblies:
@@ -372,12 +372,11 @@ items:
     Should be limited to pages which should be in the menu, visible and permissions ok.
   example: []
   syntax:
-    content: public IEnumerable<IMagicPage> UserPages { get; }
-    parameters: []
+    content: public IEnumerable<IMagicPage> GetUserPages()
     return:
       type: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
-    content.vb: Public ReadOnly Property UserPages As IEnumerable(Of IMagicPage)
-  overload: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.UserPages*
+    content.vb: Public Function GetUserPages() As IEnumerable(Of IMagicPage)
+  overload: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetUserPages*
 - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.ChildrenOf(System.Collections.Generic.IList{ToSic.Cre8magic.Pages.IMagicPage},System.Int32)
   commentId: M:ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.ChildrenOf(System.Collections.Generic.IList{ToSic.Cre8magic.Pages.IMagicPage},System.Int32)
   id: ChildrenOf(System.Collections.Generic.IList{ToSic.Cre8magic.Pages.IMagicPage},System.Int32)
@@ -1065,12 +1064,12 @@ references:
   name: All
   nameWithType: MagicPageFactory.All
   fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.All
-- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.UserPages*
-  commentId: Overload:ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.UserPages
-  href: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageFactory_UserPages
-  name: UserPages
-  nameWithType: MagicPageFactory.UserPages
-  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.UserPages
+- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetUserPages*
+  commentId: Overload:ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetUserPages
+  href: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageFactory_GetUserPages
+  name: GetUserPages
+  nameWithType: MagicPageFactory.GetUserPages
+  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.GetUserPages
 - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.ChildrenOf*
   commentId: Overload:ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.ChildrenOf
   href: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageFactory_ChildrenOf_System_Collections_Generic_IList_ToSic_Cre8magic_Pages_IMagicPage__System_Int32_

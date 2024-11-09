@@ -2,10 +2,12 @@
 items:
 - uid: ToSic.Cre8magic.Client.Pages
   commentId: N:ToSic.Cre8magic.Client.Pages
-  id: ToSic.Cre8magic.Client.Pages
+  id: Pages
+  parent: ToSic.Cre8magic.Client
   children:
   - ToSic.Cre8magic.Client.Pages.IMagicPageList
   - ToSic.Cre8magic.Client.Pages.IPageDesigner
+  - ToSic.Cre8magic.Client.Pages.Internal
   - ToSic.Cre8magic.Client.Pages.MagicPageWithDesign
   langs:
   - csharp
@@ -17,6 +19,52 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Client.Pages.Internal
+  commentId: N:ToSic.Cre8magic.Client.Pages.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Pages.Internal
+  nameWithType: ToSic.Cre8magic.Client.Pages.Internal
+  fullName: ToSic.Cre8magic.Client.Pages.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Client.Pages.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Client.Pages.Internal.html
 - uid: ToSic.Cre8magic.Client.Pages.IMagicPageList
   commentId: T:ToSic.Cre8magic.Client.Pages.IMagicPageList
   parent: ToSic.Cre8magic.Client.Pages

@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Interface IMagicPage
- | cre8magic </title>
+      <title>Interface IMagicPage | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Interface IMagicPage
- | cre8magic ">
+      <meta name="title" content="Interface IMagicPage | cre8magic ">
       
+      <meta name="description" content="Magic Pages are smart wrappers around Oqtane Pages. They offer many benefits such as:  Read-only properties (no accidental writing properties with unexpected side effects) Improved naming, e.g. .Id instead of .PageId Calculated properties such as Target (which becomes &amp;quot;_blank&amp;quot; for external links or null for normal links) Corrected values - e.g. the Link property will be javascript:void(0) if the page is not clickable Navigation properties such as Parent and Breadcrumb">
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -78,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -90,8 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Pages_IMagicPage" data-uid="ToSic.Cre8magic.Pages.IMagicPage" class="text-break">
-    Interface IMagicPage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L5"><i class="bi bi-code-slash"></i></a>
+Interface IMagicPage  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,7 +97,16 @@
   <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Magic Pages are smart wrappers around Oqtane Pages.
+They offer many benefits such as:</p>
+<ol>
+<li>Read-only properties (no accidental writing properties with unexpected side effects)</li>
+<li>Improved naming, e.g. <code>.Id</code> instead of <code>.PageId</code></li>
+<li>Calculated properties such as <code>Target</code> (which becomes <code>&quot;_blank&quot;</code> for external links or <code>null</code> for normal links)</li>
+<li>Corrected values - e.g. the <code>Link</code> property will be <code>javascript:void(0)</code> if the page is not clickable</li>
+<li>Navigation properties such as <code>Parent</code> and <code>Breadcrumb</code></li>
+</ol>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -122,11 +129,11 @@
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Pages_IMagicPage_Breadcrumb_" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb*"></a>
+  <a id="ToSic_Cre8magic_Pages_IMagicPage_Breadcrumbs_" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Breadcrumbs*"></a>
 
-  <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Breadcrumb" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb">
-  Breadcrumb
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Breadcrumbs" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Breadcrumbs">
+  Breadcrumbs
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The current pages bread-crumb, going from the top-level to the current page.
@@ -135,7 +142,7 @@ Note that the &quot;Home&quot; page is usually not a parent, so it's not include
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">List&lt;IMagicPage&gt; Breadcrumb { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;IMagicPage&gt; Breadcrumbs { get; }</code></pre>
   </div>
 
 
@@ -159,7 +166,7 @@ Note that the &quot;Home&quot; page is usually not a parent, so it's not include
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_HasChildren" data-uid="ToSic.Cre8magic.Pages.IMagicPage.HasChildren">
   HasChildren
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines if there are sub-pages. True if this page has sub-pages.</p>
@@ -187,11 +194,43 @@ Note that the &quot;Home&quot; page is usually not a parent, so it's not include
 
 
 
-  <a id="ToSic_Cre8magic_Pages_IMagicPage_InBreadcrumb_" data-uid="ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb*"></a>
+  <a id="ToSic_Cre8magic_Pages_IMagicPage_Id_" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Id*"></a>
 
-  <h3 id="ToSic_Cre8magic_Pages_IMagicPage_InBreadcrumb" data-uid="ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb">
-  InBreadcrumb
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Id" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>ID of this Page</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int Id { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Pages_IMagicPage_InBreadcrumbs_" data-uid="ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumbs*"></a>
+
+  <h3 id="ToSic_Cre8magic_Pages_IMagicPage_InBreadcrumbs" data-uid="ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumbs">
+  InBreadcrumbs
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determine if the menu page is in the breadcrumb.</p>
@@ -199,7 +238,7 @@ Note that the &quot;Home&quot; page is usually not a parent, so it's not include
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool InBreadcrumb { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">bool InBreadcrumbs { get; }</code></pre>
   </div>
 
 
@@ -223,7 +262,7 @@ Note that the &quot;Home&quot; page is usually not a parent, so it's not include
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_IsClickable" data-uid="ToSic.Cre8magic.Pages.IMagicPage.IsClickable">
   IsClickable
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L83"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Link in site navigation is enabled or disabled.</p>
@@ -255,7 +294,7 @@ Note that the &quot;Home&quot; page is usually not a parent, so it's not include
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_IsCurrent" data-uid="ToSic.Cre8magic.Pages.IMagicPage.IsCurrent">
   IsCurrent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>True if this page is the current page which the user is viewing.</p>
@@ -287,7 +326,7 @@ Note that the &quot;Home&quot; page is usually not a parent, so it's not include
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Level" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Level">
   Level
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L89"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Current page level from the top of the Menu.
@@ -320,7 +359,7 @@ As in Oqtane, it's 0 based.</p>
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Link" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Link">
   Link
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Link to this page.</p>
@@ -352,7 +391,7 @@ As in Oqtane, it's 0 based.</p>
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_MenuLevel" data-uid="ToSic.Cre8magic.Pages.IMagicPage.MenuLevel">
   MenuLevel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Level in the menu, starting from 1.
@@ -385,7 +424,7 @@ As different menus may start at other depths, this is not always the same as the
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Name" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Page Name.</p>
@@ -417,7 +456,7 @@ As different menus may start at other depths, this is not always the same as the
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_OriginalPage" data-uid="ToSic.Cre8magic.Pages.IMagicPage.OriginalPage">
   OriginalPage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Original Oqtane page wrapped in MagicPage.</p>
@@ -445,19 +484,19 @@ As different menus may start at other depths, this is not always the same as the
 
 
 
-  <a id="ToSic_Cre8magic_Pages_IMagicPage_PageId_" data-uid="ToSic.Cre8magic.Pages.IMagicPage.PageId*"></a>
+  <a id="ToSic_Cre8magic_Pages_IMagicPage_Parent_" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Parent*"></a>
 
-  <h3 id="ToSic_Cre8magic_Pages_IMagicPage_PageId" data-uid="ToSic.Cre8magic.Pages.IMagicPage.PageId">
-  PageId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Parent" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Parent">
+  Parent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L104"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Id of the Page</p>
+  <div class="markdown level1 summary"><p>The parent page of this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">int PageId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicPage? Parent { get; }</code></pre>
   </div>
 
 
@@ -466,8 +505,9 @@ As different menus may start at other depths, this is not always the same as the
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
+    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></dt>
+    <dd><p>The parent page, or null if the page is on the top level and doesn't have a parent page.</p>
+</dd>
   </dl>
 
 
@@ -481,7 +521,7 @@ As different menus may start at other depths, this is not always the same as the
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_ParentId" data-uid="ToSic.Cre8magic.Pages.IMagicPage.ParentId">
   ParentId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reference to the parent <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs">Page</a> if it has one.</p>
@@ -513,7 +553,7 @@ As different menus may start at other depths, this is not always the same as the
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Path" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Path">
   Path
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Path of the page.</p>
@@ -545,7 +585,7 @@ As different menus may start at other depths, this is not always the same as the
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Target" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Target">
   Target
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L37"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Target for link to this page.</p>
@@ -577,7 +617,7 @@ As different menus may start at other depths, this is not always the same as the
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPage_Url" data-uid="ToSic.Cre8magic.Pages.IMagicPage.Url">
   Url
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Full URL to this page.</p>
@@ -609,7 +649,7 @@ As different menus may start at other depths, this is not always the same as the
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -2,14 +2,19 @@
 items:
 - uid: ToSic.Cre8magic.Client.Controls
   commentId: N:ToSic.Cre8magic.Client.Controls
-  id: ToSic.Cre8magic.Client.Controls
+  id: Controls
+  parent: ToSic.Cre8magic.Client
   children:
   - ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
   - ToSic.Cre8magic.Client.Controls.IMagicDesigner
   - ToSic.Cre8magic.Client.Controls.MagicComponent
   - ToSic.Cre8magic.Client.Controls.MagicControl
+  - ToSic.Cre8magic.Client.Controls.MagicDebug
   - ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
+  - ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
+  - ToSic.Cre8magic.Client.Controls.MagicExceptions
   - ToSic.Cre8magic.Client.Controls.MagicLogin
+  - ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
   langs:
   - csharp
   - vb
@@ -47,18 +52,42 @@ references:
   name: MagicControl
   nameWithType: MagicControl
   fullName: ToSic.Cre8magic.Client.Controls.MagicControl
+- uid: ToSic.Cre8magic.Client.Controls.MagicDebug
+  commentId: T:ToSic.Cre8magic.Client.Controls.MagicDebug
+  href: ToSic.Cre8magic.Client.Controls.MagicDebug.html
+  name: MagicDebug
+  nameWithType: MagicDebug
+  fullName: ToSic.Cre8magic.Client.Controls.MagicDebug
 - uid: ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
   commentId: T:ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
   href: ToSic.Cre8magic.Client.Controls.MagicDynamicComponent.html
   name: MagicDynamicComponent
   nameWithType: MagicDynamicComponent
   fullName: ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
+- uid: ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
+  commentId: T:ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
+  href: ToSic.Cre8magic.Client.Controls.MagicDynamicComponents.html
+  name: MagicDynamicComponents
+  nameWithType: MagicDynamicComponents
+  fullName: ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
+- uid: ToSic.Cre8magic.Client.Controls.MagicExceptions
+  commentId: T:ToSic.Cre8magic.Client.Controls.MagicExceptions
+  href: ToSic.Cre8magic.Client.Controls.MagicExceptions.html
+  name: MagicExceptions
+  nameWithType: MagicExceptions
+  fullName: ToSic.Cre8magic.Client.Controls.MagicExceptions
 - uid: ToSic.Cre8magic.Client.Controls.MagicLogin
   commentId: T:ToSic.Cre8magic.Client.Controls.MagicLogin
   href: ToSic.Cre8magic.Client.Controls.MagicLogin.html
   name: MagicLogin
   nameWithType: MagicLogin
   fullName: ToSic.Cre8magic.Client.Controls.MagicLogin
+- uid: ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
+  commentId: T:ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
+  href: ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel.html
+  name: MagicOqtaneControlPanel
+  nameWithType: MagicOqtaneControlPanel
+  fullName: ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
 - uid: ToSic.Cre8magic.Client.Controls
   commentId: N:ToSic.Cre8magic.Client.Controls
   href: ToSic.html

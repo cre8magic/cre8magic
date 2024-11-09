@@ -153,7 +153,7 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
-  summary: Reads and converts the JSON to type T.
+  summary: Reads and converts the JSON to type <code class="typeparamref">T</code>.
   example: []
   syntax:
     content: public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

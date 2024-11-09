@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
-  id: ToSic.Cre8magic.Pages
+  id: Pages
+  parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Pages.IMagicPage
   - ToSic.Cre8magic.Pages.IMagicPageService

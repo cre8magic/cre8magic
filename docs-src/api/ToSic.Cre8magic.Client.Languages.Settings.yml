@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.Languages.Settings
   commentId: N:ToSic.Cre8magic.Client.Languages.Settings
-  id: ToSic.Cre8magic.Client.Languages.Settings
+  id: Settings
+  parent: ToSic.Cre8magic.Client.Languages
   children:
   - ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage
   - ToSic.Cre8magic.Client.Languages.Settings.MagicLanguagesSettings

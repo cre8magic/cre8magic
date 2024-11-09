@@ -17,7 +17,7 @@
         // "GenerateDocumentationFile": true,
         // "ProduceReferenceAssembly": true
       },
-      // "namespaceLayout": "nested",
+      "namespaceLayout": "nested",
     }
   ],
   "build": {
@@ -84,7 +84,7 @@
     "template": [
       "default",
       "modern",
-      "templates/nested"
+      // "templates/nested"
     ],
     "globalMetadata": {
       // "_appName": "cre8magic",

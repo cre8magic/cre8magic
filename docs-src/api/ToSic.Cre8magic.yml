@@ -1,0 +1,73 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic
+  id: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.Client
+  - ToSic.Cre8magic.Pages
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic
+  type: Namespace
+references:
+- uid: ToSic.Cre8magic.Client
+  commentId: N:ToSic.Cre8magic.Client
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client
+  nameWithType: ToSic.Cre8magic.Client
+  fullName: ToSic.Cre8magic.Client
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html

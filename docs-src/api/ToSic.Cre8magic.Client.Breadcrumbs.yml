@@ -2,11 +2,13 @@
 items:
 - uid: ToSic.Cre8magic.Client.Breadcrumbs
   commentId: N:ToSic.Cre8magic.Client.Breadcrumbs
-  id: ToSic.Cre8magic.Client.Breadcrumbs
+  id: Breadcrumbs
+  parent: ToSic.Cre8magic.Client
   children:
   - ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb
   - ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
   - ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs
+  - ToSic.Cre8magic.Client.Breadcrumbs.Settings
   langs:
   - csharp
   - vb
@@ -17,6 +19,52 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings
+  commentId: N:ToSic.Cre8magic.Client.Breadcrumbs.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Breadcrumbs.Settings
+  nameWithType: ToSic.Cre8magic.Client.Breadcrumbs.Settings
+  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Breadcrumbs
+    name: Breadcrumbs
+    href: ToSic.Cre8magic.Client.Breadcrumbs.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Breadcrumbs
+    name: Breadcrumbs
+    href: ToSic.Cre8magic.Client.Breadcrumbs.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.html
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb
   commentId: T:ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb
   parent: ToSic.Cre8magic.Client.Breadcrumbs

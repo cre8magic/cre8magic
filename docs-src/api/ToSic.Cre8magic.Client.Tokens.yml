@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.Tokens
   commentId: N:ToSic.Cre8magic.Client.Tokens
-  id: ToSic.Cre8magic.Client.Tokens
+  id: Tokens
+  parent: ToSic.Cre8magic.Client
   children:
   - ToSic.Cre8magic.Client.Tokens.ThemeTokens
   langs:

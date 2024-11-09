@@ -2,7 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.Settings.Json
   commentId: N:ToSic.Cre8magic.Client.Settings.Json
-  id: ToSic.Cre8magic.Client.Settings.Json
+  id: Json
+  parent: ToSic.Cre8magic.Client.Settings
   children:
   - ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
   langs:
