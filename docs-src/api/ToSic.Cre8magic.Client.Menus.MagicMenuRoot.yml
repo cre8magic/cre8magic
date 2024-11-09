@@ -31,14 +31,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicMenuRoot
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 10
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   summary: Base class for Razor menus
   example: []
@@ -62,6 +62,7 @@ items:
   - ToSic.Cre8magic.Client.Controls.IMagicDesigner
   inheritedMembers:
   - ToSic.Cre8magic.Client.Menus.MagicMenuBase.Settings
+  - ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
   - ToSic.Cre8magic.Client.Menus.MagicMenuBase.Classes(System.String)
   - ToSic.Cre8magic.Client.Menus.MagicMenuBase.Value(System.String)
   - ToSic.Cre8magic.Client.Menus.MagicMenuBase.Id(System.String)
@@ -132,14 +133,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuSettings
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 16
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 15
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   summary: >-
     Complex object with all settings.
@@ -176,14 +177,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuId
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 18
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 17
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -215,14 +216,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ConfigName
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 19
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 18
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -254,14 +255,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Children
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 22
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 21
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -293,14 +294,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 23
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 22
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -332,14 +333,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Depth
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 24
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 23
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -371,14 +372,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Display
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 25
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 24
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -410,14 +411,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Level
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 26
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -449,14 +450,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Start
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 27
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 26
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -488,14 +489,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Design
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 28
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 27
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -527,14 +528,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Template
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 30
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 29
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -566,14 +567,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Menu
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 32
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 31
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: protected MagicMenuTree? Menu { get; }
@@ -595,14 +596,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Logger
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 34
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 33
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -634,14 +635,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuTreeService
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 36
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 35
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: >-
@@ -673,14 +674,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsVertical
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 42
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 41
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   summary: >-
     Detect if the menu is configured for vertical.
@@ -707,14 +708,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsHorizontal
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 43
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 42
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: protected bool IsHorizontal { get; }
@@ -736,14 +737,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnParametersSetAsync
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuRoot.razor.cs
-    startLine: 45
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs
+    startLine: 44
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   summary: >-
     Method invoked when the component has received parameters from its parent in
@@ -907,6 +908,13 @@ references:
   name: Settings
   nameWithType: MagicMenuBase.Settings
   fullName: ToSic.Cre8magic.Client.Menus.MagicMenuBase.Settings
+- uid: ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
+  commentId: P:ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
+  parent: ToSic.Cre8magic.Client.Menus.MagicMenuBase
+  href: ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_PageFactory
+  name: PageFactory
+  nameWithType: MagicMenuBase.PageFactory
+  fullName: ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
 - uid: ToSic.Cre8magic.Client.Menus.MagicMenuBase.Classes(System.String)
   commentId: M:ToSic.Cre8magic.Client.Menus.MagicMenuBase.Classes(System.String)
   parent: ToSic.Cre8magic.Client.Menus.MagicMenuBase

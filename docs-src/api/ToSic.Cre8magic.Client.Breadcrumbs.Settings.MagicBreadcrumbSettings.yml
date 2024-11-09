@@ -23,14 +23,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicBreadcrumbSettings
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   syntax:
     content: 'public class MagicBreadcrumbSettings : SettingsWithInherit'
@@ -60,14 +60,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 7
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: Empty constructor is important for JSON deserialization
   example: []
@@ -91,14 +91,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 12
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: A unique ID to identify the breadcrumb.
   example: []
@@ -122,14 +122,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ConfigName
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 18
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: Name to identify this configuration
   example: []
@@ -153,14 +153,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 21
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: Debug settings for anything that can configure show/hide of debug
   example: []
@@ -184,14 +184,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Display
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 27
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: Determines if this breadcrumb should be shown.
   example: []
@@ -215,14 +215,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DisplayDefault
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 28
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   syntax:
     content: public const bool DisplayDefault = true
@@ -242,14 +242,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Start
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 36
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: >-
     Start page of this breadcrumb - like home or another specific page.
@@ -280,14 +280,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DesignSettings
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 39
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   syntax:
     content: public NamedSettings<MagicBreadcrumbDesign>? DesignSettings { get; set; }
@@ -309,14 +309,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: BreadcrumbId
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbSettings.cs
     startLine: 41
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   syntax:
     content: public string BreadcrumbId { get; }

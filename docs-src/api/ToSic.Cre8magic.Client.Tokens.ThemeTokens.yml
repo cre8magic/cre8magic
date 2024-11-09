@@ -18,14 +18,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
+      path: ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemeTokens
-    path: ../ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
+    path: ../ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Tokens
   syntax:
     content: public class ThemeTokens
@@ -40,33 +40,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameIdConstant
-  commentId: F:ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameIdConstant
-  id: NameIdConstant
-  parent: ToSic.Cre8magic.Client.Tokens.ThemeTokens
-  langs:
-  - csharp
-  - vb
-  name: NameIdConstant
-  nameWithType: ThemeTokens.NameIdConstant
-  fullName: ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameIdConstant
-  type: Field
-  source:
-    remote:
-      path: ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: NameIdConstant
-    path: ../ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
-    startLine: 4
-  assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Client.Tokens
-  syntax:
-    content: public const string NameIdConstant = "ThemeTokens"
-    return:
-      type: System.String
-    content.vb: Public Const NameIdConstant As String = "ThemeTokens"
 - uid: ToSic.Cre8magic.Client.Tokens.ThemeTokens.#ctor(ToSic.Cre8magic.Client.Settings.MagicPackageSettings)
   commentId: M:ToSic.Cre8magic.Client.Tokens.ThemeTokens.#ctor(ToSic.Cre8magic.Client.Settings.MagicPackageSettings)
   id: '#ctor(ToSic.Cre8magic.Client.Settings.MagicPackageSettings)'
@@ -80,14 +53,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
+      path: ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
-    startLine: 6
+    path: ../ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
+    startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Tokens
   syntax:
     content: public ThemeTokens(MagicPackageSettings themeSettings)
@@ -99,6 +72,33 @@ items:
   nameWithType.vb: ThemeTokens.New(MagicPackageSettings)
   fullName.vb: ToSic.Cre8magic.Client.Tokens.ThemeTokens.New(ToSic.Cre8magic.Client.Settings.MagicPackageSettings)
   name.vb: New(MagicPackageSettings)
+- uid: ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameIdConstant
+  commentId: F:ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameIdConstant
+  id: NameIdConstant
+  parent: ToSic.Cre8magic.Client.Tokens.ThemeTokens
+  langs:
+  - csharp
+  - vb
+  name: NameIdConstant
+  nameWithType: ThemeTokens.NameIdConstant
+  fullName: ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameIdConstant
+  type: Field
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: NameIdConstant
+    path: ../ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
+    startLine: 4
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Tokens
+  syntax:
+    content: public const string NameIdConstant = "ThemeTokens"
+    return:
+      type: System.String
+    content.vb: Public Const NameIdConstant As String = "ThemeTokens"
 - uid: ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameId
   commentId: P:ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameId
   id: NameId
@@ -112,14 +112,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
+      path: ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: NameId
-    path: ../ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
-    startLine: 14
+    path: ../ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
+    startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Tokens
   example: []
   syntax:
@@ -142,14 +142,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
+      path: ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parse
-    path: ../ToSic.Cre8magic.Client/Tokens/ThemeTokens.cs
-    startLine: 16
+    path: ../ToSic.Cre8Magic.Client/Tokens/ThemeTokens.cs
+    startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Tokens
   example: []
   syntax:
@@ -440,17 +440,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: ToSic.Cre8magic.Client.Tokens.ThemeTokens.#ctor*
   commentId: Overload:ToSic.Cre8magic.Client.Tokens.ThemeTokens.#ctor
   href: ToSic.Cre8magic.Client.Tokens.ThemeTokens.html#ToSic_Cre8magic_Client_Tokens_ThemeTokens__ctor_ToSic_Cre8magic_Client_Settings_MagicPackageSettings_
@@ -505,6 +494,17 @@ references:
   - uid: ToSic.Cre8magic.Client.Settings
     name: Settings
     href: ToSic.Cre8magic.Client.Settings.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameId*
   commentId: Overload:ToSic.Cre8magic.Client.Tokens.ThemeTokens.NameId
   href: ToSic.Cre8magic.Client.Tokens.ThemeTokens.html#ToSic_Cre8magic_Client_Tokens_ThemeTokens_NameId

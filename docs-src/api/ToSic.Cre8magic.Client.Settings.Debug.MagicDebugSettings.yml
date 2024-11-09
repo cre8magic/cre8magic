@@ -19,14 +19,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicDebugSettings
-    path: ../ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Debug
   syntax:
     content: public class MagicDebugSettings
@@ -54,14 +54,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Allowed
-    path: ../ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Debug
   syntax:
     content: public bool? Allowed { get; set; }
@@ -83,14 +83,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Anonymous
-    path: ../ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
     startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Debug
   syntax:
     content: public bool? Anonymous { get; set; }
@@ -112,14 +112,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Admin
-    path: ../ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
     startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Debug
   syntax:
     content: public bool? Admin { get; set; }
@@ -141,14 +141,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Detailed
-    path: ../ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
     startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Debug
   syntax:
     content: public bool? Detailed { get; set; }
@@ -170,14 +170,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetState
-    path: ../ToSic.Cre8magic.Client/Settings/Debug/MagicDebugSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/Debug/MagicDebugSettings.cs
     startLine: 14
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Debug
   syntax:
     content: public MagicDebugState GetState(object? target, bool isAdmin)

@@ -91,12 +91,12 @@
 
   <h1 id="ToSic_Cre8magic_Client_Menus_MagicMenu" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenu" class="text-break">
     Class MagicMenu
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenu.razor.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenu.razor.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Client.html">Client</a>.<a class="xref" href="ToSic.Cre8magic.Client.Menus.html">Menus</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>Base class for any menu list</p>
@@ -142,6 +142,9 @@
     <dd>
     <div>
       <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_Settings">MagicMenuBase.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_PageFactory">MagicMenuBase.PageFactory</a>
     </div>
     <div>
       <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_Classes_System_String_">MagicMenuBase.Classes(string)</a>
@@ -332,7 +335,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenu_Menu" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenu.Menu">
   Menu
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenu.razor.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenu.razor.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -341,7 +344,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Parameter]
 [EditorRequired]
-public MagicMenuPage Menu { get; set; }</code></pre>
+public IMagicPageList Menu { get; set; }</code></pre>
   </div>
 
 
@@ -350,49 +353,9 @@ public MagicMenuPage Menu { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuPage.html">MagicMenuPage</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Client.Pages.IMagicPageList.html">IMagicPageList</a></dt>
     <dd></dd>
   </dl>
-
-
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenu_GetUrl_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenu.GetUrl*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenu_GetUrl_ToSic_Cre8magic_Client_Menus_MagicMenuPage_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenu.GetUrl(ToSic.Cre8magic.Client.Menus.MagicMenuPage)">
-  GetUrl(MagicMenuPage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenu.razor.cs/#L14"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string GetUrl(MagicMenuPage page)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>page</code> <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuPage.html">MagicMenuPage</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
 
 
 
@@ -405,7 +368,7 @@ public MagicMenuPage Menu { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenu.razor.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenu.razor.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

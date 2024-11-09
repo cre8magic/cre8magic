@@ -18,14 +18,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicDynamicComponent
-    path: ../ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: public class MagicDynamicComponent
@@ -53,14 +53,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
-    startLine: 4
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
+    startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: public MagicDynamicComponent(string group, Type type, Dictionary<string, object>? parameters)
@@ -89,14 +89,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Group
-    path: ../ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
-    startLine: 11
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
+    startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: public string Group { get; set; }
@@ -118,14 +118,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Type
-    path: ../ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
-    startLine: 13
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
+    startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: public Type Type { get; set; }
@@ -147,14 +147,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parameters
-    path: ../ToSic.Cre8magic.Client/Controls/MagicDynamicComponent.cs
-    startLine: 15
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicDynamicComponent.cs
+    startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: public Dictionary<string, object>? Parameters { get; set; }

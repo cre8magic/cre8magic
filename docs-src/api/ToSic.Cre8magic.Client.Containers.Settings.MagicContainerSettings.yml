@@ -15,14 +15,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/Settings/MagicContainerSettings.cs
+      path: ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicContainerSettings
-    path: ../ToSic.Cre8magic.Client/Containers/Settings/MagicContainerSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers.Settings
   syntax:
     content: 'public class MagicContainerSettings : SettingsWithInherit'
@@ -52,14 +52,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/Settings/MagicContainerSettings.cs
+      path: ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Custom
-    path: ../ToSic.Cre8magic.Client/Containers/Settings/MagicContainerSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers.Settings
   syntax:
     content: public NamedSettings<DesignSetting> Custom { get; set; }

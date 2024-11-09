@@ -18,14 +18,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicSettingsJsonService
-    path: ../ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
+    path: ../ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
     startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: 'public class MagicSettingsJsonService : IHasSettingsExceptions'
@@ -42,35 +42,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
-  commentId: P:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
-  id: Logger
-  parent: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService
-  langs:
-  - csharp
-  - vb
-  name: Logger
-  nameWithType: MagicSettingsJsonService.Logger
-  fullName: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Logger
-    path: ../ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
-    startLine: 8
-  assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Client.Services
-  syntax:
-    content: public ILogger<MagicSettingsJsonService> Logger { get; }
-    parameters: []
-    return:
-      type: Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Client.Services.MagicSettingsJsonService}
-    content.vb: Public ReadOnly Property Logger As ILogger(Of MagicSettingsJsonService)
-  overload: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger*
 - uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.#ctor(Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Client.Services.MagicSettingsJsonService})
   commentId: M:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.#ctor(Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Client.Services.MagicSettingsJsonService})
   id: '#ctor(Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Client.Services.MagicSettingsJsonService})'
@@ -84,14 +55,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
-    startLine: 10
+    path: ../ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
+    startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger)
@@ -103,6 +74,35 @@ items:
   nameWithType.vb: MagicSettingsJsonService.New(ILogger(Of MagicSettingsJsonService))
   fullName.vb: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.New(Microsoft.Extensions.Logging.ILogger(Of ToSic.Cre8magic.Client.Services.MagicSettingsJsonService))
   name.vb: New(ILogger(Of MagicSettingsJsonService))
+- uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
+  commentId: P:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
+  id: Logger
+  parent: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService
+  langs:
+  - csharp
+  - vb
+  name: Logger
+  nameWithType: MagicSettingsJsonService.Logger
+  fullName: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Logger
+    path: ../ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
+    startLine: 8
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Services
+  syntax:
+    content: public ILogger<MagicSettingsJsonService> Logger { get; }
+    parameters: []
+    return:
+      type: Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Client.Services.MagicSettingsJsonService}
+    content.vb: Public ReadOnly Property Logger As ILogger(Of MagicSettingsJsonService)
+  overload: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger*
 - uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.LoadJson(ToSic.Cre8magic.Client.Settings.MagicPackageSettings)
   commentId: M:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.LoadJson(ToSic.Cre8magic.Client.Settings.MagicPackageSettings)
   id: LoadJson(ToSic.Cre8magic.Client.Settings.MagicPackageSettings)
@@ -116,14 +116,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LoadJson
-    path: ../ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
-    startLine: 15
+    path: ../ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
+    startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public MagicSettingsCatalog LoadJson(MagicPackageSettings themeConfig)
@@ -147,14 +147,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Exceptions
-    path: ../ToSic.Cre8magic.Client/Services/MagicSettingsJsonService.cs
-    startLine: 46
+    path: ../ToSic.Cre8Magic.Client/Services/MagicSettingsJsonService.cs
+    startLine: 41
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   example: []
   syntax:
@@ -487,12 +487,15 @@ references:
   - uid: ToSic.Cre8magic.Client.Settings
     name: Settings
     href: ToSic.Cre8magic.Client.Settings.html
-- uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger*
-  commentId: Overload:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
-  href: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.html#ToSic_Cre8magic_Client_Services_MagicSettingsJsonService_Logger
-  name: Logger
-  nameWithType: MagicSettingsJsonService.Logger
-  fullName: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
+- uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.#ctor*
+  commentId: Overload:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.#ctor
+  href: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.html#ToSic_Cre8magic_Client_Services_MagicSettingsJsonService__ctor_Microsoft_Extensions_Logging_ILogger_ToSic_Cre8magic_Client_Services_MagicSettingsJsonService__
+  name: MagicSettingsJsonService
+  nameWithType: MagicSettingsJsonService.MagicSettingsJsonService
+  fullName: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.MagicSettingsJsonService
+  nameWithType.vb: MagicSettingsJsonService.New
+  fullName.vb: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.New
+  name.vb: New
 - uid: Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Client.Services.MagicSettingsJsonService}
   commentId: T:Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Client.Services.MagicSettingsJsonService}
   parent: Microsoft.Extensions.Logging
@@ -591,15 +594,12 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
-- uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.#ctor
-  href: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.html#ToSic_Cre8magic_Client_Services_MagicSettingsJsonService__ctor_Microsoft_Extensions_Logging_ILogger_ToSic_Cre8magic_Client_Services_MagicSettingsJsonService__
-  name: MagicSettingsJsonService
-  nameWithType: MagicSettingsJsonService.MagicSettingsJsonService
-  fullName: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.MagicSettingsJsonService
-  nameWithType.vb: MagicSettingsJsonService.New
-  fullName.vb: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.New
-  name.vb: New
+- uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger*
+  commentId: Overload:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
+  href: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.html#ToSic_Cre8magic_Client_Services_MagicSettingsJsonService_Logger
+  name: Logger
+  nameWithType: MagicSettingsJsonService.Logger
+  fullName: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.Logger
 - uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.LoadJson*
   commentId: Overload:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.LoadJson
   href: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.html#ToSic_Cre8magic_Client_Services_MagicSettingsJsonService_LoadJson_ToSic_Cre8magic_Client_Settings_MagicPackageSettings_

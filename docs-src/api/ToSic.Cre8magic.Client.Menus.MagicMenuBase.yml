@@ -7,6 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.Client.Menus.MagicMenuBase.Classes(System.String)
   - ToSic.Cre8magic.Client.Menus.MagicMenuBase.Id(System.String)
+  - ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
   - ToSic.Cre8magic.Client.Menus.MagicMenuBase.Settings
   - ToSic.Cre8magic.Client.Menus.MagicMenuBase.Value(System.String)
   langs:
@@ -18,14 +19,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicMenuBase
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
-    startLine: 5
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
+    startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: 'public abstract class MagicMenuBase : MenuBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner'
@@ -116,14 +117,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
-    startLine: 7
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
+    startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   example: []
   syntax:
@@ -146,6 +147,35 @@ items:
   - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
     ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
     arguments: []
+- uid: ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
+  commentId: P:ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
+  id: PageFactory
+  parent: ToSic.Cre8magic.Client.Menus.MagicMenuBase
+  langs:
+  - csharp
+  - vb
+  name: PageFactory
+  nameWithType: MagicMenuBase.PageFactory
+  fullName: ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PageFactory
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Menus
+  syntax:
+    content: protected MagicPageFactory PageFactory { get; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+    content.vb: Protected ReadOnly Property PageFactory As MagicPageFactory
+  overload: ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory*
 - uid: ToSic.Cre8magic.Client.Menus.MagicMenuBase.Classes(System.String)
   commentId: M:ToSic.Cre8magic.Client.Menus.MagicMenuBase.Classes(System.String)
   id: Classes(System.String)
@@ -159,14 +189,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
-    startLine: 11
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
+    startLine: 15
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   example: []
   syntax:
@@ -196,14 +226,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
-    startLine: 12
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
+    startLine: 16
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   example: []
   syntax:
@@ -233,14 +263,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBase.razor.cs
-    startLine: 14
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBase.razor.cs
+    startLine: 18
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   example: []
   syntax:
@@ -2499,6 +2529,65 @@ references:
   name: MagicSettings
   nameWithType: MagicSettings
   fullName: ToSic.Cre8magic.Client.Settings.MagicSettings
+- uid: ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory*
+  commentId: Overload:ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
+  href: ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_PageFactory
+  name: PageFactory
+  nameWithType: MagicMenuBase.PageFactory
+  fullName: ToSic.Cre8magic.Client.Menus.MagicMenuBase.PageFactory
+- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+  commentId: T:ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+  parent: ToSic.Cre8magic.Client.Pages.Internal
+  href: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.html
+  name: MagicPageFactory
+  nameWithType: MagicPageFactory
+  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+- uid: ToSic.Cre8magic.Client.Pages.Internal
+  commentId: N:ToSic.Cre8magic.Client.Pages.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Pages.Internal
+  nameWithType: ToSic.Cre8magic.Client.Pages.Internal
+  fullName: ToSic.Cre8magic.Client.Pages.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Client.Pages.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Client.Pages.Internal.html
 - uid: ToSic.Cre8magic.Client.Menus.MagicMenuBase.Classes*
   commentId: Overload:ToSic.Cre8magic.Client.Menus.MagicMenuBase.Classes
   href: ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_Classes_System_String_

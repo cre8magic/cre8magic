@@ -18,14 +18,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicLanguagesSettings
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   syntax:
     content: 'public class MagicLanguagesSettings : SettingsWithInherit'
@@ -55,14 +55,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
     startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   summary: >-
     Dummy constructor so better find cases where it's created
@@ -89,14 +89,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: HideOthers
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
     startLine: 14
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   summary: >-
     If true, will only show the languages which are explicitly configured.
@@ -123,14 +123,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
     startLine: 17
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   summary: Debug settings for anything that can configure show/hide of debug
   example: []
@@ -154,14 +154,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Languages
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguagesSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguagesSettings.cs
     startLine: 22
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   summary: List of languages
   example: []

@@ -19,14 +19,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicLanguage
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   syntax:
     content: public class MagicLanguage
@@ -54,14 +54,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
     startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   summary: Empty constructor for deserialization
   example: []
@@ -85,14 +85,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Culture
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
     startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   syntax:
     content: public string? Culture { get; set; }
@@ -114,14 +114,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Label
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
     startLine: 17
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   summary: >-
     Label to show for this culture.
@@ -148,14 +148,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Description
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
     startLine: 23
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   summary: >-
     Description to show for this language.
@@ -182,14 +182,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+      path: ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsActive
-    path: ../ToSic.Cre8magic.Client/Languages/Settings/MagicLanguage.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/Settings/MagicLanguage.cs
     startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages.Settings
   syntax:
     content: public bool IsActive { get; }

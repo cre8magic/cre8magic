@@ -20,14 +20,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+      path: ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LogCall
-    path: ../ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   syntax:
     content: 'public class LogCall<T> : LogCallBase'
@@ -61,14 +61,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+      path: ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Return
-    path: ../ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
     startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   syntax:
     content: public T Return(T result)
@@ -94,14 +94,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+      path: ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Return
-    path: ../ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
     startLine: 12
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   syntax:
     content: public T Return(T result, string message)
@@ -130,14 +130,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+      path: ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ReturnAndKeepData
-    path: ../ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
     startLine: 17
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   syntax:
     content: public T ReturnAndKeepData(T result, string message)
@@ -166,14 +166,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+      path: ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ReturnAndLog
-    path: ../ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
     startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   syntax:
     content: public T ReturnAndLog(T result)
@@ -199,14 +199,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+      path: ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ReturnNull
-    path: ../ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
     startLine: 27
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   syntax:
     content: public T ReturnNull()
@@ -229,14 +229,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+      path: ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ReturnNull
-    path: ../ToSic.Cre8magic.Client/Logging/LogCall_T.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/LogCall_T.cs
     startLine: 29
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   syntax:
     content: public T ReturnNull(string message)

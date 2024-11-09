@@ -20,14 +20,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+      path: ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DesignSetting
-    path: ../ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
     startLine: 7
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: >-
     Anything that can define what classes it should have.
@@ -64,14 +64,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+      path: ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
-    path: ../ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
     startLine: 12
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Classes which are applied to all the tags of this type
   example: []
@@ -95,14 +95,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+      path: ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
-    path: ../ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
     startLine: 17
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Special key to get a value - for non-css configurations
   example: []
@@ -126,14 +126,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+      path: ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
-    path: ../ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
     startLine: 20
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public string? Id { get; set; }
@@ -155,14 +155,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+      path: ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsActive
-    path: ../ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
     startLine: 26
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: >-
     Classes to apply if this thing is active.
@@ -189,14 +189,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+      path: ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsPublished
-    path: ../ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
     startLine: 33
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: If something is published or not, usually just for Containers
   example: []
@@ -220,14 +220,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+      path: ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsAdmin
-    path: ../ToSic.Cre8magic.Client/Settings/DesignSetting.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/DesignSetting.cs
     startLine: 38
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: If a module is admin or not, usually just for containers
   example: []

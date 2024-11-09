@@ -16,14 +16,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicPageEditService.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicPageEditService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicPageEditService
-    path: ../ToSic.Cre8magic.Client/Services/MagicPageEditService.cs
+    path: ../ToSic.Cre8Magic.Client/Services/MagicPageEditService.cs
     startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   summary: >-
     Helper to remove the logic/code from the razor file.
@@ -58,15 +58,22 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicPageEditService.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicPageEditService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Services/MagicPageEditService.cs
-    startLine: 13
+    path: ../ToSic.Cre8Magic.Client/Services/MagicPageEditService.cs
+    startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
+  summary: >-
+    Helper to remove the logic/code from the razor file.
+
+    It's just meant to support the AdminButtons,
+
+    without placing the logic code inside that.
+  example: []
   syntax:
     content: public MagicPageEditService(IPageService pageService, NavigationManager navigationManager)
     parameters:
@@ -92,14 +99,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicPageEditService.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicPageEditService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ToggleEditMode
-    path: ../ToSic.Cre8magic.Client/Services/MagicPageEditService.cs
-    startLine: 24
+    path: ../ToSic.Cre8Magic.Client/Services/MagicPageEditService.cs
+    startLine: 14
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public Task ToggleEditMode(PageState pageState)

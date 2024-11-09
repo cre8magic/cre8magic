@@ -34,8 +34,6 @@ items:
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   name: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   items:
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
-    name: IBreadcrumbDesigner
   - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesign
     name: MagicBreadcrumbDesign
   - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner
@@ -110,24 +108,35 @@ items:
     name: MagicMenuRoot
   - uid: ToSic.Cre8magic.Client.Menus.MagicMenuTree
     name: MagicMenuTree
+  - uid: ToSic.Cre8magic.Client.Menus.NodeRuleHelper
+    name: NodeRuleHelper
 - uid: ToSic.Cre8magic.Client.Menus.Settings
   name: ToSic.Cre8magic.Client.Menus.Settings
   items:
-  - uid: ToSic.Cre8magic.Client.Menus.Settings.IMenuDesigner
-    name: IMenuDesigner
   - uid: ToSic.Cre8magic.Client.Menus.Settings.MagicMenuDesign
     name: MagicMenuDesign
+  - uid: ToSic.Cre8magic.Client.Menus.Settings.MagicMenuDesigner
+    name: MagicMenuDesigner
   - uid: ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings
     name: MagicMenuSettings
-  - uid: ToSic.Cre8magic.Client.Menus.Settings.MenuDesigner
-    name: MenuDesigner
-- uid: ToSic.Cre8magic.Client.Models
-  name: ToSic.Cre8magic.Client.Models
+- uid: ToSic.Cre8magic.Client.Pages
+  name: ToSic.Cre8magic.Client.Pages
   items:
-  - uid: ToSic.Cre8magic.Client.Models.MagicPage
+  - uid: ToSic.Cre8magic.Client.Pages.IMagicPageList
+    name: IMagicPageList
+  - uid: ToSic.Cre8magic.Client.Pages.IPageDesigner
+    name: IPageDesigner
+  - uid: ToSic.Cre8magic.Client.Pages.MagicPageWithDesign
+    name: MagicPageWithDesign
+- uid: ToSic.Cre8magic.Client.Pages.Internal
+  name: ToSic.Cre8magic.Client.Pages.Internal
+  items:
+  - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPage
     name: MagicPage
-  - uid: ToSic.Cre8magic.Client.Models.MagicPageExtensions
-    name: MagicPageExtensions
+  - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase
+    name: MagicPageBase
+  - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+    name: MagicPageFactory
 - uid: ToSic.Cre8magic.Client.Services
   name: ToSic.Cre8magic.Client.Services
   items:
@@ -209,4 +218,11 @@ items:
   items:
   - uid: ToSic.Cre8magic.Client.Tokens.ThemeTokens
     name: ThemeTokens
+- uid: ToSic.Cre8magic.Pages
+  name: ToSic.Cre8magic.Pages
+  items:
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+  - uid: ToSic.Cre8magic.Pages.IMagicPageService
+    name: IMagicPageService
 memberLayout: SamePage

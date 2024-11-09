@@ -16,14 +16,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Analytics/MagicAnalyticsService.cs
+      path: ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicAnalyticsService
-    path: ../ToSic.Cre8magic.Client/Analytics/MagicAnalyticsService.cs
+    path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsService.cs
     startLine: 5
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Analytics
   syntax:
     content: public class MagicAnalyticsService
@@ -51,14 +51,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Analytics/MagicAnalyticsService.cs
+      path: ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Analytics/MagicAnalyticsService.cs
-    startLine: 8
+    path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsService.cs
+    startLine: 5
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Analytics
   syntax:
     content: public MagicAnalyticsService(IJSRuntime jsRuntime)
@@ -83,14 +83,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Analytics/MagicAnalyticsService.cs
+      path: ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: JsRuntime
-    path: ../ToSic.Cre8magic.Client/Analytics/MagicAnalyticsService.cs
-    startLine: 12
+    path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsService.cs
+    startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Analytics
   syntax:
     content: public IJSRuntime JsRuntime { get; }

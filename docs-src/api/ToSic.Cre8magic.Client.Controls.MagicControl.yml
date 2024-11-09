@@ -9,6 +9,7 @@ items:
   - ToSic.Cre8magic.Client.Controls.MagicControl.ClassesOrDefault(System.String,System.String)
   - ToSic.Cre8magic.Client.Controls.MagicControl.Designer
   - ToSic.Cre8magic.Client.Controls.MagicControl.Id(System.String)
+  - ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
   - ToSic.Cre8magic.Client.Controls.MagicControl.Settings
   - ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   - ToSic.Cre8magic.Client.Controls.MagicControl.UserIsEditor
@@ -23,14 +24,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicControl
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 8
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   summary: Oqtane Blazor Control with Settings
   example: []
@@ -119,14 +120,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 10
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   example: []
   syntax:
@@ -149,6 +150,35 @@ items:
   - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
     ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
     arguments: []
+- uid: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+  commentId: P:ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+  id: PageFactory
+  parent: ToSic.Cre8magic.Client.Controls.MagicControl
+  langs:
+  - csharp
+  - vb
+  name: PageFactory
+  nameWithType: MagicControl.PageFactory
+  fullName: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PageFactory
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 13
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Controls
+  syntax:
+    content: protected MagicPageFactory PageFactory { get; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+    content.vb: Protected ReadOnly Property PageFactory As MagicPageFactory
+  overload: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory*
 - uid: ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   commentId: P:ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   id: UserIsAdmin
@@ -162,14 +192,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UserIsAdmin
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 12
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 17
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: protected bool UserIsAdmin { get; }
@@ -191,14 +221,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UserIsEditor
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 14
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 19
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: protected bool UserIsEditor { get; }
@@ -220,14 +250,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UserIsLoggedIn
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 16
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 21
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: protected bool UserIsLoggedIn { get; }
@@ -249,14 +279,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Designer
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 18
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 23
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: protected virtual IMagicDesigner Designer { get; }
@@ -278,14 +308,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 21
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 26
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   example: []
   syntax:
@@ -315,14 +345,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ClassesOrDefault
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 23
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 28
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: public string? ClassesOrDefault(string target, string defaultValue)
@@ -351,14 +381,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 25
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 30
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   example: []
   syntax:
@@ -388,14 +418,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
-    path: ../ToSic.Cre8magic.Client/Controls/MagicControl.razor.cs
-    startLine: 27
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicControl.razor.cs
+    startLine: 32
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   example: []
   syntax:
@@ -2510,6 +2540,65 @@ references:
   name: MagicSettings
   nameWithType: MagicSettings
   fullName: ToSic.Cre8magic.Client.Settings.MagicSettings
+- uid: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory*
+  commentId: Overload:ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+  href: ToSic.Cre8magic.Client.Controls.MagicControl.html#ToSic_Cre8magic_Client_Controls_MagicControl_PageFactory
+  name: PageFactory
+  nameWithType: MagicControl.PageFactory
+  fullName: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+- uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+  commentId: T:ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+  parent: ToSic.Cre8magic.Client.Pages.Internal
+  href: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory.html
+  name: MagicPageFactory
+  nameWithType: MagicPageFactory
+  fullName: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
+- uid: ToSic.Cre8magic.Client.Pages.Internal
+  commentId: N:ToSic.Cre8magic.Client.Pages.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Pages.Internal
+  nameWithType: ToSic.Cre8magic.Client.Pages.Internal
+  fullName: ToSic.Cre8magic.Client.Pages.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Client.Pages.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Client.Pages.Internal.html
 - uid: ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin*
   commentId: Overload:ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   href: ToSic.Cre8magic.Client.Controls.MagicControl.html#ToSic_Cre8magic_Client_Controls_MagicControl_UserIsAdmin

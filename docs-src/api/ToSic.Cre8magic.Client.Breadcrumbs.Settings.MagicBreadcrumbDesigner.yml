@@ -5,9 +5,8 @@ items:
   id: MagicBreadcrumbDesigner
   parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   children:
-  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.#ctor(ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb,ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings)
-  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
+  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
   langs:
   - csharp
   - vb
@@ -17,24 +16,24 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicBreadcrumbDesigner
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
-    startLine: 7
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
+    startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: Special helper to provide Css classes to menus
   example: []
   syntax:
-    content: 'public class MagicBreadcrumbDesigner : IBreadcrumbDesigner'
-    content.vb: Public Class MagicBreadcrumbDesigner Implements IBreadcrumbDesigner
+    content: 'public class MagicBreadcrumbDesigner : IPageDesigner'
+    content.vb: Public Class MagicBreadcrumbDesigner Implements IPageDesigner
   inheritance:
   - System.Object
   implements:
-  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
+  - ToSic.Cre8magic.Client.Pages.IPageDesigner
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -43,118 +42,84 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.#ctor(ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb,ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings)
-  commentId: M:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.#ctor(ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb,ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings)
-  id: '#ctor(ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb,ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings)'
+- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  id: Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
   parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner
   langs:
   - csharp
   - vb
-  name: MagicBreadcrumbDesigner(MagicBreadcrumb, MagicBreadcrumbSettings)
-  nameWithType: MagicBreadcrumbDesigner.MagicBreadcrumbDesigner(MagicBreadcrumb, MagicBreadcrumbSettings)
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.MagicBreadcrumbDesigner(ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb, ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings)
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
-    startLine: 9
-  assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
-  syntax:
-    content: public MagicBreadcrumbDesigner(MagicBreadcrumb breadcrumb, MagicBreadcrumbSettings breadcrumbConfig)
-    parameters:
-    - id: breadcrumb
-      type: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb
-    - id: breadcrumbConfig
-      type: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings
-    content.vb: Public Sub New(breadcrumb As MagicBreadcrumb, breadcrumbConfig As MagicBreadcrumbSettings)
-  overload: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.#ctor*
-  nameWithType.vb: MagicBreadcrumbDesigner.New(MagicBreadcrumb, MagicBreadcrumbSettings)
-  fullName.vb: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.New(ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb, ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings)
-  name.vb: New(MagicBreadcrumb, MagicBreadcrumbSettings)
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  commentId: M:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  id: Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner
-  langs:
-  - csharp
-  - vb
-  name: Classes(string, MagicBreadcrumbItem)
-  nameWithType: MagicBreadcrumbDesigner.Classes(string, MagicBreadcrumbItem)
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(string, ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
+  name: Classes(string, IMagicPage)
+  nameWithType: MagicBreadcrumbDesigner.Classes(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(string, ToSic.Cre8magic.Pages.IMagicPage)
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
-    startLine: 19
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
+    startLine: 24
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   example: []
   syntax:
-    content: public string Classes(string tag, MagicBreadcrumbItem item)
+    content: public string Classes(string tag, IMagicPage item)
     parameters:
     - id: tag
       type: System.String
     - id: item
-      type: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
+      type: ToSic.Cre8magic.Pages.IMagicPage
     return:
       type: System.String
-    content.vb: Public Function Classes(tag As String, item As MagicBreadcrumbItem) As String
+    content.vb: Public Function Classes(tag As String, item As IMagicPage) As String
   overload: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes*
   implements:
-  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  nameWithType.vb: MagicBreadcrumbDesigner.Classes(String, MagicBreadcrumbItem)
-  fullName.vb: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(String, ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  name.vb: Classes(String, MagicBreadcrumbItem)
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  commentId: M:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  id: Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
+  - ToSic.Cre8magic.Client.Pages.IPageDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  nameWithType.vb: MagicBreadcrumbDesigner.Classes(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Classes(String, IMagicPage)
+- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  id: Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
   parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner
   langs:
   - csharp
   - vb
-  name: Value(string, MagicBreadcrumbItem)
-  nameWithType: MagicBreadcrumbDesigner.Value(string, MagicBreadcrumbItem)
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(string, ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
+  name: Value(string, IMagicPage)
+  nameWithType: MagicBreadcrumbDesigner.Value(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(string, ToSic.Cre8magic.Pages.IMagicPage)
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
-    startLine: 27
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs
+    startLine: 32
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   example: []
   syntax:
-    content: public string Value(string key, MagicBreadcrumbItem item)
+    content: public string Value(string key, IMagicPage item)
     parameters:
     - id: key
       type: System.String
     - id: item
-      type: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
+      type: ToSic.Cre8magic.Pages.IMagicPage
     return:
       type: System.String
-    content.vb: Public Function Value(key As String, item As MagicBreadcrumbItem) As String
+    content.vb: Public Function Value(key As String, item As IMagicPage) As String
   overload: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value*
   implements:
-  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  nameWithType.vb: MagicBreadcrumbDesigner.Value(String, MagicBreadcrumbItem)
-  fullName.vb: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(String, ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  name.vb: Value(String, MagicBreadcrumbItem)
+  - ToSic.Cre8magic.Client.Pages.IPageDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  nameWithType.vb: MagicBreadcrumbDesigner.Value(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Value(String, IMagicPage)
 references:
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   commentId: N:ToSic.Cre8magic.Client.Breadcrumbs.Settings
@@ -213,13 +178,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
-  commentId: T:ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
-  parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings
-  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html
-  name: IBreadcrumbDesigner
-  nameWithType: IBreadcrumbDesigner
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
+- uid: ToSic.Cre8magic.Client.Pages.IPageDesigner
+  commentId: T:ToSic.Cre8magic.Client.Pages.IPageDesigner
+  parent: ToSic.Cre8magic.Client.Pages
+  href: ToSic.Cre8magic.Client.Pages.IPageDesigner.html
+  name: IPageDesigner
+  nameWithType: IPageDesigner
+  fullName: ToSic.Cre8magic.Client.Pages.IPageDesigner
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -446,35 +411,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.#ctor
-  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner__ctor_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbSettings_
-  name: MagicBreadcrumbDesigner
-  nameWithType: MagicBreadcrumbDesigner.MagicBreadcrumbDesigner
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.MagicBreadcrumbDesigner
-  nameWithType.vb: MagicBreadcrumbDesigner.New
-  fullName.vb: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.New
-  name.vb: New
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb
-  commentId: T:ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb
-  parent: ToSic.Cre8magic.Client.Breadcrumbs
-  href: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.html
-  name: MagicBreadcrumb
-  nameWithType: MagicBreadcrumb
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings
-  commentId: T:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings
-  parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings
-  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings.html
-  name: MagicBreadcrumbSettings
-  nameWithType: MagicBreadcrumbSettings
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings
-- uid: ToSic.Cre8magic.Client.Breadcrumbs
-  commentId: N:ToSic.Cre8magic.Client.Breadcrumbs
+- uid: ToSic.Cre8magic.Client.Pages
+  commentId: N:ToSic.Cre8magic.Client.Pages
   href: ToSic.html
-  name: ToSic.Cre8magic.Client.Breadcrumbs
-  nameWithType: ToSic.Cre8magic.Client.Breadcrumbs
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs
+  name: ToSic.Cre8magic.Client.Pages
+  nameWithType: ToSic.Cre8magic.Client.Pages
+  fullName: ToSic.Cre8magic.Client.Pages
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -488,9 +430,9 @@ references:
     name: Client
     href: ToSic.Cre8magic.Client.html
   - name: .
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs
-    name: Breadcrumbs
-    href: ToSic.Cre8magic.Client.Breadcrumbs.html
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -504,30 +446,30 @@ references:
     name: Client
     href: ToSic.Cre8magic.Client.html
   - name: .
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs
-    name: Breadcrumbs
-    href: ToSic.Cre8magic.Client.Breadcrumbs.html
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes*
   commentId: Overload:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes
-  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Classes_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_
+  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
   name: Classes
   nameWithType: MagicBreadcrumbDesigner.Classes
   fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  commentId: M:ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
+- uid: ToSic.Cre8magic.Client.Pages.IPageDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Client.Pages.IPageDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Client.Pages.IPageDesigner
   isExternal: true
-  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_IBreadcrumbDesigner_Classes_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_
-  name: Classes(string, MagicBreadcrumbItem)
-  nameWithType: IBreadcrumbDesigner.Classes(string, MagicBreadcrumbItem)
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Classes(string, ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  nameWithType.vb: IBreadcrumbDesigner.Classes(String, MagicBreadcrumbItem)
-  fullName.vb: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Classes(String, ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  name.vb: Classes(String, MagicBreadcrumbItem)
+  href: ToSic.Cre8magic.Client.Pages.IPageDesigner.html#ToSic_Cre8magic_Client_Pages_IPageDesigner_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Classes(string, IMagicPage)
+  nameWithType: IPageDesigner.Classes(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Client.Pages.IPageDesigner.Classes(string, ToSic.Cre8magic.Pages.IMagicPage)
+  nameWithType.vb: IPageDesigner.Classes(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Client.Pages.IPageDesigner.Classes(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Classes(String, IMagicPage)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
+  - uid: ToSic.Cre8magic.Client.Pages.IPageDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
     name: Classes
-    href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_IBreadcrumbDesigner_Classes_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_
+    href: ToSic.Cre8magic.Client.Pages.IPageDesigner.html#ToSic_Cre8magic_Client_Pages_IPageDesigner_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
   - name: (
   - uid: System.String
     name: string
@@ -535,14 +477,14 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
-    name: MagicBreadcrumbItem
-    href: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
+  - uid: ToSic.Cre8magic.Client.Pages.IPageDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
     name: Classes
-    href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_IBreadcrumbDesigner_Classes_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_
+    href: ToSic.Cre8magic.Client.Pages.IPageDesigner.html#ToSic_Cre8magic_Client_Pages_IPageDesigner_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
   - name: (
   - uid: System.String
     name: String
@@ -550,9 +492,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
-    name: MagicBreadcrumbItem
-    href: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: )
 - uid: System.String
   commentId: T:System.String
@@ -565,34 +507,64 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
-  commentId: T:ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
-  parent: ToSic.Cre8magic.Client.Breadcrumbs
-  href: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html
-  name: MagicBreadcrumbItem
-  nameWithType: MagicBreadcrumbItem
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value*
   commentId: Overload:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value
-  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Value_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_
+  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
   name: Value
   nameWithType: MagicBreadcrumbDesigner.Value
   fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  commentId: M:ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
+- uid: ToSic.Cre8magic.Client.Pages.IPageDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Client.Pages.IPageDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Client.Pages.IPageDesigner
   isExternal: true
-  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_IBreadcrumbDesigner_Value_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_
-  name: Value(string, MagicBreadcrumbItem)
-  nameWithType: IBreadcrumbDesigner.Value(string, MagicBreadcrumbItem)
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Value(string, ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  nameWithType.vb: IBreadcrumbDesigner.Value(String, MagicBreadcrumbItem)
-  fullName.vb: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Value(String, ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
-  name.vb: Value(String, MagicBreadcrumbItem)
+  href: ToSic.Cre8magic.Client.Pages.IPageDesigner.html#ToSic_Cre8magic_Client_Pages_IPageDesigner_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Value(string, IMagicPage)
+  nameWithType: IPageDesigner.Value(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Client.Pages.IPageDesigner.Value(string, ToSic.Cre8magic.Pages.IMagicPage)
+  nameWithType.vb: IPageDesigner.Value(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Client.Pages.IPageDesigner.Value(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Value(String, IMagicPage)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
+  - uid: ToSic.Cre8magic.Client.Pages.IPageDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
     name: Value
-    href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_IBreadcrumbDesigner_Value_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_
+    href: ToSic.Cre8magic.Client.Pages.IPageDesigner.html#ToSic_Cre8magic_Client_Pages_IPageDesigner_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
   - name: (
   - uid: System.String
     name: string
@@ -600,14 +572,14 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
-    name: MagicBreadcrumbItem
-    href: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)
+  - uid: ToSic.Cre8magic.Client.Pages.IPageDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
     name: Value
-    href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html#ToSic_Cre8magic_Client_Breadcrumbs_Settings_IBreadcrumbDesigner_Value_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_
+    href: ToSic.Cre8magic.Client.Pages.IPageDesigner.html#ToSic_Cre8magic_Client_Pages_IPageDesigner_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
   - name: (
   - uid: System.String
     name: String
@@ -615,7 +587,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
-    name: MagicBreadcrumbItem
-    href: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: )

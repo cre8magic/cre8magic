@@ -18,14 +18,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
+      path: ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: JsonConverterBase
-    path: ../ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
     startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Json
   syntax:
     content: 'public abstract class JsonConverterBase<T> : JsonConverter<T>'
@@ -58,37 +58,6 @@ items:
   nameWithType.vb: JsonConverterBase(Of T)
   fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T)
   name.vb: JsonConverterBase(Of T)
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
-  commentId: P:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
-  id: Logger
-  parent: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
-  langs:
-  - csharp
-  - vb
-  name: Logger
-  nameWithType: JsonConverterBase<T>.Logger
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.Logger
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Logger
-    path: ../ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
-    startLine: 10
-  assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Client.Settings.Json
-  syntax:
-    content: public ILogger Logger { get; }
-    parameters: []
-    return:
-      type: Microsoft.Extensions.Logging.ILogger
-    content.vb: Public ReadOnly Property Logger As ILogger
-  overload: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger*
-  nameWithType.vb: JsonConverterBase(Of T).Logger
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).Logger
 - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.#ctor(Microsoft.Extensions.Logging.ILogger)
   commentId: M:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.#ctor(Microsoft.Extensions.Logging.ILogger)
   id: '#ctor(Microsoft.Extensions.Logging.ILogger)'
@@ -102,14 +71,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
+      path: ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
-    startLine: 12
+    path: ../ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
+    startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Json
   syntax:
     content: protected JsonConverterBase(ILogger logger)
@@ -121,6 +90,37 @@ items:
   nameWithType.vb: JsonConverterBase(Of T).New(ILogger)
   fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).New(Microsoft.Extensions.Logging.ILogger)
   name.vb: New(ILogger)
+- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
+  commentId: P:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
+  id: Logger
+  parent: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
+  langs:
+  - csharp
+  - vb
+  name: Logger
+  nameWithType: JsonConverterBase<T>.Logger
+  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.Logger
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Logger
+    path: ../ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Settings.Json
+  syntax:
+    content: public ILogger Logger { get; }
+    parameters: []
+    return:
+      type: Microsoft.Extensions.Logging.ILogger
+    content.vb: Public ReadOnly Property Logger As ILogger
+  overload: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger*
+  nameWithType.vb: JsonConverterBase(Of T).Logger
+  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).Logger
 - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   commentId: M:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   id: GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
@@ -134,14 +134,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
+      path: ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetOptionsWithoutThisConverter
-    path: ../ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
-    startLine: 27
+    path: ../ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
+    startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Json
   syntax:
     content: protected JsonSerializerOptions GetOptionsWithoutThisConverter(JsonSerializerOptions options)
@@ -167,14 +167,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
+      path: ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ConvertObject
-    path: ../ToSic.Cre8magic.Client/Settings/Json/JsonConverterBase.cs
-    startLine: 43
+    path: ../ToSic.Cre8Magic.Client/Settings/Json/JsonConverterBase.cs
+    startLine: 41
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings.Json
   syntax:
     content: protected T? ConvertObject(JsonObject jsonObject, JsonSerializerOptions options)
@@ -1118,14 +1118,15 @@ references:
   fullName: System.Text.Json.Serialization.JsonConverter<T>.Type
   nameWithType.vb: JsonConverter(Of T).Type
   fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).Type
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger*
-  commentId: Overload:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_Logger
-  name: Logger
-  nameWithType: JsonConverterBase<T>.Logger
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.Logger
-  nameWithType.vb: JsonConverterBase(Of T).Logger
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).Logger
+- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.#ctor*
+  commentId: Overload:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.#ctor
+  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1__ctor_Microsoft_Extensions_Logging_ILogger_
+  name: JsonConverterBase
+  nameWithType: JsonConverterBase<T>.JsonConverterBase
+  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.JsonConverterBase
+  nameWithType.vb: JsonConverterBase(Of T).New
+  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).New
+  name.vb: New
 - uid: Microsoft.Extensions.Logging.ILogger
   commentId: T:Microsoft.Extensions.Logging.ILogger
   parent: Microsoft.Extensions.Logging
@@ -1171,15 +1172,14 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.#ctor
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1__ctor_Microsoft_Extensions_Logging_ILogger_
-  name: JsonConverterBase
-  nameWithType: JsonConverterBase<T>.JsonConverterBase
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.JsonConverterBase
-  nameWithType.vb: JsonConverterBase(Of T).New
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).New
-  name.vb: New
+- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger*
+  commentId: Overload:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
+  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_Logger
+  name: Logger
+  nameWithType: JsonConverterBase<T>.Logger
+  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.Logger
+  nameWithType.vb: JsonConverterBase(Of T).Logger
+  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).Logger
 - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter*
   commentId: Overload:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter
   href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_

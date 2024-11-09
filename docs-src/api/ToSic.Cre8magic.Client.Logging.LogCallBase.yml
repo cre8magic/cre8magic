@@ -14,14 +14,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/LogCallBase.cs
+      path: ToSic.Cre8Magic.Client/Logging/LogCallBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LogCallBase
-    path: ../ToSic.Cre8magic.Client/Logging/LogCallBase.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/LogCallBase.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   syntax:
     content: public class LogCallBase

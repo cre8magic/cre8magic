@@ -21,14 +21,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicThemeSettings
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: 'public class MagicThemeSettings : SettingsWithInherit'
@@ -58,14 +58,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Logo
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
     startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   summary: The logo to show, should be located in the assets subfolder
   example: []
@@ -89,14 +89,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LanguagesMin
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
     startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public int LanguagesMin { get; set; }
@@ -118,14 +118,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parts
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
     startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   summary: The parts of this theme, like breadcrumbs and various menu configs
   example: []
@@ -149,14 +149,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicContextInBody
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
     startLine: 28
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public bool? MagicContextInBody { get; set; }
@@ -178,14 +178,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Design
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
     startLine: 30
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public string? Design { get; set; }
@@ -207,14 +207,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Fallback
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
     startLine: 38
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public static MagicThemeSettings Fallback
@@ -234,14 +234,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemeSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs
     startLine: 52
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   summary: Debug settings for anything that can configure show/hide of debug
   example: []

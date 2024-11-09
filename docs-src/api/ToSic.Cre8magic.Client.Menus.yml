@@ -10,6 +10,7 @@ items:
   - ToSic.Cre8magic.Client.Menus.MagicMenuPage
   - ToSic.Cre8magic.Client.Menus.MagicMenuRoot
   - ToSic.Cre8magic.Client.Menus.MagicMenuTree
+  - ToSic.Cre8magic.Client.Menus.NodeRuleHelper
   langs:
   - csharp
   - vb
@@ -18,7 +19,7 @@ items:
   fullName: ToSic.Cre8magic.Client.Menus
   type: Namespace
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
 references:
 - uid: ToSic.Cre8magic.Client.Menus.MagicMenu
   commentId: T:ToSic.Cre8magic.Client.Menus.MagicMenu
@@ -42,7 +43,6 @@ references:
   fullName: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder
 - uid: ToSic.Cre8magic.Client.Menus.MagicMenuPage
   commentId: T:ToSic.Cre8magic.Client.Menus.MagicMenuPage
-  parent: ToSic.Cre8magic.Client.Menus
   href: ToSic.Cre8magic.Client.Menus.MagicMenuPage.html
   name: MagicMenuPage
   nameWithType: MagicMenuPage
@@ -60,6 +60,12 @@ references:
   name: MagicMenuTree
   nameWithType: MagicMenuTree
   fullName: ToSic.Cre8magic.Client.Menus.MagicMenuTree
+- uid: ToSic.Cre8magic.Client.Menus.NodeRuleHelper
+  commentId: T:ToSic.Cre8magic.Client.Menus.NodeRuleHelper
+  href: ToSic.Cre8magic.Client.Menus.NodeRuleHelper.html
+  name: NodeRuleHelper
+  nameWithType: NodeRuleHelper
+  fullName: ToSic.Cre8magic.Client.Menus.NodeRuleHelper
 - uid: ToSic.Cre8magic.Client.Menus
   commentId: N:ToSic.Cre8magic.Client.Menus
   href: ToSic.html

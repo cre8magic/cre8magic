@@ -16,14 +16,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicServiceWithSettingsBase.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicServiceWithSettingsBase
-    path: ../ToSic.Cre8magic.Client/Services/MagicServiceWithSettingsBase.cs
+    path: ../ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public abstract class MagicServiceWithSettingsBase
@@ -54,14 +54,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicServiceWithSettingsBase.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: InitSettings
-    path: ../ToSic.Cre8magic.Client/Services/MagicServiceWithSettingsBase.cs
+    path: ../ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public void InitSettings(MagicSettings settings)
@@ -83,14 +83,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicServiceWithSettingsBase.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
-    path: ../ToSic.Cre8magic.Client/Services/MagicServiceWithSettingsBase.cs
+    path: ../ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
     startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public MagicSettings? Settings { get; }

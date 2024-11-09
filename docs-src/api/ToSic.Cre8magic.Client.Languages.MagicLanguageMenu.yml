@@ -21,14 +21,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicLanguageMenu
-    path: ../ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages
   syntax:
     content: 'public abstract class MagicLanguageMenu : MagicControl, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner'
@@ -49,6 +49,7 @@ items:
   - ToSic.Cre8magic.Client.Controls.IMagicDesigner
   inheritedMembers:
   - ToSic.Cre8magic.Client.Controls.MagicControl.Settings
+  - ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
   - ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   - ToSic.Cre8magic.Client.Controls.MagicControl.UserIsEditor
   - ToSic.Cre8magic.Client.Controls.MagicControl.UserIsLoggedIn
@@ -120,14 +121,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LanguageService
-    path: ../ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
     startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages
   syntax:
     content: >-
@@ -159,14 +160,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Languages
-    path: ../ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
     startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages
   syntax:
     content: public List<MagicLanguage> Languages { get; }
@@ -188,14 +189,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Designer
-    path: ../ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
     startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages
   example: []
   syntax:
@@ -219,14 +220,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Show
-    path: ../ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
     startLine: 16
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages
   summary: Determines if the languages should be shown. Will be retrieved from the settings
   example: []
@@ -250,14 +251,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnParametersSetAsync
-    path: ../ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
     startLine: 18
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages
   summary: >-
     Method invoked when the component has received parameters from its parent in
@@ -285,14 +286,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SetLanguage
-    path: ../ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
     startLine: 29
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages
   syntax:
     content: public Task SetLanguage(string culture)
@@ -319,14 +320,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
-    path: ../ToSic.Cre8magic.Client/Languages/MagicLanguageMenu.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageMenu.razor.cs
     startLine: 31
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Languages
   syntax:
     content: public string? Classes(MagicLanguage? lang, string tag)
@@ -483,6 +484,13 @@ references:
   name: Settings
   nameWithType: MagicControl.Settings
   fullName: ToSic.Cre8magic.Client.Controls.MagicControl.Settings
+- uid: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+  commentId: P:ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+  parent: ToSic.Cre8magic.Client.Controls.MagicControl
+  href: ToSic.Cre8magic.Client.Controls.MagicControl.html#ToSic_Cre8magic_Client_Controls_MagicControl_PageFactory
+  name: PageFactory
+  nameWithType: MagicControl.PageFactory
+  fullName: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
 - uid: ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   commentId: P:ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   parent: ToSic.Cre8magic.Client.Controls.MagicControl

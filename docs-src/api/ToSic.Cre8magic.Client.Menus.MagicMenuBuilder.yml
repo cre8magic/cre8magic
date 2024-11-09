@@ -6,7 +6,7 @@ items:
   parent: ToSic.Cre8magic.Client.Menus
   children:
   - ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.#ctor(Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Client.Menus.MagicMenuBuilder})
-  - ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings,System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage})
+  - ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings,System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage})
   - ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.Logger
   langs:
   - csharp
@@ -17,14 +17,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBuilder.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBuilder.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicMenuBuilder
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBuilder.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBuilder.cs
     startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   summary: Will create a MenuTree based on the current pages information and configuration
   example: []
@@ -57,14 +57,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBuilder.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBuilder.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBuilder.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBuilder.cs
     startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   summary: Will create a MenuTree based on the current pages information and configuration
   example: []
@@ -91,14 +91,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBuilder.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBuilder.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Logger
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBuilder.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBuilder.cs
     startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
     content: public ILogger Logger { get; }
@@ -107,42 +107,42 @@ items:
       type: Microsoft.Extensions.Logging.ILogger
     content.vb: Public ReadOnly Property Logger As ILogger
   overload: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.Logger*
-- uid: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings,System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage})
-  commentId: M:ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings,System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage})
-  id: GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings,System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage})
+- uid: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings,System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage})
+  commentId: M:ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings,System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage})
+  id: GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings,System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage})
   parent: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder
   langs:
   - csharp
   - vb
-  name: GetTree(MagicMenuSettings, List<MagicPage>)
-  nameWithType: MagicMenuBuilder.GetTree(MagicMenuSettings, List<MagicPage>)
-  fullName: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings, System.Collections.Generic.List<ToSic.Cre8magic.Client.Models.MagicPage>)
+  name: GetTree(MagicMenuSettings, List<IMagicPage>)
+  nameWithType: MagicMenuBuilder.GetTree(MagicMenuSettings, List<IMagicPage>)
+  fullName: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings, System.Collections.Generic.List<ToSic.Cre8magic.Pages.IMagicPage>)
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/MagicMenuBuilder.cs
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuBuilder.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetTree
-    path: ../ToSic.Cre8magic.Client/Menus/MagicMenuBuilder.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuBuilder.cs
     startLine: 15
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus
   syntax:
-    content: public MagicMenuTree GetTree(MagicMenuSettings config, List<MagicPage> menuPages)
+    content: public MagicMenuTree GetTree(MagicMenuSettings config, List<IMagicPage> menuPages)
     parameters:
     - id: config
       type: ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings
     - id: menuPages
-      type: System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage}
+      type: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
     return:
       type: ToSic.Cre8magic.Client.Menus.MagicMenuTree
-    content.vb: Public Function GetTree(config As MagicMenuSettings, menuPages As List(Of MagicPage)) As MagicMenuTree
+    content.vb: Public Function GetTree(config As MagicMenuSettings, menuPages As List(Of IMagicPage)) As MagicMenuTree
   overload: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree*
-  nameWithType.vb: MagicMenuBuilder.GetTree(MagicMenuSettings, List(Of MagicPage))
-  fullName.vb: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings, System.Collections.Generic.List(Of ToSic.Cre8magic.Client.Models.MagicPage))
-  name.vb: GetTree(MagicMenuSettings, List(Of MagicPage))
+  nameWithType.vb: MagicMenuBuilder.GetTree(MagicMenuSettings, List(Of IMagicPage))
+  fullName.vb: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree(ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings, System.Collections.Generic.List(Of ToSic.Cre8magic.Pages.IMagicPage))
+  name.vb: GetTree(MagicMenuSettings, List(Of IMagicPage))
 references:
 - uid: ToSic.Cre8magic.Client.Menus
   commentId: N:ToSic.Cre8magic.Client.Menus
@@ -619,7 +619,7 @@ references:
   fullName: Microsoft.Extensions.Logging.ILogger
 - uid: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree*
   commentId: Overload:ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree
-  href: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.html#ToSic_Cre8magic_Client_Menus_MagicMenuBuilder_GetTree_ToSic_Cre8magic_Client_Menus_Settings_MagicMenuSettings_System_Collections_Generic_List_ToSic_Cre8magic_Client_Models_MagicPage__
+  href: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.html#ToSic_Cre8magic_Client_Menus_MagicMenuBuilder_GetTree_ToSic_Cre8magic_Client_Menus_Settings_MagicMenuSettings_System_Collections_Generic_List_ToSic_Cre8magic_Pages_IMagicPage__
   name: GetTree
   nameWithType: MagicMenuBuilder.GetTree
   fullName: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.GetTree
@@ -630,26 +630,26 @@ references:
   name: MagicMenuSettings
   nameWithType: MagicMenuSettings
   fullName: ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings
-- uid: System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage}
-  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage}
+- uid: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<MagicPage>
-  nameWithType: List<MagicPage>
-  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Client.Models.MagicPage>
-  nameWithType.vb: List(Of MagicPage)
-  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Client.Models.MagicPage)
-  name.vb: List(Of MagicPage)
+  name: List<IMagicPage>
+  nameWithType: List<IMagicPage>
+  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Pages.IMagicPage>
+  nameWithType.vb: List(Of IMagicPage)
+  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: List(Of IMagicPage)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: ToSic.Cre8magic.Client.Models.MagicPage
-    name: MagicPage
-    href: ToSic.Cre8magic.Client.Models.MagicPage.html
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -659,9 +659,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ToSic.Cre8magic.Client.Models.MagicPage
-    name: MagicPage
-    href: ToSic.Cre8magic.Client.Models.MagicPage.html
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: )
 - uid: ToSic.Cre8magic.Client.Menus.MagicMenuTree
   commentId: T:ToSic.Cre8magic.Client.Menus.MagicMenuTree

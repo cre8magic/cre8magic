@@ -9,15 +9,15 @@
           ]
         }
       ],
-      "dest": "xapi",
+      "dest": "api",
       "disableGitFeatures": false,
       "force": true, // Re-build all the documentation
       "properties": {
         "TargetFramework": "net8.0",
-        "GenerateDocumentationFile": true,
-        "ProduceReferenceAssembly": true
+        // "GenerateDocumentationFile": true,
+        // "ProduceReferenceAssembly": true
       },
-      "namespaceLayout": "nested",
+      // "namespaceLayout": "nested",
     }
   ],
   "build": {
@@ -83,7 +83,8 @@
     "output": "../docs",
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/nested"
     ],
     "globalMetadata": {
       // "_appName": "cre8magic",

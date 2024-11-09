@@ -4,7 +4,6 @@ items:
   commentId: N:ToSic.Cre8magic.Client.Breadcrumbs.Settings
   id: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   children:
-  - ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
   - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesign
   - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner
   - ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings
@@ -16,15 +15,8 @@ items:
   fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   type: Namespace
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
-  commentId: T:ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
-  parent: ToSic.Cre8magic.Client.Breadcrumbs.Settings
-  href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html
-  name: IBreadcrumbDesigner
-  nameWithType: IBreadcrumbDesigner
-  fullName: ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesign
   commentId: T:ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesign
   href: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesign.html

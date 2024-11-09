@@ -91,19 +91,19 @@
 
   <h1 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb" class="text-break">
     Class MagicBreadcrumb
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Client.html">Client</a>.<a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.html">Breadcrumbs</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"></div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MagicBreadcrumb : MagicBreadcrumbItem</code></pre>
+    <pre><code class="lang-csharp hljs">public class MagicBreadcrumb : MagicBreadcrumbItem, IMagicPage</code></pre>
   </div>
 
 
@@ -113,61 +113,78 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html">MagicPageBase</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html">MagicPage</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Client.Pages.MagicPageWithDesign.html">MagicPageWithDesign</a></div>
       <div><a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html">MagicBreadcrumbItem</a></div>
       <div><span class="xref">MagicBreadcrumb</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></div>
+    </dd>
+  </dl>
 
 
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html#ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_PageState">MagicBreadcrumbItem.PageState</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.MagicPageWithDesign.html#ToSic_Cre8magic_Client_Pages_MagicPageWithDesign_Classes_System_String_">MagicPageWithDesign.Classes(string)</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html#ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_IsActive">MagicBreadcrumbItem.IsActive</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.MagicPageWithDesign.html#ToSic_Cre8magic_Client_Pages_MagicPageWithDesign_Value_System_String_">MagicPageWithDesign.Value(string)</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html#ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_Classes_System_String_">MagicBreadcrumbItem.Classes(string)</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_PageFactory">MagicPage.PageFactory</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html#ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_Value_System_String_">MagicBreadcrumbItem.Value(string)</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_MenuLevel">MagicPage.MenuLevel</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html#ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_Link">MagicBreadcrumbItem.Link</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_IsCurrent">MagicPage.IsCurrent</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html#ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_Target">MagicBreadcrumbItem.Target</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_Link">MagicPage.Link</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_OriginalPage">MagicPage.OriginalPage</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_Target">MagicPage.Target</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_PageId">MagicPage.PageId</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_Breadcrumb">MagicPage.Breadcrumb</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_ParentId">MagicPage.ParentId</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_InBreadcrumb">MagicPage.InBreadcrumb</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_Path">MagicPage.Path</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_OriginalPage">MagicPageBase.OriginalPage</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_Name">MagicPage.Name</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_PageId">MagicPageBase.PageId</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_Url">MagicPage.Url</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_ParentId">MagicPageBase.ParentId</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_IsClickable">MagicPage.IsClickable</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Path">MagicPageBase.Path</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_Level">MagicPage.Level</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Name">MagicPageBase.Name</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_HasChildren">MagicPage.HasChildren</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Url">MagicPageBase.Url</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_IsClickable">MagicPageBase.IsClickable</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Level">MagicPageBase.Level</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_HasChildren">MagicPageBase.HasChildren</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -205,7 +222,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb__ctor_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.#ctor(Oqtane.UI.PageState)">
   MagicBreadcrumb(PageState)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -236,7 +253,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb__ctor_ToSic_Cre8magic_Client_Settings_MagicSettings_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.#ctor(ToSic.Cre8magic.Client.Settings.MagicSettings)">
   MagicBreadcrumb(MagicSettings)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -271,14 +288,14 @@
 
   <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_Items" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.Items">
   Items
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;MagicBreadcrumbItem&gt; Items { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;MagicBreadcrumbItem&gt; Items { get; }</code></pre>
   </div>
 
 
@@ -287,69 +304,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html">MagicBreadcrumbItem</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_Settings_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.Settings*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_Settings" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.Settings">
-  Settings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L41"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicBreadcrumbSettings Settings { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings.html">MagicBreadcrumbSettings</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_StartPage_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.StartPage*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_StartPage" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.StartPage">
-  StartPage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L45"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicPage StartPage { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html">MagicBreadcrumbItem</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -366,21 +321,21 @@
 
   <a id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_Designer_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.Designer*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_Designer_ToSic_Cre8magic_Client_Breadcrumbs_Settings_IBreadcrumbDesigner_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.Designer(ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner)">
-  Designer(IBreadcrumbDesigner)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_Designer_ToSic_Cre8magic_Client_Pages_IPageDesigner_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.Designer(ToSic.Cre8magic.Client.Pages.IPageDesigner)">
+  Designer(IPageDesigner)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicBreadcrumb Designer(IBreadcrumbDesigner designer)</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicBreadcrumb Designer(IPageDesigner designer)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>designer</code> <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html">IBreadcrumbDesigner</a></dt>
+    <dt><code>designer</code> <a class="xref" href="ToSic.Cre8magic.Client.Pages.IPageDesigner.html">IPageDesigner</a></dt>
     <dd></dd>
   </dl>
 
@@ -404,7 +359,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_Setup_ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbSettings_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.Setup(ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings)">
   Setup(MagicBreadcrumbSettings)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -440,7 +395,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumb.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

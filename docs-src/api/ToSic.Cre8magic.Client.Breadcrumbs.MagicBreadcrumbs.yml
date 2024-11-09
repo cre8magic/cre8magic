@@ -16,14 +16,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicBreadcrumbs
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs
   syntax:
     content: 'public abstract class MagicBreadcrumbs : MagicControl, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner'
@@ -44,6 +44,7 @@ items:
   - ToSic.Cre8magic.Client.Controls.IMagicDesigner
   inheritedMembers:
   - ToSic.Cre8magic.Client.Controls.MagicControl.Settings
+  - ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
   - ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   - ToSic.Cre8magic.Client.Controls.MagicControl.UserIsEditor
   - ToSic.Cre8magic.Client.Controls.MagicControl.UserIsLoggedIn
@@ -117,21 +118,21 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: HomePage
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
     startLine: 7
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs
   syntax:
-    content: protected MagicPage HomePage { get; }
+    content: protected IMagicPage HomePage { get; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Client.Models.MagicPage
-    content.vb: Protected ReadOnly Property HomePage As MagicPage
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    content.vb: Protected ReadOnly Property HomePage As IMagicPage
   overload: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.HomePage*
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.Breadcrumbs
   commentId: P:ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.Breadcrumbs
@@ -146,21 +147,21 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Breadcrumbs
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs
     startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs
   syntax:
-    content: protected List<MagicPage> Breadcrumbs { get; }
+    content: protected List<IMagicPage> Breadcrumbs { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage}
-    content.vb: Protected ReadOnly Property Breadcrumbs As List(Of MagicPage)
+      type: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+    content.vb: Protected ReadOnly Property Breadcrumbs As List(Of IMagicPage)
   overload: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.Breadcrumbs*
 references:
 - uid: ToSic.Cre8magic.Client.Breadcrumbs
@@ -303,6 +304,13 @@ references:
   name: Settings
   nameWithType: MagicControl.Settings
   fullName: ToSic.Cre8magic.Client.Controls.MagicControl.Settings
+- uid: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+  commentId: P:ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
+  parent: ToSic.Cre8magic.Client.Controls.MagicControl
+  href: ToSic.Cre8magic.Client.Controls.MagicControl.html#ToSic_Cre8magic_Client_Controls_MagicControl_PageFactory
+  name: PageFactory
+  nameWithType: MagicControl.PageFactory
+  fullName: ToSic.Cre8magic.Client.Controls.MagicControl.PageFactory
 - uid: ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   commentId: P:ToSic.Cre8magic.Client.Controls.MagicControl.UserIsAdmin
   parent: ToSic.Cre8magic.Client.Controls.MagicControl
@@ -2455,19 +2463,19 @@ references:
   name: HomePage
   nameWithType: MagicBreadcrumbs.HomePage
   fullName: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.HomePage
-- uid: ToSic.Cre8magic.Client.Models.MagicPage
-  commentId: T:ToSic.Cre8magic.Client.Models.MagicPage
-  parent: ToSic.Cre8magic.Client.Models
-  href: ToSic.Cre8magic.Client.Models.MagicPage.html
-  name: MagicPage
-  nameWithType: MagicPage
-  fullName: ToSic.Cre8magic.Client.Models.MagicPage
-- uid: ToSic.Cre8magic.Client.Models
-  commentId: N:ToSic.Cre8magic.Client.Models
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
   href: ToSic.html
-  name: ToSic.Cre8magic.Client.Models
-  nameWithType: ToSic.Cre8magic.Client.Models
-  fullName: ToSic.Cre8magic.Client.Models
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -2477,13 +2485,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Models
-    name: Models
-    href: ToSic.Cre8magic.Client.Models.html
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -2493,39 +2497,35 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Models
-    name: Models
-    href: ToSic.Cre8magic.Client.Models.html
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
 - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.Breadcrumbs*
   commentId: Overload:ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.Breadcrumbs
   href: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.html#ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbs_Breadcrumbs
   name: Breadcrumbs
   nameWithType: MagicBreadcrumbs.Breadcrumbs
   fullName: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.Breadcrumbs
-- uid: System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage}
-  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage}
+- uid: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<MagicPage>
-  nameWithType: List<MagicPage>
-  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Client.Models.MagicPage>
-  nameWithType.vb: List(Of MagicPage)
-  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Client.Models.MagicPage)
-  name.vb: List(Of MagicPage)
+  name: List<IMagicPage>
+  nameWithType: List<IMagicPage>
+  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Pages.IMagicPage>
+  nameWithType.vb: List(Of IMagicPage)
+  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: List(Of IMagicPage)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: ToSic.Cre8magic.Client.Models.MagicPage
-    name: MagicPage
-    href: ToSic.Cre8magic.Client.Models.MagicPage.html
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -2535,9 +2535,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ToSic.Cre8magic.Client.Models.MagicPage
-    name: MagicPage
-    href: ToSic.Cre8magic.Client.Models.MagicPage.html
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: )
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1

@@ -19,14 +19,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/CodeRef.cs
+      path: ToSic.Cre8Magic.Client/Logging/CodeRef.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: CodeRef
-    path: ../ToSic.Cre8magic.Client/Logging/CodeRef.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/CodeRef.cs
     startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   summary: Reference to code - containing the path to the file, the method name and the line in the code.
   example: []
@@ -68,14 +68,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/CodeRef.cs
+      path: ToSic.Cre8Magic.Client/Logging/CodeRef.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Path
-    path: ../ToSic.Cre8magic.Client/Logging/CodeRef.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/CodeRef.cs
     startLine: 14
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   summary: Path to the code file
   example: []
@@ -97,14 +97,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/CodeRef.cs
+      path: ToSic.Cre8Magic.Client/Logging/CodeRef.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Name
-    path: ../ToSic.Cre8magic.Client/Logging/CodeRef.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/CodeRef.cs
     startLine: 19
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   summary: Name of the method/property accessed
   example: []
@@ -126,14 +126,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/CodeRef.cs
+      path: ToSic.Cre8Magic.Client/Logging/CodeRef.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Line
-    path: ../ToSic.Cre8magic.Client/Logging/CodeRef.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/CodeRef.cs
     startLine: 24
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   summary: Line of code where the code was running
   example: []
@@ -155,14 +155,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/CodeRef.cs
+      path: ToSic.Cre8Magic.Client/Logging/CodeRef.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Logging/CodeRef.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/CodeRef.cs
     startLine: 29
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   summary: Default constructor to set the values
   example: []
@@ -193,14 +193,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Logging/CodeRef.cs
+      path: ToSic.Cre8Magic.Client/Logging/CodeRef.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Logging/CodeRef.cs
+    path: ../ToSic.Cre8Magic.Client/Logging/CodeRef.cs
     startLine: 44
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Logging
   summary: This constructor should be called without params, so that the compiler automatically injects all values.
   example: []

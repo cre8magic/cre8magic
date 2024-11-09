@@ -91,12 +91,12 @@
 
   <h1 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage" class="text-break">
     Class MagicMenuPage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuPage.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Client.html">Client</a>.<a class="xref" href="ToSic.Cre8magic.Client.Menus.html">Menus</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>Represents a menu page in the MagicMenu system.</p>
@@ -104,7 +104,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MagicMenuPage : MagicPage</code></pre>
+    <pre><code class="lang-csharp hljs">public class MagicMenuPage : MagicPageWithDesign, IMagicPage, IMagicPageList</code></pre>
   </div>
 
 
@@ -114,42 +114,72 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html">MagicPageBase</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html">MagicPage</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Client.Pages.MagicPageWithDesign.html">MagicPageWithDesign</a></div>
       <div><span class="xref">MagicMenuPage</span></div>
     </dd>
   </dl>
 
-
-  <dl class="typelist derived">
-    <dt>Derived</dt>
+  <dl class="typelist implements">
+    <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuTree.html">MagicMenuTree</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Client.Pages.IMagicPageList.html">IMagicPageList</a></div>
     </dd>
   </dl>
+
 
   <dl class="typelist derived">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_OriginalPage">MagicPage.OriginalPage</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.MagicPageWithDesign.html#ToSic_Cre8magic_Client_Pages_MagicPageWithDesign_Classes_System_String_">MagicPageWithDesign.Classes(string)</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_PageId">MagicPage.PageId</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.MagicPageWithDesign.html#ToSic_Cre8magic_Client_Pages_MagicPageWithDesign_Value_System_String_">MagicPageWithDesign.Value(string)</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_ParentId">MagicPage.ParentId</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_PageFactory">MagicPage.PageFactory</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_Path">MagicPage.Path</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_IsCurrent">MagicPage.IsCurrent</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_Name">MagicPage.Name</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_Link">MagicPage.Link</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_Url">MagicPage.Url</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_Target">MagicPage.Target</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html#ToSic_Cre8magic_Client_Models_MagicPage_IsClickable">MagicPage.IsClickable</a>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_Breadcrumb">MagicPage.Breadcrumb</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPage.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPage_InBreadcrumb">MagicPage.InBreadcrumb</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_OriginalPage">MagicPageBase.OriginalPage</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_PageId">MagicPageBase.PageId</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_ParentId">MagicPageBase.ParentId</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Path">MagicPageBase.Path</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Name">MagicPageBase.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Url">MagicPageBase.Url</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_IsClickable">MagicPageBase.IsClickable</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase.html#ToSic_Cre8magic_Client_Pages_Internal_MagicPageBase_Level">MagicPageBase.Level</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -182,55 +212,6 @@
 </div>
 
 
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage__ctor_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.#ctor*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage__ctor_ToSic_Cre8magic_Client_Models_MagicPage_System_Int32_Oqtane_UI_PageState_ToSic_Cre8magic_Client_Menus_MagicMenuTree_System_String_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.#ctor(ToSic.Cre8magic.Client.Models.MagicPage,System.Int32,Oqtane.UI.PageState,ToSic.Cre8magic.Client.Menus.MagicMenuTree,System.String)">
-  MagicMenuPage(MagicPage, int, PageState, MagicMenuTree, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L24"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuPage.html">MagicMenuPage</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected MagicMenuPage(MagicPage page, int level, PageState pageState, MagicMenuTree tree = null, string debugPrefix = null)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>page</code> <a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a></dt>
-    <dd><p>The original page.</p>
-</dd>
-    <dt><code>level</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The menu level.</p>
-</dd>
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
-    <dd><p>The page state.</p>
-</dd>
-    <dt><code>tree</code> <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuTree.html">MagicMenuTree</a></dt>
-    <dd><p>The magic menu tree.</p>
-</dd>
-    <dt><code>debugPrefix</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The debug prefix.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -239,7 +220,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Children" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Children">
   Children
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuPage.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get children of the current menu page.</p>
@@ -271,7 +252,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_HasChildren" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.HasChildren">
   HasChildren
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuPage.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines if there are sub-pages. True if this page has sub-pages.</p>
@@ -299,19 +280,19 @@
 
 
 
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_InBreadcrumb_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.InBreadcrumb*"></a>
+  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_MenuId_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.MenuId*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_InBreadcrumb" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.InBreadcrumb">
-  InBreadcrumb
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_MenuId" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.MenuId">
+  MenuId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuPage.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Determine if the menu page is in the breadcrumb.</p>
+  <div class="markdown level1 summary"><p>The ID of the menu item</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool InBreadcrumb { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string MenuId { get; }</code></pre>
   </div>
 
 
@@ -320,7 +301,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
   </dl>
 
@@ -331,43 +312,11 @@
 
 
 
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_IsActive_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.IsActive*"></a>
+  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_MenuLevel_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.MenuLevel*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_IsActive" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.IsActive">
-  IsActive
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L113"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Determine if the menu page is current page.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsActive { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Level_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Level*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Level" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Level">
-  Level
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_MenuLevel" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.MenuLevel">
+  MenuLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuPage.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Menu Level relative to the start of the menu (always starts with 1)</p>
@@ -375,7 +324,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int Level { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override int MenuLevel { get; }</code></pre>
   </div>
 
 
@@ -391,26 +340,25 @@
 
 
 
-  <h4 class="section" id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Level_remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>This is not the same as Oqtane Page.Level (witch exists in base class).</p>
+  <h4 class="section" id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_MenuLevel_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is <em>not</em> the same as Oqtane Page.Level (which exists in base class).</p>
 </div>
 
 
 
 
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Link_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Link*"></a>
+  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Settings_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Settings*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Link" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Link">
-  Link
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Settings" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Settings">
+  Settings
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuPage.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Link to this page.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Link { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicMenuSettings Settings { get; }</code></pre>
   </div>
 
 
@@ -419,104 +367,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_MenuId_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.MenuId*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_MenuId" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.MenuId">
-  MenuId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L123"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>The ID of the menu item</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual string MenuId { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_PageState_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.PageState*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_PageState" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.PageState">
-  PageState
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L47"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>PageState id dependency that provides information about the current page,
-also it is used by derived classes MagicMenuPage, MagicMenuThree</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected PageState PageState { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Target_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Target*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Target" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Target">
-  Target
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L133"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Target for link to this page.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Target { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings.html">MagicMenuSettings</a></dt>
     <dd></dd>
   </dl>
 
@@ -531,153 +382,11 @@ also it is used by derived classes MagicMenuPage, MagicMenuThree</p>
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_ChildrenOf_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.ChildrenOf*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_ChildrenOf_System_Int32_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.ChildrenOf(System.Int32)">
-  ChildrenOf(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L169"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected List&lt;MagicPage&gt; ChildrenOf(int pageId)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>pageId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Classes_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Classes*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Classes_System_String_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Classes(System.String)">
-  Classes(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L70"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Get css class for tag.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Classes(string tag)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_ErrPage_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.ErrPage*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_ErrPage_System_Int32_System_String_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.ErrPage(System.Int32,System.String)">
-  ErrPage(int, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L180"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected MagicPage ErrPage(int id, string message)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_GetChildPages_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.GetChildPages*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_GetChildPages" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.GetChildPages">
-  GetChildPages()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L161"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual List&lt;MagicPage&gt; GetChildPages()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_GetChildren_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.GetChildren*"></a>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_GetChildren" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.GetChildren">
   GetChildren()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuPage.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Retrieve the children the first time it's needed.</p>
@@ -705,84 +414,11 @@ also it is used by derived classes MagicMenuPage, MagicMenuThree</p>
 
 
 
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_LogPageList_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.LogPageList*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_LogPageList_System_Collections_Generic_List_ToSic_Cre8magic_Client_Models_MagicPage__" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.LogPageList(System.Collections.Generic.List{ToSic.Cre8magic.Client.Models.MagicPage})">
-  LogPageList(List&lt;MagicPage&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L81"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string LogPageList(List&lt;MagicPage&gt;? pages)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>pages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Value_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Value*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuPage_Value_System_String_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuPage.Value(System.String)">
-  Value(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L77"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Get attribute value.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Value(string key)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Menus/MagicMenuPage.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuPage.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

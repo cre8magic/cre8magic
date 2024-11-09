@@ -21,14 +21,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicLogin
-    path: ../ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
     startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: 'public abstract class MagicLogin : LoginBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner'
@@ -123,14 +123,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
-    path: ../ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
     startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   example: []
   syntax:
@@ -166,14 +166,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsLoggedIn
-    path: ../ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
     startLine: 12
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: protected bool IsLoggedIn { get; }
@@ -195,14 +195,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LocalizedLabel
-    path: ../ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
     startLine: 15
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: protected string LocalizedLabel { get; }
@@ -224,14 +224,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ChangeLogin
-    path: ../ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
     startLine: 17
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: protected Task ChangeLogin()
@@ -252,14 +252,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
-    path: ../ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
     startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   example: []
   syntax:
@@ -289,14 +289,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
-    path: ../ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
     startLine: 27
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   example: []
   syntax:
@@ -326,14 +326,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+      path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
-    path: ../ToSic.Cre8magic.Client/Controls/MagicLogin.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
     startLine: 29
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   example: []
   syntax:

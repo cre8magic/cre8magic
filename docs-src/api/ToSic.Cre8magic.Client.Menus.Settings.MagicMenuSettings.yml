@@ -33,14 +33,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicMenuSettings
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: 'public class MagicMenuSettings : SettingsWithInherit'
@@ -70,14 +70,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 7
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: Empty constructor is important for JSON deserialization
   example: []
@@ -101,14 +101,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 13
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: >-
     A unique ID to identify the menu.
@@ -135,14 +135,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ConfigName
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 19
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: Name to identify this configuration
   example: []
@@ -166,14 +166,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 22
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: Debug settings for anything that can configure show/hide of debug
   example: []
@@ -197,14 +197,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Display
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 29
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: >-
     Determines if this navigation should be shown.
@@ -231,14 +231,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DisplayDefault
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 30
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public const bool DisplayDefault = true
@@ -258,14 +258,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Depth
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 37
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public int? Depth { get; set; }
@@ -287,14 +287,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LevelDepthFallback
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 38
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public const int LevelDepthFallback = 1
@@ -314,14 +314,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Children
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 47
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: >-
     Levels to skip from the initial stating point.
@@ -354,14 +354,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ChildrenFallback
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 48
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public const bool ChildrenFallback = false
@@ -381,14 +381,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Start
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 66
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: >-
     Start page of this navigation - like home or another specific page.
@@ -425,14 +425,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: StartPageRoot
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 67
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public const string StartPageRoot = "*"
@@ -452,14 +452,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: StartPageCurrent
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 68
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public const string StartPageCurrent = "."
@@ -479,14 +479,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Level
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 77
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: >-
     The level this menu should start from.
@@ -519,14 +519,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: StartLevelFallback
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 78
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public const int StartLevelFallback = 0
@@ -546,14 +546,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Template
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 83
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: The template to use - horizontal/vertical
   example: []
@@ -577,14 +577,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: TemplateDefault
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 84
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public const string TemplateDefault = "Horizontal"
@@ -604,14 +604,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DesignSettings
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 87
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public NamedSettings<MagicMenuDesign>? DesignSettings { get; set; }
@@ -633,14 +633,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuId
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuSettings.cs
     startLine: 89
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: public string MenuId { get; }

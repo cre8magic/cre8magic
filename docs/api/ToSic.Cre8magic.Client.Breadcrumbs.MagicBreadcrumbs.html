@@ -91,12 +91,12 @@
 
   <h1 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbs" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs" class="text-break">
     Class MagicBreadcrumbs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs/#L5"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Client.html">Client</a>.<a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.html">Breadcrumbs</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"></div>
@@ -140,6 +140,9 @@
     <dd>
     <div>
       <a class="xref" href="ToSic.Cre8magic.Client.Controls.MagicControl.html#ToSic_Cre8magic_Client_Controls_MagicControl_Settings">MagicControl.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Client.Controls.MagicControl.html#ToSic_Cre8magic_Client_Controls_MagicControl_PageFactory">MagicControl.PageFactory</a>
     </div>
     <div>
       <a class="xref" href="ToSic.Cre8magic.Client.Controls.MagicControl.html#ToSic_Cre8magic_Client_Controls_MagicControl_UserIsAdmin">MagicControl.UserIsAdmin</a>
@@ -336,14 +339,14 @@
 
   <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbs_Breadcrumbs" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.Breadcrumbs">
   Breadcrumbs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected List&lt;MagicPage&gt; Breadcrumbs { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected List&lt;IMagicPage&gt; Breadcrumbs { get; }</code></pre>
   </div>
 
 
@@ -352,7 +355,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -367,14 +370,14 @@
 
   <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbs_HomePage" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs.HomePage">
   HomePage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected MagicPage HomePage { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected IMagicPage HomePage { get; }</code></pre>
   </div>
 
 
@@ -383,7 +386,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Models.MagicPage.html">MagicPage</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></dt>
     <dd></dd>
   </dl>
 
@@ -398,7 +401,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbs.razor.cs/#L5" class="edit-link">Edit this page</a>
         </div>
 
 

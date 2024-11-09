@@ -15,14 +15,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/SettingsException.cs
+      path: ToSic.Cre8Magic.Client/Settings/SettingsException.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SettingsException
-    path: ../ToSic.Cre8magic.Client/Settings/SettingsException.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/SettingsException.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: 'public class SettingsException : Exception, ISerializable'
@@ -63,14 +63,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/SettingsException.cs
+      path: ToSic.Cre8Magic.Client/Settings/SettingsException.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Settings/SettingsException.cs
-    startLine: 4
+    path: ../ToSic.Cre8Magic.Client/Settings/SettingsException.cs
+    startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public SettingsException(string message)

@@ -1,0 +1,857 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
+  id: IMagicPage
+  parent: ToSic.Cre8magic.Pages
+  children:
+  - ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb
+  - ToSic.Cre8magic.Pages.IMagicPage.HasChildren
+  - ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb
+  - ToSic.Cre8magic.Pages.IMagicPage.IsClickable
+  - ToSic.Cre8magic.Pages.IMagicPage.IsCurrent
+  - ToSic.Cre8magic.Pages.IMagicPage.Level
+  - ToSic.Cre8magic.Pages.IMagicPage.Link
+  - ToSic.Cre8magic.Pages.IMagicPage.MenuLevel
+  - ToSic.Cre8magic.Pages.IMagicPage.Name
+  - ToSic.Cre8magic.Pages.IMagicPage.OriginalPage
+  - ToSic.Cre8magic.Pages.IMagicPage.PageId
+  - ToSic.Cre8magic.Pages.IMagicPage.ParentId
+  - ToSic.Cre8magic.Pages.IMagicPage.Path
+  - ToSic.Cre8magic.Pages.IMagicPage.Target
+  - ToSic.Cre8magic.Pages.IMagicPage.Url
+  langs:
+  - csharp
+  - vb
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicPage
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 4
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  syntax:
+    content: public interface IMagicPage
+    content.vb: Public Interface IMagicPage
+- uid: ToSic.Cre8magic.Pages.IMagicPage.MenuLevel
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.MenuLevel
+  id: MenuLevel
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: MenuLevel
+  nameWithType: IMagicPage.MenuLevel
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.MenuLevel
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MenuLevel
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    Level in the menu, starting from 1.
+
+    As different menus may start at other depths, this is not always the same as the Oqtane level.
+  example: []
+  syntax:
+    content: int MenuLevel { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property MenuLevel As Integer
+  overload: ToSic.Cre8magic.Pages.IMagicPage.MenuLevel*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.IsCurrent
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.IsCurrent
+  id: IsCurrent
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: IsCurrent
+  nameWithType: IMagicPage.IsCurrent
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.IsCurrent
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsCurrent
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 15
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: True if this page is the current page which the user is viewing.
+  example: []
+  syntax:
+    content: bool IsCurrent { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsCurrent As Boolean
+  overload: ToSic.Cre8magic.Pages.IMagicPage.IsCurrent*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Link
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Link
+  id: Link
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: Link
+  nameWithType: IMagicPage.Link
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Link
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Link
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 20
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Link to this page.
+  example: []
+  syntax:
+    content: string Link { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Link As String
+  overload: ToSic.Cre8magic.Pages.IMagicPage.Link*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Target
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Target
+  id: Target
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: Target
+  nameWithType: IMagicPage.Target
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Target
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Target
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 25
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Target for link to this page.
+  example: []
+  syntax:
+    content: string? Target { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Target As String
+  overload: ToSic.Cre8magic.Pages.IMagicPage.Target*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb
+  id: Breadcrumb
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: Breadcrumb
+  nameWithType: IMagicPage.Breadcrumb
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Breadcrumb
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 31
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    The current pages bread-crumb, going from the top-level to the current page.
+
+    Note that the "Home" page is usually not a parent, so it's not included.
+  example: []
+  syntax:
+    content: List<IMagicPage> Breadcrumb { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+    content.vb: ReadOnly Property Breadcrumb As List(Of IMagicPage)
+  overload: ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb
+  id: InBreadcrumb
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: InBreadcrumb
+  nameWithType: IMagicPage.InBreadcrumb
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: InBreadcrumb
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 36
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Determine if the menu page is in the breadcrumb.
+  example: []
+  syntax:
+    content: bool InBreadcrumb { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property InBreadcrumb As Boolean
+  overload: ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.OriginalPage
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.OriginalPage
+  id: OriginalPage
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: OriginalPage
+  nameWithType: IMagicPage.OriginalPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.OriginalPage
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: OriginalPage
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 41
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Original Oqtane page wrapped in MagicPage.
+  example: []
+  syntax:
+    content: Page OriginalPage { get; }
+    parameters: []
+    return:
+      type: Oqtane.Models.Page
+    content.vb: ReadOnly Property OriginalPage As Page
+  overload: ToSic.Cre8magic.Pages.IMagicPage.OriginalPage*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.PageId
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.PageId
+  id: PageId
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: PageId
+  nameWithType: IMagicPage.PageId
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.PageId
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PageId
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 46
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Id of the Page
+  example: []
+  syntax:
+    content: int PageId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property PageId As Integer
+  overload: ToSic.Cre8magic.Pages.IMagicPage.PageId*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.ParentId
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.ParentId
+  id: ParentId
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: ParentId
+  nameWithType: IMagicPage.ParentId
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.ParentId
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ParentId
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 51
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Reference to the parent <xref href="Oqtane.Models.Page" data-throw-if-not-resolved="false"></xref> if it has one.
+  example: []
+  syntax:
+    content: int? ParentId { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: ReadOnly Property ParentId As Integer?
+  overload: ToSic.Cre8magic.Pages.IMagicPage.ParentId*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Path
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Path
+  id: Path
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: IMagicPage.Path
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Path
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Path
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 56
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Path of the page.
+  example: []
+  syntax:
+    content: string Path { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Path As String
+  overload: ToSic.Cre8magic.Pages.IMagicPage.Path*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Name
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Name
+  id: Name
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: IMagicPage.Name
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Name
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Name
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 61
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Page Name.
+  example: []
+  syntax:
+    content: string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Name As String
+  overload: ToSic.Cre8magic.Pages.IMagicPage.Name*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Url
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Url
+  id: Url
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: Url
+  nameWithType: IMagicPage.Url
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Url
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Url
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 66
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Full URL to this page.
+  example: []
+  syntax:
+    content: string Url { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Url As String
+  overload: ToSic.Cre8magic.Pages.IMagicPage.Url*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.IsClickable
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.IsClickable
+  id: IsClickable
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: IsClickable
+  nameWithType: IMagicPage.IsClickable
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.IsClickable
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsClickable
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 71
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Link in site navigation is enabled or disabled.
+  example: []
+  syntax:
+    content: bool IsClickable { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsClickable As Boolean
+  overload: ToSic.Cre8magic.Pages.IMagicPage.IsClickable*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Level
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Level
+  id: Level
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: Level
+  nameWithType: IMagicPage.Level
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Level
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Level
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 77
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    Current page level from the top of the Menu.
+
+    As in Oqtane, it's 0 based.
+  example: []
+  syntax:
+    content: int Level { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property Level As Integer
+  overload: ToSic.Cre8magic.Pages.IMagicPage.Level*
+- uid: ToSic.Cre8magic.Pages.IMagicPage.HasChildren
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.HasChildren
+  id: HasChildren
+  parent: ToSic.Cre8magic.Pages.IMagicPage
+  langs:
+  - csharp
+  - vb
+  name: HasChildren
+  nameWithType: IMagicPage.HasChildren
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.HasChildren
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: HasChildren
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
+    startLine: 82
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Determines if there are sub-pages. True if this page has sub-pages.
+  example: []
+  syntax:
+    content: bool HasChildren { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property HasChildren As Boolean
+  overload: ToSic.Cre8magic.Pages.IMagicPage.HasChildren*
+references:
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+- uid: ToSic.Cre8magic.Pages.IMagicPage.MenuLevel*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.MenuLevel
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_MenuLevel
+  name: MenuLevel
+  nameWithType: IMagicPage.MenuLevel
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.MenuLevel
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Pages.IMagicPage.IsCurrent*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.IsCurrent
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_IsCurrent
+  name: IsCurrent
+  nameWithType: IMagicPage.IsCurrent
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.IsCurrent
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Link*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.Link
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Link
+  name: Link
+  nameWithType: IMagicPage.Link
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Link
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Target*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.Target
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Target
+  name: Target
+  nameWithType: IMagicPage.Target
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Target
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Breadcrumb
+  name: Breadcrumb
+  nameWithType: IMagicPage.Breadcrumb
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Breadcrumb
+- uid: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<IMagicPage>
+  nameWithType: List<IMagicPage>
+  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Pages.IMagicPage>
+  nameWithType.vb: List(Of IMagicPage)
+  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: List(Of IMagicPage)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_InBreadcrumb
+  name: InBreadcrumb
+  nameWithType: IMagicPage.InBreadcrumb
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.InBreadcrumb
+- uid: ToSic.Cre8magic.Pages.IMagicPage.OriginalPage*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.OriginalPage
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_OriginalPage
+  name: OriginalPage
+  nameWithType: IMagicPage.OriginalPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.OriginalPage
+- uid: Oqtane.Models.Page
+  commentId: T:Oqtane.Models.Page
+  parent: Oqtane.Models
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs
+  name: Page
+  nameWithType: Page
+  fullName: Oqtane.Models.Page
+- uid: Oqtane.Models
+  commentId: N:Oqtane.Models
+  isExternal: true
+  name: Oqtane.Models
+  nameWithType: Oqtane.Models
+  fullName: Oqtane.Models
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.Models
+    name: Models
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.Models
+    name: Models
+    isExternal: true
+- uid: ToSic.Cre8magic.Pages.IMagicPage.PageId*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.PageId
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_PageId
+  name: PageId
+  nameWithType: IMagicPage.PageId
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.PageId
+- uid: ToSic.Cre8magic.Pages.IMagicPage.ParentId*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.ParentId
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_ParentId
+  name: ParentId
+  nameWithType: IMagicPage.ParentId
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.ParentId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Path*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.Path
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Path
+  name: Path
+  nameWithType: IMagicPage.Path
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Path
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Name*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.Name
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Name
+  name: Name
+  nameWithType: IMagicPage.Name
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Name
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Url*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.Url
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Url
+  name: Url
+  nameWithType: IMagicPage.Url
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Url
+- uid: ToSic.Cre8magic.Pages.IMagicPage.IsClickable*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.IsClickable
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_IsClickable
+  name: IsClickable
+  nameWithType: IMagicPage.IsClickable
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.IsClickable
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Level*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.Level
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Level
+  name: Level
+  nameWithType: IMagicPage.Level
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Level
+- uid: ToSic.Cre8magic.Pages.IMagicPage.HasChildren*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.HasChildren
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_HasChildren
+  name: HasChildren
+  nameWithType: IMagicPage.HasChildren
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.HasChildren

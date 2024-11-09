@@ -21,14 +21,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicContainer
-    path: ../ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   syntax:
     content: 'public class MagicContainer : ContainerBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IContainerControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner'
@@ -114,14 +114,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
-    path: ../ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
     startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   example: []
   syntax:
@@ -157,14 +157,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: NavigationManager
-    path: ../ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
     startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   syntax:
     content: >-
@@ -196,14 +196,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: CloseModal
-    path: ../ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
     startLine: 12
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   syntax:
     content: protected void CloseModal()
@@ -222,14 +222,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
-    path: ../ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
     startLine: 19
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   example: []
   syntax:
@@ -259,14 +259,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
-    path: ../ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
     startLine: 20
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   example: []
   syntax:
@@ -296,14 +296,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
-    path: ../ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
     startLine: 21
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   example: []
   syntax:
@@ -333,14 +333,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UseAdminContainer
-    path: ../ToSic.Cre8magic.Client/Containers/MagicContainer.cs
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
     startLine: 27
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   summary: Modules are treated as admin modules (and must use the the admin container) if they are marked as such, or come from the Oqtane ....Admin... type
   example: []

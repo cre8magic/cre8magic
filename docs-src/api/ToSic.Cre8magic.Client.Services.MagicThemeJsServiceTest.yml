@@ -17,14 +17,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicThemeJsServiceTest.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicThemeJsServiceTest.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicThemeJsServiceTest
-    path: ../ToSic.Cre8magic.Client/Services/MagicThemeJsServiceTest.cs
+    path: ../ToSic.Cre8Magic.Client/Services/MagicThemeJsServiceTest.cs
     startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   summary: Constants and helpers related to JS calls from the Theme to it's own JS libraries
   example: []
@@ -63,15 +63,17 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicThemeJsServiceTest.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicThemeJsServiceTest.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Services/MagicThemeJsServiceTest.cs
-    startLine: 12
+    path: ../ToSic.Cre8Magic.Client/Services/MagicThemeJsServiceTest.cs
+    startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
+  summary: Constants and helpers related to JS calls from the Theme to it's own JS libraries
+  example: []
   syntax:
     content: public MagicThemeJsServiceTest(IJSRuntime jsRuntime)
     parameters:
@@ -95,14 +97,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicThemeJsServiceTest.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicThemeJsServiceTest.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SetBodyClasses
-    path: ../ToSic.Cre8magic.Client/Services/MagicThemeJsServiceTest.cs
-    startLine: 17
+    path: ../ToSic.Cre8Magic.Client/Services/MagicThemeJsServiceTest.cs
+    startLine: 13
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   summary: Set body classes (removes all previous classes in the process)
   example: []
@@ -135,14 +137,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/MagicThemeJsServiceTest.cs
+      path: ToSic.Cre8Magic.Client/Services/MagicThemeJsServiceTest.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: TestFromTest
-    path: ../ToSic.Cre8magic.Client/Services/MagicThemeJsServiceTest.cs
-    startLine: 22
+    path: ../ToSic.Cre8Magic.Client/Services/MagicThemeJsServiceTest.cs
+    startLine: 18
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public Task<string> TestFromTest()

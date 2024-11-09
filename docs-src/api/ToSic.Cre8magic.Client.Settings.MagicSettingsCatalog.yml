@@ -25,14 +25,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicSettingsCatalog
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: >-
     This is a catalog of all kinds of configurations.
@@ -65,14 +65,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SourceDefault
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public const string SourceDefault = "Unknown"
@@ -92,14 +92,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Version
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 15
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Version number when loading from JSON to verify it's what we expect
   example: []
@@ -123,14 +123,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 20
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Master debug settings - would override other debugs
   example: []
@@ -154,14 +154,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Source
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Source of these settings / where they came from, to ensure that we can see in debug where a value was picked up from
   example: []
@@ -185,14 +185,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Analytics
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 27
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public NamedSettings<MagicAnalyticsSettings> Analytics { get; set; }
@@ -214,14 +214,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Themes
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 29
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public NamedSettings<MagicThemeSettings> Themes { get; set; }
@@ -243,14 +243,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemeDesigns
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 31
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public NamedSettings<MagicThemeDesignSettings> ThemeDesigns { get; set; }
@@ -272,14 +272,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Containers
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 33
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public NamedSettings<MagicContainerSettings> Containers { get; set; }
@@ -301,14 +301,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Languages
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 35
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public NamedSettings<MagicLanguagesSettings> Languages { get; set; }
@@ -330,14 +330,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Menus
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 40
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: The menu definitions
   example: []
@@ -361,14 +361,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuDesigns
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettingsCatalog.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 45
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Design definitions of the menu
   example: []

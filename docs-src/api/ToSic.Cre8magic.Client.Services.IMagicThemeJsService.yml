@@ -16,14 +16,14 @@ items:
   type: Interface
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/IMagicThemeJsService.cs
+      path: ToSic.Cre8Magic.Client/Services/IMagicThemeJsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IMagicThemeJsService
-    path: ../ToSic.Cre8magic.Client/Services/IMagicThemeJsService.cs
+    path: ../ToSic.Cre8Magic.Client/Services/IMagicThemeJsService.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public interface IMagicThemeJsService
@@ -41,14 +41,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/IMagicThemeJsService.cs
+      path: ToSic.Cre8Magic.Client/Services/IMagicThemeJsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Log
-    path: ../ToSic.Cre8magic.Client/Services/IMagicThemeJsService.cs
+    path: ../ToSic.Cre8Magic.Client/Services/IMagicThemeJsService.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: Task Log(params object[] args)
@@ -75,14 +75,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/IMagicThemeJsService.cs
+      path: ToSic.Cre8Magic.Client/Services/IMagicThemeJsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SetBodyClasses
-    path: ../ToSic.Cre8magic.Client/Services/IMagicThemeJsService.cs
+    path: ../ToSic.Cre8Magic.Client/Services/IMagicThemeJsService.cs
     startLine: 11
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   summary: Set body classes (removes all previous classes in the process)
   example: []

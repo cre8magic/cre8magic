@@ -21,14 +21,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+      path: ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicJsServiceBase
-    path: ../ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+    path: ../ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
     startLine: 7
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.JsModules
   summary: Base for any JS Module Helper class
   example: []
@@ -60,14 +60,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+      path: ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+    path: ../ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
     startLine: 14
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.JsModules
   summary: Constructor
   example: []
@@ -98,14 +98,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+      path: ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: JsRuntime
-    path: ../ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+    path: ../ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
     startLine: 20
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.JsModules
   syntax:
     content: protected IJSRuntime JsRuntime { get; }
@@ -127,14 +127,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+      path: ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ModulePath
-    path: ../ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+    path: ../ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
     startLine: 21
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.JsModules
   syntax:
     content: protected string ModulePath { get; }
@@ -156,14 +156,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+      path: ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Log
-    path: ../ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+    path: ../ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
     startLine: 23
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.JsModules
   syntax:
     content: public Task Log(params object[] args)
@@ -190,14 +190,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+      path: ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Module
-    path: ../ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+    path: ../ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
     startLine: 30
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.JsModules
   summary: >-
     The JsObjectReference to the real module.
@@ -224,14 +224,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+      path: ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: InvokeAsync
-    path: ../ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+    path: ../ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
     startLine: 34
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.JsModules
   syntax:
     content: protected Task<TValue> InvokeAsync<TValue>(string identifier)
@@ -260,14 +260,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+      path: ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: InvokeAsync
-    path: ../ToSic.Cre8magic.Client/JsModules/MagicJsServiceBase.cs
+    path: ../ToSic.Cre8Magic.Client/JsModules/MagicJsServiceBase.cs
     startLine: 37
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.JsModules
   syntax:
     content: protected Task<TValue> InvokeAsync<TValue>(string identifier, params object[] args)

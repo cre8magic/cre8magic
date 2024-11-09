@@ -15,14 +15,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/SettingsWithInherit.cs
+      path: ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SettingsWithInherit
-    path: ../ToSic.Cre8magic.Client/Settings/SettingsWithInherit.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public abstract class SettingsWithInherit
@@ -58,14 +58,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/SettingsWithInherit.cs
+      path: ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Inherits
-    path: ../ToSic.Cre8magic.Client/Settings/SettingsWithInherit.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs
     startLine: 7
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Determines if it inherits another property
   example: []

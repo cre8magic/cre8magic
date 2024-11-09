@@ -16,14 +16,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicBreadcrumbDesign
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   syntax:
     content: 'public class MagicBreadcrumbDesign : DesignSetting'
@@ -58,14 +58,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: HasChildren
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
     startLine: 13
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: Classes to add if this node is a parent (has-children).
   example: []
@@ -89,14 +89,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsDisabled
-    path: ../ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesign.cs
     startLine: 19
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Breadcrumbs.Settings
   summary: >-
     Classes to add if the node is disabled.

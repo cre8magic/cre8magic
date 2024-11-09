@@ -20,14 +20,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicThemePartSettings
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public class MagicThemePartSettings
@@ -55,14 +55,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
     startLine: 7
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   summary: For json
   example: []
@@ -86,14 +86,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
     startLine: 9
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public MagicThemePartSettings(bool show)
@@ -118,14 +118,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
     startLine: 16
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public MagicThemePartSettings(string name)
@@ -150,14 +150,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Show
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
     startLine: 23
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public bool? Show { get; set; }
@@ -179,14 +179,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Design
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
     startLine: 24
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public string? Design { get; set; }
@@ -208,14 +208,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Configuration
-    path: ../ToSic.Cre8magic.Client/Themes/Settings/MagicThemePartSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
     startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
   syntax:
     content: public string? Configuration { get; set; }

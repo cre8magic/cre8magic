@@ -17,14 +17,14 @@ items:
   type: Interface
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/IMagicDesigner.cs
+      path: ToSic.Cre8Magic.Client/Controls/IMagicDesigner.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IMagicDesigner
-    path: ../ToSic.Cre8magic.Client/Controls/IMagicDesigner.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/IMagicDesigner.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: public interface IMagicDesigner
@@ -42,14 +42,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/IMagicDesigner.cs
+      path: ToSic.Cre8Magic.Client/Controls/IMagicDesigner.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
-    path: ../ToSic.Cre8magic.Client/Controls/IMagicDesigner.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/IMagicDesigner.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: string? Classes(string target)
@@ -76,14 +76,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/IMagicDesigner.cs
+      path: ToSic.Cre8Magic.Client/Controls/IMagicDesigner.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
-    path: ../ToSic.Cre8magic.Client/Controls/IMagicDesigner.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/IMagicDesigner.cs
     startLine: 6
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: string? Value(string target)
@@ -110,14 +110,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Controls/IMagicDesigner.cs
+      path: ToSic.Cre8Magic.Client/Controls/IMagicDesigner.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
-    path: ../ToSic.Cre8magic.Client/Controls/IMagicDesigner.cs
+    path: ../ToSic.Cre8Magic.Client/Controls/IMagicDesigner.cs
     startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
     content: string? Id(string target)

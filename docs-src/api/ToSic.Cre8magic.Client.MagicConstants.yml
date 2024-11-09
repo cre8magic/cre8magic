@@ -20,14 +20,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/MagicConstants.cs
+      path: ToSic.Cre8Magic.Client/MagicConstants.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicConstants
-    path: ../ToSic.Cre8magic.Client/MagicConstants.cs
+    path: ../ToSic.Cre8Magic.Client/MagicConstants.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client
   syntax:
     content: public class MagicConstants
@@ -55,14 +55,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/MagicConstants.cs
+      path: ToSic.Cre8Magic.Client/MagicConstants.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Default
-    path: ../ToSic.Cre8magic.Client/MagicConstants.cs
+    path: ../ToSic.Cre8Magic.Client/MagicConstants.cs
     startLine: 4
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client
   syntax:
     content: public static string Default
@@ -82,14 +82,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/MagicConstants.cs
+      path: ToSic.Cre8Magic.Client/MagicConstants.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DesignMobile
-    path: ../ToSic.Cre8magic.Client/MagicConstants.cs
+    path: ../ToSic.Cre8Magic.Client/MagicConstants.cs
     startLine: 5
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client
   syntax:
     content: public static string DesignMobile
@@ -109,14 +109,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/MagicConstants.cs
+      path: ToSic.Cre8Magic.Client/MagicConstants.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: InheritName
-    path: ../ToSic.Cre8magic.Client/MagicConstants.cs
+    path: ../ToSic.Cre8Magic.Client/MagicConstants.cs
     startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client
   summary: If used on a name, means it should inherit the name used for the layout to find the menu/design/etc.
   example: []
@@ -138,14 +138,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/MagicConstants.cs
+      path: ToSic.Cre8Magic.Client/MagicConstants.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuHorizontal
-    path: ../ToSic.Cre8magic.Client/MagicConstants.cs
+    path: ../ToSic.Cre8Magic.Client/MagicConstants.cs
     startLine: 12
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client
   syntax:
     content: public const string MenuHorizontal = "Horizontal"
@@ -165,14 +165,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/MagicConstants.cs
+      path: ToSic.Cre8Magic.Client/MagicConstants.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuVertical
-    path: ../ToSic.Cre8magic.Client/MagicConstants.cs
+    path: ../ToSic.Cre8Magic.Client/MagicConstants.cs
     startLine: 13
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client
   syntax:
     content: public const string MenuVertical = "Vertical"
@@ -192,14 +192,14 @@ items:
   type: Field
   source:
     remote:
-      path: ToSic.Cre8magic.Client/MagicConstants.cs
+      path: ToSic.Cre8Magic.Client/MagicConstants.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PackageId
-    path: ../ToSic.Cre8magic.Client/MagicConstants.cs
+    path: ../ToSic.Cre8Magic.Client/MagicConstants.cs
     startLine: 15
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client
   syntax:
     content: public const string PackageId = "ToSic.Cre8magic.Oqtane"

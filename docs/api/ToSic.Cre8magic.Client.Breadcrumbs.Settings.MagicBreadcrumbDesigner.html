@@ -91,12 +91,12 @@
 
   <h1 id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner" class="text-break">
     Class MagicBreadcrumbDesigner
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Client.html">Client</a>.<a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.html">Breadcrumbs</a>.<a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.Settings.html">Settings</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>Special helper to provide Css classes to menus</p>
@@ -104,7 +104,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MagicBreadcrumbDesigner : IBreadcrumbDesigner</code></pre>
+    <pre><code class="lang-csharp hljs">public class MagicBreadcrumbDesigner : IPageDesigner</code></pre>
   </div>
 
 
@@ -121,7 +121,7 @@
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.Settings.IBreadcrumbDesigner.html">IBreadcrumbDesigner</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Client.Pages.IPageDesigner.html">IPageDesigner</a></div>
     </dd>
   </dl>
 
@@ -157,66 +157,29 @@
 
 
 
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
-  <a id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner__ctor_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.#ctor*"></a>
-
-  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner__ctor_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumb_ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbSettings_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.#ctor(ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb,ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings)">
-  MagicBreadcrumbDesigner(MagicBreadcrumb, MagicBreadcrumbSettings)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L10"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicBreadcrumbDesigner(MagicBreadcrumb breadcrumb, MagicBreadcrumbSettings breadcrumbConfig)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>breadcrumb</code> <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb.html">MagicBreadcrumb</a></dt>
-    <dd></dd>
-    <dt><code>breadcrumbConfig</code> <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings.html">MagicBreadcrumbSettings</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
   <h2 class="section" id="methods">Methods
 </h2>
 
 
   <a id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Classes_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Classes_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)">
-  Classes(string, MagicBreadcrumbItem)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)">
+  Classes(string, IMagicPage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Classes(string tag, MagicBreadcrumbItem item)</code></pre>
+    <pre><code class="lang-csharp hljs">public string Classes(string tag, IMagicPage item)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
-    <dt><code>item</code> <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html">MagicBreadcrumbItem</a></dt>
+    <dt><code>item</code> <a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></dt>
     <dd></dd>
   </dl>
 
@@ -238,23 +201,23 @@
 
   <a id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Value_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Value_System_String_ToSic_Cre8magic_Client_Breadcrumbs_MagicBreadcrumbItem_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem)">
-  Value(string, MagicBreadcrumbItem)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Breadcrumbs_Settings_MagicBreadcrumbDesigner_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_" data-uid="ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)">
+  Value(string, IMagicPage)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Value(string key, MagicBreadcrumbItem item)</code></pre>
+    <pre><code class="lang-csharp hljs">public string Value(string key, IMagicPage item)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
-    <dt><code>item</code> <a class="xref" href="ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem.html">MagicBreadcrumbItem</a></dt>
+    <dt><code>item</code> <a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></dt>
     <dd></dd>
   </dl>
 
@@ -278,7 +241,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/Settings/MagicBreadcrumbDesigner.cs/#L10" class="edit-link">Edit this page</a>
         </div>
 
 

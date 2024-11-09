@@ -17,14 +17,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/PairOnOffJsonConverter.cs
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOffJsonConverter.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PairOnOffJsonConverter
-    path: ../ToSic.Cre8magic.Client/Settings/PairOnOffJsonConverter.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOffJsonConverter.cs
     startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: 'Important: NEVER use this on a'
   example: []
@@ -65,14 +65,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/PairOnOffJsonConverter.cs
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOffJsonConverter.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetNew
-    path: ../ToSic.Cre8magic.Client/Settings/PairOnOffJsonConverter.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOffJsonConverter.cs
     startLine: 24
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public static PairOnOffJsonConverter GetNew(ILogger logger)
@@ -96,14 +96,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/PairOnOffJsonConverter.cs
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOffJsonConverter.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Write
-    path: ../ToSic.Cre8magic.Client/Settings/PairOnOffJsonConverter.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOffJsonConverter.cs
     startLine: 26
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Writes a specified value as JSON.
   example: []
@@ -137,14 +137,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/PairOnOffJsonConverter.cs
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOffJsonConverter.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Read
-    path: ../ToSic.Cre8magic.Client/Settings/PairOnOffJsonConverter.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOffJsonConverter.cs
     startLine: 40
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Reads and converts the JSON to type <xref href="ToSic.Cre8magic.Client.Settings.PairOnOff" data-throw-if-not-resolved="false"></xref>.
   example: []

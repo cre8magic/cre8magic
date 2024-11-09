@@ -14,14 +14,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/MagicTokens.cs
+      path: ToSic.Cre8Magic.Client/MagicTokens.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicTokens
-    path: ../ToSic.Cre8magic.Client/MagicTokens.cs
+    path: ../ToSic.Cre8Magic.Client/MagicTokens.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client
   syntax:
     content: public class MagicTokens

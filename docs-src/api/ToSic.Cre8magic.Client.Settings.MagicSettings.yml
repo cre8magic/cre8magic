@@ -26,14 +26,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicSettings
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 10
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: The current settings of a page.
   example: []
@@ -65,14 +65,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 21
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public MagicDebugState Debug { get; }
@@ -94,14 +94,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DebugState
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 30
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public MagicDebugState DebugState(object? target)
@@ -128,14 +128,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicContext
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 36
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public string MagicContext { get; set; }
@@ -157,14 +157,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Name
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 38
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public string Name { get; }
@@ -186,14 +186,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Service
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 40
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: >-
@@ -225,14 +225,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Theme
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 44
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public MagicThemeSettings Theme { get; }
@@ -254,14 +254,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Show
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 49
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   summary: Determine if we should show a specific part
   example: []
@@ -290,14 +290,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Analytics
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 65
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public MagicAnalyticsSettings Analytics { get; }
@@ -319,14 +319,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemeDesign
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 68
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public MagicThemeDesignSettings ThemeDesign { get; }
@@ -348,14 +348,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Languages
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 71
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public MagicLanguagesSettings Languages { get; }
@@ -377,14 +377,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DebugSources
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 74
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   syntax:
     content: public Dictionary<string, string> DebugSources { get; }
@@ -406,14 +406,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Exceptions
-    path: ../ToSic.Cre8magic.Client/Settings/MagicSettings.cs
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettings.cs
     startLine: 76
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Settings
   example: []
   syntax:

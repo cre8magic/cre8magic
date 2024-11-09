@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Client.Pages
+  commentId: N:ToSic.Cre8magic.Client.Pages
+  id: ToSic.Cre8magic.Client.Pages
+  children:
+  - ToSic.Cre8magic.Client.Pages.IMagicPageList
+  - ToSic.Cre8magic.Client.Pages.IPageDesigner
+  - ToSic.Cre8magic.Client.Pages.MagicPageWithDesign
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Client.Pages
+  nameWithType: ToSic.Cre8magic.Client.Pages
+  fullName: ToSic.Cre8magic.Client.Pages
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Client.Pages.IMagicPageList
+  commentId: T:ToSic.Cre8magic.Client.Pages.IMagicPageList
+  parent: ToSic.Cre8magic.Client.Pages
+  href: ToSic.Cre8magic.Client.Pages.IMagicPageList.html
+  name: IMagicPageList
+  nameWithType: IMagicPageList
+  fullName: ToSic.Cre8magic.Client.Pages.IMagicPageList
+- uid: ToSic.Cre8magic.Client.Pages.IPageDesigner
+  commentId: T:ToSic.Cre8magic.Client.Pages.IPageDesigner
+  parent: ToSic.Cre8magic.Client.Pages
+  href: ToSic.Cre8magic.Client.Pages.IPageDesigner.html
+  name: IPageDesigner
+  nameWithType: IPageDesigner
+  fullName: ToSic.Cre8magic.Client.Pages.IPageDesigner
+- uid: ToSic.Cre8magic.Client.Pages.MagicPageWithDesign
+  commentId: T:ToSic.Cre8magic.Client.Pages.MagicPageWithDesign
+  parent: ToSic.Cre8magic.Client.Pages
+  href: ToSic.Cre8magic.Client.Pages.MagicPageWithDesign.html
+  name: MagicPageWithDesign
+  nameWithType: MagicPageWithDesign
+  fullName: ToSic.Cre8magic.Client.Pages.MagicPageWithDesign
+- uid: ToSic.Cre8magic.Client.Pages
+  commentId: N:ToSic.Cre8magic.Client.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Pages
+  nameWithType: ToSic.Cre8magic.Client.Pages
+  fullName: ToSic.Cre8magic.Client.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Client.Pages.html

@@ -18,14 +18,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/LanguageService.cs
+      path: ToSic.Cre8Magic.Client/Services/LanguageService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LanguageService
-    path: ../ToSic.Cre8magic.Client/Services/LanguageService.cs
+    path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
     startLine: 16
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: 'public class LanguageService : MagicServiceWithSettingsBase'
@@ -56,14 +56,14 @@ items:
   type: Constructor
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/LanguageService.cs
+      path: ToSic.Cre8Magic.Client/Services/LanguageService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
-    path: ../ToSic.Cre8magic.Client/Services/LanguageService.cs
-    startLine: 18
+    path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
+    startLine: 16
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public LanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLanguages)
@@ -92,14 +92,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/LanguageService.cs
+      path: ToSic.Cre8Magic.Client/Services/LanguageService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ShowMenu
-    path: ../ToSic.Cre8magic.Client/Services/LanguageService.cs
-    startLine: 30
+    path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
+    startLine: 19
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public Task<bool> ShowMenu(int siteId)
@@ -126,14 +126,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/LanguageService.cs
+      path: ToSic.Cre8Magic.Client/Services/LanguageService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LanguagesToShow
-    path: ../ToSic.Cre8magic.Client/Services/LanguageService.cs
-    startLine: 36
+    path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
+    startLine: 25
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public Task<List<MagicLanguage>> LanguagesToShow(int siteId)
@@ -160,14 +160,14 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Services/LanguageService.cs
+      path: ToSic.Cre8Magic.Client/Services/LanguageService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SetCultureAsync
-    path: ../ToSic.Cre8magic.Client/Services/LanguageService.cs
-    startLine: 83
+    path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
+    startLine: 72
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
     content: public Task SetCultureAsync(string culture)

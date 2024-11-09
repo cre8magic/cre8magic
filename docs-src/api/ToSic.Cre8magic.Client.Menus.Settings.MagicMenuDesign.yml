@@ -18,14 +18,14 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicMenuDesign
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
     startLine: 2
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   syntax:
     content: 'public class MagicMenuDesign : DesignSetting'
@@ -60,14 +60,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ByLevel
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
     startLine: 8
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: >-
     List of classes to add on certain levels only.
@@ -94,14 +94,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: HasChildren
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
     startLine: 13
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: Classes to add if this node is a parent (has-children).
   example: []
@@ -125,14 +125,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsDisabled
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
     startLine: 19
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: >-
     Classes to add if the node is disabled.
@@ -159,14 +159,14 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+      path: ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: InBreadcrumb
-    path: ../ToSic.Cre8magic.Client/Menus/Settings/MagicMenuDesign.cs
+    path: ../ToSic.Cre8Magic.Client/Menus/Settings/MagicMenuDesign.cs
     startLine: 24
   assemblies:
-  - ToSic.Cre8Magic.Client.Oqtane
+  - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Menus.Settings
   summary: Classes to add if this node is in the path / breadcrumb of the current page.
   example: []
