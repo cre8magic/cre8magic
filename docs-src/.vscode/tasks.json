@@ -2,6 +2,14 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "restore tools (docfx)",
+      "type": "shell",
+      "command": "dotnet tool restore",
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
       "label": "docfx: serve docs",
       "type": "shell",
       "command": "docfx --serve",
@@ -11,13 +19,22 @@
       }
     },
     {
-      "label": "docfx: build docs",
+      "label": "docfx: build docs (skip building API, faster for documentation)",
       "type": "shell",
       "command": "docfx build",
       "group": "build",
       "presentation": {
         "reveal": "always"
       }
-    }
+    },
+    {
+      "label": "docfx build everything (API and docs, slower)",
+      "type": "shell",
+      "command": "dotnet docfx",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
   ]
 }

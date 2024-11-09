@@ -3,21 +3,21 @@
     {
       "src": [
         {
-          "src": "../ToSic.Cre8magic.Client",
+          "src": "..",
           "files": [
-            "**/*.csproj"
+            "ToSic.Cre8magic.Client/*.csproj"
           ]
         }
       ],
-      "dest": "api",
+      "dest": "xapi",
       "disableGitFeatures": false,
       "force": true, // Re-build all the documentation
-      // "properties": {
-      //   "TargetFramework": "net8.0",
-      //   "GenerateDocumentationFile": true,
-      //   "ProduceReferenceAssembly": true
-      // },
-      // "namespaceLayout": "nested",
+      "properties": {
+        "TargetFramework": "net8.0",
+        "GenerateDocumentationFile": true,
+        "ProduceReferenceAssembly": true
+      },
+      "namespaceLayout": "nested",
     }
   ],
   "build": {
