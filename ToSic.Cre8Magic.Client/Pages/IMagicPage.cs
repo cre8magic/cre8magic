@@ -42,9 +42,9 @@ public interface IMagicPage
     Page OriginalPage { get; }
 
     /// <summary>
-    /// Id of the Page
+    /// ID of this Page
     /// </summary>
-    int PageId { get; }
+    int Id { get; }
 
     /// <summary>
     /// Reference to the parent <see cref="Page"/> if it has one.
@@ -81,4 +81,16 @@ public interface IMagicPage
     /// Determines if there are sub-pages. True if this page has sub-pages.
     /// </summary>
     bool HasChildren { get; }
+
+    #region Relationships
+
+    /// <summary>
+    /// The parent page of this page.
+    /// </summary>
+    /// <returns>
+    /// The parent page, or null if the page is on the top level and doesn't have a parent page.
+    /// </returns>
+    IMagicPage? Parent { get; }
+
+    #endregion
 }

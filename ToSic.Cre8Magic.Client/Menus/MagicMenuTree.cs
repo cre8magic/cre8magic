@@ -25,10 +25,10 @@ public class MagicMenuTree : IMagicPageList
         PageFactory = pageFactory;
         SetHelper = new(pageFactory);
         Log = SetHelper.LogRoot.GetLog("Root");
-        Log.A($"Start with PageState for Page:{pageFactory.Current.PageId}; Level:1");
+        Log.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
 
         // update dependent properties
-        MenuPages = PageFactory.UserPages.ToList();
+        MenuPages = PageFactory.GetUserPages().ToList();
         Debug = [];
     }
 
@@ -101,7 +101,7 @@ public class MagicMenuTree : IMagicPageList
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
-            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{PageFactory.Current.PageId}"))
+            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{PageFactory.Current.Id}"))
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

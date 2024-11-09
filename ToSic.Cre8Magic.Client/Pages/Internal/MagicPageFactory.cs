@@ -61,7 +61,7 @@ public class MagicPageFactory(PageState pageState)
     /// Pages in the menu according to Oqtane pre-processing
     /// Should be limited to pages which should be in the menu, visible and permissions ok. 
     /// </summary>
-    public IEnumerable<IMagicPage> UserPages => GetMenuPages();
+    public IEnumerable<IMagicPage> GetUserPages() => GetMenuPages();
 
     private IEnumerable<IMagicPage> GetMenuPages()
     {
@@ -106,7 +106,7 @@ public class MagicPageFactory(PageState pageState)
         while (page != null)
         {
             yield return page;
-            page = pages.FirstOrDefault(p => p.PageId == page.ParentId);
+            page = pages.FirstOrDefault(p => p.Id == page.ParentId);
         }
     }
 

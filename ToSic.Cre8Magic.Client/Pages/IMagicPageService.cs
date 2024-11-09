@@ -1,4 +1,5 @@
-﻿using Oqtane.UI;
+﻿using Oqtane.Models;
+using Oqtane.UI;
 
 // ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
@@ -13,15 +14,17 @@ public interface IMagicPageService
     /// </remarks>
     PageState PageState { get; }
 
-    IMagicPageService AddState(PageState pageState);
+    IMagicPageService Setup(PageState pageState);
 
-    IEnumerable<IMagicPage> All { get; }
+    IEnumerable<IMagicPage> GetAll(bool ignorePermissions = default);
 
-    IMagicPage Home { get; }
+    IMagicPage GetHome();
 
-    IMagicPage Current { get; }
+    IMagicPage GetCurrent();
 
-    IMagicPage? Get(int pageId);
+    IMagicPage? GetPage(int pageId);
 
-    IEnumerable<IMagicPage> Get(IEnumerable<int> pageIds);
+    IMagicPage? GetPage(Page? page);
+
+    IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds);
 }

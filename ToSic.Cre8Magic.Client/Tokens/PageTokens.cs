@@ -23,7 +23,7 @@ internal class PageTokens(
         if (!classes.HasValue()) return classes;
         var page = Page ?? pageFactory.Current;
         var result = classes
-            .Replace(PageId, $"{page.PageId}", InvariantCultureIgnoreCase);
+            .Replace(PageId, $"{page.Id}", InvariantCultureIgnoreCase);
 
         // If there are no placeholders left, exit
         if (!result.Contains(PlaceholderMarker)) return result;
@@ -49,7 +49,7 @@ internal class PageTokens(
         {
             if (_pageRootAlreadyTried) return _pageRootId;
             _pageRootAlreadyTried = true;
-            _pageRootId = pageFactory.Breadcrumbs() /* PageState.Breadcrumbs() */.FirstOrDefault()?.PageId;
+            _pageRootId = pageFactory.Breadcrumbs() /* PageState.Breadcrumbs() */.FirstOrDefault()?.Id;
             return _pageRootId;
         }
     }

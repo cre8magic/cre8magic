@@ -77,8 +77,8 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
-        var children = PageFactory.ChildrenOf(Tree.MenuPages, PageId)
-            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{PageId}"))
+        var children = PageFactory.ChildrenOf(Tree.MenuPages, Id)
+            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{Id}"))
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

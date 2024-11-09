@@ -1,4 +1,5 @@
-﻿using Oqtane.UI;
+﻿using Oqtane.Models;
+using Oqtane.UI;
 using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Pages.Internal;
@@ -7,10 +8,10 @@ internal class MagicPageService() : IMagicPageService
 {
     #region Setup and Core Internals
 
-    public PageState PageState => _pageState ?? throw new($"{nameof(PageState)} is not ready, make sure you always call {nameof(AddState)}(PageState) first.");
+    public PageState PageState => _pageState ?? throw new($"{nameof(PageState)} is not ready, make sure you always call {nameof(Setup)}(PageState) first.");
     private PageState? _pageState;
 
-    public IMagicPageService AddState(PageState pageState)
+    public IMagicPageService Setup(PageState pageState)
     {
         _pageState = pageState;
         return this;
@@ -21,18 +22,19 @@ internal class MagicPageService() : IMagicPageService
 
     #endregion
 
-    public IEnumerable<IMagicPage> All => PageFactory.All();
+    public IEnumerable<IMagicPage> GetAll(bool ignorePermissions = default) => ignorePermissions ? PageFactory.All() : PageFactory.GetUserPages();
 
-    public IEnumerable<IMagicPage> UserAll => null;
+    public IMagicPage GetHome() => PageFactory.Home;
 
-    public IMagicPage Home => PageFactory.Home;
+    public IMagicPage GetCurrent() => PageFactory.Current;
 
-    public IMagicPage Current => PageFactory.Current;
+    public IMagicPage? GetPage(int pageId) => PageFactory.Get([pageId])?.FirstOrDefault();
 
-    public IMagicPage? Get(int pageId) => PageFactory.Get([pageId])?.FirstOrDefault();
+    public IMagicPage? GetPage(Page? page) => PageFactory.CreateOrNull(page);
 
-    public IEnumerable<IMagicPage> Get(IEnumerable<int> pageIds) => PageFactory.Get(pageIds);
 
-    public IMagicPageList Menu => new MagicMenuTree(PageState);
+    public IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds) => PageFactory.Get(pageIds);
+
+    public IMagicPageList GetMenu() => new MagicMenuTree(PageState);
 
 }

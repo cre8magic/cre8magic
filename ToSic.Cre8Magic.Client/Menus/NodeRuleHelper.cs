@@ -29,7 +29,7 @@ public class NodeRuleHelper
 
     internal List<IMagicPage> GetRootPages()
     {
-        var l = Log.Fn<List<IMagicPage>>($"{Current.PageId}");
+        var l = Log.Fn<List<IMagicPage>>($"{Current.Id}");
         // Give empty list if we shouldn't display it
         var s = Settings;
         if (s.Display == false)
@@ -84,7 +84,7 @@ public class NodeRuleHelper
         switch (n.ModeInfo)
         {
             case StartMode.PageId:
-                return l.Return(source.Where(p => p.PageId == n.Id).ToList(), $"Page with id {n.Id}");
+                return l.Return(source.Where(p => p.Id == n.Id).ToList(), $"Page with id {n.Id}");
             case StartMode.Root:
                 return l.Return(source.Where(p => p.MenuLevel == 1).ToList(), "Home/root");
             // Level 0 means current level / current page
@@ -116,7 +116,7 @@ public class NodeRuleHelper
 
     private List<IMagicPage> GetRelatedPagesByLevel(IMagicPage referencePage, int level)
     {
-        var l = Log.Fn<List<IMagicPage>>($"{referencePage.PageId}; {level}");
+        var l = Log.Fn<List<IMagicPage>>($"{referencePage.Id}; {level}");
         List<IMagicPage> result;
         switch (level)
         {
@@ -127,7 +127,7 @@ public class NodeRuleHelper
                 result = [referencePage];
                 return l.Return(result, "current page - " + result.LogPageList());
             case 1:
-                result = PageFactory.ChildrenOf(List, referencePage.PageId);
+                result = PageFactory.ChildrenOf(List, referencePage.Id);
                 return l.Return(result, "children - " + result.LogPageList());
             case > 1:
                 return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level > 1")], "err");

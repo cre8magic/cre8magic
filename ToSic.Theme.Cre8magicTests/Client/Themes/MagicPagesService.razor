@@ -1,0 +1,67 @@
+@namespace ToSic.Theme.Cre8magicTests
+@using ToSic.Cre8magic.Pages
+@inherits ThemeBase
+@inject IMagicPageService PageSvc
+
+@code {
+    // Standard Theme Properties
+    public override string Name => "Magic Pages Service";
+    public override string Panes => PaneNames.Default;
+
+    // Test Values
+    public const string TopLevelWithSubpagesId = "97";
+
+    public const int PageWithDeepBreadcrumb = 308;
+}
+
+<main role="main">
+    <nav class="navbar navbar-dark bg-primary">
+        <Logo />
+
+        <div class="controls ms-auto">
+            <div class="controls-group"><UserProfile /> <Login /> <ControlPanel ButtonClass="btn-outline-light" /></div>
+        </div>
+    </nav>
+
+    <h1>Magic Pages Service</h1>
+    <hr/>
+    
+    <h2>Basic Get Current, Home, etc.</h2>
+    
+    <ol>
+        <li>Current Page: @PageSvc.GetCurrent()</li>
+        <li>Home Page: @PageSvc.GetHome()</li>
+        <li>Current Page Parent: @PageSvc.GetCurrent().Parent</li>
+        <li>Current page using GetPage: @PageSvc.GetPage(PageState.Page)</li>
+        <li>Current page using GetPage: @PageSvc.GetPage(PageState.Page.PageId)</li>
+        <li>Current page using GetPage: @PageSvc.GetPage(PageSvc.GetCurrent().Id)</li>
+    </ol>
+    
+    <h2>Get Many</h2>
+    
+    <ol>
+        @foreach(var aPage in PageSvc.GetPages([PageSvc.GetCurrent().Id, PageSvc.GetHome().Id]))
+        {
+            <li>@aPage</li>
+        }
+    </ol>
+
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <Pane Name="@PaneNames.Default" />
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@code {
+    protected override void OnParametersSet()
+    {
+        PageSvc.Setup(PageState);
+    }
+
+}

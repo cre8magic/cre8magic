@@ -26,7 +26,7 @@ public class MagicMenuDesigner : IPageDesigner
 
     public string Classes(string tag, IMagicPage page)
     {
-        var l = Log.Fn<string>($"{nameof(tag)}: {tag}, page: {page.PageId} \"{page.Name}\"");
+        var l = Log.Fn<string>($"{nameof(tag)}: {tag}, page: {page.Id} \"{page.Name}\"");
         var configsForTag = ConfigsForTag(tag);
         var result = configsForTag.Any()
             ? ListToClasses(TagClasses(page, configsForTag))

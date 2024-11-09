@@ -26,13 +26,22 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory): MagicPa
     private string? _target;
 
     /// <inheritdoc />
-    public List<IMagicPage> Breadcrumb => _breadcrumb ??= PageFactory.Breadcrumbs(this).ToList();
+    public List<IMagicPage> Breadcrumb => _breadcrumb ??= pageFactory.Breadcrumbs(this).ToList();
     private List<IMagicPage>? _breadcrumb;
 
 
     /// <inheritdoc />
-    public bool InBreadcrumb => _inBreadcrumb ??= PageFactory.Current.Breadcrumb.Contains(this);
+    public bool InBreadcrumb => _inBreadcrumb ??= pageFactory.Current.Breadcrumb.Contains(this);
     private bool? _inBreadcrumb;
 
 
+    public override string ToString() => $"{Name} ({Id})";
+
+    #region Relationships
+
+    
+    public IMagicPage? Parent => _parent ??= ParentId == null ? null : pageFactory.GetOrNull(ParentId);
+    private IMagicPage? _parent;
+
+    #endregion
 }

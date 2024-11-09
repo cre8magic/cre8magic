@@ -14,9 +14,9 @@ public class MagicPageBase(Page originalPage)
     public Page OriginalPage { get; } = originalPage;
 
     /// <summary>
-    /// Id of the Page
+    /// ID of the Page
     /// </summary>
-    public int PageId => OriginalPage.PageId;
+    public int Id => OriginalPage.PageId;
 
     /// <summary>
     /// Reference to the parent <see cref="Page"/> if it has one.

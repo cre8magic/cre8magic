@@ -49,7 +49,7 @@ public class MagicBreadcrumb(PageState pageState) : MagicBreadcrumbItem(new(page
             new (PageFactory, SetHelper, currentPage)
         };
 
-        if (PageFactory.Home.PageId == currentPage.PageId)
+        if (PageFactory.Home.Id == currentPage.Id)
             return breadcrumbs;
 
         // TODO: this is a bit strange, it appears that no matter what start page was set, the home-page will also be added
@@ -57,7 +57,7 @@ public class MagicBreadcrumb(PageState pageState) : MagicBreadcrumbItem(new(page
 
         var oqtPages = PageFactory.PageState.Pages;
         var parentPage = oqtPages.FirstOrDefault(p => p.PageId == currentPage.ParentId);
-        while (parentPage != null && PageFactory.Home.PageId != parentPage.PageId)
+        while (parentPage != null && PageFactory.Home.Id != parentPage.PageId)
         {
             breadcrumbs.Insert(1, new (PageFactory, SetHelper, PageFactory.Create(parentPage)));
             parentPage = oqtPages.FirstOrDefault(p => p.PageId == parentPage.ParentId);
