@@ -1,8 +1,9 @@
-﻿using ToSic.Cre8magic.Client.Settings.Internal;
+﻿using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Client.Settings.Internal;
 
 namespace ToSic.Cre8magic.Client.Menus.Settings;
 
-public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings
+public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
     /// <summary>
     /// Empty constructor is important for JSON deserialization

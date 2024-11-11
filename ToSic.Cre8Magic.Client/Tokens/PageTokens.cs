@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Client.Pages.Internal;
-using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Pages;
 using static System.StringComparison;
 using static ToSic.Cre8magic.Client.MagicTokens;
 

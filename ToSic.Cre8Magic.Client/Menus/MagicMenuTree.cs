@@ -12,7 +12,7 @@ public class MagicMenuTree : IMagicPageListOld
     {
         Specs = specs ?? new();
         PageFactory = new(pageState, Specs.Pages);
-        SetHelper = new(PageFactory);
+        SetHelper = new(PageFactory, this);
         SetHelper.Set(Specs.MagicSettings);
         SetHelper.Set(Specs.Designer);
         SetHelper.Set(Specs.Settings);
@@ -26,7 +26,7 @@ public class MagicMenuTree : IMagicPageListOld
 
     internal MagicMenuPageSetHelper SetHelper { get; }
     private MagicPageFactory PageFactory { get; }
-    public MagicMenuSettings Settings => SetHelper.Settings;
+    public MagicMenuSettings Settings => SetHelper.SettingsTyped;
 
 
     internal MagicMenuTree Tree => this;
@@ -52,7 +52,7 @@ public class MagicMenuTree : IMagicPageListOld
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
-            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{PageFactory.Current.Id}"))
+            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1))
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

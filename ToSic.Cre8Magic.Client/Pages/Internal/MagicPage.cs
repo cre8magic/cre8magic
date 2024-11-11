@@ -6,7 +6,6 @@ namespace ToSic.Cre8magic.Client.Pages.Internal;
 /// <summary>
 /// Wrapper for the Oqtane Page.
 /// </summary>
-/// <param name="oqtanePagege"></param>
 public class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPageBase(oqtanePage), IMagicPage
 {
     protected MagicPageFactory PageFactory => pageFactory;
@@ -40,8 +39,18 @@ public class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPage
     #region Relationships
 
     
-    public IMagicPage? Parent => _parent ??= ParentId == null ? null : pageFactory.GetOrNull(ParentId);
+    public IMagicPage? Parent
+    {
+        get
+        {
+            if (_parentAlreadyTried) return _parent;
+            _parentAlreadyTried = true;
+            return _parent ??= ParentId == null ? null : pageFactory.GetOrNull(ParentId);
+        }
+    }
+
     private IMagicPage? _parent;
+    private bool _parentAlreadyTried;
 
     #endregion
 }

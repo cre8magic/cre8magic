@@ -6,8 +6,10 @@ internal class MagicBreadcrumbSetHelper(MagicPageFactory pageFactory): MagicPage
 {
     public void Set(MagicBreadcrumbSettings settings) => _settings = settings;
 
-    public MagicBreadcrumbSettings Settings => _settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
+    public MagicBreadcrumbSettings SettingsTyped => _settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
     private MagicBreadcrumbSettings? _settings;
 
-    protected override IPageDesigner FallbackDesigner() => new MagicBreadcrumbDesigner(this, Settings);
+    public override IMagicPageSetSettings Settings => SettingsTyped;
+
+    protected override IPageDesigner FallbackDesigner() => new MagicBreadcrumbDesigner(this, SettingsTyped);
 }

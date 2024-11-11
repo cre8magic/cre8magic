@@ -1,8 +1,9 @@
-﻿using ToSic.Cre8magic.Client.Settings.Internal;
+﻿using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Client.Settings.Internal;
 
 namespace ToSic.Cre8magic.Client.Breadcrumb.Settings;
 
-public class MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings
+public class MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
     /// <summary>
     /// Empty constructor is important for JSON deserialization
@@ -41,8 +42,8 @@ public class MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings
     // todo: name, maybe not on interface
     public NamedSettings<MagicBreadcrumbDesign>? DesignSettings { get; init; }
 
-    public string BreadcrumbId => _breadcrumbId ??= SettingsUtils.RandomLongId(Id);
-    private string? _breadcrumbId;
+    public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
+    private string? _menuId;
 
     private static readonly MagicBreadcrumbSettings FbAndF = new()
     {

@@ -7,7 +7,16 @@ internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
 {
     #region Logging
 
-    internal LogRoot LogRoot { get; } = new();
+    internal LogRoot LogRoot { get; } = pageFactory.LogRoot;
+
+    internal Log Log => _log ??= LogRoot.GetLog(GetType().Name);
+    private Log? _log;
+
+    #endregion
+
+    #region Abstract
+
+    public abstract IMagicPageSetSettings Settings { get; }
 
     #endregion
 

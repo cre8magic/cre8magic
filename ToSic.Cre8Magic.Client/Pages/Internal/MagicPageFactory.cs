@@ -28,7 +28,10 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
 
     internal PageState PageState => pageState ?? throw new ArgumentNullException(nameof(pageState));
 
-    internal Log Log = new LogRoot().GetLog("pageFact");
+    internal LogRoot LogRoot = new LogRoot();
+
+    internal Log Log => _log ??= LogRoot.GetLog("pageFact");
+    private Log? _log;
 
     /// <summary>
     /// Helper to calculate URL and other page properties.
