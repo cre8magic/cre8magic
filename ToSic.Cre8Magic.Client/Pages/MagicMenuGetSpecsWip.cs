@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Client.Breadcrumb.Settings;
-using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Pages;
 
@@ -10,21 +9,36 @@ namespace ToSic.Cre8magic.Client.Pages;
 /// </summary>
 public record MagicMenuGetSpecsWip
 {
-    ///// <summary>
-    ///// If the current page should be included in the breadcrumb.
-    /////
-    ///// Set to false for scenarios where you don't want to show the final page,
-    ///// or will use custom code to visualize differently.
-    ///// </summary>
-    //public bool WithCurrent { get; init; } = true;
+    /// <summary>
+    /// Magic Settings for debugging, in case these specs were generated from there.
+    /// </summary>
+    public MagicSettings? MagicSettings { get; init; }
 
-    ///// <summary>
-    ///// If the home page should be included in the breadcrumb.
-    ///// This is special because the home page is usually not really "above" the others, but typically side-by side to other pages on the top level menu.
-    /////
-    ///// Set to false, if you only want to show the breadcrumb starting at the level below home.
-    ///// </summary>
-    //public bool WithHome { get; init; } = true;
+    /// <summary>
+    /// How many level deep the navigation should show.
+    /// The number is ??? relative,
+    /// so if the navigation starts an level 2 then levelDepth 2 means to show levels 2 & 3 ??? verify
+    /// </summary>
+    public int? Depth { get; set; }
+
+    /// <summary>
+    /// Levels to skip from the initial stating point.
+    /// - 0 means don't skip any, so if we're starting at the root, show that level
+    /// - 1 means skip the first level, so if we're starting at the root, show the children
+    /// See inspiration context from DDRMenu https://www.dnnsoftware.com/wiki/ddrmenu-reference-guide
+    /// in DDR it was called 'skip' but it didn't make sense IMHO
+    /// </summary>
+    public bool? Children { get; set; }
+
+    /// <summary>
+    /// The level this menu should start from.
+    /// - `0` is the top level (default)
+    /// - `1` is the top level containing home and other pages
+    /// - `-1` is one level up from the current node
+    /// - `-2` is two levels up from the current node
+    /// </summary>
+    public int? Level { get; set; }
+
 
     public MagicMenuSettings? Settings { get; init; }
 

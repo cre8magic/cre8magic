@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic.Client.Menus;
 /// <summary>
 /// Will create a MenuTree based on the current pages information and configuration
 /// </summary>
-public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger) : MagicServiceWithSettingsBase
+public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageService pageSvc) : MagicServiceWithSettingsBase
 {
     public ILogger Logger { get; } = logger;
 
@@ -64,6 +64,13 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger) : MagicServiceWi
         else
             messages.Add("Design rules already set");
 
-        return new MagicMenuTree(Settings, new MagicMenuGetSpecsWip() { Settings = config, Pages = menuPages, DebugMessages = messages}, config);
+        return (MagicMenuTree)pageSvc.Setup(Settings.PageState)
+            .GetMenu(new MagicMenuGetSpecsWip()
+            {
+                MagicSettings = Settings,
+                Settings = config,
+                Pages = menuPages,
+                DebugMessages = messages
+            });
     }
 }

@@ -8,18 +8,14 @@ namespace ToSic.Cre8magic.Client.Menus;
 
 public class MagicMenuTree : IMagicPageListOld
 {
-    internal MagicMenuTree(MagicSettings magicSettings, MagicMenuGetSpecsWip? specs, MagicMenuSettings? settings)
-        : this(magicSettings.PageState, specs ?? new MagicMenuGetSpecsWip())
-    {
-        SetHelper.Set(magicSettings);
-        SetHelper.Set(settings);
-    }
-
     public MagicMenuTree(PageState pageState, MagicMenuGetSpecsWip? specs = null)
     {
         Specs = specs ?? new();
         PageFactory = new(pageState, Specs.Pages);
         SetHelper = new(PageFactory);
+        SetHelper.Set(Specs.MagicSettings);
+        SetHelper.Set(Specs.Designer);
+        SetHelper.Set(Specs.Settings);
         Log = SetHelper.LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
     }
@@ -32,27 +28,10 @@ public class MagicMenuTree : IMagicPageListOld
     private MagicPageFactory PageFactory { get; }
     public MagicMenuSettings Settings => SetHelper.Settings;
 
-    #region Init
-
-    public MagicMenuTree Setup(MagicMenuSettings? settings)
-    {
-        Log.A($"Init MagicMenuSettings Start:{settings?.Start}; Level:{settings?.Level}");
-        SetHelper.Set(settings);
-        return this;
-    }
-
-    public MagicMenuTree Designer(IPageDesigner pageDesigner)
-    {
-        Log.A($"Init MenuDesigner:{pageDesigner != null}");
-        SetHelper.Set(pageDesigner);
-        return this;
-    }
-
-    #endregion
 
     internal MagicMenuTree Tree => this;
 
-    public int MaxDepth => _maxDepth ??= Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
+    public int MaxDepth => _maxDepth ??= Specs.Depth ?? Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
     private int? _maxDepth;
 
     public int MenuLevel => 1;
@@ -69,7 +48,7 @@ public class MagicMenuTree : IMagicPageListOld
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
-        var rootPages = new NodeRuleHelper(PageFactory, /*MenuPages,*/ PageFactory.Current, Settings, Log).GetRootPages(Specs);
+        var rootPages = new NodeRuleHelper(PageFactory, PageFactory.Current, Settings, Log).GetRootPages(Specs);
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages

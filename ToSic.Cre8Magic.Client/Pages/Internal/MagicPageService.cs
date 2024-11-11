@@ -46,8 +46,4 @@ internal class MagicPageService() : IMagicPageService
         return new MagicMenuTree(PageState, specs);
     }
 
-    public MagicMenuTree GetMenuWip(MagicMenuGetSpecsWip? specs = default)
-    {
-        return new MagicMenuTree(PageState, specs);
-    }
 }

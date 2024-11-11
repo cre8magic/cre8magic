@@ -36,8 +36,8 @@ public class NodeRuleHelper
         var start = (specs.Start ?? s.Start)?.Trim();
 
         // Case 2: '.' - not yet tested
-        var startLevel = s.Level ?? MagicMenuSettings.StartLevelFallback;
-        var getChildren = s.Children ?? MagicMenuSettings.ChildrenFallback;
+        var startLevel = s.Level ?? specs.Level ?? MagicMenuSettings.StartLevelFallback;
+        var getChildren = s.Children ?? specs.Children ?? MagicMenuSettings.ChildrenFallback;
         var startingPoints = GetStartNodeRules(start, startLevel, getChildren);
         // Case 3: one or more IDs to start from
 

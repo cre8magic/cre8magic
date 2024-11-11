@@ -32,6 +32,4 @@ public interface IMagicPageService
     IMagicPageListWip GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default);
 
     IMagicPageListOld GetMenu(MagicMenuGetSpecsWip? specs = default);
-
-    MagicMenuTree GetMenuWip(MagicMenuGetSpecsWip? specs = default);
 }
