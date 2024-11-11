@@ -23,16 +23,15 @@ internal class MagicMenuPageSetHelper(MagicPageFactory pageFactory, MagicMenuTre
     /// Retrieve the children the first time it's needed.
     /// </summary>
     /// <returns></returns>
-    public List<MagicMenuPage> GetChildren(IMagicPage page)
+    public override List<IMagicPageWithDesignWip> GetChildren(IMagicPage page)
     {
-        var l = Log.Fn<List<MagicMenuPage>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
+        var l = Log.Fn<List<IMagicPageWithDesignWip>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
         var levelsRemaining = tree.MaxDepth - (page.MenuLevel - 1 /* Level is 1 based, so -1 */);
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
-        var children = pageFactory.ChildrenOf(page.Id)
-            .Select(child => new MagicMenuPage(pageFactory, this, child, page.MenuLevel + 1))
-            .ToList();
+        var children = base.GetChildren(page);
+
         return l.Return(children, $"{children.Count}");
     }
 

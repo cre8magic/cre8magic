@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Client.Pages;
+﻿using ToSic.Cre8magic.Pages;
+
+namespace ToSic.Cre8magic.Client.Pages;
 
 public interface IMagicPageListOld
 {
@@ -6,7 +8,7 @@ public interface IMagicPageListOld
 
     bool HasChildren { get; }
 
-    IList<MagicMenuPage> Children { get; }
+    IEnumerable<IMagicPageWithDesignWip> Children { get; }
 
     /// <summary>
     /// Get css class for tag.

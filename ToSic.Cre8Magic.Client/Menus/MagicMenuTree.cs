@@ -38,12 +38,12 @@ public class MagicMenuTree : IMagicPageListOld
 
     public bool HasChildren => Children.Any();
 
-    public IList<MagicMenuPage> Children => _children ??= GetChildren();
-    private IList<MagicMenuPage>? _children;
+    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= GetChildren();
+    private IList<IMagicPageWithDesignWip>? _children;
 
-    protected List<MagicMenuPage> GetChildren()
+    protected List<IMagicPageWithDesignWip> GetChildren()
     {
-        var l = Log.Fn<List<MagicMenuPage>>($"{nameof(MenuLevel)}: {MenuLevel}");
+        var l = Log.Fn<List<IMagicPageWithDesignWip>>($"{nameof(MenuLevel)}: {MenuLevel}");
         var levelsRemaining = Tree.MaxDepth - (MenuLevel - 1 /* Level is 1 based, so -1 */);
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
@@ -52,7 +52,7 @@ public class MagicMenuTree : IMagicPageListOld
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
-            .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1))
+            .Select(page => new MagicPageWithDesign(PageFactory, SetHelper, page, MenuLevel + 1) as IMagicPageWithDesignWip)
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

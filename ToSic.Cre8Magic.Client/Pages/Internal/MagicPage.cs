@@ -11,7 +11,12 @@ public class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPage
     protected MagicPageFactory PageFactory => pageFactory;
 
     /// <inheritdoc />
-    public virtual int MenuLevel => Level + 1;
+    public int MenuLevel
+    {
+        get => _menuLevel ??= Level + 1;
+        init => _menuLevel = value;
+    }
+    private int? _menuLevel;
 
     /// <inheritdoc />
     public bool IsCurrent => OqtanePage.PageId == pageFactory.PageState.Page.PageId;

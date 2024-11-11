@@ -47,4 +47,26 @@ internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
         return MagicSettings.Tokens.SwapParser(originalPage);
     }
 
+
+    #region Children
+
+    /// <summary>
+    /// Retrieve the children the first time it's needed.
+    ///
+    /// It's virtual, since other SetHelpers will have different implementations.
+    /// For exapmle the MagicMenuPageSetHelper will stop if a certain depth has been reached.
+    /// </summary>
+    /// <returns></returns>
+    public virtual List<IMagicPageWithDesignWip> GetChildren(IMagicPage page)
+    {
+        var l = Log.Fn<List<IMagicPageWithDesignWip>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
+
+        var children = pageFactory.ChildrenOf(page.Id)
+            .Select(child => new MagicPageWithDesign(pageFactory, this, child, page.MenuLevel + 1) as IMagicPageWithDesignWip)
+            .ToList();
+        return l.Return(children, $"{children.Count}");
+    }
+
+
+    #endregion
 }
