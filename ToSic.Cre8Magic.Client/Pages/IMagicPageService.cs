@@ -30,4 +30,8 @@ public interface IMagicPageService
     IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds);
 
     IMagicPageListWip GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default);
+
+    IMagicPageListOld GetMenu(MagicMenuGetSpecsWip? specs = default);
+
+    MagicMenuTree GetMenuWip(MagicMenuGetSpecsWip? specs = default);
 }

@@ -44,7 +44,7 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageListOld
     /// <summary>
     /// Root navigator object which has some data/logs for all navigators which spawned from it. 
     /// </summary>
-    internal MagicMenuTree Tree { get; }
+    private MagicMenuTree Tree { get; }
 
     internal Log Log { get; }
     
@@ -77,7 +77,7 @@ public class MagicMenuPage : MagicPageWithDesign, IMagicPageListOld
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
-        var children = PageFactory.ChildrenOf(Tree.MenuPages, Id)
+        var children = PageFactory.ChildrenOf(Id)
             .Select(page => new MagicMenuPage(PageFactory, SetHelper, page, MenuLevel + 1, Tree, $"{Log.Prefix}>{Id}"))
             .ToList();
         return l.Return(children, $"{children.Count}");

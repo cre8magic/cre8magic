@@ -1,19 +1,63 @@
 @namespace ToSic.Theme.Cre8magicTests
-@using ToSic.Cre8magic.Client.Menus
 @using ToSic.Cre8magic.Client.Pages.Internal
 @using ToSic.Cre8magic.Pages
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeBase
 @inject ISettingService SettingService
+@inject IMagicPageService PageSvc
 
 @code {
     public override string Name => "Theme1";
     public override string Panes => PaneNames.Default;
 
-    public const string TopLevelWithSubpagesId = "97";
+    // Use test parameters from Tonci vs. Daniel
+    const bool PCTonci = false;
 
-    public IEnumerable<IMagicPage> GetCustomMenuPages() => new MagicPageFactory(PageState).Get([97, 98, 99]);
+    public const string TopLevelWithSubpagesId = PCTonci
+        ? "97"
+        : "29";
 
+    static List<int> Pages2dm =
+    [
+        29, // Top level page (first with subitems)
+        33, // Third under Top Level Page
+        41, // Main Test Page with loads of pages
+    ];
+
+    static List<int> Pages2dmRestrict =
+    [
+        ..Pages2dm,
+        36, // "Page with Content" under "TopLevel"
+    ];
+
+    public static string TopLevelThreePages = PCTonci
+        ? "97, 98, 99"
+        : string.Join(", ", Pages2dm);
+
+
+    public IEnumerable<IMagicPage> RestrictPossiblePages() => new MagicPageFactory(PageState).Get(PCTonci
+        ? [97, 98, 99]
+        : Pages2dmRestrict
+    );
+
+    private bool _login = true;
+    private bool _register = true;
+
+    protected override void OnParametersSet()
+    {
+        PageSvc.Setup(PageState);
+
+        try
+        {
+            var settings = SettingService.MergeSettings(PageState.Site.Settings, PageState.Page.Settings);
+            _login = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Login", "true"));
+            _register = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Register", "true"));
+        }
+        catch
+        {
+            // error loading theme settings
+        }
+    }
 }
 
 <main role="main">
@@ -26,63 +70,66 @@
     </nav>
     
 
-    <h1>Menu</h1>
+    <h1>Menu Tests for @(PCTonci ? "Tonci" : "iJungleboy")</h1>
 
     <div class="navbar-expand-lg">
         
         <h2>No Settings</h2>
         <h3>Basic Menu without Setting, name none</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState)' />
+        <BasicMenu Menu='PageSvc.GetMenu()' />
         <hr/>
 
         <hr/>
         <h2>Set MenuPages</h2>
-        <h3>Custom menu pages (97, 98, 99)</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).SetMenuPages(GetCustomMenuPages())'></BasicMenu>
+        <h3>Custom menu pages (@string.Join(",", RestrictPossiblePages().Select(p => p.Id))) </h3>
+        <BasicMenu Menu="PageSvc.GetMenuWip(new() { Pages = RestrictPossiblePages() } )"></BasicMenu>
 
         <h2>Set Designer</h2>
         <h3>BasicMenuDesigner</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Designer(new BasicMenuDesigner())' />
+        <BasicMenu Menu="PageSvc.GetMenuWip().Designer(new BasicMenuDesigner())" />
         <hr/>
 
         <h2>Various Settings</h2>
-        <h3>Only one specific page, no other params</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = TopLevelWithSubpagesId }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <h3>Only one specific page @TopLevelWithSubpagesId, no other params</h3>
+        <BasicMenu Menu="PageSvc.GetMenuWip(new() { Start = TopLevelWithSubpagesId, Designer = new BasicMenuDesigner()  }).Setup(new() { Start = TopLevelWithSubpagesId }).Designer(new BasicMenuDesigner())"></BasicMenu>
 
-        <h3>Only one specific page, Depth = 0</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = TopLevelWithSubpagesId, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <h3>Only 3 specific pages (@TopLevelThreePages), no other params</h3>
+        <BasicMenu Menu="PageSvc.GetMenuWip(new() { Start = TopLevelThreePages, Designer = new BasicMenuDesigner() })"></BasicMenu>
 
-        <h3>Only one specific page, Depth = 2</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = TopLevelWithSubpagesId, Depth = 2 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <h3>Only one specific page @TopLevelWithSubpagesId, Depth = 0</h3>
+        <BasicMenu Menu="PageSvc.GetMenuWip(new() { Start = TopLevelWithSubpagesId }).Setup(new() { Start = TopLevelWithSubpagesId, Depth = 0 }).Designer(new BasicMenuDesigner())"></BasicMenu>
+
+        <h3>Only one specific page @TopLevelWithSubpagesId, Depth = 2</h3>
+        <BasicMenu Menu="PageSvc.GetMenuWip(new() { Start = TopLevelWithSubpagesId }).Setup(new() { Start = TopLevelWithSubpagesId, Depth = 2 }).Designer(new BasicMenuDesigner())"></BasicMenu>
 
         <hr/>
         <h2>Start at current level</h2>
         <h3>Current level only (should only show one page...)</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = "." }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip(new() { Start = "." }).Setup(new() { Start = "." }).Designer(new BasicMenuDesigner())'></BasicMenu>
 
         <h3>Current level with children</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = ".", Depth = 1 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip().Setup(new() { Start = ".", Depth = 1 }).Designer(new BasicMenuDesigner())'></BasicMenu>
 
         <h3>Current level children only</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = ".", Children = true, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip().Setup(new() { Start = ".", Children = true, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
 
         <h3>Parent level only</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = ".", Level = -1, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip().Setup(new() { Start = ".", Level = -1, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
 
         <h3>Current from Root Level 1, no children</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = ".", Level = 1, Children = false, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip().Setup(new() { Start = ".", Level = 1, Children = false, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
         <h3>Current from Root Level 1, children</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = ".", Level = 1, Children = true, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip().Setup(new() { Start = ".", Level = 1, Children = true, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
         <h3>Current from Root Level 1, no-children Depth 1</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = ".", Level = 1, Children = false, Depth = 1 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip().Setup(new() { Start = ".", Level = 1, Children = false, Depth = 1 }).Designer(new BasicMenuDesigner())'></BasicMenu>
 
         <h3>Current from Root Level 2</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = ".", Level = 2, Children = true, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip().Setup(new() { Start = ".", Level = 2, Children = true, Depth = 0 }).Designer(new BasicMenuDesigner())'></BasicMenu>
 
         <hr/>
         <h2>Start with specific numbers</h2>
         <h3>Specific Pages Listed here (Home, myPage, Login)</h3>
-        <BasicMenu Menu='new MagicMenuTree(PageState).Setup(new() { Start = "1, 3, 5!" }).Designer(new BasicMenuDesigner())'></BasicMenu>
+        <BasicMenu Menu='PageSvc.GetMenuWip().Setup(new() { Start = "1, 3, 5!" }).Designer(new BasicMenuDesigner())'></BasicMenu>
 
     </div>
 
@@ -97,23 +144,3 @@
 
     </div>
 </main>
-
-@code {
-    
-    private bool _login = true;
-    private bool _register = true;
-
-    protected override void OnParametersSet()
-    {
-        try
-        {
-            var settings = SettingService.MergeSettings(PageState.Site.Settings, PageState.Page.Settings);
-            _login = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Login", "true"));
-            _register = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Register", "true"));
-        }
-        catch
-        {
-            // error loading theme settings
-        }
-    }
-}

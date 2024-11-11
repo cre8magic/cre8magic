@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Client.Settings.Json;
 using ToSic.Cre8magic.Pages;
 
@@ -63,6 +64,6 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger) : MagicServiceWi
         else
             messages.Add("Design rules already set");
 
-        return new MagicMenuTree(Settings, config, menuPages, messages);
+        return new MagicMenuTree(Settings, new MagicMenuGetSpecsWip() { Settings = config, Pages = menuPages, DebugMessages = messages}, config);
     }
 }

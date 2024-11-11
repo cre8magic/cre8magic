@@ -13,12 +13,26 @@ namespace ToSic.Cre8magic.Client.Pages.Internal;
 /// Factory to create Magic Pages.
 /// This is necessary, because the pages need certain properties which require other services to be available.
 /// </summary>
-public class MagicPageFactory(PageState pageState)
+public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false)
 {
+    /// <summary>
+    /// Get a new factory, with different page restrictions
+    /// </summary>
+    /// <param name="restrictPages"></param>
+    /// <returns></returns>
+    public MagicPageFactory Clone(List<IMagicPage> restrictPages, bool ignorePermissions = false)
+    {
+        var clone = new MagicPageFactory(pageState, restrictPages, ignorePermissions);
+        return clone;
+    }
+
+    internal PageState PageState => pageState ?? throw new ArgumentNullException(nameof(pageState));
+
     internal Log Log = new LogRoot().GetLog("pageFact");
 
-    internal PageState PageState => pageState;
-
+    /// <summary>
+    /// Helper to calculate URL and other page properties.
+    /// </summary>
     internal MagicPageProperties PageProperties => _pageProperties ??= new(this);
     private MagicPageProperties? _pageProperties;
 
@@ -35,18 +49,18 @@ public class MagicPageFactory(PageState pageState)
 
     public IMagicPage? CreateOrNull(Page? page) => page == null ? null : Create(page);
 
-    public IMagicPage Home => _home ??= Create(pageState.Pages.Find(p => p.Path == "") ?? throw new("Home page not found, no page with empty path"));
+    public IMagicPage Home => _home ??= Create(OqtanePages.Find(p => p.Path == "") ?? throw new("Home page not found, no page with empty path"));
     private IMagicPage? _home;
 
-    public IMagicPage Current => _current ??= Create(pageState.Page ?? throw new("Current Page not found"));
+    public IMagicPage Current => _current ??= Create(PageState.Page ?? throw new("Current Page not found"));
     private IMagicPage? _current;
 
     
 
-    public IMagicPage? GetOrNull(int? id) => id == null ? null : CreateOrNull(pageState.Pages.FirstOrDefault(p => p.PageId == id));
+    public IMagicPage? GetOrNull(int? id) => id == null ? null : CreateOrNull(OqtanePages.FirstOrDefault(p => p.PageId == id));
 
     public IEnumerable<IMagicPage> Get(IEnumerable<int> ids) =>
-        pageState.Pages.Where(p => ids.Contains(p.PageId)).Select(Create);
+        OqtanePages.Where(p => ids.Contains(p.PageId)).Select(Create);
 
     public IEnumerable<IMagicPage> Get(IEnumerable<Page> pages) =>
         pages.Select(Create);
@@ -54,8 +68,14 @@ public class MagicPageFactory(PageState pageState)
     /// <summary>
     /// List of all pages - even these which would currently not be shown in the menu.
     /// </summary>
-    public IEnumerable<IMagicPage> All() => _all ??= pageState.Pages.Select(Create).ToList();
+    public IEnumerable<IMagicPage> PagesAll() => _all ??= PageState.Pages.Select(Create).ToList();
     private List<IMagicPage>? _all;  // internally use list, so any further ToList() will be optimized
+
+    public IEnumerable<IMagicPage> PagesCurrent() => _currentPages ??= restrictPages?.ToList() ?? (ignorePermissions ? PagesAll() : PagesUser()).ToList();
+    private List<IMagicPage>? _currentPages;
+
+    private List<Page> OqtanePages => _oqtanePages ??= PageState.Pages.ToList();
+    private List<Page>? _oqtanePages;
 
     #region Menu Pages - these are all the pages which the current user is allowed to see
 
@@ -63,17 +83,14 @@ public class MagicPageFactory(PageState pageState)
     /// Pages in the menu according to Oqtane pre-processing
     /// Should be limited to pages which should be in the menu, visible and permissions ok. 
     /// </summary>
-    public IEnumerable<IMagicPage> GetUserPages() => GetMenuPages();
+    public IEnumerable<IMagicPage> PagesUser() => GetUserMenuPages();
 
-    private IEnumerable<IMagicPage> GetMenuPages()
+    private IEnumerable<IMagicPage> GetUserMenuPages()
     {
-        if (pageState == null)
-            throw new InvalidOperationException("PageState is null.");
-
         var securityLevel = int.MaxValue;
-        foreach (var page in pageState.Pages.Where(item => item.IsNavigation))
+        foreach (var page in OqtanePages.Where(item => item.IsNavigation))
         {
-            if (page.Level <= securityLevel && UserSecurity.IsAuthorized(pageState.User, PermissionNames.View, page.PermissionList))
+            if (page.Level <= securityLevel && UserSecurity.IsAuthorized(PageState.User, PermissionNames.View, page.PermissionList))
             {
                 securityLevel = int.MaxValue;
                 yield return Create(page);
@@ -126,7 +143,7 @@ public class MagicPageFactory(PageState pageState)
     //    var restrictions = specs.Pages?.Select(p => p.Id).ToHashSet();
 
     //    //// Find first parent page
-    //    //var oqtPages = (specs.Pages ?? PageState.Pages).ToList();
+    //    //var oqtPages = (specs.Pages ?? OqtanePages).ToList();
     //    //var parentPage = oqtPages.FirstOrDefault(p => p.PageId == endPage.ParentId);
     //    var parentPage = endPage.Parent;
 
@@ -174,10 +191,10 @@ public class MagicPageFactory(PageState pageState)
 
     #region ChildrenOf
 
-    public List<IMagicPage> ChildrenOf(IList<IMagicPage> list, int pageId)
+    public List<IMagicPage> ChildrenOf(int pageId)
     {
         var l = Log.Fn<List<IMagicPage>>(pageId.ToString());
-        var result = list.Where(p => p.ParentId == pageId).ToList();
+        var result = PagesCurrent().Where(p => p.ParentId == pageId).ToList();
         return l.Return(result, result.LogPageList());
     }
 

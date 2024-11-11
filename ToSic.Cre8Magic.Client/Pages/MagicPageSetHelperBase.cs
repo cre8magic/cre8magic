@@ -31,7 +31,7 @@ internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
     {
         // fallback without MagicSettings return just TokenEngine with PageTokens
         if (MagicSettings == null)
-            return new TokenEngine([new PageTokens(pageFactory, page)]);
+            return new TokenEngine([new PageTokens(page)]);
 
         var originalPage = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
         originalPage = originalPage.Clone(page);

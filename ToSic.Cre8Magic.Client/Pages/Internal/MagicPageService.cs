@@ -24,14 +24,14 @@ internal class MagicPageService() : IMagicPageService
 
     public IEnumerable<IMagicPage> GetAll(bool ignorePermissions = default) =>
         ignorePermissions
-            ? PageFactory.All()
-            : PageFactory.GetUserPages();
+            ? PageFactory.PagesAll()
+            : PageFactory.PagesUser();
 
     public IMagicPage GetHome() => PageFactory.Home;
 
     public IMagicPage GetCurrent() => PageFactory.Current;
 
-    public IMagicPage? GetPage(int pageId) => PageFactory.Get([pageId])?.FirstOrDefault();
+    public IMagicPage? GetPage(int pageId) => PageFactory.GetOrNull(pageId);
 
     public IMagicPage? GetPage(Page? page) => PageFactory.CreateOrNull(page);
 
@@ -41,6 +41,13 @@ internal class MagicPageService() : IMagicPageService
     public IMagicPageListWip GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default) =>
         PageFactory.Breadcrumb.Get(specs);
 
-    public IMagicPageListOld GetMenu() => new MagicMenuTree(PageState);
+    public IMagicPageListOld GetMenu(MagicMenuGetSpecsWip? specs = default)
+    {
+        return new MagicMenuTree(PageState, specs);
+    }
 
+    public MagicMenuTree GetMenuWip(MagicMenuGetSpecsWip? specs = default)
+    {
+        return new MagicMenuTree(PageState, specs);
+    }
 }

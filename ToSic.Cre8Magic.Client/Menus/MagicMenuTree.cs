@@ -8,34 +8,28 @@ namespace ToSic.Cre8magic.Client.Menus;
 
 public class MagicMenuTree : IMagicPageListOld
 {
-    internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<IMagicPage>? menuPages = null, List<string>? messages = null)
-        : this(magicSettings.PageState)
+    internal MagicMenuTree(MagicSettings magicSettings, MagicMenuGetSpecsWip? specs, MagicMenuSettings? settings)
+        : this(magicSettings.PageState, specs ?? new MagicMenuGetSpecsWip())
     {
         SetHelper.Set(magicSettings);
         SetHelper.Set(settings);
-        if (menuPages != null) SetMenuPages(menuPages);
-        if (messages != null) SetMessages(messages);
     }
 
-    public MagicMenuTree(PageState pageState) : this(new MagicPageFactory(pageState))
-    { }
-
-    private MagicMenuTree(MagicPageFactory pageFactory)
+    public MagicMenuTree(PageState pageState, MagicMenuGetSpecsWip? specs = null)
     {
-        PageFactory = pageFactory;
-        SetHelper = new(pageFactory);
+        Specs = specs ?? new();
+        PageFactory = new(pageState, Specs.Pages);
+        SetHelper = new(PageFactory);
         Log = SetHelper.LogRoot.GetLog("Root");
-        Log.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
-
-        // update dependent properties
-        MenuPages = PageFactory.GetUserPages().ToList();
-        Debug = [];
+        Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
     }
+
+    internal MagicMenuGetSpecsWip Specs { get; }
 
     internal Log Log { get; }
 
     internal MagicMenuPageSetHelper SetHelper { get; }
-    internal MagicPageFactory PageFactory { get; }
+    private MagicPageFactory PageFactory { get; }
     public MagicMenuSettings Settings => SetHelper.Settings;
 
     #region Init
@@ -44,20 +38,6 @@ public class MagicMenuTree : IMagicPageListOld
     {
         Log.A($"Init MagicMenuSettings Start:{settings?.Start}; Level:{settings?.Level}");
         SetHelper.Set(settings);
-        return this;
-    }
-
-    public MagicMenuTree SetMenuPages(IEnumerable<IMagicPage> menuPages)
-    {
-        Log.A($"Init menuPages:{menuPages.Count()}");
-        MenuPages = menuPages.ToList();
-        return this;
-    }
-
-    public MagicMenuTree SetMessages(List<string> messages)
-    {
-        Log.A($"Init messages:{messages.Count}");
-        Debug = messages;
         return this;
     }
 
@@ -70,18 +50,10 @@ public class MagicMenuTree : IMagicPageListOld
 
     #endregion
 
-    /// <summary>
-    /// Pages in the menu according to Oqtane pre-processing
-    /// Should be limited to pages which should be in the menu, visible and permissions ok. 
-    /// </summary>
-    internal IList<IMagicPage> MenuPages { get; private set; }
-
-    internal /*override*/ MagicMenuTree Tree => this;
+    internal MagicMenuTree Tree => this;
 
     public int MaxDepth => _maxDepth ??= Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
     private int? _maxDepth;
-
-    public List<string> Debug { get; private set; }
 
     public int MenuLevel => 1;
 
@@ -97,7 +69,7 @@ public class MagicMenuTree : IMagicPageListOld
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
-        var rootPages = new NodeRuleHelper(PageFactory, MenuPages, PageFactory.Current, Settings, Log).GetRootPages();
+        var rootPages = new NodeRuleHelper(PageFactory, /*MenuPages,*/ PageFactory.Current, Settings, Log).GetRootPages(Specs);
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages

@@ -8,11 +8,10 @@ public class NodeRuleHelper
 {
     public const char PageForced = '!';
 
-    internal NodeRuleHelper(MagicPageFactory pageFactory, IList<IMagicPage>? list, IMagicPage current, MagicMenuSettings settings, Log log)
+    internal NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, MagicMenuSettings settings, Log log)
     {
         Log = log;
         PageFactory = pageFactory;
-        List = list ?? pageFactory.All().ToList();
         Current = current;
         Settings = settings;
     }
@@ -20,14 +19,12 @@ public class NodeRuleHelper
 
     internal MagicPageFactory PageFactory { get; }
 
-    internal IList<IMagicPage> List { get; }
-    
     private IMagicPage Current { get; }
 
     public MagicMenuSettings Settings { get; }
 
 
-    internal List<IMagicPage> GetRootPages()
+    internal List<IMagicPage> GetRootPages(MagicMenuGetSpecsWip specs)
     {
         var l = Log.Fn<List<IMagicPage>>($"{Current.Id}");
         // Give empty list if we shouldn't display it
@@ -36,7 +33,7 @@ public class NodeRuleHelper
             return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries
-        var start = s.Start?.Trim();
+        var start = (specs.Start ?? s.Start)?.Trim();
 
         // Case 2: '.' - not yet tested
         var startLevel = s.Level ?? MagicMenuSettings.StartLevelFallback;
@@ -78,8 +75,8 @@ public class NodeRuleHelper
     {
         var l = Log.Fn<List<IMagicPage>>();
         var source = n.Force
-            ? PageFactory.All().ToList()
-            : List;
+            ? PageFactory.PagesAll().ToList()
+            : PageFactory.PagesCurrent().ToList();
 
         switch (n.ModeInfo)
         {
@@ -121,13 +118,13 @@ public class NodeRuleHelper
         switch (level)
         {
             case -1:
-                result = PageFactory.ChildrenOf(List, referencePage.ParentId ?? 0);
+                result = PageFactory.ChildrenOf(referencePage.ParentId ?? 0);
                 return l.Return(result, "siblings - " + result.LogPageList());
             case 0:
                 result = [referencePage];
                 return l.Return(result, "current page - " + result.LogPageList());
             case 1:
-                result = PageFactory.ChildrenOf(List, referencePage.Id);
+                result = PageFactory.ChildrenOf(referencePage.Id);
                 return l.Return(result, "children - " + result.LogPageList());
             case > 1:
                 return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level > 1")], "err");

@@ -51,8 +51,9 @@ public class MagicSettingsService: IHasSettingsExceptions
         if (cached != null) return cached;
 
         // Tokens engine for this specific PageState
+        var pageFactory = new MagicPageFactory(pageState);
         var tokens = new TokenEngine([
-            new PageTokens(new MagicPageFactory(pageState), null, bodyClasses),
+            new PageTokens(pageFactory.Current, null, bodyClasses),
             new ThemeTokens(PackageSettings)
         ]);
 

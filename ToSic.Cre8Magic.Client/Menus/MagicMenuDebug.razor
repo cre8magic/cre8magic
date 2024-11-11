@@ -9,7 +9,7 @@
     private Dictionary<string, object?> GetMore() => new()
     {
         { "Menu Settings", MenuTree?.Tree.Settings },
-        { "Tree Build Messages", MenuTree?.Tree.Debug },
+        { "Tree Build Messages", MenuTree?.Tree.Specs.DebugMessages },
         { "Log", MenuTree?.SetHelper.LogRoot.Entries }
     };
 }

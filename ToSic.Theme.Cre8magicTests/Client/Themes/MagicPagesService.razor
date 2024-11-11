@@ -89,6 +89,16 @@
             </li>
         }
     </ol>
+    
+    <h2>Breadcrumb to Home</h2>
+    <ol>
+        @foreach(var bc in PageSvc.GetBreadcrumb(new() { Current = PageSvc.GetHome() } ))
+        {
+            <li>
+                <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
+            </li>
+        }
+    </ol>
 
     <div class="content">
         <div class="container">

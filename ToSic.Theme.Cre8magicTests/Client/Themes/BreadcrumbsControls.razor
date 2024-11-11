@@ -7,8 +7,12 @@
     public override string Name => "Breadcrumb using Controls";
     public override string Panes => PaneNames.Default;
 
-    // Test Parameters
-    public const string TopLevelWithSubpagesId = "97";
+    // Use test parameters from Tonci vs. Daniel
+    const bool PCTonci = false;
+
+    public const string TopLevelWithSubpagesId = PCTonci
+        ? "97"
+        : "29";
 
     public const int PageWithDeepBreadcrumb = 308;
 
