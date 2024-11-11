@@ -4,16 +4,31 @@ namespace ToSic.Cre8magic.Client.Pages.Internal;
 
 internal class MagicBreadcrumbFactory(MagicPageFactory pageFactory)
 {
-    internal IEnumerable<IMagicPage> Get(IMagicPage? page = null)
-        => Get(null, ((_, magicPage) => magicPage), page);
+    private MagicBreadcrumbSetHelper SetHelper(MagicBreadcrumbGetSpecsWip specs)
+    {
+        var setHelper = new MagicBreadcrumbSetHelper(pageFactory);
+        if (specs.Settings != null)
+            setHelper.Set(specs.Settings);
+        if (specs.Designer != null)
+            setHelper.Set(specs.Designer);
+        return setHelper;
+    }
 
-    internal IEnumerable<IMagicPage> Get(IList<IMagicPage> pages, IMagicPage? page)
-        => Get(new() { Pages = pages }, ((_, magicPage) => magicPage), page);
-
-    internal IEnumerable<TPage> Get<TPage>(MagicBreadcrumbGetSpecsWip? specs, Func<MagicPageFactory, IMagicPage, TPage> generator, IMagicPage? page = null)
+    internal IMagicPageListWip Get(MagicBreadcrumbGetSpecsWip? specs = default)
     {
         specs ??= new();
-        var endPage = page ?? pageFactory.Current;
+        var setHelper = SetHelper(specs);
+        var list = pageFactory.Breadcrumb.Get(
+            specs,
+            (factory, magicPage) => new MagicPageWithDesign(factory, setHelper, magicPage)
+        );
+        return new MagicPageList(pageFactory, setHelper, list);
+    }
+
+    private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbGetSpecsWip? specs, Func<MagicPageFactory, IMagicPage, TPage> generator)
+    {
+        specs ??= new();
+        var endPage = specs.Current ?? pageFactory.Current;
         // Create a new list with the current page
         var list = new List<TPage>();
 
@@ -34,8 +49,6 @@ internal class MagicBreadcrumbFactory(MagicPageFactory pageFactory)
         var restrictions = specs.Pages?.Select(p => p.Id).ToHashSet();
 
         //// Find first parent page
-        //var oqtPages = (specs.Pages ?? PageState.Pages).ToList();
-        //var parentPage = oqtPages.FirstOrDefault(p => p.PageId == endPage.ParentId);
         var parentPage = endPage.Parent;
 
         // Loop through all parent pages until we reach the home page
@@ -48,7 +61,7 @@ internal class MagicBreadcrumbFactory(MagicPageFactory pageFactory)
             // Add to list
             list.Insert(1, generator(pageFactory, parentPage));
             // Find next parent
-            parentPage = parentPage.Parent; // oqtPages.FirstOrDefault(p => p.PageId == parentPage.ParentId);
+            parentPage = parentPage.Parent;
         }
 
         if (specs.Reverse)

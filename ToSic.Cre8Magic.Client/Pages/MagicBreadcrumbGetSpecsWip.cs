@@ -48,4 +48,7 @@ public record MagicBreadcrumbGetSpecsWip
     /// TODO: NAMING
     /// </summary>
     public IEnumerable<IMagicPage>? Pages { get; init; } = null;
+
+    // TODO: NAMING
+    public IMagicPage? Current { get; init; }
 }

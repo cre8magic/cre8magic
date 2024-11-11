@@ -6,7 +6,7 @@ using Log = ToSic.Cre8magic.Client.Logging.Log;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
-public class MagicMenuTree : IMagicPageList
+public class MagicMenuTree : IMagicPageListOld
 {
     internal MagicMenuTree(MagicSettings magicSettings, MagicMenuSettings settings, IEnumerable<IMagicPage>? menuPages = null, List<string>? messages = null)
         : this(magicSettings.PageState)
@@ -114,10 +114,10 @@ public class MagicMenuTree : IMagicPageList
     private IMagicPage VPageLevel1 => _vPageLevel1 ??= new MagicPage(new() { Level = 0 /* Level is 0, so MenuLevel will be 1 */ }, PageFactory);
     private IMagicPage? _vPageLevel1;
 
-    /// <inheritdoc cref="IMagicPageList.Classes" />
+    /// <inheritdoc cref="IMagicPageListOld.Classes" />
     public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, VPageLevel1)).EmptyAsNull();
 
-    /// <inheritdoc cref="IMagicPageList.Value" />
+    /// <inheritdoc cref="IMagicPageListOld.Value" />
     public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, VPageLevel1)).EmptyAsNull();
 
 }

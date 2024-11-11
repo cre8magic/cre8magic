@@ -11,7 +11,7 @@ namespace ToSic.Cre8magic.Client.Menus;
 /// <remarks>
 /// Can't provide PageState from DI because that breaks Oqtane.
 /// </remarks>
-public class MagicMenuPage : MagicPageWithDesign, IMagicPageList
+public class MagicMenuPage : MagicPageWithDesign, IMagicPageListOld
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MagicMenuPage"/> class.

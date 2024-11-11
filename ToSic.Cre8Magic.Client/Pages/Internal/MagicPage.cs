@@ -26,7 +26,7 @@ public class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPage
     private string? _target;
 
     /// <inheritdoc />
-    public IEnumerable<IMagicPage> Breadcrumb => _breadcrumb ??= pageFactory.Breadcrumb.Get(this).ToList();
+    public IEnumerable<IMagicPage> Breadcrumb => _breadcrumb ??= pageFactory.Breadcrumb.Get(new MagicBreadcrumbGetSpecsWip { Current = this }).ToList();
     private IEnumerable<IMagicPage>? _breadcrumb;
 
 

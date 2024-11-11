@@ -29,6 +29,5 @@ public interface IMagicPageService
 
     IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds);
 
-
-    IEnumerable<IMagicPage> GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default);
+    IMagicPageListWip GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default);
 }

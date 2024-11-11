@@ -1,6 +1,6 @@
 ﻿namespace ToSic.Cre8magic.Client.Pages;
 
-public interface IMagicPageList
+public interface IMagicPageListOld
 {
     int MenuLevel { get; }
 

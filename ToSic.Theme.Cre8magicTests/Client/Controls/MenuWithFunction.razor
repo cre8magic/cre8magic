@@ -4,7 +4,7 @@
 
 @code{
     [Parameter, EditorRequired]
-    public IMagicPageList Menu { get; set; }
+    public IMagicPageListOld Menu { get; set; }
 }
 
 @RenderMenu(Menu)
@@ -17,7 +17,7 @@
     /// </summary>
     /// <param name="menu"></param>
     /// <returns></returns>
-    RenderFragment RenderMenu(IMagicPageList menu) =>
+    RenderFragment RenderMenu(IMagicPageListOld menu) =>
         @<ul class='@menu.Classes("li")'>
             @foreach (var menuPage in menu.Children)
             {

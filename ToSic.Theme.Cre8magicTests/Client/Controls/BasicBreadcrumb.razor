@@ -1,8 +1,9 @@
 ﻿@namespace ToSic.Theme.Cre8magicTests
-@using ToSic.Cre8magic.Client.Breadcrumb
 @using ToSic.Cre8magic.Client.Pages
+@using ToSic.Cre8magic.Pages
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeControlBase;
+@inject IMagicPageService PageSvc
 
 @code {
     /// <summary>
@@ -12,16 +13,14 @@
     public MagicBreadcrumbGetSpecsWip Settings { get; set; }
 }
 @{
-    // default
-    var breadcrumb = new MagicBreadcrumbRootWip(PageState).Setup(
-        Settings != null 
+    var breadcrumb = PageSvc.Setup(PageState).GetBreadcrumb(Settings != null
         ? Settings.Designer != null ? Settings : Settings with { Designer = new BasicBreadcrumbDesigner() }
         : new() { Designer = new BasicBreadcrumbDesigner() }
     );
 }
 <nav aria-label="breadcrumb">
     <ol class='@breadcrumb.Classes("ol")'>
-        @foreach (var item in breadcrumb.Items)
+        @foreach (var item in breadcrumb)
         {
             <li class='@item.Classes("li")' aria-current='@item.Value("aria-current")'>
                 @if (item.IsCurrent)

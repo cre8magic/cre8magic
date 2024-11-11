@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Client.Menus;
 public abstract class MagicMenu : MagicMenuBase
 {
 #pragma warning disable CS8618
-    [Parameter, EditorRequired] public IMagicPageList Menu { get; set; }
+    [Parameter, EditorRequired] public IMagicPageListOld Menu { get; set; }
 #pragma warning restore CS8618
 
     //public string GetUrl(MagicMenuPage page) => GetUrl(page.OriginalPage);
