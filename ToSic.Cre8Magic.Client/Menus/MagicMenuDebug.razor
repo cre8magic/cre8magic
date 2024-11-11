@@ -1,6 +1,6 @@
-﻿@using ToSic.Cre8magic.Client.Pages
+﻿@using ToSic.Cre8magic.Pages
 @code {
-    [Parameter, EditorRequired] public IMagicPageListOld? Menu { get; set; }
+    [Parameter, EditorRequired] public IMagicPageList? Menu { get; set; }
 
     private MagicMenuTree? MenuTree => Menu as MagicMenuTree;
 

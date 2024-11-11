@@ -1,14 +1,14 @@
 @namespace ToSic.Theme.Cre8magicTests
-@using ToSic.Cre8magic.Client.Pages
+@using ToSic.Cre8magic.Pages
 @inherits ThemeControlBase;
 
 @code{
     [Parameter, EditorRequired]
-    public IMagicPageListOld Menu { get; set; }
+    public IMagicPageList Menu { get; set; }
 }
 
 <ul class='@Menu.Classes("li")'>
-    @foreach (var menuPage in Menu.Children)
+    @foreach (var menuPage in Menu)
     {
         <li class='@menuPage.Classes("li")'>
             <a class='@menuPage.Classes("a")' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>

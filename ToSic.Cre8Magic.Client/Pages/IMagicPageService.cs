@@ -29,7 +29,7 @@ public interface IMagicPageService
 
     IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds);
 
-    IMagicPageListWip GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default);
+    IMagicPageList GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default);
 
-    IMagicPageListOld GetMenu(MagicMenuGetSpecsWip? specs = default);
+    IMagicPageList GetMenu(MagicMenuGetSpecsWip? specs = default);
 }

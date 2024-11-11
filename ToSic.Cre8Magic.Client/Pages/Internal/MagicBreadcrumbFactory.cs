@@ -14,7 +14,7 @@ internal class MagicBreadcrumbFactory(MagicPageFactory pageFactory)
         return setHelper;
     }
 
-    internal IMagicPageListWip Get(MagicBreadcrumbGetSpecsWip? specs = default)
+    internal IMagicPageList Get(MagicBreadcrumbGetSpecsWip? specs = default)
     {
         specs ??= new();
         var setHelper = SetHelper(specs);

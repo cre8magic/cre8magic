@@ -11,10 +11,10 @@ Nice to know:
     - The configurations are smart, so they change the class depending on active etc.
     - The `a` tag with the label is written in a way so there are no additional spaces
 *@
-@if (Menu.HasChildren)
+@if (Menu.Any())
 {
     <ul class='@Menu.Classes("ul")'>
-        @foreach(var menuPage in Menu.Children)
+        @foreach(var menuPage in Menu)
         {
             <li class='@menuPage.Classes("li")'>
                 <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'

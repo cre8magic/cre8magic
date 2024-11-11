@@ -1,10 +1,11 @@
-﻿using ToSic.Cre8magic.Client.Pages;
+﻿using System.Collections;
+using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Client.Pages.Internal;
 
 // ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
 
-public class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPageListOld
+public class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPageList, IEnumerable<IMagicPageWithDesignWip>
 {
     /// <param name="pageFactory"></param>
     /// <param name="setHelper"></param>
@@ -45,13 +46,16 @@ public class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPag
     private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(this);
     private ITokenReplace? _nodeReplace;
 
-    /// <inheritdoc cref="IMagicPageListOld.Classes" />
+    /// <inheritdoc cref="IMagicPageList.Classes" />
     public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, this)).EmptyAsNull();
 
-    /// <inheritdoc cref="IMagicPageListOld.Value" />
+    /// <inheritdoc cref="IMagicPageList.Value" />
     public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
 
     #endregion
 
 
+    public IEnumerator<IMagicPageWithDesignWip> GetEnumerator() => Children.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }

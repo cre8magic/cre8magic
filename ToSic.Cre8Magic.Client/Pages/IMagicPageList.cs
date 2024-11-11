@@ -8,8 +8,12 @@ namespace ToSic.Cre8magic.Pages;
 /// It does not represent a page itself, but a list of pages.
 /// For example, a breadcrumb or a menu.
 /// </summary>
-public interface IMagicPageListWip: IEnumerable<IMagicPageWithDesignWip>
+public interface IMagicPageList: IEnumerable<IMagicPageWithDesignWip>
 {
+    int MenuLevel { get; }
+
+    // TODO:
+    //string MenuId { get; }
 
     /// <summary>
     /// Get css class for tag.

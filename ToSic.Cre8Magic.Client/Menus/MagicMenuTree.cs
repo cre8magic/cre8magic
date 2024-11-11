@@ -1,4 +1,5 @@
-﻿using Oqtane.UI;
+﻿using System.Collections;
+using Oqtane.UI;
 using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Client.Pages.Internal;
 using ToSic.Cre8magic.Pages;
@@ -6,7 +7,7 @@ using Log = ToSic.Cre8magic.Client.Logging.Log;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
-public class MagicMenuTree : IMagicPageListOld
+public class MagicMenuTree : IMagicPageList
 {
     public MagicMenuTree(PageState pageState, MagicMenuGetSpecsWip? specs = null)
     {
@@ -65,10 +66,13 @@ public class MagicMenuTree : IMagicPageListOld
     private IMagicPage VPageLevel1 => _vPageLevel1 ??= new MagicPage(new() { Level = 0 /* Level is 0, so MenuLevel will be 1 */ }, PageFactory);
     private IMagicPage? _vPageLevel1;
 
-    /// <inheritdoc cref="IMagicPageListOld.Classes" />
+    /// <inheritdoc cref="IMagicPageList.Classes" />
     public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, VPageLevel1)).EmptyAsNull();
 
-    /// <inheritdoc cref="IMagicPageListOld.Value" />
+    /// <inheritdoc cref="IMagicPageList.Value" />
     public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, VPageLevel1)).EmptyAsNull();
 
+    public IEnumerator<IMagicPageWithDesignWip> GetEnumerator() => Children.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }

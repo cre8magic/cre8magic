@@ -38,10 +38,10 @@ internal class MagicPageService() : IMagicPageService
 
     public IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds) => PageFactory.Get(pageIds);
 
-    public IMagicPageListWip GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default) =>
+    public IMagicPageList GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default) =>
         PageFactory.Breadcrumb.Get(specs);
 
-    public IMagicPageListOld GetMenu(MagicMenuGetSpecsWip? specs = default)
+    public IMagicPageList GetMenu(MagicMenuGetSpecsWip? specs = default)
     {
         return new MagicMenuTree(PageState, specs);
     }

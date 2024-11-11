@@ -10,8 +10,10 @@ namespace ToSic.Cre8magic.Pages;
 ///
 /// TODO: naming not final
 /// </summary>
-public interface IMagicPageWithDesignWip: IMagicPage, IMagicPageListOld
+public interface IMagicPageWithDesignWip: IMagicPage, IMagicPageList
 {
+    new int MenuLevel { get; }
+
     /// <summary>
     /// Get css class for tag.
     /// </summary>
@@ -25,10 +27,5 @@ public interface IMagicPageWithDesignWip: IMagicPage, IMagicPageListOld
     /// <param name="key"></param>
     /// <returns></returns>
     new string? Value(string key);
-
-    new IEnumerable<IMagicPageWithDesignWip> Children { get; }
-
-    new bool HasChildren { get; }
-
-    new int MenuLevel { get; }
+    
 }

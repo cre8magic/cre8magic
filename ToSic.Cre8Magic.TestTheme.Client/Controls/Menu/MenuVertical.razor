@@ -4,10 +4,10 @@ File Purpose:       Show a vertical menu, usually used for mobile or sidebar
 Recommendations:    See `MenuDefault.razor`
 Nice to know:       See `MenuDefault.razor`
 *@
-@if (Menu.HasChildren)
+@if (Menu.Any())
 {
     <ul class='@Menu.Classes("ul")'>
-        @foreach(var menuPage in Menu.Children)
+        @foreach(var menuPage in Menu)
         {
             <li class='@menuPage.Classes("li")'>
                 <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'
