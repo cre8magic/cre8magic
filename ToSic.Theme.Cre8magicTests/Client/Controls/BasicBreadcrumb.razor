@@ -1,19 +1,27 @@
 ﻿@namespace ToSic.Theme.Cre8magicTests
-@using ToSic.Cre8magic.Client.Breadcrumbs
+@using ToSic.Cre8magic.Client.Breadcrumb
+@using ToSic.Cre8magic.Client.Pages
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeControlBase;
 
 @code {
-    [Parameter/* , EditorRequired */]
-    public MagicBreadcrumb Breadcrumb { get; set; }
+    /// <summary>
+    /// Settings for retrieving the breadcrumbs; optional
+    /// </summary>
+    [Parameter]
+    public MagicBreadcrumbGetSpecsWip Settings { get; set; }
 }
 @{
     // default
-    Breadcrumb ??= new MagicBreadcrumb(PageState).Designer(new BasicBreadcrumbDesigner());
+    var breadcrumb = new MagicBreadcrumbRootWip(PageState).Setup(
+        Settings != null 
+        ? Settings.Designer != null ? Settings : Settings with { Designer = new BasicBreadcrumbDesigner() }
+        : new() { Designer = new BasicBreadcrumbDesigner() }
+    );
 }
 <nav aria-label="breadcrumb">
-    <ol class='@Breadcrumb.Classes("ol")'>
-        @foreach (var item in Breadcrumb.Items)
+    <ol class='@breadcrumb.Classes("ol")'>
+        @foreach (var item in breadcrumb.Items)
         {
             <li class='@item.Classes("li")' aria-current='@item.Value("aria-current")'>
                 @if (item.IsCurrent)

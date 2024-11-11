@@ -1,11 +1,10 @@
 @namespace ToSic.Theme.Cre8magicTests
-@using ToSic.Cre8magic.Client.Breadcrumbs
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeBase
 
 @code {
     // Theme Specs
-    public override string Name => "Breadcrumbs using Controls";
+    public override string Name => "Breadcrumb using Controls";
     public override string Panes => PaneNames.Default;
 
     // Test Parameters
@@ -28,28 +27,45 @@
         </div>
     </nav>
 
-    <h1>MagicBreadcrumbs</h1>
+    <h1>MagicBreadcrumb</h1>
 
-    <h2>Oqtane standard Breadcrumbs</h2>
+    <h2>Oqtane standard Breadcrumbs (with s)</h2>
     <Breadcrumbs></Breadcrumbs>
 
     <h2>BasicBreadcrumb, no parameters</h2>
     <BasicBreadcrumb></BasicBreadcrumb>
 
     <h2>BasicBreadcrumb with data, without Settings</h2>
-    <BasicBreadcrumb Breadcrumb="new MagicBreadcrumb(PageState)"></BasicBreadcrumb>
+    <BasicBreadcrumb></BasicBreadcrumb>
 
     <hr/>
 
     <h2>Designer</h2>
-    <h3>BasicBreadcrumb with CustomBreadcrumbDesigner</h3>
-    <BasicBreadcrumb Breadcrumb="new MagicBreadcrumb(PageState).Designer(new CustomBreadcrumbDesigner())"></BasicBreadcrumb>
+    <p>No Designer (defaults to BasicDesigner)</p>
+    <BasicBreadcrumb></BasicBreadcrumb>
+    <p>BasicBreadcrumb with CustomBreadcrumbDesigner</p>
+    <BasicBreadcrumb Settings="new() { Designer = new CustomBreadcrumbDesigner() }"></BasicBreadcrumb>
 
     <hr />
 
     <h2>Settings</h2>
-    <h3>BasicBreadcrumb with Settings { Start = PageWithDeepBreadcrumb }</h3>
-    <BasicBreadcrumb Breadcrumb="new MagicBreadcrumb(PageState).Setup(new() { Start = PageWithDeepBreadcrumb }).Designer(new BasicBreadcrumbDesigner())"></BasicBreadcrumb>
+    <p>Reverse</p>
+    <BasicBreadcrumb Settings="new() { Reverse = true }"></BasicBreadcrumb>
+    
+    <p>Without Home</p>
+    <BasicBreadcrumb></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { WithHome = true }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { WithHome = false }"></BasicBreadcrumb>
+    
+    <p>Without current</p>
+    <BasicBreadcrumb></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { WithCurrent = false }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { WithCurrent = true }"></BasicBreadcrumb>
+
+    <p>BasicBreadcrumb with Settings { Start = PageWithDeepBreadcrumb }</p>
+    <BasicBreadcrumb Settings="new() { Settings = new() { Start = PageWithDeepBreadcrumb } }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { Settings = new() { Start = PageWithDeepBreadcrumb }, Designer = new BasicBreadcrumbDesigner() }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { Settings = new() { Start = PageWithDeepBreadcrumb }, Designer = new CustomBreadcrumbDesigner() }"></BasicBreadcrumb>
 
     <hr/>
 

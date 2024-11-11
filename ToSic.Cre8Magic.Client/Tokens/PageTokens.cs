@@ -30,7 +30,7 @@ internal class PageTokens(
 
         result = result
             .Replace(PageParentId, page.ParentId != null ? $"{page.ParentId}" : None)
-            .Replace(SiteId, $"{page.OriginalPage.SiteId}", InvariantCultureIgnoreCase)
+            .Replace(SiteId, $"{page.OqtanePage.SiteId}", InvariantCultureIgnoreCase)
             .Replace(LayoutVariation, bodyClasses ?? None)
             .Replace(MenuLevel, $"{page.MenuLevel}")
             .Replace(MenuId, id ?? None);
@@ -49,7 +49,7 @@ internal class PageTokens(
         {
             if (_pageRootAlreadyTried) return _pageRootId;
             _pageRootAlreadyTried = true;
-            _pageRootId = pageFactory.Breadcrumbs() /* PageState.Breadcrumbs() */.FirstOrDefault()?.Id;
+            _pageRootId = pageFactory.Breadcrumb.Get().FirstOrDefault()?.Id;
             return _pageRootId;
         }
     }

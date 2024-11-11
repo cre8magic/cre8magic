@@ -40,6 +40,27 @@
         <li>Current page using GetPage: @PageSvc.GetPage(PageSvc.GetCurrent().Id)</li>
     </ol>
     
+    <h2>Current page properties</h2>
+    <ol>
+        <li>Id: @PageSvc.GetCurrent().Id</li>
+        <li>Path: @PageSvc.GetCurrent().Path</li>
+        <li>Name: @PageSvc.GetCurrent().Name</li>
+        <li>Parent: @PageSvc.GetCurrent().Parent</li>
+        @*         <li>Children: @PageSvc.GetCurrent().Children</li>
+        <li>Is Home: @PageSvc.GetCurrent().IsHome</li>
+ *@
+        <li>Is Current: @PageSvc.GetCurrent().IsCurrent</li>
+        <li>Is In Breadcrumb: @PageSvc.GetCurrent().IsInBreadcrumb</li>
+        @* <li>Is Parent: @PageSvc.GetCurrent().IsParent</li>
+        <li>Is Child: @PageSvc.GetCurrent().IsChild</li>
+        <li>Is Ancestor: @PageSvc.GetCurrent().IsAncestor</li>
+        <li>Is Descendant: @PageSvc.GetCurrent().IsDescendant</li>
+        <li>Is Hidden: @PageSvc.GetCurrent().IsHidden</li>
+        <li>Is System: @PageSvc.GetCurrent().IsSystem</li>
+        <li>Is Published: @PageSvc.GetCurrent().IsPublished</li>
+        <li>Is Deleted: @PageSvc.GetCurrent().IsDeleted *@
+    </ol>
+    
     <h2>Get Many</h2>
     
     <ol>
@@ -53,7 +74,7 @@
     
     <h2>Breadcrumb just list</h2>
     <ol>
-        @foreach(var bc in PageSvc.GetBreadcrumbs())
+        @foreach(var bc in PageSvc.GetBreadcrumb())
         {
             <li>@bc</li>
         }
@@ -61,7 +82,7 @@
     
     <h2>Breadcrumb links</h2>
     <ol>
-        @foreach(var bc in PageSvc.GetBreadcrumbs())
+        @foreach(var bc in PageSvc.GetBreadcrumb())
         {
             <li>
                 <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>

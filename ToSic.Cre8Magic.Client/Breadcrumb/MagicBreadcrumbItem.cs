@@ -2,7 +2,7 @@
 using ToSic.Cre8magic.Client.Pages.Internal;
 using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Client.Breadcrumbs;
+namespace ToSic.Cre8magic.Client.Breadcrumb;
 
 public class MagicBreadcrumbItem : MagicPageWithDesign
 {

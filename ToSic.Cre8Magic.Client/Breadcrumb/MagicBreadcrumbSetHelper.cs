@@ -1,8 +1,8 @@
-﻿using ToSic.Cre8magic.Client.Breadcrumbs.Settings;
+﻿using ToSic.Cre8magic.Client.Breadcrumb.Settings;
 using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Client.Pages.Internal;
 
-namespace ToSic.Cre8magic.Client.Breadcrumbs;
+namespace ToSic.Cre8magic.Client.Breadcrumb;
 
 internal class MagicBreadcrumbSetHelper(MagicPageFactory pageFactory): MagicPageSetHelperBase(pageFactory)
 {

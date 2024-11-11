@@ -97,13 +97,13 @@ public class NodeRuleHelper
             case StartMode.Current when n.Level > 0:
                 // If coming from the top, level 1 means top level, so skip one less
                 var skipDown = n.Level - 1;
-                var fromTop = PageFactory.Breadcrumbs(source, Current).Skip(skipDown).FirstOrDefault();
+                var fromTop = PageFactory.Breadcrumb.Get(source, Current).Skip(skipDown).FirstOrDefault();
                 List<IMagicPage> fromTopResult = fromTop == null ? [] : [fromTop];
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
             case StartMode.Current when n.Level < 0:
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
-                var fromCurrent = PageFactory.GetAncestors(source, Current).ToList().Skip(skipUp).FirstOrDefault();
+                var fromCurrent = PageFactory.Breadcrumb.Get(source, Current).ToList().Skip(skipUp).FirstOrDefault();
                 List<IMagicPage> result = fromCurrent == null ? [] : [fromCurrent];
                 return l.Return(result, $"up the ancestors by {skipUp}");
             case StartMode.Undefined:

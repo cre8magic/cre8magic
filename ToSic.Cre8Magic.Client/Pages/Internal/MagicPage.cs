@@ -6,8 +6,8 @@ namespace ToSic.Cre8magic.Client.Pages.Internal;
 /// <summary>
 /// Wrapper for the Oqtane Page.
 /// </summary>
-/// <param name="originalPage"></param>
-public class MagicPage(Page originalPage, MagicPageFactory pageFactory): MagicPageBase(originalPage), IMagicPage
+/// <param name="oqtanePagege"></param>
+public class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPageBase(oqtanePage), IMagicPage
 {
     protected MagicPageFactory PageFactory => pageFactory;
 
@@ -15,7 +15,7 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory): MagicPa
     public virtual int MenuLevel => Level + 1;
 
     /// <inheritdoc />
-    public bool IsCurrent => OriginalPage.PageId == pageFactory.PageState.Page.PageId;
+    public bool IsCurrent => OqtanePage.PageId == pageFactory.PageState.Page.PageId;
 
     /// <inheritdoc />
     public string Link => _link ??= pageFactory.PageProperties.GetLink(this);
@@ -26,13 +26,13 @@ public class MagicPage(Page originalPage, MagicPageFactory pageFactory): MagicPa
     private string? _target;
 
     /// <inheritdoc />
-    public List<IMagicPage> Breadcrumbs => _breadcrumbs ??= pageFactory.Breadcrumbs(this).ToList();
-    private List<IMagicPage>? _breadcrumbs;
+    public IEnumerable<IMagicPage> Breadcrumb => _breadcrumb ??= pageFactory.Breadcrumb.Get(this).ToList();
+    private IEnumerable<IMagicPage>? _breadcrumb;
 
 
     /// <inheritdoc />
-    public bool InBreadcrumbs => _inBreadcrumb ??= pageFactory.Current.Breadcrumbs.Contains(this);
-    private bool? _inBreadcrumb;
+    public bool IsInBreadcrumb => _isInBreadcrumb ??= pageFactory.Current.Breadcrumb.Contains(this);
+    private bool? _isInBreadcrumb;
 
 
     public override string ToString() => $"{Name} ({Id})";

@@ -2,6 +2,9 @@
 
 namespace ToSic.Cre8magic.Client.Settings;
 
+/// <summary>
+/// Simple interface to mark something which can inherit settings from elsewhere...
+/// </summary>
 internal interface IInherit
 {
     /// <summary>

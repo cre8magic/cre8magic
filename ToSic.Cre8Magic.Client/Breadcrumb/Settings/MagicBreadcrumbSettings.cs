@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Client.Settings.Internal;
 
-namespace ToSic.Cre8magic.Client.Breadcrumbs.Settings;
+namespace ToSic.Cre8magic.Client.Breadcrumb.Settings;
 
 public class MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings
 {

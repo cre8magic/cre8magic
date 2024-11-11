@@ -40,17 +40,17 @@ public interface IMagicPage
     /// The current pages bread-crumb, going from the top-level to the current page.
     /// Note that the "Home" page is usually not a parent, so it's not included.
     /// </summary>
-    List<IMagicPage> Breadcrumbs { get; }
+    IEnumerable<IMagicPage> Breadcrumb { get; }
 
     /// <summary>
     /// Determine if the menu page is in the breadcrumb.
     /// </summary>
-    bool InBreadcrumbs { get; }
+    bool IsInBreadcrumb { get; }
 
     /// <summary>
     /// Original Oqtane page wrapped in MagicPage.
     /// </summary>
-    Page OriginalPage { get; }
+    Page OqtanePage { get; }
 
     /// <summary>
     /// ID of this Page

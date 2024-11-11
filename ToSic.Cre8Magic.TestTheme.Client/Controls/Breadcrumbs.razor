@@ -1,12 +1,17 @@
-﻿@inherits MagicBreadcrumbs
+﻿@inherits ToSic.Cre8magic.Client.Breadcrumb.MagicBreadcrumb
 @*
 File Purpose:       Show the Breadcrumb
 Recommendations:    -
 Nice to know:       Uses extension methods like GetHomePage() and GetBreadcrumb()
 *@
+@if (false) @* Debug *@
+{
+    <div class="alert alert-info">Breadcrumb Razor</div>
+}
+
 <div class="container theme-breadcrumbs d-flex py-2" aria-label="breadcrumb">
     <div class="theme-breadcrumbs-item">
-        <a aria-current="page" href="@NavigateUrl(HomePage.Path)">@HomePage.Name</a>
+        <a aria-current="page" href="@HomePage.Link">@HomePage.Name</a>
     </div>
 
     @* Show a ... ellipsis in mobile mode to toggle showing the rest of the breadcrumb *@
@@ -16,7 +21,7 @@ Nice to know:       Uses extension methods like GetHomePage() and GetBreadcrumb(
     @foreach (var p in Breadcrumbs) {
         <div class="theme-breadcrumbs-item">
             <span class="theme-breadcrumbs-separator"></span>
-            <a href="@NavigateUrl(p.Path)">@p.Name</a>
+            <a href="@p.Link">@p.Name</a>
         </div>
     }
 </div>

@@ -8,7 +8,7 @@ public class MagicPageWithDesign : MagicPage
     /// <param name="pageFactory"></param>
     /// <param name="setHelper"></param>
     /// <param name="page">The original page.</param>
-    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, IMagicPage? page = null) : base(page?.OriginalPage ?? pageFactory.PageState.Page, pageFactory)
+    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, IMagicPage? page = null) : base(page?.OqtanePage ?? pageFactory.PageState.Page, pageFactory)
     {
         SetHelper = setHelper;
     }

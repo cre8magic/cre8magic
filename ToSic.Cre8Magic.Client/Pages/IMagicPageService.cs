@@ -1,5 +1,6 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
+using ToSic.Cre8magic.Client.Pages;
 
 // ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
@@ -29,5 +30,5 @@ public interface IMagicPageService
     IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds);
 
 
-    IEnumerable<IMagicPage> GetBreadcrumbs();
+    IEnumerable<IMagicPage> GetBreadcrumb(MagicBreadcrumbGetSpecsWip? specs = default);
 }

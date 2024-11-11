@@ -21,7 +21,7 @@ public class MagicThemeSettings: SettingsWithInherit, IHasDebugSettings
     //public string? GtmTrackPageViewEvent { get; set; }
 
     /// <summary>
-    /// The parts of this theme, like breadcrumbs and various menu configs
+    /// The parts of this theme, like breadcrumb and various menu configs
     /// </summary>
     public NamedSettings<MagicThemePartSettings> Parts { get; set; } = new();
 

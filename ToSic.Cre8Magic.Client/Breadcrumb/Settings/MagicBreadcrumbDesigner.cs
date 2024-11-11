@@ -2,7 +2,7 @@
 using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Client.Breadcrumbs.Settings;
+namespace ToSic.Cre8magic.Client.Breadcrumb.Settings;
 
 /// <summary>
 /// Special helper to provide Css classes to menus

@@ -21,14 +21,14 @@ function setBreadcrumbsStyling() {
   if(header != null) {
     var headerHeight = header.offsetHeight;
 
-    var breadcrumbs = document.querySelector(`.${prefixBreadcrumbs}`) as HTMLElement;
-    breadcrumbs.style.top = headerHeight + "px";
-    var breadcrumbsOffsetTop = breadcrumbs.getBoundingClientRect().top;
+    var breadcrumb = document.querySelector(`.${prefixBreadcrumbs}`) as HTMLElement;
+    breadcrumb.style.top = headerHeight + "px";
+    var breadcrumbOffsetTop = breadcrumb.getBoundingClientRect().top;
 
-    if (breadcrumbsOffsetTop <= headerHeight && scrollY != 0) {
-      breadcrumbs.classList.add("bg-light", "shadow");
+    if (breadcrumbOffsetTop <= headerHeight && scrollY != 0) {
+      breadcrumb.classList.add("bg-light", "shadow");
     } else {
-      breadcrumbs.classList.remove("bg-light", "shadow");
+      breadcrumb.classList.remove("bg-light", "shadow");
     }
   }
 }
