@@ -1,5 +1,6 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
+using ToSic.Cre8magic.Client.Pages.Internal.Menu;
 using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Pages.Internal;
@@ -43,6 +44,18 @@ internal class MagicPageService() : IMagicPageService
 
     public IMagicPageList GetMenu(MagicMenuGetSpecsWip? specs = default)
     {
+        specs ??= new();
+        //var PageFactory = new MagicPageFactory(PageState, specs.Pages);
+        //var SetHelper = new MagicMenuPageSetHelper(PageFactory, this);
+        //SetHelper.Set(specs.MagicSettings);
+        //SetHelper.Set(specs.Designer);
+        //SetHelper.Set(specs.Settings);
+
+        var rootBuilder = new MagicMenuRootBuilder(PageState, specs);
+
+        var list = new MagicPageList(PageFactory, rootBuilder.SubSetHelper, rootBuilder.GetChildren());
+
+        //return list;
         return new MagicMenuTree(PageState, specs);
     }
 

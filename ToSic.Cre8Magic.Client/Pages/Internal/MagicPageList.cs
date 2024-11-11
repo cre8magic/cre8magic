@@ -7,6 +7,8 @@ internal class MagicPageList(MagicPageFactory pageFactory, MagicPageSetHelperBas
 {
     public int MenuLevel => 1;
 
+    internal MagicPageSetHelperBase SetHelper => helper;
+
     // ReSharper disable once NotDisposedResourceIsReturned
     public IEnumerator<IMagicPageWithDesignWip> GetEnumerator() => items.GetEnumerator();
 
@@ -24,4 +26,6 @@ internal class MagicPageList(MagicPageFactory pageFactory, MagicPageSetHelperBas
 
     /// <inheritdoc cref="IMagicPageList.Value" />
     public string? Value(string key) => TokenReplace.Parse(helper.Design.Value(key, VPageLevel1)).EmptyAsNull();
+
+    public IMagicPageSetSettings Settings => helper.Settings;
 }

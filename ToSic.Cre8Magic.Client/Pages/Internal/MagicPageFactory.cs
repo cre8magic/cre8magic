@@ -2,6 +2,7 @@
 using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
+using ToSic.Cre8magic.Client.Pages.Internal.Breadcrumb;
 using ToSic.Cre8magic.Pages;
 using Log = ToSic.Cre8magic.Client.Logging.Log;
 

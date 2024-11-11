@@ -2,20 +2,23 @@
 @code {
     [Parameter, EditorRequired] public IMagicPageList? Menu { get; set; }
 
-    private MagicMenuTree? MenuTree => Menu as MagicMenuTree;
-
     [Parameter] public bool Standalone { get; set; } = false;
+}
+@{
+    var menuTree = Menu as MagicMenuTree;
+    
+    var settings = menuTree?.SetHelper.Settings as MagicMenuSettings;
 
-    private Dictionary<string, object?> GetMore() => new()
+    Dictionary<string, object?> GetMore() => new()
     {
-        { "Menu Settings", MenuTree?.Tree.Settings },
-        { "Tree Build Messages", MenuTree?.Tree.Specs.DebugMessages },
-        { "Log", MenuTree?.SetHelper.LogRoot.Entries }
+        { "Menu Settings", settings },
+        { "Tree Build Messages", menuTree?.Specs.DebugMessages },
+        { "Log", menuTree?.SetHelper.LogRoot.Entries }
     };
 }
-@if (MenuTree?.MenuLevel == 1)
+@if (menuTree?.MenuLevel == 1)
 {
-    <MagicDebug Target="@MenuTree?.Tree.Settings" Title="Settings (Menu)" More="GetMore()">
+    <MagicDebug Target="@settings" Title="Settings (Menu)" More="GetMore()">
         <Button>
             @if (Standalone)
             {
@@ -28,8 +31,8 @@
         </Button>
         <Content>
             <ul>
-                <li>Config Name:@MenuTree?.Tree.Settings.ConfigName</li>
-                <li>Template: @MenuTree?.Tree.Settings.Template</li>
+                <li>Config Name:@settings?.ConfigName</li>
+                <li>Template: @settings?.Template</li>
             </ul>
         </Content>
     </MagicDebug>

@@ -14,7 +14,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
 
     private const string MenuSettingPrefix = "menu-";
 
-    public MagicMenuTree GetTree(MagicMenuSettings config, List<IMagicPage> menuPages)
+    public IMagicPageList GetTree(MagicMenuSettings config, List<IMagicPage> menuPages)
     {
         var settingsSvc = Settings!.Service;
         var messages = new List<string>();
@@ -64,7 +64,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         else
             messages.Add("Design rules already set");
 
-        return (MagicMenuTree)pageSvc.Setup(Settings.PageState)
+        return pageSvc.Setup(Settings.PageState)
             .GetMenu(new MagicMenuGetSpecsWip()
             {
                 MagicSettings = Settings,

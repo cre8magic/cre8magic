@@ -15,9 +15,10 @@ Nice to know:
 @* Special Debugging *@
 @if (true)
 {
+    @* var settings = ((MagicMenuSettings?)Menu?.SetHelper.Settings); *@
     <div>
-        ConfigName: @(Menu?.Settings.ConfigName) <br/>
-        HasChildren: @(Menu?.HasChildren) - @Menu?.Children.Count() <br/>
+        @* ConfigName: @(Menu?.Settings.ConfigName) <br/> *@
+        HasChildren: @(Menu?.Any()) - @Menu?.Count() <br/>
         @* This: @Menu?.Name (@Menu?.Link) <br/> *@
         Direction: @(IsVertical ? "Vertical" : "Horizontal") <br/>
         Ul-Classes: @Menu?.Classes("ul") <br/>
@@ -35,12 +36,12 @@ else
 {
     <MenuHorizontal Menu="@Menu"></MenuHorizontal>
 }
-@if (Menu?.HasChildren == false)
+@if (Menu?.Any() == false)
 {
     @* Debug Information in cases where the menu doesn't even show *@
     <MagicMenuDebug Menu="@Menu" Standalone="true"></MagicMenuDebug>
 }
 @if (true)
 {
-    <div>End-Of-Menu-@(Menu?.Settings.ConfigName)</div>
+    <div>End-Of-Menu</div>
 }

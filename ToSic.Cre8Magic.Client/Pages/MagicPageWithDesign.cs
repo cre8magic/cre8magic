@@ -52,6 +52,8 @@ public class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPag
     /// <inheritdoc cref="IMagicPageList.Value" />
     public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
 
+    public IMagicPageSetSettings Settings => SetHelper.Settings;
+
     #endregion
 
 

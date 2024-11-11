@@ -1,5 +1,6 @@
 ﻿using ToSic.Cre8magic.Client.Pages.Internal;
 using ToSic.Cre8magic.Client.Settings.Internal;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Breadcrumb.Settings;
 
@@ -44,6 +45,9 @@ public class MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, I
 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;
+
+    public string Variant => ""; // TODO
+
 
     private static readonly MagicBreadcrumbSettings FbAndF = new()
     {

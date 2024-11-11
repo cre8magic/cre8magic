@@ -5,6 +5,7 @@ namespace ToSic.Cre8magic.Client.Pages;
 
 internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
 {
+    internal MagicPageFactory PageFactory => pageFactory;
     #region Logging
 
     internal LogRoot LogRoot { get; } = pageFactory.LogRoot;
@@ -54,7 +55,7 @@ internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
     /// Retrieve the children the first time it's needed.
     ///
     /// It's virtual, since other SetHelpers will have different implementations.
-    /// For exapmle the MagicMenuPageSetHelper will stop if a certain depth has been reached.
+    /// For example the MagicMenuPageSetHelper will stop if a certain depth has been reached.
     /// </summary>
     /// <returns></returns>
     public virtual List<IMagicPageWithDesignWip> GetChildren(IMagicPage page)

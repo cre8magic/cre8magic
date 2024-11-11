@@ -1,10 +1,14 @@
-﻿using ToSic.Cre8magic.Client.Pages;
-using ToSic.Cre8magic.Client.Pages.Internal;
-using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Client.Menus;
+namespace ToSic.Cre8magic.Client.Pages.Internal.Menu;
 
-internal class MagicMenuPageSetHelper(MagicPageFactory pageFactory, MagicMenuTree tree) : MagicPageSetHelperBase(pageFactory)
+/// <summary>
+/// The builder for all sub-items of a magic menu.
+///
+/// Not used for the root though...
+/// </summary>
+/// <param name="pageFactory"></param>
+internal class MagicMenuSubBuilder(MagicPageFactory pageFactory, Func<int> getMaxDepth) : MagicPageSetHelperBase(pageFactory)
 {
     public void Set(MagicMenuSettings settings) => _settings = settings;
 
@@ -26,7 +30,8 @@ internal class MagicMenuPageSetHelper(MagicPageFactory pageFactory, MagicMenuTre
     public override List<IMagicPageWithDesignWip> GetChildren(IMagicPage page)
     {
         var l = Log.Fn<List<IMagicPageWithDesignWip>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
-        var levelsRemaining = tree.MaxDepth - (page.MenuLevel - 1 /* Level is 1 based, so -1 */);
+        var maxDepth = getMaxDepth(); // getTree().MaxDepth;// ?? SettingsTyped.Depth ?? MagicMenuSettings.LevelDepthFallback;
+        var levelsRemaining = maxDepth - (page.MenuLevel - 1 /* Level is 1 based, so -1 */);
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 

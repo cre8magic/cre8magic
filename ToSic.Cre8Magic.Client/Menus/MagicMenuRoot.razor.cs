@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 using Oqtane.Themes.Controls;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus;
 
@@ -29,7 +30,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
 
     [Parameter] public string? Template { get; set; }
 
-    protected MagicMenuTree? Menu { get; private set; }
+    protected IMagicPageList? Menu { get; private set; }
 
     [Inject] public ILogger<Menu>? Logger { get; set; }
 
@@ -39,8 +40,8 @@ public abstract class MagicMenuRoot: MagicMenuBase
     /// Detect if the menu is configured for vertical.
     /// For the most common 2 kinds of menu options. 
     /// </summary>
-    protected bool IsVertical => MagicConstants.MenuVertical.EqInvariant(Menu?.Settings.Template);
-    protected bool IsHorizontal => MagicConstants.MenuHorizontal.EqInvariant(Menu?.Settings.Template);
+    protected bool IsVertical => MagicConstants.MenuVertical.EqInvariant(Menu?.Settings?.Variant);
+    protected bool IsHorizontal => MagicConstants.MenuHorizontal.EqInvariant(Menu?.Settings?.Variant);
 
     protected override async Task OnParametersSetAsync()
     {

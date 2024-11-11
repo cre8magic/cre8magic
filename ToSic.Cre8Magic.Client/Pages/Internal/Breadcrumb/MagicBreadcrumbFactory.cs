@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal;
+namespace ToSic.Cre8magic.Client.Pages.Internal.Breadcrumb;
 
 internal class MagicBreadcrumbFactory(MagicPageFactory pageFactory)
 {

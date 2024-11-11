@@ -1,5 +1,6 @@
 ﻿using ToSic.Cre8magic.Client.Pages.Internal;
 using ToSic.Cre8magic.Client.Settings.Internal;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus.Settings;
 
@@ -92,6 +93,8 @@ public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicP
 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;
+
+    public string Variant => Template ?? "";
 
 
     private static readonly MagicMenuSettings FbAndF = new()

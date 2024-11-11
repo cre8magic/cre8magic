@@ -2,6 +2,7 @@
 using Oqtane.UI;
 using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Client.Pages.Internal.Menu;
 using ToSic.Cre8magic.Pages;
 using Log = ToSic.Cre8magic.Client.Logging.Log;
 
@@ -9,56 +10,32 @@ namespace ToSic.Cre8magic.Client.Menus;
 
 public class MagicMenuTree : IMagicPageList
 {
-    public MagicMenuTree(PageState pageState, MagicMenuGetSpecsWip? specs = null)
+    public MagicMenuTree(PageState pageState, MagicMenuGetSpecsWip specs)
     {
-        Specs = specs ?? new();
-        PageFactory = new(pageState, Specs.Pages);
-        SetHelper = new(PageFactory, this);
-        SetHelper.Set(Specs.MagicSettings);
-        SetHelper.Set(Specs.Designer);
-        SetHelper.Set(Specs.Settings);
+        Specs = specs;
+        RootBuilder = new MagicMenuRootBuilder(pageState, specs);
+        PageFactory = RootBuilder.PageFactory;
+        SetHelper = RootBuilder.SubSetHelper;
         Log = SetHelper.LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
     }
+
+    private MagicMenuRootBuilder RootBuilder { get; }
 
     internal MagicMenuGetSpecsWip Specs { get; }
 
     internal Log Log { get; }
 
-    internal MagicMenuPageSetHelper SetHelper { get; }
+    internal MagicMenuSubBuilder SetHelper { get; }
     private MagicPageFactory PageFactory { get; }
-    public MagicMenuSettings Settings => SetHelper.SettingsTyped;
-
-
-    internal MagicMenuTree Tree => this;
-
-    public int MaxDepth => _maxDepth ??= Specs.Depth ?? Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
-    private int? _maxDepth;
 
     public int MenuLevel => 1;
 
     public bool HasChildren => Children.Any();
 
-    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= GetChildren();
+    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= RootBuilder.GetChildren();
     private IList<IMagicPageWithDesignWip>? _children;
-
-    protected List<IMagicPageWithDesignWip> GetChildren()
-    {
-        var l = Log.Fn<List<IMagicPageWithDesignWip>>($"{nameof(MenuLevel)}: {MenuLevel}");
-        var levelsRemaining = Tree.MaxDepth - (MenuLevel - 1 /* Level is 1 based, so -1 */);
-        if (levelsRemaining < 0)
-            return l.Return([], "remaining levels 0 - return empty");
-
-        var rootPages = new NodeRuleHelper(PageFactory, PageFactory.Current, Settings, Log).GetRootPages(Specs);
-        l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
-
-        var children = rootPages
-            .Select(page => new MagicPageWithDesign(PageFactory, SetHelper, page, MenuLevel + 1) as IMagicPageWithDesignWip)
-            .ToList();
-        return l.Return(children, $"{children.Count}");
-    }
-
-
+    
 
     private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(VPageLevel1);
     private ITokenReplace? _nodeReplace;
@@ -71,6 +48,8 @@ public class MagicMenuTree : IMagicPageList
 
     /// <inheritdoc cref="IMagicPageList.Value" />
     public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, VPageLevel1)).EmptyAsNull();
+
+    public IMagicPageSetSettings Settings => SetHelper.Settings;
 
     public IEnumerator<IMagicPageWithDesignWip> GetEnumerator() => Children.GetEnumerator();
 
