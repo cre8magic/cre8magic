@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Client.Menus.Settings;
+﻿using ToSic.Cre8magic.Settings;
+
+namespace ToSic.Cre8magic.Client.Menus.Settings;
 
 public class MagicMenuDesign: DesignSetting
 {

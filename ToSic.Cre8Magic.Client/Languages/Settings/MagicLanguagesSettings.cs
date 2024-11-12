@@ -1,4 +1,8 @@
-﻿namespace ToSic.Cre8magic.Languages.Settings;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Debug;
+using ToSic.Cre8magic.Settings.Internal;
+
+namespace ToSic.Cre8magic.Languages.Settings;
 
 public record MagicLanguagesSettings : SettingsWithInherit, IHasDebugSettings
 {

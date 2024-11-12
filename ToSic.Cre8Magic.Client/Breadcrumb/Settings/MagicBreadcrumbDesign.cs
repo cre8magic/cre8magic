@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Breadcrumb.Settings;
+﻿using ToSic.Cre8magic.Settings;
+
+namespace ToSic.Cre8magic.Breadcrumb.Settings;
 
 public class MagicBreadcrumbDesign : DesignSetting
 {

@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Client.Settings;
+﻿namespace ToSic.Cre8magic.Settings;
 
 /// <summary>
 /// Settings for a Theme Package.

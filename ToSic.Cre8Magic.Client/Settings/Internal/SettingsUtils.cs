@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Settings.Internal;
+namespace ToSic.Cre8magic.Settings.Internal;
 
 internal static class SettingsUtils
 {

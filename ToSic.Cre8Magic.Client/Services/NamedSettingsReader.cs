@@ -1,7 +1,9 @@
-﻿using ToSic.Cre8magic.Utils;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicConstants;
-using static ToSic.Cre8magic.Client.Settings.Json.JsonMerger;
-using static ToSic.Cre8magic.Client.Settings.SettingsWithInherit;
+using static ToSic.Cre8magic.Settings.Json.JsonMerger;
+using static ToSic.Cre8magic.Settings.SettingsWithInherit;
 
 namespace ToSic.Cre8magic.Client.Services;
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Breadcrumb.Settings;

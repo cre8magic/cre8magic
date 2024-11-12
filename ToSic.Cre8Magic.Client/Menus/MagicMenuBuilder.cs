@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using ToSic.Cre8magic.Client.Settings.Json;
 using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Settings.Json;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Menus;

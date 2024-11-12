@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Tokens;
+﻿using ToSic.Cre8magic.Settings;
+
+namespace ToSic.Cre8magic.Tokens;
 
 internal class ThemeTokens(MagicPackageSettings themeSettings) : ITokenReplace
 {

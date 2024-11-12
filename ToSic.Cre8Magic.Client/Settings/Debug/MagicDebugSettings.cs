@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Client.Settings.Debug;
+﻿using ToSic.Cre8magic.Settings.Internal;
+
+namespace ToSic.Cre8magic.Settings.Debug;
 
 public class MagicDebugSettings
 {
