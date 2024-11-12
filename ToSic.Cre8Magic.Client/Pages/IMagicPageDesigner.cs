@@ -9,6 +9,6 @@ namespace ToSic.Cre8magic.Pages;
 /// </summary>
 public interface IMagicPageDesigner
 {
-    string Classes(string tag, IMagicPage page);
-    string Value(string key, IMagicPage page);
+    string? Classes(string tag, IMagicPage page);
+    string? Value(string key, IMagicPage page);
 }

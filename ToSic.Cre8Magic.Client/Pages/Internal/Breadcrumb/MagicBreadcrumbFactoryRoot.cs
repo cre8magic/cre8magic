@@ -18,13 +18,13 @@ internal class MagicBreadcrumbFactoryRoot(MagicPageFactory pageFactory)
     private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbSettings settings, Func<IMagicPage, TPage> generator)
     {
         // Check if we have a specified current page
-        var endPage = settings.Current;
+        var endPage = settings.Active;
 
         // If not, and we have a CurrentId, try that.
         // If there is no match, exit.
-        if (endPage == null && settings.Start != null)
+        if (endPage == null && settings.ActiveId != null)
         {
-            endPage = pageFactory.GetOrNull(settings.Start);
+            endPage = pageFactory.GetOrNull(settings.ActiveId);
             if (endPage == null)
                 return new List<TPage>();
         }
@@ -35,7 +35,7 @@ internal class MagicBreadcrumbFactoryRoot(MagicPageFactory pageFactory)
         // Create a new list with the current page
         var list = new List<TPage>();
 
-        if (settings.WithCurrent)
+        if (settings.WithActive)
             list.Add(generator(endPage));
 
         // If we are on home, exit now.

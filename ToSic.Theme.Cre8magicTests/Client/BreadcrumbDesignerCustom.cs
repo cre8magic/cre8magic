@@ -3,9 +3,9 @@ using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Theme.Cre8magicTests.Client;
 
-internal class CustomBreadcrumbDesigner : IMagicPageDesigner
+internal class BreadcrumbDesignerCustom: MagicPageDesignerBasic
 {
-    public string Classes(string tag, IMagicPage item)
+    public override string Classes(string tag, IMagicPage item)
     {
         // List to store CSS class names
         var classes = new List<string> { "custom" };
@@ -38,11 +38,4 @@ internal class CustomBreadcrumbDesigner : IMagicPageDesigner
         // Return the CSS classes as a space-separated string
         return string.Join(" ", classes);
     }
-
-    public string Value(string key, IMagicPage item) 
-        => key.ToLower() switch
-        {
-            "aria-current" => item.IsCurrent ? "page" : "",
-            _ => ""
-        };
 }

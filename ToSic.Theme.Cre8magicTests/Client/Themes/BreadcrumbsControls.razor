@@ -1,4 +1,6 @@
 @namespace ToSic.Theme.Cre8magicTests
+@using ToSic.Cre8magic.Breadcrumb
+@using ToSic.Cre8magic.Breadcrumb.Settings
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeBase
 
@@ -45,7 +47,7 @@
     <p>No Designer (defaults to BasicDesigner)</p>
     <BasicBreadcrumb></BasicBreadcrumb>
     <p>BasicBreadcrumb with CustomBreadcrumbDesigner</p>
-    <BasicBreadcrumb Settings="new() { Designer = new CustomBreadcrumbDesigner() }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { Designer = new BreadcrumbDesignerDark() }"></BasicBreadcrumb>
 
     <hr />
 
@@ -60,21 +62,21 @@
     
     <p>Without current</p>
     <BasicBreadcrumb></BasicBreadcrumb>
-    <BasicBreadcrumb Settings="new() { WithCurrent = false }"></BasicBreadcrumb>
-    <BasicBreadcrumb Settings="new() { WithCurrent = true }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { WithActive = false }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { WithActive = true }"></BasicBreadcrumb>
 
-    <h3>BasicBreadcrumb with Settings { Start = @PageWithDeepBreadcrumb }</h3>
+    <h3>BasicBreadcrumb with Settings { @nameof(MagicBreadcrumbSettings.ActiveId) = @PageWithDeepBreadcrumb }</h3>
     <p>No designer</p>
-    <BasicBreadcrumb Settings="new() { Start = PageWithDeepBreadcrumb }"></BasicBreadcrumb>
-    <p>BasicBreadcrumb with BasicBreadcrumbDesigner</p>
-    <BasicBreadcrumb Settings="new() { Start = PageWithDeepBreadcrumb, Designer = new BasicBreadcrumbDesigner() }"></BasicBreadcrumb>
-    <p>BasicBreadcrumb with CustomBreadcrumbDesigner</p>
-    <BasicBreadcrumb Settings="new() { Start = PageWithDeepBreadcrumb, Designer = new CustomBreadcrumbDesigner() }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb }"></BasicBreadcrumb>
+    <p>BasicBreadcrumb with @nameof(MagicBreadcrumbDesignerBs5)</p>
+    <BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb, Designer = new MagicBreadcrumbDesignerBs5() }"></BasicBreadcrumb>
+    <p>BasicBreadcrumb with @nameof(BreadcrumbDesignerDark)</p>
+    <BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb, Designer = new BreadcrumbDesignerDark() }"></BasicBreadcrumb>
 
     <hr />
-    <h3>BasicBreadcrumb Non-Existing { Start = -1 }</h3>
+    <h3>BasicBreadcrumb Non-Existing { @nameof(MagicBreadcrumbSettings.ActiveId) = -1 }</h3>
     <p>This should not show anything</p>
-    <BasicBreadcrumb Settings="new() { Start = -1 }"></BasicBreadcrumb>
+    <BasicBreadcrumb Settings="new() { ActiveId = -1 }"></BasicBreadcrumb>
     <p>End - there should be nothing to be seen</p>
     <hr />
 

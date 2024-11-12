@@ -6,13 +6,11 @@ namespace ToSic.Cre8magic.Breadcrumb.Settings;
 
 /// <summary>
 /// Breadcrumb settings - either provided in code, or generated from JSON.
-///
-/// Note that as of v0.2 the JSON variant is not in use.
 /// </summary>
 /// <remarks>
-/// Empty constructor is important for JSON deserialization to work.
+/// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings() : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
+public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
     #region WIP properties moved from specs
 
@@ -23,7 +21,7 @@ public record MagicBreadcrumbSettings() : SettingsWithInherit, IHasDebugSettings
     /// or will use custom code to visualize differently.
     /// </summary>
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
-    public bool WithCurrent { get; init; } = true;
+    public bool WithActive { get; init; } = true;
 
     /// <summary>
     /// If the home page should be included in the breadcrumb.
@@ -61,7 +59,7 @@ public record MagicBreadcrumbSettings() : SettingsWithInherit, IHasDebugSettings
 
     // TODO: NAMING
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
-    public IMagicPage? Current { get; init; }
+    public IMagicPage? Active { get; init; }
 
     #endregion
 
@@ -92,7 +90,7 @@ public record MagicBreadcrumbSettings() : SettingsWithInherit, IHasDebugSettings
     /// - a specific ID
     /// - blank / null, current page
     /// </summary>
-    public int? Start { get; init; }
+    public int? ActiveId { get; init; }
 
     // todo: name, maybe not on interface
     public NamedSettings<MagicBreadcrumbDesign>? DesignSettings { get; init; }

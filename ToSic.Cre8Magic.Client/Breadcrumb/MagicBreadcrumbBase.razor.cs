@@ -12,6 +12,10 @@ public abstract class MagicBreadcrumbBase: MagicControl
     protected IMagicPage HomePage => _homePage ??= PageFactory.Home;
     private IMagicPage? _homePage;
 
+    /// <summary>
+    /// The Breadcrumb for the current page.
+    /// Will be updated when the page changes.
+    /// </summary>
     protected IEnumerable<IMagicPageWithDesignWip> Breadcrumb => _breadcrumbs.Get(
         () => (PageFactory.Breadcrumb.Get(), PageState.Page.PageId),
         (_, i) => i == PageState.Page.PageId
