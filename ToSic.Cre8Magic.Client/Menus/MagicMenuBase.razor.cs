@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Utils;
 
 // TODO: adapt Cre8magic everywhere
 namespace ToSic.Cre8magic.Client.Menus;
@@ -8,8 +9,8 @@ public abstract class MagicMenuBase: Oqtane.Themes.Controls.MenuBase, IMagicCont
 {
     [CascadingParameter] public MagicSettings Settings { get; set; }
 
-    protected MagicPageFactory PageFactory => _pageFactory ??= new MagicPageFactory(PageState);
-    private MagicPageFactory? _pageFactory;
+    protected MagicPageFactory PageFactory => _pageFactory.Get(() => new(PageState), f => f?.PageState.Page == PageState.Page);
+    private readonly GetKeep<MagicPageFactory> _pageFactory = new();
 
     private const string ErrMsg = "error calling {0} in {1}. Use the {0} method of the branch to get the expected result.";
 

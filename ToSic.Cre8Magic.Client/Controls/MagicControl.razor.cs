@@ -12,10 +12,8 @@ public abstract class MagicControl: ThemeControlBase, IMagicControlWithSettings
 {
     [CascadingParameter] public MagicSettings Settings { get; set; }
 
-    protected MagicPageFactory PageFactory => _pageFactory?.PageState.Page == PageState.Page
-        ? _pageFactory
-        : _pageFactory = new(PageState);
-    private MagicPageFactory? _pageFactory;
+    protected MagicPageFactory PageFactory => _pageFactory.Get(() => new(PageState), f => f?.PageState.Page == PageState.Page);
+    private readonly GetKeep<MagicPageFactory> _pageFactory = new();
 
     protected bool UserIsAdmin => PageState.UserIsAdmin();
 
