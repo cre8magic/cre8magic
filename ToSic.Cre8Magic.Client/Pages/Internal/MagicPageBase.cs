@@ -5,8 +5,7 @@ namespace ToSic.Cre8magic.Client.Pages.Internal;
 /// <summary>
 /// Wrapper for the Oqtane Page.
 /// </summary>
-/// <param name="oqtanePagege"></param>
-public class MagicPageBase(Page oqtanePage)
+internal class MagicPageBase(Page oqtanePage)
 {
     /// <summary>
     /// Original Oqtane page wrapped in MagicPage.

@@ -13,7 +13,7 @@ public interface IMagicPageService
     /// <remarks>
     /// Will throw an error if accessed before initializing.
     /// </remarks>
-    PageState PageState { get; }
+    internal PageState PageState { get; }
 
     IMagicPageService Setup(PageState pageState);
 

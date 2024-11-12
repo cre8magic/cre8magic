@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Client.Pages.Internal;
 // ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
 
-public class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPageList, IEnumerable<IMagicPageWithDesignWip>
+internal class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPageList, IEnumerable<IMagicPageWithDesignWip>
 {
     /// <param name="pageFactory"></param>
     /// <param name="factory"></param>

@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Client.Pages.Internal;
 /// <summary>
 /// Wrapper for the Oqtane Page.
 /// </summary>
-public class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPageBase(oqtanePage), IMagicPage
+internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPageBase(oqtanePage), IMagicPage
 {
     protected MagicPageFactory PageFactory => pageFactory;
 

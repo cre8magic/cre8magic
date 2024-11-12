@@ -1,7 +1,7 @@
 ﻿
-// ReSharper disable once CheckNamespace
 using ToSic.Cre8magic.Client.Pages.Internal;
 
+// ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
 
 /// <summary>
