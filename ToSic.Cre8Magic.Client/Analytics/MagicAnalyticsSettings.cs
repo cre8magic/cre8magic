@@ -1,18 +1,18 @@
 ﻿namespace ToSic.Cre8magic.Analytics;
 
-public class MagicAnalyticsSettings : SettingsWithInherit
+public record MagicAnalyticsSettings : SettingsWithInherit
 {
     // public NamedSettings<DesignSetting> Custom { get; set; } = new();
 
-    public string? GtmId { get; set; }
+    public string? GtmId { get; init; }
 
-    public bool? PageViewTrack { get; set; }
+    public bool? PageViewTrack { get; init; }
 
-    public bool? PageViewTrackFirst { get; set; }
+    public bool? PageViewTrackFirst { get; init; }
 
-    public string? PageViewJs { get; set; }
+    public string? PageViewJs { get; init; }
 
-    public string? PageViewEvent { get; set; }
+    public string? PageViewEvent { get; init; }
 
 
     private static readonly MagicAnalyticsSettings FbAndF = new()

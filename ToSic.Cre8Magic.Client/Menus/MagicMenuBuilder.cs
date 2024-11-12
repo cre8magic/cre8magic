@@ -59,7 +59,8 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
             // Check various places where design could be configured by priority
             var designConfig = settingsSvc.MenuDesigns.Find(designName, Settings.Name);
 
-            config.DesignSettings = designConfig;
+            //config.DesignSettings = designConfig;
+            config = config with { DesignSettings = designConfig };
         }
         else
             messages.Add("Design rules already set");

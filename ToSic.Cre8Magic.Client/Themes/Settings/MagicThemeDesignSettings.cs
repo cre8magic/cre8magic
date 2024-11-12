@@ -5,7 +5,7 @@
 ///
 /// If you change these, you must also update the SCSS files. 
 /// </summary>
-public class MagicThemeDesignSettings: SettingsWithInherit
+public record MagicThemeDesignSettings: SettingsWithInherit
 {
     private const string SitePrefixDefault = "site";
     private const string PagePrefixDefault = "page";
@@ -38,15 +38,15 @@ public class MagicThemeDesignSettings: SettingsWithInherit
     ];
 
 
-    public string[] MagicContext { get; set; } = [];
+    public string[] MagicContext { get; init; } = [];
 
-    public PairOnOff PageIsHome { get; set; }
+    public PairOnOff PageIsHome { get; init; }
 
-    public PairOnOff PaneIsEmpty { get; set; }
+    public PairOnOff PaneIsEmpty { get; init; }
 
-    public string MagicContextTagId { get; set; }
+    public string MagicContextTagId { get; init; }
 
-    public NamedSettings<DesignSetting> Custom { get; set; } = new();
+    public NamedSettings<DesignSetting> Custom { get; init; } = new();
 
     // TODO: initialize with real properties, so the defaults don't already contain something?
 

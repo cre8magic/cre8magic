@@ -1,6 +1,6 @@
 ﻿namespace ToSic.Cre8magic.Languages.Settings;
 
-public class MagicLanguagesSettings : SettingsWithInherit, IHasDebugSettings
+public record MagicLanguagesSettings : SettingsWithInherit, IHasDebugSettings
 {
     /// <summary>
     /// Dummy constructor so better find cases where it's created
@@ -12,10 +12,10 @@ public class MagicLanguagesSettings : SettingsWithInherit, IHasDebugSettings
     /// If true, will only show the languages which are explicitly configured.
     /// If false, will first show the configured languages, then the rest. 
     /// </summary>
-    public bool HideOthers { get; set; } = false;
+    public bool HideOthers { get; init; } = false;
 
     /// <inheritdoc />
-    public MagicDebugSettings? Debug { get; set; }
+    public MagicDebugSettings? Debug { get; init; }
 
     /// <summary>
     /// List of languages
@@ -23,9 +23,9 @@ public class MagicLanguagesSettings : SettingsWithInherit, IHasDebugSettings
     public NamedSettings<MagicLanguage>? Languages
     {
         get => _languages;
-        set => _languages = InitList(value);
+        init => _languages = InitList(value);
     }
-    private NamedSettings<MagicLanguage>? _languages;
+    private readonly NamedSettings<MagicLanguage>? _languages;
 
     private NamedSettings<MagicLanguage>? InitList(NamedSettings<MagicLanguage>? dic)
     {

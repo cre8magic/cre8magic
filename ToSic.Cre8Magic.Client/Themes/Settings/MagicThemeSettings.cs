@@ -3,14 +3,14 @@ using static ToSic.Cre8magic.Client.MagicConstants;
 
 namespace ToSic.Cre8magic.Client.Themes.Settings;
 
-public class MagicThemeSettings: SettingsWithInherit, IHasDebugSettings
+public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings
 {
     /// <summary>
     /// The logo to show, should be located in the assets subfolder
     /// </summary>
     public string? Logo { get; set; }
 
-    public int LanguagesMin { get; set; }
+    public int LanguagesMin { get; init; }
 
     //public string? GtmId { get; set; }
 
@@ -24,12 +24,12 @@ public class MagicThemeSettings: SettingsWithInherit, IHasDebugSettings
     /// <summary>
     /// The parts of this theme, like breadcrumb and various menu configs
     /// </summary>
-    public NamedSettings<MagicThemePartSettings> Parts { get; set; } = new();
+    public NamedSettings<MagicThemePartSettings> Parts { get; init; } = new();
 
 
-    public bool? MagicContextInBody { get; set; }
+    public bool? MagicContextInBody { get; init; }
 
-    public string? Design { get; set; }
+    public string? Design { get; init; }
 
     internal MagicThemeSettings Parse(ITokenReplace tokens)
     {
@@ -51,5 +51,5 @@ public class MagicThemeSettings: SettingsWithInherit, IHasDebugSettings
         Foundation = Fallback
     };
 
-    public MagicDebugSettings? Debug { get; set; }
+    public MagicDebugSettings? Debug { get; init; }
 }

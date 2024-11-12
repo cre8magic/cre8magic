@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus.Settings;
 
-public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
+public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
     /// <summary>
     /// Empty constructor is important for JSON deserialization
@@ -14,23 +14,23 @@ public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicP
     /// A unique ID to identify the menu.
     /// Would be used for debugging but also to help in creating unique css-classes for collapsible menus
     /// </summary>
-    public string? Id { get; set; }
+    public string? Id { get; init; }
 
     /// <summary>
     /// Name to identify this configuration
     /// </summary>
     // TODO: REVIEW NAME
-    public string? ConfigName { get; set; }
+    public string? ConfigName { get; init; }
 
     /// <inheritdoc />
-    public MagicDebugSettings? Debug { get; set; }
+    public MagicDebugSettings? Debug { get; init; }
 
     /// <summary>
     /// Determines if this navigation should be shown.
     /// Mainly used for standard menus which could be disabled through configuration. 
     /// </summary>
     // TODO: REVIEW NAME - Show would probably be better!
-    public bool? Display { get; set; } = DisplayDefault;
+    public bool? Display { get; init; } = DisplayDefault;
     public const bool DisplayDefault = true;
 
     /// <summary>
@@ -38,7 +38,7 @@ public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicP
     /// The number is ??? relative,
     /// so if the navigation starts an level 2 then levelDepth 2 means to show levels 2 & 3 ??? verify
     /// </summary>
-    public int? Depth { get; set; }
+    public int? Depth { get; init; }
     public const int LevelDepthFallback = 1;
 
     /// <summary>
@@ -48,7 +48,7 @@ public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicP
     /// See inspiration context from DDRMenu https://www.dnnsoftware.com/wiki/ddrmenu-reference-guide
     /// in DDR it was called 'skip' but it didn't make sense IMHO
     /// </summary>
-    public bool? Children { get; set; }
+    public bool? Children { get; init; }
     public const bool ChildrenFallback = default;
 
     //// TODO: NOT YET IMPLEMENTED
@@ -67,7 +67,7 @@ public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicP
     /// - `.` to indicate current page
     /// - blank / null, to use another start ???
     /// </summary>
-    public string? Start { get; set; }
+    public string? Start { get; init; }
     public const string StartPageRoot = "*";
     public const string StartPageCurrent = ".";
 
@@ -78,17 +78,17 @@ public class MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicP
     /// - `-1` is one level up from the current node
     /// - `-2` is two levels up from the current node
     /// </summary>
-    public int? Level { get; set; }
+    public int? Level { get; init; }
     public const int StartLevelFallback = default;
 
     /// <summary>
     /// The template to use - horizontal/vertical
     /// </summary>
-    public string? Template { get; set; }
+    public string? Template { get; init; }
     public const string TemplateDefault = "Horizontal";
 
     // todo: name, maybe not on interface
-    public NamedSettings<MagicMenuDesign>? DesignSettings { get; set; }
+    public NamedSettings<MagicMenuDesign>? DesignSettings { get; init; }
 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;

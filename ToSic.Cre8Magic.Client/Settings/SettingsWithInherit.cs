@@ -2,7 +2,7 @@
 
 namespace ToSic.Cre8magic.Client.Settings;
 
-public abstract class SettingsWithInherit: IInherit
+public abstract record SettingsWithInherit: IInherit
 {
     internal const string InheritsNameInJson = "@inherits";
     [JsonPropertyName(InheritsNameInJson)]

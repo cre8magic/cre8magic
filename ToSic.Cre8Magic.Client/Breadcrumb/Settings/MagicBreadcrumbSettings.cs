@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Breadcrumb.Settings;
 
-public class MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
+public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
     /// <summary>
     /// Empty constructor is important for JSON deserialization

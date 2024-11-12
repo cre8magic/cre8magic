@@ -1,8 +1,8 @@
 ﻿namespace ToSic.Cre8magic.Client.Containers.Settings;
 
-public class MagicContainerSettings: SettingsWithInherit
+public record MagicContainerSettings: SettingsWithInherit
 {
-    public NamedSettings<DesignSetting> Custom { get; set; } = new();
+    public NamedSettings<DesignSetting> Custom { get; init; } = new();
 
     private static readonly MagicContainerSettings FbAndF = new()
     {
