@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
-public abstract class MagicLanguageMenuBase: MagicControl
+public abstract class MagicLanguageMenuBase: MagicControlBase
 {
     [Inject] protected LanguageService LanguageService { get; set; }
 

@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Client.Controls;
 /// <summary>
 /// Non-Oqtane Blazor component with Settings as base for your controls
 /// </summary>
-public abstract class MagicComponent: ComponentBase, IMagicControlWithSettings
+public abstract class MagicComponentBase: ComponentBase, IMagicControlWithSettings
 {
     [CascadingParameter] public MagicAllSettings AllSettings { get; set; }
 
