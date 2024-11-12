@@ -1,4 +1,5 @@
 ﻿using Oqtane.Models;
+using ToSic.Cre8magic.Breadcrumb.Settings;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
@@ -29,7 +30,7 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPa
     private string? _target;
 
     /// <inheritdoc />
-    public IEnumerable<IMagicPage> Breadcrumb => _breadcrumb ??= pageFactory.Breadcrumb.Get(new MagicBreadcrumbGetSpecsWip { Current = this }).ToList();
+    public IEnumerable<IMagicPage> Breadcrumb => _breadcrumb ??= pageFactory.Breadcrumb.Get(new MagicBreadcrumbSettings { Current = this }).ToList();
     private IEnumerable<IMagicPage>? _breadcrumb;
 
 

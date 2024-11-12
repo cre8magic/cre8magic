@@ -1,14 +1,69 @@
-﻿using ToSic.Cre8magic.Client.Settings.Internal;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Client.Settings.Internal;
 using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Breadcrumb.Settings;
 
-public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
+/// <summary>
+/// Breadcrumb settings - either provided in code, or generated from JSON.
+///
+/// Note that as of v0.2 the JSON variant is not in use.
+/// </summary>
+/// <remarks>
+/// Empty constructor is important for JSON deserialization to work.
+/// </remarks>
+public record MagicBreadcrumbSettings() : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
+    #region WIP properties moved from specs
+
     /// <summary>
-    /// Empty constructor is important for JSON deserialization
+    /// If the current page should be included in the breadcrumb.
+    ///
+    /// Set to false for scenarios where you don't want to show the final page,
+    /// or will use custom code to visualize differently.
     /// </summary>
-    public MagicBreadcrumbSettings() { }
+    [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
+    public bool WithCurrent { get; init; } = true;
+
+    /// <summary>
+    /// If the home page should be included in the breadcrumb.
+    /// This is special because the home page is usually not really "above" the others, but typically side-by side to other pages on the top level menu.
+    ///
+    /// Set to false, if you only want to show the breadcrumb starting at the level below home.
+    /// </summary>
+    [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
+    public bool WithHome { get; init; } = true;
+
+    [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
+    public IMagicPageDesigner? Designer { get; init; }
+
+    /// <summary>
+    /// Maximum depth of the breadcrumb, defaults to 10.
+    /// This is to ensure that we don't run into infinite loops.
+    /// </summary>
+    [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
+    public int MaxDepth { get; init; } = 10;
+
+    /// <summary>
+    /// If the order of the Breadcrumb should be reversed.
+    /// </summary>
+    [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
+    public bool Reverse { get; init; } = false;
+
+    /// <summary>
+    /// List of pages to respect when creating the breadcrumb.
+    /// Default is `null` - so it will just take all the pages.
+    ///
+    /// TODO: NAMING
+    /// </summary>
+    [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
+    public IEnumerable<IMagicPage>? Pages { get; init; } = null;
+
+    // TODO: NAMING
+    [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
+    public IMagicPage? Current { get; init; }
+
+    #endregion
 
     /// <summary>
     /// A unique ID to identify the breadcrumb.
@@ -47,15 +102,12 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
 
     public string Variant => ""; // TODO
 
-
-    private static readonly MagicBreadcrumbSettings FbAndF = new()
-    {
-        Start = null,
-    };
-
+    /// <summary>
+    /// Defaults - these don't do anything, but we want to use this pattern for consistency.
+    /// </summary>
     internal static Defaults<MagicBreadcrumbSettings> Defaults = new()
     {
-        Fallback = FbAndF,
-        Foundation = FbAndF,
+        Fallback = new(),
+        Foundation = new(),
     };
 }

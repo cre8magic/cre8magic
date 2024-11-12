@@ -14,12 +14,9 @@
         ? "97"
         : "29";
 
-    public const int PageWithDeepBreadcrumb = 308;
-
-    protected override void OnParametersSet()
-    {
-    
-    }
+    public const int PageWithDeepBreadcrumb = PCTonci
+        ? 308
+        : 35; // Sub-Under-Third
 }
 
 <main role="main">
@@ -66,12 +63,20 @@
     <BasicBreadcrumb Settings="new() { WithCurrent = false }"></BasicBreadcrumb>
     <BasicBreadcrumb Settings="new() { WithCurrent = true }"></BasicBreadcrumb>
 
-    <p>BasicBreadcrumb with Settings { Start = PageWithDeepBreadcrumb }</p>
-    <BasicBreadcrumb Settings="new() { Settings = new() { Start = PageWithDeepBreadcrumb } }"></BasicBreadcrumb>
-    <BasicBreadcrumb Settings="new() { Settings = new() { Start = PageWithDeepBreadcrumb }, Designer = new BasicBreadcrumbDesigner() }"></BasicBreadcrumb>
-    <BasicBreadcrumb Settings="new() { Settings = new() { Start = PageWithDeepBreadcrumb }, Designer = new CustomBreadcrumbDesigner() }"></BasicBreadcrumb>
+    <h3>BasicBreadcrumb with Settings { Start = @PageWithDeepBreadcrumb }</h3>
+    <p>No designer</p>
+    <BasicBreadcrumb Settings="new() { Start = PageWithDeepBreadcrumb }"></BasicBreadcrumb>
+    <p>BasicBreadcrumb with BasicBreadcrumbDesigner</p>
+    <BasicBreadcrumb Settings="new() { Start = PageWithDeepBreadcrumb, Designer = new BasicBreadcrumbDesigner() }"></BasicBreadcrumb>
+    <p>BasicBreadcrumb with CustomBreadcrumbDesigner</p>
+    <BasicBreadcrumb Settings="new() { Start = PageWithDeepBreadcrumb, Designer = new CustomBreadcrumbDesigner() }"></BasicBreadcrumb>
 
-    <hr/>
+    <hr />
+    <h3>BasicBreadcrumb Non-Existing { Start = -1 }</h3>
+    <p>This should not show anything</p>
+    <BasicBreadcrumb Settings="new() { Start = -1 }"></BasicBreadcrumb>
+    <p>End - there should be nothing to be seen</p>
+    <hr />
 
     <div class="content">
         <div class="container">

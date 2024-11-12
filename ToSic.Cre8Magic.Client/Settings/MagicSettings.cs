@@ -11,7 +11,7 @@ namespace ToSic.Cre8magic.Client.Settings;
 /// <summary>
 /// The current settings of a page.
 /// </summary>
-public class MagicSettings: IHasSettingsExceptions, IHasDebugSettings
+public record MagicSettings: IHasSettingsExceptions, IHasDebugSettings
 {
     internal MagicSettings(string name, MagicSettingsService service, MagicThemeSettings theme, TokenEngine tokens, PageState pageState)
     {

@@ -1,4 +1,5 @@
 ﻿@namespace ToSic.Theme.Cre8magicTests
+@using ToSic.Cre8magic.Breadcrumb.Settings
 @using ToSic.Cre8magic.Pages
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeControlBase;
@@ -9,7 +10,7 @@
     /// Settings for retrieving the breadcrumbs; optional
     /// </summary>
     [Parameter]
-    public MagicBreadcrumbGetSpecsWip Settings { get; set; }
+    public MagicBreadcrumbSettings Settings { get; set; }
 }
 @{
     var breadcrumb = PageSvc.Setup(PageState).GetBreadcrumb(Settings != null
@@ -21,10 +22,10 @@
     <ol class='@breadcrumb.Classes("ol")'>
         @foreach (var item in breadcrumb)
         {
-            <li class='@item.Classes("li")' aria-current='@item.Value("aria-current")'>
+            <li class='@item.Classes("li")'>
                 @if (item.IsCurrent)
                 {
-                    <span class='@item.Classes("span")'>@item.Name</span>
+                    <span class='@item.Classes("span")' aria-current="page">@item.Name</span>
                 } else
                 {
                     <a href="@item.Link" class='@item.Classes("a")'>@item.Name</a>

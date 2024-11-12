@@ -1,36 +1,41 @@
-﻿namespace ToSic.Cre8magic.Pages.Internal.Breadcrumb;
+﻿using ToSic.Cre8magic.Breadcrumb.Settings;
+
+namespace ToSic.Cre8magic.Pages.Internal.Breadcrumb;
 
 internal class MagicBreadcrumbFactoryRoot(MagicPageFactory pageFactory)
 {
-    private MagicBreadcrumbFactory BreadcrumbFactory(MagicBreadcrumbGetSpecsWip specs)
+    internal IMagicPageList Get(MagicBreadcrumbSettings? settings = default)
     {
-        var setHelper = new MagicBreadcrumbFactory(pageFactory);
-        if (specs.Settings != null)
-            setHelper.Set(specs.Settings);
-        if (specs.Designer != null)
-            setHelper.Set(specs.Designer);
-        return setHelper;
-    }
-
-    internal IMagicPageList Get(MagicBreadcrumbGetSpecsWip? specs = default)
-    {
-        specs ??= new();
-        var factory = BreadcrumbFactory(specs);
+        settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
+        var factory = new MagicBreadcrumbFactory(pageFactory, settings);
         var list = Get(
-            specs,
+            settings,
             magicPage => new MagicPageWithDesign(pageFactory, factory, magicPage)
         );
         return new MagicPageList(pageFactory, factory, list);
     }
 
-    private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbGetSpecsWip? specs, Func<IMagicPage, TPage> generator)
+    private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbSettings settings, Func<IMagicPage, TPage> generator)
     {
-        specs ??= new();
-        var endPage = specs.Current ?? pageFactory.Current;
+        // Check if we have a specified current page
+        var endPage = settings.Current;
+
+        // If not, and we have a CurrentId, try that.
+        // If there is no match, exit.
+        if (endPage == null && settings.Start != null)
+        {
+            endPage = pageFactory.GetOrNull(settings.Start);
+            if (endPage == null)
+                return new List<TPage>();
+        }
+
+        // In case we didn't have a hit, use the current page
+        endPage ??= pageFactory.Current;
+
         // Create a new list with the current page
         var list = new List<TPage>();
 
-        if (specs.WithCurrent)
+        if (settings.WithCurrent)
             list.Add(generator(endPage));
 
         // If we are on home, exit now.
@@ -39,18 +44,18 @@ internal class MagicBreadcrumbFactoryRoot(MagicPageFactory pageFactory)
             return list;
 
         // Technically home is not in the breadcrumb, it's usually just the first page in the list
-        if (specs.WithHome)
+        if (settings.WithHome)
             list.Insert(0, generator(pageFactory.Home));
 
         // determine if we restrict the output list
         // Note that as of 2024-11-10 it has not been tested.
-        var restrictions = specs.Pages?.Select(p => p.Id).ToHashSet();
+        var restrictions = settings.Pages?.Select(p => p.Id).ToHashSet();
 
         //// Find first parent page
         var parentPage = endPage.Parent;
 
         // Loop through all parent pages until we reach the home page
-        while (parentPage != null && homeId != parentPage.Id && list.Count <= specs.MaxDepth)
+        while (parentPage != null && homeId != parentPage.Id && list.Count <= settings.MaxDepth)
         {
             // Check if not in the list of restrictions
             if (restrictions != null && !restrictions.Contains(parentPage.Id))
@@ -62,7 +67,7 @@ internal class MagicBreadcrumbFactoryRoot(MagicPageFactory pageFactory)
             parentPage = parentPage.Parent;
         }
 
-        if (specs.Reverse)
+        if (settings.Reverse)
             list.Reverse();
 
         return list;

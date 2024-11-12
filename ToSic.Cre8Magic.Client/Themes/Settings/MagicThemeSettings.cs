@@ -12,15 +12,6 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings
 
     public int LanguagesMin { get; init; }
 
-    //public string? GtmId { get; set; }
-
-    //public bool? GtmTrackPageView { get; set; }
-    //public bool? GtmTrackPageViewFirst { get; set; }
-
-    //public string? GtmTrackPageViewJs { get; set; }
-
-    //public string? GtmTrackPageViewEvent { get; set; }
-
     /// <summary>
     /// The parts of this theme, like breadcrumb and various menu configs
     /// </summary>
