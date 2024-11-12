@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 using Oqtane;
+using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Client.Controls;
 
@@ -8,7 +9,7 @@ public abstract class MagicLogin: Oqtane.Themes.Controls.LoginBase, IMagicContro
 {
     [Inject] private IStringLocalizer<SharedResources> Localizer { get; set; }
 
-    [CascadingParameter] public MagicSettings Settings { get; set; }
+    [CascadingParameter] public MagicAllSettings AllSettings { get; set; }
 
     protected bool IsLoggedIn => _isLoggedIn ??= PageState.User is { IsAuthenticated: true };
     private bool? _isLoggedIn;
@@ -23,9 +24,9 @@ public abstract class MagicLogin: Oqtane.Themes.Controls.LoginBase, IMagicContro
             LoginUser();
     }
 
-    public string? Classes(string target) => Settings?.ThemeDesigner.Classes(target);
+    public string? Classes(string target) => AllSettings?.ThemeDesigner.Classes(target);
 
-    public string? Value(string target) => Settings?.ThemeDesigner.Value(target);
+    public string? Value(string target) => AllSettings?.ThemeDesigner.Value(target);
 
-    public string? Id(string name) => Settings?.ThemeDesigner.Id(name);
+    public string? Id(string name) => AllSettings?.ThemeDesigner.Id(name);
 }

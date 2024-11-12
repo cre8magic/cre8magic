@@ -10,7 +10,7 @@ public abstract class MagicLanguageMenuBase: MagicControl
 
     public List<MagicLanguage> Languages { get; private set; }
 
-    protected override IMagicDesigner Designer => _designer ??= new LanguagesDesigner(Settings);
+    protected override IMagicDesigner Designer => _designer ??= new LanguagesDesigner(AllSettings);
     private IMagicDesigner? _designer;
 
     /// <summary>
@@ -22,7 +22,7 @@ public abstract class MagicLanguageMenuBase: MagicControl
     {
         await base.OnParametersSetAsync();
 
-        LanguageService.InitSettings(Settings);
+        LanguageService.InitSettings(AllSettings);
 
         // Load defined language list. It changes unless the page is reloaded, so we can cache it on this control
         Languages ??= await LanguageService.LanguagesToShow(PageState.Site.SiteId);

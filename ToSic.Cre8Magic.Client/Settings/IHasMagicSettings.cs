@@ -1,6 +1,8 @@
-﻿namespace ToSic.Cre8magic.Client.Settings;
+﻿using ToSic.Cre8magic.Settings;
+
+namespace ToSic.Cre8magic.Client.Settings;
 
 public interface IHasMagicSettings
 {
-    MagicSettings Settings { get; set; }
+    MagicAllSettings AllSettings { get; set; }
 }

@@ -1,4 +1,5 @@
-﻿@inherits ComponentBase
+﻿@using ToSic.Cre8magic.Settings
+@inherits ComponentBase
 @*
     Purpose:    Ensures that there is a wrapper - div or body
                 which has a bunch of css-classes to tell the stylesheets
@@ -6,18 +7,21 @@
 *@
 @code
 {
-    [Parameter, EditorRequired] public MagicSettings Settings { get; set; }
-    [Parameter] public RenderFragment? ChildContent { get; set; }
-    [Inject] protected IMagicThemeJsService? ThemeJs { get; set; }
+    [Parameter, EditorRequired]
+    public required MagicAllSettings AllSettings { get; set; }
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+    [Inject]
+    protected IMagicThemeJsService? ThemeJs { get; set; }
 
     // [Inject] protected MagicThemeJsServiceTest? ThemeJsTest { get; set; }
 
-    private bool PutInBody => Settings.Theme.MagicContextInBody == true;
+    private bool PutInBody => AllSettings.Theme.MagicContextInBody == true;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-        if (PutInBody && ThemeJs != null) await ThemeJs.SetBodyClasses(Settings.MagicContext);
+        if (PutInBody && ThemeJs != null) await ThemeJs.SetBodyClasses(AllSettings.MagicContext);
 
         // await ThemeJsTest!.Log("test from test");
         // var x = await ThemeJsTest!.TestFromTest();
@@ -25,19 +29,19 @@
 
 }
 @* Stop here if Settings are not ready *@
-@if (Settings == null) 
+@if (AllSettings == null) 
 {
     <text>Loading settings...</text>
     return;
 }
-<CascadingValue Value="Settings">
+<CascadingValue Value="AllSettings">
 @if (PutInBody)
 {
     @ChildContent
 }
 else
 {
-    <div id="@Settings.ThemeDesign.MagicContextTagId" class="@Settings.MagicContext">
+    <div id="@AllSettings.ThemeDesign.MagicContextTagId" class="@AllSettings.MagicContext">
         @ChildContent
     </div>
 }

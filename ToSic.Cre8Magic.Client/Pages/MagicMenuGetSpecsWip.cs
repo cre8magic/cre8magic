@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Settings;
+
+namespace ToSic.Cre8magic.Pages;
 
 /// <summary>
 /// Specs for creating a breadcrumb.
@@ -10,7 +12,7 @@ public record MagicMenuGetSpecsWip
     /// <summary>
     /// Magic Settings for debugging, in case these specs were generated from there.
     /// </summary>
-    public MagicSettings? MagicSettings { get; init; }
+    public MagicAllSettings? MagicSettings { get; init; }
 
     /// <summary>
     /// How many level deep the navigation should show.

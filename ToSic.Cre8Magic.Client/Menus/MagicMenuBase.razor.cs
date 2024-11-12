@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 
 // TODO: adapt Cre8magic everywhere
@@ -7,7 +8,8 @@ namespace ToSic.Cre8magic.Client.Menus;
 
 public abstract class MagicMenuBase: Oqtane.Themes.Controls.MenuBase, IMagicControlWithSettings // TODO: stv use ThemeControlBase instead MenuBase and use MenuPageService that replaces MenuBase
 {
-    [CascadingParameter] public MagicSettings Settings { get; set; }
+    [CascadingParameter]
+    public MagicAllSettings AllSettings { get; set; }
 
     protected MagicPageFactory PageFactory => _pageFactory.Get(() => new(PageState), f => f?.PageState.Page == PageState.Page);
     private readonly GetKeep<MagicPageFactory> _pageFactory = new();

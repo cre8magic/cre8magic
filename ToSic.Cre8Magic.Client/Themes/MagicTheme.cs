@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Client.Themes;
 
@@ -64,7 +65,7 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase, IMagicControlWithSet
     /// <summary>
     /// The settings of this layout, as loaded from the ThemePackageSettings + JSON
     /// </summary>
-    public MagicSettings? Settings { get; set; }
+    public MagicAllSettings? AllSettings { get; set; }
 
     /// <summary>
     /// This contains the default settings which must be used in this theme.
@@ -78,9 +79,9 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase, IMagicControlWithSet
     {
         await base.OnParametersSetAsync();
 
-        var prevSettings = Settings;
-        Settings = MagicSettingsService.CurrentSettings(PageState, Layout, MagicClasses);
-        if (Settings != prevSettings)
+        var prevSettings = AllSettings;
+        AllSettings = MagicSettingsService.CurrentSettings(PageState, Layout, MagicClasses);
+        if (AllSettings != prevSettings)
             StateHasChanged();
     }
 
@@ -90,17 +91,17 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase, IMagicControlWithSet
 
         // Track page views
         if (MagicAnalytics != null)
-            await MagicAnalytics.TrackPage(Settings, firstRender);
+            await MagicAnalytics.TrackPage(AllSettings, firstRender);
     }
 
     /// <summary>
     /// Special classes for divs surrounding panes pane, especially to indicate when it's empty
     /// </summary>
-    protected string? PaneClasses(string paneName) => Settings?.ThemeDesigner.PaneClasses(paneName);
+    protected string? PaneClasses(string paneName) => AllSettings?.ThemeDesigner.PaneClasses(paneName);
 
-    public string? Classes(string target) => Settings?.ThemeDesigner.Classes(target);
+    public string? Classes(string target) => AllSettings?.ThemeDesigner.Classes(target);
 
-    public string? Value(string target) => Settings?.ThemeDesigner.Value(target);
+    public string? Value(string target) => AllSettings?.ThemeDesigner.Value(target);
 
-    public string? Id(string name) => Settings?.ThemeDesigner.Id(name);
+    public string? Id(string name) => AllSettings?.ThemeDesigner.Id(name);
 }

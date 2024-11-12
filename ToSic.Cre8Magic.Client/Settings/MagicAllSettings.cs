@@ -6,14 +6,14 @@ using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 using static System.StringComparer;
 
-namespace ToSic.Cre8magic.Client.Settings;
+namespace ToSic.Cre8magic.Settings;
 
 /// <summary>
-/// The current settings of a page.
+/// All the current "global" settings of a page, which apply to anything on the page.
 /// </summary>
-public record MagicSettings: IHasSettingsExceptions, IHasDebugSettings
+public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings
 {
-    internal MagicSettings(string name, MagicSettingsService service, MagicThemeSettings theme, TokenEngine tokens, PageState pageState)
+    internal MagicAllSettings(string name, MagicSettingsService service, MagicThemeSettings theme, TokenEngine tokens, PageState pageState)
     {
         Name = name;
         Service = service;

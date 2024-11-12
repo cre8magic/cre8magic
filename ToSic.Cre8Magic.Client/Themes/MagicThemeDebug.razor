@@ -1,10 +1,10 @@
 ﻿@using ToSic.Cre8magic.Controls
 @inherits MagicControl
-<MagicDebug Target="@Settings" Title="Current Settings for this Theme">
+<MagicDebug Target="@AllSettings" Title="Current Settings for this Theme">
     <Content>
-    @if (Settings == null)
+    @if (AllSettings == null)
     {
-        <text>Trying to show debug info for a general settings, but didn't get anything for @nameof(Settings)</text>
+        <text>Trying to show debug info for a general settings, but didn't get anything for @nameof(AllSettings)</text>
     }
     </Content>
 </MagicDebug>

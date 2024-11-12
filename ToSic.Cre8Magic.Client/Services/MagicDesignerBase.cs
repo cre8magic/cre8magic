@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Tokens;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Services;
@@ -7,11 +8,11 @@ internal abstract class MagicDesignerBase: MagicServiceWithSettingsBase, IMagicD
 {
     protected internal MagicDesignerBase() {}
 
-    protected internal MagicDesignerBase(MagicSettings settings) => InitSettings(settings);
+    protected internal MagicDesignerBase(MagicAllSettings allSettings) => InitSettings(allSettings);
 
     protected abstract DesignSetting? GetSettings(string name);
 
-    protected virtual TokenEngine Tokens => _tokens ??= Settings.Tokens;
+    protected virtual TokenEngine Tokens => _tokens ??= GlobalSettings.Tokens;
     private TokenEngine? _tokens;
 
     protected virtual bool ParseTokens => true;

@@ -1,12 +1,13 @@
 ﻿using Oqtane.Models;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Containers.Settings;
 
-internal class ContainerDesigner(MagicSettings settings, Module module) : ThemeDesigner(settings)
+internal class ContainerDesigner(MagicAllSettings allSettings, Module module) : ThemeDesigner(allSettings)
 {
-    protected override TokenEngine Tokens => _tokens1 ??= Settings.Tokens.Expanded(new ModuleTokens(module));
+    protected override TokenEngine Tokens => _tokens1 ??= GlobalSettings.Tokens.Expanded(new ModuleTokens(module));
     private TokenEngine? _tokens1;
 
     public override string? Classes(string tag)

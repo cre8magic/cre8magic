@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Containers;
 
 public class MagicContainer: Oqtane.Themes.ContainerBase, IMagicControlWithSettings
 {
-    [CascadingParameter] public MagicSettings Settings { get; set; }
+    [CascadingParameter] public MagicAllSettings AllSettings { get; set; }
 
     #region Navigation / Close
 
@@ -15,7 +16,7 @@ public class MagicContainer: Oqtane.Themes.ContainerBase, IMagicControlWithSetti
     
     #endregion
     
-    private ContainerDesigner Designer => _designer ??= new(Settings, ModuleState);
+    private ContainerDesigner Designer => _designer ??= new(AllSettings, ModuleState);
     private ContainerDesigner? _designer;
 
     public string? Classes(string target) => Designer.Classes(target);

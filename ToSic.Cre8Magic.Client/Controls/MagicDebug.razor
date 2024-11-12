@@ -14,7 +14,7 @@
 
     [Parameter] public RenderFragment? Button { get; set; }
 
-    private MagicDebugState Debug => _debug ??= Settings.DebugState(Target);
+    private MagicDebugState Debug => _debug ??= AllSettings.DebugState(Target);
     private MagicDebugState? _debug;
 
     private static JsonSerializerOptions showOptions = new()

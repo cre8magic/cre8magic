@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Tokens;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Pages.Internal;
@@ -28,9 +29,9 @@ internal abstract class MagicPagesFactoryBase(MagicPageFactory pageFactory)
     private IMagicPageDesigner? _designer;
 
 
-    public void Set(MagicSettings? magicSettings) => MagicSettings = magicSettings;
+    public void Set(MagicAllSettings? magicSettings) => MagicSettings = magicSettings;
 
-    internal MagicSettings? MagicSettings { get; private set; }
+    internal MagicAllSettings? MagicSettings { get; private set; }
 
     /// <summary>
     /// 

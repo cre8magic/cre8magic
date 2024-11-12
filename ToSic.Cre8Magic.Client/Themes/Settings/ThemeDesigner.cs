@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Tokens;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Themes.Settings;
@@ -6,17 +7,17 @@ namespace ToSic.Cre8magic.Client.Themes.Settings;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-internal class ThemeDesigner(MagicSettings settings) : MagicDesignerBase(settings)
+internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(allSettings)
 {
     internal string? BodyClasses(ITokenReplace tokens)
     {
-        var css = Settings?.ThemeDesign;
+        var css = GlobalSettings?.ThemeDesign;
 
         if (css == null) throw new ArgumentException("Can't continue without CSS specs", nameof(css));
 
         // Make a copy...
         var classes = css.MagicContext.ToList();
-        classes.Add(css.PageIsHome?.Get(Settings.PageState.Page.Path == ""));
+        classes.Add(css.PageIsHome?.Get(GlobalSettings.PageState.Page.Path == ""));
 
         // Do these once multi-language is better
         //1.5 Set the page-root-neutral-### class
@@ -38,8 +39,8 @@ internal class ThemeDesigner(MagicSettings settings) : MagicDesignerBase(setting
 
     private bool PaneIsEmpty(string paneName)
     {
-        if (Settings == null) return true;
-        var pageState = Settings.PageState;
+        if (GlobalSettings == null) return true;
+        var pageState = GlobalSettings.PageState;
         var paneHasModules = pageState.Modules.Any(
             module => !module.IsDeleted
                       && module.PageId == pageState.Page.PageId
@@ -48,7 +49,7 @@ internal class ThemeDesigner(MagicSettings settings) : MagicDesignerBase(setting
         return !paneHasModules;
     }
 
-    public string? PaneClasses(string paneName) => Settings?.ThemeDesign.PaneIsEmpty.Get(PaneIsEmpty(paneName));
+    public string? PaneClasses(string paneName) => GlobalSettings?.ThemeDesign.PaneIsEmpty.Get(PaneIsEmpty(paneName));
 
-    protected override DesignSetting? GetSettings(string name) => Settings?.ThemeDesign.Custom.GetInvariant(name);
+    protected override DesignSetting? GetSettings(string name) => GlobalSettings?.ThemeDesign.Custom.GetInvariant(name);
 }

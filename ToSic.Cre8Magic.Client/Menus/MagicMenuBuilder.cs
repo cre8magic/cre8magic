@@ -16,15 +16,15 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
 
     public IMagicPageList GetTree(MagicMenuSettings config, List<IMagicPage> menuPages)
     {
-        var settingsSvc = Settings!.Service;
+        var settingsSvc = GlobalSettings!.Service;
         var messages = new List<string>();
-        var (configName, configMessages) = settingsSvc.FindConfigName(config.ConfigName, Settings.Name);
+        var (configName, configMessages) = settingsSvc.FindConfigName(config.ConfigName, GlobalSettings.Name);
         messages.AddRange(configMessages);
 
         // Check if we have a name-remap to consider
-        var menuConfig = Settings.ConfigurationName(configName);
+        var menuConfig = GlobalSettings.ConfigurationName(configName);
         if (menuConfig == null && !configName.StartsWith(MenuSettingPrefix))
-            menuConfig = Settings.ConfigurationName($"{MenuSettingPrefix}{configName}");
+            menuConfig = GlobalSettings.ConfigurationName($"{MenuSettingPrefix}{configName}");
 
         var updatedName = menuConfig; // Settings.Theme.Menus.FindInvariant(configName);
         if (updatedName.HasValue())
@@ -39,9 +39,9 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         config = JsonMerger.Merge(config, menuSettings, Logger);
 
         // See if we have a default configuration for CSS which should be applied
-        var menuDesign = Settings.DesignName(configName);
+        var menuDesign = GlobalSettings.DesignName(configName);
         if (menuDesign == null && !configName.StartsWith(MenuSettingPrefix))
-            menuDesign = Settings.DesignName($"{MenuSettingPrefix}{configName}");
+            menuDesign = GlobalSettings.DesignName($"{MenuSettingPrefix}{configName}");
 
         var designName = menuDesign;
         messages.Add($"Design name in config: '{designName}'");
@@ -57,7 +57,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         if (config.DesignSettings == null)
         {
             // Check various places where design could be configured by priority
-            var designConfig = settingsSvc.MenuDesigns.Find(designName, Settings.Name);
+            var designConfig = settingsSvc.MenuDesigns.Find(designName, GlobalSettings.Name);
 
             //config.DesignSettings = designConfig;
             config = config with { DesignSettings = designConfig };
@@ -65,10 +65,10 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         else
             messages.Add("Design rules already set");
 
-        return pageSvc.Setup(Settings.PageState)
+        return pageSvc.Setup(GlobalSettings.PageState)
             .GetMenu(new MagicMenuGetSpecsWip()
             {
-                MagicSettings = Settings,
+                MagicSettings = GlobalSettings,
                 Settings = config,
                 Pages = menuPages,
                 DebugMessages = messages

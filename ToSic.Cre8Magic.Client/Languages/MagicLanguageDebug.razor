@@ -11,12 +11,12 @@
 
     private Dictionary<string, object> GetMore() => new()
     {
-        { "Language Settings", Settings.Languages },
+        { "Language Settings", AllSettings.Languages },
         { "Languages To Show", Languages },
-        { "Language Design", Settings.ThemeDesign.Custom }
+        { "Language Design", AllSettings.ThemeDesign.Custom }
     };
 }
-<MagicDebug Target="@Settings.Languages" Title="Language Settings" More="GetMore()">
+<MagicDebug Target="@AllSettings.Languages" Title="Language Settings" More="GetMore()">
     <Content>
         <ul>
             <li>Show: @Show</li>

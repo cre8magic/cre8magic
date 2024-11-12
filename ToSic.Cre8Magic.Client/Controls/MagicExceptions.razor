@@ -1,13 +1,13 @@
 ﻿@using ToSic.Cre8magic.Utils
 @inherits MagicControl
-@if ((Settings as IHasSettingsExceptions).HasExceptions)
+@if ((AllSettings as IHasSettingsExceptions).HasExceptions)
 {
     <div class="alert alert-danger" role="alert">
-        @if (Settings.Debug?.Show == true || PageState.UserIsAdmin())
+        @if (AllSettings.Debug?.Show == true || PageState.UserIsAdmin())
         {
             <strong>The Cre8magic Design System reports some problems (visible to Admins only)</strong>
             <ul>
-                @foreach (var ex in Settings.Exceptions)
+                @foreach (var ex in AllSettings.Exceptions)
                 {
                     <li>@ex.Message</li>
                 }

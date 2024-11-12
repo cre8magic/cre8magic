@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Client.Controls;
 
@@ -7,11 +8,11 @@ namespace ToSic.Cre8magic.Client.Controls;
 /// </summary>
 public abstract class MagicComponent: ComponentBase, IMagicControlWithSettings
 {
-    [CascadingParameter] public MagicSettings Settings { get; set; }
+    [CascadingParameter] public MagicAllSettings AllSettings { get; set; }
 
-    public string? Classes(string target) => Settings.ThemeDesigner.Classes(target);
+    public string? Classes(string target) => AllSettings.ThemeDesigner.Classes(target);
 
-    public string? Value(string target) => Settings.ThemeDesigner.Value(target);
+    public string? Value(string target) => AllSettings.ThemeDesigner.Value(target);
 
-    public string? Id(string name) => Settings.ThemeDesigner.Id(name);
+    public string? Id(string name) => AllSettings.ThemeDesigner.Id(name);
 }

@@ -22,7 +22,7 @@ public class LanguageService(NavigationManager navigation, IJSRuntime jsRuntime,
     public async Task<bool> ShowMenu(int siteId)
     {
         var languages = await LanguagesToShow(siteId);
-        return Settings.Show("Languages") && Settings.Theme.LanguagesMin <= languages.Count;
+        return GlobalSettings.Show("Languages") && GlobalSettings.Theme.LanguagesMin <= languages.Count;
     }
 
     public async Task<List<MagicLanguage>> LanguagesToShow(int siteId)
@@ -31,7 +31,7 @@ public class LanguageService(NavigationManager navigation, IJSRuntime jsRuntime,
 
         var siteLanguages = await oqtLanguages.GetLanguagesAsync(siteId);
 
-        var langSettings = Settings.Languages;
+        var langSettings = GlobalSettings.Languages;
 
         var customList = langSettings.Languages.Values;
 

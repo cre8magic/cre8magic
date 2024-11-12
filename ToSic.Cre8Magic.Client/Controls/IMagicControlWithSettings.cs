@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
+using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Client.Controls;
 
 public interface IMagicControlWithSettings: IHasMagicSettings, IMagicDesigner
 {
-    [CascadingParameter] MagicSettings Settings { get; set; }
+    [CascadingParameter] MagicAllSettings AllSettings { get; set; }
 
     //public string? Classes(string target);
 

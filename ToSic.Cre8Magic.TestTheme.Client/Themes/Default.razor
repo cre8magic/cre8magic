@@ -19,7 +19,7 @@ Nice to know:
        Note that the specifics are configured in the configuration
     2. It will ensure that the object Settings are available on all child controls using <CascadingValue>
 *@
-<MagicContextAndSettings Settings="Settings">
+<MagicContextAndSettings AllSettings="AllSettings">
 
     @* Show any errors to the admin if something went wrong like when loading settings *@
     <MagicExceptions></MagicExceptions>
@@ -36,13 +36,13 @@ Nice to know:
     <main id="@Id("sectionMain")" class="@Classes("sectionMain")">
 
         @* Show Breadcrumb if desired *@
-        @if (Settings.Show("breadcrumbs"))
+        @if (AllSettings.Show("breadcrumbs"))
         {
             <Breadcrumbs></Breadcrumbs>
         }
 
         @* If we show the Sidebar, then it must be side-by-side with the Content *@
-        @if (Settings.Show("menuSidebar"))
+        @if (AllSettings.Show("menuSidebar"))
         {
             <div class="container">
                 <div class="row">

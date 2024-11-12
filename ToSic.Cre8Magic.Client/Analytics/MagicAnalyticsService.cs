@@ -1,4 +1,5 @@
 ﻿using Microsoft.JSInterop;
+using ToSic.Cre8magic.Settings;
 using static ToSic.Cre8magic.Client.Services.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics;
@@ -14,7 +15,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime)
     /// <param name="settings"></param>
     /// <param name="firstRender"></param>
     /// <returns></returns>
-    internal async Task TrackPage(MagicSettings? settings, bool firstRender)
+    internal async Task TrackPage(MagicAllSettings? settings, bool firstRender)
     {
         if (settings == null) return;
         var gtmSettings = settings.Analytics;

@@ -5,6 +5,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Client.Settings.Json;
 using ToSic.Cre8magic.Languages.Settings;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicConstants;
@@ -46,7 +47,7 @@ public class MagicSettingsService: IHasSettingsExceptions
     private MagicSettingsJsonService Json { get; }
     public ILogger<MagicSettingsService> Logger { get; }
 
-    public MagicSettings CurrentSettings(PageState pageState, string? name, string bodyClasses)
+    public MagicAllSettings CurrentSettings(PageState pageState, string? name, string bodyClasses)
     {
         // Get a cache-id for this specific configuration, which can vary by page
         var originalNameForCache = (name ?? "prevent-error") + pageState.Page.PageId;
@@ -65,7 +66,7 @@ public class MagicSettingsService: IHasSettingsExceptions
         name = configDetails.ConfigName;
         var theme = Theme.Find(name).Parse(tokens);
 
-        var current = new MagicSettings(name, this, theme, tokens, pageState);
+        var current = new MagicAllSettings(name, this, theme, tokens, pageState);
         //ThemeDesigner.InitSettings(current);
         current.MagicContext = current.ThemeDesigner.BodyClasses(tokens);
         var dbg = current.DebugSources;
@@ -93,7 +94,7 @@ public class MagicSettingsService: IHasSettingsExceptions
         return result!;
     }
 
-    private readonly NamedSettings<MagicSettings> _currentSettingsCache = new();
+    private readonly NamedSettings<MagicAllSettings> _currentSettingsCache = new();
 
     internal NamedSettingsReader<MagicAnalyticsSettings> Analytics => _analytics ??=
         new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
