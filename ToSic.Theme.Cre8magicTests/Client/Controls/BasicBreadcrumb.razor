@@ -1,35 +1,28 @@
 ﻿@namespace ToSic.Theme.Cre8magicTests
 @using ToSic.Cre8magic.Breadcrumb
 @using ToSic.Cre8magic.Breadcrumb.Settings
-@using ToSic.Cre8magic.Pages
-@inherits ThemeControlBase;
-@inject IMagicPageService PageSvc
+@inherits MagicBreadcrumbBase;
 
 @code {
-    /// <summary>
-    /// Settings for retrieving the breadcrumbs; optional.
-    /// If not set, the current page will be used as the active page.
-    /// </summary>
-    [Parameter]
-    public MagicBreadcrumbSettings? Settings { get; set; }
+
+    protected override MagicBreadcrumbSettings Customize(MagicBreadcrumbSettings settings) =>
+        settings.Designer != null
+            ? settings
+            : settings with { Designer = new MagicBreadcrumbDesignerBs5() };
+
 }
-@{
-    var breadcrumb = PageSvc.Setup(PageState).GetBreadcrumb(Settings != null
-        ? Settings.Designer != null
-            ? Settings
-            : Settings with { Designer = new MagicBreadcrumbDesignerBs5() }
-        : new() { Designer = new MagicBreadcrumbDesignerBs5() }
-    );
-}
+
 <nav aria-label="breadcrumb">
-    <ol class='@breadcrumb.Classes("ol")'>
-        @foreach (var item in breadcrumb)
+    <ol class='@Breadcrumb.Classes("ol")'>
+        @foreach (var item in Breadcrumb)
         {
             <li class='@item.Classes("li")'>
+                @* TODO: IMPROVE HasLink / UseLink, etc. *@
                 @if (item.IsActive)
                 {
                     <span class='@item.Classes("span")' aria-current="page">@item.Name</span>
-                } else
+                }
+                else
                 {
                     <a href="@item.Link" class='@item.Classes("a")'>@item.Name</a>
                 }

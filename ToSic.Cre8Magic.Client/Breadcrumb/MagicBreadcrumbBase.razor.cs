@@ -10,6 +10,9 @@ namespace ToSic.Cre8magic.Breadcrumb;
 /// </summary>
 public abstract class MagicBreadcrumbBase: MagicControlBase
 {
+    [Inject]
+    public IMagicPageService? PageSvc { get; set; }
+
     /// <summary>
     /// Settings for retrieving the breadcrumbs; optional.
     /// If not set, the current page will be used as the active page.
@@ -17,7 +20,14 @@ public abstract class MagicBreadcrumbBase: MagicControlBase
     [Parameter]
     public MagicBreadcrumbSettings? Settings { get; set; }
 
-    protected MagicBreadcrumbSettings CustomizeSettings() => Settings ?? new();
+
+    /// <summary>
+    /// WIP experimental pattern. Probably not the best/final implementation yet...
+    /// </summary>
+    /// <param name="settings"></param>
+    /// <returns></returns>
+    protected virtual MagicBreadcrumbSettings Customize(MagicBreadcrumbSettings settings)
+        => settings;
 
     // The home page - never changes during runtime, so we can cache it
     protected IMagicPage HomePage => _homePage ??= PageFactory.Home;
@@ -27,10 +37,11 @@ public abstract class MagicBreadcrumbBase: MagicControlBase
     /// The Breadcrumb for the current page.
     /// Will be updated when the page changes.
     /// </summary>
-    protected IEnumerable<IMagicPageWithDesignWip> Breadcrumb => _breadcrumbs.Get(
-        () => (PageFactory.Breadcrumb.Get(), PageState.Page.PageId),
+    protected IMagicPageList Breadcrumb => _breadcrumbs.Get(
+        () => (PageSvc.Setup(PageState).GetBreadcrumb(Customize(Settings ?? new())), PageState.Page.PageId),
+        //() => (PageFactory.Breadcrumb.Get(), PageState.Page.PageId),
         (_, i) => i == PageState.Page.PageId
     );
-    private readonly GetKeep<IEnumerable<IMagicPageWithDesignWip>, int?> _breadcrumbs = new();
+    private readonly GetKeep<IMagicPageList, int?> _breadcrumbs = new();
 
 }
