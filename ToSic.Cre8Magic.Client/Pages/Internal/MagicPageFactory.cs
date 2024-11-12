@@ -2,13 +2,13 @@
 using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
-using ToSic.Cre8magic.Client.Pages.Internal.Breadcrumb;
-using ToSic.Cre8magic.Pages;
-using Log = ToSic.Cre8magic.Client.Logging.Log;
+using ToSic.Cre8magic.Pages.Internal.Breadcrumb;
+using ToSic.Cre8magic.Utils.Logging;
+using Log = ToSic.Cre8magic.Utils.Logging.Log;
 
 // using Log = Oqtane.Models.Log;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal;
+namespace ToSic.Cre8magic.Pages.Internal;
 
 /// <summary>
 /// Factory to create Magic Pages.

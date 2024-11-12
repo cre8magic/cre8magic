@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Oqtane.Themes.Controls;
 using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Menus;
 

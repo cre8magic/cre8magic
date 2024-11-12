@@ -1,9 +1,8 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
-using ToSic.Cre8magic.Client.Pages.Internal.Menu;
-using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Pages.Internal.Menu;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal;
+namespace ToSic.Cre8magic.Pages.Internal;
 
 internal class MagicPageService() : IMagicPageService
 {

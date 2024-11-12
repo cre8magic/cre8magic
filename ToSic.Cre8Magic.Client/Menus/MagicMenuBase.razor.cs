@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
-using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages.Internal;
 
 // TODO: adapt Cre8magic everywhere
 namespace ToSic.Cre8magic.Client.Menus;

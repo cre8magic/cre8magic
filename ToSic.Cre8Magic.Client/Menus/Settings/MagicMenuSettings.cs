@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Client.Pages.Internal;
-using ToSic.Cre8magic.Client.Settings.Internal;
+﻿using ToSic.Cre8magic.Client.Settings.Internal;
 using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus.Settings;

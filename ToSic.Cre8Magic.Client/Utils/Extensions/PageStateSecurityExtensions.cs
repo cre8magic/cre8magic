@@ -3,7 +3,7 @@ using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
 
-namespace ToSic.Cre8magic.Client;
+namespace ToSic.Cre8magic.Utils;
 
 public static class PageStateSecurityExtensions
 {

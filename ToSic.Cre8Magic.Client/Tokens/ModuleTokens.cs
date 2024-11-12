@@ -1,7 +1,8 @@
 ﻿using Oqtane.Models;
+using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicTokens;
 
-namespace ToSic.Cre8magic.Client.Tokens;
+namespace ToSic.Cre8magic.Tokens;
 
 internal class ModuleTokens(Module module) : ITokenReplace
 {

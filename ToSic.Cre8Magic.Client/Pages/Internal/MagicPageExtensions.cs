@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Pages;
-
-namespace ToSic.Cre8magic.Client.Pages.Internal;
+﻿namespace ToSic.Cre8magic.Pages.Internal;
 
 internal static class MagicPageExtensions
 {

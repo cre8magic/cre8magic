@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.JSInterop;
-using ToSic.Cre8magic.Client.JsModules;
+using ToSic.Cre8magic.JsModules;
 
 namespace ToSic.Cre8magic.TestTheme.Client.Services;
 

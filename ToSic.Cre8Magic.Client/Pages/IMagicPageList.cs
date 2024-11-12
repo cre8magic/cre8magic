@@ -1,7 +1,6 @@
 ﻿
-using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages.Internal;
 
-// ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
 
 /// <summary>

@@ -1,6 +1,6 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal.Menu;
+namespace ToSic.Cre8magic.Pages.Internal.Menu;
 
 /// <summary>
 /// The builder for all sub-items of a magic menu.

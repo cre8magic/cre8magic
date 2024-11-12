@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Client.Settings.Internal;
+﻿using ToSic.Cre8magic.Utils;
+
+namespace ToSic.Cre8magic.Client.Settings.Internal;
 
 internal static class SettingsUtils
 {

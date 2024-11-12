@@ -1,8 +1,6 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
-using ToSic.Cre8magic.Client.Pages;
 
-// ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
 
 public interface IMagicPageService

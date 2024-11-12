@@ -1,6 +1,6 @@
-﻿namespace ToSic.Cre8magic.Client.Logging;
+﻿namespace ToSic.Cre8magic.Utils.Logging;
 
-public class LogCallBase
+internal class LogCallBase
 {
     /// <summary>
     /// Keep constructor internal

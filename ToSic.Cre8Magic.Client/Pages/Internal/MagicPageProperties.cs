@@ -1,7 +1,6 @@
 ﻿using Oqtane.Shared;
-using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal;
+namespace ToSic.Cre8magic.Pages.Internal;
 
 /// <summary>
 /// This class provides functionality for the menu control.

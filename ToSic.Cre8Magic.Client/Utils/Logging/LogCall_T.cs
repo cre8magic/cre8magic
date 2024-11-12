@@ -1,6 +1,6 @@
-﻿namespace ToSic.Cre8magic.Client.Logging;
+﻿namespace ToSic.Cre8magic.Utils.Logging;
 
-public class LogCall<T> : LogCallBase
+internal class LogCall<T> : LogCallBase
 {
 
     internal LogCall(ILog? log, CodeRef code, bool isProp, string parameters = null, string message = null, bool startTimer = false)

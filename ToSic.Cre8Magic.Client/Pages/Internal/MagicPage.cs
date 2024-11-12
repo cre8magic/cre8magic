@@ -1,7 +1,6 @@
 ﻿using Oqtane.Models;
-using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal;
+namespace ToSic.Cre8magic.Pages.Internal;
 
 /// <summary>
 /// Wrapper for the Oqtane Page.

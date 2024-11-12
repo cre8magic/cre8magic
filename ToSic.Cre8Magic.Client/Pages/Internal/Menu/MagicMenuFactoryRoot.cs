@@ -1,7 +1,7 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal.Menu;
+namespace ToSic.Cre8magic.Pages.Internal.Menu;
 
 internal class MagicMenuFactoryRoot
 {

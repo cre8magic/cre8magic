@@ -13,8 +13,7 @@ global using System.Linq;
 
 // Cre8magic Namespaces
 global using ToSic.Cre8magic.Client;
-global using ToSic.Cre8magic.Client.Languages;
-global using ToSic.Cre8magic.Client.Languages.Settings;
+//global using ToSic.Cre8magic.Client.Languages;
 global using ToSic.Cre8magic.Client.Menus;
 global using ToSic.Cre8magic.Client.Menus.Settings;
 global using ToSic.Cre8magic.Client.Settings;
@@ -22,6 +21,15 @@ global using ToSic.Cre8magic.Client.Services;
 global using ToSic.Cre8magic.Client.Controls;
 global using ToSic.Cre8magic.Client.Themes;
 
+// WIP Shorter Namespaces
+global using ToSic.Cre8magic;
+global using ToSic.Cre8magic.Languages;
+global using ToSic.Cre8magic.Menus;
+global using ToSic.Cre8magic.Client.Menus.Settings;
+global using ToSic.Cre8magic.Client.Settings;
+global using ToSic.Cre8magic.Client.Services;
+global using ToSic.Cre8magic.Client.Controls;
+global using ToSic.Cre8magic.Themes;
 
 // This themes namespaces
 global using ToSic.Cre8magic.TestTheme.Client;

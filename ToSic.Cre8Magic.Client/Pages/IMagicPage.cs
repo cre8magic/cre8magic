@@ -1,6 +1,5 @@
 ﻿using Oqtane.Models;
 
-// ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
 
 /// <summary>

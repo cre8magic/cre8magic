@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace ToSic.Cre8magic.Client;
+namespace ToSic.Cre8magic.Utils;
 
 internal static class Utf8JsonWriterExtensions
 {

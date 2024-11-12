@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Containers;
 
@@ -22,7 +23,7 @@ public class MagicContainer: Oqtane.Themes.ContainerBase, IMagicControlWithSetti
     public string? Value(string key) => Designer.Value(key);
 
     /// <summary>
-    /// Modules are treated as admin modules (and must use the the admin container) if they are marked as such, or come from the Oqtane ....Admin... type
+    /// Modules are treated as admin modules (and must use the admin container) if they are marked as such, or come from the Oqtane ....Admin... type
     /// </summary>
     /// <returns></returns>
     protected bool UseAdminContainer => ModuleState.ForceAdminContainer();

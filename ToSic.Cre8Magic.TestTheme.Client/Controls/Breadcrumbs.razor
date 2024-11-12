@@ -1,8 +1,11 @@
-﻿@inherits ToSic.Cre8magic.Client.Breadcrumb.MagicBreadcrumb
+﻿@inherits ToSic.Cre8magic.Breadcrumb.MagicBreadcrumbBase
 @*
 File Purpose:       Show the Breadcrumb
 Recommendations:    -
 Nice to know:       Uses extension methods like GetHomePage() and GetBreadcrumb()
+TODO:
+- change aria-current to correctly always be on the current page
+- fix mechanism so it shows the home as part of the loop, since it may not always the real home
 *@
 @if (false) @* Debug *@
 {
@@ -18,7 +21,8 @@ Nice to know:       Uses extension methods like GetHomePage() and GetBreadcrumb(
     <div class="theme-breadcrumbs-trigger"></div>
 
     @* Show an > arrow and the page name with link to it for each page in the breadcrumb *@
-    @foreach (var p in Breadcrumbs) {
+    @foreach (var p in Breadcrumb)
+    {
         <div class="theme-breadcrumbs-item">
             <span class="theme-breadcrumbs-separator"></span>
             <a href="@p.Link">@p.Name</a>

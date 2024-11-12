@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
+using ToSic.Cre8magic.Languages.Settings;
+using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Languages;
+namespace ToSic.Cre8magic.Languages;
 
-public abstract class MagicLanguageMenu: MagicControl
+public abstract class MagicLanguageMenuBase: MagicControl
 {
     [Inject] protected LanguageService LanguageService { get; set; }
 
@@ -22,7 +24,7 @@ public abstract class MagicLanguageMenu: MagicControl
 
         LanguageService.InitSettings(Settings);
 
-        // Load defined language list. It change unless the page is reloaded, so we can cache it on this control
+        // Load defined language list. It changes unless the page is reloaded, so we can cache it on this control
         Languages ??= await LanguageService.LanguagesToShow(PageState.Site.SiteId);
         Show ??= await LanguageService.ShowMenu(PageState.Site.SiteId);
     }

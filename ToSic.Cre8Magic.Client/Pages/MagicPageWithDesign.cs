@@ -1,7 +1,8 @@
 ﻿using System.Collections;
-using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Tokens;
+using ToSic.Cre8magic.Utils;
 
-// ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.Pages;
 
 internal class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPageList, IEnumerable<IMagicPageWithDesignWip>

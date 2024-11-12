@@ -1,4 +1,7 @@
-﻿namespace ToSic.Cre8magic.Client.Themes.Settings;
+﻿using ToSic.Cre8magic.Tokens;
+using ToSic.Cre8magic.Utils;
+
+namespace ToSic.Cre8magic.Client.Themes.Settings;
 
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 

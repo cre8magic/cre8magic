@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Client.Analytics;
+﻿namespace ToSic.Cre8magic.Analytics;
 
 public class MagicAnalyticsSettings : SettingsWithInherit
 {

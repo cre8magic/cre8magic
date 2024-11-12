@@ -1,8 +1,9 @@
 ﻿using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Utils;
 using static System.StringComparison;
 using static ToSic.Cre8magic.Client.MagicTokens;
 
-namespace ToSic.Cre8magic.Client.Tokens;
+namespace ToSic.Cre8magic.Tokens;
 
 internal class PageTokens(IMagicPage page, string? bodyClasses = null, string? id = null) : ITokenReplace
 {

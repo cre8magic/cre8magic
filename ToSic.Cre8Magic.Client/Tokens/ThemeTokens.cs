@@ -1,6 +1,6 @@
-﻿namespace ToSic.Cre8magic.Client.Tokens;
+﻿namespace ToSic.Cre8magic.Tokens;
 
-public class ThemeTokens(MagicPackageSettings themeSettings) : ITokenReplace
+internal class ThemeTokens(MagicPackageSettings themeSettings) : ITokenReplace
 {
     public const string NameIdConstant = nameof(ThemeTokens);
 

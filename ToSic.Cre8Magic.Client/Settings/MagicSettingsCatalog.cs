@@ -1,5 +1,5 @@
-﻿
-using ToSic.Cre8magic.Client.Analytics;
+﻿using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Languages.Settings;
 
 namespace ToSic.Cre8magic.Client.Settings;
 

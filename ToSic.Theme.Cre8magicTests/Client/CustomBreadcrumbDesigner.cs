@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Theme.Cre8magicTests.Client;

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
-using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Tokens;
+using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal;
+namespace ToSic.Cre8magic.Pages.Internal;
 
 internal class MagicPageList(MagicPageFactory pageFactory, MagicPagesFactoryBase factory, IEnumerable<IMagicPageWithDesignWip> items): IMagicPageList
 {

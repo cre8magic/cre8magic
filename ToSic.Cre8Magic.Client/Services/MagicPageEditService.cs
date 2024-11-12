@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.Services;
 using Oqtane.UI;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Services;
 

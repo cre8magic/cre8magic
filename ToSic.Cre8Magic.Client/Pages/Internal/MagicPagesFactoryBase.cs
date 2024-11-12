@@ -1,6 +1,7 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Tokens;
+using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Client.Pages.Internal;
+namespace ToSic.Cre8magic.Pages.Internal;
 
 internal abstract class MagicPagesFactoryBase(MagicPageFactory pageFactory)
 {

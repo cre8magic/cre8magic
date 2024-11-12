@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using static System.StringComparison;
 
-namespace ToSic.Cre8magic.Client;
+namespace ToSic.Cre8magic.Utils;
 
 public static class StringExtensions
 {

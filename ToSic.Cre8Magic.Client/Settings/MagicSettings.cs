@@ -1,6 +1,9 @@
 ﻿using System.Text.Json.Serialization;
 using Oqtane.UI;
-using ToSic.Cre8magic.Client.Analytics;
+using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Languages.Settings;
+using ToSic.Cre8magic.Tokens;
+using ToSic.Cre8magic.Utils;
 using static System.StringComparer;
 
 namespace ToSic.Cre8magic.Client.Settings;

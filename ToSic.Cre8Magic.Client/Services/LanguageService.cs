@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using Oqtane.Services;
 using Oqtane.UI;
+using ToSic.Cre8magic.Languages.Settings;
+using ToSic.Cre8magic.Utils;
 using static Microsoft.AspNetCore.Localization.CookieRequestCultureProvider;
 
 namespace ToSic.Cre8magic.Client.Services;

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.Themes;
-using ToSic.Cre8magic.Client.Pages.Internal;
+using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Controls;
 
@@ -11,9 +12,10 @@ public abstract class MagicControl: ThemeControlBase, IMagicControlWithSettings
 {
     [CascadingParameter] public MagicSettings Settings { get; set; }
 
-    protected MagicPageFactory PageFactory => _pageFactory ??= new MagicPageFactory(PageState);
+    protected MagicPageFactory PageFactory => _pageFactory?.PageState.Page == PageState.Page
+        ? _pageFactory
+        : _pageFactory = new(PageState);
     private MagicPageFactory? _pageFactory;
-
 
     protected bool UserIsAdmin => PageState.UserIsAdmin();
 
