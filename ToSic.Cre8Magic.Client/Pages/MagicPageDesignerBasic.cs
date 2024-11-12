@@ -42,7 +42,7 @@ public class MagicPageDesignerBasic : MagicPageDesignerBase
         if (LookupClasses.TryGetValue(tag, out tagClass))
             classes.Add(tagClass);
 
-        if (item.IsCurrent && LookupClassActive != null)
+        if (item.IsActive && LookupClassActive != null)
             classes.Add(LookupClassActive);
 
         // Return the CSS classes as a space-separated string

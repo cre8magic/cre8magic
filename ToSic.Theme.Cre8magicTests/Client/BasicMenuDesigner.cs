@@ -33,7 +33,7 @@ internal class BasicMenuDesigner : IMagicPageDesigner
                 // Use 'nav-link' class from Bootstrap
                 classes.Add("nav-link");
                 // If the page is active, add 'active' class
-                if (page.IsCurrent) classes.Add("active");
+                if (page.IsActive) classes.Add("active");
                 break;
 
             case "span":

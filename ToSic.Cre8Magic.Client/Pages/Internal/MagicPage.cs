@@ -19,7 +19,10 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPa
     private int? _menuLevel;
 
     /// <inheritdoc />
-    public bool IsCurrent => OqtanePage.PageId == pageFactory.PageState.Page.PageId;
+    public bool IsActive => OqtanePage.PageId == pageFactory.PageState.Page.PageId;
+
+    /// <inheritdoc />
+    public bool IsHome => OqtanePage.Path == "";
 
     /// <inheritdoc />
     public string Link => _link ??= pageFactory.PageProperties.GetLink(this);

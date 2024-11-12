@@ -59,7 +59,7 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
 
         AddIfAny(configs.Select(c => c.Classes));
         AddIfAny(configs.Select(c => c.Classes));
-        AddIfAny(configs.Select(c => c.IsActive.Get(page.IsCurrent)));
+        AddIfAny(configs.Select(c => c.IsActive.Get(page.IsActive)));
         AddIfAny(configs.Select(c => c.HasChildren.Get(page.HasChildren)));
         AddIfAny(configs.Select(c => c.IsDisabled.Get(!page.IsClickable)));
         //AddIfAny(configs.Select(c => c.InBreadcrumb.Get(page.InBreadcrumb)));

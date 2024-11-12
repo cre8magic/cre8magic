@@ -23,7 +23,7 @@ internal class BreadcrumbDesignerCustom: MagicPageDesignerBasic
             case "li":
                 // Use 'breadcrumb-item' class from Bootstrap
                 classes.Add("breadcrumb-item");
-                if (item.IsCurrent) classes.Add("active");
+                if (item.IsActive) classes.Add("active");
                 break;
 
             case "a" or "span":

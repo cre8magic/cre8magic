@@ -21,9 +21,14 @@ public interface IMagicPage
     int MenuLevel { get; }
 
     /// <summary>
-    /// True if this page is the current page which the user is viewing.
+    /// True if this page is the active / current page which the user is viewing.
     /// </summary>
-    bool IsCurrent { get; }
+    bool IsActive { get; }
+
+    /// <summary>
+    /// True if this is the home page.
+    /// </summary>
+    bool IsHome { get; }
 
     /// <summary>
     /// Link to this page.
@@ -48,6 +53,7 @@ public interface IMagicPage
 
     /// <summary>
     /// Original Oqtane page wrapped in MagicPage.
+    /// Can be used to access additional properties of the Oqtane page.
     /// </summary>
     Page OqtanePage { get; }
 

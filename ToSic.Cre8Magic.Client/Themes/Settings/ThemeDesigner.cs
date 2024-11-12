@@ -16,7 +16,7 @@ internal class ThemeDesigner(MagicSettings settings) : MagicDesignerBase(setting
 
         // Make a copy...
         var classes = css.MagicContext.ToList();
-        classes.Add(css.PageIsHome?.Get(Settings.PageState.CurrentPageIsHome()));
+        classes.Add(css.PageIsHome?.Get(Settings.PageState.Page.Path == ""));
 
         // Do these once multi-language is better
         //1.5 Set the page-root-neutral-### class

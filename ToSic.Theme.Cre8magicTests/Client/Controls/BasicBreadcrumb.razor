@@ -26,7 +26,7 @@
         @foreach (var item in breadcrumb)
         {
             <li class='@item.Classes("li")'>
-                @if (item.IsCurrent)
+                @if (item.IsActive)
                 {
                     <span class='@item.Classes("span")' aria-current="page">@item.Name</span>
                 } else
