@@ -51,12 +51,12 @@ internal class MagicPageService() : IMagicPageService
         //SetHelper.Set(specs.Designer);
         //SetHelper.Set(specs.Settings);
 
-        var rootBuilder = new MagicMenuRootBuilder(PageState, specs);
+        var rootBuilder = new MagicMenuFactoryRoot(PageState, specs);
 
-        var list = new MagicPageList(PageFactory, rootBuilder.SubSetHelper, rootBuilder.GetChildren());
+        var list = new MagicPageList(PageFactory, rootBuilder.Factory, rootBuilder.GetChildren());
 
-        //return list;
-        return new MagicMenuTree(PageState, specs);
+        return list;
+        //return new MagicMenuTree(PageState, specs);
     }
 
 }

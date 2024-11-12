@@ -1,57 +1,62 @@
-﻿using System.Collections;
-using Oqtane.UI;
-using ToSic.Cre8magic.Client.Pages;
-using ToSic.Cre8magic.Client.Pages.Internal;
-using ToSic.Cre8magic.Client.Pages.Internal.Menu;
-using ToSic.Cre8magic.Pages;
-using Log = ToSic.Cre8magic.Client.Logging.Log;
+﻿//using System.Collections;
+//using Oqtane.UI;
+//using ToSic.Cre8magic.Client.Pages;
+//using ToSic.Cre8magic.Client.Pages.Internal;
+//using ToSic.Cre8magic.Client.Pages.Internal.Menu;
+//using ToSic.Cre8magic.Pages;
+//using Log = ToSic.Cre8magic.Client.Logging.Log;
 
-namespace ToSic.Cre8magic.Client.Menus;
+//namespace ToSic.Cre8magic.Client.Menus;
 
-public class MagicMenuTree : IMagicPageList
-{
-    public MagicMenuTree(PageState pageState, MagicMenuGetSpecsWip specs)
-    {
-        Specs = specs;
-        RootBuilder = new MagicMenuRootBuilder(pageState, specs);
-        PageFactory = RootBuilder.PageFactory;
-        SetHelper = RootBuilder.SubSetHelper;
-        Log = SetHelper.LogRoot.GetLog("Root");
-        Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
-    }
+//public class MagicMenuTree : IMagicPageList
+//{
+//    public MagicMenuTree(PageState pageState, MagicMenuGetSpecsWip specs)
+//    {
+//        Specs = specs;
+//        FactoryRoot = new MagicMenuFactoryRoot(pageState, specs);
+//        PageFactory = FactoryRoot.PageFactory;
+//        FactorySub = FactoryRoot.Factory;
+//        Log = FactorySub.LogRoot.GetLog("Root");
+//        Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
+//    }
 
-    private MagicMenuRootBuilder RootBuilder { get; }
+//    private MagicMenuFactoryRoot FactoryRoot { get; }
 
-    internal MagicMenuGetSpecsWip Specs { get; }
+//    internal MagicMenuGetSpecsWip Specs { get; }
 
-    internal Log Log { get; }
+//    internal Log Log { get; }
 
-    internal MagicMenuSubBuilder SetHelper { get; }
-    private MagicPageFactory PageFactory { get; }
+//    private MagicMenuFactory FactorySub { get; }
+//    private MagicPageFactory PageFactory { get; }
 
-    public int MenuLevel => 1;
+//    //MagicPagesFactoryBase IMagicPageListInternal.Factory2 => FactorySub;
+//    MagicPagesFactoryBase IMagicPageList.Factory => FactorySub;
 
-    public bool HasChildren => Children.Any();
+//    public int MenuLevel => 1;
 
-    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= RootBuilder.GetChildren();
-    private IList<IMagicPageWithDesignWip>? _children;
+//    //public bool HasChildren => Children.Any();
+
+//    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= FactoryRoot.GetChildren();
+//    private IList<IMagicPageWithDesignWip>? _children;
     
 
-    private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(VPageLevel1);
-    private ITokenReplace? _nodeReplace;
+//    private ITokenReplace TokenReplace => _nodeReplace ??= FactorySub.PageTokenEngine(VPageLevel1);
+//    private ITokenReplace? _nodeReplace;
 
-    private IMagicPage VPageLevel1 => _vPageLevel1 ??= new MagicPage(new() { Level = 0 /* Level is 0, so MenuLevel will be 1 */ }, PageFactory);
-    private IMagicPage? _vPageLevel1;
+//    private IMagicPage VPageLevel1 => _vPageLevel1 ??= new MagicPage(new() { Level = 0 /* Level is 0, so MenuLevel will be 1 */ }, PageFactory);
+//    private IMagicPage? _vPageLevel1;
+//    private MagicPagesFactoryBase _factory2;
 
-    /// <inheritdoc cref="IMagicPageList.Classes" />
-    public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, VPageLevel1)).EmptyAsNull();
+//    /// <inheritdoc cref="IMagicPageList.Classes" />
+//    public string? Classes(string tag) => TokenReplace.Parse(FactorySub.Design.Classes(tag, VPageLevel1)).EmptyAsNull();
 
-    /// <inheritdoc cref="IMagicPageList.Value" />
-    public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, VPageLevel1)).EmptyAsNull();
+//    /// <inheritdoc cref="IMagicPageList.Value" />
+//    public string? Value(string key) => TokenReplace.Parse(FactorySub.Design.Value(key, VPageLevel1)).EmptyAsNull();
 
-    public IMagicPageSetSettings Settings => SetHelper.Settings;
+//    public IMagicPageSetSettings Settings => FactorySub.Settings;
 
-    public IEnumerator<IMagicPageWithDesignWip> GetEnumerator() => Children.GetEnumerator();
+//    public IEnumerator<IMagicPageWithDesignWip> GetEnumerator() => Children.GetEnumerator();
 
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-}
+//    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+//}

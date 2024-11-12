@@ -42,7 +42,7 @@ public record MagicMenuGetSpecsWip
 
     public MagicMenuSettings? Settings { get; init; }
 
-    public IPageDesigner? Designer { get; init; }
+    public IMagicPageDesigner? Designer { get; init; }
 
     /// <summary>
     /// WIP moving here

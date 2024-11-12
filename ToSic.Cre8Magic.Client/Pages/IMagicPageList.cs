@@ -1,5 +1,7 @@
 ﻿
 // ReSharper disable once CheckNamespace
+using ToSic.Cre8magic.Client.Pages.Internal;
+
 namespace ToSic.Cre8magic.Pages;
 
 /// <summary>
@@ -34,4 +36,6 @@ public interface IMagicPageList: IEnumerable<IMagicPageWithDesignWip>
     string? Value(string key);
 
     IMagicPageSetSettings Settings { get; }
+
+    internal MagicPagesFactoryBase Factory { get; }
 }

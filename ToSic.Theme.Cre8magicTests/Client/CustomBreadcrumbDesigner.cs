@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Theme.Cre8magicTests.Client;
 
-internal class CustomBreadcrumbDesigner : IPageDesigner
+internal class CustomBreadcrumbDesigner : IMagicPageDesigner
 {
     public string Classes(string tag, IMagicPage item)
     {

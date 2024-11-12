@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Client.Pages.Internal;
 using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Breadcrumb.Settings;
@@ -7,9 +8,9 @@ namespace ToSic.Cre8magic.Client.Breadcrumb.Settings;
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MagicBreadcrumbDesigner : IPageDesigner
+public class MagicBreadcrumbDesigner : IMagicPageDesigner
 {
-    internal MagicBreadcrumbDesigner(MagicPageSetHelperBase setHelper, MagicBreadcrumbSettings breadcrumbConfig)
+    internal MagicBreadcrumbDesigner(MagicPagesFactoryBase factory, MagicBreadcrumbSettings breadcrumbConfig)
     {
         BreadcrumbSettings = breadcrumbConfig ?? throw new ArgumentException("BreadcrumbConfig must be real", nameof(BreadcrumbSettings));
 

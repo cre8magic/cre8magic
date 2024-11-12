@@ -3,16 +3,16 @@ using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Pages.Internal.Menu;
 
-internal class MagicMenuRootBuilder
+internal class MagicMenuFactoryRoot
 {
-    public MagicMenuRootBuilder(PageState pageState, MagicMenuGetSpecsWip specs)
+    public MagicMenuFactoryRoot(PageState pageState, MagicMenuGetSpecsWip specs)
     {
         Specs = specs;
-        PageFactory = new(pageState, Specs.Pages);
-        SubSetHelper = new(PageFactory, () => this.MaxDepth);
-        SubSetHelper.Set(Specs.MagicSettings);
-        SubSetHelper.Set(Specs.Designer);
-        SubSetHelper.Set(Specs.Settings);
+        PageFactory = new(pageState, specs.Pages);
+        Factory = new(PageFactory, specs, () => MaxDepth);
+        Factory.Set(specs.MagicSettings);
+        Factory.Set(specs.Designer);
+        Factory.Set(specs.Settings);
         Log = new LogRoot().GetLog("root");
         //Log = SetHelper.LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
@@ -35,7 +35,7 @@ internal class MagicMenuRootBuilder
 
     internal MagicMenuGetSpecsWip Specs { get; }
 
-    internal MagicMenuSubBuilder SubSetHelper { get; }
+    internal MagicMenuFactory Factory { get; }
 
     public int MaxDepth => _maxDepth ??= Specs.Depth ?? Specs.Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
     private int? _maxDepth;
@@ -43,7 +43,7 @@ internal class MagicMenuRootBuilder
     public List<IMagicPageWithDesignWip> GetChildren()
     {
         var l = Log.Fn<List<IMagicPageWithDesignWip>>("Root");
-        var settings = (MagicMenuSettings)SubSetHelper.Settings;
+        var settings = (MagicMenuSettings)Factory.Settings;
         var levelsRemaining = MaxDepth;
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
@@ -52,7 +52,7 @@ internal class MagicMenuRootBuilder
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
-            .Select(child => new MagicPageWithDesign(PageFactory, SubSetHelper, child, 2 /* todo: should probably be 1 */) as IMagicPageWithDesignWip)
+            .Select(child => new MagicPageWithDesign(PageFactory, Factory, child, 2 /* todo: should probably be 1 */) as IMagicPageWithDesignWip)
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

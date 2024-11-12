@@ -8,9 +8,11 @@ namespace ToSic.Cre8magic.Client.Pages.Internal.Menu;
 /// Not used for the root though...
 /// </summary>
 /// <param name="pageFactory"></param>
-internal class MagicMenuSubBuilder(MagicPageFactory pageFactory, Func<int> getMaxDepth) : MagicPageSetHelperBase(pageFactory)
+internal class MagicMenuFactory(MagicPageFactory pageFactory, MagicMenuGetSpecsWip specsForDebug, Func<int> getMaxDepth) : MagicPagesFactoryBase(pageFactory)
 {
-    public void Set(MagicMenuSettings settings) => _settings = settings;
+    public List<string> DebugMessages => specsForDebug.DebugMessages;
+
+    public void Set(MagicMenuSettings? settings) => _settings = settings;
 
     /// <summary>
     /// Settings - on first access takes the one given, or creates a default.
@@ -20,7 +22,7 @@ internal class MagicMenuSubBuilder(MagicPageFactory pageFactory, Func<int> getMa
 
     public override IMagicPageSetSettings Settings => SettingsTyped;
 
-    protected override IPageDesigner FallbackDesigner() => new MagicMenuDesigner(this, SettingsTyped);
+    protected override IMagicPageDesigner FallbackDesigner() => new MagicMenuDesigner(this, SettingsTyped);
 
 
     /// <summary>

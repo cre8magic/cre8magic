@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Theme.Cre8magicTests.Client;
 
-internal class BasicMenuDesigner : IPageDesigner
+internal class BasicMenuDesigner : IMagicPageDesigner
 {
     public string Classes(string tag, IMagicPage page)
     {

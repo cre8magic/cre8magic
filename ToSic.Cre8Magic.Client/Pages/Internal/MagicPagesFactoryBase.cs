@@ -1,9 +1,8 @@
-﻿using ToSic.Cre8magic.Client.Pages.Internal;
-using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Client.Pages;
+namespace ToSic.Cre8magic.Client.Pages.Internal;
 
-internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
+internal abstract class MagicPagesFactoryBase(MagicPageFactory pageFactory)
 {
     internal MagicPageFactory PageFactory => pageFactory;
     #region Logging
@@ -21,14 +20,14 @@ internal abstract class MagicPageSetHelperBase(MagicPageFactory pageFactory)
 
     #endregion
 
-    protected abstract IPageDesigner FallbackDesigner();
-    public void Set(IPageDesigner designer) => _designer = designer;
+    protected abstract IMagicPageDesigner FallbackDesigner();
+    public void Set(IMagicPageDesigner? designer) => _designer = designer;
 
-    internal IPageDesigner Design => _designer ??= FallbackDesigner();
-    private IPageDesigner? _designer;
+    internal IMagicPageDesigner Design => _designer ??= FallbackDesigner();
+    private IMagicPageDesigner? _designer;
 
 
-    public void Set(MagicSettings magicSettings) => MagicSettings = magicSettings;
+    public void Set(MagicSettings? magicSettings) => MagicSettings = magicSettings;
 
     internal MagicSettings? MagicSettings { get; private set; }
 

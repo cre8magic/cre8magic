@@ -111,8 +111,8 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
 
     #region Breadcrumb
 
-    internal MagicBreadcrumbFactory Breadcrumb => _breadcrumbFactory ??= new(this);
-    private MagicBreadcrumbFactory? _breadcrumbFactory;
+    internal MagicBreadcrumbFactoryRoot Breadcrumb => _breadcrumbFactory ??= new(this);
+    private MagicBreadcrumbFactoryRoot? _breadcrumbFactory;
 
 
     //internal IEnumerable<IMagicPage> Breadcrumb(IMagicPage? page = null)

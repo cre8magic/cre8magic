@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using ToSic.Cre8magic.Client.Pages;
 using ToSic.Cre8magic.Client.Pages.Internal;
 
 // ReSharper disable once CheckNamespace
@@ -8,28 +7,31 @@ namespace ToSic.Cre8magic.Pages;
 public class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPageList, IEnumerable<IMagicPageWithDesignWip>
 {
     /// <param name="pageFactory"></param>
-    /// <param name="setHelper"></param>
+    /// <param name="factory"></param>
     /// <param name="page">The original page.</param>
-    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPageSetHelperBase setHelper, IMagicPage? page = default, int? menuLevel = default)
+    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPagesFactoryBase factory, IMagicPage? page = default, int? menuLevel = default)
         : base(page?.OqtanePage ?? pageFactory.PageState.Page, pageFactory)
     {
-        SetHelper = setHelper;
+        Factory = factory;
         if (menuLevel.HasValue) MenuLevel = menuLevel.Value;
     }
 
-    internal MagicPageSetHelperBase SetHelper { get; }
+    private MagicPagesFactoryBase Factory { get; }
+
+    MagicPagesFactoryBase IMagicPageList.Factory => Factory;
+
 
     /// <summary>
     /// The ID of the menu item
     /// </summary>
-    public string MenuId => SetHelper.Settings.MenuId;
+    public string MenuId => Factory.Settings.MenuId;
 
     #region Children
 
     /// <summary>
     /// Get children of the current menu page.
     /// </summary>
-    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= SetHelper.GetChildren(this);
+    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= Factory.GetChildren(this);
     private IList<IMagicPageWithDesignWip>? _children;
 
     /// <summary>
@@ -43,16 +45,16 @@ public class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPag
 
     #region Design
 
-    private ITokenReplace TokenReplace => _nodeReplace ??= SetHelper.PageTokenEngine(this);
+    private ITokenReplace TokenReplace => _nodeReplace ??= Factory.PageTokenEngine(this);
     private ITokenReplace? _nodeReplace;
 
     /// <inheritdoc cref="IMagicPageList.Classes" />
-    public string? Classes(string tag) => TokenReplace.Parse(SetHelper.Design.Classes(tag, this)).EmptyAsNull();
+    public string? Classes(string tag) => TokenReplace.Parse(Factory.Design.Classes(tag, this)).EmptyAsNull();
 
     /// <inheritdoc cref="IMagicPageList.Value" />
-    public string? Value(string key) => TokenReplace.Parse(SetHelper.Design.Value(key, this)).EmptyAsNull();
+    public string? Value(string key) => TokenReplace.Parse(Factory.Design.Value(key, this)).EmptyAsNull();
 
-    public IMagicPageSetSettings Settings => SetHelper.Settings;
+    public IMagicPageSetSettings Settings => Factory.Settings;
 
     #endregion
 

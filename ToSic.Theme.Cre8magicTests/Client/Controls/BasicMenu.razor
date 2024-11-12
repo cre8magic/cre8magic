@@ -6,7 +6,6 @@
     [Parameter, EditorRequired]
     public IMagicPageList Menu { get; set; }
 }
-
 <ul class='@Menu.Classes("li")'>
     @foreach (var menuPage in Menu)
     {

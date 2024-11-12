@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Client.Pages;
+using ToSic.Cre8magic.Client.Pages.Internal;
 using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Client.Menus.Settings;
@@ -7,16 +8,16 @@ namespace ToSic.Cre8magic.Client.Menus.Settings;
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MagicMenuDesigner : IPageDesigner
+public class MagicMenuDesigner : IMagicPageDesigner
 {
-    internal MagicMenuDesigner(MagicPageSetHelperBase setHelper, MagicMenuSettings menuSettings)
+    internal MagicMenuDesigner(MagicPagesFactoryBase factory, MagicMenuSettings menuSettings)
     {
         MenuSettings = menuSettings ?? throw new ArgumentNullException(nameof(menuSettings));
 
         DesignSettingsList = [MenuSettings.DesignSettings!];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
-        Log = menuSettings.Debug?.Detailed == true ? setHelper.LogRoot.GetLog("MenuDesigner") : null;
+        Log = menuSettings.Debug?.Detailed == true ? factory.LogRoot.GetLog("MenuDesigner") : null;
     }
     private MagicMenuSettings MenuSettings { get; }
 

@@ -1,22 +1,22 @@
-﻿@using ToSic.Cre8magic.Pages
+﻿@using ToSic.Cre8magic.Client.Pages.Internal.Menu
+@using ToSic.Cre8magic.Pages
 @code {
     [Parameter, EditorRequired] public IMagicPageList? Menu { get; set; }
 
     [Parameter] public bool Standalone { get; set; } = false;
 }
 @{
-    var menuTree = Menu as MagicMenuTree;
-    
-    var settings = menuTree?.SetHelper.Settings as MagicMenuSettings;
+    var typedFactory = Menu?.Factory as MagicMenuFactory;
+    var settings = typedFactory?.Settings as MagicMenuSettings;
 
     Dictionary<string, object?> GetMore() => new()
     {
         { "Menu Settings", settings },
-        { "Tree Build Messages", menuTree?.Specs.DebugMessages },
-        { "Log", menuTree?.SetHelper.LogRoot.Entries }
+        { "Tree Build Messages", typedFactory?.DebugMessages },
+        { "Log", Menu?.Factory?.LogRoot.Entries }
     };
 }
-@if (menuTree?.MenuLevel == 1)
+@if (Menu?.MenuLevel == 1)
 {
     <MagicDebug Target="@settings" Title="Settings (Menu)" More="GetMore()">
         <Button>

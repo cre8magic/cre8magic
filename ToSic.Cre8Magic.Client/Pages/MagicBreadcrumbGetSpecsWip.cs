@@ -28,7 +28,7 @@ public record MagicBreadcrumbGetSpecsWip
 
     public MagicBreadcrumbSettings? Settings { get; init; }
 
-    public IPageDesigner? Designer { get; init; }
+    public IMagicPageDesigner? Designer { get; init; }
 
     /// <summary>
     /// Maximum depth of the breadcrumb, defaults to 10.
