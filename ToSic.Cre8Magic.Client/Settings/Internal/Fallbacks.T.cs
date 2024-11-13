@@ -4,6 +4,12 @@ internal class Defaults<T> where T: class, new()
 {
     public Defaults() {}
 
+    public Defaults(T both)
+    {
+        Fallback = both;
+        Foundation = both;
+    }
+
     public Defaults(T fallback, T? foundation)
     {
         Fallback = fallback;

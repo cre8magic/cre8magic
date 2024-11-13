@@ -6,8 +6,33 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Menus;
 
-public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
+public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicMenuSettings>
 {
+    public MagicMenuSettings() { }
+
+    public MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default) : base(priority, fallback)
+    {
+        AllSettings = priority?.AllSettings ?? fallback?.AllSettings;
+        Designer = priority?.Designer ?? fallback?.Designer;
+        Pages = priority?.Pages ?? fallback?.Pages;
+
+        Id = priority?.Id ?? fallback?.Id;
+        ConfigName = priority?.ConfigName ?? fallback?.ConfigName;
+        Debug = priority?.Debug ?? fallback?.Debug;
+        Display = priority?.Display ?? fallback?.Display;
+        Depth = priority?.Depth ?? fallback?.Depth;
+        Children = priority?.Children ?? fallback?.Children;
+        Start = priority?.Start ?? fallback?.Start;
+        Level = priority?.Level ?? fallback?.Level;
+        Template = priority?.Template ?? fallback?.Template;
+
+        // TODO: #NamedSettings
+        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+    }
+
+    public MagicMenuSettings CloneMerge(MagicMenuSettings? priority, bool forceCopy = false) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
     #region WIP merging Specs
 
     /// <summary>

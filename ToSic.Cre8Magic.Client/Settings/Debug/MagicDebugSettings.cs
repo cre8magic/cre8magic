@@ -2,55 +2,63 @@
 
 namespace ToSic.Cre8magic.Settings.Debug;
 
-public class MagicDebugSettings
+public record MagicDebugSettings
 {
-    public bool? Allowed { get; set; }
-    private const bool AllowedDefault = false;
-    public bool? Anonymous { get; set; }
-    private const bool AnonymousDefault = false;
-    public bool? Admin { get; set; }
-    private const bool AdminDefault = true;
+    public MagicDebugSettings() { }
 
-    public bool? Detailed { get; set; }
-    private const bool DetailedDefault = false;
-
-    public MagicDebugState GetState(object? target, bool isAdmin)
-        => (target is not IHasDebugSettings debugTarget
-                ? this
-                : Merge(this, debugTarget.Debug))
-            .Parsed(isAdmin);
-
-
-    private MagicDebugSettings Merge(MagicDebugSettings master, MagicDebugSettings? slave)
+    public MagicDebugSettings(MagicDebugSettings? priority, MagicDebugSettings? fallbackOriginal = default)
     {
-        if (slave == null) return master;
-        return new()
-        {
-            Allowed = master.Allowed, // allowed can only come from master
-            Anonymous = Merge(master.Anonymous, slave.Anonymous),
-            Admin = Merge(master.Admin, slave.Admin),
-        };
+        // Allowed is special, as it should only come from the master / fallback
+        Allowed = fallbackOriginal?.Allowed ?? priority?.Allowed ?? false;
+        Anonymous = Merge(priority?.Anonymous, fallbackOriginal?.Anonymous);
+        Admin = Merge(priority?.Admin, fallbackOriginal?.Admin);
     }
 
-    private bool Merge(bool? master, bool? slave) => slave == true || slave == null && master == true;
+    public MagicDebugState GetState(object? target, bool isAdmin)
+        => (target is not IHasDebugSettings debugTarget ? this : new(debugTarget.Debug, this))
+            .Parsed(isAdmin);
+
+    public bool? Allowed { get; init; }
+    private const bool AllowedDefault = false;
+    public bool? Anonymous { get; init; }
+    private const bool AnonymousDefault = false;
+    public bool? Admin { get; init; }
+    private const bool AdminDefault = true;
+
+    public bool? Detailed { get; init; }
+    private const bool DetailedDefault = false;
+
+
+    // Mechanism before 2024-11-13 - keep for a while just to be safe
+    //private MagicDebugSettings Merge(MagicDebugSettings? priority, MagicDebugSettings original) =>
+    //    priority == null
+    //        ? original
+    //        : new()
+    //        {
+    //            Allowed = original.Allowed, // allowed can only come from master / fallback
+    //            Anonymous = Merge(priority.Anonymous, original.Anonymous),
+    //            Admin = Merge(priority.Admin, original.Admin),
+    //        };
+
+    private bool Merge(bool? priority, bool? fallback) => priority == true || priority == null && fallback == true;
 
     internal MagicDebugState Parsed(bool isAdmin)
     {
-        if (!(Allowed ?? AllowedDefault)) return new();
+        if (!(Allowed ?? AllowedDefault))
+            return new();
 
-        return new() { Show = isAdmin ? Admin ?? AdminDefault : Anonymous ?? AnonymousDefault };
+        return new()
+        {
+            Show = isAdmin
+                ? Admin ?? AdminDefault
+                : Anonymous ?? AnonymousDefault
+        };
     }
 
-    private static readonly MagicDebugSettings DefaultForAll = new()
+    internal static Defaults<MagicDebugSettings> Defaults = new(new()
     {
         Allowed = false,
         Anonymous = false,
         Admin = false,
-    };
-
-    internal static Defaults<MagicDebugSettings> Defaults = new()
-    {
-        Foundation = DefaultForAll,
-        Fallback = DefaultForAll,
-    };
+    });
 }

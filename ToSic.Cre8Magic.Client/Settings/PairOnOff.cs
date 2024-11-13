@@ -1,6 +1,12 @@
-﻿namespace ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Settings.Internal;
 
-public class PairOnOff
+namespace ToSic.Cre8magic.Settings;
+
+/// <summary>
+/// Simple Object containing a setting to be used when a value is on or off.
+/// Typically used to specify strings to place in classes when something is active, is home, etc.
+/// </summary>
+public class PairOnOff: ICanClone<PairOnOff>
 {
     /// <summary>
     /// Empty constructor for JSON serialization
@@ -13,8 +19,22 @@ public class PairOnOff
         Off = off;
     }
 
-    public string? On { get; set; }
-    public string? Off { get; set; }
+    /// <summary>
+    /// Value / Class to add if the setting is on
+    /// </summary>
+    public string? On { get; init; }
+
+    /// <summary>
+    /// Value / Class to add if the setting is off
+    /// </summary>
+    public string? Off { get; init; }
+
+    public PairOnOff CloneMerge(PairOnOff? priority, bool forceCopy = false) =>
+        new()
+        {
+            On = priority?.On ?? On,
+            Off = priority?.Off ?? Off
+        };
 }
 
 

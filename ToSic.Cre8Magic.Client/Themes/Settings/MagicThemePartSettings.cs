@@ -1,11 +1,25 @@
-﻿namespace ToSic.Cre8magic.Client.Themes.Settings;
+﻿using ToSic.Cre8magic.Settings.Internal;
 
-public class MagicThemePartSettings
+namespace ToSic.Cre8magic.Client.Themes.Settings;
+
+public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
 {
     /// <summary>
     /// For json
     /// </summary>
     public MagicThemePartSettings() {}
+
+    public MagicThemePartSettings(MagicThemePartSettings? priority, MagicThemePartSettings? fallback = default)
+    {
+        Show = priority?.Show ?? fallback?.Show;
+        Design = priority?.Design ?? fallback?.Design;
+        Configuration = priority?.Configuration ?? fallback?.Configuration;
+    }
+
+    public MagicThemePartSettings CloneMerge(MagicThemePartSettings? priority, bool forceCopy = false) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
+
 
     public MagicThemePartSettings(bool show)
     {
@@ -21,7 +35,7 @@ public class MagicThemePartSettings
         Configuration = name;
     }
 
-    public bool? Show { get; set; }
-    public string? Design { get; set; }
-    public string? Configuration { get; set; }
+    public bool? Show { get; init; }
+    public string? Design { get; init; }
+    public string? Configuration { get; init; }
 }

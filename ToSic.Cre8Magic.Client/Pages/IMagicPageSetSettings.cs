@@ -20,5 +20,5 @@ public interface IMagicPageSetSettings
     /// </summary>
     string MenuId { get; }
 
-    string Variant { get; }
+    string? Variant { get; }
 }

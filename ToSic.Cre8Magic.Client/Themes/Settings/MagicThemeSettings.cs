@@ -6,8 +6,27 @@ using static ToSic.Cre8magic.Client.MagicConstants;
 
 namespace ToSic.Cre8magic.Client.Themes.Settings;
 
-public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings
+public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanClone<MagicThemeSettings>
 {
+    public MagicThemeSettings() { }
+
+    public MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = default)
+        : base(priority, fallback)
+    {
+        Logo = priority?.Logo ?? fallback?.Logo ?? Defaults.Fallback.Logo;
+        LanguagesMin = priority?.LanguagesMin ?? fallback?.LanguagesMin ?? Defaults.Fallback.LanguagesMin;
+
+        // TODO: #NamedSettings
+        Parts = priority?.Parts ?? fallback?.Parts ?? new();
+
+        MagicContextInBody = priority?.MagicContextInBody ?? fallback?.MagicContextInBody ?? Defaults.Fallback.MagicContextInBody;
+        Design = priority?.Design ?? fallback?.Design ?? Defaults.Fallback.Design;
+        Debug = priority?.Debug ?? fallback?.Debug;
+    }
+
+    public MagicThemeSettings CloneMerge(MagicThemeSettings? priority, bool forceCopy = false) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
     /// <summary>
     /// The logo to show, should be located in the assets subfolder
     /// </summary>
@@ -31,19 +50,13 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings
         return this;
     }
 
-    public static MagicThemeSettings Fallback = new()
+    internal static Defaults<MagicThemeSettings> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
         LanguagesMin = 2,
         MagicContextInBody = false,
         Design = InheritName,
-    };
-
-    internal static Defaults<MagicThemeSettings> Defaults = new()
-    {
-        Fallback = Fallback,
-        Foundation = Fallback
-    };
+    });
 
     public MagicDebugSettings? Debug { get; init; }
 }

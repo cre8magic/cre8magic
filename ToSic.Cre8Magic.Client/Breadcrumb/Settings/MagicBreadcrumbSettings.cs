@@ -12,7 +12,7 @@ namespace ToSic.Cre8magic.Breadcrumb.Settings;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
+public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>
 {
     public MagicBreadcrumbSettings() { }
 
@@ -36,6 +36,10 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
         Variant = priority?.Variant ?? fallback?.Variant;
     }
+
+    public MagicBreadcrumbSettings CloneMerge(MagicBreadcrumbSettings? priority, bool forceCopy = false) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
 
     #region WIP properties moved from specs
 
@@ -123,7 +127,7 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;
 
-    public string Variant { get; init; } // TODO:
+    public string? Variant { get; init; } // TODO:
 
     /// <summary>
     /// Defaults - these don't do anything, but we want to use this pattern for consistency.
@@ -133,4 +137,5 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
         Fallback = new(),
         Foundation = new(),
     };
+
 }

@@ -1,9 +1,10 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Breadcrumb.Settings;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Client.Containers.Settings;
 
-public record MagicContainerSettings: SettingsWithInherit
+public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContainerSettings>
 {
     public MagicContainerSettings()
     { }
@@ -14,6 +15,9 @@ public record MagicContainerSettings: SettingsWithInherit
         // TODO!
         //Custom = new NamedSettings<DesignSetting>(priority?.Custom, fallback?.Custom);
     }
+    public MagicContainerSettings CloneMerge(MagicContainerSettings? priority, bool forceCopy = false) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
 
     public NamedSettings<DesignSetting> Custom { get; init; } = new();
 

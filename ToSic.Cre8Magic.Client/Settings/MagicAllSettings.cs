@@ -14,7 +14,7 @@ namespace ToSic.Cre8magic.Settings;
 /// <summary>
 /// All the current "global" settings of a page, which apply to anything on the page.
 /// </summary>
-public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings
+public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanClone<MagicAllSettings>
 {
     internal MagicAllSettings(string name, IMagicSettingsService service, MagicThemeSettings theme, TokenEngine tokens, PageState pageState)
     {
@@ -24,6 +24,22 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings
         Tokens = tokens;
         PageState = pageState;
     }
+
+    internal MagicAllSettings(MagicAllSettings? priority, MagicAllSettings? fallback = default)
+    {
+        PageState = priority?.PageState ?? fallback?.PageState ?? throw new("PageState is required");
+        Tokens = priority?.Tokens ?? fallback?.Tokens ?? throw new("Tokens are required");
+        MagicContext = priority?.MagicContext ?? fallback?.MagicContext ?? "";
+        Name = priority?.Name ?? fallback?.Name ?? "unknown";
+
+
+        Service = priority?.Service ?? fallback?.Service ?? throw new("Service is required");
+        Theme = priority?.Theme ?? fallback?.Theme ?? throw new("Theme is required");
+    }
+
+    public MagicAllSettings CloneMerge(MagicAllSettings? priority, bool forceCopy = false) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
 
     public MagicDebugState Debug => _debug ??= DebugState(Theme);
     private MagicDebugState? _debug;
@@ -44,8 +60,10 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings
 
     public string Name { get; }
 
-    [JsonIgnore] public IMagicSettingsService Service { get; }
-    [JsonIgnore] internal ThemeDesigner ThemeDesigner => _themeDesigner ??= new(this);
+    [JsonIgnore]
+    public IMagicSettingsService Service { get; }
+    [JsonIgnore]
+    internal ThemeDesigner ThemeDesigner => _themeDesigner ??= new(this);
     private ThemeDesigner? _themeDesigner;
 
     public MagicThemeSettings Theme { get; }
