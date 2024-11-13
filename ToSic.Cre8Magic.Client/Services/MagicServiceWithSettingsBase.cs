@@ -4,9 +4,9 @@ namespace ToSic.Cre8magic.Client.Services;
 
 public abstract class MagicServiceWithSettingsBase
 {
-    public void InitSettings(MagicAllSettings allSettings) => GlobalSettings = allSettings;
+    public void InitSettings(MagicAllSettings allSettings) => AllSettings = allSettings;
 
     // TODO: RENAME TO AllSettings
-    public MagicAllSettings? GlobalSettings { get; private set; }
+    public MagicAllSettings? AllSettings { get; private set; }
 
 }

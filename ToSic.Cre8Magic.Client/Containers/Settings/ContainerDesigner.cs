@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.Client.Containers.Settings;
 
 internal class ContainerDesigner(MagicAllSettings allSettings, Module module) : ThemeDesigner(allSettings)
 {
-    protected override TokenEngine Tokens => _tokens1 ??= GlobalSettings.Tokens.Expanded(new ModuleTokens(module));
+    protected override TokenEngine Tokens => _tokens1 ??= AllSettings.Tokens.Expanded(new ModuleTokens(module));
     private TokenEngine? _tokens1;
 
     public override string? Classes(string tag)

@@ -12,7 +12,7 @@ internal abstract class MagicDesignerBase: MagicServiceWithSettingsBase, IMagicD
 
     protected abstract DesignSetting? GetSettings(string name);
 
-    protected virtual TokenEngine Tokens => _tokens ??= GlobalSettings.Tokens;
+    protected virtual TokenEngine Tokens => _tokens ??= AllSettings.Tokens;
     private TokenEngine? _tokens;
 
     protected virtual bool ParseTokens => true;

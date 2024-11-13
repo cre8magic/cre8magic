@@ -12,7 +12,7 @@ internal class MagicMenuFactoryRoot
         Specs = specs;
         PageFactory = new(pageState, specs.Pages);
         Factory = new(PageFactory, specs, () => MaxDepth);
-        Factory.Set(specs.MagicSettings);
+        Factory.Set(specs.AllSettings);
         Factory.Set(specs.Designer);
         Factory.Set(specs/*.Settings*/);
         Log = new LogRoot().GetLog("root");

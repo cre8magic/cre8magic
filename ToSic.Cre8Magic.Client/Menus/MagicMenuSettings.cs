@@ -14,7 +14,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     /// Magic Settings for debugging, in case these specs were generated from there.
     /// </summary>
     [JsonIgnore]
-    public MagicAllSettings? MagicSettings { get; init; }
+    public MagicAllSettings? AllSettings { get; init; }
 
     [JsonIgnore]
     public IMagicPageDesigner? Designer { get; init; }

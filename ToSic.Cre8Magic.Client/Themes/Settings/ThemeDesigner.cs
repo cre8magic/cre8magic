@@ -11,13 +11,13 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
 {
     internal string? BodyClasses(ITokenReplace tokens)
     {
-        var css = GlobalSettings?.ThemeDesign;
+        var css = AllSettings?.ThemeDesign;
 
         if (css == null) throw new ArgumentException("Can't continue without CSS specs", nameof(css));
 
         // Make a copy...
         var classes = css.MagicContext.ToList();
-        classes.Add(css.PageIsHome?.Get(GlobalSettings.PageState.Page.Path == ""));
+        classes.Add(css.PageIsHome?.Get(AllSettings.PageState.Page.Path == ""));
 
         // Do these once multi-language is better
         //1.5 Set the page-root-neutral-### class
@@ -39,8 +39,8 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
 
     private bool PaneIsEmpty(string paneName)
     {
-        if (GlobalSettings == null) return true;
-        var pageState = GlobalSettings.PageState;
+        if (AllSettings == null) return true;
+        var pageState = AllSettings.PageState;
         var paneHasModules = pageState.Modules.Any(
             module => !module.IsDeleted
                       && module.PageId == pageState.Page.PageId
@@ -49,7 +49,7 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
         return !paneHasModules;
     }
 
-    public string? PaneClasses(string paneName) => GlobalSettings?.ThemeDesign.PaneIsEmpty.Get(PaneIsEmpty(paneName));
+    public string? PaneClasses(string paneName) => AllSettings?.ThemeDesign.PaneIsEmpty.Get(PaneIsEmpty(paneName));
 
-    protected override DesignSetting? GetSettings(string name) => GlobalSettings?.ThemeDesign.Custom.GetInvariant(name);
+    protected override DesignSetting? GetSettings(string name) => AllSettings?.ThemeDesign.Custom.GetInvariant(name);
 }
