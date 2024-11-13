@@ -12,9 +12,18 @@ namespace ToSic.Cre8magic.Client.Services;
 
 public interface IMagicSettingsService: IHasSettingsExceptions
 {
+    /// <summary>
+    /// Set up the settings service with the package settings, layout name and body classes.
+    /// This will result in other controls and services being able to use these settings.
+    /// Otherwise, the settings are just defaulted to some standard values.
+    /// </summary>
+    /// <param name="packageSettings"></param>
+    /// <param name="layoutName"></param>
+    /// <param name="bodyClasses"></param>
+    /// <returns></returns>
     IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName, string? bodyClasses);
 
-    MagicAllSettings CurrentSettings(PageState pageState);
+    MagicAllSettings GetSettings(PageState pageState);
 
     internal MagicSettingsCatalog Catalog { get; }
 

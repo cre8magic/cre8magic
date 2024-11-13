@@ -19,13 +19,15 @@ namespace ToSic.Cre8magic.Services.Internal;
 internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, MagicSettingsLoader loader)
     : IMagicSettingsService
 {
+    /// <inheritdoc />>
     public IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName, string? bodyClasses)
     {
         _packageSettings = packageSettings;
         loader.Setup(packageSettings);
         _themeTokens = null;
-        _bodyClasses = bodyClasses;
+        _currentSettingsCache.Clear();
         _layoutName = layoutName;
+        _bodyClasses = bodyClasses;
         return this;
     }
 
@@ -39,7 +41,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private MagicPackageSettings? _packageSettings;
 
 
-    private ThemeTokens ThemeTokens => _themeTokens ??= new ThemeTokens(PackageSettings);
+    private ThemeTokens ThemeTokens => _themeTokens ??= new(PackageSettings);
     private ThemeTokens? _themeTokens;
 
     /// <summary>
@@ -47,32 +49,30 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     /// </summary>
     ILogger<IMagicSettingsService> IMagicSettingsService.Logger { get; } = logger;
 
-    public MagicAllSettings CurrentSettings(PageState pageState)
+    public MagicAllSettings GetSettings(PageState pageState)
     {
-        // Get a cache-id for this specific configuration, which can vary by page
-        var layoutName = _layoutName;
-        var originalNameForCache = (layoutName ?? "prevent-error") + pageState.Page.PageId;
+        // Check if already in cache; vary by layout name and active page
+        var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
         var cached = _currentSettingsCache.FindInvariant(originalNameForCache);
         if (cached != null) return cached;
 
         // Tokens engine for this specific PageState
         var pageFactory = new MagicPageFactory(pageState);
-        var tokens = new TokenEngine([
-            new PageTokens(pageFactory.Current, null, _bodyClasses),
-            ThemeTokens,
-        ]);
+        var pageTokens = new PageTokens(pageFactory.Current, _layoutName);
+        var tokens = new TokenEngine([pageTokens, ThemeTokens]);
 
         // Figure out real config-name, and get the initial layout
-        var configDetails = FindConfigName(layoutName, Default);
-        layoutName = configDetails.ConfigName;
-        var theme = Theme.Find(layoutName).Parse(tokens);
+        var (configName, source) = FindConfigName(_layoutName, Default);
+        var theme = Theme.Find(configName).Parse(tokens);
+        var current = new MagicAllSettings(configName, this, theme, tokens, pageState);
 
-        var current = new MagicAllSettings(layoutName, this, theme, tokens, pageState);
-        //ThemeDesigner.InitSettings(current);
-        current.MagicContext = current.ThemeDesigner.BodyClasses(tokens);
-        var dbg = current.DebugSources;
-        dbg.Add("Name", string.Join("; ", configDetails.Source));
+        // Get the magic context (probably the classes we'll add) using the tokens
+        current.MagicContext = current.ThemeDesigner.BodyClasses(tokens, _bodyClasses);
 
+        // Merge debug info in case it's needed
+        current.DebugSources.Add("Name", string.Join("; ", source));
+
+        // Cache and return
         _currentSettingsCache[originalNameForCache] = current;
         return current;
     }
@@ -125,7 +125,8 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
             configName = inheritedName;
             debugInfo.Add($"switched to inherit '{inheritedName}'");
         }
-        if (configName.HasText()) return (configName, debugInfo);
+        if (configName.HasText())
+            return (configName, debugInfo);
 
         debugInfo.Add($"Config changed to '{Default}'");
         return (Default, debugInfo);

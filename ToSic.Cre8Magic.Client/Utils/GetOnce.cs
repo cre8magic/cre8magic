@@ -1,6 +1,6 @@
 ﻿namespace ToSic.Cre8magic.Utils;
 
-internal class GetOnce<TResult> where TResult : class
+internal class GetOnce<TResult> 
 {
     /// <summary>
     /// Construct an empty GetOnce object for use later on.

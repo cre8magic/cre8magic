@@ -80,7 +80,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWit
         await base.OnParametersSetAsync();
 
         var prevSettings = AllSettings;
-        AllSettings = MagicSettingsService.CurrentSettings(PageState);
+        AllSettings = MagicSettingsService.GetSettings(PageState);
         if (AllSettings != prevSettings)
             StateHasChanged();
     }

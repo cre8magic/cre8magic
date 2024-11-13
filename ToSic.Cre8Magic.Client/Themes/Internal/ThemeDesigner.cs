@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// </summary>
 internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(allSettings)
 {
-    internal string? BodyClasses(ITokenReplace tokens)
+    internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
     {
         var themeDesign = AllSettings?.ThemeDesign;
 
@@ -18,6 +18,8 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
         // Make a copy...
         var classes = themeDesign.MagicContext.ToList();
         classes.Add(themeDesign.PageIsHome?.Get(AllSettings.PageState.Page.Path == ""));
+        if (additionalClasses.HasText())
+            classes.Add(additionalClasses);
 
         // Do these once multi-language is better
         //1.5 Set the page-root-neutral-### class
