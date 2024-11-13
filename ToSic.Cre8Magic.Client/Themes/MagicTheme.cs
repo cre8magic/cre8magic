@@ -58,7 +58,7 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase, IMagicControlWithSet
     protected MagicSettingsService MagicSettingsService
     {
         get => _magicSettingsService!;
-        set => _magicSettingsService = value.InitSettings(ThemePackageSettings);    // Init when injecting
+        set => _magicSettingsService = value.Setup(ThemePackageSettings);    // Init when injecting
     }
     private MagicSettingsService? _magicSettingsService;
 

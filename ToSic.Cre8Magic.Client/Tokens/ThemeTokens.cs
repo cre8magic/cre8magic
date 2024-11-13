@@ -10,6 +10,6 @@ internal class ThemeTokens(MagicPackageSettings themeSettings) : ITokenReplace
 
     public string NameId => NameIdConstant;
 
-    public virtual string Parse(string value) =>
-        value.Replace(MagicTokens.ThemeUrl, PackageSettings.Url);
+    public virtual string? Parse(string? value) =>
+        value?.Replace(MagicTokens.ThemeUrl, PackageSettings.Url);
 }

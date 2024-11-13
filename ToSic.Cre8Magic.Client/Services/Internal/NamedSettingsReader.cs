@@ -6,7 +6,7 @@ using static ToSic.Cre8magic.Client.MagicConstants;
 using static ToSic.Cre8magic.Settings.Json.JsonMerger;
 using static ToSic.Cre8magic.Settings.SettingsWithInherit;
 
-namespace ToSic.Cre8magic.Client.Services;
+namespace ToSic.Cre8magic.Services.Internal;
 
 internal class NamedSettingsReader<TPart>(
     MagicSettingsService parent,
@@ -72,7 +72,7 @@ internal class NamedSettingsReader<TPart>(
 
         var allSourcesAndNames = names
             .Distinct()
-            .Select(name => (Settings: parent.MergedCatalog, Name: name))
+            .Select(name => (Settings: parent.Catalog, Name: name))
             .ToList();
 
         foreach (var set in allSourcesAndNames)

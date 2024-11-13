@@ -4,6 +4,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Languages.Settings;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Services.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
@@ -19,7 +20,7 @@ namespace ToSic.Cre8magic.Client.Services;
 public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSettingsLoader loader)
     : IHasSettingsExceptions
 {
-    public MagicSettingsService InitSettings(MagicPackageSettings packageSettings)
+    public MagicSettingsService Setup(MagicPackageSettings packageSettings)
     {
         PackageSettings = packageSettings;
         loader.Setup(packageSettings);
@@ -31,12 +32,15 @@ public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSet
 
     private MagicPackageSettings PackageSettings
     {
-        get => _packageSettings ?? throw new ArgumentException($"You must first call {nameof(InitSettings)}", nameof(PackageSettings));
+        get => _packageSettings ?? MagicPackageSettings.Fallback;
         set => _packageSettings = value;
     }
     private MagicPackageSettings? _packageSettings;
 
-    public ILogger<MagicSettingsService> Logger { get; } = logger;
+    /// <summary>
+    /// Logger, provided to the <see cref="NamedSettingsReader{TPart}"/>
+    /// </summary>
+    internal ILogger<MagicSettingsService> Logger { get; } = logger;
 
     public MagicAllSettings CurrentSettings(PageState pageState, string? name, string bodyClasses)
     {
@@ -67,38 +71,40 @@ public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSet
         return current;
     }
 
-    internal MagicSettingsCatalog MergedCatalog => _mergedCatalog ??= loader.MergeCatalogs();
-    private MagicSettingsCatalog? _mergedCatalog;
+    internal MagicSettingsCatalog Catalog => _catalog ??= loader.MergeCatalogs();
+    private MagicSettingsCatalog? _catalog;
 
     private readonly NamedSettings<MagicAllSettings> _currentSettingsCache = new();
 
-    internal NamedSettingsReader<MagicAnalyticsSettings> Analytics => _analytics ??=
-        new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
+    internal NamedSettingsReader<MagicAnalyticsSettings> Analytics =>
+        _analytics ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
     private NamedSettingsReader<MagicAnalyticsSettings>? _analytics;
 
-    private NamedSettingsReader<MagicThemeSettings> Theme => _getTheme ??=
-        new(this, MagicThemeSettings.Defaults, cat => cat.Themes,
-            (name) => json => json.Replace("\"=\"", $"\"{name}\""));
+    private NamedSettingsReader<MagicThemeSettings> Theme =>
+        _getTheme ??= new(this, MagicThemeSettings.Defaults,
+            cat => cat.Themes,
+            (name) => json => json.Replace("\"=\"", $"\"{name}\"")
+        );
     private NamedSettingsReader<MagicThemeSettings>? _getTheme;
 
-    internal NamedSettingsReader<MagicMenuSettings> MenuSettings => _getMenuSettings ??=
-        new(this, MagicMenuSettings.Defaults, cat => cat.Menus);
+    internal NamedSettingsReader<MagicMenuSettings> MenuSettings =>
+        _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, cat => cat.Menus);
     private NamedSettingsReader<MagicMenuSettings>? _getMenuSettings;
 
-    internal NamedSettingsReader<MagicLanguagesSettings> Languages => _languages ??=
-        new(this, MagicLanguagesSettings.Defaults, cat => cat.Languages);
+    internal NamedSettingsReader<MagicLanguagesSettings> Languages =>
+        _languages ??= new(this, MagicLanguagesSettings.Defaults, cat => cat.Languages);
     private NamedSettingsReader<MagicLanguagesSettings>? _languages;
 
-    internal NamedSettingsReader<MagicContainerSettings> Containers => _containers ??=
-        new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
+    internal NamedSettingsReader<MagicContainerSettings> Containers =>
+        _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
     private NamedSettingsReader<MagicContainerSettings>? _containers;
 
-    internal NamedSettingsReader<MagicThemeDesignSettings> ThemeDesign => _themeDesign ??=
-        new(this, MagicThemeDesignSettings.Defaults, cat => cat.ThemeDesigns);
+    internal NamedSettingsReader<MagicThemeDesignSettings> ThemeDesign =>
+        _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, cat => cat.ThemeDesigns);
     private NamedSettingsReader<MagicThemeDesignSettings>? _themeDesign;
 
-    internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns => _menuDesigns ??=
-        new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);
+    internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns =>
+        _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);
     private NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>>? _menuDesigns;
 
 
@@ -116,6 +122,8 @@ public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSet
         return (Default, debugInfo);
     }
 
-
+    /// <summary>
+    /// Exceptions - ATM just forward the loader exceptions, as none are logged here.
+    /// </summary>
     public List<Exception> Exceptions => loader.Exceptions;
 }

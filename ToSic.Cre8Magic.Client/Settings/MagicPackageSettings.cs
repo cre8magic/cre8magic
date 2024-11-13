@@ -25,4 +25,12 @@ public class MagicPackageSettings
         set => _url = value;
     }
     private string? _url;
+
+    internal static MagicPackageSettings Fallback = new()
+    {
+        Defaults = MagicSettingsCatalog.Fallback,
+        WwwRoot = "wwwroot",
+        SettingsJsonFile = "",
+        PackageName = "Fallback-Not-Configured"
+    };
 }

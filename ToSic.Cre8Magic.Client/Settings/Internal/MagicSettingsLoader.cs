@@ -25,7 +25,7 @@ public class MagicSettingsLoader(MagicSettingsJsonService jsonService, ILogger<M
     /// </summary>
     internal MagicPackageSettings PackageSettings
     {
-        get => _packageSettings ?? throw new ArgumentException($"You must first call {nameof(Setup)}", nameof(PackageSettings));
+        get => _packageSettings ?? MagicPackageSettings.Fallback;
         set => _packageSettings = value;
     }
     private MagicPackageSettings? _packageSettings;
@@ -54,16 +54,24 @@ public class MagicSettingsLoader(MagicSettingsJsonService jsonService, ILogger<M
 
     private List<MagicSettingsCatalog> Load()
     {
-            var sources = new List<MagicSettingsCatalog?>
-                {
-                    // in future also add the settings from the dialog as the first priority
-                    jsonService.LoadJson(PackageSettings),
-                    PackageSettings.Defaults,
-                }
-                .Where(x => x != null)
-                .Cast<MagicSettingsCatalog>()
-                .ToList();
-            return sources;
+        if (string.IsNullOrWhiteSpace(PackageSettings.SettingsJsonFile))
+            return PackageSettings.Defaults == null
+                ? []
+                : [PackageSettings.Defaults];
+
+        var catalogFromJson = jsonService.LoadJson(PackageSettings);
+        var sources = new List<MagicSettingsCatalog?>
+            {
+                // 1. in future also add the settings from the dialog as the first priority
+                // 2. then the settings from the json file
+                catalogFromJson,
+                // 3. fallback which can be specified by the theme
+                PackageSettings.Defaults,
+            }
+            .Where(x => x != null)
+            .Cast<MagicSettingsCatalog>()
+            .ToList();
+        return sources;
     }
 
     public List<Exception> Exceptions => MyExceptions.Concat(jsonService.Exceptions).ToList();

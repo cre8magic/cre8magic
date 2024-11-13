@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
-using ToSic.Cre8magic.Services;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Json;
 
@@ -18,9 +17,12 @@ public class Startup : Oqtane.Services.IClientStartup
     public void ConfigureServices(IServiceCollection services)
     {
         // All these Settings etc. should be scoped, so they don't have to reload for each click
-        services.TryAddScoped<MagicSettingsJsonService>();
         services.TryAddScoped<MagicSettingsService>();
-        services.TryAddScoped<MagicSettingsLoader>();
+
+        // Services used by SettingsService, which is scoped, so the dependencies can be normal transient
+        services.TryAddTransient<MagicSettingsLoader>();
+        services.TryAddTransient<MagicSettingsJsonService>();
+
         services.TryAddTransient<LanguageService>();
 
         services.TryAddTransient<MagicThemeJsServiceTest>();
