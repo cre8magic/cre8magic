@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Services.Internal;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Json;
 

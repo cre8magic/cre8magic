@@ -2,7 +2,7 @@
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Themes.Settings;
+namespace ToSic.Cre8magic.Themes.Internal;
 
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
@@ -11,13 +11,13 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
 {
     internal string? BodyClasses(ITokenReplace tokens)
     {
-        var css = AllSettings?.ThemeDesign;
+        var themeDesign = AllSettings?.ThemeDesign;
 
-        if (css == null) throw new ArgumentException("Can't continue without CSS specs", nameof(css));
+        if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
 
         // Make a copy...
-        var classes = css.MagicContext.ToList();
-        classes.Add(css.PageIsHome?.Get(AllSettings.PageState.Page.Path == ""));
+        var classes = themeDesign.MagicContext.ToList();
+        classes.Add(themeDesign.PageIsHome?.Get(AllSettings.PageState.Page.Path == ""));
 
         // Do these once multi-language is better
         //1.5 Set the page-root-neutral-### class
@@ -49,7 +49,9 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
         return !paneHasModules;
     }
 
-    public string? PaneClasses(string paneName) => AllSettings?.ThemeDesign.PaneIsEmpty.Get(PaneIsEmpty(paneName));
+    public string? PaneClasses(string paneName) =>
+        AllSettings?.ThemeDesign.PaneIsEmpty.Get(PaneIsEmpty(paneName));
 
-    protected override DesignSetting? GetSettings(string name) => AllSettings?.ThemeDesign.Custom.GetInvariant(name);
+    protected override DesignSetting? GetSettings(string name) =>
+        AllSettings?.ThemeDesign.Custom.GetInvariant(name);
 }

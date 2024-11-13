@@ -4,6 +4,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Languages.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 using static System.StringComparer;

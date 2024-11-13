@@ -4,7 +4,6 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Languages.Settings;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
-using ToSic.Cre8magic.Services.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
@@ -12,7 +11,7 @@ using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicConstants;
 
-namespace ToSic.Cre8magic.Client.Services;
+namespace ToSic.Cre8magic.Services.Internal;
 
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
@@ -20,12 +19,18 @@ namespace ToSic.Cre8magic.Client.Services;
 internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, MagicSettingsLoader loader)
     : IMagicSettingsService
 {
-    public IMagicSettingsService Setup(MagicPackageSettings packageSettings)
+    public IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName, string? bodyClasses)
     {
         _packageSettings = packageSettings;
         loader.Setup(packageSettings);
+        _themeTokens = null;
+        _bodyClasses = bodyClasses;
+        _layoutName = layoutName;
         return this;
     }
+
+    private string? _bodyClasses;
+    private string? _layoutName;
 
     MagicDebugSettings IMagicSettingsService.Debug => _debug ??= loader.DebugSettings ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
@@ -33,31 +38,36 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
     private MagicPackageSettings? _packageSettings;
 
+
+    private ThemeTokens ThemeTokens => _themeTokens ??= new ThemeTokens(PackageSettings);
+    private ThemeTokens? _themeTokens;
+
     /// <summary>
     /// Logger, provided to the <see cref="NamedSettingsReader{TPart}"/>
     /// </summary>
     ILogger<IMagicSettingsService> IMagicSettingsService.Logger { get; } = logger;
 
-    public MagicAllSettings CurrentSettings(PageState pageState, string? name, string bodyClasses)
+    public MagicAllSettings CurrentSettings(PageState pageState)
     {
         // Get a cache-id for this specific configuration, which can vary by page
-        var originalNameForCache = (name ?? "prevent-error") + pageState.Page.PageId;
+        var layoutName = _layoutName;
+        var originalNameForCache = (layoutName ?? "prevent-error") + pageState.Page.PageId;
         var cached = _currentSettingsCache.FindInvariant(originalNameForCache);
         if (cached != null) return cached;
 
         // Tokens engine for this specific PageState
         var pageFactory = new MagicPageFactory(pageState);
         var tokens = new TokenEngine([
-            new PageTokens(pageFactory.Current, null, bodyClasses),
-            new ThemeTokens(PackageSettings)
+            new PageTokens(pageFactory.Current, null, _bodyClasses),
+            ThemeTokens,
         ]);
 
         // Figure out real config-name, and get the initial layout
-        var configDetails = FindConfigName(name, Default);
-        name = configDetails.ConfigName;
-        var theme = Theme.Find(name).Parse(tokens);
+        var configDetails = FindConfigName(layoutName, Default);
+        layoutName = configDetails.ConfigName;
+        var theme = Theme.Find(layoutName).Parse(tokens);
 
-        var current = new MagicAllSettings(name, this, theme, tokens, pageState);
+        var current = new MagicAllSettings(layoutName, this, theme, tokens, pageState);
         //ThemeDesigner.InitSettings(current);
         current.MagicContext = current.ThemeDesigner.BodyClasses(tokens);
         var dbg = current.DebugSources;

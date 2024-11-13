@@ -2,7 +2,7 @@
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Settings;
 
-namespace ToSic.Cre8magic.Client.Themes;
+namespace ToSic.Cre8magic.Themes;
 
 /// <summary>
 /// Base class for our themes. It's responsible for
@@ -14,7 +14,7 @@ namespace ToSic.Cre8magic.Client.Themes;
 /// - The base class must be abstract, so that Oqtane doesn't see it as a real them.
 /// - The config-properties must be abstract, so the inheriting files are forced to set them. 
 /// </remarks>
-public abstract class MagicTheme : Oqtane.Themes.ThemeBase, IMagicControlWithSettings
+public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWithSettings
 {
 
     /// <summary>
@@ -58,7 +58,7 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase, IMagicControlWithSet
     protected IMagicSettingsService MagicSettingsService
     {
         get => _magicSettingsService!;
-        set => _magicSettingsService = value.Setup(ThemePackageSettings);    // Init when injecting
+        set => _magicSettingsService = value.Setup(ThemePackageSettings, Layout, MagicClasses);    // Init when injecting
     }
     private IMagicSettingsService? _magicSettingsService;
 
@@ -80,7 +80,7 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase, IMagicControlWithSet
         await base.OnParametersSetAsync();
 
         var prevSettings = AllSettings;
-        AllSettings = MagicSettingsService.CurrentSettings(PageState, Layout, MagicClasses);
+        AllSettings = MagicSettingsService.CurrentSettings(PageState);
         if (AllSettings != prevSettings)
             StateHasChanged();
     }
