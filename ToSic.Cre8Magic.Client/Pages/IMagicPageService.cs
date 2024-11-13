@@ -29,7 +29,9 @@ public interface IMagicPageService
 
     IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds);
 
-    IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default);
+    //IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default);
+
+    IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default);
 
     IMagicPageList GetMenu(MagicMenuSettings? specs = default);
 

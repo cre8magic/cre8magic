@@ -12,6 +12,7 @@ public abstract class MagicBreadcrumbBase: MagicControlBase
 {
     [Inject]
     public IMagicPageService? PageSvc { get; set; }
+    private IMagicPageService PageSvcSafe => PageSvc ?? throw new InvalidOperationException("Page Service not available, it seems you're accessing a property before injection");
 
     /// <summary>
     /// Settings for retrieving the breadcrumbs; optional.
@@ -38,8 +39,7 @@ public abstract class MagicBreadcrumbBase: MagicControlBase
     /// Will be updated when the page changes.
     /// </summary>
     protected IMagicPageList Breadcrumb => _breadcrumbs.Get(
-        () => (PageSvc.Setup(PageState).GetBreadcrumb(Customize(Settings ?? new())), PageState.Page.PageId),
-        //() => (PageFactory.Breadcrumb.Get(), PageState.Page.PageId),
+        () => (PageSvcSafe.GetBreadcrumb(PageState, Customize(Settings ?? new())), PageState.Page.PageId),
         (_, i) => i == PageState.Page.PageId
     );
     private readonly GetKeep<IMagicPageList, int?> _breadcrumbs = new();

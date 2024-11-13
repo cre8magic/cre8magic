@@ -74,7 +74,7 @@
     
     <h2>Breadcrumb just list</h2>
     <ol>
-        @foreach(var bc in PageSvc.GetBreadcrumb())
+        @foreach(var bc in PageSvc.GetBreadcrumb(PageState))
         {
             <li>@bc</li>
         }
@@ -82,7 +82,7 @@
     
     <h2>Breadcrumb links</h2>
     <ol>
-        @foreach(var bc in PageSvc.GetBreadcrumb())
+        @foreach(var bc in PageSvc.GetBreadcrumb(PageState))
         {
             <li>
                 <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
@@ -92,7 +92,7 @@
     
     <h2>Breadcrumb to Home</h2>
     <ol>
-        @foreach(var bc in PageSvc.GetBreadcrumb(new() { Active = PageSvc.GetHome() } ))
+        @foreach(var bc in PageSvc.GetBreadcrumb(PageState,new() { Active = PageSvc.GetHome() } ))
         {
             <li>
                 <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>

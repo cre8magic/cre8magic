@@ -16,6 +16,7 @@ internal class MagicPageService() : IMagicPageService
     public IMagicPageService Setup(PageState pageState)
     {
         _pageState = pageState;
+        _pageFactory = null;
         return this;
     }
 
@@ -45,8 +46,17 @@ internal class MagicPageService() : IMagicPageService
     public IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds) =>
         PageFactory.Get(pageIds);
 
-    public IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default) =>
-        PageFactory.Breadcrumb.Get(specs);
+    private MagicPageFactory GetFactory(PageState? pageState) =>
+        pageState == null ? PageFactory : new(pageState);
+
+    //public IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default) =>
+    //    GetBreadcrumb(PageFactory, specs);
+
+    public IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default) =>
+        GetBreadcrumb(GetFactory(pageState), specs);
+
+    private IMagicPageList GetBreadcrumb(MagicPageFactory pageFactory, MagicBreadcrumbSettings? specs = default) =>
+        pageFactory.Breadcrumb.Get(specs);
 
     public IMagicPageList GetMenu(MagicMenuSettings? specs = default) =>
         GetMenuInternal(specs, null);
