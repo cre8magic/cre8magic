@@ -1,5 +1,4 @@
-﻿using System.Text.Json;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Languages.Settings;
@@ -8,7 +7,6 @@ using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Json;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicConstants;
@@ -18,37 +16,27 @@ namespace ToSic.Cre8magic.Client.Services;
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
 /// </summary>
-public class MagicSettingsService: IHasSettingsExceptions
+public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSettingsLoader loader)
+    : IHasSettingsExceptions
 {
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    public MagicSettingsService(MagicSettingsJsonService jsonService, ILogger<MagicSettingsService> logger)
+    public MagicSettingsService InitSettings(MagicPackageSettings packageSettings)
     {
-        Json = jsonService;
-        Logger = logger;
-    }
-
-    public MagicSettingsService InitSettings(MagicPackageSettings themeSettings)
-    {
-        PackageSettings = themeSettings;
+        PackageSettings = packageSettings;
+        loader.Setup(packageSettings);
         return this;
     }
 
-    public MagicDebugSettings Debug => _debug
-        ??= ConfigurationSources.FirstOrDefault(c => c.Debug != null)?.Debug
-            ?? MagicDebugSettings.Defaults.Fallback;
+    public MagicDebugSettings Debug => _debug ??= loader.DebugSettings ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
 
     private MagicPackageSettings PackageSettings
     {
-        get => _settings ?? throw new ArgumentException($"The {nameof(MagicSettingsService)} can't work without first calling {nameof(InitSettings)}", nameof(PackageSettings));
-        set => _settings = value;
+        get => _packageSettings ?? throw new ArgumentException($"You must first call {nameof(InitSettings)}", nameof(PackageSettings));
+        set => _packageSettings = value;
     }
-    private MagicPackageSettings? _settings;
+    private MagicPackageSettings? _packageSettings;
 
-    private MagicSettingsJsonService Json { get; }
-    public ILogger<MagicSettingsService> Logger { get; }
+    public ILogger<MagicSettingsService> Logger { get; } = logger;
 
     public MagicAllSettings CurrentSettings(PageState pageState, string? name, string bodyClasses)
     {
@@ -79,23 +67,8 @@ public class MagicSettingsService: IHasSettingsExceptions
         return current;
     }
 
-    internal MagicSettingsCatalog MergedCatalog => _mergedCatalog ??= MergeCatalogs();
+    internal MagicSettingsCatalog MergedCatalog => _mergedCatalog ??= loader.MergeCatalogs();
     private MagicSettingsCatalog? _mergedCatalog;
-
-    private MagicSettingsCatalog MergeCatalogs()
-    {
-        var sources = ConfigurationSources;
-        var priority = JsonSerializer.Serialize(sources.First());
-        foreach (var source in sources.Skip(1))
-        {
-            // get new json
-            var lowerPriority = JsonSerializer.Serialize(source, JsonMerger.GetNewOptionsForPreMerge(Logger));
-            var merged = JsonMerger.Merge(priority, lowerPriority);
-            priority = merged;
-        }
-        var result = JsonSerializer.Deserialize<MagicSettingsCatalog>(priority);
-        return result!;
-    }
 
     private readonly NamedSettings<MagicAllSettings> _currentSettingsCache = new();
 
@@ -144,26 +117,5 @@ public class MagicSettingsService: IHasSettingsExceptions
     }
 
 
-    private List<MagicSettingsCatalog> ConfigurationSources
-    {
-        get
-        {
-            if (_configurationSources != null) return _configurationSources;
-            var sources = new List<MagicSettingsCatalog?>
-                {
-                    // in future also add the settings from the dialog as the first priority
-                    Json.LoadJson(PackageSettings),
-                    PackageSettings.Defaults,
-                }
-                .Where(x => x != null)
-                .Cast<MagicSettingsCatalog>()
-                .ToList();
-            return _configurationSources = sources;
-        }
-    }
-
-    private List<MagicSettingsCatalog>? _configurationSources;
-
-    public List<Exception> Exceptions => MyExceptions.Concat(Json.Exceptions).ToList();
-    private List<SettingsException> MyExceptions { get; } = [];
+    public List<Exception> Exceptions => loader.Exceptions;
 }

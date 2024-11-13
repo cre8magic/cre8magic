@@ -15,11 +15,11 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
 
     private const string MenuSettingPrefix = "menu-";
 
-    public IMagicPageList GetTree(MagicMenuSettings config, List<IMagicPage> menuPages)
+    public IMagicPageList GetTree(MagicMenuSettings settings, List<IMagicPage> menuPages)
     {
         var settingsSvc = AllSettings!.Service;
         var messages = new List<string>();
-        var (configName, configMessages) = settingsSvc.FindConfigName(config.ConfigName, AllSettings.Name);
+        var (configName, configMessages) = settingsSvc.FindConfigName(settings.ConfigName, AllSettings.Name);
         messages.AddRange(configMessages);
 
         // Check if we have a name-remap to consider
@@ -37,7 +37,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         // If the user didn't specify a config name in the Parameters or the config name
         // isn't contained in the json file the normal parameter are given to the service
         var menuSettings = settingsSvc.MenuSettings.Find(configName);
-        config = JsonMerger.Merge(config, menuSettings, Logger);
+        settings = JsonMerger.Merge(settings, menuSettings, Logger);
 
         // See if we have a default configuration for CSS which should be applied
         var menuDesign = AllSettings.DesignName(configName);
@@ -55,24 +55,24 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         // Usually there is no Design-object pre-filled, in which case we should
         // 1. try to find it in json
         // 2. use the one from the configuration
-        if (config.DesignSettings == null)
+        if (settings.DesignSettings == null)
         {
             // Check various places where design could be configured by priority
             var designConfig = settingsSvc.MenuDesigns.Find(designName, AllSettings.Name);
 
             //config.DesignSettings = designConfig;
-            config = config with { DesignSettings = designConfig };
+            settings = settings with { DesignSettings = designConfig };
         }
         else
             messages.Add("Design rules already set");
 
-        config = config with
+        settings = settings with
         {
             AllSettings = AllSettings,
             Pages = menuPages,
         };
 
-        var result = pageSvc.Setup(AllSettings.PageState).GetMenuInternal(config, messages);
+        var result = pageSvc.Setup(AllSettings.PageState).GetMenuInternal(settings, messages);
         return result;
     }
 }

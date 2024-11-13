@@ -13,10 +13,10 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     /// <summary>
     /// Magic Settings for debugging, in case these specs were generated from there.
     /// </summary>
-    [JsonIgnore]
+    [JsonIgnore]    // Not meant for JSON at all...
     public MagicAllSettings? AllSettings { get; init; }
 
-    [JsonIgnore]
+    [JsonIgnore]    // Not meant for JSON at all...
     public IMagicPageDesigner? Designer { get; init; }
 
     /// <summary>
@@ -25,7 +25,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     ///
     /// TODO: NAMING
     /// </summary>
-    [JsonIgnore]
+    [JsonIgnore]    // Not meant for JSON at all...
     public IEnumerable<IMagicPage>? Pages { get; init; } = null;
 
     #endregion
@@ -116,7 +116,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     public string Variant => Template ?? "";
 
 
-    private static readonly MagicMenuSettings FbAndF = new()
+    private static readonly MagicMenuSettings Fallback = new()
     {
         Template = TemplateDefault,
         Start = "*",
@@ -125,7 +125,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
 
     internal static Defaults<MagicMenuSettings> Defaults = new()
     {
-        Fallback = FbAndF,
-        Foundation = FbAndF,
+        Fallback = Fallback,
+        Foundation = Fallback,
     };
 }

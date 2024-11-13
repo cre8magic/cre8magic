@@ -1,11 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
-using System.Text.Json;
-using ToSic.Cre8magic.Settings;
+﻿using System.Text.Json;
+using Microsoft.Extensions.Logging;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Json;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Services;
+namespace ToSic.Cre8magic.Settings.Json;
 
 public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger) : IHasSettingsExceptions
 {
