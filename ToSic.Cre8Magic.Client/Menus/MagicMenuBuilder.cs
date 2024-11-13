@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Oqtane.UI;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings.Json;
@@ -9,28 +10,27 @@ namespace ToSic.Cre8magic.Client.Menus;
 /// <summary>
 /// Will create a MenuTree based on the current pages information and configuration
 /// </summary>
-public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageService pageSvc) : MagicServiceWithSettingsBase
+public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageService pageSvc, IMagicSettingsService settingsSvc) : MagicServiceWithSettingsBase
 {
     public ILogger Logger { get; } = logger;
 
     private const string MenuSettingPrefix = "menu-";
 
-    public IMagicPageList GetTree(MagicMenuSettings settings, List<IMagicPage> menuPages)
+    public IMagicPageList GetTree(MagicMenuSettings settings, PageState pageState, List<IMagicPage> menuPages)
     {
-        var settingsSvc = AllSettings!.Service;
         var messages = new List<string>();
-        var (configName, configMessages) = settingsSvc.FindConfigName(settings.ConfigName, AllSettings.Name);
+        var allSettings = settingsSvc.GetSettings(pageState);
+        var (configName, configMessages) = settingsSvc.FindConfigName(settings.ConfigName, allSettings.Name);
         messages.AddRange(configMessages);
 
         // Check if we have a name-remap to consider
-        var menuConfig = AllSettings.ConfigurationName(configName);
+        var menuConfig = allSettings.ConfigurationName(configName);
         if (menuConfig == null && !configName.StartsWith(MenuSettingPrefix))
-            menuConfig = AllSettings.ConfigurationName($"{MenuSettingPrefix}{configName}");
+            menuConfig = allSettings.ConfigurationName($"{MenuSettingPrefix}{configName}");
 
-        var updatedName = menuConfig; // Settings.Theme.Menus.FindInvariant(configName);
-        if (updatedName.HasValue())
+        if (menuConfig.HasValue())
         {
-            configName = updatedName!;
+            configName = menuConfig;
             messages.Add($"updated config to '{configName}'");
         }
 
@@ -40,9 +40,9 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         settings = JsonMerger.Merge(settings, menuSettings, Logger);
 
         // See if we have a default configuration for CSS which should be applied
-        var menuDesign = AllSettings.DesignName(configName);
+        var menuDesign = allSettings.DesignName(configName);
         if (menuDesign == null && !configName.StartsWith(MenuSettingPrefix))
-            menuDesign = AllSettings.DesignName($"{MenuSettingPrefix}{configName}");
+            menuDesign = allSettings.DesignName($"{MenuSettingPrefix}{configName}");
 
         var designName = menuDesign;
         messages.Add($"Design name in config: '{designName}'");
@@ -58,7 +58,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         if (settings.DesignSettings == null)
         {
             // Check various places where design could be configured by priority
-            var designConfig = settingsSvc.MenuDesigns.Find(designName, AllSettings.Name);
+            var designConfig = settingsSvc.MenuDesigns.Find(designName, allSettings.Name);
 
             //config.DesignSettings = designConfig;
             settings = settings with { DesignSettings = designConfig };
@@ -68,11 +68,11 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
 
         settings = settings with
         {
-            AllSettings = AllSettings,
+            AllSettings = allSettings,
             Pages = menuPages,
         };
 
-        var result = pageSvc.Setup(AllSettings.PageState).GetMenuInternal(settings, messages);
+        var result = pageSvc.Setup(pageState).GetMenuInternal(settings, messages);
         return result;
     }
 }

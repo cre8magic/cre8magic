@@ -49,7 +49,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
     {
         await base.OnParametersSetAsync();
 
-        MenuTreeService?.InitSettings(AllSettings);
+        //MenuTreeService?.InitSettings(AllSettings);
 
         var menuSettings = MenuSettings ?? new MagicMenuSettings
         {
@@ -64,7 +64,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
             Template = Template,
         };
 
-        Menu = MenuTreeService?.GetTree(menuSettings, PageFactory.Get(MenuPages).ToList());
+        Menu = MenuTreeService?.GetTree(menuSettings, PageState, PageFactory.Get(MenuPages).ToList());
     }
 
 }

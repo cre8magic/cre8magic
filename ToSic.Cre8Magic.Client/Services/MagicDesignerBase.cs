@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Client.Services;
 
 internal abstract class MagicDesignerBase: MagicServiceWithSettingsBase, IMagicDesigner
 {
-    protected internal MagicDesignerBase() {}
+    //protected internal MagicDesignerBase() {}
 
     protected internal MagicDesignerBase(MagicAllSettings allSettings) => InitSettings(allSettings);
 
