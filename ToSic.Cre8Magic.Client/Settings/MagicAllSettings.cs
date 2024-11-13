@@ -15,7 +15,7 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings
 {
-    internal MagicAllSettings(string name, MagicSettingsService service, MagicThemeSettings theme, TokenEngine tokens, PageState pageState)
+    internal MagicAllSettings(string name, IMagicSettingsService service, MagicThemeSettings theme, TokenEngine tokens, PageState pageState)
     {
         Name = name;
         Service = service;
@@ -43,7 +43,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings
 
     public string Name { get; }
 
-    [JsonIgnore] public MagicSettingsService Service { get; }
+    [JsonIgnore] public IMagicSettingsService Service { get; }
     [JsonIgnore] internal ThemeDesigner ThemeDesigner => _themeDesigner ??= new(this);
     private ThemeDesigner? _themeDesigner;
 

@@ -17,30 +17,26 @@ namespace ToSic.Cre8magic.Client.Services;
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
 /// </summary>
-public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSettingsLoader loader)
-    : IHasSettingsExceptions
+internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, MagicSettingsLoader loader)
+    : IMagicSettingsService
 {
-    public MagicSettingsService Setup(MagicPackageSettings packageSettings)
+    public IMagicSettingsService Setup(MagicPackageSettings packageSettings)
     {
-        PackageSettings = packageSettings;
+        _packageSettings = packageSettings;
         loader.Setup(packageSettings);
         return this;
     }
 
-    public MagicDebugSettings Debug => _debug ??= loader.DebugSettings ?? MagicDebugSettings.Defaults.Fallback;
+    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= loader.DebugSettings ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
 
-    private MagicPackageSettings PackageSettings
-    {
-        get => _packageSettings ?? MagicPackageSettings.Fallback;
-        set => _packageSettings = value;
-    }
+    private MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
     private MagicPackageSettings? _packageSettings;
 
     /// <summary>
     /// Logger, provided to the <see cref="NamedSettingsReader{TPart}"/>
     /// </summary>
-    internal ILogger<MagicSettingsService> Logger { get; } = logger;
+    ILogger<IMagicSettingsService> IMagicSettingsService.Logger { get; } = logger;
 
     public MagicAllSettings CurrentSettings(PageState pageState, string? name, string bodyClasses)
     {
@@ -71,12 +67,15 @@ public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSet
         return current;
     }
 
-    internal MagicSettingsCatalog Catalog => _catalog ??= loader.MergeCatalogs();
+    /// <summary>
+    /// Actually internal, on the interface to avoid exposing it to the outside
+    /// </summary>
+    MagicSettingsCatalog IMagicSettingsService.Catalog => _catalog ??= loader.MergeCatalogs();
     private MagicSettingsCatalog? _catalog;
 
     private readonly NamedSettings<MagicAllSettings> _currentSettingsCache = new();
 
-    internal NamedSettingsReader<MagicAnalyticsSettings> Analytics =>
+    NamedSettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
     private NamedSettingsReader<MagicAnalyticsSettings>? _analytics;
 
@@ -87,11 +86,11 @@ public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSet
         );
     private NamedSettingsReader<MagicThemeSettings>? _getTheme;
 
-    internal NamedSettingsReader<MagicMenuSettings> MenuSettings =>
+    NamedSettingsReader<MagicMenuSettings> IMagicSettingsService.MenuSettings =>
         _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, cat => cat.Menus);
     private NamedSettingsReader<MagicMenuSettings>? _getMenuSettings;
 
-    internal NamedSettingsReader<MagicLanguagesSettings> Languages =>
+    NamedSettingsReader<MagicLanguagesSettings> IMagicSettingsService.Languages =>
         _languages ??= new(this, MagicLanguagesSettings.Defaults, cat => cat.Languages);
     private NamedSettingsReader<MagicLanguagesSettings>? _languages;
 
@@ -99,16 +98,16 @@ public class MagicSettingsService(ILogger<MagicSettingsService> logger, MagicSet
         _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
     private NamedSettingsReader<MagicContainerSettings>? _containers;
 
-    internal NamedSettingsReader<MagicThemeDesignSettings> ThemeDesign =>
+    NamedSettingsReader<MagicThemeDesignSettings> IMagicSettingsService.ThemeDesign =>
         _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, cat => cat.ThemeDesigns);
     private NamedSettingsReader<MagicThemeDesignSettings>? _themeDesign;
 
-    internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns =>
+    NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);
     private NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>>? _menuDesigns;
 
 
-    internal (string ConfigName, List<string> Source) FindConfigName(string? configName, string inheritedName)
+    public (string ConfigName, List<string> Source) FindConfigName(string? configName, string inheritedName)
     {
         var debugInfo = new List<string> { $"Initial Config: '{configName}'"};
         if (configName.EqInvariant(InheritName))

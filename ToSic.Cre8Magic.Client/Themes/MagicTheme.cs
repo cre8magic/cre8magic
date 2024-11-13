@@ -55,12 +55,12 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase, IMagicControlWithSet
     public new string ThemePath() => base.ThemePath().Replace(".Client", "");
 
     [Inject]
-    protected MagicSettingsService MagicSettingsService
+    protected IMagicSettingsService MagicSettingsService
     {
         get => _magicSettingsService!;
         set => _magicSettingsService = value.Setup(ThemePackageSettings);    // Init when injecting
     }
-    private MagicSettingsService? _magicSettingsService;
+    private IMagicSettingsService? _magicSettingsService;
 
     /// <summary>
     /// The settings of this layout, as loaded from the ThemePackageSettings + JSON

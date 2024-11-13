@@ -17,7 +17,8 @@ public class Startup : Oqtane.Services.IClientStartup
     public void ConfigureServices(IServiceCollection services)
     {
         // All these Settings etc. should be scoped, so they don't have to reload for each click
-        services.TryAddScoped<MagicSettingsService>();
+        //services.TryAddScoped<MagicSettingsService>();
+        services.TryAddScoped<IMagicSettingsService, MagicSettingsService>();
 
         // Services used by SettingsService, which is scoped, so the dependencies can be normal transient
         services.TryAddTransient<MagicSettingsLoader>();

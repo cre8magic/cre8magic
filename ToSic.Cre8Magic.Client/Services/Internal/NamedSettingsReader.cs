@@ -9,7 +9,7 @@ using static ToSic.Cre8magic.Settings.SettingsWithInherit;
 namespace ToSic.Cre8magic.Services.Internal;
 
 internal class NamedSettingsReader<TPart>(
-    MagicSettingsService parent,
+    IMagicSettingsService parent,
     Defaults<TPart> defaults,
     Func<MagicSettingsCatalog, NamedSettings<TPart>> findList,
     Func<string, Func<string, string>>? jsonProcessing = null)

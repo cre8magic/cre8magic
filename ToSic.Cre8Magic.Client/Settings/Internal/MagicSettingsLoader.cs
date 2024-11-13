@@ -6,28 +6,24 @@ using ToSic.Cre8magic.Settings.Json;
 namespace ToSic.Cre8magic.Settings.Internal;
 
 /// <summary>
-/// Helper to load all the magic settings which could be used by the <see cref="MagicSettingsService"/>.
+/// Helper to load all the magic settings which could be used by the <see cref="IMagicSettingsService"/>.
 ///
 /// It requires that there are <see cref="MagicPackageSettings"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-public class MagicSettingsLoader(MagicSettingsJsonService jsonService, ILogger<MagicSettingsService> logger)
+public class MagicSettingsLoader(MagicSettingsJsonService jsonService, ILogger<MagicSettingsLoader> logger)
     : IHasSettingsExceptions
 {
     public MagicSettingsLoader Setup(MagicPackageSettings packageSettings)
     {
-        PackageSettings = packageSettings;
+        _packageSettings = packageSettings;
         return this;
     }
 
     /// <summary>
     /// Safe access to Package Settings, with warning if not setup correctly.
     /// </summary>
-    internal MagicPackageSettings PackageSettings
-    {
-        get => _packageSettings ?? MagicPackageSettings.Fallback;
-        set => _packageSettings = value;
-    }
+    internal MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
     private MagicPackageSettings? _packageSettings;
 
 
