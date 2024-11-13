@@ -9,9 +9,13 @@ namespace ToSic.Cre8magic.Pages.Internal.Menu;
 /// Not used for the root though...
 /// </summary>
 /// <param name="pageFactory"></param>
-internal class MagicMenuFactory(MagicPageFactory pageFactory, MagicMenuSettings specsForDebug, Func<int> getMaxDepth) : MagicPagesFactoryBase(pageFactory)
+internal class MagicMenuFactory(
+    MagicPageFactory pageFactory,
+    MagicMenuSettings specsForDebug,
+    List<string>? debugMessages,
+    Func<int> getMaxDepth) : MagicPagesFactoryBase(pageFactory)
 {
-    public List<string> DebugMessages => specsForDebug.DebugMessages;
+    public List<string> DebugMessages => debugMessages ?? [];
 
     public void Set(MagicMenuSettings? settings) => _settings = settings;
 

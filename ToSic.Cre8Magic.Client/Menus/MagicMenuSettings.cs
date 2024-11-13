@@ -28,11 +28,6 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     [JsonIgnore]
     public IEnumerable<IMagicPage>? Pages { get; init; } = null;
 
-    // TODO: SHOULD PROBABLY NOT BE HERE
-    [JsonIgnore]
-    public List<string> DebugMessages { get; init; } = [];
-
-
     #endregion
 
     /// <summary>

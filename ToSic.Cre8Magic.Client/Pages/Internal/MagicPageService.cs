@@ -29,26 +29,33 @@ internal class MagicPageService() : IMagicPageService
             ? PageFactory.PagesAll()
             : PageFactory.PagesUser();
 
-    public IMagicPage GetHome() => PageFactory.Home;
+    public IMagicPage GetHome() =>
+        PageFactory.Home;
 
-    public IMagicPage GetCurrent() => PageFactory.Current;
+    public IMagicPage GetCurrent() =>
+        PageFactory.Current;
 
-    public IMagicPage? GetPage(int pageId) => PageFactory.GetOrNull(pageId);
+    public IMagicPage? GetPage(int pageId) =>
+        PageFactory.GetOrNull(pageId);
 
-    public IMagicPage? GetPage(Page? page) => PageFactory.CreateOrNull(page);
+    public IMagicPage? GetPage(Page? page) =>
+        PageFactory.CreateOrNull(page);
 
 
-    public IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds) => PageFactory.Get(pageIds);
+    public IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds) =>
+        PageFactory.Get(pageIds);
 
     public IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default) =>
         PageFactory.Breadcrumb.Get(specs);
 
-    public IMagicPageList GetMenu(MagicMenuSettings? specs = default)
+    public IMagicPageList GetMenu(MagicMenuSettings? specs = default) =>
+        GetMenuInternal(specs, null);
+
+    public IMagicPageList GetMenuInternal(MagicMenuSettings? specs, List<string>? debugMessages)
     {
         specs ??= new();
-        var rootBuilder = new MagicMenuFactoryRoot(PageState, specs);
+        var rootBuilder = new MagicMenuFactoryRoot(PageState, specs, debugMessages);
         var list = new MagicPageList(PageFactory, rootBuilder.Factory, rootBuilder.GetChildren());
         return list;
     }
-
 }

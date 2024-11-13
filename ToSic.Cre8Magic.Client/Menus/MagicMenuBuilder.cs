@@ -70,18 +70,9 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         {
             AllSettings = AllSettings,
             Pages = menuPages,
-            DebugMessages = messages,
         };
 
-        return pageSvc.Setup(AllSettings.PageState).GetMenu(config);
-
-        //return pageSvc.Setup(GlobalSettings.PageState)
-        //    .GetMenu(new()
-        //    {
-        //        MagicSettings = GlobalSettings,
-        //        Settings = config,
-        //        Pages = menuPages,
-        //        DebugMessages = messages
-        //    });
+        var result = pageSvc.Setup(AllSettings.PageState).GetMenuInternal(config, messages);
+        return result;
     }
 }

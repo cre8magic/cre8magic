@@ -7,11 +7,11 @@ namespace ToSic.Cre8magic.Pages.Internal.Menu;
 
 internal class MagicMenuFactoryRoot
 {
-    public MagicMenuFactoryRoot(PageState pageState, MagicMenuSettings specs)
+    public MagicMenuFactoryRoot(PageState pageState, MagicMenuSettings specs, List<string>? debugMessages)
     {
         Specs = specs;
         PageFactory = new(pageState, specs.Pages);
-        Factory = new(PageFactory, specs, () => MaxDepth);
+        Factory = new(PageFactory, specs, debugMessages, () => MaxDepth);
         Factory.Set(specs.AllSettings);
         Factory.Set(specs.Designer);
         Factory.Set(specs/*.Settings*/);
