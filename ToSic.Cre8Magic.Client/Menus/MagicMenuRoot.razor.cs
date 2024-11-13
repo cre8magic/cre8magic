@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
 using Oqtane.Themes.Controls;
+using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils;
 

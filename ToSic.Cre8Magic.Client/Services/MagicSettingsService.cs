@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Languages.Settings;
+using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
@@ -123,9 +124,9 @@ public class MagicSettingsService: IHasSettingsExceptions
         new(this, MagicThemeDesignSettings.Defaults, cat => cat.ThemeDesigns);
     private NamedSettingsReader<MagicThemeDesignSettings>? _themeDesign;
 
-    internal NamedSettingsReader<NamedSettings<MagicMenuDesign>> MenuDesigns => _menuDesigns ??=
+    internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns => _menuDesigns ??=
         new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);
-    private NamedSettingsReader<NamedSettings<MagicMenuDesign>>? _menuDesigns;
+    private NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>>? _menuDesigns;
 
 
     internal (string ConfigName, List<string> Source) FindConfigName(string? configName, string inheritedName)

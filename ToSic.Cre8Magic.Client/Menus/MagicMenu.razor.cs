@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Client.Menus;
+namespace ToSic.Cre8magic.Menus;
 
 /// <summary>
 /// Base class for any menu list

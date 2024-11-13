@@ -1,5 +1,6 @@
 ﻿using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Languages.Settings;
+using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Debug;
 
 namespace ToSic.Cre8magic.Settings;
@@ -44,5 +45,5 @@ public class MagicSettingsCatalog: IHasDebugSettings
     /// <summary>
     /// Design definitions of the menu
     /// </summary>
-    public NamedSettings<NamedSettings<MagicMenuDesign>> MenuDesigns { get; set; } = new();
+    public NamedSettings<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; set; } = new();
 }

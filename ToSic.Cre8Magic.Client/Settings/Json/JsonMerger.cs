@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
+using ToSic.Cre8magic.Menus;
 
 namespace ToSic.Cre8magic.Settings.Json;
 
@@ -19,7 +20,7 @@ internal class JsonMerger
             PairOnOffJsonConverter.GetNew(logger),
             DesignSettingsJsonConverter<DesignSetting>.GetNew(logger),
             // DesignSettingsJsonConverter<DesignSettingActive>.GetNew(),
-            DesignSettingsJsonConverter<MagicMenuDesign>.GetNew(logger),
+            DesignSettingsJsonConverter<MagicMenuDesignSettings>.GetNew(logger),
             // DesignSettingsJsonConverter<MagicContainerDesignSettingsItem>.GetNew(),
             ThemePartJsonConverter.GetNew(logger),
         },

@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Pages;
 
@@ -67,9 +68,6 @@ public record MagicMenuGetSpecsWip
     /// TODO: NAMING
     /// </summary>
     public IEnumerable<IMagicPage>? Pages { get; init; } = null;
-
-    //// TODO: NAMING
-    //public IMagicPage? Current { get; init; }
 
     public List<string> DebugMessages { get; init; } = [];
 

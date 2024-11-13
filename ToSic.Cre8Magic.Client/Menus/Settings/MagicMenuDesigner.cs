@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
@@ -23,7 +24,7 @@ public class MagicMenuDesigner : IMagicPageDesigner
     }
     private MagicMenuSettings MenuSettings { get; }
 
-    internal List<NamedSettings<MagicMenuDesign>> DesignSettingsList { get; }
+    internal List<NamedSettings<MagicMenuDesignSettings>> DesignSettingsList { get; }
 
     private ILog? Log { get; }
 
@@ -48,13 +49,13 @@ public class MagicMenuDesigner : IMagicPageDesigner
         return l.ReturnAndLog(string.Join(" ", configsForKey));
     }
 
-    private List<MagicMenuDesign> ConfigsForTag(string tag) =>
+    private List<MagicMenuDesignSettings> ConfigsForTag(string tag) =>
         DesignSettingsList
             .Select(c => c.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 
-    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuDesign> configs)
+    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuDesignSettings> configs)
     {
         var classes = new List<string?>();
 

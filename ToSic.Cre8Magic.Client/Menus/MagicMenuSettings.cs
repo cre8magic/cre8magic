@@ -3,15 +3,10 @@ using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Client.Menus.Settings;
+namespace ToSic.Cre8magic.Menus;
 
 public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
-    /// <summary>
-    /// Empty constructor is important for JSON deserialization
-    /// </summary>
-    public MagicMenuSettings() { }
-
     /// <summary>
     /// A unique ID to identify the menu.
     /// Would be used for debugging but also to help in creating unique css-classes for collapsible menus
@@ -90,7 +85,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     public const string TemplateDefault = "Horizontal";
 
     // todo: name, maybe not on interface
-    public NamedSettings<MagicMenuDesign>? DesignSettings { get; init; }
+    public NamedSettings<MagicMenuDesignSettings>? DesignSettings { get; init; }
 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;

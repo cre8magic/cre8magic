@@ -1,8 +1,8 @@
 ﻿using ToSic.Cre8magic.Settings;
 
-namespace ToSic.Cre8magic.Client.Menus.Settings;
+namespace ToSic.Cre8magic.Menus;
 
-public class MagicMenuDesign: DesignSetting
+public class MagicMenuDesignSettings: DesignSetting
 {
     /// <summary>
     /// List of classes to add on certain levels only.

@@ -1,10 +1,11 @@
-﻿using static ToSic.Cre8magic.Client.MagicTokens;
+﻿using ToSic.Cre8magic.Menus;
+using static ToSic.Cre8magic.Client.MagicTokens;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
 internal class DefaultSettings
 {
-    internal static Defaults<NamedSettings<MagicMenuDesign>> Defaults = new()
+    internal static Defaults<NamedSettings<MagicMenuDesignSettings>> Defaults = new()
     {
         // The default/fallback design configuration for menus.
         // Normally this would be set in the json file or the theme settings, so this wouldn't be used. 

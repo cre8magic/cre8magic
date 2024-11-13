@@ -1,4 +1,6 @@
 ﻿using Oqtane.UI;
+using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Pages.Internal.Menu;

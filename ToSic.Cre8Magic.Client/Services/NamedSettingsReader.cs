@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicConstants;
@@ -32,7 +33,7 @@ internal class NamedSettingsReader<TPart>(
             needsMore.Inherits = null;
             priority = FindPartAndMergeIfPossible(priority, realName, inheritFrom);
         }
-        else if (priority is NamedSettings<MagicMenuDesign> priorityNamed 
+        else if (priority is NamedSettings<MagicMenuDesignSettings> priorityNamed 
                  && priorityNamed.TryGetValue(InheritsNameInJson, out var value))
         {
             priorityNamed.Remove(InheritsNameInJson);

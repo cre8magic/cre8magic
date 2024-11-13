@@ -3,8 +3,7 @@ using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 
-// TODO: adapt Cre8magic everywhere
-namespace ToSic.Cre8magic.Client.Menus;
+namespace ToSic.Cre8magic.Menus;
 
 public abstract class MagicMenuBase: Oqtane.Themes.Controls.MenuBase, IMagicControlWithSettings // TODO: stv use ThemeControlBase instead MenuBase and use MenuPageService that replaces MenuBase
 {
