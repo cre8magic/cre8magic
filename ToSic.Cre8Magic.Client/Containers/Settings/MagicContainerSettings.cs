@@ -5,6 +5,16 @@ namespace ToSic.Cre8magic.Client.Containers.Settings;
 
 public record MagicContainerSettings: SettingsWithInherit
 {
+    public MagicContainerSettings()
+    { }
+
+    public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
+        : base(priority, fallback)
+    {
+        // TODO!
+        //Custom = new NamedSettings<DesignSetting>(priority?.Custom, fallback?.Custom);
+    }
+
     public NamedSettings<DesignSetting> Custom { get; init; } = new();
 
     private static readonly MagicContainerSettings FbAndF = new()

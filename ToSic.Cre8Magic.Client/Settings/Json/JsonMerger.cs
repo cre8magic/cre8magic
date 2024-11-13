@@ -28,12 +28,12 @@ internal class JsonMerger
         AllowTrailingCommas = true,
     };
 
-    public static TType Clone<TType>(TType original)
-    {
-        var json = JsonSerializer.Serialize(original);
-        var result = JsonSerializer.Deserialize<TType>(json);
-        return result!;
-    }
+    //public static TType Clone<TType>(TType original)
+    //{
+    //    var json = JsonSerializer.Serialize(original);
+    //    var result = JsonSerializer.Deserialize<TType>(json);
+    //    return result!;
+    //}
 
     public static TType Merge<TType>(TType priority, TType fallback, ILogger logger,
         Func<string, string>? optionalProcessing = null)

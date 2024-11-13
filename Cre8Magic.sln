@@ -51,6 +51,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oqtane", "Oqtane", "{4DF7A8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cre8magic", "Cre8magic", "{229651EF-A199-44F4-AF93-0D94F97BAC4B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cre8magic Unit Tests", "Cre8magic Unit Tests", "{19BBE93B-F3E7-45A4-B817-A0A6DEC6DAC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToSic.Cre8magic.ClientUnitTests", "ToSic.Cre8magic.ClientUnitTests\ToSic.Cre8magic.ClientUnitTests.csproj", "{B3CC4100-4671-47A7-8A73-D4577ADB1415}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,10 @@ Global
 		{D477F169-0C7D-4747-99FE-76768D7C1E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D477F169-0C7D-4747-99FE-76768D7C1E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D477F169-0C7D-4747-99FE-76768D7C1E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3CC4100-4671-47A7-8A73-D4577ADB1415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3CC4100-4671-47A7-8A73-D4577ADB1415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3CC4100-4671-47A7-8A73-D4577ADB1415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3CC4100-4671-47A7-8A73-D4577ADB1415}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +145,7 @@ Global
 		{97A42E2D-B397-4BD2-93E2-81F12199E8A0} = {0C0ED938-AC91-42F0-8323-8512FE9F116A}
 		{C4701B5E-9409-444A-A397-CC13EA9A8CD0} = {0C0ED938-AC91-42F0-8323-8512FE9F116A}
 		{D477F169-0C7D-4747-99FE-76768D7C1E91} = {0C0ED938-AC91-42F0-8323-8512FE9F116A}
+		{B3CC4100-4671-47A7-8A73-D4577ADB1415} = {19BBE93B-F3E7-45A4-B817-A0A6DEC6DAC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D016F15-46FE-4726-8DFD-2E4FD4DC7668}

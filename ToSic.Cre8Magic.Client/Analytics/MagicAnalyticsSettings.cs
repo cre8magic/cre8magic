@@ -3,9 +3,24 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Analytics;
 
-public record MagicAnalyticsSettings : SettingsWithInherit
+public record MagicAnalyticsSettings : SettingsWithInherit, ICanClone<MagicAnalyticsSettings>
 {
-    // public NamedSettings<DesignSetting> Custom { get; set; } = new();
+    public MagicAnalyticsSettings()
+    { }
+
+    public MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
+        : base(priority, fallback)
+    {
+        GtmId = priority?.GtmId ?? fallback?.GtmId;
+        PageViewTrack = priority?.PageViewTrack ?? fallback?.PageViewTrack;
+        PageViewTrackFirst = priority?.PageViewTrackFirst ?? fallback?.PageViewTrackFirst;
+        PageViewJs = priority?.PageViewJs ?? fallback?.PageViewJs;
+        PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
+
+    }
+
+    public MagicAnalyticsSettings CloneMerge(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     public string? GtmId { get; init; }
 
@@ -32,5 +47,6 @@ public record MagicAnalyticsSettings : SettingsWithInherit
         Fallback = FbAndF,
         Foundation = FbAndF,
     };
+
 
 }

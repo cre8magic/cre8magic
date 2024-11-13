@@ -14,6 +14,29 @@ namespace ToSic.Cre8magic.Breadcrumb.Settings;
 /// </remarks>
 public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
+    public MagicBreadcrumbSettings() { }
+
+    /// <summary>
+    /// Cloning constructor
+    /// </summary>
+    public MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = default): base(priority, fallback)
+    {
+        WithActive = priority?.WithActive ?? fallback?.WithActive ?? Defaults.Fallback.WithActive;
+        WithHome = priority?.WithHome ?? fallback?.WithHome ?? Defaults.Fallback.WithHome;
+        Designer = priority?.Designer ?? fallback?.Designer;
+        MaxDepth = priority?.MaxDepth ?? fallback?.MaxDepth ?? Defaults.Fallback.MaxDepth;
+        Reverse = priority?.Reverse ?? fallback?.Reverse ?? Defaults.Fallback.Reverse;
+        Pages = priority?.Pages ?? fallback?.Pages;
+        Active = priority?.Active ?? fallback?.Active;
+        Id = priority?.Id ?? fallback?.Id;
+        ConfigName = priority?.ConfigName ?? fallback?.ConfigName;
+        Debug = priority?.Debug ?? fallback?.Debug;
+        Display = priority?.Display ?? fallback?.Display ?? Defaults.Fallback.Display;
+        ActiveId = priority?.ActiveId ?? fallback?.ActiveId;
+        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+        Variant = priority?.Variant ?? fallback?.Variant;
+    }
+
     #region WIP properties moved from specs
 
     /// <summary>
@@ -100,7 +123,7 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;
 
-    public string Variant => ""; // TODO
+    public string Variant { get; init; } // TODO:
 
     /// <summary>
     /// Defaults - these don't do anything, but we want to use this pattern for consistency.
