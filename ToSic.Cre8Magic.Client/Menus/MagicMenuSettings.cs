@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
@@ -7,6 +8,33 @@ namespace ToSic.Cre8magic.Menus;
 
 public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings
 {
+    #region WIP merging Specs
+
+    /// <summary>
+    /// Magic Settings for debugging, in case these specs were generated from there.
+    /// </summary>
+    [JsonIgnore]
+    public MagicAllSettings? MagicSettings { get; init; }
+
+    [JsonIgnore]
+    public IMagicPageDesigner? Designer { get; init; }
+
+    /// <summary>
+    /// List of pages to respect when creating the breadcrumb.
+    /// Default is `null` - so it will just take all the pages.
+    ///
+    /// TODO: NAMING
+    /// </summary>
+    [JsonIgnore]
+    public IEnumerable<IMagicPage>? Pages { get; init; } = null;
+
+    // TODO: SHOULD PROBABLY NOT BE HERE
+    [JsonIgnore]
+    public List<string> DebugMessages { get; init; } = [];
+
+
+    #endregion
+
     /// <summary>
     /// A unique ID to identify the menu.
     /// Would be used for debugging but also to help in creating unique css-classes for collapsible menus

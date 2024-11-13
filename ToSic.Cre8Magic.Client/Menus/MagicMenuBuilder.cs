@@ -66,13 +66,22 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         else
             messages.Add("Design rules already set");
 
-        return pageSvc.Setup(GlobalSettings.PageState)
-            .GetMenu(new MagicMenuGetSpecsWip()
-            {
-                MagicSettings = GlobalSettings,
-                Settings = config,
-                Pages = menuPages,
-                DebugMessages = messages
-            });
+        config = config with
+        {
+            MagicSettings = GlobalSettings,
+            Pages = menuPages,
+            DebugMessages = messages,
+        };
+
+        return pageSvc.Setup(GlobalSettings.PageState).GetMenu(config);
+
+        //return pageSvc.Setup(GlobalSettings.PageState)
+        //    .GetMenu(new()
+        //    {
+        //        MagicSettings = GlobalSettings,
+        //        Settings = config,
+        //        Pages = menuPages,
+        //        DebugMessages = messages
+        //    });
     }
 }

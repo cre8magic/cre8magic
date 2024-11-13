@@ -25,7 +25,7 @@ public class NodeRuleHelper
     public MagicMenuSettings Settings { get; }
 
 
-    internal List<IMagicPage> GetRootPages(MagicMenuGetSpecsWip specs)
+    internal List<IMagicPage> GetRootPages(MagicMenuSettings settings)
     {
         var l = Log.Fn<List<IMagicPage>>($"{Current.Id}");
         // Give empty list if we shouldn't display it
@@ -34,11 +34,11 @@ public class NodeRuleHelper
             return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries
-        var start = (specs.Start ?? s.Start)?.Trim();
+        var start = (settings.Start ?? s.Start)?.Trim();
 
         // Case 2: '.' - not yet tested
-        var startLevel = s.Level ?? specs.Level ?? MagicMenuSettings.StartLevelFallback;
-        var getChildren = s.Children ?? specs.Children ?? MagicMenuSettings.ChildrenFallback;
+        var startLevel = s.Level ?? settings.Level ?? MagicMenuSettings.StartLevelFallback;
+        var getChildren = s.Children ?? settings.Children ?? MagicMenuSettings.ChildrenFallback;
         var startingPoints = GetStartNodeRules(start, startLevel, getChildren);
         // Case 3: one or more IDs to start from
 

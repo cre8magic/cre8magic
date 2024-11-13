@@ -1,6 +1,7 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumb.Settings;
+using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal.Menu;
 
 namespace ToSic.Cre8magic.Pages.Internal;
@@ -42,7 +43,7 @@ internal class MagicPageService() : IMagicPageService
     public IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default) =>
         PageFactory.Breadcrumb.Get(specs);
 
-    public IMagicPageList GetMenu(MagicMenuGetSpecsWip? specs = default)
+    public IMagicPageList GetMenu(MagicMenuSettings? specs = default)
     {
         specs ??= new();
         var rootBuilder = new MagicMenuFactoryRoot(PageState, specs);

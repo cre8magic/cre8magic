@@ -7,14 +7,14 @@ namespace ToSic.Cre8magic.Pages.Internal.Menu;
 
 internal class MagicMenuFactoryRoot
 {
-    public MagicMenuFactoryRoot(PageState pageState, MagicMenuGetSpecsWip specs)
+    public MagicMenuFactoryRoot(PageState pageState, MagicMenuSettings specs)
     {
         Specs = specs;
         PageFactory = new(pageState, specs.Pages);
         Factory = new(PageFactory, specs, () => MaxDepth);
         Factory.Set(specs.MagicSettings);
         Factory.Set(specs.Designer);
-        Factory.Set(specs.Settings);
+        Factory.Set(specs/*.Settings*/);
         Log = new LogRoot().GetLog("root");
         //Log = SetHelper.LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
@@ -35,11 +35,11 @@ internal class MagicMenuFactoryRoot
 
 
 
-    internal MagicMenuGetSpecsWip Specs { get; }
+    internal MagicMenuSettings Specs { get; }
 
     internal MagicMenuFactory Factory { get; }
 
-    public int MaxDepth => _maxDepth ??= Specs.Depth ?? Specs.Settings?.Depth ?? MagicMenuSettings.LevelDepthFallback;
+    public int MaxDepth => _maxDepth ??= Specs.Depth ?? Specs.Depth ?? MagicMenuSettings.LevelDepthFallback;
     private int? _maxDepth;
 
     public List<IMagicPageWithDesignWip> GetChildren()
