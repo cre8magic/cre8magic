@@ -5,6 +5,7 @@ using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Pages.Internal.Menu;
 
+// TODO: probably merge into the MagicMenuService
 internal class MagicMenuFactoryRoot
 {
     public MagicMenuFactoryRoot(PageState pageState, MagicMenuSettings settings, List<string>? debugMessages)

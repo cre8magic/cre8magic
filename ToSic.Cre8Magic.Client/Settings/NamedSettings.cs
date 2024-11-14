@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 /// <typeparam name="T"></typeparam>
 // TODO: CONTINUE HERE - ICANCLONE REQUIREMENT
-public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>> where T : class // , ICanClone<T>
+public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>> where T : class, ICanClone<T>
 {
     public NamedSettings() : base(InvariantCultureIgnoreCase) { }
 

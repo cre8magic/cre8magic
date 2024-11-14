@@ -92,8 +92,28 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private NamedSettingsReader<MagicThemeSettings> Theme =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults,
             cat => cat.Themes,
-            (name) => json => json.Replace("\"=\"", $"\"{name}\"")
-        );
+            (name) => json =>
+            {
+                if (json == null) return null;
+                return json.Replace("\"=\"", $"\"{name}\"");
+            },
+            // Special processing, to swap default design term "=" which means it's the same as the name
+            modify: (name, settings) =>
+            {
+                // If settings has a design which should match the name, insert it now
+                settings = settings.Design == InheritName ? settings with { Design = name } : settings;
+                if (settings.Parts.Count == 0)
+                    return settings;
+
+                var modParts = settings.Parts.ToDictionary(
+                    p => p.Key,
+                    p => p.Value.Design == InheritName ? p.Value with { Design = name } : p.Value
+                );
+
+                settings = settings with { Parts = new(modParts) };
+
+                return settings;
+            });
     private NamedSettingsReader<MagicThemeSettings>? _getTheme;
 
     NamedSettingsReader<MagicMenuSettings> IMagicSettingsService.MenuSettings =>
