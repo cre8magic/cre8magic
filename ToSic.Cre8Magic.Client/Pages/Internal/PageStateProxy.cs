@@ -1,9 +1,20 @@
-﻿using Oqtane.Models;
-using Oqtane.Shared;
-using Oqtane.UI;
+﻿using Oqtane.UI;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
+/// <summary>
+/// Wrapper for PageState, so that we can "inject" a debug state to a specific menu.
+/// This is just for internal development.
+///
+/// Goal is that if we have a page with a lot of test-menus, we can provide
+/// this instead of the real PageState, and then we can stop
+/// in certain places - only for this menu.
+///
+/// To do that, see the extension methods below.
+///
+/// Usage ca.:
+/// if (PageState.IsDebug()) PageState.DoNothing(); // set breakpoint here
+/// </summary>
 public class PageStateProxy : PageState
 {
     public PageStateProxy(PageState pageState, bool debug = false)
@@ -34,20 +45,29 @@ public class PageStateProxy : PageState
         RenderId = pageState.RenderId;
         Refresh = pageState.Refresh;
     }
-    // Do extra stuff here if needed
 
+    /// <summary>
+    /// Debug state to check if we should debug this case.
+    /// </summary>
     public bool Debug { get; }
 
+    /// <summary>
+    /// Underlying PageState, in case we think the proxy is broken.
+    /// </summary>
     public PageState PageState { get; }
 }
 
 public static class PageStateProxyExtensions
 {
-    public static PageStateProxy ToProxy(this PageState pageState, bool debug = false)
-    {
-        return new PageStateProxy(pageState, debug);
-    }
+    /// <summary>
+    /// Convert to proxy
+    /// </summary>
+    public static PageStateProxy ToProxy(this PageState pageState, bool debug = false) => new(pageState, debug);
 
+    /// <summary>
+    /// Check if we should debug this.
+    /// </summary>
+    /// <param name="pageState"></param>
     public static bool IsDebug(this PageState pageState) => pageState is PageStateProxy { Debug: true };
 
     public static void DoNothing(this PageState pageState) { }
