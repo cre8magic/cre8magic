@@ -1,0 +1,422 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Pages.IMagicPageList
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageList
+  id: IMagicPageList
+  parent: ToSic.Cre8magic.Pages
+  children:
+  - ToSic.Cre8magic.Pages.IMagicPageList.Classes(System.String)
+  - ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel
+  - ToSic.Cre8magic.Pages.IMagicPageList.Settings
+  - ToSic.Cre8magic.Pages.IMagicPageList.Value(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IMagicPageList
+  nameWithType: IMagicPageList
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicPageList
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+    startLine: 13
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    A list of magic pages with design capabilities.
+
+
+    It does not represent a page itself, but a list of pages.
+
+    For example, a breadcrumb or a menu.
+
+
+    It can be iterated to get the pages.
+  example: []
+  syntax:
+    content: 'public interface IMagicPageList : IEnumerable<IMagicPageWithDesignWip>, IEnumerable'
+    content.vb: Public Interface IMagicPageList Inherits IEnumerable(Of IMagicPageWithDesignWip), IEnumerable
+  inheritedMembers:
+  - System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPageWithDesignWip}.GetEnumerator
+- uid: ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel
+  id: MenuLevel
+  parent: ToSic.Cre8magic.Pages.IMagicPageList
+  langs:
+  - csharp
+  - vb
+  name: MenuLevel
+  nameWithType: IMagicPageList.MenuLevel
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MenuLevel
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+    startLine: 20
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    The depth in the current menu, starting from 1.
+
+    Can be different from the normal Level, since it starts at 1 (not 0)
+
+    and if the menu starts at level 2 or 3, this will still be 1.
+  example: []
+  syntax:
+    content: int MenuLevel { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property MenuLevel As Integer
+  overload: ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel*
+- uid: ToSic.Cre8magic.Pages.IMagicPageList.Classes(System.String)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageList.Classes(System.String)
+  id: Classes(System.String)
+  parent: ToSic.Cre8magic.Pages.IMagicPageList
+  langs:
+  - csharp
+  - vb
+  name: Classes(string)
+  nameWithType: IMagicPageList.Classes(string)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList.Classes(string)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Classes
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+    startLine: 27
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Get css class for tag.
+  example: []
+  syntax:
+    content: string? Classes(string tag)
+    parameters:
+    - id: tag
+      type: System.String
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Function Classes(tag As String) As String
+  overload: ToSic.Cre8magic.Pages.IMagicPageList.Classes*
+  nameWithType.vb: IMagicPageList.Classes(String)
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageList.Classes(String)
+  name.vb: Classes(String)
+- uid: ToSic.Cre8magic.Pages.IMagicPageList.Value(System.String)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageList.Value(System.String)
+  id: Value(System.String)
+  parent: ToSic.Cre8magic.Pages.IMagicPageList
+  langs:
+  - csharp
+  - vb
+  name: Value(string)
+  nameWithType: IMagicPageList.Value(string)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList.Value(string)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Value
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+    startLine: 34
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: Get attribute value.
+  example: []
+  syntax:
+    content: string? Value(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Function Value(key As String) As String
+  overload: ToSic.Cre8magic.Pages.IMagicPageList.Value*
+  nameWithType.vb: IMagicPageList.Value(String)
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageList.Value(String)
+  name.vb: Value(String)
+- uid: ToSic.Cre8magic.Pages.IMagicPageList.Settings
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPageList.Settings
+  id: Settings
+  parent: ToSic.Cre8magic.Pages.IMagicPageList
+  langs:
+  - csharp
+  - vb
+  name: Settings
+  nameWithType: IMagicPageList.Settings
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList.Settings
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Settings
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs
+    startLine: 36
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  syntax:
+    content: IMagicPageSetSettings Settings { get; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+    content.vb: ReadOnly Property Settings As IMagicPageSetSettings
+  overload: ToSic.Cre8magic.Pages.IMagicPageList.Settings*
+references:
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+- uid: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPageWithDesignWip}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPageWithDesignWip}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPageWithDesignWip}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<IMagicPageWithDesignWip>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<ToSic.Cre8magic.Pages.IMagicPageWithDesignWip>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of IMagicPageWithDesignWip).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ToSic.Cre8magic.Pages.IMagicPageWithDesignWip).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPageWithDesignWip}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPageWithDesignWip}.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPageWithDesignWip}
+  commentId: T:System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPageWithDesignWip}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<IMagicPageWithDesignWip>
+  nameWithType: IEnumerable<IMagicPageWithDesignWip>
+  fullName: System.Collections.Generic.IEnumerable<ToSic.Cre8magic.Pages.IMagicPageWithDesignWip>
+  nameWithType.vb: IEnumerable(Of IMagicPageWithDesignWip)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ToSic.Cre8magic.Pages.IMagicPageWithDesignWip)
+  name.vb: IEnumerable(Of IMagicPageWithDesignWip)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+    name: IMagicPageWithDesignWip
+    href: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+    name: IMagicPageWithDesignWip
+    href: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel
+  href: ToSic.Cre8magic.Pages.IMagicPageList.html#ToSic_Cre8magic_Pages_IMagicPageList_MenuLevel
+  name: MenuLevel
+  nameWithType: IMagicPageList.MenuLevel
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Pages.IMagicPageList.Classes*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageList.Classes
+  href: ToSic.Cre8magic.Pages.IMagicPageList.html#ToSic_Cre8magic_Pages_IMagicPageList_Classes_System_String_
+  name: Classes
+  nameWithType: IMagicPageList.Classes
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList.Classes
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Pages.IMagicPageList.Value*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageList.Value
+  href: ToSic.Cre8magic.Pages.IMagicPageList.html#ToSic_Cre8magic_Pages_IMagicPageList_Value_System_String_
+  name: Value
+  nameWithType: IMagicPageList.Value
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList.Value
+- uid: ToSic.Cre8magic.Pages.IMagicPageList.Settings*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageList.Settings
+  href: ToSic.Cre8magic.Pages.IMagicPageList.html#ToSic_Cre8magic_Pages_IMagicPageList_Settings
+  name: Settings
+  nameWithType: IMagicPageList.Settings
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList.Settings
+- uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageSetSettings.html
+  name: IMagicPageSetSettings
+  nameWithType: IMagicPageSetSettings
+  fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings

@@ -1,0 +1,79 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Pages.Internal
+  commentId: N:ToSic.Cre8magic.Pages.Internal
+  id: Internal
+  parent: ToSic.Cre8magic.Pages
+  children:
+  - ToSic.Cre8magic.Pages.Internal.MagicPageFactory
+  - ToSic.Cre8magic.Pages.Internal.PageStateProxy
+  - ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Pages.Internal
+  nameWithType: ToSic.Cre8magic.Pages.Internal
+  fullName: ToSic.Cre8magic.Pages.Internal
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
+  commentId: T:ToSic.Cre8magic.Pages.Internal.MagicPageFactory
+  parent: ToSic.Cre8magic.Pages.Internal
+  href: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html
+  name: MagicPageFactory
+  nameWithType: MagicPageFactory
+  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
+- uid: ToSic.Cre8magic.Pages.Internal.PageStateProxy
+  commentId: T:ToSic.Cre8magic.Pages.Internal.PageStateProxy
+  parent: ToSic.Cre8magic.Pages.Internal
+  href: ToSic.Cre8magic.Pages.Internal.PageStateProxy.html
+  name: PageStateProxy
+  nameWithType: PageStateProxy
+  fullName: ToSic.Cre8magic.Pages.Internal.PageStateProxy
+- uid: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions
+  commentId: T:ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions
+  parent: ToSic.Cre8magic.Pages.Internal
+  href: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.html
+  name: PageStateProxyExtensions
+  nameWithType: PageStateProxyExtensions
+  fullName: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions
+- uid: ToSic.Cre8magic.Pages.Internal
+  commentId: N:ToSic.Cre8magic.Pages.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages.Internal
+  nameWithType: ToSic.Cre8magic.Pages.Internal
+  fullName: ToSic.Cre8magic.Pages.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Pages.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Pages.Internal.html

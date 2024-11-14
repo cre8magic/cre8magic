@@ -23,7 +23,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LanguageService
     path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
@@ -34,8 +34,8 @@ items:
   - System.Object
   - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
   inheritedMembers:
-  - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
-  - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
+  - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
+  - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -61,7 +61,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
-    startLine: 16
+    startLine: 18
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
@@ -97,7 +97,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ShowMenu
     path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
@@ -131,7 +131,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LanguagesToShow
     path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
-    startLine: 25
+    startLine: 27
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
@@ -141,7 +141,7 @@ items:
     - id: siteId
       type: System.Int32
     return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.List{ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage}}
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{ToSic.Cre8magic.Languages.Settings.MagicLanguage}}
     content.vb: Public Function LanguagesToShow(siteId As Integer) As Task(Of List(Of MagicLanguage))
   overload: ToSic.Cre8magic.Client.Services.LanguageService.LanguagesToShow*
   nameWithType.vb: LanguageService.LanguagesToShow(Integer)
@@ -165,7 +165,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SetCultureAsync
     path: ../ToSic.Cre8Magic.Client/Services/LanguageService.cs
-    startLine: 72
+    startLine: 74
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
@@ -238,38 +238,38 @@ references:
   name: MagicServiceWithSettingsBase
   nameWithType: MagicServiceWithSettingsBase
   fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
-- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
-  commentId: M:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
+- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
+  commentId: M:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
   parent: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
-  href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_InitSettings_ToSic_Cre8magic_Client_Settings_MagicSettings_
-  name: InitSettings(MagicSettings)
-  nameWithType: MagicServiceWithSettingsBase.InitSettings(MagicSettings)
-  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
+  href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_InitSettings_ToSic_Cre8magic_Settings_MagicAllSettings_
+  name: InitSettings(MagicAllSettings)
+  nameWithType: MagicServiceWithSettingsBase.InitSettings(MagicAllSettings)
+  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
+  - uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
     name: InitSettings
-    href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_InitSettings_ToSic_Cre8magic_Client_Settings_MagicSettings_
+    href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_InitSettings_ToSic_Cre8magic_Settings_MagicAllSettings_
   - name: (
-  - uid: ToSic.Cre8magic.Client.Settings.MagicSettings
-    name: MagicSettings
-    href: ToSic.Cre8magic.Client.Settings.MagicSettings.html
+  - uid: ToSic.Cre8magic.Settings.MagicAllSettings
+    name: MagicAllSettings
+    href: ToSic.Cre8magic.Settings.MagicAllSettings.html
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
+  - uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
     name: InitSettings
-    href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_InitSettings_ToSic_Cre8magic_Client_Settings_MagicSettings_
+    href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_InitSettings_ToSic_Cre8magic_Settings_MagicAllSettings_
   - name: (
-  - uid: ToSic.Cre8magic.Client.Settings.MagicSettings
-    name: MagicSettings
-    href: ToSic.Cre8magic.Client.Settings.MagicSettings.html
+  - uid: ToSic.Cre8magic.Settings.MagicAllSettings
+    name: MagicAllSettings
+    href: ToSic.Cre8magic.Settings.MagicAllSettings.html
   - name: )
-- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
-  commentId: P:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
+- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
+  commentId: P:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
   parent: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
-  href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_Settings
-  name: Settings
-  nameWithType: MagicServiceWithSettingsBase.Settings
-  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
+  href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_AllSettings
+  name: AllSettings
+  nameWithType: MagicServiceWithSettingsBase.AllSettings
+  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -738,16 +738,16 @@ references:
   name: LanguagesToShow
   nameWithType: LanguageService.LanguagesToShow
   fullName: ToSic.Cre8magic.Client.Services.LanguageService.LanguagesToShow
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage}}
-  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage}}
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{ToSic.Cre8magic.Languages.Settings.MagicLanguage}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{ToSic.Cre8magic.Languages.Settings.MagicLanguage}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   name: Task<List<MagicLanguage>>
   nameWithType: Task<List<MagicLanguage>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<ToSic.Cre8magic.Languages.Settings.MagicLanguage>>
   nameWithType.vb: Task(Of List(Of MagicLanguage))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of ToSic.Cre8magic.Languages.Settings.MagicLanguage))
   name.vb: Task(Of List(Of MagicLanguage))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
@@ -760,9 +760,9 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage
+  - uid: ToSic.Cre8magic.Languages.Settings.MagicLanguage
     name: MagicLanguage
-    href: ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage.html
+    href: ToSic.Cre8magic.Languages.Settings.MagicLanguage.html
   - name: '>'
   - name: '>'
   spec.vb:
@@ -780,9 +780,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage
+  - uid: ToSic.Cre8magic.Languages.Settings.MagicLanguage
     name: MagicLanguage
-    href: ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage.html
+    href: ToSic.Cre8magic.Languages.Settings.MagicLanguage.html
   - name: )
   - name: )
 - uid: ToSic.Cre8magic.Client.Services.LanguageService.SetCultureAsync*

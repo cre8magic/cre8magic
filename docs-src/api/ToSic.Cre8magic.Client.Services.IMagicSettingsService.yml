@@ -1,0 +1,322 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  commentId: T:ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  id: IMagicSettingsService
+  parent: ToSic.Cre8magic.Client.Services
+  children:
+  - ToSic.Cre8magic.Client.Services.IMagicSettingsService.GetSettings(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IMagicSettingsService
+  nameWithType: IMagicSettingsService
+  fullName: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Services/IMagicSettingsService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicSettingsService
+    path: ../ToSic.Cre8Magic.Client/Services/IMagicSettingsService.cs
+    startLine: 12
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Services
+  syntax:
+    content: 'public interface IMagicSettingsService : IHasSettingsExceptions'
+    content.vb: Public Interface IMagicSettingsService Inherits IHasSettingsExceptions
+  inheritedMembers:
+  - ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.HasExceptions
+  - ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.Exceptions
+- uid: ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String,System.String)
+  commentId: M:ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String,System.String)
+  id: Setup(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String,System.String)
+  parent: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  langs:
+  - csharp
+  - vb
+  name: Setup(MagicPackageSettings, string?, string?)
+  nameWithType: IMagicSettingsService.Setup(MagicPackageSettings, string?, string?)
+  fullName: ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings, string?, string?)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Services/IMagicSettingsService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Setup
+    path: ../ToSic.Cre8Magic.Client/Services/IMagicSettingsService.cs
+    startLine: 23
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Services
+  summary: >-
+    Set up the settings service with the package settings, layout name and body classes.
+
+    This will result in other controls and services being able to use these settings.
+
+    Otherwise, the settings are just defaulted to some standard values.
+  example: []
+  syntax:
+    content: IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName, string? bodyClasses)
+    parameters:
+    - id: packageSettings
+      type: ToSic.Cre8magic.Settings.MagicPackageSettings
+      description: ''
+    - id: layoutName
+      type: System.String
+      description: ''
+    - id: bodyClasses
+      type: System.String
+      description: ''
+    return:
+      type: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+      description: ''
+    content.vb: Function Setup(packageSettings As MagicPackageSettings, layoutName As String, bodyClasses As String) As IMagicSettingsService
+  overload: ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup*
+  nameWithType.vb: IMagicSettingsService.Setup(MagicPackageSettings, String, String)
+  fullName.vb: ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings, String, String)
+  name.vb: Setup(MagicPackageSettings, String, String)
+- uid: ToSic.Cre8magic.Client.Services.IMagicSettingsService.GetSettings(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Client.Services.IMagicSettingsService.GetSettings(Oqtane.UI.PageState)
+  id: GetSettings(Oqtane.UI.PageState)
+  parent: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  langs:
+  - csharp
+  - vb
+  name: GetSettings(PageState)
+  nameWithType: IMagicSettingsService.GetSettings(PageState)
+  fullName: ToSic.Cre8magic.Client.Services.IMagicSettingsService.GetSettings(Oqtane.UI.PageState)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Services/IMagicSettingsService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: GetSettings
+    path: ../ToSic.Cre8Magic.Client/Services/IMagicSettingsService.cs
+    startLine: 25
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Services
+  syntax:
+    content: MagicAllSettings GetSettings(PageState pageState)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    return:
+      type: ToSic.Cre8magic.Settings.MagicAllSettings
+    content.vb: Function GetSettings(pageState As PageState) As MagicAllSettings
+  overload: ToSic.Cre8magic.Client.Services.IMagicSettingsService.GetSettings*
+references:
+- uid: ToSic.Cre8magic.Client.Services
+  commentId: N:ToSic.Cre8magic.Client.Services
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Services
+  nameWithType: ToSic.Cre8magic.Client.Services
+  fullName: ToSic.Cre8magic.Client.Services
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Services
+    name: Services
+    href: ToSic.Cre8magic.Client.Services.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Services
+    name: Services
+    href: ToSic.Cre8magic.Client.Services.html
+- uid: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.HasExceptions
+  commentId: P:ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.HasExceptions
+  parent: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
+  href: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.html#ToSic_Cre8magic_Settings_Internal_IHasSettingsExceptions_HasExceptions
+  name: HasExceptions
+  nameWithType: IHasSettingsExceptions.HasExceptions
+  fullName: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.HasExceptions
+- uid: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.Exceptions
+  commentId: P:ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.Exceptions
+  parent: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
+  href: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.html#ToSic_Cre8magic_Settings_Internal_IHasSettingsExceptions_Exceptions
+  name: Exceptions
+  nameWithType: IHasSettingsExceptions.Exceptions
+  fullName: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.Exceptions
+- uid: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
+  commentId: T:ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
+  parent: ToSic.Cre8magic.Settings.Internal
+  href: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.html
+  name: IHasSettingsExceptions
+  nameWithType: IHasSettingsExceptions
+  fullName: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
+- uid: ToSic.Cre8magic.Settings.Internal
+  commentId: N:ToSic.Cre8magic.Settings.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal
+  nameWithType: ToSic.Cre8magic.Settings.Internal
+  fullName: ToSic.Cre8magic.Settings.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+- uid: ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup*
+  commentId: Overload:ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup
+  href: ToSic.Cre8magic.Client.Services.IMagicSettingsService.html#ToSic_Cre8magic_Client_Services_IMagicSettingsService_Setup_ToSic_Cre8magic_Settings_MagicPackageSettings_System_String_System_String_
+  name: Setup
+  nameWithType: IMagicSettingsService.Setup
+  fullName: ToSic.Cre8magic.Client.Services.IMagicSettingsService.Setup
+- uid: ToSic.Cre8magic.Settings.MagicPackageSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicPackageSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
+  name: MagicPackageSettings
+  nameWithType: MagicPackageSettings
+  fullName: ToSic.Cre8magic.Settings.MagicPackageSettings
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  commentId: T:ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  parent: ToSic.Cre8magic.Client.Services
+  href: ToSic.Cre8magic.Client.Services.IMagicSettingsService.html
+  name: IMagicSettingsService
+  nameWithType: IMagicSettingsService
+  fullName: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Client.Services.IMagicSettingsService.GetSettings*
+  commentId: Overload:ToSic.Cre8magic.Client.Services.IMagicSettingsService.GetSettings
+  href: ToSic.Cre8magic.Client.Services.IMagicSettingsService.html#ToSic_Cre8magic_Client_Services_IMagicSettingsService_GetSettings_Oqtane_UI_PageState_
+  name: GetSettings
+  nameWithType: IMagicSettingsService.GetSettings
+  fullName: ToSic.Cre8magic.Client.Services.IMagicSettingsService.GetSettings
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: ToSic.Cre8magic.Settings.MagicAllSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicAllSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicAllSettings.html
+  name: MagicAllSettings
+  nameWithType: MagicAllSettings
+  fullName: ToSic.Cre8magic.Settings.MagicAllSettings
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true

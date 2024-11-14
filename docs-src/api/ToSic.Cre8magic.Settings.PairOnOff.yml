@@ -1,0 +1,805 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.PairOnOff
+  commentId: T:ToSic.Cre8magic.Settings.PairOnOff
+  id: PairOnOff
+  parent: ToSic.Cre8magic.Settings
+  children:
+  - ToSic.Cre8magic.Settings.PairOnOff.#ctor
+  - ToSic.Cre8magic.Settings.PairOnOff.#ctor(System.String,System.String)
+  - ToSic.Cre8magic.Settings.PairOnOff.CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+  - ToSic.Cre8magic.Settings.PairOnOff.Off
+  - ToSic.Cre8magic.Settings.PairOnOff.On
+  langs:
+  - csharp
+  - vb
+  name: PairOnOff
+  nameWithType: PairOnOff
+  fullName: ToSic.Cre8magic.Settings.PairOnOff
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PairOnOff
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+    startLine: 8
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Simple Object containing a setting to be used when a value is on or off.
+
+    Typically used to specify strings to place in classes when something is active, is home, etc.
+  example: []
+  syntax:
+    content: 'public class PairOnOff : ICanClone<PairOnOff>'
+    content.vb: Public Class PairOnOff Implements ICanClone(Of PairOnOff)
+  inheritance:
+  - System.Object
+  implements:
+  - ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - ToSic.Cre8magic.Settings.PairOnOff.ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(System.Nullable{System.Boolean})
+- uid: ToSic.Cre8magic.Settings.PairOnOff.#ctor
+  commentId: M:ToSic.Cre8magic.Settings.PairOnOff.#ctor
+  id: '#ctor'
+  parent: ToSic.Cre8magic.Settings.PairOnOff
+  langs:
+  - csharp
+  - vb
+  name: PairOnOff()
+  nameWithType: PairOnOff.PairOnOff()
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.PairOnOff()
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+    startLine: 13
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Empty constructor for JSON serialization
+  example: []
+  syntax:
+    content: public PairOnOff()
+    content.vb: Public Sub New()
+  overload: ToSic.Cre8magic.Settings.PairOnOff.#ctor*
+  nameWithType.vb: PairOnOff.New()
+  fullName.vb: ToSic.Cre8magic.Settings.PairOnOff.New()
+  name.vb: New()
+- uid: ToSic.Cre8magic.Settings.PairOnOff.#ctor(System.String,System.String)
+  commentId: M:ToSic.Cre8magic.Settings.PairOnOff.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: ToSic.Cre8magic.Settings.PairOnOff
+  langs:
+  - csharp
+  - vb
+  name: PairOnOff(string?, string?)
+  nameWithType: PairOnOff.PairOnOff(string?, string?)
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.PairOnOff(string?, string?)
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+    startLine: 15
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: public PairOnOff(string? on, string? off = null)
+    parameters:
+    - id: on
+      type: System.String
+    - id: off
+      type: System.String
+    content.vb: Public Sub New([on] As String, off As String = Nothing)
+  overload: ToSic.Cre8magic.Settings.PairOnOff.#ctor*
+  nameWithType.vb: PairOnOff.New(String, String)
+  fullName.vb: ToSic.Cre8magic.Settings.PairOnOff.New(String, String)
+  name.vb: New(String, String)
+- uid: ToSic.Cre8magic.Settings.PairOnOff.On
+  commentId: P:ToSic.Cre8magic.Settings.PairOnOff.On
+  id: On
+  parent: ToSic.Cre8magic.Settings.PairOnOff
+  langs:
+  - csharp
+  - vb
+  name: On
+  nameWithType: PairOnOff.On
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.On
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: On
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+    startLine: 24
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Value / Class to add if the setting is on
+  example: []
+  syntax:
+    content: public string? On { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property [On] As String
+  overload: ToSic.Cre8magic.Settings.PairOnOff.On*
+- uid: ToSic.Cre8magic.Settings.PairOnOff.Off
+  commentId: P:ToSic.Cre8magic.Settings.PairOnOff.Off
+  id: Off
+  parent: ToSic.Cre8magic.Settings.PairOnOff
+  langs:
+  - csharp
+  - vb
+  name: Off
+  nameWithType: PairOnOff.Off
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.Off
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Off
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+    startLine: 29
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Value / Class to add if the setting is off
+  example: []
+  syntax:
+    content: public string? Off { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Off As String
+  overload: ToSic.Cre8magic.Settings.PairOnOff.Off*
+- uid: ToSic.Cre8magic.Settings.PairOnOff.CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.PairOnOff.CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+  id: CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.PairOnOff
+  langs:
+  - csharp
+  - vb
+  name: CloneWith(PairOnOff?, bool)
+  nameWithType: PairOnOff.CloneWith(PairOnOff?, bool)
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.CloneWith(ToSic.Cre8magic.Settings.PairOnOff?, bool)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: CloneWith
+    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+    startLine: 31
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  example: []
+  syntax:
+    content: public PairOnOff CloneWith(PairOnOff? priority, bool forceCopy = false)
+    parameters:
+    - id: priority
+      type: ToSic.Cre8magic.Settings.PairOnOff
+    - id: forceCopy
+      type: System.Boolean
+    return:
+      type: ToSic.Cre8magic.Settings.PairOnOff
+    content.vb: Public Function CloneWith(priority As PairOnOff, forceCopy As Boolean = False) As PairOnOff
+  overload: ToSic.Cre8magic.Settings.PairOnOff.CloneWith*
+  implements:
+  - ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}.CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+  nameWithType.vb: PairOnOff.CloneWith(PairOnOff, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.PairOnOff.CloneWith(ToSic.Cre8magic.Settings.PairOnOff, Boolean)
+  name.vb: CloneWith(PairOnOff, Boolean)
+references:
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}
+  commentId: T:ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}
+  parent: ToSic.Cre8magic.Settings.Internal
+  definition: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  name: ICanClone<PairOnOff>
+  nameWithType: ICanClone<PairOnOff>
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<ToSic.Cre8magic.Settings.PairOnOff>
+  nameWithType.vb: ICanClone(Of PairOnOff)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of ToSic.Cre8magic.Settings.PairOnOff)
+  name.vb: ICanClone(Of PairOnOff)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+    name: ICanClone
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: <
+  - uid: ToSic.Cre8magic.Settings.PairOnOff
+    name: PairOnOff
+    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+    name: ICanClone
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Settings.PairOnOff
+    name: PairOnOff
+    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: ToSic.Cre8magic.Settings.PairOnOff.ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(System.Nullable{System.Boolean})
+  commentId: M:ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+  parent: ToSic.Cre8magic.Settings.PairOnOffExtensions
+  definition: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_PairOnOff_System_Nullable_System_Boolean__
+  name: Get(PairOnOff, bool?)
+  nameWithType: PairOnOffExtensions.Get(PairOnOff, bool?)
+  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff, bool?)
+  nameWithType.vb: PairOnOffExtensions.Get(PairOnOff, Boolean?)
+  fullName.vb: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff, Boolean?)
+  name.vb: Get(PairOnOff, Boolean?)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+    name: Get
+    href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_PairOnOff_System_Nullable_System_Boolean__
+  - name: (
+  - uid: ToSic.Cre8magic.Settings.PairOnOff
+    name: PairOnOff
+    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+    name: Get
+    href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_PairOnOff_System_Nullable_System_Boolean__
+  - name: (
+  - uid: ToSic.Cre8magic.Settings.PairOnOff
+    name: PairOnOff
+    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+  commentId: T:ToSic.Cre8magic.Settings.Internal.ICanClone`1
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  name: ICanClone<T>
+  nameWithType: ICanClone<T>
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>
+  nameWithType.vb: ICanClone(Of T)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T)
+  name.vb: ICanClone(Of T)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+    name: ICanClone
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+    name: ICanClone
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal
+  commentId: N:ToSic.Cre8magic.Settings.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal
+  nameWithType: ToSic.Cre8magic.Settings.Internal
+  fullName: ToSic.Cre8magic.Settings.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+- uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+  commentId: M:ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_PairOnOff_System_Nullable_System_Boolean__
+  name: Get(PairOnOff, bool?)
+  nameWithType: PairOnOffExtensions.Get(PairOnOff, bool?)
+  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff, bool?)
+  nameWithType.vb: PairOnOffExtensions.Get(PairOnOff, Boolean?)
+  fullName.vb: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff, Boolean?)
+  name.vb: Get(PairOnOff, Boolean?)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+    name: Get
+    href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_PairOnOff_System_Nullable_System_Boolean__
+  - name: (
+  - uid: ToSic.Cre8magic.Settings.PairOnOff
+    name: PairOnOff
+    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+    name: Get
+    href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_PairOnOff_System_Nullable_System_Boolean__
+  - name: (
+  - uid: ToSic.Cre8magic.Settings.PairOnOff
+    name: PairOnOff
+    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  - name: )
+- uid: ToSic.Cre8magic.Settings.PairOnOffExtensions
+  commentId: T:ToSic.Cre8magic.Settings.PairOnOffExtensions
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html
+  name: PairOnOffExtensions
+  nameWithType: PairOnOffExtensions
+  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions
+- uid: ToSic.Cre8magic.Settings.PairOnOff.#ctor*
+  commentId: Overload:ToSic.Cre8magic.Settings.PairOnOff.#ctor
+  href: ToSic.Cre8magic.Settings.PairOnOff.html#ToSic_Cre8magic_Settings_PairOnOff__ctor
+  name: PairOnOff
+  nameWithType: PairOnOff.PairOnOff
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.PairOnOff
+  nameWithType.vb: PairOnOff.New
+  fullName.vb: ToSic.Cre8magic.Settings.PairOnOff.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Settings.PairOnOff.On*
+  commentId: Overload:ToSic.Cre8magic.Settings.PairOnOff.On
+  href: ToSic.Cre8magic.Settings.PairOnOff.html#ToSic_Cre8magic_Settings_PairOnOff_On
+  name: On
+  nameWithType: PairOnOff.On
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.On
+- uid: ToSic.Cre8magic.Settings.PairOnOff.Off*
+  commentId: Overload:ToSic.Cre8magic.Settings.PairOnOff.Off
+  href: ToSic.Cre8magic.Settings.PairOnOff.html#ToSic_Cre8magic_Settings_PairOnOff_Off
+  name: Off
+  nameWithType: PairOnOff.Off
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.Off
+- uid: ToSic.Cre8magic.Settings.PairOnOff.CloneWith*
+  commentId: Overload:ToSic.Cre8magic.Settings.PairOnOff.CloneWith
+  href: ToSic.Cre8magic.Settings.PairOnOff.html#ToSic_Cre8magic_Settings_PairOnOff_CloneWith_ToSic_Cre8magic_Settings_PairOnOff_System_Boolean_
+  name: CloneWith
+  nameWithType: PairOnOff.CloneWith
+  fullName: ToSic.Cre8magic.Settings.PairOnOff.CloneWith
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}.CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}.CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}
+  definition: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  name: CloneWith(PairOnOff, bool)
+  nameWithType: ICanClone<PairOnOff>.CloneWith(PairOnOff, bool)
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<ToSic.Cre8magic.Settings.PairOnOff>.CloneWith(ToSic.Cre8magic.Settings.PairOnOff, bool)
+  nameWithType.vb: ICanClone(Of PairOnOff).CloneWith(PairOnOff, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of ToSic.Cre8magic.Settings.PairOnOff).CloneWith(ToSic.Cre8magic.Settings.PairOnOff, Boolean)
+  name.vb: CloneWith(PairOnOff, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}.CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+    name: CloneWith
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  - name: (
+  - uid: ToSic.Cre8magic.Settings.PairOnOff
+    name: PairOnOff
+    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Settings.PairOnOff}.CloneWith(ToSic.Cre8magic.Settings.PairOnOff,System.Boolean)
+    name: CloneWith
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  - name: (
+  - uid: ToSic.Cre8magic.Settings.PairOnOff
+    name: PairOnOff
+    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: ToSic.Cre8magic.Settings.PairOnOff
+  commentId: T:ToSic.Cre8magic.Settings.PairOnOff
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.PairOnOff.html
+  name: PairOnOff
+  nameWithType: PairOnOff
+  fullName: ToSic.Cre8magic.Settings.PairOnOff
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  name: CloneWith(T, bool)
+  nameWithType: ICanClone<T>.CloneWith(T, bool)
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>.CloneWith(T, bool)
+  nameWithType.vb: ICanClone(Of T).CloneWith(T, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T).CloneWith(T, Boolean)
+  name.vb: CloneWith(T, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+    name: CloneWith
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+    name: CloneWith
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )

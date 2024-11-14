@@ -1,0 +1,24 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Menus.Internal
+  commentId: N:ToSic.Cre8magic.Menus.Internal
+  id: Internal
+  parent: ToSic.Cre8magic.Menus
+  children:
+  - ToSic.Cre8magic.Menus.Internal.MagicMenuService
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Menus.Internal
+  nameWithType: ToSic.Cre8magic.Menus.Internal
+  fullName: ToSic.Cre8magic.Menus.Internal
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Menus.Internal.MagicMenuService
+  commentId: T:ToSic.Cre8magic.Menus.Internal.MagicMenuService
+  href: ToSic.Cre8magic.Menus.Internal.MagicMenuService.html
+  name: MagicMenuService
+  nameWithType: MagicMenuService
+  fullName: ToSic.Cre8magic.Menus.Internal.MagicMenuService

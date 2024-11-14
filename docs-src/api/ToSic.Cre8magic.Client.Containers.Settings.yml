@@ -18,7 +18,54 @@ items:
 references:
 - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
   commentId: T:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+  parent: ToSic.Cre8magic.Client.Containers.Settings
   href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html
   name: MagicContainerSettings
   nameWithType: MagicContainerSettings
   fullName: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+- uid: ToSic.Cre8magic.Client.Containers.Settings
+  commentId: N:ToSic.Cre8magic.Client.Containers.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Client.Containers.Settings
+  nameWithType: ToSic.Cre8magic.Client.Containers.Settings
+  fullName: ToSic.Cre8magic.Client.Containers.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Containers
+    name: Containers
+    href: ToSic.Cre8magic.Client.Containers.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Containers.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Client.Containers.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client
+    name: Client
+    href: ToSic.Cre8magic.Client.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Containers
+    name: Containers
+    href: ToSic.Cre8magic.Client.Containers.html
+  - name: .
+  - uid: ToSic.Cre8magic.Client.Containers.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Client.Containers.Settings.html

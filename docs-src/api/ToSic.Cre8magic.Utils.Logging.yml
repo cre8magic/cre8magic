@@ -1,0 +1,24 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Utils.Logging
+  commentId: N:ToSic.Cre8magic.Utils.Logging
+  id: Logging
+  parent: ToSic.Cre8magic.Utils
+  children:
+  - ToSic.Cre8magic.Utils.Logging.CodeRef
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Utils.Logging
+  nameWithType: ToSic.Cre8magic.Utils.Logging
+  fullName: ToSic.Cre8magic.Utils.Logging
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Utils.Logging.CodeRef
+  commentId: T:ToSic.Cre8magic.Utils.Logging.CodeRef
+  href: ToSic.Cre8magic.Utils.Logging.CodeRef.html
+  name: CodeRef
+  nameWithType: CodeRef
+  fullName: ToSic.Cre8magic.Utils.Logging.CodeRef

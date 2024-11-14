@@ -1,0 +1,38 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Themes
+  commentId: N:ToSic.Cre8magic.Themes
+  id: Themes
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.Themes.MagicContextAndSettings
+  - ToSic.Cre8magic.Themes.MagicThemeBase
+  - ToSic.Cre8magic.Themes.MagicThemeDebug
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Themes
+  nameWithType: ToSic.Cre8magic.Themes
+  fullName: ToSic.Cre8magic.Themes
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Themes.MagicContextAndSettings
+  commentId: T:ToSic.Cre8magic.Themes.MagicContextAndSettings
+  href: ToSic.Cre8magic.Themes.MagicContextAndSettings.html
+  name: MagicContextAndSettings
+  nameWithType: MagicContextAndSettings
+  fullName: ToSic.Cre8magic.Themes.MagicContextAndSettings
+- uid: ToSic.Cre8magic.Themes.MagicThemeBase
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemeBase
+  href: ToSic.Cre8magic.Themes.MagicThemeBase.html
+  name: MagicThemeBase
+  nameWithType: MagicThemeBase
+  fullName: ToSic.Cre8magic.Themes.MagicThemeBase
+- uid: ToSic.Cre8magic.Themes.MagicThemeDebug
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemeDebug
+  href: ToSic.Cre8magic.Themes.MagicThemeDebug.html
+  name: MagicThemeDebug
+  nameWithType: MagicThemeDebug
+  fullName: ToSic.Cre8magic.Themes.MagicThemeDebug

@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Languages
+  commentId: N:ToSic.Cre8magic.Languages
+  id: Languages
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.Languages.MagicLanguageDebug
+  - ToSic.Cre8magic.Languages.MagicLanguageMenuBase
+  - ToSic.Cre8magic.Languages.Settings
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Languages
+  nameWithType: ToSic.Cre8magic.Languages
+  fullName: ToSic.Cre8magic.Languages
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Languages.Settings
+  commentId: N:ToSic.Cre8magic.Languages.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Languages.Settings
+  nameWithType: ToSic.Cre8magic.Languages.Settings
+  fullName: ToSic.Cre8magic.Languages.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Languages
+    name: Languages
+    href: ToSic.Cre8magic.Languages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Languages.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Languages.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Languages
+    name: Languages
+    href: ToSic.Cre8magic.Languages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Languages.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Languages.Settings.html
+- uid: ToSic.Cre8magic.Languages.MagicLanguageDebug
+  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageDebug
+  href: ToSic.Cre8magic.Languages.MagicLanguageDebug.html
+  name: MagicLanguageDebug
+  nameWithType: MagicLanguageDebug
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageDebug
+- uid: ToSic.Cre8magic.Languages.MagicLanguageMenuBase
+  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageMenuBase
+  href: ToSic.Cre8magic.Languages.MagicLanguageMenuBase.html
+  name: MagicLanguageMenuBase
+  nameWithType: MagicLanguageMenuBase
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageMenuBase

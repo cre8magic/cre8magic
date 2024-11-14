@@ -5,11 +5,11 @@ items:
   id: MagicContainer
   parent: ToSic.Cre8magic.Client.Containers
   children:
+  - ToSic.Cre8magic.Client.Containers.MagicContainer.AllSettings
   - ToSic.Cre8magic.Client.Containers.MagicContainer.Classes(System.String)
   - ToSic.Cre8magic.Client.Containers.MagicContainer.CloseModal
   - ToSic.Cre8magic.Client.Containers.MagicContainer.Id(System.String)
   - ToSic.Cre8magic.Client.Containers.MagicContainer.NavigationManager
-  - ToSic.Cre8magic.Client.Containers.MagicContainer.Settings
   - ToSic.Cre8magic.Client.Containers.MagicContainer.UseAdminContainer
   - ToSic.Cre8magic.Client.Containers.MagicContainer.Value(System.String)
   langs:
@@ -26,13 +26,13 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicContainer
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
   syntax:
-    content: 'public class MagicContainer : ContainerBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IContainerControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner'
-    content.vb: Public Class MagicContainer Inherits ContainerBase Implements IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IContainerControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner
+    content: 'public class MagicContainer : ContainerBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IContainerControl, IMagicControlWithSettings, IMagicDesigner'
+    content.vb: Public Class MagicContainer Inherits ContainerBase Implements IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IContainerControl, IMagicControlWithSettings, IMagicDesigner
   inheritance:
   - System.Object
   - Microsoft.AspNetCore.Components.ComponentBase
@@ -45,7 +45,6 @@ items:
   - Oqtane.Themes.IThemeControl
   - Oqtane.Themes.IContainerControl
   - ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
-  - ToSic.Cre8magic.Client.Settings.IHasMagicSettings
   - ToSic.Cre8magic.Client.Controls.IMagicDesigner
   inheritedMembers:
   - Oqtane.Themes.ContainerBase.ShouldRender
@@ -101,25 +100,25 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ToSic.Cre8magic.Client.Containers.MagicContainer.Settings
-  commentId: P:ToSic.Cre8magic.Client.Containers.MagicContainer.Settings
-  id: Settings
+- uid: ToSic.Cre8magic.Client.Containers.MagicContainer.AllSettings
+  commentId: P:ToSic.Cre8magic.Client.Containers.MagicContainer.AllSettings
+  id: AllSettings
   parent: ToSic.Cre8magic.Client.Containers.MagicContainer
   langs:
   - csharp
   - vb
-  name: Settings
-  nameWithType: MagicContainer.Settings
-  fullName: ToSic.Cre8magic.Client.Containers.MagicContainer.Settings
+  name: AllSettings
+  nameWithType: MagicContainer.AllSettings
+  fullName: ToSic.Cre8magic.Client.Containers.MagicContainer.AllSettings
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Settings
+    id: AllSettings
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
@@ -128,18 +127,17 @@ items:
     content: >-
       [CascadingParameter]
 
-      public MagicSettings Settings { get; set; }
+      public MagicAllSettings AllSettings { get; set; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Client.Settings.MagicSettings
+      type: ToSic.Cre8magic.Settings.MagicAllSettings
     content.vb: >-
       <CascadingParameter>
 
-      Public Property Settings As MagicSettings
-  overload: ToSic.Cre8magic.Client.Containers.MagicContainer.Settings*
+      Public Property AllSettings As MagicAllSettings
+  overload: ToSic.Cre8magic.Client.Containers.MagicContainer.AllSettings*
   implements:
-  - ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.Settings
-  - ToSic.Cre8magic.Client.Settings.IHasMagicSettings.Settings
+  - ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.AllSettings
   attributes:
   - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
     ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
@@ -162,7 +160,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: NavigationManager
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
-    startLine: 10
+    startLine: 12
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
@@ -201,7 +199,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: CloseModal
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
@@ -227,7 +225,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
-    startLine: 19
+    startLine: 21
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
@@ -264,7 +262,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
@@ -301,7 +299,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
-    startLine: 21
+    startLine: 23
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
@@ -338,11 +336,11 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UseAdminContainer
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainer.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers
-  summary: Modules are treated as admin modules (and must use the the admin container) if they are marked as such, or come from the Oqtane ....Admin... type
+  summary: Modules are treated as admin modules (and must use the admin container) if they are marked as such, or come from the Oqtane ....Admin... type
   example: []
   syntax:
     content: protected bool UseAdminContainer { get; }
@@ -473,13 +471,6 @@ references:
   name: IMagicControlWithSettings
   nameWithType: IMagicControlWithSettings
   fullName: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
-- uid: ToSic.Cre8magic.Client.Settings.IHasMagicSettings
-  commentId: T:ToSic.Cre8magic.Client.Settings.IHasMagicSettings
-  parent: ToSic.Cre8magic.Client.Settings
-  href: ToSic.Cre8magic.Client.Settings.IHasMagicSettings.html
-  name: IHasMagicSettings
-  nameWithType: IHasMagicSettings
-  fullName: ToSic.Cre8magic.Client.Settings.IHasMagicSettings
 - uid: ToSic.Cre8magic.Client.Controls.IMagicDesigner
   commentId: T:ToSic.Cre8magic.Client.Controls.IMagicDesigner
   parent: ToSic.Cre8magic.Client.Controls
@@ -2439,12 +2430,32 @@ references:
   - uid: ToSic.Cre8magic.Client.Controls
     name: Controls
     href: ToSic.Cre8magic.Client.Controls.html
-- uid: ToSic.Cre8magic.Client.Settings
-  commentId: N:ToSic.Cre8magic.Client.Settings
+- uid: ToSic.Cre8magic.Client.Containers.MagicContainer.AllSettings*
+  commentId: Overload:ToSic.Cre8magic.Client.Containers.MagicContainer.AllSettings
+  href: ToSic.Cre8magic.Client.Containers.MagicContainer.html#ToSic_Cre8magic_Client_Containers_MagicContainer_AllSettings
+  name: AllSettings
+  nameWithType: MagicContainer.AllSettings
+  fullName: ToSic.Cre8magic.Client.Containers.MagicContainer.AllSettings
+- uid: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.AllSettings
+  commentId: P:ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.AllSettings
+  parent: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
+  href: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.html#ToSic_Cre8magic_Client_Controls_IMagicControlWithSettings_AllSettings
+  name: AllSettings
+  nameWithType: IMagicControlWithSettings.AllSettings
+  fullName: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.AllSettings
+- uid: ToSic.Cre8magic.Settings.MagicAllSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicAllSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicAllSettings.html
+  name: MagicAllSettings
+  nameWithType: MagicAllSettings
+  fullName: ToSic.Cre8magic.Settings.MagicAllSettings
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
   href: ToSic.html
-  name: ToSic.Cre8magic.Client.Settings
-  nameWithType: ToSic.Cre8magic.Client.Settings
-  fullName: ToSic.Cre8magic.Client.Settings
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -2454,13 +2465,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
+    href: ToSic.Cre8magic.Settings.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -2470,40 +2477,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
-- uid: ToSic.Cre8magic.Client.Containers.MagicContainer.Settings*
-  commentId: Overload:ToSic.Cre8magic.Client.Containers.MagicContainer.Settings
-  href: ToSic.Cre8magic.Client.Containers.MagicContainer.html#ToSic_Cre8magic_Client_Containers_MagicContainer_Settings
-  name: Settings
-  nameWithType: MagicContainer.Settings
-  fullName: ToSic.Cre8magic.Client.Containers.MagicContainer.Settings
-- uid: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.Settings
-  commentId: P:ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.Settings
-  parent: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
-  href: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.html#ToSic_Cre8magic_Client_Controls_IMagicControlWithSettings_Settings
-  name: Settings
-  nameWithType: IMagicControlWithSettings.Settings
-  fullName: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.Settings
-- uid: ToSic.Cre8magic.Client.Settings.IHasMagicSettings.Settings
-  commentId: P:ToSic.Cre8magic.Client.Settings.IHasMagicSettings.Settings
-  parent: ToSic.Cre8magic.Client.Settings.IHasMagicSettings
-  href: ToSic.Cre8magic.Client.Settings.IHasMagicSettings.html#ToSic_Cre8magic_Client_Settings_IHasMagicSettings_Settings
-  name: Settings
-  nameWithType: IHasMagicSettings.Settings
-  fullName: ToSic.Cre8magic.Client.Settings.IHasMagicSettings.Settings
-- uid: ToSic.Cre8magic.Client.Settings.MagicSettings
-  commentId: T:ToSic.Cre8magic.Client.Settings.MagicSettings
-  parent: ToSic.Cre8magic.Client.Settings
-  href: ToSic.Cre8magic.Client.Settings.MagicSettings.html
-  name: MagicSettings
-  nameWithType: MagicSettings
-  fullName: ToSic.Cre8magic.Client.Settings.MagicSettings
+    href: ToSic.Cre8magic.Settings.html
 - uid: ToSic.Cre8magic.Client.Containers.MagicContainer.NavigationManager*
   commentId: Overload:ToSic.Cre8magic.Client.Containers.MagicContainer.NavigationManager
   href: ToSic.Cre8magic.Client.Containers.MagicContainer.html#ToSic_Cre8magic_Client_Containers_MagicContainer_NavigationManager

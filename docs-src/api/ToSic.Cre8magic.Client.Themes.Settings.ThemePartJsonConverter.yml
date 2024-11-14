@@ -22,7 +22,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemePartJsonConverter
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
@@ -35,11 +35,11 @@ items:
   - System.Object
   - System.Text.Json.Serialization.JsonConverter
   - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
-  - ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
+  - ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
   inheritedMembers:
-  - ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.Logger
-  - ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  - ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  - ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.Logger
+  - ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  - ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
   - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.CanConvert(System.Type)
   - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
   - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
@@ -70,7 +70,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetNew
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
@@ -101,7 +101,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Write
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
@@ -142,7 +142,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Read
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Themes.Settings
@@ -268,30 +268,30 @@ references:
     name: MagicThemePartSettings
     href: ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings.html
   - name: )
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
-  commentId: T:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
-  parent: ToSic.Cre8magic.Client.Settings.Json
-  definition: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html
+- uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
+  commentId: T:ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
+  parent: ToSic.Cre8magic.Settings.Json
+  definition: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1
+  href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html
   name: JsonConverterBase<MagicThemePartSettings>
   nameWithType: JsonConverterBase<MagicThemePartSettings>
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings>
+  fullName: ToSic.Cre8magic.Settings.Json.JsonConverterBase<ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings>
   nameWithType.vb: JsonConverterBase(Of MagicThemePartSettings)
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.Json.JsonConverterBase(Of ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings)
   name.vb: JsonConverterBase(Of MagicThemePartSettings)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1
     name: JsonConverterBase
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html
   - name: <
   - uid: ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings
     name: MagicThemePartSettings
     href: ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings.html
   - name: '>'
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1
     name: JsonConverterBase
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html
   - name: (
   - name: Of
   - name: " "
@@ -299,30 +299,30 @@ references:
     name: MagicThemePartSettings
     href: ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings.html
   - name: )
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.Logger
-  commentId: P:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.Logger
-  parent: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
-  definition: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_Logger
+- uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.Logger
+  commentId: P:ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.Logger
+  parent: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
+  definition: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.Logger
+  href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_Logger
   name: Logger
   nameWithType: JsonConverterBase<MagicThemePartSettings>.Logger
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings>.Logger
+  fullName: ToSic.Cre8magic.Settings.Json.JsonConverterBase<ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings>.Logger
   nameWithType.vb: JsonConverterBase(Of MagicThemePartSettings).Logger
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings).Logger
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  commentId: M:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  parent: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
-  definition: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
+  fullName.vb: ToSic.Cre8magic.Settings.Json.JsonConverterBase(Of ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings).Logger
+- uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  parent: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
+  definition: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   name: GetOptionsWithoutThisConverter(JsonSerializerOptions)
   nameWithType: JsonConverterBase<MagicThemePartSettings>.GetOptionsWithoutThisConverter(JsonSerializerOptions)
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings>.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Settings.Json.JsonConverterBase<ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings>.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   nameWithType.vb: JsonConverterBase(Of MagicThemePartSettings).GetOptionsWithoutThisConverter(JsonSerializerOptions)
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings).GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Settings.Json.JsonConverterBase(Of ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings).GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
     name: GetOptionsWithoutThisConverter
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
@@ -330,29 +330,29 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
     name: GetOptionsWithoutThisConverter
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
-  commentId: M:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
-  parent: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
-  definition: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
+- uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  parent: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}
+  definition: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   name: ConvertObject(JsonObject, JsonSerializerOptions)
   nameWithType: JsonConverterBase<MagicThemePartSettings>.ConvertObject(JsonObject, JsonSerializerOptions)
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings>.ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Settings.Json.JsonConverterBase<ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings>.ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
   nameWithType.vb: JsonConverterBase(Of MagicThemePartSettings).ConvertObject(JsonObject, JsonSerializerOptions)
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings).ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Settings.Json.JsonConverterBase(Of ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings).ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
     name: ConvertObject
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.Nodes.JsonObject
     name: JsonObject
@@ -366,9 +366,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase{ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
     name: ConvertObject
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.Nodes.JsonObject
     name: JsonObject
@@ -847,37 +847,37 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
-  commentId: T:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html
+- uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1
+  commentId: T:ToSic.Cre8magic.Settings.Json.JsonConverterBase`1
+  href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html
   name: JsonConverterBase<T>
   nameWithType: JsonConverterBase<T>
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>
+  fullName: ToSic.Cre8magic.Settings.Json.JsonConverterBase<T>
   nameWithType.vb: JsonConverterBase(Of T)
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T)
+  fullName.vb: ToSic.Cre8magic.Settings.Json.JsonConverterBase(Of T)
   name.vb: JsonConverterBase(Of T)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1
     name: JsonConverterBase
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1
     name: JsonConverterBase
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html
   - name: (
   - name: Of
   - name: " "
   - name: T
   - name: )
-- uid: ToSic.Cre8magic.Client.Settings.Json
-  commentId: N:ToSic.Cre8magic.Client.Settings.Json
+- uid: ToSic.Cre8magic.Settings.Json
+  commentId: N:ToSic.Cre8magic.Settings.Json
   href: ToSic.html
-  name: ToSic.Cre8magic.Client.Settings.Json
-  nameWithType: ToSic.Cre8magic.Client.Settings.Json
-  fullName: ToSic.Cre8magic.Client.Settings.Json
+  name: ToSic.Cre8magic.Settings.Json
+  nameWithType: ToSic.Cre8magic.Settings.Json
+  fullName: ToSic.Cre8magic.Settings.Json
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -887,17 +887,13 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
+    href: ToSic.Cre8magic.Settings.html
   - name: .
-  - uid: ToSic.Cre8magic.Client.Settings.Json
+  - uid: ToSic.Cre8magic.Settings.Json
     name: Json
-    href: ToSic.Cre8magic.Client.Settings.Json.html
+    href: ToSic.Cre8magic.Settings.Json.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -907,38 +903,34 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
+    href: ToSic.Cre8magic.Settings.html
   - name: .
-  - uid: ToSic.Cre8magic.Client.Settings.Json
+  - uid: ToSic.Cre8magic.Settings.Json
     name: Json
-    href: ToSic.Cre8magic.Client.Settings.Json.html
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
-  commentId: P:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.Logger
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_Logger
+    href: ToSic.Cre8magic.Settings.Json.html
+- uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.Logger
+  commentId: P:ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.Logger
+  href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_Logger
   name: Logger
   nameWithType: JsonConverterBase<T>.Logger
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.Logger
+  fullName: ToSic.Cre8magic.Settings.Json.JsonConverterBase<T>.Logger
   nameWithType.vb: JsonConverterBase(Of T).Logger
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).Logger
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  commentId: M:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Settings.Json.JsonConverterBase(Of T).Logger
+- uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   isExternal: true
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
+  href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   name: GetOptionsWithoutThisConverter(JsonSerializerOptions)
   nameWithType: JsonConverterBase<T>.GetOptionsWithoutThisConverter(JsonSerializerOptions)
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Settings.Json.JsonConverterBase<T>.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   nameWithType.vb: JsonConverterBase(Of T).GetOptionsWithoutThisConverter(JsonSerializerOptions)
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Settings.Json.JsonConverterBase(Of T).GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
     name: GetOptionsWithoutThisConverter
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
@@ -946,28 +938,28 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
     name: GetOptionsWithoutThisConverter
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
-- uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
-  commentId: M:ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+- uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
   isExternal: true
-  href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
+  href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   name: ConvertObject(JsonObject, JsonSerializerOptions)
   nameWithType: JsonConverterBase<T>.ConvertObject(JsonObject, JsonSerializerOptions)
-  fullName: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase<T>.ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Settings.Json.JsonConverterBase<T>.ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
   nameWithType.vb: JsonConverterBase(Of T).ConvertObject(JsonObject, JsonSerializerOptions)
-  fullName.vb: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase(Of T).ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Settings.Json.JsonConverterBase(Of T).ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
     name: ConvertObject
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.Nodes.JsonObject
     name: JsonObject
@@ -981,9 +973,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
     name: ConvertObject
-    href: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Client_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
+    href: ToSic.Cre8magic.Settings.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.Nodes.JsonObject
     name: JsonObject

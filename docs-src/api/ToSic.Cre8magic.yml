@@ -1,16 +1,92 @@
 ### YamlMime:ManagedReference
 items:
 - uid: ToSic.Cre8magic
+  commentId: N:ToSic.Cre8magic
   id: ToSic.Cre8magic
   children:
+  - ToSic.Cre8magic.Analytics
+  - ToSic.Cre8magic.Breadcrumb
   - ToSic.Cre8magic.Client
+  - ToSic.Cre8magic.Controls
+  - ToSic.Cre8magic.JsModules
+  - ToSic.Cre8magic.Languages
+  - ToSic.Cre8magic.Menus
   - ToSic.Cre8magic.Pages
+  - ToSic.Cre8magic.Settings
+  - ToSic.Cre8magic.Startup
+  - ToSic.Cre8magic.Themes
+  - ToSic.Cre8magic.Utils
+  - ToSic.Cre8magic._Imports
   langs:
   - csharp
   - vb
   name: ToSic.Cre8magic
+  nameWithType: ToSic.Cre8magic
+  fullName: ToSic.Cre8magic
   type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Analytics
+  commentId: N:ToSic.Cre8magic.Analytics
+  href: ToSic.html
+  name: ToSic.Cre8magic.Analytics
+  nameWithType: ToSic.Cre8magic.Analytics
+  fullName: ToSic.Cre8magic.Analytics
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+- uid: ToSic.Cre8magic.Breadcrumb
+  commentId: N:ToSic.Cre8magic.Breadcrumb
+  href: ToSic.html
+  name: ToSic.Cre8magic.Breadcrumb
+  nameWithType: ToSic.Cre8magic.Breadcrumb
+  fullName: ToSic.Cre8magic.Breadcrumb
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumb
+    name: Breadcrumb
+    href: ToSic.Cre8magic.Breadcrumb.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumb
+    name: Breadcrumb
+    href: ToSic.Cre8magic.Breadcrumb.html
 - uid: ToSic.Cre8magic.Client
   commentId: N:ToSic.Cre8magic.Client
   href: ToSic.html
@@ -41,6 +117,126 @@ references:
   - uid: ToSic.Cre8magic.Client
     name: Client
     href: ToSic.Cre8magic.Client.html
+- uid: ToSic.Cre8magic.Controls
+  commentId: N:ToSic.Cre8magic.Controls
+  href: ToSic.html
+  name: ToSic.Cre8magic.Controls
+  nameWithType: ToSic.Cre8magic.Controls
+  fullName: ToSic.Cre8magic.Controls
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Controls
+    name: Controls
+    href: ToSic.Cre8magic.Controls.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Controls
+    name: Controls
+    href: ToSic.Cre8magic.Controls.html
+- uid: ToSic.Cre8magic.JsModules
+  commentId: N:ToSic.Cre8magic.JsModules
+  href: ToSic.html
+  name: ToSic.Cre8magic.JsModules
+  nameWithType: ToSic.Cre8magic.JsModules
+  fullName: ToSic.Cre8magic.JsModules
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.JsModules
+    name: JsModules
+    href: ToSic.Cre8magic.JsModules.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.JsModules
+    name: JsModules
+    href: ToSic.Cre8magic.JsModules.html
+- uid: ToSic.Cre8magic.Languages
+  commentId: N:ToSic.Cre8magic.Languages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Languages
+  nameWithType: ToSic.Cre8magic.Languages
+  fullName: ToSic.Cre8magic.Languages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Languages
+    name: Languages
+    href: ToSic.Cre8magic.Languages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Languages
+    name: Languages
+    href: ToSic.Cre8magic.Languages.html
+- uid: ToSic.Cre8magic.Menus
+  commentId: N:ToSic.Cre8magic.Menus
+  href: ToSic.html
+  name: ToSic.Cre8magic.Menus
+  nameWithType: ToSic.Cre8magic.Menus
+  fullName: ToSic.Cre8magic.Menus
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Menus
+    name: Menus
+    href: ToSic.Cre8magic.Menus.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Menus
+    name: Menus
+    href: ToSic.Cre8magic.Menus.html
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
   href: ToSic.html
@@ -71,3 +267,105 @@ references:
   - uid: ToSic.Cre8magic.Pages
     name: Pages
     href: ToSic.Cre8magic.Pages.html
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: ToSic.Cre8magic.Themes
+  commentId: N:ToSic.Cre8magic.Themes
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes
+  nameWithType: ToSic.Cre8magic.Themes
+  fullName: ToSic.Cre8magic.Themes
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+- uid: ToSic.Cre8magic.Utils
+  commentId: N:ToSic.Cre8magic.Utils
+  href: ToSic.html
+  name: ToSic.Cre8magic.Utils
+  nameWithType: ToSic.Cre8magic.Utils
+  fullName: ToSic.Cre8magic.Utils
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Utils
+    name: Utils
+    href: ToSic.Cre8magic.Utils.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Utils
+    name: Utils
+    href: ToSic.Cre8magic.Utils.html
+- uid: ToSic.Cre8magic.Startup
+  commentId: T:ToSic.Cre8magic.Startup
+  href: ToSic.Cre8magic.Startup.html
+  name: Startup
+  nameWithType: Startup
+  fullName: ToSic.Cre8magic.Startup
+- uid: ToSic.Cre8magic._Imports
+  commentId: T:ToSic.Cre8magic._Imports
+  href: ToSic.Cre8magic._Imports.html
+  name: _Imports
+  nameWithType: _Imports
+  fullName: ToSic.Cre8magic._Imports

@@ -1,0 +1,63 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Analytics
+  commentId: N:ToSic.Cre8magic.Analytics
+  id: Analytics
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.Analytics.MagicAnalyticsService
+  - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Analytics
+  nameWithType: ToSic.Cre8magic.Analytics
+  fullName: ToSic.Cre8magic.Analytics
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsService
+  commentId: T:ToSic.Cre8magic.Analytics.MagicAnalyticsService
+  parent: ToSic.Cre8magic.Analytics
+  href: ToSic.Cre8magic.Analytics.MagicAnalyticsService.html
+  name: MagicAnalyticsService
+  nameWithType: MagicAnalyticsService
+  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsService
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+  commentId: T:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+  parent: ToSic.Cre8magic.Analytics
+  href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  name: MagicAnalyticsSettings
+  nameWithType: MagicAnalyticsSettings
+  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+- uid: ToSic.Cre8magic.Analytics
+  commentId: N:ToSic.Cre8magic.Analytics
+  href: ToSic.html
+  name: ToSic.Cre8magic.Analytics
+  nameWithType: ToSic.Cre8magic.Analytics
+  fullName: ToSic.Cre8magic.Analytics
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html

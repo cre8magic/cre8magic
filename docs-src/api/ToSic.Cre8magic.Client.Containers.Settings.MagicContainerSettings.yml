@@ -5,6 +5,9 @@ items:
   id: MagicContainerSettings
   parent: ToSic.Cre8magic.Client.Containers.Settings
   children:
+  - ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor
+  - ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings)
+  - ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
   - ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.Custom
   langs:
   - csharp
@@ -20,18 +23,22 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicContainerSettings
     path: ../ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers.Settings
   syntax:
-    content: 'public class MagicContainerSettings : SettingsWithInherit'
-    content.vb: Public Class MagicContainerSettings Inherits SettingsWithInherit
+    content: 'public record MagicContainerSettings : SettingsWithInherit, IEquatable<SettingsWithInherit>, ICanClone<MagicContainerSettings>, IEquatable<MagicContainerSettings>'
+    content.vb: Public Class MagicContainerSettings Inherits SettingsWithInherit Implements IEquatable(Of SettingsWithInherit), ICanClone(Of MagicContainerSettings), IEquatable(Of MagicContainerSettings)
   inheritance:
   - System.Object
-  - ToSic.Cre8magic.Client.Settings.SettingsWithInherit
+  - ToSic.Cre8magic.Settings.SettingsWithInherit
+  implements:
+  - System.IEquatable{ToSic.Cre8magic.Settings.SettingsWithInherit}
+  - ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}
+  - System.IEquatable{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}
   inheritedMembers:
-  - ToSic.Cre8magic.Client.Settings.SettingsWithInherit.Inherits
+  - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -39,6 +46,108 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+- uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor
+  commentId: M:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor
+  id: '#ctor'
+  parent: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+  langs:
+  - csharp
+  - vb
+  name: MagicContainerSettings()
+  nameWithType: MagicContainerSettings.MagicContainerSettings()
+  fullName: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.MagicContainerSettings()
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
+    startLine: 7
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Containers.Settings
+  syntax:
+    content: public MagicContainerSettings()
+    content.vb: Public Sub New()
+  overload: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor*
+  nameWithType.vb: MagicContainerSettings.New()
+  fullName.vb: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.New()
+  name.vb: New()
+- uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings)
+  commentId: M:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings)
+  id: '#ctor(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings)'
+  parent: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+  langs:
+  - csharp
+  - vb
+  name: MagicContainerSettings(MagicContainerSettings?, MagicContainerSettings?)
+  nameWithType: MagicContainerSettings.MagicContainerSettings(MagicContainerSettings?, MagicContainerSettings?)
+  fullName: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.MagicContainerSettings(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings?, ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings?)
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Containers.Settings
+  syntax:
+    content: public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = null)
+    parameters:
+    - id: priority
+      type: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    - id: fallback
+      type: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    content.vb: Public Sub New(priority As MagicContainerSettings, fallback As MagicContainerSettings = Nothing)
+  overload: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor*
+  nameWithType.vb: MagicContainerSettings.New(MagicContainerSettings, MagicContainerSettings)
+  fullName.vb: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.New(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings, ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings)
+  name.vb: New(MagicContainerSettings, MagicContainerSettings)
+- uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
+  id: CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
+  parent: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+  langs:
+  - csharp
+  - vb
+  name: CloneWith(MagicContainerSettings?, bool)
+  nameWithType: MagicContainerSettings.CloneWith(MagicContainerSettings?, bool)
+  fullName: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings?, bool)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: CloneWith
+    path: ../ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
+    startLine: 16
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Client.Containers.Settings
+  example: []
+  syntax:
+    content: public MagicContainerSettings CloneWith(MagicContainerSettings? priority, bool forceCopy = false)
+    parameters:
+    - id: priority
+      type: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    - id: forceCopy
+      type: System.Boolean
+    return:
+      type: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    content.vb: Public Function CloneWith(priority As MagicContainerSettings, forceCopy As Boolean = False) As MagicContainerSettings
+  overload: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith*
+  implements:
+  - ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
+  nameWithType.vb: MagicContainerSettings.CloneWith(MagicContainerSettings, Boolean)
+  fullName.vb: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings, Boolean)
+  name.vb: CloneWith(MagicContainerSettings, Boolean)
 - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.Custom
   commentId: P:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.Custom
   id: Custom
@@ -57,15 +166,15 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Custom
     path: ../ToSic.Cre8Magic.Client/Containers/Settings/MagicContainerSettings.cs
-    startLine: 4
+    startLine: 20
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Containers.Settings
   syntax:
-    content: public NamedSettings<DesignSetting> Custom { get; set; }
+    content: public NamedSettings<DesignSetting> Custom { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Client.Settings.NamedSettings{ToSic.Cre8magic.Client.Settings.DesignSetting}
+      type: ToSic.Cre8magic.Settings.NamedSettings{ToSic.Cre8magic.Settings.DesignSetting}
     content.vb: Public Property Custom As NamedSettings(Of DesignSetting)
   overload: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.Custom*
 references:
@@ -126,20 +235,117 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ToSic.Cre8magic.Client.Settings.SettingsWithInherit
-  commentId: T:ToSic.Cre8magic.Client.Settings.SettingsWithInherit
-  parent: ToSic.Cre8magic.Client.Settings
-  href: ToSic.Cre8magic.Client.Settings.SettingsWithInherit.html
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit
+  commentId: T:ToSic.Cre8magic.Settings.SettingsWithInherit
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html
   name: SettingsWithInherit
   nameWithType: SettingsWithInherit
-  fullName: ToSic.Cre8magic.Client.Settings.SettingsWithInherit
-- uid: ToSic.Cre8magic.Client.Settings.SettingsWithInherit.Inherits
-  commentId: P:ToSic.Cre8magic.Client.Settings.SettingsWithInherit.Inherits
-  parent: ToSic.Cre8magic.Client.Settings.SettingsWithInherit
-  href: ToSic.Cre8magic.Client.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Client_Settings_SettingsWithInherit_Inherits
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
+- uid: System.IEquatable{ToSic.Cre8magic.Settings.SettingsWithInherit}
+  commentId: T:System.IEquatable{ToSic.Cre8magic.Settings.SettingsWithInherit}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<SettingsWithInherit>
+  nameWithType: IEquatable<SettingsWithInherit>
+  fullName: System.IEquatable<ToSic.Cre8magic.Settings.SettingsWithInherit>
+  nameWithType.vb: IEquatable(Of SettingsWithInherit)
+  fullName.vb: System.IEquatable(Of ToSic.Cre8magic.Settings.SettingsWithInherit)
+  name.vb: IEquatable(Of SettingsWithInherit)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit
+    name: SettingsWithInherit
+    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit
+    name: SettingsWithInherit
+    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}
+  commentId: T:ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}
+  parent: ToSic.Cre8magic.Settings.Internal
+  definition: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  name: ICanClone<MagicContainerSettings>
+  nameWithType: ICanClone<MagicContainerSettings>
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings>
+  nameWithType.vb: ICanClone(Of MagicContainerSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings)
+  name.vb: ICanClone(Of MagicContainerSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+    name: ICanClone
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: <
+  - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    name: MagicContainerSettings
+    href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+    name: ICanClone
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    name: MagicContainerSettings
+    href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html
+  - name: )
+- uid: System.IEquatable{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}
+  commentId: T:System.IEquatable{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<MagicContainerSettings>
+  nameWithType: IEquatable<MagicContainerSettings>
+  fullName: System.IEquatable<ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings>
+  nameWithType.vb: IEquatable(Of MagicContainerSettings)
+  fullName.vb: System.IEquatable(Of ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings)
+  name.vb: IEquatable(Of MagicContainerSettings)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    name: MagicContainerSettings
+    href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    name: MagicContainerSettings
+    href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html
+  - name: )
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+  commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+  parent: ToSic.Cre8magic.Settings.SettingsWithInherit
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits
   name: Inherits
   nameWithType: SettingsWithInherit.Inherits
-  fullName: ToSic.Cre8magic.Client.Settings.SettingsWithInherit.Inherits
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -366,12 +572,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Client.Settings
-  commentId: N:ToSic.Cre8magic.Client.Settings
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
   href: ToSic.html
-  name: ToSic.Cre8magic.Client.Settings
-  nameWithType: ToSic.Cre8magic.Client.Settings
-  fullName: ToSic.Cre8magic.Client.Settings
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -381,13 +587,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
+    href: ToSic.Cre8magic.Settings.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -397,70 +599,268 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
+    href: ToSic.Cre8magic.Settings.html
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+  commentId: T:ToSic.Cre8magic.Settings.Internal.ICanClone`1
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  name: ICanClone<T>
+  nameWithType: ICanClone<T>
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>
+  nameWithType.vb: ICanClone(Of T)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T)
+  name.vb: ICanClone(Of T)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+    name: ICanClone
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+    name: ICanClone
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal
+  commentId: N:ToSic.Cre8magic.Settings.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal
+  nameWithType: ToSic.Cre8magic.Settings.Internal
+  fullName: ToSic.Cre8magic.Settings.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+- uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor*
+  commentId: Overload:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.#ctor
+  href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html#ToSic_Cre8magic_Client_Containers_Settings_MagicContainerSettings__ctor
+  name: MagicContainerSettings
+  nameWithType: MagicContainerSettings.MagicContainerSettings
+  fullName: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.MagicContainerSettings
+  nameWithType.vb: MagicContainerSettings.New
+  fullName.vb: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.New
+  name.vb: New
+- uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+  commentId: T:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+  parent: ToSic.Cre8magic.Client.Containers.Settings
+  href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html
+  name: MagicContainerSettings
+  nameWithType: MagicContainerSettings
+  fullName: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+- uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith*
+  commentId: Overload:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith
+  href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html#ToSic_Cre8magic_Client_Containers_Settings_MagicContainerSettings_CloneWith_ToSic_Cre8magic_Client_Containers_Settings_MagicContainerSettings_System_Boolean_
+  name: CloneWith
+  nameWithType: MagicContainerSettings.CloneWith
+  fullName: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.CloneWith
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}
+  definition: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  name: CloneWith(MagicContainerSettings, bool)
+  nameWithType: ICanClone<MagicContainerSettings>.CloneWith(MagicContainerSettings, bool)
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings>.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings, bool)
+  nameWithType.vb: ICanClone(Of MagicContainerSettings).CloneWith(MagicContainerSettings, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings).CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings, Boolean)
+  name.vb: CloneWith(MagicContainerSettings, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
+    name: CloneWith
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  - name: (
+  - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    name: MagicContainerSettings
+    href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings}.CloneWith(ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings,System.Boolean)
+    name: CloneWith
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  - name: (
+  - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings
+    name: MagicContainerSettings
+    href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  name: CloneWith(T, bool)
+  nameWithType: ICanClone<T>.CloneWith(T, bool)
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>.CloneWith(T, bool)
+  nameWithType.vb: ICanClone(Of T).CloneWith(T, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T).CloneWith(T, Boolean)
+  name.vb: CloneWith(T, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+    name: CloneWith
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+    name: CloneWith
+    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
 - uid: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.Custom*
   commentId: Overload:ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.Custom
   href: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html#ToSic_Cre8magic_Client_Containers_Settings_MagicContainerSettings_Custom
   name: Custom
   nameWithType: MagicContainerSettings.Custom
   fullName: ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.Custom
-- uid: ToSic.Cre8magic.Client.Settings.NamedSettings{ToSic.Cre8magic.Client.Settings.DesignSetting}
-  commentId: T:ToSic.Cre8magic.Client.Settings.NamedSettings{ToSic.Cre8magic.Client.Settings.DesignSetting}
-  parent: ToSic.Cre8magic.Client.Settings
-  definition: ToSic.Cre8magic.Client.Settings.NamedSettings`1
-  href: ToSic.Cre8magic.Client.Settings.NamedSettings-1.html
+- uid: ToSic.Cre8magic.Settings.NamedSettings{ToSic.Cre8magic.Settings.DesignSetting}
+  commentId: T:ToSic.Cre8magic.Settings.NamedSettings{ToSic.Cre8magic.Settings.DesignSetting}
+  parent: ToSic.Cre8magic.Settings
+  definition: ToSic.Cre8magic.Settings.NamedSettings`1
+  href: ToSic.Cre8magic.Settings.NamedSettings-1.html
   name: NamedSettings<DesignSetting>
   nameWithType: NamedSettings<DesignSetting>
-  fullName: ToSic.Cre8magic.Client.Settings.NamedSettings<ToSic.Cre8magic.Client.Settings.DesignSetting>
+  fullName: ToSic.Cre8magic.Settings.NamedSettings<ToSic.Cre8magic.Settings.DesignSetting>
   nameWithType.vb: NamedSettings(Of DesignSetting)
-  fullName.vb: ToSic.Cre8magic.Client.Settings.NamedSettings(Of ToSic.Cre8magic.Client.Settings.DesignSetting)
+  fullName.vb: ToSic.Cre8magic.Settings.NamedSettings(Of ToSic.Cre8magic.Settings.DesignSetting)
   name.vb: NamedSettings(Of DesignSetting)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Settings.NamedSettings`1
+  - uid: ToSic.Cre8magic.Settings.NamedSettings`1
     name: NamedSettings
-    href: ToSic.Cre8magic.Client.Settings.NamedSettings-1.html
+    href: ToSic.Cre8magic.Settings.NamedSettings-1.html
   - name: <
-  - uid: ToSic.Cre8magic.Client.Settings.DesignSetting
+  - uid: ToSic.Cre8magic.Settings.DesignSetting
     name: DesignSetting
-    href: ToSic.Cre8magic.Client.Settings.DesignSetting.html
+    href: ToSic.Cre8magic.Settings.DesignSetting.html
   - name: '>'
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Settings.NamedSettings`1
+  - uid: ToSic.Cre8magic.Settings.NamedSettings`1
     name: NamedSettings
-    href: ToSic.Cre8magic.Client.Settings.NamedSettings-1.html
+    href: ToSic.Cre8magic.Settings.NamedSettings-1.html
   - name: (
   - name: Of
   - name: " "
-  - uid: ToSic.Cre8magic.Client.Settings.DesignSetting
+  - uid: ToSic.Cre8magic.Settings.DesignSetting
     name: DesignSetting
-    href: ToSic.Cre8magic.Client.Settings.DesignSetting.html
+    href: ToSic.Cre8magic.Settings.DesignSetting.html
   - name: )
-- uid: ToSic.Cre8magic.Client.Settings.NamedSettings`1
-  commentId: T:ToSic.Cre8magic.Client.Settings.NamedSettings`1
-  href: ToSic.Cre8magic.Client.Settings.NamedSettings-1.html
+- uid: ToSic.Cre8magic.Settings.NamedSettings`1
+  commentId: T:ToSic.Cre8magic.Settings.NamedSettings`1
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.NamedSettings-1.html
   name: NamedSettings<T>
   nameWithType: NamedSettings<T>
-  fullName: ToSic.Cre8magic.Client.Settings.NamedSettings<T>
+  fullName: ToSic.Cre8magic.Settings.NamedSettings<T>
   nameWithType.vb: NamedSettings(Of T)
-  fullName.vb: ToSic.Cre8magic.Client.Settings.NamedSettings(Of T)
+  fullName.vb: ToSic.Cre8magic.Settings.NamedSettings(Of T)
   name.vb: NamedSettings(Of T)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.Settings.NamedSettings`1
+  - uid: ToSic.Cre8magic.Settings.NamedSettings`1
     name: NamedSettings
-    href: ToSic.Cre8magic.Client.Settings.NamedSettings-1.html
+    href: ToSic.Cre8magic.Settings.NamedSettings-1.html
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.Settings.NamedSettings`1
+  - uid: ToSic.Cre8magic.Settings.NamedSettings`1
     name: NamedSettings
-    href: ToSic.Cre8magic.Client.Settings.NamedSettings-1.html
+    href: ToSic.Cre8magic.Settings.NamedSettings-1.html
   - name: (
   - name: Of
   - name: " "

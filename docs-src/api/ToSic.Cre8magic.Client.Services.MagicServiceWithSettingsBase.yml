@@ -5,8 +5,8 @@ items:
   id: MagicServiceWithSettingsBase
   parent: ToSic.Cre8magic.Client.Services
   children:
-  - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
-  - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
+  - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
+  - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
   langs:
   - csharp
   - vb
@@ -21,7 +21,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicServiceWithSettingsBase
     path: ../ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
-    startLine: 2
+    startLine: 4
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
@@ -31,7 +31,6 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
-  - ToSic.Cre8magic.Client.Menus.MagicMenuBuilder
   - ToSic.Cre8magic.Client.Services.LanguageService
   inheritedMembers:
   - System.Object.Equals(System.Object)
@@ -41,16 +40,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
-  commentId: M:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
-  id: InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
+- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
+  commentId: M:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
+  id: InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
   parent: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
   langs:
   - csharp
   - vb
-  name: InitSettings(MagicSettings)
-  nameWithType: MagicServiceWithSettingsBase.InitSettings(MagicSettings)
-  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Client.Settings.MagicSettings)
+  name: InitSettings(MagicAllSettings)
+  nameWithType: MagicServiceWithSettingsBase.InitSettings(MagicAllSettings)
+  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings(ToSic.Cre8magic.Settings.MagicAllSettings)
   type: Method
   source:
     remote:
@@ -59,46 +58,46 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: InitSettings
     path: ../ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
-    content: public void InitSettings(MagicSettings settings)
+    content: public void InitSettings(MagicAllSettings allSettings)
     parameters:
-    - id: settings
-      type: ToSic.Cre8magic.Client.Settings.MagicSettings
-    content.vb: Public Sub InitSettings(settings As MagicSettings)
+    - id: allSettings
+      type: ToSic.Cre8magic.Settings.MagicAllSettings
+    content.vb: Public Sub InitSettings(allSettings As MagicAllSettings)
   overload: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings*
-- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
-  commentId: P:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
-  id: Settings
+- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
+  commentId: P:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
+  id: AllSettings
   parent: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
   langs:
   - csharp
   - vb
-  name: Settings
-  nameWithType: MagicServiceWithSettingsBase.Settings
-  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
+  name: AllSettings
+  nameWithType: MagicServiceWithSettingsBase.AllSettings
+  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Settings
+    id: AllSettings
     path: ../ToSic.Cre8Magic.Client/Services/MagicServiceWithSettingsBase.cs
-    startLine: 6
+    startLine: 8
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Services
   syntax:
-    content: public MagicSettings? Settings { get; }
+    content: public MagicAllSettings? AllSettings { get; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Client.Settings.MagicSettings
-    content.vb: Public Property Settings As MagicSettings
-  overload: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings*
+      type: ToSic.Cre8magic.Settings.MagicAllSettings
+    content.vb: Public Property AllSettings As MagicAllSettings
+  overload: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings*
 references:
 - uid: ToSic.Cre8magic.Client.Services
   commentId: N:ToSic.Cre8magic.Client.Services
@@ -377,23 +376,23 @@ references:
   fullName: System
 - uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings*
   commentId: Overload:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings
-  href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_InitSettings_ToSic_Cre8magic_Client_Settings_MagicSettings_
+  href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_InitSettings_ToSic_Cre8magic_Settings_MagicAllSettings_
   name: InitSettings
   nameWithType: MagicServiceWithSettingsBase.InitSettings
   fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.InitSettings
-- uid: ToSic.Cre8magic.Client.Settings.MagicSettings
-  commentId: T:ToSic.Cre8magic.Client.Settings.MagicSettings
-  parent: ToSic.Cre8magic.Client.Settings
-  href: ToSic.Cre8magic.Client.Settings.MagicSettings.html
-  name: MagicSettings
-  nameWithType: MagicSettings
-  fullName: ToSic.Cre8magic.Client.Settings.MagicSettings
-- uid: ToSic.Cre8magic.Client.Settings
-  commentId: N:ToSic.Cre8magic.Client.Settings
+- uid: ToSic.Cre8magic.Settings.MagicAllSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicAllSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicAllSettings.html
+  name: MagicAllSettings
+  nameWithType: MagicAllSettings
+  fullName: ToSic.Cre8magic.Settings.MagicAllSettings
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
   href: ToSic.html
-  name: ToSic.Cre8magic.Client.Settings
-  nameWithType: ToSic.Cre8magic.Client.Settings
-  fullName: ToSic.Cre8magic.Client.Settings
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -403,13 +402,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
+    href: ToSic.Cre8magic.Settings.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -419,16 +414,12 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
-- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings*
-  commentId: Overload:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
-  href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_Settings
-  name: Settings
-  nameWithType: MagicServiceWithSettingsBase.Settings
-  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings*
+  commentId: Overload:ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings
+  href: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.html#ToSic_Cre8magic_Client_Services_MagicServiceWithSettingsBase_AllSettings
+  name: AllSettings
+  nameWithType: MagicServiceWithSettingsBase.AllSettings
+  fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase.AllSettings

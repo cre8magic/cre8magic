@@ -3,34 +3,32 @@ items:
 - uid: ToSic.Cre8magic
   name: ToSic.Cre8magic
   items:
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    items:
+    - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsService
+      name: MagicAnalyticsService
+    - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+      name: MagicAnalyticsSettings
+  - uid: ToSic.Cre8magic.Breadcrumb
+    name: Breadcrumb
+    items:
+    - uid: ToSic.Cre8magic.Breadcrumb.Settings
+      name: Settings
+      items:
+      - uid: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbDesign
+        name: MagicBreadcrumbDesign
+      - uid: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbDesigner
+        name: MagicBreadcrumbDesigner
+      - uid: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
+        name: MagicBreadcrumbSettings
+    - uid: ToSic.Cre8magic.Breadcrumb.MagicBreadcrumbBase
+      name: MagicBreadcrumbBase
+    - uid: ToSic.Cre8magic.Breadcrumb.MagicBreadcrumbDesignerBs5
+      name: MagicBreadcrumbDesignerBs5
   - uid: ToSic.Cre8magic.Client
     name: Client
     items:
-    - uid: ToSic.Cre8magic.Client.Analytics
-      name: Analytics
-      items:
-      - uid: ToSic.Cre8magic.Client.Analytics.MagicAnalyticsService
-        name: MagicAnalyticsService
-      - uid: ToSic.Cre8magic.Client.Analytics.MagicAnalyticsSettings
-        name: MagicAnalyticsSettings
-    - uid: ToSic.Cre8magic.Client.Breadcrumbs
-      name: Breadcrumbs
-      items:
-      - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings
-        name: Settings
-        items:
-        - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesign
-          name: MagicBreadcrumbDesign
-        - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbDesigner
-          name: MagicBreadcrumbDesigner
-        - uid: ToSic.Cre8magic.Client.Breadcrumbs.Settings.MagicBreadcrumbSettings
-          name: MagicBreadcrumbSettings
-      - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumb
-        name: MagicBreadcrumb
-      - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbItem
-        name: MagicBreadcrumbItem
-      - uid: ToSic.Cre8magic.Client.Breadcrumbs.MagicBreadcrumbs
-        name: MagicBreadcrumbs
     - uid: ToSic.Cre8magic.Client.Containers
       name: Containers
       items:
@@ -48,101 +46,24 @@ items:
         name: IMagicControlWithSettings
       - uid: ToSic.Cre8magic.Client.Controls.IMagicDesigner
         name: IMagicDesigner
-      - uid: ToSic.Cre8magic.Client.Controls.MagicComponent
-        name: MagicComponent
-      - uid: ToSic.Cre8magic.Client.Controls.MagicControl
-        name: MagicControl
-      - uid: ToSic.Cre8magic.Client.Controls.MagicDebug
-        name: MagicDebug
+      - uid: ToSic.Cre8magic.Client.Controls.MagicComponentBase
+        name: MagicComponentBase
+      - uid: ToSic.Cre8magic.Client.Controls.MagicControlBase
+        name: MagicControlBase
       - uid: ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
         name: MagicDynamicComponent
-      - uid: ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
-        name: MagicDynamicComponents
-      - uid: ToSic.Cre8magic.Client.Controls.MagicExceptions
-        name: MagicExceptions
       - uid: ToSic.Cre8magic.Client.Controls.MagicLogin
         name: MagicLogin
-      - uid: ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
-        name: MagicOqtaneControlPanel
-    - uid: ToSic.Cre8magic.Client.JsModules
-      name: JsModules
-      items:
-      - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
-        name: MagicJsServiceBase
-    - uid: ToSic.Cre8magic.Client.Languages
-      name: Languages
-      items:
-      - uid: ToSic.Cre8magic.Client.Languages.Settings
-        name: Settings
-        items:
-        - uid: ToSic.Cre8magic.Client.Languages.Settings.MagicLanguage
-          name: MagicLanguage
-        - uid: ToSic.Cre8magic.Client.Languages.Settings.MagicLanguagesSettings
-          name: MagicLanguagesSettings
-      - uid: ToSic.Cre8magic.Client.Languages.MagicLanguageDebug
-        name: MagicLanguageDebug
-      - uid: ToSic.Cre8magic.Client.Languages.MagicLanguageMenu
-        name: MagicLanguageMenu
-    - uid: ToSic.Cre8magic.Client.Logging
-      name: Logging
-      items:
-      - uid: ToSic.Cre8magic.Client.Logging.CodeRef
-        name: CodeRef
-      - uid: ToSic.Cre8magic.Client.Logging.LogCall
-        name: LogCall
-      - uid: ToSic.Cre8magic.Client.Logging.LogCallBase
-        name: LogCallBase
-      - uid: ToSic.Cre8magic.Client.Logging.LogCall`1
-        name: LogCall<T>
     - uid: ToSic.Cre8magic.Client.Menus
       name: Menus
       items:
-      - uid: ToSic.Cre8magic.Client.Menus.Settings
-        name: Settings
-        items:
-        - uid: ToSic.Cre8magic.Client.Menus.Settings.MagicMenuDesign
-          name: MagicMenuDesign
-        - uid: ToSic.Cre8magic.Client.Menus.Settings.MagicMenuDesigner
-          name: MagicMenuDesigner
-        - uid: ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings
-          name: MagicMenuSettings
-      - uid: ToSic.Cre8magic.Client.Menus.MagicMenu
-        name: MagicMenu
-      - uid: ToSic.Cre8magic.Client.Menus.MagicMenuBase
-        name: MagicMenuBase
-      - uid: ToSic.Cre8magic.Client.Menus.MagicMenuBuilder
-        name: MagicMenuBuilder
-      - uid: ToSic.Cre8magic.Client.Menus.MagicMenuDebug
-        name: MagicMenuDebug
-      - uid: ToSic.Cre8magic.Client.Menus.MagicMenuPage
-        name: MagicMenuPage
       - uid: ToSic.Cre8magic.Client.Menus.MagicMenuRoot
         name: MagicMenuRoot
-      - uid: ToSic.Cre8magic.Client.Menus.MagicMenuTree
-        name: MagicMenuTree
-      - uid: ToSic.Cre8magic.Client.Menus.NodeRuleHelper
-        name: NodeRuleHelper
-    - uid: ToSic.Cre8magic.Client.Pages
-      name: Pages
-      items:
-      - uid: ToSic.Cre8magic.Client.Pages.Internal
-        name: Internal
-        items:
-        - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPage
-          name: MagicPage
-        - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageBase
-          name: MagicPageBase
-        - uid: ToSic.Cre8magic.Client.Pages.Internal.MagicPageFactory
-          name: MagicPageFactory
-      - uid: ToSic.Cre8magic.Client.Pages.IMagicPageList
-        name: IMagicPageList
-      - uid: ToSic.Cre8magic.Client.Pages.IPageDesigner
-        name: IPageDesigner
-      - uid: ToSic.Cre8magic.Client.Pages.MagicPageWithDesign
-        name: MagicPageWithDesign
     - uid: ToSic.Cre8magic.Client.Services
       name: Services
       items:
+      - uid: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+        name: IMagicSettingsService
       - uid: ToSic.Cre8magic.Client.Services.IMagicThemeJsService
         name: IMagicThemeJsService
       - uid: ToSic.Cre8magic.Client.Services.LanguageService
@@ -151,99 +72,179 @@ items:
         name: MagicPageEditService
       - uid: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
         name: MagicServiceWithSettingsBase
-      - uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService
-        name: MagicSettingsJsonService
-      - uid: ToSic.Cre8magic.Client.Services.MagicSettingsService
-        name: MagicSettingsService
       - uid: ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest
         name: MagicThemeJsServiceTest
-      - uid: ToSic.Cre8magic.Client.Services.Startup
-        name: Startup
-    - uid: ToSic.Cre8magic.Client.Settings
-      name: Settings
+    - uid: ToSic.Cre8magic.Client.Themes.Settings
+      name: Themes.Settings
       items:
-      - uid: ToSic.Cre8magic.Client.Settings.Debug
-        name: Debug
-        items:
-        - uid: ToSic.Cre8magic.Client.Settings.Debug.MagicDebugSettings
-          name: MagicDebugSettings
-        - uid: ToSic.Cre8magic.Client.Settings.Debug.MagicDebugState
-          name: MagicDebugState
-      - uid: ToSic.Cre8magic.Client.Settings.Json
-        name: Json
-        items:
-        - uid: ToSic.Cre8magic.Client.Settings.Json.JsonConverterBase`1
-          name: JsonConverterBase<T>
-      - uid: ToSic.Cre8magic.Client.Settings.DesignSetting
-        name: DesignSetting
-      - uid: ToSic.Cre8magic.Client.Settings.DesignSettingsJsonConverter`1
-        name: DesignSettingsJsonConverter<T>
-      - uid: ToSic.Cre8magic.Client.Settings.IHasMagicSettings
-        name: IHasMagicSettings
-      - uid: ToSic.Cre8magic.Client.Settings.IHasSettingsExceptions
-        name: IHasSettingsExceptions
-      - uid: ToSic.Cre8magic.Client.Settings.MagicPackageSettings
-        name: MagicPackageSettings
-      - uid: ToSic.Cre8magic.Client.Settings.MagicSettings
-        name: MagicSettings
-      - uid: ToSic.Cre8magic.Client.Settings.MagicSettingsCatalog
-        name: MagicSettingsCatalog
-      - uid: ToSic.Cre8magic.Client.Settings.NamedSettings`1
-        name: NamedSettings<T>
-      - uid: ToSic.Cre8magic.Client.Settings.PairOnOff
-        name: PairOnOff
-      - uid: ToSic.Cre8magic.Client.Settings.PairOnOffExtensions
-        name: PairOnOffExtensions
-      - uid: ToSic.Cre8magic.Client.Settings.PairOnOffJsonConverter
-        name: PairOnOffJsonConverter
-      - uid: ToSic.Cre8magic.Client.Settings.SettingsException
-        name: SettingsException
-      - uid: ToSic.Cre8magic.Client.Settings.SettingsWithInherit
-        name: SettingsWithInherit
-    - uid: ToSic.Cre8magic.Client.Themes
-      name: Themes
-      items:
-      - uid: ToSic.Cre8magic.Client.Themes.Settings
-        name: Settings
-        items:
-        - uid: ToSic.Cre8magic.Client.Themes.Settings.MagicThemeDesignSettings
-          name: MagicThemeDesignSettings
-        - uid: ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings
-          name: MagicThemePartSettings
-        - uid: ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings
-          name: MagicThemeSettings
-        - uid: ToSic.Cre8magic.Client.Themes.Settings.ThemePartJsonConverter
-          name: ThemePartJsonConverter
-      - uid: ToSic.Cre8magic.Client.Themes.MagicContextAndSettings
-        name: MagicContextAndSettings
-      - uid: ToSic.Cre8magic.Client.Themes.MagicTheme
-        name: MagicTheme
-      - uid: ToSic.Cre8magic.Client.Themes.MagicThemeDebug
-        name: MagicThemeDebug
-    - uid: ToSic.Cre8magic.Client.Tokens
-      name: Tokens
-      items:
-      - uid: ToSic.Cre8magic.Client.Tokens.ThemeTokens
-        name: ThemeTokens
-    - uid: ToSic.Cre8magic.Client.DictionaryExtensions
-      name: DictionaryExtensions
+      - uid: ToSic.Cre8magic.Client.Themes.Settings.MagicThemeDesignSettings
+        name: MagicThemeDesignSettings
+      - uid: ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings
+        name: MagicThemePartSettings
+      - uid: ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings
+        name: MagicThemeSettings
+      - uid: ToSic.Cre8magic.Client.Themes.Settings.ThemePartJsonConverter
+        name: ThemePartJsonConverter
     - uid: ToSic.Cre8magic.Client.MagicConstants
       name: MagicConstants
     - uid: ToSic.Cre8magic.Client.MagicTokens
       name: MagicTokens
-    - uid: ToSic.Cre8magic.Client.PageStateMenuExtensions
-      name: PageStateMenuExtensions
-    - uid: ToSic.Cre8magic.Client.PageStateSecurityExtensions
-      name: PageStateSecurityExtensions
-    - uid: ToSic.Cre8magic.Client.StringExtensions
-      name: StringExtensions
-    - uid: ToSic.Cre8magic.Client._Imports
-      name: _Imports
+  - uid: ToSic.Cre8magic.Controls
+    name: Controls
+    items:
+    - uid: ToSic.Cre8magic.Controls.MagicDebug
+      name: MagicDebug
+    - uid: ToSic.Cre8magic.Controls.MagicDynamicComponents
+      name: MagicDynamicComponents
+    - uid: ToSic.Cre8magic.Controls.MagicExceptions
+      name: MagicExceptions
+    - uid: ToSic.Cre8magic.Controls.MagicOqtaneControlPanel
+      name: MagicOqtaneControlPanel
+  - uid: ToSic.Cre8magic.JsModules
+    name: JsModules
+    items:
+    - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase
+      name: MagicJsServiceBase
+  - uid: ToSic.Cre8magic.Languages
+    name: Languages
+    items:
+    - uid: ToSic.Cre8magic.Languages.Settings
+      name: Settings
+      items:
+      - uid: ToSic.Cre8magic.Languages.Settings.MagicLanguage
+        name: MagicLanguage
+      - uid: ToSic.Cre8magic.Languages.Settings.MagicLanguagesSettings
+        name: MagicLanguagesSettings
+    - uid: ToSic.Cre8magic.Languages.MagicLanguageDebug
+      name: MagicLanguageDebug
+    - uid: ToSic.Cre8magic.Languages.MagicLanguageMenuBase
+      name: MagicLanguageMenuBase
+  - uid: ToSic.Cre8magic.Menus
+    name: Menus
+    items:
+    - uid: ToSic.Cre8magic.Menus.Internal
+      name: Internal
+      items:
+      - uid: ToSic.Cre8magic.Menus.Internal.MagicMenuService
+        name: MagicMenuService
+    - uid: ToSic.Cre8magic.Menus.Settings
+      name: Settings
+      items:
+      - uid: ToSic.Cre8magic.Menus.Settings.MagicMenuDesigner
+        name: MagicMenuDesigner
+    - uid: ToSic.Cre8magic.Menus.IMagicMenuService
+      name: IMagicMenuService
+    - uid: ToSic.Cre8magic.Menus.MagicMenu
+      name: MagicMenu
+    - uid: ToSic.Cre8magic.Menus.MagicMenuBase
+      name: MagicMenuBase
+    - uid: ToSic.Cre8magic.Menus.MagicMenuDebug
+      name: MagicMenuDebug
+    - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
+      name: MagicMenuDesignSettings
+    - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
+      name: MagicMenuSettings
   - uid: ToSic.Cre8magic.Pages
     name: Pages
     items:
+    - uid: ToSic.Cre8magic.Pages.Internal
+      name: Internal
+      items:
+      - uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
+        name: MagicPageFactory
+      - uid: ToSic.Cre8magic.Pages.Internal.PageStateProxy
+        name: PageStateProxy
+      - uid: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions
+        name: PageStateProxyExtensions
     - uid: ToSic.Cre8magic.Pages.IMagicPage
       name: IMagicPage
+    - uid: ToSic.Cre8magic.Pages.IMagicPageDesigner
+      name: IMagicPageDesigner
+    - uid: ToSic.Cre8magic.Pages.IMagicPageList
+      name: IMagicPageList
     - uid: ToSic.Cre8magic.Pages.IMagicPageService
       name: IMagicPageService
+    - uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+      name: IMagicPageSetSettings
+    - uid: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+      name: IMagicPageWithDesignWip
+    - uid: ToSic.Cre8magic.Pages.MagicPageDesignerBase
+      name: MagicPageDesignerBase
+    - uid: ToSic.Cre8magic.Pages.MagicPageDesignerBasic
+      name: MagicPageDesignerBasic
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    items:
+    - uid: ToSic.Cre8magic.Settings.Debug
+      name: Debug
+      items:
+      - uid: ToSic.Cre8magic.Settings.Debug.MagicDebugSettings
+        name: MagicDebugSettings
+      - uid: ToSic.Cre8magic.Settings.Debug.MagicDebugState
+        name: MagicDebugState
+    - uid: ToSic.Cre8magic.Settings.Internal
+      name: Internal
+      items:
+      - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
+        name: ICanClone<T>
+      - uid: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
+        name: IHasSettingsExceptions
+      - uid: ToSic.Cre8magic.Settings.Internal.MagicSettingsLoader
+        name: MagicSettingsLoader
+      - uid: ToSic.Cre8magic.Settings.Internal.SettingsException
+        name: SettingsException
+    - uid: ToSic.Cre8magic.Settings.Json
+      name: Json
+      items:
+      - uid: ToSic.Cre8magic.Settings.Json.DesignSettingsJsonConverter`1
+        name: DesignSettingsJsonConverter<T>
+      - uid: ToSic.Cre8magic.Settings.Json.JsonConverterBase`1
+        name: JsonConverterBase<T>
+      - uid: ToSic.Cre8magic.Settings.Json.MagicSettingsJsonService
+        name: MagicSettingsJsonService
+      - uid: ToSic.Cre8magic.Settings.Json.PairOnOffJsonConverter
+        name: PairOnOffJsonConverter
+    - uid: ToSic.Cre8magic.Settings.DesignSetting
+      name: DesignSetting
+    - uid: ToSic.Cre8magic.Settings.MagicAllSettings
+      name: MagicAllSettings
+    - uid: ToSic.Cre8magic.Settings.MagicPackageSettings
+      name: MagicPackageSettings
+    - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+      name: MagicSettingsCatalog
+    - uid: ToSic.Cre8magic.Settings.NamedSettings`1
+      name: NamedSettings<T>
+    - uid: ToSic.Cre8magic.Settings.PairOnOff
+      name: PairOnOff
+    - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions
+      name: PairOnOffExtensions
+    - uid: ToSic.Cre8magic.Settings.SettingsWithInherit
+      name: SettingsWithInherit
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    items:
+    - uid: ToSic.Cre8magic.Themes.MagicContextAndSettings
+      name: MagicContextAndSettings
+    - uid: ToSic.Cre8magic.Themes.MagicThemeBase
+      name: MagicThemeBase
+    - uid: ToSic.Cre8magic.Themes.MagicThemeDebug
+      name: MagicThemeDebug
+  - uid: ToSic.Cre8magic.Utils
+    name: Utils
+    items:
+    - uid: ToSic.Cre8magic.Utils.Logging
+      name: Logging
+      items:
+      - uid: ToSic.Cre8magic.Utils.Logging.CodeRef
+        name: CodeRef
+    - uid: ToSic.Cre8magic.Utils.DictionaryExtensions
+      name: DictionaryExtensions
+    - uid: ToSic.Cre8magic.Utils.PageStateSecurityExtensions
+      name: PageStateSecurityExtensions
+    - uid: ToSic.Cre8magic.Utils.StringExtensions
+      name: StringExtensions
+  - uid: ToSic.Cre8magic.Startup
+    name: Startup
+  - uid: ToSic.Cre8magic._Imports
+    name: _Imports
 memberLayout: SamePage

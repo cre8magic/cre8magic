@@ -5,12 +5,12 @@ items:
   id: MagicLogin
   parent: ToSic.Cre8magic.Client.Controls
   children:
+  - ToSic.Cre8magic.Client.Controls.MagicLogin.AllSettings
   - ToSic.Cre8magic.Client.Controls.MagicLogin.ChangeLogin
   - ToSic.Cre8magic.Client.Controls.MagicLogin.Classes(System.String)
   - ToSic.Cre8magic.Client.Controls.MagicLogin.Id(System.String)
   - ToSic.Cre8magic.Client.Controls.MagicLogin.IsLoggedIn
   - ToSic.Cre8magic.Client.Controls.MagicLogin.LocalizedLabel
-  - ToSic.Cre8magic.Client.Controls.MagicLogin.Settings
   - ToSic.Cre8magic.Client.Controls.MagicLogin.Value(System.String)
   langs:
   - csharp
@@ -26,13 +26,13 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicLogin
     path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
   syntax:
-    content: 'public abstract class MagicLogin : LoginBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner'
-    content.vb: Public MustInherit Class MagicLogin Inherits LoginBase Implements IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner
+    content: 'public abstract class MagicLogin : LoginBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IMagicDesigner'
+    content.vb: Public MustInherit Class MagicLogin Inherits LoginBase Implements IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IMagicDesigner
   inheritance:
   - System.Object
   - Microsoft.AspNetCore.Components.ComponentBase
@@ -45,7 +45,6 @@ items:
   - Microsoft.AspNetCore.Components.IHandleAfterRender
   - Oqtane.Themes.IThemeControl
   - ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
-  - ToSic.Cre8magic.Client.Settings.IHasMagicSettings
   - ToSic.Cre8magic.Client.Controls.IMagicDesigner
   inheritedMembers:
   - Oqtane.Themes.Controls.LoginBase.loginurl
@@ -110,25 +109,25 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ToSic.Cre8magic.Client.Controls.MagicLogin.Settings
-  commentId: P:ToSic.Cre8magic.Client.Controls.MagicLogin.Settings
-  id: Settings
+- uid: ToSic.Cre8magic.Client.Controls.MagicLogin.AllSettings
+  commentId: P:ToSic.Cre8magic.Client.Controls.MagicLogin.AllSettings
+  id: AllSettings
   parent: ToSic.Cre8magic.Client.Controls.MagicLogin
   langs:
   - csharp
   - vb
-  name: Settings
-  nameWithType: MagicLogin.Settings
-  fullName: ToSic.Cre8magic.Client.Controls.MagicLogin.Settings
+  name: AllSettings
+  nameWithType: MagicLogin.AllSettings
+  fullName: ToSic.Cre8magic.Client.Controls.MagicLogin.AllSettings
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Settings
+    id: AllSettings
     path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
@@ -137,18 +136,17 @@ items:
     content: >-
       [CascadingParameter]
 
-      public MagicSettings Settings { get; set; }
+      public MagicAllSettings AllSettings { get; set; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Client.Settings.MagicSettings
+      type: ToSic.Cre8magic.Settings.MagicAllSettings
     content.vb: >-
       <CascadingParameter>
 
-      Public Property Settings As MagicSettings
-  overload: ToSic.Cre8magic.Client.Controls.MagicLogin.Settings*
+      Public Property AllSettings As MagicAllSettings
+  overload: ToSic.Cre8magic.Client.Controls.MagicLogin.AllSettings*
   implements:
-  - ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.Settings
-  - ToSic.Cre8magic.Client.Settings.IHasMagicSettings.Settings
+  - ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.AllSettings
   attributes:
   - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
     ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
@@ -171,7 +169,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsLoggedIn
     path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
@@ -200,7 +198,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LocalizedLabel
     path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
-    startLine: 15
+    startLine: 16
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
@@ -229,7 +227,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ChangeLogin
     path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
@@ -257,7 +255,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
     path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
-    startLine: 25
+    startLine: 26
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
@@ -294,7 +292,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Value
     path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
@@ -331,7 +329,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
     path: ../ToSic.Cre8Magic.Client/Controls/MagicLogin.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Client.Controls
@@ -471,13 +469,6 @@ references:
   name: IMagicControlWithSettings
   nameWithType: IMagicControlWithSettings
   fullName: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
-- uid: ToSic.Cre8magic.Client.Settings.IHasMagicSettings
-  commentId: T:ToSic.Cre8magic.Client.Settings.IHasMagicSettings
-  parent: ToSic.Cre8magic.Client.Settings
-  href: ToSic.Cre8magic.Client.Settings.IHasMagicSettings.html
-  name: IHasMagicSettings
-  nameWithType: IHasMagicSettings
-  fullName: ToSic.Cre8magic.Client.Settings.IHasMagicSettings
 - uid: ToSic.Cre8magic.Client.Controls.IMagicDesigner
   commentId: T:ToSic.Cre8magic.Client.Controls.IMagicDesigner
   parent: ToSic.Cre8magic.Client.Controls
@@ -2529,12 +2520,32 @@ references:
   - uid: Oqtane.Themes.Controls
     name: Controls
     isExternal: true
-- uid: ToSic.Cre8magic.Client.Settings
-  commentId: N:ToSic.Cre8magic.Client.Settings
+- uid: ToSic.Cre8magic.Client.Controls.MagicLogin.AllSettings*
+  commentId: Overload:ToSic.Cre8magic.Client.Controls.MagicLogin.AllSettings
+  href: ToSic.Cre8magic.Client.Controls.MagicLogin.html#ToSic_Cre8magic_Client_Controls_MagicLogin_AllSettings
+  name: AllSettings
+  nameWithType: MagicLogin.AllSettings
+  fullName: ToSic.Cre8magic.Client.Controls.MagicLogin.AllSettings
+- uid: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.AllSettings
+  commentId: P:ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.AllSettings
+  parent: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
+  href: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.html#ToSic_Cre8magic_Client_Controls_IMagicControlWithSettings_AllSettings
+  name: AllSettings
+  nameWithType: IMagicControlWithSettings.AllSettings
+  fullName: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.AllSettings
+- uid: ToSic.Cre8magic.Settings.MagicAllSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicAllSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicAllSettings.html
+  name: MagicAllSettings
+  nameWithType: MagicAllSettings
+  fullName: ToSic.Cre8magic.Settings.MagicAllSettings
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
   href: ToSic.html
-  name: ToSic.Cre8magic.Client.Settings
-  nameWithType: ToSic.Cre8magic.Client.Settings
-  fullName: ToSic.Cre8magic.Client.Settings
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -2544,13 +2555,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
+    href: ToSic.Cre8magic.Settings.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -2560,40 +2567,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.Settings
+  - uid: ToSic.Cre8magic.Settings
     name: Settings
-    href: ToSic.Cre8magic.Client.Settings.html
-- uid: ToSic.Cre8magic.Client.Controls.MagicLogin.Settings*
-  commentId: Overload:ToSic.Cre8magic.Client.Controls.MagicLogin.Settings
-  href: ToSic.Cre8magic.Client.Controls.MagicLogin.html#ToSic_Cre8magic_Client_Controls_MagicLogin_Settings
-  name: Settings
-  nameWithType: MagicLogin.Settings
-  fullName: ToSic.Cre8magic.Client.Controls.MagicLogin.Settings
-- uid: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.Settings
-  commentId: P:ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.Settings
-  parent: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
-  href: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.html#ToSic_Cre8magic_Client_Controls_IMagicControlWithSettings_Settings
-  name: Settings
-  nameWithType: IMagicControlWithSettings.Settings
-  fullName: ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.Settings
-- uid: ToSic.Cre8magic.Client.Settings.IHasMagicSettings.Settings
-  commentId: P:ToSic.Cre8magic.Client.Settings.IHasMagicSettings.Settings
-  parent: ToSic.Cre8magic.Client.Settings.IHasMagicSettings
-  href: ToSic.Cre8magic.Client.Settings.IHasMagicSettings.html#ToSic_Cre8magic_Client_Settings_IHasMagicSettings_Settings
-  name: Settings
-  nameWithType: IHasMagicSettings.Settings
-  fullName: ToSic.Cre8magic.Client.Settings.IHasMagicSettings.Settings
-- uid: ToSic.Cre8magic.Client.Settings.MagicSettings
-  commentId: T:ToSic.Cre8magic.Client.Settings.MagicSettings
-  parent: ToSic.Cre8magic.Client.Settings
-  href: ToSic.Cre8magic.Client.Settings.MagicSettings.html
-  name: MagicSettings
-  nameWithType: MagicSettings
-  fullName: ToSic.Cre8magic.Client.Settings.MagicSettings
+    href: ToSic.Cre8magic.Settings.html
 - uid: ToSic.Cre8magic.Client.Controls.MagicLogin.IsLoggedIn*
   commentId: Overload:ToSic.Cre8magic.Client.Controls.MagicLogin.IsLoggedIn
   href: ToSic.Cre8magic.Client.Controls.MagicLogin.html#ToSic_Cre8magic_Client_Controls_MagicLogin_IsLoggedIn

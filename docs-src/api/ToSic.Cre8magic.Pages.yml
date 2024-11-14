@@ -6,7 +6,14 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Pages.IMagicPage
+  - ToSic.Cre8magic.Pages.IMagicPageDesigner
+  - ToSic.Cre8magic.Pages.IMagicPageList
   - ToSic.Cre8magic.Pages.IMagicPageService
+  - ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  - ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+  - ToSic.Cre8magic.Pages.Internal
+  - ToSic.Cre8magic.Pages.MagicPageDesignerBase
+  - ToSic.Cre8magic.Pages.MagicPageDesignerBasic
   langs:
   - csharp
   - vb
@@ -17,6 +24,44 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Pages.Internal
+  commentId: N:ToSic.Cre8magic.Pages.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages.Internal
+  nameWithType: ToSic.Cre8magic.Pages.Internal
+  fullName: ToSic.Cre8magic.Pages.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Pages.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Pages.Internal.html
 - uid: ToSic.Cre8magic.Pages.IMagicPage
   commentId: T:ToSic.Cre8magic.Pages.IMagicPage
   parent: ToSic.Cre8magic.Pages
@@ -24,6 +69,20 @@ references:
   name: IMagicPage
   nameWithType: IMagicPage
   fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: ToSic.Cre8magic.Pages.IMagicPageDesigner
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageDesigner
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageDesigner.html
+  name: IMagicPageDesigner
+  nameWithType: IMagicPageDesigner
+  fullName: ToSic.Cre8magic.Pages.IMagicPageDesigner
+- uid: ToSic.Cre8magic.Pages.IMagicPageList
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageList
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageList.html
+  name: IMagicPageList
+  nameWithType: IMagicPageList
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList
 - uid: ToSic.Cre8magic.Pages.IMagicPageService
   commentId: T:ToSic.Cre8magic.Pages.IMagicPageService
   parent: ToSic.Cre8magic.Pages
@@ -31,6 +90,33 @@ references:
   name: IMagicPageService
   nameWithType: IMagicPageService
   fullName: ToSic.Cre8magic.Pages.IMagicPageService
+- uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageSetSettings.html
+  name: IMagicPageSetSettings
+  nameWithType: IMagicPageSetSettings
+  fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+- uid: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+  href: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip.html
+  name: IMagicPageWithDesignWip
+  nameWithType: IMagicPageWithDesignWip
+  fullName: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+- uid: ToSic.Cre8magic.Pages.MagicPageDesignerBase
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageDesignerBase
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.MagicPageDesignerBase.html
+  name: MagicPageDesignerBase
+  nameWithType: MagicPageDesignerBase
+  fullName: ToSic.Cre8magic.Pages.MagicPageDesignerBase
+- uid: ToSic.Cre8magic.Pages.MagicPageDesignerBasic
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageDesignerBasic
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.MagicPageDesignerBasic.html
+  name: MagicPageDesignerBasic
+  nameWithType: MagicPageDesignerBasic
+  fullName: ToSic.Cre8magic.Pages.MagicPageDesignerBasic
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
   href: ToSic.html

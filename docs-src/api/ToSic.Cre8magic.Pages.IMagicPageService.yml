@@ -5,15 +5,13 @@ items:
   id: IMagicPageService
   parent: ToSic.Cre8magic.Pages
   children:
-  - ToSic.Cre8magic.Pages.IMagicPageService.GetAll(System.Boolean)
-  - ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumbs
-  - ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent
-  - ToSic.Cre8magic.Pages.IMagicPageService.GetHome
-  - ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.Models.Page)
-  - ToSic.Cre8magic.Pages.IMagicPageService.GetPage(System.Int32)
-  - ToSic.Cre8magic.Pages.IMagicPageService.GetPages(System.Collections.Generic.IEnumerable{System.Int32})
-  - ToSic.Cre8magic.Pages.IMagicPageService.PageState
-  - ToSic.Cre8magic.Pages.IMagicPageService.Setup(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.Pages.IMagicPageService.GetAll(Oqtane.UI.PageState,System.Boolean)
+  - ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
+  - ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.Pages.IMagicPageService.GetHome(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState,Oqtane.Models.Page)
+  - ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState,System.Int32)
+  - ToSic.Cre8magic.Pages.IMagicPageService.GetPages(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{System.Int32})
   langs:
   - csharp
   - vb
@@ -35,79 +33,16 @@ items:
   syntax:
     content: public interface IMagicPageService
     content.vb: Public Interface IMagicPageService
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.PageState
-  commentId: P:ToSic.Cre8magic.Pages.IMagicPageService.PageState
-  id: PageState
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetAll(Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetAll(Oqtane.UI.PageState,System.Boolean)
+  id: GetAll(Oqtane.UI.PageState,System.Boolean)
   parent: ToSic.Cre8magic.Pages.IMagicPageService
   langs:
   - csharp
   - vb
-  name: PageState
-  nameWithType: IMagicPageService.PageState
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.PageState
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: PageState
-    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 14
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Pages
-  summary: The page state - must be initialized before using the service.
-  remarks: Will throw an error if accessed before initializing.
-  example: []
-  syntax:
-    content: PageState PageState { get; }
-    parameters: []
-    return:
-      type: Oqtane.UI.PageState
-    content.vb: ReadOnly Property PageState As PageState
-  overload: ToSic.Cre8magic.Pages.IMagicPageService.PageState*
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.Setup(Oqtane.UI.PageState)
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.Setup(Oqtane.UI.PageState)
-  id: Setup(Oqtane.UI.PageState)
-  parent: ToSic.Cre8magic.Pages.IMagicPageService
-  langs:
-  - csharp
-  - vb
-  name: Setup(PageState)
-  nameWithType: IMagicPageService.Setup(PageState)
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.Setup(Oqtane.UI.PageState)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Setup
-    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 16
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Pages
-  syntax:
-    content: IMagicPageService Setup(PageState pageState)
-    parameters:
-    - id: pageState
-      type: Oqtane.UI.PageState
-    return:
-      type: ToSic.Cre8magic.Pages.IMagicPageService
-    content.vb: Function Setup(pageState As PageState) As IMagicPageService
-  overload: ToSic.Cre8magic.Pages.IMagicPageService.Setup*
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetAll(System.Boolean)
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetAll(System.Boolean)
-  id: GetAll(System.Boolean)
-  parent: ToSic.Cre8magic.Pages.IMagicPageService
-  langs:
-  - csharp
-  - vb
-  name: GetAll(bool)
-  nameWithType: IMagicPageService.GetAll(bool)
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetAll(bool)
+  name: GetAll(PageState, bool)
+  nameWithType: IMagicPageService.GetAll(PageState, bool)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetAll(Oqtane.UI.PageState, bool)
   type: Method
   source:
     remote:
@@ -116,32 +51,34 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetAll
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 18
+    startLine: 8
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
   syntax:
-    content: IEnumerable<IMagicPage> GetAll(bool ignorePermissions = false)
+    content: IEnumerable<IMagicPage> GetAll(PageState pageState, bool ignorePermissions = false)
     parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
     - id: ignorePermissions
       type: System.Boolean
     return:
       type: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
-    content.vb: Function GetAll(ignorePermissions As Boolean = False) As IEnumerable(Of IMagicPage)
+    content.vb: Function GetAll(pageState As PageState, ignorePermissions As Boolean = False) As IEnumerable(Of IMagicPage)
   overload: ToSic.Cre8magic.Pages.IMagicPageService.GetAll*
-  nameWithType.vb: IMagicPageService.GetAll(Boolean)
-  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetAll(Boolean)
-  name.vb: GetAll(Boolean)
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetHome
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetHome
-  id: GetHome
+  nameWithType.vb: IMagicPageService.GetAll(PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetAll(Oqtane.UI.PageState, Boolean)
+  name.vb: GetAll(PageState, Boolean)
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetHome(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetHome(Oqtane.UI.PageState)
+  id: GetHome(Oqtane.UI.PageState)
   parent: ToSic.Cre8magic.Pages.IMagicPageService
   langs:
   - csharp
   - vb
-  name: GetHome()
-  nameWithType: IMagicPageService.GetHome()
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetHome()
+  name: GetHome(PageState)
+  nameWithType: IMagicPageService.GetHome(PageState)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetHome(Oqtane.UI.PageState)
   type: Method
   source:
     remote:
@@ -150,26 +87,29 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetHome
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 20
+    startLine: 10
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
   syntax:
-    content: IMagicPage GetHome()
+    content: IMagicPage GetHome(PageState pageState)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
     return:
       type: ToSic.Cre8magic.Pages.IMagicPage
-    content.vb: Function GetHome() As IMagicPage
+    content.vb: Function GetHome(pageState As PageState) As IMagicPage
   overload: ToSic.Cre8magic.Pages.IMagicPageService.GetHome*
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent
-  id: GetCurrent
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent(Oqtane.UI.PageState)
+  id: GetCurrent(Oqtane.UI.PageState)
   parent: ToSic.Cre8magic.Pages.IMagicPageService
   langs:
   - csharp
   - vb
-  name: GetCurrent()
-  nameWithType: IMagicPageService.GetCurrent()
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent()
+  name: GetCurrent(PageState)
+  nameWithType: IMagicPageService.GetCurrent(PageState)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent(Oqtane.UI.PageState)
   type: Method
   source:
     remote:
@@ -178,26 +118,29 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetCurrent
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 22
+    startLine: 12
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
   syntax:
-    content: IMagicPage GetCurrent()
+    content: IMagicPage GetCurrent(PageState pageState)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
     return:
       type: ToSic.Cre8magic.Pages.IMagicPage
-    content.vb: Function GetCurrent() As IMagicPage
+    content.vb: Function GetCurrent(pageState As PageState) As IMagicPage
   overload: ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent*
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(System.Int32)
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetPage(System.Int32)
-  id: GetPage(System.Int32)
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState,System.Int32)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState,System.Int32)
+  id: GetPage(Oqtane.UI.PageState,System.Int32)
   parent: ToSic.Cre8magic.Pages.IMagicPageService
   langs:
   - csharp
   - vb
-  name: GetPage(int)
-  nameWithType: IMagicPageService.GetPage(int)
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(int)
+  name: GetPage(PageState, int)
+  nameWithType: IMagicPageService.GetPage(PageState, int)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState, int)
   type: Method
   source:
     remote:
@@ -206,32 +149,34 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetPage
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 24
+    startLine: 14
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
   syntax:
-    content: IMagicPage? GetPage(int pageId)
+    content: IMagicPage? GetPage(PageState pageState, int pageId)
     parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
     - id: pageId
       type: System.Int32
     return:
       type: ToSic.Cre8magic.Pages.IMagicPage
-    content.vb: Function GetPage(pageId As Integer) As IMagicPage
+    content.vb: Function GetPage(pageState As PageState, pageId As Integer) As IMagicPage
   overload: ToSic.Cre8magic.Pages.IMagicPageService.GetPage*
-  nameWithType.vb: IMagicPageService.GetPage(Integer)
-  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Integer)
-  name.vb: GetPage(Integer)
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.Models.Page)
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.Models.Page)
-  id: GetPage(Oqtane.Models.Page)
+  nameWithType.vb: IMagicPageService.GetPage(PageState, Integer)
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState, Integer)
+  name.vb: GetPage(PageState, Integer)
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState,Oqtane.Models.Page)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState,Oqtane.Models.Page)
+  id: GetPage(Oqtane.UI.PageState,Oqtane.Models.Page)
   parent: ToSic.Cre8magic.Pages.IMagicPageService
   langs:
   - csharp
   - vb
-  name: GetPage(Page?)
-  nameWithType: IMagicPageService.GetPage(Page?)
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.Models.Page?)
+  name: GetPage(PageState, Page?)
+  nameWithType: IMagicPageService.GetPage(PageState, Page?)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState, Oqtane.Models.Page?)
   type: Method
   source:
     remote:
@@ -240,32 +185,34 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetPage
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 26
+    startLine: 16
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
   syntax:
-    content: IMagicPage? GetPage(Page? page)
+    content: IMagicPage? GetPage(PageState pageState, Page? page)
     parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
     - id: page
       type: Oqtane.Models.Page
     return:
       type: ToSic.Cre8magic.Pages.IMagicPage
-    content.vb: Function GetPage(page As Page) As IMagicPage
+    content.vb: Function GetPage(pageState As PageState, page As Page) As IMagicPage
   overload: ToSic.Cre8magic.Pages.IMagicPageService.GetPage*
-  nameWithType.vb: IMagicPageService.GetPage(Page)
-  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.Models.Page)
-  name.vb: GetPage(Page)
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPages(System.Collections.Generic.IEnumerable{System.Int32})
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetPages(System.Collections.Generic.IEnumerable{System.Int32})
-  id: GetPages(System.Collections.Generic.IEnumerable{System.Int32})
+  nameWithType.vb: IMagicPageService.GetPage(PageState, Page)
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState, Oqtane.Models.Page)
+  name.vb: GetPage(PageState, Page)
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPages(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{System.Int32})
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetPages(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{System.Int32})
+  id: GetPages(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{System.Int32})
   parent: ToSic.Cre8magic.Pages.IMagicPageService
   langs:
   - csharp
   - vb
-  name: GetPages(IEnumerable<int>)
-  nameWithType: IMagicPageService.GetPages(IEnumerable<int>)
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetPages(System.Collections.Generic.IEnumerable<int>)
+  name: GetPages(PageState, IEnumerable<int>)
+  nameWithType: IMagicPageService.GetPages(PageState, IEnumerable<int>)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetPages(Oqtane.UI.PageState, System.Collections.Generic.IEnumerable<int>)
   type: Method
   source:
     remote:
@@ -274,50 +221,60 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetPages
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 28
+    startLine: 18
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
   syntax:
-    content: IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds)
+    content: IEnumerable<IMagicPage> GetPages(PageState pageState, IEnumerable<int> pageIds)
     parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
     - id: pageIds
       type: System.Collections.Generic.IEnumerable{System.Int32}
     return:
       type: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
-    content.vb: Function GetPages(pageIds As IEnumerable(Of Integer)) As IEnumerable(Of IMagicPage)
+    content.vb: Function GetPages(pageState As PageState, pageIds As IEnumerable(Of Integer)) As IEnumerable(Of IMagicPage)
   overload: ToSic.Cre8magic.Pages.IMagicPageService.GetPages*
-  nameWithType.vb: IMagicPageService.GetPages(IEnumerable(Of Integer))
-  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetPages(System.Collections.Generic.IEnumerable(Of Integer))
-  name.vb: GetPages(IEnumerable(Of Integer))
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumbs
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumbs
-  id: GetBreadcrumbs
+  nameWithType.vb: IMagicPageService.GetPages(PageState, IEnumerable(Of Integer))
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetPages(Oqtane.UI.PageState, System.Collections.Generic.IEnumerable(Of Integer))
+  name.vb: GetPages(PageState, IEnumerable(Of Integer))
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
+  id: GetBreadcrumb(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
   parent: ToSic.Cre8magic.Pages.IMagicPageService
   langs:
   - csharp
   - vb
-  name: GetBreadcrumbs()
-  nameWithType: IMagicPageService.GetBreadcrumbs()
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumbs()
+  name: GetBreadcrumb(PageState, MagicBreadcrumbSettings?)
+  nameWithType: IMagicPageService.GetBreadcrumb(PageState, MagicBreadcrumbSettings?)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState, ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings?)
   type: Method
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: GetBreadcrumbs
+    id: GetBreadcrumb
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 31
+    startLine: 20
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
   syntax:
-    content: IEnumerable<IMagicPage> GetBreadcrumbs()
+    content: IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = null)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    - id: specs
+      type: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
     return:
-      type: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
-    content.vb: Function GetBreadcrumbs() As IEnumerable(Of IMagicPage)
-  overload: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumbs*
+      type: ToSic.Cre8magic.Pages.IMagicPageList
+    content.vb: Function GetBreadcrumb(pageState As PageState, specs As MagicBreadcrumbSettings = Nothing) As IMagicPageList
+  overload: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb*
+  nameWithType.vb: IMagicPageService.GetBreadcrumb(PageState, MagicBreadcrumbSettings)
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState, ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
+  name.vb: GetBreadcrumb(PageState, MagicBreadcrumbSettings)
 references:
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
@@ -349,12 +306,12 @@ references:
   - uid: ToSic.Cre8magic.Pages
     name: Pages
     href: ToSic.Cre8magic.Pages.html
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.PageState*
-  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.PageState
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_PageState
-  name: PageState
-  nameWithType: IMagicPageService.PageState
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.PageState
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetAll*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetAll
+  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetAll_Oqtane_UI_PageState_System_Boolean_
+  name: GetAll
+  nameWithType: IMagicPageService.GetAll
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetAll
 - uid: Oqtane.UI.PageState
   commentId: T:Oqtane.UI.PageState
   parent: Oqtane.UI
@@ -363,47 +320,6 @@ references:
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState
-- uid: Oqtane.UI
-  commentId: N:Oqtane.UI
-  isExternal: true
-  name: Oqtane.UI
-  nameWithType: Oqtane.UI
-  fullName: Oqtane.UI
-  spec.csharp:
-  - uid: Oqtane
-    name: Oqtane
-    isExternal: true
-  - name: .
-  - uid: Oqtane.UI
-    name: UI
-    isExternal: true
-  spec.vb:
-  - uid: Oqtane
-    name: Oqtane
-    isExternal: true
-  - name: .
-  - uid: Oqtane.UI
-    name: UI
-    isExternal: true
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.Setup*
-  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.Setup
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_Setup_Oqtane_UI_PageState_
-  name: Setup
-  nameWithType: IMagicPageService.Setup
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.Setup
-- uid: ToSic.Cre8magic.Pages.IMagicPageService
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageService
-  parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html
-  name: IMagicPageService
-  nameWithType: IMagicPageService
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetAll*
-  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetAll
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetAll_System_Boolean_
-  name: GetAll
-  nameWithType: IMagicPageService.GetAll
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetAll
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -448,6 +364,28 @@ references:
     name: IMagicPage
     href: ToSic.Cre8magic.Pages.IMagicPage.html
   - name: )
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
 - uid: System
   commentId: N:System
   isExternal: true
@@ -522,7 +460,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: ToSic.Cre8magic.Pages.IMagicPageService.GetHome*
   commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetHome
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetHome
+  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetHome_Oqtane_UI_PageState_
   name: GetHome
   nameWithType: IMagicPageService.GetHome
   fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetHome
@@ -535,13 +473,13 @@ references:
   fullName: ToSic.Cre8magic.Pages.IMagicPage
 - uid: ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent*
   commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetCurrent
+  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetCurrent_Oqtane_UI_PageState_
   name: GetCurrent
   nameWithType: IMagicPageService.GetCurrent
   fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent
 - uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPage*
   commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetPage
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetPage_System_Int32_
+  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetPage_Oqtane_UI_PageState_System_Int32_
   name: GetPage
   nameWithType: IMagicPageService.GetPage
   fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetPage
@@ -588,7 +526,7 @@ references:
     isExternal: true
 - uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPages*
   commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetPages
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetPages_System_Collections_Generic_IEnumerable_System_Int32__
+  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetPages_Oqtane_UI_PageState_System_Collections_Generic_IEnumerable_System_Int32__
   name: GetPages
   nameWithType: IMagicPageService.GetPages
   fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetPages
@@ -627,9 +565,61 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumbs*
-  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumbs
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetBreadcrumbs
-  name: GetBreadcrumbs
-  nameWithType: IMagicPageService.GetBreadcrumbs
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumbs
+- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb
+  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetBreadcrumb_Oqtane_UI_PageState_ToSic_Cre8magic_Breadcrumb_Settings_MagicBreadcrumbSettings_
+  name: GetBreadcrumb
+  nameWithType: IMagicPageService.GetBreadcrumb
+  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb
+- uid: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
+  commentId: T:ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
+  parent: ToSic.Cre8magic.Breadcrumb.Settings
+  href: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings.html
+  name: MagicBreadcrumbSettings
+  nameWithType: MagicBreadcrumbSettings
+  fullName: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
+- uid: ToSic.Cre8magic.Pages.IMagicPageList
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageList
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageList.html
+  name: IMagicPageList
+  nameWithType: IMagicPageList
+  fullName: ToSic.Cre8magic.Pages.IMagicPageList
+- uid: ToSic.Cre8magic.Breadcrumb.Settings
+  commentId: N:ToSic.Cre8magic.Breadcrumb.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Breadcrumb.Settings
+  nameWithType: ToSic.Cre8magic.Breadcrumb.Settings
+  fullName: ToSic.Cre8magic.Breadcrumb.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumb
+    name: Breadcrumb
+    href: ToSic.Cre8magic.Breadcrumb.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumb.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Breadcrumb.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumb
+    name: Breadcrumb
+    href: ToSic.Cre8magic.Breadcrumb.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumb.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Breadcrumb.Settings.html

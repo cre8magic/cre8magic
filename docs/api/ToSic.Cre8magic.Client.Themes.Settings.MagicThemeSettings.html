@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class MagicThemeSettings
- | cre8magic </title>
+      <title>Class MagicThemeSettings | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class MagicThemeSettings
- | cre8magic ">
+      <meta name="title" content="Class MagicThemeSettings | cre8magic ">
+      
       
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -78,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -90,8 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings" class="text-break">
-    Class MagicThemeSettings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L5"><i class="bi bi-code-slash"></i></a>
+Class MagicThemeSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -103,7 +101,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MagicThemeSettings : SettingsWithInherit</code></pre>
+    <pre><code class="lang-csharp hljs">public record MagicThemeSettings : SettingsWithInherit, IEquatable&lt;SettingsWithInherit&gt;, ICanClone&lt;MagicThemeSettings&gt;, IEquatable&lt;MagicThemeSettings&gt;</code></pre>
   </div>
 
 
@@ -113,18 +111,26 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
       <div><span class="xref">MagicThemeSettings</span></div>
     </dd>
   </dl>
 
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a>&gt;</div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.Internal.ICanClone-1.html">ICanClone</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.html">MagicThemeSettings</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.html">MagicThemeSettings</a>&gt;</div>
+    </dd>
+  </dl>
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Client_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -154,31 +160,60 @@
 
 
 
-  <h2 class="section" id="fields">Fields
+  <h2 class="section" id="constructors">Constructors
 </h2>
 
 
+  <a id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings__ctor_" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.#ctor*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_Fallback" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.Fallback">
-  Fallback
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings__ctor" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.#ctor">
+  MagicThemeSettings()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static MagicThemeSettings Fallback</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicThemeSettings()</code></pre>
   </div>
 
 
 
 
-  <h4 class="section">Field Value</h4>
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings__ctor_" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.#ctor*"></a>
+
+  <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings__ctor_ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.#ctor(ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings,ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings)">
+  MagicThemeSettings(MagicThemeSettings?, MagicThemeSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.html">MagicThemeSettings</a></dt>
+    <dt><code>priority</code> <a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.html">MagicThemeSettings</a></dt>
+    <dd></dd>
+    <dt><code>fallback</code> <a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.html">MagicThemeSettings</a></dt>
     <dd></dd>
   </dl>
+
+
+
 
 
 
@@ -196,7 +231,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_Debug" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.Debug">
   Debug
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Debug settings for anything that can configure show/hide of debug</p>
@@ -204,7 +239,7 @@
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicDebugSettings? Debug { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicDebugSettings? Debug { get; init; }</code></pre>
   </div>
 
 
@@ -213,7 +248,7 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Settings.Debug.MagicDebugSettings.html">MagicDebugSettings</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.html">MagicDebugSettings</a></dt>
     <dd></dd>
   </dl>
 
@@ -228,14 +263,14 @@
 
   <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_Design" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.Design">
   Design
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Design { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string? Design { get; init; }</code></pre>
   </div>
 
 
@@ -259,14 +294,14 @@
 
   <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_LanguagesMin" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.LanguagesMin">
   LanguagesMin
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int LanguagesMin { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int LanguagesMin { get; init; }</code></pre>
   </div>
 
 
@@ -290,7 +325,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_Logo" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.Logo">
   Logo
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The logo to show, should be located in the assets subfolder</p>
@@ -322,14 +357,14 @@
 
   <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_MagicContextInBody" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.MagicContextInBody">
   MagicContextInBody
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool? MagicContextInBody { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool? MagicContextInBody { get; init; }</code></pre>
   </div>
 
 
@@ -353,15 +388,15 @@
 
   <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_Parts" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.Parts">
   Parts
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The parts of this theme, like breadcrumbs and various menu configs</p>
+  <div class="markdown level1 summary"><p>The parts of this theme, like breadcrumb and various menu configs</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NamedSettings&lt;MagicThemePartSettings&gt; Parts { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public NamedSettings&lt;MagicThemePartSettings&gt; Parts { get; init; }</code></pre>
   </div>
 
 
@@ -370,9 +405,51 @@
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Settings.NamedSettings-1.html">NamedSettings</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings.html">MagicThemePartSettings</a>&gt;</dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Settings.NamedSettings-1.html">NamedSettings</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings.html">MagicThemePartSettings</a>&gt;</dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_CloneWith_" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.CloneWith*"></a>
+
+  <h3 id="ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_CloneWith_ToSic_Cre8magic_Client_Themes_Settings_MagicThemeSettings_System_Boolean_" data-uid="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.CloneWith(ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings,System.Boolean)">
+  CloneWith(MagicThemeSettings?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicThemeSettings CloneWith(MagicThemeSettings? priority, bool forceCopy = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>priority</code> <a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.html">MagicThemeSettings</a></dt>
+    <dd></dd>
+    <dt><code>forceCopy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.html">MagicThemeSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
 
 
 
@@ -385,7 +462,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L5" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeSettings.cs/#L9" class="edit-link">Edit this page</a>
         </div>
 
 

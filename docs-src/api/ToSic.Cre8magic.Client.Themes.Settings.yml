@@ -2,8 +2,8 @@
 items:
 - uid: ToSic.Cre8magic.Client.Themes.Settings
   commentId: N:ToSic.Cre8magic.Client.Themes.Settings
-  id: Settings
-  parent: ToSic.Cre8magic.Client.Themes
+  id: Themes.Settings
+  parent: ToSic.Cre8magic.Client
   children:
   - ToSic.Cre8magic.Client.Themes.Settings.MagicThemeDesignSettings
   - ToSic.Cre8magic.Client.Themes.Settings.MagicThemePartSettings

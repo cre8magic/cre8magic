@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace ToSic.Cre8magic.Pages
- | cre8magic </title>
+      <title>Namespace ToSic.Cre8magic.Pages | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace ToSic.Cre8magic.Pages
- | cre8magic ">
+      <meta name="title" content="Namespace ToSic.Cre8magic.Pages | cre8magic ">
+      
       
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -78,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -87,12 +86,35 @@
 
         <article data-uid="ToSic.Cre8magic.Pages">
 
-  <h1 id="ToSic_Cre8magic_Pages" data-uid="ToSic.Cre8magic.Pages" class="text-break">Namespace ToSic.Cre8magic.Pages
-</h1>
+  <h1 id="ToSic_Cre8magic_Pages" data-uid="ToSic.Cre8magic.Pages" class="text-break">Namespace ToSic.Cre8magic.Pages</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
 
+    <h3 id="namespaces">
+Namespaces
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.Internal.html">ToSic.Cre8magic.Pages.Internal</a></dt>
+      <dd></dd>
+    </dl>
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageDesignerBase.html">MagicPageDesignerBase</a></dt>
+      <dd><p>Base class for page designers.
+Can be used as a foundation for creating your custom designers.</p>
+<p>This is a bit safer than just implementing the interface, as future enhancements
+would appear on this class so your implementation would work even on an upgrade.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageDesignerBasic.html">MagicPageDesignerBasic</a></dt>
+      <dd><p>Simple page designer for breadcrumbs or menus.
+If no lookups are specified, the Classes(...) and Data(...) methods will return empty strings.</p>
+</dd>
+    </dl>
     <h3 id="interfaces">
 Interfaces
 </h3>
@@ -110,8 +132,35 @@ They offer many benefits such as:</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageDesigner.html">IMagicPageDesigner</a></dt>
+      <dd><p>Interface for a designer of a magic page.</p>
+<p>Anything implementing this interface can be used as a designer for a magic page,
+providing custom classes and values when generating the HTML for the page.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageList.html">IMagicPageList</a></dt>
+      <dd><p>A list of magic pages with design capabilities.</p>
+<p>It does not represent a page itself, but a list of pages.
+For example, a breadcrumb or a menu.</p>
+<p>It can be iterated to get the pages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageService.html">IMagicPageService</a></dt>
       <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageSetSettings.html">IMagicPageSetSettings</a></dt>
+      <dd><p>WIP
+TODO: naming not final</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageWithDesignWip.html">IMagicPageWithDesignWip</a></dt>
+      <dd><p>An extended magic page which includes design information.</p>
+<p>TODO: naming not final</p>
+</dd>
     </dl>
 
 

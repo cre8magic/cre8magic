@@ -33,16 +33,16 @@ items:
     content.vb: Public Class MagicThemeJsServiceTest Inherits MagicJsServiceBase Implements IMagicThemeJsService
   inheritance:
   - System.Object
-  - ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
+  - ToSic.Cre8magic.JsModules.MagicJsServiceBase
   implements:
   - ToSic.Cre8magic.Client.Services.IMagicThemeJsService
   inheritedMembers:
-  - ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.JsRuntime
-  - ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.ModulePath
-  - ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Log(System.Object[])
-  - ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Module
-  - ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
-  - ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
+  - ToSic.Cre8magic.JsModules.MagicJsServiceBase.JsRuntime
+  - ToSic.Cre8magic.JsModules.MagicJsServiceBase.ModulePath
+  - ToSic.Cre8magic.JsModules.MagicJsServiceBase.Log(System.Object[])
+  - ToSic.Cre8magic.JsModules.MagicJsServiceBase.Module
+  - ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
+  - ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -202,13 +202,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
-  commentId: T:ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
-  parent: ToSic.Cre8magic.Client.JsModules
-  href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html
+- uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase
+  commentId: T:ToSic.Cre8magic.JsModules.MagicJsServiceBase
+  parent: ToSic.Cre8magic.JsModules
+  href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html
   name: MagicJsServiceBase
   nameWithType: MagicJsServiceBase
-  fullName: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
+  fullName: ToSic.Cre8magic.JsModules.MagicJsServiceBase
 - uid: ToSic.Cre8magic.Client.Services.IMagicThemeJsService
   commentId: T:ToSic.Cre8magic.Client.Services.IMagicThemeJsService
   parent: ToSic.Cre8magic.Client.Services
@@ -216,35 +216,35 @@ references:
   name: IMagicThemeJsService
   nameWithType: IMagicThemeJsService
   fullName: ToSic.Cre8magic.Client.Services.IMagicThemeJsService
-- uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.JsRuntime
-  commentId: P:ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.JsRuntime
-  parent: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
-  href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_JsRuntime
+- uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.JsRuntime
+  commentId: P:ToSic.Cre8magic.JsModules.MagicJsServiceBase.JsRuntime
+  parent: ToSic.Cre8magic.JsModules.MagicJsServiceBase
+  href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_JsRuntime
   name: JsRuntime
   nameWithType: MagicJsServiceBase.JsRuntime
-  fullName: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.JsRuntime
-- uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.ModulePath
-  commentId: P:ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.ModulePath
-  parent: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
-  href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_ModulePath
+  fullName: ToSic.Cre8magic.JsModules.MagicJsServiceBase.JsRuntime
+- uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.ModulePath
+  commentId: P:ToSic.Cre8magic.JsModules.MagicJsServiceBase.ModulePath
+  parent: ToSic.Cre8magic.JsModules.MagicJsServiceBase
+  href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_ModulePath
   name: ModulePath
   nameWithType: MagicJsServiceBase.ModulePath
-  fullName: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.ModulePath
-- uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Log(System.Object[])
-  commentId: M:ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Log(System.Object[])
-  parent: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
+  fullName: ToSic.Cre8magic.JsModules.MagicJsServiceBase.ModulePath
+- uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Log(System.Object[])
+  commentId: M:ToSic.Cre8magic.JsModules.MagicJsServiceBase.Log(System.Object[])
+  parent: ToSic.Cre8magic.JsModules.MagicJsServiceBase
   isExternal: true
-  href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_Log_System_Object___
+  href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_Log_System_Object___
   name: Log(params object[])
   nameWithType: MagicJsServiceBase.Log(params object[])
-  fullName: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Log(params object[])
+  fullName: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Log(params object[])
   nameWithType.vb: MagicJsServiceBase.Log(ParamArray Object())
-  fullName.vb: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Log(ParamArray Object())
+  fullName.vb: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Log(ParamArray Object())
   name.vb: Log(ParamArray Object())
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Log(System.Object[])
+  - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Log(System.Object[])
     name: Log
-    href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_Log_System_Object___
+    href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_Log_System_Object___
   - name: (
   - name: params
   - name: " "
@@ -256,9 +256,9 @@ references:
   - name: ']'
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Log(System.Object[])
+  - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Log(System.Object[])
     name: Log
-    href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_Log_System_Object___
+    href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_Log_System_Object___
   - name: (
   - name: ParamArray
   - name: " "
@@ -269,40 +269,40 @@ references:
   - name: (
   - name: )
   - name: )
-- uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Module
-  commentId: M:ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Module
-  parent: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
-  href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_Module
+- uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Module
+  commentId: M:ToSic.Cre8magic.JsModules.MagicJsServiceBase.Module
+  parent: ToSic.Cre8magic.JsModules.MagicJsServiceBase
+  href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_Module
   name: Module()
   nameWithType: MagicJsServiceBase.Module()
-  fullName: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Module()
+  fullName: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Module()
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Module
+  - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Module
     name: Module
-    href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_Module
+    href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_Module
   - name: (
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.Module
+  - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.Module
     name: Module
-    href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_Module
+    href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_Module
   - name: (
   - name: )
-- uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
-  commentId: M:ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
-  parent: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
+- uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
+  commentId: M:ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
+  parent: ToSic.Cre8magic.JsModules.MagicJsServiceBase
   isExternal: true
-  href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_
+  href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_
   name: InvokeAsync<TValue>(string)
   nameWithType: MagicJsServiceBase.InvokeAsync<TValue>(string)
-  fullName: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync<TValue>(string)
+  fullName: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync<TValue>(string)
   nameWithType.vb: MagicJsServiceBase.InvokeAsync(Of TValue)(String)
-  fullName.vb: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync(Of TValue)(String)
+  fullName.vb: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync(Of TValue)(String)
   name.vb: InvokeAsync(Of TValue)(String)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
+  - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
     name: InvokeAsync
-    href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_
+    href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_
   - name: <
   - name: TValue
   - name: '>'
@@ -313,9 +313,9 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
+  - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String)
     name: InvokeAsync
-    href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_
+    href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_
   - name: (
   - name: Of
   - name: " "
@@ -327,21 +327,21 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
-  commentId: M:ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
-  parent: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase
+- uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
+  commentId: M:ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
+  parent: ToSic.Cre8magic.JsModules.MagicJsServiceBase
   isExternal: true
-  href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_System_Object___
+  href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_System_Object___
   name: InvokeAsync<TValue>(string, params object[])
   nameWithType: MagicJsServiceBase.InvokeAsync<TValue>(string, params object[])
-  fullName: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync<TValue>(string, params object[])
+  fullName: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync<TValue>(string, params object[])
   nameWithType.vb: MagicJsServiceBase.InvokeAsync(Of TValue)(String, ParamArray Object())
-  fullName.vb: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync(Of TValue)(String, ParamArray Object())
+  fullName.vb: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync(Of TValue)(String, ParamArray Object())
   name.vb: InvokeAsync(Of TValue)(String, ParamArray Object())
   spec.csharp:
-  - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
+  - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
     name: InvokeAsync
-    href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_System_Object___
+    href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_System_Object___
   - name: <
   - name: TValue
   - name: '>'
@@ -362,9 +362,9 @@ references:
   - name: ']'
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
+  - uid: ToSic.Cre8magic.JsModules.MagicJsServiceBase.InvokeAsync``1(System.String,System.Object[])
     name: InvokeAsync
-    href: ToSic.Cre8magic.Client.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_Client_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_System_Object___
+    href: ToSic.Cre8magic.JsModules.MagicJsServiceBase.html#ToSic_Cre8magic_JsModules_MagicJsServiceBase_InvokeAsync__1_System_String_System_Object___
   - name: (
   - name: Of
   - name: " "
@@ -612,12 +612,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Client.JsModules
-  commentId: N:ToSic.Cre8magic.Client.JsModules
+- uid: ToSic.Cre8magic.JsModules
+  commentId: N:ToSic.Cre8magic.JsModules
   href: ToSic.html
-  name: ToSic.Cre8magic.Client.JsModules
-  nameWithType: ToSic.Cre8magic.Client.JsModules
-  fullName: ToSic.Cre8magic.Client.JsModules
+  name: ToSic.Cre8magic.JsModules
+  nameWithType: ToSic.Cre8magic.JsModules
+  fullName: ToSic.Cre8magic.JsModules
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -627,13 +627,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.JsModules
+  - uid: ToSic.Cre8magic.JsModules
     name: JsModules
-    href: ToSic.Cre8magic.Client.JsModules.html
+    href: ToSic.Cre8magic.JsModules.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -643,13 +639,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Client
-    name: Client
-    href: ToSic.Cre8magic.Client.html
-  - name: .
-  - uid: ToSic.Cre8magic.Client.JsModules
+  - uid: ToSic.Cre8magic.JsModules
     name: JsModules
-    href: ToSic.Cre8magic.Client.JsModules.html
+    href: ToSic.Cre8magic.JsModules.html
 - uid: ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest.#ctor*
   commentId: Overload:ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest.#ctor
   href: ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest.html#ToSic_Cre8magic_Client_Services_MagicThemeJsServiceTest__ctor_Microsoft_JSInterop_IJSRuntime_

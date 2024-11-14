@@ -7,14 +7,10 @@ items:
   children:
   - ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings
   - ToSic.Cre8magic.Client.Controls.IMagicDesigner
-  - ToSic.Cre8magic.Client.Controls.MagicComponent
-  - ToSic.Cre8magic.Client.Controls.MagicControl
-  - ToSic.Cre8magic.Client.Controls.MagicDebug
+  - ToSic.Cre8magic.Client.Controls.MagicComponentBase
+  - ToSic.Cre8magic.Client.Controls.MagicControlBase
   - ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
-  - ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
-  - ToSic.Cre8magic.Client.Controls.MagicExceptions
   - ToSic.Cre8magic.Client.Controls.MagicLogin
-  - ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
   langs:
   - csharp
   - vb
@@ -39,55 +35,31 @@ references:
   name: IMagicDesigner
   nameWithType: IMagicDesigner
   fullName: ToSic.Cre8magic.Client.Controls.IMagicDesigner
-- uid: ToSic.Cre8magic.Client.Controls.MagicComponent
-  commentId: T:ToSic.Cre8magic.Client.Controls.MagicComponent
-  href: ToSic.Cre8magic.Client.Controls.MagicComponent.html
-  name: MagicComponent
-  nameWithType: MagicComponent
-  fullName: ToSic.Cre8magic.Client.Controls.MagicComponent
-- uid: ToSic.Cre8magic.Client.Controls.MagicControl
-  commentId: T:ToSic.Cre8magic.Client.Controls.MagicControl
+- uid: ToSic.Cre8magic.Client.Controls.MagicComponentBase
+  commentId: T:ToSic.Cre8magic.Client.Controls.MagicComponentBase
+  href: ToSic.Cre8magic.Client.Controls.MagicComponentBase.html
+  name: MagicComponentBase
+  nameWithType: MagicComponentBase
+  fullName: ToSic.Cre8magic.Client.Controls.MagicComponentBase
+- uid: ToSic.Cre8magic.Client.Controls.MagicControlBase
+  commentId: T:ToSic.Cre8magic.Client.Controls.MagicControlBase
   parent: ToSic.Cre8magic.Client.Controls
-  href: ToSic.Cre8magic.Client.Controls.MagicControl.html
-  name: MagicControl
-  nameWithType: MagicControl
-  fullName: ToSic.Cre8magic.Client.Controls.MagicControl
-- uid: ToSic.Cre8magic.Client.Controls.MagicDebug
-  commentId: T:ToSic.Cre8magic.Client.Controls.MagicDebug
-  href: ToSic.Cre8magic.Client.Controls.MagicDebug.html
-  name: MagicDebug
-  nameWithType: MagicDebug
-  fullName: ToSic.Cre8magic.Client.Controls.MagicDebug
+  href: ToSic.Cre8magic.Client.Controls.MagicControlBase.html
+  name: MagicControlBase
+  nameWithType: MagicControlBase
+  fullName: ToSic.Cre8magic.Client.Controls.MagicControlBase
 - uid: ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
   commentId: T:ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
   href: ToSic.Cre8magic.Client.Controls.MagicDynamicComponent.html
   name: MagicDynamicComponent
   nameWithType: MagicDynamicComponent
   fullName: ToSic.Cre8magic.Client.Controls.MagicDynamicComponent
-- uid: ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
-  commentId: T:ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
-  href: ToSic.Cre8magic.Client.Controls.MagicDynamicComponents.html
-  name: MagicDynamicComponents
-  nameWithType: MagicDynamicComponents
-  fullName: ToSic.Cre8magic.Client.Controls.MagicDynamicComponents
-- uid: ToSic.Cre8magic.Client.Controls.MagicExceptions
-  commentId: T:ToSic.Cre8magic.Client.Controls.MagicExceptions
-  href: ToSic.Cre8magic.Client.Controls.MagicExceptions.html
-  name: MagicExceptions
-  nameWithType: MagicExceptions
-  fullName: ToSic.Cre8magic.Client.Controls.MagicExceptions
 - uid: ToSic.Cre8magic.Client.Controls.MagicLogin
   commentId: T:ToSic.Cre8magic.Client.Controls.MagicLogin
   href: ToSic.Cre8magic.Client.Controls.MagicLogin.html
   name: MagicLogin
   nameWithType: MagicLogin
   fullName: ToSic.Cre8magic.Client.Controls.MagicLogin
-- uid: ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
-  commentId: T:ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
-  href: ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel.html
-  name: MagicOqtaneControlPanel
-  nameWithType: MagicOqtaneControlPanel
-  fullName: ToSic.Cre8magic.Client.Controls.MagicOqtaneControlPanel
 - uid: ToSic.Cre8magic.Client.Controls
   commentId: N:ToSic.Cre8magic.Client.Controls
   href: ToSic.html

@@ -1,0 +1,45 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Controls
+  commentId: N:ToSic.Cre8magic.Controls
+  id: Controls
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.Controls.MagicDebug
+  - ToSic.Cre8magic.Controls.MagicDynamicComponents
+  - ToSic.Cre8magic.Controls.MagicExceptions
+  - ToSic.Cre8magic.Controls.MagicOqtaneControlPanel
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Controls
+  nameWithType: ToSic.Cre8magic.Controls
+  fullName: ToSic.Cre8magic.Controls
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Controls.MagicDebug
+  commentId: T:ToSic.Cre8magic.Controls.MagicDebug
+  href: ToSic.Cre8magic.Controls.MagicDebug.html
+  name: MagicDebug
+  nameWithType: MagicDebug
+  fullName: ToSic.Cre8magic.Controls.MagicDebug
+- uid: ToSic.Cre8magic.Controls.MagicDynamicComponents
+  commentId: T:ToSic.Cre8magic.Controls.MagicDynamicComponents
+  href: ToSic.Cre8magic.Controls.MagicDynamicComponents.html
+  name: MagicDynamicComponents
+  nameWithType: MagicDynamicComponents
+  fullName: ToSic.Cre8magic.Controls.MagicDynamicComponents
+- uid: ToSic.Cre8magic.Controls.MagicExceptions
+  commentId: T:ToSic.Cre8magic.Controls.MagicExceptions
+  href: ToSic.Cre8magic.Controls.MagicExceptions.html
+  name: MagicExceptions
+  nameWithType: MagicExceptions
+  fullName: ToSic.Cre8magic.Controls.MagicExceptions
+- uid: ToSic.Cre8magic.Controls.MagicOqtaneControlPanel
+  commentId: T:ToSic.Cre8magic.Controls.MagicOqtaneControlPanel
+  href: ToSic.Cre8magic.Controls.MagicOqtaneControlPanel.html
+  name: MagicOqtaneControlPanel
+  nameWithType: MagicOqtaneControlPanel
+  fullName: ToSic.Cre8magic.Controls.MagicOqtaneControlPanel

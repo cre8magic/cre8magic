@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class MagicMenuRoot
- | cre8magic </title>
+      <title>Class MagicMenuRoot | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class MagicMenuRoot
- | cre8magic ">
+      <meta name="title" content="Class MagicMenuRoot | cre8magic ">
       
+      <meta name="description" content="Base class for Razor menus">
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -30,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -78,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -90,8 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot" class="text-break">
-    Class MagicMenuRoot
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L10"><i class="bi bi-code-slash"></i></a>
+Class MagicMenuRoot  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -104,7 +102,7 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class MagicMenuRoot : MagicMenuBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IHasMagicSettings, IMagicDesigner</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class MagicMenuRoot : MagicMenuBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl</code></pre>
   </div>
 
 
@@ -118,7 +116,7 @@
       <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase</a></div>
       <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeControlBase.cs">ThemeControlBase</a></div>
       <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/Controls/Theme/MenuBase.cs">MenuBase</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html">MagicMenuBase</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuBase.html">MagicMenuBase</a></div>
       <div><span class="xref">MagicMenuRoot</span></div>
     </dd>
   </dl>
@@ -130,30 +128,21 @@
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleevent">IHandleEvent</a></div>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleafterrender">IHandleAfterRender</a></div>
       <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Interfaces/IThemeControl.cs">IThemeControl</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.html">IMagicControlWithSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Settings.IHasMagicSettings.html">IHasMagicSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Controls.IMagicDesigner.html">IMagicDesigner</a></div>
     </dd>
   </dl>
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_Settings">MagicMenuBase.Settings</a>
+      <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuBase.html#ToSic_Cre8magic_Menus_MagicMenuBase_Classes_System_String_">MagicMenuBase.Classes(string)</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_PageFactory">MagicMenuBase.PageFactory</a>
+      <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuBase.html#ToSic_Cre8magic_Menus_MagicMenuBase_Value_System_String_">MagicMenuBase.Value(string)</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_Classes_System_String_">MagicMenuBase.Classes(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_Value_System_String_">MagicMenuBase.Value(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBase.html#ToSic_Cre8magic_Client_Menus_MagicMenuBase_Id_System_String_">MagicMenuBase.Id(string)</a>
+      <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuBase.html#ToSic_Cre8magic_Menus_MagicMenuBase_Id_System_String_">MagicMenuBase.Id(string)</a>
     </div>
     <div>
       <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/Controls/Theme/MenuBase.cs">MenuBase.GetTarget(Page)</a>
@@ -332,7 +321,7 @@
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Children" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Children">
   Children
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -364,7 +353,7 @@ public bool? Children { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_ConfigName" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.ConfigName">
   ConfigName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -396,7 +385,7 @@ public string? ConfigName { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Debug" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Debug">
   Debug
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -428,7 +417,7 @@ public bool? Debug { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Depth" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Depth">
   Depth
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -460,7 +449,7 @@ public int? Depth { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Design" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Design">
   Design
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -492,7 +481,7 @@ public string? Design { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Display" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Display">
   Display
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L33"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -524,7 +513,7 @@ public bool? Display { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_IsHorizontal" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.IsHorizontal">
   IsHorizontal
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -555,7 +544,7 @@ public bool? Display { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_IsVertical" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.IsVertical">
   IsVertical
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Detect if the menu is configured for vertical.
@@ -588,7 +577,7 @@ For the most common 2 kinds of menu options.</p>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Level" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Level">
   Level
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -620,7 +609,7 @@ public int? Level { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Logger" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Logger">
   Logger
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -648,18 +637,19 @@ public ILogger&lt;Menu&gt;? Logger { get; set; }</code></pre>
 
 
 
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Menu_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Menu*"></a>
+  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_MagicMenuService_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.MagicMenuService*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Menu" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Menu">
-  Menu
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_MagicMenuService" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.MagicMenuService">
+  MagicMenuService
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected MagicMenuTree? Menu { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Inject]
+public IMagicMenuService? MagicMenuService { get; set; }</code></pre>
   </div>
 
 
@@ -668,7 +658,38 @@ public ILogger&lt;Menu&gt;? Logger { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuTree.html">MagicMenuTree</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Menus.IMagicMenuService.html">IMagicMenuService</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Menu_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Menu*"></a>
+
+  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Menu" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Menu">
+  Menu
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IMagicPageList? Menu { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageList.html">IMagicPageList</a></dt>
     <dd></dd>
   </dl>
 
@@ -683,7 +704,7 @@ public ILogger&lt;Menu&gt;? Logger { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_MenuId" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.MenuId">
   MenuId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -715,7 +736,7 @@ public string? MenuId { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_MenuSettings" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.MenuSettings">
   MenuSettings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Complex object with all settings.
@@ -734,7 +755,7 @@ public MagicMenuSettings? MenuSettings { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Menus.Settings.MagicMenuSettings.html">MagicMenuSettings</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></dt>
     <dd></dd>
   </dl>
 
@@ -745,19 +766,19 @@ public MagicMenuSettings? MenuSettings { get; set; }</code></pre>
 
 
 
-  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_MenuTreeService_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.MenuTreeService*"></a>
+  <a id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_PageList_" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.PageList*"></a>
 
-  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_MenuTreeService" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.MenuTreeService">
-  MenuTreeService
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_PageList" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.PageList">
+  PageList
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Inject]
-public MagicMenuBuilder? MenuTreeService { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Parameter]
+public List&lt;int&gt;? PageList { get; set; }</code></pre>
   </div>
 
 
@@ -766,7 +787,7 @@ public MagicMenuBuilder? MenuTreeService { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Menus.MagicMenuBuilder.html">MagicMenuBuilder</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -781,7 +802,7 @@ public MagicMenuBuilder? MenuTreeService { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Start" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Start">
   Start
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -813,7 +834,7 @@ public string? Start { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_Template" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.Template">
   Template
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -849,7 +870,7 @@ public string? Template { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Client_Menus_MagicMenuRoot_OnParametersSetAsync" data-uid="ToSic.Cre8magic.Client.Menus.MagicMenuRoot.OnParametersSetAsync">
   OnParametersSetAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Method invoked when the component has received parameters from its parent in
@@ -883,7 +904,7 @@ the render tree, and the incoming values have been assigned to properties.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L13" class="edit-link">Edit this page</a>
         </div>
 
 

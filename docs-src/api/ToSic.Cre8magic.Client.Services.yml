@@ -5,14 +5,12 @@ items:
   id: Services
   parent: ToSic.Cre8magic.Client
   children:
+  - ToSic.Cre8magic.Client.Services.IMagicSettingsService
   - ToSic.Cre8magic.Client.Services.IMagicThemeJsService
   - ToSic.Cre8magic.Client.Services.LanguageService
   - ToSic.Cre8magic.Client.Services.MagicPageEditService
   - ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
-  - ToSic.Cre8magic.Client.Services.MagicSettingsJsonService
-  - ToSic.Cre8magic.Client.Services.MagicSettingsService
   - ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest
-  - ToSic.Cre8magic.Client.Services.Startup
   langs:
   - csharp
   - vb
@@ -23,6 +21,13 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  commentId: T:ToSic.Cre8magic.Client.Services.IMagicSettingsService
+  parent: ToSic.Cre8magic.Client.Services
+  href: ToSic.Cre8magic.Client.Services.IMagicSettingsService.html
+  name: IMagicSettingsService
+  nameWithType: IMagicSettingsService
+  fullName: ToSic.Cre8magic.Client.Services.IMagicSettingsService
 - uid: ToSic.Cre8magic.Client.Services.IMagicThemeJsService
   commentId: T:ToSic.Cre8magic.Client.Services.IMagicThemeJsService
   parent: ToSic.Cre8magic.Client.Services
@@ -50,32 +55,12 @@ references:
   name: MagicServiceWithSettingsBase
   nameWithType: MagicServiceWithSettingsBase
   fullName: ToSic.Cre8magic.Client.Services.MagicServiceWithSettingsBase
-- uid: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService
-  commentId: T:ToSic.Cre8magic.Client.Services.MagicSettingsJsonService
-  parent: ToSic.Cre8magic.Client.Services
-  href: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService.html
-  name: MagicSettingsJsonService
-  nameWithType: MagicSettingsJsonService
-  fullName: ToSic.Cre8magic.Client.Services.MagicSettingsJsonService
-- uid: ToSic.Cre8magic.Client.Services.MagicSettingsService
-  commentId: T:ToSic.Cre8magic.Client.Services.MagicSettingsService
-  parent: ToSic.Cre8magic.Client.Services
-  href: ToSic.Cre8magic.Client.Services.MagicSettingsService.html
-  name: MagicSettingsService
-  nameWithType: MagicSettingsService
-  fullName: ToSic.Cre8magic.Client.Services.MagicSettingsService
 - uid: ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest
   commentId: T:ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest
   href: ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest.html
   name: MagicThemeJsServiceTest
   nameWithType: MagicThemeJsServiceTest
   fullName: ToSic.Cre8magic.Client.Services.MagicThemeJsServiceTest
-- uid: ToSic.Cre8magic.Client.Services.Startup
-  commentId: T:ToSic.Cre8magic.Client.Services.Startup
-  href: ToSic.Cre8magic.Client.Services.Startup.html
-  name: Startup
-  nameWithType: Startup
-  fullName: ToSic.Cre8magic.Client.Services.Startup
 - uid: ToSic.Cre8magic.Client.Services
   commentId: N:ToSic.Cre8magic.Client.Services
   href: ToSic.html
