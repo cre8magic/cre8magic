@@ -18,17 +18,25 @@ public abstract class MagicMenuRoot: MagicMenuBase
     /// </summary>
     [Parameter] public MagicMenuSettings? MenuSettings { get; set; }
 
+    [Parameter] public bool? Debug { get; set; }
+
+
+    #region Properties which should not be used any more - to be removed
+
     [Parameter] public string? MenuId { get; set; }
     [Parameter] public string? ConfigName { get; set; }
-    ///// <inheritdoc />
-    //[Parameter] public List<int>? PageList { get; set; }
+    /// <inheritdoc />
+    [Parameter] public List<int>? PageList { get; set; }
     [Parameter] public bool? Children { get; set; }
-    [Parameter] public bool? Debug { get; set; }
+
     [Parameter] public int? Depth { get; set; }
     [Parameter] public bool? Display { get; set; } = true;
     [Parameter] public int? Level { get; set; }
     [Parameter] public string? Start { get; set; }
     [Parameter] public string? Design { get; set; }
+
+    #endregion
+
 
     [Parameter] public string? Template { get; set; }
 
@@ -36,7 +44,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
 
     [Inject] public ILogger<Menu>? Logger { get; set; }
 
-    [Inject] public MagicMenuBuilder? MenuTreeService { get; set; } // = new ();
+    [Inject] public MagicMenuBuilder? MagicMenuService { get; set; }
 
     /// <summary>
     /// Detect if the menu is configured for vertical.
@@ -49,22 +57,23 @@ public abstract class MagicMenuRoot: MagicMenuBase
     {
         await base.OnParametersSetAsync();
 
-        //MenuTreeService?.InitSettings(AllSettings);
-
+        var startSettings = MenuSettings;
         var menuSettings = MenuSettings ?? new MagicMenuSettings
         {
-            Id = MenuId,
-            Children = Children,
-            ConfigName = ConfigName,
-            Debug = Debug == null ? null : new() { Allowed = Debug, Admin = Debug, Anonymous = Debug },
-            Depth = Depth,
-            Display = Display,
-            Level = Level,
-            Start = Start,
-            Template = Template,
+            Id = MenuId ?? startSettings?.MenuId,
+            Debug = Debug == null
+                ? startSettings?.Debug
+                : new() { Allowed = Debug, Admin = Debug, Anonymous = Debug },
+            Template = Template ?? startSettings?.Template,
+            Children = Children ?? startSettings?.Children,
+            ConfigName = ConfigName ?? startSettings?.ConfigName,
+            Depth = Depth ?? startSettings?.Depth,
+            Display = Display ?? startSettings?.Display,
+            Level = Level ?? startSettings?.Level,
+            Start = Start ?? startSettings?.Start
         };
 
-        Menu = MenuTreeService?.GetTree(menuSettings, PageState, PageFactory.Get(MenuPages).ToList());
+        Menu = MagicMenuService?.GetTree(PageState, menuSettings);
     }
 
 }

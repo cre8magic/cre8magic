@@ -1,4 +1,5 @@
-﻿<h1>Test many Menus</h1>
+﻿@using ToSic.Cre8magic.TestTheme.Client.Controls.Menu
+<h1>Test many Menus</h1>
 
 @code {
     public const string TopLevelWithSubpagesId = "29";
@@ -12,12 +13,16 @@
     <hr/>
 
     <h2>Various Settings</h2>
-    <h3>Only one specific page, no other params</h3>
+    <h3>Only one specific page (@nameof(MagicMenuSettings.Start)), no other params</h3>
+    <h4>Using Attributes</h4>
     <Menu Start="@TopLevelWithSubpagesId"></Menu>
+    <h4>Using @nameof(MagicMenuSettings)</h4>
     <Menu MenuSettings="new() { Start = TopLevelWithSubpagesId }"></Menu>
 
-    <h3>Only one specific page, LevelDepth = 0</h3>
-    <Menu Start="@TopLevelWithSubpagesId" Depth="0" ></Menu>
+    <h3>Only one specific page (@nameof(MagicMenuSettings.Start), @nameof(MagicMenuSettings.Depth) = 0)</h3>
+    <h4>Using Attributes</h4>
+    <Menu Start="@TopLevelWithSubpagesId" Depth="0"></Menu>
+    <h4>Using @nameof(MagicMenuSettings)</h4>
     <Menu MenuSettings="new() { Start = TopLevelWithSubpagesId, Depth = 0 }"></Menu>
 
     <h3>Only one specific page @TopLevelWithSubpagesId, with Depth=1</h3>

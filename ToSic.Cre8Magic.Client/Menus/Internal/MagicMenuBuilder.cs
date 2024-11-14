@@ -16,7 +16,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
 
     private const string MenuSettingPrefix = "menu-";
 
-    public IMagicPageList GetTree(MagicMenuSettings settings, PageState pageState, List<IMagicPage> menuPages)
+    public IMagicPageList GetTree(PageState pageState, MagicMenuSettings settings)
     {
         var messages = new List<string>();
         var allSettings = settingsSvc.GetSettings(pageState);
@@ -37,7 +37,9 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         // If the user didn't specify a config name in the Parameters or the config name
         // isn't contained in the json file the normal parameter are given to the service
         var menuSettings = settingsSvc.MenuSettings.Find(configName);
-        settings = JsonMerger.Merge(settings, menuSettings, Logger);
+        // WIP #DropJsonMerge
+        //settings = JsonMerger.Merge(settings, menuSettings, Logger);
+        settings = menuSettings.CloneMerge(settings);
 
         // See if we have a default configuration for CSS which should be applied
         var menuDesign = allSettings.DesignName(configName);
@@ -69,7 +71,6 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         settings = settings with
         {
             AllSettings = allSettings,
-            Pages = menuPages,
         };
 
         var result = pageSvc.Setup(pageState).GetMenuInternal(settings, messages);
