@@ -92,7 +92,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private NamedSettingsReader<MagicThemeSettings> Theme =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults,
             cat => cat.Themes,
-            // WIP #JsonMerge
+            // WIP #DropJsonMerge
             //(name) => json =>
             //{
             //    if (json == null) return null;

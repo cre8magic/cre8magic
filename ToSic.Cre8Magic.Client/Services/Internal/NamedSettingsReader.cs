@@ -14,7 +14,7 @@ internal class NamedSettingsReader<TPart>(
     IMagicSettingsService parent,
     Defaults<TPart> defaults,
     Func<MagicSettingsCatalog, NamedSettings<TPart>> findList,
-    // WIP #JsonMerge
+    // WIP #DropJsonMerge
     //Func<string, Func<string, string>>? jsonProcessing = default,
     Func<string, TPart, TPart>? modify = default)
     where TPart : class, ICanClone<TPart>, new()
@@ -52,7 +52,7 @@ internal class NamedSettingsReader<TPart>(
         if (defaults.Foundation == null)
             return priority;
 
-        // WIP #JsonMerge
+        // WIP #DropJsonMerge
         //var merged = Merge(priority, defaults.Foundation, parent.Logger, jsonProcessing?.Invoke(realName));
 
         var mergedNew = defaults.Foundation.CloneWith(priority);
@@ -73,7 +73,7 @@ internal class NamedSettingsReader<TPart>(
         var addition = FindPart(name);
         if (addition == null)
             return priority;
-        // WIP #JsonMerge
+        // WIP #DropJsonMerge
         //var mergeJson = Merge(priority, addition, parent.Logger, jsonProcessing?.Invoke(realName));
         var mergeNew = addition.CloneWith(priority);
         if (modify != null)

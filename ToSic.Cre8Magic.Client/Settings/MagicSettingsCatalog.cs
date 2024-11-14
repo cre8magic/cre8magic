@@ -11,6 +11,23 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public record MagicSettingsCatalog: IHasDebugSettings
 {
+    public MagicSettingsCatalog() { }
+
+    public MagicSettingsCatalog(MagicSettingsCatalog? priority, MagicSettingsCatalog? fallback = default)
+    {
+        Version = priority?.Version ?? fallback?.Version ?? Fallback.Version;
+        Debug = priority?.Debug ?? fallback?.Debug;
+        Source = priority?.Source ?? fallback?.Source ?? Fallback.Source;
+
+        Analytics = new(priority?.Analytics, fallback?.Analytics);
+        Themes = new(priority?.Themes, fallback?.Themes);
+        ThemeDesigns = new(priority?.ThemeDesigns, fallback?.ThemeDesigns);
+        Containers = new(priority?.Containers, fallback?.Containers);
+        Languages = new(priority?.Languages, fallback?.Languages);
+        Menus = new(priority?.Menus, fallback?.Menus);
+        MenuDesigns = new(priority?.MenuDesigns, fallback?.MenuDesigns);
+    }
+
     public const string SourceDefault = "Unknown";
     /// <summary>
     /// Version number when loading from JSON to verify it's what we expect

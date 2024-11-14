@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// <summary>
 /// Will create a MenuTree based on the current pages information and configuration
 /// </summary>
-public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicPageService pageSvc, IMagicSettingsService settingsSvc) : MagicServiceWithSettingsBase, IMagicMenuService
+public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsService settingsSvc) : MagicServiceWithSettingsBase, IMagicMenuService
 {
     public ILogger Logger { get; } = logger;
 

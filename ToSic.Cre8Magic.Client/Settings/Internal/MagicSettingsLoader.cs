@@ -33,16 +33,27 @@ public class MagicSettingsLoader(MagicSettingsJsonService jsonService, ILogger<M
     internal MagicSettingsCatalog MergeCatalogs()
     {
         var sources = ConfigurationSources;
-        var priority = JsonSerializer.Serialize(sources.First());
-        foreach (var source in sources.Skip(1))
-        {
-            // get new json
-            var lowerPriority = JsonSerializer.Serialize(source, JsonMerger.GetNewOptionsForPreMerge(logger));
-            var merged = JsonMerger.Merge(priority, lowerPriority);
-            priority = merged;
-        }
-        var result = JsonSerializer.Deserialize<MagicSettingsCatalog>(priority);
-        return result!;
+
+        if (sources.Count == 0)
+            return new();
+        var prioCat = sources.First();
+        if (sources.Count == 1)
+            return prioCat;
+
+        prioCat = sources.Aggregate(prioCat, (current, catalog) => new(current, catalog));
+
+        return prioCat;
+
+        //var priority = JsonSerializer.Serialize(sources.First());
+        //foreach (var source in sources.Skip(1))
+        //{
+        //    // get new json
+        //    var lowerPriority = JsonSerializer.Serialize(source, JsonMerger.GetNewOptionsForPreMerge(logger));
+        //    var merged = JsonMerger.Merge(priority, lowerPriority);
+        //    priority = merged;
+        //}
+        //var result = JsonSerializer.Deserialize<MagicSettingsCatalog>(priority);
+        //return result!;
     }
 
     private List<MagicSettingsCatalog> ConfigurationSources => _configurationSources ??= Load();
