@@ -1,26 +1,24 @@
 ﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
-using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Settings.Json;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Menus;
+namespace ToSic.Cre8magic.Menus.Internal;
 
 /// <summary>
 /// Will create a MenuTree based on the current pages information and configuration
 /// </summary>
-public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageService pageSvc, IMagicSettingsService settingsSvc) : MagicServiceWithSettingsBase
+public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicPageService pageSvc, IMagicSettingsService settingsSvc) : MagicServiceWithSettingsBase, IMagicMenuService
 {
     public ILogger Logger { get; } = logger;
 
     private const string MenuSettingPrefix = "menu-";
 
-    public IMagicPageList GetTree(PageState pageState, MagicMenuSettings settings)
+    public IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? settings = default)
     {
         var messages = new List<string>();
         var allSettings = settingsSvc.GetSettings(pageState);
-        var (configName, configMessages) = settingsSvc.FindConfigName(settings.ConfigName, allSettings.Name);
+        var (configName, configMessages) = settingsSvc.FindConfigName(settings?.ConfigName, allSettings.Name);
         messages.AddRange(configMessages);
 
         // Check if we have a name-remap to consider
@@ -39,7 +37,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         var menuSettings = settingsSvc.MenuSettings.Find(configName);
         // WIP #DropJsonMerge
         //settings = JsonMerger.Merge(settings, menuSettings, Logger);
-        settings = menuSettings.CloneWith(settings);
+        var mergedSettings = menuSettings.CloneWith(settings);
 
         // See if we have a default configuration for CSS which should be applied
         var menuDesign = allSettings.DesignName(configName);
@@ -57,23 +55,23 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         // Usually there is no Design-object pre-filled, in which case we should
         // 1. try to find it in json
         // 2. use the one from the configuration
-        if (settings.DesignSettings == null)
+        if (mergedSettings.DesignSettings == null)
         {
             // Check various places where design could be configured by priority
             var designConfig = settingsSvc.MenuDesigns.Find(designName, allSettings.Name);
 
             //config.DesignSettings = designConfig;
-            settings = settings with { DesignSettings = designConfig };
+            mergedSettings = mergedSettings with { DesignSettings = designConfig };
         }
         else
             messages.Add("Design rules already set");
 
-        settings = settings with
+        mergedSettings = mergedSettings with
         {
             AllSettings = allSettings,
         };
 
-        var result = pageSvc.Setup(pageState).GetMenuInternal(settings, messages);
+        var result = pageSvc.Setup(pageState).GetMenuInternal(mergedSettings, messages);
         return result;
     }
 }

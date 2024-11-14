@@ -58,12 +58,11 @@ internal class MagicPageService() : IMagicPageService
     private IMagicPageList GetBreadcrumb(MagicPageFactory pageFactory, MagicBreadcrumbSettings? specs = default) =>
         pageFactory.Breadcrumb.Get(specs);
 
-    public IMagicPageList GetMenu(MagicMenuSettings? specs = default) =>
-        GetMenuInternal(specs, null);
+    public IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? specs = default) =>
+        GetMenuInternal(specs ?? new(), null);
 
-    public IMagicPageList GetMenuInternal(MagicMenuSettings? specs, List<string>? debugMessages)
+    public IMagicPageList GetMenuInternal(MagicMenuSettings specs, List<string>? debugMessages)
     {
-        specs ??= new();
         var rootBuilder = new MagicMenuFactoryRoot(PageState, specs, debugMessages);
         var list = new MagicPageList(PageFactory, rootBuilder.Factory, rootBuilder.GetChildren());
         return list;

@@ -33,7 +33,7 @@ public interface IMagicPageService
 
     IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default);
 
-    IMagicPageList GetMenu(MagicMenuSettings? specs = default);
+    IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? specs = default);
 
-    internal IMagicPageList GetMenuInternal(MagicMenuSettings? specs, List<string>? debugMessages);
+    internal IMagicPageList GetMenuInternal(MagicMenuSettings specs, List<string>? debugMessages);
 }

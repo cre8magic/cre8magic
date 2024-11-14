@@ -44,7 +44,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
 
     [Inject] public ILogger<Menu>? Logger { get; set; }
 
-    [Inject] public MagicMenuBuilder? MagicMenuService { get; set; }
+    [Inject] public IMagicMenuService? MagicMenuService { get; set; }
 
     /// <summary>
     /// Detect if the menu is configured for vertical.
@@ -73,7 +73,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
             Start = Start ?? startSettings?.Start
         };
 
-        Menu = MagicMenuService?.GetTree(PageState, menuSettings);
+        Menu = MagicMenuService?.GetMenu(PageState, menuSettings);
     }
 
 }

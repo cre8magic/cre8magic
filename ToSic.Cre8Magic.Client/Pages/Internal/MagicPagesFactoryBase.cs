@@ -44,9 +44,9 @@ internal abstract class MagicPagesFactoryBase(MagicPageFactory pageFactory)
         if (MagicSettings == null)
             return new TokenEngine([new PageTokens(page)]);
 
-        var originalPage = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
-        originalPage = originalPage.Clone(page);
-        return MagicSettings.Tokens.SwapParser(originalPage);
+        var originalPageTokens = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
+        var updatedPageTokens = originalPageTokens.Clone(page);
+        return MagicSettings.Tokens.SwapParser(updatedPageTokens);
     }
 
 
