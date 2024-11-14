@@ -1,48 +1,40 @@
 @namespace ToSic.Module.Cre8magicTests
-@using ToSic.Module.Cre8MagicTests.Client.BreadcrumbTests
+@using ToSic.Module.Cre8MagicTests.Client.Tests
 @inherits ModuleBase
 @inject IStringLocalizer<Index> Localizer
+@inject ISettingService SettingService
 
 @code {
-    public string SelectedTest { get; set; }
+    public string SelectedTest { get; set; } = "";
+    public string SelectedInDb = "wait-for-loading";
+    internal TestDescription SelectedType => TestDatabase.Tests.FirstOrDefault(t => t.Id == SelectedTest);
 }
 
-@{
-    var tests = new List<string> { "Test1", "Test2", "Test3" };
-}
 
-<h1>Cre8magic Tests</h1>
-<p>
-    Select a test from the following list:
-</p>
+<sub>Cre8magic Tests - Select from the list</sub>
 <select class="form-control" @bind="@SelectedTest">
 
     <option value=""></option>
-    @foreach(var test in tests)
+    @foreach(var test in TestDatabase.Tests)
     {
-        <option value = "@test"> @test </option>
+        <option value = "@test.Id"> @test.Name </option>
     }
 </select>
-
-<div>
-    SelectedTest: @SelectedTest
-</div>
-
-@if (SelectedTest == "Test1")
+@* Show save button for logged-in users if the value had changed *@
+@if (SelectedType != null && SelectedType.Id != SelectedInDb && PageState.User?.IsAuthenticated == true)
 {
-    <BreadcrumbTest1></BreadcrumbTest1>
+    <button type="button" class="btn btn-success" @onclick="@(async () => await UpdateSettings(SelectedType.Id))">@Localizer["SaveSettings"]</button>
 }
+<br/>
 
-@if (SelectedTest == "Test2")
+@if (SelectedType != null)
 {
-    <BreadcrumbTest2></BreadcrumbTest2>
+    <div>
+        @SelectedType.Id
+    </div>
+
+    <DynamicComponent Type="@SelectedType.Type"></DynamicComponent>
 }
-
-
-<ActionLink Action="Add" Security="SecurityAccessLevel.Edit" Text="Add Cre8magicTests" ResourceKey="Add" />
-<br />
-<br />
-<p>@Localizer["Message.DisplayNone"]</p>
 
 @code {
     public override string RenderMode => RenderModes.Static;
@@ -52,5 +44,32 @@
         new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
         new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
     };
-    
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Dictionary<string, string> settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
+            SelectedTest = SelectedInDb = SettingService.GetSetting(settings, "ControlToShow", "");
+        }
+        catch (Exception ex)
+        {
+            AddModuleMessage(ex.Message, MessageType.Error);
+        }
+    }
+
+    public async Task UpdateSettings(string value)
+    {
+        try
+        {
+            Dictionary<string, string> settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
+            SettingService.SetSetting(settings, "ControlToShow", value);
+            await SettingService.UpdateModuleSettingsAsync(settings, ModuleState.ModuleId);
+        }
+        catch (Exception ex)
+        {
+            AddModuleMessage(ex.Message, MessageType.Error);
+        }
+    }
+
 }
