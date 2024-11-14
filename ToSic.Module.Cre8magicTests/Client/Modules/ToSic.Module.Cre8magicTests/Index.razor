@@ -1,0 +1,56 @@
+@namespace ToSic.Module.Cre8magicTests
+@using ToSic.Module.Cre8MagicTests.Client.BreadcrumbTests
+@inherits ModuleBase
+@inject IStringLocalizer<Index> Localizer
+
+@code {
+    public string SelectedTest { get; set; }
+}
+
+@{
+    var tests = new List<string> { "Test1", "Test2", "Test3" };
+}
+
+<h1>Cre8magic Tests</h1>
+<p>
+    Select a test from the following list:
+</p>
+<select class="form-control" @bind="@SelectedTest">
+
+    <option value=""></option>
+    @foreach(var test in tests)
+    {
+        <option value = "@test"> @test </option>
+    }
+</select>
+
+<div>
+    SelectedTest: @SelectedTest
+</div>
+
+@if (SelectedTest == "Test1")
+{
+    <BreadcrumbTest1></BreadcrumbTest1>
+}
+
+@if (SelectedTest == "Test2")
+{
+    <BreadcrumbTest2></BreadcrumbTest2>
+}
+
+
+<ActionLink Action="Add" Security="SecurityAccessLevel.Edit" Text="Add Cre8magicTests" ResourceKey="Add" />
+<br />
+<br />
+<p>@Localizer["Message.DisplayNone"]</p>
+
+@code {
+    public override string RenderMode => RenderModes.Static;
+
+    public override List<Resource> Resources => new List<Resource>()
+    {
+        new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
+        new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
+    };
+    
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ToSic.Module.Cre8magicTests</id>
+    <version>1.0.0</version>
+    <authors>ToSic</authors>
+    <owners>ToSic</owners>
+    <title>Cre8magicTests</title>
+    <description>Various test to place on pages to verify cre8magic functionality</description>
+    <copyright>ToSic</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/oqtane/oqtane.framework</projectUrl>
+    <icon>icon.png</icon>
+    <tags>oqtane module</tags>
+    <releaseNotes></releaseNotes>
+    <summary></summary>
+    <dependencies>
+      <dependency id="Oqtane.Framework" version="5.2.4" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\Client\bin\Release\net8.0\ToSic.Module.Cre8magicTests.Client.Oqtane.dll" target="lib\net8.0" /> 
+    <file src="..\Client\bin\Release\net8.0\ToSic.Module.Cre8magicTests.Client.Oqtane.pdb" target="lib\net8.0" /> 
+    <file src="..\Server\bin\Release\net8.0\ToSic.Module.Cre8magicTests.Server.Oqtane.dll" target="lib\net8.0" /> 
+    <file src="..\Server\bin\Release\net8.0\ToSic.Module.Cre8magicTests.Server.Oqtane.pdb" target="lib\net8.0" /> 
+    <file src="..\Shared\bin\Release\net8.0\ToSic.Module.Cre8magicTests.Shared.Oqtane.dll" target="lib\net8.0" /> 
+    <file src="..\Shared\bin\Release\net8.0\ToSic.Module.Cre8magicTests.Shared.Oqtane.pdb" target="lib\net8.0" /> 
+    <file src="..\Server\wwwroot\**\*.*" target="wwwroot" /> 
+    <file src="icon.png" target="" />
+  </files>
+</package>

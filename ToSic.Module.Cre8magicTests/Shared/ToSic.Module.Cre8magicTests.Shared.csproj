@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>    
+    <Version>1.0.0</Version>
+    <Product>ToSic.Module.Cre8magicTests</Product>
+    <Authors>ToSic</Authors>
+    <Company>ToSic</Company>
+    <Description>Various test to place on pages to verify cre8magic functionality</Description>
+    <Copyright>ToSic</Copyright>
+    <AssemblyName>ToSic.Module.Cre8magicTests.Shared.Oqtane</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oqtane.Shared" Version="5.2.4" />
+  </ItemGroup>
+
+</Project>
