@@ -15,10 +15,12 @@ Nice to know:
 @* Special Debugging *@
 @if (true)
 {
+    var debug = (Menu?.Settings as MagicMenuSettings)?.Debug;
     @* var settings = ((MagicMenuSettings?)Menu?.SetHelper.Settings); *@
     <div class="alert alert-info">
         @* ConfigName: @(Menu?.Settings.ConfigName) <br/> *@
         HasChildren: @(Menu?.Any()) - @Menu?.Count() <br/>
+        Debug: @debug?.Allowed / @debug?.Anonymous / @debug?.Admin <br/>
         @* This: @Menu?.Name (@Menu?.Link) <br/> *@
         Direction: @(IsVertical ? "Vertical" : "Horizontal") <br/>
         Ul-Classes: @Menu?.Classes("ul") <br/>

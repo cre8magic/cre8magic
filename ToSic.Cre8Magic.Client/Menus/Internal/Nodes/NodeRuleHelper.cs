@@ -13,7 +13,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// * "*" - the top-level pages
 /// * "." - the current page
 /// </summary>
-internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, Log log)
+internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, MagicMenuSettings settings, Log log)
 {
     public const char PageForced = '!';
 
@@ -23,7 +23,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
 
     private IMagicPage Current { get; } = current;
 
-    internal List<IMagicPage> GetRootPages(MagicMenuSettings settings)
+    internal List<IMagicPage> GetRootPages()
     {
         var l = Log.Fn<List<IMagicPage>>($"{Current.Id}");
         // Give empty list if we shouldn't display it
@@ -92,14 +92,17 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
                 return l.Return(source.Where(p => p.MenuLevel == 1).ToList(), "Current level 1?");
             case StartMode.Current when n.Level > 0:
                 // If coming from the top, level 1 means top level, so skip one less
-                var skipDown = n.Level - 1;
-                var fromTop = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current }).Skip(skipDown).FirstOrDefault();
+                //var skipDown = n.Level - 1; // till 2023-11-14
+                var skipDown = n.Level; // new 2024-11-14, since the Root is now in it too...
+                var breadcrumb = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
+                var fromTop = breadcrumb.Skip(skipDown).FirstOrDefault();
                 List<IMagicPage> fromTopResult = fromTop == null ? [] : [fromTop];
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
             case StartMode.Current when n.Level < 0:
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
-                var fromCurrent = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current }).ToList().Skip(skipUp).FirstOrDefault();
+                breadcrumb = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
+                var fromCurrent = breadcrumb.Skip(skipUp).FirstOrDefault();
                 List<IMagicPage> result = fromCurrent == null ? [] : [fromCurrent];
                 return l.Return(result, $"up the ancestors by {skipUp}");
             case StartMode.Undefined:

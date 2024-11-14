@@ -43,7 +43,7 @@ internal class MagicMenuFactoryRoot
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
-        var rootPages = new NodeRuleHelper(PageFactory, PageFactory.Current, Log).GetRootPages(Settings);
+        var rootPages = new NodeRuleHelper(PageFactory, PageFactory.Current, Settings, Log).GetRootPages();
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
