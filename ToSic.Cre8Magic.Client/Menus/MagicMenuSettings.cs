@@ -84,7 +84,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     /// so if the navigation starts an level 2 then levelDepth 2 means to show levels 2 & 3 ??? verify
     /// </summary>
     public int? Depth { get; init; }
-    public const int LevelDepthFallback = 1;
+    //public const int DepthFallback = 1;
 
     /// <summary>
     /// Levels to skip from the initial stating point.
@@ -131,7 +131,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     /// The template to use - horizontal/vertical
     /// </summary>
     public string? Template { get; init; }
-    public const string TemplateDefault = "Horizontal";
+    //public const string TemplateDefault = "Horizontal";
 
     // todo: name, maybe not on interface
     public NamedSettings<MagicMenuDesignSettings>? DesignSettings { get; init; }
@@ -145,14 +145,14 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     internal static Defaults<MagicMenuSettings> Defaults = new(
         new()
         {
-            Template = TemplateDefault,
-            Start = "*",
-            Depth = 0,
+            Template = "Horizontal",
+            Start = StartPageRoot,
+            Depth = 1, // MUST be specified on the fallback, otherwise some code will break
         },
         new()
         {
-            Template = TemplateDefault,
-            Start = "*",
+            Template = "Horizontal",
+            Start = StartPageRoot,
             Depth = 0,
         });
 }

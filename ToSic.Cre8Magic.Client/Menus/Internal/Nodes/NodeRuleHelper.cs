@@ -1,41 +1,38 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Menus.Settings;
+using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal;
 
-public class NodeRuleHelper
+/// <summary>
+/// Helper to find various pages based on rules such as
+/// * "27" - the page 27
+/// * "27,28" - the pages 27 and 28
+/// * "*" - the top-level pages
+/// * "." - the current page
+/// </summary>
+internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, Log log)
 {
     public const char PageForced = '!';
 
-    internal NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, MagicMenuSettings settings, Log log)
-    {
-        Log = log;
-        PageFactory = pageFactory;
-        Current = current;
-        //Settings = settings;
-    }
-    internal Log Log { get; }
+    internal Log Log { get; } = log;
 
-    internal MagicPageFactory PageFactory { get; }
+    internal MagicPageFactory PageFactory { get; } = pageFactory;
 
-    private IMagicPage Current { get; }
-
-    //public MagicMenuSettings Settings { get; }
-
+    private IMagicPage Current { get; } = current;
 
     internal List<IMagicPage> GetRootPages(MagicMenuSettings settings)
     {
         var l = Log.Fn<List<IMagicPage>>($"{Current.Id}");
         // Give empty list if we shouldn't display it
-        //var s = Settings;
         if (settings.Display == false)
             return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries
         var fallback = MagicMenuSettings.Defaults.Fallback;
-        var start = (settings.Start/* ?? s.Start*/ ?? fallback.Start)?.Trim();
+        var start = (settings.Start ?? fallback.Start)?.Trim();
 
         // Case 2: '.' - not yet tested
         var startLevel = settings.Level ?? settings.Level ?? MagicMenuSettings.StartLevelFallback;

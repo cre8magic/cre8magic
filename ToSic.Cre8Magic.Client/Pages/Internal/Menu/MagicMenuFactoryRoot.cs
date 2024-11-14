@@ -29,7 +29,7 @@ internal class MagicMenuFactoryRoot
 
     internal MagicMenuFactory Factory { get; }
 
-    public int MaxDepth => _maxDepth ??= Settings.Depth ?? Settings.Depth ?? MagicMenuSettings.LevelDepthFallback;
+    public int MaxDepth => _maxDepth ??= Settings.Depth ?? Settings.Depth ?? MagicMenuSettings.Defaults.Fallback.Depth!.Value;
     private int? _maxDepth;
 
     public List<IMagicPageWithDesignWip> GetChildren()
@@ -43,7 +43,7 @@ internal class MagicMenuFactoryRoot
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
-        var rootPages = new NodeRuleHelper(PageFactory, PageFactory.Current, Settings, Log).GetRootPages(Settings);
+        var rootPages = new NodeRuleHelper(PageFactory, PageFactory.Current, Log).GetRootPages(Settings);
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages

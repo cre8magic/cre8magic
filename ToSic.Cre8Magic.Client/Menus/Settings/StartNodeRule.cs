@@ -1,7 +1,6 @@
 ﻿using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Menus;
 
-namespace ToSic.Cre8magic.Client.Menus.Settings;
+namespace ToSic.Cre8magic.Menus.Settings;
 
 internal class StartNodeRule
 {
@@ -26,5 +25,5 @@ internal class StartNodeRule
                     ? StartMode.Current
                     : StartMode.Unknown;
 
-    private StartMode _mode = default;
+    private StartMode _mode;
 }
