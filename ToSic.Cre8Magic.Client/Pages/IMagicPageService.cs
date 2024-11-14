@@ -12,21 +12,21 @@ public interface IMagicPageService
     /// <remarks>
     /// Will throw an error if accessed before initializing.
     /// </remarks>
-    internal PageState PageState { get; }
+    //internal PageState PageState { get; }
 
-    IMagicPageService Setup(PageState pageState);
+    //IMagicPageService Setup(PageState pageState);
 
-    IEnumerable<IMagicPage> GetAll(bool ignorePermissions = default);
+    IEnumerable<IMagicPage> GetAll(PageState pageState, bool ignorePermissions = default);
 
-    IMagicPage GetHome();
+    IMagicPage GetHome(PageState pageState);
 
-    IMagicPage GetCurrent();
+    IMagicPage GetCurrent(PageState pageState);
 
-    IMagicPage? GetPage(int pageId);
+    IMagicPage? GetPage(PageState pageState, int pageId);
 
-    IMagicPage? GetPage(Page? page);
+    IMagicPage? GetPage(PageState pageState, Page? page);
 
-    IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds);
+    IEnumerable<IMagicPage> GetPages(PageState pageState, IEnumerable<int> pageIds);
 
     IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default);
 

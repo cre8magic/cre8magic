@@ -1,21 +1,14 @@
 @namespace ToSic.Theme.Cre8magicTests
 @using ToSic.Cre8magic.Menus
-@using ToSic.Cre8magic.Pages
 @using ToSic.Cre8magic.Pages.Internal
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeControlBase
 @inject ISettingService SettingService
-@inject IMagicPageService PageSvc
 @inject IMagicMenuService MenuSvc
 
 @code {
     public override string Name => "Theme1";
     public override string Panes => PaneNames.Default;
-
-    protected override void OnParametersSet()
-    {
-        PageSvc.Setup(PageState);
-    }
 }
 @{
     // Get the current environment - separate step, as we may change the mechanics later

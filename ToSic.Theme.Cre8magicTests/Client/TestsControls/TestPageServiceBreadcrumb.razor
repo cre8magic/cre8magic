@@ -3,16 +3,7 @@
 @inherits ThemeControlBase
 @inject IMagicPageService PageSvc
 
-@code {
-
-    // Setup Page Service
-    protected override void OnParametersSet()
-    {
-        PageSvc.Setup(PageState);
-    }
-}
-
-<h1>Breadcrumbs</h1>
+<h1>Breadcrumbs Test 2024-11-14</h1>
 <p>
     Demonstrate various ways to use the breadcrumb service
 </p>
@@ -36,7 +27,7 @@
 
 <h2>Breadcrumb to Home</h2>
 <ol>
-    @foreach(var bc in PageSvc.GetBreadcrumb(PageState,new() { Active = PageSvc.GetHome() } ))
+    @foreach(var bc in PageSvc.GetBreadcrumb(PageState,new() { Active = PageSvc.GetHome(PageState) } ))
     {
         <li>
             <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>

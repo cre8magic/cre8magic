@@ -8,50 +8,49 @@ internal class MagicPageService() : IMagicPageService
 {
     #region Setup and Core Internals
 
-    public PageState PageState => _pageState ?? throw new($"{nameof(PageState)} is not ready, make sure you always call {nameof(Setup)}(PageState) first.");
-    private PageState? _pageState;
+    //public PageState PageState => _pageState ?? throw new($"{nameof(PageState)} is not ready, make sure you always call {nameof(Setup)}(PageState) first.");
+    //private PageState? _pageState;
 
-    public IMagicPageService Setup(PageState pageState)
-    {
-        _pageState = pageState;
-        _pageFactory = null;
-        return this;
-    }
+    //public IMagicPageService Setup(PageState pageState)
+    //{
+    //    _pageState = pageState;
+    //    _pageFactory = null;
+    //    return this;
+    //}
 
-    private MagicPageFactory PageFactory => _pageFactory ??= new(PageState);
-    private MagicPageFactory? _pageFactory;
+    //private MagicPageFactory PageFactory => _pageFactory ??= new(PageState);
+    //private MagicPageFactory? _pageFactory;
 
     #endregion
 
-    public IEnumerable<IMagicPage> GetAll(bool ignorePermissions = default) =>
+    public IEnumerable<IMagicPage> GetAll(PageState pageState, bool ignorePermissions = default) =>
         ignorePermissions
-            ? PageFactory.PagesAll()
-            : PageFactory.PagesUser();
+            ? GetFactory(pageState).PagesAll()
+            : GetFactory(pageState).PagesUser();
 
-    public IMagicPage GetHome() =>
-        PageFactory.Home;
+    public IMagicPage GetHome(PageState pageState) =>
+        GetFactory(pageState).Home;
 
-    public IMagicPage GetCurrent() =>
-        PageFactory.Current;
+    public IMagicPage GetCurrent(PageState pageState) =>
+        GetFactory(pageState).Current;
 
-    public IMagicPage? GetPage(int pageId) =>
-        PageFactory.GetOrNull(pageId);
+    public IMagicPage? GetPage(PageState pageState, int pageId) =>
+        GetFactory(pageState).GetOrNull(pageId);
 
-    public IMagicPage? GetPage(Page? page) =>
-        PageFactory.CreateOrNull(page);
+    public IMagicPage? GetPage(PageState pageState, Page? page) =>
+        GetFactory(pageState).CreateOrNull(page);
 
 
-    public IEnumerable<IMagicPage> GetPages(IEnumerable<int> pageIds) =>
-        PageFactory.Get(pageIds);
+    public IEnumerable<IMagicPage> GetPages(PageState pageState, IEnumerable<int> pageIds) =>
+        GetFactory(pageState).Get(pageIds);
 
-    private MagicPageFactory GetFactory(PageState? pageState) =>
-        pageState == null ? PageFactory : new(pageState);
+    private MagicPageFactory GetFactory(PageState pageState) => new(pageState);
 
     //public IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default) =>
     //    GetBreadcrumb(PageFactory, specs);
 
     public IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default) =>
-        GetBreadcrumb(GetFactory(pageState), specs);
+        GetBreadcrumb(new MagicPageFactory(pageState), specs);
 
     private IMagicPageList GetBreadcrumb(MagicPageFactory pageFactory, MagicBreadcrumbSettings? specs = default) =>
         pageFactory.Breadcrumb.Get(specs);
