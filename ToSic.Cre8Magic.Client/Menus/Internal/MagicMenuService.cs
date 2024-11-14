@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// <summary>
 /// Will create a MenuTree based on the current pages information and configuration
 /// </summary>
-public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsService settingsSvc) : MagicServiceWithSettingsBase, IMagicMenuService
+public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsService settingsSvc): IMagicMenuService
 {
     public ILogger Logger { get; } = logger;
 
@@ -21,6 +21,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
     public IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? settings = default)
     {
         var (newSettings, messages) = NoInheritSettingsWip
+        // todo: magicMenuSettings.Default.Fallback
             ? (settings ?? new(), new List<string>())
             : MergeSettings(pageState, settings);
 

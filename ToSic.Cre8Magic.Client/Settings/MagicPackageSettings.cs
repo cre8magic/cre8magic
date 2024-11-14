@@ -26,11 +26,20 @@ public class MagicPackageSettings
     }
     private string? _url;
 
+    /// <summary>
+    /// IsConfigured is for internal use only.
+    /// Basically every instance of this will report true,
+    /// unless our default / fallback instance is used,
+    /// which will set this to false.
+    /// </summary>
+    internal bool IsConfigured { get; init; } = true;
+
     internal static MagicPackageSettings Fallback = new()
     {
         Defaults = MagicSettingsCatalog.Fallback,
         WwwRoot = "wwwroot",
         SettingsJsonFile = "",
-        PackageName = "Fallback-Not-Configured"
+        PackageName = "Fallback-Not-Configured",
+        IsConfigured = false,
     };
 }
