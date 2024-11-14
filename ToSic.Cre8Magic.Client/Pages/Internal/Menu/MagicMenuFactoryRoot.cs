@@ -14,7 +14,7 @@ internal class MagicMenuFactoryRoot
         Factory = new(PageFactory, settings, debugMessages, () => MaxDepth);
         Factory.Set(settings.AllSettings);
         Factory.Set(settings.Designer);
-        Factory.Set(settings/*.Settings*/);
+        Factory.Set(settings);
         Log = new LogRoot().GetLog("root");
         //Log = SetHelper.LogRoot.GetLog("Root");
         Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
@@ -34,9 +34,8 @@ internal class MagicMenuFactoryRoot
 
     public List<IMagicPageWithDesignWip> GetChildren()
     {
-        // Add break-point for debugging
-        if (PageFactory.PageState.IsDebug())
-            PageFactory.PageState.DoNothing();
+        // Add break-point for debugging during development
+        if (PageFactory.PageState.IsDebug()) PageFactory.PageState.DoNothing();
 
         var l = Log.Fn<List<IMagicPageWithDesignWip>>("Root");
         var levelsRemaining = MaxDepth;

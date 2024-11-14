@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Pages.Internal.Menu;
+using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Menus.Internal;
@@ -21,9 +23,13 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicPageServic
         var (newSettings, messages) = NoInheritSettingsWip
             ? (settings ?? new(), new List<string>())
             : MergeSettings(pageState, settings);
-        
-        var result = pageSvc.GetMenuInternal(pageState, newSettings, messages);
-        return result;
+
+        // Add break-point for debugging during development
+        if (pageState.IsDebug()) pageState.DoNothing();
+
+        var rootBuilder = new MagicMenuFactoryRoot(pageState, newSettings, messages);
+        var list = new MagicPageList(new(pageState), rootBuilder.Factory, rootBuilder.GetChildren());
+        return list;
     }
 
     private (MagicMenuSettings Settings, List<string> Messages) MergeSettings(PageState pageState, MagicMenuSettings? settings = default)
@@ -85,4 +91,5 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicPageServic
 
         return (mergedSettings, messages);
     }
+
 }
