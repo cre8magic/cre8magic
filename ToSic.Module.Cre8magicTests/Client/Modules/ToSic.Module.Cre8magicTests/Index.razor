@@ -13,8 +13,7 @@
 
 <sub>Cre8magic Tests - Select from the list</sub>
 <select class="form-control" @bind="@SelectedTest">
-
-    <option value=""></option>
+    <option value="">(select from the list)</option>
     @foreach(var test in TestDatabase.Tests)
     {
         <option value = "@test.Id"> @test.Name </option>
@@ -29,27 +28,27 @@
 
 @if (SelectedType != null)
 {
-    <div>
-        @SelectedType.Id
-    </div>
-
     <DynamicComponent Type="@SelectedType.Type"></DynamicComponent>
 }
 
 @code {
     public override string RenderMode => RenderModes.Static;
 
-    public override List<Resource> Resources => new List<Resource>()
-    {
-        new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
-        new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
-    };
+    public override List<Resource> Resources =>
+    [
+        new() { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
+        new() { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
+    ];
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync() => await LoadSettings();
+
+    protected override Task OnParametersSetAsync() => LoadSettings();
+
+    private async Task LoadSettings()
     {
         try
         {
-            Dictionary<string, string> settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
+            var settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
             SelectedTest = SelectedInDb = SettingService.GetSetting(settings, "ControlToShow", "");
         }
         catch (Exception ex)
@@ -62,7 +61,7 @@
     {
         try
         {
-            Dictionary<string, string> settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
+            var settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
             SettingService.SetSetting(settings, "ControlToShow", value);
             await SettingService.UpdateModuleSettingsAsync(settings, ModuleState.ModuleId);
             SelectedInDb = value;

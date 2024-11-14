@@ -29,5 +29,6 @@ internal class TestDatabase
 
         // Menu Service
         new("menu-basic", "Menus Basic", typeof(MenuControlsBasic)),
+        new("menu-functions", "Menus Functions", typeof(MenuControlsFunctions)),
     ];
 }

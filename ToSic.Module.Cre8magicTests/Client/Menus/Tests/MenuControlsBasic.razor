@@ -2,7 +2,6 @@
 @using ToSic.Cre8magic.Pages.Internal
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeControlBase
-@inject ISettingService SettingService
 @inject IMagicMenuService MenuSvc
 
 @code {
@@ -15,33 +14,10 @@
 
     var topLevelWithSubpagesId = TestParameters.TopLevelWithSubpagesIdDic[currentEnv];
 
-    var dicTopLevelThreePage = new Dictionary<string, List<int>>()
-    {
-        { TestParameters.EnvTonci, [97, 98, 99] },
-        {
-            TestParameters.EnvIJungleboy, [
-                29, // Top level page (first with subitems)
-                33, // Third under Top Level Page
-                41, // Main Test Page with loads of pages
-            ]
-        }
-    };
-
-    var topLevelThreePages = string.Join(", ", dicTopLevelThreePage[currentEnv]);
-
-    var dicRestrictPages = new Dictionary<string, List<int>>()
-    {
-        { TestParameters.EnvTonci, dicTopLevelThreePage[TestParameters.EnvTonci] },
-        {
-            TestParameters.EnvIJungleboy, [
-                ..dicTopLevelThreePage[TestParameters.EnvIJungleboy],
-                36, // "Page with Content" under "TopLevel"
-            ]
-        }
-    };
+    var topLevelThreePages = string.Join(", ", MenuTestData.dicTopLevelThreePage[currentEnv]);
 
     var restrictPossiblePages = new MagicPageFactory(PageState)
-        .Get(dicRestrictPages[currentEnv])
+        .Get(MenuTestData.dicRestrictPages[currentEnv])
         .ToList();
 
     MenuSvc.NoInheritSettingsWip = true;
@@ -68,7 +44,7 @@
     <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Pages = restrictPossiblePages })"></BasicMenu>
 
 
-    ---
+    <hr/>
 
     <h2>Designer</h2>
     <h3>Use BasicMenuDesigner</h3>
