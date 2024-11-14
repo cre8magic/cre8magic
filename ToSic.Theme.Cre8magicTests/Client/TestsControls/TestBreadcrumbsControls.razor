@@ -8,21 +8,16 @@
     // Theme Specs
     public override string Name => "Breadcrumb using Controls";
     public override string Panes => PaneNames.Default;
+}
+@{
+    // Get the current environment - separate step, as we may change the mechanics later
+    var currentEnv = TestParameters.EnvCurrent;
 
-    // Use test parameters from Tonci vs. Daniel
-    const bool PCTonci = false;
-
-    public const string TopLevelWithSubpagesId = PCTonci
-        ? "97"
-        : "29";
-
-    public const int PageWithDeepBreadcrumb = PCTonci
-        ? 308
-        : 35; // Sub-Under-Third
+    var pageWithDeepBreadcrumb = TestParameters.PageWithDeepBreadcrumbIdDic[currentEnv];
 }
 
 
-<h1>MagicBreadcrumb in Control</h1>
+<h1>MagicBreadcrumb in Control for @currentEnv</h1>
 
 <h2>Oqtane standard Breadcrumbs (with s)</h2>
 <Breadcrumbs></Breadcrumbs>
@@ -57,13 +52,13 @@
 <BasicBreadcrumb Settings="new() { WithActive = false }"></BasicBreadcrumb>
 <BasicBreadcrumb Settings="new() { WithActive = true }"></BasicBreadcrumb>
 
-<h3>BasicBreadcrumb with Settings { @nameof(MagicBreadcrumbSettings.ActiveId) = @PageWithDeepBreadcrumb }</h3>
+<h3>BasicBreadcrumb with Settings { @nameof(MagicBreadcrumbSettings.ActiveId) = @pageWithDeepBreadcrumb }</h3>
 <p>No designer</p>
-<BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb }"></BasicBreadcrumb>
+<BasicBreadcrumb Settings="new() { ActiveId = pageWithDeepBreadcrumb }"></BasicBreadcrumb>
 <p>BasicBreadcrumb with @nameof(MagicBreadcrumbDesignerBs5)</p>
-<BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb, Designer = new MagicBreadcrumbDesignerBs5() }"></BasicBreadcrumb>
+<BasicBreadcrumb Settings="new() { ActiveId = pageWithDeepBreadcrumb, Designer = new MagicBreadcrumbDesignerBs5() }"></BasicBreadcrumb>
 <p>BasicBreadcrumb with @nameof(BreadcrumbDesignerDark)</p>
-<BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb, Designer = new BreadcrumbDesignerDark() }"></BasicBreadcrumb>
+<BasicBreadcrumb Settings="new() { ActiveId = pageWithDeepBreadcrumb, Designer = new BreadcrumbDesignerDark() }"></BasicBreadcrumb>
 
 <hr />
 <h3>BasicBreadcrumb Non-Existing { @nameof(MagicBreadcrumbSettings.ActiveId) = -1 }</h3>

@@ -12,42 +12,46 @@
     public override string Name => "Theme1";
     public override string Panes => PaneNames.Default;
 
-    // Use test parameters from Tonci vs. Daniel
-    const bool PCTonci = false;
-
-    public const string TopLevelWithSubpagesId = PCTonci
-        ? "97"
-        : "29";
-
-    static List<int> Pages2dm =
-    [
-        29, // Top level page (first with subitems)
-        33, // Third under Top Level Page
-        41, // Main Test Page with loads of pages
-    ];
-
-    static List<int> Pages2dmRestrict =
-    [
-        ..Pages2dm,
-        36, // "Page with Content" under "TopLevel"
-    ];
-
-    public static string TopLevelThreePages = PCTonci
-        ? "97, 98, 99"
-        : string.Join(", ", Pages2dm);
-
-
-    public IEnumerable<IMagicPage> RestrictPossiblePages() => new MagicPageFactory(PageState).Get(PCTonci
-        ? [97, 98, 99]
-        : Pages2dmRestrict
-    );
-
     protected override void OnParametersSet()
     {
         PageSvc.Setup(PageState);
     }
 }
 @{
+    // Get the current environment - separate step, as we may change the mechanics later
+    var currentEnv = TestParameters.EnvCurrent;
+
+    var topLevelWithSubpagesId = TestParameters.TopLevelWithSubpagesIdDic[currentEnv];
+
+    var dicTopLevelThreePage = new Dictionary<string, List<int>>()
+    {
+        { TestParameters.EnvTonci, [97, 98, 99] },
+        {
+            TestParameters.EnvIJungleboy, [
+                29, // Top level page (first with subitems)
+                33, // Third under Top Level Page
+                41, // Main Test Page with loads of pages
+            ]
+        }
+    };
+
+    var topLevelThreePages = string.Join(", ", dicTopLevelThreePage[currentEnv]);
+
+    var dicRestrictPages = new Dictionary<string, List<int>>()
+    {
+        { TestParameters.EnvTonci, dicTopLevelThreePage[TestParameters.EnvTonci] },
+        {
+            TestParameters.EnvIJungleboy, [
+                ..dicTopLevelThreePage[TestParameters.EnvIJungleboy],
+                36, // "Page with Content" under "TopLevel"
+            ]
+        }
+    };
+
+    var restrictPossiblePages = new MagicPageFactory(PageState)
+        .Get(dicRestrictPages[currentEnv])
+        .ToList();
+
     MenuSvc.NoInheritSettingsWip = true;
 
     // Default menu designer to be used in most tests here
@@ -57,7 +61,7 @@
 }
 
 
-<h1>Menu Tests for @(PCTonci ? "Tonci" : "iJungleboy")</h1>
+<h1>Menu Tests for @currentEnv</h1>
 
 <div class="navbar-expand-lg">
     
@@ -68,8 +72,8 @@
 
     <hr/>
     <h2>Set MenuPages</h2>
-    <h3>Custom menu pages (@string.Join(",", RestrictPossiblePages().Select(p => p.Id))) </h3>
-    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Pages = RestrictPossiblePages() })"></BasicMenu>
+    <h3>Custom menu pages (@string.Join(",", restrictPossiblePages.Select(p => p.Id))) </h3>
+    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Pages = restrictPossiblePages })"></BasicMenu>
 
 
     ---
@@ -80,19 +84,19 @@
     <hr/>
 
     <h2>Various Settings</h2>
-    <h3>Only one specific page @TopLevelWithSubpagesId, no other params</h3>
-    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Start = TopLevelWithSubpagesId, Designer = basicDesigner })"></BasicMenu>
+    <h3>Only one specific page @topLevelWithSubpagesId, no other params</h3>
+    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Start = topLevelWithSubpagesId, Designer = basicDesigner })"></BasicMenu>
 
-    <h3>Only 3 specific pages (@TopLevelThreePages), no other params</h3>
-    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Start = TopLevelThreePages, Designer = basicDesigner })"></BasicMenu>
+    <h3>Only 3 specific pages (@topLevelThreePages), no other params</h3>
+    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Start = topLevelThreePages, Designer = basicDesigner })"></BasicMenu>
 
-    <h3>Only one specific page @TopLevelWithSubpagesId, Depth = 0</h3>
-    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Start = TopLevelWithSubpagesId, Designer = basicDesigner, Depth = 0 })"></BasicMenu>
+    <h3>Only one specific page @topLevelWithSubpagesId, Depth = 0</h3>
+    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Start = topLevelWithSubpagesId, Designer = basicDesigner, Depth = 0 })"></BasicMenu>
     
     ---
 
-    <h3>Only one specific page @TopLevelWithSubpagesId, Depth = 2</h3>
-    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Start = TopLevelWithSubpagesId, Designer = basicDesigner, Depth = 2 })"></BasicMenu>
+    <h3>Only one specific page @topLevelWithSubpagesId, Depth = 2</h3>
+    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Start = topLevelWithSubpagesId, Designer = basicDesigner, Depth = 2 })"></BasicMenu>
 
     <hr/>
     <h2>Start at current level</h2>
