@@ -20,11 +20,13 @@ internal class NamedSettingsReader<TPart>(
         var names = GetConfigNamesToCheck(name, defaultName ?? name);
         var realName = names[0];
         var cached = _cache.FindInvariant(realName);
-        if (cached != null) return cached;
+        if (cached != null)
+            return cached;
 
         // Get best part; return Fallback if nothing found
         var priority = FindPart(names);
-        if (priority == null) return defaults.Fallback;
+        if (priority == null)
+            return defaults.Fallback;
 
         // Check if our part declares that it inherits something
         if (priority is IInherit needsMore && needsMore.Inherits.HasText())
@@ -40,7 +42,8 @@ internal class NamedSettingsReader<TPart>(
             if (value.Value != null) priority = FindPartAndMergeIfPossible(priority, realName, value.Value);
         }
 
-        if (defaults.Foundation == null) return priority;
+        if (defaults.Foundation == null)
+            return priority;
 
         var merged = Merge(priority, defaults.Foundation, parent.Logger, jsonProcessing?.Invoke(realName));
         return merged!;

@@ -92,6 +92,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     /// - 1 means skip the first level, so if we're starting at the root, show the children
     /// See inspiration context from DDRMenu https://www.dnnsoftware.com/wiki/ddrmenu-reference-guide
     /// in DDR it was called 'skip' but it didn't make sense IMHO
+    /// TODO: possibly rename to StartOnChildren or StartSkip?
     /// </summary>
     public bool? Children { get; init; }
     public const bool ChildrenFallback = default;
@@ -141,16 +142,10 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     public string Variant => Template ?? "";
 
 
-    private static readonly MagicMenuSettings Fallback = new()
+    internal static Defaults<MagicMenuSettings> Defaults = new(new()
     {
         Template = TemplateDefault,
         Start = "*",
         Depth = 0,
-    };
-
-    internal static Defaults<MagicMenuSettings> Defaults = new()
-    {
-        Fallback = Fallback,
-        Foundation = Fallback,
-    };
+    });
 }
