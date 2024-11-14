@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Settings;
 

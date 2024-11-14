@@ -1,5 +1,4 @@
-﻿using System.Text.Json;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Json;
 

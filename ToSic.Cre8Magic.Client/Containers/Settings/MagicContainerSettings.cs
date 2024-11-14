@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Breadcrumb.Settings;
-using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Client.Containers.Settings;
