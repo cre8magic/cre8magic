@@ -6,23 +6,6 @@ namespace ToSic.Cre8magic.Pages.Internal;
 
 internal class MagicPageService() : IMagicPageService
 {
-    #region Setup and Core Internals
-
-    //public PageState PageState => _pageState ?? throw new($"{nameof(PageState)} is not ready, make sure you always call {nameof(Setup)}(PageState) first.");
-    //private PageState? _pageState;
-
-    //public IMagicPageService Setup(PageState pageState)
-    //{
-    //    _pageState = pageState;
-    //    _pageFactory = null;
-    //    return this;
-    //}
-
-    //private MagicPageFactory PageFactory => _pageFactory ??= new(PageState);
-    //private MagicPageFactory? _pageFactory;
-
-    #endregion
-
     public IEnumerable<IMagicPage> GetAll(PageState pageState, bool ignorePermissions = default) =>
         ignorePermissions
             ? GetFactory(pageState).PagesAll()

@@ -12,6 +12,4 @@ public abstract class MagicMenu : MagicMenuBase
     [Parameter, EditorRequired] public IMagicPageList Menu { get; set; }
 #pragma warning restore CS8618
 
-    //public string GetUrl(MagicMenuPage page) => GetUrl(page.OriginalPage);
-
 }

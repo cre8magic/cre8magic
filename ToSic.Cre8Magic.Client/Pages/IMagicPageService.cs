@@ -6,16 +6,6 @@ namespace ToSic.Cre8magic.Pages;
 
 public interface IMagicPageService
 {
-    /// <summary>
-    /// The page state - must be initialized before using the service.
-    /// </summary>
-    /// <remarks>
-    /// Will throw an error if accessed before initializing.
-    /// </remarks>
-    //internal PageState PageState { get; }
-
-    //IMagicPageService Setup(PageState pageState);
-
     IEnumerable<IMagicPage> GetAll(PageState pageState, bool ignorePermissions = default);
 
     IMagicPage GetHome(PageState pageState);

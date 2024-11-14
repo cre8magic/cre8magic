@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Breadcrumb.Settings;
 using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Breadcrumb;
@@ -31,7 +32,7 @@ public abstract class MagicBreadcrumbBase: MagicControlBase
         => settings;
 
     // The home page - never changes during runtime, so we can cache it
-    protected IMagicPage HomePage => _homePage ??= PageFactory.Home;
+    protected IMagicPage HomePage => _homePage ??= new MagicPageFactory(PageState).Home;
     private IMagicPage? _homePage;
 
     /// <summary>

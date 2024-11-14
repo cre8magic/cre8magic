@@ -5,13 +5,13 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Menus;
 
-public abstract class MagicMenuBase: Oqtane.Themes.Controls.MenuBase, IMagicControlWithSettings // TODO: stv use ThemeControlBase instead MenuBase and use MenuPageService that replaces MenuBase
+public abstract class MagicMenuBase: Oqtane.Themes.Controls.MenuBase // , IMagicControlWithSettings // TODO: stv use ThemeControlBase instead MenuBase and use MenuPageService that replaces MenuBase
 {
-    [CascadingParameter]
-    public MagicAllSettings AllSettings { get; set; }
+    //[CascadingParameter]
+    //public MagicAllSettings AllSettings { get; set; }
 
-    protected MagicPageFactory PageFactory => _pageFactory.Get(() => new(PageState), f => f?.PageState.Page == PageState.Page);
-    private readonly GetKeep<MagicPageFactory> _pageFactory = new();
+    //protected MagicPageFactory PageFactory => _pageFactory.Get(() => new(PageState), f => f?.PageState.Page == PageState.Page);
+    //private readonly GetKeep<MagicPageFactory> _pageFactory = new();
 
     private const string ErrMsg = "error calling {0} in {1}. Use the {0} method of the branch to get the expected result.";
 

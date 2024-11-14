@@ -13,8 +13,8 @@ public abstract class MagicControlBase: ThemeControlBase, IMagicControlWithSetti
 {
     [CascadingParameter] public MagicAllSettings AllSettings { get; set; }
 
-    protected MagicPageFactory PageFactory => _pageFactory.Get(() => new(PageState), f => f?.PageState.Page == PageState.Page);
-    private readonly GetKeep<MagicPageFactory> _pageFactory = new();
+    //protected MagicPageFactory PageFactory => _pageFactory.Get(() => new(PageState), f => f?.PageState.Page == PageState.Page);
+    //private readonly GetKeep<MagicPageFactory> _pageFactory = new();
 
     protected bool UserIsAdmin => PageState.UserIsAdmin();
 
