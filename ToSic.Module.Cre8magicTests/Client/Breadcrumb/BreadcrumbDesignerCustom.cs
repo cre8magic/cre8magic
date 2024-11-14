@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Theme.Cre8magicTests.Client;
+namespace ToSic.Module.Cre8MagicTests.Client.Breadcrumb;
 
 internal class BreadcrumbDesignerCustom: MagicPageDesignerBasic
 {

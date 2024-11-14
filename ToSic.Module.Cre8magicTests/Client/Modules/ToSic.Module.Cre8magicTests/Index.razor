@@ -65,6 +65,7 @@
             Dictionary<string, string> settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
             SettingService.SetSetting(settings, "ControlToShow", value);
             await SettingService.UpdateModuleSettingsAsync(settings, ModuleState.ModuleId);
+            SelectedInDb = value;
         }
         catch (Exception ex)
         {
