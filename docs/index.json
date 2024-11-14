@@ -559,6 +559,11 @@
     "title": "Change Log | cre8magic",
     "keywords": "cre8magic Change Log Version 0 2022-10-07 v0.0.2 Made menu design settings support inherit Added json schema and published to https://2sic.github.io/cre8magic/schemas/2022-10/theme.json 2022-10-05 v0.0.1 Initial release for use on blazor-cms.org Named settings for layouts, breadcrumbs, menus Named settings for the design of layouts, breadcrumbs, menus A bunch of base clases for Razor A bunch of services to make it happen MagicContext, MagicSettings, MagicConfigurations etc."
   },
+  "contribute/code/index.html": {
+    "href": "contribute/code/index.html",
+    "title": "Contributing Code | cre8magic",
+    "keywords": "Contributing Code Tip This is still a work in progress. Setup The Solution is a Visual Studio 2022 solution. It has a few special things to know: The core project is ToSic.Cre8magic.Client Most UI tests are found in the Module ToSic.Module.Cre8magicTests. Testing in the Browser Place the module on a page and select various tests. If you are logged in, you can also save the configuration so the same test will be shown when you revisit the page. The reason we're doing this is because various tests will behave differently, depending on the theme around it. So this allows us to place the module on pages with different themes and see how it behaves."
+  },
   "contribute/gh-pages.html": {
     "href": "contribute/gh-pages.html",
     "title": "Documentation is hosted with GitHub Pages | cre8magic",
