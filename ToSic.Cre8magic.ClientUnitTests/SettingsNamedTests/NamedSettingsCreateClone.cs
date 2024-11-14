@@ -10,7 +10,7 @@ public class NamedSettingsCreateClone
     public void Cloning(bool forceCopy)
     {
         var original = DataSimple;
-        var clone = original.CloneMerge(null, forceCopy);
+        var clone = original.CloneWith(null, forceCopy);
         // Verify that it's a real copy, or the original object
         Assert.Equal(forceCopy, clone != original);
         // Verify that the content is the same
@@ -39,7 +39,7 @@ public class NamedSettingsCreateClone
 
     private static void MixExpectsDataSimple(NamedSettings<DataForTest> h1, NamedSettings<DataForTest> h2)
     {
-        var clone = h1.CloneMerge(h2);
+        var clone = h1.CloneWith(h2);
         var expected = DataSimple;
         AssertSameAs(expected, clone);
     }

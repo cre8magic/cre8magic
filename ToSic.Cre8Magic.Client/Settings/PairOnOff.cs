@@ -29,7 +29,7 @@ public class PairOnOff: ICanClone<PairOnOff>
     /// </summary>
     public string? Off { get; init; }
 
-    public PairOnOff CloneMerge(PairOnOff? priority, bool forceCopy = false) =>
+    public PairOnOff CloneWith(PairOnOff? priority, bool forceCopy = false) =>
         new()
         {
             On = priority?.On ?? On,

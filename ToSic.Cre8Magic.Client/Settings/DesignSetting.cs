@@ -21,7 +21,7 @@ public record DesignSetting: ICanClone<DesignSetting>
         IsAdmin = priority?.IsAdmin ?? fallback?.IsAdmin;
     }
 
-    public DesignSetting CloneMerge(DesignSetting? priority, bool forceCopy = false) =>
+    public DesignSetting CloneWith(DesignSetting? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

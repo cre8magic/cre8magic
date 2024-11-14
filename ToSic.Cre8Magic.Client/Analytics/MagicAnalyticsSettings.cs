@@ -19,7 +19,7 @@ public record MagicAnalyticsSettings : SettingsWithInherit, ICanClone<MagicAnaly
 
     }
 
-    public MagicAnalyticsSettings CloneMerge(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
+    public MagicAnalyticsSettings CloneWith(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     public string? GtmId { get; init; }

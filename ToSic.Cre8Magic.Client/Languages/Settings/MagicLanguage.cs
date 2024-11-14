@@ -17,7 +17,7 @@ public record MagicLanguage: ICanClone<MagicLanguage>
         Description = priority?.Description ?? fallback?.Description;
     }
 
-    public MagicLanguage CloneMerge(MagicLanguage? priority, bool forceCopy = false) =>
+    public MagicLanguage CloneWith(MagicLanguage? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     public string? Culture { get; init; }

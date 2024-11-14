@@ -37,7 +37,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
         Theme = priority?.Theme ?? fallback?.Theme ?? throw new("Theme is required");
     }
 
-    public MagicAllSettings CloneMerge(MagicAllSettings? priority, bool forceCopy = false) =>
+    public MagicAllSettings CloneWith(MagicAllSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

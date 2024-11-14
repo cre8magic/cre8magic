@@ -15,7 +15,7 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
         // TODO!
         //Custom = new NamedSettings<DesignSetting>(priority?.Custom, fallback?.Custom);
     }
-    public MagicContainerSettings CloneMerge(MagicContainerSettings? priority, bool forceCopy = false) =>
+    public MagicContainerSettings CloneWith(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

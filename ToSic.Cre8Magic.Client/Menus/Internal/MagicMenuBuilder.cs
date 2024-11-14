@@ -39,7 +39,7 @@ public class MagicMenuBuilder(ILogger<MagicMenuBuilder> logger, IMagicPageServic
         var menuSettings = settingsSvc.MenuSettings.Find(configName);
         // WIP #DropJsonMerge
         //settings = JsonMerger.Merge(settings, menuSettings, Logger);
-        settings = menuSettings.CloneMerge(settings);
+        settings = menuSettings.CloneWith(settings);
 
         // See if we have a default configuration for CSS which should be applied
         var menuDesign = allSettings.DesignName(configName);

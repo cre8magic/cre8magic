@@ -30,7 +30,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
 
-    public MagicMenuSettings CloneMerge(MagicMenuSettings? priority, bool forceCopy = false) =>
+    public MagicMenuSettings CloneWith(MagicMenuSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #region WIP merging Specs

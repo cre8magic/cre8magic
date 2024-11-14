@@ -38,7 +38,7 @@ public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>
             {
                 // since both sources exist, the dictionary already contains the fallback
                 var existingFallback = this[key];
-                this[key] = cloneable.CloneMerge(existingFallback, true);
+                this[key] = cloneable.CloneWith(existingFallback, true);
                 continue;
             }
 
@@ -47,7 +47,7 @@ public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>
         }
     }
 
-    public NamedSettings<T> CloneMerge(NamedSettings<T>? priority, bool forceCopy = false) =>
+    public NamedSettings<T> CloneWith(NamedSettings<T>? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? new(this) : this) : new(priority, this);
 
 

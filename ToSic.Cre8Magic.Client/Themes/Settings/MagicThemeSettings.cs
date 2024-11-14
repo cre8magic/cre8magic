@@ -24,7 +24,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
-    public MagicThemeSettings CloneMerge(MagicThemeSettings? priority, bool forceCopy = false) =>
+    public MagicThemeSettings CloneWith(MagicThemeSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

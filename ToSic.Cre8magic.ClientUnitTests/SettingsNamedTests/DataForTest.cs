@@ -23,6 +23,6 @@ internal record DataForTestCanClone : DataForTest, ICanClone<DataForTestCanClone
         Description = priority?.Description ?? fallback?.Description;
     }
 
-    public DataForTestCanClone CloneMerge(DataForTestCanClone? priority, bool forceCopy = false) =>
+    public DataForTestCanClone CloneWith(DataForTestCanClone? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 }

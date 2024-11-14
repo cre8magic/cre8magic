@@ -15,7 +15,7 @@ public record MagicMenuDesignSettings: DesignSetting, ICanClone<MagicMenuDesignS
         InBreadcrumb = priority?.InBreadcrumb ?? fallback?.InBreadcrumb;
     }
 
-    public MagicMenuDesignSettings CloneMerge(MagicMenuDesignSettings? priority, bool forceCopy = false) =>
+    public MagicMenuDesignSettings CloneWith(MagicMenuDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
