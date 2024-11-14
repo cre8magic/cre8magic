@@ -3,7 +3,8 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Settings;
 
-public abstract record SettingsWithInherit: IInherit
+// No base interface, because for processing we need to ensure it's always a record
+public abstract record SettingsWithInherit // : IInherit
 {
     protected SettingsWithInherit() { }
 
@@ -17,6 +18,6 @@ public abstract record SettingsWithInherit: IInherit
 
     internal const string InheritsNameInJson = "@inherits";
     [JsonPropertyName(InheritsNameInJson)]
-    public string? Inherits { get; set; }
+    public string? Inherits { get; init; }
 
 }

@@ -92,11 +92,12 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private NamedSettingsReader<MagicThemeSettings> Theme =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults,
             cat => cat.Themes,
-            (name) => json =>
-            {
-                if (json == null) return null;
-                return json.Replace("\"=\"", $"\"{name}\"");
-            },
+            // WIP #JsonMerge
+            //(name) => json =>
+            //{
+            //    if (json == null) return null;
+            //    return json.Replace("\"=\"", $"\"{name}\"");
+            //},
             // Special processing, to swap default design term "=" which means it's the same as the name
             modify: (name, settings) =>
             {

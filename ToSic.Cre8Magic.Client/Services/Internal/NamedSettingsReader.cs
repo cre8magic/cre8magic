@@ -1,4 +1,6 @@
-﻿using ToSic.Cre8magic.Menus;
+﻿using System.Runtime.InteropServices.JavaScript;
+using System.Text.Json;
+using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
@@ -12,7 +14,8 @@ internal class NamedSettingsReader<TPart>(
     IMagicSettingsService parent,
     Defaults<TPart> defaults,
     Func<MagicSettingsCatalog, NamedSettings<TPart>> findList,
-    Func<string, Func<string, string>>? jsonProcessing = default,
+    // WIP #JsonMerge
+    //Func<string, Func<string, string>>? jsonProcessing = default,
     Func<string, TPart, TPart>? modify = default)
     where TPart : class, ICanClone<TPart>, new()
 {
@@ -30,10 +33,13 @@ internal class NamedSettingsReader<TPart>(
             return defaults.Fallback;
 
         // Check if our part declares that it inherits something
-        if (priority is IInherit needsMore && needsMore.Inherits.HasText())
+        if (priority is SettingsWithInherit needsMore && needsMore.Inherits.HasText())
         {
+            // Remember inherits-from setting, and then remove from the part
             var inheritFrom = needsMore.Inherits;
-            needsMore.Inherits = null;
+            needsMore = needsMore with { Inherits = null };
+            priority = needsMore as TPart ?? priority;
+
             priority = FindPartAndMergeIfPossible(priority, realName, inheritFrom);
         }
         else if (priority is NamedSettings<MagicMenuDesignSettings> priorityNamed 
@@ -46,6 +52,7 @@ internal class NamedSettingsReader<TPart>(
         if (defaults.Foundation == null)
             return priority;
 
+        // WIP #JsonMerge
         //var merged = Merge(priority, defaults.Foundation, parent.Logger, jsonProcessing?.Invoke(realName));
 
         var mergedNew = defaults.Foundation.CloneWith(priority);
@@ -57,15 +64,25 @@ internal class NamedSettingsReader<TPart>(
         //var json1 = JsonSerializer.Serialize(merged);
         //var json2 = JsonSerializer.Serialize(mergedNew);
 
+        _cache[realName] = mergedNew;
         return mergedNew!;
     }
 
     private TPart FindPartAndMergeIfPossible(TPart priority, string realName, string name)
     {
         var addition = FindPart(name);
-        return addition == null 
-            ? priority 
-            : Merge(priority, addition, parent.Logger, jsonProcessing?.Invoke(realName));
+        if (addition == null)
+            return priority;
+        // WIP #JsonMerge
+        //var mergeJson = Merge(priority, addition, parent.Logger, jsonProcessing?.Invoke(realName));
+        var mergeNew = addition.CloneWith(priority);
+        if (modify != null)
+            mergeNew = modify(realName, mergeNew);
+
+        //var json1 = JsonSerializer.Serialize(mergeJson);
+        //var json2 = JsonSerializer.Serialize(mergeNew);
+
+        return mergeNew;
     }
 
     private readonly NamedSettings<TPart> _cache = new();

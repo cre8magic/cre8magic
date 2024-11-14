@@ -38,7 +38,7 @@ public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>
             {
                 // since both sources exist, the dictionary already contains the fallback
                 var existingFallback = this[key];
-                this[key] = cloneable.CloneWith(existingFallback, true);
+                this[key] = existingFallback.CloneWith(value, true);
                 continue;
             }
 
