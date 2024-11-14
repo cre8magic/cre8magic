@@ -48,8 +48,12 @@
     }
 }
 @{
+    // MenuSvc.NoInheritSettingsWip = true;
+
     // Default menu designer to be used in most tests here
     var basicDesigner = new BasicMenuDesigner();
+
+    var pageStateDebug = new PageStateProxy(PageState, true);
 }
 
 
@@ -59,15 +63,17 @@
     
     <h2>No Settings</h2>
     <h3>Basic Menu without Setting, name none</h3>
-    <BasicMenu Menu='PageSvc.GetMenu(PageState)' />
-    <hr/>
+    <BasicMenu Menu='PageSvc.GetMenu(pageStateDebug)' />
+    <BasicMenu Menu='MenuSvc.GetMenu(PageState)' />
+    <hr />
 
     <hr/>
     <h2>Set MenuPages</h2>
     <h3>Custom menu pages (@string.Join(",", RestrictPossiblePages().Select(p => p.Id))) </h3>
     <BasicMenu Menu="PageSvc.GetMenu(PageState, new() { Pages = RestrictPossiblePages() })"></BasicMenu>
-    
-    
+    <BasicMenu Menu="MenuSvc.GetMenu(PageState, new() { Pages = RestrictPossiblePages() })"></BasicMenu>
+
+
     ---
 
     <h2>Designer</h2>

@@ -142,10 +142,17 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     public string Variant => Template ?? "";
 
 
-    internal static Defaults<MagicMenuSettings> Defaults = new(new()
-    {
-        Template = TemplateDefault,
-        Start = "*",
-        Depth = 0,
-    });
+    internal static Defaults<MagicMenuSettings> Defaults = new(
+        new()
+        {
+            Template = TemplateDefault,
+            Start = "*",
+            Depth = 0,
+        },
+        new()
+        {
+            Template = TemplateDefault,
+            Start = "*",
+            Depth = 0,
+        });
 }

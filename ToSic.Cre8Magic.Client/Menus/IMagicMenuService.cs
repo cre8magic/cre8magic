@@ -8,6 +8,8 @@ namespace ToSic.Cre8magic.Menus;
 /// </summary>
 public interface IMagicMenuService
 {
+    public bool NoInheritSettingsWip { get; set; }
+
     /// <summary>
     /// Get the menu items for the current page and specified settings.
     /// </summary>

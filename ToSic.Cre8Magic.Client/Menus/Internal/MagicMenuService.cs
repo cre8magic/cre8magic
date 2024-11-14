@@ -14,7 +14,19 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicPageServic
 
     private const string MenuSettingPrefix = "menu-";
 
+    public bool NoInheritSettingsWip { get; set; } = false;
+
     public IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? settings = default)
+    {
+        var (newSettings, messages) = NoInheritSettingsWip
+            ? (settings ?? new(), new List<string>())
+            : MergeSettings(pageState, settings);
+        
+        var result = pageSvc.GetMenuInternal(pageState, newSettings, messages);
+        return result;
+    }
+
+    private (MagicMenuSettings Settings, List<string> Messages) MergeSettings(PageState pageState, MagicMenuSettings? settings = default)
     {
         var messages = new List<string>();
         var allSettings = settingsSvc.GetSettings(pageState);
@@ -71,7 +83,6 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicPageServic
             AllSettings = allSettings,
         };
 
-        var result = pageSvc.Setup(pageState).GetMenuInternal(mergedSettings, messages);
-        return result;
+        return (mergedSettings, messages);
     }
 }

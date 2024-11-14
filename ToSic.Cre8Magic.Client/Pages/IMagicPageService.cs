@@ -35,5 +35,5 @@ public interface IMagicPageService
 
     IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? specs = default);
 
-    internal IMagicPageList GetMenuInternal(MagicMenuSettings specs, List<string>? debugMessages);
+    internal IMagicPageList GetMenuInternal(PageState pageState, MagicMenuSettings specs, List<string>? debugMessages);
 }
