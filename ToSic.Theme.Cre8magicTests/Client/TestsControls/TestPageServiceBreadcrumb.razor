@@ -1,0 +1,45 @@
+@namespace ToSic.Theme.Cre8magicTests
+@using ToSic.Cre8magic.Pages
+@inherits ThemeControlBase
+@inject IMagicPageService PageSvc
+
+@code {
+
+    // Setup Page Service
+    protected override void OnParametersSet()
+    {
+        PageSvc.Setup(PageState);
+    }
+}
+
+<h1>Breadcrumbs</h1>
+<p>
+    Demonstrate various ways to use the breadcrumb service
+</p>
+<h2>Breadcrumb just list</h2>
+<ol>
+    @foreach(var bc in PageSvc.GetBreadcrumb(PageState))
+    {
+        <li>@bc</li>
+    }
+</ol>
+
+<h2>Breadcrumb links</h2>
+<ol>
+    @foreach(var bc in PageSvc.GetBreadcrumb(PageState))
+    {
+        <li>
+            <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
+        </li>
+    }
+</ol>
+
+<h2>Breadcrumb to Home</h2>
+<ol>
+    @foreach(var bc in PageSvc.GetBreadcrumb(PageState,new() { Active = PageSvc.GetHome() } ))
+    {
+        <li>
+            <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
+        </li>
+    }
+</ol>

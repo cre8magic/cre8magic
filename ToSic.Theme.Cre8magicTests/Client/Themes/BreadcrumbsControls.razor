@@ -1,24 +1,10 @@
 @namespace ToSic.Theme.Cre8magicTests
-@using ToSic.Cre8magic.Breadcrumb
-@using ToSic.Cre8magic.Breadcrumb.Settings
-@using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeBase
 
 @code {
     // Theme Specs
     public override string Name => "Breadcrumb using Controls";
     public override string Panes => PaneNames.Default;
-
-    // Use test parameters from Tonci vs. Daniel
-    const bool PCTonci = false;
-
-    public const string TopLevelWithSubpagesId = PCTonci
-        ? "97"
-        : "29";
-
-    public const int PageWithDeepBreadcrumb = PCTonci
-        ? 308
-        : 35; // Sub-Under-Third
 }
 
 <main role="main">
@@ -29,56 +15,8 @@
             <div class="controls-group"><UserProfile /> <Login /> <ControlPanel ButtonClass="btn-outline-light" /></div>
         </div>
     </nav>
-
-    <h1>MagicBreadcrumb</h1>
-
-    <h2>Oqtane standard Breadcrumbs (with s)</h2>
-    <Breadcrumbs></Breadcrumbs>
-
-    <h2>BasicBreadcrumb, no parameters</h2>
-    <BasicBreadcrumb></BasicBreadcrumb>
-
-    <h2>BasicBreadcrumb with data, without Settings</h2>
-    <BasicBreadcrumb></BasicBreadcrumb>
-
-    <hr/>
-
-    <h2>Designer</h2>
-    <p>No Designer (defaults to BasicDesigner)</p>
-    <BasicBreadcrumb></BasicBreadcrumb>
-    <p>BasicBreadcrumb with CustomBreadcrumbDesigner</p>
-    <BasicBreadcrumb Settings="new() { Designer = new BreadcrumbDesignerDark() }"></BasicBreadcrumb>
-
-    <hr />
-
-    <h2>Settings</h2>
-    <p>Reverse</p>
-    <BasicBreadcrumb Settings="new() { Reverse = true }"></BasicBreadcrumb>
     
-    <p>Without Home</p>
-    <BasicBreadcrumb></BasicBreadcrumb>
-    <BasicBreadcrumb Settings="new() { WithHome = true }"></BasicBreadcrumb>
-    <BasicBreadcrumb Settings="new() { WithHome = false }"></BasicBreadcrumb>
-    
-    <p>Without current</p>
-    <BasicBreadcrumb></BasicBreadcrumb>
-    <BasicBreadcrumb Settings="new() { WithActive = false }"></BasicBreadcrumb>
-    <BasicBreadcrumb Settings="new() { WithActive = true }"></BasicBreadcrumb>
-
-    <h3>BasicBreadcrumb with Settings { @nameof(MagicBreadcrumbSettings.ActiveId) = @PageWithDeepBreadcrumb }</h3>
-    <p>No designer</p>
-    <BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb }"></BasicBreadcrumb>
-    <p>BasicBreadcrumb with @nameof(MagicBreadcrumbDesignerBs5)</p>
-    <BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb, Designer = new MagicBreadcrumbDesignerBs5() }"></BasicBreadcrumb>
-    <p>BasicBreadcrumb with @nameof(BreadcrumbDesignerDark)</p>
-    <BasicBreadcrumb Settings="new() { ActiveId = PageWithDeepBreadcrumb, Designer = new BreadcrumbDesignerDark() }"></BasicBreadcrumb>
-
-    <hr />
-    <h3>BasicBreadcrumb Non-Existing { @nameof(MagicBreadcrumbSettings.ActiveId) = -1 }</h3>
-    <p>This should not show anything</p>
-    <BasicBreadcrumb Settings="new() { ActiveId = -1 }"></BasicBreadcrumb>
-    <p>End - there should be nothing to be seen</p>
-    <hr />
+    <TestBreadcrumbsControls></TestBreadcrumbsControls>
 
     <div class="content">
         <div class="container">

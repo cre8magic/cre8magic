@@ -1,0 +1,58 @@
+@namespace ToSic.Theme.Cre8magicTests
+@using ToSic.Cre8magic.Pages
+@inherits ThemeControlBase
+@inject IMagicPageService PageSvc
+
+@code {
+
+    // Setup Page Service
+    protected override void OnParametersSet()
+    {
+        PageSvc.Setup(PageState);
+    }
+}
+
+
+<h1>Magic Pages Service</h1>
+<hr/>
+
+<h2>Basic Get Current, Home, etc.</h2>
+
+<ol>
+    <li>Current Page: @PageSvc.GetCurrent()</li>
+    <li>Home Page: @PageSvc.GetHome()</li>
+    <li>Current Page Parent: @PageSvc.GetCurrent().Parent</li>
+    <li>Current page using GetPage: @PageSvc.GetPage(PageState.Page)</li>
+    <li>Current page using GetPage: @PageSvc.GetPage(PageState.Page.PageId)</li>
+    <li>Current page using GetPage: @PageSvc.GetPage(PageSvc.GetCurrent().Id)</li>
+</ol>
+
+<h2>Current page properties</h2>
+<ol>
+    <li>Id: @PageSvc.GetCurrent().Id</li>
+    <li>Path: @PageSvc.GetCurrent().Path</li>
+    <li>Name: @PageSvc.GetCurrent().Name</li>
+    <li>Parent: @PageSvc.GetCurrent().Parent</li>
+    @*         <li>Children: @PageSvc.GetCurrent().Children</li>
+    <li>Is Home: @PageSvc.GetCurrent().IsHome</li>
+*@
+    <li>Is Current: @PageSvc.GetCurrent().IsActive</li>
+    <li>Is In Breadcrumb: @PageSvc.GetCurrent().IsInBreadcrumb</li>
+    @* <li>Is Parent: @PageSvc.GetCurrent().IsParent</li>
+    <li>Is Child: @PageSvc.GetCurrent().IsChild</li>
+    <li>Is Ancestor: @PageSvc.GetCurrent().IsAncestor</li>
+    <li>Is Descendant: @PageSvc.GetCurrent().IsDescendant</li>
+    <li>Is Hidden: @PageSvc.GetCurrent().IsHidden</li>
+    <li>Is System: @PageSvc.GetCurrent().IsSystem</li>
+    <li>Is Published: @PageSvc.GetCurrent().IsPublished</li>
+    <li>Is Deleted: @PageSvc.GetCurrent().IsDeleted *@
+</ol>
+
+<h2>Get Many</h2>
+
+<ol>
+    @foreach(var aPage in PageSvc.GetPages([PageSvc.GetCurrent().Id, PageSvc.GetHome().Id]))
+    {
+        <li>@aPage</li>
+    }
+</ol>
