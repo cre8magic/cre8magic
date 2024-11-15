@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ToSic.Module.Cre8MagicTests.Client.Menus.Tests;
+using ToSic.Module.Cre8MagicTests.Client.RandomTests;
 using ToSic.Module.Cre8MagicTests.Client.Tests.Breadcrumb;
 using ToSic.Module.Cre8MagicTests.Client.Tests.PageService;
 using ToSic.Theme.Cre8magicTests;
@@ -30,5 +31,8 @@ internal class TestDatabase
         // Menu Service
         new("menu-basic", "Menus Basic", typeof(MenuControlsBasic)),
         new("menu-functions", "Menus Functions", typeof(MenuControlsFunctions)),
+
+        // Special Tests
+        new("sys-random-number-by-page", "Random Number by Page", typeof(TestGetKeep)),
     ];
 }

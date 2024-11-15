@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic.Utils;
 /// </summary>
 /// <typeparam name="TResult"></typeparam>
 /// <typeparam name="TCompare"></typeparam>
-internal class GetKeep<TResult, TCompare> where TResult : class
+public class GetKeep<TResult, TCompare> where TResult : class
 {
     public TResult Get(Func<(TResult Result, TCompare Compare)> getter, Func<TResult, TCompare, bool> keep)
     {

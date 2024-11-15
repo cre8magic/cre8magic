@@ -37,10 +37,7 @@ public abstract class MagicBreadcrumbBase: MagicControlBase
     /// The Breadcrumb for the current page.
     /// Will be updated when the page changes.
     /// </summary>
-    protected IMagicPageList Breadcrumb => _breadcrumbs.Get(
-        () => (PageSvcSafe.GetBreadcrumb(PageState, Customize(Settings ?? new())), PageState.Page.PageId),
-        (_, i) => i == PageState.Page.PageId
-    );
-    private readonly GetKeep<IMagicPageList, int?> _breadcrumbs = new();
+    protected IMagicPageList Breadcrumb => _breadcrumbs.Get(PageState, () => PageSvcSafe.GetBreadcrumb(PageState, Customize(Settings ?? new())));
+    private readonly GetKeepByPageId<IMagicPageList> _breadcrumbs = new();
 
 }
