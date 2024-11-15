@@ -6,11 +6,12 @@ namespace ToSic.Cre8magic.Languages;
 
 public abstract class MagicLanguageMenuBase: MagicControlBase
 {
+
     [Inject] protected LanguageService LanguageService { get; set; }
 
     public List<MagicLanguage> Languages { get; private set; }
 
-    protected override IMagicDesigner Designer => _designer ??= new LanguagesDesigner(AllSettings);
+    protected override IMagicDesigner Designer => _designer ??= MagicFactory.LanguagesDesigner(PageState);
     private IMagicDesigner? _designer;
 
     /// <summary>
@@ -22,14 +23,14 @@ public abstract class MagicLanguageMenuBase: MagicControlBase
     {
         await base.OnParametersSetAsync();
 
-        LanguageService.InitSettings(AllSettings);
-
         // Load defined language list. It changes unless the page is reloaded, so we can cache it on this control
-        Languages ??= await LanguageService.LanguagesToShow(PageState.Site.SiteId);
-        Show ??= await LanguageService.ShowMenu(PageState.Site.SiteId);
+        Languages ??= await LanguageService.LanguagesToShow(PageState);
+        Show ??= await LanguageService.ShowMenu(PageState);
     }
 
-    public async Task SetLanguage(string culture) => await LanguageService.SetCultureAsync(culture);
+    public async Task SetLanguage(string culture) =>
+        await LanguageService.SetCultureAsync(culture);
 
-    public string? Classes(MagicLanguage? lang, string tag) => (Designer as LanguagesDesigner)?.Classes(lang, tag).EmptyAsNull();
+    public string? Classes(MagicLanguage? lang, string tag) =>
+        (Designer as LanguagesDesigner)?.Classes(lang, tag).EmptyAsNull();
 }

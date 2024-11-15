@@ -16,22 +16,26 @@ namespace ToSic.Cre8magic.Client.Services;
  * - ...and only show these; possibly show more to admin?
  */
 
-public class LanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLanguages)
-    : MagicServiceWithSettingsBase
+public class LanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLanguages, IMagicSettingsService settingsSvc)
 {
-    public async Task<bool> ShowMenu(int siteId)
+    public async Task<bool> ShowMenu(PageState pageState)
     {
-        var languages = await LanguagesToShow(siteId);
-        return AllSettings.Show("Languages") && AllSettings.Theme.LanguagesMin <= languages.Count;
+        var allSettings = settingsSvc.GetSettings(pageState);
+        var languages = await LanguagesToShow(pageState);
+        return allSettings.Show("Languages") && allSettings.Theme.LanguagesMin <= languages.Count;
     }
 
-    public async Task<List<MagicLanguage>> LanguagesToShow(int siteId)
+    public async Task<List<MagicLanguage>> LanguagesToShow(PageState pageState)
     {
-        if (_languages.TryGetValue(siteId, out var cached)) return cached;
+        var siteId = pageState.Site.SiteId;
+        if (_languages.TryGetValue(siteId, out var cached))
+            return cached;
+
+        var allSettings = settingsSvc.GetSettings(pageState);
 
         var siteLanguages = await oqtLanguages.GetLanguagesAsync(siteId);
 
-        var langSettings = AllSettings.Languages;
+        var langSettings = allSettings.Languages;
 
         var customList = langSettings.Languages.Values;
 

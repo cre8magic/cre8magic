@@ -44,5 +44,6 @@ public class Startup : Oqtane.Services.IClientStartup
 
         // WIP v0.02.00
         services.TryAddTransient<IMagicPageService, MagicPageService>();
+        services.TryAddTransient<IMagicFactoryWip, MagicFactoryWip>();
     }
 }
