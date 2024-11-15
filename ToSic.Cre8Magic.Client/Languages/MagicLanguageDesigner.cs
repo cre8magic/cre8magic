@@ -1,10 +1,9 @@
 ﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
-internal class MagicLanguageDesigner(MagicAllSettings allSettings) : ThemeDesigner(allSettings)
+internal class MagicLanguageDesigner(MagicAllSettings allSettings) : MagicDesignerBase(allSettings)
 {
     internal string Classes(MagicLanguage? lang, string tag)
     {
@@ -13,5 +12,8 @@ internal class MagicLanguageDesigner(MagicAllSettings allSettings) : ThemeDesign
         if (styles is null) return "";
         return styles.Classes + " " + styles.IsActive.Get(lang?.IsActive);
     }
+
+    protected override MagicDesignSettings? GetSettings(string name) =>
+        AllSettings?.ThemeDesign.DesignSettings.GetInvariant(name);
 
 }

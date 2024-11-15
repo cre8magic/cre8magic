@@ -4,11 +4,14 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Client.Services;
 
-internal abstract class MagicDesignerBase: MagicServiceWithSettingsBase, IMagicDesigner
+internal abstract class MagicDesignerBase: IMagicDesigner
 {
-    //protected internal MagicDesignerBase() {}
+    protected internal MagicDesignerBase(MagicAllSettings allSettings)
+    {
+        AllSettings = allSettings;
+    }
+    public MagicAllSettings AllSettings { get; }
 
-    protected internal MagicDesignerBase(MagicAllSettings allSettings) => InitSettings(allSettings);
 
     protected abstract MagicDesignSettings? GetSettings(string name);
 

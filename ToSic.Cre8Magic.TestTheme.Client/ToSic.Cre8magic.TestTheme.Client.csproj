@@ -63,6 +63,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Containers\SystemContainer.razor.old" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Containers\SystemContainer.razor.old" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ToSic.Cre8magic.Client\ToSic.Cre8magic.Client.csproj" />
   </ItemGroup>
 

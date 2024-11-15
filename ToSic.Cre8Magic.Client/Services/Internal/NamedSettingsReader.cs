@@ -86,7 +86,8 @@ internal class NamedSettingsReader<TPart>(
 
     private static string[] GetConfigNamesToCheck(string? configuredNameOrNull, string currentName)
     {
-        if (configuredNameOrNull == InheritName) configuredNameOrNull = currentName;
+        if (configuredNameOrNull == InheritName)
+            configuredNameOrNull = currentName;
 
         return configuredNameOrNull.HasText()
             ? new[] { configuredNameOrNull, Default }.Distinct().ToArray()
