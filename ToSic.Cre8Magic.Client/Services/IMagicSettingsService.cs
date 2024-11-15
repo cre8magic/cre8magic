@@ -39,5 +39,12 @@ public interface IMagicSettingsService: IHasSettingsExceptions
 
     internal NamedSettingsReader<MagicMenuSettings> MenuSettings { get; }
 
-    internal (string ConfigName, List<string> Source) FindConfigName(string? configName, string inheritedName);
+    ///// <summary>
+    ///// Figure out which settings-name can be used.
+    ///// It will first try the preferred option, then the fallback, and if that doesn't exist, it will use the default name.
+    ///// </summary>
+    ///// <param name="preferred"></param>
+    ///// <param name="fallback"></param>
+    ///// <returns></returns>
+    //internal (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback);
 }

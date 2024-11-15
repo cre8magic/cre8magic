@@ -62,7 +62,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         var tokens = new TokenEngine([pageTokens, ThemeTokens]);
 
         // Figure out real config-name, and get the initial layout
-        var (configName, source) = FindConfigName(_layoutName, Default);
+        var (configName, source) = MagicAllSettingsReader.GetBestSettingsName(_layoutName, Default);
         var theme = Theme.Find(configName).Parse(tokens);
         var current = new MagicAllSettings(configName, this, theme, tokens, pageState);
 
@@ -138,20 +138,20 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>>? _menuDesigns;
 
 
-    public (string ConfigName, List<string> Source) FindConfigName(string? configName, string inheritedName)
-    {
-        var debugInfo = new List<string> { $"Initial Config: '{configName}'"};
-        if (configName.EqInvariant(InheritName))
-        {
-            configName = inheritedName;
-            debugInfo.Add($"switched to inherit '{inheritedName}'");
-        }
-        if (configName.HasText())
-            return (configName, debugInfo);
+    //public (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback)
+    //{
+        //var debugInfo = new List<string> { $"Initial Config: '{preferred}'"};
+        //if (preferred.EqInvariant(InheritName))
+        //{
+        //    preferred = fallback;
+        //    debugInfo.Add($"switched to inherit '{fallback}'");
+        //}
+        //if (preferred.HasText())
+        //    return (preferred, debugInfo);
 
-        debugInfo.Add($"Config changed to '{Default}'");
-        return (Default, debugInfo);
-    }
+        //debugInfo.Add($"Config changed to '{Default}'");
+        //return (Default, debugInfo);
+    //}
 
     /// <summary>
     /// Exceptions - ATM just forward the loader exceptions, as none are logged here.

@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Runtime.CompilerServices;
+using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
@@ -56,21 +58,13 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
     private (MagicMenuSettings Settings, List<string> Messages) MergeSettings(PageState pageState, MagicMenuSettings? settings = default)
     {
-        var messages = new List<string>();
         var allSettings = settingsSvc.GetSettings(pageState);
-        var (configName, configMessages) = settingsSvc.FindConfigName(settings?.ConfigName, allSettings.Name);
-        messages.AddRange(configMessages);
-        
-        // Check if we have a name-remap to consider
-        var menuConfig = allSettings.ConfigurationName(configName);
-        if (menuConfig == null && !configName.StartsWith(MenuSettingPrefix))
-            menuConfig = allSettings.ConfigurationName($"{MenuSettingPrefix}{configName}");
 
-        if (menuConfig.HasValue())
-        {
-            configName = menuConfig;
-            messages.Add($"updated config to '{configName}'");
-        }
+        var reader = new MagicAllSettingsReader(allSettings);
+
+        var (configName, journal) = reader.GetMostRelevantSettingsName(settings?.ConfigName, MenuSettingPrefix);
+        var messages = new List<string>(journal);
+
 
         // If the user didn't specify a config name in the Parameters or the config name
         // isn't contained in the json file the normal parameter are given to the service

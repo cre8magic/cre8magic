@@ -70,29 +70,40 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     /// <summary>
     /// Determine if we should show a specific part
     /// </summary>
-    public bool Show(string name) => Theme.Parts.TryGetValue(name, out var value) && value.Show == true;
+    public bool Show(string name) =>
+        Theme.Parts.TryGetValue(name, out var value) && value.Show == true;
 
     /// <summary>
     /// Determine the name of the design configuration of a specific part
     /// </summary>
-    internal string? DesignName(string name) => Theme.Parts.TryGetValue(name, out var value) ? value.Design : null;
+    internal string? DesignName(string name) =>
+        Theme.Parts.TryGetValue(name, out var value)
+            ? value.Design
+            : null;
 
     /// <summary>
     /// Determine the configuration name of a specific part.
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
-    internal string? ConfigurationName(string name) => Theme.Parts.TryGetValue(name, out var value) ? value.Configuration : null;
+    internal string? GetThemePartRenameOrNull(string name) =>
+        Theme.Parts.TryGetValue(name, out var value)
+            ? value.Configuration
+            : null;
 
-    internal string ConfigurationNameOrDefault(string name) => ConfigurationName(name) ?? Name;
+    internal string GetThemePartRenameOrDefault(string name) =>
+        GetThemePartRenameOrNull(name) ?? Name;
 
-    public MagicAnalyticsSettings Analytics => _a ??= Service.Analytics.Find(ConfigurationNameOrDefault(nameof(Analytics)), Name);
+    public MagicAnalyticsSettings Analytics =>
+        _a ??= Service.Analytics.Find(GetThemePartRenameOrDefault(nameof(Analytics)), Name);
     private MagicAnalyticsSettings? _a;
 
-    public MagicThemeDesignSettings ThemeDesign => _td ??= Service.ThemeDesign.Find(Theme.Design ?? ConfigurationNameOrDefault(nameof(Theme.Design)), Name);
+    public MagicThemeDesignSettings ThemeDesign =>
+        _td ??= Service.ThemeDesign.Find(Theme.Design ?? GetThemePartRenameOrDefault(nameof(Theme.Design)), Name);
     private MagicThemeDesignSettings? _td;
 
-    public MagicLanguageSettings Languages => _l ??= Service.Languages.Find(ConfigurationNameOrDefault(nameof(Languages)), Name);
+    public MagicLanguageSettings Languages =>
+        _l ??= Service.Languages.Find(GetThemePartRenameOrDefault(nameof(Languages)), Name);
     private MagicLanguageSettings? _l;
 
     public Dictionary<string, string> DebugSources { get; } = new(InvariantCultureIgnoreCase);
