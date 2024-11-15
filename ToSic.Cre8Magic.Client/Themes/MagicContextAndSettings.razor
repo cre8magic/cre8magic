@@ -21,7 +21,8 @@
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-        if (PutInBody && ThemeJs != null) await ThemeJs.SetBodyClasses(AllSettings.MagicContext);
+        if (PutInBody && ThemeJs != null)
+            await ThemeJs.SetBodyClasses(AllSettings.MagicContext);
 
         // await ThemeJsTest!.Log("test from test");
         // var x = await ThemeJsTest!.TestFromTest();

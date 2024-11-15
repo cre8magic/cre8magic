@@ -16,7 +16,6 @@ namespace ToSic.Cre8magic.Themes;
 /// </remarks>
 public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWithSettings
 {
-
     /// <summary>
     /// Name to show in the Theme-picker.
     /// Must be set by each inheriting theme, which is why it's marked abstract to enforce this.
@@ -31,8 +30,12 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWit
 
     /// <summary>
     /// Sets additional body classes - usually to activate CSS variations for this theme
+    /// 
+    /// Note that ATM they are not set on the body, but on a div wrapping the entire contents.
+    /// This is because of some shortcomings in Oqtane, which doesn't allow to reliably set classes on the body.
+    /// Just remember that when you write your CSS ;).
     /// </summary>
-    protected abstract string MagicClasses { get; }
+    protected abstract string BodyClasses { get; }
 
     /// <summary>
     /// Option to inject dynamic components - mainly for testing
@@ -58,7 +61,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWit
     protected IMagicSettingsService MagicSettingsService
     {
         get => _magicSettingsService!;
-        set => _magicSettingsService = value.Setup(ThemePackageSettings, Layout, MagicClasses);    // Init when injecting
+        set => _magicSettingsService = value.Setup(ThemePackageSettings, Layout, BodyClasses);    // Init when injecting
     }
     private IMagicSettingsService? _magicSettingsService;
 

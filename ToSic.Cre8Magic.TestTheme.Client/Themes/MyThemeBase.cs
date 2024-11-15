@@ -1,6 +1,5 @@
 ﻿using Oqtane.Models;
 using Oqtane.Shared;
-using System.Threading.Tasks;
 using ToSic.Cre8magic.Settings;
 using static Oqtane.Shared.ResourceType;
 
@@ -32,10 +31,4 @@ public abstract class MyThemeBase : MagicThemeBase
     public override MagicPackageSettings ThemePackageSettings => ThemeInfo.ThemePackageDefaults;
 
     public override string Panes => string.Join(",", PaneNames.Default, PaneNameHeader);
-
-    protected override async Task OnParametersSetAsync()
-    {
-        await base.OnParametersSetAsync();
-
-    }
 }
