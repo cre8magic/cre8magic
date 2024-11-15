@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Components;
 using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Themes;

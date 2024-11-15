@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Client.Controls;
+﻿namespace ToSic.Cre8magic.Components;
 
 public class MagicDynamicComponent(string group, Type type, Dictionary<string, object>? parameters)
 {

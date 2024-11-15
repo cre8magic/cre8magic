@@ -1,41 +1,13 @@
-@using ToSic.Cre8magic.Menus
-@using ToSic.Cre8magic.Pages.Internal
-@using ToSic.Theme.Cre8magicTests.Client
-@inherits ThemeControlBase
-@inject IMagicMenuService MenuSvc
-
-@*
-    Menu Variants
+# Menu Variants
     
-    Goal is to make notes of ca. how we want the menu to be used.
-*@
+Goal is to make notes of ca. how we want the menu to be used.
 
-@{
-    // Get the current environment - separate step, as we may change the mechanics later
-    var currentEnv = TestParameters.EnvCurrent;
+## Just us the Service & Data
 
-    var topLevelWithSubpagesId = TestParameters.TopLevelWithSubpagesIdDic[currentEnv];
+This would just be using the service, and looping etc.
+Examples:
 
-    var topLevelThreePages = string.Join(", ", MenuTestData.dicTopLevelThreePage[currentEnv]);
-
-    var restrictPossiblePages = new MagicPageFactory(PageState)
-        .Get(MenuTestData.dicRestrictPages[currentEnv])
-        .ToList();
-
-    MenuSvc.NoInheritSettingsWip = true;
-
-    // Default menu designer to be used in most tests here
-    var basicDesigner = new BasicMenuDesigner();
-
-    var pageStateDebug = PageState.ToProxy(true);
-}
-
-<h2>Just us the Service & Data</h2>
-<p>
-    This would just be using the service, and looping etc.
-    Examples:
-</p>
-
+```razor
 @inject IMagicMenuService MenuSvc
 @{
     var menuSettings = new MagicMenuSettings
@@ -50,16 +22,18 @@
 {
     <div>@item.Title</div>
 }
+```
 
-<h2>Just the service - using Configs from elsewhere...?</h2>
-<p>
-    Not sure if this is a realistic scenario, but it would basically be the same thing,
-    but the settings etc. would come from a central place...
+
+## Just the service - using Configs from elsewhere...?
+
+Not sure if this is a realistic scenario, but it would basically be the same thing,
+but the settings etc. would come from a central place...
     
-    Not sure if this makes sense, because you could simply have a helper object which
-    has the code elsewhere, to generate the settings, which is similar but less predefined architecture...
-</p>
+Not sure if this makes sense, because you could simply have a helper object which
+has the code elsewhere, to generate the settings, which is similar but less predefined architecture...
 
+```razor
 @inject IMagicMenuService MenuSvc
 @inject MyMenuSettingsProvider MenuSettingsProvider
 @{
@@ -76,18 +50,21 @@
     // Named Settings with differing parameter
     var menu2 = MenuSvc.GetMenu(PageState, new() { SettingsProvider = MenuSettingsProvider, SettingsName = "footer", Start = "52, 41!" })
 }
+```
 
 Note: some consequences would probably be that we would internall separate 
+
 - settings
 - runtime context containing logs, all-settings etc. ? - would make the settings less mutable in a good way...
 - TODO: needs clarity as to how the new settings are mixed with provided settings
 
 
-<h2>Just the service and just a Designer</h2>
-<p>
-    This scenario would be uncommon, but I guess would make sense architecturally.
-    Basically you would use the service and a designer, to simply organize the code better.
-</p>
+## Just the service and just a Designer
+
+This scenario would be uncommon, but I guess would make sense architecturally.
+Basically you would use the service and a designer, to simply organize the code better.
+
+```razor
 @{
     var myDesigner = new MyMenuDesigner();
     var menu = MenuSvc.GetMenu(PageState, new() { Designer = myDesigner });
@@ -97,8 +74,10 @@ Note: some consequences would probably be that we would internall separate
 {
     <div class='item.Classes("div")'>@item.Title</div>
 }
+```
 
 Notes:
+
 - the designer could be preconfigured, in which case it doesn't need to know the menu settings
 - in other cases the designer should know about the current settings - TODO: how?
 - in other cases the designer should know about more global settings - TODO: how?
@@ -107,10 +86,11 @@ Notes:
 - ...or maybe also DesignerName / DesignerType, which would then use DI?
 
 
-<h2>Using Pre-Built controls</h2>
-<p>
-    This would use the pre-built controls, which are already there.
-</p>
+## Using Pre-Built controls
+
+This would use the pre-built controls, which are already there.
+
+```razor
 <MagicMenu Settings="new()"></MagicMenu>
 
 <MagicMenu Settings="new() { Designer = new MyMenuDesigner() }"></MagicMenu>
@@ -119,3 +99,4 @@ Notes:
 
 <!-- maybe with name...?-->
 <MagicMenu SettingsName="footer"></MagicMenu>
+```

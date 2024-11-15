@@ -1,4 +1,5 @@
 @namespace ToSic.Cre8magic.TestTheme.Client
+@using ToSic.Cre8magic.Components
 @inherits MyThemeBase
 @*
 File Purpose:       Core theme file and Default variation
@@ -48,7 +49,7 @@ Nice to know:
                 <div class="row">
                     <div class='@Classes("sidebarBody")'>
                         <Pane Name="@PaneNames.Default"/>
-                        <MagicDynamicComponents Components="@MagicComponents"></MagicDynamicComponents>
+                        <MagicShowComponents Components="@MagicComponents"></MagicShowComponents>
                     </div>
                     <div class='@Classes("sidebarMenu")'>
                         <div id="@Id("sidebarMenu-inner")" class="@Classes("sidebarMenu-inner")">
@@ -61,7 +62,11 @@ Nice to know:
         else
         {
             <Pane Name="@PaneNames.Default"/>
-            <MagicDynamicComponents Components="MagicComponents"></MagicDynamicComponents>
+            @if (true)
+            {
+                <div>before!</div>
+            }
+            <MagicShowComponents Components="@MagicComponents"></MagicShowComponents>
         }
 
         <ToTop></ToTop>

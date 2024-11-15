@@ -13,11 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Menus\Tests\MenuVariants.html" />
+    <None Remove="Menus\Tests\MenuVariants.md" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Menus\Tests\MenuVariants.html" />
+    <Content Include="Menus\Tests\MenuVariants.md" />
   </ItemGroup>
 
   <ItemGroup>

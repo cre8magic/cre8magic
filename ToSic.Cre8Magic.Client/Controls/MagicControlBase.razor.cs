@@ -10,11 +10,14 @@ namespace ToSic.Cre8magic.Client.Controls;
 /// </summary>
 public abstract class MagicControlBase: ThemeControlBase, IMagicControlWithSettings
 {
-    [Inject] public IMagicFactoryWip MagicFactory { get; set; }
+    [Inject]
+    public IMagicFactoryWip MagicFactory { get; set; }
 
-    [Inject] public IMagicSettingsService MagicSettings { get; set; }
+    [Inject]
+    public IMagicSettingsService MagicSettings { get; set; }
 
-    [CascadingParameter] public MagicAllSettings AllSettings { get; set; }
+    [CascadingParameter]
+    public MagicAllSettings AllSettings { get; set; }
 
     protected bool UserIsAdmin => PageState.UserIsAdmin();
 
