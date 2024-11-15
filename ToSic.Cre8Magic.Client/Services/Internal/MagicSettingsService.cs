@@ -137,22 +137,6 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);
     private NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>>? _menuDesigns;
 
-
-    //public (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback)
-    //{
-        //var debugInfo = new List<string> { $"Initial Config: '{preferred}'"};
-        //if (preferred.EqInvariant(InheritName))
-        //{
-        //    preferred = fallback;
-        //    debugInfo.Add($"switched to inherit '{fallback}'");
-        //}
-        //if (preferred.HasText())
-        //    return (preferred, debugInfo);
-
-        //debugInfo.Add($"Config changed to '{Default}'");
-        //return (Default, debugInfo);
-    //}
-
     /// <summary>
     /// Exceptions - ATM just forward the loader exceptions, as none are logged here.
     /// </summary>

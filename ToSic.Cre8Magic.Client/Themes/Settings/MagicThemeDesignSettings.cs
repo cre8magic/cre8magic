@@ -21,7 +21,7 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
         MagicContextTagId = priority?.MagicContextTagId ?? fallback?.MagicContextTagId;
 
         // TODO: #NamedSettings
-        Custom = priority?.Custom ?? fallback?.Custom ?? new();
+        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings ?? new();
     }
 
     public MagicThemeDesignSettings CloneWith(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
@@ -68,7 +68,11 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
 
     public string? MagicContextTagId { get; init; }
 
-    public NamedSettings<MagicDesignSettings> Custom { get; init; } = new();
+    /// <summary>
+    /// Custom values / classes as you need them in your code
+    /// TODO: probably rename to "data"
+    /// </summary>
+    public NamedSettings<MagicDesignSettings> DesignSettings { get; init; } = new();
 
     // TODO: initialize with real properties, so the defaults don't already contain something?
 
@@ -84,7 +88,7 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
             PageIsHome = new($"{PagePrefixDefault}-is-home"),
             PaneIsEmpty = new($"{PanePrefixDefault}-is-empty"),
             MagicContextTagId = BodyDivId,
-            Custom = new()
+            DesignSettings = new()
             {
                 { "languages-li", new() { IsActive = new($"active {SettingFromDefaults}") } },
                 {
@@ -107,7 +111,7 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
             PageIsHome = new(),
             PaneIsEmpty = new(),
             MagicContextTagId = BodyDivId,
-            Custom = new()
+            DesignSettings = new()
             {
                 { "container", new() { Id = ContainerIdDefault } },
             }

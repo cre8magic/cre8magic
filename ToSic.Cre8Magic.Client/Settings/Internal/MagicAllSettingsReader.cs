@@ -1,5 +1,4 @@
 ﻿using ToSic.Cre8magic.Utils;
-using static ToSic.Cre8magic.Client.MagicConstants;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
@@ -37,7 +36,7 @@ internal class MagicAllSettingsReader(MagicAllSettings allSettings)
     public static (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback)
     {
         var debugInfo = new List<string> { $"Initial Config: '{preferred}'" };
-        if (preferred.EqInvariant(InheritName))
+        if (preferred.EqInvariant(MagicConstants.InheritName))
         {
             preferred = fallback;
             debugInfo.Add($"switched to inherit '{fallback}'");
@@ -45,8 +44,8 @@ internal class MagicAllSettingsReader(MagicAllSettings allSettings)
         if (preferred.HasText())
             return (preferred, debugInfo);
 
-        debugInfo.Add($"Config changed to '{Default}'");
-        return (Default, debugInfo);
+        debugInfo.Add($"Config changed to '{MagicConstants.Default}'");
+        return (MagicConstants.Default, debugInfo);
     }
 
 }

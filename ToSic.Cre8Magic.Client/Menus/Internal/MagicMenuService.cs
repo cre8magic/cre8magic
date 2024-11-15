@@ -93,17 +93,12 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         {
             // Check various places where design could be configured by priority
             var designConfig = settingsSvc.MenuDesigns.Find(designName, allSettings.Name);
-
-            //config.DesignSettings = designConfig;
             mergedSettings = mergedSettings with { DesignSettings = designConfig };
         }
         else
             messages.Add("Design rules already set");
 
-        mergedSettings = mergedSettings with
-        {
-            AllSettings = allSettings,
-        };
+        mergedSettings = mergedSettings with { AllSettings = allSettings };
 
         return (mergedSettings, messages);
     }

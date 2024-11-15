@@ -8,7 +8,7 @@ using static ToSic.Cre8magic.Settings.SettingsWithInherit;
 namespace ToSic.Cre8magic.Services.Internal;
 
 internal class NamedSettingsReader<TPart>(
-    IMagicSettingsService parent,
+    IMagicSettingsService settingsSvc,
     Defaults<TPart> defaults,
     Func<MagicSettingsCatalog, NamedSettings<TPart>> findList,
     // WIP #DropJsonMerge
@@ -100,7 +100,7 @@ internal class NamedSettingsReader<TPart>(
 
         var allSourcesAndNames = names
             .Distinct()
-            .Select(name => (Settings: parent.Catalog, Name: name))
+            .Select(name => (Settings: settingsSvc.Catalog, Name: name))
             .ToList();
 
         foreach (var set in allSourcesAndNames)
