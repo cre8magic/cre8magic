@@ -13,7 +13,6 @@ internal class MagicBreadcrumbFactoryRoot(MagicPageFactory pageFactory)
             settings,
             settings.Designer,
             pageFactory.PageState,
-            [],
             pageFactory
         );
         var factory = new MagicBreadcrumbFactory(context);

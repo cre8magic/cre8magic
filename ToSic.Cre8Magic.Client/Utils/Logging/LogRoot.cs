@@ -2,10 +2,10 @@
 
 namespace ToSic.Cre8magic.Utils.Logging;
 
-internal class LogRoot
+public class LogRoot
 {
     [JsonIgnore]
-    public readonly List<LogEntry> LogEntries = [];
+    internal readonly List<LogEntry> LogEntries = [];
 
     public IEnumerable<object?> Entries => LogEntries.SelectMany(e =>
     {
@@ -16,5 +16,5 @@ internal class LogRoot
     [JsonIgnore]
     public int Depth { get; set; } = 0;
 
-    public Log GetLog(string? prefix) => new(this, Depth + 1, prefix);
+    internal Log GetLog(string? prefix) => new(this, Depth + 1, prefix);
 }

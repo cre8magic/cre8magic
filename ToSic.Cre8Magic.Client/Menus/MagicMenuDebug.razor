@@ -13,7 +13,6 @@
     Dictionary<string, object?> GetMore() => new()
     {
         { "Menu Settings", settings },
-        { "Tree Build Messages", Menu?.Context?.DebugMessages },
         { "Log", Menu?.Context?.LogRoot.Entries }
     };
 }

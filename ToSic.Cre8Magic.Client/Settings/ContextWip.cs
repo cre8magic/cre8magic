@@ -15,8 +15,8 @@ public class ContextWip<TSettings, TDesigner>(
     TSettings settings,
     TDesigner? designer,
     PageState pageState /* probably replace with a service? */,
-    List<string>? debugMessages,
-    MagicPageFactory? pageFactory) : IContextWip
+    MagicPageFactory? pageFactory,
+    LogRoot? logRoot = default) : IContextWip
 {
     public PageState PageState { get; } = pageState;
 
@@ -31,9 +31,7 @@ public class ContextWip<TSettings, TDesigner>(
 
     public IMagicPageDesigner? PageDesigner => Designer as IMagicPageDesigner;
 
-    public List<string> DebugMessages { get; } = debugMessages ?? [];
-
-    internal LogRoot LogRoot { get; } = new();
+    internal LogRoot LogRoot { get; } = logRoot ?? new();
 
     LogRoot IContextWip.LogRoot => LogRoot;
 

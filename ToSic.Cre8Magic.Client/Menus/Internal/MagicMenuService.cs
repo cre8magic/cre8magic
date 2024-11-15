@@ -5,6 +5,7 @@ using ToSic.Cre8magic.Pages.Internal.Menu;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal;
 
@@ -21,10 +22,19 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
     public IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? settings = default)
     {
+
         var (newSettings, messages) = NoInheritSettingsWip
         // todo: magicMenuSettings.Default.Fallback
             ? (settings ?? new(), new List<string>())
             : MergeSettings(pageState, settings);
+
+        var logRoot = new LogRoot();
+        if (messages.Any())
+        {
+            var messageLog = logRoot.GetLog("tree-build");
+            foreach (var m in messages) messageLog.A(m);
+        }
+
 
         // Add break-point for debugging during development
         if (pageState.IsDebug()) pageState.DoNothing();
@@ -33,8 +43,9 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
             newSettings.AllSettings,
             newSettings,
             newSettings.Designer,
-            pageState, messages,
-            new(pageState, newSettings.Pages)
+            pageState,
+            new(pageState, newSettings.Pages),
+            logRoot: logRoot
         );
 
         var rootBuilder = new MagicMenuFactoryRoot(context);

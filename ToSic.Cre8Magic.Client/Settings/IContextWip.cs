@@ -13,6 +13,4 @@ public interface IContextWip
     IMagicPageDesigner? PageDesigner { get; }
 
     internal TokenEngine? TokenEngineWip { get; }
-
-    internal List<string> DebugMessages { get; }
 }
