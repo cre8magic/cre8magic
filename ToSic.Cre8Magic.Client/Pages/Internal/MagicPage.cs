@@ -1,5 +1,5 @@
 ﻿using Oqtane.Models;
-using ToSic.Cre8magic.Breadcrumb.Settings;
+using ToSic.Cre8magic.Breadcrumb;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 

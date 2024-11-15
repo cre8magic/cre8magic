@@ -1,5 +1,5 @@
 ﻿using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Languages.Settings;
+using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Debug;
 
@@ -52,7 +52,7 @@ public record MagicSettingsCatalog: IHasDebugSettings
 
     public NamedSettings<MagicContainerSettings> Containers { get; init; } = new();
 
-    public NamedSettings<MagicLanguagesSettings> Languages { get; init; } = new();
+    public NamedSettings<MagicLanguageSettings> Languages { get; init; } = new();
 
     /// <summary>
     /// The menu definitions

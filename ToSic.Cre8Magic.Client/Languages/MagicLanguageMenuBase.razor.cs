@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using ToSic.Cre8magic.Languages.Settings;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
@@ -32,5 +31,5 @@ public abstract class MagicLanguageMenuBase: MagicControlBase
         await LanguageService.SetCultureAsync(culture);
 
     public string? Classes(MagicLanguage? lang, string tag) =>
-        (Designer as LanguagesDesigner)?.Classes(lang, tag).EmptyAsNull();
+        (Designer as MagicLanguageDesigner)?.Classes(lang, tag).EmptyAsNull();
 }

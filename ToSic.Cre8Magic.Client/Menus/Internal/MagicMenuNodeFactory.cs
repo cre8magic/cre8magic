@@ -1,16 +1,18 @@
-﻿using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Menus.Settings;
+﻿using ToSic.Cre8magic.Menus.Settings;
+using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Pages.Internal.Menu;
+namespace ToSic.Cre8magic.Menus.Internal;
 
 /// <summary>
 /// The builder for all sub-items of a magic menu.
 ///
 /// Not used for the root though...
 /// </summary>
-internal class MagicMenuFactory(ContextWip<MagicMenuSettings, IMagicPageDesigner> context, Func<int> getMaxDepth) : MagicPagesFactoryBase(context)
+internal class MagicMenuNodeFactory(ContextWip<MagicMenuSettings, IMagicPageDesigner> context, Func<int> getMaxDepth) 
+    : MagicPagesFactoryBase(context)
 {
     /// <summary>
     /// Settings - on first access takes the one given, or creates a default.

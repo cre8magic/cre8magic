@@ -2,7 +2,7 @@
 using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
-using ToSic.Cre8magic.Pages.Internal.Breadcrumb;
+using ToSic.Cre8magic.Breadcrumb.Internal;
 using ToSic.Cre8magic.Utils.Logging;
 using Log = ToSic.Cre8magic.Utils.Logging.Log;
 
@@ -97,8 +97,8 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
 
     #region Breadcrumb
 
-    internal MagicBreadcrumbFactoryRoot Breadcrumb => _breadcrumbFactory ??= new(this);
-    private MagicBreadcrumbFactoryRoot? _breadcrumbFactory;
+    internal MagicBreadcrumbBuilder Breadcrumb => _breadcrumbFactory ??= new(this);
+    private MagicBreadcrumbBuilder? _breadcrumbFactory;
 
     #endregion
 

@@ -1,27 +1,29 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Breadcrumb.Settings;
+namespace ToSic.Cre8magic.Breadcrumb;
 
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
 public class MagicBreadcrumbDesigner : IMagicPageDesigner
 {
-    internal MagicBreadcrumbDesigner(MagicPagesFactoryBase factory, MagicBreadcrumbSettings breadcrumbConfig)
+    internal MagicBreadcrumbDesigner(IContextWip context, MagicBreadcrumbSettings breadcrumbConfig)
     {
         BreadcrumbSettings = breadcrumbConfig ?? throw new ArgumentException("BreadcrumbConfig must be real", nameof(BreadcrumbSettings));
 
         DesignSettingsList = [BreadcrumbSettings.DesignSettings!];
 
-        // todo: add logging from set-helper
+        Log = context.LogRoot.GetLog("magic-breadcrumb-designer");
     }
 
+    private Log Log { get; }
+
     private MagicBreadcrumbSettings BreadcrumbSettings { get; }
-    internal List<NamedSettings<MagicBreadcrumbDesign>> DesignSettingsList { get; }
+    internal List<NamedSettings<MagicBreadcrumbDesignSettings>> DesignSettingsList { get; }
 
 
     public string Classes(string tag, IMagicPage item)
@@ -42,13 +44,13 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
         return string.Join(" ", configsForKey);
     }
 
-    private List<MagicBreadcrumbDesign> ConfigsForTag(string tag) =>
+    private List<MagicBreadcrumbDesignSettings> ConfigsForTag(string tag) =>
         DesignSettingsList
             .Select(c => c.FindInvariant(tag))
             .Where(c => c is { })
             .ToList()!;
 
-    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbDesign> configs)
+    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbDesignSettings> configs)
     {
         var classes = new List<string?>();
 

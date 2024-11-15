@@ -54,6 +54,6 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
     public string? PaneClasses(string paneName) =>
         AllSettings?.ThemeDesign.PaneIsEmpty.Get(PaneIsEmpty(paneName));
 
-    protected override DesignSetting? GetSettings(string name) =>
+    protected override MagicDesignSettings? GetSettings(string name) =>
         AllSettings?.ThemeDesign.Custom.GetInvariant(name);
 }

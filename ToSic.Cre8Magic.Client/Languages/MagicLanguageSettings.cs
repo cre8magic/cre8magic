@@ -2,28 +2,25 @@
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Languages.Settings;
+namespace ToSic.Cre8magic.Languages;
 
-public record MagicLanguagesSettings : SettingsWithInherit, IHasDebugSettings, ICanClone<MagicLanguagesSettings>
+public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, ICanClone<MagicLanguageSettings>
 {
     /// <summary>
     /// Dummy constructor so better find cases where it's created
     /// Note it must be without parameters for json deserialization
     /// </summary>
-    public MagicLanguagesSettings() {}
+    public MagicLanguageSettings() {}
 
-    public MagicLanguagesSettings(MagicLanguagesSettings? priority, MagicLanguagesSettings? fallback = default)
+    public MagicLanguageSettings(MagicLanguageSettings? priority, MagicLanguageSettings? fallback = default)
         : base(priority, fallback)
     {
         HideOthers = priority?.HideOthers ?? fallback?.HideOthers ?? Defaults.Fallback.HideOthers;
         Debug = priority?.Debug ?? fallback?.Debug;
-
-        // todo: languages
-        // TODO: #NamedSettings
         Languages = priority?.Languages ?? fallback?.Languages;
     }
 
-    public MagicLanguagesSettings CloneWith(MagicLanguagesSettings? priority, bool forceCopy = false) =>
+    public MagicLanguageSettings CloneWith(MagicLanguageSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
@@ -50,17 +47,16 @@ public record MagicLanguagesSettings : SettingsWithInherit, IHasDebugSettings, I
         if (dic == null)
             return null;
 
-
         // Ensure each config knows what culture it's for, as
-        var extended = dic.ToDictionary(pair => pair.Key, pair => pair.Value with { Culture = pair.Key });
+        var extended = dic.ToDictionary(
+            pair => pair.Key,
+            pair => pair.Value with { Culture = pair.Key }
+        );
 
-        return new NamedSettings<MagicLanguage>(extended);
-        //foreach (var set in dic)
-        //    set.Value.Culture ??= set.Key;
-        //return dic;
+        return new(extended);
     }
 
-    internal static Defaults<MagicLanguagesSettings> Defaults = new()
+    internal static Defaults<MagicLanguageSettings> Defaults = new()
     {
         Fallback = new()
         {

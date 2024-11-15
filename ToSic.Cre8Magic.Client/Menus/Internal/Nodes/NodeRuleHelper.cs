@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Menus.Internal;
+namespace ToSic.Cre8magic.Menus.Internal.Nodes;
 
 /// <summary>
 /// Helper to find various pages based on rules such as

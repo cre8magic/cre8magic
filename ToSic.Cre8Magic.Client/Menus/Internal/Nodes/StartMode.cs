@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Client.Menus.Settings;
+﻿namespace ToSic.Cre8magic.Menus.Internal.Nodes;
 
 internal enum StartMode
 {

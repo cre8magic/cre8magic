@@ -2,9 +2,9 @@
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Languages.Settings;
+namespace ToSic.Cre8magic.Languages;
 
-internal class LanguagesDesigner(MagicAllSettings allSettings) : ThemeDesigner(allSettings)
+internal class MagicLanguageDesigner(MagicAllSettings allSettings) : ThemeDesigner(allSettings)
 {
     internal string Classes(MagicLanguage? lang, string tag)
     {

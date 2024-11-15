@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Pages.Internal.Menu;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
@@ -50,8 +49,8 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
             logRoot: logRoot
         );
 
-        var rootBuilder = new MagicMenuFactoryRoot(context);
-        var list = new MagicPageList(context, pageFactory, rootBuilder.Factory, rootBuilder.GetChildren());
+        var rootBuilder = new MagicMenuBuilder(context);
+        var list = new MagicPageList(context, pageFactory, rootBuilder.NodeFactory, rootBuilder.GetChildren());
         return list;
     }
 

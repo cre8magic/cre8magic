@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Breadcrumb.Settings;
+namespace ToSic.Cre8magic.Breadcrumb;
 
 /// <summary>
 /// Breadcrumb settings - either provided in code, or generated from JSON.
@@ -122,7 +122,7 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     public int? ActiveId { get; init; }
 
     // todo: name, maybe not on interface
-    public NamedSettings<MagicBreadcrumbDesign>? DesignSettings { get; init; }
+    public NamedSettings<MagicBreadcrumbDesignSettings>? DesignSettings { get; init; }
 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;

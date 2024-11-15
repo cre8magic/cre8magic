@@ -1,9 +1,10 @@
-﻿using ToSic.Cre8magic.Breadcrumb.Settings;
+﻿using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 
-namespace ToSic.Cre8magic.Pages.Internal.Breadcrumb;
+namespace ToSic.Cre8magic.Breadcrumb.Internal;
 
-internal class MagicBreadcrumbFactoryRoot(MagicPageFactory pageFactory)
+internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
 {
     internal IMagicPageList Get(MagicBreadcrumbSettings? settings = default)
     {
@@ -15,7 +16,7 @@ internal class MagicBreadcrumbFactoryRoot(MagicPageFactory pageFactory)
             pageFactory.PageState,
             pageFactory
         );
-        var factory = new MagicBreadcrumbFactory(context);
+        var factory = new MagicBreadcrumbNodeFactory(context);
         var list = Get(
             settings,
             magicPage => new MagicPageWithDesign(context, pageFactory, factory, magicPage)

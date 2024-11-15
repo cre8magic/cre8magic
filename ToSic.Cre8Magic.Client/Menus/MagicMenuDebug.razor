@@ -1,13 +1,13 @@
 ﻿@using ToSic.Cre8magic.Pages
-@using ToSic.Cre8magic.Pages.Internal.Menu
 @using ToSic.Cre8magic.Controls
+@using ToSic.Cre8magic.Menus.Internal
 @code {
     [Parameter, EditorRequired] public IMagicPageList? Menu { get; set; }
 
     [Parameter] public bool Standalone { get; set; } = false;
 }
 @{
-    var typedFactory = Menu?.Factory as MagicMenuFactory;
+    var typedFactory = Menu?.Factory as MagicMenuNodeFactory;
     var settings = typedFactory?.Settings as MagicMenuSettings;
 
     Dictionary<string, object?> GetMore() => new()

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Languages.Settings;
+using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
@@ -121,9 +121,9 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, cat => cat.Menus);
     private NamedSettingsReader<MagicMenuSettings>? _getMenuSettings;
 
-    NamedSettingsReader<MagicLanguagesSettings> IMagicSettingsService.Languages =>
-        _languages ??= new(this, MagicLanguagesSettings.Defaults, cat => cat.Languages);
-    private NamedSettingsReader<MagicLanguagesSettings>? _languages;
+    NamedSettingsReader<MagicLanguageSettings> IMagicSettingsService.Languages =>
+        _languages ??= new(this, MagicLanguageSettings.Defaults, cat => cat.Languages);
+    private NamedSettingsReader<MagicLanguageSettings>? _languages;
 
     internal NamedSettingsReader<MagicContainerSettings> Containers =>
         _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);

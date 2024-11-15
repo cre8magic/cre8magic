@@ -1,20 +1,20 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Breadcrumb.Settings;
+namespace ToSic.Cre8magic.Breadcrumb;
 
-public record MagicBreadcrumbDesign : DesignSetting, ICanClone<MagicBreadcrumbDesign>
+public record MagicBreadcrumbDesignSettings : MagicDesignSettings, ICanClone<MagicBreadcrumbDesignSettings>
 {
-    public MagicBreadcrumbDesign() { }
+    public MagicBreadcrumbDesignSettings() { }
 
-    public MagicBreadcrumbDesign(MagicBreadcrumbDesign? priority, MagicBreadcrumbDesign? fallback = default)
+    public MagicBreadcrumbDesignSettings(MagicBreadcrumbDesignSettings? priority, MagicBreadcrumbDesignSettings? fallback = default)
         : base(priority, fallback)
     {
         HasChildren = fallback?.HasChildren?.CloneWith(priority?.HasChildren) ?? priority?.HasChildren;
         IsDisabled = fallback?.IsDisabled?.CloneWith(priority?.IsDisabled) ?? priority?.IsDisabled;
     }
 
-    public MagicBreadcrumbDesign CloneWith(MagicBreadcrumbDesign? priority, bool forceCopy = false) =>
+    public MagicBreadcrumbDesignSettings CloneWith(MagicBreadcrumbDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

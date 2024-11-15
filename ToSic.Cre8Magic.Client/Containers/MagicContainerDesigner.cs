@@ -4,12 +4,12 @@ using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Containers.Settings;
+namespace ToSic.Cre8magic.Containers;
 
-internal class ContainerDesigner(MagicAllSettings allSettings, Module module) : ThemeDesigner(allSettings)
+internal class MagicContainerDesigner(MagicAllSettings allSettings, Module module) : ThemeDesigner(allSettings)
 {
-    protected override TokenEngine Tokens => _tokens1 ??= AllSettings.Tokens.Expanded(new ModuleTokens(module));
-    private TokenEngine? _tokens1;
+    protected override TokenEngine Tokens => _tokens ??= AllSettings.Tokens.Expanded(new ModuleTokens(module));
+    private TokenEngine? _tokens;
 
     public override string? Classes(string tag)
     {
@@ -24,7 +24,7 @@ internal class ContainerDesigner(MagicAllSettings allSettings, Module module) : 
     /// </summary>
     /// <param name="styles"></param>
     /// <returns></returns>
-    private string CombineWithModuleClasses(DesignSetting styles)
+    private string CombineWithModuleClasses(MagicDesignSettings styles)
     {
         var value =  string.Join(" ", new[]
         {

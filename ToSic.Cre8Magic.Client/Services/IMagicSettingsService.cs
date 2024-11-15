@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Languages.Settings;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Services.Internal;
 using ToSic.Cre8magic.Settings;
@@ -34,7 +33,7 @@ public interface IMagicSettingsService: IHasSettingsExceptions
     internal NamedSettingsReader<MagicAnalyticsSettings> Analytics { get; }
     internal NamedSettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
 
-    internal NamedSettingsReader<MagicLanguagesSettings> Languages { get; }
+    internal NamedSettingsReader<MagicLanguageSettings> Languages { get; }
 
     internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; }
 

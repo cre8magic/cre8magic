@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Containers;
+namespace ToSic.Cre8magic.Containers;
 
 public class MagicContainer: Oqtane.Themes.ContainerBase
 {
@@ -15,8 +15,8 @@ public class MagicContainer: Oqtane.Themes.ContainerBase
     
     #endregion
 
-    private ContainerDesigner Designer => _designer ??= MagicFactory.ContainerDesigner(PageState, ModuleState);
-    private ContainerDesigner? _designer;
+    private MagicContainerDesigner Designer => _designer ??= MagicFactory.ContainerDesigner(PageState, ModuleState);
+    private MagicContainerDesigner? _designer;
 
     public string? Classes(string target) => Designer.Classes(target);
     public string? Id(string name) => Designer.Id(name);

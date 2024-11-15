@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Menus;
 
-public record MagicMenuDesignSettings: DesignSetting, ICanClone<MagicMenuDesignSettings>
+public record MagicMenuDesignSettings: MagicDesignSettings, ICanClone<MagicMenuDesignSettings>
 {
     public MagicMenuDesignSettings() { }
 

@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Languages.Settings;
+namespace ToSic.Cre8magic.Languages;
 
 public record MagicLanguage: ICanClone<MagicLanguage>
 {

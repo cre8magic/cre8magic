@@ -68,7 +68,7 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
 
     public string? MagicContextTagId { get; init; }
 
-    public NamedSettings<DesignSetting> Custom { get; init; } = new();
+    public NamedSettings<MagicDesignSettings> Custom { get; init; } = new();
 
     // TODO: initialize with real properties, so the defaults don't already contain something?
 
