@@ -12,6 +12,8 @@ public abstract class MagicControlBase: ThemeControlBase, IMagicControlWithSetti
 {
     [Inject] public IMagicFactoryWip MagicFactory { get; set; }
 
+    [Inject] public IMagicSettingsService MagicSettings { get; set; }
+
     [CascadingParameter] public MagicAllSettings AllSettings { get; set; }
 
     protected bool UserIsAdmin => PageState.UserIsAdmin();
