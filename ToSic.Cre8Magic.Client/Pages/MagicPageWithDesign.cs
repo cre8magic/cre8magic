@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
@@ -7,12 +8,14 @@ namespace ToSic.Cre8magic.Pages;
 
 internal class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPageList, IEnumerable<IMagicPageWithDesignWip>
 {
+    /// <param name="context"></param>
     /// <param name="pageFactory"></param>
     /// <param name="factory"></param>
     /// <param name="page">The original page.</param>
-    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPagesFactoryBase factory, IMagicPage? page = default, int? menuLevel = default)
+    internal MagicPageWithDesign(IContextWip context, MagicPageFactory pageFactory, MagicPagesFactoryBase factory, IMagicPage? page = default, int? menuLevel = default)
         : base(page?.OqtanePage ?? pageFactory.PageState.Page, pageFactory)
     {
+        _context = context;
         Factory = factory;
         if (menuLevel.HasValue) MenuLevel = menuLevel.Value;
     }
@@ -56,6 +59,9 @@ internal class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicP
     public string? Value(string key) => TokenReplace.Parse(Factory.Design.Value(key, this)).EmptyAsNull();
 
     public IMagicPageSetSettings Settings => Factory.Settings;
+
+    IContextWip IMagicPageList.Context => _context;
+    private readonly IContextWip _context;
 
     #endregion
 

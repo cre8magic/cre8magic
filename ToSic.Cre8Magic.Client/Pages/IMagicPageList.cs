@@ -1,5 +1,6 @@
 ﻿
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Pages;
 
@@ -37,4 +38,6 @@ public interface IMagicPageList: IEnumerable<IMagicPageWithDesignWip>
     IMagicPageSetSettings Settings { get; }
 
     internal MagicPagesFactoryBase Factory { get; }
+
+    internal IContextWip Context { get; }
 }

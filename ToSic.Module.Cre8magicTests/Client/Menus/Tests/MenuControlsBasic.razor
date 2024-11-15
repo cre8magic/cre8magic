@@ -4,10 +4,6 @@
 @inherits ThemeControlBase
 @inject IMagicMenuService MenuSvc
 
-@code {
-    public override string Name => "Theme1";
-    public override string Panes => PaneNames.Default;
-}
 @{
     // Get the current environment - separate step, as we may change the mechanics later
     var currentEnv = TestParameters.EnvCurrent;

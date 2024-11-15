@@ -4,14 +4,13 @@ using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
-internal abstract class MagicPagesFactoryBase(MagicPageFactory pageFactory)
+internal abstract class MagicPagesFactoryBase(IContextWip context)
 {
-    internal MagicPageFactory PageFactory => pageFactory;
     #region Logging
 
-    internal LogRoot LogRoot { get; } = pageFactory.LogRoot;
+    public IContextWip Context { get; } = context;
 
-    internal Log Log => _log ??= LogRoot.GetLog(GetType().Name);
+    internal Log Log => _log ??= context.LogRoot.GetLog(GetType().Name);
     private Log? _log;
 
     #endregion
@@ -23,15 +22,9 @@ internal abstract class MagicPagesFactoryBase(MagicPageFactory pageFactory)
     #endregion
 
     protected abstract IMagicPageDesigner FallbackDesigner();
-    public void Set(IMagicPageDesigner? designer) => _designer = designer;
 
-    internal IMagicPageDesigner Design => _designer ??= FallbackDesigner();
+    internal IMagicPageDesigner Design => _designer ??= context.PageDesigner ?? FallbackDesigner();
     private IMagicPageDesigner? _designer;
-
-
-    public void Set(MagicAllSettings? magicSettings) => MagicSettings = magicSettings;
-
-    internal MagicAllSettings? MagicSettings { get; private set; }
 
     /// <summary>
     /// 
@@ -40,13 +33,14 @@ internal abstract class MagicPagesFactoryBase(MagicPageFactory pageFactory)
     /// <returns></returns>
     internal TokenEngine PageTokenEngine(IMagicPage page)
     {
+        var tokens = context.TokenEngineWip;
         // fallback without MagicSettings return just TokenEngine with PageTokens
-        if (MagicSettings == null)
+        if (tokens == null)
             return new TokenEngine([new PageTokens(page)]);
 
-        var originalPageTokens = (PageTokens)MagicSettings.Tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
+        var originalPageTokens = (PageTokens)tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
         var updatedPageTokens = originalPageTokens.Clone(page);
-        return MagicSettings.Tokens.SwapParser(updatedPageTokens);
+        return tokens.SwapParser(updatedPageTokens);
     }
 
 
@@ -63,8 +57,9 @@ internal abstract class MagicPagesFactoryBase(MagicPageFactory pageFactory)
     {
         var l = Log.Fn<List<IMagicPageWithDesignWip>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
 
+        var pageFactory = context.PageFactory;
         var children = pageFactory.ChildrenOf(page.Id)
-            .Select(child => new MagicPageWithDesign(pageFactory, this, child, page.MenuLevel + 1) as IMagicPageWithDesignWip)
+            .Select(child => new MagicPageWithDesign(context, pageFactory, this, child, page.MenuLevel + 1) as IMagicPageWithDesignWip)
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

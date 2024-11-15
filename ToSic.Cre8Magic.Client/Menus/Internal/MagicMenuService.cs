@@ -3,6 +3,7 @@ using Oqtane.UI;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal.Menu;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Menus.Internal;
@@ -28,8 +29,16 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         // Add break-point for debugging during development
         if (pageState.IsDebug()) pageState.DoNothing();
 
-        var rootBuilder = new MagicMenuFactoryRoot(pageState, newSettings, messages);
-        var list = new MagicPageList(new(pageState), rootBuilder.Factory, rootBuilder.GetChildren());
+        var context = new ContextWip<MagicMenuSettings, IMagicPageDesigner>(
+            newSettings.AllSettings,
+            newSettings,
+            newSettings.Designer,
+            pageState, messages,
+            new(pageState, newSettings.Pages)
+        );
+
+        var rootBuilder = new MagicMenuFactoryRoot(context);
+        var list = new MagicPageList(context, new(pageState), rootBuilder.Factory, rootBuilder.GetChildren());
         return list;
     }
 
@@ -39,7 +48,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         var allSettings = settingsSvc.GetSettings(pageState);
         var (configName, configMessages) = settingsSvc.FindConfigName(settings?.ConfigName, allSettings.Name);
         messages.AddRange(configMessages);
-
+        
         // Check if we have a name-remap to consider
         var menuConfig = allSettings.ConfigurationName(configName);
         if (menuConfig == null && !configName.StartsWith(MenuSettingPrefix))

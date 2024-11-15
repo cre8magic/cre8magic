@@ -142,17 +142,19 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     public string Variant => Template ?? "";
 
 
-    internal static Defaults<MagicMenuSettings> Defaults = new(
-        new()
+    internal static Defaults<MagicMenuSettings> Defaults = new()
+    {
+        Fallback = new()
         {
             Template = "Horizontal",
             Start = StartPageRoot,
             Depth = 1, // MUST be specified on the fallback, otherwise some code will break
         },
-        new()
+        Foundation = new()
         {
             Template = "Horizontal",
             Start = StartPageRoot,
             Depth = 0,
-        });
+        },
+    };
 }

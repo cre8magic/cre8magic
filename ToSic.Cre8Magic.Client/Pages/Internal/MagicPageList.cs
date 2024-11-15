@@ -1,10 +1,11 @@
 ﻿using System.Collections;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
-internal class MagicPageList(MagicPageFactory pageFactory, MagicPagesFactoryBase factory, IEnumerable<IMagicPageWithDesignWip> items): IMagicPageList
+internal class MagicPageList(IContextWip context, MagicPageFactory pageFactory, MagicPagesFactoryBase factory, IEnumerable<IMagicPageWithDesignWip> items): IMagicPageList
 {
     public int MenuLevel => 1;
 
@@ -32,4 +33,6 @@ internal class MagicPageList(MagicPageFactory pageFactory, MagicPagesFactoryBase
     public string? Value(string key) => TokenReplace.Parse(factory.Design.Value(key, VPageLevel1)).EmptyAsNull();
 
     public IMagicPageSetSettings Settings => factory.Settings;
+
+    IContextWip IMagicPageList.Context => context;
 }

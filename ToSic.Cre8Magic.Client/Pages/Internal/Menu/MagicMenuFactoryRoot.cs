@@ -1,6 +1,6 @@
-﻿using Oqtane.UI;
-using ToSic.Cre8magic.Menus;
+﻿using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Menus.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Pages.Internal.Menu;
@@ -8,21 +8,19 @@ namespace ToSic.Cre8magic.Pages.Internal.Menu;
 // TODO: probably merge into the MagicMenuService
 internal class MagicMenuFactoryRoot
 {
-    public MagicMenuFactoryRoot(PageState pageState, MagicMenuSettings settings, List<string>? debugMessages)
+    public MagicMenuFactoryRoot(ContextWip<MagicMenuSettings, IMagicPageDesigner> context)
     {
-        Settings = settings;
-        PageFactory = new(pageState, settings.Pages);
-        Factory = new(PageFactory, settings, debugMessages, () => MaxDepth);
-        Factory.Set(settings.AllSettings);
-        Factory.Set(settings.Designer);
-        Factory.Set(settings);
-        Log = new LogRoot().GetLog("root");
-        //Log = SetHelper.LogRoot.GetLog("Root");
+        Context = context;
+        Settings = context.Settings;
+        Factory = new(context, () => MaxDepth);
+        Log = context.LogRoot.GetLog("root");
         Log.A($"Start with PageState for Page:{PageFactory.Current.Id}; Level:1");
 
     }
 
-    internal MagicPageFactory PageFactory { get; }
+    internal ContextWip<MagicMenuSettings, IMagicPageDesigner> Context;
+
+    internal MagicPageFactory PageFactory => Context.PageFactory;
 
     private Log Log { get; }
     
@@ -47,7 +45,7 @@ internal class MagicMenuFactoryRoot
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
-            .Select(child => new MagicPageWithDesign(PageFactory, Factory, child, 2 /* todo: should probably be 1 */) as IMagicPageWithDesignWip)
+            .Select(child => new MagicPageWithDesign(Context, PageFactory, Factory, child, 2 /* todo: should probably be 1 */) as IMagicPageWithDesignWip)
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

@@ -2,11 +2,11 @@
 using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
+using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal.Breadcrumb;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils.Logging;
 using Log = ToSic.Cre8magic.Utils.Logging.Log;
-
-// using Log = Oqtane.Models.Log;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
@@ -14,7 +14,7 @@ namespace ToSic.Cre8magic.Pages.Internal;
 /// Factory to create Magic Pages.
 /// This is necessary, because the pages need certain properties which require other services to be available.
 /// </summary>
-public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false)
+public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false, ContextWip<MagicMenuSettings, IMagicPageDesigner>? context = default)
 {
     /// <summary>
     /// Get a new factory, with different page restrictions
@@ -23,15 +23,14 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
     /// <returns></returns>
     public MagicPageFactory Clone(List<IMagicPage> restrictPages, bool ignorePermissions = false)
     {
-        var clone = new MagicPageFactory(pageState, restrictPages, ignorePermissions);
+        var clone = new MagicPageFactory(pageState, restrictPages, ignorePermissions, context);
         return clone;
     }
 
     internal PageState PageState => pageState ?? throw new ArgumentNullException(nameof(pageState));
 
-    internal LogRoot LogRoot = new LogRoot();
-
-    internal Log Log => _log ??= LogRoot.GetLog("pageFact");
+    // TODO: MAKE use context ? 
+    internal Log Log => _log ??= new LogRoot().GetLog("pageFact");
     private Log? _log;
 
     /// <summary>

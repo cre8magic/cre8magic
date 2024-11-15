@@ -13,8 +13,8 @@
     Dictionary<string, object?> GetMore() => new()
     {
         { "Menu Settings", settings },
-        { "Tree Build Messages", typedFactory?.DebugMessages },
-        { "Log", Menu?.Factory?.LogRoot.Entries }
+        { "Tree Build Messages", Menu?.Context?.DebugMessages },
+        { "Log", Menu?.Context?.LogRoot.Entries }
     };
 }
 @if (Menu?.MenuLevel == 1)

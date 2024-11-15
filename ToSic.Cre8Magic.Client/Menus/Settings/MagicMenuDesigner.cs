@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
@@ -12,16 +11,16 @@ namespace ToSic.Cre8magic.Menus.Settings;
 /// </summary>
 public class MagicMenuDesigner : IMagicPageDesigner
 {
-    internal MagicMenuDesigner(MagicPagesFactoryBase factory, MagicMenuSettings menuSettings)
+    internal MagicMenuDesigner(ContextWip<MagicMenuSettings, IMagicPageDesigner> context)
     {
-        MenuSettings = menuSettings ?? throw new ArgumentNullException(nameof(menuSettings));
+        Settings = context.Settings ?? throw new ArgumentNullException(nameof(context), $"{nameof(context.Settings)} null");
 
-        DesignSettingsList = [MenuSettings.DesignSettings!];
+        DesignSettingsList = [Settings.DesignSettings!];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
-        Log = menuSettings.Debug?.Detailed == true ? factory.LogRoot.GetLog("MenuDesigner") : null;
+        Log = context.Settings.Debug?.Detailed == true ? context.LogRoot.GetLog("MenuDesigner") : null;
     }
-    private MagicMenuSettings MenuSettings { get; }
+    private MagicMenuSettings Settings { get; }
 
     // TODO: unclear why this is a list, it can only contain one...?
     internal List<NamedSettings<MagicMenuDesignSettings>> DesignSettingsList { get; }
