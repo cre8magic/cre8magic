@@ -33,7 +33,7 @@ internal class MagicPageService() : IMagicPageService
     //    GetBreadcrumb(PageFactory, specs);
 
     public IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default) =>
-        GetBreadcrumb(new MagicPageFactory(pageState), specs);
+        GetBreadcrumb(GetFactory(pageState), specs);
 
     private IMagicPageList GetBreadcrumb(MagicPageFactory pageFactory, MagicBreadcrumbSettings? specs = default) =>
         pageFactory.Breadcrumb.Get(specs);

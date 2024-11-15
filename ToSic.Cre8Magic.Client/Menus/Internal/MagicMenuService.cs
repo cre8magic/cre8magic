@@ -28,6 +28,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
             ? (settings ?? new(), new List<string>())
             : MergeSettings(pageState, settings);
 
+        // Transfer Logs from Tree creation to the current log
         var logRoot = new LogRoot();
         if (messages.Any())
         {
@@ -39,17 +40,18 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         // Add break-point for debugging during development
         if (pageState.IsDebug()) pageState.DoNothing();
 
+        var pageFactory = new MagicPageFactory(pageState, newSettings.Pages, logRoot: logRoot);
         var context = new ContextWip<MagicMenuSettings, IMagicPageDesigner>(
             newSettings.AllSettings,
             newSettings,
             newSettings.Designer,
             pageState,
-            new(pageState, newSettings.Pages),
+            pageFactory,
             logRoot: logRoot
         );
 
         var rootBuilder = new MagicMenuFactoryRoot(context);
-        var list = new MagicPageList(context, new(pageState), rootBuilder.Factory, rootBuilder.GetChildren());
+        var list = new MagicPageList(context, pageFactory, rootBuilder.Factory, rootBuilder.GetChildren());
         return list;
     }
 

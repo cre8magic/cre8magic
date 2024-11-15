@@ -32,7 +32,7 @@ public abstract class MagicBreadcrumbBase: MagicControlBase
         => settings;
 
     // The home page - never changes during runtime, so we can cache it
-    protected IMagicPage HomePage => _homePage ??= new MagicPageFactory(PageState).Home;
+    protected IMagicPage HomePage => _homePage ??= PageSvcSafe.GetHome(PageState);
     private IMagicPage? _homePage;
 
     /// <summary>

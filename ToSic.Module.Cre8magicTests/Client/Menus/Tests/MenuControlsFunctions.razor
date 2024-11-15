@@ -1,17 +1,17 @@
 @using ToSic.Cre8magic.Menus
-@using ToSic.Cre8magic.Pages.Internal
+@using ToSic.Cre8magic.Pages
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeControlBase
 @inject IMagicMenuService MenuSvc
+@inject IMagicPageService PageSvc
 
 @{
     // Get the current environment - separate step, as we may change the mechanics later
     var currentEnv = TestParameters.EnvCurrent;
     
-    var restrictPossiblePages = new MagicPageFactory(PageState)
-        .Get(MenuTestData.dicRestrictPages[currentEnv])
+    var restrictPossiblePages = PageSvc
+        .GetPages(PageState, MenuTestData.dicRestrictPages[currentEnv])
         .ToList();
-
 }
 
 

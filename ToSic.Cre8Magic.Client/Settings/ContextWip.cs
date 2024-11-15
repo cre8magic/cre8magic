@@ -15,12 +15,12 @@ public class ContextWip<TSettings, TDesigner>(
     TSettings settings,
     TDesigner? designer,
     PageState pageState /* probably replace with a service? */,
-    MagicPageFactory? pageFactory,
+    MagicPageFactory pageFactory,
     LogRoot? logRoot = default) : IContextWip
 {
     public PageState PageState { get; } = pageState;
 
-    public MagicPageFactory PageFactory { get; } = pageFactory ?? new(pageState);
+    public MagicPageFactory PageFactory { get; } = pageFactory;
 
     public MagicAllSettings? AllSettings { get; } = allSettings;
 

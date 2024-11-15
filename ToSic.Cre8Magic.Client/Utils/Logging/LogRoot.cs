@@ -2,7 +2,7 @@
 
 namespace ToSic.Cre8magic.Utils.Logging;
 
-public class LogRoot
+public class LogRoot()
 {
     [JsonIgnore]
     internal readonly List<LogEntry> LogEntries = [];

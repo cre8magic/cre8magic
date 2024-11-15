@@ -14,23 +14,12 @@ namespace ToSic.Cre8magic.Pages.Internal;
 /// Factory to create Magic Pages.
 /// This is necessary, because the pages need certain properties which require other services to be available.
 /// </summary>
-public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false, ContextWip<MagicMenuSettings, IMagicPageDesigner>? context = default)
+public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false, LogRoot? logRoot = default)
 {
-    /// <summary>
-    /// Get a new factory, with different page restrictions
-    /// </summary>
-    /// <param name="restrictPages"></param>
-    /// <returns></returns>
-    public MagicPageFactory Clone(List<IMagicPage> restrictPages, bool ignorePermissions = false)
-    {
-        var clone = new MagicPageFactory(pageState, restrictPages, ignorePermissions, context);
-        return clone;
-    }
-
     internal PageState PageState => pageState ?? throw new ArgumentNullException(nameof(pageState));
 
     // TODO: MAKE use context ? 
-    internal Log Log => _log ??= new LogRoot().GetLog("pageFact");
+    internal Log Log => _log ??= (logRoot ?? new LogRoot()).GetLog("pageFact");
     private Log? _log;
 
     /// <summary>
