@@ -36,14 +36,15 @@
     return;
 }
 <CascadingValue Value="AllSettings">
-@if (PutInBody)
-{
-    @ChildContent
-}
-else
-{
-    <div id="@AllSettings.ThemeDesignSettings.MagicContextTagId" class="@AllSettings.MagicContext">
+    @* If PutInBody a JS will place the classes in the Body tag *@
+    @if (PutInBody)
+    {
         @ChildContent
-    </div>
-}
+    }
+    else
+    {
+        <div id="@AllSettings.ThemeDesignSettings.MagicContextTagId" class="@AllSettings.MagicContext">
+            @ChildContent
+        </div>
+    }
 </CascadingValue>

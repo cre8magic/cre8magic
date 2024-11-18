@@ -8,6 +8,7 @@ using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
@@ -59,10 +60,14 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
             return cached2;
 
         var themeCtx = GetThemeContext(pageState);
-        var current = new MagicAllSettings(themeCtx.SettingsName, this, themeCtx.ThemeSettings, themeCtx.PageTokens, pageState);
 
         // Get the magic context (probably the classes we'll add) using the tokens
-        current.MagicContext = current.ThemeDesigner.BodyClasses(themeCtx.PageTokens, _bodyClasses);
+        var themeDesigner = new MagicThemeDesigner(themeCtx);
+
+        var current = new MagicAllSettings(themeCtx.SettingsName, this, themeCtx.ThemeSettings, themeDesigner, themeCtx.PageTokens, pageState)
+            {
+                MagicContext = themeDesigner.BodyClasses(themeCtx.PageTokens, _bodyClasses) ?? ""
+            };
 
         // Merge debug info in case it's needed
         current.DebugSources.Add("GetName", string.Join("; ", themeCtx.Journal));
