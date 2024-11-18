@@ -12,7 +12,6 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
 
     public MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default) : base(priority, fallback)
     {
-        AllSettings = priority?.AllSettings ?? fallback?.AllSettings;
         Designer = priority?.Designer ?? fallback?.Designer;
         Pages = priority?.Pages ?? fallback?.Pages;
 
@@ -35,11 +34,6 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
 
     #region WIP merging Specs
 
-    /// <summary>
-    /// Magic Settings for debugging, in case these specs were generated from there.
-    /// </summary>
-    [JsonIgnore]    // Not meant for JSON at all...
-    public MagicAllSettings? AllSettings { get; init; }
 
     [JsonIgnore]    // Not meant for JSON at all...
     public IMagicPageDesigner? Designer { get; init; }

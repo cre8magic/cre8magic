@@ -7,6 +7,7 @@ using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Settings;
+using ToSic.Cre8magic.Tokens;
 
 namespace ToSic.Cre8magic.Client.Services;
 
@@ -41,6 +42,8 @@ public interface IMagicSettingsService: IHasSettingsExceptions
     internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; }
 
     internal NamedSettingsReader<MagicMenuSettings> MenuSettings { get; }
+
+    internal TokenEngine PageTokenEngine(PageState pageState);
 
     ///// <summary>
     ///// Figure out which settings-name can be used.

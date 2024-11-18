@@ -41,12 +41,13 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         if (pageState.IsDebug()) pageState.DoNothing();
 
         var pageFactory = new MagicPageFactory(pageState, newSettings.Pages, logRoot: logRoot);
+        var pageTokens = settingsSvc.PageTokenEngine(pageState);
         var context = new ContextWip<MagicMenuSettings, IMagicPageDesigner>(
-            newSettings.AllSettings,
             newSettings,
             newSettings.Designer,
             pageState,
             pageFactory,
+            pageTokens,
             logRoot: logRoot
         );
 
@@ -57,9 +58,9 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
     private (MagicMenuSettings Settings, List<string> Messages) MergeSettings(PageState pageState, MagicMenuSettings? settings = default)
     {
-        var allSettings = settingsSvc.GetSettings(pageState);
+        var themeCtx = settingsSvc.GetThemeContext(pageState);
 
-        var reader = new MagicAllSettingsReader(allSettings);
+        var reader = new MagicAllSettingsReader(themeCtx);
 
         var (configName, journal) = reader.GetMostRelevantSettingsName(settings?.ConfigName, MenuSettingPrefix);
         var messages = new List<string>(journal);
@@ -71,9 +72,9 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         var mergedSettings = menuSettings.CloneWith(settings);
 
         // See if we have a default configuration for CSS which should be applied
-        var menuDesign = allSettings.ThemeSettings.Parts.GetThemeDesignRenameOrNull(configName);
+        var menuDesign = themeCtx.ThemeSettings.Parts.GetThemeDesignRenameOrNull(configName);
         if (menuDesign == null && !configName.StartsWith(MenuSettingPrefix))
-            menuDesign = allSettings.ThemeSettings.Parts.GetThemeDesignRenameOrNull($"{MenuSettingPrefix}{configName}");
+            menuDesign = themeCtx.ThemeSettings.Parts.GetThemeDesignRenameOrNull($"{MenuSettingPrefix}{configName}");
 
         var designName = menuDesign;
         messages.Add($"Design name in config: '{designName}'");
@@ -89,13 +90,11 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         if (mergedSettings.DesignSettings == null)
         {
             // Check various places where design could be configured by priority
-            var designConfig = settingsSvc.MenuDesigns.Find(designName, allSettings.Name);
+            var designConfig = settingsSvc.MenuDesigns.Find(designName, themeCtx.SettingsName);
             mergedSettings = mergedSettings with { DesignSettings = designConfig };
         }
         else
             messages.Add("Design rules already set");
-
-        mergedSettings = mergedSettings with { AllSettings = allSettings };
 
         return (mergedSettings, messages);
     }

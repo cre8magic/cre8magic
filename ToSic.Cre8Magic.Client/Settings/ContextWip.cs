@@ -11,18 +11,19 @@ namespace ToSic.Cre8magic.Settings;
 /// Goal is that it contains logging etc. which is shared across all parts which are getting something done.
 /// </summary>
 public class ContextWip<TSettings, TDesigner>(
-    MagicAllSettings? allSettings,
+    //MagicAllSettings? allSettings,
     TSettings settings,
     TDesigner? designer,
     PageState pageState /* probably replace with a service? */,
     MagicPageFactory pageFactory,
+    TokenEngine pageTokens,
     LogRoot? logRoot = default) : IContextWip
 {
     public PageState PageState { get; } = pageState;
 
     public MagicPageFactory PageFactory { get; } = pageFactory;
 
-    public MagicAllSettings? AllSettings { get; } = allSettings;
+    //public MagicAllSettings? AllSettings { get; } = allSettings;
 
     public TSettings Settings { get; } = settings;
 
@@ -35,5 +36,5 @@ public class ContextWip<TSettings, TDesigner>(
 
     LogRoot IContextWip.LogRoot => LogRoot;
 
-    TokenEngine? IContextWip.TokenEngineWip => AllSettings?.Tokens;
+    TokenEngine? IContextWip.TokenEngineWip => pageTokens;// ?? allSettings?.Tokens;
 }

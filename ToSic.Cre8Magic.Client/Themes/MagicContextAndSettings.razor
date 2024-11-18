@@ -9,8 +9,14 @@
 {
     [Parameter, EditorRequired]
     public required MagicAllSettings AllSettings { get; set; }
+
+    /// <summary>
+    /// The HTML contents which is wrapped by this tag.
+    /// Anything inside this will have the `div` around it with the magic CSS classes.
+    /// </summary>
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
+
     [Inject]
     protected IMagicThemeJsService? ThemeJs { get; set; }
 

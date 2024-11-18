@@ -43,9 +43,21 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
     private MagicPackageSettings? _packageSettings;
 
-
-    private ThemeTokens ThemeTokens => _themeTokens ??= new(PackageSettings);
+    /// <summary>
+    /// Tokens engine for this specific PageState
+    /// </summary>
+    /// <param name="pageState"></param>
+    /// <returns></returns>
+    public TokenEngine PageTokenEngine(PageState pageState)
+    {
+        var pageFactory = new MagicPageFactory(pageState);
+        var pageTokens = new PageTokens(pageFactory.Current, _layoutName);
+        var themeTokens = _themeTokens ??= new(PackageSettings);
+        var tokens = new TokenEngine([pageTokens, themeTokens]);
+        return tokens;
+    }
     private ThemeTokens? _themeTokens;
+
 
     /// <summary>
     /// Logger, provided to the <see cref="NamedSettingsReader{TPart}"/>
@@ -98,19 +110,6 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     }
 
     private readonly Dictionary<string, MagicThemeContext> _themeCache = new(StringComparer.InvariantCultureIgnoreCase);
-
-    /// <summary>
-    /// Tokens engine for this specific PageState
-    /// </summary>
-    /// <param name="pageState"></param>
-    /// <returns></returns>
-    public TokenEngine PageTokenEngine(PageState pageState)
-    {
-        var pageFactory = new MagicPageFactory(pageState);
-        var pageTokens = new PageTokens(pageFactory.Current, _layoutName);
-        var tokens = new TokenEngine([pageTokens, ThemeTokens]);
-        return tokens;
-    }
 
     /// <summary>
     /// Actually internal, on the interface to avoid exposing it to the outside

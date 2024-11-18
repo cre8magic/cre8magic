@@ -3,19 +3,19 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
-internal class MagicAllSettingsReader(MagicAllSettings allSettings)
+internal class MagicAllSettingsReader(MagicThemeContext themeContext)
 {
     public (string BestName, List<string> Messages) GetMostRelevantSettingsName(string? originalName, string? prefixToCheck)
     {
         var messages = new List<string>();
-        var (configName, journal) = GetBestSettingsName(originalName, allSettings.Name);
+        var (configName, journal) = GetBestSettingsName(originalName, themeContext.SettingsName);
         messages.AddRange(journal);
 
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
-        var menuConfig = allSettings.ThemeSettings.Parts.GetThemePartRenameOrNull(configName);
+        var menuConfig = themeContext.ThemeSettings.Parts.GetThemePartRenameOrNull(configName);
         if (menuConfig == null && !string.IsNullOrEmpty(prefixToCheck) && !configName.StartsWith(prefixToCheck))
-            menuConfig = allSettings.ThemeSettings.Parts.GetThemePartRenameOrNull($"{prefixToCheck}{configName}");
+            menuConfig = themeContext.ThemeSettings.Parts.GetThemePartRenameOrNull($"{prefixToCheck}{configName}");
 
         if (menuConfig.HasValue())
         {

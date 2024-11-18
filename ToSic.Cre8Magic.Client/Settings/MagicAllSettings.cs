@@ -33,6 +33,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
         Tokens = priority?.Tokens ?? fallback?.Tokens ?? throw new("Tokens are required");
         MagicContext = priority?.MagicContext ?? fallback?.MagicContext ?? "";
         Name = priority?.Name ?? fallback?.Name ?? "unknown";
+        ThemeDesigner = priority?.ThemeDesigner ?? fallback?.ThemeDesigner ?? throw new("ThemeDesigner is required");
 
 
         Service = priority?.Service ?? fallback?.Service ?? throw new("Service is required");
@@ -65,7 +66,8 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     [JsonIgnore]
     public IMagicSettingsService Service { get; }
 
-    [JsonIgnore] internal MagicThemeDesigner ThemeDesigner { get; init; }
+    [JsonIgnore]
+    internal MagicThemeDesigner ThemeDesigner { get; init; }
 
     public MagicThemeSettings ThemeSettings { get; }
 
@@ -81,7 +83,6 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
 
     public MagicThemeDesignSettings ThemeDesignSettings =>
         _td ??= ((MagicSettingsService)Service).ThemeDesignSettings(ThemeSettings, Name);
-    //_td ??= Service.ThemeDesign.Find(ThemeSettings.Design ?? ThemeSettings.Parts.GetThemePartRenameOrFallback(nameof(ThemeSettings.Design), Name), Name);
     private MagicThemeDesignSettings? _td;
 
     public MagicLanguageSettings Languages =>
