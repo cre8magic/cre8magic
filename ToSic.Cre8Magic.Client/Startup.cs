@@ -6,6 +6,7 @@ using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Services.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Json;
 
@@ -45,5 +46,6 @@ public class Startup : Oqtane.Services.IClientStartup
         // WIP v0.02.00
         services.TryAddTransient<IMagicPageService, MagicPageService>();
         services.TryAddTransient<IMagicFactoryWip, MagicFactoryWip>();
+        services.TryAddScoped<IMagicSettingsProvider, MagicSettingsProvider>();
     }
 }

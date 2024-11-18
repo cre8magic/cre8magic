@@ -3,7 +3,10 @@
 /// <summary>
 /// Settings for a Theme Package.
 ///
-/// Contains semi-constants like location of assets and configuration for various parts like CSS.
+/// It contains things like
+/// 
+/// 1. location of assets
+/// 1. configuration for various parts like CSS
 /// </summary>
 public class MagicPackageSettings
 {
@@ -27,7 +30,7 @@ public class MagicPackageSettings
     private string? _url;
 
     /// <summary>
-    /// IsConfigured is for internal use only.
+    /// `IsConfigured` is for internal use only.
     /// Basically every instance of this will report true,
     /// unless our default / fallback instance is used,
     /// which will set this to false.

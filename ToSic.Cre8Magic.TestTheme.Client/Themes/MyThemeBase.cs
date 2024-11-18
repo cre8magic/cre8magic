@@ -18,12 +18,12 @@ namespace ToSic.Cre8magic.TestTheme.Client;
 /// </remarks>
 public abstract class MyThemeBase : MagicThemeBase
 {
-    public override List<Resource> Resources => new()
-    {
-        new() { ResourceType = Stylesheet, Url = $"{ThemePath()}theme.min.css" },       // Bootstrap generated with Sass/Webpack
+    public override List<Resource> Resources =>
+    [
+        new() { ResourceType = Stylesheet, Url = $"{ThemePath()}theme.min.css" }, // Bootstrap generated with Sass/Webpack
         new() { ResourceType = Script, Url = $"{ThemePath()}bootstrap.bundle.min.js" }, // Bootstrap JS
-        new() { ResourceType = Script, Url = $"{ThemePath()}ambient.js", },             // Ambient JS for page Up-button etc.
-    };
+        new() { ResourceType = Script, Url = $"{ThemePath()}ambient.js", } // Ambient JS for page Up-button etc.
+    ];
 
     /// <summary>
     /// The ThemePackageSettings must be set in this class, so the Settings initializer can pick it up.

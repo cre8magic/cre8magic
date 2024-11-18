@@ -17,9 +17,6 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
 
     #region Navigation / Close
 
-    [Inject]
-    public NavigationManager? NavigationManager { get; set; }
-
     public string CloseUrl { get; private set; } = "#";
 
     /// <summary>
@@ -37,9 +34,9 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
     private MagicContainerDesigner Designer => _designer ??= MagicFactory.ContainerDesigner(PageState, ModuleState);
     private MagicContainerDesigner? _designer;
 
-    public string? Classes(string target) => Designer.Classes(target);
-    public string? Id(string name) => Designer.Id(name);
-    public string? Value(string key) => Designer.Value(key);
+    //public string? Classes(string target) => Designer.Classes(target);
+    //public string? Id(string name) => Designer.Id(name);
+    //public string? Value(string key) => Designer.Value(key);
 
     /// <summary>
     /// Modules are treated as admin modules (and must use the admin container) if they are marked as such, or come from the Oqtane ....Admin... type
