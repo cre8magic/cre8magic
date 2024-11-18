@@ -21,7 +21,7 @@ public class LanguageService(NavigationManager navigation, IJSRuntime jsRuntime,
     {
         var allSettings = settingsSvc.GetSettings(pageState);
         var languages = await LanguagesToShow(pageState);
-        return allSettings.Show("Languages") && allSettings.Theme.LanguagesMin <= languages.Count;
+        return allSettings.Show("Languages") && allSettings.ThemeSettings.LanguagesMin <= languages.Count;
     }
 
     public async Task<List<MagicLanguage>> LanguagesToShow(PageState pageState)

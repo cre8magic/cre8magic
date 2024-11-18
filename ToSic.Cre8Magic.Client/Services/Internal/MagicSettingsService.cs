@@ -62,15 +62,15 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         var tokens = new TokenEngine([pageTokens, ThemeTokens]);
 
         // Figure out real config-name, and get the initial layout
-        var (configName, source) = MagicAllSettingsReader.GetBestSettingsName(_layoutName, Default);
-        var theme = Theme.Find(configName).Parse(tokens);
+        var (configName, nameJournal) = MagicAllSettingsReader.GetBestSettingsName(_layoutName, Default);
+        var theme = ThemeSettings.Find(configName).Parse(tokens);
         var current = new MagicAllSettings(configName, this, theme, tokens, pageState);
 
         // Get the magic context (probably the classes we'll add) using the tokens
         current.MagicContext = current.ThemeDesigner.BodyClasses(tokens, _bodyClasses);
 
         // Merge debug info in case it's needed
-        current.DebugSources.Add("Name", string.Join("; ", source));
+        current.DebugSources.Add("GetName", string.Join("; ", nameJournal));
 
         // Cache and return
         _currentSettingsCache[originalNameForCache] = current;
@@ -89,7 +89,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         _analytics ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
     private NamedSettingsReader<MagicAnalyticsSettings>? _analytics;
 
-    private NamedSettingsReader<MagicThemeSettings> Theme =>
+    private NamedSettingsReader<MagicThemeSettings> ThemeSettings =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults,
             cat => cat.Themes,
             // WIP #DropJsonMerge

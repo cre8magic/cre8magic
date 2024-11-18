@@ -16,7 +16,7 @@
 
     // [Inject] protected MagicThemeJsServiceTest? ThemeJsTest { get; set; }
 
-    private bool PutInBody => AllSettings.Theme.MagicContextInBody == true;
+    private bool PutInBody => AllSettings.ThemeSettings.MagicContextInBody == true;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {

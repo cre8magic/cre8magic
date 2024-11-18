@@ -6,7 +6,6 @@ using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
-using ToSic.Cre8magic.Utils.Logging;
 using static System.StringComparer;
 
 namespace ToSic.Cre8magic.Settings;
@@ -16,11 +15,11 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanClone<MagicAllSettings>
 {
-    internal MagicAllSettings(string name, IMagicSettingsService service, MagicThemeSettings theme, TokenEngine tokens, PageState pageState)
+    internal MagicAllSettings(string name, IMagicSettingsService service, MagicThemeSettings themeSettings, TokenEngine tokens, PageState pageState)
     {
         Name = name;
         Service = service;
-        Theme = theme;
+        ThemeSettings = themeSettings;
         Tokens = tokens;
         PageState = pageState;
     }
@@ -34,20 +33,20 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
 
 
         Service = priority?.Service ?? fallback?.Service ?? throw new("Service is required");
-        Theme = priority?.Theme ?? fallback?.Theme ?? throw new("Theme is required");
+        ThemeSettings = priority?.ThemeSettings ?? fallback?.ThemeSettings ?? throw new("Theme is required");
     }
 
     public MagicAllSettings CloneWith(MagicAllSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
-    public MagicDebugState Debug => _debug ??= DebugState(Theme);
+    public MagicDebugState Debug => _debug ??= DebugState(ThemeSettings);
     private MagicDebugState? _debug;
 
     /// <summary>
     /// This is only used to detect if debugging should be active, and the setting should come from the theme itself
     /// </summary>
-    MagicDebugSettings? IHasDebugSettings.Debug => Theme.Debug;
+    MagicDebugSettings? IHasDebugSettings.Debug => ThemeSettings.Debug;
 
 
     public MagicDebugState DebugState(object? target) => Service.Debug.GetState(target, PageState.UserIsAdmin());
@@ -66,19 +65,19 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     internal MagicThemeDesigner ThemeDesigner => _themeDesigner ??= new(new DesignerContextWip(this, PageState));
     private MagicThemeDesigner? _themeDesigner;
 
-    public MagicThemeSettings Theme { get; }
+    public MagicThemeSettings ThemeSettings { get; }
 
     /// <summary>
     /// Determine if we should show a specific part
     /// </summary>
     public bool Show(string name) =>
-        Theme.Parts.TryGetValue(name, out var value) && value.Show == true;
+        ThemeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;
 
     /// <summary>
     /// Determine the name of the design configuration of a specific part
     /// </summary>
     internal string? DesignName(string name) =>
-        Theme.Parts.TryGetValue(name, out var value)
+        ThemeSettings.Parts.TryGetValue(name, out var value)
             ? value.Design
             : null;
 
@@ -88,7 +87,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     /// <param name="name"></param>
     /// <returns></returns>
     internal string? GetThemePartRenameOrNull(string name) =>
-        Theme.Parts.TryGetValue(name, out var value)
+        ThemeSettings.Parts.TryGetValue(name, out var value)
             ? value.Configuration
             : null;
 
@@ -100,7 +99,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     private MagicAnalyticsSettings? _a;
 
     public MagicThemeDesignSettings ThemeDesignSettings =>
-        _td ??= Service.ThemeDesign.Find(Theme.Design ?? GetThemePartRenameOrDefault(nameof(Theme.Design)), Name);
+        _td ??= Service.ThemeDesign.Find(ThemeSettings.Design ?? GetThemePartRenameOrDefault(nameof(ThemeSettings.Design)), Name);
     private MagicThemeDesignSettings? _td;
 
     public MagicLanguageSettings Languages =>
