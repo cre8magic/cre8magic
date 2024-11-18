@@ -3,7 +3,7 @@
 /// <summary>
 /// TODO: WIP, maybe create interface....
 /// </summary>
-public class MagicLanguagesState(
+public class MagicLanguageState(
     bool show,
     IEnumerable<MagicLanguage> languages,
     MagicLanguageDesigner designer)

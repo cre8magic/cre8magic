@@ -31,7 +31,7 @@ internal class MagicFactoryWip(IMagicSettingsService settingsSvc) : IMagicFactor
     }
     private readonly Dictionary<int, MagicThemeDesigner> _themeDesigners = new();
 
-    public MagicLanguageDesigner LanguagesDesigner(PageState pageState)
+    public MagicLanguageDesigner LanguageDesigner(PageState pageState)
     {
         if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;

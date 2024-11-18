@@ -17,42 +17,40 @@ namespace ToSic.Cre8magic.Languages;
  * - ...and only show these; possibly show more to admin?
  */
 
-public class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLanguages, IMagicSettingsService settingsSvc, IMagicFactoryWip factory)
+public class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc, IMagicFactoryWip factory)
 {
-    public async Task<MagicLanguagesState> State(PageState pageState) =>
+    public async Task<MagicLanguageState> State(PageState pageState) =>
         await _languageStates.GetAsync(pageState, async () => await CreateState(pageState));
-    private readonly GetKeepByPageId<MagicLanguagesState> _languageStates = new();
+    private readonly GetKeepByPageId<MagicLanguageState> _languageStates = new();
     
-    private async Task<MagicLanguagesState> CreateState(PageState pageState)
+    private async Task<MagicLanguageState> CreateState(PageState pageState)
     {
         var themeContext = settingsSvc.GetThemeContext(pageState);
-        var languagesSettings = ((MagicSettingsService)settingsSvc).LanguagesSettings(themeContext.ThemeSettings, themeContext.SettingsName);
+        var languagesSettings = ((MagicSettingsService)settingsSvc).LanguageSettings(themeContext.ThemeSettings, themeContext.SettingsName);
 
-        var (languages, settings) = await LanguagesToShow(pageState, languagesSettings);
+        var languages = await LanguagesToShow(pageState, languagesSettings);
         var show = themeContext.ThemeSettings.Show("Languages") && themeContext.ThemeSettings.LanguagesMin <= languages.Count;
-        var designer = factory.LanguagesDesigner(pageState);
-        return new(show, languages, designer) { LanguageSettings = settings };
+        var designer = factory.LanguageDesigner(pageState);
+        return new(show, languages, designer) { LanguageSettings = languagesSettings };
     }
 
-    private async Task<(List<MagicLanguage> Languages, MagicLanguageSettings Settings)> LanguagesToShow(PageState pageState, MagicLanguageSettings langsSettings)
+    private async Task<List<MagicLanguage>> LanguagesToShow(PageState pageState, MagicLanguageSettings settings)
     {
         var siteId = pageState.Site.SiteId;
         if (_languages.TryGetValue(siteId, out var cached))
             return cached;
 
-        var siteLanguages = await oqtLanguages.GetLanguagesAsync(siteId);
-
-        var customList = langsSettings.Languages.Values;
-
+        var siteLanguages = await oqtLangSvc.GetLanguagesAsync(siteId);
         var siteLanguageCodes = siteLanguages.Select(l => l.Code).ToList();
 
         // Primary order of languages. If specified, use that, otherwise use site list
+        var customList = settings.Languages.Values;
         var primaryOrder = (customList.Any()
                 ? customList.Select(l => l.Culture)
                 : siteLanguageCodes)
             .ToList();
 
-        if (!langsSettings.HideOthers && primaryOrder.Count < siteLanguages.Count)
+        if (!settings.HideOthers && primaryOrder.Count < siteLanguages.Count)
         {
             var missingLanguages = siteLanguageCodes
                 .Where(slc => !primaryOrder.Any(slc.EqInvariant)).ToList();
@@ -75,11 +73,11 @@ public class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRun
             })
             .Where(set => set.Description.HasValue())
             .ToList();
-        _languages[siteId] = (result, langsSettings);
-        return (result, langsSettings);
+        _languages[siteId] = result;
+        return result;
     }
 
-    private readonly Dictionary<int, (List<MagicLanguage> Languages, MagicLanguageSettings Settings)> _languages = new();
+    private readonly Dictionary<int, List<MagicLanguage>> _languages = new();
 
     public async Task SetCultureAsync(string culture)
     {

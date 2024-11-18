@@ -150,7 +150,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         _languages ??= new(this, MagicLanguageSettings.Defaults, cat => cat.Languages);
     private NamedSettingsReader<MagicLanguageSettings>? _languages;
 
-    public MagicLanguageSettings LanguagesSettings(MagicThemeSettings settings, string settingsName) =>
+    public MagicLanguageSettings LanguageSettings(MagicThemeSettings settings, string settingsName) =>
         ((IMagicSettingsService)this).Languages.Find(settings.Parts.GetPartRenameOrFallback("Languages", settingsName), settingsName);
 
     internal NamedSettingsReader<MagicContainerSettings> Containers =>

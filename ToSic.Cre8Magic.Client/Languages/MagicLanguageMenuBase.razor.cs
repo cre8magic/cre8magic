@@ -2,12 +2,12 @@
 
 namespace ToSic.Cre8magic.Languages;
 
-public abstract class MagicLanguagesMenuBase: MagicControlBase
+public abstract class MagicLanguageMenuBase: MagicControlBase
 {
     [Inject]
     protected MagicLanguageService LanguageService { get; set; }
 
-    public MagicLanguagesState? State { get; private set; }
+    public MagicLanguageState? State { get; private set; }
 
     protected override async Task OnParametersSetAsync()
     {

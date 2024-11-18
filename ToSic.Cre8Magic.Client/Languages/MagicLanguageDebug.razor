@@ -3,7 +3,7 @@
 @code
 {
     [Parameter, EditorRequired]
-    public required MagicLanguagesState State { get; set; }
+    public required MagicLanguageState State { get; set; }
 }
 @{
     var allSettings = MagicSettings.GetSettings(PageState);
@@ -15,7 +15,7 @@
         { "Language Design", allSettings.ThemeDesignSettings.DesignSettings }
     };
 }
-<MagicDebug Target="@State.LanguageSettings" Title="Languages Settings" More="GetMore()">
+<MagicDebug Target="@State.LanguageSettings" Title="Language Settings" More="GetMore()">
     <Content>
         <ul>
             <li>Show: @State.Show</li>

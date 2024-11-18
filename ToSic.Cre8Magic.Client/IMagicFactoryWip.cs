@@ -10,5 +10,5 @@ public interface IMagicFactoryWip
     internal MagicContainerDesigner ContainerDesigner(PageState pageState, Module module);
     internal MagicThemeDesigner ThemeDesigner(PageState pageState);
 
-    internal MagicLanguageDesigner LanguagesDesigner(PageState pageState);
+    internal MagicLanguageDesigner LanguageDesigner(PageState pageState);
 }
