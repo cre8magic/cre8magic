@@ -67,8 +67,6 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         // If the user didn't specify a config name in the Parameters or the config name
         // isn't contained in the json file the normal parameter are given to the service
         var menuSettings = settingsSvc.MenuSettings.Find(configName);
-        // WIP #DropJsonMerge
-        //settings = JsonMerger.Merge(settings, menuSettings, Logger);
         var mergedSettings = menuSettings.CloneWith(settings);
 
         // See if we have a default configuration for CSS which should be applied
