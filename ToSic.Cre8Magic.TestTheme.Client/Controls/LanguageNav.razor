@@ -1,4 +1,4 @@
-@inherits MagicLanguageMenuBase
+@inherits MagicLanguagesMenuBase
 @*
 File Purpose:       Show the Language Navigation / Selector
 Recommendations:    -
@@ -7,15 +7,15 @@ Nice to know:
       ...if the list is empty, it will use the site definition
       ...otherwise it will use the values specified for order/label of languages
 *@
-@if (Show == true)
+@if (State is { Show: true })
 {
-    <ul class='@(Designer.Classes("languages-ul") ?? "theme-languages")'>
-        @foreach (var lang in Languages)
+    <ul class='@(State.Designer.Classes("languages-ul") ?? "theme-languages")'>
+        @foreach (var lang in State.Languages)
         {
-            <li class='@Classes(lang, "languages-li")'>
-                <a href="#" @onclick="@(async _ => await SetLanguage(lang.Culture))" title="@lang.Description">@lang.Label</a>
+            <li class='@State.Designer.Classes("languages-li", lang)'>
+                <a href="#" @onclick="@(async _ => await LanguageService.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
             </li>
         }
     </ul>
-    <MagicLanguageDebug Show="Show == true" Languages="Languages" LanguageService="LanguageService" ></MagicLanguageDebug>
+    <MagicLanguageDebug State="State"></MagicLanguageDebug>
 }

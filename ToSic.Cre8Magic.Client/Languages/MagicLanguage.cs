@@ -3,6 +3,10 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Languages;
 
+/// <summary>
+/// Describes a language inside Oqtane.
+/// With Name, Label, Culture and Active-State.
+/// </summary>
 public record MagicLanguage: ICanClone<MagicLanguage>
 {
     /// <summary>
@@ -12,7 +16,7 @@ public record MagicLanguage: ICanClone<MagicLanguage>
 
     public MagicLanguage(MagicLanguage? priority, MagicLanguage? fallback = default)
     {
-        Culture = priority?.Culture ?? fallback?.Culture;
+        Culture = priority?.Culture ?? fallback?.Culture ?? "en";
         Label = priority?.Label ?? fallback?.Label;
         Description = priority?.Description ?? fallback?.Description;
     }
@@ -20,7 +24,7 @@ public record MagicLanguage: ICanClone<MagicLanguage>
     public MagicLanguage CloneWith(MagicLanguage? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
-    public string? Culture { get; init; }
+    public string Culture { get; init; } = "en";
 
     /// <summary>
     /// Label to show for this culture.

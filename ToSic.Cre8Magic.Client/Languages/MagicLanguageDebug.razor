@@ -2,26 +2,23 @@
 @inherits MagicControlBase
 @code
 {
-    [Parameter, EditorRequired] public bool Show { get; set; }
-
-    [Parameter, EditorRequired] public LanguageService LanguageService { get; set; }
-
-    [Parameter, EditorRequired] public List<MagicLanguage> Languages { get; set; }
+    [Parameter, EditorRequired]
+    public required MagicLanguagesState State { get; set; }
 }
 @{
     var allSettings = MagicSettings.GetSettings(PageState);
 
     Dictionary<string, object> GetMore() => new()
     {
-        { "Language Settings", allSettings.Languages },
-        { "Languages To Show", Languages },
+        { "Language Settings", State.LanguagesSettings },
+        { "Languages To Show", State.Languages },
         { "Language Design", allSettings.ThemeDesignSettings.DesignSettings }
     };
 }
-<MagicDebug Target="@allSettings.Languages" Title="Language Settings" More="GetMore()">
+<MagicDebug Target="@State.LanguagesSettings" Title="Languages Settings" More="GetMore()">
     <Content>
         <ul>
-            <li>Show: @Show</li>
+            <li>Show: @State.Show</li>
         </ul>
     </Content>
 </MagicDebug>

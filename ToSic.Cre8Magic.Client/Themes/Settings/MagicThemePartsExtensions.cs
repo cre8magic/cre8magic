@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Themes.Settings;
 
@@ -30,5 +24,8 @@ internal static class MagicThemePartsExtensions
 
     public static string GetThemePartRenameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>
         dic.GetThemePartRenameOrNull(name) ?? fallback;
+
+    public static bool Show(this MagicThemeSettings themeSettings, string name) =>
+        themeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;
 
 }
