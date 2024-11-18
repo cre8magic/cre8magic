@@ -42,16 +42,13 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
-    public MagicDebugState Debug => _debug ??= DebugState(ThemeSettings);
+    public MagicDebugState Debug => _debug ??= Service.Debug.GetState(ThemeSettings, PageState.UserIsAdmin());
     private MagicDebugState? _debug;
 
     /// <summary>
     /// This is only used to detect if debugging should be active, and the setting should come from the theme itself
     /// </summary>
     MagicDebugSettings? IHasDebugSettings.Debug => ThemeSettings.Debug;
-
-
-    public MagicDebugState DebugState(object? target) => Service.Debug.GetState(target, PageState.UserIsAdmin());
 
     internal PageState PageState { get; }
 

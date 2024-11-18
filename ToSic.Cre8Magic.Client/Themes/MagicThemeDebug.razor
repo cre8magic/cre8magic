@@ -1,10 +1,11 @@
 ﻿@using ToSic.Cre8magic.Controls
 @inherits MagicControlBase
-<MagicDebug Target="@AllSettings" Title="Current Settings for this Theme">
+@inject IMagicSettingsService SettingsService
+@{
+    var allSettings = SettingsService.GetSettings(PageState);
+}
+<MagicDebug Target="@allSettings" Title="Current Settings for this Theme">
     <Content>
-    @if (AllSettings == null)
-    {
-        <text>Trying to show debug info for a general settings, but didn't get anything for @nameof(AllSettings)</text>
-    }
+        <h4>Showing Debug for all settings</h4>
     </Content>
 </MagicDebug>

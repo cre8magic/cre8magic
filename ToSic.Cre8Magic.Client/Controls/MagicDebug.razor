@@ -3,6 +3,8 @@
 @using System.Text.Json.Serialization
 @using System.Text.Encodings.Web
 @using ToSic.Cre8magic.Settings.Debug
+@using ToSic.Cre8magic.Utils
+@inject IMagicSettingsService SettingsService
 @code {
     [Parameter] public bool? Show { get; set; }
     [Parameter, EditorRequired] public object? Target { get; set; }
@@ -15,10 +17,10 @@
 
     [Parameter] public RenderFragment? Button { get; set; }
 
-    private MagicDebugState Debug => _debug ??= AllSettings.DebugState(Target);
+    private MagicDebugState Debug => _debug ??= SettingsService.Debug.GetState(Target, PageState.UserIsAdmin());
     private MagicDebugState? _debug;
 
-    private static JsonSerializerOptions showOptions = new()
+    private static JsonSerializerOptions _showOptions = new()
     {
         WriteIndented = true, 
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
@@ -64,7 +66,7 @@
                 {
                     @if (!MoreContainsTarget())
                     {
-                        <pre>@JsonSerializer.Serialize(Target, showOptions)</pre>
+                        <pre>@JsonSerializer.Serialize(Target, _showOptions)</pre>
                     }
                     @if (More?.Any() == true)
                     {
@@ -82,7 +84,7 @@
                             }
                             else
                             {
-                                <pre>@JsonSerializer.Serialize(data.Value, showOptions)</pre>
+                                <pre>@JsonSerializer.Serialize(data.Value, _showOptions)</pre>
                             }
                         }
 
