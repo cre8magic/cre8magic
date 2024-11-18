@@ -18,4 +18,6 @@ public class MagicLanguageState(
     public MagicLanguageDesigner Designer { get; init; } = designer;
 
     internal MagicLanguageSettings LanguageSettings { get; init; }
+
+    internal MagicThemeDesignSettings ThemeDesignSettings { get; init; }
 }

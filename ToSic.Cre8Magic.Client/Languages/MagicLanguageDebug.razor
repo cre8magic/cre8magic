@@ -6,13 +6,11 @@
     public required MagicLanguageState State { get; set; }
 }
 @{
-    var allSettings = MagicSettings.GetSettings(PageState);
-
     Dictionary<string, object> GetMore() => new()
     {
         { "Language Settings", State.LanguageSettings },
         { "Languages To Show", State.Languages },
-        { "Language Design", allSettings.ThemeDesignSettings.DesignSettings }
+        { "Language Design", State.ThemeDesignSettings.DesignSettings }
     };
 }
 <MagicDebug Target="@State.LanguageSettings" Title="Language Settings" More="GetMore()">

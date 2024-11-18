@@ -28,7 +28,7 @@ public class Startup : Oqtane.Services.IClientStartup
         services.TryAddTransient<MagicSettingsLoader>();
         services.TryAddTransient<MagicSettingsJsonService>();
 
-        services.TryAddTransient<MagicLanguageService>();
+        services.TryAddTransient<IMagicLanguageService, MagicLanguageService>();
 
         services.TryAddTransient<MagicThemeJsServiceTest>();
 

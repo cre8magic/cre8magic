@@ -17,21 +17,31 @@ namespace ToSic.Cre8magic.Languages;
  * - ...and only show these; possibly show more to admin?
  */
 
-public class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc, IMagicFactoryWip factory)
+internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc, IMagicFactoryWip factory) : IMagicLanguageService
 {
-    public async Task<MagicLanguageState> State(PageState pageState) =>
+    /// <summary>
+    /// Get the state. Must be async, because it might need to load data from Oqtane.
+    /// </summary>
+    /// <param name="pageState"></param>
+    /// <returns></returns>
+    public async Task<MagicLanguageState> GetStateAsync(PageState pageState) =>
         await _languageStates.GetAsync(pageState, async () => await CreateState(pageState));
     private readonly GetKeepByPageId<MagicLanguageState> _languageStates = new();
     
     private async Task<MagicLanguageState> CreateState(PageState pageState)
     {
         var themeContext = settingsSvc.GetThemeContext(pageState);
-        var languagesSettings = ((MagicSettingsService)settingsSvc).LanguageSettings(themeContext.ThemeSettings, themeContext.SettingsName);
+        var settings = themeContext.ThemeSettings;
+        var languagesSettings = ((MagicSettingsService)settingsSvc).LanguageSettings(settings, themeContext.SettingsName);
 
         var languages = await LanguagesToShow(pageState, languagesSettings);
-        var show = themeContext.ThemeSettings.Show("Languages") && themeContext.ThemeSettings.LanguagesMin <= languages.Count;
+        var show = settings.Show("Languages") && settings.LanguagesMin <= languages.Count;
         var designer = factory.LanguageDesigner(pageState);
-        return new(show, languages, designer) { LanguageSettings = languagesSettings };
+        return new(show, languages, designer)
+        {
+            LanguageSettings = languagesSettings,
+            ThemeDesignSettings = themeContext.ThemeDesignSettings
+        };
     }
 
     private async Task<List<MagicLanguage>> LanguagesToShow(PageState pageState, MagicLanguageSettings settings)

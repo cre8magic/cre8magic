@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Languages;
 public abstract class MagicLanguageMenuBase: MagicControlBase
 {
     [Inject]
-    protected MagicLanguageService LanguageService { get; set; }
+    protected IMagicLanguageService LanguageService { get; set; }
 
     public MagicLanguageState? State { get; private set; }
 
@@ -14,6 +14,6 @@ public abstract class MagicLanguageMenuBase: MagicControlBase
         await base.OnParametersSetAsync();
 
         // Load defined language list. It changes unless the page is reloaded, so we can cache it on this control
-        State ??= await LanguageService.State(PageState);
+        State ??= await LanguageService.GetStateAsync(PageState);
     }
 }
