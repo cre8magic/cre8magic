@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
-internal class MagicLanguageDesigner(DesignerContextWip context, MagicAllSettings allSettings) : MagicDesignerBase(context, allSettings)
+internal class MagicLanguageDesigner(DesignerContextWip context) : MagicDesignerBase(context)
 {
     internal string Classes(MagicLanguage? lang, string tag)
     {

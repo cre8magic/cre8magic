@@ -16,7 +16,7 @@ internal class MagicFactoryWip(IMagicSettingsService settingsSvc) : IMagicFactor
         var allSettings = settingsSvc.GetSettings(pageState);
 
         var context = new DesignerContextWip(allSettings, pageState);
-        var container = new MagicContainerDesigner(context, allSettings, module);
+        var container = new MagicContainerDesigner(context, module);
         _containerDesigners[module.ModuleId] = container;
         return container;
     }
@@ -29,7 +29,7 @@ internal class MagicFactoryWip(IMagicSettingsService settingsSvc) : IMagicFactor
         var allSettings = settingsSvc.GetSettings(pageState);
 
         var context = new DesignerContextWip(allSettings, pageState);
-        var theme = new MagicThemeDesigner(context, allSettings);
+        var theme = new MagicThemeDesigner(context);
         _themeDesigners[pageState.Page.PageId] = theme;
         return theme;
     }
@@ -42,7 +42,7 @@ internal class MagicFactoryWip(IMagicSettingsService settingsSvc) : IMagicFactor
         var allSettings = settingsSvc.GetSettings(pageState);
         var context = new DesignerContextWip(allSettings, pageState);
 
-        var languages = new MagicLanguageDesigner(context, allSettings);
+        var languages = new MagicLanguageDesigner(context);
         _languagesDesigners[pageState.Page.PageId] = languages;
         return languages;
     }

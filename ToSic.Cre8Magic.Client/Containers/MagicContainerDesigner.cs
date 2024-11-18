@@ -5,7 +5,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Containers;
 
-internal class MagicContainerDesigner(DesignerContextWip context, MagicAllSettings allSettings, Module module) : MagicDesignerBase(context, allSettings)
+internal class MagicContainerDesigner(DesignerContextWip context, Module module) : MagicDesignerBase(context)
 {
     internal override TokenEngine Tokens => _tokens ??= context.TokenEngineWip.Expanded(new ModuleTokens(module));
     private TokenEngine? _tokens;

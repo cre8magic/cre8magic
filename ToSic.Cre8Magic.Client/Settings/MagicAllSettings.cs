@@ -63,7 +63,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     [JsonIgnore]
     public IMagicSettingsService Service { get; }
     [JsonIgnore]
-    internal MagicThemeDesigner ThemeDesigner => _themeDesigner ??= new(new DesignerContextWip(this, PageState) , this);
+    internal MagicThemeDesigner ThemeDesigner => _themeDesigner ??= new(new DesignerContextWip(this, PageState));
     private MagicThemeDesigner? _themeDesigner;
 
     public MagicThemeSettings Theme { get; }

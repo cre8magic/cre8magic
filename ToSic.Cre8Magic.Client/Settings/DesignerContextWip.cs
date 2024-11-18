@@ -14,4 +14,6 @@ public class DesignerContextWip(
     internal LogRoot LogRoot { get; } = logRoot ?? new();
 
     internal TokenEngine TokenEngineWip => allSettings.Tokens;
+
+    internal MagicThemeDesignSettings ThemeDesignSettings => allSettings.ThemeDesignSettings;
 }

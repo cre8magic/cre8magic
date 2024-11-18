@@ -7,11 +7,11 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicThemeDesigner(DesignerContextWip context, MagicAllSettings allSettings) : MagicDesignerBase(context, allSettings)
+public class MagicThemeDesigner(DesignerContextWip context) : MagicDesignerBase(context)
 {
     internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
     {
-        var themeDesign = AllSettings?.ThemeDesignSettings;
+        var themeDesign = Context.ThemeDesignSettings;
 
         if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
 
@@ -51,5 +51,5 @@ public class MagicThemeDesigner(DesignerContextWip context, MagicAllSettings all
     }
 
     public string? PaneClasses(string paneName) =>
-        AllSettings?.ThemeDesignSettings.PaneIsEmpty.Get(PaneIsEmpty(paneName));
+        Context?.ThemeDesignSettings.PaneIsEmpty.Get(PaneIsEmpty(paneName));
 }
