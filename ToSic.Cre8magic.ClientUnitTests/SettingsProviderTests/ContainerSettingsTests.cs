@@ -10,9 +10,9 @@ public class ContainerSettingsTests
     /// Prepare a settings service and add a defaut value. 
     /// </summary>
     /// <returns></returns>
-    private static (IMagicSettingsProvider SettingsSvc, MagicContainerSettings DefaultSettings) PrepareSettings()
+    private static (IMagicSettingsProviders SettingsSvc, MagicContainerSettings DefaultSettings) PrepareSettings()
     {
-        var settingsSvc = SetupServices.PrepareServices().GetRequiredService<IMagicSettingsProvider>();
+        var settingsSvc = SetupServices.PrepareServices().GetRequiredService<IMagicSettingsProviders>();
         var original = new MagicContainerSettings();
         settingsSvc.ContainerSettings.Provide(original);
         return (settingsSvc, original);
