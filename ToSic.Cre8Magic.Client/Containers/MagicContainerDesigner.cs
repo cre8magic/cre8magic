@@ -15,7 +15,7 @@ internal class MagicContainerDesigner(MagicThemeContext context, Module module) 
     {
         if (GetSettings(tag) is not { } styles) return null;
         var value = CombineWithModuleClasses(styles);
-        return PostProcess(value);
+        return ProcessTokens(value);
     }
 
 

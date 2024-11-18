@@ -22,16 +22,14 @@ public abstract class MagicDesignerBase: IMagicDesigner
 
     protected virtual bool ParseTokens => true;
 
-    protected string? PostProcess(string? value)
-    {
-        if (!ParseTokens) return value.EmptyAsNull();
-        return Tokens.Parse(value).EmptyAsNull();
-    }
+    protected string? ProcessTokens(string? value) => !ParseTokens
+        ? value.EmptyAsNull()
+        : Tokens.Parse(value).EmptyAsNull();
 
-    public virtual string? Classes(string target) => PostProcess(GetSettings(target)?.Classes);
+    public virtual string? Classes(string target) => ProcessTokens(GetSettings(target)?.Classes);
 
-    public string? Value(string target) => PostProcess(GetSettings(target)?.Value);
+    public string? Value(string target) => ProcessTokens(GetSettings(target)?.Value);
 
-    public string? Id(string name) => PostProcess(GetSettings(name)?.Id);
+    public string? Id(string name) => ProcessTokens(GetSettings(name)?.Id);
 
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
-using System.Xml.Linq;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
@@ -11,7 +10,6 @@ using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
-using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicConstants;
 
 namespace ToSic.Cre8magic.Services.Internal;

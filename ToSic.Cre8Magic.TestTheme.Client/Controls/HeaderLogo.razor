@@ -1,4 +1,5 @@
 @inherits MagicControlBase
+@inject IMagicThemeService ThemeService
 @*
 File Purpose:       Contains the logo in the layout. 
 Recommendations:    We recommend to use an inline SVG for the logo.
@@ -9,6 +10,9 @@ Nice to know:
 TODO:
 - I18N in resources @2md
 *@
-<a class="@Designer.Classes("logo")" href="" title="2shine Oqtane BS5 2sxc (change this in the ToShineLogo.razor)">
-    <img alt="Logo" class="img-fluid" src="@AllSettings.ThemeSettings.Logo">
+@{
+    var state = ThemeService.State(PageState);
+}
+<a class="@state.Designer.Classes("logo")" href="/" title="2shine Oqtane BS5 2sxc (change this in the ToShineLogo.razor)">
+    <img alt="Logo" class="img-fluid" src="@state.Settings.Logo">
 </a>
