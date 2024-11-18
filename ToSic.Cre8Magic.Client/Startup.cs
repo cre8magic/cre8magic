@@ -12,6 +12,7 @@ using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Json;
 using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Themes.Internal;
+using ToSic.Cre8magic.Users;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic;
@@ -35,6 +36,7 @@ public class Startup : Oqtane.Services.IClientStartup
         services.TryAddTransient<IMagicLanguageService, MagicLanguageService>();
         services.TryAddTransient<IMagicThemeService, MagicThemeService>();
         services.TryAddTransient<IMagicPageContextService, MagicPageContextService>();
+        services.TryAddTransient<IMagicUserService, MagicUserService>();
 
         services.TryAddTransient<MagicThemeJsServiceTest>();
 
