@@ -13,8 +13,8 @@ public abstract class MagicLoginBase: Oqtane.Themes.Controls.LoginBase
     [Inject]
     public IMagicFactoryWip MagicFactory { get; set; }
 
-    private ThemeDesigner Designer => _designer ??= MagicFactory.ThemeDesigner(PageState);
-    private ThemeDesigner? _designer;
+    private MagicThemeDesigner Designer => _designer ??= MagicFactory.ThemeDesigner(PageState);
+    private MagicThemeDesigner? _designer;
 
 
     protected bool IsLoggedIn => _isLoggedIn ??= PageState.User is { IsAuthenticated: true };

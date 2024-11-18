@@ -6,6 +6,7 @@ using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Utils.Logging;
 using static System.StringComparer;
 
 namespace ToSic.Cre8magic.Settings;
@@ -62,8 +63,8 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     [JsonIgnore]
     public IMagicSettingsService Service { get; }
     [JsonIgnore]
-    internal ThemeDesigner ThemeDesigner => _themeDesigner ??= new(this);
-    private ThemeDesigner? _themeDesigner;
+    internal MagicThemeDesigner ThemeDesigner => _themeDesigner ??= new(new DesignerContextWip(this, PageState) , this);
+    private MagicThemeDesigner? _themeDesigner;
 
     public MagicThemeSettings Theme { get; }
 
@@ -98,7 +99,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
         _a ??= Service.Analytics.Find(GetThemePartRenameOrDefault(nameof(Analytics)), Name);
     private MagicAnalyticsSettings? _a;
 
-    public MagicThemeDesignSettings ThemeDesign =>
+    public MagicThemeDesignSettings ThemeDesignSettings =>
         _td ??= Service.ThemeDesign.Find(Theme.Design ?? GetThemePartRenameOrDefault(nameof(Theme.Design)), Name);
     private MagicThemeDesignSettings? _td;
 

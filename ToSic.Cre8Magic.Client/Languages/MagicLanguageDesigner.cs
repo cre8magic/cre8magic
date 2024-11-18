@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
-internal class MagicLanguageDesigner(MagicAllSettings allSettings) : MagicDesignerBase(allSettings)
+internal class MagicLanguageDesigner(DesignerContextWip context, MagicAllSettings allSettings) : MagicDesignerBase(context, allSettings)
 {
     internal string Classes(MagicLanguage? lang, string tag)
     {
@@ -11,8 +11,4 @@ internal class MagicLanguageDesigner(MagicAllSettings allSettings) : MagicDesign
         if (GetSettings(tag) is not { } styles) return "";
         return styles.Classes + " " + styles.IsActive.Get(lang?.IsActive);
     }
-
-    protected override MagicDesignSettings? GetSettings(string name) =>
-        AllSettings?.ThemeDesign.DesignSettings.GetInvariant(name);
-
 }

@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic;
 public interface IMagicFactoryWip
 {
     internal MagicContainerDesigner ContainerDesigner(PageState pageState, Module module);
-    internal ThemeDesigner ThemeDesigner(PageState pageState);
+    internal MagicThemeDesigner ThemeDesigner(PageState pageState);
 
     internal MagicLanguageDesigner LanguagesDesigner(PageState pageState);
 }

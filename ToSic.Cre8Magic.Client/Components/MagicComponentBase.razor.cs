@@ -15,8 +15,8 @@ public abstract class MagicComponentBase: ComponentBase
     [Inject]
     public IMagicFactoryWip MagicFactory { get; set; }
 
-    private ThemeDesigner Designer => _designer ??= MagicFactory.ThemeDesigner(PageState);
-    private ThemeDesigner? _designer;
+    private MagicThemeDesigner Designer => _designer ??= MagicFactory.ThemeDesigner(PageState);
+    private MagicThemeDesigner? _designer;
 
     public string? Classes(string target) => Designer.Classes(target);
 

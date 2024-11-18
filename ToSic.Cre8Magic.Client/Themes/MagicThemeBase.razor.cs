@@ -2,6 +2,7 @@
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Components;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Themes.Internal;
 
 namespace ToSic.Cre8magic.Themes;
 
@@ -98,14 +99,16 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWit
             await MagicAnalytics.TrackPage(AllSettings, firstRender);
     }
 
+    public MagicThemeDesigner Designer => AllSettings?.ThemeDesigner ?? throw new("No settings available");
+
     /// <summary>
     /// Special classes for divs surrounding panes pane, especially to indicate when it's empty
     /// </summary>
-    protected string? PaneClasses(string paneName) => AllSettings?.ThemeDesigner.PaneClasses(paneName);
+    protected string? PaneClasses(string paneName) => Designer.PaneClasses(paneName);
 
-    public string? Classes(string target) => AllSettings?.ThemeDesigner.Classes(target);
+    public string? Classes(string target) => Designer.Classes(target);
 
-    public string? Value(string target) => AllSettings?.ThemeDesigner.Value(target);
+    public string? Value(string target) => Designer.Value(target);
 
-    public string? Id(string name) => AllSettings?.ThemeDesigner.Id(name);
+    public string? Id(string name) => Designer.Id(name);
 }

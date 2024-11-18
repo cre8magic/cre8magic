@@ -7,17 +7,17 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(allSettings)
+public class MagicThemeDesigner(DesignerContextWip context, MagicAllSettings allSettings) : MagicDesignerBase(context, allSettings)
 {
     internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
     {
-        var themeDesign = AllSettings?.ThemeDesign;
+        var themeDesign = AllSettings?.ThemeDesignSettings;
 
         if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
 
         // Make a copy...
         var classes = themeDesign.MagicContext.ToList();
-        classes.Add(themeDesign.PageIsHome?.Get(AllSettings.PageState.Page.Path == ""));
+        classes.Add(themeDesign.PageIsHome?.Get(context.PageState.Page.Path == ""));
         if (additionalClasses.HasText())
             classes.Add(additionalClasses);
 
@@ -41,8 +41,7 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
 
     private bool PaneIsEmpty(string paneName)
     {
-        if (AllSettings == null) return true;
-        var pageState = AllSettings.PageState;
+        var pageState = context.PageState;
         var paneHasModules = pageState.Modules.Any(
             module => !module.IsDeleted
                       && module.PageId == pageState.Page.PageId
@@ -52,8 +51,5 @@ internal class ThemeDesigner(MagicAllSettings allSettings) : MagicDesignerBase(a
     }
 
     public string? PaneClasses(string paneName) =>
-        AllSettings?.ThemeDesign.PaneIsEmpty.Get(PaneIsEmpty(paneName));
-
-    protected override MagicDesignSettings? GetSettings(string name) =>
-        AllSettings?.ThemeDesign.DesignSettings.GetInvariant(name);
+        AllSettings?.ThemeDesignSettings.PaneIsEmpty.Get(PaneIsEmpty(paneName));
 }
