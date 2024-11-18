@@ -1,4 +1,5 @@
 ﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
@@ -7,7 +8,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicThemeDesigner(DesignerContextWip context) : MagicDesignerBase(context)
+public class MagicThemeDesigner(MagicThemeContext context) : MagicDesignerBase(context)
 {
     internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
     {

@@ -1,8 +1,6 @@
-﻿using System.Runtime.CompilerServices;
-using Oqtane.Models;
+﻿using Oqtane.Models;
 using Oqtane.UI;
 using ToSic.Cre8magic.Containers;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Internal;
 
 namespace ToSic.Cre8magic;
@@ -13,10 +11,9 @@ internal class MagicFactoryWip(IMagicSettingsService settingsSvc) : IMagicFactor
     {
         if (_containerDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
-        var allSettings = settingsSvc.GetSettings(pageState);
 
-        var context = new DesignerContextWip(allSettings, pageState);
-        var container = new MagicContainerDesigner(context, module);
+        var designContext = settingsSvc.GetThemeContext(pageState);
+        var container = new MagicContainerDesigner(designContext, module);
         _containerDesigners[module.ModuleId] = container;
         return container;
     }
@@ -26,10 +23,9 @@ internal class MagicFactoryWip(IMagicSettingsService settingsSvc) : IMagicFactor
     {
         if (_themeDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
-        var allSettings = settingsSvc.GetSettings(pageState);
 
-        var context = new DesignerContextWip(allSettings, pageState);
-        var theme = new MagicThemeDesigner(context);
+        var designContext = settingsSvc.GetThemeContext(pageState);
+        var theme = new MagicThemeDesigner(designContext);
         _themeDesigners[pageState.Page.PageId] = theme;
         return theme;
     }
@@ -39,10 +35,9 @@ internal class MagicFactoryWip(IMagicSettingsService settingsSvc) : IMagicFactor
     {
         if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
-        var allSettings = settingsSvc.GetSettings(pageState);
-        var context = new DesignerContextWip(allSettings, pageState);
+        var designContext = settingsSvc.GetThemeContext(pageState);
 
-        var languages = new MagicLanguageDesigner(context);
+        var languages = new MagicLanguageDesigner(designContext);
         _languagesDesigners[pageState.Page.PageId] = languages;
         return languages;
     }

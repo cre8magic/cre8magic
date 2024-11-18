@@ -1,6 +1,6 @@
 ﻿namespace ToSic.Cre8magic.Tokens;
 
-internal interface ITokenReplace
+public interface ITokenReplace
 {
     string NameId { get; }
     string? Parse(string? value);

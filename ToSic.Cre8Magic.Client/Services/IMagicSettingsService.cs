@@ -6,6 +6,7 @@ using ToSic.Cre8magic.Services.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Client.Services;
 
@@ -23,6 +24,8 @@ public interface IMagicSettingsService: IHasSettingsExceptions
     IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName, string? bodyClasses);
 
     MagicAllSettings GetSettings(PageState pageState);
+
+    internal MagicThemeContext GetThemeContext(PageState pageState);
 
     internal MagicSettingsCatalog Catalog { get; }
 

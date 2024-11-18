@@ -4,6 +4,7 @@ using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal;
@@ -70,9 +71,9 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         var mergedSettings = menuSettings.CloneWith(settings);
 
         // See if we have a default configuration for CSS which should be applied
-        var menuDesign = allSettings.DesignName(configName);
+        var menuDesign = allSettings.ThemeSettings.Parts.GetThemeDesignRenameOrNull(configName);
         if (menuDesign == null && !configName.StartsWith(MenuSettingPrefix))
-            menuDesign = allSettings.DesignName($"{MenuSettingPrefix}{configName}");
+            menuDesign = allSettings.ThemeSettings.Parts.GetThemeDesignRenameOrNull($"{MenuSettingPrefix}{configName}");
 
         var designName = menuDesign;
         messages.Add($"Design name in config: '{designName}'");

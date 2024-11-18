@@ -1,9 +1,11 @@
 ﻿using System.Text.Json.Serialization;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Services.Internal;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Internal;
+using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 using static System.StringComparer;
@@ -62,7 +64,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     [JsonIgnore]
     public IMagicSettingsService Service { get; }
     [JsonIgnore]
-    internal MagicThemeDesigner ThemeDesigner => _themeDesigner ??= new(new DesignerContextWip(this, PageState));
+    internal MagicThemeDesigner ThemeDesigner => _themeDesigner ??= new(new MagicThemeContext(Name, PageState, ThemeSettings, ThemeDesignSettings, Tokens, []));
     private MagicThemeDesigner? _themeDesigner;
 
     public MagicThemeSettings ThemeSettings { get; }
@@ -73,37 +75,17 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     public bool Show(string name) =>
         ThemeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;
 
-    /// <summary>
-    /// Determine the name of the design configuration of a specific part
-    /// </summary>
-    internal string? DesignName(string name) =>
-        ThemeSettings.Parts.TryGetValue(name, out var value)
-            ? value.Design
-            : null;
-
-    /// <summary>
-    /// Determine the configuration name of a specific part.
-    /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
-    internal string? GetThemePartRenameOrNull(string name) =>
-        ThemeSettings.Parts.TryGetValue(name, out var value)
-            ? value.Configuration
-            : null;
-
-    internal string GetThemePartRenameOrDefault(string name) =>
-        GetThemePartRenameOrNull(name) ?? Name;
-
     public MagicAnalyticsSettings Analytics =>
-        _a ??= Service.Analytics.Find(GetThemePartRenameOrDefault(nameof(Analytics)), Name);
+        _a ??= Service.Analytics.Find(ThemeSettings.Parts.GetThemePartRenameOrFallback(nameof(Analytics), Name), Name);
     private MagicAnalyticsSettings? _a;
 
     public MagicThemeDesignSettings ThemeDesignSettings =>
-        _td ??= Service.ThemeDesign.Find(ThemeSettings.Design ?? GetThemePartRenameOrDefault(nameof(ThemeSettings.Design)), Name);
+        _td ??= ((MagicSettingsService)Service).ThemeDesignSettings(ThemeSettings, Name);
+    //_td ??= Service.ThemeDesign.Find(ThemeSettings.Design ?? ThemeSettings.Parts.GetThemePartRenameOrFallback(nameof(ThemeSettings.Design), Name), Name);
     private MagicThemeDesignSettings? _td;
 
     public MagicLanguageSettings Languages =>
-        _l ??= Service.Languages.Find(GetThemePartRenameOrDefault(nameof(Languages)), Name);
+        _l ??= Service.Languages.Find(ThemeSettings.Parts.GetThemePartRenameOrFallback(nameof(Languages), Name), Name);
     private MagicLanguageSettings? _l;
 
     public Dictionary<string, string> DebugSources { get; } = new(InvariantCultureIgnoreCase);

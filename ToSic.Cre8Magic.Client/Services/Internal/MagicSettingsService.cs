@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
+using System.Xml.Linq;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
@@ -7,6 +8,7 @@ using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicConstants;
@@ -53,28 +55,56 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     {
         // Check if already in cache; vary by layout name and active page
         var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
-        var cached = _currentSettingsCache.FindInvariant(originalNameForCache);
-        if (cached != null) return cached;
+        if (_currentSettingsCache.TryGetValue(originalNameForCache, out var cached2))
+            return cached2;
 
-        // Tokens engine for this specific PageState
-        var pageFactory = new MagicPageFactory(pageState);
-        var pageTokens = new PageTokens(pageFactory.Current, _layoutName);
-        var tokens = new TokenEngine([pageTokens, ThemeTokens]);
-
-        // Figure out real config-name, and get the initial layout
-        var (configName, nameJournal) = MagicAllSettingsReader.GetBestSettingsName(_layoutName, Default);
-        var theme = ThemeSettings.Find(configName).Parse(tokens);
-        var current = new MagicAllSettings(configName, this, theme, tokens, pageState);
+        var themeCtx = GetThemeContext(pageState);
+        var current = new MagicAllSettings(themeCtx.SettingsName, this, themeCtx.ThemeSettings, themeCtx.PageTokens, pageState);
 
         // Get the magic context (probably the classes we'll add) using the tokens
-        current.MagicContext = current.ThemeDesigner.BodyClasses(tokens, _bodyClasses);
+        current.MagicContext = current.ThemeDesigner.BodyClasses(themeCtx.PageTokens, _bodyClasses);
 
         // Merge debug info in case it's needed
-        current.DebugSources.Add("GetName", string.Join("; ", nameJournal));
+        current.DebugSources.Add("GetName", string.Join("; ", themeCtx.Journal));
 
         // Cache and return
         _currentSettingsCache[originalNameForCache] = current;
         return current;
+    }
+    private readonly NamedSettings<MagicAllSettings> _currentSettingsCache = new();
+
+    public MagicThemeContext GetThemeContext(PageState pageState)
+    {
+        var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
+        if (_themeCache.TryGetValue(originalNameForCache, out var cached2))
+            return cached2;
+
+        // Tokens engine for this specific PageState
+        var tokens = PageTokenEngine(pageState);
+
+        // Figure out real config-name, and get the initial layout
+        var (settingsName, nameJournal) = MagicAllSettingsReader.GetBestSettingsName(_layoutName, Default);
+        var theme = ThemeSettings.Find(settingsName).Parse(tokens);
+
+        var designSettings = ThemeDesignSettings(theme, settingsName);
+        var ctx = new MagicThemeContext(settingsName, pageState, theme, designSettings, tokens, nameJournal);
+        _themeCache[originalNameForCache] = ctx;
+        return ctx;
+    }
+
+    private readonly Dictionary<string, MagicThemeContext> _themeCache = new(StringComparer.InvariantCultureIgnoreCase);
+
+    /// <summary>
+    /// Tokens engine for this specific PageState
+    /// </summary>
+    /// <param name="pageState"></param>
+    /// <returns></returns>
+    public TokenEngine PageTokenEngine(PageState pageState)
+    {
+        var pageFactory = new MagicPageFactory(pageState);
+        var pageTokens = new PageTokens(pageFactory.Current, _layoutName);
+        var tokens = new TokenEngine([pageTokens, ThemeTokens]);
+        return tokens;
     }
 
     /// <summary>
@@ -83,7 +113,6 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     MagicSettingsCatalog IMagicSettingsService.Catalog => _catalog ??= loader.MergeCatalogs();
     private MagicSettingsCatalog? _catalog;
 
-    private readonly NamedSettings<MagicAllSettings> _currentSettingsCache = new();
 
     NamedSettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
@@ -127,6 +156,9 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     NamedSettingsReader<MagicThemeDesignSettings> IMagicSettingsService.ThemeDesign =>
         _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, cat => cat.ThemeDesigns);
     private NamedSettingsReader<MagicThemeDesignSettings>? _themeDesign;
+
+    public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
+        ((IMagicSettingsService)this).ThemeDesign.Find(settings.Design ?? settings.Parts.GetThemePartRenameOrFallback(nameof(settings.Design), settingsName), settingsName);
 
     NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);

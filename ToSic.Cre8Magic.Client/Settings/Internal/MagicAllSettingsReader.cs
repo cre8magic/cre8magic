@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Utils;
+﻿using ToSic.Cre8magic.Themes.Settings;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
@@ -12,9 +13,9 @@ internal class MagicAllSettingsReader(MagicAllSettings allSettings)
 
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
-        var menuConfig = allSettings.GetThemePartRenameOrNull(configName);
+        var menuConfig = allSettings.ThemeSettings.Parts.GetThemePartRenameOrNull(configName);
         if (menuConfig == null && !string.IsNullOrEmpty(prefixToCheck) && !configName.StartsWith(prefixToCheck))
-            menuConfig = allSettings.GetThemePartRenameOrNull($"{prefixToCheck}{configName}");
+            menuConfig = allSettings.ThemeSettings.Parts.GetThemePartRenameOrNull($"{prefixToCheck}{configName}");
 
         if (menuConfig.HasValue())
         {

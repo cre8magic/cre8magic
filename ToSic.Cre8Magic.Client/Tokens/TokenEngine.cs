@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Tokens;
 /// similar to 2sxc.
 /// But ATM there are only ca. 10 tokens so the current model is probably sufficient
 /// </summary>
-internal class TokenEngine: ITokenReplace
+public class TokenEngine: ITokenReplace
 {
     public const string NameIdConst = nameof(TokenEngine);
     public string NameId => NameIdConst;
