@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic.Client.Controls;
 /// <summary>
 /// Oqtane Blazor Control with Settings
 /// </summary>
-public abstract class MagicControlBase: ThemeControlBase, IMagicControlWithSettings
+public abstract class MagicControlBase: ThemeControlBase
 {
     [Inject]
     public IMagicFactoryWip MagicFactory { get; set; }

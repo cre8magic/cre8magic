@@ -16,7 +16,7 @@ namespace ToSic.Cre8magic.Themes;
 /// - The base class must be abstract, so that Oqtane doesn't see it as a real them.
 /// - The config-properties must be abstract, so the inheriting files are forced to set them. 
 /// </remarks>
-public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWithSettings
+public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
 {
     /// <summary>
     /// Name to show in the Theme-picker.
@@ -96,7 +96,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWit
 
         // Track page views
         if (MagicAnalytics != null)
-            await MagicAnalytics.TrackPage(AllSettings, firstRender);
+            await MagicAnalytics.TrackPage(AllSettings?.Analytics, firstRender);
     }
 
     public MagicThemeDesigner Designer => AllSettings?.ThemeDesigner ?? throw new("No settings available");

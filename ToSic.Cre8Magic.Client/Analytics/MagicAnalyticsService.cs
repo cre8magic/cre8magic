@@ -1,5 +1,4 @@
 ﻿using Microsoft.JSInterop;
-using ToSic.Cre8magic.Settings;
 using static ToSic.Cre8magic.Client.Services.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics;
@@ -15,15 +14,14 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime)
     /// <param name="settings"></param>
     /// <param name="firstRender"></param>
     /// <returns></returns>
-    internal async Task TrackPage(MagicAllSettings? settings, bool firstRender)
+    internal async Task TrackPage(MagicAnalyticsSettings? settings, bool firstRender)
     {
         if (settings == null) return;
-        var gtmSettings = settings.Analytics;
-        if (gtmSettings.PageViewTrack != true) return;
+        if (settings.PageViewTrack != true) return;
 
-        if (firstRender && gtmSettings.PageViewTrackFirst != true) return;
-        var js = gtmSettings.PageViewJs!;
-        var eventName = gtmSettings.PageViewEvent;
+        if (firstRender && settings.PageViewTrackFirst != true) return;
+        var js = settings.PageViewJs!;
+        var eventName = settings.PageViewEvent;
 
         // Run the JS Command but don't wait for it
         // https://stackoverflow.com/questions/17805887/using-async-without-await
