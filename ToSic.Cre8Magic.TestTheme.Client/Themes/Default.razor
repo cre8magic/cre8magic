@@ -29,12 +29,12 @@ Nice to know:
     <Header></Header>
     
     @* Header Pane *@
-    <div id="@Id("sectionHeader")" class="@Classes("sectionHeader") @PaneClasses(PaneNameHeader)">
+    <div id="@Designer.Id("sectionHeader")" class="@Designer.Classes("sectionHeader") @Designer.PaneClasses(PaneNameHeader)">
         <Pane Name="@PaneNameHeader"/>
     </div>
     
     @* Main Section *@
-    <main id="@Id("sectionMain")" class="@Classes("sectionMain")">
+    <main id="@Designer.Id("sectionMain")" class="@Designer.Classes("sectionMain")">
 
         @* Show Breadcrumb if desired *@
         @if (AllSettings.Show("breadcrumbs"))
@@ -47,12 +47,12 @@ Nice to know:
         {
             <div class="container">
                 <div class="row">
-                    <div class='@Classes("sidebarBody")'>
+                    <div class='@Designer.Classes("sidebarBody")'>
                         <Pane Name="@PaneNames.Default"/>
                         <MagicShowComponents Components="@MagicComponents"></MagicShowComponents>
                     </div>
-                    <div class='@Classes("sidebarMenu")'>
-                        <div id="@Id("sidebarMenu-inner")" class="@Classes("sidebarMenu-inner")">
+                    <div class='@Designer.Classes("sidebarMenu")'>
+                        <div id="@Designer.Id("sidebarMenu-inner")" class="@Designer.Classes("sidebarMenu-inner")">
                             <Menu ConfigName="@ThemeInfo.MenuSidebar"></Menu>
                         </div>
                     </div>

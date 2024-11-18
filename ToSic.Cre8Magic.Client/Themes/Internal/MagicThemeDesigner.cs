@@ -50,6 +50,9 @@ public class MagicThemeDesigner(DesignerContextWip context) : MagicDesignerBase(
         return !paneHasModules;
     }
 
+    /// <summary>
+    /// Special classes for divs surrounding panes pane, especially to indicate when it's empty
+    /// </summary>
     public string? PaneClasses(string paneName) =>
         Context?.ThemeDesignSettings.PaneIsEmpty.Get(PaneIsEmpty(paneName));
 }

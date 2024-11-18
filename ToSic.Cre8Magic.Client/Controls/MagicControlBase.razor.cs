@@ -28,11 +28,4 @@ public abstract class MagicControlBase: ThemeControlBase, IMagicControlWithSetti
     protected virtual IMagicDesigner Designer => _designer ??= MagicFactory.ThemeDesigner(PageState);
     private IMagicDesigner? _designer;
 
-    public string? Classes(string target) => Designer.Classes(target);
-
-    public string? ClassesOrDefault(string target, string defaultValue) => Classes(target) ?? defaultValue;
-
-    public string? Value(string target) => Designer.Value(target);
-
-    public string? Id(string name) => Designer.Id(name);
 }

@@ -9,7 +9,7 @@ Nice to know:
 *@
 @if (Show == true)
 {
-    <ul class='@ClassesOrDefault("languages-ul", "theme-languages")'>
+    <ul class='@(Designer.Classes("languages-ul") ?? "theme-languages")'>
         @foreach (var lang in Languages)
         {
             <li class='@Classes(lang, "languages-li")'>

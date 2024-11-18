@@ -100,15 +100,4 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase, IMagicControlWit
     }
 
     public MagicThemeDesigner Designer => AllSettings?.ThemeDesigner ?? throw new("No settings available");
-
-    /// <summary>
-    /// Special classes for divs surrounding panes pane, especially to indicate when it's empty
-    /// </summary>
-    protected string? PaneClasses(string paneName) => Designer.PaneClasses(paneName);
-
-    public string? Classes(string target) => Designer.Classes(target);
-
-    public string? Value(string target) => Designer.Value(target);
-
-    public string? Id(string name) => Designer.Id(name);
 }
