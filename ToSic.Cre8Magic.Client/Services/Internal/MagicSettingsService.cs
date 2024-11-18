@@ -81,9 +81,6 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
                 MagicContext = themeDesigner.BodyClasses(themeCtx.PageTokens, _bodyClasses) ?? ""
             };
 
-        // Merge debug info in case it's needed
-        current.DebugSources.Add("GetName", string.Join("; ", themeCtx.Journal));
-
         // Cache and return
         _currentSettingsCache[originalNameForCache] = current;
         return current;
@@ -149,9 +146,9 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, cat => cat.Menus);
     private NamedSettingsReader<MagicMenuSettings>? _getMenuSettings;
 
-    NamedSettingsReader<MagicLanguageSettings> IMagicSettingsService.Languages =>
-        _languages ??= new(this, MagicLanguageSettings.Defaults, cat => cat.Languages);
-    private NamedSettingsReader<MagicLanguageSettings>? _languages;
+    NamedSettingsReader<MagicLanguagesSettings> IMagicSettingsService.Languages =>
+        _languages ??= new(this, MagicLanguagesSettings.Defaults, cat => cat.Languages);
+    private NamedSettingsReader<MagicLanguagesSettings>? _languages;
 
     internal NamedSettingsReader<MagicContainerSettings> Containers =>
         _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);

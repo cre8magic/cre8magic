@@ -4,15 +4,15 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Languages;
 
-public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, ICanClone<MagicLanguageSettings>
+public record MagicLanguagesSettings : SettingsWithInherit, IHasDebugSettings, ICanClone<MagicLanguagesSettings>
 {
     /// <summary>
     /// Dummy constructor so better find cases where it's created
     /// Note it must be without parameters for json deserialization
     /// </summary>
-    public MagicLanguageSettings() {}
+    public MagicLanguagesSettings() {}
 
-    public MagicLanguageSettings(MagicLanguageSettings? priority, MagicLanguageSettings? fallback = default)
+    public MagicLanguagesSettings(MagicLanguagesSettings? priority, MagicLanguagesSettings? fallback = default)
         : base(priority, fallback)
     {
         HideOthers = priority?.HideOthers ?? fallback?.HideOthers ?? Defaults.Fallback.HideOthers;
@@ -20,7 +20,7 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
         Languages = priority?.Languages ?? fallback?.Languages;
     }
 
-    public MagicLanguageSettings CloneWith(MagicLanguageSettings? priority, bool forceCopy = false) =>
+    public MagicLanguagesSettings CloneWith(MagicLanguagesSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
@@ -56,7 +56,7 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
         return new(extended);
     }
 
-    internal static Defaults<MagicLanguageSettings> Defaults = new()
+    internal static Defaults<MagicLanguagesSettings> Defaults = new()
     {
         Fallback = new()
         {

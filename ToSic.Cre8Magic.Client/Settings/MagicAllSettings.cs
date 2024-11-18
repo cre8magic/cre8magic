@@ -85,11 +85,9 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
         _td ??= ((MagicSettingsService)Service).ThemeDesignSettings(ThemeSettings, Name);
     private MagicThemeDesignSettings? _td;
 
-    public MagicLanguageSettings Languages =>
+    public MagicLanguagesSettings Languages =>
         _l ??= Service.Languages.Find(ThemeSettings.Parts.GetThemePartRenameOrFallback(nameof(Languages), Name), Name);
-    private MagicLanguageSettings? _l;
-
-    public Dictionary<string, string> DebugSources { get; } = new(InvariantCultureIgnoreCase);
+    private MagicLanguagesSettings? _l;
 
     public List<Exception> Exceptions => Service.Exceptions;
 
