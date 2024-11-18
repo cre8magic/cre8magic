@@ -37,7 +37,7 @@ public interface IMagicSettingsService: IHasSettingsExceptions
     internal NamedSettingsReader<MagicAnalyticsSettings> Analytics { get; }
     internal NamedSettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
 
-    internal NamedSettingsReader<MagicLanguagesSettings> Languages { get; }
+    internal NamedSettingsReader<MagicLanguageSettings> Languages { get; }
 
     internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; }
 

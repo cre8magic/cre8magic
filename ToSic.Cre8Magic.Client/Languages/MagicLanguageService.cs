@@ -17,9 +17,13 @@ namespace ToSic.Cre8magic.Languages;
  * - ...and only show these; possibly show more to admin?
  */
 
-public class MagicLanguagesService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLanguages, IMagicSettingsService settingsSvc, IMagicFactoryWip factory)
+public class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLanguages, IMagicSettingsService settingsSvc, IMagicFactoryWip factory)
 {
-    public async Task<MagicLanguagesState> State(PageState pageState)
+    public async Task<MagicLanguagesState> State(PageState pageState) =>
+        await _languageStates.GetAsync(pageState, async () => await CreateState(pageState));
+    private readonly GetKeepByPageId<MagicLanguagesState> _languageStates = new();
+    
+    private async Task<MagicLanguagesState> CreateState(PageState pageState)
     {
         var themeContext = settingsSvc.GetThemeContext(pageState);
         var languagesSettings = ((MagicSettingsService)settingsSvc).LanguagesSettings(themeContext.ThemeSettings, themeContext.SettingsName);
@@ -27,11 +31,10 @@ public class MagicLanguagesService(NavigationManager navigation, IJSRuntime jsRu
         var (languages, settings) = await LanguagesToShow(pageState, languagesSettings);
         var show = themeContext.ThemeSettings.Show("Languages") && themeContext.ThemeSettings.LanguagesMin <= languages.Count;
         var designer = factory.LanguagesDesigner(pageState);
-        return new(show, languages, designer) { LanguagesSettings = settings };
+        return new(show, languages, designer) { LanguageSettings = settings };
     }
-    private GetKeepByPageId<MagicLanguagesState> _languageStates = new();
 
-    private async Task<(List<MagicLanguage> Languages, MagicLanguagesSettings Settings)> LanguagesToShow(PageState pageState, MagicLanguagesSettings langsSettings)
+    private async Task<(List<MagicLanguage> Languages, MagicLanguageSettings Settings)> LanguagesToShow(PageState pageState, MagicLanguageSettings langsSettings)
     {
         var siteId = pageState.Site.SiteId;
         if (_languages.TryGetValue(siteId, out var cached))
@@ -76,7 +79,7 @@ public class MagicLanguagesService(NavigationManager navigation, IJSRuntime jsRu
         return (result, langsSettings);
     }
 
-    private readonly Dictionary<int, (List<MagicLanguage> Languages, MagicLanguagesSettings Settings)> _languages = new();
+    private readonly Dictionary<int, (List<MagicLanguage> Languages, MagicLanguageSettings Settings)> _languages = new();
 
     public async Task SetCultureAsync(string culture)
     {

@@ -10,6 +10,10 @@ namespace ToSic.Cre8magic.Utils;
 /// <typeparam name="TCompare"></typeparam>
 public class GetKeep<TResult, TCompare> where TResult : class
 {
+    private TResult? _value;
+
+    private TCompare compare;
+
     public TResult Get(Func<(TResult Result, TCompare Compare)> getter, Func<TResult, TCompare, bool> keep)
     {
         if (IsValueCreated && keep(_value, compare)) return _value;
@@ -20,9 +24,19 @@ public class GetKeep<TResult, TCompare> where TResult : class
         IsValueCreated = true;
         return _value;
     }
-    private TResult? _value;
 
-    private TCompare compare;
+    // Create the same as above, but Async
+
+    public async Task<TResult> GetAsync(Func<Task<(TResult Result, TCompare Compare)>> getter, Func<TResult, TCompare, bool> keep)
+    {
+        if (IsValueCreated && keep(_value, compare)) return _value;
+        var result = await getter();
+        _value = result.Result;
+        compare = result.Compare;
+        IsValueCreated = true;
+        return _value;
+    }
+
 
     /// <summary>
     /// Determines if value has been created.

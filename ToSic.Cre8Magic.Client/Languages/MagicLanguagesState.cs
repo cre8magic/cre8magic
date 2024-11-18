@@ -17,5 +17,5 @@ public class MagicLanguagesState(
 
     public MagicLanguageDesigner Designer { get; init; } = designer;
 
-    internal MagicLanguagesSettings LanguagesSettings { get; init; }
+    internal MagicLanguageSettings LanguageSettings { get; init; }
 }

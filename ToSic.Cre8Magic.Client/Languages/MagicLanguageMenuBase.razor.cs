@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Languages;
 public abstract class MagicLanguagesMenuBase: MagicControlBase
 {
     [Inject]
-    protected MagicLanguagesService LanguageService { get; set; }
+    protected MagicLanguageService LanguageService { get; set; }
 
     public MagicLanguagesState? State { get; private set; }
 
