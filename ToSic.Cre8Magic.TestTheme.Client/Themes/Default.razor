@@ -1,5 +1,6 @@
 @namespace ToSic.Cre8magic.TestTheme.Client
 @using ToSic.Cre8magic.Components
+@using ToSic.Cre8magic.PageContext
 @inherits MyThemeBase
 @*
 File Purpose:       Core theme file and Default variation
@@ -20,7 +21,7 @@ Nice to know:
        Note that the specifics are configured in the configuration
     2. It will ensure that the object Settings are available on all child controls using <CascadingValue>
 *@
-<MagicContextAndSettings AllSettings="AllSettings">
+<MagicContextAndSettings AllSettings="AllSettings" Settings="new MagicPageContextSettings() { Classes = BodyClasses }">
 
     @* Show any errors to the admin if something went wrong like when loading settings *@
     <MagicExceptions></MagicExceptions>

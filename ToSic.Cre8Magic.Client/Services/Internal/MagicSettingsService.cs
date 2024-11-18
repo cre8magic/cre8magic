@@ -74,10 +74,8 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         // Get the magic context (probably the classes we'll add) using the tokens
         var themeDesigner = new MagicThemeDesigner(themeCtx);
 
-        var current = new MagicAllSettings(themeCtx.SettingsName, this, themeCtx.ThemeSettings, themeDesigner, themeCtx.PageTokens, pageState)
-            {
-                MagicContext = themeDesigner.BodyClasses(themeCtx.PageTokens, _bodyClasses) ?? ""
-            };
+        var current = new MagicAllSettings(themeCtx.SettingsName, this, themeCtx.ThemeSettings, themeDesigner,
+            themeCtx.PageTokens, pageState);
 
         // Cache and return
         _currentSettingsCache[originalNameForCache] = current;

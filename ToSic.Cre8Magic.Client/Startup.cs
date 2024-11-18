@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Menus.Internal;
+using ToSic.Cre8magic.PageContext;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Services.Internal;
@@ -32,6 +33,7 @@ public class Startup : Oqtane.Services.IClientStartup
 
         services.TryAddTransient<IMagicLanguageService, MagicLanguageService>();
         services.TryAddTransient<IMagicThemeService, MagicThemeService>();
+        services.TryAddTransient<IMagicPageContextService, MagicPageContextService>();
 
         services.TryAddTransient<MagicThemeJsServiceTest>();
 

@@ -1,5 +1,9 @@
-﻿@using ToSic.Cre8magic.Settings
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.PageContext
+@using ToSic.Cre8magic.Settings
 @inherits ComponentBase
+@inject IMagicPageContextService PageContextSvc;
+
 @*
     Purpose:    Ensures that there is a wrapper - div or body
                 which has a bunch of css-classes to tell the stylesheets
@@ -10,46 +14,38 @@
     [Parameter, EditorRequired]
     public required MagicAllSettings AllSettings { get; set; }
 
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicPageContextSettings? Settings { get; set; }
+
     /// <summary>
-    /// The HTML contents which is wrapped by this tag.
-    /// Anything inside this will have the `div` around it with the magic CSS classes.
+    /// The HTML contents which is wrapped by this component.
+    /// If the settings specify that it uses the Body tag, then no div is added.
+    /// Otherwise, everything will be wrapped in a div with the magic CSS classes.
     /// </summary>
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 
-    [Inject]
-    protected IMagicThemeJsService? ThemeJs { get; set; }
-
-    // [Inject] protected MagicThemeJsServiceTest? ThemeJsTest { get; set; }
-
-    private bool PutInBody => AllSettings.ThemeSettings.MagicContextInBody == true;
-
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-        if (PutInBody && ThemeJs != null)
-            await ThemeJs.SetBodyClasses(AllSettings.MagicContext);
-
-        // await ThemeJsTest!.Log("test from test");
-        // var x = await ThemeJsTest!.TestFromTest();
+        await PageContextSvc.SetBodyClasses(PageState, Settings);
     }
-
 }
-@* Stop here if Settings are not ready *@
-@if (AllSettings == null) 
-{
-    <text>Loading settings...</text>
-    return;
+@{
+    var state = PageContextSvc.State(PageState, Settings);
 }
 <CascadingValue Value="AllSettings">
     @* If PutInBody a JS will place the classes in the Body tag *@
-    @if (PutInBody)
+    @if (state.UseBodyTag)
     {
         @ChildContent
     }
     else
     {
-        <div id="@AllSettings.ThemeDesignSettings.MagicContextTagId" class="@AllSettings.MagicContext">
+        <div id="@state.TagId" class="@state.Classes">
             @ChildContent
         </div>
     }

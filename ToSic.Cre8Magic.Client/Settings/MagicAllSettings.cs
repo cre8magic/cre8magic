@@ -30,7 +30,6 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     {
         PageState = priority?.PageState ?? fallback?.PageState ?? throw new("PageState is required");
         Tokens = priority?.Tokens ?? fallback?.Tokens ?? throw new("Tokens are required");
-        MagicContext = priority?.MagicContext ?? fallback?.MagicContext ?? "";
         Name = priority?.Name ?? fallback?.Name ?? "unknown";
         ThemeDesigner = priority?.ThemeDesigner ?? fallback?.ThemeDesigner ?? throw new("ThemeDesigner is required");
 
@@ -57,8 +56,6 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
     internal PageState PageState { get; }
 
     internal TokenEngine Tokens { get; }
-
-    public string MagicContext { get; set; } = "";
 
     public string Name { get; }
 

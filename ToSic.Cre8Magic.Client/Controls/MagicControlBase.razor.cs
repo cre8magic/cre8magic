@@ -13,9 +13,6 @@ public abstract class MagicControlBase: ThemeControlBase
     [Inject]
     public IMagicFactoryWip MagicFactory { get; set; }
 
-    [Inject]
-    public IMagicSettingsService MagicSettings { get; set; }
-
     [CascadingParameter]
     public MagicAllSettings AllSettings { get; set; }
 
