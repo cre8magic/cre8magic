@@ -151,7 +151,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private NamedSettingsReader<MagicLanguageSettings>? _languages;
 
     public MagicLanguageSettings LanguagesSettings(MagicThemeSettings settings, string settingsName) =>
-        ((IMagicSettingsService)this).Languages.Find(settings.Parts.GetThemePartRenameOrFallback("Languages", settingsName), settingsName);
+        ((IMagicSettingsService)this).Languages.Find(settings.Parts.GetPartRenameOrFallback("Languages", settingsName), settingsName);
 
     internal NamedSettingsReader<MagicContainerSettings> Containers =>
         _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
@@ -162,7 +162,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     private NamedSettingsReader<MagicThemeDesignSettings>? _themeDesign;
 
     public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
-        ((IMagicSettingsService)this).ThemeDesign.Find(settings.Design ?? settings.Parts.GetThemePartRenameOrFallback(nameof(settings.Design), settingsName), settingsName);
+        ((IMagicSettingsService)this).ThemeDesign.Find(settings.Design ?? settings.Parts.GetPartRenameOrFallback(nameof(settings.Design), settingsName), settingsName);
 
     NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);

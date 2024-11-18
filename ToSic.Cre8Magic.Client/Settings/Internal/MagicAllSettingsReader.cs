@@ -13,9 +13,9 @@ internal class MagicAllSettingsReader(MagicThemeContext themeContext)
 
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
-        var menuConfig = themeContext.ThemeSettings.Parts.GetThemePartRenameOrNull(configName);
+        var menuConfig = themeContext.ThemeSettings.Parts.GetPartRenameOrNull(configName);
         if (menuConfig == null && !string.IsNullOrEmpty(prefixToCheck) && !configName.StartsWith(prefixToCheck))
-            menuConfig = themeContext.ThemeSettings.Parts.GetThemePartRenameOrNull($"{prefixToCheck}{configName}");
+            menuConfig = themeContext.ThemeSettings.Parts.GetPartRenameOrNull($"{prefixToCheck}{configName}");
 
         if (menuConfig.HasValue())
         {

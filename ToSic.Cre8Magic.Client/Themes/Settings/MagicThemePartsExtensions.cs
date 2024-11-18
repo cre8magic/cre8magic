@@ -9,7 +9,7 @@ internal static class MagicThemePartsExtensions
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
-    public static string? GetThemePartRenameOrNull(this NamedSettings<MagicThemePartSettings> dic, string name) =>
+    public static string? GetPartRenameOrNull(this NamedSettings<MagicThemePartSettings> dic, string name) =>
         dic.TryGetValue(name, out var value)
             ? value.Configuration
             : null;
@@ -22,8 +22,8 @@ internal static class MagicThemePartsExtensions
             ? value.Design
             : null;
 
-    public static string GetThemePartRenameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>
-        dic.GetThemePartRenameOrNull(name) ?? fallback;
+    public static string GetPartRenameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>
+        dic.GetPartRenameOrNull(name) ?? fallback;
 
     public static bool Show(this MagicThemeSettings themeSettings, string name) =>
         themeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;

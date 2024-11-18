@@ -78,7 +78,7 @@ public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanC
         ThemeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;
 
     public MagicAnalyticsSettings Analytics =>
-        _a ??= Service.Analytics.Find(ThemeSettings.Parts.GetThemePartRenameOrFallback(nameof(Analytics), Name), Name);
+        _a ??= Service.Analytics.Find(ThemeSettings.Parts.GetPartRenameOrFallback(nameof(Analytics), Name), Name);
     private MagicAnalyticsSettings? _a;
 
     public MagicThemeDesignSettings ThemeDesignSettings =>
