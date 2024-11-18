@@ -14,13 +14,10 @@ internal class MagicThemeService(IMagicSettingsService settingsSvc, ScopedDictio
         if (cacheSvc.TryGetValue(cacheId, out var value))
             return value;
 
-        buildCount++;
         var themeContext = settingsSvc.GetThemeContext(pageState);
         var designer = new MagicThemeDesigner(themeContext);
         var result = new MagicThemeState(themeContext, designer);
         cacheSvc[cacheId] = result;
         return result;
     }
-
-    private static int buildCount;
 }

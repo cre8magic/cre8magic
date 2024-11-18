@@ -10,9 +10,6 @@ namespace ToSic.Cre8magic.Client.Controls;
 /// </summary>
 public abstract class MagicControlBase: ThemeControlBase
 {
-    [Inject]
-    public IMagicFactoryWip MagicFactory { get; set; }
-
     [CascadingParameter]
     public MagicAllSettings AllSettings { get; set; }
 
@@ -21,8 +18,4 @@ public abstract class MagicControlBase: ThemeControlBase
     protected bool UserIsEditor => PageState.UserIsEditor();
 
     protected bool UserIsLoggedIn => PageState.UserIsRegistered();
-
-    protected virtual IMagicDesigner Designer => _designer ??= MagicFactory.ThemeDesigner(PageState);
-    private IMagicDesigner? _designer;
-
 }

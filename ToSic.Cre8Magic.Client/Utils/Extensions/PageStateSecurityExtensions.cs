@@ -8,10 +8,10 @@ namespace ToSic.Cre8magic.Utils;
 public static class PageStateSecurityExtensions
 {
     internal static bool UserIsEditor(this PageState pageState)
-        => pageState.User != null && UserSecurity.IsAuthorized(pageState.User, PermissionNames.Edit, pageState.Page.Permissions);
+        => pageState.User != null && UserSecurity.IsAuthorized(pageState.User, PermissionNames.Edit, pageState.Page.PermissionList);
 
     internal static bool UserIsAdmin(this PageState pageState)
-        => pageState.User != null && UserSecurity.IsAuthorized(pageState.User, PermissionNames.Edit, pageState.Page.Permissions);
+        => pageState.User != null && UserSecurity.IsAuthorized(pageState.User, PermissionNames.Edit, pageState.Page.PermissionList);
 
     internal static bool UserIsRegistered(this PageState pageState)
         => pageState.User != null && UserSecurity.IsAuthorized(pageState.User, RoleNames.Registered);
