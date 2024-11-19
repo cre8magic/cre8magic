@@ -1,7 +1,11 @@
-XCOPY "..\ToSic.Cre8magic.Seo.Client\bin\Debug\net8.0\ToSic.Cre8magic.Seo.Client.Oqtane.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net8.0\" /Y
-XCOPY "..\ToSic.Cre8magic.Seo.Client\bin\Debug\net8.0\ToSic.Cre8magic.Seo.Client.Oqtane.pdb" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net8.0\" /Y
-XCOPY "..\ToSic.Cre8magic.Seo.Server\bin\Debug\net8.0\ToSic.Cre8magic.Seo.Server.Oqtane.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net8.0\" /Y
-XCOPY "..\ToSic.Cre8magic.Seo.Server\bin\Debug\net8.0\ToSic.Cre8magic.Seo.Server.Oqtane.pdb" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net8.0\" /Y
-XCOPY "..\ToSic.Cre8magic.Seo.Shared\bin\Debug\net8.0\ToSic.Cre8magic.Seo.Shared.Oqtane.dll" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net8.0\" /Y
-XCOPY "..\ToSic.Cre8magic.Seo.Shared\bin\Debug\net8.0\ToSic.Cre8magic.Seo.Shared.Oqtane.pdb" "..\..\oqtane.framework\Oqtane.Server\bin\Debug\net8.0\" /Y
-XCOPY "..\ToSic.Cre8magic.Seo.Server\wwwroot\*" "..\..\oqtane.framework\Oqtane.Server\wwwroot\" /Y /S /I
+set CodeBinPrefix=bin\Debug\net8.0\ToSic.Cre8magic.Seo
+set OqtanePath=..\..\oqtane.framework\Oqtane.Server
+set CodeBinTarget=%OqtanePath%\bin\Debug\net9.0\
+
+XCOPY "..\ToSic.Cre8magic.Seo.Client\%CodeBinPrefix%.Client.Oqtane.dll" "%CodeBinTarget%" /Y
+XCOPY "..\ToSic.Cre8magic.Seo.Client\%CodeBinPrefix%.Client.Oqtane.pdb" "%CodeBinTarget%" /Y
+XCOPY "..\ToSic.Cre8magic.Seo.Server\%CodeBinPrefix%.Server.Oqtane.dll" "%CodeBinTarget%" /Y
+XCOPY "..\ToSic.Cre8magic.Seo.Server\%CodeBinPrefix%.Server.Oqtane.pdb" "%CodeBinTarget%" /Y
+XCOPY "..\ToSic.Cre8magic.Seo.Shared\%CodeBinPrefix%.Shared.Oqtane.dll" "%CodeBinTarget%" /Y
+XCOPY "..\ToSic.Cre8magic.Seo.Shared\%CodeBinPrefix%.Shared.Oqtane.pdb" "%CodeBinTarget%" /Y
+XCOPY "..\ToSic.Cre8magic.Seo.Server\wwwroot\*" "%OqtanePath%\wwwroot\" /Y /S /I
