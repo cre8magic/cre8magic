@@ -25,7 +25,8 @@ public interface IMagicSettingsService: IHasSystemMessages
 
     internal MagicThemeContext GetThemeContext(PageState pageState);
 
-    internal MagicSettingsCatalog Catalog { get; }
+    // #WipRemovingPreMergedCatalog
+    //internal MagicSettingsCatalog Catalog { get; }
 
     internal MagicDebugSettings Debug { get; }
 

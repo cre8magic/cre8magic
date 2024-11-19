@@ -32,7 +32,7 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
 
     public MagicDebugState DebugState(PageState pageState) => ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
-    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= Catalog.Debug ?? MagicDebugSettings.Defaults.Fallback;
+    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= AllCatalogs.FirstOrDefault(c => c.Debug != null)?.Debug ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
 
     private MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
@@ -79,11 +79,12 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
 
     private readonly Dictionary<string, MagicThemeContext> _themeCache = new(StringComparer.InvariantCultureIgnoreCase);
 
-    /// <summary>
-    /// Actually internal, on the interface to avoid exposing it to the outside
-    /// </summary>
-    public MagicSettingsCatalog Catalog => _catalog ??= loader.MergeCatalogs(PackageSettings);
-    private MagicSettingsCatalog? _catalog;
+    // #WipRemovingPreMergedCatalog
+    ///// <summary>
+    ///// Actually internal, on the interface to avoid exposing it to the outside
+    ///// </summary>
+    //public MagicSettingsCatalog Catalog => _catalog ??= loader.MergeCatalogs(PackageSettings);
+    //private MagicSettingsCatalog? _catalog;
 
     /// <summary>
     /// actually internal
