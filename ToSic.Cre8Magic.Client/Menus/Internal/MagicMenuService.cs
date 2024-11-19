@@ -60,27 +60,27 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
     {
         var themeCtx = settingsSvc.GetThemeContext(pageState);
 
-        var reader = new ThemePartNameResolver(themeCtx);
+        var nameResolver = new ThemePartNameResolver(themeCtx);
 
-        var (configName, journal) = reader.GetMostRelevantSettingsName(settings?.ConfigName, MenuSettingPrefix);
+        var (settingsName, journal) = nameResolver.GetMostRelevantSettingsName(settings?.ConfigName, MenuSettingPrefix);
         var messages = new List<string>(journal);
 
 
         // If the user didn't specify a config name in the Parameters or the config name
         // isn't contained in the json file the normal parameter are given to the service
-        var menuSettings = settingsSvc.MenuSettings.Find(configName);
+        var menuSettings = settingsSvc.MenuSettings.Find(settingsName);
         var mergedSettings = menuSettings.CloneWith(settings);
 
         // See if we have a default configuration for CSS which should be applied
-        var menuDesign = themeCtx.ThemeSettings.Parts.GetThemeDesignRenameOrNull(configName);
-        if (menuDesign == null && !configName.StartsWith(MenuSettingPrefix))
-            menuDesign = themeCtx.ThemeSettings.Parts.GetThemeDesignRenameOrNull($"{MenuSettingPrefix}{configName}");
+        var menuDesign = themeCtx.ThemeSettings.Parts.GetThemeDesignRenameOrNull(settingsName);
+        if (menuDesign == null && !settingsName.StartsWith(MenuSettingPrefix))
+            menuDesign = themeCtx.ThemeSettings.Parts.GetThemeDesignRenameOrNull($"{MenuSettingPrefix}{settingsName}");
 
         var designName = menuDesign;
         messages.Add($"Design name in config: '{designName}'");
         if (string.IsNullOrWhiteSpace(designName))
         {
-            designName = configName;
+            designName = settingsName;
             messages.Add($"Design set to '{designName}'");
         }
 

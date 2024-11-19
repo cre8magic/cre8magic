@@ -17,7 +17,8 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// <param name="themeSettingsParts"></param>
 internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePartSettings> themeSettingsParts)
 {
-    internal ThemePartNameResolver(MagicThemeContext themeCtx): this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
+    internal ThemePartNameResolver(MagicThemeContext themeCtx)
+        : this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
     { }
 
     public (string BestName, List<string> Messages) GetMostRelevantSettingsName(string? possibleName, string? prefixToCheck)
@@ -27,6 +28,11 @@ internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePa
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
         var betterName = themeSettingsParts.GetPartRenameOrNull(initialName);
+
+        // If the better name wants to use the main config name ("=") then use that and exit
+        if (betterName == MagicConstants.InheritName)
+            return(mainName, journal.Concat([$"switched to inherit '{mainName}'"]).ToList());
+
         if (betterName == null && !string.IsNullOrEmpty(prefixToCheck) && !initialName.StartsWith(prefixToCheck))
             betterName = themeSettingsParts.GetPartRenameOrNull($"{prefixToCheck}{initialName}");
 

@@ -35,7 +35,20 @@ public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
         Configuration = name;
     }
 
+    /// <summary>
+    /// Determines if this part should be shown or not.
+    ///
+    /// This allows you to configure to show / not show certain bits like breadcrumbs in certain scenarios.
+    /// </summary>
     public bool? Show { get; init; }
+
+    /// <summary>
+    /// Name of the design settings to look up.
+    /// </summary>
     public string? Design { get; init; }
+
+    /// <summary>
+    /// Name of the settings to look up.
+    /// </summary>
     public string? Configuration { get; init; }
 }
