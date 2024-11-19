@@ -56,7 +56,11 @@ public class Startup : Oqtane.Services.IClientStartup
         // WIP v0.02.00
         services.TryAddTransient<IMagicPageService, MagicPageService>();
         services.TryAddTransient<IMagicFactoryWip, MagicFactoryWip>();
-        services.TryAddScoped<IMagicSettingsProviders, MagicSettingsProviders>();
+
+        // Main Settings Provider, scoped, to be used on two following interfaces
+        services.TryAddScoped<MagicSettingsProviders>();
+        services.TryAddTransient<IMagicSettingsProviders>(s => s.GetService<MagicSettingsProviders>());
+        services.AddTransient<IMagicSettingsSource>(s => s.GetService<MagicSettingsProviders>());
 
         services.TryAddScoped(typeof(ScopedDictionaryCache<>));
 

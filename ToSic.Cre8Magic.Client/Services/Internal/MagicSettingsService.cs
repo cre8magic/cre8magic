@@ -85,10 +85,18 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     public MagicSettingsCatalog Catalog => _catalog ??= loader.MergeCatalogs(PackageSettings);
     private MagicSettingsCatalog? _catalog;
 
-    
+    /// <summary>
+    /// actually internal
+    /// </summary>
+    public List<MagicSettingsCatalog> AllCatalogs => loader.Catalogs(PackageSettings, cache: false);
 
     NamedSettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
-        _analytics ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
+        _analytics ??= new(
+            this,
+            MagicAnalyticsSettings.Defaults,
+            cat => cat.Analytics,
+            useAllSources: true
+        );
     private NamedSettingsReader<MagicAnalyticsSettings>? _analytics;
 
     private NamedSettingsReader<MagicThemeSettings> ThemeSettings =>
@@ -113,6 +121,8 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
                 return settings;
             });
     private NamedSettingsReader<MagicThemeSettings>? _getTheme;
+
+    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) => ((IMagicSettingsService)this).Analytics.Find(settingsName, null);
 
     NamedSettingsReader<MagicMenuSettings> IMagicSettingsService.MenuSettings =>
         _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, cat => cat.Menus);

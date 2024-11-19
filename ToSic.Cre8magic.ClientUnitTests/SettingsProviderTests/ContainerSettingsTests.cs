@@ -1,20 +1,22 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Sources;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsProviderTests;
 
 public class ContainerSettingsTests
 {
     /// <summary>
-    /// Prepare a settings service and add a defaut value. 
+    /// Prepare a settings service and add a default value. 
     /// </summary>
     /// <returns></returns>
     private static (IMagicSettingsProviders SettingsSvc, MagicContainerSettings DefaultSettings) PrepareSettings()
     {
-        var settingsSvc = SetupServices.PrepareServices().GetRequiredService<IMagicSettingsProviders>();
+        var settingsSvc = SetupServices.Start().PrepareServices().Finish().GetRequiredService<IMagicSettingsProviders>();
         var original = new MagicContainerSettings();
-        settingsSvc.ContainerSettings.Provide(original);
+        settingsSvc.Containers.Provide(original);
         return (settingsSvc, original);
     }
 
@@ -26,7 +28,7 @@ public class ContainerSettingsTests
     public void ValueOnlyNotNamed(string? name)
     {
         var (settingsSvc, original) = PrepareSettings();
-        var retrieved = settingsSvc.ContainerSettings.Find(new MagicSettingsContext { Name = name });
+        var retrieved = settingsSvc.Containers.Find(new MagicSettingsContext { Name = name });
         Assert.Equal(original, retrieved);
     }
 
@@ -41,9 +43,9 @@ public class ContainerSettingsTests
         var addName = prefixInData + (string.IsNullOrEmpty(prefixInData) ? "" : "-") + addDicName;
         var (settingsSvc, defaultSettings) = PrepareSettings();
         var namedSettings = new MagicContainerSettings();
-        settingsSvc.ContainerSettings.Provide(addName, namedSettings);
+        settingsSvc.Containers.Provide(addName, namedSettings);
 
-        var retrieved = settingsSvc.ContainerSettings.Find(new MagicSettingsContext { Name = searchName, Prefix = ContainerPrefix });
+        var retrieved = settingsSvc.Containers.Find(new MagicSettingsContext { Name = searchName, Prefix = ContainerPrefix });
         Assert.Equal(shouldBeEqual, namedSettings == retrieved);
         Assert.Equal(!shouldBeEqual, defaultSettings == retrieved);
     }
@@ -66,5 +68,18 @@ public class ContainerSettingsTests
     [InlineData("admin", "default", false)]
     public void FromDictionaryFallbackDefault(string dicName, string searchName, bool shouldBeEqual = true) =>
         FromDictionaryTests(null, shouldBeEqual, dicName, searchName);
+
+    [Fact]
+    public void BothInterfacesOnServiceProviderGiveSameObject()
+    {
+        var serviceProvider = SetupServices.Start().PrepareServices().AddStandardLogging().Finish();
+        var original = serviceProvider.GetRequiredService<MagicSettingsProviders>();
+        var settingsProvider = serviceProvider.GetRequiredService<IMagicSettingsProviders>();
+
+        Assert.Equal(original, settingsProvider);
+
+        var allSettingsProviders = serviceProvider.GetRequiredService<IEnumerable<IMagicSettingsSource>>();
+        Assert.Contains(original, allSettingsProviders);
+    }
 
 }

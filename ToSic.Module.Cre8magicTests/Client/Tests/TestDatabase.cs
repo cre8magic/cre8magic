@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ToSic.Module.Cre8MagicTests.Client.Analytics;
 using ToSic.Module.Cre8MagicTests.Client.Menus.Tests;
 using ToSic.Module.Cre8MagicTests.Client.RandomTests;
 using ToSic.Module.Cre8MagicTests.Client.Tests.Breadcrumb;
@@ -31,6 +32,9 @@ internal class TestDatabase
         // Menu Service
         new("menu-basic", "Menus Basic", typeof(MenuControlsBasic)),
         new("menu-functions", "Menus Functions", typeof(MenuControlsFunctions)),
+
+        // Analytics
+        new("analytics-inject-settings", "Analytics - inject settings", typeof(TestSettingsProvidersAnalytics)),
 
         // Special Tests
         new("sys-random-number-by-page", "Random Number by Page", typeof(TestGetKeep)),

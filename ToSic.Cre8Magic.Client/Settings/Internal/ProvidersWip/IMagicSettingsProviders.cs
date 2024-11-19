@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Breadcrumb;
+﻿using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Breadcrumb;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Settings.Internal;
 
@@ -12,7 +13,8 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public interface IMagicSettingsProviders
 {
-    MagicSettingsProvider<MagicContainerSettings> ContainerSettings { get; }
+    MagicSettingsProvider<MagicContainerSettings> Containers { get; }
 
-    MagicSettingsProvider<MagicBreadcrumbSettings> BreadcrumbSettings { get; }
+    MagicSettingsProvider<MagicBreadcrumbSettings> Breadcrumbs { get; }
+    MagicSettingsProvider<MagicAnalyticsSettings> Analytics { get; }
 }

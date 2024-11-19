@@ -1,5 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Breadcrumb;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Debug;
@@ -22,6 +23,7 @@ public record MagicSettingsCatalog: IHasDebugSettings
         Source = priority?.Source ?? fallback?.Source ?? Fallback.Source;
 
         Analytics = new(priority?.Analytics, fallback?.Analytics);
+        Breadcrumbs = new(priority?.Breadcrumbs, fallback?.Breadcrumbs);
         Themes = new(priority?.Themes, fallback?.Themes);
         ThemeDesigns = new(priority?.ThemeDesigns, fallback?.ThemeDesigns);
         Containers = new(priority?.Containers, fallback?.Containers);
@@ -49,6 +51,8 @@ public record MagicSettingsCatalog: IHasDebugSettings
     public string Source { get; set; } = SourceDefault;
 
     public NamedSettings<MagicAnalyticsSettings> Analytics { get; init; } = new();
+
+    public NamedSettings<MagicBreadcrumbSettings> Breadcrumbs { get; init; } = new();
 
     public NamedSettings<MagicThemeSettings> Themes { get; init; } = new();
 

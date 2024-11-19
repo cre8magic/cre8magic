@@ -12,7 +12,7 @@ public class MagicSettingsLoader(IEnumerable<IMagicSettingsSource> sources)
 {
     internal MagicSettingsCatalog MergeCatalogs(MagicPackageSettings packageSettings)
     {
-        var sources = (_catalogs ??= Load(packageSettings));
+        var sources = Catalogs(packageSettings);
 
         if (sources.Count == 0)
             return new();
@@ -24,6 +24,9 @@ public class MagicSettingsLoader(IEnumerable<IMagicSettingsSource> sources)
 
         return prioCat;
     }
+
+    public List<MagicSettingsCatalog> Catalogs(MagicPackageSettings packageSettings, bool cache = true) => 
+        cache ? _catalogs ??= Load(packageSettings) : Load(packageSettings);
     private List<MagicSettingsCatalog>? _catalogs;
 
     private List<MagicSettingsCatalog> Load(MagicPackageSettings packageSettings)

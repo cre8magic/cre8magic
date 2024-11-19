@@ -11,6 +11,8 @@ internal class NamedSettingsReader<TPart>(
     IMagicSettingsService settingsSvc,
     Defaults<TPart> defaults,
     Func<MagicSettingsCatalog, NamedSettings<TPart>> findList,
+    //Func<List<NamedSettings<TPart>>>? findAllSources = default,
+    bool useAllSources = false,
     Func<string, TPart, TPart>? modify = default)
     where TPart : class, ICanClone<TPart>, new()
 {
@@ -28,12 +30,12 @@ internal class NamedSettingsReader<TPart>(
             return defaults.Fallback;
 
         // Check if our part declares that it inherits something
-        if (priority is SettingsWithInherit needsMore && needsMore.Inherits.HasText())
+        if (priority is SettingsWithInherit couldInherit && couldInherit.Inherits.HasText())
         {
             // Remember inherits-from setting, and then remove from the part
-            var inheritFrom = needsMore.Inherits;
-            needsMore = needsMore with { Inherits = null };
-            priority = needsMore as TPart ?? priority;
+            var inheritFrom = couldInherit.Inherits;
+            couldInherit = couldInherit with { Inherits = null };
+            priority = couldInherit as TPart ?? priority;
 
             priority = FindPartAndMergeIfPossible(priority, realName, inheritFrom);
         }
@@ -84,14 +86,18 @@ internal class NamedSettingsReader<TPart>(
         // Make sure we have at least one name
         if (names == null || names.Length == 0) names = [Default];
 
+        var catalogs = useAllSources
+            ? settingsSvc.AllCatalogs
+            : [settingsSvc.Catalog];
+
         var allSourcesAndNames = names
             .Distinct()
-            .Select(name => (Settings: settingsSvc.Catalog, Name: name))
+            .SelectMany(name => catalogs.Select(catalog => (catalog, name)))
             .ToList();
 
         foreach (var set in allSourcesAndNames)
         {
-            var result = findList(set.Settings).GetInvariant(set.Name);
+            var result = findList(set.catalog).GetInvariant(set.name);
             if (result != null) return result;
         }
 

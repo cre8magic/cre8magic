@@ -16,7 +16,9 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     public MagicContainerSettings CloneWith(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
-
+    /// <summary>
+    /// TODO: PROBABLY CHANGE TO DATA / whatever ?
+    /// </summary>
     public NamedSettings<MagicDesignSettings> Custom { get; init; } = new();
 
     private static readonly MagicContainerSettings FbAndF = new()

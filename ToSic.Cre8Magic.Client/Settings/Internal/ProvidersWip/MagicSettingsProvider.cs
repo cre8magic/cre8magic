@@ -1,46 +1,24 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal;
+﻿using ToSic.Cre8magic.Settings.Internal.ProvidersWip;
 
-public class MagicSettingsProvider<T>(IMagicSettingsProviders parent) : IMagicSettingsProvider<T> where T : class
+namespace ToSic.Cre8magic.Settings.Internal;
+
+public class MagicSettingsProvider<T>(IMagicSettingsProviders parent) : IMagicSettingsProviderWithMoreWip<T, IMagicSettingsProviders> where T : class
 {
+    internal bool HasValues { get; private set; }
     private T? Value { get; set; }
 
-    private IDictionary<string, T>? Values { get; set; }
+    internal IDictionary<string, T>? Values { get; set; }
 
     private Func<IMagicSettingsContext, T?>? _getter;
 
 
-    public T? Find(IMagicSettingsContext context)
-    {
-        // First try if we have a custom getter - as it has the highest priority
-        if (_getter != null)
-            return _getter(context) ?? (context.FallbackToDefault
-                    ? Value
-                    : null
-                );
+    public T? Find(IMagicSettingsContext context) => ProviderFindWip.StaticFind(context, _getter, Value, Values);
 
-        // If we have a Dictionary, try that
-        if (Values != null)
-        {
-            var hasPrefix = !string.IsNullOrEmpty(context.Prefix);
-            var hasName = !string.IsNullOrEmpty(context.Name);
-            List<string?> keys =
-            [
-                hasPrefix ? context.Prefix + "-" + context.Name : null,
-                hasName ? context.Name : null,
-                hasPrefix ? context.Prefix + "-" + "default" : null,
-                context.FallbackToDefault ? "default" : null,
-            ];
-            foreach (var key in keys)
-                if (!string.IsNullOrEmpty(key) && Values.TryGetValue(key, out var namedValue))
-                    return namedValue;
-        }
-
-        return context.FallbackToDefault ? Value : null;
-    }
 
     public IMagicSettingsProviders Provide(T value)
     {
         Value = value;
+        HasValues = true;
         return parent;
     }
 
@@ -48,18 +26,21 @@ public class MagicSettingsProvider<T>(IMagicSettingsProviders parent) : IMagicSe
     {
         Values ??= new Dictionary<string, T>(StringComparer.InvariantCultureIgnoreCase);
         Values[key] = value;
+        HasValues = true;
         return parent;
     }
 
     public IMagicSettingsProviders Provide(IDictionary<string, T> dictionary)
     {
         Values = new Dictionary<string, T>(dictionary, StringComparer.InvariantCultureIgnoreCase);
+        HasValues = true;
         return parent;
     }
 
     public IMagicSettingsProviders Provide(Func<IMagicSettingsContext, T> getter)
     {
         _getter = getter;
+        HasValues = true;
         return parent;
     }
 }

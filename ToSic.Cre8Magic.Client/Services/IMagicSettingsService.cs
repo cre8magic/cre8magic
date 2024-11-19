@@ -36,6 +36,7 @@ public interface IMagicSettingsService: IHasSystemMessages
     internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; }
 
     internal NamedSettingsReader<MagicMenuSettings> MenuSettings { get; }
+    internal List<MagicSettingsCatalog> AllCatalogs { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);
 
@@ -48,4 +49,5 @@ public interface IMagicSettingsService: IHasSystemMessages
     ///// <returns></returns>
     //internal (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback);
     MagicDebugState DebugState(PageState pageState);
+    MagicAnalyticsSettings AnalyticsSettings(string settingsName);
 }
