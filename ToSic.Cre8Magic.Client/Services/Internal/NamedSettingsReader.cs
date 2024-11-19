@@ -105,7 +105,7 @@ internal class NamedSettingsReader<TPart>(
         // Make sure we have at least one name
         if (names == null || names.Length == 0) names = [Default];
 
-        var catalogs = useAllSources
+        var catalogs = useAllSources || true
             ? settingsSvc.AllCatalogs
             : [settingsSvc.Catalog];
 

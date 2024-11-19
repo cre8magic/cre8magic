@@ -46,7 +46,6 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         var context = new ContextWip<MagicMenuSettings, IMagicPageDesigner>(
             newSettings,
             newSettings.Designer,
-            pageState,
             pageFactory,
             pageTokens,
             logRoot: logRoot

@@ -12,7 +12,6 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
         var context = new ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner>(
             settings,
             settings.Designer,
-            pageFactory.PageState,
             pageFactory,
             null  // TODO: SHOULD provide AllSettings or whatever will replace it, so we can get the Page tokens
         );

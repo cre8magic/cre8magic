@@ -66,7 +66,6 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
         // Figure out real config-name, and get the initial layout
         var (settingsName, nameJournal) = ThemePartNameResolver.GetBestSettingsName(_layoutName, Default);
         var themeSettings = ThemeSettings.FindAndNeutralize(settingsName);
-        //var theme = ThemeSettings.Find(settingsName).Parse(tokens);
         var theme = themeSettings with
         {
             Logo = tokens.Parse(themeSettings.Logo)
