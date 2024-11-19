@@ -1,6 +1,5 @@
 ﻿using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal.Sources;
-using ToSic.Cre8magic.Settings.Json;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
@@ -10,8 +9,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// It requires that there are <see cref="MagicPackageSettings"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-public class MagicSettingsLoader(MagicSettingsJsonService jsonService, IEnumerable<IMagicSettingsSource> sources)
-    : IHasSystemMessages
+public class MagicSettingsLoader(IEnumerable<IMagicSettingsSource> sources)
 {
     public MagicSettingsLoader Setup(MagicPackageSettings packageSettings)
     {
@@ -56,16 +54,15 @@ public class MagicSettingsLoader(MagicSettingsJsonService jsonService, IEnumerab
             .OrderByDescending(s => s.Priority)
             .Select(s => s.Get(PackageSettings))
             .Where(c => c?.Catalog != null)
-            //.Select(c => c!.Catalog!)
             .ToList();
 
-        MyExceptions = sources2.SelectMany(c => c!.Exceptions ?? []).ToList();
+        // Merge & keep all exceptions
+        Exceptions = sources2.SelectMany(c => c!.Exceptions ?? []).ToList();
 
         return sources2.Select(c => c!.Catalog!).ToList();
 
     }
 
-    public List<Exception> Exceptions => MyExceptions.Concat(jsonService.Exceptions).ToList();
-    private List<Exception> MyExceptions { get; set; } = [];
+    internal List<Exception> Exceptions { get; set; } = [];
 
 }

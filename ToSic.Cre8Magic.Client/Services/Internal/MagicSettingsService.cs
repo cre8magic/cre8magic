@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
@@ -63,7 +62,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     public MagicAllSettings GetSettings(PageState pageState)
     {
         // Check if already in cache; vary by layout name and active page
-        var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
+        var originalNameForCache = (_layoutName?.ToLowerInvariant() ?? "prevent-error") + pageState.Page.PageId;
         if (_currentSettingsCache.TryGetValue(originalNameForCache, out var cached2))
             return cached2;
 
@@ -79,7 +78,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         _currentSettingsCache[originalNameForCache] = current;
         return current;
     }
-    private readonly NamedSettings<MagicAllSettings> _currentSettingsCache = new();
+    private readonly Dictionary<string, MagicAllSettings> _currentSettingsCache = new();
 
     public MagicThemeContext GetThemeContext(PageState pageState)
     {
@@ -108,6 +107,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     MagicSettingsCatalog IMagicSettingsService.Catalog => _catalog ??= loader.MergeCatalogs();
     private MagicSettingsCatalog? _catalog;
 
+    
 
     NamedSettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);

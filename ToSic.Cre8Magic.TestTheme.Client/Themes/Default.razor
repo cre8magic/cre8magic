@@ -38,13 +38,13 @@ Nice to know:
     <main id="@Designer.Id("sectionMain")" class="@Designer.Classes("sectionMain")">
 
         @* Show Breadcrumb if desired *@
-        @if (AllSettings.Show("breadcrumbs"))
+        @if (AllSettings.ShowPart("breadcrumbs"))
         {
             <Breadcrumbs></Breadcrumbs>
         }
 
         @* If we show the Sidebar, then it must be side-by-side with the Content *@
-        @if (AllSettings.Show("menuSidebar"))
+        @if (AllSettings.ShowPart("menuSidebar"))
         {
             <div class="container">
                 <div class="row">

@@ -1,7 +1,9 @@
-﻿using ToSic.Cre8magic.Analytics;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Debug;
+using ToSic.Cre8magic.Settings.Internal.Logging;
 
 namespace ToSic.Cre8magic.Settings;
 
@@ -26,6 +28,8 @@ public record MagicSettingsCatalog: IHasDebugSettings
         Languages = new(priority?.Languages, fallback?.Languages);
         Menus = new(priority?.Menus, fallback?.Menus);
         MenuDesigns = new(priority?.MenuDesigns, fallback?.MenuDesigns);
+
+        Logs = new(priority?.Logs.Exceptions ?? fallback?.Logs.Exceptions);
     }
 
     public const string SourceDefault = "Unknown";
@@ -63,6 +67,9 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// Design definitions of the menu
     /// </summary>
     public NamedSettings<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; init; } = new();
+
+    [JsonIgnore]
+    internal SettingsLogs Logs { get; init; } = new(null);
 
     internal static MagicSettingsCatalog Fallback = new()
     {

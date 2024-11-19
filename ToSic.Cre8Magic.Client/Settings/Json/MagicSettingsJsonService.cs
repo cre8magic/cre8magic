@@ -5,7 +5,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Json;
 
-public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger) : IHasSystemMessages
+public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger)
 {
     public ILogger<MagicSettingsJsonService> Logger { get; } = logger;
 
@@ -23,23 +23,24 @@ public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger) 
 
             // Ensure we have version set, ATM exactly 0.01
             if (Math.Abs(result.Version - 0.01) > 0.001)
-                AddException(themeConfig,
-                    new ArgumentException($"Json {nameof(result.Version)} must be set to 0.01", nameof(result.Version)));
+                AddException(themeConfig, new ArgumentException($"Json {nameof(result.Version)} must be set to 0.01", nameof(result.Version)));
 
-            if (!result.Source.HasValue() || result.Source == MagicSettingsCatalog.SourceDefault) 
-                result.Source = "JSON";
+            if (!result.Source.HasValue() || result.Source == MagicSettingsCatalog.SourceDefault)
+                return result with { Source = "JSON", Logs = new(Exceptions) };
 
-            return result;
+            return result with { Logs = new(Exceptions) };
         }
         catch (Exception ex)
         {
             AddException(themeConfig, ex);
-            return new();
+            return new()
+            {
+                Logs = new(Exceptions)
+            };
         }
     }
 
-    public List<Exception> Exceptions => _exceptions ??= [];
-    private List<Exception>? _exceptions;
+    public List<Exception> Exceptions { get; } = new();
 
     private void AddException(MagicPackageSettings themeConfig, Exception ex)
     {
