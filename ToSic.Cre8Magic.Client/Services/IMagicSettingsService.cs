@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Oqtane.UI;
+﻿using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Services.Internal;
@@ -20,11 +19,8 @@ public interface IMagicSettingsService: IHasSystemMessages
     /// </summary>
     /// <param name="packageSettings"></param>
     /// <param name="layoutName"></param>
-    /// <param name="bodyClasses"></param>
     /// <returns></returns>
     IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName);
-
-    MagicAllSettings GetSettings(PageState pageState);
 
     internal MagicThemeContext GetThemeContext(PageState pageState);
 

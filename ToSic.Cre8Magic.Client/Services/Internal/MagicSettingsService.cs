@@ -23,7 +23,6 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     {
         _packageSettings = packageSettings;
         _themeTokens = null;
-        _currentSettingsCache.Clear();
         _layoutName = layoutName;
         return this;
     }
@@ -53,26 +52,6 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     }
     private ThemeTokens? _themeTokens;
 
-    public MagicAllSettings GetSettings(PageState pageState)
-    {
-        // Check if already in cache; vary by layout name and active page
-        var originalNameForCache = (_layoutName?.ToLowerInvariant() ?? "prevent-error") + pageState.Page.PageId;
-        if (_currentSettingsCache.TryGetValue(originalNameForCache, out var cached2))
-            return cached2;
-
-        var themeCtx = GetThemeContext(pageState);
-
-        // Get the magic context (probably the classes we'll add) using the tokens
-        var themeDesigner = new MagicThemeDesigner(themeCtx);
-
-        var current = new MagicAllSettings(themeCtx.SettingsName, this, themeCtx.ThemeSettings, themeDesigner,
-            themeCtx.PageTokens, pageState);
-
-        // Cache and return
-        _currentSettingsCache[originalNameForCache] = current;
-        return current;
-    }
-    private readonly Dictionary<string, MagicAllSettings> _currentSettingsCache = new();
 
     public MagicThemeContext GetThemeContext(PageState pageState)
     {
