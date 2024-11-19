@@ -1,4 +1,4 @@
-set CodeBinPrefix=bin\Debug\net8.0\ToSic.Cre8magic.Seo
+set CodeBinPrefix=bin\Debug\net9.0\ToSic.Cre8magic.Seo
 set OqtanePath=..\..\oqtane.framework\Oqtane.Server
 set CodeBinTarget=%OqtanePath%\bin\Debug\net9.0\
 
