@@ -27,6 +27,8 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
 
         // TODO: #NamedSettings
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+
+        //IsFounded = priority?.IsFounded ?? fallback?.IsFounded;
     }
 
     public MagicMenuSettings CloneWith(MagicMenuSettings? priority, bool forceCopy = false) =>
@@ -136,6 +138,13 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
 
     public string Variant => Template ?? "";
 
+    ///// <summary>
+    ///// Internal flag to indicate if settings have already been merged with fallback.
+    /////
+    ///// Can and may only be set here.
+    ///// </summary>
+    //internal bool? IsFounded { get; init; }
+
 
     internal static Defaults<MagicMenuSettings> Defaults = new()
     {
@@ -144,12 +153,14 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
             Template = "Horizontal",
             Start = StartPageRoot,
             Depth = 1, // MUST be specified on the fallback, otherwise some code will break
+            //IsFounded = true,
         },
         Foundation = new()
         {
             Template = "Horizontal",
             Start = StartPageRoot,
             Depth = 0,
+            //IsFounded = true,
         },
     };
 }

@@ -14,7 +14,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
         var themeContext = settingsSvc.GetThemeContext(pageState);
         var themeSettings = themeContext.ThemeSettings;
         var bestName = themeSettings.Parts.GetPartRenameOrFallback(nameof(IMagicSettingsService.Analytics), themeContext.SettingsName);
-        var analyticsSettings = settingsSvc.Analytics.Find(bestName, themeContext.SettingsName);
+        var analyticsSettings = settingsSvc.Analytics.FindAndNeutralize(bestName, themeContext.SettingsName);
         return analyticsSettings;
     }
 

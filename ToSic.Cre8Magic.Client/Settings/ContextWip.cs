@@ -23,8 +23,6 @@ public class ContextWip<TSettings, TDesigner>(
 
     public MagicPageFactory PageFactory { get; } = pageFactory;
 
-    //public MagicAllSettings? AllSettings { get; } = allSettings;
-
     public TSettings Settings { get; } = settings;
 
     // TODO: ATM still nullable, should be changed
@@ -36,5 +34,5 @@ public class ContextWip<TSettings, TDesigner>(
 
     LogRoot IContextWip.LogRoot => LogRoot;
 
-    TokenEngine? IContextWip.TokenEngineWip => pageTokens;// ?? allSettings?.Tokens;
+    TokenEngine? IContextWip.TokenEngineWip => pageTokens;
 }

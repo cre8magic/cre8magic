@@ -15,7 +15,24 @@ internal class NamedSettingsReader<TPart>(
 )
     where TPart : class, ICanClone<TPart>, new()
 {
-    internal TPart Find(string name, string? defaultName = null, bool skipCache = false)
+
+    internal TPart FindAndMerge(string name, string? defaultName = null, TPart? priority = null, bool skipCache = false)
+    {
+        var found = FindAndNeutralize(name, defaultName, skipCache);
+        return priority == null
+            ? found
+            : found.CloneWith(priority);
+    }
+
+    /// <summary>
+    /// Find a part by name, and merge it with the foundation if applicable.
+    /// This is to ensure necessary basics are always present, even if the part doesn't specify them.
+    /// </summary>
+    /// <param name="name">The name to look for.</param>
+    /// <param name="defaultName">Name of the current theme settings, which is used for fallback options.</param>
+    /// <param name="skipCache"></param>
+    /// <returns></returns>
+    internal TPart FindAndNeutralize(string name, string? defaultName = null, bool skipCache = false)
     {
         // Create array of names to look up, the first one is the main name
         var names = GetConfigNamesToCheck(name, defaultName ?? name);

@@ -65,7 +65,7 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
 
         // Figure out real config-name, and get the initial layout
         var (settingsName, nameJournal) = ThemePartNameResolver.GetBestSettingsName(_layoutName, Default);
-        var themeSettings = ThemeSettings.Find(settingsName);
+        var themeSettings = ThemeSettings.FindAndNeutralize(settingsName);
         //var theme = ThemeSettings.Find(settingsName).Parse(tokens);
         var theme = themeSettings with
         {
@@ -104,7 +104,7 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
         _getTheme ??= new(this, MagicThemeSettings.Defaults, cat => cat.Themes);
     private NamedSettingsReader<MagicThemeSettings>? _getTheme;
 
-    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) => ((IMagicSettingsService)this).Analytics.Find(settingsName, null, skipCache: _bypassCaches);
+    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) => ((IMagicSettingsService)this).Analytics.FindAndNeutralize(settingsName, null, skipCache: _bypassCaches);
     
     public TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func)
     {
@@ -123,7 +123,7 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     private NamedSettingsReader<MagicLanguageSettings>? _languages;
 
     public MagicLanguageSettings LanguageSettings(MagicThemeSettings settings, string settingsName) =>
-        ((IMagicSettingsService)this).Languages.Find(settings.Parts.GetPartRenameOrFallback("Languages", settingsName), settingsName);
+        ((IMagicSettingsService)this).Languages.FindAndNeutralize(settings.Parts.GetPartRenameOrFallback("Languages", settingsName), settingsName);
 
     //internal NamedSettingsReader<MagicContainerSettings> Containers =>
     //    _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
@@ -134,7 +134,7 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     private NamedSettingsReader<MagicThemeDesignSettings>? _themeDesign;
 
     public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
-        ((IMagicSettingsService)this).ThemeDesign.Find(settings.Design ?? settings.Parts.GetPartRenameOrFallback(nameof(settings.Design), settingsName), settingsName);
+        ((IMagicSettingsService)this).ThemeDesign.FindAndNeutralize(settings.Design ?? settings.Parts.GetPartRenameOrFallback(nameof(settings.Design), settingsName), settingsName);
 
     NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);

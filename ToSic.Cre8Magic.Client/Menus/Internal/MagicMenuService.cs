@@ -62,18 +62,12 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         var themeCtx = settingsSvc.GetThemeContext(pageState);
 
         var nameResolver = new ThemePartNameResolver(themeCtx);
+        var (settingsName, designName, journal) = nameResolver.GetMostRelevantNames(settings?.PartName, MenuSettingPrefix);
 
-        var partName = settings?.PartName;
-        var (settingsName, journal) = nameResolver.GetMostRelevantSettingsName(partName, MenuSettingPrefix);
 
         // If the user didn't specify a config name in the Parameters or the config name
         // isn't contained in the json file the normal parameter are given to the service
-        var menuSettings = settingsSvc.MenuSettings.Find(settingsName);
-        var mergedSettings = menuSettings.CloneWith(settings);
-
-        // See if we have a default configuration for CSS which should be applied
-        var (designName, journalDesign) = nameResolver.GetMostRelevantDesignSettingsName(partName, MenuSettingPrefix);
-        journal.AddRange(journalDesign);
+        var mergedSettings = settingsSvc.MenuSettings.FindAndMerge(settingsName, themeCtx.SettingsName, settings);
 
         // Usually there is no Design-object pre-filled, in which case we should
         // 1. try to find it in json
@@ -81,7 +75,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         if (mergedSettings.DesignSettings == null)
         {
             // Check various places where design could be configured by priority
-            var designSettings = settingsSvc.MenuDesigns.Find(designName, themeCtx.SettingsName);
+            var designSettings = settingsSvc.MenuDesigns.FindAndNeutralize(designName, themeCtx.SettingsName);
             mergedSettings = mergedSettings with { DesignSettings = designSettings };
         }
         else

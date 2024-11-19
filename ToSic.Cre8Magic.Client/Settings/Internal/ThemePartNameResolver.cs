@@ -21,6 +21,16 @@ internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePa
         : this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
     { }
 
+
+    public (string BestSettingsName, string BestDesignName, List<string> Messages)
+        GetMostRelevantNames(string? possibleName, string? prefixToCheck)
+    {
+        var (bestSettingsName, settingsJournal) = GetMostRelevantSettingsName(possibleName, prefixToCheck);
+        var (bestDesignName, designJournal) = GetMostRelevantDesignSettingsName(possibleName, prefixToCheck);
+        return (bestSettingsName, bestDesignName, settingsJournal.Concat(designJournal).ToList());
+    }
+
+
     public (string BestName, List<string> Messages)
         GetMostRelevantSettingsName(string? possibleName, string? prefixToCheck) =>
         GetMostRelevantSettingsName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartRenameOrNull);
