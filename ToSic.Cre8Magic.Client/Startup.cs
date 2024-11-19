@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Analytics.Internal;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContext;

@@ -3,33 +3,34 @@ using Oqtane.UI;
 using ToSic.Cre8magic.Themes.Settings;
 using static ToSic.Cre8magic.Client.Services.DoStuff;
 
-namespace ToSic.Cre8magic.Analytics;
+namespace ToSic.Cre8magic.Analytics.Internal;
 
 public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc) : IMagicAnalyticsService
 {
     private const string GtmEvent = "event";
 
-    public async Task TrackPage(PageState pageState, bool firstRender)
+    public async Task TrackPage(PageState pageState, bool isFirstRender)
+    {
+        var analyticsSettings = GetAnalyticsSettings(pageState);
+        await TrackPage(pageState, isFirstRender, analyticsSettings);
+    }
+
+    private MagicAnalyticsSettings GetAnalyticsSettings(PageState pageState)
     {
         var themeContext = settingsSvc.GetThemeContext(pageState);
         var themeSettings = themeContext.ThemeSettings;
         var bestName = themeSettings.Parts.GetPartRenameOrFallback(nameof(IMagicSettingsService.Analytics), themeContext.SettingsName);
         var analyticsSettings = settingsSvc.Analytics.Find(bestName, themeContext.SettingsName);
-        await TrackPage(analyticsSettings, firstRender);
+        return analyticsSettings;
     }
 
-    /// <summary>
-    /// Must run in OnAfterRenderAsync for now
-    /// </summary>
-    /// <param name="settings"></param>
-    /// <param name="firstRender"></param>
-    /// <returns></returns>
-    public async Task TrackPage(MagicAnalyticsSettings? settings, bool firstRender)
+    /// <inheritdoc />
+    public async Task TrackPage(PageState pageState, bool isFirstRender, MagicAnalyticsSettings? settings)
     {
         if (settings == null) return;
         if (settings.PageViewTrack != true) return;
 
-        if (firstRender && settings.PageViewTrackFirst != true) return;
+        if (isFirstRender && settings.PageViewTrackFirst != true) return;
         var js = settings.PageViewJs!;
         var eventName = settings.PageViewEvent;
 
