@@ -33,20 +33,14 @@ public record MagicAnalyticsSettings : SettingsWithInherit, ICanClone<MagicAnaly
     public string? PageViewEvent { get; init; }
 
 
-    private static readonly MagicAnalyticsSettings FbAndF = new()
+    internal static Defaults<MagicAnalyticsSettings> Defaults = new(new()
     {
         GtmId = null,
         PageViewTrack = false,
         PageViewTrackFirst = false,
         PageViewJs = "gtag",
         PageViewEvent = "blazor_page_view"
-    };
-
-    internal static Defaults<MagicAnalyticsSettings> Defaults = new()
-    {
-        Fallback = FbAndF,
-        Foundation = FbAndF,
-    };
+    });
 
 
 }

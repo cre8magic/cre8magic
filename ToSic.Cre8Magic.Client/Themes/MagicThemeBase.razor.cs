@@ -3,6 +3,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Components;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Themes;
 
@@ -66,29 +67,21 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
         set => _magicSettingsService = value.Setup(ThemePackageSettings, Layout);    // Init when injecting
     }
     private IMagicSettingsService? _magicSettingsService;
-
-    /// <summary>
-    /// The settings of this layout, as loaded from the ThemePackageSettings + JSON
-    /// </summary>
-    public MagicAllSettings? AllSettings { get; set; }
-
+    
     /// <summary>
     /// This contains the default settings which must be used in this theme.
     /// Any inheriting class must specify what it will be. 
     /// </summary>
     public abstract MagicPackageSettings ThemePackageSettings { get; }
 
-    [Inject] public IMagicAnalyticsService? MagicAnalytics { get; set; }
+    [Inject]
+    public IMagicAnalyticsService? MagicAnalytics { get; set; }
 
-    protected override async Task OnParametersSetAsync()
-    {
-        await base.OnParametersSetAsync();
+    [Inject]
+    public IMagicThemeService? ThemeService { get; set; }
 
-        var prevSettings = AllSettings;
-        AllSettings = MagicSettingsService.GetSettings(PageState);
-        if (AllSettings != prevSettings)
-            StateHasChanged();
-    }
+    public MagicThemeState ThemeState => _themeState.Get(PageState, () => ThemeService!.State(PageState));
+    private readonly GetKeepByPageId<MagicThemeState> _themeState = new();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -99,5 +92,5 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
             await MagicAnalytics.TrackPage(PageState, firstRender);
     }
 
-    public MagicThemeDesigner Designer => AllSettings?.ThemeDesigner ?? throw new("No settings available");
+    public MagicThemeDesigner Designer => ThemeState.Designer ?? throw new("No settings available");
 }

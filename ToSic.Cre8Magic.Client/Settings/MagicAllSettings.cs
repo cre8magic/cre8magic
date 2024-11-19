@@ -17,8 +17,8 @@ public record MagicAllSettings: IHasDebugSettings
         //Name = name;
         Service = service;
         ThemeSettings = themeSettings;
-        ThemeDesigner = designer;
-        Tokens = tokens;
+        //ThemeDesigner = designer;
+        //Tokens = tokens;
         PageState = pageState;
     }
 
@@ -32,21 +32,21 @@ public record MagicAllSettings: IHasDebugSettings
 
     internal PageState PageState { get; }
 
-    internal TokenEngine Tokens { get; }
+    //internal TokenEngine Tokens { get; }
 
     //public string Name { get; }
 
     [JsonIgnore]
     public IMagicSettingsService Service { get; }
 
-    [JsonIgnore]
-    internal MagicThemeDesigner ThemeDesigner { get; init; }
+    //[JsonIgnore]
+    //internal MagicThemeDesigner ThemeDesigner { get; init; }
 
     public MagicThemeSettings ThemeSettings { get; }
 
-    /// <summary>
-    /// Determine if we should show a specific part
-    /// </summary>
-    public bool ShowPart(string name) =>
-        ThemeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;
+    ///// <summary>
+    ///// Determine if we should show a specific part
+    ///// </summary>
+    //public bool ShowPart(string name) =>
+    //    ThemeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;
 }
