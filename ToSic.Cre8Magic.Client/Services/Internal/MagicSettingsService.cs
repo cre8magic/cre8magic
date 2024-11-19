@@ -21,18 +21,16 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     : IMagicSettingsService
 {
     /// <inheritdoc />>
-    public IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName, string? bodyClasses)
+    public IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName)
     {
         _packageSettings = packageSettings;
         loader.Setup(packageSettings);
         _themeTokens = null;
         _currentSettingsCache.Clear();
         _layoutName = layoutName;
-        _bodyClasses = bodyClasses;
         return this;
     }
 
-    private string? _bodyClasses;
     private string? _layoutName;
 
     MagicDebugSettings IMagicSettingsService.Debug => _debug ??= loader.DebugSettings ?? MagicDebugSettings.Defaults.Fallback;
@@ -149,9 +147,9 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     public MagicLanguageSettings LanguageSettings(MagicThemeSettings settings, string settingsName) =>
         ((IMagicSettingsService)this).Languages.Find(settings.Parts.GetPartRenameOrFallback("Languages", settingsName), settingsName);
 
-    internal NamedSettingsReader<MagicContainerSettings> Containers =>
-        _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
-    private NamedSettingsReader<MagicContainerSettings>? _containers;
+    //internal NamedSettingsReader<MagicContainerSettings> Containers =>
+    //    _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
+    //private NamedSettingsReader<MagicContainerSettings>? _containers;
 
     NamedSettingsReader<MagicThemeDesignSettings> IMagicSettingsService.ThemeDesign =>
         _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, cat => cat.ThemeDesigns);

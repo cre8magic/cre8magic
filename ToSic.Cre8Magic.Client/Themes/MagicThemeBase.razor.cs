@@ -37,7 +37,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     /// This is because of some shortcomings in Oqtane, which doesn't allow to reliably set classes on the body.
     /// Just remember that when you write your CSS ;).
     /// </summary>
-    protected abstract string BodyClasses { get; }
+    protected abstract string MagicContextClasses { get; }
 
     /// <summary>
     /// Option to inject dynamic components - mainly for testing
@@ -63,7 +63,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     protected IMagicSettingsService MagicSettingsService
     {
         get => _magicSettingsService!;
-        set => _magicSettingsService = value.Setup(ThemePackageSettings, Layout, BodyClasses);    // Init when injecting
+        set => _magicSettingsService = value.Setup(ThemePackageSettings, Layout);    // Init when injecting
     }
     private IMagicSettingsService? _magicSettingsService;
 

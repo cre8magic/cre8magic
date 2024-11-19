@@ -66,7 +66,7 @@ public class ThemeInfo : ITheme
         // The package name is important, as it's used to find assets etc.
         PackageName = new ThemeInfo().Theme.PackageName,
 
-        // The json file in the theme folder folder containing all kinds of settings etc.
+        // The json file in the theme folder containing all kinds of settings etc.
         SettingsJsonFile = "theme.json",
     };
 

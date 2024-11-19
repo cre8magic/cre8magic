@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using ToSic.Cre8magic.Settings.Debug;
+﻿using ToSic.Cre8magic.Settings.Debug;
+using ToSic.Cre8magic.Settings.Internal.Sources;
 using ToSic.Cre8magic.Settings.Json;
 
 namespace ToSic.Cre8magic.Settings.Internal;
@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// It requires that there are <see cref="MagicPackageSettings"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-public class MagicSettingsLoader(MagicSettingsJsonService jsonService, ILogger<MagicSettingsLoader> logger)
+public class MagicSettingsLoader(MagicSettingsJsonService jsonService, IEnumerable<IMagicSettingsSource> sources)
     : IHasSystemMessages
 {
     public MagicSettingsLoader Setup(MagicPackageSettings packageSettings)
@@ -49,27 +49,23 @@ public class MagicSettingsLoader(MagicSettingsJsonService jsonService, ILogger<M
 
     private List<MagicSettingsCatalog> Load()
     {
-        if (string.IsNullOrWhiteSpace(PackageSettings.SettingsJsonFile))
-            return PackageSettings.Defaults == null
-                ? []
-                : [PackageSettings.Defaults];
-
-        var catalogFromJson = jsonService.LoadJson(PackageSettings);
-        var sources = new List<MagicSettingsCatalog?>
-            {
-                // 1. in future also add the settings from the dialog as the first priority
-                // 2. then the settings from the json file
-                catalogFromJson,
-                // 3. fallback which can be specified by the theme
-                PackageSettings.Defaults,
-            }
-            .Where(x => x != null)
-            .Cast<MagicSettingsCatalog>()
+        // Typical sources
+        // 100 Package Settings JSON
+        // -100 Package Defaults
+        var sources2 = sources
+            .OrderByDescending(s => s.Priority)
+            .Select(s => s.Get(PackageSettings))
+            .Where(c => c?.Catalog != null)
+            //.Select(c => c!.Catalog!)
             .ToList();
-        return sources;
+
+        MyExceptions = sources2.SelectMany(c => c!.Exceptions ?? []).ToList();
+
+        return sources2.Select(c => c!.Catalog!).ToList();
+
     }
 
     public List<Exception> Exceptions => MyExceptions.Concat(jsonService.Exceptions).ToList();
-    private List<SettingsException> MyExceptions { get; } = [];
+    private List<Exception> MyExceptions { get; set; } = [];
 
 }

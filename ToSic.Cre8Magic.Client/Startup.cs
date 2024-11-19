@@ -9,6 +9,7 @@ using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Services.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Sources;
 using ToSic.Cre8magic.Settings.Json;
 using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Themes.Internal;
@@ -56,5 +57,10 @@ public class Startup : Oqtane.Services.IClientStartup
         services.TryAddScoped<IMagicSettingsProviders, MagicSettingsProviders>();
 
         services.TryAddScoped(typeof(ScopedDictionaryCache<>));
+
+        // Json sources
+        services.TryAddScoped<MagicSettingsJsonService>();
+        services.AddScoped<IMagicSettingsSource, MagicSettingsSourceJson>();
+        services.AddTransient<IMagicSettingsSource, MagicSettingsSourcePackageDefaults>();
     }
 }

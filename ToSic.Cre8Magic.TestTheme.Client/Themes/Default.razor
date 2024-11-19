@@ -13,7 +13,7 @@ Nice to know:
 {
     public override string Name => "Default";
     public override string Layout => "default";
-    protected override string BodyClasses => "floatwideheader";
+    protected override string MagicContextClasses => "floatwideheader";
 }
 @*
     The MagicContextAndSettings wrapper does 2 things
@@ -21,7 +21,7 @@ Nice to know:
        Note that the specifics are configured in the configuration
     2. It will ensure that the object Settings are available on all child controls using <CascadingValue>
 *@
-<MagicContextAndSettings Settings="new MagicPageContextSettings() { Classes = BodyClasses }">
+<MagicContextAndSettings Settings="new MagicPageContextSettings() { Classes = MagicContextClasses }">
 
     @* Show any errors to the admin if something went wrong like when loading settings *@
     <MagicExceptions></MagicExceptions>

@@ -5,7 +5,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Json;
 
-public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger) : IHasSettingsExceptions
+public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger) : IHasSystemMessages
 {
     public ILogger<MagicSettingsJsonService> Logger { get; } = logger;
 
@@ -19,8 +19,6 @@ public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger) 
             var result = JsonSerializer.Deserialize<MagicSettingsCatalog>(jsonString, new JsonSerializerOptions(JsonMerger.GetNewOptionsForPreMerge(Logger))
             {
                 PropertyNameCaseInsensitive = true,
-                //ReadCommentHandling = JsonCommentHandling.Skip,
-                //AllowTrailingCommas = true,
             })!;
 
             // Ensure we have version set, ATM exactly 0.01

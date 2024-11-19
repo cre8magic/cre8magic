@@ -22,7 +22,7 @@ public interface IMagicSettingsService: IHasSystemMessages
     /// <param name="layoutName"></param>
     /// <param name="bodyClasses"></param>
     /// <returns></returns>
-    IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName, string? bodyClasses);
+    IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName);
 
     MagicAllSettings GetSettings(PageState pageState);
 
