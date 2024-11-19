@@ -11,51 +11,55 @@ internal class NamedSettingsReader<TPart>(
     IMagicSettingsService settingsSvc,
     Defaults<TPart> defaults,
     Func<MagicSettingsCatalog, NamedSettings<TPart>> findList,
-    //Func<List<NamedSettings<TPart>>>? findAllSources = default,
     bool useAllSources = false,
     Func<string, TPart, TPart>? modify = default)
     where TPart : class, ICanClone<TPart>, new()
 {
     internal TPart Find(string name, string? defaultName = null, bool skipCache = false)
     {
+        // Create array of names to look up, the first one is the main name
         var names = GetConfigNamesToCheck(name, defaultName ?? name);
-        var realName = names[0];
-        if (!skipCache && _cache.TryGetValue(realName, out var cached2))
+        var mainName = names[0];
+
+        // Check cache if applicable
+        if (!skipCache && _cache.TryGetValue(mainName, out var cached2))
             return cached2;
-        //var cached = _cache.FindInvariant(realName);
-        //if (cached != null)
-        //    return cached;
 
-        // Get best part; return Fallback if nothing found
+        // Get best matching part; returns null if nothing found
         var priority = FindPart(names);
-        if (priority == null)
-            return defaults.Fallback;
-
-        // Check if our part declares that it inherits something
-        if (priority is SettingsWithInherit couldInherit && couldInherit.Inherits.HasText())
+        switch (priority)
         {
-            // Remember inherits-from setting, and then remove from the part
-            var inheritFrom = couldInherit.Inherits;
-            couldInherit = couldInherit with { Inherits = null };
-            priority = couldInherit as TPart ?? priority;
+            // Nothing found, return fallback
+            case null:
+                return defaults.Fallback;
 
-            priority = FindPartAndMergeIfPossible(priority, realName, inheritFrom);
-        }
-        else if (priority is NamedSettings<MagicMenuDesignSettings> priorityNamed 
-                 && priorityNamed.TryGetValue(InheritsNameInJson, out var value))
-        {
-            priorityNamed.Remove(InheritsNameInJson);
-            if (value.Value != null) priority = FindPartAndMergeIfPossible(priority, realName, value.Value);
+            // Check if our part declares that it inherits something
+            case SettingsWithInherit couldInherit when couldInherit.Inherits.HasText():
+                // Remember inherits-from setting, and then remove from the part
+                var inheritFrom = couldInherit.Inherits;
+                priority = couldInherit with { Inherits = null } as TPart ?? priority;
+                priority = FindPartAndMergeIfPossible(priority, mainName, inheritFrom);
+                break;
+
+            // Check if it's a dictionary containing @inherit specs
+            case NamedSettings<MagicMenuDesignSettings> named when named.TryGetValue(InheritsNameInJson, out var value):
+                if (value.Value != null)
+                    priority = FindPartAndMergeIfPossible(priority, mainName, value.Value);
+                else
+                    named.Remove(InheritsNameInJson);
+                break;
         }
 
+        // If we don't have a foundation to mix in, we're done
         if (defaults.Foundation == null)
             return priority;
 
         var mergedNew = defaults.Foundation.CloneWith(priority);
         if (modify != null)
-            mergedNew = modify(realName, mergedNew);
+            mergedNew = modify(mainName, mergedNew);
 
-        _cache[realName] = mergedNew;
+        if (!skipCache)
+            _cache[mainName] = mergedNew;
         return mergedNew!;
     }
 
@@ -103,7 +107,7 @@ internal class NamedSettingsReader<TPart>(
             if (result != null) return result;
         }
 
-        return default;
+        return null;
     }
 
 
