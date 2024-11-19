@@ -102,7 +102,9 @@ and sometimes the parent component is not yet ready to pass in the parameter.
 Some tips:
 
 1. always assume that the parameters could contain an empty / default value at first
-
+1. use the `OnParametersSet` or `OnParametersSetAsync` lifecycle methods to initialize other objects
+1. ... and to react to parameter changes
+1. when something else is initialized with this parameter, also assume that it could be empty at first
 
 
 ## Cascade Parameters from Theme to any Control
@@ -150,3 +152,113 @@ This way you can pass the `IconSettings` object from the Theme to the MenuIcon C
 ### How Cascading Parameters are Used in Oqtane
 
 Oqtane uses cascading parameters a lot.
+You will typically get the following parameters from the Theme:
+
+```razor
+@code
+{
+  /// <summary>
+  /// Get the PageState from the CascadingParameter
+  /// </summary>
+  [CascadingParameter]
+  public required PageState PageState { get; set; }
+}
+```
+
+If your control is inside a module (eg. part of a Container)
+you can also get the ModuleState like this:
+
+```razor
+@code
+{
+  /// <summary>
+  /// Get the ModuleState from the CascadingParameter
+  /// </summary>
+  [CascadingParameter]
+  public required Module ModuleState { get; set; }
+}
+```
+
+### Timing Issues with Cascading Parameters
+
+Cascading parameters are set before the component is initialized,
+so you can be sure that they are available when the component is created.
+This is why you can use them to pass parameters to components that are not directly related to each other.
+
+### Empty Values in Cascading Parameters
+
+Note that cascading parameters can be empty, because the parent component did not set them,
+or they were set to `null` or `default` by the parent component.
+
+So if you create your own cascading parameters,
+either mark them as `required` to get compiler errors, or do null/default checks in your component.
+
+## Using a Service
+
+The last way to pass parameters is to use a service.
+This is a bit more advanced and not used as often as the other two ways.
+
+Services allow you to:
+
+1. pass parameters "downwards" in the component tree (like cascading parameters)
+1. pass parameters "upwards" in the component tree
+1. pass parameters "sideways" between components that are not directly related
+
+For this to work, a service needs to be scoped correctly,
+meaning that it should provide the same service instance for every component that needs it.
+
+This is done by registering the service as a scoped service in the `Startup.cs` file:
+
+```csharp
+namespace ToSic.Cre8magic;
+
+public class Startup : Oqtane.Services.IClientStartup
+{
+  /// <summary>
+  /// Register Services
+  /// </summary>
+  /// <param name="services"></param>
+  public void ConfigureServices(IServiceCollection services)
+  {
+    // All these Settings etc. should be scoped, so they don't have to reload for each click
+    services.TryAddScoped<IMagicSettingsService, MagicSettingsService>();
+  }
+}
+```
+
+> [!TIP]
+> **Scoped** services have different behaviors depending on the RenderMode.
+> For now, just understand that they will always give the same instance
+> for everything that is rendered in the same page.
+
+Then you can use the service in your components like this:
+
+```razor
+@code
+{
+  [Inject]
+  public IMagicSettingsService MagicSettingsService { get; set; }
+}
+```
+
+or like this:
+
+```razor
+@code
+@inject IMagicSettingsService MagicSettingsService
+```
+
+In .net 9 you can also use constructor injection (new in Oqtane 6)
+which has some benefits:
+
+```razor
+@code
+{
+  private readonly IMagicSettingsService _magicSettingsService;
+
+  public MyComponent(IMagicSettingsService magicSettingsService)
+  {
+    _magicSettingsService = magicSettingsService;
+  }
+}
+```
