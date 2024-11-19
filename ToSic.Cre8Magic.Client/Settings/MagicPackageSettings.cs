@@ -8,24 +8,24 @@
 /// 1. location of assets
 /// 1. configuration for various parts like CSS
 /// </summary>
-public class MagicPackageSettings
+public record MagicPackageSettings
 {
     /// <summary>
     /// All kinds of settings for the layout, how it should be etc.
     /// Should usually only serve as backup in case the JSON fails.
     /// </summary>
-    public MagicSettingsCatalog? Defaults { get; set; }
+    public MagicSettingsCatalog? Defaults { get; init; }
 
-    public string WwwRoot { get; set; } = "wwwroot";
+    public string WwwRoot { get; init; } = "wwwroot";
 
-    public string SettingsJsonFile { get; set; } = "theme.json";
+    public string SettingsJsonFile { get; init; } = "theme.json";
 
-    public string PackageName { get; set; } = "todo: set theme package name in your constructor";
+    public string PackageName { get; init; } = "todo: set theme package name in your constructor";
 
     public string Url
     {
         get => _url ??= "Themes/" + PackageName;
-        set => _url = value;
+        init => _url = value;
     }
     private string? _url;
 
