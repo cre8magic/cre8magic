@@ -15,7 +15,7 @@ public record MagicAllSettings: IHasDebugSettings
     internal MagicAllSettings(string name, IMagicSettingsService service, MagicThemeSettings themeSettings, MagicThemeDesigner designer, TokenEngine tokens, PageState pageState)
     {
         //Name = name;
-        Service = service;
+        //Service = service;
         ThemeSettings = themeSettings;
         //ThemeDesigner = designer;
         //Tokens = tokens;
@@ -36,8 +36,8 @@ public record MagicAllSettings: IHasDebugSettings
 
     //public string Name { get; }
 
-    [JsonIgnore]
-    public IMagicSettingsService Service { get; }
+    //[JsonIgnore]
+    //public IMagicSettingsService Service { get; }
 
     //[JsonIgnore]
     //internal MagicThemeDesigner ThemeDesigner { get; init; }
