@@ -81,11 +81,23 @@
     }
 
     <h3>Basic Menu without Setting, name "Sidebar"</h3>
-    <p>With ConfigName</p>
+    <h4>PartName: SideBar</h4>
+    <p>With PartName</p>
     <Menu PartName="Sidebar"></Menu>
-    <p>With Settings</p>
+    <p>With PartName in Settings and debug activated</p>
     <Menu MenuSettings='new() { PartName = "Sidebar", Debug = new() { Admin = true } }'></Menu>
-
+    
+    <h4>PartName: menu-test-part-unchanged</h4>
+    <Menu PartName="menu-test-part-unchanged"></Menu>
+    
+    @*
+        this doesn't work, as the name isn't found...
+        <h4>PartName: test-part-unchanged (should auto-prefix)</h4>
+        <Menu PartName="test-part-unchanged"></Menu>
+    *@
+    
+    <h4>PartName: menu-test-part-rename-to-menu-new-name</h4>
+    <Menu PartName="menu-test-part-rename-to-menu-new-name"></Menu>
 
     <hr/>
 </div>
