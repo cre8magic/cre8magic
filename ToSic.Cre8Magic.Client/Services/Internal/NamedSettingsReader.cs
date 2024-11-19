@@ -16,13 +16,15 @@ internal class NamedSettingsReader<TPart>(
     Func<string, TPart, TPart>? modify = default)
     where TPart : class, ICanClone<TPart>, new()
 {
-    internal TPart Find(string name, string? defaultName = null)
+    internal TPart Find(string name, string? defaultName = null, bool skipCache = false)
     {
         var names = GetConfigNamesToCheck(name, defaultName ?? name);
         var realName = names[0];
-        var cached = _cache.FindInvariant(realName);
-        if (cached != null)
-            return cached;
+        if (!skipCache && _cache.TryGetValue(realName, out var cached2))
+            return cached2;
+        //var cached = _cache.FindInvariant(realName);
+        //if (cached != null)
+        //    return cached;
 
         // Get best part; return Fallback if nothing found
         var priority = FindPart(names);

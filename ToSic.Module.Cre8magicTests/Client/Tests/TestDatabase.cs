@@ -34,7 +34,8 @@ internal class TestDatabase
         new("menu-functions", "Menus Functions", typeof(MenuControlsFunctions)),
 
         // Analytics
-        new("analytics-inject-settings", "Analytics - inject settings", typeof(TestSettingsProvidersAnalytics)),
+        new("analytics-inject-settings", "Analytics - Inject Settings", typeof(TestSettingsProvidersAnalytics)),
+        new("analytics-inject-settings-read-only", "Analytics - Read Injected Settings or Default", typeof(TestReadingProvidersAnalytics)),
 
         // Special Tests
         new("sys-random-number-by-page", "Random Number by Page", typeof(TestGetKeep)),

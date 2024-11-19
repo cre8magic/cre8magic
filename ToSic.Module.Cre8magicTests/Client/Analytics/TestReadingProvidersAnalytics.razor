@@ -1,23 +1,20 @@
 ﻿@using ToSic.Cre8magic.Analytics
 @using ToSic.Cre8magic.Client.Services
-@using ToSic.Cre8magic.Services.Internal
 @using ToSic.Cre8magic.Settings
 @inherits ToSic.Cre8magic.Client.Controls.MagicControlBase;
 @inject IMagicSettingsProviders SettingsProviders
 @inject IMagicAnalyticsService Analytics
 @inject IMagicSettingsService SettingsService
 @{
-    SettingsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
+    // SettingsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
     var defAnalytics = SettingsService.AnalyticsSettings("default");
-    var testAnalytics = SettingsService.NoCachingForDebug(s => s.AnalyticsSettings("analytics-test"));
-    var test = testAnalytics.GtmId;
-
-    var x = 1;
+    var testAnalytics = SettingsService.AnalyticsSettings("analytics-test");
 }
 <div class="alert alert-info">
     <h4>Debug analytics</h4>
     <p>
-        This will set and read the test-analytics.
+        This will ONLY read the test-analytics.
+        So if you refresh this page, it will be the same as default, if you go to the other page first, it should have that value.
     </p>
     <p>Default Analytics: @defAnalytics.GtmId</p>
     <p>Test Analytics: @testAnalytics.GtmId</p>

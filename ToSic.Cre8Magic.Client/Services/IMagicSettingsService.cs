@@ -1,4 +1,5 @@
-﻿using Oqtane.UI;
+﻿using Microsoft.Net.Http.Headers;
+using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Services.Internal;
@@ -49,5 +50,9 @@ public interface IMagicSettingsService: IHasSystemMessages
     ///// <returns></returns>
     //internal (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback);
     MagicDebugState DebugState(PageState pageState);
+
+
     MagicAnalyticsSettings AnalyticsSettings(string settingsName);
+
+    internal TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func);
 }

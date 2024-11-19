@@ -5,7 +5,6 @@ using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
@@ -28,6 +27,8 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     }
 
     private string? _layoutName;
+
+    private bool _bypassCaches;
 
     public MagicDebugState DebugState(PageState pageState) => ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
@@ -122,7 +123,15 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
             });
     private NamedSettingsReader<MagicThemeSettings>? _getTheme;
 
-    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) => ((IMagicSettingsService)this).Analytics.Find(settingsName, null);
+    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) => ((IMagicSettingsService)this).Analytics.Find(settingsName, null, skipCache: _bypassCaches);
+    
+    public TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func)
+    {
+        this._bypassCaches = true;
+        var result = func(this);
+        this._bypassCaches = false;
+        return result;
+    }
 
     NamedSettingsReader<MagicMenuSettings> IMagicSettingsService.MenuSettings =>
         _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, cat => cat.Menus);
