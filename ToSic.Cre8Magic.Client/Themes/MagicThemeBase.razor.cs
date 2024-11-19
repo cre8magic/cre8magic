@@ -78,7 +78,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     /// </summary>
     public abstract MagicPackageSettings ThemePackageSettings { get; }
 
-    [Inject] public MagicAnalyticsService? MagicAnalytics { get; set; }
+    [Inject] public IMagicAnalyticsService? MagicAnalytics { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
@@ -96,7 +96,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
 
         // Track page views
         if (MagicAnalytics != null)
-            await MagicAnalytics.TrackPage(AllSettings?.Analytics, firstRender);
+            await MagicAnalytics.TrackPage(PageState, firstRender);
     }
 
     public MagicThemeDesigner Designer => AllSettings?.ThemeDesigner ?? throw new("No settings available");

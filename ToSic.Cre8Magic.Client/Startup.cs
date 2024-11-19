@@ -37,6 +37,7 @@ public class Startup : Oqtane.Services.IClientStartup
         services.TryAddTransient<IMagicThemeService, MagicThemeService>();
         services.TryAddTransient<IMagicPageContextService, MagicPageContextService>();
         services.TryAddTransient<IMagicUserService, MagicUserService>();
+        services.TryAddTransient<IMagicAnalyticsService, MagicAnalyticsService>();
 
         services.TryAddTransient<MagicThemeJsServiceTest>();
 

@@ -1,9 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using Oqtane.UI;
-using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Themes.Internal;
-using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
@@ -16,7 +14,7 @@ public record MagicAllSettings: IHasDebugSettings
 {
     internal MagicAllSettings(string name, IMagicSettingsService service, MagicThemeSettings themeSettings, MagicThemeDesigner designer, TokenEngine tokens, PageState pageState)
     {
-        Name = name;
+        //Name = name;
         Service = service;
         ThemeSettings = themeSettings;
         ThemeDesigner = designer;
@@ -36,7 +34,7 @@ public record MagicAllSettings: IHasDebugSettings
 
     internal TokenEngine Tokens { get; }
 
-    public string Name { get; }
+    //public string Name { get; }
 
     [JsonIgnore]
     public IMagicSettingsService Service { get; }
@@ -51,9 +49,4 @@ public record MagicAllSettings: IHasDebugSettings
     /// </summary>
     public bool ShowPart(string name) =>
         ThemeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;
-
-    public MagicAnalyticsSettings Analytics =>
-        _a ??= Service.Analytics.Find(ThemeSettings.Parts.GetPartRenameOrFallback(nameof(Analytics), Name), Name);
-    private MagicAnalyticsSettings? _a;
-
 }

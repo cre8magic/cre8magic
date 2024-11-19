@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Settings.Debug;
-using ToSic.Cre8magic.Settings.Internal.Sources;
+﻿using ToSic.Cre8magic.Settings.Internal.Sources;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
@@ -25,8 +24,6 @@ public class MagicSettingsLoader(IEnumerable<IMagicSettingsSource> sources)
 
         return prioCat;
     }
-
-    //private List<MagicSettingsCatalog> GetCatalogs(MagicPackageSettings? packageSettings) => _catalogs ??= Load(packageSettings);
     private List<MagicSettingsCatalog>? _catalogs;
 
     private List<MagicSettingsCatalog> Load(MagicPackageSettings packageSettings)
