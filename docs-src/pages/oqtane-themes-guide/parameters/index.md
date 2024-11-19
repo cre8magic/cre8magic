@@ -231,6 +231,14 @@ public class Startup : Oqtane.Services.IClientStartup
 > For now, just understand that they will always give the same instance
 > for everything that is rendered in the same page.
 
+### Simple Example (Oqtane 5+)
+
+In Oqtane 5+ you can use the `[Inject]` attribute or `@inject` to inject services into your components.
+
+> [!TIP]
+> This is the classic way of doing things, but has a few issues related to timing.
+> Read on...
+
 Then you can use the service in your components like this:
 
 ```razor
@@ -262,3 +270,39 @@ which has some benefits:
   }
 }
 ```
+
+### Timing Issues with `@inject` and `[Inject]` Services
+
+Services injected with `@inject` or `[Inject]` are handled the same way,
+and they are _not_ available when the component is constructed.
+Instead, they are available in the `OnInitialized` and `OnInitializedAsync` lifecycle method.
+
+This is important, because it's counterintuitive and different from the normal
+constructor injection that you might know from normal C# services.
+
+Either make sure your code expects this - or use constructor injection if you're on Oqtane 6.
+
+### Constructor Injection (Oqtane 6+)
+
+In Oqtane 6+ you can use constructor injection to inject services into your components.
+
+
+TODO
+
+
+### How Service Injections are Used for Parameters in Oqtane
+
+_This is about parameters in Oqtane, not about general Service Injection._
+
+In Oqtane, certain environment parameters are provided as a service instead of Cascading Parameters.
+
+Specifically, the SiteState is provided as a service:
+
+```razor
+  [Inject]
+  protected SiteState SiteState { get; set; }
+```
+
+This is because the SiteState will not change through the lifecycle of the page.
+
+
