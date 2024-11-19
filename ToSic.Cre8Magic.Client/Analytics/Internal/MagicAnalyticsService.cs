@@ -9,12 +9,6 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
 {
     private const string GtmEvent = "event";
 
-    public async Task TrackPage(PageState pageState, bool isFirstRender)
-    {
-        var analyticsSettings = GetAnalyticsSettings(pageState);
-        await TrackPage(pageState, isFirstRender, analyticsSettings);
-    }
-
     private MagicAnalyticsSettings GetAnalyticsSettings(PageState pageState)
     {
         var themeContext = settingsSvc.GetThemeContext(pageState);
@@ -27,6 +21,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
     /// <inheritdoc />
     public async Task TrackPage(PageState pageState, bool isFirstRender, MagicAnalyticsSettings? settings)
     {
+        settings ??= GetAnalyticsSettings(pageState);
         if (settings == null) return;
         if (settings.PageViewTrack != true) return;
 
