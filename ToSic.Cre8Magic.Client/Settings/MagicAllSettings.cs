@@ -14,7 +14,7 @@ namespace ToSic.Cre8magic.Settings;
 /// <summary>
 /// All the current "global" settings of a page, which apply to anything on the page.
 /// </summary>
-public record MagicAllSettings: IHasSettingsExceptions, IHasDebugSettings, ICanClone<MagicAllSettings>
+public record MagicAllSettings: IHasSystemMessages, IHasDebugSettings, ICanClone<MagicAllSettings>
 {
     internal MagicAllSettings(string name, IMagicSettingsService service, MagicThemeSettings themeSettings, MagicThemeDesigner designer, TokenEngine tokens, PageState pageState)
     {

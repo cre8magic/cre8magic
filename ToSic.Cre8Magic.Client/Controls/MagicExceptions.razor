@@ -5,7 +5,7 @@
 @{
     var allSettings = SettingsService.GetSettings(PageState);
 }
-@if ((allSettings as IHasSettingsExceptions).HasExceptions)
+@if ((allSettings as IHasSystemMessages).HasExceptions)
 {
     <div class="alert alert-danger" role="alert">
         @if (allSettings.Debug?.Show == true || PageState.UserIsAdmin())

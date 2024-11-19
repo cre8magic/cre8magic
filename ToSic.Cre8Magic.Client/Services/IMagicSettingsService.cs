@@ -11,7 +11,7 @@ using ToSic.Cre8magic.Tokens;
 
 namespace ToSic.Cre8magic.Client.Services;
 
-public interface IMagicSettingsService: IHasSettingsExceptions
+public interface IMagicSettingsService: IHasSystemMessages
 {
     /// <summary>
     /// Set up the settings service with the package settings, layout name and body classes.
