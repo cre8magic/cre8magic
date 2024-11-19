@@ -14,16 +14,16 @@ internal static class MagicThemePartsExtensions
             ? value.Configuration
             : null;
 
+    public static string GetPartRenameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>
+        dic.GetPartRenameOrNull(name) ?? fallback;
+
     /// <summary>
     /// Determine the name of the design configuration of a specific part
     /// </summary>
-    public static string? GetThemeDesignRenameOrNull(this NamedSettings<MagicThemePartSettings> dic, string name) =>
+    public static string? GetPartDesignRenameOrNull(this NamedSettings<MagicThemePartSettings> dic, string name) =>
         dic.TryGetValue(name, out var value)
             ? value.Design
             : null;
-
-    public static string GetPartRenameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>
-        dic.GetPartRenameOrNull(name) ?? fallback;
 
     public static bool Show(this MagicThemeSettings themeSettings, string name) =>
         themeSettings.Parts.TryGetValue(name, out var value) && value.Show == true;

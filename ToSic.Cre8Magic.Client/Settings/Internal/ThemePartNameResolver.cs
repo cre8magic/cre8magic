@@ -21,26 +21,40 @@ internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePa
         : this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
     { }
 
-    public (string BestName, List<string> Messages) GetMostRelevantSettingsName(string? possibleName, string? prefixToCheck)
+    public (string BestName, List<string> Messages)
+        GetMostRelevantSettingsName(string? possibleName, string? prefixToCheck) =>
+        GetMostRelevantSettingsName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartRenameOrNull);
+
+    public (string BestName, List<string> Messages)
+        GetMostRelevantDesignSettingsName(string? possibleName, string? prefixToCheck) =>
+        GetMostRelevantSettingsName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartDesignRenameOrNull);
+
+    /// <summary>
+    /// Generic method to check for names, since it could be run on the Settings/Configuration property or on the DesignSettings property
+    /// </summary>
+    /// <param name="possibleName"></param>
+    /// <param name="prefixToCheck"></param>
+    /// <param name="getRenameOrNull"></param>
+    /// <returns></returns>
+    private (string BestName, List<string> Messages) GetMostRelevantSettingsName(string? possibleName, string? prefixToCheck, Func<NamedSettings<MagicThemePartSettings>, string, string?> getRenameOrNull)
     {
         var (initialName, journal) = GetBestSettingsName(possibleName, mainName);
 
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
-        var betterName = themeSettingsParts.GetPartRenameOrNull(initialName);
+        var betterName = getRenameOrNull(themeSettingsParts, initialName);
 
         // If the better name wants to use the main config name ("=") then use that and exit
         if (betterName == MagicConstants.InheritName)
             return(mainName, journal.Concat([$"switched to inherit '{mainName}'"]).ToList());
 
         if (betterName == null && !string.IsNullOrEmpty(prefixToCheck) && !initialName.StartsWith(prefixToCheck))
-            betterName = themeSettingsParts.GetPartRenameOrNull($"{prefixToCheck}{initialName}");
+            betterName = getRenameOrNull(themeSettingsParts,$"{prefixToCheck}{initialName}");
 
         if (!betterName.HasValue())
             return (initialName, journal);
 
-        var messages = new List<string>(journal) { $"updated config to '{initialName}'" };
-        return (betterName, messages);
+        return (betterName, journal.Concat([$"updated config to '{initialName}'"]).ToList());
 
     }
 
