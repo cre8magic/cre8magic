@@ -286,8 +286,18 @@ Either make sure your code expects this - or use constructor injection if you're
 
 In Oqtane 6+ you can use constructor injection to inject services into your components.
 
+> [!IMPORTANT]
+> Using Constructor Injection is a great way to avoid timing issues with services.
+> It's also nicer but it has some downsides:
+>
+> 1. You must separate your razor file into 2 files `.razor` and `.razor.cs` (with code behind) which is possibly not desired
+> 1. You can't easily inherit the component anymore (`error CS7036: There is no argument given that corresponds to the required parameter...`)
 
-TODO
+So you can still inherit the component, but any descendant component must also use
+2 razor files with code-behind, which is kind of viral...
+
+> [!TIP]
+> Because of this tradeoff, we currently recommend against using constructor injection in Oqtane Components.
 
 
 ### How Service Injections are Used for Parameters in Oqtane

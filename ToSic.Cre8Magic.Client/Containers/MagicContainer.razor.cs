@@ -15,12 +15,6 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
     [Inject]
     public IMagicFactoryWip MagicFactory { get; set; }
 
-    public MagicContainer()
-    {
-        var x = MagicFactory;
-    }
-
-
     #region Navigation / Close
 
     public string CloseUrl { get; private set; } = "#";

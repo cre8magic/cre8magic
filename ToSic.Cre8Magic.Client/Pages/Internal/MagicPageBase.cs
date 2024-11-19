@@ -30,7 +30,7 @@ internal class MagicPageBase(Page oqtanePage)
     /// <summary>
     /// Page Name.
     /// </summary>
-    public string Name => OqtanePage.Name + "-234";
+    public string Name => OqtanePage.Name;
 
     /// <summary>
     /// Full URL to this page.
