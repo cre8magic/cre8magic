@@ -11,25 +11,9 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// </summary>
 public class MagicSettingsLoader(IEnumerable<IMagicSettingsSource> sources)
 {
-    public MagicSettingsLoader Setup(MagicPackageSettings packageSettings)
+    internal MagicSettingsCatalog MergeCatalogs(MagicPackageSettings packageSettings)
     {
-        _packageSettings = packageSettings;
-        return this;
-    }
-
-    /// <summary>
-    /// Safe access to Package Settings, with warning if not setup correctly.
-    /// </summary>
-    internal MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
-    private MagicPackageSettings? _packageSettings;
-
-
-    public MagicDebugSettings? DebugSettings => _debug ??= ConfigurationSources.FirstOrDefault(c => c.Debug != null)?.Debug;
-    private MagicDebugSettings? _debug;
-
-    internal MagicSettingsCatalog MergeCatalogs()
-    {
-        var sources = ConfigurationSources;
+        var sources = (_catalogs ??= Load(packageSettings));
 
         if (sources.Count == 0)
             return new();
@@ -42,17 +26,17 @@ public class MagicSettingsLoader(IEnumerable<IMagicSettingsSource> sources)
         return prioCat;
     }
 
-    private List<MagicSettingsCatalog> ConfigurationSources => _configurationSources ??= Load();
-    private List<MagicSettingsCatalog>? _configurationSources;
+    //private List<MagicSettingsCatalog> GetCatalogs(MagicPackageSettings? packageSettings) => _catalogs ??= Load(packageSettings);
+    private List<MagicSettingsCatalog>? _catalogs;
 
-    private List<MagicSettingsCatalog> Load()
+    private List<MagicSettingsCatalog> Load(MagicPackageSettings packageSettings)
     {
         // Typical sources
         // 100 Package Settings JSON
         // -100 Package Defaults
         var sources2 = sources
             .OrderByDescending(s => s.Priority)
-            .Select(s => s.Get(PackageSettings))
+            .Select(s => s.Get(packageSettings))
             .Where(c => c?.Catalog != null)
             .ToList();
 

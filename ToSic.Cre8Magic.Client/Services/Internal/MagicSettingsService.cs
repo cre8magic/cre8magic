@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Oqtane.UI;
+﻿using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
@@ -16,14 +15,12 @@ namespace ToSic.Cre8magic.Services.Internal;
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
 /// </summary>
-internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, MagicSettingsLoader loader)
-    : IMagicSettingsService
+internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettingsService
 {
     /// <inheritdoc />>
     public IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName)
     {
         _packageSettings = packageSettings;
-        loader.Setup(packageSettings);
         _themeTokens = null;
         _currentSettingsCache.Clear();
         _layoutName = layoutName;
@@ -32,7 +29,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
 
     private string? _layoutName;
 
-    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= loader.DebugSettings ?? MagicDebugSettings.Defaults.Fallback;
+    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= Catalog.Debug ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
 
     private MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
@@ -52,12 +49,6 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
         return tokens;
     }
     private ThemeTokens? _themeTokens;
-
-
-    /// <summary>
-    /// Logger, provided to the <see cref="NamedSettingsReader{TPart}"/>
-    /// </summary>
-    ILogger<IMagicSettingsService> IMagicSettingsService.Logger { get; } = logger;
 
     public MagicAllSettings GetSettings(PageState pageState)
     {
@@ -104,7 +95,7 @@ internal class MagicSettingsService(ILogger<IMagicSettingsService> logger, Magic
     /// <summary>
     /// Actually internal, on the interface to avoid exposing it to the outside
     /// </summary>
-    MagicSettingsCatalog IMagicSettingsService.Catalog => _catalog ??= loader.MergeCatalogs();
+    public MagicSettingsCatalog Catalog => _catalog ??= loader.MergeCatalogs(PackageSettings);
     private MagicSettingsCatalog? _catalog;
 
     

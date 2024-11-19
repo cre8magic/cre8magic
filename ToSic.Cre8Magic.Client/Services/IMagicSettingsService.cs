@@ -30,8 +30,6 @@ public interface IMagicSettingsService: IHasSystemMessages
 
     internal MagicSettingsCatalog Catalog { get; }
 
-    internal ILogger<IMagicSettingsService> Logger { get; }
-
     internal MagicDebugSettings Debug { get; }
 
     internal NamedSettingsReader<MagicAnalyticsSettings> Analytics { get; }
