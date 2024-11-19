@@ -32,8 +32,8 @@ public class ThemePartNameLookupTests
         {
             { Default, new() },
             { MenuNoRedirect, new() },
-            { MenuRedirect, new() { Configuration = OtherSettingsName } },
-            { FallbackToMainName, new() { Configuration = MagicConstants.InheritName } },
+            { MenuRedirect, new() { Settings = OtherSettingsName } },
+            { FallbackToMainName, new() { Settings = MagicConstants.InheritName } },
         };
 
         var nameResolver = new ThemePartNameResolver(ThemeName, themeParts);

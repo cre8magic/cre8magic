@@ -26,7 +26,7 @@ public class ThemePartJsonConverter : JsonConverterBase<MagicThemePartSettings>
 
     public override void Write(Utf8JsonWriter writer, MagicThemePartSettings? part, JsonSerializerOptions options)
     {
-        if (part == null || (part.Show == null && part.Configuration == null && part.Design == null))
+        if (part == null || (part.Show == null && part.Settings == null && part.Design == null))
         {
             writer.WriteNullValue();
             return;
@@ -78,6 +78,6 @@ public class ThemePartJsonConverter : JsonConverterBase<MagicThemePartSettings>
     {
         Show = null,
         Design = null,
-        Configuration = null,
+        Settings = null,
     };
 }

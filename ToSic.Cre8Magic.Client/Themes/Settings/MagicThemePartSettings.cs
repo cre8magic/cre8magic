@@ -13,7 +13,7 @@ public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
     {
         Show = priority?.Show ?? fallback?.Show;
         Design = priority?.Design ?? fallback?.Design;
-        Configuration = priority?.Configuration ?? fallback?.Configuration;
+        Settings = priority?.Settings ?? fallback?.Settings;
     }
 
     public MagicThemePartSettings CloneWith(MagicThemePartSettings? priority, bool forceCopy = false) =>
@@ -25,14 +25,14 @@ public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
     {
         Show = show;
         Design = null;
-        Configuration = null;
+        Settings = null;
     }
 
     public MagicThemePartSettings(string name)
     {
         Show = true;
         Design = name;
-        Configuration = name;
+        Settings = name;
     }
 
     /// <summary>
@@ -50,5 +50,5 @@ public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
     /// <summary>
     /// Name of the settings to look up.
     /// </summary>
-    public string? Configuration { get; init; }
+    public string? Settings { get; init; }
 }

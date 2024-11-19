@@ -63,7 +63,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
         var nameResolver = new ThemePartNameResolver(themeCtx);
 
-        var partName = settings?.ConfigName;
+        var partName = settings?.PartName;
         var (settingsName, journal) = nameResolver.GetMostRelevantSettingsName(partName, MenuSettingPrefix);
 
         // If the user didn't specify a config name in the Parameters or the config name

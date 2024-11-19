@@ -16,7 +16,7 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
         Pages = priority?.Pages ?? fallback?.Pages;
 
         Id = priority?.Id ?? fallback?.Id;
-        ConfigName = priority?.ConfigName ?? fallback?.ConfigName;
+        PartName = priority?.PartName ?? fallback?.PartName;
         Debug = priority?.Debug ?? fallback?.Debug;
         Display = priority?.Display ?? fallback?.Display;
         Depth = priority?.Depth ?? fallback?.Depth;
@@ -56,10 +56,11 @@ public record MagicMenuSettings : SettingsWithInherit, IHasDebugSettings, IMagic
     public string? Id { get; init; }
 
     /// <summary>
-    /// Name to identify this configuration
+    /// Name to identify this part.
+    /// This information is used to load settings (menu settings and design settings)
     /// </summary>
     // TODO: REVIEW NAME
-    public string? ConfigName { get; init; }
+    public string? PartName { get; init; }
 
     /// <inheritdoc />
     public MagicDebugSettings? Debug { get; init; }

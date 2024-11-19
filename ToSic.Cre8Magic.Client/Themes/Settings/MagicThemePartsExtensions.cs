@@ -11,7 +11,7 @@ internal static class MagicThemePartsExtensions
     /// <returns></returns>
     public static string? GetPartRenameOrNull(this NamedSettings<MagicThemePartSettings> dic, string name) =>
         dic.TryGetValue(name, out var value)
-            ? value.Configuration
+            ? value.Settings
             : null;
 
     public static string GetPartRenameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>

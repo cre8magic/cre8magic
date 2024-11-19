@@ -29,7 +29,7 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
         Pages = priority?.Pages ?? fallback?.Pages;
         Active = priority?.Active ?? fallback?.Active;
         Id = priority?.Id ?? fallback?.Id;
-        ConfigName = priority?.ConfigName ?? fallback?.ConfigName;
+        PartName = priority?.PartName ?? fallback?.PartName;
         Debug = priority?.Debug ?? fallback?.Debug;
         Display = priority?.Display ?? fallback?.Display ?? Defaults.Fallback.Display;
         ActiveId = priority?.ActiveId ?? fallback?.ActiveId;
@@ -98,10 +98,10 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     public string? Id { get; init; }
 
     /// <summary>
-    /// Name to identify this configuration
+    /// Name to identify this part.
+    /// This information is used to load settings (breadcrumb settings and design settings)
     /// </summary>
-    // TODO: REVIEW NAME
-    public string? ConfigName { get; init; }
+    public string? PartName { get; init; }
 
     /// <inheritdoc />
     public MagicDebugSettings? Debug { get; init; }

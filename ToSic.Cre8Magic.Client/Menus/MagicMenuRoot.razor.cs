@@ -24,7 +24,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
     #region Properties which should not be used any more - to be removed
 
     [Parameter] public string? MenuId { get; set; }
-    [Parameter] public string? ConfigName { get; set; }
+    [Parameter] public string? PartName { get; set; }
     /// <inheritdoc />
     [Parameter] public List<int>? PageList { get; set; }
     [Parameter] public bool? Children { get; set; }
@@ -66,7 +66,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
                 : new() { Allowed = Debug, Admin = Debug, Anonymous = Debug },
             Template = Template ?? startSettings?.Template,
             Children = Children ?? startSettings?.Children,
-            ConfigName = ConfigName ?? startSettings?.ConfigName,
+            PartName = PartName ?? startSettings?.PartName,
             Depth = Depth ?? startSettings?.Depth,
             Display = Display ?? startSettings?.Display,
             Level = Level ?? startSettings?.Level,

@@ -69,22 +69,22 @@
         <Menu Start="1, 3, 5!" MenuSettings='new() { Start = "1, 3, 5!" }'></Menu>
 
         <h3>Specific Pages Listed here (Home, myPage, Login)</h3>
-        <Menu ConfigName="Footer"></Menu>
+        <Menu PartName="Footer"></Menu>
 
         <hr/>
         <h2>Json Settings</h2>
         <h3>Basic Menu without Setting, name "Main"</h3>
-        <Menu ConfigName="Main"></Menu>
+        <Menu PartName="Main"></Menu>
 
         <h3>Basic Menu without Setting, name "Mobile"</h3>
-        <Menu ConfigName="Mobile"></Menu>
+        <Menu PartName="Mobile"></Menu>
     }
 
     <h3>Basic Menu without Setting, name "Sidebar"</h3>
     <p>With ConfigName</p>
-    <Menu ConfigName="Sidebar"></Menu>
+    <Menu PartName="Sidebar"></Menu>
     <p>With Settings</p>
-    <Menu MenuSettings='new() { ConfigName = "Sidebar", Debug = new() { Admin = true } }'></Menu>
+    <Menu MenuSettings='new() { PartName = "Sidebar", Debug = new() { Admin = true } }'></Menu>
 
 
     <hr/>
