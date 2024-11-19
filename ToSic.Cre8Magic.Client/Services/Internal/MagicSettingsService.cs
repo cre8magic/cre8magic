@@ -8,6 +8,7 @@ using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
+using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.MagicConstants;
 
 namespace ToSic.Cre8magic.Services.Internal;
@@ -28,6 +29,8 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     }
 
     private string? _layoutName;
+
+    public MagicDebugState DebugState(PageState pageState) => ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
     MagicDebugSettings IMagicSettingsService.Debug => _debug ??= Catalog.Debug ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
@@ -82,7 +85,12 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
 
         // Figure out real config-name, and get the initial layout
         var (settingsName, nameJournal) = MagicAllSettingsReader.GetBestSettingsName(_layoutName, Default);
-        var theme = ThemeSettings.Find(settingsName).Parse(tokens);
+        var themeSettings = ThemeSettings.Find(settingsName);
+        //var theme = ThemeSettings.Find(settingsName).Parse(tokens);
+        var theme = themeSettings with
+        {
+            Logo = tokens.Parse(themeSettings.Logo)
+        };
 
         var designSettings = ThemeDesignSettings(theme, settingsName);
         var ctx = new MagicThemeContext(settingsName, pageState, theme, designSettings, tokens, nameJournal);

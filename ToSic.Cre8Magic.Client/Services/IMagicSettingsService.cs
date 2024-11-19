@@ -51,4 +51,5 @@ public interface IMagicSettingsService: IHasSystemMessages
     ///// <param name="fallback"></param>
     ///// <returns></returns>
     //internal (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback);
+    MagicDebugState DebugState(PageState pageState);
 }

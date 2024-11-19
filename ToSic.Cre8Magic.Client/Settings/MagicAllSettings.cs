@@ -22,8 +22,8 @@ public record MagicAllSettings: IHasDebugSettings
         PageState = pageState;
     }
 
-    public MagicDebugState Debug => _debug ??= Service.Debug.GetState(ThemeSettings, PageState.UserIsAdmin());
-    private MagicDebugState? _debug;
+    //public MagicDebugState Debug => _debug ??= Service.Debug.GetState(ThemeSettings, PageState.UserIsAdmin());
+    //private MagicDebugState? _debug;
 
     /// <summary>
     /// This is only used to detect if debugging should be active, and the setting should come from the theme itself

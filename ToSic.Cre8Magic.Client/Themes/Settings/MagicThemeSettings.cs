@@ -30,7 +30,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     /// <summary>
     /// The logo to show, should be located in the assets subfolder
     /// </summary>
-    public string? Logo { get; set; }
+    public string? Logo { get; init; }
 
     public int LanguagesMin { get; init; }
 
@@ -44,11 +44,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
 
     public string? Design { get; init; }
 
-    internal MagicThemeSettings Parse(ITokenReplace tokens)
-    {
-        Logo = tokens.Parse(Logo);
-        return this;
-    }
+    public MagicDebugSettings? Debug { get; init; }
 
     internal static Defaults<MagicThemeSettings> Defaults = new(new()
     {
@@ -57,6 +53,4 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
         MagicContextInBody = false,
         Design = InheritName,
     });
-
-    public MagicDebugSettings? Debug { get; init; }
 }

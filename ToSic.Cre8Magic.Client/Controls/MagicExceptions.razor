@@ -1,19 +1,17 @@
-﻿@using ToSic.Cre8magic.Settings.Internal
-@using ToSic.Cre8magic.Utils
+﻿@using ToSic.Cre8magic.Utils
 @inject IMagicSettingsService SettingsService
 @inherits MagicControlBase
-@{
-    var allSettings = SettingsService.GetSettings(PageState);
-    var exceptions = SettingsService.Exceptions;
-}
-@if (exceptions?.Any() ?? false)
+@* Check if we have any exceptions to report *@
+@if (SettingsService.Exceptions?.Any() ?? false)
 {
+    var debug = SettingsService.DebugState(PageState);
+
     <div class="alert alert-danger" role="alert">
-        @if (allSettings.Debug?.Show == true || PageState.UserIsAdmin())
+        @if (debug?.Show == true || PageState.UserIsAdmin())
         {
             <strong>The Cre8magic Design System reports some problems (visible to Admins only)</strong>
             <ul>
-                @foreach (var ex in exceptions)
+                @foreach (var ex in SettingsService.Exceptions)
                 {
                     <li>@ex.Message</li>
                 }
