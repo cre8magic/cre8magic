@@ -11,8 +11,8 @@ internal class NamedSettingsReader<TPart>(
     IMagicSettingsService settingsSvc,
     Defaults<TPart> defaults,
     Func<MagicSettingsCatalog, NamedSettings<TPart>> findList,
-    bool useAllSources = false,
-    Func<string, TPart, TPart>? modify = default)
+    bool useAllSources = false
+)
     where TPart : class, ICanClone<TPart>, new()
 {
     internal TPart Find(string name, string? defaultName = null, bool skipCache = false)
@@ -55,8 +55,6 @@ internal class NamedSettingsReader<TPart>(
             return priority;
 
         var mergedNew = defaults.Foundation.CloneWith(priority);
-        if (modify != null)
-            mergedNew = modify(mainName, mergedNew);
 
         if (!skipCache)
             _cache[mainName] = mergedNew;
@@ -69,8 +67,6 @@ internal class NamedSettingsReader<TPart>(
         if (addition == null)
             return priority;
         var mergeNew = addition.CloneWith(priority);
-        if (modify != null)
-            mergeNew = modify(realName, mergeNew);
 
         return mergeNew;
     }
