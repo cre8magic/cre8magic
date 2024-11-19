@@ -11,9 +11,9 @@
 *@
 @code
 {
-    [Parameter, EditorRequired]
-    public required MagicAllSettings AllSettings { get; set; }
-
+    /// <summary>
+    /// Get the PageState from the CascadingParameter
+    /// </summary>
     [CascadingParameter]
     public required PageState PageState { get; set; }
 
@@ -37,16 +37,14 @@
 @{
     var state = PageContextSvc.State(PageState, Settings);
 }
-<CascadingValue Value="AllSettings">
-    @* If PutInBody a JS will place the classes in the Body tag *@
-    @if (state.UseBodyTag)
-    {
+@* If PutInBody a JS will place the classes in the Body tag, so no need to add it here *@
+@if (state.UseBodyTag)
+{
+    @ChildContent
+}
+else
+{
+    <div id="@state.TagId" class="@state.Classes">
         @ChildContent
-    }
-    else
-    {
-        <div id="@state.TagId" class="@state.Classes">
-            @ChildContent
-        </div>
-    }
-</CascadingValue>
+    </div>
+}
