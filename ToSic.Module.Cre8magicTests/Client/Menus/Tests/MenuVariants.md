@@ -100,3 +100,12 @@ This would use the pre-built controls, which are already there.
 <!-- maybe with name...?-->
 <MagicMenu SettingsName="footer"></MagicMenu>
 ```
+
+!WARNING!
+
+We have 2 scenarios
+
+1. Settings Name - where it should look up this name in the list of settings for this name
+1. Part Name - where we look up the parts configuration to possibly find another name!
+1. Theme Settings Name - where we would first choose the theme configuration? and then the part?
+

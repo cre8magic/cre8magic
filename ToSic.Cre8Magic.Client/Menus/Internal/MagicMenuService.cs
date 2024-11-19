@@ -60,7 +60,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
     {
         var themeCtx = settingsSvc.GetThemeContext(pageState);
 
-        var reader = new MagicAllSettingsReader(themeCtx);
+        var reader = new ThemePartNameResolver(themeCtx);
 
         var (configName, journal) = reader.GetMostRelevantSettingsName(settings?.ConfigName, MenuSettingPrefix);
         var messages = new List<string>(journal);
