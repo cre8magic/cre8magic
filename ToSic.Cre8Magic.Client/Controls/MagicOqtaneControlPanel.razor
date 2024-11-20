@@ -1,5 +1,6 @@
-﻿@using ToSic.Cre8magic.Users
-@inherits MagicControlBase
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Users
+@inherits ComponentBase
 @inject IMagicUserService UserService
 @*
 File Purpose:       Add the Oqtane Control Panel to the Page
@@ -9,6 +10,11 @@ Nice to know:
     because the default implementation adds a bunch of buttons we don't want.
     -> See in the _oqtane-admin-buttons.scss file
 *@
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
 @if (UserService.User(PageState).IsAdmin)
 {
     <div id="oqtane-control-panel">

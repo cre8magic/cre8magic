@@ -1,5 +1,5 @@
 @using ToSic.Cre8magic.Users
-@inherits MagicControlBase
+@inherits ComponentBase
 @inject MagicPageEditService PageEditService
 @inject IMagicThemeService ThemeService
 @inject IMagicUserService UserService
@@ -8,6 +8,11 @@ File Purpose:       Shows the Toggle-Edit Button
 Recommendations:    We recommend to use inline SVGs for performance reasons.
 Nice to know:       -
 *@
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
 @{
     var user = UserService.User(PageState);
 }

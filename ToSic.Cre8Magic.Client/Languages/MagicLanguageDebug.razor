@@ -1,7 +1,11 @@
-﻿@using ToSic.Cre8magic.Controls
-@inherits MagicControlBase
-@code
-{
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Controls
+@inherits ComponentBase
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
     [Parameter, EditorRequired]
     public required IMagicLanguageKit State { get; set; }
 }

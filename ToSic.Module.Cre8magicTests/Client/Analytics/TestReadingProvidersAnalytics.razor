@@ -1,7 +1,12 @@
 ﻿@using ToSic.Cre8magic.Client.Services
 @using ToSic.Cre8magic.Services.Internal
-@inherits ToSic.Cre8magic.Client.Controls.MagicControlBase;
+@inherits ComponentBase
 @inject IMagicSettingsService SettingsService
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
 @{
     // SettingsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
     var defAnalytics = SettingsService.AnalyticsSettings("default");

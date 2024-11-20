@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
@@ -38,7 +39,7 @@ public record MagicLanguage: ICanClone<MagicLanguage>
     /// </summary>
     public string? Description { get; init; }
 
-    public bool IsActive => CultureInfo.CurrentUICulture.Name == Culture;
+    public bool IsActive => CultureInfo.CurrentUICulture.Name.EqInvariant(Culture);
 
     // TODO: MAYBE additional options to only enable on certain roles...?
 }

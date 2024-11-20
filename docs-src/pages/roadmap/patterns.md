@@ -9,7 +9,9 @@
 
 ## Composition over Inheritance
 
+## Plain Vanilla Blazor Components
 
+...`ComponentBase` instead of `ThemeBase` etc.
 
 ## Read-Only Record Objects
 

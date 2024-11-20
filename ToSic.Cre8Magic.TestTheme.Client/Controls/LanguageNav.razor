@@ -7,15 +7,15 @@ Nice to know:
       ...if the list is empty, it will use the site definition
       ...otherwise it will use the values specified for order/label of languages
 *@
-@if (State is { Show: true })
+@if (LanguageKit is { Show: true })
 {
-    <ul class='@(State.Designer.Classes("languages-ul") ?? "theme-languages")'>
-        @foreach (var lang in State.Languages)
+    <ul class='@(LanguageKit.Designer.Classes("languages-ul") ?? "theme-languages")'>
+        @foreach (var lang in LanguageKit.Languages)
         {
-            <li class='@State.Designer.Classes("languages-li", lang)'>
+            <li class='@LanguageKit.Designer.Classes("languages-li", lang)'>
                 <a href="#" @onclick="@(async _ => await LanguageService.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
             </li>
         }
     </ul>
-    <MagicLanguageDebug State="State"></MagicLanguageDebug>
+    <MagicLanguageDebug State="LanguageKit"></MagicLanguageDebug>
 }

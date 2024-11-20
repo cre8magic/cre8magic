@@ -1,5 +1,5 @@
 @using ToSic.Cre8magic.Users
-@inherits MagicControlBase
+@inherits ComponentBase
 @inject IMagicThemeService ThemeService
 @inject IMagicUserService UserService
 @*
@@ -7,6 +7,11 @@ File Purpose:       Button: Show Control Panel
 Recommendations:    We recommend to use inline SVGs for performance reasons.
 Nice to know:       Will use Bootstrap toggle functionality to show the hidden control panel
 *@
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
 @{
     var user = UserService.User(PageState);
 }

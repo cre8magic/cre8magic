@@ -1,4 +1,4 @@
-@inherits MagicControlBase
+@inherits ComponentBase
 @inject IMagicThemeService ThemeService
 @*
 File Purpose:       Contains the logo in the layout. 
@@ -10,6 +10,11 @@ Nice to know:
 TODO:
 - I18N in resources @2md
 *@
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
 @{
     var state = ThemeService.State(PageState);
 }

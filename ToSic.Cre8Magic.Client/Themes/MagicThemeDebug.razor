@@ -1,6 +1,12 @@
-﻿@using ToSic.Cre8magic.Controls
-@inherits MagicControlBase
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Controls
+@inherits ComponentBase
 @inject IMagicSettingsService SettingsService
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
 @{
     var themeContext = SettingsService.GetThemeContext(PageState);
 }

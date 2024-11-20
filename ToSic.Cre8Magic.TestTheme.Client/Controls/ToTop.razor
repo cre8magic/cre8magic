@@ -1,4 +1,4 @@
-﻿@inherits MagicControlBase
+﻿@inherits ComponentBase
 @inject IMagicThemeService ThemeService
 @*
 File Purpose:       Contains the floating "UP" button it the corner. 
@@ -7,6 +7,11 @@ Nice to know:       -
 TODO:
     - Title should be i18n @2md
 *@
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
 <a id="@ThemeService.State(PageState).Designer.Id("linkToTop")" title="Up" rel="nofollow">
     <svg xmlns="http://www.w3.org/2000/svg" width="19.032" height="20.034" viewBox="0 0 19.032 20.034">
         <g id="Group_2" data-name="Group 2" transform="translate(-1055.984 -551.276)">

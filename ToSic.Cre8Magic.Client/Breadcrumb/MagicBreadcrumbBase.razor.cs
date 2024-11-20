@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Oqtane.UI;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils;
 
@@ -7,11 +8,14 @@ namespace ToSic.Cre8magic.Breadcrumb;
 /// <summary>
 /// Recommended base class for all breadcrumb components.
 /// </summary>
-public abstract class MagicBreadcrumbBase: MagicControlBase
+public abstract class MagicBreadcrumbBase: ComponentBase
 {
     [Inject]
-    public IMagicPageService? PageSvc { get; set; }
-    private IMagicPageService PageSvcSafe => PageSvc ?? throw new InvalidOperationException("Page Service not available, it seems you're accessing a property before injection");
+    public IMagicPageService? PageServiceWip { get; set; }
+
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
 
     /// <summary>
     /// Settings for retrieving the breadcrumbs; optional.
@@ -30,14 +34,14 @@ public abstract class MagicBreadcrumbBase: MagicControlBase
         => settings;
 
     // The home page - never changes during runtime, so we can cache it
-    protected IMagicPage HomePage => _homePage ??= PageSvcSafe.GetHome(PageState);
+    protected IMagicPage HomePage => _homePage ??= PageServiceWip!.GetHome(PageState);
     private IMagicPage? _homePage;
 
     /// <summary>
     /// The Breadcrumb for the current page.
     /// Will be updated when the page changes.
     /// </summary>
-    protected IMagicPageList Breadcrumb => _breadcrumbs.Get(PageState, () => PageSvcSafe.GetBreadcrumb(PageState, Customize(Settings ?? new())));
+    protected IMagicPageList Breadcrumb => _breadcrumbs.Get(PageState, () => PageServiceWip!.GetBreadcrumb(PageState, Customize(Settings ?? new())));
     private readonly GetKeepByPageId<IMagicPageList> _breadcrumbs = new();
 
 }
