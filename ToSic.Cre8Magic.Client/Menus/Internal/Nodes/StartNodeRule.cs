@@ -19,7 +19,7 @@ internal class StartNodeRule
         ? _mode
         : _mode = Id != default
             ? StartMode.PageId
-            : From == MagicMenuSettingsData.StartPageRoot
+            : From is MagicMenuSettingsData.StartPageRoot or MagicMenuSettingsData.StartPageRoot2
                 ? StartMode.Root
                 : From == MagicMenuSettingsData.StartPageCurrent
                     ? StartMode.Current

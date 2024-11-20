@@ -44,12 +44,12 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         return l.Return(startPages, startPages.LogPageList());
     }
 
-    internal List<IMagicPage> FindStartPageOfManyRules(StartNodeRule[] startingPoints)
+    internal List<IMagicPage> FindStartPageOfManyRules(List<StartNodeRule> startingPoints)
     {
         var l = Log.Fn<List<IMagicPage>>(string.Join(',', startingPoints.Select(p => p.Id)));
         var result = startingPoints
             .SelectMany(FindStartPagesOfOneRule)
-            .Where(p => p != null)
+            //.Where(p => p != null)
             .ToList();
         return l.Return(result, result.LogPageList());
     }
@@ -80,15 +80,19 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         {
             case StartMode.PageId:
                 return l.Return(source.Where(p => p.Id == n.Id).ToList(), $"Page with id {n.Id}");
+
             case StartMode.Root:
                 return l.Return(source.Where(p => p.MenuLevel == 1).ToList(), "Home/root");
+
             // Level 0 means current level / current page
             case StartMode.Current when n.Level == 0:
                 return l.Return([Current], "Current page");
             // Level 1 means top-level pages. If we don't want the level1 children, we want the top-level items
             // TODO: CHECK WHAT LEVEL Oqtane actually gives us, is 1 the top?
+
             case StartMode.Current when n is { Level: 1, ShowChildren: false }:
                 return l.Return(source.Where(p => p.MenuLevel == 1).ToList(), "Current level 1?");
+
             case StartMode.Current when n.Level > 0:
                 // If coming from the top, level 1 means top level, so skip one less
                 //var skipDown = n.Level - 1; // till 2023-11-14
@@ -97,6 +101,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
                 var fromTop = breadcrumb.Skip(skipDown).FirstOrDefault();
                 List<IMagicPage> fromTopResult = fromTop == null ? [] : [fromTop];
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
+
             case StartMode.Current when n.Level < 0:
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
@@ -104,6 +109,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
                 var fromCurrent = breadcrumb.Skip(skipUp).FirstOrDefault();
                 List<IMagicPage> result = fromCurrent == null ? [] : [fromCurrent];
                 return l.Return(result, $"up the ancestors by {skipUp}");
+
             case StartMode.Undefined:
             case StartMode.Unknown:
             default:
@@ -130,30 +136,44 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
             case > 1:
                 return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level > 1")], "err");
             default:
-                return l.Return(
-                    [PageFactory.ErrPage(0, "Error: Create menu from current page but level < -1, not yet implemented")], "err");
+                return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level < -1, not yet implemented")], "err");
         }
     }
 
-    private StartNodeRule[] GetStartNodeRules(string? value, int level, bool showChildren)
+    private List<StartNodeRule> GetStartNodeRules(string? value, int level, bool showChildren)
     {
-        var l = Log.Fn<StartNodeRule[]>($"{nameof(value)}: '{value}'; {nameof(level)}: {level}; {nameof(showChildren)}: {showChildren}");
+        var l = Log.Fn<List<StartNodeRule>>($"{nameof(value)}: '{value}'; {nameof(level)}: {level}; {nameof(showChildren)}: {showChildren}");
 
-        if (!value.HasText()) return l.Return([], "no value, empty list");
-        var parts = value.Split(',');
+        if (!value.HasText())
+            return l.Return([], "no value, empty list");
+
+        var parts = value.Split(',')
+            .Select(s => s.Trim())
+            .Where(s => s.HasText())
+            .ToList();
+
         var result = parts
             .Select(fromNode =>
             {
-                fromNode = fromNode.Trim();
-                if (!fromNode.HasText()) return null;
+                //fromNode = fromNode.Trim();
+                //if (!fromNode.HasText()) return null;
                 var important = fromNode.EndsWith(PageForced);
-                if (important) fromNode = fromNode.TrimEnd(PageForced);
+                if (important)
+                    fromNode = fromNode.TrimEnd(PageForced);
                 fromNode = fromNode.Trim();
                 int.TryParse(fromNode, out var id);
-                return new StartNodeRule { Id = id, From = fromNode, Force = important, ShowChildren = showChildren, Level = level };
+                return new StartNodeRule
+                {
+                    Id = id,
+                    From = fromNode,
+                    Force = important,
+                    ShowChildren = showChildren,
+                    Level = level
+                };
             })
             .Where(n => n != null)
-            .ToArray() as StartNodeRule[];
-        return l.ReturnAndKeepData(result, result.Length.ToString());
+            .ToList();
+
+        return l.ReturnAndKeepData(result, result.Count.ToString());
     }
 }

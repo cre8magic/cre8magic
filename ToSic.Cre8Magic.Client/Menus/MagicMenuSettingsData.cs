@@ -89,6 +89,7 @@ public record MagicMenuSettingsData : SettingsWithInherit, IHasDebugSettings, IM
     /// </summary>
     public string? Start { get; init; }
     public const string StartPageRoot = "*";
+    public const string StartPageRoot2 = "/";
     public const string StartPageCurrent = ".";
 
     /// <summary>

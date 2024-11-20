@@ -1,10 +1,8 @@
-﻿@using ToSic.Cre8magic.Client.Services
-@using ToSic.Cre8magic.Components.Internal
+﻿@using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.Settings.Providers
 @inherits ComponentBase
 @inject IMagicSettingsProvider SettingsProviders
-@inject IMagicSettingsService SettingsService
 @inject IMagicMenuService MenuSvc
 @code {
     /// <inheritdoc cref="ComponentDocs.PageState"/>
@@ -14,19 +12,25 @@
 @{
     var menuName = "red-menu";
 
-    var designs = new Dictionary<string, MagicMenuDesignSettings>()
+    var designs = new Dictionary<string, MagicMenuDesignSettings>
     {
         { "ul", new() { Classes = "alert alert-warning" } },
     };
 
     SettingsProviders.Reset();
     SettingsProviders.MenuDesigns.Provide(menuName, designs);
-    // var testAnalytics = SettingsService.NoCachingForDebug(s => s.AnalyticsSettings("analytics-test"));
 }
 <div class="alert alert-info">
     <h4>Menu Provide Design Red</h4>
     <p>
         Goal is that this code will configure a menu design, and the menu will pick it up automatically.
     </p>
-    <BasicMenu MenuKit="MenuSvc.MenuKit(PageState, new() { PartName = menuName })"></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = menuName, Start = "." })'></BasicMenu>
+    
+    <hr />
+    <p>
+        This is the default
+    </p>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = "." })'></BasicMenu>
+    
 </div>
