@@ -1,6 +1,7 @@
 ﻿using Microsoft.JSInterop;
 using Oqtane.UI;
 using ToSic.Cre8magic.Themes.Settings;
+using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Client.Services.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics.Internal;
@@ -8,6 +9,16 @@ namespace ToSic.Cre8magic.Analytics.Internal;
 public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc) : IMagicAnalyticsService
 {
     private const string GtmEvent = "event";
+
+    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = default) =>
+        _cache.Get(pageState, () => new MagicAnalyticsKit
+        {
+            Settings = settings ?? GetAnalyticsSettings(pageState),
+            PageState = pageState,
+            Service = this
+        });
+
+    private readonly GetKeepByPageId<IMagicAnalyticsKit> _cache = new();
 
     private MagicAnalyticsSettings GetAnalyticsSettings(PageState pageState)
     {
@@ -18,10 +29,15 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
         return analyticsSettings;
     }
 
-    /// <inheritdoc />
-    public async Task TrackPage(PageState pageState, bool isFirstRender, MagicAnalyticsSettings? settings)
+    /// <summary>
+    /// Call to do tracking, which will be accessed by the kit.
+    /// </summary>
+    /// <param name="pageState"></param>
+    /// <param name="settings"></param>
+    /// <param name="isFirstRender"></param>
+    /// <returns></returns>
+    internal async Task TrackPage(PageState pageState, MagicAnalyticsSettings? settings, bool isFirstRender)
     {
-        settings ??= GetAnalyticsSettings(pageState);
         if (settings == null) return;
         if (settings.PageViewTrack != true) return;
 

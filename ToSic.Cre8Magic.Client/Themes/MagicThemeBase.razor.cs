@@ -89,7 +89,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
 
         // Track page views
         if (MagicAnalytics != null)
-            await MagicAnalytics.TrackPage(PageState, firstRender);
+            await MagicAnalytics.AnalyticsKit(PageState).TrackPage(firstRender);
     }
 
     public MagicThemeDesigner Designer => ThemeState.Designer ?? throw new("No settings available");
