@@ -38,7 +38,7 @@ public class ThemePartNameLookupTests
 
         var nameResolver = new ThemePartNameResolver(ThemeName, themeParts);
 
-        var (bestName, messages) = nameResolver.GetMostRelevantSettingsName(partName, MenuPrefix);
+        var (bestName, messages) = nameResolver.FindBestSettingsName(partName, MenuPrefix);
         Assert.Equal(expected, bestName);
     }
 }

@@ -23,22 +23,19 @@ internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePa
     { }
 
 
-    public (string BestSettingsName, string BestDesignName, List<string> Messages)
-        GetMostRelevantNames(string? possibleName, string? prefixToCheck)
+    public (string BestSettingsName, string BestDesignName, List<string> Messages) GetBestNames(string? possibleName, string? prefixToCheck)
     {
-        var (bestSettingsName, settingsJournal) = GetMostRelevantSettingsName(possibleName, prefixToCheck);
-        var (bestDesignName, designJournal) = GetMostRelevantDesignSettingsName(possibleName, prefixToCheck);
+        var (bestSettingsName, settingsJournal) = FindBestSettingsName(possibleName, prefixToCheck);
+        var (bestDesignName, designJournal) = FindBestDesignName(possibleName, prefixToCheck);
         return (bestSettingsName, bestDesignName, settingsJournal.Concat(designJournal).ToList());
     }
 
 
-    public (string BestName, List<string> Messages)
-        GetMostRelevantSettingsName(string? possibleName, string? prefixToCheck) =>
-        GetMostRelevantSettingsName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartRenameOrNull);
+    internal (string BestName, List<string> Messages) FindBestSettingsName(string? possibleName, string? prefixToCheck) =>
+        FindBestName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartSettingsName);
 
-    public (string BestName, List<string> Messages)
-        GetMostRelevantDesignSettingsName(string? possibleName, string? prefixToCheck) =>
-        GetMostRelevantSettingsName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartDesignRenameOrNull);
+    internal (string BestName, List<string> Messages) FindBestDesignName(string? possibleName, string? prefixToCheck) =>
+        FindBestName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartDesignName);
 
     /// <summary>
     /// Generic method to check for names, since it could be run on the Settings/Configuration property or on the DesignSettings property
@@ -47,9 +44,9 @@ internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePa
     /// <param name="prefixToCheck"></param>
     /// <param name="getRenameOrNull"></param>
     /// <returns></returns>
-    private (string BestName, List<string> Messages) GetMostRelevantSettingsName(string? possibleName, string? prefixToCheck, Func<NamedSettings<MagicThemePartSettings>, string, string?> getRenameOrNull)
+    private (string BestName, List<string> Messages) FindBestName(string? possibleName, string? prefixToCheck, Func<NamedSettings<MagicThemePartSettings>, string, string?> getRenameOrNull)
     {
-        var (initialName, journal) = GetBestSettingsName(possibleName, mainName);
+        var (initialName, journal) = PickBestSettingsName(possibleName, mainName);
 
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
@@ -77,7 +74,7 @@ internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePa
     /// <param name="preferred"></param>
     /// <param name="mainName"></param>
     /// <returns></returns>
-    public static (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string mainName)
+    internal static (string BestName, List<string> Journal) PickBestSettingsName(string? preferred, string mainName)
     {
         var journal = new List<string> { $"Initial Settings Name: '{preferred}'" };
 

@@ -9,18 +9,18 @@ internal static class MagicThemePartsExtensions
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
-    public static string? GetPartRenameOrNull(this NamedSettings<MagicThemePartSettings> dic, string name) =>
+    public static string? GetPartSettingsName(this NamedSettings<MagicThemePartSettings> dic, string name) =>
         dic.TryGetValue(name, out var value)
             ? value.Settings
             : null;
 
-    public static string GetPartRenameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>
-        dic.GetPartRenameOrNull(name) ?? fallback;
+    public static string GetPartSettingsNameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>
+        dic.GetPartSettingsName(name) ?? fallback;
 
     /// <summary>
     /// Determine the name of the design configuration of a specific part
     /// </summary>
-    public static string? GetPartDesignRenameOrNull(this NamedSettings<MagicThemePartSettings> dic, string name) =>
+    public static string? GetPartDesignName(this NamedSettings<MagicThemePartSettings> dic, string name) =>
         dic.TryGetValue(name, out var value)
             ? value.Design
             : null;

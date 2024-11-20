@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 ///
 /// Not used for the root though...
 /// </summary>
-internal class MagicMenuNodeFactory(MagicMenuContextWip context, Func<int> getMaxDepth) 
+internal class MagicMenuNodeFactory(MagicMenuContextWip context) 
     : MagicPagesFactoryBase(context)
 {
     /// <summary>
@@ -23,6 +23,8 @@ internal class MagicMenuNodeFactory(MagicMenuContextWip context, Func<int> getMa
 
     protected override IMagicPageDesigner FallbackDesigner() => new MagicMenuDesigner(context);
 
+    public int MaxDepth => _maxDepth ??= context.Settings.Depth ?? MagicMenuSettingsData.Defaults.Fallback.Depth!.Value;
+    private int? _maxDepth;
 
     /// <summary>
     /// Retrieve the children the first time it's needed.
@@ -31,8 +33,7 @@ internal class MagicMenuNodeFactory(MagicMenuContextWip context, Func<int> getMa
     public override List<IMagicPageWithDesignWip> GetChildren(IMagicPage page)
     {
         var l = Log.Fn<List<IMagicPageWithDesignWip>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
-        var maxDepth = getMaxDepth(); // getTree().MaxDepth;// ?? SettingsTyped.Depth ?? MagicMenuSettings.LevelDepthFallback;
-        var levelsRemaining = maxDepth - (page.MenuLevel - 1 /* Level is 1 based, so -1 */);
+        var levelsRemaining = MaxDepth - (page.MenuLevel - 1 /* Level is 1 based, so -1 */);
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 
