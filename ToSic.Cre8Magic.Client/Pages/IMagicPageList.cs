@@ -1,8 +1,4 @@
-﻿
-using ToSic.Cre8magic.Pages.Internal;
-using ToSic.Cre8magic.Settings;
-
-namespace ToSic.Cre8magic.Pages;
+﻿namespace ToSic.Cre8magic.Pages;
 
 /// <summary>
 /// A list of magic pages with design capabilities.

@@ -22,6 +22,6 @@ public record MagicMenuKit : IMagicMenuKit
     public /* actually internal */ required IContextWip Context { get; init; }
 
     // TODO: naming not final
-    public IMagicMenuKit Kit(IMagicPageList pages) =>
-        this with { Pages = pages };
+    public IMagicMenuKit Kit(IMagicPageWithDesignWip page) =>
+        this with { Pages = page };
 }
