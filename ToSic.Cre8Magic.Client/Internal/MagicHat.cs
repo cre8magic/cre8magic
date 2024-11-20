@@ -22,7 +22,7 @@ internal class MagicHat(
         if (_containerDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
 
-        var designContext = settingsSvc.GetThemeContext(pageState);
+        var designContext = settingsSvc.GetThemeContextFull(pageState);
         var container = new MagicContainerDesigner(designContext, module);
         _containerDesigners[module.ModuleId] = container;
         return container;
@@ -34,7 +34,7 @@ internal class MagicHat(
         if (_themeDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
 
-        var designContext = settingsSvc.GetThemeContext(pageState);
+        var designContext = settingsSvc.GetThemeContextFull(pageState);
         var theme = new MagicThemeDesigner(designContext);
         _themeDesigners[pageState.Page.PageId] = theme;
         return theme;
@@ -45,7 +45,7 @@ internal class MagicHat(
     {
         if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
-        var designContext = settingsSvc.GetThemeContext(pageState);
+        var designContext = settingsSvc.GetThemeContextFull(pageState);
 
         var languages = new MagicLanguageDesigner(designContext);
         _languagesDesigners[pageState.Page.PageId] = languages;

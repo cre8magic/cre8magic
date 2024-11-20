@@ -12,7 +12,7 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
 
     private MagicPageContextState BuildState(PageState pageState, MagicPageContextSettings? settings)
     {
-        var themeCtx = settingsSvc.GetThemeContext(pageState);
+        var themeCtx = settingsSvc.GetThemeContextFull(pageState);
         var useBodyTag = settings?.UseBodyTag ?? themeCtx.ThemeSettings.MagicContextInBody == true;
         var tagId = settings?.TagId ?? themeCtx.ThemeDesignSettings.MagicContextTagId;
         var themeDesigner = new MagicThemeDesigner(themeCtx);

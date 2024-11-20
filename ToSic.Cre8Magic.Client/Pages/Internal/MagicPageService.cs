@@ -7,25 +7,23 @@ internal class MagicPageService : IMagicPageService
 {
     public IEnumerable<IMagicPage> GetAll(PageState pageState, bool ignorePermissions = default) =>
         ignorePermissions
-            ? GetFactory(pageState).PagesAll()
-            : GetFactory(pageState).PagesUser();
+            ? new MagicPageFactory(pageState).PagesAll()
+            : new MagicPageFactory(pageState).PagesUser();
 
     public IMagicPage GetHome(PageState pageState) =>
-        GetFactory(pageState).Home;
+        new MagicPageFactory(pageState).Home;
 
     public IMagicPage GetCurrent(PageState pageState) =>
-        GetFactory(pageState).Current;
+        new MagicPageFactory(pageState).Current;
 
     public IMagicPage? GetPage(PageState pageState, int pageId) =>
-        GetFactory(pageState).GetOrNull(pageId);
+        new MagicPageFactory(pageState).GetOrNull(pageId);
 
     public IMagicPage? GetPage(PageState pageState, Page? page) =>
-        GetFactory(pageState).CreateOrNull(page);
+        new MagicPageFactory(pageState).CreateOrNull(page);
 
 
     public IEnumerable<IMagicPage> GetPages(PageState pageState, IEnumerable<int> pageIds) =>
-        GetFactory(pageState).Get(pageIds);
-
-    private MagicPageFactory GetFactory(PageState pageState) => new(pageState);
+        new MagicPageFactory(pageState).Get(pageIds);
 
 }

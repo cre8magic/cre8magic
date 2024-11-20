@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 
 internal class MagicThemeService(IMagicSettingsService settingsSvc, ScopedDictionaryCache<IMagicThemeKit> cacheSvc) : IMagicThemeService
 {
-    public IMagicThemeKit State(PageState pageState) => _state.Get(pageState, () => BuildState(pageState));
+    public IMagicThemeKit ThemeKit(PageState pageState) => _state.Get(pageState, () => BuildState(pageState));
     private readonly GetKeepByPageId<IMagicThemeKit> _state = new();
 
     private IMagicThemeKit BuildState(PageState pageState)
@@ -14,7 +14,7 @@ internal class MagicThemeService(IMagicSettingsService settingsSvc, ScopedDictio
         if (cacheSvc.TryGetValue(cacheId, out var value))
             return value;
 
-        var themeContext = settingsSvc.GetThemeContext(pageState);
+        var themeContext = settingsSvc.GetThemeContextFull(pageState);
         var designer = new MagicThemeDesigner(themeContext);
         var result = new MagicThemeKit
         {

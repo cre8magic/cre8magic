@@ -6,6 +6,7 @@ public interface IMagicThemeKit
 {
     MagicThemeSettings Settings { get; }
     MagicThemeDesigner Designer { get; }
+    string Logo { get; }
 
     /// <summary>
     /// Determine if we should show a specific part

@@ -1,16 +1,17 @@
-﻿using ToSic.Cre8magic.Themes.Settings;
-
-namespace ToSic.Cre8magic.Themes.Internal;
+﻿namespace ToSic.Cre8magic.Themes.Internal;
 
 internal record MagicThemeKit : IMagicThemeKit
 {
-    internal required MagicThemeContext Context { get; init; }
+    internal required MagicThemeContextFull Context { get; init; }
 
     public MagicThemeSettings Settings => Context.ThemeSettings;
 
     public MagicThemeDesignSettings DesignSettings => Context.ThemeDesignSettings;
 
     public required MagicThemeDesigner Designer { get; init; }
+
+    public string Logo => _logo ??= Context.PageTokens.Parse(Settings.Logo) ?? "";
+    private string? _logo;
 
     /// <summary>
     /// Determine if we should show a specific part

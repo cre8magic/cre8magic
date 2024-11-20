@@ -42,7 +42,8 @@ public class TokenEngine: ITokenReplace
 
     public string? Parse(string? value)
     {
-        if (!value.HasValue() || !value.Contains(MagicTokens.PlaceholderMarker)) return value;
+        if (!value.HasValue() || !value.Contains(MagicTokens.PlaceholderMarker))
+            return value;
         foreach (var p in Parsers)
         {
             value = p.Parse(value);

@@ -30,7 +30,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     
     private async Task<IMagicLanguageKit> CreateState(PageState pageState)
     {
-        var themeContext = settingsSvc.GetThemeContext(pageState);
+        var themeContext = settingsSvc.GetThemeContextFull(pageState);
         var settings = themeContext.ThemeSettings;
         var languagesSettings = ((MagicSettingsService)settingsSvc).LanguageSettings(settings, themeContext.SettingsName);
 

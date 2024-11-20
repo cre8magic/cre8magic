@@ -81,7 +81,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     [Inject]
     public IMagicThemeService? ThemeService { get; set; }
 
-    public IMagicThemeKit ThemeState => _themeState.Get(PageState, () => ThemeService!.State(PageState));
+    public IMagicThemeKit ThemeState => _themeState.Get(PageState, () => ThemeService!.ThemeKit(PageState));
     private readonly GetKeepByPageId<IMagicThemeKit> _themeState = new();
 
     protected override async Task OnAfterRenderAsync(bool firstRender)

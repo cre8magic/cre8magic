@@ -6,6 +6,7 @@ using ToSic.Cre8magic.Services.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 
@@ -23,7 +24,14 @@ public interface IMagicSettingsService: IHasSystemMessages
     /// <returns></returns>
     IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName);
 
+    /// <summary>
+    /// Get lightweight theme context - basically the final name, settings and journal.
+    /// </summary>
+    /// <param name="pageState"></param>
+    /// <returns></returns>
     internal MagicThemeContext GetThemeContext(PageState pageState);
+
+    internal MagicThemeContextFull GetThemeContextFull(PageState pageState);
 
     // #WipRemovingPreMergedCatalog
     //internal MagicSettingsCatalog Catalog { get; }

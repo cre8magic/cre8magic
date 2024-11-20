@@ -17,8 +17,8 @@ TODO:
     public required PageState PageState { get; set; }
 }
 @{
-    var state = ThemeService.State(PageState);
+    var themeKit = ThemeService.ThemeKit(PageState);
 }
-<a class="@state.Designer.Classes("logo")" href="/" title="2shine Oqtane BS5 2sxc (change this in the ToShineLogo.razor)">
-    <img alt="Logo" class="img-fluid" src="@state.Settings.Logo">
+<a class="@themeKit.Designer.Classes("logo")" href="/" title="2shine Oqtane BS5 2sxc (change this in the ToShineLogo.razor)">
+    <img alt="Logo" class="img-fluid" src="@themeKit.Logo">
 </a>

@@ -5,6 +5,7 @@ using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
@@ -53,31 +54,41 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     }
     private ThemeTokens? _themeTokens;
 
-
+    /// <inheritdoc />
     public MagicThemeContext GetThemeContext(PageState pageState)
     {
         var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
-        if (_themeCache.TryGetValue(originalNameForCache, out var cached2))
+        if (_themeCtxCache.TryGetValue(originalNameForCache, out var cached2))
             return cached2;
-
-        // Tokens engine for this specific PageState
-        var tokens = PageTokenEngine(pageState);
 
         // Figure out real config-name, and get the initial layout
         var (settingsName, nameJournal) = ThemePartNameResolver.GetBestSettingsName(_layoutName, Default);
         var themeSettings = ThemeSettings.FindAndNeutralize(settingsName);
-        var theme = themeSettings with
-        {
-            Logo = tokens.Parse(themeSettings.Logo)
-        };
 
-        var designSettings = ThemeDesignSettings(theme, settingsName);
-        var ctx = new MagicThemeContext(settingsName, pageState, theme, designSettings, tokens, nameJournal);
-        _themeCache[originalNameForCache] = ctx;
+        var ctx = new MagicThemeContext(settingsName, themeSettings, nameJournal);
+        _themeCtxCache[originalNameForCache] = ctx;
+        return ctx;
+    }
+    private readonly Dictionary<string, MagicThemeContext> _themeCtxCache = new(StringComparer.InvariantCultureIgnoreCase);
+
+    public MagicThemeContextFull GetThemeContextFull(PageState pageState)
+    {
+        var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
+        if (_themeCtxFullCache.TryGetValue(originalNameForCache, out var cached2))
+            return cached2;
+
+        var ctxLight = GetThemeContext(pageState);
+
+        // Tokens engine for this specific PageState
+        var pageTokens = PageTokenEngine(pageState);
+
+        var designSettings = ThemeDesignSettings(ctxLight.ThemeSettings, ctxLight.SettingsName);
+        var ctx = new MagicThemeContextFull(ctxLight.SettingsName, pageState, ctxLight.ThemeSettings, designSettings, pageTokens, ctxLight.Journal);
+        _themeCtxFullCache[originalNameForCache] = ctx;
         return ctx;
     }
 
-    private readonly Dictionary<string, MagicThemeContext> _themeCache = new(StringComparer.InvariantCultureIgnoreCase);
+    private readonly Dictionary<string, MagicThemeContextFull> _themeCtxFullCache = new(StringComparer.InvariantCultureIgnoreCase);
 
     // #WipRemovingPreMergedCatalog
     ///// <summary>
