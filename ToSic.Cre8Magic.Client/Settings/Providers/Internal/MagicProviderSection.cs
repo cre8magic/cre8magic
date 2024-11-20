@@ -1,6 +1,8 @@
 ﻿namespace ToSic.Cre8magic.Settings.Providers.Internal;
 
-public class MagicProviderSection<T>(IMagicSettingsProvider parent) : IMagicProviderSectionWithMoreWip<T, IMagicSettingsProvider> where T : class
+public class MagicProviderSection<T>(IMagicSettingsProvider parent)
+    : IMagicProviderSectionWithMoreWip<T, IMagicSettingsProvider>, ISourceInternal
+    where T : class
 {
     public bool HasValues { get; private set; }
     internal T? Value { get; set; }
@@ -9,9 +11,13 @@ public class MagicProviderSection<T>(IMagicSettingsProvider parent) : IMagicProv
 
     internal Func<IMagicSettingsContext, T?>? Getter;
 
-
-    public T? Find(IMagicSettingsContext context) => ProviderFindWip.StaticFind(context, Getter, Value, Values);
-
+    public void Reset()
+    {
+        Value = null;
+        Values = null;
+        Getter = null;
+        HasValues = false;
+    }
 
     public IMagicSettingsProvider Provide(T value)
     {

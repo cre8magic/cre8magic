@@ -1,7 +1,6 @@
 ﻿@using ToSic.Cre8magic.Client.Services
 @using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Services.Internal
-@using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Providers
 @inherits ComponentBase
 @inject IMagicSettingsProvider SettingsProviders
@@ -12,6 +11,7 @@
     public required PageState PageState { get; set; }
 }
 @{
+    SettingsProviders.Reset();
     SettingsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
     var defAnalytics = SettingsService.AnalyticsSettings("default");
     var testAnalytics = SettingsService.NoCachingForDebug(s => s.AnalyticsSettings("analytics-test"));

@@ -17,7 +17,7 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
     /// <returns></returns>
     public SettingsSourceInfo? Get(MagicPackageSettings packageSettings)
     {
-        if (Containers?.HasValues != true && Breadcrumbs?.HasValues != true && Analytics?.HasValues != true)
+        if (AllSources.All(source => source?.HasValues != true))
             return null;
 
         var catalog = new MagicSettingsCatalog
@@ -36,13 +36,22 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
         return new(catalog, null);
     }
 
-    public /* actually internal */ void Reset()
+    public void Reset()
     {
-        _analytics = null;
-        _containers = null;
-        _breadcrumbs = null;
-        _menuDesigns = null;
+        foreach (var source in AllSources) 
+            source?.Reset();
     }
+
+    /// <summary>
+    /// Remember to add any new sources to this list!
+    /// </summary>
+    private List<ISourceInternal?> AllSources =>
+    [
+        _analytics,
+        _containers,
+        _breadcrumbs,
+        _menuDesigns
+    ];
 
     public IMagicProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
     private MagicProviderSection<MagicAnalyticsSettings>? _analytics;

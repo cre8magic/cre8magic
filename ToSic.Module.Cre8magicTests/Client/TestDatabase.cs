@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using ToSic.Module.Cre8MagicTests.Client.Analytics;
+using ToSic.Module.Cre8MagicTests.Client.Breadcrumb.Tests;
 using ToSic.Module.Cre8MagicTests.Client.Menus.Tests;
+using ToSic.Module.Cre8MagicTests.Client.PageService;
 using ToSic.Module.Cre8MagicTests.Client.RandomTests;
-using ToSic.Module.Cre8MagicTests.Client.Tests.Breadcrumb;
-using ToSic.Module.Cre8MagicTests.Client.Tests.PageService;
-using ToSic.Theme.Cre8magicTests;
 
-namespace ToSic.Module.Cre8MagicTests.Client.Tests;
-
+namespace ToSic.Module.Cre8MagicTests.Client;
 
 /// <summary>
 /// 
@@ -32,6 +30,7 @@ internal class TestDatabase
         // Menu Service
         new("menu-basic", "Menus Basic", typeof(MenuControlsBasic)),
         new("menu-functions", "Menus Functions", typeof(MenuControlsFunctions)),
+        new("menu-provide-design-red", "Menus Provide Design Red", typeof(MenuProvideDesignRed)),
 
         // Analytics
         new("analytics-inject-settings", "Analytics - Inject Settings", typeof(TestSettingsProvidersAnalytics)),

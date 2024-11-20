@@ -5,7 +5,7 @@
     [Parameter, EditorRequired]
     public required IMagicMenuKit MenuKit { get; set; }
 }
-<ul class='@MenuKit.Pages.Classes("li")'>
+<ul class='@MenuKit.Pages.Classes("ul")'>
     @foreach (var menuPage in MenuKit.Pages)
     {
         <li class='@menuPage.Classes("li")'>
