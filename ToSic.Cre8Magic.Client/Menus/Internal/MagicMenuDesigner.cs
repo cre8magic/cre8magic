@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Menus.Settings;
+namespace ToSic.Cre8magic.Menus.Internal;
 
 /// <summary>
 /// Special helper to provide Css classes to menus

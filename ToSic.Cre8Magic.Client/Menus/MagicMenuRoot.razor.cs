@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Logging;
 using Oqtane.Themes;
-using Oqtane.Themes.Controls;
 using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils;
+
+// TODO:
+// 1. Reduce to only use MagicMenuSettings / PartName etc.
+// 2. Change to use base class without all the theme stuff
+// 2. Then probably merge with MagicMenu?
+
 
 namespace ToSic.Cre8magic.Client.Menus;
 
@@ -41,11 +44,9 @@ public abstract class MagicMenuRoot: ThemeControlBase
 
     [Parameter] public string? Template { get; set; }
 
-    protected IMagicMenuKit? MenuKit { get; private set; }
-
-    [Inject] public ILogger<Menu>? Logger { get; set; }
-
     [Inject] public IMagicMenuService? MagicMenuService { get; set; }
+
+    protected IMagicMenuKit? MenuKit { get; private set; }
 
     /// <summary>
     /// Detect if the menu is configured for vertical.
@@ -74,7 +75,7 @@ public abstract class MagicMenuRoot: ThemeControlBase
             Start = Start ?? startSettings?.Start
         };
 
-        MenuKit = MagicMenuService?.GetMenu(PageState, menuSettings);
+        MenuKit = MagicMenuService?.MenuKit(PageState, menuSettings);
     }
 
 }

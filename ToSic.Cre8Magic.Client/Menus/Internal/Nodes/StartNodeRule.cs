@@ -1,7 +1,6 @@
 ﻿using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Menus.Internal.Nodes;
 
-namespace ToSic.Cre8magic.Menus.Settings;
+namespace ToSic.Cre8magic.Menus.Internal.Nodes;
 
 internal class StartNodeRule
 {

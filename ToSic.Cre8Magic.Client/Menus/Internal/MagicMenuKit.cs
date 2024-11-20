@@ -1,9 +1,7 @@
-﻿using Oqtane.Models;
-using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Pages.Internal;
+﻿using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 
-namespace ToSic.Cre8magic.Menus;
+namespace ToSic.Cre8magic.Menus.Internal;
 
 /// <summary>
 /// tbd

@@ -15,5 +15,5 @@ public interface IMagicMenuService
     /// <param name="pageState"></param>
     /// <param name="settings"></param>
     /// <returns></returns>
-    IMagicMenuKit GetMenu(PageState pageState, MagicMenuSettings? settings = default);
+    IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = default);
 }

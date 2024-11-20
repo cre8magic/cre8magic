@@ -19,7 +19,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
     public bool NoInheritSettingsWip { get; set; } = false;
 
-    public IMagicMenuKit GetMenu(PageState pageState, MagicMenuSettings? settings = null)
+    public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)
     {
         var (newSettings, messages) = NoInheritSettingsWip
         // todo: magicMenuSettings.Default.Fallback
