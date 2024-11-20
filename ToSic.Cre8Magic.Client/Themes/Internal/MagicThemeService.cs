@@ -3,12 +3,12 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Themes.Internal;
 
-internal class MagicThemeService(IMagicSettingsService settingsSvc, ScopedDictionaryCache<MagicThemeState> cacheSvc) : IMagicThemeService
+internal class MagicThemeService(IMagicSettingsService settingsSvc, ScopedDictionaryCache<IMagicThemeKit> cacheSvc) : IMagicThemeService
 {
-    public MagicThemeState State(PageState pageState) => _state.Get(pageState, () => BuildState(pageState));
-    private readonly GetKeepByPageId<MagicThemeState> _state = new();
+    public IMagicThemeKit State(PageState pageState) => _state.Get(pageState, () => BuildState(pageState));
+    private readonly GetKeepByPageId<IMagicThemeKit> _state = new();
 
-    private MagicThemeState BuildState(PageState pageState)
+    private IMagicThemeKit BuildState(PageState pageState)
     {
         var cacheId = pageState.Page.PageId.ToString();
         if (cacheSvc.TryGetValue(cacheId, out var value))
@@ -16,7 +16,11 @@ internal class MagicThemeService(IMagicSettingsService settingsSvc, ScopedDictio
 
         var themeContext = settingsSvc.GetThemeContext(pageState);
         var designer = new MagicThemeDesigner(themeContext);
-        var result = new MagicThemeState(themeContext, designer);
+        var result = new MagicThemeKit
+        {
+            Context = themeContext,
+            Designer = designer,
+        };
         cacheSvc[cacheId] = result;
         return result;
     }
