@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 // TODO: probably merge into the MagicMenuService
 internal class MagicMenuBuilder
 {
-    public MagicMenuBuilder(ContextWip<MagicMenuSettings, IMagicPageDesigner> context)
+    public MagicMenuBuilder(MagicMenuContextWip context)
     {
         Context = context;
         Settings = context.Settings;
@@ -19,17 +19,17 @@ internal class MagicMenuBuilder
 
     }
 
-    internal ContextWip<MagicMenuSettings, IMagicPageDesigner> Context;
+    internal MagicMenuContextWip Context;
 
     internal MagicPageFactory PageFactory => Context.PageFactory;
 
     private Log Log { get; }
     
-    internal MagicMenuSettings Settings { get; }
+    internal MagicMenuSettingsData Settings { get; }
 
     internal MagicMenuNodeFactory NodeFactory { get; }
 
-    public int MaxDepth => _maxDepth ??= Settings.Depth ?? Settings.Depth ?? MagicMenuSettings.Defaults.Fallback.Depth!.Value;
+    public int MaxDepth => _maxDepth ??= Settings.Depth ?? Settings.Depth ?? MagicMenuSettingsData.Defaults.Fallback.Depth!.Value;
     private int? _maxDepth;
 
     public List<IMagicPageWithDesignWip> GetChildren()

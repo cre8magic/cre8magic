@@ -19,9 +19,9 @@ internal class StartNodeRule
         ? _mode
         : _mode = Id != default
             ? StartMode.PageId
-            : From == MagicMenuSettings.StartPageRoot
+            : From == MagicMenuSettingsData.StartPageRoot
                 ? StartMode.Root
-                : From == MagicMenuSettings.StartPageCurrent
+                : From == MagicMenuSettingsData.StartPageCurrent
                     ? StartMode.Current
                     : StartMode.Unknown;
 

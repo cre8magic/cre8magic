@@ -45,7 +45,7 @@ public interface IMagicSettingsService: IHasSystemMessages
 
     internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; }
 
-    internal NamedSettingsReader<MagicMenuSettings> MenuSettings { get; }
+    internal NamedSettingsReader<MagicMenuSettingsData> MenuSettings { get; }
     internal List<MagicSettingsCatalog> AllCatalogs { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);

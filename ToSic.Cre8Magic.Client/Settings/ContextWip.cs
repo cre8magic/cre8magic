@@ -10,25 +10,20 @@ namespace ToSic.Cre8magic.Settings;
 /// The execution context - WIP.
 /// Goal is that it contains logging etc. which is shared across all parts which are getting something done.
 /// </summary>
-public class ContextWip<TSettings, TDesigner>(
-    TSettings settings,
-    TDesigner? designer,
-    MagicPageFactory pageFactory,
-    TokenEngine pageTokens,
-    LogRoot? logRoot = default) : IContextWip
+internal record ContextWip<TSettings, TDesigner> : IContextWip
 {
-    public MagicPageFactory PageFactory { get; } = pageFactory;
+    public required MagicPageFactory PageFactory { get; init; }
 
-    public TSettings Settings { get; } = settings;
+    public required TSettings Settings { get; init; }
 
     // TODO: ATM still nullable, should be changed
-    public TDesigner? Designer { get; } = designer;
+    public required TDesigner? Designer { get; init; }
 
     public IMagicPageDesigner? PageDesigner => Designer as IMagicPageDesigner;
 
-    internal LogRoot LogRoot { get; } = logRoot ?? new();
+    internal required LogRoot LogRoot { get; init; }
 
     LogRoot IContextWip.LogRoot => LogRoot;
 
-    TokenEngine? IContextWip.TokenEngineWip => pageTokens;
+    public required TokenEngine? TokenEngineWip { get; init; }
 }

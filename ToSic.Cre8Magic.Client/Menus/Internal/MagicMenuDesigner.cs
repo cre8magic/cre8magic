@@ -11,7 +11,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// </summary>
 public class MagicMenuDesigner : IMagicPageDesigner
 {
-    internal MagicMenuDesigner(ContextWip<MagicMenuSettings, IMagicPageDesigner> context)
+    internal MagicMenuDesigner(MagicMenuContextWip context)
     {
         Settings = context.Settings ?? throw new ArgumentNullException(nameof(context), $"{nameof(context.Settings)} null");
 

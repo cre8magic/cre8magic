@@ -125,9 +125,9 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
         return result;
     }
 
-    NamedSettingsReader<MagicMenuSettings> IMagicSettingsService.MenuSettings =>
-        _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, cat => cat.Menus);
-    private NamedSettingsReader<MagicMenuSettings>? _getMenuSettings;
+    NamedSettingsReader<MagicMenuSettingsData> IMagicSettingsService.MenuSettings =>
+        _getMenuSettings ??= new(this, MagicMenuSettingsData.Defaults, cat => cat.Menus);
+    private NamedSettingsReader<MagicMenuSettingsData>? _getMenuSettings;
 
     NamedSettingsReader<MagicLanguageSettings> IMagicSettingsService.Languages =>
         _languages ??= new(this, MagicLanguageSettings.Defaults, cat => cat.Languages);

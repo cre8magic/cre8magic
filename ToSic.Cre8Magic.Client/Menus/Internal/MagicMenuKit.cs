@@ -10,7 +10,7 @@ public record MagicMenuKit : IMagicMenuKit
 {
     public required IMagicPageList Pages { get; init; }
 
-    public required IMagicPageSetSettings Settings { get; init; }
+    public required MagicMenuSettings Settings { get; init; }
 
     // TODO:
     //public object Designer => Pages.Settings.Designer;

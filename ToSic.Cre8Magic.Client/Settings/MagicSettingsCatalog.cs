@@ -65,7 +65,7 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// <summary>
     /// The menu definitions
     /// </summary>
-    public NamedSettings<MagicMenuSettings> Menus { get; init; } = new();
+    public NamedSettings<MagicMenuSettingsData> Menus { get; init; } = new();
 
     /// <summary>
     /// Design definitions of the menu

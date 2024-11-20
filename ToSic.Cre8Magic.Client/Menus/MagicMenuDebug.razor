@@ -16,7 +16,7 @@
 }
 @if (MenuKit?.Pages.MenuLevel == 1)
 {
-    <MagicDebug Target="@settings" Title="Settings (Menu)" More="GetMore()">
+    <MagicDebug Target="@MenuKit?.Settings" Title="Settings (Menu)" More="GetMore()">
         <Button>
             @if (Standalone)
             {

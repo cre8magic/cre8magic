@@ -16,6 +16,14 @@ internal class NamedSettingsReader<TPart>(
     where TPart : class, ICanClone<TPart>, new()
 {
 
+    /// <summary>
+    /// Find the settings according to the names, and (if not null) merge with priority.
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="defaultName"></param>
+    /// <param name="priority"></param>
+    /// <param name="skipCache"></param>
+    /// <returns></returns>
     internal TPart FindAndMerge(string name, string? defaultName = null, TPart? priority = null, bool skipCache = false)
     {
         var found = FindAndNeutralize(name, defaultName, skipCache);

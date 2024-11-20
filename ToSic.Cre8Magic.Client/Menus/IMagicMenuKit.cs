@@ -22,7 +22,7 @@ public interface IMagicMenuKit
     /// <summary>
     /// The settings used to retrieve and build the pages.
     /// </summary>
-    IMagicPageSetSettings Settings { get; }
+    MagicMenuSettings Settings { get; }
 
     /// <summary>
     /// The menu variant to use.

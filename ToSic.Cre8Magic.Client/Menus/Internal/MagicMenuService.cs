@@ -40,13 +40,14 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
         var pageFactory = new MagicPageFactory(pageState, newSettings.Pages, logRoot: logRoot);
         var pageTokens = settingsSvc.PageTokenEngine(pageState);
-        var context = new ContextWip<MagicMenuSettings, IMagicPageDesigner>(
-            newSettings,
-            newSettings.Designer,
-            pageFactory,
-            pageTokens,
-            logRoot: logRoot
-        );
+        var context = new MagicMenuContextWip
+        {
+            Designer = newSettings.Designer,
+            LogRoot = logRoot,
+            PageFactory = pageFactory,
+            TokenEngineWip = pageTokens,
+            Settings = newSettings,
+        };
 
         var rootBuilder = new MagicMenuBuilder(context);
         var list = new MagicPageList(pageFactory, rootBuilder.NodeFactory, rootBuilder.GetChildren());
@@ -60,7 +61,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         return kit;
     }
 
-    private (MagicMenuSettings Settings, List<string> Messages) MergeSettings(PageState pageState, MagicMenuSettings? settings = default)
+    private (MagicMenuSettings Settings, /*NamedSettings<MagicMenuDesignSettings> DesignSettings,*/ List<string> Messages) MergeSettings(PageState pageState, MagicMenuSettings? settings = default)
     {
         var themeCtx = settingsSvc.GetThemeContext(pageState);
 
@@ -75,16 +76,13 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         // Usually there is no Design-object pre-filled, in which case we should
         // 1. try to find it in json
         // 2. use the one from the configuration
-        if (mergedSettings.DesignSettings == null)
+        var designSettings = settingsSvc.MenuDesigns.FindAndMerge(designName, themeCtx.SettingsName, settings?.DesignSettings);
+
+        var fullSettings = new MagicMenuSettings(ancestor: mergedSettings, settings) with
         {
-            // Check various places where design could be configured by priority
-            var designSettings = settingsSvc.MenuDesigns.FindAndNeutralize(designName, themeCtx.SettingsName);
-            mergedSettings = mergedSettings with { DesignSettings = designSettings };
-        }
-        else
-            journal.Add("Design rules already set");
+            DesignSettings = designSettings
+        };
 
-        return (mergedSettings, journal);
+        return (fullSettings, /*designSettings,*/ journal);
     }
-
 }

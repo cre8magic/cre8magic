@@ -9,12 +9,14 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
     internal IMagicPageList Get(MagicBreadcrumbSettings? settings = default)
     {
         settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
-        var context = new ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner>(
-            settings,
-            settings.Designer,
-            pageFactory,
-            null  // TODO: SHOULD provide AllSettings or whatever will replace it, so we can get the Page tokens
-        );
+        var context = new ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner>
+        {
+            Designer = settings.Designer,
+            LogRoot = null, // wip
+            PageFactory = pageFactory,
+            TokenEngineWip = null, // TODO: SHOULD provide AllSettings or whatever will replace it, so we can get the Page tokens
+            Settings = settings,
+        };
         var factory = new MagicBreadcrumbNodeFactory(context);
         var list = Get(
             settings,
