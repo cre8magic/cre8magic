@@ -1,14 +1,20 @@
+@using ToSic.Cre8magic.Breadcrumb
 @using ToSic.Cre8magic.Pages
-@inherits ThemeControlBase
-@inject IMagicPageService PageSvc
-
+@inherits ComponentBase
+@inject IMagicPageService PageService
+@inject IMagicBreadcrumbService BreadcrumbService
+@code {
+    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
 <h1>Breadcrumbs Test 2024-11-14</h1>
 <p>
     Demonstrate various ways to use the breadcrumb service
 </p>
 <h2>Breadcrumb just list</h2>
 <ol>
-    @foreach(var bc in PageSvc.GetBreadcrumb(PageState))
+    @foreach(var bc in BreadcrumbService.BreadcrumbKit(PageState).Pages)
     {
         <li>@bc</li>
     }
@@ -16,7 +22,7 @@
 
 <h2>Breadcrumb links</h2>
 <ol>
-    @foreach(var bc in PageSvc.GetBreadcrumb(PageState))
+    @foreach(var bc in BreadcrumbService.BreadcrumbKit(PageState).Pages)
     {
         <li>
             <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
@@ -26,7 +32,7 @@
 
 <h2>Breadcrumb to Home</h2>
 <ol>
-    @foreach(var bc in PageSvc.GetBreadcrumb(PageState,new() { Active = PageSvc.GetHome(PageState) } ))
+    @foreach (var bc in BreadcrumbService.BreadcrumbKit(PageState, new() { Active = PageService.GetHome(PageState) }).Pages)
     {
         <li>
             <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>

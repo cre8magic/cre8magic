@@ -1,10 +1,9 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
-using ToSic.Cre8magic.Breadcrumb;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
-internal class MagicPageService() : IMagicPageService
+internal class MagicPageService : IMagicPageService
 {
     public IEnumerable<IMagicPage> GetAll(PageState pageState, bool ignorePermissions = default) =>
         ignorePermissions
@@ -32,10 +31,10 @@ internal class MagicPageService() : IMagicPageService
     //public IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default) =>
     //    GetBreadcrumb(PageFactory, specs);
 
-    public IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default) =>
-        GetBreadcrumb(GetFactory(pageState), specs);
+    //public IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default) =>
+    //    GetBreadcrumb(GetFactory(pageState), specs);
 
-    private IMagicPageList GetBreadcrumb(MagicPageFactory pageFactory, MagicBreadcrumbSettings? specs = default) =>
-        pageFactory.Breadcrumb.Get(specs);
+    //private IMagicPageList GetBreadcrumb(MagicPageFactory pageFactory, MagicBreadcrumbSettings? specs = default) =>
+    //    pageFactory.Breadcrumb.Get(specs);
 
 }

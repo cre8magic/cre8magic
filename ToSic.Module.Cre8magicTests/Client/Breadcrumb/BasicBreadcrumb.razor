@@ -11,8 +11,8 @@
 }
 
 <nav aria-label="breadcrumb">
-    <ol class='@Breadcrumb.Classes("ol")'>
-        @foreach (var item in Breadcrumb)
+    <ol class='@BreadcrumbKit.Pages.Classes("ol")'>
+        @foreach (var item in BreadcrumbKit.Pages)
         {
             <li class='@item.Classes("li")'>
                 @* TODO: IMPROVE HasLink / UseLink, etc. *@

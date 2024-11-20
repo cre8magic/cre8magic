@@ -13,6 +13,9 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     [Inject]
     public IMagicPageService? PageServiceWip { get; set; }
 
+    [Inject]
+    public required IMagicBreadcrumbService BreadcrumbService { get; set; }
+
     /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
@@ -33,6 +36,8 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     protected virtual MagicBreadcrumbSettings Customize(MagicBreadcrumbSettings settings)
         => settings;
 
+    // TODO: move to kit, or consider removing
+    // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
     // The home page - never changes during runtime, so we can cache it
     protected IMagicPage HomePage => _homePage ??= PageServiceWip!.GetHome(PageState);
     private IMagicPage? _homePage;
@@ -41,7 +46,7 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     /// The Breadcrumb for the current page.
     /// Will be updated when the page changes.
     /// </summary>
-    protected IMagicPageList Breadcrumb => _breadcrumbs.Get(PageState, () => PageServiceWip!.GetBreadcrumb(PageState, Customize(Settings ?? new())));
-    private readonly GetKeepByPageId<IMagicPageList> _breadcrumbs = new();
+    protected IMagicBreadcrumbKit BreadcrumbKit => _breadcrumbKit.Get(PageState, () => BreadcrumbService.BreadcrumbKit(PageState, Customize(Settings ?? new())));
+    private readonly GetKeepByPageId<IMagicBreadcrumbKit> _breadcrumbKit = new();
 
 }

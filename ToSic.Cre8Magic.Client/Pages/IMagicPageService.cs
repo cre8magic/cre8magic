@@ -18,6 +18,6 @@ public interface IMagicPageService
 
     IEnumerable<IMagicPage> GetPages(PageState pageState, IEnumerable<int> pageIds);
 
-    IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default);
+    //IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default);
 
 }
