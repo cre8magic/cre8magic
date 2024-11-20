@@ -2,8 +2,9 @@
 @using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Services.Internal
 @using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.Settings.Providers
 @inherits ComponentBase
-@inject IMagicSettingsProviders SettingsProviders
+@inject IMagicSettingsProvider SettingsProviders
 @inject IMagicSettingsService SettingsService
 @code {
     /// <inheritdoc cref="ComponentDocs.PageState"/>

@@ -1,11 +1,11 @@
-﻿namespace ToSic.Cre8magic.Settings;
+﻿namespace ToSic.Cre8magic.Settings.Providers.Internal;
 
 /// <summary>
 /// A provider for one type of settings.
 /// </summary>
 /// <typeparam name="TSettings"></typeparam>
 /// <typeparam name="TProvider"></typeparam>
-public interface IMagicSettingsProviderWithMoreWip<TSettings, out TProvider> : IMagicSettingsProvider<TSettings, TProvider> where TSettings : class
+public interface IMagicProviderSectionWithMoreWip<TSettings, out TProvider> : IMagicProviderSection<TSettings> where TSettings : class
 {
     /// <summary>
     /// Retrieve specified settings according to specs in the context.

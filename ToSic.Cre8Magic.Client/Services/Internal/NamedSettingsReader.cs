@@ -124,10 +124,10 @@ internal class NamedSettingsReader<TPart>(
             .ToList();
 
         foreach (var set in allSourcesAndNames)
-        {
-            var result = findList(set.catalog).GetInvariant(set.name);
-            if (result != null) return result;
-        }
+            if (findList(set.catalog).TryGetValue(set.name, out var result) && result != null)
+                return result;
+        //var result = findList(set.catalog).GetInvariant(set.name);
+        //if (result != null) return result;
 
         return null;
     }

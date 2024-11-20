@@ -17,7 +17,7 @@ public abstract class MagicDesignerBase: IMagicDesigner
 
 
     protected MagicDesignSettings? GetSettings(string name) =>
-        Context.ThemeDesignSettings.DesignSettings.GetInvariant(name);
+        Context.ThemeDesignSettings.DesignSettings.TryGetValue(name, out var found) ? found : null;
 
     internal virtual TokenEngine Tokens => _tokens ??= Context.PageTokens;
     private TokenEngine? _tokens;

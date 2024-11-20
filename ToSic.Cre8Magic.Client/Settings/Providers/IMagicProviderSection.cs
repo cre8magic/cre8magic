@@ -1,11 +1,10 @@
-﻿namespace ToSic.Cre8magic.Settings;
+﻿namespace ToSic.Cre8magic.Settings.Providers;
 
 /// <summary>
 /// A provider for one type of settings.
 /// </summary>
 /// <typeparam name="TSettings"></typeparam>
-/// <typeparam name="TProvider"></typeparam>
-public interface IMagicSettingsProvider<TSettings, out TProvider> where TSettings : class
+public interface IMagicProviderSection<TSettings> where TSettings : class
 {
     ///// <summary>
     ///// Retrieve specified settings according to specs in the context.
@@ -27,7 +26,7 @@ public interface IMagicSettingsProvider<TSettings, out TProvider> where TSetting
     /// </summary>
     /// <param name="value"></param>
     /// <returns></returns>
-    TProvider Provide(TSettings value);
+    IMagicSettingsProvider Provide(TSettings value);
 
     /// <summary>
     /// Configure to provide a named value.
@@ -35,13 +34,14 @@ public interface IMagicSettingsProvider<TSettings, out TProvider> where TSetting
     /// <param name="key"></param>
     /// <param name="value"></param>
     /// <returns></returns>
-    TProvider Provide(string key, TSettings value);
+    IMagicSettingsProvider Provide(string key, TSettings value);
 
     /// <summary>
     /// Configure to provide a dictionary of named values.
     /// </summary>
     /// <param name="dictionary"></param>
     /// <returns></returns>
-    TProvider Provide(IDictionary<string, TSettings> dictionary);
+    IMagicSettingsProvider Provide(IDictionary<string, TSettings> dictionary);
 
+    internal bool HasValues { get; }
 }

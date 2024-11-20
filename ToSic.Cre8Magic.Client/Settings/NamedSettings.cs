@@ -7,10 +7,11 @@ namespace ToSic.Cre8magic.Settings;
 /// Case-insensitive dictionary managing a list of named settings
 /// </summary>
 /// <typeparam name="T"></typeparam>
-// TODO: CONTINUE HERE - ICANCLONE REQUIREMENT
 public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>> where T : class, ICanClone<T>
 {
     public NamedSettings() : base(InvariantCultureIgnoreCase) { }
+
+    public NamedSettings(IDictionary<string, T> dic) : base(dic, InvariantCultureIgnoreCase) { }
 
     /// <summary>
     /// Copy / clone constructor
@@ -51,11 +52,5 @@ public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>
         priority == null ? (forceCopy ? new(this) : this) : new(priority, this);
 
 
-    public NamedSettings(IDictionary<string, T> dic): base(dic, InvariantCultureIgnoreCase) { }
 
-    public NamedSettings(IEnumerable<KeyValuePair<string, T>> dic): base(dic, InvariantCultureIgnoreCase) { }
-
-    public T? GetInvariant(string key) => TryGetValue(key, out var value) ? value : default;
-
-    
 }

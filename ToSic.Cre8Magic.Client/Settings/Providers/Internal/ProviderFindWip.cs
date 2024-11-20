@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace ToSic.Cre8magic.Settings.Providers.Internal;
 
-namespace ToSic.Cre8magic.Settings.Internal.ProvidersWip;
-
-public class ProviderFindWip
+public static class ProviderFindWip
 {
+    public static T? Find<T>(this IMagicProviderSection<T> source, IMagicSettingsContext context) where T : class
+    {
+        if (source is not MagicProviderSection<T> typedSource)
+            throw new ArgumentException("source must be of type MagicProviderSection<T>", nameof(source));
+
+        return StaticFind(context, typedSource.Getter, typedSource.Value, typedSource.Values);
+    }
+
     public static T? StaticFind<T>(IMagicSettingsContext context, Func<IMagicSettingsContext, T?>? getter, T? value, IDictionary<string, T>? values) where T : class
     {
         // First try if we have a custom getter - as it has the highest priority

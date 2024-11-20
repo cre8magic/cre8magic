@@ -16,6 +16,8 @@ using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Sources;
 using ToSic.Cre8magic.Settings.Json;
+using ToSic.Cre8magic.Settings.Providers;
+using ToSic.Cre8magic.Settings.Providers.Internal;
 using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Users;
@@ -66,9 +68,9 @@ public class Startup : Oqtane.Services.IClientStartup
         services.TryAddTransient<IMagicHat, MagicHat>();
 
         // Main Settings Provider, scoped, to be used on two following interfaces
-        services.TryAddScoped<MagicSettingsProviders>();
-        services.TryAddTransient<IMagicSettingsProviders>(s => s.GetService<MagicSettingsProviders>());
-        services.AddTransient<IMagicSettingsSource>(s => s.GetService<MagicSettingsProviders>());
+        services.TryAddScoped<MagicSettingsProvider>();
+        services.TryAddTransient<IMagicSettingsProvider>(s => s.GetService<MagicSettingsProvider>());
+        services.AddTransient<IMagicSettingsSource>(s => s.GetService<MagicSettingsProvider>());
 
         services.TryAddScoped(typeof(ScopedDictionaryCache<>));
 
