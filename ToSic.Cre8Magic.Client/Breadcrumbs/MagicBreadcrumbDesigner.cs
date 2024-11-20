@@ -1,10 +1,11 @@
 ﻿using System.Collections;
+using ToSic.Cre8magic.Breadcrumb;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Breadcrumb;
+namespace ToSic.Cre8magic.Breadcrumbs;
 
 /// <summary>
 /// Special helper to provide Css classes to menus

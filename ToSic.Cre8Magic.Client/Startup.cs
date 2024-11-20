@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Analytics.Internal;
 using ToSic.Cre8magic.Breadcrumb;
-using ToSic.Cre8magic.Breadcrumb.Internal;
+using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Menus.Internal;
