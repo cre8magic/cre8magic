@@ -1,10 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
-using Oqtane.UI;
+﻿using Oqtane.UI;
 using ToSic.Cre8magic.Menus.Internal.Nodes;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Services.Internal;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal;
@@ -12,10 +10,8 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// <summary>
 /// Will create a MenuTree based on the current pages information and configuration
 /// </summary>
-public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsService settingsSvc): IMagicMenuService
+public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuService
 {
-    public ILogger Logger { get; } = logger;
-
     private const string MenuSettingPrefix = "menu-";
 
     public bool NoInheritSettingsWip { get; set; } = false;
@@ -29,15 +25,7 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
         // Transfer Logs from Tree creation to the current log
         var logRoot = new LogRoot();
-        if (journal.Any())
-        {
-            var messageLog = logRoot.GetLog("tree-build");
-            foreach (var m in journal) messageLog.A(m);
-        }
-
-        // Add break-point for debugging during development
-        if (pageState.IsDebug())
-            pageState.DoNothing();
+        logRoot.Add("tree-build", journal);
 
         // Page Factory with possibly reduced set of possible pages it can return
         var pageFactory = new MagicPageFactory(pageState, newSettings.Pages, logRoot: logRoot);
@@ -87,19 +75,20 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
     }
 
 
-    private List<IMagicPageWithDesignWip> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)
+    private static List<IMagicPageWithDesignWip> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)
     {
+        var log = context.LogRoot.GetLog("get-root");
+
         var pageFactory = context.PageFactory;
-        var log = context.LogRoot.GetLog("root");
-
-        log.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
         var settings = context.Settings;
-
+        
         // Add break-point for debugging during development
         if (pageFactory.PageState.IsDebug())
             pageFactory.PageState.DoNothing();
 
         var l = log.Fn<List<IMagicPageWithDesignWip>>("Root");
+        l.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
+
         var levelsRemaining = nodeFactory.MaxDepth;
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
