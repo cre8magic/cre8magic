@@ -11,10 +11,10 @@ Nice to know:
     - The configurations are smart, so they change the class depending on active etc.
     - The `a` tag with the label is written in a way so there are no additional spaces
 *@
-@if (Menu.Any())
+@if (MenuKit.Pages.Any())
 {
-    <ul class='@Menu.Classes("ul")'>
-        @foreach(var menuPage in Menu)
+    <ul class='@MenuKit.Pages.Classes("ul")'>
+        @foreach(var menuPage in MenuKit.Pages)
         {
             <li class='@menuPage.Classes("li")'>
                 <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'
@@ -23,11 +23,11 @@ Nice to know:
 
                 @if (menuPage.HasChildren)
                 {
-                    <MenuHorizontal Menu="@menuPage"></MenuHorizontal>
+                    <MenuHorizontal MenuKit="@MenuKit.Kit(menuPage)"></MenuHorizontal>
                 }
             </li>
         }
         @* Debug Information as things can get complex *@
-        <MagicMenuDebug Menu="@Menu"></MagicMenuDebug>
+        <MagicMenuDebug MenuKit="@MenuKit"></MagicMenuDebug>
     </ul>
 }

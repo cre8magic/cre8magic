@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Menus;
 
@@ -8,8 +7,6 @@ namespace ToSic.Cre8magic.Menus;
 /// </summary>
 public abstract class MagicMenu : MagicMenuBase
 {
-#pragma warning disable CS8618
-    [Parameter, EditorRequired] public IMagicPageList Menu { get; set; }
-#pragma warning restore CS8618
-
+    [Parameter]
+    public required IMagicMenuKit MenuKit { get; set; }
 }

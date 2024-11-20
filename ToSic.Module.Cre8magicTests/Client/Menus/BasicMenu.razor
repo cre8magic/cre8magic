@@ -1,19 +1,19 @@
-@using ToSic.Cre8magic.Pages
+@using ToSic.Cre8magic.Menus
 @inherits ThemeControlBase;
 
 @code{
     [Parameter, EditorRequired]
-    public IMagicPageList Menu { get; set; }
+    public required IMagicMenuKit MenuKit { get; set; }
 }
-<ul class='@Menu.Classes("li")'>
-    @foreach (var menuPage in Menu)
+<ul class='@MenuKit.Pages.Classes("li")'>
+    @foreach (var menuPage in MenuKit.Pages)
     {
         <li class='@menuPage.Classes("li")'>
             <a class='@menuPage.Classes("a")' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>
             @if (menuPage.HasChildren)
             {
                 <span class='@menuPage.Classes("span")'></span>
-                <BasicMenu Menu="@menuPage" />
+                <BasicMenu MenuKit="@MenuKit.Kit(menuPage)" />
             }
         </li>
     }

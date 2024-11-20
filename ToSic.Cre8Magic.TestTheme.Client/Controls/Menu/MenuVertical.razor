@@ -4,10 +4,10 @@ File Purpose:       Show a vertical menu, usually used for mobile or sidebar
 Recommendations:    See `MenuDefault.razor`
 Nice to know:       See `MenuDefault.razor`
 *@
-@if (Menu.Any())
+@if (MenuKit.Pages.Any())
 {
-    <ul class='@Menu.Classes("ul")'>
-        @foreach(var menuPage in Menu)
+    <ul class='@MenuKit.Pages.Classes("ul")'>
+        @foreach(var menuPage in MenuKit.Pages)
         {
             <li class='@menuPage.Classes("li")'>
                 <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'
@@ -19,11 +19,11 @@ Nice to know:       See `MenuDefault.razor`
                           data-bs-toggle='collapse'
                           data-bs-target='@menuPage.Value("data-bs-target")'
                           aria-expanded='@menuPage.IsInBreadcrumb'></span>
-                    <MenuVertical Menu="@menuPage"></MenuVertical>
+                    <MenuVertical MenuKit="@MenuKit.Kit(menuPage)"></MenuVertical>
                 }
             </li>
         }
         @* Debug Information as things can get complex *@
-        <MagicMenuDebug Menu="@Menu"></MagicMenuDebug>
+        <MagicMenuDebug MenuKit="@MenuKit"></MagicMenuDebug>
     </ul>
 }

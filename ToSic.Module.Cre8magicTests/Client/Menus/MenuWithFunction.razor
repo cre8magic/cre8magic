@@ -1,12 +1,13 @@
+@using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.Pages
 @inherits ThemeControlBase;
 
 @code{
     [Parameter, EditorRequired]
-    public IMagicPageList Menu { get; set; }
+    public IMagicMenuKit MenuKit { get; set; }
 }
 
-@RenderMenu(Menu)
+@RenderMenu(MenuKit.Pages)
 
 @* Function creating a menu *@
 @code

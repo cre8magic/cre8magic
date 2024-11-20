@@ -24,12 +24,12 @@
     
     <h2>No Settings</h2>
     <h3>Basic Menu without Setting, name none</h3>
-    <MenuWithFunction Menu='MenuSvc.GetMenu(PageState)' />
+    <MenuWithFunction MenuKit="MenuSvc.GetMenu(PageState)" />
     <hr />
 
     <hr/>
     <h2>Set MenuPages</h2>
     <h3>Custom menu pages (@string.Join(",", restrictPossiblePages.Select(p => p.Id))) </h3>
-    <MenuWithFunction Menu="MenuSvc.GetMenu(PageState, new() { Pages = restrictPossiblePages })"></MenuWithFunction>
+    <MenuWithFunction MenuKit="MenuSvc.GetMenu(PageState, new() { Pages = restrictPossiblePages })"></MenuWithFunction>
 
 </div>

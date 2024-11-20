@@ -40,7 +40,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
 
     [Parameter] public string? Template { get; set; }
 
-    protected IMagicPageList? Menu { get; private set; }
+    protected IMagicMenuKit? MenuKit { get; private set; }
 
     [Inject] public ILogger<Menu>? Logger { get; set; }
 
@@ -50,8 +50,8 @@ public abstract class MagicMenuRoot: MagicMenuBase
     /// Detect if the menu is configured for vertical.
     /// For the most common 2 kinds of menu options. 
     /// </summary>
-    protected bool IsVertical => MagicConstants.MenuVertical.EqInvariant(Menu?.Settings?.Variant);
-    protected bool IsHorizontal => MagicConstants.MenuHorizontal.EqInvariant(Menu?.Settings?.Variant);
+    protected bool IsVertical => MagicConstants.MenuVertical.EqInvariant(MenuKit?.Variant);
+    protected bool IsHorizontal => MagicConstants.MenuHorizontal.EqInvariant(MenuKit?.Variant);
 
     protected override async Task OnParametersSetAsync()
     {
@@ -73,7 +73,7 @@ public abstract class MagicMenuRoot: MagicMenuBase
             Start = Start ?? startSettings?.Start
         };
 
-        Menu = MagicMenuService?.GetMenu(PageState, menuSettings);
+        MenuKit = MagicMenuService?.GetMenu(PageState, menuSettings);
     }
 
 }

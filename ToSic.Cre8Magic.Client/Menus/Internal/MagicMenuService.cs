@@ -1,11 +1,9 @@
-﻿using System.Net.Http.Headers;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using Oqtane.UI;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal;
@@ -21,7 +19,13 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
     public bool NoInheritSettingsWip { get; set; } = false;
 
-    public IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? settings = default)
+    public IMagicMenuKit GetMenu(PageState pageState, MagicMenuSettings? settings = null)
+    {
+        var list = GetMenuList(pageState, settings);
+        return new MagicMenuKit { Pages = list, Settings = list.Settings };
+    }
+
+    public IMagicPageList GetMenuList(PageState pageState, MagicMenuSettings? settings = default)
     {
 
         var (newSettings, messages) = NoInheritSettingsWip
