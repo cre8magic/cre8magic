@@ -1,11 +1,12 @@
 ﻿@using ToSic.Cre8magic.Client.Services
+@using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Services.Internal
 @using ToSic.Cre8magic.Settings
 @inherits ComponentBase
 @inject IMagicSettingsProviders SettingsProviders
 @inject IMagicSettingsService SettingsService
 @code {
-    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
 }

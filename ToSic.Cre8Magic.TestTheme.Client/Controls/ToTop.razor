@@ -1,4 +1,5 @@
-﻿@inherits ComponentBase
+﻿@using ToSic.Cre8magic.Components.Internal
+@inherits ComponentBase
 @inject IMagicThemeService ThemeService
 @*
 File Purpose:       Contains the floating "UP" button it the corner. 
@@ -8,7 +9,7 @@ TODO:
     - Title should be i18n @2md
 *@
 @code {
-    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
 }

@@ -3,11 +3,12 @@
 @using System.Text.Json.Serialization
 @using System.Text.Encodings.Web
 @using Oqtane.UI
+@using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Settings.Debug
 @using ToSic.Cre8magic.Utils
 @inject IMagicSettingsService SettingsService
 @code {
-    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
 

@@ -1,11 +1,12 @@
-﻿@inherits ComponentBase
+﻿@using ToSic.Cre8magic.Components.Internal
+@inherits ComponentBase
 @*
 File Purpose:       Show the Header with logo, navigation etc.
 Recommendations:    -
 Nice to know:       Most of the parts are again other controls (icon, navigation, etc.)
 *@
 @code {
-    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
 }

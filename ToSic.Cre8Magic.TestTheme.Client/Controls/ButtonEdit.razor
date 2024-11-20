@@ -1,3 +1,4 @@
+@using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Users
 @inherits ComponentBase
 @inject MagicPageEditService PageEditService
@@ -9,7 +10,7 @@ Recommendations:    We recommend to use inline SVGs for performance reasons.
 Nice to know:       -
 *@
 @code {
-    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
 }

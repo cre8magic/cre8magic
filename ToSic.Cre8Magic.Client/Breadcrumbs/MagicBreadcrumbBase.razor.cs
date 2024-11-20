@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.UI;
+using ToSic.Cre8magic.Components.Internal;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils;
 
@@ -16,7 +17,7 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     [Inject]
     public required IMagicBreadcrumbService BreadcrumbService { get; set; }
 
-    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
 

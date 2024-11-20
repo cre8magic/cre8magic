@@ -1,4 +1,5 @@
 ﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Users
 @inherits ComponentBase
 @inject IMagicUserService UserService
@@ -11,7 +12,7 @@ Nice to know:
     -> See in the _oqtane-admin-buttons.scss file
 *@
 @code {
-    /// <inheritdoc cref="ToSic.Cre8magic.Components.MagicComponentBase.PageState"/>
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
 }

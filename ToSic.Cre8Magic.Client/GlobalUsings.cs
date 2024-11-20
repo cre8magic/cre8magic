@@ -3,7 +3,6 @@ global using System.Linq;
 
 global using ToSic.Cre8magic.Client;
 global using ToSic.Cre8magic.Client.Services;
-global using ToSic.Cre8magic.Client.Controls;
 global using ToSic.Cre8magic.Languages;
 global using ToSic.Cre8magic.Client.Themes;
 global using ToSic.Cre8magic.Client.Themes.Settings;
