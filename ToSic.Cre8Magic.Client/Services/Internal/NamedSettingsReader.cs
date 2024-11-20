@@ -10,8 +10,7 @@ namespace ToSic.Cre8magic.Services.Internal;
 internal class NamedSettingsReader<TPart>(
     IMagicSettingsService settingsSvc,
     Defaults<TPart> defaults,
-    Func<MagicSettingsCatalog, NamedSettings<TPart>> findList,
-    bool useAllSources = false
+    Func<MagicSettingsCatalog, NamedSettings<TPart>> findList
 )
     where TPart : class, ICanClone<TPart>, new()
 {
@@ -29,7 +28,7 @@ internal class NamedSettingsReader<TPart>(
         var found = FindAndNeutralize(name, defaultName, skipCache);
         return priority == null
             ? found
-            : found.CloneWith(priority);
+            : found.CloneUnder(priority);
     }
 
     /// <summary>
@@ -79,11 +78,11 @@ internal class NamedSettingsReader<TPart>(
         if (defaults.Foundation == null)
             return priority;
 
-        var mergedNew = defaults.Foundation.CloneWith(priority);
+        var mergedNew = defaults.Foundation.CloneUnder(priority);
 
         if (!skipCache)
             _cache[mainName] = mergedNew;
-        return mergedNew!;
+        return mergedNew;
     }
 
     private TPart FindPartAndMergeIfPossible(TPart priority, string realName, string name)
@@ -91,7 +90,7 @@ internal class NamedSettingsReader<TPart>(
         var addition = FindPart(name);
         if (addition == null)
             return priority;
-        var mergeNew = addition.CloneWith(priority);
+        var mergeNew = addition.CloneUnder(priority);
 
         return mergeNew;
     }

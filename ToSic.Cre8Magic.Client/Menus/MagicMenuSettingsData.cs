@@ -32,7 +32,7 @@ public record MagicMenuSettingsData : SettingsWithInherit, IHasDebugSettings, IM
         Template = priority?.Template ?? fallback?.Template;
     }
 
-    MagicMenuSettingsData ICanClone<MagicMenuSettingsData>.CloneWith(MagicMenuSettingsData? priority, bool forceCopy = false) =>
+    MagicMenuSettingsData ICanClone<MagicMenuSettingsData>.CloneUnder(MagicMenuSettingsData? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

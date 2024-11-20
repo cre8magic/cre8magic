@@ -24,7 +24,7 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings ?? new();
     }
 
-    public MagicThemeDesignSettings CloneWith(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
+    public MagicThemeDesignSettings CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

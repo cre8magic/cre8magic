@@ -11,9 +11,9 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
-        Custom = fallback?.Custom.CloneWith(priority?.Custom) ?? priority?.Custom ?? new();
+        Custom = fallback?.Custom.CloneUnder(priority?.Custom) ?? priority?.Custom ?? new();
     }
-    public MagicContainerSettings CloneWith(MagicContainerSettings? priority, bool forceCopy = false) =>
+    public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

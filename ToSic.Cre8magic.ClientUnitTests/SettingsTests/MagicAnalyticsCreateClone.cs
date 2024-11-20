@@ -19,15 +19,15 @@ public class MagicAnalyticsCreateClone
     public void ConstructorClone2() => VerifySameAsOriginal(new(null, Original()));
 
     [Fact]
-    public void CloneWithNull() => VerifySameAsOriginal(Original().CloneWith(null));
+    public void CloneWithNull() => VerifySameAsOriginal(Original().CloneUnder(null));
 
     [Fact]
-    public void CloneWithEmpty() => VerifySameAsOriginal(Original().CloneWith(new()));
+    public void CloneWithEmpty() => VerifySameAsOriginal(Original().CloneUnder(new()));
 
     [Fact]
     public void CloneWithDifferent()
     {
-        var x = Original().CloneWith(Replacement());
+        var x = Original().CloneUnder(Replacement());
         VerifySameAsReplacement(x, skipGtm: true);
         Assert.Equal(Original().GtmId, x.GtmId);
     }

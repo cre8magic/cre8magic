@@ -10,11 +10,11 @@ public record MagicBreadcrumbDesignSettings : MagicDesignSettings, ICanClone<Mag
     public MagicBreadcrumbDesignSettings(MagicBreadcrumbDesignSettings? priority, MagicBreadcrumbDesignSettings? fallback = default)
         : base(priority, fallback)
     {
-        HasChildren = fallback?.HasChildren?.CloneWith(priority?.HasChildren) ?? priority?.HasChildren;
-        IsDisabled = fallback?.IsDisabled?.CloneWith(priority?.IsDisabled) ?? priority?.IsDisabled;
+        HasChildren = fallback?.HasChildren?.CloneUnder(priority?.HasChildren) ?? priority?.HasChildren;
+        IsDisabled = fallback?.IsDisabled?.CloneUnder(priority?.IsDisabled) ?? priority?.IsDisabled;
     }
 
-    public MagicBreadcrumbDesignSettings CloneWith(MagicBreadcrumbDesignSettings? priority, bool forceCopy = false) =>
+    public MagicBreadcrumbDesignSettings CloneUnder(MagicBreadcrumbDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

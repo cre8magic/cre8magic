@@ -39,7 +39,7 @@ public record MagicMenuSettings: MagicMenuSettingsData, ICanClone<MagicMenuSetti
         Pages = addOn.Pages;
     }
 
-    MagicMenuSettings ICanClone<MagicMenuSettings>.CloneWith(MagicMenuSettings? priority, bool forceCopy = false) =>
+    MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

@@ -20,13 +20,13 @@ public class MagicBreadcrumbDesignSettingsCreateClone
     public void ConstructorClone2() => VerifySameAsOriginal(new(null, Original()));
 
     [Fact]
-    public void CloneWithNull() => VerifySameAsOriginal(Original().CloneWith(null));
+    public void CloneWithNull() => VerifySameAsOriginal(Original().CloneUnder(null));
 
     [Fact]
-    public void CloneWithNull2() => VerifySameAsOriginal(Original().CloneWith(null, true));
+    public void CloneWithNull2() => VerifySameAsOriginal(Original().CloneUnder(null, true));
 
     [Fact]
-    public void CloneWithHalf() => VerifySameAsMix(Original().CloneWith(Half()));
+    public void CloneWithHalf() => VerifySameAsMix(Original().CloneUnder(Half()));
 
     private static MagicBreadcrumbDesignSettings Original() =>
         new()

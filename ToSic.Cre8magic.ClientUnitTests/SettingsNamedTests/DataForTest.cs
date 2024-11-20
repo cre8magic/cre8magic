@@ -14,7 +14,7 @@ internal record DataForTest: ICanClone<DataForTest>
     /// <summary>
     /// FAKE can clone, to simulate scenario where cloning doesn't work.
     /// </summary>
-    public DataForTest CloneWith(DataForTest? priority, bool forceCopy = false)
+    public DataForTest CloneUnder(DataForTest? priority, bool forceCopy = false)
     {
         return this;
     }
@@ -31,6 +31,6 @@ internal record DataForTestCanClone : DataForTest, ICanClone<DataForTestCanClone
         Description = priority?.Description ?? fallback?.Description;
     }
 
-    public DataForTestCanClone CloneWith(DataForTestCanClone? priority, bool forceCopy = false) =>
+    public DataForTestCanClone CloneUnder(DataForTestCanClone? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 }

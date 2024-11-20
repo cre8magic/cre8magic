@@ -8,7 +8,7 @@ public class NamedSettingsCreateCloneSubItems
 
     private static void MixExpects<T>(NamedSettings<T> h1, NamedSettings<T> h2, NamedSettings<T> expected) where T: DataForTest, ICanClone<T>
     {
-        var clone = h1.CloneWith(h2);
+        var clone = h1.CloneUnder(h2);
         AssertSameAs(expected, clone);
     }
 

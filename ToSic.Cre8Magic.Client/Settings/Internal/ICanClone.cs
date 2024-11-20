@@ -2,5 +2,5 @@
 
 public interface ICanClone<T>
 {
-    public T CloneWith(T? priority, bool forceCopy = false);
+    public T CloneUnder(T? priority, bool forceCopy = false);
 }

@@ -20,7 +20,7 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
         Languages = priority?.Languages ?? fallback?.Languages;
     }
 
-    public MagicLanguageSettings CloneWith(MagicLanguageSettings? priority, bool forceCopy = false) =>
+    public MagicLanguageSettings CloneUnder(MagicLanguageSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

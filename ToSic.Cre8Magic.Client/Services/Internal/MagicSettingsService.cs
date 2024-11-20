@@ -106,8 +106,7 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
         _analytics ??= new(
             this,
             MagicAnalyticsSettings.Defaults,
-            cat => cat.Analytics,
-            useAllSources: true
+            cat => cat.Analytics
         );
     private NamedSettingsReader<MagicAnalyticsSettings>? _analytics;
 

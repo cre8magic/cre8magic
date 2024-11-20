@@ -16,7 +16,7 @@ public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
         Settings = priority?.Settings ?? fallback?.Settings;
     }
 
-    public MagicThemePartSettings CloneWith(MagicThemePartSettings? priority, bool forceCopy = false) =>
+    public MagicThemePartSettings CloneUnder(MagicThemePartSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
