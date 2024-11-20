@@ -1,6 +1,6 @@
 ﻿using Oqtane.UI;
 
-namespace ToSic.Cre8magic.Breadcrumbs;
+namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
 public interface IMagicBreadcrumbService
 {

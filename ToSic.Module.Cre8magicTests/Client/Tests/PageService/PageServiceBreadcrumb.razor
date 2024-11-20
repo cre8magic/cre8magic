@@ -1,9 +1,9 @@
-@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Cre8magic
 @using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Pages
 @inherits ComponentBase
 @inject IMagicPageService PageService
-@inject IMagicBreadcrumbService BreadcrumbService
+@inject IMagicHat MagicHat
 @code {
     /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
@@ -15,7 +15,7 @@
 </p>
 <h2>Breadcrumb just list</h2>
 <ol>
-    @foreach(var bc in BreadcrumbService.BreadcrumbKit(PageState).Pages)
+    @foreach(var bc in MagicHat.BreadcrumbKit(PageState).Pages)
     {
         <li>@bc</li>
     }
@@ -23,7 +23,7 @@
 
 <h2>Breadcrumb links</h2>
 <ol>
-    @foreach(var bc in BreadcrumbService.BreadcrumbKit(PageState).Pages)
+    @foreach(var bc in MagicHat.BreadcrumbKit(PageState).Pages)
     {
         <li>
             <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
@@ -33,7 +33,7 @@
 
 <h2>Breadcrumb to Home</h2>
 <ol>
-    @foreach (var bc in BreadcrumbService.BreadcrumbKit(PageState, new() { Active = PageService.GetHome(PageState) }).Pages)
+    @foreach (var bc in MagicHat.BreadcrumbKit(PageState, new() { Active = PageService.GetHome(PageState) }).Pages)
     {
         <li>
             <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>

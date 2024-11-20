@@ -13,7 +13,7 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
     public virtual MagicContainerSettings? Settings => null;
 
     [Inject]
-    public IMagicHat MagicHat { get; set; }
+    public required IMagicHat MagicHat { get; set; }
 
     #region Navigation / Close
 
