@@ -18,9 +18,9 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
         var factory = new MagicBreadcrumbNodeFactory(context);
         var list = Get(
             settings,
-            magicPage => new MagicPageWithDesign(context, pageFactory, factory, magicPage)
+            magicPage => new MagicPageWithDesign(pageFactory, factory, magicPage)
         );
-        return new MagicPageList(context, pageFactory, factory, list);
+        return new MagicPageList(pageFactory, factory, list);
     }
 
     private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbSettings settings, Func<IMagicPage, TPage> generator)

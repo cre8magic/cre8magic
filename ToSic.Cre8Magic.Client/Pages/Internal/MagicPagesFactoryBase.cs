@@ -8,8 +8,6 @@ internal abstract class MagicPagesFactoryBase(IContextWip context)
 {
     #region Logging
 
-    public IContextWip Context { get; } = context;
-
     internal Log Log => _log ??= context.LogRoot.GetLog(GetType().Name);
     private Log? _log;
 
@@ -59,7 +57,7 @@ internal abstract class MagicPagesFactoryBase(IContextWip context)
 
         var pageFactory = context.PageFactory;
         var children = pageFactory.ChildrenOf(page.Id)
-            .Select(child => new MagicPageWithDesign(context, pageFactory, this, child, page.MenuLevel + 1) as IMagicPageWithDesignWip)
+            .Select(child => new MagicPageWithDesign(pageFactory, this, child, page.MenuLevel + 1) as IMagicPageWithDesignWip)
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

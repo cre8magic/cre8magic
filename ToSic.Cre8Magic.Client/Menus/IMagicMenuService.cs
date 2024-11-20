@@ -10,7 +10,7 @@ public interface IMagicMenuService
     public bool NoInheritSettingsWip { get; set; }
 
     /// <summary>
-    /// Get the menu items for the current page and specified settings.
+    /// Get the menu kit containing all items for the current page and specified settings.
     /// </summary>
     /// <param name="pageState"></param>
     /// <param name="settings"></param>

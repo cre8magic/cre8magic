@@ -46,7 +46,7 @@ internal class MagicMenuBuilder
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
-            .Select(child => new MagicPageWithDesign(Context, PageFactory, NodeFactory, child, 2 /* todo: should probably be 1 */) as IMagicPageWithDesignWip)
+            .Select(child => new MagicPageWithDesign(PageFactory, NodeFactory, child, 2 /* todo: should probably be 1 */) as IMagicPageWithDesignWip)
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

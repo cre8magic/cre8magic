@@ -8,8 +8,6 @@ namespace ToSic.Cre8magic.Pages.Internal;
 /// </summary>
 internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPageBase(oqtanePage), IMagicPage
 {
-    protected MagicPageFactory PageFactory => pageFactory;
-
     /// <inheritdoc />
     public int MenuLevel
     {

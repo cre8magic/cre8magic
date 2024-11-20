@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Pages.Internal;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
@@ -8,34 +7,29 @@ namespace ToSic.Cre8magic.Pages;
 
 internal class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicPageList, IEnumerable<IMagicPageWithDesignWip>
 {
-    /// <param name="context"></param>
     /// <param name="pageFactory"></param>
-    /// <param name="factory"></param>
+    /// <param name="pagesFactory"></param>
     /// <param name="page">The original page.</param>
-    internal MagicPageWithDesign(IContextWip context, MagicPageFactory pageFactory, MagicPagesFactoryBase factory, IMagicPage? page = default, int? menuLevel = default)
+    internal MagicPageWithDesign(MagicPageFactory pageFactory, MagicPagesFactoryBase pagesFactory, IMagicPage? page = default, int? menuLevel = default)
         : base(page?.OqtanePage ?? pageFactory.PageState.Page, pageFactory)
     {
-        _context = context;
-        Factory = factory;
+        PagesFactory = pagesFactory;
         if (menuLevel.HasValue) MenuLevel = menuLevel.Value;
     }
 
-    private MagicPagesFactoryBase Factory { get; }
-
-    MagicPagesFactoryBase IMagicPageList.Factory => Factory;
-
+    private MagicPagesFactoryBase PagesFactory { get; }
 
     /// <summary>
     /// The ID of the menu item
     /// </summary>
-    public string MenuId => Factory.Settings.MenuId;
+    public string MenuId => PagesFactory.Settings.MenuId;
 
     #region Children
 
     /// <summary>
     /// Get children of the current menu page.
     /// </summary>
-    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= Factory.GetChildren(this);
+    public IEnumerable<IMagicPageWithDesignWip> Children => _children ??= PagesFactory.GetChildren(this);
     private IList<IMagicPageWithDesignWip>? _children;
 
     /// <summary>
@@ -49,19 +43,14 @@ internal class MagicPageWithDesign : MagicPage, IMagicPageWithDesignWip, IMagicP
 
     #region Design
 
-    private ITokenReplace TokenReplace => _nodeReplace ??= Factory.PageTokenEngine(this);
+    private ITokenReplace TokenReplace => _nodeReplace ??= PagesFactory.PageTokenEngine(this);
     private ITokenReplace? _nodeReplace;
 
     /// <inheritdoc cref="IMagicPageList.Classes" />
-    public string? Classes(string tag) => TokenReplace.Parse(Factory.Design.Classes(tag, this)).EmptyAsNull();
+    public string? Classes(string tag) => TokenReplace.Parse(PagesFactory.Design.Classes(tag, this)).EmptyAsNull();
 
     /// <inheritdoc cref="IMagicPageList.Value" />
-    public string? Value(string key) => TokenReplace.Parse(Factory.Design.Value(key, this)).EmptyAsNull();
-
-    public IMagicPageSetSettings Settings => Factory.Settings;
-
-    IContextWip IMagicPageList.Context => _context;
-    private readonly IContextWip _context;
+    public string? Value(string key) => TokenReplace.Parse(PagesFactory.Design.Value(key, this)).EmptyAsNull();
 
     #endregion
 

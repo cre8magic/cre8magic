@@ -21,13 +21,6 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
 
     public IMagicMenuKit GetMenu(PageState pageState, MagicMenuSettings? settings = null)
     {
-        var list = GetMenuList(pageState, settings);
-        return new MagicMenuKit { Pages = list, Settings = list.Settings };
-    }
-
-    public IMagicPageList GetMenuList(PageState pageState, MagicMenuSettings? settings = default)
-    {
-
         var (newSettings, messages) = NoInheritSettingsWip
         // todo: magicMenuSettings.Default.Fallback
             ? (settings ?? new(), new List<string>())
@@ -56,8 +49,15 @@ public class MagicMenuService(ILogger<MagicMenuService> logger, IMagicSettingsSe
         );
 
         var rootBuilder = new MagicMenuBuilder(context);
-        var list = new MagicPageList(context, pageFactory, rootBuilder.NodeFactory, rootBuilder.GetChildren());
-        return list;
+        var list = new MagicPageList(pageFactory, rootBuilder.NodeFactory, rootBuilder.GetChildren());
+
+        var kit = new MagicMenuKit
+        {
+            Pages = list,
+            Settings = newSettings,
+            Context = context,
+        };
+        return kit;
     }
 
     private (MagicMenuSettings Settings, List<string> Messages) MergeSettings(PageState pageState, MagicMenuSettings? settings = default)

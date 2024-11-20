@@ -10,5 +10,6 @@ public interface IMagicMenuKit
     string Variant { get; }
 
     internal IContextWip Context { get; }
-    IMagicMenuKit Kit(IMagicPageList? pages);
+
+    IMagicMenuKit Kit(IMagicPageList pages);
 }

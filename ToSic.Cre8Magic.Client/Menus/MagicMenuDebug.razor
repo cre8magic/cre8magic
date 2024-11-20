@@ -1,5 +1,4 @@
 ﻿@using ToSic.Cre8magic.Controls
-@using ToSic.Cre8magic.Menus.Internal
 @code {
     [Parameter, EditorRequired]
     public IMagicMenuKit? MenuKit { get; set; }
@@ -7,8 +6,7 @@
     [Parameter] public bool Standalone { get; set; } = false;
 }
 @{
-    var typedFactory = MenuKit?.Pages.Factory as MagicMenuNodeFactory;
-    var settings = typedFactory?.Settings as MagicMenuSettings;
+    var settings = MenuKit?.Settings as MagicMenuSettings;
 
     Dictionary<string, object?> GetMore() => new()
     {

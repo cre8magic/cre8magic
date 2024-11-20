@@ -35,9 +35,4 @@ public interface IMagicPageList: IEnumerable<IMagicPageWithDesignWip>
     /// <returns></returns>
     string? Value(string key);
 
-    IMagicPageSetSettings Settings { get; }
-
-    internal MagicPagesFactoryBase Factory { get; }
-
-    internal IContextWip Context { get; }
 }

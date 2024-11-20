@@ -1,4 +1,6 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using Oqtane.Models;
+using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Menus;
@@ -15,17 +17,11 @@ public record MagicMenuKit : IMagicMenuKit
     // TODO:
     //public object Designer => Pages.Settings.Designer;
 
-    public string Variant => Pages.Settings.Variant;
+    public string Variant => Settings.Variant ?? "";
 
-    /// <summary>
-    /// note: actually internal on interface
-    /// </summary>
-    public IContextWip Context { get; }
+    public /* actually internal */ required IContextWip Context { get; init; }
 
-    public IMagicMenuKit Kit(IMagicPageList? pages) =>
-        new MagicMenuKit
-        {
-            Pages = pages ?? Pages,
-            Settings = Settings,
-        };
+    // TODO: naming not final
+    public IMagicMenuKit Kit(IMagicPageList pages) =>
+        this with { Pages = pages };
 }

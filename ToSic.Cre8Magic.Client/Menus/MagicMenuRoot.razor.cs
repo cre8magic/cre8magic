@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
+using Oqtane.Themes;
 using Oqtane.Themes.Controls;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages;
@@ -10,7 +11,7 @@ namespace ToSic.Cre8magic.Client.Menus;
 /// <summary>
 /// Base class for Razor menus
 /// </summary>
-public abstract class MagicMenuRoot: MagicMenuBase
+public abstract class MagicMenuRoot: ThemeControlBase
 {
     /// <summary>
     /// Complex object with all settings.
