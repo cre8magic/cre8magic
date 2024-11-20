@@ -8,7 +8,7 @@ using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 using static Microsoft.AspNetCore.Localization.CookieRequestCultureProvider;
 
-namespace ToSic.Cre8magic.Languages;
+namespace ToSic.Cre8magic.Languages.Internal;
 
 /*
  * Todo:
@@ -24,11 +24,11 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     /// </summary>
     /// <param name="pageState"></param>
     /// <returns></returns>
-    public async Task<MagicLanguageState> GetStateAsync(PageState pageState) =>
+    public async Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState) =>
         await _languageStates.GetAsync(pageState, async () => await CreateState(pageState));
-    private readonly GetKeepByPageId<MagicLanguageState> _languageStates = new();
+    private readonly GetKeepByPageId<IMagicLanguageKit> _languageStates = new();
     
-    private async Task<MagicLanguageState> CreateState(PageState pageState)
+    private async Task<IMagicLanguageKit> CreateState(PageState pageState)
     {
         var themeContext = settingsSvc.GetThemeContext(pageState);
         var settings = themeContext.ThemeSettings;
@@ -37,8 +37,11 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         var languages = await LanguagesToShow(pageState, languagesSettings);
         var show = settings.Show("Languages") && settings.LanguagesMin <= languages.Count;
         var designer = factory.LanguageDesigner(pageState);
-        return new(show, languages, designer)
+        return new MagicLanguageKit
         {
+            Show = show,
+            Languages = languages,
+            Designer = designer,
             LanguageSettings = languagesSettings,
             ThemeDesignSettings = themeContext.ThemeDesignSettings
         };

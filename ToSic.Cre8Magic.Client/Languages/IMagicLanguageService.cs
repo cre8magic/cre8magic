@@ -9,7 +9,7 @@ public interface IMagicLanguageService
     /// </summary>
     /// <param name="pageState"></param>
     /// <returns></returns>
-    Task<MagicLanguageState> GetStateAsync(PageState pageState);
+    Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState);
 
     Task SetCultureAsync(string culture);
 }

@@ -3,7 +3,7 @@
 @code
 {
     [Parameter, EditorRequired]
-    public required MagicLanguageState State { get; set; }
+    public required IMagicLanguageKit State { get; set; }
 }
 @{
     Dictionary<string, object> GetMore() => new()
