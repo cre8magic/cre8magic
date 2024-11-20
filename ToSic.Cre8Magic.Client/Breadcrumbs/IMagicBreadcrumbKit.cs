@@ -1,7 +1,6 @@
 ﻿using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Pages.Internal;
 
-namespace ToSic.Cre8magic.Breadcrumb;
+namespace ToSic.Cre8magic.Breadcrumbs;
 
 public interface IMagicBreadcrumbKit
 {

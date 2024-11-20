@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Breadcrumb;
+namespace ToSic.Cre8magic.Breadcrumbs;
 
 /// <summary>
 /// Breadcrumb settings - either provided in code, or generated from JSON.

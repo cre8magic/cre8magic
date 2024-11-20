@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Components.Internal;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Breadcrumb;
+namespace ToSic.Cre8magic.Breadcrumbs;
 
 /// <summary>
 /// Recommended base class for all breadcrumb components.
@@ -15,7 +15,7 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     public IMagicPageService? PageServiceWip { get; set; }
 
     [Inject]
-    public required IMagicBreadcrumbService BreadcrumbService { get; set; }
+    public required IMagicHat MagicHat { get; set; }
 
     /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
@@ -47,7 +47,7 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     /// The Breadcrumb for the current page.
     /// Will be updated when the page changes.
     /// </summary>
-    protected IMagicBreadcrumbKit BreadcrumbKit => _breadcrumbKit.Get(PageState, () => BreadcrumbService.BreadcrumbKit(PageState, Customize(Settings ?? new())));
+    protected IMagicBreadcrumbKit BreadcrumbKit => _breadcrumbKit.Get(PageState, () => MagicHat.BreadcrumbKit(PageState, Customize(Settings ?? new())));
     private readonly GetKeepByPageId<IMagicBreadcrumbKit> _breadcrumbKit = new();
 
 }

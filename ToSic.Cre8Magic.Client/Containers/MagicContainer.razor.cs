@@ -13,7 +13,7 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
     public virtual MagicContainerSettings? Settings => null;
 
     [Inject]
-    public IMagicFactoryWip MagicFactory { get; set; }
+    public IMagicHat MagicHat { get; set; }
 
     #region Navigation / Close
 
@@ -31,12 +31,8 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
 
     #endregion
 
-    private MagicContainerDesigner Designer => _designer ??= MagicFactory.ContainerDesigner(PageState, ModuleState);
+    private MagicContainerDesigner Designer => _designer ??= MagicHat.ContainerDesigner(PageState, ModuleState);
     private MagicContainerDesigner? _designer;
-
-    //public string? Classes(string target) => Designer.Classes(target);
-    //public string? Id(string name) => Designer.Id(name);
-    //public string? Value(string key) => Designer.Value(key);
 
     /// <summary>
     /// Modules are treated as admin modules (and must use the admin container) if they are marked as such, or come from the Oqtane ....Admin... type

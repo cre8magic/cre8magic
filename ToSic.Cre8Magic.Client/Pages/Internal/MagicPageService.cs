@@ -28,13 +28,4 @@ internal class MagicPageService : IMagicPageService
 
     private MagicPageFactory GetFactory(PageState pageState) => new(pageState);
 
-    //public IMagicPageList GetBreadcrumb(MagicBreadcrumbSettings? specs = default) =>
-    //    GetBreadcrumb(PageFactory, specs);
-
-    //public IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default) =>
-    //    GetBreadcrumb(GetFactory(pageState), specs);
-
-    //private IMagicPageList GetBreadcrumb(MagicPageFactory pageFactory, MagicBreadcrumbSettings? specs = default) =>
-    //    pageFactory.Breadcrumb.Get(specs);
-
 }

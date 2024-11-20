@@ -2,8 +2,9 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Analytics.Internal;
-using ToSic.Cre8magic.Breadcrumb;
+using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
+using ToSic.Cre8magic.Internal;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Menus.Internal;
@@ -30,6 +31,9 @@ public class Startup : Oqtane.Services.IClientStartup
     /// <param name="services"></param>
     public void ConfigureServices(IServiceCollection services)
     {
+        // Infrastructure
+        services.TryAddTransient(typeof(MagicLazy<>));
+
         // All these Settings etc. should be scoped, so they don't have to reload for each click
         services.TryAddScoped<IMagicSettingsService, MagicSettingsService>();
 
@@ -59,7 +63,7 @@ public class Startup : Oqtane.Services.IClientStartup
 
         // WIP v0.02.00
         services.TryAddTransient<IMagicPageService, MagicPageService>();
-        services.TryAddTransient<IMagicFactoryWip, MagicFactoryWip>();
+        services.TryAddTransient<IMagicHat, MagicHat>();
 
         // Main Settings Provider, scoped, to be used on two following interfaces
         services.TryAddScoped<MagicSettingsProviders>();

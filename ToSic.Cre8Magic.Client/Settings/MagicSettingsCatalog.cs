@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Breadcrumb;
+using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Debug;

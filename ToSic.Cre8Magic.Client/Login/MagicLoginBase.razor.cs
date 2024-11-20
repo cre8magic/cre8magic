@@ -11,9 +11,9 @@ public abstract class MagicLoginBase: Oqtane.Themes.Controls.LoginBase
     private IStringLocalizer<SharedResources> Localizer { get; set; }
 
     [Inject]
-    public IMagicFactoryWip MagicFactory { get; set; }
+    public IMagicHat MagicHat { get; set; }
 
-    private MagicThemeDesigner Designer => _designer ??= MagicFactory.ThemeDesigner(PageState);
+    private MagicThemeDesigner Designer => _designer ??= MagicHat.ThemeDesigner(PageState);
     private MagicThemeDesigner? _designer;
 
 

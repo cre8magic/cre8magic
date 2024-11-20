@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Pages;
 
-namespace ToSic.Cre8magic.Breadcrumb;
+namespace ToSic.Cre8magic.Breadcrumbs;
 
 /// <summary>
 /// Default designer for breadcrumbs in Bootstrap 5.

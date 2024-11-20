@@ -1,5 +1,4 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Breadcrumb;
 using ToSic.Cre8magic.Pages.Internal;
 
 namespace ToSic.Cre8magic.Breadcrumbs.Internal;

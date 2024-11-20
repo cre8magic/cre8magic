@@ -1,6 +1,5 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
-using ToSic.Cre8magic.Breadcrumb;
 
 namespace ToSic.Cre8magic.Pages;
 
@@ -17,7 +16,4 @@ public interface IMagicPageService
     IMagicPage? GetPage(PageState pageState, Page? page);
 
     IEnumerable<IMagicPage> GetPages(PageState pageState, IEnumerable<int> pageIds);
-
-    //IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = default);
-
 }

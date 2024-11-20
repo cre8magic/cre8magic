@@ -1,12 +1,21 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
+using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Themes.Internal;
 
-namespace ToSic.Cre8magic;
+namespace ToSic.Cre8magic.Internal;
 
-internal class MagicFactoryWip(IMagicSettingsService settingsSvc) : IMagicFactoryWip
+internal class MagicHat(
+    IMagicSettingsService settingsSvc,
+    MagicLazy<IMagicBreadcrumbService> breadcrumbSvc
+    ) : IMagicHat
 {
+
+    public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default) =>
+        breadcrumbSvc.Value.BreadcrumbKit(pageState, settings);
+
+
     public MagicContainerDesigner ContainerDesigner(PageState pageState, Module module)
     {
         if (_containerDesigners.TryGetValue(pageState.Page.PageId, out var designer))

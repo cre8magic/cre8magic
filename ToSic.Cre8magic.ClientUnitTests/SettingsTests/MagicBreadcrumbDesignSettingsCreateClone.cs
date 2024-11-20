@@ -1,4 +1,4 @@
-﻿using ToSic.Cre8magic.Breadcrumb;
+﻿using ToSic.Cre8magic.Breadcrumbs;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsTests;
 

@@ -17,7 +17,7 @@ namespace ToSic.Cre8magic.Languages.Internal;
  * - ...and only show these; possibly show more to admin?
  */
 
-internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc, IMagicFactoryWip factory) : IMagicLanguageService
+internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc, IMagicHat factory) : IMagicLanguageService
 {
     /// <summary>
     /// Get the state. Must be async, because it might need to load data from Oqtane.
