@@ -1,5 +1,7 @@
-﻿@using ToSic.Cre8magic.Components.Internal
+﻿@using ToSic.Cre8magic.Client.Themes.Settings
+@using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Providers
 @inherits ComponentBase
 @inject IMagicSettingsProvider SettingsProviders
@@ -10,22 +12,33 @@
     public required PageState PageState { get; set; }
 }
 @{
-    var menuName = "red-menu";
+    var redMenuName = "red-menu";
+    var unknownMenuName = "unknown-menu";
+    var redPartName = "red-part";
 
-    var designs = new Dictionary<string, MagicMenuDesignSettings>
+    var redDesign = new Dictionary<string, MagicMenuDesignSettings>
     {
         { "ul", new() { Classes = "alert alert-warning" } },
     };
 
     SettingsProviders.Reset();
-    SettingsProviders.MenuDesigns.Provide(menuName, designs);
+    SettingsProviders.MenuDesigns.Provide(redMenuName, redDesign);
+
+    var themeSettings = new MagicThemeSettings
+    {
+        Parts = new()
+        {
+            { redPartName, new() { Design = redMenuName } }
+        }
+    };
+    SettingsProviders.Themes.Provide("default", themeSettings);
 }
 <div class="alert alert-info">
     <h4>Menu Provide Design Red</h4>
     <p>
         Goal is that this code will configure a menu design, and the menu will pick it up automatically.
     </p>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = menuName, Start = "." })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = redMenuName, Start = "." })'></BasicMenu>
     
     <hr />
     <p>
@@ -33,4 +46,16 @@
     </p>
     <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = "." })'></BasicMenu>
     
+    <hr/>
+    <p>
+        This is an unknown name
+    </p>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = unknownMenuName, Start = "." })'></BasicMenu>
+
+    <hr />
+    <p>
+        This uses a part name
+    </p>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = redPartName, Start = "." })'></BasicMenu>
+
 </div>

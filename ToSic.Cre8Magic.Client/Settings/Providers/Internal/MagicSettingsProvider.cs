@@ -30,7 +30,8 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
                     dic => dic.Key,
                     dic => new NamedSettings<MagicMenuDesignSettings>(dic.Value)
                 ))
-                : new()
+                : new(),
+            Themes = _themes?.Values != null ? new(_themes.Values) : new()
         };
 
         return new(catalog, null);
@@ -50,7 +51,8 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
         _analytics,
         _containers,
         _breadcrumbs,
-        _menuDesigns
+        _menuDesigns,
+        _themes
     ];
 
     public IMagicProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
@@ -65,4 +67,6 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
     public IMagicProviderSection<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns => _menuDesigns ??= new(this);
     private MagicProviderSection<Dictionary<string, MagicMenuDesignSettings>>? _menuDesigns;
 
+    public IMagicProviderSection<MagicThemeSettings> Themes => _themes ??= new(this);
+    private MagicProviderSection<MagicThemeSettings>? _themes;
 }

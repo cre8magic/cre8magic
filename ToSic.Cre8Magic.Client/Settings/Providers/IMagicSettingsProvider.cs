@@ -18,5 +18,6 @@ public interface IMagicSettingsProvider
     IMagicProviderSection<MagicBreadcrumbSettings> Breadcrumbs { get; }
     IMagicProviderSection<MagicAnalyticsSettings> Analytics { get; }
     IMagicProviderSection<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; }
+    IMagicProviderSection<MagicThemeSettings> Themes { get; }
     public void Reset();
 }
