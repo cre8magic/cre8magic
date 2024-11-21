@@ -1,4 +1,5 @@
 ﻿using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 using static System.StringComparer;
 
 namespace ToSic.Cre8magic.Settings;
@@ -7,7 +8,7 @@ namespace ToSic.Cre8magic.Settings;
 /// Case-insensitive dictionary managing a list of named settings
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>> where T : class //, ICanClone<T>
+public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>> where T : class
 {
     public NamedSettings() : base(InvariantCultureIgnoreCase) { }
 
@@ -24,34 +25,13 @@ public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>
         if (priority == null || fallback == null)
             return;
 
-        // Merge the priority over the fallback settings
-        foreach (var (key, value) in priority)
-        {
-            // If it doesn't exist yet, simply add
-            if (!ContainsKey(key))
-            {
-                Add(key, value);
-                continue;
-            }
-
-            // If it does exist, and it's a cloneable type, then clone and merge
-            if (value is ICanClone<T> cloneable)
-            {
-                // since both sources exist, the dictionary already contains the fallback
-                var existingFallback = this[key];
-                if (existingFallback is ICanClone<T> cloneableFallback)
-                    this[key] = cloneableFallback.CloneUnder(value, true);
-                continue;
-            }
-
-            // If it's not cloneable, then just replace
-            this[key] = value;
-        }
+        // Both existed, so the original one was created with the fallback
+        // now merge in the priority
+        MergeHelper.MergeDictionaries(this, priority);
     }
 
     public NamedSettings<T> CloneUnder(NamedSettings<T>? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? new(this) : this) : new(priority, this);
-
 
 
 }

@@ -13,14 +13,14 @@ internal class NamedSettingsReader<TPart>(
     where TPart : class, /*ICanClone<TPart>,*/ new()
 {
 
-    private TPart TryToMergeOrKeepPriority(TPart? priority, TPart? fallback) =>
-        fallback == null
-            ? priority ?? new()
-            : priority == null
-                ? fallback
-                : fallback is ICanClone<TPart> cloneable
-                    ? cloneable.CloneUnder(priority)
-                    : priority;
+    //private TPart TryToMergeOrKeepPriority(TPart? priority, TPart? fallback) =>
+    //    fallback == null
+    //        ? priority ?? new()
+    //        : priority == null
+    //            ? fallback
+    //            : fallback is ICanClone<TPart> cloneable
+    //                ? cloneable.CloneUnder(priority)
+    //                : priority;
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -33,7 +33,7 @@ internal class NamedSettingsReader<TPart>(
     internal TPart FindAndMerge(string name, string? defaultName = null, TPart? priority = null, bool skipCache = false)
     {
         var found = FindAndNeutralize(name, defaultName, skipCache);
-        return TryToMergeOrKeepPriority(priority, found);
+        return MergeHelper.TryToMergeOrKeepPriority(priority, found)!;
         //return priority == null
         //    ? found
         //    : found.CloneUnder(priority);
@@ -86,7 +86,7 @@ internal class NamedSettingsReader<TPart>(
         if (defaults.Foundation == null)
             return priority;
 
-        var mergedNew = TryToMergeOrKeepPriority(priority, defaults.Foundation);
+        var mergedNew = MergeHelper.TryToMergeOrKeepPriority(priority, defaults.Foundation)!;
         //var mergedNew = defaults.Foundation.CloneUnder(priority);
 
         if (!skipCache)
@@ -100,7 +100,7 @@ internal class NamedSettingsReader<TPart>(
         if (addition == null)
             return priority;
 
-        var mergeNew = TryToMergeOrKeepPriority(priority, addition);
+        var mergeNew = MergeHelper.TryToMergeOrKeepPriority(priority, addition)!;
         //var mergeNew = addition.CloneUnder(priority);
 
         return mergeNew;
