@@ -52,5 +52,12 @@ Example of ♾️ vs. 💧
 
 ## Interfaces instead of Objects
 
+...
+
+## Structure by Topic, not by Type
+
+todo: diff than Oqtane
+
+## ...
 
 ## Autocachnig in the service...
