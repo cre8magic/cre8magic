@@ -17,6 +17,9 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public record MagicSettingsCatalog: IHasDebugSettings
 {
+    /// <summary>
+    /// Empty Constructor so it can be created in code and Json-Deserialized
+    /// </summary>
     public MagicSettingsCatalog() { }
 
 
@@ -51,8 +54,18 @@ public record MagicSettingsCatalog: IHasDebugSettings
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicContainerSettings>))]
     public Dictionary<string, MagicContainerSettings> Containers { get; init; } = new(InvariantCultureIgnoreCase);
 
+    /// <summary>
+    /// Language Settings
+    /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguageSettings>))]
     public Dictionary<string, MagicLanguageSettings> Languages { get; init; } = new(InvariantCultureIgnoreCase);
+
+    /// <summary>
+    /// Design definitions of languages
+    /// </summary>
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<Dictionary<string, MagicDesignSettings>>))]
+    public Dictionary<string, Dictionary<string, MagicDesignSettings>> LanguageDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+
 
     /// <summary>
     /// The menu definitions

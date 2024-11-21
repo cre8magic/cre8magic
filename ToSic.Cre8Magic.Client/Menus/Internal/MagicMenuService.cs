@@ -13,7 +13,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// </summary>
 public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuService
 {
-    private const string MenuSettingPrefix = "menu-";
+    private const string OptionalPrefix = "menu-";
 
     public bool NoInheritSettingsWip { get; set; } = false;
 
@@ -59,11 +59,8 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
             settingsSvc.MenuSettings,
             settings?.DesignSettings,
             settingsSvc.MenuDesigns, 
-            MenuSettingPrefix,
-            finalize: (settingsData, designSettings) => new(settingsData, settings)
-            {
-                DesignSettings = designSettings
-            });
+            OptionalPrefix,
+            finalize: (settingsData, designSettings) => new(settingsData, settings) { DesignSettings = designSettings });
 
 
     private static List<IMagicPageWithDesignWip> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)

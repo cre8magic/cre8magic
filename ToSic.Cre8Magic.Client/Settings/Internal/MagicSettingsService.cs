@@ -102,7 +102,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     private SettingsReader<MagicAnalyticsSettings>? _analytics;
 
     private SettingsReader<MagicThemeSettings> ThemeSettings =>
-        _getTheme ??= new(this, MagicThemeSettings.Defaults, cat => cat.Themes);
+        _getTheme ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);
     private SettingsReader<MagicThemeSettings>? _getTheme;
 
     public MagicAnalyticsSettings AnalyticsSettings(string settingsName) => ((IMagicSettingsService)this).Analytics.FindAndNeutralize(settingsName, null, skipCache: _bypassCaches);
@@ -115,13 +115,19 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         return result;
     }
 
-    SettingsReader<MagicMenuSettingsData> IMagicSettingsService.MenuSettings =>
-        _getMenuSettings ??= new(this, MagicMenuSettingsData.Defaults, cat => cat.Menus);
+    public SettingsReader<MagicMenuSettingsData> MenuSettings =>
+        _getMenuSettings ??= new(this, MagicMenuSettingsData.Defaults, catalog => catalog.Menus);
     private SettingsReader<MagicMenuSettingsData>? _getMenuSettings;
 
-    SettingsReader<MagicLanguageSettings> IMagicSettingsService.Languages =>
-        _languages ??= new(this, MagicLanguageSettings.Defaults, cat => cat.Languages);
+    public SettingsReader<MagicLanguageSettings> Languages => _languages ??= new(this,
+            MagicLanguageSettings.Defaults,
+            catalog => catalog.Languages
+        );
     private SettingsReader<MagicLanguageSettings>? _languages;
+
+    public SettingsReader<Dictionary<string, MagicDesignSettings>> LanguageDesigns =>
+        _languageDesigns ??= new(this, new(), catalog => catalog.LanguageDesigns);
+    private SettingsReader<Dictionary<string, MagicDesignSettings>>? _languageDesigns;
 
     public MagicLanguageSettings LanguageSettings(MagicThemeSettings settings, string settingsName) =>
         ((IMagicSettingsService)this).Languages.FindAndNeutralize(settings.Parts.GetPartSettingsNameOrFallback("Languages", settingsName), settingsName);
@@ -130,15 +136,15 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     //    _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
     //private NamedSettingsReader<MagicContainerSettings>? _containers;
 
-    SettingsReader<MagicThemeDesignSettings> IMagicSettingsService.ThemeDesign =>
-        _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, cat => cat.ThemeDesigns);
+    public SettingsReader<MagicThemeDesignSettings> ThemeDesign =>
+        _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, catalog => catalog.ThemeDesigns);
     private SettingsReader<MagicThemeDesignSettings>? _themeDesign;
 
     public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
         ((IMagicSettingsService)this).ThemeDesign.FindAndNeutralize(settings.Design ?? settings.Parts.GetPartSettingsNameOrFallback(nameof(settings.Design), settingsName), settingsName);
 
-    SettingsReader<Dictionary<string, MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
-        _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);
+    public SettingsReader<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns =>
+        _menuDesigns ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);
     private SettingsReader<Dictionary<string, MagicMenuDesignSettings>>? _menuDesigns;
 
     /// <summary>

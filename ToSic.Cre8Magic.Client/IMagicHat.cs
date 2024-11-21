@@ -27,7 +27,7 @@ public interface IMagicHat
     internal MagicContainerDesigner ContainerDesigner(PageState pageState, Module module);
     internal MagicThemeDesigner ThemeDesigner(PageState pageState);
 
-    internal MagicLanguageDesigner LanguageDesigner(PageState pageState);
+    //internal MagicLanguageDesigner LanguageDesigner(PageState pageState);
 
     #endregion
 

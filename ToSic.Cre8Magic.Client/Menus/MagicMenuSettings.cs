@@ -57,8 +57,6 @@ public record MagicMenuSettings: MagicMenuSettingsData, ISettingsForCodeUse //, 
     [JsonIgnore]    // Not meant for JSON at all...
     public IMagicPageDesigner? Designer { get; init; }
 
-    // todo: name, maybe not on interface
-    [JsonIgnore] // can't be provided in JSON, but could in code
     public Dictionary<string, MagicMenuDesignSettings>? DesignSettings { get; init; }
 
     /// <summary>

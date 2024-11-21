@@ -41,6 +41,7 @@ public interface IMagicSettingsService: IHasSystemMessages
 
     internal SettingsReader<MagicMenuSettingsData> MenuSettings { get; }
     internal List<MagicSettingsCatalog> AllCatalogs { get; }
+    internal SettingsReader<Dictionary<string, MagicDesignSettings>> LanguageDesigns { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);
 

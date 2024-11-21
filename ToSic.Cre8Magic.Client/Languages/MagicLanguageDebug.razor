@@ -8,20 +8,20 @@
     public required PageState PageState { get; set; }
 
     [Parameter, EditorRequired]
-    public required IMagicLanguageKit State { get; set; }
+    public required IMagicLanguageKit LanguageKit { get; set; }
 }
 @{
-    Dictionary<string, object> GetMore() => new()
+    Dictionary<string, object?> GetMore() => new()
     {
-        { "Language Settings", State.Settings },
-        { "Languages To Show", State.Languages },
-        { "Language Design", State.ThemeDesignSettings.DesignSettings }
+        { "Language Settings", LanguageKit.Settings },
+        { "Languages To Show", LanguageKit.Languages },
+        { "Language Design", LanguageKit.Settings.DesignSettings }
     };
 }
-<MagicDebug Target="@State.Settings" Title="Language Settings" More="GetMore()">
+<MagicDebug Target="@LanguageKit.Settings" Title="Language Settings" More="GetMore()">
     <Content>
         <ul>
-            <li>Show: @State.Show</li>
+            <li>Show: @LanguageKit.Show</li>
         </ul>
     </Content>
 </MagicDebug>

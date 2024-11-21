@@ -47,15 +47,15 @@ internal class MagicHat(
     }
     private readonly Dictionary<int, MagicThemeDesigner> _themeDesigners = new();
 
-    public MagicLanguageDesigner LanguageDesigner(PageState pageState)
-    {
-        if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
-            return designer;
-        var designContext = settingsSvc.GetThemeContextFull(pageState);
+    //public MagicLanguageDesigner LanguageDesigner(PageState pageState)
+    //{
+    //    if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
+    //        return designer;
+    //    var designContext = settingsSvc.GetThemeContextFull(pageState);
 
-        var languages = new MagicLanguageDesigner(designContext);
-        _languagesDesigners[pageState.Page.PageId] = languages;
-        return languages;
-    }
-    private readonly Dictionary<int, MagicLanguageDesigner> _languagesDesigners = new();
+    //    var languages = new MagicLanguageDesigner(designContext);
+    //    _languagesDesigners[pageState.Page.PageId] = languages;
+    //    return languages;
+    //}
+    //private readonly Dictionary<int, MagicLanguageDesigner> _languagesDesigners = new();
 }

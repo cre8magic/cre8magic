@@ -24,7 +24,7 @@ public interface IMagicLanguageKit
 
     internal MagicLanguageSettingsPubWip Settings { get; init; }
 
-    internal MagicThemeDesignSettings ThemeDesignSettings { get; init; }
+    //internal MagicThemeDesignSettings ThemeDesignSettings { get; init; }
 
     /// <summary>
     /// Command to set the culture.
