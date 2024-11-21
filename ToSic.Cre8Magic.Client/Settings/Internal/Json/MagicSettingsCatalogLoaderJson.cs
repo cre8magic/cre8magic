@@ -1,13 +1,13 @@
 ﻿using System.Text.Json;
 using Microsoft.Extensions.Logging;
-using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Json;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Settings.Json;
+namespace ToSic.Cre8magic.Settings.Internal.Json;
 
-public class MagicSettingsJsonService(ILogger<MagicSettingsJsonService> logger)
+public class MagicSettingsCatalogLoaderJson(ILogger<MagicSettingsCatalogLoaderJson> logger)
 {
-    public ILogger<MagicSettingsJsonService> Logger { get; } = logger;
+    public ILogger<MagicSettingsCatalogLoaderJson> Logger { get; } = logger;
 
     public MagicSettingsCatalog LoadJson(MagicPackageSettings themeConfig)
     {

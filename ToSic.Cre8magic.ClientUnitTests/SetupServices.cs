@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using ToSic.Cre8magic.Internal.Startup;
 
 namespace ToSic.Cre8magic.ClientUnitTests;
 
@@ -17,7 +18,7 @@ internal static class SetupServices
     /// <returns>The service provider.</returns>
     public static IServiceCollection PrepareServices(this IServiceCollection serviceCollection)
     {
-        var startup = new Startup();
+        var startup = new OqtaneClientStartup();
         startup.ConfigureServices(serviceCollection);
         return serviceCollection;
     }

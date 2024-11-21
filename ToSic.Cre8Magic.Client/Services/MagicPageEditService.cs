@@ -22,7 +22,7 @@ public class MagicPageEditService(IPageService pageService, NavigationManager na
             // Unclear what this is for, so just a guess
             // Probably the personalizable page is "virtual" so if he's on that page
             // He doesn't have a personalizable page yet, so it must be created.
-            // I assume afterward he would always be on that page, so it wouldn't create it any more
+            // I assume afterward he would always be on that page, so it wouldn't create it anymore
             await pageService.AddPageAsync(pageState.Page.PageId, pageState.User.UserId);
             pageState.EditMode = !pageState.EditMode;
         }

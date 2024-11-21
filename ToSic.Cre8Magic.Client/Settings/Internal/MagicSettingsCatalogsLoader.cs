@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// It requires that there are <see cref="MagicPackageSettings"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-public class MagicSettingsLoader(IEnumerable<IMagicSettingsSource> sources)
+public class MagicSettingsCatalogsLoader(IEnumerable<IMagicSettingsSource> sources)
 {
     // #WipRemovingPreMergedCatalog
     //internal MagicSettingsCatalog MergeCatalogs(MagicPackageSettings packageSettings)

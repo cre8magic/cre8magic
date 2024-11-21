@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings.Json;
+﻿using ToSic.Cre8magic.Settings.Internal.Json;
+using ToSic.Cre8magic.Settings.Json;
 
 namespace ToSic.Cre8magic.Settings.Internal.Sources;
 
@@ -8,7 +9,7 @@ namespace ToSic.Cre8magic.Settings.Internal.Sources;
 /// It requires that there are <see cref="MagicPackageSettings"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-public class MagicSettingsSourceJson(MagicSettingsJsonService jsonService) : IMagicSettingsSource
+public class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoaderJson) : IMagicSettingsSource
 {
     public int Priority => 100;
 
@@ -23,9 +24,9 @@ public class MagicSettingsSourceJson(MagicSettingsJsonService jsonService) : IMa
         if (string.IsNullOrWhiteSpace(packageSettings.SettingsJsonFile))
             return new(null, []);
 
-        var catalogFromJson = jsonService.LoadJson(packageSettings);
+        var catalogFromJson = catalogLoaderJson.LoadJson(packageSettings);
 
-        var bundle = new SettingsSourceInfo(catalogFromJson, jsonService.Exceptions);
+        var bundle = new SettingsSourceInfo(catalogFromJson, catalogLoaderJson.Exceptions);
         _cache[packageSettings] = bundle;
         return bundle;
     }

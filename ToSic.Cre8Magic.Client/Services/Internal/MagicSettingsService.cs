@@ -16,7 +16,7 @@ namespace ToSic.Cre8magic.Services.Internal;
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
 /// </summary>
-internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettingsService
+internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) : IMagicSettingsService
 {
     /// <inheritdoc />>
     public IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName)
@@ -100,7 +100,7 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     /// <summary>
     /// actually internal
     /// </summary>
-    public List<MagicSettingsCatalog> AllCatalogs => loader.Catalogs(PackageSettings, cache: false);
+    public List<MagicSettingsCatalog> AllCatalogs => catalogsLoader.Catalogs(PackageSettings, cache: false);
 
     NamedSettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(
@@ -153,5 +153,5 @@ internal class MagicSettingsService(MagicSettingsLoader loader) : IMagicSettings
     /// <summary>
     /// Exceptions - ATM just forward the loader exceptions, as none are logged here.
     /// </summary>
-    public List<Exception> Exceptions => loader.Exceptions;
+    public List<Exception> Exceptions => catalogsLoader.Exceptions;
 }
