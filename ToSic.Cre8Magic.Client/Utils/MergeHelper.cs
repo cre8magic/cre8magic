@@ -20,16 +20,16 @@ internal class MergeHelper
             return fallback;
         }
 
-        if (fallback is IDictionary<string, TPart> dict && priority is IDictionary<string, TPart> priorityDict)
-        {
-            MergeDictionaries(dict, priorityDict);
-            return fallback;
-        }
+        //if (fallback is IDictionary<string, TPart> dict && priority is IDictionary<string, TPart> priorityDict)
+        //{
+        //    MergeDictionaries(dict, priorityDict);
+        //    return fallback;
+        //}
 
         return priority;
     }
 
-    public static void MergeDictionaries<TVal>(IDictionary<string, TVal>? target, IDictionary<string, TVal>? priority)
+    public static void MergeDictionaries<TVal>(Dictionary<string, TVal>? target, Dictionary<string, TVal>? priority)
     {
         if (priority == null || target == null)
             return;
@@ -46,18 +46,18 @@ internal class MergeHelper
         }
     }
 
-    public static void MergeDictionariesUnknownType(IDictionary target, IDictionary source)
+    public static void MergeDictionariesUnknownType(IDictionary target, IDictionary priority)
     {
         try
         {
             var typeTarget = target.GetType();
-            var typeSource = source.GetType();
+            var typeSource = priority.GetType();
             if (typeTarget != typeSource || !typeSource.IsGenericType)
                 return;
 
             var typeVal = typeSource.GetGenericArguments()[1];
             var method = typeof(MergeHelper).GetMethod(nameof(MergeDictionaries))?.MakeGenericMethod(typeVal);
-            method?.Invoke(null, [target, source]);
+            method?.Invoke(null, [target, priority]);
         }
         catch
         {

@@ -1,6 +1,8 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Themes.Settings;
 using static ToSic.Cre8magic.MagicConstants;
 
@@ -37,7 +39,8 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     /// <summary>
     /// The parts of this theme, like breadcrumb and various menu configs
     /// </summary>
-    public NamedSettings<MagicThemePartSettings> Parts { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemePartSettings>))]
+    public Dictionary<string, MagicThemePartSettings> Parts { get; init; } = new();
 
 
     public bool? MagicContextInBody { get; init; }

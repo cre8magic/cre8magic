@@ -1,5 +1,8 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Json;
 
 namespace ToSic.Cre8magic.Themes.Settings;
 
@@ -72,7 +75,8 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
     /// Custom values / classes as you need them in your code
     /// TODO: probably rename to "data"
     /// </summary>
-    public NamedSettings<MagicDesignSettings> DesignSettings { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettings>))]
+    public Dictionary<string, MagicDesignSettings> DesignSettings { get; init; } = new();
 
     // TODO: initialize with real properties, so the defaults don't already contain something?
 

@@ -1,4 +1,5 @@
 ﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsNamedTests;
 
@@ -10,14 +11,15 @@ public class NamedSettingsCreateClone
     public void Cloning(bool forceCopy)
     {
         var original = DataSimple;
-        var clone = original.CloneUnder(null, forceCopy);
+        var clone = original;
+        MergeHelper.MergeDictionaries<TestDataNoMerge>(null, clone);// original.CloneUnder(null, forceCopy);
         // Verify that it's a real copy, or the original object
         Assert.Equal(forceCopy, clone != original);
         // Verify that the content is the same
         AssertSameAs(original, clone);
     }
 
-    private static void AssertSameAs(NamedSettings<TestDataNoMerge> expected, NamedSettings<TestDataNoMerge> clone)
+    private static void AssertSameAs(Dictionary<string, TestDataNoMerge> expected, Dictionary<string, TestDataNoMerge> clone)
     {
         Assert.Equal(expected.Count, clone.Count);
         foreach (var key in expected.Keys)
@@ -37,14 +39,16 @@ public class NamedSettingsCreateClone
     [Fact]
     public void MixingPartsWhichOverlapWithIdenticalData() => MixExpectsDataSimple(DataSimpleHalf1, DataSimpleHalf2);
 
-    private static void MixExpectsDataSimple(NamedSettings<TestDataNoMerge> h1, NamedSettings<TestDataNoMerge> h2)
+    private static void MixExpectsDataSimple(Dictionary<string, TestDataNoMerge> h1, Dictionary<string, TestDataNoMerge> priority)
     {
-        var clone = h1.CloneUnder(h2);
+        //var clone = h1.CloneUnder(priority);
+        MergeHelper.MergeDictionaries(h1, priority); // h1.CloneUnder(priority);
         var expected = DataSimple;
-        AssertSameAs(expected, clone);
+        //AssertSameAs(expected, clone);
+        AssertSameAs(expected, h1);
     }
 
-    private static NamedSettings<TestDataNoMerge> DataSimple =>
+    private static Dictionary<string, TestDataNoMerge> DataSimple =>
         new()
         {
             { "a", new() },
@@ -54,7 +58,7 @@ public class NamedSettingsCreateClone
         };
 
 
-    private static NamedSettings<TestDataNoMerge> DataSimpleHalf1 =>
+    private static Dictionary<string, TestDataNoMerge> DataSimpleHalf1 =>
         new()
         {
             { "a", new() },
@@ -63,7 +67,7 @@ public class NamedSettingsCreateClone
             //{ "description", new DataForTest { Description = "world" } },
         };
 
-    private static NamedSettings<TestDataNoMerge> DataSimpleHalf2 =>
+    private static Dictionary<string, TestDataNoMerge> DataSimpleHalf2 =>
         new()
         {
             //{ "a", new DataForTest() },
@@ -71,7 +75,7 @@ public class NamedSettingsCreateClone
             { "ID", new() { Id = 123 } },
             { "description", new() { Description = "world" } },
         };
-    private static NamedSettings<TestDataNoMerge> DataSimpleHalf2WithName =>
+    private static Dictionary<string, TestDataNoMerge> DataSimpleHalf2WithName =>
         new()
         {
             //{ "a", new DataForTest() },

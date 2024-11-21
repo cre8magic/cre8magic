@@ -1,18 +1,20 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsNamedTests;
 
 public class NamedSettingsCreateCloneSubItems
 {
 
-    private static void MixExpects<T>(NamedSettings<T> foundation, NamedSettings<T> priority, NamedSettings<T> expected) where T: TestDataNoMerge, ICanClone<T>
+    private static void MixExpects<T>(Dictionary<string, T> foundation, Dictionary<string, T> priority, Dictionary<string, T> expected) where T: TestDataNoMerge, ICanClone<T>
     {
-        var clone = foundation.CloneUnder(priority);
-        AssertSameAs(expected, clone);
+        MergeHelper.MergeDictionaries(foundation, priority);
+        // var clone = foundation.CloneUnder(priority);
+        AssertSameAs(expected, foundation);
     }
 
-    private static void AssertSameAs<T>(NamedSettings<T> expected, NamedSettings<T> clone) where T : TestDataNoMerge, ICanClone<T>
+    private static void AssertSameAs<T>(Dictionary<string, T> expected, Dictionary<string, T> clone) where T : TestDataNoMerge, ICanClone<T>
     {
         Assert.Equal(expected.Count, clone.Count);
         foreach (var key in expected.Keys)
@@ -63,25 +65,25 @@ public class NamedSettingsCreateCloneSubItems
         DicWithNameAndId<TestDataAbleToMerge>()
     );
 
-    private static NamedSettings<T> DicWithEmpty<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
+    private static Dictionary<string, T> DicWithEmpty<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
         new()
         {
             { "subitem", new() },
         };
 
-    private static NamedSettings<T> DicWithName<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
+    private static Dictionary<string, T> DicWithName<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
         new()
         {
             { "subitem", new() { Name = "hello" } },
         };
 
-    private static NamedSettings<T> DicWithId<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
+    private static Dictionary<string, T> DicWithId<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
         new()
         {
             { "subitem", new() { Id = 123 } },
         };
 
-    private static NamedSettings<T> DicWithNameAndId<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
+    private static Dictionary<string, T> DicWithNameAndId<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
         new()
         {
             { "subitem", new() { Name = "hello", Id = 123 } },

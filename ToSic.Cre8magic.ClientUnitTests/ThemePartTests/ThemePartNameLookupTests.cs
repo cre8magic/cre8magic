@@ -27,7 +27,7 @@ public class ThemePartNameLookupTests
     [InlineData(Default, null, "null should use default")]
     public void CheckNameRedirects(string expected, string? partName, string? testDescription = default)
     {
-        var themeParts = new NamedSettings<MagicThemePartSettings>
+        var themeParts = new Dictionary<string, MagicThemePartSettings>
         {
             { Default, new() },
             { MenuNoRedirect, new() },
