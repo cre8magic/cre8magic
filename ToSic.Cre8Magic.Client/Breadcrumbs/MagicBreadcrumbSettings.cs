@@ -122,7 +122,8 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     public int? ActiveId { get; init; }
 
     // todo: name, maybe not on interface
-    public NamedSettings<MagicBreadcrumbDesignSettings>? DesignSettings { get; init; }
+    [JsonIgnore] // TODO: MOVE TO DESIGN SETTINGS after renaming this to ...Data
+    public Dictionary<string, MagicBreadcrumbDesignSettings>? DesignSettings { get; init; }
 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;

@@ -12,16 +12,6 @@ internal class NamedSettingsReader<TPart>(
 )
     where TPart : class, /*ICanClone<TPart>,*/ new()
 {
-
-    //private TPart TryToMergeOrKeepPriority(TPart? priority, TPart? fallback) =>
-    //    fallback == null
-    //        ? priority ?? new()
-    //        : priority == null
-    //            ? fallback
-    //            : fallback is ICanClone<TPart> cloneable
-    //                ? cloneable.CloneUnder(priority)
-    //                : priority;
-
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
     /// </summary>
@@ -34,9 +24,6 @@ internal class NamedSettingsReader<TPart>(
     {
         var found = FindAndNeutralize(name, defaultName, skipCache);
         return MergeHelper.TryToMergeOrKeepPriority(priority, found)!;
-        //return priority == null
-        //    ? found
-        //    : found.CloneUnder(priority);
     }
 
     /// <summary>
@@ -74,7 +61,7 @@ internal class NamedSettingsReader<TPart>(
                 break;
 
             // Check if it's a dictionary containing @inherit specs
-            case NamedSettings<MagicMenuDesignSettings> named when named.TryGetValue(InheritsNameInJson, out var value):
+            case IDictionary<string, MagicMenuDesignSettings> named when named.TryGetValue(InheritsNameInJson, out var value):
                 if (value.Value != null)
                     priority = FindPartAndMergeIfPossible(priority, mainName, value.Value);
                 else
@@ -87,7 +74,6 @@ internal class NamedSettingsReader<TPart>(
             return priority;
 
         var mergedNew = MergeHelper.TryToMergeOrKeepPriority(priority, defaults.Foundation)!;
-        //var mergedNew = defaults.Foundation.CloneUnder(priority);
 
         if (!skipCache)
             _cache[mainName] = mergedNew;
@@ -106,7 +92,7 @@ internal class NamedSettingsReader<TPart>(
         return mergeNew;
     }
 
-    private readonly NamedSettings<TPart> _cache = new();
+    private readonly Dictionary<string, TPart> _cache = new(StringComparer.InvariantCultureIgnoreCase);
 
     private static string[] GetConfigNamesToCheck(string? configuredNameOrNull, string currentName)
     {

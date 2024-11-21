@@ -23,7 +23,7 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
     private Log Log { get; }
 
     private MagicBreadcrumbSettings BreadcrumbSettings { get; }
-    internal List<NamedSettings<MagicBreadcrumbDesignSettings>> DesignSettingsList { get; }
+    internal List<Dictionary<string, MagicBreadcrumbDesignSettings>> DesignSettingsList { get; }
 
 
     public string Classes(string tag, IMagicPage item)
@@ -47,7 +47,7 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
     private List<MagicBreadcrumbDesignSettings> ConfigsForTag(string tag) =>
         DesignSettingsList
             .Select(c => c.FindInvariant(tag))
-            .Where(c => c is { })
+            .Where(c => c is not null)
             .ToList()!;
 
     private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbDesignSettings> configs)

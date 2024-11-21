@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Settings;
-
-namespace ToSic.Cre8magic.Themes.Settings;
+﻿namespace ToSic.Cre8magic.Themes.Settings;
 
 internal static class MagicThemePartsExtensions
 {
@@ -9,18 +7,18 @@ internal static class MagicThemePartsExtensions
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>
-    public static string? GetPartSettingsName(this NamedSettings<MagicThemePartSettings> dic, string name) =>
+    public static string? GetPartSettingsName(this IDictionary<string, MagicThemePartSettings> dic, string name) =>
         dic.TryGetValue(name, out var value)
             ? value.Settings
             : null;
 
-    public static string GetPartSettingsNameOrFallback(this NamedSettings<MagicThemePartSettings> dic, string name, string fallback) =>
+    public static string GetPartSettingsNameOrFallback(this Dictionary<string, MagicThemePartSettings> dic, string name, string fallback) =>
         dic.GetPartSettingsName(name) ?? fallback;
 
     /// <summary>
     /// Determine the name of the design configuration of a specific part
     /// </summary>
-    public static string? GetPartDesignName(this NamedSettings<MagicThemePartSettings> dic, string name) =>
+    public static string? GetPartDesignName(this Dictionary<string, MagicThemePartSettings> dic, string name) =>
         dic.TryGetValue(name, out var value)
             ? value.Design
             : null;

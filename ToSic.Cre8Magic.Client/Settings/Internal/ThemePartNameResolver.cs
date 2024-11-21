@@ -16,7 +16,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// </summary>
 /// <param name="mainName"></param>
 /// <param name="themeSettingsParts"></param>
-internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePartSettings> themeSettingsParts)
+internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicThemePartSettings> themeSettingsParts)
 {
     internal ThemePartNameResolver(MagicThemeContext themeCtx)
         : this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
@@ -44,7 +44,7 @@ internal class ThemePartNameResolver(string mainName, NamedSettings<MagicThemePa
     /// <param name="prefixToCheck"></param>
     /// <param name="getRenameOrNull"></param>
     /// <returns></returns>
-    private (string BestName, List<string> Messages) FindBestName(string? possibleName, string? prefixToCheck, Func<NamedSettings<MagicThemePartSettings>, string, string?> getRenameOrNull)
+    private (string BestName, List<string> Messages) FindBestName(string? possibleName, string? prefixToCheck, Func<Dictionary<string, MagicThemePartSettings>, string, string?> getRenameOrNull)
     {
         var (initialName, journal) = PickBestSettingsName(possibleName, mainName);
 

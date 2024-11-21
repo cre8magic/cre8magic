@@ -1,5 +1,8 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Json;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Containers;
 
@@ -11,7 +14,16 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
-        Custom = fallback?.Custom.CloneUnder(priority?.Custom) ?? priority?.Custom ?? new();
+        if (fallback?.Custom == null)
+        {
+            Custom = priority?.Custom == null ? new(StringComparer.InvariantCultureIgnoreCase) : new(priority.Custom, StringComparer.InvariantCultureIgnoreCase);
+            return;
+        }
+
+        var copyFallback = new Dictionary<string, MagicDesignSettings>(fallback.Custom, StringComparer.InvariantCulture);
+
+        MergeHelper.MergeDictionaries(copyFallback, priority?.Custom);
+        Custom = copyFallback;
     }
     public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
@@ -19,7 +31,8 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     /// <summary>
     /// TODO: PROBABLY CHANGE TO DATA / whatever ?
     /// </summary>
-    public NamedSettings<MagicDesignSettings> Custom { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettings>))]
+    public Dictionary<string, MagicDesignSettings> Custom { get; init; } = new(StringComparer.InvariantCultureIgnoreCase);
 
     private static readonly MagicContainerSettings FbAndF = new()
     {

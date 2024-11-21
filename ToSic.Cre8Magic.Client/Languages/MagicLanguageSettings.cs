@@ -1,6 +1,9 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Json;
 
 namespace ToSic.Cre8magic.Languages;
 
@@ -35,25 +38,24 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
     /// <summary>
     /// List of languages
     /// </summary>
-    public NamedSettings<MagicLanguage>? Languages
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguage>))]
+    public Dictionary<string, MagicLanguage>? Languages
     {
         get => _languages;
         init => _languages = InitList(value);
     }
-    private readonly NamedSettings<MagicLanguage>? _languages;
+    private readonly Dictionary<string, MagicLanguage>? _languages;
 
-    private NamedSettings<MagicLanguage>? InitList(NamedSettings<MagicLanguage>? dic)
+    private static Dictionary<string, MagicLanguage>? InitList(Dictionary<string, MagicLanguage>? dic)
     {
-        if (dic == null)
-            return null;
-
         // Ensure each config knows what culture it's for, as
-        var extended = dic.ToDictionary(
+        var extended = dic?.ToDictionary(
             pair => pair.Key,
-            pair => pair.Value with { Culture = pair.Key }
+            pair => pair.Value with { Culture = pair.Key },
+            StringComparer.InvariantCultureIgnoreCase
         );
 
-        return new(extended);
+        return extended;
     }
 
     internal static Defaults<MagicLanguageSettings> Defaults = new()
