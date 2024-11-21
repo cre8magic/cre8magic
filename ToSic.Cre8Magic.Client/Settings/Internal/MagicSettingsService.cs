@@ -3,7 +3,6 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
-using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;

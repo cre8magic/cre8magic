@@ -4,8 +4,6 @@ using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Docs;
-using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal;
@@ -22,8 +20,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
     public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)
     {
         var (newSettings, journal) = NoInheritSettingsWip
-        // todo: magicMenuSettings.Default.Fallback
-            ? (settings ?? new(), new List<string>())
+            ? new(settings ?? new(), [])    // todo: magicMenuSettings.Default.Fallback
             : MergeSettings(pageState, settings);
 
         // Transfer Logs from Tree creation to the current log
@@ -55,27 +52,18 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         return kit;
     }
 
-    private (MagicMenuSettings Settings, List<string> Journal) MergeSettings(PageState pageState, MagicMenuSettings? settings)
-    {
-        // If the user didn't specify a config name in the Parameters or the config name
-        // isn't contained in the json file the normal parameter are given to the service
-        var themeCtx = settingsSvc.GetThemeContext(pageState);
-        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, MenuSettingPrefix);
-        var (mergedSettings, settingsJournal) = settingsSvc.MenuSettings.FindAndMerge(findSettings, settings);
-
-        // Usually there is no Design-object pre-filled, in which case we should
-        // 1. try to find it in json
-        // 2. use the one from the configuration
-        findSettings = new(themeCtx, settings, ThemePartSectionEnum.Design, MenuSettingPrefix);
-        var (designSettings, designJournal) = settingsSvc.MenuDesigns.FindAndMerge(findSettings, settings?.DesignSettings);
-
-        var fullSettings = new MagicMenuSettings(ancestor: mergedSettings, settings)
-        {
-            DesignSettings = designSettings,
-        };
-
-        return (fullSettings, settingsJournal.Concat(designJournal).ToList());
-    }
+    private DataWithJournal<MagicMenuSettings> MergeSettings(PageState pageState, MagicMenuSettings? settings) =>
+        settingsSvc.GetBestSettingsAndDesignSettings(
+            pageState,
+            settings,
+            settingsSvc.MenuSettings,
+            settings?.DesignSettings,
+            settingsSvc.MenuDesigns, 
+            MenuSettingPrefix,
+            finalize: (settingsData, designSettings) => new(settingsData, settings)
+            {
+                DesignSettings = designSettings
+            });
 
 
     private static List<IMagicPageWithDesignWip> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)
