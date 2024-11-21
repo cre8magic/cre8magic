@@ -2,10 +2,11 @@
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Docs;
 
 namespace ToSic.Cre8magic.Menus;
 
-public record MagicMenuSettings: MagicMenuSettingsData, ICanClone<MagicMenuSettings>
+public record MagicMenuSettings: MagicMenuSettingsData, ISettingsWithNames, ICanClone<MagicMenuSettings>
 {
     /// <summary>
     /// Default constructor, so this record can be created anywhere.
@@ -28,15 +29,15 @@ public record MagicMenuSettings: MagicMenuSettingsData, ICanClone<MagicMenuSetti
     /// Constructor to re-hydrate from object of base class.
     /// </summary>
     /// <param name="ancestor"></param>
-    /// <param name="addOn"></param>
-    internal MagicMenuSettings(MagicMenuSettingsData ancestor, MagicMenuSettings? addOn) : base(ancestor)
+    /// <param name="original"></param>
+    internal MagicMenuSettings(MagicMenuSettingsData ancestor, MagicMenuSettings? original) : base(ancestor)
     {
-        if (addOn == null)
+        if (original == null)
             return;
-        Designer = addOn.Designer;
-        DesignSettings = addOn.DesignSettings;
-        PartName = addOn.PartName;
-        Pages = addOn.Pages;
+        Designer = original.Designer;
+        DesignSettings = original.DesignSettings;
+        PartName = original.PartName;
+        Pages = original.Pages;
     }
 
     MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy = false) =>
@@ -44,10 +45,7 @@ public record MagicMenuSettings: MagicMenuSettingsData, ICanClone<MagicMenuSetti
 
 
 
-    /// <summary>
-    /// Name to identify this part.
-    /// This information is used to load settings (menu settings and design settings)
-    /// </summary>
+    /// <inheritdoc />
     public string? PartName { get; init; }
 
     [JsonIgnore]    // Not meant for JSON at all...
