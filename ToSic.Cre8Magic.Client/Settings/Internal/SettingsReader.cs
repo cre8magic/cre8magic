@@ -6,39 +6,25 @@ using static ToSic.Cre8magic.Settings.SettingsWithInherit;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
-internal class SettingsReader<TPart>(
+internal class SettingsReader<TSettingsData>(
     IMagicSettingsService settingsSvc,
-    Defaults<TPart> defaults,
-    Func<MagicSettingsCatalog, IDictionary<string, TPart>> findList
+    Defaults<TSettingsData> defaults,
+    Func<MagicSettingsCatalog, IDictionary<string, TSettingsData>> getSourceOnCatalog
 )
-    where TPart : class, new()
+    where TSettingsData : class, new()
 {
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
     /// </summary>
-    internal DataWithJournal<TPart> FindAndMerge(FindSettingsSpecs specs, TPart? priority = null, bool skipCache = false)
+    internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsSpecs specs, TSettingsData? priority = null, bool skipCache = false)
     {
         var (bestName, journal) = specs.Context.NameResolver.FindBestNameAccordingToParts(specs);
 
-        var part = FindAndMerge(bestName, specs.ThemeName, priority, skipCache);
+        var found = FindAndNeutralize(bestName, specs.ThemeName, skipCache);
+        var part = MergeHelper.TryToMergeOrKeepPriority(priority, found)!;
 
         return new(part, journal);
-    }
-
-
-    /// <summary>
-    /// Find the settings according to the names, and (if not null) merge with priority.
-    /// </summary>
-    /// <param name="name"></param>
-    /// <param name="defaultName"></param>
-    /// <param name="priority"></param>
-    /// <param name="skipCache"></param>
-    /// <returns></returns>
-    internal TPart FindAndMerge(string name, string? defaultName = null, TPart? priority = null, bool skipCache = false)
-    {
-        var found = FindAndNeutralize(name, defaultName, skipCache);
-        return MergeHelper.TryToMergeOrKeepPriority(priority, found)!;
     }
 
     /// <summary>
@@ -49,10 +35,14 @@ internal class SettingsReader<TPart>(
     /// <param name="defaultName">Name of the current theme settings, which is used for fallback options.</param>
     /// <param name="skipCache"></param>
     /// <returns></returns>
-    internal TPart FindAndNeutralize(string name, string? defaultName = null, bool skipCache = false)
+    internal TSettingsData FindAndNeutralize(string name, string? defaultName = null, bool skipCache = false)
     {
-        // Create array of names to look up, the first one is the main name
-        var names = GetConfigNamesToCheck(name, defaultName ?? name);
+        // Create array of names to look up, the first one is the main name (specify type so clearly non-null)
+        string[] names = new[] { name, defaultName, Default }
+            .Where(s => s.HasText())
+            .Distinct()
+            .ToArray()!;
+
         var mainName = names[0];
 
         // Check cache if applicable
@@ -60,7 +50,7 @@ internal class SettingsReader<TPart>(
             return cached2;
 
         // Get best matching part; returns null if nothing found
-        var priority = FindPart(names);
+        var priority = FindSettingsData(names);
         switch (priority)
         {
             // Nothing found, return fallback
@@ -71,14 +61,14 @@ internal class SettingsReader<TPart>(
             case SettingsWithInherit couldInherit when couldInherit.Inherits.HasText():
                 // Remember inherits-from setting, and then remove from the part
                 var inheritFrom = couldInherit.Inherits;
-                priority = couldInherit with { Inherits = null } as TPart ?? priority;
-                priority = FindPartAndMergeIfPossible(priority, mainName, inheritFrom);
+                priority = couldInherit with { Inherits = null } as TSettingsData ?? priority;
+                priority = FindSettingsAndTryMerge(priority, inheritFrom);
                 break;
 
             // Check if it's a dictionary containing @inherit specs
             case IDictionary<string, MagicMenuDesignSettings> named when named.TryGetValue(InheritsNameInJson, out var value):
                 if (value.Value != null)
-                    priority = FindPartAndMergeIfPossible(priority, mainName, value.Value);
+                    priority = FindSettingsAndTryMerge(priority, value.Value);
                 else
                     named.Remove(InheritsNameInJson);
                 break;
@@ -93,45 +83,36 @@ internal class SettingsReader<TPart>(
         if (!skipCache)
             _cache[mainName] = mergedNew;
         return mergedNew;
+
+        // Inner function to find settings and merge them
+        TSettingsData FindSettingsAndTryMerge(TSettingsData priorityData, string nameToFind)
+        {
+            var addition = FindSettingsData(nameToFind);
+            return addition == null
+                ? priorityData
+                : MergeHelper.TryToMergeOrKeepPriority(priorityData, addition)!;
+        }
     }
 
-    private TPart FindPartAndMergeIfPossible(TPart priority, string realName, string name)
-    {
-        var addition = FindPart(name);
-        if (addition == null)
-            return priority;
+    private readonly Dictionary<string, TSettingsData> _cache = new(StringComparer.InvariantCultureIgnoreCase);
 
-        var mergeNew = MergeHelper.TryToMergeOrKeepPriority(priority, addition)!;
-
-        return mergeNew;
-    }
-
-    private readonly Dictionary<string, TPart> _cache = new(StringComparer.InvariantCultureIgnoreCase);
-
-    private static string[] GetConfigNamesToCheck(string? configuredNameOrNull, string currentName)
-    {
-        if (configuredNameOrNull == InheritName)
-            configuredNameOrNull = currentName;
-
-        return configuredNameOrNull.HasText()
-            ? new[] { configuredNameOrNull, Default }.Distinct().ToArray()
-            : [Default];
-    }
-
-    internal TPart? FindPart(params string[]? names)
+    private TSettingsData? FindSettingsData(params string[]? names)
     {
         // Make sure we have at least one name
         if (names == null || names.Length == 0) names = [Default];
 
+        // Get all catalogs / sources (e.g. provided by code in theme, from JSON, etc.)
         var catalogs = settingsSvc.AllCatalogs;
 
+        // Create a list of all possible sources and names
+        // Prioritize the names, and then go through all sources for each name
         var allSourcesAndNames = names
             .Distinct()
             .SelectMany(name => catalogs.Select(catalog => (catalog, name)))
             .ToList();
 
         foreach (var set in allSourcesAndNames)
-            if (findList(set.catalog).TryGetValue(set.name, out var result) && result != null)
+            if (getSourceOnCatalog(set.catalog).TryGetValue(set.name, out var result) && result != null)
                 return result;
 
         return null;
