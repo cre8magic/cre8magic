@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Languages;
+﻿using ToSic.Cre8magic.Themes.Settings;
+
+namespace ToSic.Cre8magic.Languages;
 
 public interface IMagicLanguageKit
 {

@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Themes.Internal;
+﻿using ToSic.Cre8magic.Themes.Settings;
+
+namespace ToSic.Cre8magic.Themes.Internal;
 
 internal record MagicThemeKit : IMagicThemeKit
 {

@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Client.Themes.Settings;
+namespace ToSic.Cre8magic.Themes.Settings;
 
 public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
 {

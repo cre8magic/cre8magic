@@ -1,10 +1,10 @@
 ﻿using Microsoft.JSInterop;
-using ToSic.Cre8magic.JsModules;
+using ToSic.Cre8magic.Themes;
 
-namespace ToSic.Cre8magic.Client.Services;
+namespace ToSic.Cre8magic.Internal.JsInterops.Internal;
 
 /// <summary>
-/// Constants and helpers related to JS calls from the Theme to it's own JS libraries
+/// Constants and helpers related to JS calls from the Theme to its own JS libraries
 /// </summary>
 // TODO: SOME DAY move to Cre8magic, as soon as we know how to reliably include the js-assets in the final distribution
 public class MagicThemeJsServiceTest(IJSRuntime jsRuntime)

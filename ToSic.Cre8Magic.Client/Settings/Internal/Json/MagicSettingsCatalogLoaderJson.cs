@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using Microsoft.Extensions.Logging;
-using ToSic.Cre8magic.Settings.Json;
+using ToSic.Cre8magic.Settings.Internal.Logging;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Internal.Json;

@@ -1,7 +1,6 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Services.Internal;
+namespace ToSic.Cre8magic.Settings.Internal;
 
 internal static class MagicSettingsExtensions
 {

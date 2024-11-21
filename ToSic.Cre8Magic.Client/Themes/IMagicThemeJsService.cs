@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Client.Services;
+﻿namespace ToSic.Cre8magic.Themes;
 
 public interface IMagicThemeJsService
 {

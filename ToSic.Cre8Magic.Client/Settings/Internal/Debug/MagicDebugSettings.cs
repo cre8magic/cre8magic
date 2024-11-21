@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
-
-namespace ToSic.Cre8magic.Settings.Debug;
+﻿namespace ToSic.Cre8magic.Settings.Internal.Debug;
 
 public record MagicDebugSettings
 {

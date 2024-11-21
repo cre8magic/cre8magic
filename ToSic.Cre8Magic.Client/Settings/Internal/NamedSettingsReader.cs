@@ -1,11 +1,9 @@
 ﻿using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
-using static ToSic.Cre8magic.Client.MagicConstants;
+using static ToSic.Cre8magic.MagicConstants;
 using static ToSic.Cre8magic.Settings.SettingsWithInherit;
 
-namespace ToSic.Cre8magic.Services.Internal;
+namespace ToSic.Cre8magic.Settings.Internal;
 
 internal class NamedSettingsReader<TPart>(
     IMagicSettingsService settingsSvc,

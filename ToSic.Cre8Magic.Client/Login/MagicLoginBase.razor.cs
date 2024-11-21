@@ -5,6 +5,7 @@ using ToSic.Cre8magic.Themes.Internal;
 
 namespace ToSic.Cre8magic.Login;
 
+// TODO: CHANGE TO Composition
 public abstract class MagicLoginBase: Oqtane.Themes.Controls.LoginBase
 {
     [Inject]

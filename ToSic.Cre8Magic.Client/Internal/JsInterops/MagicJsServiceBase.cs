@@ -1,6 +1,6 @@
 ﻿using Microsoft.JSInterop;
 
-namespace ToSic.Cre8magic.JsModules;
+namespace ToSic.Cre8magic.Internal.JsInterops;
 
 /// <summary>
 /// Base for any JS Module Helper class

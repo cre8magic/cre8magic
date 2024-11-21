@@ -1,8 +1,9 @@
 ﻿using Microsoft.JSInterop;
 using Oqtane.UI;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
-using static ToSic.Cre8magic.Client.Services.DoStuff;
+using static ToSic.Cre8magic.Utils.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics.Internal;
 

@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Languages.Internal;
+﻿using ToSic.Cre8magic.Themes.Settings;
+
+namespace ToSic.Cre8magic.Languages.Internal;
 
 /// <summary>
 /// TODO: WIP, maybe create interface....

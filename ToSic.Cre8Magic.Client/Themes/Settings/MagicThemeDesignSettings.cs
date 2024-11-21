@@ -1,7 +1,7 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
-namespace ToSic.Cre8magic.Client.Themes.Settings;
+namespace ToSic.Cre8magic.Themes.Settings;
 
 /// <summary>
 /// Constants and helpers related to creating Css and Css Classes.

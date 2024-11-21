@@ -1,5 +1,5 @@
 ﻿using ToSic.Cre8magic.Menus;
-using static ToSic.Cre8magic.Client.MagicTokens;
+using static ToSic.Cre8magic.MagicTokens;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 

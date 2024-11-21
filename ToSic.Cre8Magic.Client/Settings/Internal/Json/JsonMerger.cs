@@ -2,8 +2,9 @@
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Logging;
 using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Themes.Settings;
 
-namespace ToSic.Cre8magic.Settings.Json;
+namespace ToSic.Cre8magic.Settings.Internal.Json;
 
 /// <summary>
 /// Inspired by https://github.com/dotnet/runtime/issues/31433

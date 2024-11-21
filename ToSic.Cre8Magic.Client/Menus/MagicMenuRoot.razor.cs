@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.Themes;
-using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Utils;
 
 // TODO:
@@ -9,7 +8,7 @@ using ToSic.Cre8magic.Utils;
 // 2. Then probably merge with MagicMenu?
 
 
-namespace ToSic.Cre8magic.Client.Menus;
+namespace ToSic.Cre8magic.Menus;
 
 /// <summary>
 /// Base class for Razor menus

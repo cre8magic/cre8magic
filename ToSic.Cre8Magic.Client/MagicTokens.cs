@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Client;
+﻿namespace ToSic.Cre8magic;
 
 public class MagicTokens
 {

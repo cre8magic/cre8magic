@@ -3,7 +3,7 @@ using Oqtane.Services;
 using Oqtane.UI;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Client.Services;
+namespace ToSic.Cre8magic.Pages;
 
 /// <summary>
 /// Helper to remove the logic/code from the razor file.

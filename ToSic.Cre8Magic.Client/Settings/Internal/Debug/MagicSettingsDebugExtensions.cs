@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Services.Internal;
+﻿namespace ToSic.Cre8magic.Settings.Internal.Debug;
 
 public static class MagicSettingsDebugExtensions
 {

@@ -1,16 +1,13 @@
-﻿using Microsoft.Net.Http.Headers;
-using Oqtane.UI;
+﻿using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Services.Internal;
-using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 
-namespace ToSic.Cre8magic.Client.Services;
+namespace ToSic.Cre8magic.Settings;
 
 public interface IMagicSettingsService: IHasSystemMessages
 {

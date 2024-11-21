@@ -3,8 +3,10 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Settings.Debug;
+using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Logging;
+using ToSic.Cre8magic.Themes;
+using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Settings;
 

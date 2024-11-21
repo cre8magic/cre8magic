@@ -1,4 +1,6 @@
 ﻿using Oqtane.UI;
+using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Utils;
 

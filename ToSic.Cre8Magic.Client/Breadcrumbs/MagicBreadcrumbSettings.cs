@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Debug;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 

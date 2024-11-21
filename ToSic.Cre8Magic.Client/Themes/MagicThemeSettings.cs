@@ -1,9 +1,10 @@
 ﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Internal;
-using static ToSic.Cre8magic.Client.MagicConstants;
+using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Themes.Settings;
+using static ToSic.Cre8magic.MagicConstants;
 
-namespace ToSic.Cre8magic.Client.Themes.Settings;
+namespace ToSic.Cre8magic.Themes;
 
 public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanClone<MagicThemeSettings>
 {

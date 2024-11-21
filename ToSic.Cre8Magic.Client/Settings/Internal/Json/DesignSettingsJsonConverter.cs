@@ -2,7 +2,7 @@
 using System.Text.Json.Nodes;
 using Microsoft.Extensions.Logging;
 
-namespace ToSic.Cre8magic.Settings.Json;
+namespace ToSic.Cre8magic.Settings.Internal.Json;
 
 /// <summary>
 /// Important: NEVER use this on a 
