@@ -6,13 +6,13 @@ namespace ToSic.Cre8magic.ClientUnitTests.SettingsNamedTests;
 public class NamedSettingsCreateCloneSubItems
 {
 
-    private static void MixExpects<T>(NamedSettings<T> h1, NamedSettings<T> h2, NamedSettings<T> expected) where T: DataForTest, ICanClone<T>
+    private static void MixExpects<T>(NamedSettings<T> foundation, NamedSettings<T> priority, NamedSettings<T> expected) where T: TestDataNoMerge, ICanClone<T>
     {
-        var clone = h1.CloneUnder(h2);
+        var clone = foundation.CloneUnder(priority);
         AssertSameAs(expected, clone);
     }
 
-    private static void AssertSameAs<T>(NamedSettings<T> expected, NamedSettings<T> clone) where T : DataForTest, ICanClone<T>
+    private static void AssertSameAs<T>(NamedSettings<T> expected, NamedSettings<T> clone) where T : TestDataNoMerge, ICanClone<T>
     {
         Assert.Equal(expected.Count, clone.Count);
         foreach (var key in expected.Keys)
@@ -27,12 +27,20 @@ public class NamedSettingsCreateCloneSubItems
 
 
     [Fact]
-    public void MixEmptyAndName() => MixExpects(GetNoCloneEmpty<DataForTest>(), GetNoCloneWithName<DataForTest>(), GetNoCloneWithName<DataForTest>());
-    [Fact]
-    public void MixNameAndName() => MixExpects(GetNoCloneWithName<DataForTest>(), GetNoCloneWithName<DataForTest>(), GetNoCloneWithName<DataForTest>());
+    public void MixEmptyAndName() =>
+        MixExpects(DicWithEmpty<TestDataNoMerge>(), DicWithName<TestDataNoMerge>(), DicWithName<TestDataNoMerge>());
 
     [Fact]
-    public void MixEmptyAndId() => MixExpects(GetNoCloneEmpty<DataForTest>(), GetWithId<DataForTest>(), GetWithId<DataForTest>());
+    public void MixNameAndName() =>
+        MixExpects(DicWithName<TestDataNoMerge>(), DicWithName<TestDataNoMerge>(), DicWithName<TestDataNoMerge>());
+
+    [Fact]
+    public void MixEmptyUnderId() =>
+        MixExpects(DicWithEmpty<TestDataNoMerge>(), DicWithId<TestDataNoMerge>(), DicWithId<TestDataNoMerge>());
+
+    [Fact]
+    public void MixIdUnderEmpty() =>
+        MixExpects(DicWithId<TestDataNoMerge>(), DicWithEmpty<TestDataNoMerge>(), DicWithEmpty<TestDataNoMerge>());
 
     /// <summary>
     /// This test will take a type which doesn't know about cloning, and will merge.
@@ -40,9 +48,9 @@ public class NamedSettingsCreateCloneSubItems
     /// </summary>
     [Fact]
     public void MixNameAndIdNoClone() => MixExpects(
-        GetNoCloneWithName<DataForTest>(),
-        GetWithId<DataForTest>(),
-        GetWithId<DataForTest>()
+        DicWithName<TestDataNoMerge>(),
+        DicWithId<TestDataNoMerge>(),
+        DicWithId<TestDataNoMerge>()
     );
 
     /// <summary>
@@ -50,30 +58,30 @@ public class NamedSettingsCreateCloneSubItems
     /// </summary>
     [Fact]
     public void MixNameAndIdClone() => MixExpects(
-        GetNoCloneWithName<DataForTestCanClone>(),
-        GetWithId<DataForTestCanClone>(),
-        GetWithNameAndId<DataForTestCanClone>()
+        DicWithName<TestDataAbleToMerge>(),
+        DicWithId<TestDataAbleToMerge>(),
+        DicWithNameAndId<TestDataAbleToMerge>()
     );
 
-    private static NamedSettings<T> GetNoCloneEmpty<T>() where T: DataForTest, ICanClone<T>, new() =>
+    private static NamedSettings<T> DicWithEmpty<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
         new()
         {
             { "subitem", new() },
         };
 
-    private static NamedSettings<T> GetNoCloneWithName<T>() where T: DataForTest, ICanClone<T>, new() =>
+    private static NamedSettings<T> DicWithName<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
         new()
         {
             { "subitem", new() { Name = "hello" } },
         };
 
-    private static NamedSettings<T> GetWithId<T>() where T: DataForTest, ICanClone<T>, new() =>
+    private static NamedSettings<T> DicWithId<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
         new()
         {
             { "subitem", new() { Id = 123 } },
         };
 
-    private static NamedSettings<T> GetWithNameAndId<T>() where T: DataForTest, ICanClone<T>, new() =>
+    private static NamedSettings<T> DicWithNameAndId<T>() where T: TestDataNoMerge, ICanClone<T>, new() =>
         new()
         {
             { "subitem", new() { Name = "hello", Id = 123 } },

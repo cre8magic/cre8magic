@@ -17,7 +17,7 @@ public class NamedSettingsCreateClone
         AssertSameAs(original, clone);
     }
 
-    private static void AssertSameAs(NamedSettings<DataForTest> expected, NamedSettings<DataForTest> clone)
+    private static void AssertSameAs(NamedSettings<TestDataNoMerge> expected, NamedSettings<TestDataNoMerge> clone)
     {
         Assert.Equal(expected.Count, clone.Count);
         foreach (var key in expected.Keys)
@@ -37,14 +37,14 @@ public class NamedSettingsCreateClone
     [Fact]
     public void MixingPartsWhichOverlapWithIdenticalData() => MixExpectsDataSimple(DataSimpleHalf1, DataSimpleHalf2);
 
-    private static void MixExpectsDataSimple(NamedSettings<DataForTest> h1, NamedSettings<DataForTest> h2)
+    private static void MixExpectsDataSimple(NamedSettings<TestDataNoMerge> h1, NamedSettings<TestDataNoMerge> h2)
     {
         var clone = h1.CloneUnder(h2);
         var expected = DataSimple;
         AssertSameAs(expected, clone);
     }
 
-    private static NamedSettings<DataForTest> DataSimple =>
+    private static NamedSettings<TestDataNoMerge> DataSimple =>
         new()
         {
             { "a", new() },
@@ -54,7 +54,7 @@ public class NamedSettingsCreateClone
         };
 
 
-    private static NamedSettings<DataForTest> DataSimpleHalf1 =>
+    private static NamedSettings<TestDataNoMerge> DataSimpleHalf1 =>
         new()
         {
             { "a", new() },
@@ -63,7 +63,7 @@ public class NamedSettingsCreateClone
             //{ "description", new DataForTest { Description = "world" } },
         };
 
-    private static NamedSettings<DataForTest> DataSimpleHalf2 =>
+    private static NamedSettings<TestDataNoMerge> DataSimpleHalf2 =>
         new()
         {
             //{ "a", new DataForTest() },
@@ -71,11 +71,11 @@ public class NamedSettingsCreateClone
             { "ID", new() { Id = 123 } },
             { "description", new() { Description = "world" } },
         };
-    private static NamedSettings<DataForTest> DataSimpleHalf2WithName =>
+    private static NamedSettings<TestDataNoMerge> DataSimpleHalf2WithName =>
         new()
         {
             //{ "a", new DataForTest() },
-            { "name", new DataForTest { Name = "hello" } },
+            { "name", new TestDataNoMerge { Name = "hello" } },
             { "ID", new() { Id = 123 } },
             { "description", new() { Description = "world" } },
         };

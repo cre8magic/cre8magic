@@ -2,7 +2,7 @@
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsNamedTests;
 
-internal record DataForTest: ICanClone<DataForTest>
+internal record TestDataNoMerge: ICanClone<TestDataNoMerge>
 {
 
     public string Name { get; init; }
@@ -14,23 +14,23 @@ internal record DataForTest: ICanClone<DataForTest>
     /// <summary>
     /// FAKE can clone, to simulate scenario where cloning doesn't work.
     /// </summary>
-    public DataForTest CloneUnder(DataForTest? priority, bool forceCopy = false)
+    public TestDataNoMerge CloneUnder(TestDataNoMerge? priority, bool forceCopy = false)
     {
-        return this;
+        return priority;
     }
 }
 
-internal record DataForTestCanClone : DataForTest, ICanClone<DataForTestCanClone>
+internal record TestDataAbleToMerge : TestDataNoMerge, ICanClone<TestDataAbleToMerge>
 {
-    public DataForTestCanClone() { }
+    public TestDataAbleToMerge() { }
 
-    public DataForTestCanClone(DataForTestCanClone? priority, DataForTestCanClone? fallback = default)
+    public TestDataAbleToMerge(TestDataAbleToMerge? priority, TestDataAbleToMerge? fallback = default)
     {
         Name = priority?.Name ?? fallback?.Name;
         Id = priority?.Id ?? fallback?.Id;
         Description = priority?.Description ?? fallback?.Description;
     }
 
-    public DataForTestCanClone CloneUnder(DataForTestCanClone? priority, bool forceCopy = false) =>
+    public TestDataAbleToMerge CloneUnder(TestDataAbleToMerge? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 }
