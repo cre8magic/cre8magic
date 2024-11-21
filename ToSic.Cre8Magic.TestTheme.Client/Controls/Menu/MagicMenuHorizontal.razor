@@ -1,4 +1,4 @@
-﻿@inherits MagicMenu;
+﻿@inherits MagicMenuBase;
 @*
 File Purpose:       Show a standard horizontal menu - usually on the top of the page
 Recommendations:    
@@ -23,7 +23,7 @@ Nice to know:
 
                 @if (menuPage.HasChildren)
                 {
-                    <MenuHorizontal MenuKit="@MenuKit.Kit(menuPage)"></MenuHorizontal>
+                    <MagicMenuHorizontal MenuKit="@MenuKit.Kit(menuPage)"></MagicMenuHorizontal>
                 }
             </li>
         }

@@ -40,6 +40,10 @@
     <PackageReference Include="Oqtane.Shared" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Languages\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <!-- there may be other elements here -->
     <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>

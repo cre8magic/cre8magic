@@ -1,18 +1,14 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.UI;
 using ToSic.Cre8magic.Components.Internal;
-using ToSic.Cre8magic.Languages.Internal;
 
-namespace ToSic.Cre8magic.Languages;
+namespace ToSic.Cre8magic.Languages.Components;
 
 public abstract class MagicLanguageMenuBase: ComponentBase
 {
     /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
-
-    [Inject]
-    protected IMagicLanguageService LanguageService { get; set; }
 
     [Inject]
     public required IMagicHat MagicHat { get; set; }

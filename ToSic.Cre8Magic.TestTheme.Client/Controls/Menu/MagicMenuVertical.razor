@@ -1,4 +1,4 @@
-﻿@inherits MagicMenu;
+﻿@inherits MagicMenuBase;
 @*
 File Purpose:       Show a vertical menu, usually used for mobile or sidebar
 Recommendations:    See `MenuDefault.razor`
@@ -19,7 +19,7 @@ Nice to know:       See `MenuDefault.razor`
                           data-bs-toggle='collapse'
                           data-bs-target='@menuPage.Value("data-bs-target")'
                           aria-expanded='@menuPage.IsInBreadcrumb'></span>
-                    <MenuVertical MenuKit="@MenuKit.Kit(menuPage)"></MenuVertical>
+                    <MagicMenuVertical MenuKit="@MenuKit.Kit(menuPage)"></MagicMenuVertical>
                 }
             </li>
         }

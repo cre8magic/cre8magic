@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Menus;
 /// <summary>
 /// Base class for any menu list
 /// </summary>
-public abstract class MagicMenu : ThemeControlBase
+public abstract class MagicMenuBase : ThemeControlBase
 {
     [Parameter, EditorRequired]
     public required IMagicMenuKit MenuKit { get; set; }

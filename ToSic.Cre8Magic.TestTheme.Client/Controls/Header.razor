@@ -1,4 +1,5 @@
 ﻿@using ToSic.Cre8magic.Components.Internal
+@using ToSic.Cre8magic.Languages.Components
 @inherits ComponentBase
 @*
 File Purpose:       Show the Header with logo, navigation etc.
@@ -29,13 +30,13 @@ Nice to know:       Most of the parts are again other controls (icon, navigation
             <div class="offcanvas-body">
                 <div class="d-flex flex-column justify-content-end align-items-end flex-grow-1">
                     <div class="d-none d-lg-block">
-                        <Menu PartName="@ThemeInfo.MenuMain"></Menu>
+                        <MagicMenu PartName="@ThemeInfo.MenuMain"></MagicMenu>
                     </div>
                     <div class="d-block d-lg-none w-100">
-                        <Menu PartName="@ThemeInfo.MenuMobile"></Menu>
+                        <MagicMenu PartName="@ThemeInfo.MenuMobile"></MagicMenu>
                     </div>
                     <div class="d-flex order-lg-first">
-                        <LanguageNav></LanguageNav>
+                        <MagicLanguageMenu></MagicLanguageMenu>
                         <ButtonLogin></ButtonLogin>
                         <ButtonEdit></ButtonEdit>
                         <ButtonControlPanel></ButtonControlPanel>

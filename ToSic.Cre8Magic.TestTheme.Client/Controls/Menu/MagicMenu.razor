@@ -33,11 +33,11 @@ Nice to know:
 @* Show the desired menu - in this setup we have 2 options. If you need more, change the conditions to check for Menu?.Settings.Template *@
 @if (IsVertical)
 {
-    <MenuVertical MenuKit="@MenuKit"></MenuVertical>
+    <MagicMenuVertical MenuKit="@MenuKit"></MagicMenuVertical>
 }
 else
 {
-    <MenuHorizontal MenuKit="@MenuKit"></MenuHorizontal>
+    <MagicMenuHorizontal MenuKit="@MenuKit"></MagicMenuHorizontal>
 }
 @if (MenuKit?.Pages?.Any() == false)
 {
