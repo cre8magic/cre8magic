@@ -2,6 +2,11 @@
 
 namespace ToSic.Cre8magic.Languages;
 
+/// <summary>
+/// The Kit to Show language menus in the UI.
+///
+/// You can get it by `@inject` / `[Inject]`-ing the `IMagicHat` and calling the <see cref="IMagicHat.LanguageKitAsync"/>.
+/// </summary>
 public interface IMagicLanguageKit
 {
     /// <summary>
@@ -9,8 +14,23 @@ public interface IMagicLanguageKit
     /// </summary>
     bool Show { get; init; }
 
+    /// <summary>
+    /// List of languages to show as specified in the settings.
+    /// </summary>
     IEnumerable<MagicLanguage> Languages { get; init; }
+
+
     MagicLanguageDesigner Designer { get; init; }
+
     internal MagicLanguageSettings LanguageSettings { get; init; }
+
     internal MagicThemeDesignSettings ThemeDesignSettings { get; init; }
+
+    /// <summary>
+    /// Command to set the culture.
+    /// This will trigger a page reload.
+    /// </summary>
+    /// <param name="culture"></param>
+    /// <returns></returns>
+    public Task SetCultureAsync(string culture);
 }

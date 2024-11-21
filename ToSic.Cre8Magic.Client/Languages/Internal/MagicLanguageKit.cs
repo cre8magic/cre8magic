@@ -3,7 +3,6 @@
 namespace ToSic.Cre8magic.Languages.Internal;
 
 /// <summary>
-/// TODO: WIP, maybe create interface....
 /// </summary>
 internal record MagicLanguageKit : IMagicLanguageKit
 {
@@ -19,4 +18,8 @@ internal record MagicLanguageKit : IMagicLanguageKit
     public /* actually internal */ required MagicLanguageSettings LanguageSettings { get; init; }
 
     public /* actually internal */ required MagicThemeDesignSettings ThemeDesignSettings { get; init; }
+
+    public required IMagicLanguageService Service { get; init; }
+
+    public Task SetCultureAsync(string culture) => Service.SetCultureAsync(culture);
 }

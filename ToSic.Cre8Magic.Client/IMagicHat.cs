@@ -3,6 +3,7 @@ using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
+using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 
 namespace ToSic.Cre8magic;
@@ -14,6 +15,9 @@ public interface IMagicHat
 {
     /// <inheritdoc cref="IMagicBreadcrumbService.BreadcrumbKit"/>
     IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default);
+
+    /// <inheritdoc cref="IMagicLanguageService.LanguageKitAsync"/>
+    Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState);
 
 
     #region OLD - to be replaced!

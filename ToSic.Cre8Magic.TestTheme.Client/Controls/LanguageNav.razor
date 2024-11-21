@@ -13,7 +13,7 @@ Nice to know:
         @foreach (var lang in LanguageKit.Languages)
         {
             <li class='@LanguageKit.Designer.Classes("languages-li", lang)'>
-                <a href="#" @onclick="@(async _ => await LanguageService.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
+                <a href="#" @onclick="@(async _ => await LanguageKit.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
             </li>
         }
     </ul>

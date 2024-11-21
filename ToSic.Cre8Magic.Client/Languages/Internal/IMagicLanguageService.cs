@@ -1,7 +1,12 @@
 ﻿using Oqtane.UI;
 
-namespace ToSic.Cre8magic.Languages;
+namespace ToSic.Cre8magic.Languages.Internal;
 
+/// <summary>
+/// The service to get the language kit.
+///
+/// Not meant to be used externally, so it's hidden for now.
+/// </summary>
 public interface IMagicLanguageService
 {
     /// <summary>

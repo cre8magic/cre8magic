@@ -3,6 +3,7 @@ using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
+using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Internal;
 
@@ -10,12 +11,16 @@ namespace ToSic.Cre8magic.Internal;
 
 internal class MagicHat(
     IMagicSettingsService settingsSvc,
-    MagicLazy<IMagicBreadcrumbService> breadcrumbSvc
-    ) : IMagicHat
+    MagicLazy<IMagicBreadcrumbService> breadcrumbSvc,
+    MagicLazy<IMagicLanguageService> languageSvc) : IMagicHat
 {
     /// <inheritdoc />
     public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default) =>
         breadcrumbSvc.Value.BreadcrumbKit(pageState, settings);
+
+    /// <inheritdoc />
+    public Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState) =>
+        languageSvc.Value.LanguageKitAsync(pageState);
 
 
     public MagicContainerDesigner ContainerDesigner(PageState pageState, Module module)

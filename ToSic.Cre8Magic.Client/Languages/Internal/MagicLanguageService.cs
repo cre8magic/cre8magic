@@ -44,6 +44,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             Languages = languages,
             Designer = designer,
             LanguageSettings = languagesSettings,
+            Service = this,
             ThemeDesignSettings = themeContext.ThemeDesignSettings
         };
     }
