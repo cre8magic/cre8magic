@@ -9,10 +9,10 @@ Nice to know:
 *@
 @if (LanguageKit is { Show: true })
 {
-    <ul class='@(LanguageKit.Designer.Classes("languages-ul") ?? "theme-languages")'>
+    <ul class='@(LanguageKit.Designer.Classes("ul") ?? "theme-languages")'>
         @foreach (var lang in LanguageKit.Languages)
         {
-            <li class='@LanguageKit.Designer.Classes("languages-li", lang)'>
+            <li class='@LanguageKit.Designer.Classes("li", lang)'>
                 <a href="#" @onclick="@(async _ => await LanguageKit.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
             </li>
         }

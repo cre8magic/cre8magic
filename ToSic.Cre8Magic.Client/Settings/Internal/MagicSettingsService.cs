@@ -126,7 +126,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     private SettingsReader<MagicLanguageSettings>? _languages;
 
     public SettingsReader<Dictionary<string, MagicDesignSettings>> LanguageDesigns =>
-        _languageDesigns ??= new(this, new(), catalog => catalog.LanguageDesigns);
+        _languageDesigns ??= new(this, MagicLanguageSettings.DesignDefaults, catalog => catalog.LanguageDesigns);
     private SettingsReader<Dictionary<string, MagicDesignSettings>>? _languageDesigns;
 
     public MagicLanguageSettings LanguageSettings(MagicThemeSettings settings, string settingsName) =>

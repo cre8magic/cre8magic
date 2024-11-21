@@ -14,6 +14,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuService
 {
     private const string OptionalPrefix = "menu-";
+    private const string DefaultPartName = "Menus";
 
     public bool NoInheritSettingsWip { get; set; } = false;
 
@@ -60,6 +61,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
             settings?.DesignSettings,
             settingsSvc.MenuDesigns, 
             OptionalPrefix,
+            DefaultPartName,
             finalize: (settingsData, designSettings) => new(settingsData, settings) { DesignSettings = designSettings });
 
 

@@ -94,6 +94,7 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
             MagicContextTagId = BodyDivId,
             DesignSettings = new()
             {
+                // TODO: remove this, as we've replaced it in the language settings
                 { "languages-li", new() { IsActive = new($"active {SettingFromDefaults}") } },
                 {
                     "container", new()
@@ -105,9 +106,7 @@ public record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThem
                         Id = ContainerIdDefault,
                     }
                 },
-
-
-            }
+            },
         },
         Foundation = new()
         {

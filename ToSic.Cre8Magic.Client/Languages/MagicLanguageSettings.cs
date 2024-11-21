@@ -18,6 +18,8 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
         : base(priority, fallback)
     {
         HideOthers = priority?.HideOthers ?? fallback?.HideOthers ?? Defaults.Fallback.HideOthers;
+        //LanguagesMin = priority?.LanguagesMin ?? fallback?.LanguagesMin;
+        MinLanguagesToShow = PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
         Debug = priority?.Debug ?? fallback?.Debug;
         Languages = priority?.Languages ?? fallback?.Languages;
     }
@@ -30,6 +32,8 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
     /// If false, will first show the configured languages, then the rest. 
     /// </summary>
     public bool HideOthers { get; init; } = false;
+
+    public int MinLanguagesToShow { get; init; }
 
     /// <inheritdoc />
     public MagicDebugSettings? Debug { get; init; }
@@ -62,6 +66,7 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
         Fallback = new()
         {
             HideOthers = false,
+            MinLanguagesToShow = 2,
             Languages = new()
             {
                 { "en", new() { Culture = "en", Description = "English" } }
@@ -72,5 +77,14 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
             HideOthers = false,
             Languages = new(),
         }
+    };
+
+    internal static Defaults<Dictionary<string, MagicDesignSettings>> DesignDefaults = new()
+    {
+        Fallback = new()
+        {
+            { "li", new() { IsActive = new() { On = "active" } } }
+        },
+        Foundation = new()
     };
 }

@@ -1,12 +1,11 @@
 ﻿using ToSic.Cre8magic.Designers;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Internal;
-using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
-public class MagicLanguageDesigner(MagicThemeContextFull context) : MagicDesignerBase(context)
+public class MagicLanguageDesigner(MagicThemeContextFull context, MagicLanguageSettingsPubWip settingsFull) : MagicDesignerBase(context, settingsFull.DesignSettings)
 {
     /// <summary>
     /// TODO: PROBABLY MOVE TO Language?

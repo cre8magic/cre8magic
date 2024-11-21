@@ -16,7 +16,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
         : base(priority, fallback)
     {
         Logo = priority?.Logo ?? fallback?.Logo ?? Defaults.Fallback.Logo;
-        LanguagesMin = priority?.LanguagesMin ?? fallback?.LanguagesMin ?? Defaults.Fallback.LanguagesMin;
+        //LanguagesMin = priority?.LanguagesMin ?? fallback?.LanguagesMin ?? Defaults.Fallback.LanguagesMin;
 
         // TODO: #NamedSettings
         Parts = priority?.Parts ?? fallback?.Parts ?? new();
@@ -34,7 +34,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     /// </summary>
     public string? Logo { get; init; }
 
-    public int LanguagesMin { get; init; }
+    //public int LanguagesMin { get; init; }
 
     /// <summary>
     /// The parts of this theme, like breadcrumb and various menu configs
@@ -52,7 +52,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     internal static Defaults<MagicThemeSettings> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
-        LanguagesMin = 2,
+        //LanguagesMin = 2,
         MagicContextInBody = false,
         Design = InheritName,
     });

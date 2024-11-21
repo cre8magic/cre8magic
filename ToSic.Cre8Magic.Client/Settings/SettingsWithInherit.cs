@@ -19,4 +19,6 @@ public abstract record SettingsWithInherit // : IInherit
     [JsonPropertyName(InheritsNameInJson)]
     public string? Inherits { get; init; }
 
+
+    protected static int PickFirstNonZeroInt(int?[] values) => values.FirstOrDefault(v => v != null && v != 0) ?? 0;
 }

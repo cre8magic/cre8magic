@@ -4,9 +4,9 @@ using Microsoft.JSInterop;
 using Oqtane.Services;
 using Oqtane.Shared;
 using Oqtane.UI;
-using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 
@@ -22,6 +22,7 @@ namespace ToSic.Cre8magic.Languages.Internal;
 internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc, IMagicHat factory) : IMagicLanguageService
 {
     private const string OptionalPrefix = "language-";
+    private const string DefaultPartName = "Languages";
 
     /// <inheritdoc/>
     public async Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettingsPubWip? settings = default) =>
@@ -30,16 +31,11 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     
     private async Task<IMagicLanguageKit> CreateState(PageState pageState, MagicLanguageSettingsPubWip? settings)
     {
-        var themeContext = settingsSvc.GetThemeContextFull(pageState);
-        var themeSettings = themeContext.ThemeSettings;
-        var settingsData = ((MagicSettingsService)settingsSvc).LanguageSettings(themeSettings, themeContext.SettingsName);
-        var settingsFull = new MagicLanguageSettingsPubWip(settingsData, settings);
-
-        //var (settingsFull, journal) = MergeSettings(pageState, settings);
+        var (settingsFull, _, themePart, journal) = MergeSettings(pageState, settings);
 
         var languages = await LanguagesToShow(pageState, settingsFull);
-        var show = themeSettings.Show("Languages") && themeSettings.LanguagesMin <= languages.Count;
-        var designer = LanguageDesigner(pageState);
+        var show = themePart?.Show != false && settingsFull.MinLanguagesToShow <= languages.Count;
+        var designer = LanguageDesigner(pageState, settingsFull);
         return new MagicLanguageKit
         {
             Show = show,
@@ -47,11 +43,10 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             Designer = designer,
             Settings = settingsFull,
             Service = this,
-            //ThemeDesignSettings = themeContext.ThemeDesignSettings
         };
     }
 
-    private DataWithJournal<MagicLanguageSettingsPubWip> MergeSettings(PageState pageState, MagicLanguageSettingsPubWip? settings) =>
+    private Data3WithJournal<MagicLanguageSettingsPubWip, MagicThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicLanguageSettingsPubWip? settings) =>
         settingsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,
@@ -59,6 +54,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             settings?.DesignSettings,
             settingsSvc.LanguageDesigns,
             OptionalPrefix,
+            DefaultPartName,
             finalize: (settingsData, designSettings) => new(settingsData, settings) { DesignSettings = designSettings });
 
 
@@ -108,13 +104,13 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     private readonly Dictionary<int, List<MagicLanguage>> _languages = new();
 
 
-    public MagicLanguageDesigner LanguageDesigner(PageState pageState)
+    public MagicLanguageDesigner LanguageDesigner(PageState pageState, MagicLanguageSettingsPubWip settingsFull)
     {
         if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
-        var designContext = settingsSvc.GetThemeContextFull(pageState);
+        var themeContext = settingsSvc.GetThemeContextFull(pageState);
 
-        var languages = new MagicLanguageDesigner(designContext);
+        var languages = new MagicLanguageDesigner(themeContext, settingsFull);
         _languagesDesigners[pageState.Page.PageId] = languages;
         return languages;
     }
