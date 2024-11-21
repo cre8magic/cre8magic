@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Settings.Providers.Internal;
+﻿using ToSic.Cre8magic.Settings.Internal.Experimental;
+
+namespace ToSic.Cre8magic.Settings.Providers.Internal;
 
 public static class ProviderFindWip
 {

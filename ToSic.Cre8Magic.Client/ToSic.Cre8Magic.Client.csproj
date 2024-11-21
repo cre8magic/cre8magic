@@ -46,7 +46,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
     <PackageReference Include="Oqtane.Client" Version="6.0.0" />
     <PackageReference Include="Oqtane.Shared" Version="6.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" PrivateAssets="all" />
   </ItemGroup>
 
@@ -60,6 +59,10 @@
   <ItemGroup>
     <Folder Include="Pages\Internal\Breadcrumb\" />
     <Folder Include="Pages\Internal\Menu\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\oqtane.framework\Oqtane.Shared\Oqtane.Shared.csproj" />
   </ItemGroup>
 
 </Project>

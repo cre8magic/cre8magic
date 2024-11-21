@@ -4,5 +4,5 @@ public interface IHasSystemMessages
 {
     public bool HasExceptions => Exceptions?.Any() ?? false;
 
-    List<Exception> Exceptions { get; }
+    List<Exception>? Exceptions { get; }
 }

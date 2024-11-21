@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using Oqtane.Services;
+using Oqtane.Shared;
 using Oqtane.UI;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
-using static Microsoft.AspNetCore.Localization.CookieRequestCultureProvider;
 
 namespace ToSic.Cre8magic.Languages.Internal;
 
@@ -98,8 +98,8 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         if (culture == CultureInfo.CurrentUICulture.Name) return;
 
         var interop = new Interop(jsRuntime);
-        var localizationCookieValue = MakeCookieValue(new(culture));
-        await interop.SetCookie(DefaultCookieName, localizationCookieValue, 360);
+        var localizationCookieValue = CookieRequestCultureProvider.MakeCookieValue(new(culture));
+        await interop.SetCookie(CookieRequestCultureProvider.DefaultCookieName, localizationCookieValue, 360);
 
         navigation.NavigateTo(navigation.Uri, forceLoad: true);
     }

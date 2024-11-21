@@ -1,7 +1,7 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
 
-namespace ToSic.Cre8magic.Settings;
+namespace ToSic.Cre8magic.Settings.Internal.Experimental;
 
 public interface IMagicSettingsContext
 {
@@ -14,12 +14,12 @@ public interface IMagicSettingsContext
 
     bool FallbackToDefault { get; }
 
-    string Prefix { get; }
+    string? Prefix { get; }
 
     /// <summary>
     /// The Page State, which could be used to deliver alternate settings depending on the page.
     /// </summary>
-    PageState PageState { get; }
+    PageState? PageState { get; }
 
     /// <summary>
     /// The Module State, which could be used to deliver alternate settings depending on the module.
