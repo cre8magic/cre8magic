@@ -1,22 +1,17 @@
-﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Utils;
+﻿using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsNamedTests;
 
 public class NamedSettingsCreateClone
 {
     [Theory]
-    [InlineData(false)]
     [InlineData(true)]
     public void Cloning(bool forceCopy)
     {
         var original = DataSimple;
-        var clone = original;
-        MergeHelper.MergeDictionaries<TestDataNoMerge>(null, clone);// original.CloneUnder(null, forceCopy);
-        // Verify that it's a real copy, or the original object
-        Assert.Equal(forceCopy, clone != original);
-        // Verify that the content is the same
-        AssertSameAs(original, clone);
+        var result = MergeHelper.CloneMergeDictionaries(original, null);
+        Assert.Equal(forceCopy, result != original);
+        AssertSameAs(original, result);
     }
 
     private static void AssertSameAs(Dictionary<string, TestDataNoMerge> expected, Dictionary<string, TestDataNoMerge> clone)
@@ -34,18 +29,15 @@ public class NamedSettingsCreateClone
 
 
     [Fact]
-    public void MixingHalves() => MixExpectsDataSimple(DataSimpleHalf1, DataSimpleHalf2);
+    public void MixingHalves() => MixExpectsDataSimple(DataSimpleHalf2, DataSimpleHalf1);
 
     [Fact]
-    public void MixingPartsWhichOverlapWithIdenticalData() => MixExpectsDataSimple(DataSimpleHalf1, DataSimpleHalf2);
+    public void MixingPartsWhichOverlapWithIdenticalData() => MixExpectsDataSimple(DataSimpleHalf2, DataSimpleHalf1);
 
-    private static void MixExpectsDataSimple(Dictionary<string, TestDataNoMerge> h1, Dictionary<string, TestDataNoMerge> priority)
+    private static void MixExpectsDataSimple(Dictionary<string, TestDataNoMerge> priority, Dictionary<string, TestDataNoMerge> fallback)
     {
-        //var clone = h1.CloneUnder(priority);
-        MergeHelper.MergeDictionaries(h1, priority); // h1.CloneUnder(priority);
-        var expected = DataSimple;
-        //AssertSameAs(expected, clone);
-        AssertSameAs(expected, h1);
+        var result = MergeHelper.CloneMergeDictionaries(priority, fallback);
+        AssertSameAs(DataSimple, result);
     }
 
     private static Dictionary<string, TestDataNoMerge> DataSimple =>

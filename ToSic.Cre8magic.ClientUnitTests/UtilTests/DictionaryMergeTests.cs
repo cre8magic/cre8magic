@@ -13,16 +13,16 @@ public class DictionaryMergeTests
             { "Key1", "Value1" }
         };
 
-        Dictionary<string, string> target = new()
+        Dictionary<string, string> fallback = new()
         {
             { "Key2", "Value2" }
         };
 
-        MergeHelper.MergeDictionaries(target, priority);
+        var result = MergeHelper.CloneMergeDictionaries(priority, fallback);
 
-        Assert.Equal(2, target.Count);
-        Assert.Equal("Value1", target["Key1"]);
-        Assert.Equal("Value2", target["Key2"]);
+        Assert.Equal(2, result.Count);
+        Assert.Equal("Value1", result["Key1"]);
+        Assert.Equal("Value2", result["Key2"]);
     }
 
     [Fact]
@@ -33,17 +33,17 @@ public class DictionaryMergeTests
             { "Key1", "Value1" }
         };
 
-        Dictionary<string, string> target = new()
+        Dictionary<string, string> fallback = new()
         {
             { "Key1", "Value2" },
             { "Key2", "Value2" }
         };
 
-        MergeHelper.MergeDictionaries(target, priority);
+        var result = MergeHelper.CloneMergeDictionaries(priority, fallback);
 
-        Assert.Equal(2, target.Count);
-        Assert.Equal("Value1", target["Key1"]);
-        Assert.Equal("Value2", target["Key2"]);
+        Assert.Equal(2, result.Count);
+        Assert.Equal("Value1", result["Key1"]);
+        Assert.Equal("Value2", result["Key2"]);
     }
 
     [Fact]
@@ -54,17 +54,17 @@ public class DictionaryMergeTests
             { "Key1", new() { Name = "iJungleboy"} }
         };
 
-        Dictionary<string, TestDataAbleToMerge> target = new()
+        Dictionary<string, TestDataAbleToMerge> fallback = new()
         {
             { "Key1", new() { Id = 42 } },
             { "Key2", new() }
         };
 
-        MergeHelper.MergeDictionaries(target, priority);
+        var result = MergeHelper.CloneMergeDictionaries(priority, fallback);
 
-        Assert.Equal(2, target.Count);
-        Assert.Equal("iJungleboy", target["Key1"].Name);
-        Assert.Equal(42, target["Key1"].Id);
+        Assert.Equal(2, result.Count);
+        Assert.Equal("iJungleboy", result["Key1"].Name);
+        Assert.Equal(42, result["Key1"].Id);
     }
 
 }

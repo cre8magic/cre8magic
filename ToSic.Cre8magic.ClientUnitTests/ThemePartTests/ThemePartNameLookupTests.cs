@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal;
+﻿using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.ClientUnitTests.ThemePartTests;

@@ -14,16 +14,7 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
-        if (fallback?.Custom == null)
-        {
-            Custom = priority?.Custom == null ? new(StringComparer.InvariantCultureIgnoreCase) : new(priority.Custom, StringComparer.InvariantCultureIgnoreCase);
-            return;
-        }
-
-        var copyFallback = new Dictionary<string, MagicDesignSettings>(fallback.Custom, StringComparer.InvariantCulture);
-
-        MergeHelper.MergeDictionaries(copyFallback, priority?.Custom);
-        Custom = copyFallback;
+        Custom = MergeHelper.CloneMergeDictionaries(priority?.Custom, fallback?.Custom);
     }
     public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);

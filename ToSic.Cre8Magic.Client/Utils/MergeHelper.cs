@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Reflection.Metadata.Ecma335;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Utils;
@@ -16,23 +17,29 @@ internal class MergeHelper
 
         if (fallback is IDictionary fallbackDic && priority is IDictionary priorityDic)
         {
-            MergeDictionariesUnknownType(fallbackDic, priorityDic);
-            return fallback;
+            var mergedDic = MergeDictionariesUnknownType(fallbackDic, priorityDic);
+            return mergedDic is TPart partDic ? partDic : priority;
         }
-
-        //if (fallback is IDictionary<string, TPart> dict && priority is IDictionary<string, TPart> priorityDict)
-        //{
-        //    MergeDictionaries(dict, priorityDict);
-        //    return fallback;
-        //}
 
         return priority;
     }
 
-    public static void MergeDictionaries<TVal>(Dictionary<string, TVal>? target, Dictionary<string, TVal>? priority)
+    /// <summary>
+    /// Clone merge dictionaries - will always return a new invariant dictionary, never null.
+    /// </summary>
+    /// <typeparam name="TVal"></typeparam>
+    /// <param name="priority"></param>
+    /// <param name="fallback"></param>
+    /// <returns></returns>
+    public static Dictionary<string, TVal> CloneMergeDictionaries<TVal>(Dictionary<string, TVal>? priority, Dictionary<string, TVal>? fallback)
     {
-        if (priority == null || target == null)
-            return;
+        if (priority == null && fallback == null)
+            return new(StringComparer.InvariantCultureIgnoreCase);
+
+        if (priority == null || fallback == null)
+            return new(fallback ?? priority!, StringComparer.InvariantCultureIgnoreCase);
+
+        var target = new Dictionary<string, TVal>(fallback, StringComparer.InvariantCultureIgnoreCase);
 
         // Merge the priority over the fallback settings
         foreach (var (key, value) in priority)
@@ -44,24 +51,28 @@ internal class MergeHelper
             // If it does exist, and it's a cloneable type, then clone and merge
             target[key] = TryToMergeOrKeepPriority(value, target[key]);
         }
+        return target;
     }
 
-    public static void MergeDictionariesUnknownType(IDictionary target, IDictionary priority)
+
+    private static IDictionary MergeDictionariesUnknownType(IDictionary target, IDictionary priority)
     {
         try
         {
             var typeTarget = target.GetType();
             var typeSource = priority.GetType();
             if (typeTarget != typeSource || !typeSource.IsGenericType)
-                return;
+                return priority;
 
             var typeVal = typeSource.GetGenericArguments()[1];
-            var method = typeof(MergeHelper).GetMethod(nameof(MergeDictionaries))?.MakeGenericMethod(typeVal);
-            method?.Invoke(null, [target, priority]);
+            var method = typeof(MergeHelper).GetMethod(nameof(CloneMergeDictionaries))?.MakeGenericMethod(typeVal);
+            var result = method?.Invoke(null, [target, priority]);
+            return result as IDictionary ?? priority;
         }
         catch
         {
             // ignored
+            return priority;
         }
     }
 }

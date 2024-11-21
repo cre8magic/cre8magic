@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal;
+﻿using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsNamedTests;
@@ -9,9 +8,8 @@ public class NamedSettingsCreateCloneSubItems
 
     private static void MixExpects<T>(Dictionary<string, T> foundation, Dictionary<string, T> priority, Dictionary<string, T> expected) where T: TestDataNoMerge, ICanClone<T>
     {
-        MergeHelper.MergeDictionaries(foundation, priority);
-        // var clone = foundation.CloneUnder(priority);
-        AssertSameAs(expected, foundation);
+        var result = MergeHelper.CloneMergeDictionaries(priority, foundation);
+        AssertSameAs(expected, result);
     }
 
     private static void AssertSameAs<T>(Dictionary<string, T> expected, Dictionary<string, T> clone) where T : TestDataNoMerge, ICanClone<T>
