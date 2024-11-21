@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ToSic.Cre8magic.Containers;
+using ToSic.Cre8magic.Internal.Startup;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal.Sources;
 using ToSic.Cre8magic.Settings.Providers;
@@ -15,7 +16,7 @@ public class ContainerSettingsTests
     /// <returns></returns>
     private static (IMagicSettingsProvider SettingsSvc, MagicContainerSettings DefaultSettings) PrepareSettings()
     {
-        var settingsSvc = SetupServices.Start().PrepareServices().Finish().GetRequiredService<IMagicSettingsProvider>();
+        var settingsSvc = SetupServices.Start().AddCre8magic().Finish().GetRequiredService<IMagicSettingsProvider>();
         var original = new MagicContainerSettings();
         settingsSvc.Containers.Provide(original);
         return (settingsSvc, original);
@@ -73,7 +74,7 @@ public class ContainerSettingsTests
     [Fact]
     public void BothInterfacesOnServiceProviderGiveSameObject()
     {
-        var serviceProvider = SetupServices.Start().PrepareServices().AddStandardLogging().Finish();
+        var serviceProvider = SetupServices.Start().AddCre8magic().AddStandardLogging().Finish();
         var original = serviceProvider.GetRequiredService<MagicSettingsProvider>();
         var settingsProvider = serviceProvider.GetRequiredService<IMagicSettingsProvider>();
 
