@@ -4,8 +4,8 @@ using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Settings.Internal.Logging;
-using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Settings;
@@ -18,23 +18,6 @@ public record MagicSettingsCatalog: IHasDebugSettings
 {
     public MagicSettingsCatalog() { }
 
-    public MagicSettingsCatalog(MagicSettingsCatalog? priority, MagicSettingsCatalog? fallback = default)
-    {
-        Version = priority?.Version ?? fallback?.Version ?? Fallback.Version;
-        Debug = priority?.Debug ?? fallback?.Debug;
-        Source = priority?.Source ?? fallback?.Source ?? Fallback.Source;
-
-        Analytics = new(priority?.Analytics, fallback?.Analytics);
-        Breadcrumbs = new(priority?.Breadcrumbs, fallback?.Breadcrumbs);
-        Themes = new(priority?.Themes, fallback?.Themes);
-        ThemeDesigns = new(priority?.ThemeDesigns, fallback?.ThemeDesigns);
-        Containers = new(priority?.Containers, fallback?.Containers);
-        Languages = new(priority?.Languages, fallback?.Languages);
-        Menus = new(priority?.Menus, fallback?.Menus);
-        MenuDesigns = new(priority?.MenuDesigns, fallback?.MenuDesigns);
-
-        Logs = new(priority?.Logs.Exceptions ?? fallback?.Logs.Exceptions);
-    }
 
     public const string SourceDefault = "Unknown";
     /// <summary>
@@ -67,7 +50,8 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// <summary>
     /// The menu definitions
     /// </summary>
-    public NamedSettings<MagicMenuSettingsData> Menus { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveIDictionaryConverter<MagicMenuSettingsData>))]
+    public IDictionary<string, MagicMenuSettingsData> Menus { get; init; } = new Dictionary<string, MagicMenuSettingsData>();
 
     /// <summary>
     /// Design definitions of the menu
