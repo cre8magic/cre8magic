@@ -15,11 +15,12 @@ public class MagicSettingsCatalogLoaderJson(ILogger<MagicSettingsCatalogLoaderJs
         try
         {
             var jsonString = File.ReadAllText(jsonFileName);
-                
-            var result = JsonSerializer.Deserialize<MagicSettingsCatalog>(jsonString, new JsonSerializerOptions(JsonMerger.GetNewOptionsForPreMerge(Logger))
-            {
+
+            var deserializeOptions = new JsonSerializerOptions(JsonMerger.GetNewOptionsForPreMerge(Logger)) {
                 PropertyNameCaseInsensitive = true,
-            })!;
+            };
+
+            var result = JsonSerializer.Deserialize<MagicSettingsCatalog>(jsonString, deserializeOptions)!;
 
             // Ensure we have version set, ATM exactly 0.01
             if (Math.Abs(result.Version - 0.01) > 0.001)

@@ -8,10 +8,19 @@ namespace ToSic.Cre8magic.Settings.Internal;
 internal class NamedSettingsReader<TPart>(
     IMagicSettingsService settingsSvc,
     Defaults<TPart> defaults,
-    Func<MagicSettingsCatalog, NamedSettings<TPart>> findList
+    Func<MagicSettingsCatalog, IDictionary<string, TPart>> findList
 )
-    where TPart : class, ICanClone<TPart>, new()
+    where TPart : class, /*ICanClone<TPart>,*/ new()
 {
+
+    private TPart TryToMergeOrKeepPriority(TPart? priority, TPart? fallback) =>
+        fallback == null
+            ? priority ?? new()
+            : priority == null
+                ? fallback
+                : fallback is ICanClone<TPart> cloneable
+                    ? cloneable.CloneUnder(priority)
+                    : priority;
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -24,9 +33,10 @@ internal class NamedSettingsReader<TPart>(
     internal TPart FindAndMerge(string name, string? defaultName = null, TPart? priority = null, bool skipCache = false)
     {
         var found = FindAndNeutralize(name, defaultName, skipCache);
-        return priority == null
-            ? found
-            : found.CloneUnder(priority);
+        return TryToMergeOrKeepPriority(priority, found);
+        //return priority == null
+        //    ? found
+        //    : found.CloneUnder(priority);
     }
 
     /// <summary>
@@ -76,7 +86,8 @@ internal class NamedSettingsReader<TPart>(
         if (defaults.Foundation == null)
             return priority;
 
-        var mergedNew = defaults.Foundation.CloneUnder(priority);
+        var mergedNew = TryToMergeOrKeepPriority(priority, defaults.Foundation);
+        //var mergedNew = defaults.Foundation.CloneUnder(priority);
 
         if (!skipCache)
             _cache[mainName] = mergedNew;
@@ -88,7 +99,9 @@ internal class NamedSettingsReader<TPart>(
         var addition = FindPart(name);
         if (addition == null)
             return priority;
-        var mergeNew = addition.CloneUnder(priority);
+
+        var mergeNew = TryToMergeOrKeepPriority(priority, addition);
+        //var mergeNew = addition.CloneUnder(priority);
 
         return mergeNew;
     }

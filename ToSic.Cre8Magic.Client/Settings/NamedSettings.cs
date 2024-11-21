@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.Settings;
 /// Case-insensitive dictionary managing a list of named settings
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>> where T : class, ICanClone<T>
+public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>> where T : class //, ICanClone<T>
 {
     public NamedSettings() : base(InvariantCultureIgnoreCase) { }
 
@@ -39,7 +39,8 @@ public class NamedSettings<T>: Dictionary<string, T>, ICanClone<NamedSettings<T>
             {
                 // since both sources exist, the dictionary already contains the fallback
                 var existingFallback = this[key];
-                this[key] = existingFallback.CloneUnder(value, true);
+                if (existingFallback is ICanClone<T> cloneableFallback)
+                    this[key] = cloneableFallback.CloneUnder(value, true);
                 continue;
             }
 
