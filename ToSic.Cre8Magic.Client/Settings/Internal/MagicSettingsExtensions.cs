@@ -4,7 +4,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 
 internal static class MagicSettingsExtensions
 {
-    public static (string MainName, string BestSettingsName, string BestDesignName, List<string> Messages) GetMostRelevantNames(
+    public static DataWithJournal<(string MainName, string BestSettingsName, string BestDesignName)> GetMostRelevantNames(
         this IMagicSettingsService settings,
         PageState pageState,
         string? partName,
@@ -12,8 +12,7 @@ internal static class MagicSettingsExtensions
     )
     {
         var themeCtx = settings.GetThemeContext(pageState);
-        var nameResolver = new ThemePartNameResolver(themeCtx);
-        var (bestSettingsName, bestDesignName, messages) = nameResolver.GetBestNames(partName, prefix);
-        return (themeCtx.SettingsName, bestSettingsName, bestDesignName, messages);
+        var ((bestSettingsName, bestDesignName), journal) = themeCtx.NameResolver.GetBestNames(partName, prefix);
+        return new((themeCtx.SettingsName, bestSettingsName, bestDesignName), journal);
     }
 }

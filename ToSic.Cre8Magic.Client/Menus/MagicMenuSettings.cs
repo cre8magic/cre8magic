@@ -1,29 +1,28 @@
 ﻿using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Docs;
 
 namespace ToSic.Cre8magic.Menus;
 
-public record MagicMenuSettings: MagicMenuSettingsData, ISettingsWithNames, ICanClone<MagicMenuSettings>
+public record MagicMenuSettings: MagicMenuSettingsData, ISettingsForCodeUse //, ICanClone<MagicMenuSettings>
 {
     /// <summary>
     /// Default constructor, so this record can be created anywhere.
     /// </summary>
     public MagicMenuSettings() { }
 
-    internal MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default)
-        : base(priority, fallback)
-    {
-        Designer = priority?.Designer ?? fallback?.Designer;
-        PartName = priority?.PartName ?? fallback?.PartName;
-        Pages = priority?.Pages ?? fallback?.Pages;
+    //internal MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default)
+    //    : base(priority, fallback)
+    //{
+    //    Designer = priority?.Designer ?? fallback?.Designer;
+    //    PartName = priority?.PartName ?? fallback?.PartName;
+    //    Pages = priority?.Pages ?? fallback?.Pages;
+        
+    //    // TODO: #NamedSettings
+    //    DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
 
-        // TODO: #NamedSettings
-        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
-
-    }
+    //}
 
     /// <summary>
     /// Constructor to re-hydrate from object of base class.
@@ -36,17 +35,24 @@ public record MagicMenuSettings: MagicMenuSettingsData, ISettingsWithNames, ICan
             return;
         Designer = original.Designer;
         DesignSettings = original.DesignSettings;
+        SettingsName = original.SettingsName;
+        DesignName = original.DesignName;
         PartName = original.PartName;
         Pages = original.Pages;
     }
 
-    MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy = false) =>
-        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+    //MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy = false) =>
+    //    priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
 
     /// <inheritdoc />
     public string? PartName { get; init; }
+
+    /// <inheritdoc />
+    public string? SettingsName { get; init; }
+
+    public string? DesignName { get; init; }
 
     [JsonIgnore]    // Not meant for JSON at all...
     public IMagicPageDesigner? Designer { get; init; }

@@ -51,4 +51,12 @@ public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
     /// Name of the settings to look up.
     /// </summary>
     public string? Settings { get; init; }
+
+    internal string? GetSetting(ThemePartSectionEnum partSection) =>
+        partSection switch
+        {
+            ThemePartSectionEnum.Design => Design,
+            ThemePartSectionEnum.Settings => Settings,
+            _ => null
+        };
 }

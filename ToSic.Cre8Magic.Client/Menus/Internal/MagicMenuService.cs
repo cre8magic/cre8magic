@@ -4,6 +4,8 @@ using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Docs;
+using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal;
@@ -55,24 +57,28 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
 
     private (MagicMenuSettings Settings, List<string> Journal) MergeSettings(PageState pageState, MagicMenuSettings? settings)
     {
-        var (mainName, settingsName, designName, journal) = settingsSvc
+        // Get most relevant names
+        var ((mainName, settingsName, designName), journal) = settingsSvc
             .GetMostRelevantNames(pageState, settings?.PartName, MenuSettingPrefix);
 
         // If the user didn't specify a config name in the Parameters or the config name
         // isn't contained in the json file the normal parameter are given to the service
-        var mergedSettings = settingsSvc.MenuSettings.FindAndMerge(settingsName, mainName, settings);
+        var themeCtx = settingsSvc.GetThemeContext(pageState);
+        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, MenuSettingPrefix);
+        var (mergedSettings, settingsJournal) = settingsSvc.MenuSettings.FindAndMerge(findSettings, settings);
 
         // Usually there is no Design-object pre-filled, in which case we should
         // 1. try to find it in json
         // 2. use the one from the configuration
-        var designSettings = settingsSvc.MenuDesigns.FindAndMerge(designName, mainName, settings?.DesignSettings);
+        findSettings = new(themeCtx, settings, ThemePartSectionEnum.Design, MenuSettingPrefix);
+        var (designSettings, designJournal) = settingsSvc.MenuDesigns.FindAndMerge(findSettings, settings?.DesignSettings);
 
         var fullSettings = new MagicMenuSettings(ancestor: mergedSettings, settings)
         {
-            DesignSettings = designSettings
+            DesignSettings = designSettings,
         };
 
-        return (fullSettings, journal);
+        return (fullSettings, settingsJournal.Concat(designJournal).ToList());
     }
 
 

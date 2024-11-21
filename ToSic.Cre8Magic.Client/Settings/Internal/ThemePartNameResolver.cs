@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Themes.Internal;
+﻿using ToSic.Cre8magic.Settings.Internal.Docs;
+using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 
@@ -22,12 +23,55 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
         : this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
     { }
 
+    //public void GetBestNames(FindSettingsSpecs specs)
+    //{
+    //    var (bestSettingsName, settingsJournal) = FindBestNameAccordingToParts(specs);
+    //}
 
-    public (string BestSettingsName, string BestDesignName, List<string> Messages) GetBestNames(string? possibleName, string? prefixToCheck)
+
+    /// <summary>
+    /// Generic method to check for names, since it could be run on the Settings/Configuration property or on the DesignSettings property
+    /// </summary>
+    internal DataWithJournal<string> FindBestNameAccordingToParts(FindSettingsSpecs specs)
+    {
+        // TODO: ATM JUST USES THE PART NAME
+        var (initialName, journal) = PickBestSettingsName(specs.PartName, mainName);
+
+        // Check if we have a name-remap to consider
+        // If the first test fails, we try again with the prefix
+        var betterName = themeSettingsParts.TryGetValue(initialName, out var part)
+            ? part.GetSetting(specs.Section)
+            : null;
+
+        // If the better name wants to use the main config name ("=") then use that and exit
+        if (betterName == MagicConstants.InheritName)
+            return new(mainName, journal.Concat([$"switched to inherit '{mainName}'"]).ToList());
+
+        if (betterName == null && !string.IsNullOrEmpty(specs.Prefix) && !initialName.StartsWith(specs.Prefix))
+            betterName = themeSettingsParts.TryGetValue($"{specs.Prefix}{initialName}", out part)
+                ? part.GetSetting(specs.Section)
+                : null;
+
+        if (!betterName.HasValue())
+            return new(initialName, journal);
+
+        return new(betterName, journal.Concat([$"updated config to '{initialName}'"]).ToList());
+
+    }
+
+
+
+
+
+
+
+    public DataWithJournal<(string BestSettingsName, string BestDesignName)> GetBestNames(string? possibleName, string? prefixToCheck)
     {
         var (bestSettingsName, settingsJournal) = FindBestSettingsName(possibleName, prefixToCheck);
         var (bestDesignName, designJournal) = FindBestDesignName(possibleName, prefixToCheck);
-        return (bestSettingsName, bestDesignName, settingsJournal.Concat(designJournal).ToList());
+        var result = new DataWithJournal<(string, string)>((bestSettingsName, bestDesignName), settingsJournal.Concat(designJournal).ToList());
+        return result;
+        //return (bestSettingsName, bestDesignName, settingsJournal.Concat(designJournal).ToList());
     }
 
 

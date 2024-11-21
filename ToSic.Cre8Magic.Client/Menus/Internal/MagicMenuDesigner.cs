@@ -54,15 +54,9 @@ public class MagicMenuDesigner : IMagicPageDesigner
             .Where(c => c is not null)
             .ToList()!;
 
-    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuDesignSettings> configs)
+    private static List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuDesignSettings> configs)
     {
         var classes = new List<string?>();
-
-        void AddIfAny(IEnumerable<string?> maybeAdd)
-        {
-            var additions = maybeAdd.Where(v => v != null).ToList();
-            if (additions.Any()) classes.AddRange(additions);
-        }
 
         AddIfAny(configs.Select(c => c.Classes));
         AddIfAny(configs.Select(c => c.Classes));
@@ -78,13 +72,17 @@ public class MagicMenuDesigner : IMagicPageDesigner
                 ? null
                 : c.ByLevel.TryGetValue(page.MenuLevel, out var levelClasses)
                     ? levelClasses
-                    : c.ByLevel.TryGetValue(MagicTokens.ByLevelOtherKey, out var levelClassesDefault)
-                        ? levelClassesDefault
-                        : null
+                    : c.ByLevel.GetValueOrDefault(MagicTokens.ByLevelOtherKey)
             );
         AddIfAny(levelCss);
 
         return classes;
+
+        void AddIfAny(IEnumerable<string?> maybeAdd)
+        {
+            var additions = maybeAdd.Where(v => v != null).ToList();
+            if (additions.Any()) classes.AddRange(additions);
+        }
     }
 
     private string ListToClasses(IEnumerable<string?> original)

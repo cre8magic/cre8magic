@@ -20,30 +20,28 @@ namespace ToSic.Cre8magic.Languages.Internal;
 
 internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc, IMagicHat factory) : IMagicLanguageService
 {
-    /// <summary>
-    /// Get the state. Must be async, because it might need to load data from Oqtane.
-    /// </summary>
-    /// <param name="pageState"></param>
-    /// <returns></returns>
-    public async Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState) =>
-        await _languageStates.GetAsync(pageState, async () => await CreateState(pageState));
+    /// <inheritdoc/>
+    public async Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettingsPubWip? settings = default) =>
+        await _languageStates.GetAsync(pageState, async () => await CreateState(pageState, settings));
     private readonly GetKeepByPageId<IMagicLanguageKit> _languageStates = new();
     
-    private async Task<IMagicLanguageKit> CreateState(PageState pageState)
+    private async Task<IMagicLanguageKit> CreateState(PageState pageState, MagicLanguageSettingsPubWip? settings)
     {
         var themeContext = settingsSvc.GetThemeContextFull(pageState);
-        var settings = themeContext.ThemeSettings;
-        var languagesSettings = ((MagicSettingsService)settingsSvc).LanguageSettings(settings, themeContext.SettingsName);
+        var themeSettings = themeContext.ThemeSettings;
+        var settingsData = ((MagicSettingsService)settingsSvc).LanguageSettings(themeSettings, themeContext.SettingsName);
+        var settingsFull = new MagicLanguageSettingsPubWip(settingsData, settings);
 
-        var languages = await LanguagesToShow(pageState, languagesSettings);
-        var show = settings.Show("Languages") && settings.LanguagesMin <= languages.Count;
+
+        var languages = await LanguagesToShow(pageState, settingsData);
+        var show = themeSettings.Show("Languages") && themeSettings.LanguagesMin <= languages.Count;
         var designer = factory.LanguageDesigner(pageState);
         return new MagicLanguageKit
         {
             Show = show,
             Languages = languages,
             Designer = designer,
-            LanguageSettings = languagesSettings,
+            Settings = settingsFull,
             Service = this,
             ThemeDesignSettings = themeContext.ThemeDesignSettings
         };

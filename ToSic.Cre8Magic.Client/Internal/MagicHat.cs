@@ -19,8 +19,8 @@ internal class MagicHat(
         breadcrumbSvc.Value.BreadcrumbKit(pageState, settings);
 
     /// <inheritdoc />
-    public Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState) =>
-        languageSvc.Value.LanguageKitAsync(pageState);
+    public Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettingsPubWip? settings = default) =>
+        languageSvc.Value.LanguageKitAsync(pageState, settings);
 
 
     public MagicContainerDesigner ContainerDesigner(PageState pageState, Module module)

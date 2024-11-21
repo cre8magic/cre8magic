@@ -25,13 +25,9 @@
 
   <ItemGroup>
     <Compile Remove="Models\**" />
-    <Compile Remove="Settings\Internal\NewFolder\**" />
     <Content Remove="Models\**" />
-    <Content Remove="Settings\Internal\NewFolder\**" />
     <EmbeddedResource Remove="Models\**" />
-    <EmbeddedResource Remove="Settings\Internal\NewFolder\**" />
     <None Remove="Models\**" />
-    <None Remove="Settings\Internal\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,6 +59,7 @@
   <ItemGroup>
     <Folder Include="Pages\Internal\Breadcrumb\" />
     <Folder Include="Pages\Internal\Menu\" />
+    <Folder Include="Settings\Internal\Docs\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -15,7 +15,7 @@ internal record MagicLanguageKit : IMagicLanguageKit
 
     public required MagicLanguageDesigner Designer { get; init; }
 
-    public /* actually internal */ required MagicLanguageSettings LanguageSettings { get; init; }
+    public /* actually internal */ required MagicLanguageSettingsPubWip Settings { get; init; }
 
     public /* actually internal */ required MagicThemeDesignSettings ThemeDesignSettings { get; init; }
 

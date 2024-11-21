@@ -1,4 +1,5 @@
 ﻿using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Settings.Internal.Docs;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.MagicConstants;
 using static ToSic.Cre8magic.Settings.SettingsWithInherit;
@@ -12,6 +13,20 @@ internal class SettingsReader<TPart>(
 )
     where TPart : class, new()
 {
+
+    /// <summary>
+    /// Find the settings according to the names, and (if not null) merge with priority.
+    /// </summary>
+    internal DataWithJournal<TPart> FindAndMerge(FindSettingsSpecs specs, TPart? priority = null, bool skipCache = false)
+    {
+        var (bestName, journal) = specs.Context.NameResolver.FindBestNameAccordingToParts(specs);
+
+        var part = FindAndMerge(bestName, specs.ThemeName, priority, skipCache);
+
+        return new(part, journal);
+    }
+
+
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
     /// </summary>
