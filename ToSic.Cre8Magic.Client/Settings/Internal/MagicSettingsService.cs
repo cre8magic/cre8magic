@@ -145,9 +145,9 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
         ((IMagicSettingsService)this).ThemeDesign.FindAndNeutralize(settings.Design ?? settings.Parts.GetPartSettingsNameOrFallback(nameof(settings.Design), settingsName), settingsName);
 
-    NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
+    NamedSettingsReader<Dictionary<string, MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);
-    private NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>>? _menuDesigns;
+    private NamedSettingsReader<Dictionary<string, MagicMenuDesignSettings>>? _menuDesigns;
 
     /// <summary>
     /// Exceptions - ATM just forward the loader exceptions, as none are logged here.

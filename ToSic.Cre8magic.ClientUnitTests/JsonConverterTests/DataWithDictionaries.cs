@@ -7,17 +7,17 @@ internal class DataWithDictionaries
 {
     public IDictionary<string, string>? Classic { get; set; }
 
-    [JsonConverter(typeof(CaseInsensitiveIDictionaryConverter<string>))]
+    [JsonConverter(typeof(CaseInsensitiveInterfaceDictionaryConverter<string>))]
     public IDictionary<string, string>? Invariant { get; set; }
 
     public IDictionary<string, string>? ClassicShouldBeNull { get; set; }
 
-    [JsonConverter(typeof(CaseInsensitiveIDictionaryConverter<string>))]
+    [JsonConverter(typeof(CaseInsensitiveInterfaceDictionaryConverter<string>))]
     public IDictionary<string, string>? InvariantShouldBeNull { get; set; }
 
     public IDictionary<string, string> ClassicShouldBeNonNull { get; set; } = new Dictionary<string, string>();
 
-    [JsonConverter(typeof(CaseInsensitiveIDictionaryConverter<string>))]
+    [JsonConverter(typeof(CaseInsensitiveInterfaceDictionaryConverter<string>))]
     public IDictionary<string, string> InvariantShouldBeNonNull { get; set; } = new Dictionary<string, string>();
 
     public const string Json = @"

@@ -55,7 +55,7 @@ public record MagicMenuSettings: MagicMenuSettingsData, ICanClone<MagicMenuSetti
 
     // todo: name, maybe not on interface
     [JsonIgnore] // can't be provided in JSON, but could in code
-    public NamedSettings<MagicMenuDesignSettings>? DesignSettings { get; init; }
+    public Dictionary<string, MagicMenuDesignSettings>? DesignSettings { get; init; }
 
     /// <summary>
     /// List of pages to respect when creating the breadcrumb.

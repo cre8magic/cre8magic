@@ -23,7 +23,7 @@ public class MagicMenuDesigner : IMagicPageDesigner
     private MagicMenuSettings Settings { get; }
 
     // TODO: unclear why this is a list, it can only contain one...?
-    internal List<NamedSettings<MagicMenuDesignSettings>> DesignSettingsList { get; }
+    internal List<Dictionary<string, MagicMenuDesignSettings>> DesignSettingsList { get; }
 
     private ILog? Log { get; }
 

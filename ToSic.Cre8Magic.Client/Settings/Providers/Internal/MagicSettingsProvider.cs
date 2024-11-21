@@ -29,7 +29,7 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
             MenuDesigns = _menuDesigns?.Values != null
                 ? new(_menuDesigns.Values.ToDictionary(
                     dic => dic.Key,
-                    dic => new NamedSettings<MagicMenuDesignSettings>(dic.Value)
+                    dic => new Dictionary<string, MagicMenuDesignSettings>(dic.Value)
                 ))
                 : new(),
             Themes = _themes?.Values != null ? new(_themes.Values) : new()

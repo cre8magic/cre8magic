@@ -7,6 +7,7 @@ using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Settings.Internal.Logging;
 using ToSic.Cre8magic.Themes.Settings;
+using static System.StringComparer;
 
 namespace ToSic.Cre8magic.Settings;
 
@@ -35,28 +36,35 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// </summary>
     public string Source { get; set; } = SourceDefault;
 
-    public NamedSettings<MagicAnalyticsSettings> Analytics { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicAnalyticsSettings>))]
+    public Dictionary<string, MagicAnalyticsSettings> Analytics { get; init; } = new(InvariantCultureIgnoreCase);
 
-    public NamedSettings<MagicBreadcrumbSettings> Breadcrumbs { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbSettings>))]
+    public Dictionary<string, MagicBreadcrumbSettings> Breadcrumbs { get; init; } = new(InvariantCultureIgnoreCase);
 
-    public NamedSettings<MagicThemeSettings> Themes { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeSettings>))]
+    public Dictionary<string, MagicThemeSettings> Themes { get; init; } = new(InvariantCultureIgnoreCase);
 
-    public NamedSettings<MagicThemeDesignSettings> ThemeDesigns { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeDesignSettings>))]
+    public Dictionary<string, MagicThemeDesignSettings> ThemeDesigns { get; init; } = new(InvariantCultureIgnoreCase);
 
-    public NamedSettings<MagicContainerSettings> Containers { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicContainerSettings>))]
+    public Dictionary<string, MagicContainerSettings> Containers { get; init; } = new(InvariantCultureIgnoreCase);
 
-    public NamedSettings<MagicLanguageSettings> Languages { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguageSettings>))]
+    public Dictionary<string, MagicLanguageSettings> Languages { get; init; } = new(InvariantCultureIgnoreCase);
 
     /// <summary>
     /// The menu definitions
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveIDictionaryConverter<MagicMenuSettingsData>))]
-    public IDictionary<string, MagicMenuSettingsData> Menus { get; init; } = new Dictionary<string, MagicMenuSettingsData>();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuSettingsData>))]
+    public Dictionary<string, MagicMenuSettingsData> Menus { get; init; } = new(InvariantCultureIgnoreCase);
 
     /// <summary>
     /// Design definitions of the menu
     /// </summary>
-    public NamedSettings<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<Dictionary<string, MagicMenuDesignSettings>>))]
+    public Dictionary<string, Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; init; } = new(InvariantCultureIgnoreCase);
 
     [JsonIgnore]
     internal SettingsLogs Logs { get; init; } = new(null);

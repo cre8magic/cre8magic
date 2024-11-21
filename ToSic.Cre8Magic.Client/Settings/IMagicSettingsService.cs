@@ -40,7 +40,7 @@ public interface IMagicSettingsService: IHasSystemMessages
 
     internal NamedSettingsReader<MagicLanguageSettings> Languages { get; }
 
-    internal NamedSettingsReader<NamedSettings<MagicMenuDesignSettings>> MenuDesigns { get; }
+    internal NamedSettingsReader<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; }
 
     internal NamedSettingsReader<MagicMenuSettingsData> MenuSettings { get; }
     internal List<MagicSettingsCatalog> AllCatalogs { get; }
