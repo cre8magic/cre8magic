@@ -8,9 +8,9 @@ internal class LogCall<T> : LogCallBase
     {
     }
 
-    public T Return(T result) => Return(result, null);
+    public T Return(T? result) => Return(result, null);
 
-    public T Return(T result, string message)
+    public T Return(T? result, string? message)
     {
         this.DoneInternal(message);
         return result;
@@ -25,7 +25,7 @@ internal class LogCall<T> : LogCallBase
 
     public T ReturnAndLog(T result) => Return(result, $"{result}");
 
-    public T ReturnNull() => Return(default, null);
+    public T? ReturnNull() => Return(default, null);
 
     public T ReturnNull(string message) => Return(default, message);
 }

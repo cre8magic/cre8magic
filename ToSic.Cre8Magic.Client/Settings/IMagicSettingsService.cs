@@ -30,19 +30,16 @@ public interface IMagicSettingsService: IHasSystemMessages
 
     internal MagicThemeContextFull GetThemeContextFull(PageState pageState);
 
-    // #WipRemovingPreMergedCatalog
-    //internal MagicSettingsCatalog Catalog { get; }
-
     internal MagicDebugSettings Debug { get; }
 
-    internal NamedSettingsReader<MagicAnalyticsSettings> Analytics { get; }
-    internal NamedSettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
+    internal SettingsReader<MagicAnalyticsSettings> Analytics { get; }
+    internal SettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
 
-    internal NamedSettingsReader<MagicLanguageSettings> Languages { get; }
+    internal SettingsReader<MagicLanguageSettings> Languages { get; }
 
-    internal NamedSettingsReader<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; }
+    internal SettingsReader<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; }
 
-    internal NamedSettingsReader<MagicMenuSettingsData> MenuSettings { get; }
+    internal SettingsReader<MagicMenuSettingsData> MenuSettings { get; }
     internal List<MagicSettingsCatalog> AllCatalogs { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);

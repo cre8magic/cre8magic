@@ -15,9 +15,6 @@
     SettingsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
     var defAnalytics = SettingsService.AnalyticsSettings("default");
     var testAnalytics = SettingsService.NoCachingForDebug(s => s.AnalyticsSettings("analytics-test"));
-    var test = testAnalytics.GtmId;
-
-    var x = 1;
 }
 <div class="alert alert-info">
     <h4>Debug analytics</h4>

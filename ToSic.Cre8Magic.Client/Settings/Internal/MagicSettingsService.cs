@@ -89,29 +89,22 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     private readonly Dictionary<string, MagicThemeContextFull> _themeCtxFullCache = new(StringComparer.InvariantCultureIgnoreCase);
 
-    // #WipRemovingPreMergedCatalog
-    ///// <summary>
-    ///// Actually internal, on the interface to avoid exposing it to the outside
-    ///// </summary>
-    //public MagicSettingsCatalog Catalog => _catalog ??= loader.MergeCatalogs(PackageSettings);
-    //private MagicSettingsCatalog? _catalog;
-
     /// <summary>
     /// actually internal
     /// </summary>
     public List<MagicSettingsCatalog> AllCatalogs => catalogsLoader.Catalogs(PackageSettings, cache: false);
 
-    NamedSettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
+    SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(
             this,
             MagicAnalyticsSettings.Defaults,
             cat => cat.Analytics
         );
-    private NamedSettingsReader<MagicAnalyticsSettings>? _analytics;
+    private SettingsReader<MagicAnalyticsSettings>? _analytics;
 
-    private NamedSettingsReader<MagicThemeSettings> ThemeSettings =>
+    private SettingsReader<MagicThemeSettings> ThemeSettings =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults, cat => cat.Themes);
-    private NamedSettingsReader<MagicThemeSettings>? _getTheme;
+    private SettingsReader<MagicThemeSettings>? _getTheme;
 
     public MagicAnalyticsSettings AnalyticsSettings(string settingsName) => ((IMagicSettingsService)this).Analytics.FindAndNeutralize(settingsName, null, skipCache: _bypassCaches);
     
@@ -123,13 +116,13 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         return result;
     }
 
-    NamedSettingsReader<MagicMenuSettingsData> IMagicSettingsService.MenuSettings =>
+    SettingsReader<MagicMenuSettingsData> IMagicSettingsService.MenuSettings =>
         _getMenuSettings ??= new(this, MagicMenuSettingsData.Defaults, cat => cat.Menus);
-    private NamedSettingsReader<MagicMenuSettingsData>? _getMenuSettings;
+    private SettingsReader<MagicMenuSettingsData>? _getMenuSettings;
 
-    NamedSettingsReader<MagicLanguageSettings> IMagicSettingsService.Languages =>
+    SettingsReader<MagicLanguageSettings> IMagicSettingsService.Languages =>
         _languages ??= new(this, MagicLanguageSettings.Defaults, cat => cat.Languages);
-    private NamedSettingsReader<MagicLanguageSettings>? _languages;
+    private SettingsReader<MagicLanguageSettings>? _languages;
 
     public MagicLanguageSettings LanguageSettings(MagicThemeSettings settings, string settingsName) =>
         ((IMagicSettingsService)this).Languages.FindAndNeutralize(settings.Parts.GetPartSettingsNameOrFallback("Languages", settingsName), settingsName);
@@ -138,16 +131,16 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     //    _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
     //private NamedSettingsReader<MagicContainerSettings>? _containers;
 
-    NamedSettingsReader<MagicThemeDesignSettings> IMagicSettingsService.ThemeDesign =>
+    SettingsReader<MagicThemeDesignSettings> IMagicSettingsService.ThemeDesign =>
         _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, cat => cat.ThemeDesigns);
-    private NamedSettingsReader<MagicThemeDesignSettings>? _themeDesign;
+    private SettingsReader<MagicThemeDesignSettings>? _themeDesign;
 
     public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
         ((IMagicSettingsService)this).ThemeDesign.FindAndNeutralize(settings.Design ?? settings.Parts.GetPartSettingsNameOrFallback(nameof(settings.Design), settingsName), settingsName);
 
-    NamedSettingsReader<Dictionary<string, MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
+    SettingsReader<Dictionary<string, MagicMenuDesignSettings>> IMagicSettingsService.MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, cat => cat.MenuDesigns);
-    private NamedSettingsReader<Dictionary<string, MagicMenuDesignSettings>>? _menuDesigns;
+    private SettingsReader<Dictionary<string, MagicMenuDesignSettings>>? _menuDesigns;
 
     /// <summary>
     /// Exceptions - ATM just forward the loader exceptions, as none are logged here.

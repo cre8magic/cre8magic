@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
+﻿using System.Diagnostics;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.ClientUnitTests.ThemePartTests;
@@ -26,6 +27,8 @@ public class ThemePartNameLookupTests
     [InlineData(Default, null, "null should use default")]
     public void CheckNameRedirects(string expected, string? partName, string? testDescription = default)
     {
+        testDescription ??= "add this to prevent warning of unused variable";
+
         var themeParts = new Dictionary<string, MagicThemePartSettings>
         {
             { Default, new() },
@@ -38,5 +41,7 @@ public class ThemePartNameLookupTests
 
         var (bestName, messages) = nameResolver.FindBestSettingsName(partName, MenuPrefix);
         Assert.Equal(expected, bestName);
+
+        
     }
 }

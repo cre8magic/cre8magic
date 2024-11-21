@@ -10,22 +10,6 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// </summary>
 public class MagicSettingsCatalogsLoader(IEnumerable<IMagicSettingsSource> sources)
 {
-    // #WipRemovingPreMergedCatalog
-    //internal MagicSettingsCatalog MergeCatalogs(MagicPackageSettings packageSettings)
-    //{
-    //    var sources = Catalogs(packageSettings);
-
-    //    if (sources.Count == 0)
-    //        return new();
-    //    var prioCat = sources.First();
-    //    if (sources.Count == 1)
-    //        return prioCat;
-
-    //    prioCat = sources.Aggregate(prioCat, (current, catalog) => new(current, catalog));
-
-    //    return prioCat;
-    //}
-
     public List<MagicSettingsCatalog> Catalogs(MagicPackageSettings packageSettings, bool cache = true) => 
         cache ? _catalogs ??= Load(packageSettings) : Load(packageSettings);
     private List<MagicSettingsCatalog>? _catalogs;

@@ -11,7 +11,7 @@ internal static class LogCallBaseExtensions
         [CallerLineNumber] int cLine = 0
     ) => logCall?.LogOrNull?.A(message, cPath, cName, cLine);
 
-    internal static void DoneInternal(this LogCallBase logCall, string message)
+    internal static void DoneInternal(this LogCallBase logCall, string? message)
     {
         if (logCall?.LogOrNull == null) return;
         var log = logCall.LogOrNull;

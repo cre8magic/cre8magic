@@ -5,12 +5,12 @@ using static ToSic.Cre8magic.Settings.SettingsWithInherit;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
-internal class NamedSettingsReader<TPart>(
+internal class SettingsReader<TPart>(
     IMagicSettingsService settingsSvc,
     Defaults<TPart> defaults,
     Func<MagicSettingsCatalog, IDictionary<string, TPart>> findList
 )
-    where TPart : class, /*ICanClone<TPart>,*/ new()
+    where TPart : class, new()
 {
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -87,7 +87,6 @@ internal class NamedSettingsReader<TPart>(
             return priority;
 
         var mergeNew = MergeHelper.TryToMergeOrKeepPriority(priority, addition)!;
-        //var mergeNew = addition.CloneUnder(priority);
 
         return mergeNew;
     }
@@ -109,11 +108,7 @@ internal class NamedSettingsReader<TPart>(
         // Make sure we have at least one name
         if (names == null || names.Length == 0) names = [Default];
 
-        // #WipRemovingPreMergedCatalog
-        var catalogs = // useAllSources || true
-            /*?*/ settingsSvc.AllCatalogs
-            //: [settingsSvc.Catalog]
-            ;
+        var catalogs = settingsSvc.AllCatalogs;
 
         var allSourcesAndNames = names
             .Distinct()
@@ -123,8 +118,6 @@ internal class NamedSettingsReader<TPart>(
         foreach (var set in allSourcesAndNames)
             if (findList(set.catalog).TryGetValue(set.name, out var result) && result != null)
                 return result;
-        //var result = findList(set.catalog).GetInvariant(set.name);
-        //if (result != null) return result;
 
         return null;
     }

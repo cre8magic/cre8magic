@@ -14,6 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Oqtane.Shared" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Client\ToSic.Theme.Cre8magicTests.Client.csproj" />
   </ItemGroup>
 
