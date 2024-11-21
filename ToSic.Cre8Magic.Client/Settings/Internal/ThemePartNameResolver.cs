@@ -23,18 +23,11 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
         : this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
     { }
 
-    //public void GetBestNames(FindSettingsSpecs specs)
-    //{
-    //    var (bestSettingsName, settingsJournal) = FindBestNameAccordingToParts(specs);
-    //}
-
-
     /// <summary>
     /// Generic method to check for names, since it could be run on the Settings/Configuration property or on the DesignSettings property
     /// </summary>
     internal DataWithJournal<string> FindBestNameAccordingToParts(FindSettingsSpecs specs)
     {
-        // TODO: ATM JUST USES THE PART NAME
         var (initialName, journal) = PickBestSettingsName(specs.PartName, mainName);
 
         // Check if we have a name-remap to consider
@@ -58,58 +51,6 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
         return new(betterName, journal.Concat([$"updated config to '{initialName}'"]).ToList());
 
     }
-
-
-
-
-
-
-
-    public DataWithJournal<(string BestSettingsName, string BestDesignName)> GetBestNames(string? possibleName, string? prefixToCheck)
-    {
-        var (bestSettingsName, settingsJournal) = FindBestSettingsName(possibleName, prefixToCheck);
-        var (bestDesignName, designJournal) = FindBestDesignName(possibleName, prefixToCheck);
-        var result = new DataWithJournal<(string, string)>((bestSettingsName, bestDesignName), settingsJournal.Concat(designJournal).ToList());
-        return result;
-        //return (bestSettingsName, bestDesignName, settingsJournal.Concat(designJournal).ToList());
-    }
-
-
-    internal (string BestName, List<string> Messages) FindBestSettingsName(string? possibleName, string? prefixToCheck) =>
-        FindBestName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartSettingsName);
-
-    internal (string BestName, List<string> Messages) FindBestDesignName(string? possibleName, string? prefixToCheck) =>
-        FindBestName(possibleName, prefixToCheck, MagicThemePartsExtensions.GetPartDesignName);
-
-    /// <summary>
-    /// Generic method to check for names, since it could be run on the Settings/Configuration property or on the DesignSettings property
-    /// </summary>
-    /// <param name="possibleName"></param>
-    /// <param name="prefixToCheck"></param>
-    /// <param name="getRenameOrNull"></param>
-    /// <returns></returns>
-    private (string BestName, List<string> Messages) FindBestName(string? possibleName, string? prefixToCheck, Func<Dictionary<string, MagicThemePartSettings>, string, string?> getRenameOrNull)
-    {
-        var (initialName, journal) = PickBestSettingsName(possibleName, mainName);
-
-        // Check if we have a name-remap to consider
-        // If the first test fails, we try again with the prefix
-        var betterName = getRenameOrNull(themeSettingsParts, initialName);
-
-        // If the better name wants to use the main config name ("=") then use that and exit
-        if (betterName == MagicConstants.InheritName)
-            return(mainName, journal.Concat([$"switched to inherit '{mainName}'"]).ToList());
-
-        if (betterName == null && !string.IsNullOrEmpty(prefixToCheck) && !initialName.StartsWith(prefixToCheck))
-            betterName = getRenameOrNull(themeSettingsParts,$"{prefixToCheck}{initialName}");
-
-        if (!betterName.HasValue())
-            return (initialName, journal);
-
-        return (betterName, journal.Concat([$"updated config to '{initialName}'"]).ToList());
-
-    }
-
 
     /// <summary>
     /// Figure out which settings-name can be used (not empty, using "=", etc.).

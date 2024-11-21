@@ -1,5 +1,5 @@
-﻿using System.Diagnostics;
-using ToSic.Cre8magic.Settings.Internal;
+﻿using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Docs;
 using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.ClientUnitTests.ThemePartTests;
@@ -39,9 +39,9 @@ public class ThemePartNameLookupTests
 
         var nameResolver = new ThemePartNameResolver(ThemeName, themeParts);
 
-        var (bestName, messages) = nameResolver.FindBestSettingsName(partName, MenuPrefix);
-        Assert.Equal(expected, bestName);
+        var findSpecs = new FindSettingsSpecs(null, null, partName, null, ThemePartSectionEnum.Settings, null);
+        var result = nameResolver.FindBestNameAccordingToParts(findSpecs);
 
-        
+        Assert.Equal(expected, result.Data);
     }
 }

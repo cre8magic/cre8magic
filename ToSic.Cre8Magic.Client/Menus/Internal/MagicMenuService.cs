@@ -57,10 +57,6 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
 
     private (MagicMenuSettings Settings, List<string> Journal) MergeSettings(PageState pageState, MagicMenuSettings? settings)
     {
-        // Get most relevant names
-        var ((mainName, settingsName, designName), journal) = settingsSvc
-            .GetMostRelevantNames(pageState, settings?.PartName, MenuSettingPrefix);
-
         // If the user didn't specify a config name in the Parameters or the config name
         // isn't contained in the json file the normal parameter are given to the service
         var themeCtx = settingsSvc.GetThemeContext(pageState);
