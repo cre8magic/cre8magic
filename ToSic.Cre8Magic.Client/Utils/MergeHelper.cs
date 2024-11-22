@@ -29,7 +29,7 @@ internal class MergeHelper
     /// <typeparam name="TVal"></typeparam>
     /// <param name="priority"></param>
     /// <param name="fallback"></param>
-    /// <returns></returns>
+    /// <returns>Will always return a dictionary invariant, never null.</returns>
     public static Dictionary<string, TVal> CloneMergeDictionaries<TVal>(Dictionary<string, TVal>? priority, Dictionary<string, TVal>? fallback)
     {
         if (priority == null && fallback == null)

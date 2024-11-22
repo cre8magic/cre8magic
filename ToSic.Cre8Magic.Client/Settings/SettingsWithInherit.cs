@@ -3,8 +3,11 @@
 namespace ToSic.Cre8magic.Settings;
 
 // No base interface, because for processing we need to ensure it's always a record
-public abstract record SettingsWithInherit // : IInherit
+public abstract record SettingsWithInherit
 {
+    /// <summary>
+    /// Empty Constructor necessary for deserialization of inheriting classes
+    /// </summary>
     protected SettingsWithInherit() { }
 
     /// <summary>

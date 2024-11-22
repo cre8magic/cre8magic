@@ -10,7 +10,7 @@ public abstract class MagicDesignerBase: IMagicDesigner
     protected internal MagicDesignerBase(MagicThemeContextFull context, Dictionary<string, MagicDesignSettings>? designSettings = default)
     {
         Context = context;
-        DesignSettings = designSettings ?? context.ThemeDesignSettings.DesignSettings;
+        DesignSettings = designSettings ?? context.ThemeDesignSettings.Data;
         Tokens = context.PageTokens;
     }
     protected MagicThemeContextFull Context { get; }
