@@ -5,7 +5,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
-public class MagicLanguageDesigner(MagicThemeContextFull context, MagicLanguageSettingsPubWip settingsFull) : MagicDesignerBase(context, settingsFull.DesignSettings)
+public class MagicLanguageDesigner(MagicThemeContextFull context, MagicLanguageSettingsPubWip settingsFull) : MagicDesignerBase(context, settingsFull.DesignSettings?.ByName)
 {
     /// <summary>
     /// TODO: PROBABLY MOVE TO Language?

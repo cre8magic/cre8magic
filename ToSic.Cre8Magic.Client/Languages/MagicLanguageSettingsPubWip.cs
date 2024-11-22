@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal.Docs;
+﻿using ToSic.Cre8magic.Settings.Internal.Docs;
 
 namespace ToSic.Cre8magic.Languages;
 
@@ -30,6 +28,6 @@ public record MagicLanguageSettingsPubWip: MagicLanguageSettings, ISettingsForCo
 
     public string? DesignName { get; init; }
 
-    public Dictionary<string, MagicDesignSettings>? DesignSettings { get; init; }
+    public MagicLanguageDesignSettings? DesignSettings { get; init; }
 
 }

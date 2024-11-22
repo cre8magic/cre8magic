@@ -78,13 +78,4 @@ public record MagicLanguageSettings : SettingsWithInherit, IHasDebugSettings, IC
             Languages = new(),
         }
     };
-
-    internal static Defaults<Dictionary<string, MagicDesignSettings>> DesignDefaults = new()
-    {
-        Fallback = new()
-        {
-            { "li", new() { IsActive = new() { On = "active" } } }
-        },
-        Foundation = new()
-    };
 }
