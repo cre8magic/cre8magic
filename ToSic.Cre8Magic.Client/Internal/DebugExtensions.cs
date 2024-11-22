@@ -1,6 +1,7 @@
-﻿using Oqtane.Services;
+﻿using Oqtane.UI;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Themes.Internal;
 
 namespace ToSic.Cre8magic.Internal;
 
@@ -15,4 +16,8 @@ public static class DebugExtensions
 
     public static List<Exception> GetExceptions(this IMagicSettingsService settingsSvc) =>
         settingsSvc.AllCatalogs.SelectMany(c => c.Journal.Exceptions).ToList();
+
+    public static MagicThemeContext GetThemeContext(this IMagicSettingsService settingsSvc, PageState pageState) =>
+        settingsSvc.GetThemeContext(pageState);
+
 }

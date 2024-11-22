@@ -31,30 +31,30 @@ Nice to know:
     <Header></Header>
     
     @* Header Pane *@
-    <div id="@Designer.Id("sectionHeader")" class="@Designer.Classes("sectionHeader") @Designer.PaneClasses(PaneNameHeader)">
-        <Pane Name="@PaneNameHeader"/>
+    <div id="@ThemeKit.Designer.Id("sectionHeader")" class='@ThemeKit.Designer.Classes("sectionHeader") @ThemeKit.Designer.PaneClasses("Header")'>
+        <Pane Name="Header"/>
     </div>
     
     @* Main Section *@
-    <main id="@Designer.Id("sectionMain")" class="@Designer.Classes("sectionMain")">
+    <main id="@ThemeKit.Designer.Id("sectionMain")" class="@ThemeKit.Designer.Classes("sectionMain")">
 
         @* Show Breadcrumb if desired *@
-        @if (ThemeState.ShowPart("breadcrumbs"))
+        @if (ThemeKit.ShowPart("breadcrumbs"))
         {
             <Breadcrumbs></Breadcrumbs>
         }
 
         @* If we show the Sidebar, then it must be side-by-side with the Content *@
-        @if (ThemeState.ShowPart("menuSidebar"))
+        @if (ThemeKit.ShowPart("menuSidebar"))
         {
             <div class="container">
                 <div class="row">
-                    <div class='@Designer.Classes("sidebarBody")'>
+                    <div class='@ThemeKit.Designer.Classes("sidebarBody")'>
                         <Pane Name="@PaneNames.Default"/>
                         <MagicShowComponents Components="@MagicComponents"></MagicShowComponents>
                     </div>
-                    <div class='@Designer.Classes("sidebarMenu")'>
-                        <div id="@Designer.Id("sidebarMenu-inner")" class="@Designer.Classes("sidebarMenu-inner")">
+                    <div class='@ThemeKit.Designer.Classes("sidebarMenu")'>
+                        <div id="@ThemeKit.Designer.Id("sidebarMenu-inner")" class="@ThemeKit.Designer.Classes("sidebarMenu-inner")">
                             <MagicMenu PartName="@ThemeInfo.MenuSidebar"></MagicMenu>
                         </div>
                     </div>

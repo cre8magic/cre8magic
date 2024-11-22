@@ -1,9 +1,11 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
+using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Languages.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Users;
 
@@ -25,13 +27,24 @@ public interface IMagicHat
 
 
 
-    public MagicContainerDesigner ContainerDesigner(PageState pageState, Module module);
+    //public MagicContainerDesigner ContainerDesigner(PageState pageState, Module module);
     public MagicThemeDesigner ThemeDesigner(PageState pageState);
 
     //internal MagicLanguageDesigner LanguageDesigner(PageState pageState);
 
     #endregion
 
+    /// <inheritdoc cref="IMagicUserService.User"/>
     MagicUser User(PageState pageState);
+
+    /// <inheritdoc cref="IMagicContainerService.ContainerKit"/>
     IMagicContainerKit ContainerKit(PageState pageState, Module module);
+
+    /// <inheritdoc cref="IMagicAnalyticsService.AnalyticsKit"/>
+    IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = default);
+
+    /// <inheritdoc cref="IMagicThemeService.ThemeKit"/>
+    IMagicThemeKit ThemeKit(PageState pageState);
+
+    void UseSettings(MagicPackageSettings packageSettings, string? layoutName);
 }

@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
-using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Components;
 using ToSic.Cre8magic.Components.Internal;
 using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Themes;
@@ -61,14 +58,6 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     /// <returns></returns>
     public new string ThemePath() => base.ThemePath().Replace(".Client", "");
 
-    [Inject]
-    protected IMagicSettingsService MagicSettingsService
-    {
-        get => _magicSettingsService!;
-        set => _magicSettingsService = value.Setup(ThemePackageSettings, Layout);    // Init when injecting
-    }
-    private IMagicSettingsService? _magicSettingsService;
-    
     /// <summary>
     /// This contains the default settings which must be used in this theme.
     /// Any inheriting class must specify what it will be. 
@@ -76,22 +65,26 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     public abstract MagicPackageSettings ThemePackageSettings { get; }
 
     [Inject]
-    public IMagicAnalyticsService? MagicAnalytics { get; set; }
+    public required IMagicHat MagicHat { get; set; }
 
-    [Inject]
-    public IMagicThemeService? ThemeService { get; set; }
+    public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicHat.ThemeKit(PageState));
+    private readonly GetKeepByPageId<IMagicThemeKit> _themeKit = new();
 
-    public IMagicThemeKit ThemeState => _themeState.Get(PageState, () => ThemeService!.ThemeKit(PageState));
-    private readonly GetKeepByPageId<IMagicThemeKit> _themeState = new();
+    /// <summary>
+    /// OnInitialized, make ure that cre8magic knows what settings this theme wants.
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        MagicHat.UseSettings(ThemePackageSettings, Layout);
+    }
 
+    /// <summary>
+    /// OnAfterRender, track page views
+    /// </summary>
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-
-        // Track page views
-        if (MagicAnalytics != null)
-            await MagicAnalytics.AnalyticsKit(PageState).TrackPage(firstRender);
+        await MagicHat.AnalyticsKit(PageState).TrackPage(firstRender);
     }
-
-    public MagicThemeDesigner Designer => ThemeState.Designer ?? throw new("No settings available");
 }

@@ -66,4 +66,10 @@
     <ProjectReference Include="..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="ComponentsBs5\Debug\MagicThemeDebug.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>
