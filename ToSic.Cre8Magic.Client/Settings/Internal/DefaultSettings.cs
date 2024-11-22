@@ -12,7 +12,7 @@ internal class DefaultSettings
         // Normally this would be set in the json file or the theme settings, so this wouldn't be used. 
         Fallback = new()
         {
-            ByName = new(InvariantCultureIgnoreCase)
+            Parts = new(InvariantCultureIgnoreCase)
             {
                 {
                     "a", new()

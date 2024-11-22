@@ -16,7 +16,7 @@ public record MagicLanguageDesignSettings : SettingsWithInherit, ICanClone<Magic
     public MagicLanguageDesignSettings(MagicLanguageDesignSettings? priority, MagicLanguageDesignSettings? fallback = default)
         : base(priority, fallback)
     {
-        ByName = MergeHelper.CloneMergeDictionaries(priority?.ByName, fallback?.ByName);
+        Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
     public MagicLanguageDesignSettings CloneUnder(MagicLanguageDesignSettings? priority, bool forceCopy = false) =>
@@ -27,14 +27,14 @@ public record MagicLanguageDesignSettings : SettingsWithInherit, ICanClone<Magic
     /// For things such as `ul` or `li` or `a` tags.
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettings>))]
-    public Dictionary<string, MagicDesignSettings> ByName { get; init; } = new();
+    public Dictionary<string, MagicDesignSettings> Parts { get; init; } = new();
 
 
     internal static Defaults<MagicLanguageDesignSettings> DesignDefaults = new()
     {
         Fallback = new()
         {
-            ByName = new()
+            Parts = new()
             {
                 { "li", new() { IsActive = new() { On = "active" } } }
             },

@@ -23,7 +23,7 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
         PaneIsEmpty = priority?.PaneIsEmpty ?? fallback?.PaneIsEmpty;
         MagicContextTagId = priority?.MagicContextTagId ?? fallback?.MagicContextTagId;
 
-        ByName = MergeHelper.CloneMergeDictionaries(priority?.ByName, fallback?.ByName);
+        Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
     public MagicThemeDesignSettings CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
@@ -41,6 +41,6 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
     /// Custom values / classes as you need them in your code
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettings>))]
-    public Dictionary<string, MagicDesignSettings> ByName { get; init; } = new();
+    public Dictionary<string, MagicDesignSettings> Parts { get; init; } = new();
 
 }

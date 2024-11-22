@@ -48,13 +48,13 @@ public class MagicMenuDesigner : IMagicPageDesigner
         return l.ReturnAndLog(string.Join(" ", configsForKey));
     }
 
-    private List<MagicMenuDesignSettingsByName> ConfigsForTag(string tag) =>
+    private List<MagicMenuDesignSettingsPart> ConfigsForTag(string tag) =>
         DesignSettingsList
-            .Select(c => c.ByName.FindInvariant(tag))
+            .Select(c => c.Parts.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 
-    private static List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuDesignSettingsByName> configs)
+    private static List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuDesignSettingsPart> configs)
     {
         var classes = new List<string?>();
 

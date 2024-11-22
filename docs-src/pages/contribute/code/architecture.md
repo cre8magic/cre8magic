@@ -46,7 +46,7 @@ In addition, the settings mechanisms should be seamless, magical but still very 
 ## Sample Best Practice Setup by Example of the Menu
 
 1. **IMagicMenuKit** will be the object that contains everything to do with the menu.
-1. **IMagicMenuService** will be the service that contains the logic to get the Kit.
+1. **Internal.IMagicMenuService** will be the service that contains the logic to get the Kit.
 1. **IMagicHat** is the main entry point which is usually used to call the service.
 1. **MagicMenuSettingsData** (`record`) is the data object that is used for settings which can be stored.
     This object is usually not used the outside, as the outside will use the **MagicMenuSettings** (without the `Data`).
@@ -55,8 +55,10 @@ In addition, the settings mechanisms should be seamless, magical but still very 
     1. This object will usually be provided to the `MagicHat` to get everything set up.
     1. After the setup it will also be found on the `.Settings` property of the `MagicMenuKit`.
     1. After the setup it will have more values filled (from the `MagicMenuSettingsData`).
-1. **MagicMenuDesignSettings** ...
-1. **MagicMenuDesigner** ...
+1. Design
+    1. **MagicMenuDesignSettings** ...
+    1. **MagicMenuDesignSettingsPart** ... TODO: NAMING NOT FINAL
+    1. **MagicMenuDesigner** ...
 1. The **/Menus/Components/MagicMenu** is a primary or sample component for using the menu.
     1. It will expect a `Settings` parameter which is the `MagicMenuSettings`.
     1. It will usually use the `MagicHat` to prepare the `MagicMenuKit`

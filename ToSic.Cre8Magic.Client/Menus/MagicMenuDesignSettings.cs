@@ -16,7 +16,7 @@ public record MagicMenuDesignSettings : SettingsWithInherit, ICanClone<MagicMenu
     public MagicMenuDesignSettings(MagicMenuDesignSettings? priority, MagicMenuDesignSettings? fallback = default)
         : base(priority, fallback)
     {
-        ByName = MergeHelper.CloneMergeDictionaries(priority?.ByName, fallback?.ByName);
+        Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
     public MagicMenuDesignSettings CloneUnder(MagicMenuDesignSettings? priority, bool forceCopy = false) =>
@@ -26,7 +26,7 @@ public record MagicMenuDesignSettings : SettingsWithInherit, ICanClone<MagicMenu
     /// Custom, named settings for classes, values etc. as you need them in your code.
     /// For things such as `ul` or `li` or `a` tags.
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuDesignSettingsByName>))]
-    public Dictionary<string, MagicMenuDesignSettingsByName> ByName { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuDesignSettingsPart>))]
+    public Dictionary<string, MagicMenuDesignSettingsPart> Parts { get; init; } = new();
 
 }

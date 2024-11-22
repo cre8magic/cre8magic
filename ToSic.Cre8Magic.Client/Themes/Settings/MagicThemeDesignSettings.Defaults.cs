@@ -43,7 +43,7 @@ public partial record MagicThemeDesignSettings
             PageIsHome = new($"{PagePrefixDefault}-is-home"),
             PaneIsEmpty = new($"{PanePrefixDefault}-is-empty"),
             MagicContextTagId = BodyDivId,
-            ByName = new()
+            Parts = new()
             {
                 // TODO: remove this, as we've replaced it in the language settings
                 { "languages-li", new() { IsActive = new($"active {SettingFromDefaults}") } },
@@ -65,7 +65,7 @@ public partial record MagicThemeDesignSettings
             PageIsHome = new(),
             PaneIsEmpty = new(),
             MagicContextTagId = BodyDivId,
-            ByName = new()
+            Parts = new()
             {
                 { "container", new() { Id = ContainerIdDefault } },
             }
