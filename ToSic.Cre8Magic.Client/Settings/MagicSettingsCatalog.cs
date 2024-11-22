@@ -79,8 +79,8 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// <summary>
     /// Design definitions of the menu
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<Dictionary<string, MagicMenuDesignSettings>>))]
-    public Dictionary<string, Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<Dictionary<string, MagicMenuDesignSettingsByName>>))]
+    public Dictionary<string, Dictionary<string, MagicMenuDesignSettingsByName>> MenuDesigns { get; init; } = new(InvariantCultureIgnoreCase);
 
     internal static MagicSettingsCatalog Fallback = new()
     {

@@ -141,7 +141,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
         ((IMagicSettingsService)this).ThemeDesign.FindAndNeutralize(settings.Design ?? settings.Parts.GetPartSettingsNameOrFallback(nameof(settings.Design), settingsName), settingsName);
 
-    public SettingsReader<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns =>
+    public SettingsReader<Dictionary<string, MagicMenuDesignSettingsByName>> MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);
-    private SettingsReader<Dictionary<string, MagicMenuDesignSettings>>? _menuDesigns;
+    private SettingsReader<Dictionary<string, MagicMenuDesignSettingsByName>>? _menuDesigns;
 }

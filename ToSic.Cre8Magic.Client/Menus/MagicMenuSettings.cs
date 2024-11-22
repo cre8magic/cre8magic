@@ -57,7 +57,7 @@ public record MagicMenuSettings: MagicMenuSettingsData, ISettingsForCodeUse //, 
     [JsonIgnore]    // Not meant for JSON at all...
     public IMagicPageDesigner? Designer { get; init; }
 
-    public Dictionary<string, MagicMenuDesignSettings>? DesignSettings { get; init; }
+    public Dictionary<string, MagicMenuDesignSettingsByName>? DesignSettings { get; init; }
 
     /// <summary>
     /// List of pages to respect when creating the breadcrumb.

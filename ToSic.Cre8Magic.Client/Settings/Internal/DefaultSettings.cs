@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 
 internal class DefaultSettings
 {
-    internal static Defaults<Dictionary<string, MagicMenuDesignSettings>> Defaults = new()
+    internal static Defaults<Dictionary<string, MagicMenuDesignSettingsByName>> Defaults = new()
     {
         // The default/fallback design configuration for menus.
         // Normally this would be set in the json file or the theme settings, so this wouldn't be used. 

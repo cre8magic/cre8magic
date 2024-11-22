@@ -67,7 +67,7 @@ internal class SettingsReader<TSettingsData>(
                 break;
 
             // Check if it's a dictionary containing @inherit specs
-            case IDictionary<string, MagicMenuDesignSettings> named when named.TryGetValue(InheritsNameInJson, out var value):
+            case IDictionary<string, MagicMenuDesignSettingsByName> named when named.TryGetValue(InheritsNameInJson, out var value):
                 if (value.Value != null)
                     priority = FindSettingsAndTryMerge(priority, value.Value);
                 else

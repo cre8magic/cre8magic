@@ -38,7 +38,7 @@ public interface IMagicSettingsService
 
     internal SettingsReader<MagicLanguageSettingsData> Languages { get; }
 
-    internal SettingsReader<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; }
+    internal SettingsReader<Dictionary<string, MagicMenuDesignSettingsByName>> MenuDesigns { get; }
 
     internal SettingsReader<MagicMenuSettingsData> MenuSettings { get; }
     internal List<DataWithJournal<MagicSettingsCatalog>> AllCatalogs { get; }

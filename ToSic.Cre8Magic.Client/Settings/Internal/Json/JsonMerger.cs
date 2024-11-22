@@ -19,7 +19,7 @@ internal class JsonMerger
             PairOnOffJsonConverter.GetNew(logger),
             DesignSettingsJsonConverter<MagicDesignSettings>.GetNew(logger),
             // DesignSettingsJsonConverter<DesignSettingActive>.GetNew(),
-            DesignSettingsJsonConverter<MagicMenuDesignSettings>.GetNew(logger),
+            DesignSettingsJsonConverter<MagicMenuDesignSettingsByName>.GetNew(logger),
             // DesignSettingsJsonConverter<MagicContainerDesignSettingsItem>.GetNew(),
             ThemePartJsonConverter.GetNew(logger),
         },
