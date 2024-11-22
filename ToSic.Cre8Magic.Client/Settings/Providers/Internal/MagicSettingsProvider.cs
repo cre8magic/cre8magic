@@ -16,7 +16,7 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
     /// </summary>
     /// <param name="packageSettings"></param>
     /// <returns></returns>
-    public SettingsSourceInfo? Get(MagicPackageSettings packageSettings)
+    public SettingsSourceInfo? Catalog(MagicPackageSettings packageSettings)
     {
         if (AllSources.All(source => source?.HasValues != true))
             return null;

@@ -2,7 +2,7 @@
 
 public interface IMagicSettingsSource
 {
-    SettingsSourceInfo? Get(MagicPackageSettings packageSettings);
+    SettingsSourceInfo? Catalog(MagicPackageSettings packageSettings);
 
     /// <summary>
     /// Priority, high number means higher priority

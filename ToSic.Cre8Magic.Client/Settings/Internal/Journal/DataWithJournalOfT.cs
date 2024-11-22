@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal;
+﻿namespace ToSic.Cre8magic.Settings.Internal.Journal;
 
 internal record DataWithJournal<T>(T Data, List<string> Journal);
 

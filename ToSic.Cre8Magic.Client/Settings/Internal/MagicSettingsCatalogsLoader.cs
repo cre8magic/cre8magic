@@ -21,7 +21,7 @@ public class MagicSettingsCatalogsLoader(IEnumerable<IMagicSettingsSource> sourc
         // -100 Package Defaults
         var sources2 = sources
             .OrderByDescending(s => s.Priority)
-            .Select(s => s.Get(packageSettings))
+            .Select(s => s.Catalog(packageSettings))
             .Where(c => c?.Catalog != null)
             .ToList();
 

@@ -9,7 +9,7 @@ public class MagicSettingsSourcePackageDefaults : IMagicSettingsSource
 {
     public int Priority => -100;
 
-    public SettingsSourceInfo Get(MagicPackageSettings packageSettings) =>
+    public SettingsSourceInfo Catalog(MagicPackageSettings packageSettings) =>
         packageSettings == null
             ? throw new ArgumentNullException(nameof(packageSettings))
             : new(packageSettings.Defaults, []);

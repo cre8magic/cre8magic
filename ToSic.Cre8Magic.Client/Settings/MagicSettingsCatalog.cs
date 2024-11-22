@@ -39,14 +39,18 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// </summary>
     public string Source { get; set; } = SourceDefault;
 
+    /// <summary>
+    /// List of Themes and mainly what parts they want to explicitly configure (e.g. determine Show, and there these parts find their settings)
+    /// </summary>
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeSettings>))]
+    public Dictionary<string, MagicThemeSettings> Themes { get; init; } = new(InvariantCultureIgnoreCase);
+
+
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicAnalyticsSettings>))]
     public Dictionary<string, MagicAnalyticsSettings> Analytics { get; init; } = new(InvariantCultureIgnoreCase);
 
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbSettings>))]
     public Dictionary<string, MagicBreadcrumbSettings> Breadcrumbs { get; init; } = new(InvariantCultureIgnoreCase);
-
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeSettings>))]
-    public Dictionary<string, MagicThemeSettings> Themes { get; init; } = new(InvariantCultureIgnoreCase);
 
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeDesignSettings>))]
     public Dictionary<string, MagicThemeDesignSettings> ThemeDesigns { get; init; } = new(InvariantCultureIgnoreCase);

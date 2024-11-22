@@ -1,5 +1,6 @@
 ﻿using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Internal.Docs;
+using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.MagicConstants;
 using static ToSic.Cre8magic.Settings.SettingsWithInherit;

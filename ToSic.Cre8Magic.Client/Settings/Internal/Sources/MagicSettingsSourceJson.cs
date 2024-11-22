@@ -12,7 +12,7 @@ public class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoade
 {
     public int Priority => 100;
 
-    public SettingsSourceInfo Get(MagicPackageSettings packageSettings)
+    public SettingsSourceInfo Catalog(MagicPackageSettings packageSettings)
     {
         if (packageSettings == null)
             throw new ArgumentNullException(nameof(packageSettings));
