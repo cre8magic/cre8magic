@@ -7,17 +7,17 @@ namespace ToSic.Cre8magic.Designers;
 
 public abstract class MagicDesignerBase: IMagicDesigner
 {
-    protected internal MagicDesignerBase(MagicThemeContextFull context, Dictionary<string, MagicDesignSettings>? designSettings = default)
+    protected internal MagicDesignerBase(MagicThemeContextFull context, Dictionary<string, MagicDesignSettingsPart>? designSettings = default)
     {
         Context = context;
         DesignSettings = designSettings ?? context.ThemeDesignSettings.Parts;
         Tokens = context.PageTokens;
     }
     protected MagicThemeContextFull Context { get; }
-    protected Dictionary<string, MagicDesignSettings> DesignSettings { get; }
+    protected Dictionary<string, MagicDesignSettingsPart> DesignSettings { get; }
 
 
-    protected MagicDesignSettings? GetSettings(string name) =>
+    protected MagicDesignSettingsPart? GetSettings(string name) =>
         DesignSettings.GetValueOrDefault(name);
 
     internal virtual TokenEngine Tokens { get; }

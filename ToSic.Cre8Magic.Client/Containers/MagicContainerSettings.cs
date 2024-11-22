@@ -22,8 +22,8 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     /// <summary>
     /// TODO: PROBABLY CHANGE TO DATA / whatever ?
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettings>))]
-    public Dictionary<string, MagicDesignSettings> Custom { get; init; } = new(StringComparer.InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettingsPart>))]
+    public Dictionary<string, MagicDesignSettingsPart> Custom { get; init; } = new(StringComparer.InvariantCultureIgnoreCase);
 
     private static readonly MagicContainerSettings FbAndF = new()
     {

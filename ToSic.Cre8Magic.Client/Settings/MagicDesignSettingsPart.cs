@@ -7,11 +7,11 @@ namespace ToSic.Cre8magic.Settings;
 ///
 /// This is usually the base class for something that can also have more information.
 /// </summary>
-public record MagicDesignSettings: ICanClone<MagicDesignSettings>
+public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
 {
-    public MagicDesignSettings() { }
+    public MagicDesignSettingsPart() { }
 
-    public MagicDesignSettings(MagicDesignSettings? priority, MagicDesignSettings? fallback = default)
+    public MagicDesignSettingsPart(MagicDesignSettingsPart? priority, MagicDesignSettingsPart? fallback = default)
     {
         Classes = priority?.Classes ?? fallback?.Classes;
         Value = priority?.Value ?? fallback?.Value;
@@ -21,7 +21,7 @@ public record MagicDesignSettings: ICanClone<MagicDesignSettings>
         IsAdmin = priority?.IsAdmin ?? fallback?.IsAdmin;
     }
 
-    public MagicDesignSettings CloneUnder(MagicDesignSettings? priority, bool forceCopy = false) =>
+    public MagicDesignSettingsPart CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

@@ -23,7 +23,7 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
     private Log Log { get; }
 
     private MagicBreadcrumbSettings BreadcrumbSettings { get; }
-    internal List<Dictionary<string, MagicBreadcrumbDesignSettings>> DesignSettingsList { get; }
+    internal List<Dictionary<string, MagicBreadcrumbDesignSettingsPart>> DesignSettingsList { get; }
 
 
     public string Classes(string tag, IMagicPage item)
@@ -44,13 +44,13 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
         return string.Join(" ", configsForKey);
     }
 
-    private List<MagicBreadcrumbDesignSettings> ConfigsForTag(string tag) =>
+    private List<MagicBreadcrumbDesignSettingsPart> ConfigsForTag(string tag) =>
         DesignSettingsList
             .Select(c => c.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 
-    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbDesignSettings> configs)
+    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbDesignSettingsPart> configs)
     {
         var classes = new List<string?>();
 

@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.Settings.Internal.Json;
 /// <summary>
 /// Important: NEVER use this on a 
 /// </summary>
-public class DesignSettingsJsonConverter<T> : JsonConverterBase<T> where T : MagicDesignSettings, new()
+public class DesignSettingsJsonConverter<T> : JsonConverterBase<T> where T : MagicDesignSettingsPart, new()
 {
     /// <summary>
     /// Private constructor to prevent use in attributes.

@@ -40,7 +40,7 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
     /// <summary>
     /// Custom values / classes as you need them in your code
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettings>))]
-    public Dictionary<string, MagicDesignSettings> Parts { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettingsPart>))]
+    public Dictionary<string, MagicDesignSettingsPart> Parts { get; init; } = new();
 
 }

@@ -26,7 +26,7 @@ internal class MagicContainerDesigner(MagicThemeContextFull context, Module modu
     /// </summary>
     /// <param name="styles"></param>
     /// <returns></returns>
-    private string CombineWithModuleClasses(MagicDesignSettings styles)
+    private string CombineWithModuleClasses(MagicDesignSettingsPart styles)
     {
         var value =  string.Join(" ", new[]
         {

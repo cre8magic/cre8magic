@@ -28,7 +28,7 @@ public class MagicBreadcrumbDesignSettingsCreateClone
     [Fact]
     public void CloneWithHalf() => VerifySameAsMix(Original().CloneUnder(Half()));
 
-    private static MagicBreadcrumbDesignSettings Original() =>
+    private static MagicBreadcrumbDesignSettingsPart Original() =>
         new()
         {
             HasChildren = new()
@@ -42,7 +42,7 @@ public class MagicBreadcrumbDesignSettingsCreateClone
                 Off = "off"
             }
         };
-    private static MagicBreadcrumbDesignSettings Half() =>
+    private static MagicBreadcrumbDesignSettingsPart Half() =>
         new()
         {
             HasChildren = new()
@@ -52,13 +52,13 @@ public class MagicBreadcrumbDesignSettingsCreateClone
             }
         };
 
-    private static void VerifyIsEmpty(MagicBreadcrumbDesignSettings x)
+    private static void VerifyIsEmpty(MagicBreadcrumbDesignSettingsPart x)
     {
         Assert.Null(x.HasChildren);
         Assert.Null(x.IsDisabled);
     }
 
-    private static void VerifySameAsOriginal(MagicBreadcrumbDesignSettings y)
+    private static void VerifySameAsOriginal(MagicBreadcrumbDesignSettingsPart y)
     {
         Assert.Equal("on", y.HasChildren.On);
         Assert.Equal("off", y.HasChildren.Off);
@@ -66,14 +66,14 @@ public class MagicBreadcrumbDesignSettingsCreateClone
         Assert.Equal("off", y.IsDisabled.Off);
     }
 
-    private static void VerifySameAsHalf(MagicBreadcrumbDesignSettings y)
+    private static void VerifySameAsHalf(MagicBreadcrumbDesignSettingsPart y)
     {
         Assert.Equal("half-on", y.HasChildren.On);
         Assert.Equal("half-off", y.HasChildren.Off);
         Assert.Null(y.IsDisabled);
     }
 
-    private static void VerifySameAsMix(MagicBreadcrumbDesignSettings y)
+    private static void VerifySameAsMix(MagicBreadcrumbDesignSettingsPart y)
     {
         Assert.Equal("half-on", y.HasChildren.On);
         Assert.Equal("half-off", y.HasChildren.Off);
