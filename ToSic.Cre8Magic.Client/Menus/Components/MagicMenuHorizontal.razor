@@ -1,4 +1,4 @@
-﻿@inherits MagicMenuBase;
+﻿@inherits ComponentBase;
 @*
 File Purpose:       Show a standard horizontal menu - usually on the top of the page
 Recommendations:    
@@ -11,6 +11,11 @@ Nice to know:
     - The configurations are smart, so they change the class depending on active etc.
     - The `a` tag with the label is written in a way so there are no additional spaces
 *@
+@code
+{
+    [Parameter, EditorRequired]
+    public required IMagicMenuKit MenuKit { get; set; }
+}
 @if (MenuKit.Pages.Any())
 {
     <ul class='@MenuKit.Pages.Classes("ul")'>
@@ -18,7 +23,7 @@ Nice to know:
         {
             <li class='@menuPage.Classes("li")'>
                 <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'
-                   data-bs-toggle='@(menuPage.HasChildren && menuPage.IsClickable == false ? "dropdown" : "")'
+                   data-bs-toggle='@(menuPage is { HasChildren: true, IsClickable: false } ? "dropdown" : "")'
                    >@menuPage.Name</a>
 
                 @if (menuPage.HasChildren)

@@ -1,9 +1,14 @@
-﻿@inherits MagicMenuBase;
+﻿@inherits ComponentBase;
 @*
 File Purpose:       Show a vertical menu, usually used for mobile or sidebar
 Recommendations:    See `MenuDefault.razor`
 Nice to know:       See `MenuDefault.razor`
 *@
+@code
+{
+    [Parameter, EditorRequired]
+    public required IMagicMenuKit MenuKit { get; set; }
+}
 @if (MenuKit.Pages.Any())
 {
     <ul class='@MenuKit.Pages.Classes("ul")'>
