@@ -1,19 +1,15 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.UI;
 using ToSic.Cre8magic.Components.Internal;
-using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Breadcrumbs;
+namespace ToSic.Cre8magic.Breadcrumbs.Components;
 
 /// <summary>
 /// Recommended base class for all breadcrumb components.
 /// </summary>
 public abstract class MagicBreadcrumbBase: ComponentBase
 {
-    [Inject]
-    public IMagicPageService? PageServiceWip { get; set; }
-
     [Inject]
     public required IMagicHat MagicHat { get; set; }
 
@@ -28,20 +24,15 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     [Parameter]
     public MagicBreadcrumbSettings? Settings { get; set; }
 
-
     /// <summary>
-    /// WIP experimental pattern. Probably not the best/final implementation yet...
+    /// TODO: WIP experimental pattern. Probably not the best/final implementation yet...
     /// </summary>
     /// <param name="settings"></param>
     /// <returns></returns>
     protected virtual MagicBreadcrumbSettings Customize(MagicBreadcrumbSettings settings)
         => settings;
 
-    // TODO: move to kit, or consider removing
     // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
-    // The home page - never changes during runtime, so we can cache it
-    protected IMagicPage HomePage => _homePage ??= PageServiceWip!.GetHome(PageState);
-    private IMagicPage? _homePage;
 
     /// <summary>
     /// The Breadcrumb for the current page.

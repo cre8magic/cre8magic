@@ -60,4 +60,10 @@ todo: diff than Oqtane
 
 ## ...
 
-## Autocachnig in the service...
+## Auto-Caching in the service...
+
+
+## Plural Namespaces
+
+cre8magic uses plural namespaces for all services and objects.
+For example, `Breadcrumbs` or `Languages`
