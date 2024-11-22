@@ -120,11 +120,11 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         _getMenuSettings ??= new(this, MagicMenuSettingsData.Defaults, catalog => catalog.Menus);
     private SettingsReader<MagicMenuSettingsData>? _getMenuSettings;
 
-    public SettingsReader<MagicLanguageSettings> Languages => _languages ??= new(this,
-            MagicLanguageSettings.Defaults,
+    public SettingsReader<MagicLanguageSettingsData> Languages => _languages ??= new(this,
+            MagicLanguageSettingsData.Defaults,
             catalog => catalog.Languages
         );
-    private SettingsReader<MagicLanguageSettings>? _languages;
+    private SettingsReader<MagicLanguageSettingsData>? _languages;
 
     public SettingsReader<MagicLanguageDesignSettings> LanguageDesigns =>
         _languageDesigns ??= new(this, MagicLanguageDesignSettings.DesignDefaults, catalog => catalog.LanguageDesigns);
