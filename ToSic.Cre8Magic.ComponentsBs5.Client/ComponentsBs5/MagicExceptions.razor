@@ -1,0 +1,46 @@
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.ComponentsBs5.Internal
+@using ToSic.Cre8magic.Internal
+@using ToSic.Cre8magic.Settings
+@inject IMagicSettingsService SettingsService
+@inject IMagicHat MagicHat
+@code {
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
+@* Check if we have any exceptions to report *@
+@{
+    var exceptions = SettingsService.GetExceptions();
+}
+@if (exceptions.Any())
+{
+    var debug = SettingsService.DebugState(PageState);
+
+    <div class="alert alert-danger" role="alert">
+        @if (debug?.Show == true || MagicHat.User(PageState).IsAdmin)
+        {
+            <strong>The Cre8magic Design System reports some problems (visible to Admins only)</strong>
+            <ul>
+                @foreach (var ex in exceptions)
+                {
+                    <li>@ex.Message</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <strong>An exception has occurred</strong>
+            <div>
+                Please <a href="/login">login</a> to see details
+                or enable debug so exceptions are visible for anonymous users.
+            </div>
+        }
+    </div>
+    @* Add some styles to make sure the login would still work even if everything else fails *@
+    <style>
+        .modal {
+            display: block;
+        }
+    </style>
+}

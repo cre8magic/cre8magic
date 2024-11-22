@@ -1,0 +1,22 @@
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.ComponentsBs5.Internal
+@inject IMagicHat MagicHat
+@*
+File Purpose:       Add the Oqtane Control Panel to the Page
+Recommendations:    -
+Nice to know:
+    We had to add it to the page ourselves, 
+    because the default implementation adds a bunch of buttons we don't want.
+    -> See in the _oqtane-admin-buttons.scss file
+*@
+@code {
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
+@if (MagicHat.User(PageState).IsAdmin)
+{
+    <div id="oqtane-control-panel">
+        <Oqtane.Themes.Controls.ControlPanel ShowLanguageSwitcher="false"></Oqtane.Themes.Controls.ControlPanel>
+    </div>
+}

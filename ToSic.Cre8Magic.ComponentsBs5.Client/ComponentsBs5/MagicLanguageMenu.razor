@@ -1,0 +1,22 @@
+@using ToSic.Cre8magic.ComponentsBs5.Debug
+@inherits MagicLanguageMenuBase
+@*
+File Purpose:       Show the Language Navigation / Selector
+Recommendations:    -
+Nice to know:       
+    - The languages available are handed in from the Header file
+      ...if the list is empty, it will use the site definition
+      ...otherwise it will use the values specified for order/label of languages
+*@
+@if (LanguageKit is { Show: true })
+{
+    <ul class='@(LanguageKit.Designer.Classes("ul") ?? "theme-languages")'>
+        @foreach (var lang in LanguageKit.Languages)
+        {
+            <li class='@LanguageKit.Designer.Classes("li", lang)'>
+                <a href="#" @onclick="@(async _ => await LanguageKit.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
+            </li>
+        }
+    </ul>
+    <MagicLanguageDebug LanguageKit="LanguageKit"></MagicLanguageDebug>
+}

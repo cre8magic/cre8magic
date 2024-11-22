@@ -1,0 +1,51 @@
+﻿@using ToSic.Cre8magic.ComponentsBs5.Debug
+@inherits MagicMenuRoot
+@*
+File Purpose:       Add a menu based on the parameter 'ConfigName'
+Recommendations:    -
+Nice to know:
+    - Inherits from a base class that prepares everything
+    - The <ThemePackageSettings> in the @inherits tells the system what will provide the settings
+    - Prepares the menu structure and then renders using one of various menu controls
+    - Can be configured directly on the tag, or can load a config from JSON
+      The exact properties are defined in the base class
+    - If necessary, you can create another type of menu and just add it to the list below
+    - WIP: Later it will also be able to load a config from the page/theme settings
+*@
+
+@* Special Debugging *@
+@if (true)
+{
+    var debug = MenuKit?.Settings?.Debug;
+    var pageList = MenuKit.Pages;
+    @* var settings = ((MagicMenuSettings?)Menu?.SetHelper.Settings); *@
+    <div class="alert alert-info">
+        @* ConfigName: @(Menu?.Settings.ConfigName) <br/> *@
+        HasChildren: @(pageList?.Any()) - @pageList?.Count() <br />
+        Debug: @debug?.Allowed / @debug?.Anonymous / @debug?.Admin <br/>
+        @* This: @Menu?.Name (@Menu?.Link) <br/> *@
+        Direction: @(IsVertical ? "Vertical" : "Horizontal") <br/>
+        Ul-Classes: @pageList?.Classes("ul") <br />
+        Li-Classes: @pageList?.Classes("li") <br />
+        A-Classes: @pageList?.Classes("a") <br />
+    </div>
+}
+
+@* Show the desired menu - in this setup we have 2 options. If you need more, change the conditions to check for Menu?.Settings.Template *@
+@if (IsVertical)
+{
+    <MagicMenuVertical MenuKit="@MenuKit"></MagicMenuVertical>
+}
+else
+{
+    <MagicMenuHorizontal MenuKit="@MenuKit"></MagicMenuHorizontal>
+}
+@if (MenuKit?.Pages?.Any() == false)
+{
+    @* Debug Information in cases where the menu doesn't even show *@
+    <MagicMenuDebug MenuKit="@MenuKit" Standalone="true"></MagicMenuDebug>
+}
+@if (true)
+{
+    <div>End-Of-Menu</div>
+}

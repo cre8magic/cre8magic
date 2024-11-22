@@ -1,0 +1,45 @@
+@using Oqtane.UI
+@inherits Oqtane.Themes.ContainerBase
+@*
+File Purpose:       Container for normal modules.
+Recommendations:    -
+Nice to know: Normal Container
+    1. Will not show a title or anything, so the output is spotless
+    2. Adds a special class to show that the module is not yet published
+    3. Has a background-container with another div which is the container which allows for cool full-width background CSS
+    4. When showing admin-modules, will automatically use the admin container
+
+Nice to Know: System Container
+    1. Always shows a title + the X-close button
+    2. Should _not_ be called "AdminContainer" because it conflicts with Oqtane names
+    3. Calls `CloseModal` of the base class
+*@
+@if (!ContainerKit.IsForAdminModule)
+{
+    <div id="@ContainerKit.Designer.Id("container")" class='@ContainerKit.Designer.Classes("container")'>
+        <div class="container">
+            <Oqtane.Themes.Controls.ModuleActions/>
+            <ModuleInstance/>
+        </div>
+    </div>
+}
+else
+{
+    <div id="@ContainerKit.Designer.Id("container")" class='@ContainerKit.Designer.Classes("container")'>
+        <div class="app-admin-modal">
+            <div class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><Oqtane.Themes.Controls.ModuleTitle /></h5>
+                            <a href="@CloseUrl" class="btn-close" aria-label="Close"></a>
+                        </div>
+                        <div class="modal-body">
+                            <ModuleInstance />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

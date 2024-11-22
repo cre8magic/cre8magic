@@ -37,6 +37,12 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Package\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
@@ -49,12 +55,6 @@
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" PrivateAssets="all" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="Package\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Pages\Internal\Breadcrumb\" />

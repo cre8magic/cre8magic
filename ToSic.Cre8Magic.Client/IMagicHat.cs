@@ -5,6 +5,7 @@ using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Themes.Internal;
+using ToSic.Cre8magic.Users;
 
 namespace ToSic.Cre8magic;
 
@@ -24,11 +25,13 @@ public interface IMagicHat
 
 
 
-    internal MagicContainerDesigner ContainerDesigner(PageState pageState, Module module);
-    internal MagicThemeDesigner ThemeDesigner(PageState pageState);
+    public MagicContainerDesigner ContainerDesigner(PageState pageState, Module module);
+    public MagicThemeDesigner ThemeDesigner(PageState pageState);
 
     //internal MagicLanguageDesigner LanguageDesigner(PageState pageState);
 
     #endregion
 
+    MagicUser User(PageState pageState);
+    IMagicContainerKit ContainerKit(PageState pageState, Module module);
 }

@@ -1,0 +1,36 @@
+﻿@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.ComponentsBs5.Debug
+@inherits ComponentBase;
+@*
+File Purpose:       Show a vertical menu, usually used for mobile or sidebar
+Recommendations:    See `MenuDefault.razor`
+Nice to know:       See `MenuDefault.razor`
+*@
+@code
+{
+    [Parameter, EditorRequired]
+    public required IMagicMenuKit MenuKit { get; set; }
+}
+@if (MenuKit.Pages.Any())
+{
+    <ul class='@MenuKit.Pages.Classes("ul")'>
+        @foreach(var menuPage in MenuKit.Pages)
+        {
+            <li class='@menuPage.Classes("li")'>
+                <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'
+                   >@menuPage.Name</a>
+
+                @if (menuPage.HasChildren)
+                {
+                    <span class='@menuPage.Classes("span")'
+                          data-bs-toggle='collapse'
+                          data-bs-target='@menuPage.Value("data-bs-target")'
+                          aria-expanded='@menuPage.IsInBreadcrumb'></span>
+                    <MagicMenuVertical MenuKit="@MenuKit.Kit(menuPage)"></MagicMenuVertical>
+                }
+            </li>
+        }
+        @* Debug Information as things can get complex *@
+        <MagicMenuDebug MenuKit="@MenuKit"></MagicMenuDebug>
+    </ul>
+}

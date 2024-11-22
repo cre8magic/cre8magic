@@ -7,12 +7,12 @@
     <Authors>2sic internet solutions GmbH, Switzerland</Authors>
     <Company>2sic internet solutions GmbH, Switzerland</Company>
     <Description>Theme Library for professional Oqtane Themes</Description>
-    <Product>ToSic.Cre8magic.ComponentsBs5.Oqtane</Product>
+    <Product>ToSic.Cre8magic.ComponentsBs5</Product>
     <Copyright>Copyright MIT © 2sic 2024</Copyright>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>$(MSBuildProjectName).Oqtane</AssemblyName>
-    <PackageId>ToSic.Cre8magic.ComponentsBs5.Oqtane</PackageId>
+    <PackageId>ToSic.Cre8magic.ComponentsBs5</PackageId>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>cre8magic for Oqtane – Professional Theme Design</Title>
     <PackageProjectUrl>https://2sic.github.io/cre8magic/</PackageProjectUrl>
@@ -20,18 +20,29 @@
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RootNamespace>$(MSBuildProjectName.Replace(".Client", "").Replace(" ", "_"))</RootNamespace>
+    <RootNamespace>ToSic.Cre8magic</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Models\**" />
+    <Compile Remove="Pages\**" />
     <Content Remove="Models\**" />
+    <Content Remove="Pages\**" />
     <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Pages\**" />
     <None Remove="Models\**" />
+    <None Remove="Pages\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Package\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
@@ -50,20 +61,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Package\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Internal\Breadcrumb\" />
-    <Folder Include="Pages\Internal\Menu\" />
-    <Folder Include="Settings\Internal\Docs\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <!-- Temporary because Oqtane.Shared 6.0 in NuGet is broken. As soon as Oqtane 6.0.1 is out, we should remove this -->
     <ProjectReference Include="..\..\oqtane.framework\Oqtane.Shared\Oqtane.Shared.csproj" />
+    <ProjectReference Include="..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
   </ItemGroup>
 
 </Project>

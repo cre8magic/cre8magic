@@ -22,7 +22,7 @@ public interface IMagicLanguageKit
 
     MagicLanguageDesigner Designer { get; init; }
 
-    internal MagicLanguageSettings Settings { get; init; }
+    MagicLanguageSettings Settings { get; init; }
 
     //internal MagicThemeDesignSettings ThemeDesignSettings { get; init; }
 

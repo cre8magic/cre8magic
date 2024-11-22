@@ -31,7 +31,8 @@ public interface IMagicSettingsService
 
     internal MagicThemeContextFull GetThemeContextFull(PageState pageState);
 
-    internal MagicDebugSettings Debug { get; }
+    // TODO: MAKE INTERNAL again - temporarily public soi
+    public MagicDebugSettings Debug { get; }
 
     internal SettingsReader<MagicAnalyticsSettings> Analytics { get; }
     internal SettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
