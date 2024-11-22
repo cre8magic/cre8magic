@@ -2,14 +2,14 @@
 
 namespace ToSic.Cre8magic.Languages;
 
-public record MagicLanguageSettingsPubWip: MagicLanguageSettingsData, ISettingsForCodeUse
+public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCodeUse
 {
-    public MagicLanguageSettingsPubWip() { }
+    public MagicLanguageSettings() { }
 
     /// <summary>
     /// Constructor to re-hydrate from object of base class.
     /// </summary>
-    internal MagicLanguageSettingsPubWip(MagicLanguageSettingsData ancestor, MagicLanguageSettingsPubWip? original) : base(ancestor)
+    internal MagicLanguageSettings(MagicLanguageSettingsData ancestor, MagicLanguageSettings? original) : base(ancestor)
     {
         if (original == null)
             return;

@@ -15,7 +15,7 @@ public interface IMagicLanguageService
     /// <param name="pageState">The Oqtane PageState</param>
     /// <param name="settings">Settings to use - or if null, just use all the defaults</param>
     /// <returns></returns>
-    Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettingsPubWip? settings = default);
+    Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = default);
 
     Task SetCultureAsync(string culture);
 }

@@ -26,11 +26,11 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     private const string DefaultPartName = "Languages";
 
     /// <inheritdoc/>
-    public async Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettingsPubWip? settings = default) =>
+    public async Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = default) =>
         await _languageStates.GetAsync(pageState, async () => await CreateState(pageState, settings));
     private readonly GetKeepByPageId<IMagicLanguageKit> _languageStates = new();
     
-    private async Task<IMagicLanguageKit> CreateState(PageState pageState, MagicLanguageSettingsPubWip? settings)
+    private async Task<IMagicLanguageKit> CreateState(PageState pageState, MagicLanguageSettings? settings)
     {
         var (settingsFull, _, themePart, journal) = MergeSettings(pageState, settings);
 
@@ -47,7 +47,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         };
     }
 
-    private Data3WithJournal<MagicLanguageSettingsPubWip, MagicThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicLanguageSettingsPubWip? settings) =>
+    private Data3WithJournal<MagicLanguageSettings, MagicThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicLanguageSettings? settings) =>
         settingsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,
@@ -105,7 +105,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     private readonly Dictionary<int, List<MagicLanguage>> _languages = new();
 
 
-    public MagicLanguageDesigner LanguageDesigner(PageState pageState, MagicLanguageSettingsPubWip settingsFull)
+    public MagicLanguageDesigner LanguageDesigner(PageState pageState, MagicLanguageSettings settingsFull)
     {
         if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;

@@ -17,7 +17,7 @@ public interface IMagicHat
     IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default);
 
     /// <inheritdoc cref="IMagicLanguageService.LanguageKitAsync"/>
-    Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettingsPubWip? settings = default);
+    Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = default);
 
 
     #region OLD - to be replaced!
