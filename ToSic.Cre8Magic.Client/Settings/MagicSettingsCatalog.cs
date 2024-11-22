@@ -5,7 +5,6 @@ using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Json;
-using ToSic.Cre8magic.Settings.Internal.Logging;
 using ToSic.Cre8magic.Themes.Settings;
 using static System.StringComparer;
 
@@ -82,9 +81,6 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<Dictionary<string, MagicMenuDesignSettings>>))]
     public Dictionary<string, Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; init; } = new(InvariantCultureIgnoreCase);
-
-    [JsonIgnore]
-    internal SettingsLogs Logs { get; init; } = new(null);
 
     internal static MagicSettingsCatalog Fallback = new()
     {

@@ -62,6 +62,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Temporary because Oqtane.Shared 6.0 in NuGet is broken. As soon as Oqtane 6.0.1 is out, we should remove this -->
     <ProjectReference Include="..\..\oqtane.framework\Oqtane.Shared\Oqtane.Shared.csproj" />
   </ItemGroup>
 

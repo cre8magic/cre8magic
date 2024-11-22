@@ -109,11 +109,11 @@ internal class SettingsReader<TSettingsData>(
         // Prioritize the names, and then go through all sources for each name
         var allSourcesAndNames = names
             .Distinct()
-            .SelectMany(name => catalogs.Select(catalog => (catalog, name)))
+            .SelectMany(name => catalogs.Select(catalog => (catalog: catalog.Data, name)))
             .ToList();
 
         foreach (var set in allSourcesAndNames)
-            if (getSourceOnCatalog(set.catalog).TryGetValue(set.name, out var result) && result != null)
+            if (getSourceOnCatalog(set.catalog).TryGetValue(set.name, out var result))
                 return result;
 
         return null;

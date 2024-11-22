@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using Microsoft.Extensions.Logging;
+using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal.Logging;
 using ToSic.Cre8magic.Utils;
 
@@ -9,8 +10,10 @@ public class MagicSettingsCatalogLoaderJson(ILogger<MagicSettingsCatalogLoaderJs
 {
     public ILogger<MagicSettingsCatalogLoaderJson> Logger { get; } = logger;
 
-    public MagicSettingsCatalog LoadJson(MagicPackageSettings themeConfig)
+    public DataWithJournal<MagicSettingsCatalog> LoadJson(MagicPackageSettings themeConfig)
     {
+        List<Exception> exceptions = [];
+
         var jsonFileName = $"{themeConfig.WwwRoot}/{themeConfig.Url}/{themeConfig.SettingsJsonFile}";
         try
         {
@@ -24,27 +27,22 @@ public class MagicSettingsCatalogLoaderJson(ILogger<MagicSettingsCatalogLoaderJs
 
             // Ensure we have version set, ATM exactly 0.01
             if (Math.Abs(result.Version - 0.01) > 0.001)
-                AddException(themeConfig, new ArgumentException($"Json {nameof(result.Version)} must be set to 0.01", nameof(result.Version)));
+                AddException(new ArgumentException($"Json {nameof(result.Version)} must be set to 0.01", nameof(result.Version)));
 
             if (!result.Source.HasValue() || result.Source == MagicSettingsCatalog.SourceDefault)
-                return result with { Source = "JSON", Logs = new(Exceptions) };
+                return new(result with { Source = "JSON" }, new([], exceptions));
 
-            return result with { Logs = new(Exceptions) };
+            return new(result, new([], exceptions));
         }
         catch (Exception ex)
         {
-            AddException(themeConfig, ex);
-            return new()
-            {
-                Logs = new(Exceptions)
-            };
+            AddException( ex);
+            return new(new(), new([], exceptions));
         }
-    }
 
-    public List<Exception> Exceptions { get; } = new();
-
-    private void AddException(MagicPackageSettings themeConfig, Exception ex)
-    {
-        Exceptions.Add(new SettingsException($"Error loading json configuration file '{themeConfig.SettingsJsonFile}'. {ex.Message}"));
+        void AddException(Exception ex)
+        {
+            exceptions.Add(new SettingsException($"Error loading json configuration file '{themeConfig.SettingsJsonFile}'. {ex.Message}"));
+        }
     }
 }

@@ -26,10 +26,7 @@ public class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoade
 
         var catalogFromJson = catalogLoaderJson.LoadJson(packageSettings);
 
-        var bundle = new List<DataWithJournal<MagicSettingsCatalog>>
-        {
-            new(catalogFromJson, new([], catalogLoaderJson.Exceptions))
-        };
+        var bundle = new List<DataWithJournal<MagicSettingsCatalog>> { catalogFromJson };
         _cache[packageSettings] = bundle;
         return bundle;
     }

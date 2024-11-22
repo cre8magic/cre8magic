@@ -3,6 +3,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
@@ -31,7 +32,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     public MagicDebugState DebugState(PageState pageState) => ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
-    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= AllCatalogs.FirstOrDefault(c => c.Debug != null)?.Debug ?? MagicDebugSettings.Defaults.Fallback;
+    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= AllCatalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
 
     private MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
@@ -91,7 +92,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     /// <summary>
     /// actually internal
     /// </summary>
-    public List<MagicSettingsCatalog> AllCatalogs => catalogsLoader.Catalogs(PackageSettings, cache: false);
+    public List<DataWithJournal<MagicSettingsCatalog>> AllCatalogs => catalogsLoader.Catalogs(PackageSettings, cache: false);
 
     SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(
@@ -146,9 +147,4 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     public SettingsReader<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);
     private SettingsReader<Dictionary<string, MagicMenuDesignSettings>>? _menuDesigns;
-
-    /// <summary>
-    /// Exceptions - ATM just forward the loader exceptions, as none are logged here.
-    /// </summary>
-    public List<Exception> Exceptions => catalogsLoader.Exceptions;
 }

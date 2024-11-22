@@ -3,13 +3,14 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 
 namespace ToSic.Cre8magic.Settings;
 
-public interface IMagicSettingsService: IHasSystemMessages
+public interface IMagicSettingsService
 {
     /// <summary>
     /// Set up the settings service with the package settings, layout name and body classes.
@@ -40,7 +41,7 @@ public interface IMagicSettingsService: IHasSystemMessages
     internal SettingsReader<Dictionary<string, MagicMenuDesignSettings>> MenuDesigns { get; }
 
     internal SettingsReader<MagicMenuSettingsData> MenuSettings { get; }
-    internal List<MagicSettingsCatalog> AllCatalogs { get; }
+    internal List<DataWithJournal<MagicSettingsCatalog>> AllCatalogs { get; }
     internal SettingsReader<Dictionary<string, MagicDesignSettings>> LanguageDesigns { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);

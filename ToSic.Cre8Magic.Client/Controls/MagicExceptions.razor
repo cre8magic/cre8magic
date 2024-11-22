@@ -10,7 +10,10 @@
     public required PageState PageState { get; set; }
 }
 @* Check if we have any exceptions to report *@
-@if (SettingsService.Exceptions?.Any() ?? false)
+@{
+    var exceptions = SettingsService.AllCatalogs.SelectMany(c => c.Journal.Exceptions).ToList();
+}
+@if (exceptions.Any())
 {
     var debug = SettingsService.DebugState(PageState);
 
@@ -19,7 +22,7 @@
         {
             <strong>The Cre8magic Design System reports some problems (visible to Admins only)</strong>
             <ul>
-                @foreach (var ex in SettingsService.Exceptions)
+                @foreach (var ex in exceptions)
                 {
                     <li>@ex.Message</li>
                 }

@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Sources;
+﻿using ToSic.Cre8magic.Settings.Internal.Journal;
+using ToSic.Cre8magic.Settings.Internal.Sources;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
@@ -10,11 +11,11 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// </summary>
 public class MagicSettingsCatalogsLoader(IEnumerable<IMagicSettingsSource> sources)
 {
-    public List<MagicSettingsCatalog> Catalogs(MagicPackageSettings packageSettings, bool cache = true) => 
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicPackageSettings packageSettings, bool cache = true) => 
         cache ? _catalogs ??= Load(packageSettings) : Load(packageSettings);
-    private List<MagicSettingsCatalog>? _catalogs;
+    private List<DataWithJournal<MagicSettingsCatalog>>? _catalogs;
 
-    private List<MagicSettingsCatalog> Load(MagicPackageSettings packageSettings)
+    private List<DataWithJournal<MagicSettingsCatalog>> Load(MagicPackageSettings packageSettings)
     {
         // Typical sources
         // 100 Package Settings JSON
@@ -23,18 +24,8 @@ public class MagicSettingsCatalogsLoader(IEnumerable<IMagicSettingsSource> sourc
             .OrderByDescending(s => s.Priority)
             .SelectMany(s => s.Catalog(packageSettings))
             .ToList();
-
-        // Merge & keep all exceptions
-        Exceptions = sources2
-            .SelectMany(c => c.Journal.Exceptions)
-            .ToList();
-
-        return sources2
-            .Select(c => c.Data)
-            .ToList();
-
+;
+        return sources2;
     }
-
-    internal List<Exception> Exceptions { get; set; } = [];
 
 }
