@@ -22,12 +22,12 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
     public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)
     {
         var (newSettings, journal) = NoInheritSettingsWip
-            ? new(settings ?? new(), [])    // todo: magicMenuSettings.Default.Fallback
+            ? new(settings ?? new(), new())    // todo: magicMenuSettings.Default.Fallback
             : MergeSettings(pageState, settings);
 
         // Transfer Logs from Tree creation to the current log
         var logRoot = new LogRoot();
-        logRoot.Add("tree-build", journal);
+        logRoot.Add("tree-build", journal.Messages);
 
         // Page Factory with possibly reduced set of possible pages it can return
         var pageFactory = new MagicPageFactory(pageState, newSettings.Pages, logRoot: logRoot);

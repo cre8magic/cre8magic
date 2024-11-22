@@ -65,7 +65,7 @@ internal static class MagicSettingsGetSettingsPairExtensions
         // Reconstruct the expected settings type to merge in the design use the provided finalize function
         var fullSettings = finalize(mergedSettings, designSettings);
 
-        return new(fullSettings, themeCtx, part, journal.Concat(designJournal).ToList());
+        return new(fullSettings, themeCtx, part, journal.With(designJournal));
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using Oqtane.UI;
+using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 
@@ -10,5 +11,5 @@ public record MagicThemeContextFull(
     MagicThemeSettings ThemeSettings,
     MagicThemeDesignSettings ThemeDesignSettings,
     TokenEngine PageTokens,
-    List<string> Journal
+    Journal Journal
 ): MagicThemeContext(SettingsName, ThemeSettings, Journal);

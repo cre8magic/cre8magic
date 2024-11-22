@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal.Sources;
+﻿using ToSic.Cre8magic.Settings.Internal.Journal;
+
+namespace ToSic.Cre8magic.Settings.Internal.Sources;
 
 /// <summary>
 /// Load the package settings defaults.
@@ -9,8 +11,10 @@ public class MagicSettingsSourcePackageDefaults : IMagicSettingsSource
 {
     public int Priority => -100;
 
-    public SettingsSourceInfo Catalog(MagicPackageSettings packageSettings) =>
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalog(MagicPackageSettings packageSettings) =>
         packageSettings == null
             ? throw new ArgumentNullException(nameof(packageSettings))
-            : new(packageSettings.Defaults, []);
+            : packageSettings.Defaults == null
+                ? []
+                : [new(packageSettings.Defaults, new())];
 }

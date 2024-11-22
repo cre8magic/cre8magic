@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Json;
+﻿using ToSic.Cre8magic.Settings.Internal.Journal;
+using ToSic.Cre8magic.Settings.Internal.Json;
 
 namespace ToSic.Cre8magic.Settings.Internal.Sources;
 
@@ -12,7 +13,7 @@ public class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoade
 {
     public int Priority => 100;
 
-    public SettingsSourceInfo Catalog(MagicPackageSettings packageSettings)
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalog(MagicPackageSettings packageSettings)
     {
         if (packageSettings == null)
             throw new ArgumentNullException(nameof(packageSettings));
@@ -21,11 +22,14 @@ public class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoade
             return cached;
 
         if (string.IsNullOrWhiteSpace(packageSettings.SettingsJsonFile))
-            return new(null, []);
+            return [];
 
         var catalogFromJson = catalogLoaderJson.LoadJson(packageSettings);
 
-        var bundle = new SettingsSourceInfo(catalogFromJson, catalogLoaderJson.Exceptions);
+        var bundle = new List<DataWithJournal<MagicSettingsCatalog>>
+        {
+            new(catalogFromJson, new([], catalogLoaderJson.Exceptions))
+        };
         _cache[packageSettings] = bundle;
         return bundle;
     }
@@ -33,5 +37,5 @@ public class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoade
     /// <summary>
     /// Note: don't make static, otherwise we can't see json-file changes
     /// </summary>
-    private readonly Dictionary<MagicPackageSettings, SettingsSourceInfo> _cache = new();
+    private readonly Dictionary<MagicPackageSettings, List<DataWithJournal<MagicSettingsCatalog>>> _cache = new();
 }

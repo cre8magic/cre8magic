@@ -21,14 +21,17 @@ public class MagicSettingsCatalogsLoader(IEnumerable<IMagicSettingsSource> sourc
         // -100 Package Defaults
         var sources2 = sources
             .OrderByDescending(s => s.Priority)
-            .Select(s => s.Catalog(packageSettings))
-            .Where(c => c?.Catalog != null)
+            .SelectMany(s => s.Catalog(packageSettings))
             .ToList();
 
         // Merge & keep all exceptions
-        Exceptions = sources2.SelectMany(c => c!.Exceptions ?? []).ToList();
+        Exceptions = sources2
+            .SelectMany(c => c.Journal.Exceptions)
+            .ToList();
 
-        return sources2.Select(c => c!.Catalog!).ToList();
+        return sources2
+            .Select(c => c.Data)
+            .ToList();
 
     }
 

@@ -39,7 +39,7 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
 
         // If the better name wants to use the main config name ("=") then use that and exit
         if (betterName == MagicConstants.InheritName)
-            return new(mainName, journal.Concat([$"switched to inherit '{mainName}'"]).ToList());
+            return new(mainName, journal.With($"switched to inherit '{mainName}'"));
 
         if (betterName == null && !string.IsNullOrEmpty(specs.Prefix) && !initialName.StartsWith(specs.Prefix))
             betterName = themeSettingsParts.TryGetValue($"{specs.Prefix}{initialName}", out part)
@@ -49,7 +49,7 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
         if (!betterName.HasValue())
             return new(initialName, journal);
 
-        return new(betterName, journal.Concat([$"updated config to '{initialName}'"]).ToList());
+        return new(betterName, journal.With($"updated config to '{initialName}'"));
 
     }
 
@@ -60,7 +60,7 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
     /// <param name="preferred"></param>
     /// <param name="mainName"></param>
     /// <returns></returns>
-    internal static (string BestName, List<string> Journal) PickBestSettingsName(string? preferred, string mainName)
+    internal static DataWithJournal<string> PickBestSettingsName(string? preferred, string mainName)
     {
         var journal = new List<string> { $"Initial Settings Name: '{preferred}'" };
 
@@ -73,11 +73,11 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
 
         // If we have a value, use that
         if (preferred.HasText())
-            return (preferred, journal);
+            return new(preferred, new(journal, []));
 
         // If we don't have a preferred name, then don't use the main name (could be "Sidebar" or something) but instead use Default
         journal.Add($"Settings Name changed to '{MagicConstants.Default}'");
-        return (MagicConstants.Default, journal);
+        return new(MagicConstants.Default, new(journal, []));
     }
 
 }
