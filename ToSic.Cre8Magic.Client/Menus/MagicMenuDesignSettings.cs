@@ -7,7 +7,7 @@ using ToSic.Cre8magic.Utils;
 namespace ToSic.Cre8magic.Menus;
 
 /// <summary>
-/// Language Design Settings
+/// Menu Design Settings
 /// </summary>
 public record MagicMenuDesignSettings : SettingsWithInherit, ICanClone<MagicMenuDesignSettings>
 {

@@ -66,13 +66,13 @@ internal class SettingsReader<TSettingsData>(
                 priority = FindSettingsAndTryMerge(priority, inheritFrom);
                 break;
 
-            // Check if it's a dictionary containing @inherit specs
-            case IDictionary<string, MagicMenuDesignSettingsByName> named when named.TryGetValue(InheritsNameInJson, out var value):
-                if (value.Value != null)
-                    priority = FindSettingsAndTryMerge(priority, value.Value);
-                else
-                    named.Remove(InheritsNameInJson);
-                break;
+            //// Check if it's a dictionary containing @inherit specs
+            //case IMagicMenuDesignSettings named when named.TryGetValue(InheritsNameInJson, out var value):
+            //    if (value.Value != null)
+            //        priority = FindSettingsAndTryMerge(priority, value.Value);
+            //    else
+            //        named.Remove(InheritsNameInJson);
+            //    break;
         }
 
         // If we don't have a foundation to mix in, we're done

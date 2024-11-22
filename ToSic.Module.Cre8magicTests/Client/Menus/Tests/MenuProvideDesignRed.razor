@@ -16,9 +16,12 @@
     var unknownMenuName = "unknown-menu";
     var redPartName = "red-part";
 
-    var redDesign = new Dictionary<string, MagicMenuDesignSettingsByName>
+    var redDesign = new MagicMenuDesignSettings
     {
-        { "ul", new() { Classes = "alert alert-warning" } },
+        ByName = new()
+        {
+            { "ul", new() { Classes = "alert alert-warning" } },
+        }
     };
 
     SettingsProviders.Reset();

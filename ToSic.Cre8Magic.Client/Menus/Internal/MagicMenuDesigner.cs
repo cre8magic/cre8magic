@@ -23,7 +23,7 @@ public class MagicMenuDesigner : IMagicPageDesigner
     private MagicMenuSettings Settings { get; }
 
     // TODO: unclear why this is a list, it can only contain one...?
-    internal List<Dictionary<string, MagicMenuDesignSettingsByName>> DesignSettingsList { get; }
+    internal List<MagicMenuDesignSettings> DesignSettingsList { get; }
 
     private ILog? Log { get; }
 
@@ -50,7 +50,7 @@ public class MagicMenuDesigner : IMagicPageDesigner
 
     private List<MagicMenuDesignSettingsByName> ConfigsForTag(string tag) =>
         DesignSettingsList
-            .Select(c => c.FindInvariant(tag))
+            .Select(c => c.ByName.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 
