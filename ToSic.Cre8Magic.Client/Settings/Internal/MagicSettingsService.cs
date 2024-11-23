@@ -57,15 +57,15 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     public MagicThemeContext GetThemeContext(PageState pageState)
     {
         var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
-        if (_themeCtxCache.TryGetValue(originalNameForCache, out var cached2))
+        if (_themeCtxCache.TryGetValue(key: originalNameForCache, value: out var cached2))
             return cached2;
 
         // Figure out real config-name, and get the initial layout
-        var (settingsName, nameJournal) = ThemePartNameResolver.PickBestSettingsName(_layoutName, Default);
-        var themeSettings = ThemeSettings.FindAndNeutralize(settingsName);
+        var (settingsName, nameJournal) = ThemePartNameResolver.PickBestSettingsName(preferred: _layoutName, mainName: Default);
+        var themeSettings = ThemeSettings.FindAndNeutralize([settingsName]);
 
-        var ctx = new MagicThemeContext(settingsName, themeSettings, nameJournal);
-        _themeCtxCache[originalNameForCache] = ctx;
+        var ctx = new MagicThemeContext(SettingsName: settingsName, ThemeSettings: themeSettings, Journal: nameJournal);
+        _themeCtxCache[key: originalNameForCache] = ctx;
         return ctx;
     }
     private readonly Dictionary<string, MagicThemeContext> _themeCtxCache = new(StringComparer.InvariantCultureIgnoreCase);
@@ -106,7 +106,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         _getTheme ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);
     private SettingsReader<MagicThemeSettings>? _getTheme;
 
-    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) => ((IMagicSettingsService)this).Analytics.FindAndNeutralize(settingsName, null, skipCache: _bypassCaches);
+    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) =>
+        ((IMagicSettingsService)this).Analytics.FindAndNeutralize([settingsName], skipCache: _bypassCaches);
     
     public TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func)
     {
@@ -139,7 +140,13 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     private SettingsReader<MagicThemeDesignSettings>? _themeDesign;
 
     public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
-        ((IMagicSettingsService)this).ThemeDesign.FindAndNeutralize(settings.Design ?? settings.Parts.GetPartSettingsNameOrFallback(nameof(settings.Design), settingsName), settingsName);
+        ((IMagicSettingsService)this).ThemeDesign.FindAndNeutralize(
+            [
+                settings.Design,
+                settings.Parts.GetPartSettingsNameOrFallback(nameof(settings.Design), settingsName),
+                settingsName
+            ]
+        );
 
     public SettingsReader<MagicMenuDesignSettings> MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);

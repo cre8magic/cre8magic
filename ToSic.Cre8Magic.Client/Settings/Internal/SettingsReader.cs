@@ -18,9 +18,10 @@ internal class SettingsReader<TSettingsData>(
     /// </summary>
     internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsSpecs specs, TSettingsData? priority = null, bool skipCache = false)
     {
-        var (bestName, journal) = specs.Context.NameResolver.FindBestNameAccordingToParts(specs);
+        var (bestPartName, journal) = specs.Context.NameResolver.FindBestNameAccordingToParts(specs);
 
-        var found = FindAndNeutralize(bestName, specs.ThemeName, skipCache);
+        // var settingsName
+        var found = FindAndNeutralize([specs.SettingsName, bestPartName, specs.ThemeName], skipCache: skipCache);
         var part = MergeHelper.TryToMergeOrKeepPriority(priority, found)!;
 
         return new(part, journal);
@@ -30,14 +31,14 @@ internal class SettingsReader<TSettingsData>(
     /// Find a part by name, and merge it with the foundation if applicable.
     /// This is to ensure necessary basics are always present, even if the part doesn't specify them.
     /// </summary>
-    /// <param name="name">The name to look for.</param>
-    /// <param name="defaultName">Name of the current theme settings, which is used for fallback options.</param>
+    /// <param name="settingsName">The name to look for.</param>
+    /// <param name="themeName">Name of the current theme settings, which is used for fallback options.</param>
     /// <param name="skipCache"></param>
     /// <returns></returns>
-    internal TSettingsData FindAndNeutralize(string name, string? defaultName = null, bool skipCache = false)
+    internal TSettingsData FindAndNeutralize(string?[] rawNames, bool skipCache = false)
     {
         // Create array of names to look up, the first one is the main name (specify type so clearly non-null)
-        var names = new[] { name, defaultName, Default }
+        var names = ((string[])[ ..rawNames, Default ])
             .Where(s => s.HasText())
             .Select(s => s!.Trim())
             .Distinct()
