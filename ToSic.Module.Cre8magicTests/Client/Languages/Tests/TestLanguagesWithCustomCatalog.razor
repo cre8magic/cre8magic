@@ -1,0 +1,18 @@
+﻿@using ToSic.Cre8magic
+@using ToSic.Cre8magic.ComponentsBs5
+@inject IMagicHat MagicHat
+<h3>TestLanguagesWithCustomCatalog</h3>
+@code
+{
+    [CascadingParameter] public required PageState PageState { get; set; }
+}
+@{
+    // var languageKit = MagicHat.LanguageKitAsync(PageState);
+}
+
+<h2>Language Menu without config</h2>
+<MagicLanguageMenu></MagicLanguageMenu>
+
+<hr />
+<h2>Language Menu with some standard config</h2>
+<MagicLanguageMenu Settings="new() { HideOthers = true }"></MagicLanguageMenu>

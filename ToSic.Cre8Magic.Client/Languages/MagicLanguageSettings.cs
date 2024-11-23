@@ -1,8 +1,10 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Docs;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Docs;
 
 namespace ToSic.Cre8magic.Languages;
 
-public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCodeUse
+public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCodeUse, IDebugSettings
 {
     public MagicLanguageSettings() { }
 
@@ -30,4 +32,5 @@ public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCode
 
     public MagicLanguageDesignSettings? DesignSettings { get; init; }
 
+    MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
 }

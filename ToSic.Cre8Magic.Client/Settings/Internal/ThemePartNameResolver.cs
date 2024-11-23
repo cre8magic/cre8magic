@@ -64,6 +64,8 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
     {
         var journal = new List<string> { $"Initial Settings Name: '{preferred}'" };
 
+        preferred = preferred?.Trim();
+
         // Check if it's just a "=" symbol, which means "inherit"
         if (preferred == MagicConstants.InheritName)
         {

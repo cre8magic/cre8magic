@@ -1,0 +1,18 @@
+﻿@using ToSic.Cre8magic.ComponentsBs5
+
+<h1>Language Menu - Basic</h1>
+
+<h2>Language Menu without any config - should use <code>default</code> from json</h2>
+<MagicLanguageMenu></MagicLanguageMenu>
+
+<hr />
+<h2>Language Menu with just <code>HideOthers</code> = <code>true</code></h2>
+<MagicLanguageMenu Settings="new() { HideOthers = true }"></MagicLanguageMenu>
+
+<hr />
+<h2>Language Menu with just <code>SettingsName</code> = <code>englishOnly</code> </h2>
+<MagicLanguageMenu Settings='new() { SettingsName = "englishOnly"}'></MagicLanguageMenu>
+
+<hr />
+<h2>Language Menu with just <code>PartName</code> = <code>englishOnly</code> </h2>
+<MagicLanguageMenu Settings='new() { PartName = "englishOnly"}'></MagicLanguageMenu>

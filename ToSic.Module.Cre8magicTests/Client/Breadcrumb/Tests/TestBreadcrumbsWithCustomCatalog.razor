@@ -1,0 +1,33 @@
+﻿@using ToSic.Cre8magic
+@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.Settings.Internal.Debug
+@inject IMagicHat MagicHat
+<h3>TestLanguagesWithCustomCatalog</h3>
+@code
+{
+    /// <inheritdoc cref="Oqtane.UI.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
+@{
+    var catalog = new MagicSettingsCatalog
+    {
+        Breadcrumbs = new()
+        {
+            {
+                "myTest", new()
+                {
+                    WithHome = false,
+                    WithActive = true
+                }
+            }
+        }
+    };
+
+    var bcKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings().UseCatalog(catalog));
+}
+
+<div class="alert alert-info">
+    BCKit.Settings....: bcKit.Settings.UseCatalog - can't work yet, Breadcrumbs not using full settings retrieval yet
+</div>

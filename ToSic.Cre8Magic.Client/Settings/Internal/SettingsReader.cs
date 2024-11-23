@@ -37,8 +37,9 @@ internal class SettingsReader<TSettingsData>(
     internal TSettingsData FindAndNeutralize(string name, string? defaultName = null, bool skipCache = false)
     {
         // Create array of names to look up, the first one is the main name (specify type so clearly non-null)
-        string[] names = new[] { name, defaultName, Default }
+        var names = new[] { name, defaultName, Default }
             .Where(s => s.HasText())
+            .Select(s => s!.Trim())
             .Distinct()
             .ToArray()!;
 
@@ -111,8 +112,11 @@ internal class SettingsReader<TSettingsData>(
             .ToList();
 
         foreach (var set in allSourcesAndNames)
-            if (getSourceOnCatalog(set.catalog).TryGetValue(set.name, out var result))
-                return result;
+        {
+            var settingsDic = getSourceOnCatalog(set.catalog);
+            if (settingsDic.TryGetValue(set.name, out var settings))
+                return settings;
+        }
 
         return null;
     }

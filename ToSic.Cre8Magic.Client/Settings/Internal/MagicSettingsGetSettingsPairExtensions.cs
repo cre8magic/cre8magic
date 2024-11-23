@@ -56,7 +56,7 @@ internal static class MagicSettingsGetSettingsPairExtensions
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type
         var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, menuSettingPrefix);
-        var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings);
+        var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
 
         // Get Design Settings from specified reader using the provided design settings as priority to merge
         findSettings = new(themeCtx, settings, ThemePartSectionEnum.Design, menuSettingPrefix);

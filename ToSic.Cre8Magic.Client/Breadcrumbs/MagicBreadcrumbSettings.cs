@@ -12,7 +12,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>
+public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IDebugSettings
 {
     public MagicBreadcrumbSettings() { }
 
@@ -139,4 +139,5 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
         Foundation = new(),
     };
 
+    MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
 }
