@@ -17,7 +17,7 @@ public record MagicLanguageSettingsData : SettingsWithInherit, IHasDebugSettings
     public MagicLanguageSettingsData(MagicLanguageSettingsData? priority, MagicLanguageSettingsData? fallback = default)
         : base(priority, fallback)
     {
-        HideOthers = priority?.HideOthers ?? fallback?.HideOthers ?? Defaults.Fallback.HideOthers;
+        HideOthers = priority?.HideOthers ?? fallback?.HideOthers; // ?? Defaults.Fallback.HideOthers;
         //LanguagesMin = priority?.LanguagesMin ?? fallback?.LanguagesMin;
         MinLanguagesToShow = PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
         Debug = priority?.Debug ?? fallback?.Debug;
@@ -31,7 +31,8 @@ public record MagicLanguageSettingsData : SettingsWithInherit, IHasDebugSettings
     /// If true, will only show the languages which are explicitly configured.
     /// If false, will first show the configured languages, then the rest. 
     /// </summary>
-    public bool HideOthers { get; init; } = false;
+    public bool? HideOthers { get; init; }
+    internal bool HideOthersSafe => HideOthers == true;
 
     public int MinLanguagesToShow { get; init; }
 

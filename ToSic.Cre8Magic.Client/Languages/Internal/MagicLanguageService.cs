@@ -75,7 +75,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
                 : siteLanguageCodes)
             .ToList();
 
-        if (!settings.HideOthers && primaryOrder.Count < siteLanguages.Count)
+        if (!settings.HideOthersSafe && primaryOrder.Count < siteLanguages.Count)
         {
             var missingLanguages = siteLanguageCodes
                 .Where(slc => !primaryOrder.Any(slc.EqInvariant)).ToList();
