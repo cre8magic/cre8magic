@@ -1,6 +1,4 @@
-﻿@using Microsoft.Extensions.Localization
-@using Oqtane
-@inject IMagicHat MagicHat
+﻿@inject IMagicHat MagicHat
 @*
 File Purpose:       Show the Login/Logout text buttons
 Recommendations:    -
@@ -9,16 +7,10 @@ See also:           LoginIcon.razor has the same feature but with icons
 *@
 @code
 {
-    [Inject]
-    private IStringLocalizer<SharedResources> Localizer { get; set; }
-
     /// <inheritdoc cref="ComponentDocs.PageState"/>
-    [CascadingParameter]
-    public required PageState PageState { get; set; }
+    [CascadingParameter] public required PageState PageState { get; set; }
 }
 @{
-    var loginKit = MagicHat.LoginKit(PageState);
-
-    var linkTitle = Localizer[loginKit.User.IsAuthenticated ? "Logout" : "Login"];
+    var loginKit = MagicHat.UserLoginKit(PageState);
 }
-<a Title="@linkTitle" class="@loginKit.Designer.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@linkTitle</a>
+<a Title="@loginKit.Resources.Title" class="@loginKit.Designer.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@loginKit.Resources.Title</a>

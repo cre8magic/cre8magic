@@ -5,5 +5,5 @@ namespace ToSic.Cre8magic.UserLogins.Internal;
 
 public interface IUserLoginService
 {
-    IMagicUserLoginKit UserKit(PageState pageState);
+    IMagicUserLoginKit UserLoginKit(PageState pageState);
 }

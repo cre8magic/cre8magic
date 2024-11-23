@@ -7,6 +7,8 @@ internal class MagicUserLoginKit : IMagicUserLoginKit
 {
     public required MagicUser User { get; init; }
 
+    public required MagicUserLoginResources Resources { get; init; }
+
     /// <summary>
     /// TODO: not final, probably not correct!
     /// </summary>
