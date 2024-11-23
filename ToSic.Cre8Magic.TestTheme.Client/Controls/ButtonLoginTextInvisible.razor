@@ -17,7 +17,7 @@ See also:           LoginIcon.razor has the same feature but with icons
     public required PageState PageState { get; set; }
 }
 @{
-    var loginKit = MagicHat.UserKit(PageState);
+    var loginKit = MagicHat.LoginKit(PageState);
 
     var linkTitle = Localizer[loginKit.User.IsAuthenticated ? "Logout" : "Login"];
 }

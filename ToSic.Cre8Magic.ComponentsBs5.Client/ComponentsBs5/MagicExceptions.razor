@@ -18,7 +18,7 @@
     var debug = SettingsService.DebugState(PageState);
 
     <div class="alert alert-danger" role="alert">
-        @if (debug?.Show == true || MagicHat.User(PageState).IsAdmin)
+        @if (debug?.Show == true || MagicHat.User(PageState).MayAdminCurrentPage)
         {
             <strong>The Cre8magic Design System reports some problems (visible to Admins only)</strong>
             <ul>

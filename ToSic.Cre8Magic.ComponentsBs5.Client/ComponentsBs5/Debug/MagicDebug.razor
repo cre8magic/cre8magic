@@ -24,7 +24,7 @@
 
     [Parameter] public RenderFragment? Button { get; set; }
 
-    private MagicDebugState Debug => _debug ??= SettingsService.Debug.GetState(Target, MagicHat.User(PageState).IsAdmin);
+    private MagicDebugState Debug => _debug ??= SettingsService.Debug.GetState(Target, MagicHat.User(PageState).MayAdminCurrentPage);
     private MagicDebugState? _debug;
 
     private static JsonSerializerOptions _showOptions = new()

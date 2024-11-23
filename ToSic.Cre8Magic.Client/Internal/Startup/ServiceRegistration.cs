@@ -17,6 +17,7 @@ using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Settings.Providers.Internal;
 using ToSic.Cre8magic.Settings.Providers;
 using ToSic.Cre8magic.Themes.Internal;
+using ToSic.Cre8magic.UserLogins.Internal;
 using ToSic.Cre8magic.Users;
 using ToSic.Cre8magic.Users.Internal;
 using ToSic.Cre8magic.Utils;
@@ -101,6 +102,7 @@ public static class ServiceRegistration
         services.TryAddTransient<IMagicAnalyticsService, MagicAnalyticsService>();
         services.TryAddTransient<IMagicBreadcrumbService, MagicBreadcrumbService>();
         services.TryAddTransient<IMagicMenuService, MagicMenuService>();
+        services.TryAddTransient<IUserLoginService, UserLoginService>();
 
         services.TryAddTransient<IMagicHat, MagicHat>();
 

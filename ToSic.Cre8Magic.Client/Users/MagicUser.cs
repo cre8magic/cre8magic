@@ -17,25 +17,51 @@ public record MagicUser
 
     internal readonly PageState PageState;
 
+    /// <summary>
+    /// The User ID as specified in the DB.
+    /// </summary>
+    /// <returns>The ID or `0` (zero) if user is anonymous.</returns>
     public int Id => OqtaneUser?.UserId ?? 0;
 
-    public string Username => OqtaneUser?.Username;
+    /// <summary>
+    /// The username of the user.
+    /// </summary>
+    /// <returns>The username or null if the user is anonymous.</returns>
+    public string? Username => OqtaneUser?.Username;
 
+    /// <summary>
+    /// The email address of the user.
+    /// </summary>
+    /// <returns>The email address or null if the user is anonymous.</returns>
     public string Email => OqtaneUser?.Email;
 
+    /// <summary>
+    /// The display name of the user.
+    /// </summary>
+    /// <returns>The display name or null if the user is anonymous.</returns>
     public string DisplayName => OqtaneUser?.DisplayName;
 
+    /// <summary>
+    /// Is the user anonymous (not authenticated)?
+    /// </summary>
     public bool IsAnonymous => !IsAuthenticated;
 
+    /// <summary>
+    /// Is the user authenticated (not anonymous)?
+    /// </summary>
     public bool IsAuthenticated => OqtaneUser is { IsAuthenticated: true };
 
-    public bool IsEditor => PageState.UserIsEditor();
+    //private bool IsEditor => PageState.UserIsEditor();
 
-    public bool IsAdmin => PageState.UserIsAdmin();
+    public bool MayAdminCurrentPage => PageState.UserIsAdmin();
 
     public bool IsRegistered => PageState.UserIsRegistered();
 
-    public bool MayEditCurrentPage => IsEditor || (PageState.Page.IsPersonalizable && IsRegistered);
+    public bool MayEditCurrentPage => PageState.UserIsEditor() || (PageState.Page.IsPersonalizable && IsRegistered);
 
+    /// <summary>
+    /// The underlying Oqtane User object.
+    /// </summary>
+    /// <returns>The object or null if the user is not authenticated.</returns>
     public User? OqtaneUser => PageState.User;
 }

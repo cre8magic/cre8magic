@@ -7,6 +7,7 @@ using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Internal;
+using ToSic.Cre8magic.UserLogins.Internal;
 using ToSic.Cre8magic.Users;
 
 namespace ToSic.Cre8magic.Internal;
@@ -17,6 +18,7 @@ internal class MagicHat(
     IMagicSettingsService settingsSvc,
     MagicLazy<IMagicLanguageService> languageSvc,
     MagicLazy<IMagicUserService> userSvc,
+    MagicLazy<IUserLoginService> userKitSvc,
     MagicLazy<IMagicThemeService> themeSvc
 ) : IMagicHat
 {
@@ -37,8 +39,8 @@ internal class MagicHat(
     public MagicUser User(PageState pageState) =>
         userSvc.Value.User(pageState);
 
-    public IMagicUserLoginKit UserKit(PageState pageState) =>
-        userSvc.Value.UserKit(pageState);
+    public IMagicUserLoginKit LoginKit(PageState pageState) =>
+        userKitSvc.Value.UserKit(pageState);
 
     public IMagicContainerKit ContainerKit(PageState pageState, Module module)
     {

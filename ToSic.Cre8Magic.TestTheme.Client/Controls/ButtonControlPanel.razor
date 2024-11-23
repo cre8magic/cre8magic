@@ -16,7 +16,7 @@ Nice to know:       Will use Bootstrap toggle functionality to show the hidden c
 @{
     var user = UserService.User(PageState);
 }
-@if (user.IsAdmin)
+@if (user.MayAdminCurrentPage)
 {
     <a class="@ThemeService.ThemeKit(PageState).Designer.Classes("iconAdmin")" data-bs-toggle="offcanvas" data-bs-target="#offcanvasControlPanel" aria-controls="offcanvasControlPanel">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

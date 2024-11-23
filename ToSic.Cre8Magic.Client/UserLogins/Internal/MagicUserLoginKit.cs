@@ -1,7 +1,7 @@
 ﻿using ToSic.Cre8magic.Themes.Internal;
-using ToSic.Cre8magic.Users.Internal;
+using ToSic.Cre8magic.Users;
 
-namespace ToSic.Cre8magic.Users;
+namespace ToSic.Cre8magic.UserLogins.Internal;
 
 internal class MagicUserLoginKit : IMagicUserLoginKit
 {

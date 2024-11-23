@@ -1,14 +1,14 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Users.Internal;
+using ToSic.Cre8magic.Users;
 
-namespace ToSic.Cre8magic.Users;
+namespace ToSic.Cre8magic.UserLogins.Internal;
 
-internal class MagicUserService(OqtaneLoginHelperWip loginHelper, IMagicSettingsService settingsSvc) : IMagicUserService
+internal class UserLoginService(OqtaneLoginHelperWip loginHelper, IMagicSettingsService settingsSvc) : IUserLoginService
 {
     public IMagicUserLoginKit UserKit(PageState pageState)
     {
-        var user = User(pageState);
+        var user = new MagicUser(pageState);
         var themeCtx = settingsSvc.GetThemeContextFull(pageState);
 
         return new MagicUserLoginKit
@@ -18,6 +18,4 @@ internal class MagicUserService(OqtaneLoginHelperWip loginHelper, IMagicSettings
             Designer = new(themeCtx)
         };
     }
-
-    public MagicUser User(PageState pageState) => new(pageState);
 }

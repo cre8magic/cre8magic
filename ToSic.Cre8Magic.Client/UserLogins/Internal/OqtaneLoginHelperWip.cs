@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.Net;
+using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using Oqtane.Enums;
 using Oqtane.Providers;
@@ -6,10 +7,9 @@ using Oqtane.Security;
 using Oqtane.Services;
 using Oqtane.Shared;
 using Oqtane.UI;
-using System.Net;
 using ToSic.Cre8magic.Internal;
 
-namespace ToSic.Cre8magic.Users.Internal;
+namespace ToSic.Cre8magic.UserLogins.Internal;
 
 /// <summary>
 /// Special helper containing copied code from the LoginBase.cs (razor).
