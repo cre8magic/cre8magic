@@ -29,7 +29,7 @@ internal class TestDatabase
         new("breadcrumbs-basic", "Breadcrumb Basic", typeof(BreadcrumbsBasic)),
 
         // Language Controls
-        new("language-basic", "Language - Basic", typeof(TestLanguagesBasic)),
+        new("language-basic", "Language - Basic (various configs)", typeof(TestLanguagesBasic)),
         new("language-custom-catalog", "Language - Custom Catalog", typeof(TestLanguagesWithCustomCatalog)),
 
         // Page Service
