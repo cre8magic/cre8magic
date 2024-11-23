@@ -1,5 +1,7 @@
+@using Oqtane.UI
 @using ToSic.Cre8magic.ComponentsBs5.Debug
-@inherits MagicLanguageMenuBase
+@using ToSic.Cre8magic.Languages
+@inject IMagicHat MagicHat
 @*
 File Purpose:       Show the Language Navigation / Selector
 Recommendations:    -
@@ -8,6 +10,26 @@ Nice to know:
       ...if the list is empty, it will use the site definition
       ...otherwise it will use the values specified for order/label of languages
 *@
+@code
+{
+    /// <inheritdoc cref="Oqtane.UI.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    // The language kit, available after ParameterSetAsync
+    public IMagicLanguageKit? LanguageKit { get; private set; }
+
+    [Parameter]
+    public MagicLanguageSettings? Settings { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+
+        // Load defined language list. It changes unless the page is reloaded, so we can cache it on this control
+        LanguageKit ??= await MagicHat.LanguageKitAsync(PageState, Settings);
+    }
+}
 @if (LanguageKit is { Show: true })
 {
     <ul class='@(LanguageKit.Designer.Classes("ul") ?? "theme-languages")'>
