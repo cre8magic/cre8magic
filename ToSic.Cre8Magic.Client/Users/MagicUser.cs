@@ -6,31 +6,36 @@ namespace ToSic.Cre8magic.Users;
 
 public record MagicUser
 {
+    /// <summary>
+    /// Note: needs a custom constructor because the property PageState should be internal
+    /// </summary>
+    /// <param name="pageState"></param>
     public MagicUser(PageState pageState)
     {
-        _pageState = pageState;
-        OqtaneUser = pageState.User;
+        PageState = pageState;
     }
-    private readonly PageState _pageState;
 
-    public int Id => OqtaneUser.UserId;
+    internal readonly PageState PageState;
 
-    public string Username => OqtaneUser.Username;
+    public int Id => OqtaneUser?.UserId ?? 0;
 
-    public string Email => OqtaneUser.Email;
+    public string Username => OqtaneUser?.Username;
 
-    public string DisplayName => OqtaneUser.DisplayName;
+    public string Email => OqtaneUser?.Email;
 
-    public bool IsAnonymous => !OqtaneUser.IsAuthenticated;
-    public bool IsAuthenticated => OqtaneUser.IsAuthenticated;
+    public string DisplayName => OqtaneUser?.DisplayName;
 
-    public bool IsEditor => _pageState.UserIsEditor();
+    public bool IsAnonymous => !IsAuthenticated;
 
-    public bool IsAdmin => _pageState.UserIsAdmin();
+    public bool IsAuthenticated => OqtaneUser is { IsAuthenticated: true };
 
-    public bool IsRegistered => _pageState.UserIsRegistered();
+    public bool IsEditor => PageState.UserIsEditor();
 
-    public bool MayEditCurrentPage => IsEditor || (_pageState.Page.IsPersonalizable && IsRegistered);
+    public bool IsAdmin => PageState.UserIsAdmin();
 
-    public User OqtaneUser { get; }
+    public bool IsRegistered => PageState.UserIsRegistered();
+
+    public bool MayEditCurrentPage => IsEditor || (PageState.Page.IsPersonalizable && IsRegistered);
+
+    public User? OqtaneUser => PageState.User;
 }

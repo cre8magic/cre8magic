@@ -2,7 +2,6 @@
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Themes;
 
 namespace ToSic.Cre8magic.Settings.Providers;
 

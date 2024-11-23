@@ -47,4 +47,5 @@ public interface IMagicHat
     IMagicThemeKit ThemeKit(PageState pageState);
 
     void UseSettings(MagicPackageSettings packageSettings, string? layoutName);
+    IMagicUserLoginKit UserKit(PageState pageState);
 }

@@ -17,8 +17,8 @@ using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Settings.Providers.Internal;
 using ToSic.Cre8magic.Settings.Providers;
 using ToSic.Cre8magic.Themes.Internal;
-using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Users;
+using ToSic.Cre8magic.Users.Internal;
 using ToSic.Cre8magic.Utils;
 // ReSharper disable InconsistentNaming
 
@@ -39,7 +39,8 @@ public static class ServiceRegistration
             .AddCre8magicSettingsSourceProvider()
             .AddCre8magicSettingsSourcesPackage()
             .AddCre8magicMainParts()
-            .AddCre8magicJsLayer();
+            .AddCre8magicJsLayer()
+            .AddOqtaneWorkarounds();
 
         return services;
     }
@@ -112,6 +113,13 @@ public static class ServiceRegistration
     public static IServiceCollection AddCre8magicJsLayer(this IServiceCollection services)
     {
         services.TryAddTransient<MagicThemeJsServiceTest>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddOqtaneWorkarounds(this IServiceCollection services)
+    {
+        services.TryAddTransient<OqtaneLoginHelperWip>();
 
         return services;
     }

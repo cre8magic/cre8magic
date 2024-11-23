@@ -1,5 +1,4 @@
 ﻿using Microsoft.JSInterop;
-using ToSic.Cre8magic.Themes;
 
 namespace ToSic.Cre8magic.Internal.JsInterops.Internal;
 

@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Themes.Settings;
-
-namespace ToSic.Cre8magic.Languages.Internal;
+﻿namespace ToSic.Cre8magic.Languages.Internal;
 
 /// <summary>
 /// </summary>

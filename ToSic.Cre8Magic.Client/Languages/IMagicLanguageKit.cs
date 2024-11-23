@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Themes.Settings;
-
-namespace ToSic.Cre8magic.Languages;
+﻿namespace ToSic.Cre8magic.Languages;
 
 /// <summary>
 /// The Kit to Show language menus in the UI.

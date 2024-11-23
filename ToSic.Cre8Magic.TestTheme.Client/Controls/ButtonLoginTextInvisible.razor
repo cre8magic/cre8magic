@@ -1,8 +1,24 @@
-﻿@inherits ToSic.Cre8magic.Login.MagicLoginBase
+﻿@using Microsoft.Extensions.Localization
+@using Oqtane
+@inject IMagicHat MagicHat
 @*
 File Purpose:       Show the Login/Logout text buttons
 Recommendations:    -
 Nice to know:       Inherits the LoginBase, which contains ChangeLogin and i18n for the label
 See also:           LoginIcon.razor has the same feature but with icons
 *@
-<a class="@Classes("linkLogin-invisible")" @onclick="ChangeLogin">@LocalizedLabel</a>
+@code
+{
+    [Inject]
+    private IStringLocalizer<SharedResources> Localizer { get; set; }
+
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
+@{
+    var loginKit = MagicHat.UserKit(PageState);
+
+    var linkTitle = Localizer[loginKit.User.IsAuthenticated ? "Logout" : "Login"];
+}
+<a Title="@linkTitle" class="@loginKit.Designer.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@linkTitle</a>

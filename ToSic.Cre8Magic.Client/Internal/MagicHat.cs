@@ -37,6 +37,9 @@ internal class MagicHat(
     public MagicUser User(PageState pageState) =>
         userSvc.Value.User(pageState);
 
+    public IMagicUserLoginKit UserKit(PageState pageState) =>
+        userSvc.Value.UserKit(pageState);
+
     public IMagicContainerKit ContainerKit(PageState pageState, Module module)
     {
         var designer = ContainerDesigner(pageState, module);

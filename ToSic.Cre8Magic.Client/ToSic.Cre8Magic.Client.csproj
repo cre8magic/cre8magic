@@ -49,6 +49,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
     <PackageReference Include="Oqtane.Client" Version="6.0.0" />
     <PackageReference Include="Oqtane.Shared" Version="6.0.0" />
@@ -57,6 +58,8 @@
 
 
   <ItemGroup>
+    <Folder Include="Blazor\" />
+    <Folder Include="Login\" />
     <Folder Include="Pages\Internal\Breadcrumb\" />
     <Folder Include="Pages\Internal\Menu\" />
   </ItemGroup>
