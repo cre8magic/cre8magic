@@ -42,7 +42,7 @@ public interface IMagicSettingsService
     internal SettingsReader<MagicMenuDesignSettings> MenuDesigns { get; }
 
     internal SettingsReader<MagicMenuSettingsData> MenuSettings { get; }
-    internal List<DataWithJournal<MagicSettingsCatalog>> AllCatalogs { get; }
+    internal List<DataWithJournal<MagicSettingsCatalog>> Catalogs { get; }
     internal SettingsReader<MagicLanguageDesignSettings> LanguageDesigns { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);

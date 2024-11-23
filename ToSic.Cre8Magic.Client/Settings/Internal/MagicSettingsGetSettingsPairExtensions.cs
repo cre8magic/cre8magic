@@ -1,4 +1,5 @@
 ﻿using Oqtane.UI;
+using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Docs;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Themes.Internal;
@@ -56,10 +57,14 @@ internal static class MagicSettingsGetSettingsPairExtensions
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type
         var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, menuSettingPrefix);
+        if (settings is IDebugSettings { Catalog: not null } withCatalog)
+            settingsReader = settingsReader.MaybeUseCustomCatalog(withCatalog.Catalog);
         var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
 
         // Get Design Settings from specified reader using the provided design settings as priority to merge
         findSettings = new(themeCtx, settings, ThemePartSectionEnum.Design, menuSettingPrefix);
+        if (dSettings is IDebugSettings { Catalog: not null } withDesignCatalog)
+            designReader = designReader.MaybeUseCustomCatalog(withDesignCatalog.Catalog);
         var (designSettings, designJournal) = designReader.FindAndMerge(findSettings, dSettings);
 
         // Reconstruct the expected settings type to merge in the design use the provided finalize function

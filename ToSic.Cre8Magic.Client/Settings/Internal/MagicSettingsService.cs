@@ -15,7 +15,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
 /// </summary>
-internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) : IMagicSettingsService
+internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) : IMagicSettingsService, IHasCatalogs
 {
     /// <inheritdoc />>
     public IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName)
@@ -32,7 +32,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     public MagicDebugState DebugState(PageState pageState) => ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
-    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= AllCatalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
+    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= Catalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
 
     private MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
@@ -92,7 +92,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     /// <summary>
     /// actually internal
     /// </summary>
-    public List<DataWithJournal<MagicSettingsCatalog>> AllCatalogs => catalogsLoader.Catalogs(PackageSettings, cache: false);
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs => catalogsLoader.Catalogs(PackageSettings, cache: false);
 
     SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(

@@ -1,17 +1,34 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Docs;
+﻿using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Docs;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.MagicConstants;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
+/// <summary>
+/// Special helper to do a few things with settings.
+///
+/// 1. It receives a list of Catalogs which it will scan
+/// 2. It also receives a function to get only the part of the catalog it's interested in
+///    ...this is to get type safety and everything, like it will only look at the Analytics settings.
+/// </summary>
+/// <typeparam name="TSettingsData"></typeparam>
+/// <param name="settingsSvc"></param>
+/// <param name="defaults"></param>
+/// <param name="getSourceOnCatalog"></param>
 internal class SettingsReader<TSettingsData>(
-    IMagicSettingsService settingsSvc,
+    IHasCatalogs settingsSvc,
     Defaults<TSettingsData> defaults,
     Func<MagicSettingsCatalog, IDictionary<string, TSettingsData>> getSourceOnCatalog
 )
     where TSettingsData : class, new()
 {
+    /// <summary>
+    /// Create a clone of the settings reader, which will specifically only use test catalogs provided by the source.
+    /// </summary>
+    internal SettingsReader<TSettingsData> MaybeUseCustomCatalog(MagicSettingsCatalog? catalog)
+        => catalog == null ? this : new(new HasCatalogs([new(catalog, new())]), defaults, getSourceOnCatalog);
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -103,7 +120,7 @@ internal class SettingsReader<TSettingsData>(
         if (names == null || names.Length == 0) names = [Default];
 
         // Get all catalogs / sources (e.g. provided by code in theme, from JSON, etc.)
-        var catalogs = settingsSvc.AllCatalogs;
+        var catalogs = settingsSvc.Catalogs;
 
         // Create a list of all possible sources and names
         // Prioritize the names, and then go through all sources for each name
