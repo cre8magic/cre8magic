@@ -11,5 +11,5 @@ public interface IMagicBreadcrumbService
     /// <param name="pageState"></param>
     /// <param name="settings"></param>
     /// <returns></returns>
-    IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettingsWip? settings = default);
+    IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default);
 }

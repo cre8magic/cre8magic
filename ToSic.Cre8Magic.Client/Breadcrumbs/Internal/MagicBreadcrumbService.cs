@@ -11,21 +11,24 @@ namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagicBreadcrumbService
 {
     private const string OptionalPrefix = "breadcrumb-";
-    private const string DefaultPartName = "Breadcrumbs";
+    private const string DefaultPartName = "Breadcrumb";
 
-    public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettingsWip? settings = null)
+    public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = null)
     {
+        var (settingsFull, _, themePart, _) = MergeSettings(pageState, settings);
+
         var factory = new MagicPageFactory(pageState);
-        var list = factory.Breadcrumb.Get(settings);
+        var show = themePart?.Show != false;
+        var list = factory.Breadcrumb.Get(settingsFull);
         return new MagicBreadcrumbKit
         {
             Pages = list,
-            //Home = factory.Home,
-            //Settings = list,
+            Settings = settingsFull,
+            Show = show,
         };
     }
 
-    private Data3WithJournal<MagicBreadcrumbSettingsWip, MagicThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSettingsWip? settings) =>
+    private Data3WithJournal<MagicBreadcrumbSettings, MagicThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSettings? settings) =>
         settingsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,

@@ -4,11 +4,11 @@ using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
-internal class MagicBreadcrumbNodeFactory(ContextWip<MagicBreadcrumbSettingsWip, IMagicPageDesigner> context)
+internal class MagicBreadcrumbNodeFactory(ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner> context)
     : MagicPagesFactoryBase(context)
 {
-    public MagicBreadcrumbSettingsWip SettingsTyped => _settings ??= context.Settings;
-    private MagicBreadcrumbSettingsWip? _settings;
+    public MagicBreadcrumbSettings SettingsTyped => _settings ??= context.Settings;
+    private MagicBreadcrumbSettings? _settings;
 
     public override IMagicPageSetSettings Settings => SettingsTyped;
 

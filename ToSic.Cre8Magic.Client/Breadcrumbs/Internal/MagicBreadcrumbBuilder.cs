@@ -6,10 +6,10 @@ namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
 internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
 {
-    internal IMagicPageList Get(MagicBreadcrumbSettingsWip? settings = default)
+    internal IMagicPageList Get(MagicBreadcrumbSettings? settings = default)
     {
         settings ??= new(MagicBreadcrumbSettingsData.Defaults.Fallback, null);
-        var context = new ContextWip<MagicBreadcrumbSettingsWip, IMagicPageDesigner>
+        var context = new ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner>
         {
             Designer = settings.Designer,
             LogRoot = null, // wip
@@ -25,7 +25,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
         return new MagicPageList(pageFactory, factory, list);
     }
 
-    private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbSettingsWip settings, Func<IMagicPage, TPage> generator)
+    private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbSettings settings, Func<IMagicPage, TPage> generator)
     {
         // Check if we have a specified current page
         var endPage = settings.Active;
@@ -45,7 +45,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
         // Create a new list with the current page
         var list = new List<TPage>();
 
-        if (settings.WithActive)
+        if (settings.WithActiveSafe)
             list.Add(generator(endPage));
 
         // If we are on home, exit now.
@@ -54,7 +54,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
             return list;
 
         // Technically home is not in the breadcrumb, it's usually just the first page in the list
-        if (settings.WithHome)
+        if (settings.WithHomeSafe)
             list.Insert(0, generator(pageFactory.Home));
 
         // determine if we restrict the output list
@@ -77,7 +77,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
             parentPage = parentPage.Parent;
         }
 
-        if (settings.Reverse)
+        if (settings.ReverseSafe)
             list.Reverse();
 
         return list;

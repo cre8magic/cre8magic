@@ -6,7 +6,7 @@ internal record MagicBreadcrumbKit : IMagicBreadcrumbKit
 {
     public required IMagicPageList Pages { get; init; }
 
-    //public required IMagicPage Home { get; init; }
+    public required MagicBreadcrumbSettings Settings { get; init; }
 
-    //public required MagicBreadcrumbSettings Settings { get; init; }
+    public bool Show { get; init; }
 }

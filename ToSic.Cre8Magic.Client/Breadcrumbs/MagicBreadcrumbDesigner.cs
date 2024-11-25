@@ -11,7 +11,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// </summary>
 public class MagicBreadcrumbDesigner : IMagicPageDesigner
 {
-    internal MagicBreadcrumbDesigner(IContextWip context, MagicBreadcrumbSettingsWip settings)
+    internal MagicBreadcrumbDesigner(IContextWip context, MagicBreadcrumbSettings settings)
     {
         BreadcrumbSettings = settings ?? throw new ArgumentException("BreadcrumbConfig must be real", nameof(BreadcrumbSettings));
 
@@ -22,7 +22,7 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
 
     private Log Log { get; }
 
-    private MagicBreadcrumbSettingsWip BreadcrumbSettings { get; }
+    private MagicBreadcrumbSettings BreadcrumbSettings { get; }
     internal List<MagicBreadcrumbDesignSettings> DesignSettingsList { get; }
 
 

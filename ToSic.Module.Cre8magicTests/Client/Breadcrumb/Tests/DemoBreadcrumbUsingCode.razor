@@ -1,6 +1,7 @@
 @using ToSic.Cre8magic
 @using ToSic.Cre8magic.Breadcrumbs
 @using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.Settings.Internal.Debug
 @inject IMagicHat MagicHat
 
 @code {
@@ -12,11 +13,12 @@
 <h2>Settings directly in Code</h2>
 
 @{
-    var settingsInCode = new MagicBreadcrumbSettingsWip
+    var settingsInCode = new MagicBreadcrumbSettings
     {
         WithActive = true,
         WithHome = false,
     };
+
     var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, settingsInCode);
 }
 <ol class="breadcrumb">
@@ -46,10 +48,16 @@
             }
         }
     };
-    MagicHat.UseSettingsCatalog(settingsCatalog);
+    settingsInCode = (new MagicBreadcrumbSettings()
+    {
+        SettingsName = "productsBreadcrumb"
+    });
+    settingsInCode.UseCatalog(settingsCatalog).Debug();
+    // MagicHat.UseSettingsCatalog(settingsCatalog);
 }
 @{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new() { PartName = "productsBreadcrumb" });
+    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "productsBreadcrumb" });
+    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, settingsInCode);
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)

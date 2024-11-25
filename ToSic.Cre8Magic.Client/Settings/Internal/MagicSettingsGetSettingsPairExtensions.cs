@@ -48,6 +48,9 @@ internal static class MagicSettingsGetSettingsPairExtensions
         // Get the Theme Context - important for checking part names
         var themeCtx = settingsSvc.GetThemeContext(pageState);
 
+        if (settings is IDebugSettings { DebugThis: true } tempForDebug)
+            tempForDebug = tempForDebug;
+
         // Find Part which contains information for these settings,
         // e.g. what to show
         var parts = themeCtx.ThemeSettings.Parts;

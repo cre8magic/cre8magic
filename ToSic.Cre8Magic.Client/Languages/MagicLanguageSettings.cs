@@ -21,6 +21,8 @@ public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCode
         SettingsName = original.SettingsName;
         DesignName = original.DesignName;
         DesignSettings = original.DesignSettings;
+
+        ((IDebugSettings)this).Catalog = ((IDebugSettings)original).Catalog;
     }
 
     #region Settings for Code
@@ -40,4 +42,5 @@ public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCode
     public MagicLanguageDesignSettings? DesignSettings { get; init; }
 
     MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
+    bool IDebugSettings.DebugThis { get; set; }
 }

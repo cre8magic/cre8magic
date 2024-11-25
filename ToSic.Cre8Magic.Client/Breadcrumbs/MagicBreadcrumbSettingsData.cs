@@ -13,7 +13,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettingsData : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettingsData>, IDebugSettings
+public record MagicBreadcrumbSettingsData : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettingsData>
 {
     public MagicBreadcrumbSettingsData() { }
 
@@ -25,7 +25,6 @@ public record MagicBreadcrumbSettingsData : SettingsWithInherit, IHasDebugSettin
     {
         WithActive = priority?.WithActive ?? fallback?.WithActive ?? Defaults.Fallback.WithActive;
         WithHome = priority?.WithHome ?? fallback?.WithHome ?? Defaults.Fallback.WithHome;
-        Designer = priority?.Designer ?? fallback?.Designer;
         MaxDepth = priority?.MaxDepth ?? fallback?.MaxDepth ?? Defaults.Fallback.MaxDepth;
         Reverse = priority?.Reverse ?? fallback?.Reverse ?? Defaults.Fallback.Reverse;
         Pages = priority?.Pages ?? fallback?.Pages;
@@ -51,7 +50,9 @@ public record MagicBreadcrumbSettingsData : SettingsWithInherit, IHasDebugSettin
     /// or will use custom code to visualize differently.
     /// </summary>
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
-    public bool WithActive { get; init; } = true;
+    public bool? WithActive { get; init; }
+
+    internal bool WithActiveSafe => WithActive ?? true;
 
     /// <summary>
     /// If the home page should be included in the breadcrumb.
@@ -60,10 +61,8 @@ public record MagicBreadcrumbSettingsData : SettingsWithInherit, IHasDebugSettin
     /// Set to false, if you only want to show the breadcrumb starting at the level below home.
     /// </summary>
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
-    public bool WithHome { get; init; } = true;
-
-    [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
-    public IMagicPageDesigner? Designer { get; init; }
+    public bool? WithHome { get; init; }
+    internal bool WithHomeSafe => WithHome ?? true;
 
     /// <summary>
     /// Maximum depth of the breadcrumb, defaults to 10.
@@ -76,7 +75,8 @@ public record MagicBreadcrumbSettingsData : SettingsWithInherit, IHasDebugSettin
     /// If the order of the Breadcrumb should be reversed.
     /// </summary>
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
-    public bool Reverse { get; init; } = false;
+    public bool? Reverse { get; init; }
+    internal bool ReverseSafe => Reverse ?? false;
 
     /// <summary>
     /// List of pages to respect when creating the breadcrumb.
@@ -132,5 +132,4 @@ public record MagicBreadcrumbSettingsData : SettingsWithInherit, IHasDebugSettin
         Foundation = new(),
     };
 
-    MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
 }

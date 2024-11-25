@@ -2,6 +2,12 @@
 
 public static class IDebugSettingsExtensions
 {
+    public static T Debug<T>(this T settings) where T : IDebugSettings
+    {
+        settings.DebugThis = true;
+        return settings;
+    }
+
     public static T UseCatalog<T>(this T settings, MagicSettingsCatalog catalog) where T : IDebugSettings
     {
         settings.Catalog = catalog;

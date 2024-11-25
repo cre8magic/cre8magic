@@ -20,10 +20,10 @@ namespace ToSic.Cre8magic.Languages.Internal;
  * - ...and only show these; possibly show more to admin?
  */
 
-internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc, IMagicHat factory) : IMagicLanguageService
+internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, ILanguageService oqtLangSvc, IMagicSettingsService settingsSvc) : IMagicLanguageService
 {
     private const string OptionalPrefix = "language-";
-    private const string DefaultPartName = "Languages";
+    private const string DefaultPartName = "Language";
 
     /// <inheritdoc/>
     public async Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = default) =>
