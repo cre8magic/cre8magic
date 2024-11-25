@@ -72,6 +72,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
                 break;
 
             // Add to list
+            // TODO: FAILS IF NO HOME WAS ADDED, BECAUSE THERE IS NO INDEX 1, MUST REWORK
             list.Insert(1, generator(parentPage));
             // Find next parent
             parentPage = parentPage.Parent;

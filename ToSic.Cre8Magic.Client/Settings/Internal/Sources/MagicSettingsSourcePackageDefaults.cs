@@ -11,7 +11,7 @@ public class MagicSettingsSourcePackageDefaults : IMagicSettingsSource
 {
     public int Priority => -100;
 
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalog(MagicPackageSettings packageSettings) =>
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicPackageSettings packageSettings) =>
         packageSettings == null
             ? throw new ArgumentNullException(nameof(packageSettings))
             : packageSettings.Defaults == null

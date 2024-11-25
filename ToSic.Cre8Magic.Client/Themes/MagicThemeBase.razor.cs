@@ -77,7 +77,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     {
         base.OnInitialized();
         if (ThemePackageSettings != null)
-            MagicHat.UseSettings(ThemePackageSettings, Layout);
+            MagicHat.UseSettingsPackage(ThemePackageSettings, Layout);
     }
 
     /// <summary>

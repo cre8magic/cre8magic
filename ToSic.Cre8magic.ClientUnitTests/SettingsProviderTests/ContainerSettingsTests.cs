@@ -19,7 +19,7 @@ public class ContainerSettingsTests
     {
         var settingsSvc = SetupServices.Start().AddCre8magic().Finish().GetRequiredService<IMagicSettingsProvider>();
         var original = new MagicContainerSettings();
-        settingsSvc.Containers.Provide(original);
+        settingsSvc.Containers.ProvideDefault(original);
         return (settingsSvc, original);
     }
 

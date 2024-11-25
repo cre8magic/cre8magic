@@ -7,7 +7,9 @@ using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Links;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal.Sources;
 using ToSic.Cre8magic.Settings.Providers;
+using ToSic.Cre8magic.Settings.Providers.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.UserLogins.Internal;
 using ToSic.Cre8magic.Users;
@@ -62,7 +64,7 @@ internal class MagicHat(
     public IMagicThemeKit ThemeKit(PageState pageState) =>
         themeSvc.Value.ThemeKit(pageState);
 
-    public void UseSettings(MagicPackageSettings packageSettings, string? layoutName = default)
+    public void UseSettingsPackage(MagicPackageSettings packageSettings, string? layoutName = default)
     {
         settingsSvc.Setup(packageSettings, layoutName);
     }
@@ -70,6 +72,15 @@ internal class MagicHat(
     public void UseSettingsCatalog(MagicSettingsCatalog catalog)
     {
         settingsProviderSvc.Value.Provide(catalog);
+    }
+
+    public void UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc)
+    {
+        var provider = new MagicSettingsProvider();
+        var result = providerFunc(provider);
+        var cat = result?.Catalog;
+        if (cat != null)
+            settingsProviderSvc.Value.Provide(cat);
     }
 
 

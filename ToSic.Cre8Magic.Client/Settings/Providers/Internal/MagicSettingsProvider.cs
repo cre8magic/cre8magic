@@ -2,6 +2,7 @@
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal.Sources;
 
@@ -16,7 +17,7 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
     /// </summary>
     /// <param name="packageSettings"></param>
     /// <returns></returns>
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalog(MagicPackageSettings packageSettings)
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicPackageSettings packageSettings)
     {
         var partsNoData = AllSources.All(source => source?.HasValues != true);
         if (partsNoData)
@@ -67,6 +68,8 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
         _catalog = catalog;
         return this;
     }
+
+    public MagicSettingsCatalog? Catalog => Catalogs(null!).FirstOrDefault()?.Data;
 
     private MagicSettingsCatalog? _catalog;
 

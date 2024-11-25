@@ -26,7 +26,7 @@ public interface IMagicProviderSection<TSettings> where TSettings : class
     /// </summary>
     /// <param name="value"></param>
     /// <returns></returns>
-    IMagicSettingsProvider Provide(TSettings value);
+    IMagicSettingsProvider ProvideDefault(TSettings value);
 
     /// <summary>
     /// Configure to provide a named value.

@@ -21,4 +21,6 @@ public interface IMagicSettingsProvider
     IMagicProviderSection<MagicThemeSettings> Themes { get; }
     public void Reset();
     IMagicSettingsProvider Provide(MagicSettingsCatalog catalog);
+
+    internal MagicSettingsCatalog? Catalog { get; }
 }

@@ -22,7 +22,7 @@ public class MagicSettingsCatalogsLoader(IEnumerable<IMagicSettingsSource> sourc
         // -100 Package Defaults
         var sources2 = sources
             .OrderByDescending(s => s.Priority)
-            .SelectMany(s => s.Catalog(packageSettings))
+            .SelectMany(s => s.Catalogs(packageSettings))
             .ToList();
 ;
         return sources2;

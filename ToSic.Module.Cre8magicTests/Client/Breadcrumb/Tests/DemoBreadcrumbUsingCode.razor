@@ -13,13 +13,11 @@
 <h2>Settings directly in Code</h2>
 
 @{
-    var settingsInCode = new MagicBreadcrumbSettings
+    var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
     {
         WithActive = true,
         WithHome = false,
-    };
-
-    var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, settingsInCode);
+    });
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)
@@ -35,6 +33,31 @@
 @* Setup Code to ensure it uses the settings we want to provide for the demo *@
 
 @{
+    // MagicHat.UseSettingsCatalog(settingsCatalog);
+    MagicHat.UseSettingsProvider(p => p.Breadcrumbs.ProvideDefault(new()
+    {
+        WithHome = false,
+        WithActive = true
+    }));
+}
+
+@* Breadcrumb using the settings from the catalog *@
+@{
+//    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "default" });
+    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+}
+<ol class="breadcrumb">
+    @foreach (var item in breadcrumbKit.Pages)
+    {
+        <li class='breadcrumb-item'>
+            <a href="@item.Link">@item.Name</a>
+        </li>
+    }
+</ol>
+
+<h2>With Non-Default names</h2>
+                    
+@{
     var settingsCatalog = new MagicSettingsCatalog
     {
         Breadcrumbs = new()
@@ -48,16 +71,12 @@
             }
         }
     };
-    settingsInCode = (new MagicBreadcrumbSettings()
-    {
-        SettingsName = "productsBreadcrumb"
-    });
-    settingsInCode.UseCatalog(settingsCatalog).Debug();
-    // MagicHat.UseSettingsCatalog(settingsCatalog);
+    MagicHat.UseSettingsCatalog(settingsCatalog);
 }
+
+@* Breadcrumb using the settings from the catalog *@
 @{
     breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "productsBreadcrumb" });
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, settingsInCode);
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)

@@ -7,7 +7,6 @@ public class MagicProviderSection<T>(IMagicSettingsProvider parent)
     where T : class
 {
     public bool HasValues { get; private set; }
-    internal T? Value { get; set; }
 
     internal IDictionary<string, T>? Values { get; set; }
 
@@ -15,18 +14,14 @@ public class MagicProviderSection<T>(IMagicSettingsProvider parent)
 
     public void Reset()
     {
-        Value = null;
         Values = null;
         Getter = null;
         HasValues = false;
     }
 
-    public IMagicSettingsProvider Provide(T value)
-    {
-        Value = value;
-        HasValues = true;
-        return parent;
-    }
+    // TODO: use constant for "Default"
+    public IMagicSettingsProvider ProvideDefault(T value) =>
+        Provide("default", value);
 
     public IMagicSettingsProvider Provide(string key, T value)
     {

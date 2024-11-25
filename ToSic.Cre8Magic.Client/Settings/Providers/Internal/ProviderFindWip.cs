@@ -22,9 +22,10 @@ public static class ProviderFindWip
         if (source is not MagicProviderSection<T> typedSource)
             throw new ArgumentException("source must be of type MagicProviderSection<T>", nameof(source));
 
-        return StaticFind(context, typedSource.Getter, typedSource.Value, typedSource.Values);
+        return StaticFind(context, typedSource.Getter, null, /*typedSource.Value,*/ typedSource.Values);
     }
 
+    // TODO: VALUE ISN'T USED ANY MORE
     public static T? StaticFind<T>(IMagicSettingsContext context, Func<IMagicSettingsContext, T?>? getter, T? value, IDictionary<string, T>? values) where T : class
     {
         // First try if we have a custom getter - as it has the highest priority

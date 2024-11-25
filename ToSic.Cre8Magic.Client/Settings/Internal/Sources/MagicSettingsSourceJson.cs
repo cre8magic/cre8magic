@@ -13,7 +13,7 @@ public class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoade
 {
     public int Priority => 100;
 
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalog(MagicPackageSettings packageSettings)
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicPackageSettings packageSettings)
     {
         if (packageSettings == null)
             throw new ArgumentNullException(nameof(packageSettings));
