@@ -18,22 +18,28 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
     /// <returns></returns>
     public List<DataWithJournal<MagicSettingsCatalog>> Catalog(MagicPackageSettings packageSettings)
     {
-        if (AllSources.All(source => source?.HasValues != true))
-            return [];
+        var partsNoData = AllSources.All(source => source?.HasValues != true);
+        if (partsNoData)
+            return _catalog == null
+                ? []
+                : [new(_catalog, new())];
 
-        var catalog = new MagicSettingsCatalog
-        {
-            Analytics = _analytics?.Values != null ? new(_analytics.Values) : new(),
-            Breadcrumbs = _breadcrumbs?.Values != null ? new(_breadcrumbs.Values) : new(),
-            Containers = _containers?.Values != null ? new(_containers.Values) : new(),
-            MenuDesigns = _menuDesigns?.Values != null
-                ? new(_menuDesigns.Values.ToDictionary(
-                    dic => dic.Key,
-                    dic => new MagicMenuDesignSettings(dic.Value)
-                ))
-                : new(),
-            Themes = _themes?.Values != null ? new(_themes.Values) : new()
-        };
+        var catalog = _catalog ?? new MagicSettingsCatalog();
+
+        if (!partsNoData)
+            catalog = catalog with
+            {
+                Analytics = _analytics?.Values != null ? new(_analytics.Values) : catalog.Analytics,
+                Breadcrumbs = _breadcrumbs?.Values != null ? new(_breadcrumbs.Values) : catalog.Breadcrumbs,
+                Containers = _containers?.Values != null ? new(_containers.Values) : catalog.Containers,
+                MenuDesigns = _menuDesigns?.Values != null
+                    ? new(_menuDesigns.Values.ToDictionary(
+                        dic => dic.Key,
+                        dic => new MagicMenuDesignSettings(dic.Value)
+                    ))
+                    : catalog.MenuDesigns,
+                Themes = _themes?.Values != null ? new(_themes.Values) : catalog.Themes,
+            };
 
         return [new(catalog, new())];
     }
@@ -55,6 +61,14 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
         _menuDesigns,
         _themes
     ];
+
+    public IMagicSettingsProvider Provide(MagicSettingsCatalog catalog)
+    {
+        _catalog = catalog;
+        return this;
+    }
+
+    private MagicSettingsCatalog? _catalog;
 
     public IMagicProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
     private MagicProviderSection<MagicAnalyticsSettings>? _analytics;

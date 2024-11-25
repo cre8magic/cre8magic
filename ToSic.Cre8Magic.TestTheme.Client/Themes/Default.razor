@@ -1,6 +1,4 @@
 @namespace ToSic.Cre8magic.TestTheme.Client
-@using ToSic.Cre8magic.PageContext
-@using ToSic.Cre8magic.ComponentsBs5.Debug
 @using ToSic.Cre8magic.Components.Internal
 @inherits MyThemeBase
 @*
@@ -15,6 +13,38 @@ Nice to know:
     public override string Name => "Default";
     public override string Layout => "default";
     protected override string MagicContextClasses => "floatwideheader";
+
+    [Parameter, SupplyParameterFromQuery]
+    public string TestSettings { get; set; }
+
+    public Dictionary<string, string> TestSettingsDic = new()
+    {
+        { "default", "default (json)" }, // leave test as is, using base settings
+        { "catalog", "use custom catalog" }, // use full custom catalog
+    };
+
+    // /// <summary>
+    // /// Test parameters - use alternate settings for various tests
+    // /// </summary>
+    // protected override void OnInitialized()
+    // {
+    //     base.OnInitialized();
+    // }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        switch (TestSettings)
+        {
+            case "default":
+                MagicHat.UseSettings(ThemePackageSettings, Layout);
+                MagicHat.UseSettingsCatalog(null);
+                break;
+            case "catalog":
+                MagicHat.UseSettingsCatalog(ThemeSettingsForTests.Catalog1);
+                break;
+        }
+    }
 }
 @*
     The MagicContextAndSettings wrapper does 2 things
@@ -22,19 +52,31 @@ Nice to know:
        Note that the specifics are configured in the configuration
     2. It will ensure that the object Settings are available on all child controls using <CascadingValue>
 *@
-<MagicContextAndSettings Settings="new MagicPageContextSettings() { Classes = MagicContextClasses }">
+<MagicContextAndSettings Settings="new() { Classes = MagicContextClasses }">
+
+    <ul class="navbar-nav" style="flex-direction: row;">
+        @foreach (var pair in TestSettingsDic)
+        {
+            var isActive = TestSettings == pair.Key;
+            
+            <li class="nav-item">
+                <a class='navbar-link @(isActive ? "active" : "")' href='@MagicHat.Link(PageState, new() { QueryString = "TestSettings=" + pair.Key })' title="@pair.Value">@pair.Key</a>
+                &nbsp;&nbsp;
+            </li>
+        }
+    </ul>
 
     @* Show any errors to the admin if something went wrong like when loading settings *@
     <MagicExceptions></MagicExceptions>
 
     @* Header with logo and navigation etc. *@
     <Header></Header>
-    
+
     @* Header Pane *@
     <div id="@ThemeKit.Designer.Id("sectionHeader")" class='@ThemeKit.Designer.Classes("sectionHeader") @ThemeKit.Designer.PaneClasses("Header")'>
         <Pane Name="Header"/>
     </div>
-    
+
     @* Main Section *@
     <main id="@ThemeKit.Designer.Id("sectionMain")" class="@ThemeKit.Designer.Classes("sectionMain")">
 

@@ -75,6 +75,10 @@
     <ProjectReference Include="..\ToSic.Cre8Magic.ComponentsBs5.Client\ToSic.Cre8Magic.ComponentsBs5.Client.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Settings\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <!-- there may be other elements here -->
     <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>

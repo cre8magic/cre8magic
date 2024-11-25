@@ -20,4 +20,5 @@ public interface IMagicSettingsProvider
     IMagicProviderSection<MagicMenuDesignSettings> MenuDesigns { get; }
     IMagicProviderSection<MagicThemeSettings> Themes { get; }
     public void Reset();
+    IMagicSettingsProvider Provide(MagicSettingsCatalog catalog);
 }

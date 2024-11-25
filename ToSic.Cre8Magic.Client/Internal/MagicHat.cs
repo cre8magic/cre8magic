@@ -5,7 +5,9 @@ using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Languages.Internal;
+using ToSic.Cre8magic.Links;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Providers;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.UserLogins.Internal;
 using ToSic.Cre8magic.Users;
@@ -19,8 +21,9 @@ internal class MagicHat(
     MagicLazy<IMagicLanguageService> languageSvc,
     MagicLazy<IMagicUserService> userSvc,
     MagicLazy<IUserLoginService> userKitSvc,
-    MagicLazy<IMagicThemeService> themeSvc
-) : IMagicHat
+    MagicLazy<IMagicThemeService> themeSvc,
+    MagicLazy<IMagicSettingsProvider> settingsProviderSvc,
+    MagicLazy<IMagicLinkService> linkSvc) : IMagicHat
 {
     /// <inheritdoc />
     public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = default) =>
@@ -52,13 +55,21 @@ internal class MagicHat(
         };
     }
 
+    public string Link(PageState pageState, MagicLinkSpecs linkSpecs) =>
+        linkSvc.Value.Link(pageState, linkSpecs);
+
     /// <inheritdoc />
     public IMagicThemeKit ThemeKit(PageState pageState) =>
         themeSvc.Value.ThemeKit(pageState);
 
-    public void UseSettings(MagicPackageSettings packageSettings, string? layoutName)
+    public void UseSettings(MagicPackageSettings packageSettings, string? layoutName = default)
     {
         settingsSvc.Setup(packageSettings, layoutName);
+    }
+
+    public void UseSettingsCatalog(MagicSettingsCatalog catalog)
+    {
+        settingsProviderSvc.Value.Provide(catalog);
     }
 
 

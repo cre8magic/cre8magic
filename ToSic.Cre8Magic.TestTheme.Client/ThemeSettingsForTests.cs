@@ -1,0 +1,33 @@
+﻿using ToSic.Cre8magic.Settings;
+
+namespace ToSic.Cre8magic.TestTheme.Client;
+
+internal class ThemeSettingsForTests
+{
+    public static MagicSettingsCatalog Catalog1 => new()
+    {
+        Source = nameof(Catalog1),
+        Themes = new()
+        {
+            {
+                "default", new()
+                {
+                    Logo = "[Theme.Url]/assets/LOGO.svg",
+                }
+            },
+        },
+        Languages = new()
+        {
+            {
+                "default", new()
+                {
+                    Languages = new()
+                    {
+                        { "en", new() { Label = "En Code", Description = "English from  Code" } },
+                        { "de", new() { Label = "DE CoDE", Description = "DE from Code" } },
+                    },
+                }
+            },
+        }
+    };
+}

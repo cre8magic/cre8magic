@@ -31,4 +31,5 @@ public abstract class MyThemeBase : MagicThemeBase
     public override MagicPackageSettings ThemePackageSettings => ThemeInfo.ThemePackageDefaults;
 
     public override string Panes => string.Join(",", PaneNames.Default, PaneNameHeader);
+
 }
