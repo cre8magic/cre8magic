@@ -16,6 +16,11 @@ public record MagicPackageSettings
     /// </summary>
     public MagicSettingsCatalog? Defaults { get; init; }
 
+    /// <summary>
+    /// WIP
+    /// </summary>
+    public MagicSettingsCatalog? Catalog { get; init; }
+
     public string WwwRoot { get; init; } = "wwwroot";
 
     public string SettingsJsonFile { get; init; } = "theme.json";

@@ -1,6 +1,10 @@
 @namespace ToSic.Cre8magic.TestTheme.Client
+@using Microsoft.AspNetCore.Http
 @using ToSic.Cre8magic.Components.Internal
+@using ToSic.Cre8magic.Settings
 @inherits MyThemeBase
+@inject IJSRuntime jsRuntime
+@inject IHttpContextAccessor HttpContextAccessor
 @*
 File Purpose:       Core theme file and Default variation
 Recommendations:    -
@@ -16,41 +20,55 @@ Nice to know:
 
     [Parameter, SupplyParameterFromQuery]
     public string TestSettings { get; set; }
-
+    
     public Dictionary<string, string> TestSettingsDic = new()
     {
         { "default", "default (json)" }, // leave test as is, using base settings
         { "catalog", "use custom catalog" }, // use full custom catalog
     };
-
-    // /// <summary>
-    // /// Test parameters - use alternate settings for various tests
-    // /// </summary>
-    // protected override void OnInitialized()
-    // {
-    //     base.OnInitialized();
-    // }
-
+    
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
-        switch (TestSettings)
+        var cookie = HttpContextAccessor.HttpContext.Request.Cookies["TestSettings"];
+        switch (cookie)
         {
             case "default":
-                MagicHat.UseSettings(ThemePackageSettings, Layout);
-                MagicHat.UseSettingsCatalog(null);
+                // MagicHat.UseSettings(ThemePackageSettings, Layout);
+                // MagicHat.UseSettingsCatalog(null);
                 break;
             case "catalog":
                 MagicHat.UseSettingsCatalog(ThemeSettingsForTests.Catalog1);
                 break;
         }
     }
+
+    protected Task SetSettingsCookie(string name)
+    {
+        var interop = new Interop(jsRuntime);
+        return interop.SetCookie("TestSettings", name, 1);
+    }
+    /// <summary>
+    /// The ThemePackageSettings must be set in this class, so the Settings initializer can pick it up.
+    ///
+    /// For testing we have a special setup where we provide null to ensure nothing is configured if certain test cookies are set.
+    /// </summary>
+    public override MagicPackageSettings ThemePackageSettings
+    {
+        get
+        {
+            var cookie = HttpContextAccessor.HttpContext.Request.Cookies["TestSettings"];
+            return string.IsNullOrWhiteSpace(cookie) || cookie == "default"
+                ? ThemeInfo.ThemePackageDefaults
+                : null;
+        }
+    }
+
 }
 @*
-    The MagicContextAndSettings wrapper does 2 things
+    The MagicContextAndSettings wrapper does this:
     1. It ensures that certain classes are added to the body or wrapper-div so that styles can be optimized by page, language, branch etc.
        Note that the specifics are configured in the configuration
-    2. It will ensure that the object Settings are available on all child controls using <CascadingValue>
 *@
 <MagicContextAndSettings Settings="new() { Classes = MagicContextClasses }">
 
@@ -60,8 +78,8 @@ Nice to know:
             var isActive = TestSettings == pair.Key;
             
             <li class="nav-item">
-                <a class='navbar-link @(isActive ? "active" : "")' href='@MagicHat.Link(PageState, new() { QueryString = "TestSettings=" + pair.Key })' title="@pair.Value">@pair.Key</a>
-                &nbsp;&nbsp;
+                <button class='navbar-link @(isActive ? "active" : "")' @onclick="() => SetSettingsCookie(pair.Key)" title="@pair.Value">@pair.Key</button>
+                &nbsp;
             </li>
         }
     </ul>

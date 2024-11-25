@@ -23,8 +23,8 @@ internal class ThemeSettingsForTests
                 {
                     Languages = new()
                     {
-                        { "en", new() { Label = "En Code", Description = "English from  Code" } },
-                        { "de", new() { Label = "DE CoDE", Description = "DE from Code" } },
+                        { "en", new() { Label = $"En {nameof(Catalog1)}", Description = "English from Code" } },
+                        { "de", new() { Label = $"DE {nameof(Catalog1)}", Description = "DE from Code" } },
                     },
                 }
             },
