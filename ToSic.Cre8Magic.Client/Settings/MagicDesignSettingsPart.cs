@@ -11,6 +11,7 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
 {
     public MagicDesignSettingsPart() { }
 
+    [PrivateApi]
     public MagicDesignSettingsPart(MagicDesignSettingsPart? priority, MagicDesignSettingsPart? fallback = default)
     {
         Classes = priority?.Classes ?? fallback?.Classes;
@@ -21,6 +22,7 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
         IsAdmin = priority?.IsAdmin ?? fallback?.IsAdmin;
     }
 
+    [PrivateApi]
     public MagicDesignSettingsPart CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

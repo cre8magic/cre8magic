@@ -35,7 +35,6 @@ items:
   - System.Object
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart
   inheritedMembers:
-  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id
@@ -255,45 +254,6 @@ references:
   name: MagicDesignSettingsPart
   nameWithType: MagicDesignSettingsPart
   fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
-  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-  isExternal: true
-  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_CloneUnder_ToSic_Cre8magic_Settings_MagicDesignSettingsPart_System_Boolean_
-  name: CloneUnder(MagicDesignSettingsPart, bool)
-  nameWithType: MagicDesignSettingsPart.CloneUnder(MagicDesignSettingsPart, bool)
-  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart, bool)
-  nameWithType.vb: MagicDesignSettingsPart.CloneUnder(MagicDesignSettingsPart, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart, Boolean)
-  name.vb: CloneUnder(MagicDesignSettingsPart, Boolean)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
-    name: CloneUnder
-    href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_CloneUnder_ToSic_Cre8magic_Settings_MagicDesignSettingsPart_System_Boolean_
-  - name: (
-  - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-    name: MagicDesignSettingsPart
-    href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
-    name: CloneUnder
-    href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_CloneUnder_ToSic_Cre8magic_Settings_MagicDesignSettingsPart_System_Boolean_
-  - name: (
-  - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-    name: MagicDesignSettingsPart
-    href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-  - name: )
 - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
   commentId: P:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
   parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart

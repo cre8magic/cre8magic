@@ -12,6 +12,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
 {
     public MagicThemeSettings() { }
 
+    [PrivateApi]
     public MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = default)
         : base(priority, fallback)
     {
@@ -26,6 +27,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
+    [PrivateApi]
     public MagicThemeSettings CloneUnder(MagicThemeSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

@@ -14,16 +14,17 @@ public record MagicLanguageSettingsData : SettingsWithInherit, IHasDebugSettings
     /// </summary>
     public MagicLanguageSettingsData() {}
 
+    [PrivateApi]
     public MagicLanguageSettingsData(MagicLanguageSettingsData? priority, MagicLanguageSettingsData? fallback = default)
         : base(priority, fallback)
     {
-        HideOthers = priority?.HideOthers ?? fallback?.HideOthers; // ?? Defaults.Fallback.HideOthers;
-        //LanguagesMin = priority?.LanguagesMin ?? fallback?.LanguagesMin;
+        HideOthers = priority?.HideOthers ?? fallback?.HideOthers;
         MinLanguagesToShow = PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
         Debug = priority?.Debug ?? fallback?.Debug;
         Languages = priority?.Languages ?? fallback?.Languages;
     }
 
+    [PrivateApi]
     public MagicLanguageSettingsData CloneUnder(MagicLanguageSettingsData? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

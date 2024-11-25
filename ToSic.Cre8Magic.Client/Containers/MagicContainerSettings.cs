@@ -11,11 +11,14 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     public MagicContainerSettings()
     { }
 
+    [PrivateApi]
     public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
         Custom = MergeHelper.CloneMergeDictionaries(priority?.Custom, fallback?.Custom);
     }
+
+    [PrivateApi]
     public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

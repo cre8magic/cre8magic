@@ -10,12 +10,13 @@ public record MagicMenuSettings: MagicMenuSettingsData, ISettingsForCodeUse
     /// Default constructor, so this record can be created anywhere.
     /// </summary>
     public MagicMenuSettings() { }
-    
+
     /// <summary>
     /// Constructor to re-hydrate from object of base class.
     /// </summary>
     /// <param name="ancestor"></param>
     /// <param name="original"></param>
+    [PrivateApi]
     internal MagicMenuSettings(MagicMenuSettingsData ancestor, MagicMenuSettings? original) : base(ancestor)
     {
         if (original == null)

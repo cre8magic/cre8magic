@@ -16,6 +16,7 @@ public record MagicAnalyticsSettings : SettingsWithInherit, ICanClone<MagicAnaly
     public MagicAnalyticsSettings()
     { }
 
+    [PrivateApi]
     public MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
         : base(priority, fallback)
     {
@@ -27,6 +28,7 @@ public record MagicAnalyticsSettings : SettingsWithInherit, ICanClone<MagicAnaly
 
     }
 
+    [PrivateApi]
     public MagicAnalyticsSettings CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

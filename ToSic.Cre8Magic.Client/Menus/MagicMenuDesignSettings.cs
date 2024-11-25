@@ -13,12 +13,14 @@ public record MagicMenuDesignSettings : SettingsWithInherit, ICanClone<MagicMenu
 {
     public MagicMenuDesignSettings() { }
 
+    [PrivateApi]
     public MagicMenuDesignSettings(MagicMenuDesignSettings? priority, MagicMenuDesignSettings? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
+    [PrivateApi]
     public MagicMenuDesignSettings CloneUnder(MagicMenuDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

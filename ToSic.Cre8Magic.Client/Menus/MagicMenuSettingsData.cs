@@ -20,6 +20,7 @@ public record MagicMenuSettingsData : SettingsWithInherit, IHasDebugSettings, IM
     /// </summary>
     public MagicMenuSettingsData() { }
 
+    [PrivateApi]
     internal MagicMenuSettingsData(MagicMenuSettingsData? priority, MagicMenuSettingsData? fallback = default) : base(priority, fallback)
     {
         Id = priority?.Id ?? fallback?.Id;
@@ -32,6 +33,7 @@ public record MagicMenuSettingsData : SettingsWithInherit, IHasDebugSettings, IM
         Template = priority?.Template ?? fallback?.Template;
     }
 
+    [PrivateApi]
     MagicMenuSettingsData ICanClone<MagicMenuSettingsData>.CloneUnder(MagicMenuSettingsData? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

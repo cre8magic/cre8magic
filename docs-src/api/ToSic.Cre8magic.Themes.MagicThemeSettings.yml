@@ -6,8 +6,6 @@ items:
   parent: ToSic.Cre8magic.Themes
   children:
   - ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor
-  - ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor(ToSic.Cre8magic.Themes.MagicThemeSettings,ToSic.Cre8magic.Themes.MagicThemeSettings)
-  - ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder(ToSic.Cre8magic.Themes.MagicThemeSettings,System.Boolean)
   - ToSic.Cre8magic.Themes.MagicThemeSettings.Debug
   - ToSic.Cre8magic.Themes.MagicThemeSettings.Design
   - ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
@@ -69,77 +67,6 @@ items:
   nameWithType.vb: MagicThemeSettings.New()
   fullName.vb: ToSic.Cre8magic.Themes.MagicThemeSettings.New()
   name.vb: New()
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor(ToSic.Cre8magic.Themes.MagicThemeSettings,ToSic.Cre8magic.Themes.MagicThemeSettings)
-  commentId: M:ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor(ToSic.Cre8magic.Themes.MagicThemeSettings,ToSic.Cre8magic.Themes.MagicThemeSettings)
-  id: '#ctor(ToSic.Cre8magic.Themes.MagicThemeSettings,ToSic.Cre8magic.Themes.MagicThemeSettings)'
-  parent: ToSic.Cre8magic.Themes.MagicThemeSettings
-  langs:
-  - csharp
-  - vb
-  name: MagicThemeSettings(MagicThemeSettings?, MagicThemeSettings?)
-  nameWithType: MagicThemeSettings.MagicThemeSettings(MagicThemeSettings?, MagicThemeSettings?)
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.MagicThemeSettings(ToSic.Cre8magic.Themes.MagicThemeSettings?, ToSic.Cre8magic.Themes.MagicThemeSettings?)
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 14
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  syntax:
-    content: public MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = null)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Themes.MagicThemeSettings
-    - id: fallback
-      type: ToSic.Cre8magic.Themes.MagicThemeSettings
-    content.vb: Public Sub New(priority As MagicThemeSettings, fallback As MagicThemeSettings = Nothing)
-  overload: ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor*
-  nameWithType.vb: MagicThemeSettings.New(MagicThemeSettings, MagicThemeSettings)
-  fullName.vb: ToSic.Cre8magic.Themes.MagicThemeSettings.New(ToSic.Cre8magic.Themes.MagicThemeSettings, ToSic.Cre8magic.Themes.MagicThemeSettings)
-  name.vb: New(MagicThemeSettings, MagicThemeSettings)
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder(ToSic.Cre8magic.Themes.MagicThemeSettings,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder(ToSic.Cre8magic.Themes.MagicThemeSettings,System.Boolean)
-  id: CloneUnder(ToSic.Cre8magic.Themes.MagicThemeSettings,System.Boolean)
-  parent: ToSic.Cre8magic.Themes.MagicThemeSettings
-  langs:
-  - csharp
-  - vb
-  name: CloneUnder(MagicThemeSettings?, bool)
-  nameWithType: MagicThemeSettings.CloneUnder(MagicThemeSettings?, bool)
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder(ToSic.Cre8magic.Themes.MagicThemeSettings?, bool)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: CloneUnder
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 28
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  example: []
-  syntax:
-    content: public MagicThemeSettings CloneUnder(MagicThemeSettings? priority, bool forceCopy = false)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Themes.MagicThemeSettings
-    - id: forceCopy
-      type: System.Boolean
-    return:
-      type: ToSic.Cre8magic.Themes.MagicThemeSettings
-    content.vb: Public Function CloneUnder(priority As MagicThemeSettings, forceCopy As Boolean = False) As MagicThemeSettings
-  overload: ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder*
-  nameWithType.vb: MagicThemeSettings.CloneUnder(MagicThemeSettings, Boolean)
-  fullName.vb: ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder(ToSic.Cre8magic.Themes.MagicThemeSettings, Boolean)
-  name.vb: CloneUnder(MagicThemeSettings, Boolean)
 - uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
   commentId: P:ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
   id: Logo
@@ -158,7 +85,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Logo
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 34
+    startLine: 36
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -189,7 +116,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parts
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 41
+    startLine: 43
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -226,7 +153,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicContextInBody
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 45
+    startLine: 47
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -255,7 +182,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Design
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 47
+    startLine: 49
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -284,7 +211,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 49
+    startLine: 51
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -433,29 +360,6 @@ references:
   nameWithType.vb: MagicThemeSettings.New
   fullName.vb: ToSic.Cre8magic.Themes.MagicThemeSettings.New
   name.vb: New
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings
-  commentId: T:ToSic.Cre8magic.Themes.MagicThemeSettings
-  parent: ToSic.Cre8magic.Themes
-  href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
-  name: MagicThemeSettings
-  nameWithType: MagicThemeSettings
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder
-  href: ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_CloneUnder_ToSic_Cre8magic_Themes_MagicThemeSettings_System_Boolean_
-  name: CloneUnder
-  nameWithType: MagicThemeSettings.CloneUnder
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.CloneUnder
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Logo*
   commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
   href: ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Logo

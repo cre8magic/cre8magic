@@ -11,6 +11,7 @@ public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCode
     /// <summary>
     /// Constructor to re-hydrate from object of base class.
     /// </summary>
+    [PrivateApi]
     internal MagicLanguageSettings(MagicLanguageSettingsData ancestor, MagicLanguageSettings? original) : base(ancestor)
     {
         if (original == null)

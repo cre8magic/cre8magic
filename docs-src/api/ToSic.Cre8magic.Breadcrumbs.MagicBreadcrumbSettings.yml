@@ -6,10 +6,8 @@ items:
   parent: ToSic.Cre8magic.Breadcrumbs
   children:
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,System.Boolean)
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
@@ -85,79 +83,6 @@ items:
   nameWithType.vb: MagicBreadcrumbSettings.New()
   fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.New()
   name.vb: New()
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
-  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
-  id: '#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)'
-  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-  langs:
-  - csharp
-  - vb
-  name: MagicBreadcrumbSettings(MagicBreadcrumbSettings?, MagicBreadcrumbSettings?)
-  nameWithType: MagicBreadcrumbSettings.MagicBreadcrumbSettings(MagicBreadcrumbSettings?, MagicBreadcrumbSettings?)
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MagicBreadcrumbSettings(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings?, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings?)
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 21
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Breadcrumbs
-  summary: Cloning constructor
-  example: []
-  syntax:
-    content: public MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = null)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-    - id: fallback
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-    content.vb: Public Sub New(priority As MagicBreadcrumbSettings, fallback As MagicBreadcrumbSettings = Nothing)
-  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor*
-  nameWithType.vb: MagicBreadcrumbSettings.New(MagicBreadcrumbSettings, MagicBreadcrumbSettings)
-  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.New(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
-  name.vb: New(MagicBreadcrumbSettings, MagicBreadcrumbSettings)
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,System.Boolean)
-  id: CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,System.Boolean)
-  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-  langs:
-  - csharp
-  - vb
-  name: CloneUnder(MagicBreadcrumbSettings?, bool)
-  nameWithType: MagicBreadcrumbSettings.CloneUnder(MagicBreadcrumbSettings?, bool)
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings?, bool)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: CloneUnder
-    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 39
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Breadcrumbs
-  example: []
-  syntax:
-    content: public MagicBreadcrumbSettings CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy = false)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-    - id: forceCopy
-      type: System.Boolean
-    return:
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-    content.vb: Public Function CloneUnder(priority As MagicBreadcrumbSettings, forceCopy As Boolean = False) As MagicBreadcrumbSettings
-  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder*
-  nameWithType.vb: MagicBreadcrumbSettings.CloneUnder(MagicBreadcrumbSettings, Boolean)
-  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings, Boolean)
-  name.vb: CloneUnder(MagicBreadcrumbSettings, Boolean)
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
   commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
   id: WithActive
@@ -176,7 +101,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: WithActive
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 51
+    startLine: 53
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -223,7 +148,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: WithHome
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 60
+    startLine: 62
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -270,7 +195,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Designer
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 63
+    startLine: 65
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -309,7 +234,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MaxDepth
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 70
+    startLine: 72
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -353,7 +278,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Reverse
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 76
+    startLine: 78
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -394,7 +319,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Pages
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 85
+    startLine: 87
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -441,7 +366,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Active
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 89
+    startLine: 91
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -480,7 +405,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 97
+    startLine: 99
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -513,7 +438,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PartName
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 103
+    startLine: 105
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -547,7 +472,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 106
+    startLine: 108
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -578,7 +503,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Display
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 112
+    startLine: 114
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -609,7 +534,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DisplayDefault
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 113
+    startLine: 115
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -636,7 +561,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ActiveId
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 121
+    startLine: 123
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -674,7 +599,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DesignSettings
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 124
+    startLine: 126
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -713,7 +638,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuId
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 127
+    startLine: 129
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -749,7 +674,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Variant
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
-    startLine: 130
+    startLine: 132
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -936,19 +861,12 @@ references:
   nameWithType.vb: MagicBreadcrumbSettings.New
   fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.New
   name.vb: New
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-  parent: ToSic.Cre8magic.Breadcrumbs
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html
-  name: MagicBreadcrumbSettings
-  nameWithType: MagicBreadcrumbSettings
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder*
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_CloneUnder_ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_System_Boolean_
-  name: CloneUnder
-  nameWithType: MagicBreadcrumbSettings.CloneUnder
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_WithActive
+  name: WithActive
+  nameWithType: MagicBreadcrumbSettings.WithActive
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -959,12 +877,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive*
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_WithActive
-  name: WithActive
-  nameWithType: MagicBreadcrumbSettings.WithActive
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome*
   commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome
   href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_WithHome
