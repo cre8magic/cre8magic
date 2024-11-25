@@ -1,5 +1,6 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
@@ -44,6 +45,8 @@ public interface IMagicSettingsService
     internal SettingsReader<MagicMenuSettingsData> MenuSettings { get; }
     internal List<DataWithJournal<MagicSettingsCatalog>> Catalogs { get; }
     internal SettingsReader<MagicLanguageDesignSettings> LanguageDesigns { get; }
+    internal SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; }
+    internal SettingsReader<MagicBreadcrumbSettingsData> Breadcrumbs { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);
 

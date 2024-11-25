@@ -18,7 +18,7 @@ namespace ToSic.Cre8magic;
 public interface IMagicHat
 {
     /// <inheritdoc cref="IMagicBreadcrumbService.BreadcrumbKit"/>
-    IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default);
+    IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettingsWip? settings = default);
 
     /// <inheritdoc cref="IMagicLanguageService.LanguageKitAsync"/>
     Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = default);

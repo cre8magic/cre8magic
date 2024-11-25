@@ -51,7 +51,7 @@
 <BasicBreadcrumb Settings="new() { WithActive = false }"></BasicBreadcrumb>
 <BasicBreadcrumb Settings="new() { WithActive = true }"></BasicBreadcrumb>
 
-<h3>BasicBreadcrumb with Settings { @nameof(MagicBreadcrumbSettings.ActiveId) = @pageWithDeepBreadcrumb }</h3>
+<h3>BasicBreadcrumb with Settings { @nameof(MagicBreadcrumbSettingsData.ActiveId) = @pageWithDeepBreadcrumb }</h3>
 <p>No designer</p>
 <BasicBreadcrumb Settings="new() { ActiveId = pageWithDeepBreadcrumb }"></BasicBreadcrumb>
 <p>BasicBreadcrumb with @nameof(MagicBreadcrumbDesignerBs5)</p>
@@ -60,7 +60,7 @@
 <BasicBreadcrumb Settings="new() { ActiveId = pageWithDeepBreadcrumb, Designer = new BreadcrumbDesignerDark() }"></BasicBreadcrumb>
 
 <hr />
-<h3>BasicBreadcrumb Non-Existing { @nameof(MagicBreadcrumbSettings.ActiveId) = -1 }</h3>
+<h3>BasicBreadcrumb Non-Existing { @nameof(MagicBreadcrumbSettingsData.ActiveId) = -1 }</h3>
 <p>This should not show anything</p>
 <BasicBreadcrumb Settings="new() { ActiveId = -1 }"></BasicBreadcrumb>
 <p>End - there should be nothing to be seen</p>

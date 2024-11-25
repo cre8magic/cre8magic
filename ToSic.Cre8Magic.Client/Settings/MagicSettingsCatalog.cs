@@ -44,15 +44,22 @@ public record MagicSettingsCatalog: IHasDebugSettings
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeSettings>))]
     public Dictionary<string, MagicThemeSettings> Themes { get; init; } = new(InvariantCultureIgnoreCase);
 
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeDesignSettings>))]
+    public Dictionary<string, MagicThemeDesignSettings> ThemeDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+
 
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicAnalyticsSettings>))]
     public Dictionary<string, MagicAnalyticsSettings> Analytics { get; init; } = new(InvariantCultureIgnoreCase);
 
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbSettings>))]
-    public Dictionary<string, MagicBreadcrumbSettings> Breadcrumbs { get; init; } = new(InvariantCultureIgnoreCase);
 
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeDesignSettings>))]
-    public Dictionary<string, MagicThemeDesignSettings> ThemeDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbSettingsData>))]
+    public Dictionary<string, MagicBreadcrumbSettingsData> Breadcrumbs { get; init; } = new(InvariantCultureIgnoreCase);
+
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbDesignSettings>))]
+    public Dictionary<string, MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+
+
 
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicContainerSettings>))]
     public Dictionary<string, MagicContainerSettings> Containers { get; init; } = new(InvariantCultureIgnoreCase);

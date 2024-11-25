@@ -1,5 +1,6 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
@@ -94,6 +95,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     /// </summary>
     public List<DataWithJournal<MagicSettingsCatalog>> Catalogs => catalogsLoader.Catalogs(PackageSettings, cache: false);
 
+    #region Analytics - TODO: not quite done, still has a custom accessor
+
     SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(
             this,
@@ -102,13 +105,33 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         );
     private SettingsReader<MagicAnalyticsSettings>? _analytics;
 
+
+    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) =>
+        ((IMagicSettingsService)this).Analytics.FindAndNeutralize([settingsName], skipCache: _bypassCaches);
+
+    #endregion
+
+    #region Breadcrumbs - WIP 2024-11-25 2dm
+
+    public SettingsReader<MagicBreadcrumbSettingsData> Breadcrumbs =>
+        _breadcrumbs ??= new(
+            this,
+            MagicBreadcrumbSettingsData.Defaults,
+            cat => cat.Breadcrumbs
+        );
+    private SettingsReader<MagicBreadcrumbSettingsData>? _breadcrumbs;
+
+    public SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns =>
+        _breadcrumbsDesigns ??= new(this, MagicBreadcrumbDesignSettings.DesignDefaults, catalog => catalog.BreadcrumbDesigns);
+    private SettingsReader<MagicBreadcrumbDesignSettings>? _breadcrumbsDesigns;
+
+    #endregion
+
+
     private SettingsReader<MagicThemeSettings> ThemeSettings =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);
     private SettingsReader<MagicThemeSettings>? _getTheme;
 
-    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) =>
-        ((IMagicSettingsService)this).Analytics.FindAndNeutralize([settingsName], skipCache: _bypassCaches);
-    
     public TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func)
     {
         this._bypassCaches = true;

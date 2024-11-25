@@ -30,7 +30,7 @@ internal class MagicHat(
         analyticsSvc.Value.AnalyticsKit(pageState, settings);
 
     /// <inheritdoc />
-    public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default) =>
+    public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettingsWip? settings = null) =>
         breadcrumbSvc.Value.BreadcrumbKit(pageState, settings);
 
     /// <inheritdoc />

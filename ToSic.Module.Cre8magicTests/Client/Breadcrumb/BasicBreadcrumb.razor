@@ -3,7 +3,7 @@
 
 @code {
 
-    protected override MagicBreadcrumbSettings Customize(MagicBreadcrumbSettings settings) =>
+    protected override MagicBreadcrumbSettingsWip Customize(MagicBreadcrumbSettingsWip settings) =>
         settings.Designer != null
             ? settings
             : settings with { Designer = new MagicBreadcrumbDesignerBs5() };

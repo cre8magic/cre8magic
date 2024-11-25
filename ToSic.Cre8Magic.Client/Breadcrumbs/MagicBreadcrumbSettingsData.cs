@@ -13,15 +13,15 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, ISettingsForCodeUse, IDebugSettings
+public record MagicBreadcrumbSettingsData : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettingsData>, IDebugSettings
 {
-    public MagicBreadcrumbSettings() { }
+    public MagicBreadcrumbSettingsData() { }
 
     /// <summary>
     /// Cloning constructor
     /// </summary>
     [PrivateApi]
-    public MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = default): base(priority, fallback)
+    public MagicBreadcrumbSettingsData(MagicBreadcrumbSettingsData? priority, MagicBreadcrumbSettingsData? fallback = default): base(priority, fallback)
     {
         WithActive = priority?.WithActive ?? fallback?.WithActive ?? Defaults.Fallback.WithActive;
         WithHome = priority?.WithHome ?? fallback?.WithHome ?? Defaults.Fallback.WithHome;
@@ -31,16 +31,14 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
         Pages = priority?.Pages ?? fallback?.Pages;
         Active = priority?.Active ?? fallback?.Active;
         Id = priority?.Id ?? fallback?.Id;
-        PartName = priority?.PartName ?? fallback?.PartName;
         Debug = priority?.Debug ?? fallback?.Debug;
         Display = priority?.Display ?? fallback?.Display ?? Defaults.Fallback.Display;
         ActiveId = priority?.ActiveId ?? fallback?.ActiveId;
-        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
         Variant = priority?.Variant ?? fallback?.Variant;
     }
 
     [PrivateApi]
-    public MagicBreadcrumbSettings CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy = false) =>
+    public MagicBreadcrumbSettingsData CloneUnder(MagicBreadcrumbSettingsData? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
@@ -100,18 +98,6 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     /// </summary>
     public string? Id { get; init; }
 
-    #region Settings for Code
-
-    /// <inheritdoc/>
-    public string? PartName { get; init; }
-
-    /// <inheritdoc/>
-    public string? SettingsName { get; init; }
-
-    /// <inheritdoc/>
-    public string? DesignName { get; init; }
-
-    #endregion
 
     /// <inheritdoc />
     public MagicDebugSettings? Debug { get; init; }
@@ -131,9 +117,6 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     /// </summary>
     public int? ActiveId { get; init; }
 
-    // todo: name, maybe not on interface
-    [JsonIgnore] // TODO: MOVE TO DESIGN SETTINGS after renaming this to ...Data
-    public Dictionary<string, MagicBreadcrumbDesignSettingsPart>? DesignSettings { get; init; }
 
     public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
     private string? _menuId;
@@ -143,7 +126,7 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     /// <summary>
     /// Defaults - these don't do anything, but we want to use this pattern for consistency.
     /// </summary>
-    internal static Defaults<MagicBreadcrumbSettings> Defaults = new()
+    internal static Defaults<MagicBreadcrumbSettingsData> Defaults = new()
     {
         Fallback = new(),
         Foundation = new(),

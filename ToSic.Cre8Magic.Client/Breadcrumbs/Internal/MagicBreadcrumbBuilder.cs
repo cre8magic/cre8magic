@@ -6,10 +6,10 @@ namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
 internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
 {
-    internal IMagicPageList Get(MagicBreadcrumbSettings? settings = default)
+    internal IMagicPageList Get(MagicBreadcrumbSettingsWip? settings = default)
     {
-        settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
-        var context = new ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner>
+        settings ??= new(MagicBreadcrumbSettingsData.Defaults.Fallback, null);
+        var context = new ContextWip<MagicBreadcrumbSettingsWip, IMagicPageDesigner>
         {
             Designer = settings.Designer,
             LogRoot = null, // wip
@@ -25,7 +25,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
         return new MagicPageList(pageFactory, factory, list);
     }
 
-    private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbSettings settings, Func<IMagicPage, TPage> generator)
+    private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbSettingsWip settings, Func<IMagicPage, TPage> generator)
     {
         // Check if we have a specified current page
         var endPage = settings.Active;

@@ -23,14 +23,14 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     /// If not set, the current page will be used as the active page.
     /// </summary>
     [Parameter]
-    public MagicBreadcrumbSettings? Settings { get; set; }
+    public MagicBreadcrumbSettingsWip? Settings { get; set; }
 
     /// <summary>
     /// TODO: WIP experimental pattern. Probably not the best/final implementation yet...
     /// </summary>
     /// <param name="settings"></param>
     /// <returns></returns>
-    protected virtual MagicBreadcrumbSettings Customize(MagicBreadcrumbSettings settings)
+    protected virtual MagicBreadcrumbSettingsWip Customize(MagicBreadcrumbSettingsWip settings)
         => settings;
 
     // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
