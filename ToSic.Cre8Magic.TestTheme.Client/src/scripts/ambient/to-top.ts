@@ -26,10 +26,7 @@ function toTopButtonVisibility() {
   // Todo: unsure why it does body + documentElement...
   const show = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200;
   if (debugDetailed) console.log('to-top' + show ? "show" : "hide");
-  if (show) 
-    toTopButton.classList.add(visibleClass);
-  else
-    toTopButton.classList.remove(visibleClass);
+  toTopButton.classList.toggle(visibleClass, show);
 }
 
 function scrollTop() {

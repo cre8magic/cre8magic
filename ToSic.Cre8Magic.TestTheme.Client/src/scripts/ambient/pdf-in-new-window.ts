@@ -6,8 +6,7 @@
 /* Open all PDF links in a new window */
 export function openPdfInNewWindow() {
   document.querySelectorAll('a').forEach((linkElem: Element, index) => {
-    if (linkElem.hasAttribute('href') && linkElem.getAttribute('href').endsWith('.pdf')) {
+    if (linkElem.hasAttribute('href') && linkElem.getAttribute('href')?.endsWith('.pdf'))
       linkElem.setAttribute('target', '_blank');
-    }
   });
 }
