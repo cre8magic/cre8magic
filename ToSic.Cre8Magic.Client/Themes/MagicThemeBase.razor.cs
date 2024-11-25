@@ -24,7 +24,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     public abstract override string Name { get; }
 
     /// <summary>
-    /// The layout name which is used to lookup configurations.
+    /// The layout name which is used to lookup settings.
     /// The inheriting file is required to specify it. 
     /// </summary>
     public abstract string Layout { get; }

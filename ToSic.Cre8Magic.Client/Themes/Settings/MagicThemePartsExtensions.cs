@@ -3,7 +3,7 @@
 internal static class MagicThemePartsExtensions
 {
     /// <summary>
-    /// Determine the configuration name of a specific part.
+    /// Determine the settings name of a specific part.
     /// </summary>
     /// <param name="name"></param>
     /// <returns></returns>

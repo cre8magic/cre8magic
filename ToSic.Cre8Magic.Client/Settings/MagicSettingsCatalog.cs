@@ -11,8 +11,8 @@ using static System.StringComparer;
 namespace ToSic.Cre8magic.Settings;
 
 /// <summary>
-/// This is a catalog of all kinds of configurations.
-/// It serves as a kind of database to manage all configurations, which will usually be retrieved using a name. 
+/// This is a catalog of all kinds of settings.
+/// It serves as a kind of database to manage all settings, which will usually be retrieved using a name. 
 /// </summary>
 public record MagicSettingsCatalog: IHasDebugSettings
 {

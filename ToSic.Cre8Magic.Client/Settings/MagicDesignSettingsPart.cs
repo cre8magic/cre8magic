@@ -32,7 +32,7 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
     public string? Classes { get; init; }
 
     /// <summary>
-    /// Special key to get a value - for non-css configurations
+    /// Special key to get a value - for non-css settings
     /// </summary>
     public string? Value { get; init; }
 

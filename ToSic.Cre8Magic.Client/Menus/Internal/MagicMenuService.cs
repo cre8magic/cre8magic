@@ -10,7 +10,7 @@ using ToSic.Cre8magic.Utils.Logging;
 namespace ToSic.Cre8magic.Menus.Internal;
 
 /// <summary>
-/// Will create a MenuTree based on the current pages information and configuration
+/// Will create a MenuTree based on the current pages information and settings.
 /// </summary>
 public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuService
 {

@@ -1,7 +1,7 @@
 ﻿namespace ToSic.Cre8magic.Utils.Logging;
 
 /// <summary>
-/// Very trivial Logger - which is actually just a configuration how to log.
+/// Very trivial Logger - which is actually just a settings how to log.
 /// The logging happens in extension methods, and the entries are actually placed in a LogRoot.
 /// </summary>
 internal class Log: ILog

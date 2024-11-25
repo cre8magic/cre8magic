@@ -8,7 +8,7 @@ internal class DefaultSettings
 {
     internal static Defaults<MagicMenuDesignSettings> Defaults = new()
     {
-        // The default/fallback design configuration for menus.
+        // The default/fallback design settings for menus.
         // Normally this would be set in the json file or the theme settings, so this wouldn't be used. 
         Fallback = new()
         {

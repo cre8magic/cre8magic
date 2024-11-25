@@ -25,7 +25,7 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
     { }
 
     /// <summary>
-    /// Generic method to check for names, since it could be run on the Settings/Configuration property or on the DesignSettings property
+    /// Generic method to check for names, since it could be run on the Settings property or on the DesignSettings property
     /// </summary>
     internal DataWithJournal<string> FindBestNameAccordingToParts(FindSettingsSpecs specs)
     {

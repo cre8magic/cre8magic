@@ -6,7 +6,7 @@
 /// It contains things like
 /// 
 /// 1. location of assets
-/// 1. configuration for various parts like CSS
+/// 1. settings for various parts like CSS
 /// </summary>
 public record MagicPackageSettings
 {

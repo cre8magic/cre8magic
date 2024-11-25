@@ -6,7 +6,7 @@ public interface IMagicBreadcrumbService
 {
     /// <summary>
     /// Get the BreadcrumbKit.
-    /// It will either use the provided settings, retrieve these from the global information or use a default configuration.
+    /// It will either use the provided settings, retrieve these from the global information or use a default settings.
     /// </summary>
     /// <param name="pageState"></param>
     /// <param name="settings"></param>

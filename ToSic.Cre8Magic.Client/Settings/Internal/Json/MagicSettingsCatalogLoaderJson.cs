@@ -42,7 +42,7 @@ public class MagicSettingsCatalogLoaderJson(ILogger<MagicSettingsCatalogLoaderJs
 
         void AddException(Exception ex)
         {
-            exceptions.Add(new SettingsException($"Error loading json configuration file '{themeConfig.SettingsJsonFile}'. {ex.Message}"));
+            exceptions.Add(new SettingsException($"Error loading json settings file '{themeConfig.SettingsJsonFile}'. {ex.Message}"));
         }
     }
 }

@@ -48,7 +48,7 @@ public record MagicMenuSettingsData : SettingsWithInherit, IHasDebugSettings, IM
 
     /// <summary>
     /// Determines if this navigation should be shown.
-    /// Mainly used for standard menus which could be disabled through configuration. 
+    /// Mainly used for standard menus which could be disabled through settings. 
     /// </summary>
     // TODO: REVIEW NAME - Show would probably be better!
     public bool? Display { get; init; } = DisplayDefault;
