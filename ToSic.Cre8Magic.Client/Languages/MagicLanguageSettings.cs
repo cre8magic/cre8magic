@@ -22,14 +22,20 @@ public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCode
         DesignName = original.DesignName;
         DesignSettings = original.DesignSettings;
     }
-    
+
+    #region Settings for Code
+
     /// <inheritdoc/>
     public string? PartName { get; init; }
 
     /// <inheritdoc/>
     public string? SettingsName { get; init; }
 
+    /// <inheritdoc/>
     public string? DesignName { get; init; }
+
+    #endregion
+
 
     public MagicLanguageDesignSettings? DesignSettings { get; init; }
 

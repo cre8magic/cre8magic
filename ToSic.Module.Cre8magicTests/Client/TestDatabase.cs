@@ -27,6 +27,7 @@ internal class TestDatabase
 
         // Breadcrumb Controls
         new("breadcrumbs-basic", "Breadcrumb Basic", typeof(BreadcrumbsBasic)),
+        new("breadcrumb-demo-code", "Breadcrumb Demo Code", typeof(DemoBreadcrumbUsingCode)),
 
         // Language Controls
         new("language-basic", "Language - Basic (various configs)", typeof(TestLanguagesBasic)),

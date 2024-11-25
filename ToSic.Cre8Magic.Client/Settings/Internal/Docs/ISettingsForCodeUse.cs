@@ -1,7 +1,4 @@
-﻿using ToSic.Cre8magic.Themes.Internal;
-using ToSic.Cre8magic.Themes.Settings;
-
-namespace ToSic.Cre8magic.Settings.Internal.Docs;
+﻿namespace ToSic.Cre8magic.Settings.Internal.Docs;
 
 /// <summary>
 /// Internal interface to specify settings which extend the ...Data settings.
@@ -22,8 +19,8 @@ internal interface ISettingsForCodeUse
     /// </summary>
     public string? SettingsName { get; init; }
 
+    /// <summary>
+    /// Name to identify which design settings to load.
+    /// </summary>
     public string? DesignName { get; init; }
-
-    internal FindSettingsSpecs CreateFindSpecs(MagicThemeContext context, ThemePartSectionEnum section, string? prefix) =>
-        new(context, SettingsName, PartName, context.SettingsName, section, prefix);
 }

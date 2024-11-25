@@ -1,0 +1,61 @@
+@using ToSic.Cre8magic
+@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Cre8magic.Settings
+@inject IMagicHat MagicHat
+
+@code {
+    [CascadingParameter] public required PageState PageState { get; set; }
+}
+
+<h1>MagicBreadcrumb with Code to Loop Items</h1>
+
+<h2>Settings directly in Code</h2>
+
+@{
+    var settingsInCode = new MagicBreadcrumbSettings
+    {
+        WithActive = true,
+        WithHome = false,
+    };
+    var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, settingsInCode);
+}
+<ol class="breadcrumb">
+    @foreach (var item in breadcrumbKit.Pages)
+    {
+        <li class='breadcrumb-item'>
+            <a href="@item.Link">@item.Name</a>
+        </li>
+    }
+</ol>
+
+<h2>Settings from Catalog</h2>
+
+@* Setup Code to ensure it uses the settings we want to provide for the demo *@
+
+@{
+    var settingsCatalog = new MagicSettingsCatalog
+    {
+        Breadcrumbs = new()
+        {
+            {
+                "productsBreadcrumb", new()
+                {
+                    WithHome = false,
+                    WithActive = true
+                }
+            }
+        }
+    };
+    MagicHat.UseSettingsCatalog(settingsCatalog);
+}
+@{
+    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new() { PartName = "productsBreadcrumb" });
+}
+<ol class="breadcrumb">
+    @foreach (var item in breadcrumbKit.Pages)
+    {
+        <li class='breadcrumb-item'>
+            <a href="@item.Link">@item.Name</a>
+        </li>
+    }
+</ol>

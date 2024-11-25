@@ -3,6 +3,7 @@ using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Docs;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
@@ -12,7 +13,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IDebugSettings
+public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, ISettingsForCodeUse, IDebugSettings
 {
     public MagicBreadcrumbSettings() { }
 
@@ -99,11 +100,18 @@ public record MagicBreadcrumbSettings : SettingsWithInherit, IHasDebugSettings, 
     /// </summary>
     public string? Id { get; init; }
 
-    /// <summary>
-    /// Name to identify this part.
-    /// This information is used to load settings (breadcrumb settings and design settings)
-    /// </summary>
+    #region Settings for Code
+
+    /// <inheritdoc/>
     public string? PartName { get; init; }
+
+    /// <inheritdoc/>
+    public string? SettingsName { get; init; }
+
+    /// <inheritdoc/>
+    public string? DesignName { get; init; }
+
+    #endregion
 
     /// <inheritdoc />
     public MagicDebugSettings? Debug { get; init; }
