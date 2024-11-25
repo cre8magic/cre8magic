@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MagicMenuRoot | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MagicMenuRoot | cre8magic ">
+      
+      <meta name="description" content="Base class for Razor menus">
+      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/new/feature/v5/apiSpec/new?filename=ToSic_Cre8magic_Menus_MagicMenuRoot.md&amp;value=---%0Auid%3A%20ToSic.Cre8magic.Menus.MagicMenuRoot%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../assets/cre8magic-logo50.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot">
+
+
+
+  <h1 id="ToSic_Cre8magic_Menus_MagicMenuRoot" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot" class="text-break">
+Class MagicMenuRoot  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Menus.html">Menus</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Base class for Razor menus</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class MagicMenuRoot : ThemeControlBase, IThemeControl</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">ComponentBase</span></div>
+      <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase</a></div>
+      <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeControlBase.cs">ThemeControlBase</a></div>
+      <div><span class="xref">MagicMenuRoot</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Interfaces/IThemeControl.cs">IThemeControl</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.OnAfterRenderAsync(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.ThemePath()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(int, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(int, string, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, int, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, int, string, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(int, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(int, string, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(string, int, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(string, int, string, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.FileUrl(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.FileUrl(string, string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.FileUrl(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.FileUrl(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.ImageUrl(int, int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.ImageUrl(int, int, int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.ImageUrl(int, int, int, string, string, string, int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.SetPageTitle(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.AddHeadContent(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.AddScript(Resource)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.ScrollToPageTop()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.Log(Alias, LogLevel, string, Exception, string, params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.Log(Alias, LogLevel, LogFunction, Exception, string, params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.ContentUrl(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.ContentUrl(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.LoggingService</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.JSRuntime</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.SiteState</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.PageState</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.Thumbnail</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.Panes</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.Resources</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_Children_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Children*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_Children" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Children">
+  Children
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public bool? Children { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_Debug_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Debug*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_Debug" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Debug">
+  Debug
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public bool? Debug { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_Depth_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Depth*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_Depth" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Depth">
+  Depth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public int? Depth { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_Design_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Design*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_Design" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Design">
+  Design
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string? Design { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_Display_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Display*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_Display" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Display">
+  Display
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public bool? Display { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_IsHorizontal_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.IsHorizontal*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_IsHorizontal" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.IsHorizontal">
+  IsHorizontal
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool IsHorizontal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_IsVertical_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.IsVertical*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_IsVertical" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.IsVertical">
+  IsVertical
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Detect if the menu is configured for vertical.
+For the most common 2 kinds of menu options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool IsVertical { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_Level_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Level*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_Level" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Level">
+  Level
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public int? Level { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_MagicMenuService_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.MagicMenuService*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_MagicMenuService" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.MagicMenuService">
+  MagicMenuService
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Inject]
+public IMagicMenuService? MagicMenuService { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Menus.IMagicMenuService.html">IMagicMenuService</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_MenuId_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.MenuId*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_MenuId" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.MenuId">
+  MenuId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string? MenuId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_MenuKit_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.MenuKit*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_MenuKit" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.MenuKit">
+  MenuKit
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IMagicMenuKit? MenuKit { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Menus.IMagicMenuKit.html">IMagicMenuKit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_MenuSettings_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.MenuSettings*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_MenuSettings" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.MenuSettings">
+  MenuSettings
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Complex object with all settings.
+If this is used, all other settings will be ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public MagicMenuSettings? MenuSettings { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_PageList_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.PageList*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_PageList" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.PageList">
+  PageList
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public List&lt;int&gt;? PageList { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">List</span>&lt;<span class="xref">int</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_PartName_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.PartName*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_PartName" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.PartName">
+  PartName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string? PartName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_Start_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Start*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_Start" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Start">
+  Start
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string? Start { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_Template_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Template*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_Template" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.Template">
+  Template
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string? Template { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuRoot_OnParametersSetAsync_" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.OnParametersSetAsync*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuRoot_OnParametersSetAsync" data-uid="ToSic.Cre8magic.Menus.MagicMenuRoot.OnParametersSetAsync">
+  OnParametersSetAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method invoked when the component has received parameters from its parent in
+the render tree, and the incoming values have been assigned to properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Task OnParametersSetAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Task</span></dt>
+    <dd><p>A <span class="xref">System.Threading.Tasks.Task</span> representing any asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuRoot.razor.cs/#L16" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

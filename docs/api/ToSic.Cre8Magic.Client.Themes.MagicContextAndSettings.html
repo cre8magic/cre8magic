@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -110,8 +110,8 @@ Class MagicContextAndSettings
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase">ComponentBase</a></div>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">ComponentBase</span></div>
       <div><span class="xref">MagicContextAndSettings</span></div>
     </dd>
   </dl>
@@ -215,7 +215,7 @@ public RenderFragment? ChildContent { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.renderfragment">RenderFragment</a></dt>
+    <dt><span class="xref">RenderFragment</span></dt>
     <dd></dd>
   </dl>
 
@@ -302,7 +302,7 @@ protected IMagicThemeJsService? ThemeJs { get; set; }</code></pre>
   
   </h3>
 
-  <div class="markdown level1 summary"><p>Renders the component to the supplied <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder">RenderTreeBuilder</a>.</p>
+  <div class="markdown level1 summary"><p>Renders the component to the supplied <span class="xref">Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder</span>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -312,7 +312,7 @@ protected IMagicThemeJsService? ThemeJs { get; set; }</code></pre>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>__builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder">RenderTreeBuilder</a></dt>
+    <dt><code>__builder</code> <span class="xref">RenderTreeBuilder</span></dt>
     <dd></dd>
   </dl>
 
@@ -335,11 +335,11 @@ protected IMagicThemeJsService? ThemeJs { get; set; }</code></pre>
   </h3>
 
   <div class="markdown level1 summary"><p>Method invoked after each time the component has been rendered interactively and the UI has finished
-updating (for example, after elements have been added to the browser DOM). Any <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.elementreference">ElementReference</a>
+updating (for example, after elements have been added to the browser DOM). Any <span class="xref">Microsoft.AspNetCore.Components.ElementReference</span>
 fields will be populated by the time this runs.</p>
 <p>This method is not invoked during prerendering or server-side rendering, because those processes
 are not attached to any live browser DOM and are already complete before the DOM is updated.</p>
-<p>Note that the component does not automatically re-render after the completion of any returned <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>,
+<p>Note that the component does not automatically re-render after the completion of any returned <span class="xref">System.Threading.Tasks.Task</span>,
 because that would cause an infinite render loop.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -350,7 +350,7 @@ because that would cause an infinite render loop.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>firstRender</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>firstRender</code> <span class="xref">bool</span></dt>
     <dd><p>Set to <code>true</code> if this is the first time <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">OnAfterRender(bool)</a> has been invoked
 on this component instance; otherwise <code>false</code>.</p>
 </dd>
@@ -358,8 +358,8 @@ on this component instance; otherwise <code>false</code>.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing any asynchronous operation.</p>
+    <dt><span class="xref">Task</span></dt>
+    <dd><p>A <span class="xref">System.Threading.Tasks.Task</span> representing any asynchronous operation.</p>
 </dd>
   </dl>
 
@@ -370,7 +370,7 @@ on this component instance; otherwise <code>false</code>.</p>
 
 
   <h4 class="section" id="ToSic_Cre8magic_Client_Themes_MagicContextAndSettings_OnAfterRenderAsync_System_Boolean__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">OnAfterRender(bool)</a> and <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync">OnAfterRenderAsync(bool)</a> lifecycle methods
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">OnAfterRender(bool)</a> and <span class="xref">Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(bool)</span> lifecycle methods
 are useful for performing interop, or interacting with values received from <code>@ref</code>.
 Use the <code class="paramref">firstRender</code> parameter to ensure that initialization work is only performed
 once.</p>

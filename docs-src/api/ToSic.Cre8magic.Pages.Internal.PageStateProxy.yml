@@ -56,6 +56,7 @@ items:
   - Oqtane.UI.PageState.Alias
   - Oqtane.UI.PageState.Site
   - Oqtane.UI.PageState.Page
+  - Oqtane.UI.PageState.Modules
   - Oqtane.UI.PageState.User
   - Oqtane.UI.PageState.Uri
   - Oqtane.UI.PageState.Route
@@ -74,7 +75,6 @@ items:
   - Oqtane.UI.PageState.RenderId
   - Oqtane.UI.PageState.Refresh
   - Oqtane.UI.PageState.Pages
-  - Oqtane.UI.PageState.Modules
   - Oqtane.UI.PageState.Languages
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -237,7 +237,7 @@ references:
   commentId: T:Oqtane.UI.PageState
   parent: Oqtane.UI
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState
@@ -245,7 +245,7 @@ references:
   commentId: P:Oqtane.UI.PageState.Alias
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Alias
   nameWithType: PageState.Alias
   fullName: Oqtane.UI.PageState.Alias
@@ -253,7 +253,7 @@ references:
   commentId: P:Oqtane.UI.PageState.Site
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Site
   nameWithType: PageState.Site
   fullName: Oqtane.UI.PageState.Site
@@ -261,15 +261,23 @@ references:
   commentId: P:Oqtane.UI.PageState.Page
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Page
   nameWithType: PageState.Page
   fullName: Oqtane.UI.PageState.Page
+- uid: Oqtane.UI.PageState.Modules
+  commentId: P:Oqtane.UI.PageState.Modules
+  parent: Oqtane.UI.PageState
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: Modules
+  nameWithType: PageState.Modules
+  fullName: Oqtane.UI.PageState.Modules
 - uid: Oqtane.UI.PageState.User
   commentId: P:Oqtane.UI.PageState.User
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: User
   nameWithType: PageState.User
   fullName: Oqtane.UI.PageState.User
@@ -277,7 +285,7 @@ references:
   commentId: P:Oqtane.UI.PageState.Uri
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Uri
   nameWithType: PageState.Uri
   fullName: Oqtane.UI.PageState.Uri
@@ -285,7 +293,7 @@ references:
   commentId: P:Oqtane.UI.PageState.Route
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Route
   nameWithType: PageState.Route
   fullName: Oqtane.UI.PageState.Route
@@ -293,7 +301,7 @@ references:
   commentId: P:Oqtane.UI.PageState.QueryString
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: QueryString
   nameWithType: PageState.QueryString
   fullName: Oqtane.UI.PageState.QueryString
@@ -301,7 +309,7 @@ references:
   commentId: P:Oqtane.UI.PageState.UrlParameters
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: UrlParameters
   nameWithType: PageState.UrlParameters
   fullName: Oqtane.UI.PageState.UrlParameters
@@ -309,7 +317,7 @@ references:
   commentId: P:Oqtane.UI.PageState.ModuleId
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: ModuleId
   nameWithType: PageState.ModuleId
   fullName: Oqtane.UI.PageState.ModuleId
@@ -317,7 +325,7 @@ references:
   commentId: P:Oqtane.UI.PageState.Action
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Action
   nameWithType: PageState.Action
   fullName: Oqtane.UI.PageState.Action
@@ -325,7 +333,7 @@ references:
   commentId: P:Oqtane.UI.PageState.EditMode
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: EditMode
   nameWithType: PageState.EditMode
   fullName: Oqtane.UI.PageState.EditMode
@@ -333,7 +341,7 @@ references:
   commentId: P:Oqtane.UI.PageState.LastSyncDate
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: LastSyncDate
   nameWithType: PageState.LastSyncDate
   fullName: Oqtane.UI.PageState.LastSyncDate
@@ -341,7 +349,7 @@ references:
   commentId: P:Oqtane.UI.PageState.RenderMode
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: RenderMode
   nameWithType: PageState.RenderMode
   fullName: Oqtane.UI.PageState.RenderMode
@@ -349,7 +357,7 @@ references:
   commentId: P:Oqtane.UI.PageState.Runtime
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Runtime
   nameWithType: PageState.Runtime
   fullName: Oqtane.UI.PageState.Runtime
@@ -357,7 +365,7 @@ references:
   commentId: P:Oqtane.UI.PageState.VisitorId
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: VisitorId
   nameWithType: PageState.VisitorId
   fullName: Oqtane.UI.PageState.VisitorId
@@ -365,7 +373,7 @@ references:
   commentId: P:Oqtane.UI.PageState.RemoteIPAddress
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: RemoteIPAddress
   nameWithType: PageState.RemoteIPAddress
   fullName: Oqtane.UI.PageState.RemoteIPAddress
@@ -373,7 +381,7 @@ references:
   commentId: P:Oqtane.UI.PageState.ReturnUrl
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: ReturnUrl
   nameWithType: PageState.ReturnUrl
   fullName: Oqtane.UI.PageState.ReturnUrl
@@ -381,7 +389,7 @@ references:
   commentId: P:Oqtane.UI.PageState.IsInternalNavigation
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: IsInternalNavigation
   nameWithType: PageState.IsInternalNavigation
   fullName: Oqtane.UI.PageState.IsInternalNavigation
@@ -389,7 +397,7 @@ references:
   commentId: P:Oqtane.UI.PageState.RenderId
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: RenderId
   nameWithType: PageState.RenderId
   fullName: Oqtane.UI.PageState.RenderId
@@ -397,7 +405,7 @@ references:
   commentId: P:Oqtane.UI.PageState.Refresh
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Refresh
   nameWithType: PageState.Refresh
   fullName: Oqtane.UI.PageState.Refresh
@@ -405,23 +413,15 @@ references:
   commentId: P:Oqtane.UI.PageState.Pages
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Pages
   nameWithType: PageState.Pages
   fullName: Oqtane.UI.PageState.Pages
-- uid: Oqtane.UI.PageState.Modules
-  commentId: P:Oqtane.UI.PageState.Modules
-  parent: Oqtane.UI.PageState
-  isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
-  name: Modules
-  nameWithType: PageState.Modules
-  fullName: Oqtane.UI.PageState.Modules
 - uid: Oqtane.UI.PageState.Languages
   commentId: P:Oqtane.UI.PageState.Languages
   parent: Oqtane.UI.PageState
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: Languages
   nameWithType: PageState.Languages
   fullName: Oqtane.UI.PageState.Languages
@@ -660,7 +660,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: )
   spec.vb:
   - uid: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.DoNothing(Oqtane.UI.PageState)
@@ -670,7 +670,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: )
 - uid: Oqtane.UI.PageState.ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.IsDebug
   commentId: M:ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.IsDebug(Oqtane.UI.PageState)
@@ -688,7 +688,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: )
   spec.vb:
   - uid: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.IsDebug(Oqtane.UI.PageState)
@@ -698,7 +698,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: )
 - uid: Oqtane.UI.PageState.ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.ToProxy(System.Boolean)
   commentId: M:ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.ToProxy(Oqtane.UI.PageState,System.Boolean)
@@ -719,7 +719,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: ','
   - name: " "
   - uid: System.Boolean
@@ -735,7 +735,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: ','
   - name: " "
   - uid: System.Boolean
@@ -787,7 +787,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: )
   spec.vb:
   - uid: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.DoNothing(Oqtane.UI.PageState)
@@ -797,7 +797,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: )
 - uid: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions
   commentId: T:ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions
@@ -821,7 +821,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: )
   spec.vb:
   - uid: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.IsDebug(Oqtane.UI.PageState)
@@ -831,7 +831,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: )
 - uid: ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.ToProxy(Oqtane.UI.PageState,System.Boolean)
   commentId: M:ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions.ToProxy(Oqtane.UI.PageState,System.Boolean)
@@ -851,7 +851,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: ','
   - name: " "
   - uid: System.Boolean
@@ -867,7 +867,7 @@ references:
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   - name: ','
   - name: " "
   - uid: System.Boolean

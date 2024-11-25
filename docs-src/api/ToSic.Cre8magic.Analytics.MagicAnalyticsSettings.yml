@@ -7,7 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
-  - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
+  - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewEvent
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewJs
@@ -27,29 +27,30 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicAnalyticsSettings
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 5
+    startLine: 13
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
+  summary: >-
+    Settings to set up and use Google Tag Manager to track page views.
+
+
+    BETA: Doesn't completely work yet.
+
+
+    * Main caveat: Integration of the Google Tag Manager still has the GTM hardwired in the JS, must be finished.
+
+    * Background is that the Module currently doesn't contain its own JS, so it's still part of the theme.
+  example: []
   syntax:
-    content: 'public record MagicAnalyticsSettings : SettingsWithInherit, IEquatable<SettingsWithInherit>, ICanClone<MagicAnalyticsSettings>, IEquatable<MagicAnalyticsSettings>'
-    content.vb: Public Class MagicAnalyticsSettings Inherits SettingsWithInherit Implements IEquatable(Of SettingsWithInherit), ICanClone(Of MagicAnalyticsSettings), IEquatable(Of MagicAnalyticsSettings)
+    content: 'public record MagicAnalyticsSettings : SettingsWithInherit'
+    content.vb: Public Class MagicAnalyticsSettings Inherits SettingsWithInherit
   inheritance:
   - System.Object
   - ToSic.Cre8magic.Settings.SettingsWithInherit
-  implements:
-  - System.IEquatable{ToSic.Cre8magic.Settings.SettingsWithInherit}
-  - ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
-  - System.IEquatable{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
   inheritedMembers:
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
+  - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
 - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor
   commentId: M:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor
   id: '#ctor'
@@ -68,7 +69,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 7
+    startLine: 15
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -97,7 +98,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 10
+    startLine: 18
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -113,31 +114,31 @@ items:
   nameWithType.vb: MagicAnalyticsSettings.New(MagicAnalyticsSettings, MagicAnalyticsSettings)
   fullName.vb: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.New(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
   name.vb: New(MagicAnalyticsSettings, MagicAnalyticsSettings)
-- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
-  id: CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
+  id: CloneUnder(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
   parent: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
   langs:
   - csharp
   - vb
-  name: CloneWith(MagicAnalyticsSettings?, bool)
-  nameWithType: MagicAnalyticsSettings.CloneWith(MagicAnalyticsSettings?, bool)
-  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings?, bool)
+  name: CloneUnder(MagicAnalyticsSettings?, bool)
+  nameWithType: MagicAnalyticsSettings.CloneUnder(MagicAnalyticsSettings?, bool)
+  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings?, bool)
   type: Method
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: CloneWith
+    id: CloneUnder
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 21
+    startLine: 29
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
   example: []
   syntax:
-    content: public MagicAnalyticsSettings CloneWith(MagicAnalyticsSettings? priority, bool forceCopy = false)
+    content: public MagicAnalyticsSettings CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy = false)
     parameters:
     - id: priority
       type: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
@@ -145,13 +146,11 @@ items:
       type: System.Boolean
     return:
       type: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-    content.vb: Public Function CloneWith(priority As MagicAnalyticsSettings, forceCopy As Boolean = False) As MagicAnalyticsSettings
-  overload: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith*
-  implements:
-  - ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
-  nameWithType.vb: MagicAnalyticsSettings.CloneWith(MagicAnalyticsSettings, Boolean)
-  fullName.vb: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, Boolean)
-  name.vb: CloneWith(MagicAnalyticsSettings, Boolean)
+    content.vb: Public Function CloneUnder(priority As MagicAnalyticsSettings, forceCopy As Boolean = False) As MagicAnalyticsSettings
+  overload: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder*
+  nameWithType.vb: MagicAnalyticsSettings.CloneUnder(MagicAnalyticsSettings, Boolean)
+  fullName.vb: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, Boolean)
+  name.vb: CloneUnder(MagicAnalyticsSettings, Boolean)
 - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId
   commentId: P:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId
   id: GtmId
@@ -170,10 +169,12 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GtmId
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 24
+    startLine: 35
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
+  summary: ID of Google Tag Manager.
+  example: []
   syntax:
     content: public string? GtmId { get; init; }
     parameters: []
@@ -199,7 +200,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageViewTrack
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 26
+    startLine: 37
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -228,7 +229,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageViewTrackFirst
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 28
+    startLine: 39
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -257,10 +258,15 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageViewJs
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 30
+    startLine: 45
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
+  summary: >-
+    JavaScript function to call for tracking page views.
+
+    Defaults to "gtag".
+  example: []
   syntax:
     content: public string? PageViewJs { get; init; }
     parameters: []
@@ -286,10 +292,15 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageViewEvent
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 32
+    startLine: 51
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
+  summary: >-
+    Name of the event to give to GTM which should be logged.
+
+    Defaults to "blazor_page_view".
+  example: []
   syntax:
     content: public string? PageViewEvent { get; init; }
     parameters: []
@@ -332,7 +343,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -346,103 +356,6 @@ references:
   name: SettingsWithInherit
   nameWithType: SettingsWithInherit
   fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
-- uid: System.IEquatable{ToSic.Cre8magic.Settings.SettingsWithInherit}
-  commentId: T:System.IEquatable{ToSic.Cre8magic.Settings.SettingsWithInherit}
-  parent: System
-  definition: System.IEquatable`1
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<SettingsWithInherit>
-  nameWithType: IEquatable<SettingsWithInherit>
-  fullName: System.IEquatable<ToSic.Cre8magic.Settings.SettingsWithInherit>
-  nameWithType.vb: IEquatable(Of SettingsWithInherit)
-  fullName.vb: System.IEquatable(Of ToSic.Cre8magic.Settings.SettingsWithInherit)
-  name.vb: IEquatable(Of SettingsWithInherit)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit
-    name: SettingsWithInherit
-    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit
-    name: SettingsWithInherit
-    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html
-  - name: )
-- uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
-  commentId: T:ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
-  parent: ToSic.Cre8magic.Settings.Internal
-  definition: ToSic.Cre8magic.Settings.Internal.ICanClone`1
-  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
-  name: ICanClone<MagicAnalyticsSettings>
-  nameWithType: ICanClone<MagicAnalyticsSettings>
-  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<ToSic.Cre8magic.Analytics.MagicAnalyticsSettings>
-  nameWithType.vb: ICanClone(Of MagicAnalyticsSettings)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
-  name.vb: ICanClone(Of MagicAnalyticsSettings)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
-    name: ICanClone
-    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
-  - name: <
-  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-    name: MagicAnalyticsSettings
-    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
-  - name: '>'
-  spec.vb:
-  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
-    name: ICanClone
-    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-    name: MagicAnalyticsSettings
-    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
-  - name: )
-- uid: System.IEquatable{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
-  commentId: T:System.IEquatable{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
-  parent: System
-  definition: System.IEquatable`1
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<MagicAnalyticsSettings>
-  nameWithType: IEquatable<MagicAnalyticsSettings>
-  fullName: System.IEquatable<ToSic.Cre8magic.Analytics.MagicAnalyticsSettings>
-  nameWithType.vb: IEquatable(Of MagicAnalyticsSettings)
-  fullName.vb: System.IEquatable(Of ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
-  name.vb: IEquatable(Of MagicAnalyticsSettings)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-    name: MagicAnalyticsSettings
-    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-    name: MagicAnalyticsSettings
-    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
-  - name: )
 - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   parent: ToSic.Cre8magic.Settings.SettingsWithInherit
@@ -450,224 +363,40 @@ references:
   name: Inherits
   nameWithType: SettingsWithInherit.Inherits
   fullName: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+  commentId: M:ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+  parent: ToSic.Cre8magic.Settings.SettingsWithInherit
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
+  name: PickFirstNonZeroInt(int?[])
+  nameWithType: SettingsWithInherit.PickFirstNonZeroInt(int?[])
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(int?[])
+  nameWithType.vb: SettingsWithInherit.PickFirstNonZeroInt(Integer?())
+  fullName.vb: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(Integer?())
+  name.vb: PickFirstNonZeroInt(Integer?())
   spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+    name: PickFirstNonZeroInt
+    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
   - name: (
-  - uid: System.Object
-    name: object
+  - uid: System.Int32
+    name: int
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '?'
+  - name: '['
+  - name: ']'
   - name: )
   spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+    name: PickFirstNonZeroInt
+    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
   - name: (
-  - uid: System.Object
-    name: Object
+  - uid: System.Int32
+    name: Integer
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  name: Equals(object, object)
-  nameWithType: object.Equals(object, object)
-  fullName: object.Equals(object, object)
-  nameWithType.vb: Object.Equals(Object, Object)
-  fullName.vb: Object.Equals(Object, Object)
-  name.vb: Equals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: '?'
   - name: (
   - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  name: ReferenceEquals(object, object)
-  nameWithType: object.ReferenceEquals(object, object)
-  fullName: object.ReferenceEquals(object, object)
-  nameWithType.vb: Object.ReferenceEquals(Object, Object)
-  fullName.vb: Object.ReferenceEquals(Object, Object)
-  name.vb: ReferenceEquals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
   - name: )
 - uid: System
   commentId: N:System
@@ -706,97 +435,6 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: System.IEquatable`1
-  commentId: T:System.IEquatable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  name: IEquatable<T>
-  nameWithType: IEquatable<T>
-  fullName: System.IEquatable<T>
-  nameWithType.vb: IEquatable(Of T)
-  fullName.vb: System.IEquatable(Of T)
-  name.vb: IEquatable(Of T)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
-  commentId: T:ToSic.Cre8magic.Settings.Internal.ICanClone`1
-  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
-  name: ICanClone<T>
-  nameWithType: ICanClone<T>
-  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>
-  nameWithType.vb: ICanClone(Of T)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T)
-  name.vb: ICanClone(Of T)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
-    name: ICanClone
-    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
-    name: ICanClone
-    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: ToSic.Cre8magic.Settings.Internal
-  commentId: N:ToSic.Cre8magic.Settings.Internal
-  href: ToSic.html
-  name: ToSic.Cre8magic.Settings.Internal
-  nameWithType: ToSic.Cre8magic.Settings.Internal
-  fullName: ToSic.Cre8magic.Settings.Internal
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
 - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor*
   commentId: Overload:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor
   href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html#ToSic_Cre8magic_Analytics_MagicAnalyticsSettings__ctor
@@ -813,100 +451,22 @@ references:
   name: MagicAnalyticsSettings
   nameWithType: MagicAnalyticsSettings
   fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith*
-  commentId: Overload:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith
-  href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html#ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_CloneWith_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_System_Boolean_
-  name: CloneWith
-  nameWithType: MagicAnalyticsSettings.CloneWith
-  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith
-- uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
-  parent: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
-  definition: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
-  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
-  name: CloneWith(MagicAnalyticsSettings, bool)
-  nameWithType: ICanClone<MagicAnalyticsSettings>.CloneWith(MagicAnalyticsSettings, bool)
-  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<ToSic.Cre8magic.Analytics.MagicAnalyticsSettings>.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, bool)
-  nameWithType.vb: ICanClone(Of MagicAnalyticsSettings).CloneWith(MagicAnalyticsSettings, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of ToSic.Cre8magic.Analytics.MagicAnalyticsSettings).CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, Boolean)
-  name.vb: CloneWith(MagicAnalyticsSettings, Boolean)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
-    name: CloneWith
-    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
-  - name: (
-  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-    name: MagicAnalyticsSettings
-    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)
-    name: CloneWith
-    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
-  - name: (
-  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-    name: MagicAnalyticsSettings
-    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder*
+  commentId: Overload:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder
+  href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html#ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_CloneUnder_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_System_Boolean_
+  name: CloneUnder
+  nameWithType: MagicAnalyticsSettings.CloneUnder
+  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
-  isExternal: true
-  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
-  name: CloneWith(T, bool)
-  nameWithType: ICanClone<T>.CloneWith(T, bool)
-  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>.CloneWith(T, bool)
-  nameWithType.vb: ICanClone(Of T).CloneWith(T, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T).CloneWith(T, Boolean)
-  name.vb: CloneWith(T, Boolean)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
-    name: CloneWith
-    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
-    name: CloneWith
-    href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
-  - name: (
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
-  - name: )
 - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId*
   commentId: Overload:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId
   href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html#ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_GtmId
@@ -917,7 +477,6 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string
@@ -934,7 +493,6 @@ references:
   commentId: T:System.Nullable{System.Boolean}
   parent: System
   definition: System.Nullable`1
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool?
   nameWithType: bool?
   fullName: bool?
@@ -945,18 +503,15 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '?'
   spec.vb:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '?'
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   name: Nullable<T>
   nameWithType: Nullable<T>
   fullName: System.Nullable<T>
@@ -967,7 +522,6 @@ references:
   - uid: System.Nullable`1
     name: Nullable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   - name: <
   - name: T
   - name: '>'
@@ -975,7 +529,6 @@ references:
   - uid: System.Nullable`1
     name: Nullable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   - name: (
   - name: Of
   - name: " "

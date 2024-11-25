@@ -1,0 +1,97 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.Internal.Journal
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Journal
+  id: Journal
+  parent: ToSic.Cre8magic.Settings.Internal
+  children:
+  - ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal`1
+  - ToSic.Cre8magic.Settings.Internal.Journal.Journal
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Settings.Internal.Journal
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Journal
+  fullName: ToSic.Cre8magic.Settings.Internal.Journal
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal`1
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal`1
+  href: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal-1.html
+  name: DataWithJournal<T>
+  nameWithType: DataWithJournal<T>
+  fullName: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal<T>
+  nameWithType.vb: DataWithJournal(Of T)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal(Of T)
+  name.vb: DataWithJournal(Of T)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal`1
+    name: DataWithJournal
+    href: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal`1
+    name: DataWithJournal
+    href: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal.Journal.Journal
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Journal.Journal
+  parent: ToSic.Cre8magic.Settings.Internal.Journal
+  href: ToSic.Cre8magic.Settings.Internal.Journal.Journal.html
+  name: Journal
+  nameWithType: Journal
+  fullName: ToSic.Cre8magic.Settings.Internal.Journal.Journal
+- uid: ToSic.Cre8magic.Settings.Internal.Journal
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Journal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Journal
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Journal
+  fullName: ToSic.Cre8magic.Settings.Internal.Journal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Journal
+    name: Journal
+    href: ToSic.Cre8magic.Settings.Internal.Journal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Journal
+    name: Journal
+    href: ToSic.Cre8magic.Settings.Internal.Journal.html

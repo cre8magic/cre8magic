@@ -5,9 +5,8 @@ items:
   id: MagicPageFactory
   parent: ToSic.Cre8magic.Pages.Internal
   children:
-  - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)
+  - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf(System.Int32)
-  - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone(System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Create(Oqtane.Models.Page)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.CreateOrNull(Oqtane.Models.Page)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Current
@@ -32,7 +31,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicPageFactory
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 16
+    startLine: 14
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -54,16 +53,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)
-  commentId: M:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)
-  id: '#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)'
+- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)
+  commentId: M:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)
+  id: '#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)'
   parent: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
   langs:
   - csharp
   - vb
-  name: MagicPageFactory(PageState, IEnumerable<IMagicPage>?, bool)
-  nameWithType: MagicPageFactory.MagicPageFactory(PageState, IEnumerable<IMagicPage>?, bool)
-  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.MagicPageFactory(Oqtane.UI.PageState, System.Collections.Generic.IEnumerable<ToSic.Cre8magic.Pages.IMagicPage>?, bool)
+  name: MagicPageFactory(PageState, IEnumerable<IMagicPage>?, bool, LogRoot?)
+  nameWithType: MagicPageFactory.MagicPageFactory(PageState, IEnumerable<IMagicPage>?, bool, LogRoot?)
+  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.MagicPageFactory(Oqtane.UI.PageState, System.Collections.Generic.IEnumerable<ToSic.Cre8magic.Pages.IMagicPage>?, bool, ToSic.Cre8magic.Utils.Logging.LogRoot?)
   type: Constructor
   source:
     remote:
@@ -72,7 +71,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 16
+    startLine: 14
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -82,7 +81,7 @@ items:
     This is necessary, because the pages need certain properties which require other services to be available.
   example: []
   syntax:
-    content: public MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = null, bool ignorePermissions = false)
+    content: public MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = null, bool ignorePermissions = false, LogRoot? logRoot = null)
     parameters:
     - id: pageState
       type: Oqtane.UI.PageState
@@ -90,51 +89,13 @@ items:
       type: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
     - id: ignorePermissions
       type: System.Boolean
-    content.vb: Public Sub New(pageState As PageState, restrictPages As IEnumerable(Of IMagicPage) = Nothing, ignorePermissions As Boolean = False)
+    - id: logRoot
+      type: ToSic.Cre8magic.Utils.Logging.LogRoot
+    content.vb: Public Sub New(pageState As PageState, restrictPages As IEnumerable(Of IMagicPage) = Nothing, ignorePermissions As Boolean = False, logRoot As LogRoot = Nothing)
   overload: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor*
-  nameWithType.vb: MagicPageFactory.New(PageState, IEnumerable(Of IMagicPage), Boolean)
-  fullName.vb: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.New(Oqtane.UI.PageState, System.Collections.Generic.IEnumerable(Of ToSic.Cre8magic.Pages.IMagicPage), Boolean)
-  name.vb: New(PageState, IEnumerable(Of IMagicPage), Boolean)
-- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone(System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)
-  commentId: M:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone(System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)
-  id: Clone(System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)
-  parent: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
-  langs:
-  - csharp
-  - vb
-  name: Clone(List<IMagicPage>, bool)
-  nameWithType: MagicPageFactory.Clone(List<IMagicPage>, bool)
-  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone(System.Collections.Generic.List<ToSic.Cre8magic.Pages.IMagicPage>, bool)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Clone
-    path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 23
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Pages.Internal
-  summary: Get a new factory, with different page restrictions
-  example: []
-  syntax:
-    content: public MagicPageFactory Clone(List<IMagicPage> restrictPages, bool ignorePermissions = false)
-    parameters:
-    - id: restrictPages
-      type: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
-      description: ''
-    - id: ignorePermissions
-      type: System.Boolean
-    return:
-      type: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
-      description: ''
-    content.vb: Public Function Clone(restrictPages As List(Of IMagicPage), ignorePermissions As Boolean = False) As MagicPageFactory
-  overload: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone*
-  nameWithType.vb: MagicPageFactory.Clone(List(Of IMagicPage), Boolean)
-  fullName.vb: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone(System.Collections.Generic.List(Of ToSic.Cre8magic.Pages.IMagicPage), Boolean)
-  name.vb: Clone(List(Of IMagicPage), Boolean)
+  nameWithType.vb: MagicPageFactory.New(PageState, IEnumerable(Of IMagicPage), Boolean, LogRoot)
+  fullName.vb: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.New(Oqtane.UI.PageState, System.Collections.Generic.IEnumerable(Of ToSic.Cre8magic.Pages.IMagicPage), Boolean, ToSic.Cre8magic.Utils.Logging.LogRoot)
+  name.vb: New(PageState, IEnumerable(Of IMagicPage), Boolean, LogRoot)
 - uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Create(Oqtane.Models.Page)
   commentId: M:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Create(Oqtane.Models.Page)
   id: Create(Oqtane.Models.Page)
@@ -153,7 +114,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Create
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 44
+    startLine: 30
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -184,7 +145,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: CreateOrNull
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 53
+    startLine: 39
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -218,7 +179,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Home
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 55
+    startLine: 41
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -247,7 +208,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Current
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 58
+    startLine: 44
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -276,7 +237,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetOrNull
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 63
+    startLine: 49
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -310,7 +271,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Get
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 65
+    startLine: 51
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -344,7 +305,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Get
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 68
+    startLine: 54
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -378,7 +339,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PagesAll
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 74
+    startLine: 60
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -408,7 +369,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PagesCurrent
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 77
+    startLine: 63
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -436,7 +397,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PagesUser
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 89
+    startLine: 75
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -469,7 +430,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ChildrenOf
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 197
+    startLine: 107
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -763,7 +724,7 @@ references:
   fullName: System
 - uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor*
   commentId: Overload:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor
-  href: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html#ToSic_Cre8magic_Pages_Internal_MagicPageFactory__ctor_Oqtane_UI_PageState_System_Collections_Generic_IEnumerable_ToSic_Cre8magic_Pages_IMagicPage__System_Boolean_
+  href: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html#ToSic_Cre8magic_Pages_Internal_MagicPageFactory__ctor_Oqtane_UI_PageState_System_Collections_Generic_IEnumerable_ToSic_Cre8magic_Pages_IMagicPage__System_Boolean_ToSic_Cre8magic_Utils_Logging_LogRoot_
   name: MagicPageFactory
   nameWithType: MagicPageFactory.MagicPageFactory
   fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.MagicPageFactory
@@ -774,7 +735,7 @@ references:
   commentId: T:Oqtane.UI.PageState
   parent: Oqtane.UI
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState
@@ -822,6 +783,13 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: ToSic.Cre8magic.Utils.Logging.LogRoot
+  commentId: T:ToSic.Cre8magic.Utils.Logging.LogRoot
+  parent: ToSic.Cre8magic.Utils.Logging
+  href: ToSic.Cre8magic.Utils.Logging.LogRoot.html
+  name: LogRoot
+  nameWithType: LogRoot
+  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot
 - uid: Oqtane.UI
   commentId: N:Oqtane.UI
   isExternal: true
@@ -909,80 +877,44 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone*
-  commentId: Overload:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone
-  href: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html#ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Clone_System_Collections_Generic_List_ToSic_Cre8magic_Pages_IMagicPage__System_Boolean_
-  name: Clone
-  nameWithType: MagicPageFactory.Clone
-  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone
-- uid: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
-  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<IMagicPage>
-  nameWithType: List<IMagicPage>
-  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Pages.IMagicPage>
-  nameWithType.vb: List(Of IMagicPage)
-  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Pages.IMagicPage)
-  name.vb: List(Of IMagicPage)
+- uid: ToSic.Cre8magic.Utils.Logging
+  commentId: N:ToSic.Cre8magic.Utils.Logging
+  href: ToSic.html
+  name: ToSic.Cre8magic.Utils.Logging
+  nameWithType: ToSic.Cre8magic.Utils.Logging
+  fullName: ToSic.Cre8magic.Utils.Logging
   spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: ToSic.Cre8magic.Pages.IMagicPage
-    name: IMagicPage
-    href: ToSic.Cre8magic.Pages.IMagicPage.html
-  - name: '>'
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Utils
+    name: Utils
+    href: ToSic.Cre8magic.Utils.html
+  - name: .
+  - uid: ToSic.Cre8magic.Utils.Logging
+    name: Logging
+    href: ToSic.Cre8magic.Utils.Logging.html
   spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ToSic.Cre8magic.Pages.IMagicPage
-    name: IMagicPage
-    href: ToSic.Cre8magic.Pages.IMagicPage.html
-  - name: )
-- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
-  commentId: T:ToSic.Cre8magic.Pages.Internal.MagicPageFactory
-  parent: ToSic.Cre8magic.Pages.Internal
-  href: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html
-  name: MagicPageFactory
-  nameWithType: MagicPageFactory
-  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Utils
+    name: Utils
+    href: ToSic.Cre8magic.Utils.html
+  - name: .
+  - uid: ToSic.Cre8magic.Utils.Logging
+    name: Logging
+    href: ToSic.Cre8magic.Utils.Logging.html
 - uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Create*
   commentId: Overload:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Create
   href: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html#ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Create_Oqtane_Models_Page_
@@ -992,8 +924,6 @@ references:
 - uid: Oqtane.Models.Page
   commentId: T:Oqtane.Models.Page
   parent: Oqtane.Models
-  isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs
   name: Page
   nameWithType: Page
   fullName: Oqtane.Models.Page
@@ -1006,26 +936,21 @@ references:
   fullName: ToSic.Cre8magic.Pages.IMagicPage
 - uid: Oqtane.Models
   commentId: N:Oqtane.Models
-  isExternal: true
   name: Oqtane.Models
   nameWithType: Oqtane.Models
   fullName: Oqtane.Models
   spec.csharp:
   - uid: Oqtane
     name: Oqtane
-    isExternal: true
   - name: .
   - uid: Oqtane.Models
     name: Models
-    isExternal: true
   spec.vb:
   - uid: Oqtane
     name: Oqtane
-    isExternal: true
   - name: .
   - uid: Oqtane.Models
     name: Models
-    isExternal: true
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
   href: ToSic.html
@@ -1191,8 +1116,6 @@ references:
   - name: <
   - uid: Oqtane.Models.Page
     name: Page
-    isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -1204,8 +1127,6 @@ references:
   - name: " "
   - uid: Oqtane.Models.Page
     name: Page
-    isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs
   - name: )
 - uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PagesAll*
   commentId: Overload:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PagesAll
@@ -1242,3 +1163,64 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<IMagicPage>
+  nameWithType: List<IMagicPage>
+  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Pages.IMagicPage>
+  nameWithType.vb: List(Of IMagicPage)
+  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: List(Of IMagicPage)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

@@ -1,0 +1,24 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.UserLogins.Internal
+  commentId: N:ToSic.Cre8magic.UserLogins.Internal
+  id: Internal
+  parent: ToSic.Cre8magic.UserLogins
+  children:
+  - ToSic.Cre8magic.UserLogins.Internal.IUserLoginService
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.UserLogins.Internal
+  nameWithType: ToSic.Cre8magic.UserLogins.Internal
+  fullName: ToSic.Cre8magic.UserLogins.Internal
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService
+  commentId: T:ToSic.Cre8magic.UserLogins.Internal.IUserLoginService
+  href: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.html
+  name: IUserLoginService
+  nameWithType: IUserLoginService
+  fullName: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService

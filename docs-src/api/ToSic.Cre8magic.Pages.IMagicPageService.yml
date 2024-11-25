@@ -6,7 +6,6 @@ items:
   parent: ToSic.Cre8magic.Pages
   children:
   - ToSic.Cre8magic.Pages.IMagicPageService.GetAll(Oqtane.UI.PageState,System.Boolean)
-  - ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
   - ToSic.Cre8magic.Pages.IMagicPageService.GetCurrent(Oqtane.UI.PageState)
   - ToSic.Cre8magic.Pages.IMagicPageService.GetHome(Oqtane.UI.PageState)
   - ToSic.Cre8magic.Pages.IMagicPageService.GetPage(Oqtane.UI.PageState,Oqtane.Models.Page)
@@ -26,7 +25,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IMagicPageService
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 6
+    startLine: 5
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
@@ -51,7 +50,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetAll
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 8
+    startLine: 7
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
@@ -87,7 +86,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetHome
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 10
+    startLine: 9
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
@@ -118,7 +117,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetCurrent
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 12
+    startLine: 11
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
@@ -149,7 +148,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetPage
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 14
+    startLine: 13
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
@@ -185,7 +184,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetPage
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 16
+    startLine: 15
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
@@ -221,7 +220,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetPages
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 18
+    startLine: 17
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages
@@ -239,42 +238,6 @@ items:
   nameWithType.vb: IMagicPageService.GetPages(PageState, IEnumerable(Of Integer))
   fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetPages(Oqtane.UI.PageState, System.Collections.Generic.IEnumerable(Of Integer))
   name.vb: GetPages(PageState, IEnumerable(Of Integer))
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
-  commentId: M:ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
-  id: GetBreadcrumb(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
-  parent: ToSic.Cre8magic.Pages.IMagicPageService
-  langs:
-  - csharp
-  - vb
-  name: GetBreadcrumb(PageState, MagicBreadcrumbSettings?)
-  nameWithType: IMagicPageService.GetBreadcrumb(PageState, MagicBreadcrumbSettings?)
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState, ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings?)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: GetBreadcrumb
-    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageService.cs
-    startLine: 20
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Pages
-  syntax:
-    content: IMagicPageList GetBreadcrumb(PageState pageState, MagicBreadcrumbSettings? specs = null)
-    parameters:
-    - id: pageState
-      type: Oqtane.UI.PageState
-    - id: specs
-      type: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
-    return:
-      type: ToSic.Cre8magic.Pages.IMagicPageList
-    content.vb: Function GetBreadcrumb(pageState As PageState, specs As MagicBreadcrumbSettings = Nothing) As IMagicPageList
-  overload: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb*
-  nameWithType.vb: IMagicPageService.GetBreadcrumb(PageState, MagicBreadcrumbSettings)
-  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb(Oqtane.UI.PageState, ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings)
-  name.vb: GetBreadcrumb(PageState, MagicBreadcrumbSettings)
 references:
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
@@ -316,7 +279,7 @@ references:
   commentId: T:Oqtane.UI.PageState
   parent: Oqtane.UI
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState
@@ -324,7 +287,6 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -335,7 +297,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
   name: IEnumerable<IMagicPage>
   nameWithType: IEnumerable<IMagicPage>
   fullName: System.Collections.Generic.IEnumerable<ToSic.Cre8magic.Pages.IMagicPage>
@@ -346,7 +308,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: ToSic.Cre8magic.Pages.IMagicPage
     name: IMagicPage
@@ -356,7 +317,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -396,7 +356,6 @@ references:
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<T>
   nameWithType: IEnumerable<T>
   fullName: System.Collections.Generic.IEnumerable<T>
@@ -407,7 +366,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
@@ -415,7 +373,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -487,7 +444,6 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -497,33 +453,26 @@ references:
 - uid: Oqtane.Models.Page
   commentId: T:Oqtane.Models.Page
   parent: Oqtane.Models
-  isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs
   name: Page
   nameWithType: Page
   fullName: Oqtane.Models.Page
 - uid: Oqtane.Models
   commentId: N:Oqtane.Models
-  isExternal: true
   name: Oqtane.Models
   nameWithType: Oqtane.Models
   fullName: Oqtane.Models
   spec.csharp:
   - uid: Oqtane
     name: Oqtane
-    isExternal: true
   - name: .
   - uid: Oqtane.Models
     name: Models
-    isExternal: true
   spec.vb:
   - uid: Oqtane
     name: Oqtane
-    isExternal: true
   - name: .
   - uid: Oqtane.Models
     name: Models
-    isExternal: true
 - uid: ToSic.Cre8magic.Pages.IMagicPageService.GetPages*
   commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetPages
   href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetPages_Oqtane_UI_PageState_System_Collections_Generic_IEnumerable_System_Int32__
@@ -534,7 +483,6 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{System.Int32}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<int>
   nameWithType: IEnumerable<int>
   fullName: System.Collections.Generic.IEnumerable<int>
@@ -545,81 +493,19 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: System.Int32
     name: int
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Int32
     name: Integer
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
-- uid: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb*
-  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html#ToSic_Cre8magic_Pages_IMagicPageService_GetBreadcrumb_Oqtane_UI_PageState_ToSic_Cre8magic_Breadcrumb_Settings_MagicBreadcrumbSettings_
-  name: GetBreadcrumb
-  nameWithType: IMagicPageService.GetBreadcrumb
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService.GetBreadcrumb
-- uid: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
-  commentId: T:ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
-  parent: ToSic.Cre8magic.Breadcrumb.Settings
-  href: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings.html
-  name: MagicBreadcrumbSettings
-  nameWithType: MagicBreadcrumbSettings
-  fullName: ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings
-- uid: ToSic.Cre8magic.Pages.IMagicPageList
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageList
-  parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageList.html
-  name: IMagicPageList
-  nameWithType: IMagicPageList
-  fullName: ToSic.Cre8magic.Pages.IMagicPageList
-- uid: ToSic.Cre8magic.Breadcrumb.Settings
-  commentId: N:ToSic.Cre8magic.Breadcrumb.Settings
-  href: ToSic.html
-  name: ToSic.Cre8magic.Breadcrumb.Settings
-  nameWithType: ToSic.Cre8magic.Breadcrumb.Settings
-  fullName: ToSic.Cre8magic.Breadcrumb.Settings
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Breadcrumb
-    name: Breadcrumb
-    href: ToSic.Cre8magic.Breadcrumb.html
-  - name: .
-  - uid: ToSic.Cre8magic.Breadcrumb.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Breadcrumb.Settings.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Breadcrumb
-    name: Breadcrumb
-    href: ToSic.Cre8magic.Breadcrumb.html
-  - name: .
-  - uid: ToSic.Cre8magic.Breadcrumb.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Breadcrumb.Settings.html

@@ -6,6 +6,8 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Utils.DictionaryExtensions
+  - ToSic.Cre8magic.Utils.GetKeepByPageId`1
+  - ToSic.Cre8magic.Utils.GetKeep`2
   - ToSic.Cre8magic.Utils.Logging
   - ToSic.Cre8magic.Utils.PageStateSecurityExtensions
   - ToSic.Cre8magic.Utils.StringExtensions
@@ -63,6 +65,62 @@ references:
   name: DictionaryExtensions
   nameWithType: DictionaryExtensions
   fullName: ToSic.Cre8magic.Utils.DictionaryExtensions
+- uid: ToSic.Cre8magic.Utils.GetKeepByPageId`1
+  commentId: T:ToSic.Cre8magic.Utils.GetKeepByPageId`1
+  href: ToSic.Cre8magic.Utils.GetKeepByPageId-1.html
+  name: GetKeepByPageId<T>
+  nameWithType: GetKeepByPageId<T>
+  fullName: ToSic.Cre8magic.Utils.GetKeepByPageId<T>
+  nameWithType.vb: GetKeepByPageId(Of T)
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeepByPageId(Of T)
+  name.vb: GetKeepByPageId(Of T)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Utils.GetKeepByPageId`1
+    name: GetKeepByPageId
+    href: ToSic.Cre8magic.Utils.GetKeepByPageId-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Utils.GetKeepByPageId`1
+    name: GetKeepByPageId
+    href: ToSic.Cre8magic.Utils.GetKeepByPageId-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Utils.GetKeep`2
+  commentId: T:ToSic.Cre8magic.Utils.GetKeep`2
+  href: ToSic.Cre8magic.Utils.GetKeep-2.html
+  name: GetKeep<TResult, TCompare>
+  nameWithType: GetKeep<TResult, TCompare>
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>
+  nameWithType.vb: GetKeep(Of TResult, TCompare)
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare)
+  name.vb: GetKeep(Of TResult, TCompare)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Utils.GetKeep`2
+    name: GetKeep
+    href: ToSic.Cre8magic.Utils.GetKeep-2.html
+  - name: <
+  - name: TResult
+  - name: ','
+  - name: " "
+  - name: TCompare
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Utils.GetKeep`2
+    name: GetKeep
+    href: ToSic.Cre8magic.Utils.GetKeep-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: ','
+  - name: " "
+  - name: TCompare
+  - name: )
 - uid: ToSic.Cre8magic.Utils.PageStateSecurityExtensions
   commentId: T:ToSic.Cre8magic.Utils.PageStateSecurityExtensions
   href: ToSic.Cre8magic.Utils.PageStateSecurityExtensions.html

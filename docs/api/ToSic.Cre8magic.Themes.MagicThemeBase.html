@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Themes_MagicThemeBase" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase" class="text-break">
-Class MagicThemeBase  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L17"><i class="bi bi-code-slash"></i></a>
+Class MagicThemeBase  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -106,7 +106,7 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class MagicThemeBase : ThemeBase, IComponent, IHandleEvent, IHandleAfterRender, IThemeControl, IMagicControlWithSettings, IMagicDesigner</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class MagicThemeBase : ThemeBase, IThemeControl</code></pre>
   </div>
 
 
@@ -115,8 +115,8 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase">ComponentBase</a></div>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">ComponentBase</span></div>
       <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase</a></div>
       <div><span class="xref">MagicThemeBase</span></div>
     </dd>
@@ -125,12 +125,7 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
   <dl class="typelist implements">
     <dt>Implements</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.icomponent">IComponent</a></div>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleevent">IHandleEvent</a></div>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleafterrender">IHandleAfterRender</a></div>
       <div><a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Interfaces/IThemeControl.cs">IThemeControl</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Controls.IMagicControlWithSettings.html">IMagicControlWithSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Controls.IMagicDesigner.html">IMagicDesigner</a></div>
     </dd>
   </dl>
 
@@ -148,10 +143,31 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
       <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(bool)</a>
     </div>
     <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
       <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, bool)</a>
     </div>
     <div>
-      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, string)</a>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(int, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(int, string, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, int, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.NavigateUrl(string, int, string, Dictionary&lt;string, string&gt;)</a>
     </div>
     <div>
       <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(int, string)</a>
@@ -160,7 +176,13 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
       <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(int, string, string)</a>
     </div>
     <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(int, string, Dictionary&lt;string, string&gt;)</a>
+    </div>
+    <div>
       <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(string, int, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.EditUrl(string, int, string, Dictionary&lt;string, string&gt;)</a>
     </div>
     <div>
       <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.FileUrl(string, string)</a>
@@ -225,60 +247,6 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
     <div>
       <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/Themes/ThemeBase.cs">ThemeBase.Resources</a>
     </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.buildrendertree">ComponentBase.BuildRenderTree(RenderTreeBuilder)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized">ComponentBase.OnInitialized()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitializedasync">ComponentBase.OnInitializedAsync()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset">ComponentBase.OnParametersSet()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged">ComponentBase.StateHasChanged()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender">ComponentBase.ShouldRender()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">ComponentBase.OnAfterRender(bool)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)">ComponentBase.InvokeAsync(Action)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))">ComponentBase.InvokeAsync(Func&lt;Task&gt;)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync">ComponentBase.DispatchExceptionAsync(Exception)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync">ComponentBase.SetParametersAsync(ParameterView)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-    </div>
   </dd></dl>
 
 
@@ -299,7 +267,7 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_PaneNameHeader" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader">
   PaneNameHeader
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -314,7 +282,7 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
 
   <h4 class="section">Field Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -328,38 +296,6 @@ Class MagicThemeBase  <a class="header-action link-secondary" title="View source
 
   <h2 class="section" id="properties">Properties
 </h2>
-
-
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_AllSettings_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.AllSettings*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_AllSettings" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.AllSettings">
-  AllSettings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L68"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>The settings of this layout, as loaded from the ThemePackageSettings + JSON</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicAllSettings? AllSettings { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicAllSettings.html">MagicAllSettings</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
 
 
   <a id="ToSic_Cre8magic_Themes_MagicThemeBase_Layout_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.Layout*"></a>
@@ -384,71 +320,7 @@ The inheriting file is required to specify it.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicAnalytics_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicAnalytics*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicAnalytics" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicAnalytics">
-  MagicAnalytics
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L76"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Inject]
-public MagicAnalyticsService? MagicAnalytics { get; set; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Analytics.MagicAnalyticsService.html">MagicAnalyticsService</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicClasses_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicClasses*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicClasses" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicClasses">
-  MagicClasses
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L35"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Sets additional body classes - usually to activate CSS variations for this theme</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract string MagicClasses { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -463,7 +335,7 @@ public MagicAnalyticsService? MagicAnalytics { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicComponents" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents">
   MagicComponents
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Option to inject dynamic components - mainly for testing
@@ -481,7 +353,7 @@ inspired by <a href="http://www.binaryintellect.net/articles/a92dea29-3218-4d1c-
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Client.Controls.MagicDynamicComponent.html">MagicDynamicComponent</a>&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="ToSic.Cre8magic.Components.Internal.MagicDynamicComponent.html">MagicDynamicComponent</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -492,19 +364,22 @@ inspired by <a href="http://www.binaryintellect.net/articles/a92dea29-3218-4d1c-
 
 
 
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicSettingsService_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicSettingsService*"></a>
+  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicContextClasses_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses*"></a>
 
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicSettingsService" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicSettingsService">
-  MagicSettingsService
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicContextClasses" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses">
+  MagicContextClasses
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets additional body classes - usually to activate CSS variations for this theme</p>
+<p>Note that ATM they are not set on the body, but on a div wrapping the entire contents.
+This is because of some shortcomings in Oqtane, which doesn't allow to reliably set classes on the body.
+Just remember that when you write your CSS ;).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Inject]
-protected IMagicSettingsService MagicSettingsService { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract string MagicContextClasses { get; }</code></pre>
   </div>
 
 
@@ -513,7 +388,39 @@ protected IMagicSettingsService MagicSettingsService { get; set; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Client.Services.IMagicSettingsService.html">IMagicSettingsService</a></dt>
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicHat_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat*"></a>
+
+  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_MagicHat" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat">
+  MagicHat
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Inject]
+public required IMagicHat MagicHat { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.IMagicHat.html">IMagicHat</a></dt>
     <dd></dd>
   </dl>
 
@@ -546,7 +453,7 @@ Must be set by each inheriting theme, which is why it's marked abstract to enfor
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -561,7 +468,7 @@ Must be set by each inheriting theme, which is why it's marked abstract to enfor
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_Panes" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.Panes">
   Panes
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Force the user to overwrite panes.</p>
@@ -578,7 +485,38 @@ Must be set by each inheriting theme, which is why it's marked abstract to enfor
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_ThemeKit_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.ThemeKit*"></a>
+
+  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_ThemeKit" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.ThemeKit">
+  ThemeKit
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IMagicThemeKit ThemeKit { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Themes.IMagicThemeKit.html">IMagicThemeKit</a></dt>
     <dd></dd>
   </dl>
 
@@ -593,7 +531,7 @@ Must be set by each inheriting theme, which is why it's marked abstract to enfor
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_ThemePackageSettings" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings">
   ThemePackageSettings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This contains the default settings which must be used in this theme.
@@ -626,92 +564,14 @@ Any inheriting class must specify what it will be.</p>
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_Classes_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.Classes*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_Classes_System_String_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.Classes(System.String)">
-  Classes(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L102"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Classes(string target)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>target</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_Id_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.Id*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_Id_System_String_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.Id(System.String)">
-  Id(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L106"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Id(string name)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="ToSic_Cre8magic_Themes_MagicThemeBase_OnAfterRenderAsync_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.OnAfterRenderAsync*"></a>
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_OnAfterRenderAsync_System_Boolean_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.OnAfterRenderAsync(System.Boolean)">
   OnAfterRenderAsync(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Method invoked after each time the component has been rendered interactively and the UI has finished
-updating (for example, after elements have been added to the browser DOM). Any <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.elementreference">ElementReference</a>
-fields will be populated by the time this runs.</p>
-<p>This method is not invoked during prerendering or server-side rendering, because those processes
-are not attached to any live browser DOM and are already complete before the DOM is updated.</p>
-<p>Note that the component does not automatically re-render after the completion of any returned <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>,
-because that would cause an infinite render loop.</p>
+  <div class="markdown level1 summary"><p>OnAfterRender, track page views</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -721,95 +581,42 @@ because that would cause an infinite render loop.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>firstRender</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>Set to <code>true</code> if this is the first time <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">OnAfterRender(bool)</a> has been invoked
-on this component instance; otherwise <code>false</code>.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing any asynchronous operation.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-  <h4 class="section" id="ToSic_Cre8magic_Themes_MagicThemeBase_OnAfterRenderAsync_System_Boolean__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">OnAfterRender(bool)</a> and <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync">OnAfterRenderAsync(bool)</a> lifecycle methods
-are useful for performing interop, or interacting with values received from <code>@ref</code>.
-Use the <code class="paramref">firstRender</code> parameter to ensure that initialization work is only performed
-once.</p>
-</div>
-
-
-
-
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_OnParametersSetAsync_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSetAsync*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_OnParametersSetAsync" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSetAsync">
-  OnParametersSetAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L78"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Method invoked when the component has received parameters from its parent in
-the render tree, and the incoming values have been assigned to properties.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Task OnParametersSetAsync()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing any asynchronous operation.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_PaneClasses_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.PaneClasses*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_PaneClasses_System_String_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.PaneClasses(System.String)">
-  PaneClasses(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L100"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Special classes for divs surrounding panes pane, especially to indicate when it's empty</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected string? PaneClasses(string paneName)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>paneName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>firstRender</code> <span class="xref">bool</span></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">Task</span></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_OnInitialized_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.OnInitialized*"></a>
+
+  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_OnInitialized" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.OnInitialized">
+  OnInitialized()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>OnInitialized, make ure that cre8magic knows what settings this theme wants.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnInitialized()</code></pre>
+  </div>
+
+
 
 
 
@@ -825,7 +632,7 @@ the render tree, and the incoming values have been assigned to properties.</p>
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_ThemePath" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath">
   ThemePath()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Make a nicer theme path without the &quot;.Client&quot;</p>
@@ -839,43 +646,7 @@ the render tree, and the incoming values have been assigned to properties.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Themes_MagicThemeBase_Value_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.Value*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_MagicThemeBase_Value_System_String_" data-uid="ToSic.Cre8magic.Themes.MagicThemeBase.Value(System.String)">
-  Value(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L104"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? Value(string target)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>target</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -893,7 +664,7 @@ the render tree, and the incoming values have been assigned to properties.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L17" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs/#L18" class="edit-link">Edit this page</a>
         </div>
 
 

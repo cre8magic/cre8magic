@@ -1,0 +1,158 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Containers.IMagicContainerKit
+  commentId: T:ToSic.Cre8magic.Containers.IMagicContainerKit
+  id: IMagicContainerKit
+  parent: ToSic.Cre8magic.Containers
+  children:
+  - ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
+  - ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
+  langs:
+  - csharp
+  - vb
+  name: IMagicContainerKit
+  nameWithType: IMagicContainerKit
+  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Containers/IMagicContainerKit.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicContainerKit
+    path: ../ToSic.Cre8Magic.Client/Containers/IMagicContainerKit.cs
+    startLine: 2
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Containers
+  syntax:
+    content: public interface IMagicContainerKit
+    content.vb: Public Interface IMagicContainerKit
+- uid: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
+  commentId: P:ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
+  id: Designer
+  parent: ToSic.Cre8magic.Containers.IMagicContainerKit
+  langs:
+  - csharp
+  - vb
+  name: Designer
+  nameWithType: IMagicContainerKit.Designer
+  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Containers/IMagicContainerKit.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Designer
+    path: ../ToSic.Cre8Magic.Client/Containers/IMagicContainerKit.cs
+    startLine: 4
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Containers
+  syntax:
+    content: MagicContainerDesigner Designer { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Containers.MagicContainerDesigner
+    content.vb: Property Designer As MagicContainerDesigner
+  overload: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer*
+- uid: ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
+  commentId: P:ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
+  id: IsForAdminModule
+  parent: ToSic.Cre8magic.Containers.IMagicContainerKit
+  langs:
+  - csharp
+  - vb
+  name: IsForAdminModule
+  nameWithType: IMagicContainerKit.IsForAdminModule
+  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Containers/IMagicContainerKit.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsForAdminModule
+    path: ../ToSic.Cre8Magic.Client/Containers/IMagicContainerKit.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Containers
+  summary: Modules are treated as admin modules (and must use the admin container) if they are marked as such, or come from the Oqtane ....Admin... type
+  example: []
+  syntax:
+    content: bool IsForAdminModule { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: ReadOnly Property IsForAdminModule As Boolean
+  overload: ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule*
+references:
+- uid: ToSic.Cre8magic.Containers
+  commentId: N:ToSic.Cre8magic.Containers
+  href: ToSic.html
+  name: ToSic.Cre8magic.Containers
+  nameWithType: ToSic.Cre8magic.Containers
+  fullName: ToSic.Cre8magic.Containers
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Containers
+    name: Containers
+    href: ToSic.Cre8magic.Containers.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Containers
+    name: Containers
+    href: ToSic.Cre8magic.Containers.html
+- uid: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer*
+  commentId: Overload:ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
+  href: ToSic.Cre8magic.Containers.IMagicContainerKit.html#ToSic_Cre8magic_Containers_IMagicContainerKit_Designer
+  name: Designer
+  nameWithType: IMagicContainerKit.Designer
+  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
+- uid: ToSic.Cre8magic.Containers.MagicContainerDesigner
+  commentId: T:ToSic.Cre8magic.Containers.MagicContainerDesigner
+  parent: ToSic.Cre8magic.Containers
+  href: ToSic.Cre8magic.Containers.MagicContainerDesigner.html
+  name: MagicContainerDesigner
+  nameWithType: MagicContainerDesigner
+  fullName: ToSic.Cre8magic.Containers.MagicContainerDesigner
+- uid: ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule*
+  commentId: Overload:ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
+  href: ToSic.Cre8magic.Containers.IMagicContainerKit.html#ToSic_Cre8magic_Containers_IMagicContainerKit_IsForAdminModule
+  name: IsForAdminModule
+  nameWithType: IMagicContainerKit.IsForAdminModule
+  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

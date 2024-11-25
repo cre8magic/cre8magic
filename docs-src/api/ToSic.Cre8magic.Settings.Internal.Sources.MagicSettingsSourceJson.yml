@@ -1,0 +1,720 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  id: MagicSettingsSourceJson
+  parent: ToSic.Cre8magic.Settings.Internal.Sources
+  children:
+  - ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.#ctor(ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson)
+  - ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  - ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Priority
+  langs:
+  - csharp
+  - vb
+  name: MagicSettingsSourceJson
+  nameWithType: MagicSettingsSourceJson
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Internal/Sources/MagicSettingsSourceJson.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicSettingsSourceJson
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/Sources/MagicSettingsSourceJson.cs
+    startLine: 11
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings.Internal.Sources
+  summary: >-
+    Helper to load all the magic settings which could be used by the <xref href="ToSic.Cre8magic.Settings.IMagicSettingsService" data-throw-if-not-resolved="false"></xref>.
+
+
+    It requires that there are <xref href="ToSic.Cre8magic.Settings.MagicPackageSettings" data-throw-if-not-resolved="false"></xref> which were usually configured in the theme,
+
+    and then passed to the SettingsService on Setup.
+  example: []
+  syntax:
+    content: 'public class MagicSettingsSourceJson : IMagicSettingsSource'
+    content.vb: Public Class MagicSettingsSourceJson Implements IMagicSettingsSource
+  inheritance:
+  - System.Object
+  implements:
+  - ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.#ctor(ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.#ctor(ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson)
+  id: '#ctor(ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson)'
+  parent: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  langs:
+  - csharp
+  - vb
+  name: MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson)
+  nameWithType: MagicSettingsSourceJson.MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson)
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.MagicSettingsSourceJson(ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson)
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Internal/Sources/MagicSettingsSourceJson.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/Sources/MagicSettingsSourceJson.cs
+    startLine: 11
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings.Internal.Sources
+  summary: >-
+    Helper to load all the magic settings which could be used by the <xref href="ToSic.Cre8magic.Settings.IMagicSettingsService" data-throw-if-not-resolved="false"></xref>.
+
+
+    It requires that there are <xref href="ToSic.Cre8magic.Settings.MagicPackageSettings" data-throw-if-not-resolved="false"></xref> which were usually configured in the theme,
+
+    and then passed to the SettingsService on Setup.
+  example: []
+  syntax:
+    content: public MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoaderJson)
+    parameters:
+    - id: catalogLoaderJson
+      type: ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson
+    content.vb: Public Sub New(catalogLoaderJson As MagicSettingsCatalogLoaderJson)
+  overload: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.#ctor*
+  nameWithType.vb: MagicSettingsSourceJson.New(MagicSettingsCatalogLoaderJson)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.New(ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson)
+  name.vb: New(MagicSettingsCatalogLoaderJson)
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Priority
+  commentId: P:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Priority
+  id: Priority
+  parent: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  langs:
+  - csharp
+  - vb
+  name: Priority
+  nameWithType: MagicSettingsSourceJson.Priority
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Priority
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Internal/Sources/MagicSettingsSourceJson.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Priority
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/Sources/MagicSettingsSourceJson.cs
+    startLine: 13
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings.Internal.Sources
+  summary: Priority, high number means higher priority
+  example: []
+  syntax:
+    content: public int Priority { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Priority As Integer
+  overload: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Priority*
+  implements:
+  - ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Priority
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  id: Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  parent: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  langs:
+  - csharp
+  - vb
+  name: Catalog(MagicPackageSettings)
+  nameWithType: MagicSettingsSourceJson.Catalog(MagicPackageSettings)
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Internal/Sources/MagicSettingsSourceJson.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Catalog
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/Sources/MagicSettingsSourceJson.cs
+    startLine: 15
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings.Internal.Sources
+  example: []
+  syntax:
+    content: public List<DataWithJournal<MagicSettingsCatalog>> Catalog(MagicPackageSettings packageSettings)
+    parameters:
+    - id: packageSettings
+      type: ToSic.Cre8magic.Settings.MagicPackageSettings
+    return:
+      type: System.Collections.Generic.List{ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal{ToSic.Cre8magic.Settings.MagicSettingsCatalog}}
+    content.vb: Public Function Catalog(packageSettings As MagicPackageSettings) As List(Of DataWithJournal(Of MagicSettingsCatalog))
+  overload: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Catalog*
+  implements:
+  - ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+references:
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsService
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsService
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html
+  name: IMagicSettingsService
+  nameWithType: IMagicSettingsService
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService
+- uid: ToSic.Cre8magic.Settings.MagicPackageSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicPackageSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
+  name: MagicPackageSettings
+  nameWithType: MagicPackageSettings
+  fullName: ToSic.Cre8magic.Settings.MagicPackageSettings
+- uid: ToSic.Cre8magic.Settings.Internal.Sources
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Sources
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Sources
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Sources
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Sources
+    name: Sources
+    href: ToSic.Cre8magic.Settings.Internal.Sources.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Sources
+    name: Sources
+    href: ToSic.Cre8magic.Settings.Internal.Sources.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+  parent: ToSic.Cre8magic.Settings.Internal.Sources
+  href: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html
+  name: IMagicSettingsSource
+  nameWithType: IMagicSettingsSource
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.#ctor*
+  commentId: Overload:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.#ctor
+  href: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.html#ToSic_Cre8magic_Settings_Internal_Sources_MagicSettingsSourceJson__ctor_ToSic_Cre8magic_Settings_Internal_Json_MagicSettingsCatalogLoaderJson_
+  name: MagicSettingsSourceJson
+  nameWithType: MagicSettingsSourceJson.MagicSettingsSourceJson
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.MagicSettingsSourceJson
+  nameWithType.vb: MagicSettingsSourceJson.New
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.New
+  name.vb: New
+- uid: ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson
+  parent: ToSic.Cre8magic.Settings.Internal.Json
+  href: ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson.html
+  name: MagicSettingsCatalogLoaderJson
+  nameWithType: MagicSettingsCatalogLoaderJson
+  fullName: ToSic.Cre8magic.Settings.Internal.Json.MagicSettingsCatalogLoaderJson
+- uid: ToSic.Cre8magic.Settings.Internal.Json
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Json
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Json
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Json
+  fullName: ToSic.Cre8magic.Settings.Internal.Json
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Json
+    name: Json
+    href: ToSic.Cre8magic.Settings.Internal.Json.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Json
+    name: Json
+    href: ToSic.Cre8magic.Settings.Internal.Json.html
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Priority*
+  commentId: Overload:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Priority
+  href: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.html#ToSic_Cre8magic_Settings_Internal_Sources_MagicSettingsSourceJson_Priority
+  name: Priority
+  nameWithType: MagicSettingsSourceJson.Priority
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Priority
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Priority
+  commentId: P:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Priority
+  parent: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+  href: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html#ToSic_Cre8magic_Settings_Internal_Sources_IMagicSettingsSource_Priority
+  name: Priority
+  nameWithType: IMagicSettingsSource.Priority
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Priority
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Catalog*
+  commentId: Overload:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Catalog
+  href: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.html#ToSic_Cre8magic_Settings_Internal_Sources_MagicSettingsSourceJson_Catalog_ToSic_Cre8magic_Settings_MagicPackageSettings_
+  name: Catalog
+  nameWithType: MagicSettingsSourceJson.Catalog
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.Catalog
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  parent: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+  href: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html#ToSic_Cre8magic_Settings_Internal_Sources_IMagicSettingsSource_Catalog_ToSic_Cre8magic_Settings_MagicPackageSettings_
+  name: Catalog(MagicPackageSettings)
+  nameWithType: IMagicSettingsSource.Catalog(MagicPackageSettings)
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+    name: Catalog
+    href: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html#ToSic_Cre8magic_Settings_Internal_Sources_IMagicSettingsSource_Catalog_ToSic_Cre8magic_Settings_MagicPackageSettings_
+  - name: (
+  - uid: ToSic.Cre8magic.Settings.MagicPackageSettings
+    name: MagicPackageSettings
+    href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+    name: Catalog
+    href: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html#ToSic_Cre8magic_Settings_Internal_Sources_IMagicSettingsSource_Catalog_ToSic_Cre8magic_Settings_MagicPackageSettings_
+  - name: (
+  - uid: ToSic.Cre8magic.Settings.MagicPackageSettings
+    name: MagicPackageSettings
+    href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
+  - name: )
+- uid: System.Collections.Generic.List{ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal{ToSic.Cre8magic.Settings.MagicSettingsCatalog}}
+  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal{ToSic.Cre8magic.Settings.MagicSettingsCatalog}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<DataWithJournal<MagicSettingsCatalog>>
+  nameWithType: List<DataWithJournal<MagicSettingsCatalog>>
+  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal<ToSic.Cre8magic.Settings.MagicSettingsCatalog>>
+  nameWithType.vb: List(Of DataWithJournal(Of MagicSettingsCatalog))
+  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal(Of ToSic.Cre8magic.Settings.MagicSettingsCatalog))
+  name.vb: List(Of DataWithJournal(Of MagicSettingsCatalog))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal`1
+    name: DataWithJournal
+    href: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal-1.html
+  - name: <
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+    name: MagicSettingsCatalog
+    href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal`1
+    name: DataWithJournal
+    href: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+    name: MagicSettingsCatalog
+    href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

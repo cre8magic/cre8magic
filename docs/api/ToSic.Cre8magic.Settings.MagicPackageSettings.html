@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class MagicPackageSettings | cre8magic ">
       
-      <meta name="description" content="Settings for a Theme Package. Contains semi-constants like location of assets and configuration for various parts like CSS.">
+      <meta name="description" content="Settings for a Theme Package. It contains things like  location of assets configuration for various parts like CSS">
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Settings_MagicPackageSettings" data-uid="ToSic.Cre8magic.Settings.MagicPackageSettings" class="text-break">
-Class MagicPackageSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class MagicPackageSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,12 +98,16 @@ Class MagicPackageSettings  <a class="header-action link-secondary" title="View 
   </div>
 
   <div class="markdown summary"><p>Settings for a Theme Package.</p>
-<p>Contains semi-constants like location of assets and configuration for various parts like CSS.</p>
+<p>It contains things like</p>
+<ol>
+<li>location of assets</li>
+<li>configuration for various parts like CSS</li>
+</ol>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MagicPackageSettings</code></pre>
+    <pre><code class="lang-csharp hljs">public record MagicPackageSettings</code></pre>
   </div>
 
 
@@ -112,38 +116,13 @@ Class MagicPackageSettings  <a class="header-action link-secondary" title="View 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">object</span></div>
       <div><span class="xref">MagicPackageSettings</span></div>
     </dd>
   </dl>
 
 
 
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-    </div>
-  </dd></dl>
 
 
 
@@ -158,7 +137,7 @@ Class MagicPackageSettings  <a class="header-action link-secondary" title="View 
 
   <h3 id="ToSic_Cre8magic_Settings_MagicPackageSettings_Defaults" data-uid="ToSic.Cre8magic.Settings.MagicPackageSettings.Defaults">
   Defaults
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>All kinds of settings for the layout, how it should be etc.
@@ -167,7 +146,7 @@ Should usually only serve as backup in case the JSON fails.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicSettingsCatalog? Defaults { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicSettingsCatalog? Defaults { get; init; }</code></pre>
   </div>
 
 
@@ -191,14 +170,14 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h3 id="ToSic_Cre8magic_Settings_MagicPackageSettings_PackageName" data-uid="ToSic.Cre8magic.Settings.MagicPackageSettings.PackageName">
   PackageName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string PackageName { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string PackageName { get; init; }</code></pre>
   </div>
 
 
@@ -207,7 +186,7 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -222,14 +201,14 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h3 id="ToSic_Cre8magic_Settings_MagicPackageSettings_SettingsJsonFile" data-uid="ToSic.Cre8magic.Settings.MagicPackageSettings.SettingsJsonFile">
   SettingsJsonFile
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string SettingsJsonFile { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string SettingsJsonFile { get; init; }</code></pre>
   </div>
 
 
@@ -238,7 +217,7 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -253,14 +232,14 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h3 id="ToSic_Cre8magic_Settings_MagicPackageSettings_Url" data-uid="ToSic.Cre8magic.Settings.MagicPackageSettings.Url">
   Url
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Url { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string Url { get; init; }</code></pre>
   </div>
 
 
@@ -269,7 +248,7 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -284,14 +263,14 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h3 id="ToSic_Cre8magic_Settings_MagicPackageSettings_WwwRoot" data-uid="ToSic.Cre8magic.Settings.MagicPackageSettings.WwwRoot">
   WwwRoot
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string WwwRoot { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string WwwRoot { get; init; }</code></pre>
   </div>
 
 
@@ -300,7 +279,7 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -315,7 +294,7 @@ Should usually only serve as backup in case the JSON fails.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicPackageSettings.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 

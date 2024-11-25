@@ -5,7 +5,8 @@ items:
   id: Analytics
   parent: ToSic.Cre8magic
   children:
-  - ToSic.Cre8magic.Analytics.MagicAnalyticsService
+  - ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  - ToSic.Cre8magic.Analytics.IMagicAnalyticsService
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
   langs:
   - csharp
@@ -17,13 +18,19 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsService
-  commentId: T:ToSic.Cre8magic.Analytics.MagicAnalyticsService
+- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  commentId: T:ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
   parent: ToSic.Cre8magic.Analytics
-  href: ToSic.Cre8magic.Analytics.MagicAnalyticsService.html
-  name: MagicAnalyticsService
-  nameWithType: MagicAnalyticsService
-  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsService
+  href: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.html
+  name: IMagicAnalyticsKit
+  nameWithType: IMagicAnalyticsKit
+  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsService
+  commentId: T:ToSic.Cre8magic.Analytics.IMagicAnalyticsService
+  href: ToSic.Cre8magic.Analytics.IMagicAnalyticsService.html
+  name: IMagicAnalyticsService
+  nameWithType: IMagicAnalyticsService
+  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsService
 - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
   commentId: T:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
   parent: ToSic.Cre8magic.Analytics

@@ -5,7 +5,7 @@ items:
   id: ICanClone`1
   parent: ToSic.Cre8magic.Settings.Internal
   children:
-  - ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
+  - ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneUnder(`0,System.Boolean)
   langs:
   - csharp
   - vb
@@ -32,30 +32,30 @@ items:
   nameWithType.vb: ICanClone(Of T)
   fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T)
   name.vb: ICanClone(Of T)
-- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith(`0,System.Boolean)
-  id: CloneWith(`0,System.Boolean)
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneUnder(`0,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneUnder(`0,System.Boolean)
+  id: CloneUnder(`0,System.Boolean)
   parent: ToSic.Cre8magic.Settings.Internal.ICanClone`1
   langs:
   - csharp
   - vb
-  name: CloneWith(T?, bool)
-  nameWithType: ICanClone<T>.CloneWith(T?, bool)
-  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>.CloneWith(T?, bool)
+  name: CloneUnder(T?, bool)
+  nameWithType: ICanClone<T>.CloneUnder(T?, bool)
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>.CloneUnder(T?, bool)
   type: Method
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Settings/Internal/ICanClone.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: CloneWith
+    id: CloneUnder
     path: ../ToSic.Cre8Magic.Client/Settings/Internal/ICanClone.cs
     startLine: 4
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings.Internal
   syntax:
-    content: T CloneWith(T? priority, bool forceCopy = false)
+    content: T CloneUnder(T? priority, bool forceCopy = false)
     parameters:
     - id: priority
       type: '{T}'
@@ -63,11 +63,11 @@ items:
       type: System.Boolean
     return:
       type: '{T}'
-    content.vb: Function CloneWith(priority As T, forceCopy As Boolean = False) As T
-  overload: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith*
-  nameWithType.vb: ICanClone(Of T).CloneWith(T, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T).CloneWith(T, Boolean)
-  name.vb: CloneWith(T, Boolean)
+    content.vb: Function CloneUnder(priority As T, forceCopy As Boolean = False) As T
+  overload: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneUnder*
+  nameWithType.vb: ICanClone(Of T).CloneUnder(T, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T).CloneUnder(T, Boolean)
+  name.vb: CloneUnder(T, Boolean)
 references:
 - uid: ToSic.Cre8magic.Settings.Internal
   commentId: N:ToSic.Cre8magic.Settings.Internal
@@ -107,14 +107,14 @@ references:
   - uid: ToSic.Cre8magic.Settings.Internal
     name: Internal
     href: ToSic.Cre8magic.Settings.Internal.html
-- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith*
-  commentId: Overload:ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneWith
-  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneWith__0_System_Boolean_
-  name: CloneWith
-  nameWithType: ICanClone<T>.CloneWith
-  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>.CloneWith
-  nameWithType.vb: ICanClone(Of T).CloneWith
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T).CloneWith
+- uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneUnder*
+  commentId: Overload:ToSic.Cre8magic.Settings.Internal.ICanClone`1.CloneUnder
+  href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html#ToSic_Cre8magic_Settings_Internal_ICanClone_1_CloneUnder__0_System_Boolean_
+  name: CloneUnder
+  nameWithType: ICanClone<T>.CloneUnder
+  fullName: ToSic.Cre8magic.Settings.Internal.ICanClone<T>.CloneUnder
+  nameWithType.vb: ICanClone(Of T).CloneUnder
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.ICanClone(Of T).CloneUnder
 - uid: '{T}'
   commentId: '!:T'
   definition: T

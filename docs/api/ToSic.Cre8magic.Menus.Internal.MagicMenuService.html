@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Menus_Internal_MagicMenuService" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService" class="text-break">
-Class MagicMenuService  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class MagicMenuService  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -111,7 +111,7 @@ Class MagicMenuService  <a class="header-action link-secondary" title="View sour
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">object</span></div>
       <div><span class="xref">MagicMenuService</span></div>
     </dd>
   </dl>
@@ -161,9 +161,9 @@ Class MagicMenuService  <a class="header-action link-secondary" title="View sour
 
   <a id="ToSic_Cre8magic_Menus_Internal_MagicMenuService__ctor_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.#ctor*"></a>
 
-  <h3 id="ToSic_Cre8magic_Menus_Internal_MagicMenuService__ctor_Microsoft_Extensions_Logging_ILogger_ToSic_Cre8magic_Menus_Internal_MagicMenuService__ToSic_Cre8magic_Client_Services_IMagicSettingsService_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.#ctor(Microsoft.Extensions.Logging.ILogger{ToSic.Cre8magic.Menus.Internal.MagicMenuService},ToSic.Cre8magic.Client.Services.IMagicSettingsService)">
-  MagicMenuService(ILogger&lt;MagicMenuService&gt;, IMagicSettingsService)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Menus_Internal_MagicMenuService__ctor_ToSic_Cre8magic_Settings_IMagicSettingsService_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.#ctor(ToSic.Cre8magic.Settings.IMagicSettingsService)">
+  MagicMenuService(IMagicSettingsService)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Will create a MenuTree based on the current pages information and configuration</p>
@@ -171,14 +171,12 @@ Class MagicMenuService  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicMenuService(ILogger&lt;MagicMenuService&gt; logger, IMagicSettingsService settingsSvc)</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicMenuService(IMagicSettingsService settingsSvc)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="ToSic.Cre8magic.Menus.Internal.MagicMenuService.html">MagicMenuService</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>settingsSvc</code> <a class="xref" href="ToSic.Cre8magic.Client.Services.IMagicSettingsService.html">IMagicSettingsService</a></dt>
+    <dt><code>settingsSvc</code> <a class="xref" href="ToSic.Cre8magic.Settings.IMagicSettingsService.html">IMagicSettingsService</a></dt>
     <dd></dd>
   </dl>
 
@@ -197,42 +195,11 @@ Class MagicMenuService  <a class="header-action link-secondary" title="View sour
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Menus_Internal_MagicMenuService_Logger_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.Logger*"></a>
-
-  <h3 id="ToSic_Cre8magic_Menus_Internal_MagicMenuService_Logger" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.Logger">
-  Logger
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L15"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ILogger Logger { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="ToSic_Cre8magic_Menus_Internal_MagicMenuService_NoInheritSettingsWip_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.NoInheritSettingsWip*"></a>
 
   <h3 id="ToSic_Cre8magic_Menus_Internal_MagicMenuService_NoInheritSettingsWip" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.NoInheritSettingsWip">
   NoInheritSettingsWip
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -248,7 +215,7 @@ Class MagicMenuService  <a class="header-action link-secondary" title="View sour
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><span class="xref">bool</span></dt>
     <dd></dd>
   </dl>
 
@@ -263,24 +230,24 @@ Class MagicMenuService  <a class="header-action link-secondary" title="View sour
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Menus_Internal_MagicMenuService_GetMenu_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.GetMenu*"></a>
+  <a id="ToSic_Cre8magic_Menus_Internal_MagicMenuService_MenuKit_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.MenuKit*"></a>
 
-  <h3 id="ToSic_Cre8magic_Menus_Internal_MagicMenuService_GetMenu_Oqtane_UI_PageState_ToSic_Cre8magic_Menus_MagicMenuSettings_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.GetMenu(Oqtane.UI.PageState,ToSic.Cre8magic.Menus.MagicMenuSettings)">
-  GetMenu(PageState, MagicMenuSettings?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Menus_Internal_MagicMenuService_MenuKit_Oqtane_UI_PageState_ToSic_Cre8magic_Menus_MagicMenuSettings_" data-uid="ToSic.Cre8magic.Menus.Internal.MagicMenuService.MenuKit(Oqtane.UI.PageState,ToSic.Cre8magic.Menus.MagicMenuSettings)">
+  MenuKit(PageState, MagicMenuSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Get the menu items for the current page and specified settings.</p>
+  <div class="markdown level1 summary"><p>Get the menu kit containing all items for the current page and specified settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IMagicPageList GetMenu(PageState pageState, MagicMenuSettings? settings = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
+    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
     <dd></dd>
     <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></dt>
     <dd></dd>
@@ -288,7 +255,7 @@ Class MagicMenuService  <a class="header-action link-secondary" title="View sour
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageList.html">IMagicPageList</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Menus.IMagicMenuKit.html">IMagicMenuKit</a></dt>
     <dd></dd>
   </dl>
 
@@ -306,7 +273,7 @@ Class MagicMenuService  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/Internal/MagicMenuService.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

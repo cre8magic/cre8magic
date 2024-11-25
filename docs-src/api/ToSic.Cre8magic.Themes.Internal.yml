@@ -1,0 +1,79 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Themes.Internal
+  commentId: N:ToSic.Cre8magic.Themes.Internal
+  id: Internal
+  parent: ToSic.Cre8magic.Themes
+  children:
+  - ToSic.Cre8magic.Themes.Internal.MagicThemeContext
+  - ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull
+  - ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Themes.Internal
+  nameWithType: ToSic.Cre8magic.Themes.Internal
+  fullName: ToSic.Cre8magic.Themes.Internal
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeContext
+  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeContext
+  parent: ToSic.Cre8magic.Themes.Internal
+  href: ToSic.Cre8magic.Themes.Internal.MagicThemeContext.html
+  name: MagicThemeContext
+  nameWithType: MagicThemeContext
+  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeContext
+- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull
+  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull
+  parent: ToSic.Cre8magic.Themes.Internal
+  href: ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull.html
+  name: MagicThemeContextFull
+  nameWithType: MagicThemeContextFull
+  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull
+- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+  parent: ToSic.Cre8magic.Themes.Internal
+  href: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner.html
+  name: MagicThemeDesigner
+  nameWithType: MagicThemeDesigner
+  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+- uid: ToSic.Cre8magic.Themes.Internal
+  commentId: N:ToSic.Cre8magic.Themes.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes.Internal
+  nameWithType: ToSic.Cre8magic.Themes.Internal
+  fullName: ToSic.Cre8magic.Themes.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Themes.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Themes.Internal.html

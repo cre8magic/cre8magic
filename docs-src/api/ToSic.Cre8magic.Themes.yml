@@ -5,9 +5,13 @@ items:
   id: Themes
   parent: ToSic.Cre8magic
   children:
+  - ToSic.Cre8magic.Themes.IMagicThemeJsService
+  - ToSic.Cre8magic.Themes.IMagicThemeKit
+  - ToSic.Cre8magic.Themes.IMagicThemeService
   - ToSic.Cre8magic.Themes.MagicContextAndSettings
   - ToSic.Cre8magic.Themes.MagicThemeBase
-  - ToSic.Cre8magic.Themes.MagicThemeDebug
+  - ToSic.Cre8magic.Themes.MagicThemeSettings
+  - ToSic.Cre8magic.Themes.Settings
   langs:
   - csharp
   - vb
@@ -18,6 +22,63 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Themes.Settings
+  commentId: N:ToSic.Cre8magic.Themes.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes.Settings
+  nameWithType: ToSic.Cre8magic.Themes.Settings
+  fullName: ToSic.Cre8magic.Themes.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Themes.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Themes.Settings.html
+- uid: ToSic.Cre8magic.Themes.IMagicThemeJsService
+  commentId: T:ToSic.Cre8magic.Themes.IMagicThemeJsService
+  href: ToSic.Cre8magic.Themes.IMagicThemeJsService.html
+  name: IMagicThemeJsService
+  nameWithType: IMagicThemeJsService
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeJsService
+- uid: ToSic.Cre8magic.Themes.IMagicThemeKit
+  commentId: T:ToSic.Cre8magic.Themes.IMagicThemeKit
+  parent: ToSic.Cre8magic.Themes
+  href: ToSic.Cre8magic.Themes.IMagicThemeKit.html
+  name: IMagicThemeKit
+  nameWithType: IMagicThemeKit
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeKit
+- uid: ToSic.Cre8magic.Themes.IMagicThemeService
+  commentId: T:ToSic.Cre8magic.Themes.IMagicThemeService
+  href: ToSic.Cre8magic.Themes.IMagicThemeService.html
+  name: IMagicThemeService
+  nameWithType: IMagicThemeService
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeService
 - uid: ToSic.Cre8magic.Themes.MagicContextAndSettings
   commentId: T:ToSic.Cre8magic.Themes.MagicContextAndSettings
   href: ToSic.Cre8magic.Themes.MagicContextAndSettings.html
@@ -30,9 +91,40 @@ references:
   name: MagicThemeBase
   nameWithType: MagicThemeBase
   fullName: ToSic.Cre8magic.Themes.MagicThemeBase
-- uid: ToSic.Cre8magic.Themes.MagicThemeDebug
-  commentId: T:ToSic.Cre8magic.Themes.MagicThemeDebug
-  href: ToSic.Cre8magic.Themes.MagicThemeDebug.html
-  name: MagicThemeDebug
-  nameWithType: MagicThemeDebug
-  fullName: ToSic.Cre8magic.Themes.MagicThemeDebug
+- uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemeSettings
+  parent: ToSic.Cre8magic.Themes
+  href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  name: MagicThemeSettings
+  nameWithType: MagicThemeSettings
+  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings
+- uid: ToSic.Cre8magic.Themes
+  commentId: N:ToSic.Cre8magic.Themes
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes
+  nameWithType: ToSic.Cre8magic.Themes
+  fullName: ToSic.Cre8magic.Themes
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html

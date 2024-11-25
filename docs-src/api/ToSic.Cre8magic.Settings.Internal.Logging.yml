@@ -1,0 +1,24 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.Internal.Logging
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Logging
+  id: Logging
+  parent: ToSic.Cre8magic.Settings.Internal
+  children:
+  - ToSic.Cre8magic.Settings.Internal.Logging.SettingsException
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Settings.Internal.Logging
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Logging
+  fullName: ToSic.Cre8magic.Settings.Internal.Logging
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Settings.Internal.Logging.SettingsException
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Logging.SettingsException
+  href: ToSic.Cre8magic.Settings.Internal.Logging.SettingsException.html
+  name: SettingsException
+  nameWithType: SettingsException
+  fullName: ToSic.Cre8magic.Settings.Internal.Logging.SettingsException

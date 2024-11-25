@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Patterns | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Patterns | cre8magic ">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/roadmap/patterns.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../assets/cre8magic-logo50.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="patterns">Patterns</h1>
+
+<p>cre8magic strives to follow the best practices of software development.
+This includes the use of patterns and principles that have been proven to work well in the past.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Some of these patterns are very different from the patterns used in Oqtane.
+There are good reasons for this, which are explained in the respective sections.</p>
+</div>
+<h2 id="settings--service--kit--work">Settings &gt; Service &gt; Kit &gt; Work</h2>
+<p>...</p>
+<h2 id="composition-over-inheritance">Composition over Inheritance</h2>
+<p>cre8magic prefers composition over inheritance.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><strong>♾️ vs. 💧</strong>
+This pattern used by cre8magic is seen as a best practice by the cre8magic team
+and by many experts in the community.
+Oqtane currently uses a different pattern, which is prioritizes inheritance.</p>
+</div>
+<h2 id="plain-vanilla-blazor-components">Plain Vanilla Blazor Components</h2>
+<p>...<code>ComponentBase</code> instead of <code>ThemeBase</code> etc.</p>
+<p>...consequence of Composition over Inheritance.</p>
+<h2 id="read-only-record-objects">Read-Only Record Objects</h2>
+<p>cre8magic uses read-only <code>record</code> objects for state management.
+For example, a <code>MagicSettings</code> object is a read-only record object.</p>
+<p>This has many benefits, especially that it will be immutable and not cause side-effects.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><strong>♾️ vs. 💧</strong>
+This pattern used by cre8magic is seen as a best practice by the cre8magic team
+and by many experts in the community.
+Oqtane currently uses a different pattern, which has mutable classes.</p>
+</div>
+<p>Example of ♾️ vs. 💧</p>
+<ul>
+<li>Oqtane's <code>Page</code> <code>object</code> is mutable, and can be changed at any time.
+You should never do this, and it can have severe side-effects.
+But the API doesn't prevent you from doing it.</li>
+<li>cre8magic's <code>MagicPage</code> <code>record</code> is immutable, and can never be changed.
+You can create new copies of it, but the original will always stay the same.</li>
+</ul>
+<h2 id="interfaces-instead-of-objects">Interfaces instead of Objects</h2>
+<p>...</p>
+<h2 id="structure-by-topic-not-by-type">Structure by Topic, not by Type</h2>
+<p>todo: diff than Oqtane</p>
+<h2 id="section">...</h2>
+<h2 id="auto-caching-in-the-service">Auto-Caching in the service...</h2>
+<h2 id="plural-namespaces">Plural Namespaces</h2>
+<p>cre8magic uses plural namespaces for all services and objects.
+For example, <code>Breadcrumbs</code> or <code>Languages</code></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/roadmap/patterns.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

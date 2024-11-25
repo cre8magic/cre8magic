@@ -38,7 +38,6 @@ has the code elsewhere, to generate the settings, which is similar but less pred
 @inject MyMenuSettingsProvider MenuSettingsProvider
 @{
     // Named Settings with somehow injected Settings provider
-    // TODO: PROBABLY RENAME ConfigName to SettingsName or similar ???
     var menu2 = MenuSvc.GetMenu(PageState, new() { SettingsName = "footer" });
     
     // Same but "nicer"

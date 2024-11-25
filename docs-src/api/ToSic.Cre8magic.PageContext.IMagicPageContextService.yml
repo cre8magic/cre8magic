@@ -1,0 +1,233 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.PageContext.IMagicPageContextService
+  commentId: T:ToSic.Cre8magic.PageContext.IMagicPageContextService
+  id: IMagicPageContextService
+  parent: ToSic.Cre8magic.PageContext
+  children:
+  - ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses(Oqtane.UI.PageState,ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  - ToSic.Cre8magic.PageContext.IMagicPageContextService.State(Oqtane.UI.PageState,ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  langs:
+  - csharp
+  - vb
+  name: IMagicPageContextService
+  nameWithType: IMagicPageContextService
+  fullName: ToSic.Cre8magic.PageContext.IMagicPageContextService
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/PageContext/IMagicPageContextService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicPageContextService
+    path: ../ToSic.Cre8Magic.Client/PageContext/IMagicPageContextService.cs
+    startLine: 4
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.PageContext
+  syntax:
+    content: public interface IMagicPageContextService
+    content.vb: Public Interface IMagicPageContextService
+- uid: ToSic.Cre8magic.PageContext.IMagicPageContextService.State(Oqtane.UI.PageState,ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  commentId: M:ToSic.Cre8magic.PageContext.IMagicPageContextService.State(Oqtane.UI.PageState,ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  id: State(Oqtane.UI.PageState,ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  parent: ToSic.Cre8magic.PageContext.IMagicPageContextService
+  langs:
+  - csharp
+  - vb
+  name: State(PageState, MagicPageContextSettings?)
+  nameWithType: IMagicPageContextService.State(PageState, MagicPageContextSettings?)
+  fullName: ToSic.Cre8magic.PageContext.IMagicPageContextService.State(Oqtane.UI.PageState, ToSic.Cre8magic.PageContext.MagicPageContextSettings?)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/PageContext/IMagicPageContextService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: State
+    path: ../ToSic.Cre8Magic.Client/PageContext/IMagicPageContextService.cs
+    startLine: 6
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.PageContext
+  syntax:
+    content: MagicPageContextState State(PageState pageState, MagicPageContextSettings? settings = null)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    - id: settings
+      type: ToSic.Cre8magic.PageContext.MagicPageContextSettings
+    return:
+      type: ToSic.Cre8magic.PageContext.MagicPageContextState
+    content.vb: Function State(pageState As PageState, settings As MagicPageContextSettings = Nothing) As MagicPageContextState
+  overload: ToSic.Cre8magic.PageContext.IMagicPageContextService.State*
+  nameWithType.vb: IMagicPageContextService.State(PageState, MagicPageContextSettings)
+  fullName.vb: ToSic.Cre8magic.PageContext.IMagicPageContextService.State(Oqtane.UI.PageState, ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  name.vb: State(PageState, MagicPageContextSettings)
+- uid: ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses(Oqtane.UI.PageState,ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  commentId: M:ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses(Oqtane.UI.PageState,ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  id: SetBodyClasses(Oqtane.UI.PageState,ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  parent: ToSic.Cre8magic.PageContext.IMagicPageContextService
+  langs:
+  - csharp
+  - vb
+  name: SetBodyClasses(PageState, MagicPageContextSettings?)
+  nameWithType: IMagicPageContextService.SetBodyClasses(PageState, MagicPageContextSettings?)
+  fullName: ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses(Oqtane.UI.PageState, ToSic.Cre8magic.PageContext.MagicPageContextSettings?)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/PageContext/IMagicPageContextService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: SetBodyClasses
+    path: ../ToSic.Cre8Magic.Client/PageContext/IMagicPageContextService.cs
+    startLine: 7
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.PageContext
+  syntax:
+    content: Task SetBodyClasses(PageState pageState, MagicPageContextSettings? settings)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    - id: settings
+      type: ToSic.Cre8magic.PageContext.MagicPageContextSettings
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function SetBodyClasses(pageState As PageState, settings As MagicPageContextSettings) As Task
+  overload: ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses*
+  nameWithType.vb: IMagicPageContextService.SetBodyClasses(PageState, MagicPageContextSettings)
+  fullName.vb: ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses(Oqtane.UI.PageState, ToSic.Cre8magic.PageContext.MagicPageContextSettings)
+  name.vb: SetBodyClasses(PageState, MagicPageContextSettings)
+references:
+- uid: ToSic.Cre8magic.PageContext
+  commentId: N:ToSic.Cre8magic.PageContext
+  href: ToSic.html
+  name: ToSic.Cre8magic.PageContext
+  nameWithType: ToSic.Cre8magic.PageContext
+  fullName: ToSic.Cre8magic.PageContext
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContext
+    name: PageContext
+    href: ToSic.Cre8magic.PageContext.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContext
+    name: PageContext
+    href: ToSic.Cre8magic.PageContext.html
+- uid: ToSic.Cre8magic.PageContext.IMagicPageContextService.State*
+  commentId: Overload:ToSic.Cre8magic.PageContext.IMagicPageContextService.State
+  href: ToSic.Cre8magic.PageContext.IMagicPageContextService.html#ToSic_Cre8magic_PageContext_IMagicPageContextService_State_Oqtane_UI_PageState_ToSic_Cre8magic_PageContext_MagicPageContextSettings_
+  name: State
+  nameWithType: IMagicPageContextService.State
+  fullName: ToSic.Cre8magic.PageContext.IMagicPageContextService.State
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: ToSic.Cre8magic.PageContext.MagicPageContextSettings
+  commentId: T:ToSic.Cre8magic.PageContext.MagicPageContextSettings
+  parent: ToSic.Cre8magic.PageContext
+  href: ToSic.Cre8magic.PageContext.MagicPageContextSettings.html
+  name: MagicPageContextSettings
+  nameWithType: MagicPageContextSettings
+  fullName: ToSic.Cre8magic.PageContext.MagicPageContextSettings
+- uid: ToSic.Cre8magic.PageContext.MagicPageContextState
+  commentId: T:ToSic.Cre8magic.PageContext.MagicPageContextState
+  parent: ToSic.Cre8magic.PageContext
+  href: ToSic.Cre8magic.PageContext.MagicPageContextState.html
+  name: MagicPageContextState
+  nameWithType: MagicPageContextState
+  fullName: ToSic.Cre8magic.PageContext.MagicPageContextState
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses*
+  commentId: Overload:ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses
+  href: ToSic.Cre8magic.PageContext.IMagicPageContextService.html#ToSic_Cre8magic_PageContext_IMagicPageContextService_SetBodyClasses_Oqtane_UI_PageState_ToSic_Cre8magic_PageContext_MagicPageContextSettings_
+  name: SetBodyClasses
+  nameWithType: IMagicPageContextService.SetBodyClasses
+  fullName: ToSic.Cre8magic.PageContext.IMagicPageContextService.SetBodyClasses
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

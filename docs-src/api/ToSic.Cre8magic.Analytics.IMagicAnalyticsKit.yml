@@ -1,0 +1,215 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  commentId: T:ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  id: IMagicAnalyticsKit
+  parent: ToSic.Cre8magic.Analytics
+  children:
+  - ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.Settings
+  - ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage(System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: IMagicAnalyticsKit
+  nameWithType: IMagicAnalyticsKit
+  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Analytics/IMagicAnalyticsKit.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicAnalyticsKit
+    path: ../ToSic.Cre8Magic.Client/Analytics/IMagicAnalyticsKit.cs
+    startLine: 2
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Analytics
+  syntax:
+    content: public interface IMagicAnalyticsKit
+    content.vb: Public Interface IMagicAnalyticsKit
+- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.Settings
+  commentId: P:ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.Settings
+  id: Settings
+  parent: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  langs:
+  - csharp
+  - vb
+  name: Settings
+  nameWithType: IMagicAnalyticsKit.Settings
+  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.Settings
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Analytics/IMagicAnalyticsKit.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Settings
+    path: ../ToSic.Cre8Magic.Client/Analytics/IMagicAnalyticsKit.cs
+    startLine: 4
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Analytics
+  syntax:
+    content: MagicAnalyticsSettings Settings { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    content.vb: Property Settings As MagicAnalyticsSettings
+  overload: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.Settings*
+- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage(System.Boolean)
+  commentId: M:ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage(System.Boolean)
+  id: TrackPage(System.Boolean)
+  parent: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  langs:
+  - csharp
+  - vb
+  name: TrackPage(bool)
+  nameWithType: IMagicAnalyticsKit.TrackPage(bool)
+  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage(bool)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Analytics/IMagicAnalyticsKit.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: TrackPage
+    path: ../ToSic.Cre8Magic.Client/Analytics/IMagicAnalyticsKit.cs
+    startLine: 15
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Analytics
+  summary: >-
+    Simplest way to track a page, assumes that the settings are injected from a Settings Source.
+
+
+    Will take the PageState and - depending on the settings - track the view in Google Analytics.
+
+
+    Must run in `OnAfterRenderAsync` for now
+  example: []
+  syntax:
+    content: Task TrackPage(bool isFirstRender)
+    parameters:
+    - id: isFirstRender
+      type: System.Boolean
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Function TrackPage(isFirstRender As Boolean) As Task
+  overload: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage*
+  nameWithType.vb: IMagicAnalyticsKit.TrackPage(Boolean)
+  fullName.vb: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage(Boolean)
+  name.vb: TrackPage(Boolean)
+references:
+- uid: ToSic.Cre8magic.Analytics
+  commentId: N:ToSic.Cre8magic.Analytics
+  href: ToSic.html
+  name: ToSic.Cre8magic.Analytics
+  nameWithType: ToSic.Cre8magic.Analytics
+  fullName: ToSic.Cre8magic.Analytics
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.Settings*
+  commentId: Overload:ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.Settings
+  href: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.html#ToSic_Cre8magic_Analytics_IMagicAnalyticsKit_Settings
+  name: Settings
+  nameWithType: IMagicAnalyticsKit.Settings
+  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.Settings
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+  commentId: T:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+  parent: ToSic.Cre8magic.Analytics
+  href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  name: MagicAnalyticsSettings
+  nameWithType: MagicAnalyticsSettings
+  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage*
+  commentId: Overload:ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage
+  href: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.html#ToSic_Cre8magic_Analytics_IMagicAnalyticsKit_TrackPage_System_Boolean_
+  name: TrackPage
+  nameWithType: IMagicAnalyticsKit.TrackPage
+  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.TrackPage
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

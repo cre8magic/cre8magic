@@ -1,0 +1,557 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Utils.GetKeep`2
+  commentId: T:ToSic.Cre8magic.Utils.GetKeep`2
+  id: GetKeep`2
+  parent: ToSic.Cre8magic.Utils
+  children:
+  - ToSic.Cre8magic.Utils.GetKeep`2.Get(System.Func{System.ValueTuple{`0,`1}},System.Func{`0,`1,System.Boolean})
+  - ToSic.Cre8magic.Utils.GetKeep`2.GetAsync(System.Func{System.Threading.Tasks.Task{System.ValueTuple{`0,`1}}},System.Func{`0,`1,System.Boolean})
+  - ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated
+  langs:
+  - csharp
+  - vb
+  name: GetKeep<TResult, TCompare>
+  nameWithType: GetKeep<TResult, TCompare>
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: GetKeep
+    path: ../ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Utils
+  summary: >-
+    Get-or-Keep helper.
+
+    Will expect a second return value when generating the value, which it will ask for comparison
+
+    every time it's accessed again.
+  example: []
+  syntax:
+    content: 'public class GetKeep<TResult, TCompare> where TResult : class'
+    typeParameters:
+    - id: TResult
+      description: ''
+    - id: TCompare
+      description: ''
+    content.vb: Public Class GetKeep(Of TResult As Class, TCompare)
+  inheritance:
+  - System.Object
+  nameWithType.vb: GetKeep(Of TResult, TCompare)
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare)
+  name.vb: GetKeep(Of TResult, TCompare)
+- uid: ToSic.Cre8magic.Utils.GetKeep`2.Get(System.Func{System.ValueTuple{`0,`1}},System.Func{`0,`1,System.Boolean})
+  commentId: M:ToSic.Cre8magic.Utils.GetKeep`2.Get(System.Func{System.ValueTuple{`0,`1}},System.Func{`0,`1,System.Boolean})
+  id: Get(System.Func{System.ValueTuple{`0,`1}},System.Func{`0,`1,System.Boolean})
+  parent: ToSic.Cre8magic.Utils.GetKeep`2
+  langs:
+  - csharp
+  - vb
+  name: Get(Func<(TResult Result, TCompare Compare)>, Func<TResult, TCompare, bool>)
+  nameWithType: GetKeep<TResult, TCompare>.Get(Func<(TResult Result, TCompare Compare)>, Func<TResult, TCompare, bool>)
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.Get(System.Func<(TResult Result, TCompare Compare)>, System.Func<TResult, TCompare, bool>)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Get
+    path: ../ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
+    startLine: 16
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Utils
+  syntax:
+    content: public TResult Get(Func<(TResult Result, TCompare Compare)> getter, Func<TResult, TCompare, bool> keep)
+    parameters:
+    - id: getter
+      type: System.Func{System.ValueTuple{{TResult},{TCompare}}}
+    - id: keep
+      type: System.Func{{TResult},{TCompare},System.Boolean}
+    return:
+      type: '{TResult}'
+    content.vb: Public Function [Get](getter As Func(Of (Result As TResult, Compare As TCompare)), keep As Func(Of TResult, TCompare, Boolean)) As TResult
+  overload: ToSic.Cre8magic.Utils.GetKeep`2.Get*
+  nameWithType.vb: GetKeep(Of TResult, TCompare).Get(Func(Of (Result As TResult, Compare As TCompare)), Func(Of TResult, TCompare, Boolean))
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).Get(System.Func(Of (Result As TResult, Compare As TCompare)), System.Func(Of TResult, TCompare, Boolean))
+  name.vb: Get(Func(Of (Result As TResult, Compare As TCompare)), Func(Of TResult, TCompare, Boolean))
+- uid: ToSic.Cre8magic.Utils.GetKeep`2.GetAsync(System.Func{System.Threading.Tasks.Task{System.ValueTuple{`0,`1}}},System.Func{`0,`1,System.Boolean})
+  commentId: M:ToSic.Cre8magic.Utils.GetKeep`2.GetAsync(System.Func{System.Threading.Tasks.Task{System.ValueTuple{`0,`1}}},System.Func{`0,`1,System.Boolean})
+  id: GetAsync(System.Func{System.Threading.Tasks.Task{System.ValueTuple{`0,`1}}},System.Func{`0,`1,System.Boolean})
+  parent: ToSic.Cre8magic.Utils.GetKeep`2
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Func<Task<(TResult Result, TCompare Compare)>>, Func<TResult, TCompare, bool>)
+  nameWithType: GetKeep<TResult, TCompare>.GetAsync(Func<Task<(TResult Result, TCompare Compare)>>, Func<TResult, TCompare, bool>)
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.GetAsync(System.Func<System.Threading.Tasks.Task<(TResult Result, TCompare Compare)>>, System.Func<TResult, TCompare, bool>)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: GetAsync
+    path: ../ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
+    startLine: 29
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Utils
+  syntax:
+    content: public Task<TResult> GetAsync(Func<Task<(TResult Result, TCompare Compare)>> getter, Func<TResult, TCompare, bool> keep)
+    parameters:
+    - id: getter
+      type: System.Func{System.Threading.Tasks.Task{System.ValueTuple{{TResult},{TCompare}}}}
+    - id: keep
+      type: System.Func{{TResult},{TCompare},System.Boolean}
+    return:
+      type: System.Threading.Tasks.Task{{TResult}}
+    content.vb: Public Function GetAsync(getter As Func(Of Task(Of (Result As TResult, Compare As TCompare))), keep As Func(Of TResult, TCompare, Boolean)) As Task(Of TResult)
+  overload: ToSic.Cre8magic.Utils.GetKeep`2.GetAsync*
+  nameWithType.vb: GetKeep(Of TResult, TCompare).GetAsync(Func(Of Task(Of (Result As TResult, Compare As TCompare))), Func(Of TResult, TCompare, Boolean))
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).GetAsync(System.Func(Of System.Threading.Tasks.Task(Of (Result As TResult, Compare As TCompare))), System.Func(Of TResult, TCompare, Boolean))
+  name.vb: GetAsync(Func(Of Task(Of (Result As TResult, Compare As TCompare))), Func(Of TResult, TCompare, Boolean))
+- uid: ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated
+  commentId: P:ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated
+  id: IsValueCreated
+  parent: ToSic.Cre8magic.Utils.GetKeep`2
+  langs:
+  - csharp
+  - vb
+  name: IsValueCreated
+  nameWithType: GetKeep<TResult, TCompare>.IsValueCreated
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.IsValueCreated
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsValueCreated
+    path: ../ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
+    startLine: 44
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Utils
+  summary: >-
+    Determines if value has been created.
+
+    The name `IsValueCreated` is the same as in a Lazy() object
+  example: []
+  syntax:
+    content: public bool IsValueCreated { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsValueCreated As Boolean
+  overload: ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated*
+  nameWithType.vb: GetKeep(Of TResult, TCompare).IsValueCreated
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).IsValueCreated
+references:
+- uid: ToSic.Cre8magic.Utils
+  commentId: N:ToSic.Cre8magic.Utils
+  href: ToSic.html
+  name: ToSic.Cre8magic.Utils
+  nameWithType: ToSic.Cre8magic.Utils
+  fullName: ToSic.Cre8magic.Utils
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Utils
+    name: Utils
+    href: ToSic.Cre8magic.Utils.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Utils
+    name: Utils
+    href: ToSic.Cre8magic.Utils.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Utils.GetKeep`2.Get*
+  commentId: Overload:ToSic.Cre8magic.Utils.GetKeep`2.Get
+  href: ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_Get_System_Func_System_ValueTuple__0__1___System_Func__0__1_System_Boolean__
+  name: Get
+  nameWithType: GetKeep<TResult, TCompare>.Get
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.Get
+  nameWithType.vb: GetKeep(Of TResult, TCompare).Get
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).Get
+- uid: System.Func{System.ValueTuple{{TResult},{TCompare}}}
+  commentId: T:System.Func{System.ValueTuple{`0,`1}}
+  parent: System
+  definition: System.Func`1
+  name: Func<(TResult Result, TCompare Compare)>
+  nameWithType: Func<(TResult Result, TCompare Compare)>
+  fullName: System.Func<(TResult Result, TCompare Compare)>
+  nameWithType.vb: Func(Of (Result As TResult, Compare As TCompare))
+  fullName.vb: System.Func(Of (Result As TResult, Compare As TCompare))
+  name.vb: Func(Of (Result As TResult, Compare As TCompare))
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+  - name: <
+  - name: (
+  - name: TResult
+  - name: " "
+  - uid: System.ValueTuple{`0,`1}.Result
+    name: Result
+  - name: ','
+  - name: " "
+  - name: TCompare
+  - name: " "
+  - uid: System.ValueTuple{`0,`1}.Compare
+    name: Compare
+  - name: )
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: (
+  - uid: System.ValueTuple{`0,`1}.Result
+    name: Result
+  - name: " "
+  - name: As
+  - name: " "
+  - name: TResult
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{`0,`1}.Compare
+    name: Compare
+  - name: " "
+  - name: As
+  - name: " "
+  - name: TCompare
+  - name: )
+  - name: )
+- uid: System.Func{{TResult},{TCompare},System.Boolean}
+  commentId: T:System.Func{`0,`1,System.Boolean}
+  parent: System
+  definition: System.Func`3
+  name: Func<TResult, TCompare, bool>
+  nameWithType: Func<TResult, TCompare, bool>
+  fullName: System.Func<TResult, TCompare, bool>
+  nameWithType.vb: Func(Of TResult, TCompare, Boolean)
+  fullName.vb: System.Func(Of TResult, TCompare, Boolean)
+  name.vb: Func(Of TResult, TCompare, Boolean)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+  - name: <
+  - name: TResult
+  - name: ','
+  - name: " "
+  - name: TCompare
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: ','
+  - name: " "
+  - name: TCompare
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: '{TResult}'
+  commentId: '!:TResult'
+  definition: TResult
+  name: TResult
+  nameWithType: TResult
+  fullName: TResult
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: TResult
+  commentId: '!:TResult'
+  name: TResult
+  nameWithType: TResult
+  fullName: TResult
+- uid: ToSic.Cre8magic.Utils.GetKeep`2.GetAsync*
+  commentId: Overload:ToSic.Cre8magic.Utils.GetKeep`2.GetAsync
+  href: ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_GetAsync_System_Func_System_Threading_Tasks_Task_System_ValueTuple__0__1____System_Func__0__1_System_Boolean__
+  name: GetAsync
+  nameWithType: GetKeep<TResult, TCompare>.GetAsync
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.GetAsync
+  nameWithType.vb: GetKeep(Of TResult, TCompare).GetAsync
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).GetAsync
+- uid: System.Func{System.Threading.Tasks.Task{System.ValueTuple{{TResult},{TCompare}}}}
+  commentId: T:System.Func{System.Threading.Tasks.Task{System.ValueTuple{`0,`1}}}
+  parent: System
+  definition: System.Func`1
+  name: Func<Task<(TResult Result, TCompare Compare)>>
+  nameWithType: Func<Task<(TResult Result, TCompare Compare)>>
+  fullName: System.Func<System.Threading.Tasks.Task<(TResult Result, TCompare Compare)>>
+  nameWithType.vb: Func(Of Task(Of (Result As TResult, Compare As TCompare)))
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task(Of (Result As TResult, Compare As TCompare)))
+  name.vb: Func(Of Task(Of (Result As TResult, Compare As TCompare)))
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+  - name: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: <
+  - name: (
+  - name: TResult
+  - name: " "
+  - uid: System.ValueTuple{`0,`1}.Result
+    name: Result
+  - name: ','
+  - name: " "
+  - name: TCompare
+  - name: " "
+  - uid: System.ValueTuple{`0,`1}.Compare
+    name: Compare
+  - name: )
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: (
+  - uid: System.ValueTuple{`0,`1}.Result
+    name: Result
+  - name: " "
+  - name: As
+  - name: " "
+  - name: TResult
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{`0,`1}.Compare
+    name: Compare
+  - name: " "
+  - name: As
+  - name: " "
+  - name: TCompare
+  - name: )
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{{TResult}}
+  commentId: T:System.Threading.Tasks.Task{`0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated*
+  commentId: Overload:ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated
+  href: ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_IsValueCreated
+  name: IsValueCreated
+  nameWithType: GetKeep<TResult, TCompare>.IsValueCreated
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.IsValueCreated
+  nameWithType.vb: GetKeep(Of TResult, TCompare).IsValueCreated
+  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).IsValueCreated
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

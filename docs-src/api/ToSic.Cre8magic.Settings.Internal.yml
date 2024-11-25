@@ -5,10 +5,14 @@ items:
   id: Internal
   parent: ToSic.Cre8magic.Settings
   children:
+  - ToSic.Cre8magic.Settings.Internal.Debug
+  - ToSic.Cre8magic.Settings.Internal.Experimental
   - ToSic.Cre8magic.Settings.Internal.ICanClone`1
-  - ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
-  - ToSic.Cre8magic.Settings.Internal.MagicSettingsLoader
-  - ToSic.Cre8magic.Settings.Internal.SettingsException
+  - ToSic.Cre8magic.Settings.Internal.Journal
+  - ToSic.Cre8magic.Settings.Internal.Json
+  - ToSic.Cre8magic.Settings.Internal.Logging
+  - ToSic.Cre8magic.Settings.Internal.MagicSettingsCatalogsLoader
+  - ToSic.Cre8magic.Settings.Internal.Sources
   langs:
   - csharp
   - vb
@@ -19,6 +23,282 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Settings.Internal.Debug
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Debug
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Debug
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Debug
+  fullName: ToSic.Cre8magic.Settings.Internal.Debug
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Settings.Internal.Debug.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Settings.Internal.Debug.html
+- uid: ToSic.Cre8magic.Settings.Internal.Experimental
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Experimental
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Experimental
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Experimental
+  fullName: ToSic.Cre8magic.Settings.Internal.Experimental
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Experimental
+    name: Experimental
+    href: ToSic.Cre8magic.Settings.Internal.Experimental.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Experimental
+    name: Experimental
+    href: ToSic.Cre8magic.Settings.Internal.Experimental.html
+- uid: ToSic.Cre8magic.Settings.Internal.Journal
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Journal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Journal
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Journal
+  fullName: ToSic.Cre8magic.Settings.Internal.Journal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Journal
+    name: Journal
+    href: ToSic.Cre8magic.Settings.Internal.Journal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Journal
+    name: Journal
+    href: ToSic.Cre8magic.Settings.Internal.Journal.html
+- uid: ToSic.Cre8magic.Settings.Internal.Json
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Json
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Json
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Json
+  fullName: ToSic.Cre8magic.Settings.Internal.Json
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Json
+    name: Json
+    href: ToSic.Cre8magic.Settings.Internal.Json.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Json
+    name: Json
+    href: ToSic.Cre8magic.Settings.Internal.Json.html
+- uid: ToSic.Cre8magic.Settings.Internal.Logging
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Logging
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Logging
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Logging
+  fullName: ToSic.Cre8magic.Settings.Internal.Logging
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Logging
+    name: Logging
+    href: ToSic.Cre8magic.Settings.Internal.Logging.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Logging
+    name: Logging
+    href: ToSic.Cre8magic.Settings.Internal.Logging.html
+- uid: ToSic.Cre8magic.Settings.Internal.Sources
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Sources
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Sources
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Sources
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Sources
+    name: Sources
+    href: ToSic.Cre8magic.Settings.Internal.Sources.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Sources
+    name: Sources
+    href: ToSic.Cre8magic.Settings.Internal.Sources.html
 - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
   commentId: T:ToSic.Cre8magic.Settings.Internal.ICanClone`1
   href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
@@ -44,61 +324,9 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
-  commentId: T:ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
-  parent: ToSic.Cre8magic.Settings.Internal
-  href: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions.html
-  name: IHasSettingsExceptions
-  nameWithType: IHasSettingsExceptions
-  fullName: ToSic.Cre8magic.Settings.Internal.IHasSettingsExceptions
-- uid: ToSic.Cre8magic.Settings.Internal.MagicSettingsLoader
-  commentId: T:ToSic.Cre8magic.Settings.Internal.MagicSettingsLoader
-  parent: ToSic.Cre8magic.Settings.Internal
-  href: ToSic.Cre8magic.Settings.Internal.MagicSettingsLoader.html
-  name: MagicSettingsLoader
-  nameWithType: MagicSettingsLoader
-  fullName: ToSic.Cre8magic.Settings.Internal.MagicSettingsLoader
-- uid: ToSic.Cre8magic.Settings.Internal.SettingsException
-  commentId: T:ToSic.Cre8magic.Settings.Internal.SettingsException
-  href: ToSic.Cre8magic.Settings.Internal.SettingsException.html
-  name: SettingsException
-  nameWithType: SettingsException
-  fullName: ToSic.Cre8magic.Settings.Internal.SettingsException
-- uid: ToSic.Cre8magic.Settings.Internal
-  commentId: N:ToSic.Cre8magic.Settings.Internal
-  href: ToSic.html
-  name: ToSic.Cre8magic.Settings.Internal
-  nameWithType: ToSic.Cre8magic.Settings.Internal
-  fullName: ToSic.Cre8magic.Settings.Internal
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
+- uid: ToSic.Cre8magic.Settings.Internal.MagicSettingsCatalogsLoader
+  commentId: T:ToSic.Cre8magic.Settings.Internal.MagicSettingsCatalogsLoader
+  href: ToSic.Cre8magic.Settings.Internal.MagicSettingsCatalogsLoader.html
+  name: MagicSettingsCatalogsLoader
+  nameWithType: MagicSettingsCatalogsLoader
+  fullName: ToSic.Cre8magic.Settings.Internal.MagicSettingsCatalogsLoader

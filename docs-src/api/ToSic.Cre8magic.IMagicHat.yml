@@ -1,0 +1,919 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.IMagicHat
+  commentId: T:ToSic.Cre8magic.IMagicHat
+  id: IMagicHat
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.IMagicHat.AnalyticsKit(Oqtane.UI.PageState,ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
+  - ToSic.Cre8magic.IMagicHat.BreadcrumbKit(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  - ToSic.Cre8magic.IMagicHat.ContainerKit(Oqtane.UI.PageState,Oqtane.Models.Module)
+  - ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  - ToSic.Cre8magic.IMagicHat.ThemeDesigner(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.IMagicHat.ThemeKit(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.IMagicHat.UseSettings(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)
+  - ToSic.Cre8magic.IMagicHat.User(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.IMagicHat.UserLoginKit(Oqtane.UI.PageState)
+  langs:
+  - csharp
+  - vb
+  name: IMagicHat
+  nameWithType: IMagicHat
+  fullName: ToSic.Cre8magic.IMagicHat
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicHat
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 16
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  summary: This is the magic hat from which you can pull just about anything you can think of.
+  example: []
+  syntax:
+    content: public interface IMagicHat
+    content.vb: Public Interface IMagicHat
+- uid: ToSic.Cre8magic.IMagicHat.BreadcrumbKit(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  commentId: M:ToSic.Cre8magic.IMagicHat.BreadcrumbKit(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  id: BreadcrumbKit(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: BreadcrumbKit(PageState, MagicBreadcrumbSettings?)
+  nameWithType: IMagicHat.BreadcrumbKit(PageState, MagicBreadcrumbSettings?)
+  fullName: ToSic.Cre8magic.IMagicHat.BreadcrumbKit(Oqtane.UI.PageState, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings?)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: BreadcrumbKit
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 19
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  summary: >-
+    Get the BreadcrumbKit.
+
+    It will either use the provided settings, retrieve these from the global information or use a default configuration.
+  example: []
+  syntax:
+    content: IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = null)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+      description: ''
+    - id: settings
+      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+      description: ''
+    return:
+      type: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
+      description: ''
+    content.vb: Function BreadcrumbKit(pageState As PageState, settings As MagicBreadcrumbSettings = Nothing) As IMagicBreadcrumbKit
+  overload: ToSic.Cre8magic.IMagicHat.BreadcrumbKit*
+  nameWithType.vb: IMagicHat.BreadcrumbKit(PageState, MagicBreadcrumbSettings)
+  fullName.vb: ToSic.Cre8magic.IMagicHat.BreadcrumbKit(Oqtane.UI.PageState, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  name.vb: BreadcrumbKit(PageState, MagicBreadcrumbSettings)
+- uid: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  commentId: M:ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  id: LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: LanguageKitAsync(PageState, MagicLanguageSettings?)
+  nameWithType: IMagicHat.LanguageKitAsync(PageState, MagicLanguageSettings?)
+  fullName: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState, ToSic.Cre8magic.Languages.MagicLanguageSettings?)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: LanguageKitAsync
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 22
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  summary: Get the state. Must be async, because it might need to load data from Oqtane.
+  example: []
+  syntax:
+    content: Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = null)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+      description: The Oqtane PageState
+    - id: settings
+      type: ToSic.Cre8magic.Languages.MagicLanguageSettings
+      description: Settings to use - or if null, just use all the defaults
+    return:
+      type: System.Threading.Tasks.Task{ToSic.Cre8magic.Languages.IMagicLanguageKit}
+      description: ''
+    content.vb: Function LanguageKitAsync(pageState As PageState, settings As MagicLanguageSettings = Nothing) As Task(Of IMagicLanguageKit)
+  overload: ToSic.Cre8magic.IMagicHat.LanguageKitAsync*
+  nameWithType.vb: IMagicHat.LanguageKitAsync(PageState, MagicLanguageSettings)
+  fullName.vb: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState, ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  name.vb: LanguageKitAsync(PageState, MagicLanguageSettings)
+- uid: ToSic.Cre8magic.IMagicHat.ThemeDesigner(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.IMagicHat.ThemeDesigner(Oqtane.UI.PageState)
+  id: ThemeDesigner(Oqtane.UI.PageState)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: ThemeDesigner(PageState)
+  nameWithType: IMagicHat.ThemeDesigner(PageState)
+  fullName: ToSic.Cre8magic.IMagicHat.ThemeDesigner(Oqtane.UI.PageState)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ThemeDesigner
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 30
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  syntax:
+    content: MagicThemeDesigner ThemeDesigner(PageState pageState)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    return:
+      type: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+    content.vb: Function ThemeDesigner(pageState As PageState) As MagicThemeDesigner
+  overload: ToSic.Cre8magic.IMagicHat.ThemeDesigner*
+- uid: ToSic.Cre8magic.IMagicHat.User(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.IMagicHat.User(Oqtane.UI.PageState)
+  id: User(Oqtane.UI.PageState)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: User(PageState)
+  nameWithType: IMagicHat.User(PageState)
+  fullName: ToSic.Cre8magic.IMagicHat.User(Oqtane.UI.PageState)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: User
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 37
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  example: []
+  syntax:
+    content: MagicUser User(PageState pageState)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    return:
+      type: ToSic.Cre8magic.Users.MagicUser
+    content.vb: Function User(pageState As PageState) As MagicUser
+  overload: ToSic.Cre8magic.IMagicHat.User*
+- uid: ToSic.Cre8magic.IMagicHat.ContainerKit(Oqtane.UI.PageState,Oqtane.Models.Module)
+  commentId: M:ToSic.Cre8magic.IMagicHat.ContainerKit(Oqtane.UI.PageState,Oqtane.Models.Module)
+  id: ContainerKit(Oqtane.UI.PageState,Oqtane.Models.Module)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: ContainerKit(PageState, Module)
+  nameWithType: IMagicHat.ContainerKit(PageState, Module)
+  fullName: ToSic.Cre8magic.IMagicHat.ContainerKit(Oqtane.UI.PageState, Oqtane.Models.Module)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ContainerKit
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 40
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  example: []
+  syntax:
+    content: IMagicContainerKit ContainerKit(PageState pageState, Module module)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    - id: module
+      type: Oqtane.Models.Module
+    return:
+      type: ToSic.Cre8magic.Containers.IMagicContainerKit
+    content.vb: Function ContainerKit(pageState As PageState, [module] As [Module]) As IMagicContainerKit
+  overload: ToSic.Cre8magic.IMagicHat.ContainerKit*
+- uid: ToSic.Cre8magic.IMagicHat.AnalyticsKit(Oqtane.UI.PageState,ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
+  commentId: M:ToSic.Cre8magic.IMagicHat.AnalyticsKit(Oqtane.UI.PageState,ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
+  id: AnalyticsKit(Oqtane.UI.PageState,ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: AnalyticsKit(PageState, MagicAnalyticsSettings?)
+  nameWithType: IMagicHat.AnalyticsKit(PageState, MagicAnalyticsSettings?)
+  fullName: ToSic.Cre8magic.IMagicHat.AnalyticsKit(Oqtane.UI.PageState, ToSic.Cre8magic.Analytics.MagicAnalyticsSettings?)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: AnalyticsKit
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 43
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  example: []
+  syntax:
+    content: IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    - id: settings
+      type: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    return:
+      type: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+    content.vb: Function AnalyticsKit(pageState As PageState, settings As MagicAnalyticsSettings = Nothing) As IMagicAnalyticsKit
+  overload: ToSic.Cre8magic.IMagicHat.AnalyticsKit*
+  nameWithType.vb: IMagicHat.AnalyticsKit(PageState, MagicAnalyticsSettings)
+  fullName.vb: ToSic.Cre8magic.IMagicHat.AnalyticsKit(Oqtane.UI.PageState, ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
+  name.vb: AnalyticsKit(PageState, MagicAnalyticsSettings)
+- uid: ToSic.Cre8magic.IMagicHat.ThemeKit(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.IMagicHat.ThemeKit(Oqtane.UI.PageState)
+  id: ThemeKit(Oqtane.UI.PageState)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: ThemeKit(PageState)
+  nameWithType: IMagicHat.ThemeKit(PageState)
+  fullName: ToSic.Cre8magic.IMagicHat.ThemeKit(Oqtane.UI.PageState)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ThemeKit
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 46
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  example: []
+  syntax:
+    content: IMagicThemeKit ThemeKit(PageState pageState)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    return:
+      type: ToSic.Cre8magic.Themes.IMagicThemeKit
+    content.vb: Function ThemeKit(pageState As PageState) As IMagicThemeKit
+  overload: ToSic.Cre8magic.IMagicHat.ThemeKit*
+- uid: ToSic.Cre8magic.IMagicHat.UseSettings(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)
+  commentId: M:ToSic.Cre8magic.IMagicHat.UseSettings(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)
+  id: UseSettings(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: UseSettings(MagicPackageSettings, string?)
+  nameWithType: IMagicHat.UseSettings(MagicPackageSettings, string?)
+  fullName: ToSic.Cre8magic.IMagicHat.UseSettings(ToSic.Cre8magic.Settings.MagicPackageSettings, string?)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: UseSettings
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 48
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  syntax:
+    content: void UseSettings(MagicPackageSettings packageSettings, string? layoutName)
+    parameters:
+    - id: packageSettings
+      type: ToSic.Cre8magic.Settings.MagicPackageSettings
+    - id: layoutName
+      type: System.String
+    content.vb: Sub UseSettings(packageSettings As MagicPackageSettings, layoutName As String)
+  overload: ToSic.Cre8magic.IMagicHat.UseSettings*
+  nameWithType.vb: IMagicHat.UseSettings(MagicPackageSettings, String)
+  fullName.vb: ToSic.Cre8magic.IMagicHat.UseSettings(ToSic.Cre8magic.Settings.MagicPackageSettings, String)
+  name.vb: UseSettings(MagicPackageSettings, String)
+- uid: ToSic.Cre8magic.IMagicHat.UserLoginKit(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.IMagicHat.UserLoginKit(Oqtane.UI.PageState)
+  id: UserLoginKit(Oqtane.UI.PageState)
+  parent: ToSic.Cre8magic.IMagicHat
+  langs:
+  - csharp
+  - vb
+  name: UserLoginKit(PageState)
+  nameWithType: IMagicHat.UserLoginKit(PageState)
+  fullName: ToSic.Cre8magic.IMagicHat.UserLoginKit(Oqtane.UI.PageState)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/IMagicHat.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: UserLoginKit
+    path: ../ToSic.Cre8Magic.Client/IMagicHat.cs
+    startLine: 49
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic
+  syntax:
+    content: IMagicUserLoginKit UserLoginKit(PageState pageState)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    return:
+      type: ToSic.Cre8magic.Users.IMagicUserLoginKit
+    content.vb: Function UserLoginKit(pageState As PageState) As IMagicUserLoginKit
+  overload: ToSic.Cre8magic.IMagicHat.UserLoginKit*
+references:
+- uid: ToSic.Cre8magic
+  commentId: N:ToSic.Cre8magic
+  href: ToSic.html
+  name: ToSic.Cre8magic
+  nameWithType: ToSic.Cre8magic
+  fullName: ToSic.Cre8magic
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+- uid: ToSic.Cre8magic.IMagicHat.BreadcrumbKit*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.BreadcrumbKit
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_BreadcrumbKit_Oqtane_UI_PageState_ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_
+  name: BreadcrumbKit
+  nameWithType: IMagicHat.BreadcrumbKit
+  fullName: ToSic.Cre8magic.IMagicHat.BreadcrumbKit
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  parent: ToSic.Cre8magic.Breadcrumbs
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html
+  name: MagicBreadcrumbSettings
+  nameWithType: MagicBreadcrumbSettings
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+- uid: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
+  parent: ToSic.Cre8magic.Breadcrumbs
+  href: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.html
+  name: IMagicBreadcrumbKit
+  nameWithType: IMagicBreadcrumbKit
+  fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: ToSic.Cre8magic.Breadcrumbs
+  commentId: N:ToSic.Cre8magic.Breadcrumbs
+  href: ToSic.html
+  name: ToSic.Cre8magic.Breadcrumbs
+  nameWithType: ToSic.Cre8magic.Breadcrumbs
+  fullName: ToSic.Cre8magic.Breadcrumbs
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumbs
+    name: Breadcrumbs
+    href: ToSic.Cre8magic.Breadcrumbs.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumbs
+    name: Breadcrumbs
+    href: ToSic.Cre8magic.Breadcrumbs.html
+- uid: ToSic.Cre8magic.IMagicHat.LanguageKitAsync*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.LanguageKitAsync
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_LanguageKitAsync_Oqtane_UI_PageState_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+  name: LanguageKitAsync
+  nameWithType: IMagicHat.LanguageKitAsync
+  fullName: ToSic.Cre8magic.IMagicHat.LanguageKitAsync
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageSettings
+  parent: ToSic.Cre8magic.Languages
+  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  name: MagicLanguageSettings
+  nameWithType: MagicLanguageSettings
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings
+- uid: System.Threading.Tasks.Task{ToSic.Cre8magic.Languages.IMagicLanguageKit}
+  commentId: T:System.Threading.Tasks.Task{ToSic.Cre8magic.Languages.IMagicLanguageKit}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html
+  name: Task<IMagicLanguageKit>
+  nameWithType: Task<IMagicLanguageKit>
+  fullName: System.Threading.Tasks.Task<ToSic.Cre8magic.Languages.IMagicLanguageKit>
+  nameWithType.vb: Task(Of IMagicLanguageKit)
+  fullName.vb: System.Threading.Tasks.Task(Of ToSic.Cre8magic.Languages.IMagicLanguageKit)
+  name.vb: Task(Of IMagicLanguageKit)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: <
+  - uid: ToSic.Cre8magic.Languages.IMagicLanguageKit
+    name: IMagicLanguageKit
+    href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Languages.IMagicLanguageKit
+    name: IMagicLanguageKit
+    href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html
+  - name: )
+- uid: ToSic.Cre8magic.Languages
+  commentId: N:ToSic.Cre8magic.Languages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Languages
+  nameWithType: ToSic.Cre8magic.Languages
+  fullName: ToSic.Cre8magic.Languages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Languages
+    name: Languages
+    href: ToSic.Cre8magic.Languages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Languages
+    name: Languages
+    href: ToSic.Cre8magic.Languages.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: ToSic.Cre8magic.IMagicHat.ThemeDesigner*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.ThemeDesigner
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_ThemeDesigner_Oqtane_UI_PageState_
+  name: ThemeDesigner
+  nameWithType: IMagicHat.ThemeDesigner
+  fullName: ToSic.Cre8magic.IMagicHat.ThemeDesigner
+- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+  parent: ToSic.Cre8magic.Themes.Internal
+  name: MagicThemeDesigner
+  nameWithType: MagicThemeDesigner
+  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+- uid: ToSic.Cre8magic.Themes.Internal
+  commentId: N:ToSic.Cre8magic.Themes.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes.Internal
+  nameWithType: ToSic.Cre8magic.Themes.Internal
+  fullName: ToSic.Cre8magic.Themes.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Themes.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Themes.Internal.html
+- uid: ToSic.Cre8magic.IMagicHat.User*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.User
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_User_Oqtane_UI_PageState_
+  name: User
+  nameWithType: IMagicHat.User
+  fullName: ToSic.Cre8magic.IMagicHat.User
+- uid: ToSic.Cre8magic.Users.MagicUser
+  commentId: T:ToSic.Cre8magic.Users.MagicUser
+  parent: ToSic.Cre8magic.Users
+  href: ToSic.Cre8magic.Users.MagicUser.html
+  name: MagicUser
+  nameWithType: MagicUser
+  fullName: ToSic.Cre8magic.Users.MagicUser
+- uid: ToSic.Cre8magic.Users
+  commentId: N:ToSic.Cre8magic.Users
+  href: ToSic.html
+  name: ToSic.Cre8magic.Users
+  nameWithType: ToSic.Cre8magic.Users
+  fullName: ToSic.Cre8magic.Users
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Users
+    name: Users
+    href: ToSic.Cre8magic.Users.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Users
+    name: Users
+    href: ToSic.Cre8magic.Users.html
+- uid: ToSic.Cre8magic.IMagicHat.ContainerKit*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.ContainerKit
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_ContainerKit_Oqtane_UI_PageState_Oqtane_Models_Module_
+  name: ContainerKit
+  nameWithType: IMagicHat.ContainerKit
+  fullName: ToSic.Cre8magic.IMagicHat.ContainerKit
+- uid: Oqtane.Models.Module
+  commentId: T:Oqtane.Models.Module
+  parent: Oqtane.Models
+  name: Module
+  nameWithType: Module
+  fullName: Oqtane.Models.Module
+- uid: ToSic.Cre8magic.Containers.IMagicContainerKit
+  commentId: T:ToSic.Cre8magic.Containers.IMagicContainerKit
+  parent: ToSic.Cre8magic.Containers
+  href: ToSic.Cre8magic.Containers.IMagicContainerKit.html
+  name: IMagicContainerKit
+  nameWithType: IMagicContainerKit
+  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit
+- uid: Oqtane.Models
+  commentId: N:Oqtane.Models
+  name: Oqtane.Models
+  nameWithType: Oqtane.Models
+  fullName: Oqtane.Models
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+  - name: .
+  - uid: Oqtane.Models
+    name: Models
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+  - name: .
+  - uid: Oqtane.Models
+    name: Models
+- uid: ToSic.Cre8magic.Containers
+  commentId: N:ToSic.Cre8magic.Containers
+  href: ToSic.html
+  name: ToSic.Cre8magic.Containers
+  nameWithType: ToSic.Cre8magic.Containers
+  fullName: ToSic.Cre8magic.Containers
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Containers
+    name: Containers
+    href: ToSic.Cre8magic.Containers.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Containers
+    name: Containers
+    href: ToSic.Cre8magic.Containers.html
+- uid: ToSic.Cre8magic.IMagicHat.AnalyticsKit*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.AnalyticsKit
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_AnalyticsKit_Oqtane_UI_PageState_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_
+  name: AnalyticsKit
+  nameWithType: IMagicHat.AnalyticsKit
+  fullName: ToSic.Cre8magic.IMagicHat.AnalyticsKit
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+  commentId: T:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+  parent: ToSic.Cre8magic.Analytics
+  href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  name: MagicAnalyticsSettings
+  nameWithType: MagicAnalyticsSettings
+  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  commentId: T:ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+  parent: ToSic.Cre8magic.Analytics
+  href: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.html
+  name: IMagicAnalyticsKit
+  nameWithType: IMagicAnalyticsKit
+  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
+- uid: ToSic.Cre8magic.Analytics
+  commentId: N:ToSic.Cre8magic.Analytics
+  href: ToSic.html
+  name: ToSic.Cre8magic.Analytics
+  nameWithType: ToSic.Cre8magic.Analytics
+  fullName: ToSic.Cre8magic.Analytics
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+- uid: ToSic.Cre8magic.IMagicHat.ThemeKit*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.ThemeKit
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_ThemeKit_Oqtane_UI_PageState_
+  name: ThemeKit
+  nameWithType: IMagicHat.ThemeKit
+  fullName: ToSic.Cre8magic.IMagicHat.ThemeKit
+- uid: ToSic.Cre8magic.Themes.IMagicThemeKit
+  commentId: T:ToSic.Cre8magic.Themes.IMagicThemeKit
+  parent: ToSic.Cre8magic.Themes
+  href: ToSic.Cre8magic.Themes.IMagicThemeKit.html
+  name: IMagicThemeKit
+  nameWithType: IMagicThemeKit
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeKit
+- uid: ToSic.Cre8magic.Themes
+  commentId: N:ToSic.Cre8magic.Themes
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes
+  nameWithType: ToSic.Cre8magic.Themes
+  fullName: ToSic.Cre8magic.Themes
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+- uid: ToSic.Cre8magic.IMagicHat.UseSettings*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.UseSettings
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_UseSettings_ToSic_Cre8magic_Settings_MagicPackageSettings_System_String_
+  name: UseSettings
+  nameWithType: IMagicHat.UseSettings
+  fullName: ToSic.Cre8magic.IMagicHat.UseSettings
+- uid: ToSic.Cre8magic.Settings.MagicPackageSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicPackageSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
+  name: MagicPackageSettings
+  nameWithType: MagicPackageSettings
+  fullName: ToSic.Cre8magic.Settings.MagicPackageSettings
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.IMagicHat.UserLoginKit*
+  commentId: Overload:ToSic.Cre8magic.IMagicHat.UserLoginKit
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_UserLoginKit_Oqtane_UI_PageState_
+  name: UserLoginKit
+  nameWithType: IMagicHat.UserLoginKit
+  fullName: ToSic.Cre8magic.IMagicHat.UserLoginKit
+- uid: ToSic.Cre8magic.Users.IMagicUserLoginKit
+  commentId: T:ToSic.Cre8magic.Users.IMagicUserLoginKit
+  parent: ToSic.Cre8magic.Users
+  href: ToSic.Cre8magic.Users.IMagicUserLoginKit.html
+  name: IMagicUserLoginKit
+  nameWithType: IMagicUserLoginKit
+  fullName: ToSic.Cre8magic.Users.IMagicUserLoginKit

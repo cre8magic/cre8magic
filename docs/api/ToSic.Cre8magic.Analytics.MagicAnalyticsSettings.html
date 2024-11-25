@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class MagicAnalyticsSettings | cre8magic ">
       
-      
+      <meta name="description" content="Settings to set up and use Google Tag Manager to track page views. BETA: Doesn&#39;t completely work yet.  Main caveat: Integration of the Google Tag Manager still has the GTM hardwired in the JS, must be finished. Background is that the Module currently doesn&#39;t contain its own JS, so it&#39;s still part of the theme.">
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings" class="text-break">
-Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,11 +97,17 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Settings to set up and use Google Tag Manager to track page views.</p>
+<p>BETA: Doesn't completely work yet.</p>
+<ul>
+<li>Main caveat: Integration of the Google Tag Manager still has the GTM hardwired in the JS, must be finished.</li>
+<li>Background is that the Module currently doesn't contain its own JS, so it's still part of the theme.</li>
+</ul>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record MagicAnalyticsSettings : SettingsWithInherit, IEquatable&lt;SettingsWithInherit&gt;, ICanClone&lt;MagicAnalyticsSettings&gt;, IEquatable&lt;MagicAnalyticsSettings&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public record MagicAnalyticsSettings : SettingsWithInherit</code></pre>
   </div>
 
 
@@ -110,20 +116,12 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">object</span></div>
       <div><a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
       <div><span class="xref">MagicAnalyticsSettings</span></div>
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a>&gt;</div>
-      <div><a class="xref" href="ToSic.Cre8magic.Settings.Internal.ICanClone-1.html">ICanClone</a>&lt;<a class="xref" href="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html">MagicAnalyticsSettings</a>&gt;</div>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html">MagicAnalyticsSettings</a>&gt;</div>
-    </dd>
-  </dl>
 
 
   <dl class="typelist inheritedMembers">
@@ -133,25 +131,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
       <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____">SettingsWithInherit.PickFirstNonZeroInt(int?[])</a>
     </div>
   </dd></dl>
 
@@ -168,7 +148,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings__ctor" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor">
   MagicAnalyticsSettings()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -194,7 +174,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings__ctor_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)">
   MagicAnalyticsSettings(MagicAnalyticsSettings?, MagicAnalyticsSettings?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L19"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -231,10 +211,11 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_GtmId" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId">
   GtmId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>ID of Google Tag Manager.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -247,7 +228,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -262,10 +243,12 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_PageViewEvent" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewEvent">
   PageViewEvent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Name of the event to give to GTM which should be logged.
+Defaults to &quot;blazor_page_view&quot;.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -278,7 +261,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -293,10 +276,12 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_PageViewJs" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewJs">
   PageViewJs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>JavaScript function to call for tracking page views.
+Defaults to &quot;gtag&quot;.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -309,7 +294,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -324,7 +309,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_PageViewTrack" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewTrack">
   PageViewTrack
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -340,7 +325,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dt><span class="xref">bool</span>?</dt>
     <dd></dd>
   </dl>
 
@@ -355,7 +340,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_PageViewTrackFirst" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewTrackFirst">
   PageViewTrackFirst
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -371,7 +356,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dt><span class="xref">bool</span>?</dt>
     <dd></dd>
   </dl>
 
@@ -386,25 +371,25 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_CloneWith_" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith*"></a>
+  <a id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_CloneUnder_" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder*"></a>
 
-  <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_CloneWith_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_System_Boolean_" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneWith(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)">
-  CloneWith(MagicAnalyticsSettings?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_CloneUnder_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_System_Boolean_" data-uid="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.CloneUnder(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,System.Boolean)">
+  CloneUnder(MagicAnalyticsSettings?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicAnalyticsSettings CloneWith(MagicAnalyticsSettings? priority, bool forceCopy = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicAnalyticsSettings CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy = false)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>priority</code> <a class="xref" href="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html">MagicAnalyticsSettings</a></dt>
     <dd></dd>
-    <dt><code>forceCopy</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>forceCopy</code> <span class="xref">bool</span></dt>
     <dd></dd>
   </dl>
 
@@ -428,7 +413,7 @@ Class MagicAnalyticsSettings  <a class="header-action link-secondary" title="Vie
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

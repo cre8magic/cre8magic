@@ -1,0 +1,1388 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  id: MagicBreadcrumbSettings
+  parent: ToSic.Cre8magic.Breadcrumbs
+  children:
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,System.Boolean)
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DisplayDefault
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome
+  langs:
+  - csharp
+  - vb
+  name: MagicBreadcrumbSettings
+  nameWithType: MagicBreadcrumbSettings
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicBreadcrumbSettings
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 14
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: Breadcrumb settings - either provided in code, or generated from JSON.
+  remarks: NOTE that as of v0.2 the JSON variant is not in use.
+  example: []
+  syntax:
+    content: 'public record MagicBreadcrumbSettings : SettingsWithInherit, IMagicPageSetSettings'
+    content.vb: Public Class MagicBreadcrumbSettings Inherits SettingsWithInherit Implements IMagicPageSetSettings
+  inheritance:
+  - System.Object
+  - ToSic.Cre8magic.Settings.SettingsWithInherit
+  implements:
+  - ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  inheritedMembers:
+  - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+  - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor
+  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor
+  id: '#ctor'
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: MagicBreadcrumbSettings()
+  nameWithType: MagicBreadcrumbSettings.MagicBreadcrumbSettings()
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MagicBreadcrumbSettings()
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 16
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  syntax:
+    content: public MagicBreadcrumbSettings()
+    content.vb: Public Sub New()
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor*
+  nameWithType.vb: MagicBreadcrumbSettings.New()
+  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.New()
+  name.vb: New()
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  id: '#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)'
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: MagicBreadcrumbSettings(MagicBreadcrumbSettings?, MagicBreadcrumbSettings?)
+  nameWithType: MagicBreadcrumbSettings.MagicBreadcrumbSettings(MagicBreadcrumbSettings?, MagicBreadcrumbSettings?)
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MagicBreadcrumbSettings(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings?, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings?)
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 21
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: Cloning constructor
+  example: []
+  syntax:
+    content: public MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = null)
+    parameters:
+    - id: priority
+      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+    - id: fallback
+      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+    content.vb: Public Sub New(priority As MagicBreadcrumbSettings, fallback As MagicBreadcrumbSettings = Nothing)
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor*
+  nameWithType.vb: MagicBreadcrumbSettings.New(MagicBreadcrumbSettings, MagicBreadcrumbSettings)
+  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.New(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  name.vb: New(MagicBreadcrumbSettings, MagicBreadcrumbSettings)
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,System.Boolean)
+  id: CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings,System.Boolean)
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: CloneUnder(MagicBreadcrumbSettings?, bool)
+  nameWithType: MagicBreadcrumbSettings.CloneUnder(MagicBreadcrumbSettings?, bool)
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings?, bool)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: CloneUnder
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 39
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  example: []
+  syntax:
+    content: public MagicBreadcrumbSettings CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy = false)
+    parameters:
+    - id: priority
+      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+    - id: forceCopy
+      type: System.Boolean
+    return:
+      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+    content.vb: Public Function CloneUnder(priority As MagicBreadcrumbSettings, forceCopy As Boolean = False) As MagicBreadcrumbSettings
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder*
+  nameWithType.vb: MagicBreadcrumbSettings.CloneUnder(MagicBreadcrumbSettings, Boolean)
+  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings, Boolean)
+  name.vb: CloneUnder(MagicBreadcrumbSettings, Boolean)
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
+  id: WithActive
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: WithActive
+  nameWithType: MagicBreadcrumbSettings.WithActive
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: WithActive
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 51
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: >-
+    If the current page should be included in the breadcrumb.
+
+
+    Set to false for scenarios where you don't want to show the final page,
+
+    or will use custom code to visualize differently.
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public bool WithActive { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property WithActive As Boolean
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome
+  id: WithHome
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: WithHome
+  nameWithType: MagicBreadcrumbSettings.WithHome
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: WithHome
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 60
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: >-
+    If the home page should be included in the breadcrumb.
+
+    This is special because the home page is usually not really "above" the others, but typically side-by side to other pages on the top level menu.
+
+
+    Set to false, if you only want to show the breadcrumb starting at the level below home.
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public bool WithHome { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property WithHome As Boolean
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
+  id: Designer
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: Designer
+  nameWithType: MagicBreadcrumbSettings.Designer
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Designer
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 63
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public IMagicPageDesigner? Designer { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Pages.IMagicPageDesigner
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property Designer As IMagicPageDesigner
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth
+  id: MaxDepth
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: MaxDepth
+  nameWithType: MagicBreadcrumbSettings.MaxDepth
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MaxDepth
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 70
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: >-
+    Maximum depth of the breadcrumb, defaults to 10.
+
+    This is to ensure that we don't run into infinite loops.
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public int MaxDepth { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property MaxDepth As Integer
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse
+  id: Reverse
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: Reverse
+  nameWithType: MagicBreadcrumbSettings.Reverse
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Reverse
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 76
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: If the order of the Breadcrumb should be reversed.
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public bool Reverse { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property Reverse As Boolean
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages
+  id: Pages
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: Pages
+  nameWithType: MagicBreadcrumbSettings.Pages
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Pages
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 85
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: >-
+    List of pages to respect when creating the breadcrumb.
+
+    Default is `null` - so it will just take all the pages.
+
+
+    TODO: NAMING
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public IEnumerable<IMagicPage>? Pages { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property Pages As IEnumerable(Of IMagicPage)
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active
+  id: Active
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: Active
+  nameWithType: MagicBreadcrumbSettings.Active
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Active
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 89
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public IMagicPage? Active { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property Active As IMagicPage
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id
+  id: Id
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: MagicBreadcrumbSettings.Id
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Id
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 97
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: A unique ID to identify the breadcrumb.
+  example: []
+  syntax:
+    content: public string? Id { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id*
+  implements:
+  - ToSic.Cre8magic.Pages.IMagicPageSetSettings.Id
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName
+  id: PartName
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: PartName
+  nameWithType: MagicBreadcrumbSettings.PartName
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PartName
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 103
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: >-
+    Name to identify this part.
+
+    This information is used to load settings (breadcrumb settings and design settings)
+  example: []
+  syntax:
+    content: public string? PartName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PartName As String
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName*
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug
+  id: Debug
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: Debug
+  nameWithType: MagicBreadcrumbSettings.Debug
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Debug
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 106
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: Debug settings for anything that can configure show/hide of debug
+  example: []
+  syntax:
+    content: public MagicDebugSettings? Debug { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
+    content.vb: Public Property Debug As MagicDebugSettings
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug*
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display
+  id: Display
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: Display
+  nameWithType: MagicBreadcrumbSettings.Display
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Display
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 112
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: Determines if this breadcrumb should be shown.
+  example: []
+  syntax:
+    content: public bool? Display { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property Display As Boolean?
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display*
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DisplayDefault
+  commentId: F:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DisplayDefault
+  id: DisplayDefault
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: DisplayDefault
+  nameWithType: MagicBreadcrumbSettings.DisplayDefault
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DisplayDefault
+  type: Field
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: DisplayDefault
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 113
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  syntax:
+    content: public const bool DisplayDefault = true
+    return:
+      type: System.Boolean
+    content.vb: Public Const DisplayDefault As Boolean = True
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId
+  id: ActiveId
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: ActiveId
+  nameWithType: MagicBreadcrumbSettings.ActiveId
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ActiveId
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 121
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: >-
+    Start page of this breadcrumb - like home or another specific page.
+
+    Can be
+
+    - a specific ID
+
+    - blank / null, current page
+  example: []
+  syntax:
+    content: public int? ActiveId { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property ActiveId As Integer?
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId*
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
+  id: DesignSettings
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: DesignSettings
+  nameWithType: MagicBreadcrumbSettings.DesignSettings
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: DesignSettings
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 124
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public Dictionary<string, MagicBreadcrumbDesignSettingsPart>? DesignSettings { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart}
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property DesignSettings As Dictionary(Of String, MagicBreadcrumbDesignSettingsPart)
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId
+  id: MenuId
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: MenuId
+  nameWithType: MagicBreadcrumbSettings.MenuId
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MenuId
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 127
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: >-
+    Menu ID for use in JavaScript etc.
+
+    Usually predefined OR a random number
+  example: []
+  syntax:
+    content: public string MenuId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property MenuId As String
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId*
+  implements:
+  - ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant
+  id: Variant
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  langs:
+  - csharp
+  - vb
+  name: Variant
+  nameWithType: MagicBreadcrumbSettings.Variant
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Variant
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
+    startLine: 130
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  example: []
+  syntax:
+    content: public string? Variant { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property [Variant] As String
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant*
+  implements:
+  - ToSic.Cre8magic.Pages.IMagicPageSetSettings.Variant
+references:
+- uid: ToSic.Cre8magic.Breadcrumbs
+  commentId: N:ToSic.Cre8magic.Breadcrumbs
+  href: ToSic.html
+  name: ToSic.Cre8magic.Breadcrumbs
+  nameWithType: ToSic.Cre8magic.Breadcrumbs
+  fullName: ToSic.Cre8magic.Breadcrumbs
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumbs
+    name: Breadcrumbs
+    href: ToSic.Cre8magic.Breadcrumbs.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumbs
+    name: Breadcrumbs
+    href: ToSic.Cre8magic.Breadcrumbs.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit
+  commentId: T:ToSic.Cre8magic.Settings.SettingsWithInherit
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html
+  name: SettingsWithInherit
+  nameWithType: SettingsWithInherit
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
+- uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageSetSettings.html
+  name: IMagicPageSetSettings
+  nameWithType: IMagicPageSetSettings
+  fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+  commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+  parent: ToSic.Cre8magic.Settings.SettingsWithInherit
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits
+  name: Inherits
+  nameWithType: SettingsWithInherit.Inherits
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+  commentId: M:ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+  parent: ToSic.Cre8magic.Settings.SettingsWithInherit
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
+  name: PickFirstNonZeroInt(int?[])
+  nameWithType: SettingsWithInherit.PickFirstNonZeroInt(int?[])
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(int?[])
+  nameWithType.vb: SettingsWithInherit.PickFirstNonZeroInt(Integer?())
+  fullName.vb: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(Integer?())
+  name.vb: PickFirstNonZeroInt(Integer?())
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+    name: PickFirstNonZeroInt
+    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: '?'
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+    name: PickFirstNonZeroInt
+    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: '?'
+  - name: (
+  - name: )
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings__ctor
+  name: MagicBreadcrumbSettings
+  nameWithType: MagicBreadcrumbSettings.MagicBreadcrumbSettings
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MagicBreadcrumbSettings
+  nameWithType.vb: MagicBreadcrumbSettings.New
+  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.New
+  name.vb: New
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  parent: ToSic.Cre8magic.Breadcrumbs
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html
+  name: MagicBreadcrumbSettings
+  nameWithType: MagicBreadcrumbSettings
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_CloneUnder_ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_System_Boolean_
+  name: CloneUnder
+  nameWithType: MagicBreadcrumbSettings.CloneUnder
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.CloneUnder
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_WithActive
+  name: WithActive
+  nameWithType: MagicBreadcrumbSettings.WithActive
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_WithHome
+  name: WithHome
+  nameWithType: MagicBreadcrumbSettings.WithHome
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Designer
+  name: Designer
+  nameWithType: MagicBreadcrumbSettings.Designer
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
+- uid: ToSic.Cre8magic.Pages.IMagicPageDesigner
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageDesigner
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageDesigner.html
+  name: IMagicPageDesigner
+  nameWithType: IMagicPageDesigner
+  fullName: ToSic.Cre8magic.Pages.IMagicPageDesigner
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_MaxDepth
+  name: MaxDepth
+  nameWithType: MagicBreadcrumbSettings.MaxDepth
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Reverse
+  name: Reverse
+  nameWithType: MagicBreadcrumbSettings.Reverse
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Pages
+  name: Pages
+  nameWithType: MagicBreadcrumbSettings.Pages
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages
+- uid: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
+  commentId: T:System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IEnumerable<IMagicPage>
+  nameWithType: IEnumerable<IMagicPage>
+  fullName: System.Collections.Generic.IEnumerable<ToSic.Cre8magic.Pages.IMagicPage>
+  nameWithType.vb: IEnumerable(Of IMagicPage)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: IEnumerable(Of IMagicPage)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Active
+  name: Active
+  nameWithType: MagicBreadcrumbSettings.Active
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Id
+  name: Id
+  nameWithType: MagicBreadcrumbSettings.Id
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id
+- uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings.Id
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPageSetSettings.Id
+  parent: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  href: ToSic.Cre8magic.Pages.IMagicPageSetSettings.html#ToSic_Cre8magic_Pages_IMagicPageSetSettings_Id
+  name: Id
+  nameWithType: IMagicPageSetSettings.Id
+  fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings.Id
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_PartName
+  name: PartName
+  nameWithType: MagicBreadcrumbSettings.PartName
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Debug
+  name: Debug
+  nameWithType: MagicBreadcrumbSettings.Debug
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug
+- uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
+  parent: ToSic.Cre8magic.Settings.Internal.Debug
+  name: MagicDebugSettings
+  nameWithType: MagicDebugSettings
+  fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
+- uid: ToSic.Cre8magic.Settings.Internal.Debug
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Debug
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Debug
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Debug
+  fullName: ToSic.Cre8magic.Settings.Internal.Debug
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Settings.Internal.Debug.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Settings.Internal.Debug.html
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Display
+  name: Display
+  nameWithType: MagicBreadcrumbSettings.Display
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_ActiveId
+  name: ActiveId
+  nameWithType: MagicBreadcrumbSettings.ActiveId
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: '?'
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_DesignSettings
+  name: DesignSettings
+  nameWithType: MagicBreadcrumbSettings.DesignSettings
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
+- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html
+  name: Dictionary<string, MagicBreadcrumbDesignSettingsPart>
+  nameWithType: Dictionary<string, MagicBreadcrumbDesignSettingsPart>
+  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart>
+  nameWithType.vb: Dictionary(Of String, MagicBreadcrumbDesignSettingsPart)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart)
+  name.vb: Dictionary(Of String, MagicBreadcrumbDesignSettingsPart)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
+    name: MagicBreadcrumbDesignSettingsPart
+    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
+    name: MagicBreadcrumbDesignSettingsPart
+    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_MenuId
+  name: MenuId
+  nameWithType: MagicBreadcrumbSettings.MenuId
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId
+- uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
+  parent: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  href: ToSic.Cre8magic.Pages.IMagicPageSetSettings.html#ToSic_Cre8magic_Pages_IMagicPageSetSettings_MenuId
+  name: MenuId
+  nameWithType: IMagicPageSetSettings.MenuId
+  fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Variant
+  name: Variant
+  nameWithType: MagicBreadcrumbSettings.Variant
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant
+- uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings.Variant
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPageSetSettings.Variant
+  parent: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  href: ToSic.Cre8magic.Pages.IMagicPageSetSettings.html#ToSic_Cre8magic_Pages_IMagicPageSetSettings_Variant
+  name: Variant
+  nameWithType: IMagicPageSetSettings.Variant
+  fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings.Variant

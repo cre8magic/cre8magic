@@ -8,6 +8,43 @@
 
 ## Overview
 
+Everything in cre8magic will do something based on settings.
+These can come from various places
+
+1. Directly in the API call which retrieves a Kit like:  
+    `var kit = MagicHat.MenuKit(PageState, new MagicMenuSettings() { ... })`
+
+1. Directly in the Component tag which shows the thing like  
+    `<MagicMenu Settings="new MagicMenuSettings() { ... }" />`
+
+1. Provided elsewhere and named `default` so it's automatically used like  
+    `var kit = MagicHat.MenuKit(PageState)`  
+    `<MagicMenu />`
+
+1. Provided elsewhere and retrieved by name like  
+    `var kit = MagicHat.MenuKit(PageState, settingsName: "my-menu")`  
+    `<MagicMenu SettingsName="my-menu" />`
+
+1. Provided elsewhere and retrieved by Theme Part Name like
+    `var kit = MagicHat.MenuKit(PageState, partName: "my-menu")`  
+    `<MagicMenu PartName="my-menu" />`
+
+What's also important is that there are settings related to how/what data to get,
+and settings related to how to display (`DesignSettings`) it,
+as well as an option how the DesignSettings will be applied (`MagicDesigner`).
+In future, there may even be more such settings.
+
+## Levels of Indirection WIP
+
+1. Theme Variant
+1. Part in that Theme Variant
+1. Settings
+1. Design Settings
+1. Inheritance on every level
+
+
+## Overview - old, json file...
+
 Basically the magic settings let you put a bunch of parameters in a JSON file.
 This file is then used by your Theme and it's Controls to
 

@@ -1,0 +1,352 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Containers.MagicContainerDesigner
+  commentId: T:ToSic.Cre8magic.Containers.MagicContainerDesigner
+  id: MagicContainerDesigner
+  parent: ToSic.Cre8magic.Containers
+  children:
+  - ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes(System.String)
+  langs:
+  - csharp
+  - vb
+  name: MagicContainerDesigner
+  nameWithType: MagicContainerDesigner
+  fullName: ToSic.Cre8magic.Containers.MagicContainerDesigner
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainerDesigner.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicContainerDesigner
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainerDesigner.cs
+    startLine: 9
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Containers
+  syntax:
+    content: 'public class MagicContainerDesigner : MagicDesignerBase, IMagicDesigner'
+    content.vb: Public Class MagicContainerDesigner Inherits MagicDesignerBase Implements IMagicDesigner
+  inheritance:
+  - System.Object
+  - ToSic.Cre8magic.Designers.MagicDesignerBase
+  implements:
+  - ToSic.Cre8magic.Designers.IMagicDesigner
+  inheritedMembers:
+  - ToSic.Cre8magic.Designers.MagicDesignerBase.Context
+  - ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings
+  - ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(System.String)
+  - ToSic.Cre8magic.Designers.MagicDesignerBase.ParseTokens
+  - ToSic.Cre8magic.Designers.MagicDesignerBase.ProcessTokens(System.String)
+  - ToSic.Cre8magic.Designers.MagicDesignerBase.Value(System.String)
+  - ToSic.Cre8magic.Designers.MagicDesignerBase.Id(System.String)
+- uid: ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes(System.String)
+  commentId: M:ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes(System.String)
+  id: Classes(System.String)
+  parent: ToSic.Cre8magic.Containers.MagicContainerDesigner
+  langs:
+  - csharp
+  - vb
+  name: Classes(string)
+  nameWithType: MagicContainerDesigner.Classes(string)
+  fullName: ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes(string)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Containers/MagicContainerDesigner.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Classes
+    path: ../ToSic.Cre8Magic.Client/Containers/MagicContainerDesigner.cs
+    startLine: 14
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Containers
+  example: []
+  syntax:
+    content: public override string? Classes(string tag)
+    parameters:
+    - id: tag
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Overrides Function Classes(tag As String) As String
+  overridden: ToSic.Cre8magic.Designers.MagicDesignerBase.Classes(System.String)
+  overload: ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes*
+  nameWithType.vb: MagicContainerDesigner.Classes(String)
+  fullName.vb: ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes(String)
+  name.vb: Classes(String)
+references:
+- uid: ToSic.Cre8magic.Containers
+  commentId: N:ToSic.Cre8magic.Containers
+  href: ToSic.html
+  name: ToSic.Cre8magic.Containers
+  nameWithType: ToSic.Cre8magic.Containers
+  fullName: ToSic.Cre8magic.Containers
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Containers
+    name: Containers
+    href: ToSic.Cre8magic.Containers.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Containers
+    name: Containers
+    href: ToSic.Cre8magic.Containers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase
+  commentId: T:ToSic.Cre8magic.Designers.MagicDesignerBase
+  parent: ToSic.Cre8magic.Designers
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html
+  name: MagicDesignerBase
+  nameWithType: MagicDesignerBase
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase
+- uid: ToSic.Cre8magic.Designers.IMagicDesigner
+  commentId: T:ToSic.Cre8magic.Designers.IMagicDesigner
+  parent: ToSic.Cre8magic.Designers
+  href: ToSic.Cre8magic.Designers.IMagicDesigner.html
+  name: IMagicDesigner
+  nameWithType: IMagicDesigner
+  fullName: ToSic.Cre8magic.Designers.IMagicDesigner
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Context
+  commentId: P:ToSic.Cre8magic.Designers.MagicDesignerBase.Context
+  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Context
+  name: Context
+  nameWithType: MagicDesignerBase.Context
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.Context
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings
+  commentId: P:ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings
+  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_DesignSettings
+  name: DesignSettings
+  nameWithType: MagicDesignerBase.DesignSettings
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(System.String)
+  commentId: M:ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(System.String)
+  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
+  isExternal: true
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_GetSettings_System_String_
+  name: GetSettings(string)
+  nameWithType: MagicDesignerBase.GetSettings(string)
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(string)
+  nameWithType.vb: MagicDesignerBase.GetSettings(String)
+  fullName.vb: ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(String)
+  name.vb: GetSettings(String)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(System.String)
+    name: GetSettings
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_GetSettings_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(System.String)
+    name: GetSettings
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_GetSettings_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.ParseTokens
+  commentId: P:ToSic.Cre8magic.Designers.MagicDesignerBase.ParseTokens
+  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_ParseTokens
+  name: ParseTokens
+  nameWithType: MagicDesignerBase.ParseTokens
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.ParseTokens
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.ProcessTokens(System.String)
+  commentId: M:ToSic.Cre8magic.Designers.MagicDesignerBase.ProcessTokens(System.String)
+  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
+  isExternal: true
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_ProcessTokens_System_String_
+  name: ProcessTokens(string)
+  nameWithType: MagicDesignerBase.ProcessTokens(string)
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.ProcessTokens(string)
+  nameWithType.vb: MagicDesignerBase.ProcessTokens(String)
+  fullName.vb: ToSic.Cre8magic.Designers.MagicDesignerBase.ProcessTokens(String)
+  name.vb: ProcessTokens(String)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.ProcessTokens(System.String)
+    name: ProcessTokens
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_ProcessTokens_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.ProcessTokens(System.String)
+    name: ProcessTokens
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_ProcessTokens_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Value(System.String)
+  commentId: M:ToSic.Cre8magic.Designers.MagicDesignerBase.Value(System.String)
+  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
+  isExternal: true
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Value_System_String_
+  name: Value(string)
+  nameWithType: MagicDesignerBase.Value(string)
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.Value(string)
+  nameWithType.vb: MagicDesignerBase.Value(String)
+  fullName.vb: ToSic.Cre8magic.Designers.MagicDesignerBase.Value(String)
+  name.vb: Value(String)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Value(System.String)
+    name: Value
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Value_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Value(System.String)
+    name: Value
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Value_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Id(System.String)
+  commentId: M:ToSic.Cre8magic.Designers.MagicDesignerBase.Id(System.String)
+  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
+  isExternal: true
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Id_System_String_
+  name: Id(string)
+  nameWithType: MagicDesignerBase.Id(string)
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.Id(string)
+  nameWithType.vb: MagicDesignerBase.Id(String)
+  fullName.vb: ToSic.Cre8magic.Designers.MagicDesignerBase.Id(String)
+  name.vb: Id(String)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Id(System.String)
+    name: Id
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Id_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Id(System.String)
+    name: Id
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Id_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Designers
+  commentId: N:ToSic.Cre8magic.Designers
+  href: ToSic.html
+  name: ToSic.Cre8magic.Designers
+  nameWithType: ToSic.Cre8magic.Designers
+  fullName: ToSic.Cre8magic.Designers
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Designers
+    name: Designers
+    href: ToSic.Cre8magic.Designers.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Designers
+    name: Designers
+    href: ToSic.Cre8magic.Designers.html
+- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Classes(System.String)
+  commentId: M:ToSic.Cre8magic.Designers.MagicDesignerBase.Classes(System.String)
+  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
+  isExternal: true
+  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Classes_System_String_
+  name: Classes(string)
+  nameWithType: MagicDesignerBase.Classes(string)
+  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.Classes(string)
+  nameWithType.vb: MagicDesignerBase.Classes(String)
+  fullName.vb: ToSic.Cre8magic.Designers.MagicDesignerBase.Classes(String)
+  name.vb: Classes(String)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Classes(System.String)
+    name: Classes
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Classes_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Classes(System.String)
+    name: Classes
+    href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Classes_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes*
+  commentId: Overload:ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes
+  href: ToSic.Cre8magic.Containers.MagicContainerDesigner.html#ToSic_Cre8magic_Containers_MagicContainerDesigner_Classes_System_String_
+  name: Classes
+  nameWithType: MagicContainerDesigner.Classes
+  fullName: ToSic.Cre8magic.Containers.MagicContainerDesigner.Classes
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

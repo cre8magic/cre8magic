@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -90,6 +90,28 @@
 <p>The reason we're doing this is because various tests will behave differently,
 depending on the theme around it.</p>
 <p>So this allows us to place the module on pages with different themes and see how it behaves.</p>
+<h2 id="important-conventions">Important Conventions</h2>
+<h3 id="group-by-topic">Group by Topic</h3>
+<ol>
+<li>Each topic should have its own folder. eg. <code>Menus</code>, <code>Breadcrumbs</code> etc.</li>
+</ol>
+<h3 id="internal-as-much-as-possible">Internal as Much as Possible</h3>
+<p>Anything that is really not needed for the public use should be as internal as possible.</p>
+<ol>
+<li><p>Anything internal that can be internal should be marked as <code>internal</code><br>
+...to really protect the public API surface.</p>
+</li>
+<li><p>Anything internal should be in a folder <code>Internal</code> in the root or any topic based folder.<br>
+...this will be filtered out by the docs. (TODO)</p>
+</li>
+<li><p>Really internal objects should not be named <code>Magic...</code></p>
+<ul>
+<li>it's shorter</li>
+<li>and we can spot internal stuff + spot leaks in the docs.</li>
+<li>Note that this doesn't apply to internal implementations of interfaces, which should be named after the interface.</li>
+</ul>
+</li>
+</ol>
 
 </article>
 

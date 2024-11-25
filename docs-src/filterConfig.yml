@@ -1,0 +1,32 @@
+
+
+apiRules:
+# Exclude System.Object or System.Reflection to avoid having .Equals and stuff in the docs
+- exclude:
+    uidRegex: ^System\.
+
+# hides things like Microsoft.Extensions.DependencyInjection etc.
+- exclude:
+    uidRegex: ^Microsoft\.
+
+# Exclude any "Internal" namespaces
+- exclude:
+    uidRegex: \.Internal\.
+
+# exclude Samples
+# - exclude:
+#     uidRegex: ^Oqtane.Database\.
+# - exclude:
+#     uidRegex: ^Oqtane.Databases\.
+
+    
+# Exclude anything marked as PrivateApi
+# In future, we may change this to only show things which are PublicApi (recommendation of iJungleboy)
+- exclude:
+    hasAttribute:
+      uid: Oqtane.Documentation.PrivateApi
+
+      # Oqtane.Modules.Admin
+      #HtmlModule
+      #MAUI
+  

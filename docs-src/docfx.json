@@ -10,10 +10,11 @@
         }
       ],
       "dest": "api",
+      "filter": "filterConfig.yml",
       "disableGitFeatures": false,
       "force": true, // Re-build all the documentation
       "properties": {
-        "TargetFramework": "net8.0",
+        "TargetFramework": "net9.0",
         // "GenerateDocumentationFile": true,
         // "ProduceReferenceAssembly": true
       },

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -101,7 +101,7 @@ Class SettingsWithInherit  <a class="header-action link-secondary" title="View s
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract record SettingsWithInherit : IEquatable&lt;SettingsWithInherit&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract record SettingsWithInherit</code></pre>
   </div>
 
 
@@ -110,56 +110,27 @@ Class SettingsWithInherit  <a class="header-action link-secondary" title="View s
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">object</span></div>
       <div><span class="xref">SettingsWithInherit</span></div>
     </dd>
   </dl>
 
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a>&gt;</div>
-    </dd>
-  </dl>
 
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
       <div><a class="xref" href="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html">MagicAnalyticsSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Breadcrumb.Settings.MagicBreadcrumbSettings.html">MagicBreadcrumbSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Containers.Settings.MagicContainerSettings.html">MagicContainerSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeDesignSettings.html">MagicThemeDesignSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Client.Themes.Settings.MagicThemeSettings.html">MagicThemeSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Languages.Settings.MagicLanguagesSettings.html">MagicLanguagesSettings</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html">MagicBreadcrumbSettings</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Containers.MagicContainerSettings.html">MagicContainerSettings</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html">MagicLanguageDesignSettings</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html">MagicLanguageSettingsData</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html">MagicMenuDesignSettings</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettingsData.html">MagicMenuSettingsData</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Themes.MagicThemeSettings.html">MagicThemeSettings</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings.html">MagicThemeDesignSettings</a></div>
     </dd>
   </dl>
 
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-    </div>
-  </dd></dl>
 
 
 
@@ -174,10 +145,11 @@ Class SettingsWithInherit  <a class="header-action link-secondary" title="View s
 
   <h3 id="ToSic_Cre8magic_Settings_SettingsWithInherit__ctor" data-uid="ToSic.Cre8magic.Settings.SettingsWithInherit.#ctor">
   SettingsWithInherit()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Empty Constructor necessary for deserialization of inheriting classes</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -200,7 +172,7 @@ Class SettingsWithInherit  <a class="header-action link-secondary" title="View s
 
   <h3 id="ToSic_Cre8magic_Settings_SettingsWithInherit__ctor_ToSic_Cre8magic_Settings_SettingsWithInherit_ToSic_Cre8magic_Settings_SettingsWithInherit_" data-uid="ToSic.Cre8magic.Settings.SettingsWithInherit.#ctor(ToSic.Cre8magic.Settings.SettingsWithInherit,ToSic.Cre8magic.Settings.SettingsWithInherit)">
   SettingsWithInherit(SettingsWithInherit?, SettingsWithInherit?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Clone support.</p>
@@ -238,7 +210,7 @@ Class SettingsWithInherit  <a class="header-action link-secondary" title="View s
 
   <h3 id="ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits" data-uid="ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits">
   Inherits
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -255,9 +227,49 @@ public string? Inherits { get; init; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_" data-uid="ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____" data-uid="ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])">
+  PickFirstNonZeroInt(int?[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/SettingsWithInherit.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static int PickFirstNonZeroInt(int?[] values)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>values</code> <span class="xref">int</span>?[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
 
 
 

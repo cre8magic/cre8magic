@@ -6,6 +6,7 @@ items:
   parent: ToSic.Cre8magic.Utils
   children:
   - ToSic.Cre8magic.Utils.Logging.CodeRef
+  - ToSic.Cre8magic.Utils.Logging.LogRoot
   langs:
   - csharp
   - vb
@@ -22,3 +23,9 @@ references:
   name: CodeRef
   nameWithType: CodeRef
   fullName: ToSic.Cre8magic.Utils.Logging.CodeRef
+- uid: ToSic.Cre8magic.Utils.Logging.LogRoot
+  commentId: T:ToSic.Cre8magic.Utils.Logging.LogRoot
+  href: ToSic.Cre8magic.Utils.Logging.LogRoot.html
+  name: LogRoot
+  nameWithType: LogRoot
+  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot

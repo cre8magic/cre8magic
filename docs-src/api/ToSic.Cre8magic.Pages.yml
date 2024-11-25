@@ -11,9 +11,9 @@ items:
   - ToSic.Cre8magic.Pages.IMagicPageService
   - ToSic.Cre8magic.Pages.IMagicPageSetSettings
   - ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
-  - ToSic.Cre8magic.Pages.Internal
   - ToSic.Cre8magic.Pages.MagicPageDesignerBase
   - ToSic.Cre8magic.Pages.MagicPageDesignerBasic
+  - ToSic.Cre8magic.Pages.MagicPageEditService
   langs:
   - csharp
   - vb
@@ -24,44 +24,6 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.Pages.Internal
-  commentId: N:ToSic.Cre8magic.Pages.Internal
-  href: ToSic.html
-  name: ToSic.Cre8magic.Pages.Internal
-  nameWithType: ToSic.Cre8magic.Pages.Internal
-  fullName: ToSic.Cre8magic.Pages.Internal
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Pages
-    name: Pages
-    href: ToSic.Cre8magic.Pages.html
-  - name: .
-  - uid: ToSic.Cre8magic.Pages.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Pages.Internal.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Pages
-    name: Pages
-    href: ToSic.Cre8magic.Pages.html
-  - name: .
-  - uid: ToSic.Cre8magic.Pages.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Pages.Internal.html
 - uid: ToSic.Cre8magic.Pages.IMagicPage
   commentId: T:ToSic.Cre8magic.Pages.IMagicPage
   parent: ToSic.Cre8magic.Pages
@@ -85,7 +47,6 @@ references:
   fullName: ToSic.Cre8magic.Pages.IMagicPageList
 - uid: ToSic.Cre8magic.Pages.IMagicPageService
   commentId: T:ToSic.Cre8magic.Pages.IMagicPageService
-  parent: ToSic.Cre8magic.Pages
   href: ToSic.Cre8magic.Pages.IMagicPageService.html
   name: IMagicPageService
   nameWithType: IMagicPageService
@@ -99,6 +60,7 @@ references:
   fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings
 - uid: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
   commentId: T:ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+  parent: ToSic.Cre8magic.Pages
   href: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip.html
   name: IMagicPageWithDesignWip
   nameWithType: IMagicPageWithDesignWip
@@ -117,6 +79,12 @@ references:
   name: MagicPageDesignerBasic
   nameWithType: MagicPageDesignerBasic
   fullName: ToSic.Cre8magic.Pages.MagicPageDesignerBasic
+- uid: ToSic.Cre8magic.Pages.MagicPageEditService
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageEditService
+  href: ToSic.Cre8magic.Pages.MagicPageEditService.html
+  name: MagicPageEditService
+  nameWithType: MagicPageEditService
+  fullName: ToSic.Cre8magic.Pages.MagicPageEditService
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
   href: ToSic.html

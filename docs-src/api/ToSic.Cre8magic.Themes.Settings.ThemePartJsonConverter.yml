@@ -1,0 +1,748 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+  commentId: T:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+  id: ThemePartJsonConverter
+  parent: ToSic.Cre8magic.Themes.Settings
+  children:
+  - ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.GetNew(Microsoft.Extensions.Logging.ILogger)
+  - ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  - ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+  langs:
+  - csharp
+  - vb
+  name: ThemePartJsonConverter
+  nameWithType: ThemePartJsonConverter
+  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ThemePartJsonConverter
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+    startLine: 11
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes.Settings
+  summary: 'Important: NEVER use this on a'
+  example: []
+  syntax:
+    content: 'public class ThemePartJsonConverter : JsonConverterBase<MagicThemePartSettings>'
+    content.vb: Public Class ThemePartJsonConverter Inherits JsonConverterBase(Of MagicThemePartSettings)
+  inheritance:
+  - System.Object
+  - System.Text.Json.Serialization.JsonConverter
+  - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}
+  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}
+- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.GetNew(Microsoft.Extensions.Logging.ILogger)
+  commentId: M:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.GetNew(Microsoft.Extensions.Logging.ILogger)
+  id: GetNew(Microsoft.Extensions.Logging.ILogger)
+  parent: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+  langs:
+  - csharp
+  - vb
+  name: GetNew(ILogger)
+  nameWithType: ThemePartJsonConverter.GetNew(ILogger)
+  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.GetNew(Microsoft.Extensions.Logging.ILogger)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: GetNew
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+    startLine: 24
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes.Settings
+  syntax:
+    content: public static ThemePartJsonConverter GetNew(ILogger logger)
+    parameters:
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger
+    return:
+      type: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+    content.vb: Public Shared Function GetNew(logger As ILogger) As ThemePartJsonConverter
+  overload: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.GetNew*
+- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+  id: Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+  parent: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+  langs:
+  - csharp
+  - vb
+  name: Write(Utf8JsonWriter, MagicThemePartSettings?, JsonSerializerOptions)
+  nameWithType: ThemePartJsonConverter.Write(Utf8JsonWriter, MagicThemePartSettings?, JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings?, System.Text.Json.JsonSerializerOptions)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Write
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+    startLine: 26
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes.Settings
+  summary: Writes a specified value as JSON.
+  example: []
+  syntax:
+    content: public override void Write(Utf8JsonWriter writer, MagicThemePartSettings? part, JsonSerializerOptions options)
+    parameters:
+    - id: writer
+      type: System.Text.Json.Utf8JsonWriter
+      description: The writer to write to.
+    - id: part
+      type: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+    - id: options
+      type: System.Text.Json.JsonSerializerOptions
+      description: An object that specifies serialization options to use.
+    content.vb: Public Overrides Sub Write(writer As Utf8JsonWriter, part As MagicThemePartSettings, options As JsonSerializerOptions)
+  overridden: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+  overload: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write*
+  nameWithType.vb: ThemePartJsonConverter.Write(Utf8JsonWriter, MagicThemePartSettings, JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings, System.Text.Json.JsonSerializerOptions)
+  name.vb: Write(Utf8JsonWriter, MagicThemePartSettings, JsonSerializerOptions)
+- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  id: Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  parent: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+  langs:
+  - csharp
+  - vb
+  name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: ThemePartJsonConverter.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Read
+    path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+    startLine: 40
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes.Settings
+  summary: Reads and converts the JSON to type <xref href="ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public override MagicThemePartSettings? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    parameters:
+    - id: reader
+      type: System.Text.Json.Utf8JsonReader
+      description: The reader.
+    - id: typeToConvert
+      type: System.Type
+      description: The type to convert.
+    - id: options
+      type: System.Text.Json.JsonSerializerOptions
+      description: An object that specifies serialization options to use.
+    return:
+      type: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+      description: The converted value.
+    content.vb: Public Overrides Function Read(reader As Utf8JsonReader, typeToConvert As Type, options As JsonSerializerOptions) As MagicThemePartSettings
+  overridden: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  overload: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read*
+  nameWithType.vb: ThemePartJsonConverter.Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  name.vb: Read(Utf8JsonReader, Type, JsonSerializerOptions)
+references:
+- uid: ToSic.Cre8magic.Themes.Settings
+  commentId: N:ToSic.Cre8magic.Themes.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes.Settings
+  nameWithType: ToSic.Cre8magic.Themes.Settings
+  fullName: ToSic.Cre8magic.Themes.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Themes.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Themes.Settings.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Text.Json.Serialization.JsonConverter
+  commentId: T:System.Text.Json.Serialization.JsonConverter
+  parent: System.Text.Json.Serialization
+  isExternal: true
+  name: JsonConverter
+  nameWithType: JsonConverter
+  fullName: System.Text.Json.Serialization.JsonConverter
+- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}
+  commentId: T:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}
+  parent: System.Text.Json.Serialization
+  definition: System.Text.Json.Serialization.JsonConverter`1
+  href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  name: JsonConverter<MagicThemePartSettings>
+  nameWithType: JsonConverter<MagicThemePartSettings>
+  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings>
+  nameWithType.vb: JsonConverter(Of MagicThemePartSettings)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings)
+  name.vb: JsonConverter(Of MagicThemePartSettings)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1
+    name: JsonConverter
+    isExternal: true
+  - name: <
+  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+    name: MagicThemePartSettings
+    href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1
+    name: JsonConverter
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+    name: MagicThemePartSettings
+    href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}
+  parent: ToSic.Cre8magic.Settings.Internal.Json
+  definition: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
+  href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  name: JsonConverterBase<MagicThemePartSettings>
+  nameWithType: JsonConverterBase<MagicThemePartSettings>
+  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings>
+  nameWithType.vb: JsonConverterBase(Of MagicThemePartSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings)
+  name.vb: JsonConverterBase(Of MagicThemePartSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
+    name: JsonConverterBase
+  - name: <
+  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+    name: MagicThemePartSettings
+    href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
+    name: JsonConverterBase
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+    name: MagicThemePartSettings
+    href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Text.Json.Serialization
+  commentId: N:System.Text.Json.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text.Json.Serialization
+  nameWithType: System.Text.Json.Serialization
+  fullName: System.Text.Json.Serialization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json
+  - name: .
+  - uid: System.Text.Json.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json
+  - name: .
+  - uid: System.Text.Json.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization
+- uid: System.Text.Json.Serialization.JsonConverter`1
+  commentId: T:System.Text.Json.Serialization.JsonConverter`1
+  isExternal: true
+  name: JsonConverter<T>
+  nameWithType: JsonConverter<T>
+  fullName: System.Text.Json.Serialization.JsonConverter<T>
+  nameWithType.vb: JsonConverter(Of T)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T)
+  name.vb: JsonConverter(Of T)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1
+    name: JsonConverter
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1
+    name: JsonConverter
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
+  name: JsonConverterBase<T>
+  nameWithType: JsonConverterBase<T>
+  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<T>
+  nameWithType.vb: JsonConverterBase(Of T)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of T)
+  name.vb: JsonConverterBase(Of T)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
+    name: JsonConverterBase
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
+    name: JsonConverterBase
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal.Json
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Json
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Json
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Json
+  fullName: ToSic.Cre8magic.Settings.Internal.Json
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Json
+    name: Json
+    href: ToSic.Cre8magic.Settings.Internal.Json.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Json
+    name: Json
+    href: ToSic.Cre8magic.Settings.Internal.Json.html
+- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.GetNew*
+  commentId: Overload:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.GetNew
+  href: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.html#ToSic_Cre8magic_Themes_Settings_ThemePartJsonConverter_GetNew_Microsoft_Extensions_Logging_ILogger_
+  name: GetNew
+  nameWithType: ThemePartJsonConverter.GetNew
+  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.GetNew
+- uid: Microsoft.Extensions.Logging.ILogger
+  commentId: T:Microsoft.Extensions.Logging.ILogger
+  parent: Microsoft.Extensions.Logging
+  isExternal: true
+  name: ILogger
+  nameWithType: ILogger
+  fullName: Microsoft.Extensions.Logging.ILogger
+- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+  commentId: T:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+  parent: ToSic.Cre8magic.Themes.Settings
+  href: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.html
+  name: ThemePartJsonConverter
+  nameWithType: ThemePartJsonConverter
+  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}
+  definition: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  name: Write(Utf8JsonWriter, MagicThemePartSettings, JsonSerializerOptions)
+  nameWithType: JsonConverter<MagicThemePartSettings>.Write(Utf8JsonWriter, MagicThemePartSettings, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings>.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of MagicThemePartSettings).Write(Utf8JsonWriter, MagicThemePartSettings, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings).Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings, System.Text.Json.JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+    name: Write
+    isExternal: true
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+    name: MagicThemePartSettings
+    href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings,System.Text.Json.JsonSerializerOptions)
+    name: Write
+    isExternal: true
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+    name: MagicThemePartSettings
+    href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write*
+  commentId: Overload:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write
+  href: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.html#ToSic_Cre8magic_Themes_Settings_ThemePartJsonConverter_Write_System_Text_Json_Utf8JsonWriter_ToSic_Cre8magic_Themes_Settings_MagicThemePartSettings_System_Text_Json_JsonSerializerOptions_
+  name: Write
+  nameWithType: ThemePartJsonConverter.Write
+  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Write
+- uid: System.Text.Json.Utf8JsonWriter
+  commentId: T:System.Text.Json.Utf8JsonWriter
+  parent: System.Text.Json
+  isExternal: true
+  name: Utf8JsonWriter
+  nameWithType: Utf8JsonWriter
+  fullName: System.Text.Json.Utf8JsonWriter
+- uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+  commentId: T:ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+  parent: ToSic.Cre8magic.Themes.Settings
+  href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
+  name: MagicThemePartSettings
+  nameWithType: MagicThemePartSettings
+  fullName: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
+- uid: System.Text.Json.JsonSerializerOptions
+  commentId: T:System.Text.Json.JsonSerializerOptions
+  parent: System.Text.Json
+  isExternal: true
+  name: JsonSerializerOptions
+  nameWithType: JsonSerializerOptions
+  fullName: System.Text.Json.JsonSerializerOptions
+- uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+  isExternal: true
+  name: Write(Utf8JsonWriter, T, JsonSerializerOptions)
+  nameWithType: JsonConverter<T>.Write(Utf8JsonWriter, T, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.Write(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of T).Write(Utf8JsonWriter, T, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).Write(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+    name: Write
+    isExternal: true
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
+    name: Write
+    isExternal: true
+  - name: (
+  - uid: System.Text.Json.Utf8JsonWriter
+    name: Utf8JsonWriter
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+  - name: )
+- uid: System.Text.Json
+  commentId: N:System.Text.Json
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text.Json
+  nameWithType: System.Text.Json
+  fullName: System.Text.Json
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.Json
+    name: Json
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.json
+- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}
+  definition: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: JsonConverter<MagicThemePartSettings>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings>.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of MagicThemePartSettings).Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings).Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  name.vb: Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: Read
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: Read
+    isExternal: true
+  - name: (
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read*
+  commentId: Overload:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read
+  href: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.html#ToSic_Cre8magic_Themes_Settings_ThemePartJsonConverter_Read_System_Text_Json_Utf8JsonReader__System_Type_System_Text_Json_JsonSerializerOptions_
+  name: Read
+  nameWithType: ThemePartJsonConverter.Read
+  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.Read
+- uid: System.Text.Json.Utf8JsonReader
+  commentId: T:System.Text.Json.Utf8JsonReader
+  parent: System.Text.Json
+  isExternal: true
+  name: Utf8JsonReader
+  nameWithType: Utf8JsonReader
+  fullName: System.Text.Json.Utf8JsonReader
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  isExternal: true
+  name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: JsonConverter<T>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<T>.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of T).Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  name.vb: Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  spec.csharp:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: Read
+    isExternal: true
+  - name: (
+  - name: ref
+  - name: " "
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    name: Read
+    isExternal: true
+  - name: (
+  - uid: System.Text.Json.Utf8JsonReader
+    name: Utf8JsonReader
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Text.Json.JsonSerializerOptions
+    name: JsonSerializerOptions
+    isExternal: true
+  - name: )

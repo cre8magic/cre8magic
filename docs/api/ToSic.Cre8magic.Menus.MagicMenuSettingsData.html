@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MagicMenuSettingsData | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MagicMenuSettingsData | cre8magic ">
+      
+      <meta name="description" content="The raw settings for a menu, in a way which can be stored elsewhere. This is later augmented with additional information which only code can provide, in the">
+      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/new/feature/v5/apiSpec/new?filename=ToSic_Cre8magic_Menus_MagicMenuSettingsData.md&amp;value=---%0Auid%3A%20ToSic.Cre8magic.Menus.MagicMenuSettingsData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../assets/cre8magic-logo50.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData">
+
+
+
+  <h1 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData" class="text-break">
+Class MagicMenuSettingsData  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Menus.html">Menus</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The raw settings for a menu, in a way which can be stored elsewhere.</p>
+<p>This is later augmented with additional information which only code can provide, in the <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public record MagicMenuSettingsData : SettingsWithInherit, IMagicPageSetSettings</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
+      <div><span class="xref">MagicMenuSettingsData</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageSetSettings.html">IMagicPageSetSettings</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist derived">
+    <dt>Derived</dt>
+    <dd>
+      <div><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____">SettingsWithInherit.PickFirstNonZeroInt(int?[])</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is implemented as an immutable record.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData__ctor_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.#ctor*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData__ctor" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.#ctor">
+  MagicMenuSettingsData()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Default constructor, so this record can be created anywhere.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicMenuSettingsData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_ChildrenFallback" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.ChildrenFallback">
+  ChildrenFallback
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool ChildrenFallback = false</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_DisplayDefault" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.DisplayDefault">
+  DisplayDefault
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const bool DisplayDefault = true</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_StartLevelFallback" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.StartLevelFallback">
+  StartLevelFallback
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int StartLevelFallback = 0</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_StartPageCurrent" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.StartPageCurrent">
+  StartPageCurrent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string StartPageCurrent = &quot;.&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_StartPageRoot" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.StartPageRoot">
+  StartPageRoot
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string StartPageRoot = &quot;*&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_StartPageRoot2" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.StartPageRoot2">
+  StartPageRoot2
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string StartPageRoot2 = &quot;/&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Children_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Children*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Children" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Children">
+  Children
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Levels to skip from the initial stating point.</p>
+<ul>
+<li>0 means don't skip any, so if we're starting at the root, show that level</li>
+<li>1 means skip the first level, so if we're starting at the root, show the children
+See inspiration context from DDRMenu <a href="https://www.dnnsoftware.com/wiki/ddrmenu-reference-guide">https://www.dnnsoftware.com/wiki/ddrmenu-reference-guide</a>
+in DDR it was called 'skip' but it didn't make sense IMHO
+TODO: possibly rename to StartOnChildren or StartSkip?</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Children { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Debug_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Debug*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Debug" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Debug">
+  Debug
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Debug settings for anything that can configure show/hide of debug</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicDebugSettings? Debug { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings.html">MagicDebugSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Depth_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Depth*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Depth" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Depth">
+  Depth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Depth { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Display_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Display*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Display" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Display">
+  Display
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines if this navigation should be shown.
+Mainly used for standard menus which could be disabled through configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Display { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Id_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Id*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Id" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A unique ID to identify the menu.
+Would be used for debugging but also to help in creating unique css-classes for collapsible menus</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Id { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Level_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Level*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Level" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Level">
+  Level
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The level this menu should start from.</p>
+<ul>
+<li><code>0</code> is the top level (default)</li>
+<li><code>1</code> is the top level containing home and other pages</li>
+<li><code>-1</code> is one level up from the current node</li>
+<li><code>-2</code> is two levels up from the current node</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Level { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_MenuId_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.MenuId*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_MenuId" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.MenuId">
+  MenuId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Menu ID for use in JavaScript etc.
+Usually predefined OR a random number</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MenuId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Start_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Start*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Start" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Start">
+  Start
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Start page of this navigation - like home or another specific page.
+Can be</p>
+<ul>
+<li>a specific ID</li>
+<li>a CSV of IDs ???</li>
+<li><code>*</code> to indicate all pages on the specified level</li>
+<li><code>.</code> to indicate current page</li>
+<li>blank / null, to use another start ???</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Start { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Template_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Template*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Template" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Template">
+  Template
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The template to use - horizontal/vertical</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Template { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Variant_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Variant*"></a>
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettingsData_Variant" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettingsData.Variant">
+  Variant
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Variant { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettingsData.cs/#L16" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

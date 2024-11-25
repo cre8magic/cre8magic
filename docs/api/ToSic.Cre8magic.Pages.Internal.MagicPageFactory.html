@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory" class="text-break">
-Class MagicPageFactory  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L17"><i class="bi bi-code-slash"></i></a>
+Class MagicPageFactory  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -112,7 +112,7 @@ This is necessary, because the pages need certain properties which require other
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">object</span></div>
       <div><span class="xref">MagicPageFactory</span></div>
     </dd>
   </dl>
@@ -156,9 +156,9 @@ This is necessary, because the pages need certain properties which require other
 
   <a id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory__ctor_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor*"></a>
 
-  <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory__ctor_Oqtane_UI_PageState_System_Collections_Generic_IEnumerable_ToSic_Cre8magic_Pages_IMagicPage__System_Boolean_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)">
-  MagicPageFactory(PageState, IEnumerable&lt;IMagicPage&gt;?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory__ctor_Oqtane_UI_PageState_System_Collections_Generic_IEnumerable_ToSic_Cre8magic_Pages_IMagicPage__System_Boolean_ToSic_Cre8magic_Utils_Logging_LogRoot_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)">
+  MagicPageFactory(PageState, IEnumerable&lt;IMagicPage&gt;?, bool, LogRoot?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Factory to create Magic Pages.
@@ -167,16 +167,18 @@ This is necessary, because the pages need certain properties which require other
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicPageFactory(PageState pageState, IEnumerable&lt;IMagicPage&gt;? restrictPages = null, bool ignorePermissions = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicPageFactory(PageState pageState, IEnumerable&lt;IMagicPage&gt;? restrictPages = null, bool ignorePermissions = false, LogRoot? logRoot = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
+    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
     <dd></dd>
     <dt><code>restrictPages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a>&gt;</dt>
     <dd></dd>
-    <dt><code>ignorePermissions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>ignorePermissions</code> <span class="xref">bool</span></dt>
+    <dd></dd>
+    <dt><code>logRoot</code> <a class="xref" href="ToSic.Cre8magic.Utils.Logging.LogRoot.html">LogRoot</a></dt>
     <dd></dd>
   </dl>
 
@@ -199,7 +201,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Current" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Current">
   Current
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -230,7 +232,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Home" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Home">
   Home
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -265,7 +267,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_ChildrenOf_System_Int32_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf(System.Int32)">
   ChildrenOf(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -277,7 +279,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dt><code>pageId</code> <span class="xref">int</span></dt>
     <dd></dd>
   </dl>
 
@@ -297,50 +299,11 @@ This is necessary, because the pages need certain properties which require other
 
 
 
-  <a id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Clone_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone*"></a>
-
-  <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Clone_System_Collections_Generic_List_ToSic_Cre8magic_Pages_IMagicPage__System_Boolean_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Clone(System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean)">
-  Clone(List&lt;IMagicPage&gt;, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L24"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Get a new factory, with different page restrictions</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicPageFactory Clone(List&lt;IMagicPage&gt; restrictPages, bool ignorePermissions = false)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>restrictPages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>ignorePermissions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html">MagicPageFactory</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
   <a id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Create_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Create*"></a>
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Create_Oqtane_Models_Page_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Create(Oqtane.Models.Page)">
   Create(Page)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -352,7 +315,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>page</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs">Page</a></dt>
+    <dt><code>page</code> <span class="xref">Page</span></dt>
     <dd></dd>
   </dl>
 
@@ -376,7 +339,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_CreateOrNull_Oqtane_Models_Page_" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.CreateOrNull(Oqtane.Models.Page)">
   CreateOrNull(Page?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -388,7 +351,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>page</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs">Page</a></dt>
+    <dt><code>page</code> <span class="xref">Page</span></dt>
     <dd></dd>
   </dl>
 
@@ -412,7 +375,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Get_System_Collections_Generic_IEnumerable_Oqtane_Models_Page__" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Get(System.Collections.Generic.IEnumerable{Oqtane.Models.Page})">
   Get(IEnumerable&lt;Page&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -424,7 +387,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/9a7a53405124c2ac000cc8b33e0f194ffc16e58d/Oqtane.Shared/Models/Page.cs">Page</a>&gt;</dt>
+    <dt><code>pages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">Page</span>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -448,7 +411,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_Get_System_Collections_Generic_IEnumerable_System_Int32__" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Get(System.Collections.Generic.IEnumerable{System.Int32})">
   Get(IEnumerable&lt;int&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -484,7 +447,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_GetOrNull_System_Nullable_System_Int32__" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.GetOrNull(System.Nullable{System.Int32})">
   GetOrNull(int?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -520,7 +483,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_PagesAll" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PagesAll">
   PagesAll()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>List of all pages - even these which would currently not be shown in the menu.</p>
@@ -552,7 +515,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_PagesCurrent" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PagesCurrent">
   PagesCurrent()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -583,7 +546,7 @@ This is necessary, because the pages need certain properties which require other
 
   <h3 id="ToSic_Cre8magic_Pages_Internal_MagicPageFactory_PagesUser" data-uid="ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PagesUser">
   PagesUser()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Pages in the menu according to Oqtane pre-processing
@@ -616,7 +579,7 @@ Should be limited to pages which should be in the menu, visible and permissions 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L17" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

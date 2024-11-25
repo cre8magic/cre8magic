@@ -5,6 +5,8 @@ items:
   id: Internal
   parent: ToSic.Cre8magic.Menus
   children:
+  - ToSic.Cre8magic.Menus.Internal.MagicMenuDesigner
+  - ToSic.Cre8magic.Menus.Internal.MagicMenuKit
   - ToSic.Cre8magic.Menus.Internal.MagicMenuService
   langs:
   - csharp
@@ -16,6 +18,18 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Menus.Internal.MagicMenuDesigner
+  commentId: T:ToSic.Cre8magic.Menus.Internal.MagicMenuDesigner
+  href: ToSic.Cre8magic.Menus.Internal.MagicMenuDesigner.html
+  name: MagicMenuDesigner
+  nameWithType: MagicMenuDesigner
+  fullName: ToSic.Cre8magic.Menus.Internal.MagicMenuDesigner
+- uid: ToSic.Cre8magic.Menus.Internal.MagicMenuKit
+  commentId: T:ToSic.Cre8magic.Menus.Internal.MagicMenuKit
+  href: ToSic.Cre8magic.Menus.Internal.MagicMenuKit.html
+  name: MagicMenuKit
+  nameWithType: MagicMenuKit
+  fullName: ToSic.Cre8magic.Menus.Internal.MagicMenuKit
 - uid: ToSic.Cre8magic.Menus.Internal.MagicMenuService
   commentId: T:ToSic.Cre8magic.Menus.Internal.MagicMenuService
   href: ToSic.Cre8magic.Menus.Internal.MagicMenuService.html

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Pages_IMagicPageList" data-uid="ToSic.Cre8magic.Pages.IMagicPageList" class="text-break">
-Interface IMagicPageList  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Interface IMagicPageList  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -105,7 +105,7 @@ For example, a breadcrumb or a menu.</p>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public interface IMagicPageList : IEnumerable&lt;IMagicPageWithDesignWip&gt;, IEnumerable</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IMagicPageList</code></pre>
   </div>
 
 
@@ -114,13 +114,6 @@ For example, a breadcrumb or a menu.</p>
 
 
 
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator">IEnumerable&lt;IMagicPageWithDesignWip&gt;.GetEnumerator()</a>
-    </div>
-  </dd></dl>
 
 
 
@@ -135,7 +128,7 @@ For example, a breadcrumb or a menu.</p>
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPageList_MenuLevel" data-uid="ToSic.Cre8magic.Pages.IMagicPageList.MenuLevel">
   MenuLevel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The depth in the current menu, starting from 1.
@@ -154,38 +147,7 @@ and if the menu starts at level 2 or 3, this will still be 1.</p>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Pages_IMagicPageList_Settings_" data-uid="ToSic.Cre8magic.Pages.IMagicPageList.Settings*"></a>
-
-  <h3 id="ToSic_Cre8magic_Pages_IMagicPageList_Settings" data-uid="ToSic.Cre8magic.Pages.IMagicPageList.Settings">
-  Settings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L37"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicPageSetSettings Settings { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageSetSettings.html">IMagicPageSetSettings</a></dt>
+    <dt><span class="xref">int</span></dt>
     <dd></dd>
   </dl>
 
@@ -204,7 +166,7 @@ and if the menu starts at level 2 or 3, this will still be 1.</p>
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPageList_Classes_System_String_" data-uid="ToSic.Cre8magic.Pages.IMagicPageList.Classes(System.String)">
   Classes(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get css class for tag.</p>
@@ -217,13 +179,13 @@ and if the menu starts at level 2 or 3, this will still be 1.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>tag</code> <span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -241,7 +203,7 @@ and if the menu starts at level 2 or 3, this will still be 1.</p>
 
   <h3 id="ToSic_Cre8magic_Pages_IMagicPageList_Value_System_String_" data-uid="ToSic.Cre8magic.Pages.IMagicPageList.Value(System.String)">
   Value(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Get attribute value.</p>
@@ -254,13 +216,13 @@ and if the menu starts at level 2 or 3, this will still be 1.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>key</code> <span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
@@ -278,7 +240,7 @@ and if the menu starts at level 2 or 3, this will still be 1.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Pages/IMagicPageList.cs/#L11" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -1,0 +1,340 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1
+  commentId: T:ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1
+  id: IMagicProviderSection`1
+  parent: ToSic.Cre8magic.Settings.Providers
+  children:
+  - ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(System.Collections.Generic.IDictionary{System.String,`0})
+  - ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(System.String,`0)
+  - ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(`0)
+  langs:
+  - csharp
+  - vb
+  name: IMagicProviderSection<TSettings>
+  nameWithType: IMagicProviderSection<TSettings>
+  fullName: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection<TSettings>
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Providers/IMagicProviderSection.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicProviderSection
+    path: ../ToSic.Cre8Magic.Client/Settings/Providers/IMagicProviderSection.cs
+    startLine: 6
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings.Providers
+  summary: A provider for one type of settings.
+  example: []
+  syntax:
+    content: 'public interface IMagicProviderSection<TSettings> where TSettings : class'
+    typeParameters:
+    - id: TSettings
+      description: ''
+    content.vb: Public Interface IMagicProviderSection(Of TSettings As Class)
+  nameWithType.vb: IMagicProviderSection(Of TSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection(Of TSettings)
+  name.vb: IMagicProviderSection(Of TSettings)
+- uid: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(`0)
+  commentId: M:ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(`0)
+  id: Provide(`0)
+  parent: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1
+  langs:
+  - csharp
+  - vb
+  name: Provide(TSettings)
+  nameWithType: IMagicProviderSection<TSettings>.Provide(TSettings)
+  fullName: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection<TSettings>.Provide(TSettings)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Providers/IMagicProviderSection.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Provide
+    path: ../ToSic.Cre8Magic.Client/Settings/Providers/IMagicProviderSection.cs
+    startLine: 28
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings.Providers
+  summary: Configure to provide a value - either as the only result for all requests, or as a default.
+  example: []
+  syntax:
+    content: IMagicSettingsProvider Provide(TSettings value)
+    parameters:
+    - id: value
+      type: '{TSettings}'
+      description: ''
+    return:
+      type: ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider
+      description: ''
+    content.vb: Function Provide(value As TSettings) As IMagicSettingsProvider
+  overload: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide*
+  nameWithType.vb: IMagicProviderSection(Of TSettings).Provide(TSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection(Of TSettings).Provide(TSettings)
+- uid: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(System.String,`0)
+  commentId: M:ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(System.String,`0)
+  id: Provide(System.String,`0)
+  parent: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1
+  langs:
+  - csharp
+  - vb
+  name: Provide(string, TSettings)
+  nameWithType: IMagicProviderSection<TSettings>.Provide(string, TSettings)
+  fullName: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection<TSettings>.Provide(string, TSettings)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Providers/IMagicProviderSection.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Provide
+    path: ../ToSic.Cre8Magic.Client/Settings/Providers/IMagicProviderSection.cs
+    startLine: 36
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings.Providers
+  summary: Configure to provide a named value.
+  example: []
+  syntax:
+    content: IMagicSettingsProvider Provide(string key, TSettings value)
+    parameters:
+    - id: key
+      type: System.String
+      description: ''
+    - id: value
+      type: '{TSettings}'
+      description: ''
+    return:
+      type: ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider
+      description: ''
+    content.vb: Function Provide(key As String, value As TSettings) As IMagicSettingsProvider
+  overload: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide*
+  nameWithType.vb: IMagicProviderSection(Of TSettings).Provide(String, TSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection(Of TSettings).Provide(String, TSettings)
+  name.vb: Provide(String, TSettings)
+- uid: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(System.Collections.Generic.IDictionary{System.String,`0})
+  commentId: M:ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide(System.Collections.Generic.IDictionary{System.String,`0})
+  id: Provide(System.Collections.Generic.IDictionary{System.String,`0})
+  parent: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1
+  langs:
+  - csharp
+  - vb
+  name: Provide(IDictionary<string, TSettings>)
+  nameWithType: IMagicProviderSection<TSettings>.Provide(IDictionary<string, TSettings>)
+  fullName: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection<TSettings>.Provide(System.Collections.Generic.IDictionary<string, TSettings>)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Providers/IMagicProviderSection.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Provide
+    path: ../ToSic.Cre8Magic.Client/Settings/Providers/IMagicProviderSection.cs
+    startLine: 43
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings.Providers
+  summary: Configure to provide a dictionary of named values.
+  example: []
+  syntax:
+    content: IMagicSettingsProvider Provide(IDictionary<string, TSettings> dictionary)
+    parameters:
+    - id: dictionary
+      type: System.Collections.Generic.IDictionary{System.String,{TSettings}}
+      description: ''
+    return:
+      type: ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider
+      description: ''
+    content.vb: Function Provide(dictionary As IDictionary(Of String, TSettings)) As IMagicSettingsProvider
+  overload: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide*
+  nameWithType.vb: IMagicProviderSection(Of TSettings).Provide(IDictionary(Of String, TSettings))
+  fullName.vb: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection(Of TSettings).Provide(System.Collections.Generic.IDictionary(Of String, TSettings))
+  name.vb: Provide(IDictionary(Of String, TSettings))
+references:
+- uid: ToSic.Cre8magic.Settings.Providers
+  commentId: N:ToSic.Cre8magic.Settings.Providers
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Providers
+  nameWithType: ToSic.Cre8magic.Settings.Providers
+  fullName: ToSic.Cre8magic.Settings.Providers
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Providers
+    name: Providers
+    href: ToSic.Cre8magic.Settings.Providers.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Providers
+    name: Providers
+    href: ToSic.Cre8magic.Settings.Providers.html
+- uid: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide*
+  commentId: Overload:ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1.Provide
+  href: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection-1.html#ToSic_Cre8magic_Settings_Providers_IMagicProviderSection_1_Provide__0_
+  name: Provide
+  nameWithType: IMagicProviderSection<TSettings>.Provide
+  fullName: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection<TSettings>.Provide
+  nameWithType.vb: IMagicProviderSection(Of TSettings).Provide
+  fullName.vb: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection(Of TSettings).Provide
+- uid: '{TSettings}'
+  commentId: '!:TSettings'
+  definition: TSettings
+  name: TSettings
+  nameWithType: TSettings
+  fullName: TSettings
+- uid: ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider
+  commentId: T:ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider
+  parent: ToSic.Cre8magic.Settings.Providers
+  href: ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider.html
+  name: IMagicSettingsProvider
+  nameWithType: IMagicSettingsProvider
+  fullName: ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider
+- uid: TSettings
+  name: TSettings
+  nameWithType: TSettings
+  fullName: TSettings
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IDictionary{System.String,{TSettings}}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<string, TSettings>
+  nameWithType: IDictionary<string, TSettings>
+  fullName: System.Collections.Generic.IDictionary<string, TSettings>
+  nameWithType.vb: IDictionary(Of String, TSettings)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, TSettings)
+  name.vb: IDictionary(Of String, TSettings)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: TSettings
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: TSettings
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

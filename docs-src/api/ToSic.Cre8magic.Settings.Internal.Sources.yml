@@ -1,0 +1,92 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.Internal.Sources
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Sources
+  id: Sources
+  parent: ToSic.Cre8magic.Settings.Internal
+  children:
+  - ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+  - ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  - ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourcePackageDefaults
+  - ToSic.Cre8magic.Settings.Internal.Sources.TestTestTest
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Settings.Internal.Sources
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Sources
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+  parent: ToSic.Cre8magic.Settings.Internal.Sources
+  href: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html
+  name: IMagicSettingsSource
+  nameWithType: IMagicSettingsSource
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+  href: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson.html
+  name: MagicSettingsSourceJson
+  nameWithType: MagicSettingsSourceJson
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourceJson
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourcePackageDefaults
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourcePackageDefaults
+  href: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourcePackageDefaults.html
+  name: MagicSettingsSourcePackageDefaults
+  nameWithType: MagicSettingsSourcePackageDefaults
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.MagicSettingsSourcePackageDefaults
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.TestTestTest
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Sources.TestTestTest
+  href: ToSic.Cre8magic.Settings.Internal.Sources.TestTestTest.html
+  name: TestTestTest
+  nameWithType: TestTestTest
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.TestTestTest
+- uid: ToSic.Cre8magic.Settings.Internal.Sources
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Sources
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Sources
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Sources
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Sources
+    name: Sources
+    href: ToSic.Cre8magic.Settings.Internal.Sources.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Sources
+    name: Sources
+    href: ToSic.Cre8magic.Settings.Internal.Sources.html

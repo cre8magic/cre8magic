@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -75,6 +75,41 @@
 
 <p><strong>Magic Settings</strong> allow you to move 95% of the theme code into some kind of configuration.</p>
 <h2 id="overview">Overview</h2>
+<p>Everything in cre8magic will do something based on settings.
+These can come from various places</p>
+<ol>
+<li><p>Directly in the API call which retrieves a Kit like:<br>
+<code>var kit = MagicHat.MenuKit(PageState, new MagicMenuSettings() { ... })</code></p>
+</li>
+<li><p>Directly in the Component tag which shows the thing like<br>
+<code>&lt;MagicMenu Settings=&quot;new MagicMenuSettings() { ... }&quot; /&gt;</code></p>
+</li>
+<li><p>Provided elsewhere and named <code>default</code> so it's automatically used like<br>
+<code>var kit = MagicHat.MenuKit(PageState)</code><br>
+<code>&lt;MagicMenu /&gt;</code></p>
+</li>
+<li><p>Provided elsewhere and retrieved by name like<br>
+<code>var kit = MagicHat.MenuKit(PageState, settingsName: &quot;my-menu&quot;)</code><br>
+<code>&lt;MagicMenu SettingsName=&quot;my-menu&quot; /&gt;</code></p>
+</li>
+<li><p>Provided elsewhere and retrieved by Theme Part Name like
+<code>var kit = MagicHat.MenuKit(PageState, partName: &quot;my-menu&quot;)</code><br>
+<code>&lt;MagicMenu PartName=&quot;my-menu&quot; /&gt;</code></p>
+</li>
+</ol>
+<p>What's also important is that there are settings related to how/what data to get,
+and settings related to how to display (<code>DesignSettings</code>) it,
+as well as an option how the DesignSettings will be applied (<code>MagicDesigner</code>).
+In future, there may even be more such settings.</p>
+<h2 id="levels-of-indirection-wip">Levels of Indirection WIP</h2>
+<ol>
+<li>Theme Variant</li>
+<li>Part in that Theme Variant</li>
+<li>Settings</li>
+<li>Design Settings</li>
+<li>Inheritance on every level</li>
+</ol>
+<h2 id="overview---old-json-file">Overview - old, json file...</h2>
 <p>Basically the magic settings let you put a bunch of parameters in a JSON file.
 This file is then used by your Theme and it's Controls to</p>
 <ul>

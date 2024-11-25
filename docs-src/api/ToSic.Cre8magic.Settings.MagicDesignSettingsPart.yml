@@ -1,0 +1,468 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  commentId: T:ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  id: MagicDesignSettingsPart
+  parent: ToSic.Cre8magic.Settings
+  children:
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,ToSic.Cre8magic.Settings.MagicDesignSettingsPart)
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished
+  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value
+  langs:
+  - csharp
+  - vb
+  name: MagicDesignSettingsPart
+  nameWithType: MagicDesignSettingsPart
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicDesignSettingsPart
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 9
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Anything that can define what classes it should have.
+
+
+    This is usually the base class for something that can also have more information.
+  example: []
+  syntax:
+    content: public record MagicDesignSettingsPart
+    content.vb: Public Class MagicDesignSettingsPart
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
+  - ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor
+  commentId: M:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor
+  id: '#ctor'
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: MagicDesignSettingsPart()
+  nameWithType: MagicDesignSettingsPart.MagicDesignSettingsPart()
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.MagicDesignSettingsPart()
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 11
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: public MagicDesignSettingsPart()
+    content.vb: Public Sub New()
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor*
+  nameWithType.vb: MagicDesignSettingsPart.New()
+  fullName.vb: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.New()
+  name.vb: New()
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,ToSic.Cre8magic.Settings.MagicDesignSettingsPart)
+  commentId: M:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,ToSic.Cre8magic.Settings.MagicDesignSettingsPart)
+  id: '#ctor(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,ToSic.Cre8magic.Settings.MagicDesignSettingsPart)'
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: MagicDesignSettingsPart(MagicDesignSettingsPart?, MagicDesignSettingsPart?)
+  nameWithType: MagicDesignSettingsPart.MagicDesignSettingsPart(MagicDesignSettingsPart?, MagicDesignSettingsPart?)
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.MagicDesignSettingsPart(ToSic.Cre8magic.Settings.MagicDesignSettingsPart?, ToSic.Cre8magic.Settings.MagicDesignSettingsPart?)
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 13
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: public MagicDesignSettingsPart(MagicDesignSettingsPart? priority, MagicDesignSettingsPart? fallback = null)
+    parameters:
+    - id: priority
+      type: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+    - id: fallback
+      type: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+    content.vb: Public Sub New(priority As MagicDesignSettingsPart, fallback As MagicDesignSettingsPart = Nothing)
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor*
+  nameWithType.vb: MagicDesignSettingsPart.New(MagicDesignSettingsPart, MagicDesignSettingsPart)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.New(ToSic.Cre8magic.Settings.MagicDesignSettingsPart, ToSic.Cre8magic.Settings.MagicDesignSettingsPart)
+  name.vb: New(MagicDesignSettingsPart, MagicDesignSettingsPart)
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
+  id: CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: CloneUnder(MagicDesignSettingsPart?, bool)
+  nameWithType: MagicDesignSettingsPart.CloneUnder(MagicDesignSettingsPart?, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart?, bool)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: CloneUnder
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 23
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  example: []
+  syntax:
+    content: public MagicDesignSettingsPart CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy = false)
+    parameters:
+    - id: priority
+      type: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+    - id: forceCopy
+      type: System.Boolean
+    return:
+      type: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+    content.vb: Public Function CloneUnder(priority As MagicDesignSettingsPart, forceCopy As Boolean = False) As MagicDesignSettingsPart
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder*
+  nameWithType.vb: MagicDesignSettingsPart.CloneUnder(MagicDesignSettingsPart, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Settings.MagicDesignSettingsPart, Boolean)
+  name.vb: CloneUnder(MagicDesignSettingsPart, Boolean)
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
+  commentId: P:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
+  id: Classes
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: Classes
+  nameWithType: MagicDesignSettingsPart.Classes
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Classes
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 29
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Classes which are applied to all the tags of this type
+  example: []
+  syntax:
+    content: public string? Classes { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Classes As String
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes*
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value
+  commentId: P:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value
+  id: Value
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: MagicDesignSettingsPart.Value
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Value
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 34
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Special key to get a value - for non-css configurations
+  example: []
+  syntax:
+    content: public string? Value { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Value As String
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value*
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id
+  commentId: P:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id
+  id: Id
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: MagicDesignSettingsPart.Id
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Id
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 37
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: public string? Id { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id*
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive
+  commentId: P:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive
+  id: IsActive
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: MagicDesignSettingsPart.IsActive
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsActive
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 43
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Classes to apply if this thing is active.
+
+    For example, the current page or language.
+  example: []
+  syntax:
+    content: public PairOnOff? IsActive { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.PairOnOff
+    content.vb: Public Property IsActive As PairOnOff
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive*
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished
+  commentId: P:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished
+  id: IsPublished
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: IsPublished
+  nameWithType: MagicDesignSettingsPart.IsPublished
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsPublished
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 50
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: If something is published or not, usually just for Containers
+  example: []
+  syntax:
+    content: public PairOnOff? IsPublished { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.PairOnOff
+    content.vb: Public Property IsPublished As PairOnOff
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished*
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin
+  commentId: P:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin
+  id: IsAdmin
+  parent: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  langs:
+  - csharp
+  - vb
+  name: IsAdmin
+  nameWithType: MagicDesignSettingsPart.IsAdmin
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsAdmin
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicDesignSettingsPart.cs
+    startLine: 55
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: If a module is admin or not, usually just for containers
+  example: []
+  syntax:
+    content: public PairOnOff? IsAdmin { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.PairOnOff
+    content.vb: Public Property IsAdmin As PairOnOff
+  overload: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin*
+references:
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.#ctor
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart__ctor
+  name: MagicDesignSettingsPart
+  nameWithType: MagicDesignSettingsPart.MagicDesignSettingsPart
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.MagicDesignSettingsPart
+  nameWithType.vb: MagicDesignSettingsPart.New
+  fullName.vb: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.New
+  name.vb: New
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  commentId: T:ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
+  name: MagicDesignSettingsPart
+  nameWithType: MagicDesignSettingsPart
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_CloneUnder_ToSic_Cre8magic_Settings_MagicDesignSettingsPart_System_Boolean_
+  name: CloneUnder
+  nameWithType: MagicDesignSettingsPart.CloneUnder
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.CloneUnder
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_Classes
+  name: Classes
+  nameWithType: MagicDesignSettingsPart.Classes
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Classes
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_Value
+  name: Value
+  nameWithType: MagicDesignSettingsPart.Value
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Value
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_Id
+  name: Id
+  nameWithType: MagicDesignSettingsPart.Id
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.Id
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_IsActive
+  name: IsActive
+  nameWithType: MagicDesignSettingsPart.IsActive
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive
+- uid: ToSic.Cre8magic.Settings.PairOnOff
+  commentId: T:ToSic.Cre8magic.Settings.PairOnOff
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.PairOnOff.html
+  name: PairOnOff
+  nameWithType: PairOnOff
+  fullName: ToSic.Cre8magic.Settings.PairOnOff
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_IsPublished
+  name: IsPublished
+  nameWithType: MagicDesignSettingsPart.IsPublished
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished
+- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin
+  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html#ToSic_Cre8magic_Settings_MagicDesignSettingsPart_IsAdmin
+  name: IsAdmin
+  nameWithType: MagicDesignSettingsPart.IsAdmin
+  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin

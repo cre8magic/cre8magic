@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.Internal.Experimental
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Experimental
+  id: Experimental
+  parent: ToSic.Cre8magic.Settings.Internal
+  children:
+  - ToSic.Cre8magic.Settings.Internal.Experimental.IMagicSettingsContext
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Settings.Internal.Experimental
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Experimental
+  fullName: ToSic.Cre8magic.Settings.Internal.Experimental
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Settings.Internal.Experimental.IMagicSettingsContext
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Experimental.IMagicSettingsContext
+  parent: ToSic.Cre8magic.Settings.Internal.Experimental
+  href: ToSic.Cre8magic.Settings.Internal.Experimental.IMagicSettingsContext.html
+  name: IMagicSettingsContext
+  nameWithType: IMagicSettingsContext
+  fullName: ToSic.Cre8magic.Settings.Internal.Experimental.IMagicSettingsContext
+- uid: ToSic.Cre8magic.Settings.Internal.Experimental
+  commentId: N:ToSic.Cre8magic.Settings.Internal.Experimental
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings.Internal.Experimental
+  nameWithType: ToSic.Cre8magic.Settings.Internal.Experimental
+  fullName: ToSic.Cre8magic.Settings.Internal.Experimental
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Experimental
+    name: Experimental
+    href: ToSic.Cre8magic.Settings.Internal.Experimental.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Settings.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings.Internal.Experimental
+    name: Experimental
+    href: ToSic.Cre8magic.Settings.Internal.Experimental.html
