@@ -13,7 +13,7 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public interface IMagicSettingsProvider
 {
-    IMagicSettingsProviderSection<MagicContainerSettings> Containers { get; }
+    IMagicSettingsProviderSection<MagicContainerSettingsData> Containers { get; }
 
     IMagicSettingsProviderSection<MagicBreadcrumbSettingsData> Breadcrumbs { get; }
     IMagicSettingsProviderSection<MagicAnalyticsSettingsData> Analytics { get; }

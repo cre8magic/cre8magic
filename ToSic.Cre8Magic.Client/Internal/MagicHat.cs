@@ -54,7 +54,7 @@ internal class MagicHat(
     public IMagicUserLoginKit UserLoginKit(PageState pageState) =>
         userKitSvc.Value.UserLoginKit(pageState);
 
-    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettingsWip? settings = default)
+    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettings? settings = default)
     {
         return containerSvc.Value.ContainerKit(pageState, module);
         //var designer = ContainerDesigner(pageState, module);

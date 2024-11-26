@@ -59,7 +59,7 @@ public interface IMagicSettingsService
 
 
     internal SettingsReader<MagicPageContextSettingsData> PageContexts { get; }
-    internal SettingsReader<MagicContainerSettings> Containers { get; }
+    internal SettingsReader<MagicContainerSettingsData> Containers { get; }
     internal SettingsReader<MagicContainerDesignSettings> ContainerDesigns { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);

@@ -13,7 +13,7 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
     private const string OptionalPrefix = "container-";
     private const string DefaultPartName = "Container";
 
-    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettingsWip? settings = default)
+    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettings? settings = default)
     {
         var (settingsFull, _, _, journal) = MergeSettings(pageState, settings);
 
@@ -27,7 +27,7 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
         };
     }
 
-    private Data3WithJournal<MagicContainerSettingsWip, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicContainerSettingsWip? settings) =>
+    private Data3WithJournal<MagicContainerSettings, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicContainerSettings? settings) =>
         settingsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,
