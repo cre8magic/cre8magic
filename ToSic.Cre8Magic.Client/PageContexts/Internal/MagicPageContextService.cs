@@ -7,23 +7,32 @@ namespace ToSic.Cre8magic.PageContexts.Internal;
 
 internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagicThemeJsService jsSvc) : IMagicPageContextService
 {
-    public MagicPageContextState State(PageState pageState, MagicPageContextSettings? settings) =>
+    public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings) =>
         _pageContexts.Get(pageState, () => BuildState(pageState, settings));
-    private readonly GetKeepByPageId<MagicPageContextState> _pageContexts = new();
+    private readonly GetKeepByPageId<IMagicPageContextKit> _pageContexts = new();
 
-    private MagicPageContextState BuildState(PageState pageState, MagicPageContextSettings? settings)
+
+    private IMagicPageContextKit BuildState(PageState pageState, MagicPageContextSettings? settings)
     {
         var themeCtx = settingsSvc.GetThemeContextFull(pageState);
-        var useBodyTag = settings?.UseBodyTag ?? themeCtx.ThemeSettings.MagicContextInBody == true;
+        var useBodyTag = settings?.UseBodyTag ?? themeCtx.ThemeSettings.UseBodyTag == true;
         var tagId = settings?.TagId ?? themeCtx.ThemeDesignSettings.MagicContextTagId;
-        var themeDesigner = new MagicThemeDesigner(themeCtx);
-        var contextClasses = themeDesigner.BodyClasses(themeCtx.PageTokens, settings?.Classes);
-        return new(UseBodyTag: useBodyTag, Classes: contextClasses, TagId: tagId);
+        var contextClasses = new MagicPageContextDesigner(themeCtx).BodyClasses(themeCtx.PageTokens, settings?.Classes);
+        return new MagicPageContextKit
+        {
+            Classes = contextClasses,
+            UseBodyTag = useBodyTag,
+            Settings = settings,
+            TagId = tagId,
+            // Internals
+            PageState = pageState,
+            Service = this
+        };
     }
 
-    public async Task SetBodyClasses(PageState pageState, MagicPageContextSettings? settings)
+    public async Task UpdateBodyTag(PageState pageState, MagicPageContextSettings? settings)
     {
-        var state = State(pageState, settings);
+        var state = PageContextKit(pageState, settings);
         if (!state.UseBodyTag)
             return;
 

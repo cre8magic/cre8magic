@@ -6,6 +6,8 @@ using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Links;
+using ToSic.Cre8magic.PageContexts;
+using ToSic.Cre8magic.PageContexts.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal.Providers;
 using ToSic.Cre8magic.Themes.Internal;
@@ -19,6 +21,7 @@ internal class MagicHat(
     MagicLazy<IMagicBreadcrumbService> breadcrumbSvc,
     IMagicSettingsService settingsSvc,
     MagicLazy<IMagicLanguageService> languageSvc,
+    MagicLazy<IMagicPageContextService> pageContextSvc,
     MagicLazy<IMagicUserService> userSvc,
     MagicLazy<IUserLoginService> userKitSvc,
     MagicLazy<IMagicThemeService> themeSvc,
@@ -37,6 +40,10 @@ internal class MagicHat(
     public Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = default) =>
         languageSvc.Value.LanguageKitAsync(pageState, settings);
 
+
+    /// <inheritdoc />
+    public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings = default) =>
+        pageContextSvc.Value.PageContextKit(pageState, settings);
 
     /// <inheritdoc />
     public MagicUser User(PageState pageState) =>

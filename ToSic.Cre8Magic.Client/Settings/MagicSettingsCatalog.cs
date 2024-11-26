@@ -3,6 +3,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Themes.Settings;
@@ -82,6 +83,12 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuSettingsData>))]
     public Dictionary<string, MagicMenuSettingsData> Menus { get; init; } = new(InvariantCultureIgnoreCase);
+
+    /// <summary>
+    /// The menu definitions
+    /// </summary>
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicPageContextSettingsData>))]
+    public Dictionary<string, MagicPageContextSettingsData> PageContexts { get; init; } = new(InvariantCultureIgnoreCase);
 
     /// <summary>
     /// Design definitions of the menu

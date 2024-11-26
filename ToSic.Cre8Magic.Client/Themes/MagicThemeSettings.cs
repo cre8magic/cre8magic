@@ -22,7 +22,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
         // TODO: #NamedSettings
         Parts = priority?.Parts ?? fallback?.Parts ?? new();
 
-        MagicContextInBody = priority?.MagicContextInBody ?? fallback?.MagicContextInBody ?? Defaults.Fallback.MagicContextInBody;
+        UseBodyTag = priority?.UseBodyTag ?? fallback?.UseBodyTag ?? Defaults.Fallback.UseBodyTag;
         Design = priority?.Design ?? fallback?.Design ?? Defaults.Fallback.Design;
         Debug = priority?.Debug ?? fallback?.Debug;
     }
@@ -45,7 +45,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     public Dictionary<string, MagicThemePartSettings> Parts { get; init; } = new();
 
 
-    public bool? MagicContextInBody { get; init; }
+    public bool? UseBodyTag { get; init; }
 
     public string? Design { get; init; }
 
@@ -54,7 +54,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     internal static Defaults<MagicThemeSettings> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
-        MagicContextInBody = false,
+        UseBodyTag = false,
         Design = InheritName,
     });
 }

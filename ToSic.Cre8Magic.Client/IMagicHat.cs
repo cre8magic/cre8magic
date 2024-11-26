@@ -6,6 +6,7 @@ using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Links;
+using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Users;
@@ -54,4 +55,5 @@ public interface IMagicHat
     void UseSettingsCatalog(MagicSettingsCatalog catalog);
     string Link(PageState pageState, MagicLinkSpecs linkSpecs);
     void UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
+    IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings = default);
 }

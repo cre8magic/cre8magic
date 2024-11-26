@@ -1,6 +1,6 @@
 ﻿@using Oqtane.UI
 @inherits ComponentBase
-@inject IMagicPageContextService PageContextSvc;
+@inject IMagicHat MagicHat;
 
 @*
     Purpose:    Ensures that there is a wrapper - div or body
@@ -29,11 +29,11 @@
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-        await PageContextSvc.SetBodyClasses(PageState, Settings);
+        await MagicHat.PageContextKit(PageState, Settings).UpdateBodyTag();
     }
 }
 @{
-    var state = PageContextSvc.State(PageState, Settings);
+    var state = MagicHat.PageContextKit(PageState, Settings);
 }
 @* If PutInBody a JS will place the classes in the Body tag, so no need to add it here *@
 @if (state.UseBodyTag)

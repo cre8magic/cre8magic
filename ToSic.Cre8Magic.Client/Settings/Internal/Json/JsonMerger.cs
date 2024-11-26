@@ -18,9 +18,7 @@ internal class JsonMerger
         {
             PairOnOffJsonConverter.GetNew(logger),
             DesignSettingsJsonConverter<MagicDesignSettingsPart>.GetNew(logger),
-            // DesignSettingsJsonConverter<DesignSettingActive>.GetNew(),
             DesignSettingsJsonConverter<MagicMenuDesignSettingsPart>.GetNew(logger),
-            // DesignSettingsJsonConverter<MagicContainerDesignSettingsItem>.GetNew(),
             ThemePartJsonConverter.GetNew(logger),
         },
         ReadCommentHandling = JsonCommentHandling.Skip,

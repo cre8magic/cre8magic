@@ -10,36 +10,6 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// </summary>
 public class MagicThemeDesigner(CmThemeContextFull context) : MagicDesignerBase(context)
 {
-    internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
-    {
-        var themeDesign = Context.ThemeDesignSettings;
-
-        if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
-
-        // Make a copy...
-        var classes = themeDesign.MagicContext.ToList();
-        classes.Add(themeDesign.PageIsHome?.Get(context.PageState.Page.Path == ""));
-        if (additionalClasses.HasText())
-            classes.Add(additionalClasses);
-
-        // Do these once multi-language is better
-        //1.5 Set the page-root-neutral-### class
-        // do once Multilanguage is good
-
-
-        //4.1 Set lang- class
-        // do once lang is clear
-        //4.2 Set the lang-root- class
-        // do once lang is clear
-        //4.3 Set the lang-neutral- class
-        // do once lang is clear
-
-        var bodyClasses = string.Join(" ", classes.Where(c => c.HasValue())).Replace("  ", " ");
-
-        return tokens.Parse(bodyClasses);
-    }
-
-
     private bool PaneIsEmpty(string paneName)
     {
         var pageState = context.PageState;
