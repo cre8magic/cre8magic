@@ -14,7 +14,6 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
-        TestData = priority?.TestData ?? fallback?.TestData;
         Custom = MergeHelper.CloneMergeDictionaries(priority?.Custom, fallback?.Custom);
     }
 
@@ -22,8 +21,6 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
-
-    public string? TestData { get; init; }
 
     /// <summary>
     /// TODO: PROBABLY CHANGE TO DATA / whatever ?

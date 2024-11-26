@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using ToSic.Cre8magic.Containers;
+using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Internal.Startup;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
@@ -8,20 +8,21 @@ using ToSic.Cre8magic.Settings.Internal.Sources;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsProviderTests;
 
-public class ContainerSettingsTests
+public class SettingsProviderTestWithAnalytics
 {
     private const string DataValueOfOriginal = "test-inherits";
+
     /// <summary>
     /// Prepare a settings service and add a default value. 
     /// </summary>
     /// <returns></returns>
-    private static (IMagicSettingsService settingsSvc, IMagicSettingsProvider SettingsProvider, MagicContainerSettings DefaultSettings) PrepareSettings()
+    private static (IMagicSettingsService settingsSvc, IMagicSettingsProvider SettingsProvider, MagicAnalyticsSettingsData DefaultSettings) PrepareSettings()
     {
         var di = SetupServices.Start().AddCre8magic().AddLogging().Finish();
         var settingsProvider = di.GetRequiredService<IMagicSettingsProvider>();
         var settingsSvc = di.GetRequiredService<IMagicSettingsService>();
-        var original = new MagicContainerSettings { TestData = DataValueOfOriginal };
-        settingsProvider.Containers.SetDefault(original);
+        var original = new MagicAnalyticsSettingsData { GtmId = DataValueOfOriginal };
+        settingsProvider.Analytics.SetDefault(original);
         return (settingsSvc, settingsProvider, original);
     }
 
@@ -35,12 +36,12 @@ public class ContainerSettingsTests
         var (settingsSvc, settingsProvider, original) = PrepareSettings();
         var retrieved2 = settingsSvc.GetBestSettings(
             null,
-            new MagicContainerSettingsWip { SettingsName = name },
-            settingsSvc.Containers,
+            new MagicAnalyticsSettings { SettingsName = name },
+            settingsSvc.Analytics,
             ContainerPrefix + "-",
             "Container"
         );
-        Assert.Equal(original.TestData, retrieved2.Data.TestData);
+        Assert.Equal(original.GtmId, retrieved2.Data.GtmId);
     }
 
     private const string ContainerPrefix = "container";
@@ -56,19 +57,19 @@ public class ContainerSettingsTests
         var (settingsSvc, settingsProvider, defaultSettings) = PrepareSettings();
 
         // Add a named setting which can be identified when found
-        var namedSettings = new MagicContainerSettings { TestData = DataValueOfOriginal + "-named" };
-        settingsProvider.Containers.Provide(addName, namedSettings);
+        var namedSettings = new MagicAnalyticsSettingsData { GtmId = DataValueOfOriginal + "-named" };
+        settingsProvider.Analytics.Provide(addName, namedSettings);
 
         var retrieved = settingsSvc.GetBestSettings(
             null,
-            new MagicContainerSettingsWip { SettingsName = searchName },
-            settingsSvc.Containers,
+            new MagicAnalyticsSettings { SettingsName = searchName },
+            settingsSvc.Analytics,
             ContainerPrefix + "-",
             "Container"
         );
 
-        Assert.Equal(shouldBeEqual, namedSettings.TestData == retrieved.Data.TestData);
-        Assert.Equal(!shouldBeEqual, defaultSettings.TestData == retrieved.Data.TestData);
+        Assert.Equal(shouldBeEqual, namedSettings.GtmId == retrieved.Data.GtmId);
+        Assert.Equal(!shouldBeEqual, defaultSettings.GtmId == retrieved.Data.GtmId);
     }
 
     [Theory]
