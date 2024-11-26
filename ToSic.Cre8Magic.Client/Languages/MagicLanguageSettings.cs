@@ -17,10 +17,12 @@ public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCode
         if (original == null)
             return;
         
+        DesignSettings = original.DesignSettings;
+
+
         PartName = original.PartName;
         SettingsName = original.SettingsName;
         DesignName = original.DesignName;
-        DesignSettings = original.DesignSettings;
 
         ((IDebugSettings)this).Catalog = ((IDebugSettings)original).Catalog;
     }

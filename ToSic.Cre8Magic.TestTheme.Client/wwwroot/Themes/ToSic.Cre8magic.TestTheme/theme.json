@@ -93,7 +93,7 @@
 
   "pageContexts": {
     "default": {
-      "useBodyTag": true, // bool
+      "useBodyTag": false, // bool
       "classList": [
         "page-[Page.Id]",
         "page-root-[Page.RootId]",
@@ -104,7 +104,6 @@
         "theme-variation-[Layout.Variation]"
       ],
       "pageIsHome": "page-is-home", // On/Off
-      "paneIsEmpty": "pane-is-empty", // On/Off
       "tagId": "cre8magic-root" // string
     }
   },
@@ -114,6 +113,7 @@
   "themeDesigns": {
     // This is the default design which is used unless explicitly specified
     "default": {
+      "paneIsEmpty": "pane-is-empty", // On/Off
 
       // Custom values / classes as you need them in your code
       "parts": {
@@ -146,20 +146,6 @@
         "logo": "logo",
         "linkToTop": {
           "id": "theme-to-top"
-        },
-
-        // Languages - the li-node should be able to do active/passive if necessary
-        //"languages-li": {
-        //  "isActive": "active"
-        //},
-
-        // Container Designs determine CSS classes on containers
-        // The default/normal container
-        "container": {
-          "classes": "theme-container py-4 demo-module-[Module.Id] demo-page-[Page.Id]",
-          "isPublished": [ null, "module-unpublished" ],
-          "isAdmin": "theme-container-admin app-admin-modal",
-          "id": "module-[Module.Id]"
         }
       }
     }
@@ -174,6 +160,25 @@
       // "PageViewJs": "window.cre8magic.gtm.pageView",
       // "PageViewJs": "gtag",
       "PageViewEvent": "blazor_page_view"
+    }
+  },
+
+  // Containers don't have settings ATM, but you can define them here
+  "containers": {
+
+  },
+
+  // Design Settings for Containers
+  "containerDesigns": {
+    "default": {
+      "parts": {
+        "top-div": {
+          "classes": "theme-container py-4 demo-module-[Module.Id] demo-page-[Page.Id]",
+          "isPublished": [ null, "module-unpublished" ],
+          "isAdmin": "theme-container-admin app-admin-modal",
+          "id": "module-[Module.Id]"
+        }
+      }
     }
   },
 

@@ -166,10 +166,6 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #endregion
 
-    public SettingsReader<MagicContainerSettings> Containers =>
-        _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
-    private SettingsReader<MagicContainerSettings>? _containers;
-
     public SettingsReader<MagicThemeDesignSettings> ThemeDesign =>
         _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, catalog => catalog.ThemeDesigns);
     private SettingsReader<MagicThemeDesignSettings>? _themeDesign;
@@ -182,6 +178,19 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
                 settingsName
             ]
         );
+
+    #region Containers
+
+    public SettingsReader<MagicContainerSettings> Containers =>
+        _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
+    private SettingsReader<MagicContainerSettings>? _containers;
+
+    public SettingsReader<MagicContainerDesignSettings> ContainerDesigns =>
+        _containerDesigns ??= new(this, MagicContainerDesignSettings.Defaults, cat => cat.ContainerDesigns);
+    private SettingsReader<MagicContainerDesignSettings>? _containerDesigns;
+
+
+    #endregion
 
     #region Menus
 

@@ -37,20 +37,30 @@ public interface IMagicSettingsService
     // TODO: MAKE INTERNAL again - temporarily public soi
     public MagicDebugSettings Debug { get; }
 
+    internal List<DataWithJournal<MagicSettingsCatalog>> Catalogs { get; }
+
+
     internal SettingsReader<MagicAnalyticsSettingsData> Analytics { get; }
     internal SettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
 
     internal SettingsReader<MagicLanguageSettingsData> Languages { get; }
+    internal SettingsReader<MagicLanguageDesignSettings> LanguageDesigns { get; }
 
-    internal SettingsReader<MagicMenuDesignSettings> MenuDesigns { get; }
+
 
     internal SettingsReader<MagicMenuSettingsData> Menus { get; }
-    internal List<DataWithJournal<MagicSettingsCatalog>> Catalogs { get; }
-    internal SettingsReader<MagicLanguageDesignSettings> LanguageDesigns { get; }
-    internal SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; }
+    internal SettingsReader<MagicMenuDesignSettings> MenuDesigns { get; }
+
+
+
+
     internal SettingsReader<MagicBreadcrumbSettingsData> Breadcrumbs { get; }
+    internal SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; }
+
+
     internal SettingsReader<MagicPageContextSettingsData> PageContexts { get; }
     internal SettingsReader<MagicContainerSettings> Containers { get; }
+    internal SettingsReader<MagicContainerDesignSettings> ContainerDesigns { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);
 

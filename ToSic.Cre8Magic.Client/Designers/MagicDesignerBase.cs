@@ -1,5 +1,4 @@
 ﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
@@ -7,13 +6,11 @@ namespace ToSic.Cre8magic.Designers;
 
 public abstract class MagicDesignerBase: IMagicDesigner
 {
-    protected internal MagicDesignerBase(CmThemeContextFull context, Dictionary<string, MagicDesignSettingsPart>? designSettings = default)
+    protected internal MagicDesignerBase(TokenEngine tokens, Dictionary<string, MagicDesignSettingsPart> designSettings)
     {
-        Context = context;
-        DesignSettings = designSettings ?? context.ThemeDesignSettings.Parts;
-        Tokens = context.PageTokens;
+        DesignSettings = designSettings;
+        Tokens = tokens;
     }
-    protected CmThemeContextFull Context { get; }
     protected Dictionary<string, MagicDesignSettingsPart> DesignSettings { get; }
 
 

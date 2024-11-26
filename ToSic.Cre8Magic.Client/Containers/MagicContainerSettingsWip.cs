@@ -17,12 +17,17 @@ public record MagicContainerSettingsWip: MagicContainerSettings, ISettingsForCod
         if (original == null)
             return;
 
+        DesignSettings = original.DesignSettings;
+
+
         PartName = original.PartName;
         SettingsName = original.SettingsName;
         DesignName = original.DesignName;
 
         ((IDebugSettings)this).Catalog = ((IDebugSettings)original).Catalog;
     }
+
+    public MagicContainerDesignSettings? DesignSettings { get; init; }
 
 
     #region Settings for Code

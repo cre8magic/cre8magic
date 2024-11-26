@@ -65,6 +65,9 @@ public record MagicSettingsCatalog: IHasDebugSettings
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicContainerSettings>))]
     public Dictionary<string, MagicContainerSettings> Containers { get; init; } = new(InvariantCultureIgnoreCase);
 
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicContainerDesignSettings>))]
+    public Dictionary<string, MagicContainerDesignSettings> ContainerDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+
     /// <summary>
     /// Language Settings
     /// </summary>

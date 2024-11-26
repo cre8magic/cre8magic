@@ -7,11 +7,9 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Containers;
 
-public class MagicContainerDesigner(CmThemeContextFull context, Module module) : MagicDesignerBase(context)
+public class MagicContainerDesigner(CmThemeContextFull context, Module module, MagicContainerDesignSettings designSettings)
+    : MagicDesignerBase(context.PageTokens.Expanded(new ModuleTokens(module)), designSettings: designSettings.Parts ?? new())
 {
-    internal override TokenEngine Tokens => _tokens ??= context.PageTokens.Expanded(new ModuleTokens(module));
-    private TokenEngine? _tokens;
-
     public override string? Classes(string tag)
     {
         if (GetSettings(tag) is not { } styles) return null;
