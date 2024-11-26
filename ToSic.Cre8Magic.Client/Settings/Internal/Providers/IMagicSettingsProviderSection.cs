@@ -1,9 +1,9 @@
 ﻿using ToSic.Cre8magic.Settings.Internal.Experimental;
 
-namespace ToSic.Cre8magic.Settings.Providers.Internal;
+namespace ToSic.Cre8magic.Settings.Internal.Providers;
 
-internal class MagicProviderSection<T>(IMagicSettingsProvider parent)
-    : IMagicProviderSection<T>, ISourceInternal
+internal class MagicSettingsProviderSection<T>(IMagicSettingsProvider parent)
+    : IMagicSettingsProviderSection<T>, ISourceInternal
     where T : class
 {
     public bool HasValues { get; private set; }

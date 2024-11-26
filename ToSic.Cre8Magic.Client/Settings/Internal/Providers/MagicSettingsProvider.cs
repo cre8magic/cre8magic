@@ -2,11 +2,10 @@
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal.Sources;
 
-namespace ToSic.Cre8magic.Settings.Providers.Internal;
+namespace ToSic.Cre8magic.Settings.Internal.Providers;
 
 internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSource
 {
@@ -73,18 +72,18 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
 
     private MagicSettingsCatalog? _catalog;
 
-    public IMagicProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
-    private MagicProviderSection<MagicAnalyticsSettings>? _analytics;
+    public IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
+    private MagicSettingsProviderSection<MagicAnalyticsSettings>? _analytics;
 
-    public IMagicProviderSection<MagicBreadcrumbSettingsData> Breadcrumbs => _breadcrumbs ??= new(this);
-    private MagicProviderSection<MagicBreadcrumbSettingsData>? _breadcrumbs;
+    public IMagicSettingsProviderSection<MagicBreadcrumbSettingsData> Breadcrumbs => _breadcrumbs ??= new(this);
+    private MagicSettingsProviderSection<MagicBreadcrumbSettingsData>? _breadcrumbs;
 
-    public IMagicProviderSection<MagicContainerSettings> Containers => _containers ??= new(this);
-    private MagicProviderSection<MagicContainerSettings>? _containers;
+    public IMagicSettingsProviderSection<MagicContainerSettings> Containers => _containers ??= new(this);
+    private MagicSettingsProviderSection<MagicContainerSettings>? _containers;
 
-    public IMagicProviderSection<MagicMenuDesignSettings> MenuDesigns => _menuDesigns ??= new(this);
-    private MagicProviderSection<MagicMenuDesignSettings>? _menuDesigns;
+    public IMagicSettingsProviderSection<MagicMenuDesignSettings> MenuDesigns => _menuDesigns ??= new(this);
+    private MagicSettingsProviderSection<MagicMenuDesignSettings>? _menuDesigns;
 
-    public IMagicProviderSection<MagicThemeSettings> Themes => _themes ??= new(this);
-    private MagicProviderSection<MagicThemeSettings>? _themes;
+    public IMagicSettingsProviderSection<MagicThemeSettings> Themes => _themes ??= new(this);
+    private MagicSettingsProviderSection<MagicThemeSettings>? _themes;
 }

@@ -3,17 +3,20 @@
 namespace ToSic.Cre8magic.Settings;
 
 /// <summary>
-/// Simple Object containing a setting to be used when a value is on or off.
-/// Typically used to specify strings to place in classes when something is active, is home, etc.
+/// Special Setting containing a value to be used when a state is on or off.
+/// Typically used to specify strings to place in classes when something:
+/// * is active
+/// * is home
+/// * etc.
 /// </summary>
-public class PairOnOff: ICanClone<PairOnOff>
+public class MagicSettingOnOff: ICanClone<MagicSettingOnOff>
 {
     /// <summary>
     /// Empty constructor for JSON serialization
     /// </summary>
-    public PairOnOff() {}
+    public MagicSettingOnOff() {}
 
-    public PairOnOff(string? on, string? off = null)
+    public MagicSettingOnOff(string? on, string? off = null)
     {
         On = on;
         Off = off;
@@ -29,7 +32,7 @@ public class PairOnOff: ICanClone<PairOnOff>
     /// </summary>
     public string? Off { get; init; }
 
-    public PairOnOff CloneUnder(PairOnOff? priority, bool forceCopy = false) =>
+    public MagicSettingOnOff CloneUnder(MagicSettingOnOff? priority, bool forceCopy = false) =>
         new()
         {
             On = priority?.On ?? On,
@@ -46,5 +49,5 @@ public static class PairOnOffExtensions
     /// <param name="pair"></param>
     /// <param name="isOn"></param>
     /// <returns></returns>
-    public static string? Get(this PairOnOff? pair, bool? isOn) => isOn == true ? pair?.On : pair?.Off;
+    public static string? Get(this MagicSettingOnOff? pair, bool? isOn) => isOn == true ? pair?.On : pair?.Off;
 }

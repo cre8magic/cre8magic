@@ -7,7 +7,6 @@ using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Links;
 using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Providers;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Users;
 

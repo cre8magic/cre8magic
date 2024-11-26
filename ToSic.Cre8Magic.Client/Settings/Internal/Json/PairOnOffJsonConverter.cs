@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.Settings.Internal.Json;
 /// <summary>
 /// Important: NEVER use this on a 
 /// </summary>
-public class PairOnOffJsonConverter : JsonConverterBase<PairOnOff>
+public class PairOnOffJsonConverter : JsonConverterBase<MagicSettingOnOff>
 {
     /// <summary>
     /// Private constructor to prevent use in attributes.
@@ -23,7 +23,7 @@ public class PairOnOffJsonConverter : JsonConverterBase<PairOnOff>
 
     public static PairOnOffJsonConverter GetNew(ILogger logger) => new(logger);
 
-    public override void Write(Utf8JsonWriter writer, PairOnOff? pair, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, MagicSettingOnOff? pair, JsonSerializerOptions options)
     {
         if (pair?.On == null && pair?.Off == null)
         {
@@ -37,7 +37,7 @@ public class PairOnOffJsonConverter : JsonConverterBase<PairOnOff>
 
 
 
-    public override PairOnOff? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override MagicSettingOnOff? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         Logger.LogInformation($"cre8magic# Reading PairOnOffJsonConverter / {typeToConvert}.");
         var x = JsonNode.Parse(ref reader);
@@ -51,7 +51,7 @@ public class PairOnOffJsonConverter : JsonConverterBase<PairOnOff>
         };
     }
 
-    private PairOnOff? ConvertArray(JsonArray jsonArray)
+    private MagicSettingOnOff? ConvertArray(JsonArray jsonArray)
     {
         if (jsonArray.Count == 0) return null;
         return new()

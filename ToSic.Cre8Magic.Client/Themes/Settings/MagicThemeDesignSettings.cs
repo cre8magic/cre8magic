@@ -31,9 +31,9 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
 
     public string[] MagicContext { get; init; } = [];
 
-    public PairOnOff? PageIsHome { get; init; }
+    public MagicSettingOnOff? PageIsHome { get; init; }
 
-    public PairOnOff? PaneIsEmpty { get; init; }
+    public MagicSettingOnOff? PaneIsEmpty { get; init; }
 
     public string? MagicContextTagId { get; init; }
 

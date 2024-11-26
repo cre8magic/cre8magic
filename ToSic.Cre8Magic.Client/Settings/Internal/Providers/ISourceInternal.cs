@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Settings.Providers.Internal;
+﻿namespace ToSic.Cre8magic.Settings.Internal.Providers;
 
 internal interface ISourceInternal
 {

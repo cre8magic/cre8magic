@@ -43,19 +43,19 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
     /// Classes to apply if this thing is active.
     /// For example, the current page or language. 
     /// </summary>
-    public PairOnOff? IsActive { get; init; }
+    public MagicSettingOnOff? IsActive { get; init; }
 
     #region Settings which are ATM for containers only
 
     /// <summary>
     /// If something is published or not, usually just for Containers
     /// </summary>
-    public PairOnOff? IsPublished { get; init; }
+    public MagicSettingOnOff? IsPublished { get; init; }
 
     /// <summary>
     /// If a module is admin or not, usually just for containers
     /// </summary>
-    public PairOnOff? IsAdmin { get; init; }
+    public MagicSettingOnOff? IsAdmin { get; init; }
 
     #endregion
 }

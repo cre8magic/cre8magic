@@ -27,13 +27,13 @@ public record MagicBreadcrumbDesignSettingsPart : MagicDesignSettingsPart, ICanC
     /// <summary>
     /// Classes to add if this node is a parent (has-children).
     /// </summary>
-    public PairOnOff? HasChildren { get; init; }
+    public MagicSettingOnOff? HasChildren { get; init; }
 
     /// <summary>
     /// Classes to add if the node is disabled.
     /// TODO: unclear why it's disabled, what would cause this...
     /// </summary>
-    public PairOnOff? IsDisabled { get; init; }
+    public MagicSettingOnOff? IsDisabled { get; init; }
 
     ///// <summary>
     ///// Classes to add if this node is in the path / breadcrumb of the current page.

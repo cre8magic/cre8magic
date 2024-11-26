@@ -1,8 +1,8 @@
 ﻿using ToSic.Cre8magic.Settings.Internal.Experimental;
 
-namespace ToSic.Cre8magic.Settings.Providers.Internal;
+namespace ToSic.Cre8magic.Settings.Internal.Providers;
 
-public static class ProviderFindWip
+internal static class ProviderFindWip
 {
     /// <summary>
     /// Retrieve specified settings according to specs in the context.
@@ -17,9 +17,9 @@ public static class ProviderFindWip
     /// </summary>
     /// <param name="context"></param>
     /// <returns></returns>
-    public static T? Find<T>(this IMagicProviderSection<T> source, IMagicSettingsContext context) where T : class
+    public static T? Find<T>(this IMagicSettingsProviderSection<T> source, IMagicSettingsContext context) where T : class
     {
-        if (source is not MagicProviderSection<T> typedSource)
+        if (source is not MagicSettingsProviderSection<T> typedSource)
             throw new ArgumentException("source must be of type MagicProviderSection<T>", nameof(source));
 
         return StaticFind(context, typedSource.Getter, null, /*typedSource.Value,*/ typedSource.Values);

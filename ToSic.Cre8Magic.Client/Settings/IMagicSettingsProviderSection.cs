@@ -1,10 +1,10 @@
-﻿namespace ToSic.Cre8magic.Settings.Providers;
+﻿namespace ToSic.Cre8magic.Settings;
 
 /// <summary>
 /// A provider for one type of settings.
 /// </summary>
 /// <typeparam name="TSettings"></typeparam>
-public interface IMagicProviderSection<TSettings> where TSettings : class
+public interface IMagicSettingsProviderSection<TSettings> where TSettings : class
 {
     /// <summary>
     /// Configure to provide a value - either as the only result for all requests, or as a default.
