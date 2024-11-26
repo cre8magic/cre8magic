@@ -53,10 +53,6 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
         if (homeId == endPage.Id)
             return list;
 
-        // Technically home is not in the breadcrumb, it's usually just the first page in the list
-        if (settings.WithHomeSafe)
-            list.Insert(0, generator(pageFactory.Home));
-
         // determine if we restrict the output list
         // Note that as of 2024-11-10 it has not been tested.
         var restrictions = settings.Pages?.Select(p => p.Id).ToHashSet();
@@ -72,13 +68,18 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
                 break;
 
             // Add to list
-            // TODO: FAILS IF NO HOME WAS ADDED, BECAUSE THERE IS NO INDEX 1, MUST REWORK
-            list.Insert(1, generator(parentPage));
+            list.Add(generator(parentPage));
             // Find next parent
             parentPage = parentPage.Parent;
         }
 
-        if (settings.ReverseSafe)
+        // Technically home is not in the breadcrumb, it's usually just the first page in the list
+        if (settings.WithHomeSafe)
+            list.Add(generator(pageFactory.Home));
+
+        // Reverse is a setting where the developer will think the breadcrumb is reversed
+        // but since we're creating the list in reverse, we must do the opposite check
+        if (!settings.ReverseSafe)
             list.Reverse();
 
         return list;
