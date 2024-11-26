@@ -2,9 +2,9 @@
 
 public interface IMagicPageContextKit
 {
-    bool UseBodyTag { get; init; }
-    string? TagId { get; init; }
-    string? Classes { get; init; }
-    MagicPageContextSettings? Settings { get; init; }
+    bool UseBodyTag { get; }
+    string? TagId { get; }
+    string? Classes { get; }
+    MagicPageContextSettings Settings { get; }
     Task UpdateBodyTag();
 }

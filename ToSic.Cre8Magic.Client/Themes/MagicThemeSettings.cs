@@ -17,12 +17,10 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
         : base(priority, fallback)
     {
         Logo = priority?.Logo ?? fallback?.Logo ?? Defaults.Fallback.Logo;
-        //LanguagesMin = priority?.LanguagesMin ?? fallback?.LanguagesMin ?? Defaults.Fallback.LanguagesMin;
 
         // TODO: #NamedSettings
         Parts = priority?.Parts ?? fallback?.Parts ?? new();
 
-        UseBodyTag = priority?.UseBodyTag ?? fallback?.UseBodyTag ?? Defaults.Fallback.UseBodyTag;
         Design = priority?.Design ?? fallback?.Design ?? Defaults.Fallback.Design;
         Debug = priority?.Debug ?? fallback?.Debug;
     }
@@ -45,8 +43,6 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     public Dictionary<string, MagicThemePartSettings> Parts { get; init; } = new();
 
 
-    public bool? UseBodyTag { get; init; }
-
     public string? Design { get; init; }
 
     public MagicDebugSettings? Debug { get; init; }
@@ -54,7 +50,6 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     internal static Defaults<MagicThemeSettings> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
-        UseBodyTag = false,
         Design = InheritName,
     });
 }

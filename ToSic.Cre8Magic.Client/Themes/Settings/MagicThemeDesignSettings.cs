@@ -18,10 +18,7 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
     public MagicThemeDesignSettings(MagicThemeDesignSettings? priority, MagicThemeDesignSettings? fallback = default)
         : base(priority, fallback)
     {
-        MagicContext = priority?.MagicContext ?? fallback?.MagicContext ?? [];
-        PageIsHome = priority?.PageIsHome ?? fallback?.PageIsHome;
         PaneIsEmpty = priority?.PaneIsEmpty ?? fallback?.PaneIsEmpty;
-        MagicContextTagId = priority?.MagicContextTagId ?? fallback?.MagicContextTagId;
 
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
@@ -29,19 +26,8 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
     public MagicThemeDesignSettings CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
-
-
-
-    public string[] MagicContext { get; init; } = [];
-
-    public MagicSettingOnOff? PageIsHome { get; init; }
-
+    
     public MagicSettingOnOff? PaneIsEmpty { get; init; }
-
-    public string? MagicContextTagId { get; init; }
-
-
-
 
     /// <summary>
     /// Custom values / classes as you need them in your code

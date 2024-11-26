@@ -14,28 +14,22 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
     private const string DefaultPartName = "PageContext";
 
     public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings) =>
-        _pageContexts.Get(pageState, () => BuildState(pageState, settings));
+        _pageContexts.Get(pageState, () => BuildKit(pageState, settings));
     private readonly GetKeepByPageId<IMagicPageContextKit> _pageContexts = new();
 
 
-    private IMagicPageContextKit BuildState(PageState pageState, MagicPageContextSettings? settings)
+    private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSettings? settings)
     {
-        var (settingsData, _, themePart, journal) = MergeSettings(pageState, settings);
+        var (settingsData, _, _, _) = MergeSettings(pageState, settings);
         var settingsFull = new MagicPageContextSettings(settingsData, settings);
 
         var themeCtx = settingsSvc.GetThemeContextFull(pageState);
-        var useBodyTag = settingsFull.UseBodyTagSafe; // settings?.UseBodyTag ?? themeCtx.ThemeSettings.UseBodyTag == true;
-        var tagId = settingsFull.TagId; // /* settings?.TagId*/ ?? themeCtx.ThemeDesignSettings.MagicContextTagId;
-
-
 
         var contextClasses = new MagicPageContextDesigner(settingsFull, pageState).BodyClasses(themeCtx.PageTokens, settings?.Classes);
         return new MagicPageContextKit
         {
             Classes = contextClasses,
-            UseBodyTag = useBodyTag,
             Settings = settingsFull,
-            TagId = tagId,
             // Internals
             PageState = pageState,
             Service = this

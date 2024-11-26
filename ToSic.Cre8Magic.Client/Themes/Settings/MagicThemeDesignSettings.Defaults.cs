@@ -4,12 +4,8 @@ namespace ToSic.Cre8magic.Themes.Settings;
 
 public partial record MagicThemeDesignSettings
 {
-    private const string SitePrefixDefault = "site";
-    private const string PagePrefixDefault = "page";
     internal const string MainPrefix = "theme";
-    private const string PanePrefixDefault = "pane";
-    private const string MenuLevelPrefixDefault = "nav-level";
-    private const string BodyDivId = "cre8magic-root";
+    private const string PanePrefix = "pane";
     internal const string SettingFromDefaults = $"{MainPrefix}-warning-this-is-from-defaults-you-should-set-your-own-value";
 
     private const string ContainerIdDefault = "module-[Module.Id]";
@@ -20,33 +16,9 @@ public partial record MagicThemeDesignSettings
     {
         Fallback = new()
         {
-            MagicContext = [
-                //1.2 Set the page-### class
-                $"{PagePrefixDefault}-{MagicTokens.PageId}",
-                //1.4 Set the page-root-### class
-                $"{PagePrefixDefault}-root-{MagicTokens.PageRootId}",
-                //1.3 Set the page-parent-### class
-                $"{PagePrefixDefault}-parent-{MagicTokens.PageParentId}",
-                //2 Set site-### class
-                $"{SitePrefixDefault}-{MagicTokens.SiteId}",
-                //3 Set the nav-level-### class
-                $"{MenuLevelPrefixDefault}-{MagicTokens.MenuLevel}",
-                //5.1 Set the theme-variation- class
-                $"{MainPrefix}-variation-{MagicTokens.LayoutVariation}",
-
-                //5.2 Set the theme-mainnav-variation- class to align the menu
-                $"{MainPrefix}-mainnav-variation-right",
-
-                // Debug info so we know the defaults were used
-                SettingFromDefaults
-            ],
-            PageIsHome = new($"{PagePrefixDefault}-is-home"),
-            PaneIsEmpty = new($"{PanePrefixDefault}-is-empty"),
-            MagicContextTagId = BodyDivId,
+            PaneIsEmpty = new($"{PanePrefix}-is-empty"),
             Parts = new()
             {
-                // TODO: remove this, as we've replaced it in the language settings
-                { "languages-li", new() { IsActive = new($"active {SettingFromDefaults}") } },
                 {
                     "container", new()
                     {
@@ -61,10 +33,7 @@ public partial record MagicThemeDesignSettings
         },
         Foundation = new()
         {
-            MagicContext = [],
-            PageIsHome = new(),
             PaneIsEmpty = new(),
-            MagicContextTagId = BodyDivId,
             Parts = new()
             {
                 { "container", new() { Id = ContainerIdDefault } },

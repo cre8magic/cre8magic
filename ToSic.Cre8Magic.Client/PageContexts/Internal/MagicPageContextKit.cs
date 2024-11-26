@@ -7,13 +7,13 @@ namespace ToSic.Cre8magic.PageContexts.Internal;
 /// </summary>
 internal record MagicPageContextKit : IMagicPageContextKit
 {
-    public required bool UseBodyTag { get; init; }
+    public bool UseBodyTag => Settings.UseBodyTagSafe;
 
-    public required string? TagId { get; init; }
+    public string? TagId => Settings.TagId;
 
     public required string? Classes { get; init; }
 
-    public required MagicPageContextSettings? Settings { get; init; }
+    public required MagicPageContextSettings Settings { get; init; }
 
     internal required PageState PageState { get; init; }
     internal required MagicPageContextService Service { get; init; }

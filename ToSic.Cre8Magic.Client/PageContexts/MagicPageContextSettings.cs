@@ -20,16 +20,11 @@ public record MagicPageContextSettings: MagicPageContextSettingsData, ISettingsF
         PartName = original.PartName;
         SettingsName = original.SettingsName;
         DesignName = original.DesignName;
-        //DesignSettings = original.DesignSettings;
 
         ((IDebugSettings)this).Catalog = ((IDebugSettings)original).Catalog;
     }
 
-    //public bool? UseBodyTag { get; init; }
-
     public string? Classes { get; init; }
-
-    public string? TagId { get; init; }
 
     #region Settings for Code
 
