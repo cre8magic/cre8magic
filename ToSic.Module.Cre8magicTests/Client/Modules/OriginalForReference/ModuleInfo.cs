@@ -1,6 +1,3 @@
-using Oqtane.Models;
-using Oqtane.Modules;
-
 namespace ToSic.Module.Cre8magicTests.OriginalForReference
 {
     //public class ModuleInfo : IModule

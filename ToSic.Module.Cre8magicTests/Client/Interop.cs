@@ -1,5 +1,4 @@
 using Microsoft.JSInterop;
-using System.Threading.Tasks;
 
 namespace ToSic.Module.Cre8magicTests
 {

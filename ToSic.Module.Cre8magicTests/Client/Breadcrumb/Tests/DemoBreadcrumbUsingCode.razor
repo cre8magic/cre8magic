@@ -1,7 +1,6 @@
 @using ToSic.Cre8magic
 @using ToSic.Cre8magic.Breadcrumbs
 @using ToSic.Cre8magic.Settings
-@using ToSic.Cre8magic.Settings.Internal.Debug
 @inject IMagicHat MagicHat
 
 @code {
@@ -33,7 +32,6 @@
 @* Setup Code to ensure it uses the settings we want to provide for the demo *@
 
 @{
-    // MagicHat.UseSettingsCatalog(settingsCatalog);
     MagicHat.UseSettingsProvider(p => p.Breadcrumbs.ProvideDefault(new()
     {
         WithHome = false,
@@ -43,7 +41,7 @@
 
 @* Breadcrumb using the settings from the catalog *@
 @{
-//    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "default" });
+    // Note: equivalent to ... = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "default" });
     breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
 }
 <ol class="breadcrumb">
