@@ -2,6 +2,7 @@
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Journal;
@@ -111,7 +112,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #endregion
 
-    #region Breadcrumbs - WIP 2024-11-25 2dm
+    #region Breadcrumbs
 
     public SettingsReader<MagicBreadcrumbSettingsData> Breadcrumbs =>
         _breadcrumbs ??= new(
@@ -127,6 +128,14 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #endregion
 
+    #region PageContexts
+
+    public SettingsReader<MagicPageContextSettingsData> PageContexts =>
+        _pageContexts ??= new(this, MagicPageContextSettingsData.Defaults, catalog => catalog.PageContexts);
+    private SettingsReader<MagicPageContextSettingsData>? _pageContexts;
+    
+
+    #endregion
 
     private SettingsReader<MagicThemeSettings> ThemeSettings =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);

@@ -29,6 +29,9 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
     public MagicThemeDesignSettings CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
+
+
+
     public string[] MagicContext { get; init; } = [];
 
     public MagicSettingOnOff? PageIsHome { get; init; }
@@ -36,6 +39,9 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
     public MagicSettingOnOff? PaneIsEmpty { get; init; }
 
     public string? MagicContextTagId { get; init; }
+
+
+
 
     /// <summary>
     /// Custom values / classes as you need them in your code

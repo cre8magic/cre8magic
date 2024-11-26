@@ -9,6 +9,39 @@ namespace ToSic.Cre8magic.Settings.Internal;
 
 internal static class MagicSettingsGetSettingsPairExtensions
 {
+    internal static Data3WithJournal<TSettingsBase, CmThemeContext, MagicThemePartSettings?> GetBestSettings<TSettings, TSettingsBase>(
+    this IMagicSettingsService settingsSvc,
+    PageState pageState,
+    TSettings? settings,
+    SettingsReader<TSettingsBase> settingsReader,
+    string menuSettingPrefix,
+    string defaultPartNameForShow
+)
+    where TSettings : TSettingsBase, ISettingsForCodeUse, new()
+    where TSettingsBase : class, new()
+    {
+        // Get the Theme Context - important for checking part names
+        var themeCtx = settingsSvc.GetThemeContext(pageState);
+
+        if (settings is IDebugSettings { DebugThis: true } tempForDebug)
+            tempForDebug = tempForDebug;
+
+        // Find Part which contains information for these settings,
+        // e.g. what to show
+        var parts = themeCtx.ThemeSettings.Parts;
+        var part = parts.GetValueOrDefault(settings?.PartName ?? "dummy-prevent-error")
+            ?? parts.GetValueOrDefault(defaultPartNameForShow);
+
+        // Get Settings from specified reader using the provided settings as priority to merge
+        // Note that the returned data will be of the base type, not the main settings type
+        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, menuSettingPrefix);
+        if (settings is IDebugSettings { Catalog: not null } withCatalog)
+            settingsReader = settingsReader.MaybeUseCustomCatalog(withCatalog.Catalog);
+        var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
+
+        return new(mergedSettings, themeCtx, part, journal);
+    }
+
     /// <summary>
     /// Special helper to get a very common pair of settings and design settings.
     /// 
@@ -45,27 +78,29 @@ internal static class MagicSettingsGetSettingsPairExtensions
         where TSettings : TSettingsBase, ISettingsForCodeUse, new()
         where TDesign : class, new() where TSettingsBase : class, new()
     {
-        // Get the Theme Context - important for checking part names
-        var themeCtx = settingsSvc.GetThemeContext(pageState);
+
+        var (mergedSettings, themeCtx, part, journal) = settingsSvc.GetBestSettings(pageState, settings, settingsReader, menuSettingPrefix, defaultPartNameForShow);
+        //// Get the Theme Context - important for checking part names
+        //var themeCtx = settingsSvc.GetThemeContext(pageState);
 
         if (settings is IDebugSettings { DebugThis: true } tempForDebug)
             tempForDebug = tempForDebug;
 
-        // Find Part which contains information for these settings,
-        // e.g. what to show
-        var parts = themeCtx.ThemeSettings.Parts;
-        var part = parts.GetValueOrDefault(settings?.PartName ?? "dummy-prevent-error")
-            ?? parts.GetValueOrDefault(defaultPartNameForShow);
+        //// Find Part which contains information for these settings,
+        //// e.g. what to show
+        //var parts = themeCtx.ThemeSettings.Parts;
+        //var part = parts.GetValueOrDefault(settings?.PartName ?? "dummy-prevent-error")
+        //    ?? parts.GetValueOrDefault(defaultPartNameForShow);
 
-        // Get Settings from specified reader using the provided settings as priority to merge
-        // Note that the returned data will be of the base type, not the main settings type
-        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, menuSettingPrefix);
-        if (settings is IDebugSettings { Catalog: not null } withCatalog)
-            settingsReader = settingsReader.MaybeUseCustomCatalog(withCatalog.Catalog);
-        var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
+        //// Get Settings from specified reader using the provided settings as priority to merge
+        //// Note that the returned data will be of the base type, not the main settings type
+        //var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, menuSettingPrefix);
+        //if (settings is IDebugSettings { Catalog: not null } withCatalog)
+        //    settingsReader = settingsReader.MaybeUseCustomCatalog(withCatalog.Catalog);
+        //var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
 
         // Get Design Settings from specified reader using the provided design settings as priority to merge
-        findSettings = new(themeCtx, settings, ThemePartSectionEnum.Design, menuSettingPrefix);
+        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Design, menuSettingPrefix);
         if (dSettings is IDebugSettings { Catalog: not null } withDesignCatalog)
             designReader = designReader.MaybeUseCustomCatalog(withDesignCatalog.Catalog);
         var (designSettings, designJournal) = designReader.FindAndMerge(findSettings, dSettings);

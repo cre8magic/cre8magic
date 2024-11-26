@@ -60,7 +60,7 @@
         },
         "english-with-no-design": {
           "settings": "englishOnly",
-          "design": "none",
+          "design": "none"
         }
       },
       // WIP / Testing
@@ -91,11 +91,10 @@
 
   // ********************************************************************************
 
-  "themeDesigns": {
-    // This is the default design which is used unless explicitly specified
+  "pageContexts": {
     "default": {
-      // TODO: THESE NEXT SETTINGS ARE ALL FOR THE Context - they should be separted into a new section
-      "magicContext": [
+      "useBodyTag": true, // bool
+      "classList": [
         "page-[Page.Id]",
         "page-root-[Page.RootId]",
         "page-parent-[Page.ParentId]",
@@ -104,9 +103,17 @@
         "theme-mainnav-variation-right",
         "theme-variation-[Layout.Variation]"
       ],
-      "pageIsHome": "page-is-home",
-      "paneIsEmpty": "pane-is-empty",
-      "magicContextTagId": "cre8magic-root",
+      "pageIsHome": "page-is-home", // On/Off
+      "paneIsEmpty": "pane-is-empty", // On/Off
+      "magicContextTagId": "cre8magic-root" // string
+    }
+  },
+
+  // ********************************************************************************
+
+  "themeDesigns": {
+    // This is the default design which is used unless explicitly specified
+    "default": {
 
       // Custom values / classes as you need them in your code
       "parts": {
@@ -220,7 +227,7 @@
           "isActive": "nothing-to-see-here"
         }
       }
-    },
+    }
   },
 
 
@@ -334,7 +341,7 @@
         },
         // Special target information (not really styling) usually on the span-tag
         "data-bs-target": ".theme-submenu-[Menu.Id]-[Page.Id]"
-      },
+      }
     },
     "sidebar": {
       "@inherits": "Mobile",

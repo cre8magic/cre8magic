@@ -2,6 +2,7 @@
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Journal;
@@ -47,6 +48,7 @@ public interface IMagicSettingsService
     internal SettingsReader<MagicLanguageDesignSettings> LanguageDesigns { get; }
     internal SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; }
     internal SettingsReader<MagicBreadcrumbSettingsData> Breadcrumbs { get; }
+    internal SettingsReader<MagicPageContextSettingsData> PageContexts { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);
 

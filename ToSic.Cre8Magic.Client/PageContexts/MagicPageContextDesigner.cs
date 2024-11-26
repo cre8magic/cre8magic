@@ -1,5 +1,5 @@
-﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Themes.Internal;
+﻿using Oqtane.UI;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
@@ -8,17 +8,17 @@ namespace ToSic.Cre8magic.PageContexts;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicPageContextDesigner(CmThemeContextFull context)
+public class MagicPageContextDesigner(MagicPageContextSettings settings, PageState pageState)
 {
     internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
     {
-        var themeDesign = context.ThemeDesignSettings;
+        //var themeDesign = context.ThemeDesignSettings;
 
-        if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
+        //if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
 
         // Make a copy...
-        var classes = themeDesign.MagicContext.ToList();
-        classes.Add(themeDesign.PageIsHome?.Get(context.PageState.Page.Path == ""));
+        var classes = settings?.ClassList.ToList() ?? [];
+        classes.Add(settings.PageIsHome?.Get(pageState.Page.Path == ""));
         if (additionalClasses.HasText())
             classes.Add(additionalClasses);
 
