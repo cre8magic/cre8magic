@@ -36,7 +36,7 @@ public interface IMagicSettingsService
     // TODO: MAKE INTERNAL again - temporarily public soi
     public MagicDebugSettings Debug { get; }
 
-    internal SettingsReader<MagicAnalyticsSettings> Analytics { get; }
+    internal SettingsReader<MagicAnalyticsSettingsData> Analytics { get; }
     internal SettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
 
     internal SettingsReader<MagicLanguageSettingsData> Languages { get; }
@@ -63,7 +63,7 @@ public interface IMagicSettingsService
     MagicDebugState DebugState(PageState pageState);
 
 
-    MagicAnalyticsSettings AnalyticsSettings(string settingsName);
+    MagicAnalyticsSettingsData AnalyticsSettings(string settingsName);
 
     internal TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func);
 }

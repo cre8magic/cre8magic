@@ -99,16 +99,16 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #region Analytics - TODO: not quite done, still has a custom accessor
 
-    SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
+    SettingsReader<MagicAnalyticsSettingsData> IMagicSettingsService.Analytics =>
         _analytics ??= new(
             this,
-            MagicAnalyticsSettings.Defaults,
+            MagicAnalyticsSettingsData.Defaults,
             cat => cat.Analytics
         );
-    private SettingsReader<MagicAnalyticsSettings>? _analytics;
+    private SettingsReader<MagicAnalyticsSettingsData>? _analytics;
 
 
-    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) =>
+    public MagicAnalyticsSettingsData AnalyticsSettings(string settingsName) =>
         ((IMagicSettingsService)this).Analytics.FindAndNeutralize([settingsName], skipCache: _bypassCaches);
 
     #endregion

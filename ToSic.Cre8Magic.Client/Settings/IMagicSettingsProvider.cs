@@ -16,7 +16,7 @@ public interface IMagicSettingsProvider
     IMagicSettingsProviderSection<MagicContainerSettings> Containers { get; }
 
     IMagicSettingsProviderSection<MagicBreadcrumbSettingsData> Breadcrumbs { get; }
-    IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics { get; }
+    IMagicSettingsProviderSection<MagicAnalyticsSettingsData> Analytics { get; }
     IMagicSettingsProviderSection<MagicMenuDesignSettings> MenuDesigns { get; }
     IMagicSettingsProviderSection<MagicThemeSettings> Themes { get; }
     public void Reset();

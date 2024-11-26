@@ -29,7 +29,7 @@ internal class MagicHat(
     MagicLazy<IMagicLinkService> linkSvc) : IMagicHat
 {
     /// <inheritdoc />
-    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = default) =>
+    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null) =>
         analyticsSvc.Value.AnalyticsKit(pageState, settings);
 
     /// <inheritdoc />

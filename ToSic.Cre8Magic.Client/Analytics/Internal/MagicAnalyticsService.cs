@@ -1,6 +1,10 @@
 ﻿using Microsoft.JSInterop;
 using Oqtane.UI;
+using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal.Journal;
+using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Utils.DoStuff;
@@ -9,26 +13,40 @@ namespace ToSic.Cre8magic.Analytics.Internal;
 
 public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc) : IMagicAnalyticsService
 {
+    private const string OptionalPrefix = "analytics-";
+    private const string DefaultPartName = "Analytics";
+
     private const string GtmEvent = "event";
 
-    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = default) =>
-        _cache.Get(pageState, () => new MagicAnalyticsKit
-        {
-            Settings = settings ?? GetAnalyticsSettings(pageState),
-            PageState = pageState,
-            Service = this
-        });
+    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null) =>
+        _cache.Get(pageState, () => BuildKit(pageState, settings));
 
     private readonly GetKeepByPageId<IMagicAnalyticsKit> _cache = new();
 
-    private MagicAnalyticsSettings GetAnalyticsSettings(PageState pageState)
+    private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSettings? settings = null)
     {
-        var themeContext = settingsSvc.GetThemeContext(pageState);
-        var themeSettings = themeContext.ThemeSettings;
-        var bestName = themeSettings.Parts.GetPartSettingsNameOrFallback(nameof(MagicSettingsCatalog.Analytics), themeContext.SettingsName);
-        var analyticsSettings = settingsSvc.Analytics.FindAndNeutralize([bestName, themeContext.SettingsName]);
-        return analyticsSettings;
+        var (settingsData, _, _, _) = MergeSettings(pageState, settings);
+        var settingsFull = new MagicAnalyticsSettings(settingsData, settings);
+
+        var result = new MagicAnalyticsKit
+        {
+            Settings = settingsFull,
+            PageState = pageState,
+            Service = this
+        };
+
+        return result;
     }
+
+    private Data3WithJournal<MagicAnalyticsSettingsData, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicAnalyticsSettings? settings) =>
+        settingsSvc.GetBestSettings(
+            pageState,
+            settings,
+            settingsSvc.Analytics,
+            OptionalPrefix,
+            DefaultPartName
+        );
+
 
     /// <summary>
     /// Call to do tracking, which will be accessed by the kit.
@@ -37,7 +55,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
     /// <param name="settings"></param>
     /// <param name="isFirstRender"></param>
     /// <returns></returns>
-    internal async Task TrackPage(PageState pageState, MagicAnalyticsSettings? settings, bool isFirstRender)
+    internal async Task TrackPage(PageState pageState, MagicAnalyticsSettingsData? settings, bool isFirstRender)
     {
         if (settings == null) return;
         if (settings.PageViewTrack != true) return;

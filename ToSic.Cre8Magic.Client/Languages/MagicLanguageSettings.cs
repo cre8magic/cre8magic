@@ -38,9 +38,6 @@ public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCode
 
     #endregion
 
-
-    public MagicLanguageDesignSettings? DesignSettings { get; init; }
-
     #region Debug Settings
 
     MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
@@ -48,5 +45,8 @@ public record MagicLanguageSettings: MagicLanguageSettingsData, ISettingsForCode
     bool IDebugSettings.DebugThis { get; set; }
 
     #endregion
+
+    public MagicLanguageDesignSettings? DesignSettings { get; init; }
+
 
 }
