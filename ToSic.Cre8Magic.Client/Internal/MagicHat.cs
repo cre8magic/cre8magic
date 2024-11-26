@@ -64,9 +64,9 @@ internal class MagicHat(
     public IMagicThemeKit ThemeKit(PageState pageState) =>
         themeSvc.Value.ThemeKit(pageState);
 
-    public void UseSettingsPackage(MagicPackageSettings packageSettings, string? layoutName = default)
+    public void UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = default)
     {
-        settingsSvc.Setup(packageSettings, layoutName);
+        settingsSvc.Setup(themePackage, layoutName);
     }
 
     public void UseSettingsCatalog(MagicSettingsCatalog catalog)

@@ -6,33 +6,33 @@ namespace ToSic.Cre8magic.Settings.Internal.Sources;
 /// <summary>
 /// Helper to load all the magic settings which could be used by the <see cref="IMagicSettingsService"/>.
 ///
-/// It requires that there are <see cref="MagicPackageSettings"/> which were usually configured in the theme,
+/// It requires that there are <see cref="MagicThemePackage"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
 public class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoaderJson) : IMagicSettingsSource
 {
     public int Priority => 100;
 
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicPackageSettings packageSettings)
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicThemePackage themePackage)
     {
-        if (packageSettings == null)
-            throw new ArgumentNullException(nameof(packageSettings));
+        if (themePackage == null)
+            throw new ArgumentNullException(nameof(themePackage));
 
-        if (_cache.TryGetValue(packageSettings, out var cached))
+        if (_cache.TryGetValue(themePackage, out var cached))
             return cached;
 
-        if (string.IsNullOrWhiteSpace(packageSettings.SettingsJsonFile))
+        if (string.IsNullOrWhiteSpace(themePackage.SettingsJsonFile))
             return [];
 
-        var catalogFromJson = catalogLoaderJson.LoadJson(packageSettings);
+        var catalogFromJson = catalogLoaderJson.LoadJson(themePackage);
 
         var bundle = new List<DataWithJournal<MagicSettingsCatalog>> { catalogFromJson };
-        _cache[packageSettings] = bundle;
+        _cache[themePackage] = bundle;
         return bundle;
     }
 
     /// <summary>
     /// Note: don't make static, otherwise we can't see json-file changes
     /// </summary>
-    private readonly Dictionary<MagicPackageSettings, List<DataWithJournal<MagicSettingsCatalog>>> _cache = new();
+    private readonly Dictionary<MagicThemePackage, List<DataWithJournal<MagicSettingsCatalog>>> _cache = new();
 }

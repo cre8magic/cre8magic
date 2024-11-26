@@ -32,7 +32,7 @@
 @* Setup Code to ensure it uses the settings we want to provide for the demo *@
 
 @{
-    MagicHat.UseSettingsProvider(p => p.Breadcrumbs.ProvideDefault(new()
+    MagicHat.UseSettingsProvider(p => p.Breadcrumbs.SetDefault(new()
     {
         WithHome = false,
         WithActive = true

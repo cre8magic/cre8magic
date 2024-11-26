@@ -28,7 +28,7 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
         };
     }
 
-    private Data3WithJournal<MagicBreadcrumbSettings, MagicThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSettings? settings) =>
+    private Data3WithJournal<MagicBreadcrumbSettings, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSettings? settings) =>
         settingsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,

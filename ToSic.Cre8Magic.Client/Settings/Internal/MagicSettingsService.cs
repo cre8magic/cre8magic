@@ -19,9 +19,9 @@ namespace ToSic.Cre8magic.Settings.Internal;
 internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) : IMagicSettingsService, IHasCatalogs
 {
     /// <inheritdoc />>
-    public IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName)
+    public IMagicSettingsService Setup(MagicThemePackage themePackage, string? layoutName)
     {
-        _packageSettings = packageSettings;
+        _packageSettings = themePackage;
         _themeTokens = null;
         _layoutName = layoutName;
         return this;
@@ -36,8 +36,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     MagicDebugSettings IMagicSettingsService.Debug => _debug ??= Catalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
     private MagicDebugSettings? _debug;
 
-    private MagicPackageSettings PackageSettings => _packageSettings ?? MagicPackageSettings.Fallback;
-    private MagicPackageSettings? _packageSettings;
+    private MagicThemePackage ThemePackage => _packageSettings ?? MagicThemePackage.Fallback;
+    private MagicThemePackage? _packageSettings;
 
     /// <summary>
     /// Tokens engine for this specific PageState
@@ -48,14 +48,14 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     {
         var pageFactory = new MagicPageFactory(pageState);
         var pageTokens = new PageTokens(pageFactory.Current, _layoutName);
-        var themeTokens = _themeTokens ??= new(PackageSettings);
+        var themeTokens = _themeTokens ??= new(ThemePackage);
         var tokens = new TokenEngine([pageTokens, themeTokens]);
         return tokens;
     }
     private ThemeTokens? _themeTokens;
 
     /// <inheritdoc />
-    public MagicThemeContext GetThemeContext(PageState pageState)
+    public CmThemeContext GetThemeContext(PageState pageState)
     {
         var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
         if (_themeCtxCache.TryGetValue(key: originalNameForCache, value: out var cached2))
@@ -65,13 +65,13 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         var (settingsName, nameJournal) = ThemePartNameResolver.PickBestSettingsName(preferred: _layoutName, mainName: Default);
         var themeSettings = ThemeSettings.FindAndNeutralize([settingsName]);
 
-        var ctx = new MagicThemeContext(SettingsName: settingsName, ThemeSettings: themeSettings, Journal: nameJournal);
+        var ctx = new CmThemeContext(SettingsName: settingsName, ThemeSettings: themeSettings, Journal: nameJournal);
         _themeCtxCache[key: originalNameForCache] = ctx;
         return ctx;
     }
-    private readonly Dictionary<string, MagicThemeContext> _themeCtxCache = new(StringComparer.InvariantCultureIgnoreCase);
+    private readonly Dictionary<string, CmThemeContext> _themeCtxCache = new(StringComparer.InvariantCultureIgnoreCase);
 
-    public MagicThemeContextFull GetThemeContextFull(PageState pageState)
+    public CmThemeContextFull GetThemeContextFull(PageState pageState)
     {
         var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
         if (_themeCtxFullCache.TryGetValue(originalNameForCache, out var cached2))
@@ -83,17 +83,17 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         var pageTokens = PageTokenEngine(pageState);
 
         var designSettings = ThemeDesignSettings(ctxLight.ThemeSettings, ctxLight.SettingsName);
-        var ctx = new MagicThemeContextFull(ctxLight.SettingsName, pageState, ctxLight.ThemeSettings, designSettings, pageTokens, ctxLight.Journal);
+        var ctx = new CmThemeContextFull(ctxLight.SettingsName, pageState, ctxLight.ThemeSettings, designSettings, pageTokens, ctxLight.Journal);
         _themeCtxFullCache[originalNameForCache] = ctx;
         return ctx;
     }
 
-    private readonly Dictionary<string, MagicThemeContextFull> _themeCtxFullCache = new(StringComparer.InvariantCultureIgnoreCase);
+    private readonly Dictionary<string, CmThemeContextFull> _themeCtxFullCache = new(StringComparer.InvariantCultureIgnoreCase);
 
     /// <summary>
     /// actually internal
     /// </summary>
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs => catalogsLoader.Catalogs(PackageSettings, cache: false);
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs => catalogsLoader.Catalogs(ThemePackage, cache: false);
 
     #region Analytics - TODO: not quite done, still has a custom accessor
 

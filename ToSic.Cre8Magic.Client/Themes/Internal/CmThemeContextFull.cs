@@ -5,11 +5,11 @@ using ToSic.Cre8magic.Tokens;
 
 namespace ToSic.Cre8magic.Themes.Internal;
 
-public record MagicThemeContextFull(
+public record CmThemeContextFull(
     string SettingsName,
     PageState PageState,
     MagicThemeSettings ThemeSettings,
     MagicThemeDesignSettings ThemeDesignSettings,
     TokenEngine PageTokens,
     Journal Journal
-): MagicThemeContext(SettingsName, ThemeSettings, Journal);
+): CmThemeContext(SettingsName, ThemeSettings, Journal);

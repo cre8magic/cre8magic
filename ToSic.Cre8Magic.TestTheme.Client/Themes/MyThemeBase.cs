@@ -28,7 +28,7 @@ public abstract class MyThemeBase : MagicThemeBase
     /// <summary>
     /// The ThemePackageSettings must be set in this class, so the Settings initializer can pick it up.
     /// </summary>
-    public override MagicPackageSettings ThemePackageSettings => ThemeInfo.ThemePackageDefaults;
+    public override MagicThemePackage ThemePackage => ThemeInfo.ThemePackageDefaults;
 
     public override string Panes => string.Join(",", PaneNames.Default, PaneNameHeader);
 

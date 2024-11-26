@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// <param name="SettingsName"></param>
 /// <param name="ThemeSettings"></param>
 /// <param name="Journal"></param>
-public record MagicThemeContext(
+public record CmThemeContext(
     string SettingsName,
     MagicThemeSettings ThemeSettings,
     Journal Journal

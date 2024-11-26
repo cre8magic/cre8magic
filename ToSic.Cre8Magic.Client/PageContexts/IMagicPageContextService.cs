@@ -1,6 +1,6 @@
 ﻿using Oqtane.UI;
 
-namespace ToSic.Cre8magic.PageContext;
+namespace ToSic.Cre8magic.PageContexts;
 
 public interface IMagicPageContextService
 {

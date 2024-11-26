@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.PageContext;
+﻿namespace ToSic.Cre8magic.PageContexts;
 
 /// <summary>
 /// TODO: LATER INTERFACE...?

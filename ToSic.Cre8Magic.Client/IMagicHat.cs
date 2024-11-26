@@ -50,7 +50,7 @@ public interface IMagicHat
 
     IMagicUserLoginKit UserLoginKit(PageState pageState);
 
-    void UseSettingsPackage(MagicPackageSettings packageSettings, string? layoutName = default);
+    void UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = default);
 
     void UseSettingsCatalog(MagicSettingsCatalog catalog);
     string Link(PageState pageState, MagicLinkSpecs linkSpecs);

@@ -4,14 +4,14 @@ using ToSic.Cre8magic.Themes.Settings;
 namespace ToSic.Cre8magic.Settings.Internal.Docs;
 
 internal record FindSettingsSpecs(
-    MagicThemeContext Context,
+    CmThemeContext Context,
     string? SettingsName,
     string? PartName,
     string? ThemeName,
     ThemePartSectionEnum Section,
     string? Prefix)
 {
-    public FindSettingsSpecs(MagicThemeContext context, ISettingsForCodeUse? settings, ThemePartSectionEnum section, string? prefix)
+    public FindSettingsSpecs(CmThemeContext context, ISettingsForCodeUse? settings, ThemePartSectionEnum section, string? prefix)
         : this(
         context,
         section == ThemePartSectionEnum.Design ? settings?.DesignName : settings?.SettingsName, // settings?.SettingsName,

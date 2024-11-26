@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.PageContext;
+namespace ToSic.Cre8magic.PageContexts.Internal;
 
 internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagicThemeJsService jsSvc) : IMagicPageContextService
 {

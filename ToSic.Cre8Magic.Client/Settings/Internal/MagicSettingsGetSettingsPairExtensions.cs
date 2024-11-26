@@ -31,7 +31,7 @@ internal static class MagicSettingsGetSettingsPairExtensions
     /// <param name="defaultPartNameForShow"></param>
     /// <param name="finalize"></param>
     /// <returns></returns>
-    internal static Data3WithJournal<TSettings, MagicThemeContext, MagicThemePartSettings?> GetBestSettingsAndDesignSettings<TSettings, TSettingsBase, TDesign>(
+    internal static Data3WithJournal<TSettings, CmThemeContext, MagicThemePartSettings?> GetBestSettingsAndDesignSettings<TSettings, TSettingsBase, TDesign>(
         this IMagicSettingsService settingsSvc,
         PageState pageState,
         TSettings? settings,

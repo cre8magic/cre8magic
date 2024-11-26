@@ -4,7 +4,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 
 internal record MagicThemeKit : IMagicThemeKit
 {
-    internal required MagicThemeContextFull Context { get; init; }
+    internal required CmThemeContextFull Context { get; init; }
 
     public MagicThemeSettings Settings => Context.ThemeSettings;
 

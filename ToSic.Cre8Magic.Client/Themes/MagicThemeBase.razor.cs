@@ -62,7 +62,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     /// This contains the default settings which must be used in this theme.
     /// Any inheriting class must specify what it will be. 
     /// </summary>
-    public abstract MagicPackageSettings ThemePackageSettings { get; }
+    public abstract MagicThemePackage ThemePackage { get; }
 
     [Inject]
     public required IMagicHat MagicHat { get; set; }
@@ -76,8 +76,8 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        if (ThemePackageSettings != null)
-            MagicHat.UseSettingsPackage(ThemePackageSettings, Layout);
+        if (ThemePackage != null)
+            MagicHat.UseSettingsPackage(ThemePackage, Layout);
     }
 
     /// <summary>

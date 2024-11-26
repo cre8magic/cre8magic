@@ -20,7 +20,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// <param name="themeSettingsParts"></param>
 internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicThemePartSettings> themeSettingsParts)
 {
-    internal ThemePartNameResolver(MagicThemeContext themeCtx)
+    internal ThemePartNameResolver(CmThemeContext themeCtx)
         : this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
     { }
 

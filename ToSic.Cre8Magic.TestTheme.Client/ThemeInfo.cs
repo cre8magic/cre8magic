@@ -61,7 +61,7 @@ public class ThemeInfo : ITheme
     ///
     /// You don't need to do much here, because all settings should then come from the json file.
     /// </summary>
-    public static MagicPackageSettings ThemePackageDefaults = new()
+    public static MagicThemePackage ThemePackageDefaults = new()
     {
         // The package name is important, as it's used to find assets etc.
         PackageName = new ThemeInfo().Theme.PackageName,

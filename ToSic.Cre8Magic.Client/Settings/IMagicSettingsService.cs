@@ -18,19 +18,19 @@ public interface IMagicSettingsService
     /// This will result in other controls and services being able to use these settings.
     /// Otherwise, the settings are just defaulted to some standard values.
     /// </summary>
-    /// <param name="packageSettings"></param>
+    /// <param name="themePackage"></param>
     /// <param name="layoutName"></param>
     /// <returns></returns>
-    IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName);
+    IMagicSettingsService Setup(MagicThemePackage themePackage, string? layoutName);
 
     /// <summary>
     /// Get lightweight theme context - basically the final name, settings and journal.
     /// </summary>
     /// <param name="pageState"></param>
     /// <returns></returns>
-    internal MagicThemeContext GetThemeContext(PageState pageState);
+    internal CmThemeContext GetThemeContext(PageState pageState);
 
-    internal MagicThemeContextFull GetThemeContextFull(PageState pageState);
+    internal CmThemeContextFull GetThemeContextFull(PageState pageState);
 
     // TODO: MAKE INTERNAL again - temporarily public soi
     public MagicDebugSettings Debug { get; }

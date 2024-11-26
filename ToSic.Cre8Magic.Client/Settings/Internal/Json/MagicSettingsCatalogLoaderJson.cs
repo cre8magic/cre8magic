@@ -10,7 +10,7 @@ public class MagicSettingsCatalogLoaderJson(ILogger<MagicSettingsCatalogLoaderJs
 {
     public ILogger<MagicSettingsCatalogLoaderJson> Logger { get; } = logger;
 
-    public DataWithJournal<MagicSettingsCatalog> LoadJson(MagicPackageSettings themeConfig)
+    public DataWithJournal<MagicSettingsCatalog> LoadJson(MagicThemePackage themeConfig)
     {
         List<Exception> exceptions = [];
 

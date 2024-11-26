@@ -2,89 +2,56 @@
 uid: Cre8magic.MagicSettings.Index
 ---
 
-# cre8magic - Magic Settings and Prepared Settings
+# cre8magic - Magic Settings Overview
 
 **Magic Settings** are a core building block of cre8magic.
-There are two basic ways to work with Magic Settings:
+Basically anything you do, will start of with some settings - or some invisible defaults.
 
-1. With **Direct Settings**, you will specify the settings in your code to get some specific data from a service,
-2. or you can have **Prepared/Provided Settings** in a central location, and just use the name of the settings.
+These are the things you should probably know:
 
-Before we explain the details, let's look at some examples.
+1. What settings can be used for each scenario
+1. How to provide settings in a central location
+1. How to provide settings by name or theme part name (TODO:)
+1. How to provide design settings (TODO:)
+1. How settings work internally
 
-## Example Direct Settings vs. Prepared Settings
+## Settings for each Scenario
 
-### 1. Direct Settings
+Settings will differ depending on if you're creating a menu, a breadcrumb, a Magic Context, or something else.
+So for this you should look at the respective documentation.
 
-This example assumes you want to create a Breadcrumb, with all the code directly in your Blazor component.
+TODO: list all relevant parts
 
-1. going from the home page to the current page
-1. you want the home page to be shown as the first node
-1. and you want the current page to be shown as the last node, but not as a link
+## Providing Settings
 
-_Note: this sample uses a lengthy syntax just for better clarity._
-
-```csharp
-@{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
-    {
-        WithActive = true,
-        WithHome = false,
-    });
-}
-<ol class="breadcrumb">
-    @foreach (var item in breadcrumbKit.Pages)
-    {
-        @* ... *@
-    }
-</ol>
-```
-
-### 2. Loaded Settings
-
-This example assumes that settings have been prepare for this control to use.
-So the code is simply:
+Settings can be used directly in the code, like:
 
 ```csharp
-@* Breadcrumb using the settings from the catalog *@
-@{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
-    // Note: equivalent to ... = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "default" });
-}
-<ol class="breadcrumb">
-    @foreach (var item in breadcrumbKit.Pages)
-    {
-        @* ... *@
-    }
-</ol>
+var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
+{
+    WithActive = true,
+    WithHome = false,
+});
 ```
 
-### 3. Loaded Settings by Name
-
-The previous example didn't specify anything when retrieving the data.
-Now there are cases where the **Prepared Settings** use names.
-This may not be common for breadcrumbs, but typical for menus where you would have:
-
-* a `main` menu showing all items starting from the home page
-* a `footer` menu showing only a few pre-specified items
-
-In this case, you should know that these two things are equivalent:
+Or you can have settings prepared in a central location, and just use the name of the settings:
 
 ```csharp
-@{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
-    breadcrumbKit = = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "default" });
-}
+var breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
 ```
 
-## Preparing / Providing Settings
+The second way is especially useful when the _identical_ code and components should result in different outputs
+depending on the scenario, since it allows you to change the settings in one place.
 
-The settings are prepared in a central location.
+For example, you could define that certain menus don't appear or look different within certain parts of your site.
 
-> [!TIP]
-> Since each Theme can have its own settings,
-> the central location to prepare settings is in the Theme code.
+For this, see
 
-There are different ways to prepare settings:
+* [Providing Settings](./provide-settings.md).
+* Providing Named Settings TODO:
+* Providing Settings by Theme Part Name TODO:
 
-1. The theme code could have code directly to prepare settings
+## How Settings Work Internally
+
+TODO: explain how settings are used internally
+```

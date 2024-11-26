@@ -17,7 +17,7 @@ public static class DebugExtensions
     public static List<Exception> GetExceptions(this IMagicSettingsService settingsSvc) =>
         settingsSvc.Catalogs.SelectMany(c => c.Journal.Exceptions).ToList();
 
-    public static MagicThemeContext GetThemeContext(this IMagicSettingsService settingsSvc, PageState pageState) =>
+    public static CmThemeContext GetThemeContext(this IMagicSettingsService settingsSvc, PageState pageState) =>
         settingsSvc.GetThemeContext(pageState);
 
 }

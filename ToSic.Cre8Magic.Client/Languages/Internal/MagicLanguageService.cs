@@ -47,7 +47,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         };
     }
 
-    private Data3WithJournal<MagicLanguageSettings, MagicThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicLanguageSettings? settings) =>
+    private Data3WithJournal<MagicLanguageSettings, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicLanguageSettings? settings) =>
         settingsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,

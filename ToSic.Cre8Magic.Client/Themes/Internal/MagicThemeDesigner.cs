@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicThemeDesigner(MagicThemeContextFull context) : MagicDesignerBase(context)
+public class MagicThemeDesigner(CmThemeContextFull context) : MagicDesignerBase(context)
 {
     internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
     {

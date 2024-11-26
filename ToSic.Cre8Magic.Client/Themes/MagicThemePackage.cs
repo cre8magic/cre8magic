@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Settings;
+
+namespace ToSic.Cre8magic.Themes;
 
 /// <summary>
 /// Settings for a Theme Package.
@@ -8,7 +10,7 @@
 /// 1. location of assets
 /// 1. settings for various parts like CSS
 /// </summary>
-public record MagicPackageSettings
+public record MagicThemePackage
 {
     /// <summary>
     /// All kinds of settings for the layout, how it should be etc.
@@ -16,10 +18,10 @@ public record MagicPackageSettings
     /// </summary>
     public MagicSettingsCatalog? Defaults { get; init; }
 
-    /// <summary>
-    /// WIP
-    /// </summary>
-    public MagicSettingsCatalog? Catalog { get; init; }
+    ///// <summary>
+    ///// WIP
+    ///// </summary>
+    //public MagicSettingsCatalog? Catalog { get; init; }
 
     public string WwwRoot { get; init; } = "wwwroot";
 
@@ -42,7 +44,7 @@ public record MagicPackageSettings
     /// </summary>
     internal bool IsConfigured { get; init; } = true;
 
-    internal static MagicPackageSettings Fallback = new()
+    internal static MagicThemePackage Fallback = new()
     {
         Defaults = MagicSettingsCatalog.Fallback,
         WwwRoot = "wwwroot",

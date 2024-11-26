@@ -11,10 +11,10 @@ public class MagicSettingsSourcePackageDefaults : IMagicSettingsSource
 {
     public int Priority => -100;
 
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicPackageSettings packageSettings) =>
-        packageSettings == null
-            ? throw new ArgumentNullException(nameof(packageSettings))
-            : packageSettings.Defaults == null
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicThemePackage themePackage) =>
+        themePackage == null
+            ? throw new ArgumentNullException(nameof(themePackage))
+            : themePackage.Defaults == null
                 ? []
-                : [new(packageSettings.Defaults, new())];
+                : [new(themePackage.Defaults, new())];
 }

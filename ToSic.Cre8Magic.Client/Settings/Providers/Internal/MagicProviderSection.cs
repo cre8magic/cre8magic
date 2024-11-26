@@ -2,8 +2,8 @@
 
 namespace ToSic.Cre8magic.Settings.Providers.Internal;
 
-public class MagicProviderSection<T>(IMagicSettingsProvider parent)
-    : IMagicProviderSectionWithMoreWip<T, IMagicSettingsProvider>, ISourceInternal
+internal class MagicProviderSection<T>(IMagicSettingsProvider parent)
+    : IMagicProviderSection<T>, ISourceInternal
     where T : class
 {
     public bool HasValues { get; private set; }
@@ -20,7 +20,7 @@ public class MagicProviderSection<T>(IMagicSettingsProvider parent)
     }
 
     // TODO: use constant for "Default"
-    public IMagicSettingsProvider ProvideDefault(T value) =>
+    public IMagicSettingsProvider SetDefault(T value) =>
         Provide("default", value);
 
     public IMagicSettingsProvider Provide(string key, T value)
@@ -38,10 +38,11 @@ public class MagicProviderSection<T>(IMagicSettingsProvider parent)
         return parent;
     }
 
-    public IMagicSettingsProvider Provide(Func<IMagicSettingsContext, T> getter)
-    {
-        Getter = getter;
-        HasValues = true;
-        return parent;
-    }
+    // WIP, experimental, not ready for use so don't publish
+    //public IMagicSettingsProvider Provide(Func<IMagicSettingsContext, T> getter)
+    //{
+    //    Getter = getter;
+    //    HasValues = true;
+    //    return parent;
+    //}
 }

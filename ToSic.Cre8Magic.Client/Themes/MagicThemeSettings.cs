@@ -54,7 +54,6 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     internal static Defaults<MagicThemeSettings> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
-        //LanguagesMin = 2,
         MagicContextInBody = false,
         Design = InheritName,
     });

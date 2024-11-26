@@ -1,7 +1,7 @@
 @namespace ToSic.Cre8magic.TestTheme.Client
 @using Microsoft.AspNetCore.Http
 @using ToSic.Cre8magic.Components.Internal
-@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.PageContexts
 @inherits MyThemeBase
 @inject IJSRuntime JsRuntime
 @inject IHttpContextAccessor HttpContextAccessor
@@ -57,24 +57,24 @@ Nice to know:
     ///
     /// For testing we have a special setup where we provide null to ensure nothing is configured if certain test cookies are set.
     /// </summary>
-    public override MagicPackageSettings ThemePackageSettings
+    public override MagicThemePackage ThemePackage
     {
         get
         {
             var cookie = HttpContextAccessor.HttpContext.Request.Cookies["TestSettings"];
             return string.IsNullOrWhiteSpace(cookie) || cookie == "default"
-                ? base.ThemePackageSettings
+                ? base.ThemePackage
                 : null;
         }
     }
 
 }
 @*
-    The MagicContextAndSettings wrapper does this:
+    The MagicPageContext wrapper does this:
     1. It ensures that certain classes are added to the body or wrapper-div so that styles can be optimized by page, language, branch etc.
        Note that the specifics are configured in the configuration
 *@
-<MagicContextAndSettings Settings="new() { Classes = MagicContextClasses }">
+<MagicPageContext Settings="new() { Classes = MagicContextClasses }">
 
     @* Show any errors to the admin if something went wrong like when loading settings *@
     <MagicExceptions></MagicExceptions>
@@ -136,4 +136,4 @@ Nice to know:
         <ToTop></ToTop>
     </main>
     <Footer></Footer>
-</MagicContextAndSettings>
+</MagicPageContext>

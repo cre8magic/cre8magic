@@ -15,9 +15,9 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
     /// <summary>
     /// Implement interface to get this stuff
     /// </summary>
-    /// <param name="packageSettings"></param>
+    /// <param name="themePackage"></param>
     /// <returns></returns>
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicPackageSettings packageSettings)
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicThemePackage themePackage)
     {
         var partsNoData = AllSources.All(source => source?.HasValues != true);
         if (partsNoData)
