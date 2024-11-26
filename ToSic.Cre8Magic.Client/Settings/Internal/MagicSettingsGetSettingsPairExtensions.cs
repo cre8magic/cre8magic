@@ -80,25 +80,10 @@ internal static class MagicSettingsGetSettingsPairExtensions
     {
 
         var (mergedSettings, themeCtx, part, journal) = settingsSvc.GetBestSettings(pageState, settings, settingsReader, menuSettingPrefix, defaultPartNameForShow);
-        //// Get the Theme Context - important for checking part names
-        //var themeCtx = settingsSvc.GetThemeContext(pageState);
 
         if (settings is IDebugSettings { DebugThis: true } tempForDebug)
             tempForDebug = tempForDebug;
-
-        //// Find Part which contains information for these settings,
-        //// e.g. what to show
-        //var parts = themeCtx.ThemeSettings.Parts;
-        //var part = parts.GetValueOrDefault(settings?.PartName ?? "dummy-prevent-error")
-        //    ?? parts.GetValueOrDefault(defaultPartNameForShow);
-
-        //// Get Settings from specified reader using the provided settings as priority to merge
-        //// Note that the returned data will be of the base type, not the main settings type
-        //var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, menuSettingPrefix);
-        //if (settings is IDebugSettings { Catalog: not null } withCatalog)
-        //    settingsReader = settingsReader.MaybeUseCustomCatalog(withCatalog.Catalog);
-        //var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
-
+        
         // Get Design Settings from specified reader using the provided design settings as priority to merge
         var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Design, menuSettingPrefix);
         if (dSettings is IDebugSettings { Catalog: not null } withDesignCatalog)

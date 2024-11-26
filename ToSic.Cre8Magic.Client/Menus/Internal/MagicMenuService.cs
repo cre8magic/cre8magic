@@ -58,7 +58,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         settingsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,
-            settingsSvc.MenuSettings,
+            settingsSvc.Menus,
             settings?.DesignSettings,
             settingsSvc.MenuDesigns, 
             OptionalPrefix,

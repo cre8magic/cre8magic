@@ -64,7 +64,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
         // Figure out real config-name, and get the initial layout
         var (settingsName, nameJournal) = ThemePartNameResolver.PickBestSettingsName(preferred: _layoutName, mainName: Default);
-        var themeSettings = ThemeSettings.FindAndNeutralize([settingsName]);
+        var themeSettings = Themes.FindAndNeutralize([settingsName]);
 
         var ctx = new CmThemeContext(SettingsName: settingsName, ThemeSettings: themeSettings, Journal: nameJournal);
         _themeCtxCache[key: originalNameForCache] = ctx;
@@ -94,7 +94,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     /// <summary>
     /// actually internal
     /// </summary>
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs => catalogsLoader.Catalogs(ThemePackage, cache: false);
+    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs =>
+        catalogsLoader.Catalogs(ThemePackage, cache: false);
 
     #region Analytics - TODO: not quite done, still has a custom accessor
 
@@ -137,7 +138,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #endregion
 
-    private SettingsReader<MagicThemeSettings> ThemeSettings =>
+    private SettingsReader<MagicThemeSettings> Themes =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);
     private SettingsReader<MagicThemeSettings>? _getTheme;
 
@@ -149,9 +150,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         return result;
     }
 
-    public SettingsReader<MagicMenuSettingsData> MenuSettings =>
-        _getMenuSettings ??= new(this, MagicMenuSettingsData.Defaults, catalog => catalog.Menus);
-    private SettingsReader<MagicMenuSettingsData>? _getMenuSettings;
+    #region Languages
 
     public SettingsReader<MagicLanguageSettingsData> Languages => _languages ??= new(this,
             MagicLanguageSettingsData.Defaults,
@@ -162,6 +161,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     public SettingsReader<MagicLanguageDesignSettings> LanguageDesigns =>
         _languageDesigns ??= new(this, MagicLanguageDesignSettings.DesignDefaults, catalog => catalog.LanguageDesigns);
     private SettingsReader<MagicLanguageDesignSettings>? _languageDesigns;
+
+    #endregion
 
     //internal NamedSettingsReader<MagicContainerSettings> Containers =>
     //    _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
@@ -180,7 +181,16 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
             ]
         );
 
+    #region Menus
+
+    public SettingsReader<MagicMenuSettingsData> Menus =>
+        _getMenuSettings ??= new(this, MagicMenuSettingsData.Defaults, catalog => catalog.Menus);
+    private SettingsReader<MagicMenuSettingsData>? _getMenuSettings;
+
     public SettingsReader<MagicMenuDesignSettings> MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);
     private SettingsReader<MagicMenuDesignSettings>? _menuDesigns;
+
+    #endregion
+
 }

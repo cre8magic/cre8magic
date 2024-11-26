@@ -43,7 +43,7 @@ public interface IMagicSettingsService
 
     internal SettingsReader<MagicMenuDesignSettings> MenuDesigns { get; }
 
-    internal SettingsReader<MagicMenuSettingsData> MenuSettings { get; }
+    internal SettingsReader<MagicMenuSettingsData> Menus { get; }
     internal List<DataWithJournal<MagicSettingsCatalog>> Catalogs { get; }
     internal SettingsReader<MagicLanguageDesignSettings> LanguageDesigns { get; }
     internal SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; }

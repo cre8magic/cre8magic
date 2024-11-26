@@ -1,4 +1,5 @@
 ﻿using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.ClientUnitTests.AnalyticsTests;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsTests;
 
@@ -19,15 +20,15 @@ public class MagicAnalyticsCreateClone
     public void ConstructorClone2() => VerifySameAsOriginal(new(null, Original()));
 
     [Fact]
-    public void CloneWithNull() => VerifySameAsOriginal(Original().CloneUnder(null));
+    public void CloneWithNull() => VerifySameAsOriginal(Original().CloneUnderTac(null));
 
     [Fact]
-    public void CloneWithEmpty() => VerifySameAsOriginal(Original().CloneUnder(new()));
+    public void CloneWithEmpty() => VerifySameAsOriginal(Original().CloneUnderTac(new()));
 
     [Fact]
     public void CloneWithDifferent()
     {
-        var x = Original().CloneUnder(Replacement());
+        var x = Original().CloneUnderTac(Replacement());
         VerifySameAsReplacement(x, skipGtm: true);
         Assert.Equal(Original().GtmId, x.GtmId);
     }

@@ -10,6 +10,9 @@ namespace ToSic.Cre8magic.Themes;
 
 public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanClone<MagicThemeSettings>
 {
+    #region Constructor & Clone
+    
+    [PrivateApi]
     public MagicThemeSettings() { }
 
     [PrivateApi]
@@ -26,8 +29,10 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     }
 
     [PrivateApi]
-    public MagicThemeSettings CloneUnder(MagicThemeSettings? priority, bool forceCopy = false) =>
+    MagicThemeSettings ICanClone<MagicThemeSettings>.CloneUnder(MagicThemeSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
+    #endregion
 
     /// <summary>
     /// The logo to show, should be located in the assets subfolder

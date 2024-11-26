@@ -14,13 +14,13 @@ namespace ToSic.Cre8magic.Settings.Internal;
 ///    ...this is to get type safety and everything, like it will only look at the Analytics settings.
 /// </summary>
 /// <typeparam name="TSettingsData"></typeparam>
-/// <param name="settingsSvc"></param>
+/// <param name="hasCatalogs"></param>
 /// <param name="defaults"></param>
-/// <param name="getSourceOnCatalog"></param>
+/// <param name="getSection"></param>
 internal class SettingsReader<TSettingsData>(
-    IHasCatalogs settingsSvc,
+    IHasCatalogs hasCatalogs,
     Defaults<TSettingsData> defaults,
-    Func<MagicSettingsCatalog, IDictionary<string, TSettingsData>> getSourceOnCatalog
+    Func<MagicSettingsCatalog, IDictionary<string, TSettingsData>> getSection
 )
     where TSettingsData : class, new()
 {
@@ -28,7 +28,7 @@ internal class SettingsReader<TSettingsData>(
     /// Create a clone of the settings reader, which will specifically only use test catalogs provided by the source.
     /// </summary>
     internal SettingsReader<TSettingsData> MaybeUseCustomCatalog(MagicSettingsCatalog? catalog)
-        => catalog == null ? this : new(new HasCatalogs([new(catalog, new())]), defaults, getSourceOnCatalog);
+        => catalog == null ? this : new(new HasCatalogs([new(catalog, new())]), defaults, getSection);
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -48,27 +48,26 @@ internal class SettingsReader<TSettingsData>(
     /// Find a part by name, and merge it with the foundation if applicable.
     /// This is to ensure necessary basics are always present, even if the part doesn't specify them.
     /// </summary>
-    /// <param name="settingsName">The name to look for.</param>
-    /// <param name="themeName">Name of the current theme settings, which is used for fallback options.</param>
+    /// <param name="names"></param>
     /// <param name="skipCache"></param>
     /// <returns></returns>
-    internal TSettingsData FindAndNeutralize(string?[] rawNames, bool skipCache = false)
+    internal TSettingsData FindAndNeutralize(string?[] names, bool skipCache = false)
     {
         // Create array of names to look up, the first one is the main name (specify type so clearly non-null)
-        var names = ((string[])[ ..rawNames, Default ])
+        var cleanNames = ((string[])[ ..names, Default ])
             .Where(s => s.HasText())
             .Select(s => s!.Trim())
             .Distinct()
             .ToArray()!;
 
-        var mainName = names[0];
+        var mainName = cleanNames[0];
 
         // Check cache if applicable
         if (!skipCache && _cache.TryGetValue(mainName, out var cached2))
             return cached2;
 
         // Get best matching part; returns null if nothing found
-        var priority = FindSettingsData(names);
+        var priority = FindSettingsData(cleanNames);
         switch (priority)
         {
             // Nothing found, return fallback
@@ -82,14 +81,6 @@ internal class SettingsReader<TSettingsData>(
                 priority = couldInherit with { Inherits = null } as TSettingsData ?? priority;
                 priority = FindSettingsAndTryMerge(priority, inheritFrom);
                 break;
-
-            //// Check if it's a dictionary containing @inherit specs
-            //case IMagicMenuDesignSettings named when named.TryGetValue(InheritsNameInJson, out var value):
-            //    if (value.Value != null)
-            //        priority = FindSettingsAndTryMerge(priority, value.Value);
-            //    else
-            //        named.Remove(InheritsNameInJson);
-            //    break;
         }
 
         // If we don't have a foundation to mix in, we're done
@@ -105,7 +96,7 @@ internal class SettingsReader<TSettingsData>(
         // Inner function to find settings and merge them
         TSettingsData FindSettingsAndTryMerge(TSettingsData priorityData, string nameToFind)
         {
-            var addition = FindSettingsData(nameToFind);
+            var addition = FindSettingsData([nameToFind]);
             return addition == null
                 ? priorityData
                 : MergeHelper.TryToMergeOrKeepPriority(priorityData, addition)!;
@@ -114,13 +105,13 @@ internal class SettingsReader<TSettingsData>(
 
     private readonly Dictionary<string, TSettingsData> _cache = new(StringComparer.InvariantCultureIgnoreCase);
 
-    private TSettingsData? FindSettingsData(params string[]? names)
+    private TSettingsData? FindSettingsData(string[]? names)
     {
         // Make sure we have at least one name
         if (names == null || names.Length == 0) names = [Default];
 
         // Get all catalogs / sources (e.g. provided by code in theme, from JSON, etc.)
-        var catalogs = settingsSvc.Catalogs;
+        var catalogs = hasCatalogs.Catalogs;
 
         // Create a list of all possible sources and names
         // Prioritize the names, and then go through all sources for each name
@@ -131,8 +122,8 @@ internal class SettingsReader<TSettingsData>(
 
         foreach (var set in allSourcesAndNames)
         {
-            var settingsDic = getSourceOnCatalog(set.catalog);
-            if (settingsDic.TryGetValue(set.name, out var settings))
+            var section = getSection(set.catalog);
+            if (section.TryGetValue(set.name, out var settings))
                 return settings;
         }
 

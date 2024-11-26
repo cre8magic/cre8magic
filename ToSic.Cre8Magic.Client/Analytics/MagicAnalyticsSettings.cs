@@ -13,11 +13,13 @@ namespace ToSic.Cre8magic.Analytics;
 /// </summary>
 public record MagicAnalyticsSettings : SettingsWithInherit, ICanClone<MagicAnalyticsSettings>
 {
-    public MagicAnalyticsSettings()
-    { }
+    #region Constructor and Clone
 
     [PrivateApi]
-    public MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
+    public MagicAnalyticsSettings() { }
+
+    [PrivateApi]
+    internal MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
         : base(priority, fallback)
     {
         GtmId = priority?.GtmId ?? fallback?.GtmId;
@@ -25,12 +27,13 @@ public record MagicAnalyticsSettings : SettingsWithInherit, ICanClone<MagicAnaly
         PageViewTrackFirst = priority?.PageViewTrackFirst ?? fallback?.PageViewTrackFirst;
         PageViewJs = priority?.PageViewJs ?? fallback?.PageViewJs;
         PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
-
     }
 
     [PrivateApi]
-    public MagicAnalyticsSettings CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
+    MagicAnalyticsSettings ICanClone<MagicAnalyticsSettings>.CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
+    #endregion
 
     /// <summary>
     /// ID of Google Tag Manager.
