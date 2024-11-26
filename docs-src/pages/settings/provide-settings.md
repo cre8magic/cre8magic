@@ -113,7 +113,7 @@ There are different ways to provide settings:
 1. The theme code can load settings from a JSON file into the [MagicHat](xref:ToSic.Cre8magic.IMagicHat)
 1. _The theme code could load settings from a database (not supported yet)._
 
-### 1. Write your own Code
+### Option 1: Just Write Some Shared Code
 
 This variant is not recommended, but included just for completeness.
 You could just have a class which provides the settings:
@@ -139,7 +139,7 @@ And then use it like this:
 }
 ```
 
-### 2. Theme Code
+### Option 2: Broadcast from Theme
 
 This is the first recommended way to provide settings.
 The settings can be managed centrally, but are still part of the Theme.
@@ -181,3 +181,5 @@ The setup requires these things:
 
 1. A JSON file in your theme's `wwwroot` folder.
 1. A [MagicThemePackage](xref:ToSic.Cre8magic.Themes.MagicThemePackage) object in your theme.
+
+TODO:

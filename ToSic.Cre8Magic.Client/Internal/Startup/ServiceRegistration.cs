@@ -22,6 +22,7 @@ using ToSic.Cre8magic.UserLogins.Internal;
 using ToSic.Cre8magic.Users;
 using ToSic.Cre8magic.Users.Internal;
 using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Containers.Internal;
 // ReSharper disable InconsistentNaming
 
 namespace ToSic.Cre8magic.Internal.Startup;
@@ -105,6 +106,7 @@ public static class ServiceRegistration
         services.TryAddTransient<IMagicMenuService, MagicMenuService>();
         services.TryAddTransient<IUserLoginService, UserLoginService>();
         services.TryAddTransient<IMagicLinkService, MagicLinkService>();
+        services.TryAddTransient<IMagicContainerService, MagicContainerService>();
 
         services.TryAddTransient<IMagicHat, MagicHat>();
 

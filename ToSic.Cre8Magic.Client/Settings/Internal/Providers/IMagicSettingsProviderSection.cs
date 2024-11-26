@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Experimental;
-
-namespace ToSic.Cre8magic.Settings.Internal.Providers;
+﻿namespace ToSic.Cre8magic.Settings.Internal.Providers;
 
 internal class MagicSettingsProviderSection<T>(IMagicSettingsProvider parent)
     : IMagicSettingsProviderSection<T>, ISourceInternal
@@ -10,12 +8,9 @@ internal class MagicSettingsProviderSection<T>(IMagicSettingsProvider parent)
 
     internal IDictionary<string, T>? Values { get; set; }
 
-    internal Func<IMagicSettingsContext, T?>? Getter;
-
     public void Reset()
     {
         Values = null;
-        Getter = null;
         HasValues = false;
     }
 
@@ -38,11 +33,4 @@ internal class MagicSettingsProviderSection<T>(IMagicSettingsProvider parent)
         return parent;
     }
 
-    // WIP, experimental, not ready for use so don't publish
-    //public IMagicSettingsProvider Provide(Func<IMagicSettingsContext, T> getter)
-    //{
-    //    Getter = getter;
-    //    HasValues = true;
-    //    return parent;
-    //}
 }

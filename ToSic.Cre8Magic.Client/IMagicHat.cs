@@ -40,7 +40,7 @@ public interface IMagicHat
     MagicUser User(PageState pageState);
 
     /// <inheritdoc cref="IMagicContainerService.ContainerKit"/>
-    IMagicContainerKit ContainerKit(PageState pageState, Module module);
+    IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettingsWip? settings = default);
 
     /// <inheritdoc cref="IMagicAnalyticsService.AnalyticsKit"/>
     IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = default);

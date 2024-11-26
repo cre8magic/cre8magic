@@ -4,6 +4,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
+using ToSic.Cre8magic.Containers.Internal;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Links;
 using ToSic.Cre8magic.PageContexts;
@@ -26,7 +27,8 @@ internal class MagicHat(
     MagicLazy<IUserLoginService> userKitSvc,
     MagicLazy<IMagicThemeService> themeSvc,
     MagicLazy<IMagicSettingsProvider> settingsProviderSvc,
-    MagicLazy<IMagicLinkService> linkSvc) : IMagicHat
+    MagicLazy<IMagicLinkService> linkSvc,
+    MagicLazy<IMagicContainerService> containerSvc) : IMagicHat
 {
     /// <inheritdoc />
     public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null) =>
@@ -52,14 +54,15 @@ internal class MagicHat(
     public IMagicUserLoginKit UserLoginKit(PageState pageState) =>
         userKitSvc.Value.UserLoginKit(pageState);
 
-    public IMagicContainerKit ContainerKit(PageState pageState, Module module)
+    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettingsWip? settings = default)
     {
-        var designer = ContainerDesigner(pageState, module);
-        return new MagicContainerKit
-        {
-            Designer = designer,
-            Module = module
-        };
+        return containerSvc.Value.ContainerKit(pageState, module);
+        //var designer = ContainerDesigner(pageState, module);
+        //return new MagicContainerKit
+        //{
+        //    Designer = designer,
+        //    Module = module
+        //};
     }
 
     public string Link(PageState pageState, MagicLinkSpecs linkSpecs) =>
@@ -89,17 +92,17 @@ internal class MagicHat(
     }
 
 
-    private MagicContainerDesigner ContainerDesigner(PageState pageState, Module module)
-    {
-        if (_containerDesigners.TryGetValue(pageState.Page.PageId, out var designer))
-            return designer;
+    //private MagicContainerDesigner ContainerDesigner(PageState pageState, Module module)
+    //{
+    //    if (_containerDesigners.TryGetValue(pageState.Page.PageId, out var designer))
+    //        return designer;
 
-        var designContext = settingsSvc.GetThemeContextFull(pageState);
-        var container = new MagicContainerDesigner(designContext, module);
-        _containerDesigners[module.ModuleId] = container;
-        return container;
-    }
-    private readonly Dictionary<int, MagicContainerDesigner> _containerDesigners = new();
+    //    var designContext = settingsSvc.GetThemeContextFull(pageState);
+    //    var container = new MagicContainerDesigner(designContext, module);
+    //    _containerDesigners[module.ModuleId] = container;
+    //    return container;
+    //}
+    //private readonly Dictionary<int, MagicContainerDesigner> _containerDesigners = new();
 
     public MagicThemeDesigner ThemeDesigner(PageState pageState)
     {

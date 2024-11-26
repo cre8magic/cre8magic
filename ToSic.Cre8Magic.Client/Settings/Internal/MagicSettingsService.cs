@@ -1,6 +1,7 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
+using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Pages.Internal;
@@ -56,10 +57,10 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     private ThemeTokens? _themeTokens;
 
     /// <inheritdoc />
-    public CmThemeContext GetThemeContext(PageState pageState)
+    public CmThemeContext GetThemeContext(PageState pageStateForCachingOnly)
     {
-        var originalNameForCache = (_layoutName ?? "prevent-error") + pageState.Page.PageId;
-        if (_themeCtxCache.TryGetValue(key: originalNameForCache, value: out var cached2))
+        var originalNameForCache = (_layoutName ?? "prevent-error") + (pageStateForCachingOnly?.Page.PageId ?? -1);
+        if (pageStateForCachingOnly != null && _themeCtxCache.TryGetValue(key: originalNameForCache, value: out var cached2))
             return cached2;
 
         // Figure out real config-name, and get the initial layout
@@ -67,7 +68,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         var themeSettings = Themes.FindAndNeutralize([settingsName]);
 
         var ctx = new CmThemeContext(SettingsName: settingsName, ThemeSettings: themeSettings, Journal: nameJournal);
-        _themeCtxCache[key: originalNameForCache] = ctx;
+        if (pageStateForCachingOnly != null)
+            _themeCtxCache[originalNameForCache] = ctx;
         return ctx;
     }
     private readonly Dictionary<string, CmThemeContext> _themeCtxCache = new(StringComparer.InvariantCultureIgnoreCase);
@@ -164,9 +166,9 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #endregion
 
-    //internal NamedSettingsReader<MagicContainerSettings> Containers =>
-    //    _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
-    //private NamedSettingsReader<MagicContainerSettings>? _containers;
+    public SettingsReader<MagicContainerSettings> Containers =>
+        _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
+    private SettingsReader<MagicContainerSettings>? _containers;
 
     public SettingsReader<MagicThemeDesignSettings> ThemeDesign =>
         _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, catalog => catalog.ThemeDesigns);

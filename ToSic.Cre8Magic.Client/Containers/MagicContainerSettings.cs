@@ -8,13 +8,13 @@ namespace ToSic.Cre8magic.Containers;
 
 public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContainerSettings>
 {
-    public MagicContainerSettings()
-    { }
+    public MagicContainerSettings() { }
 
     [PrivateApi]
     public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
+        TestData = priority?.TestData ?? fallback?.TestData;
         Custom = MergeHelper.CloneMergeDictionaries(priority?.Custom, fallback?.Custom);
     }
 
@@ -22,21 +22,19 @@ public record MagicContainerSettings: SettingsWithInherit, ICanClone<MagicContai
     public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
+
+    public string? TestData { get; init; }
+
     /// <summary>
     /// TODO: PROBABLY CHANGE TO DATA / whatever ?
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettingsPart>))]
     public Dictionary<string, MagicDesignSettingsPart> Custom { get; init; } = new(StringComparer.InvariantCultureIgnoreCase);
 
-    private static readonly MagicContainerSettings FbAndF = new()
+
+    internal static Defaults<MagicContainerSettings> Defaults = new(new()
     {
         Custom = new()
-    };
-
-    internal static Defaults<MagicContainerSettings> Defaults = new()
-    {
-        Fallback = FbAndF,
-        Foundation = FbAndF,
-    };
+    });
 
 }

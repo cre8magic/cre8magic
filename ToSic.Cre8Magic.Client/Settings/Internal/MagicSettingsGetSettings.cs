@@ -7,21 +7,21 @@ using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
-internal static class MagicSettingsGetSettingsPairExtensions
+internal static class MagicSettingsGetSettings
 {
     internal static Data3WithJournal<TSettingsBase, CmThemeContext, MagicThemePartSettings?> GetBestSettings<TSettings, TSettingsBase>(
     this IMagicSettingsService settingsSvc,
-    PageState pageState,
+    PageState? pageStateForCachingOnly,
     TSettings? settings,
     SettingsReader<TSettingsBase> settingsReader,
-    string menuSettingPrefix,
+    string settingsPrefix,
     string defaultPartNameForShow
 )
     where TSettings : TSettingsBase, ISettingsForCodeUse, new()
     where TSettingsBase : class, new()
     {
         // Get the Theme Context - important for checking part names
-        var themeCtx = settingsSvc.GetThemeContext(pageState);
+        var themeCtx = settingsSvc.GetThemeContext(pageStateForCachingOnly);
 
         if (settings is IDebugSettings { DebugThis: true } tempForDebug)
             tempForDebug = tempForDebug;
@@ -34,7 +34,7 @@ internal static class MagicSettingsGetSettingsPairExtensions
 
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type
-        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, menuSettingPrefix);
+        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, settingsPrefix);
         if (settings is IDebugSettings { Catalog: not null } withCatalog)
             settingsReader = settingsReader.MaybeUseCustomCatalog(withCatalog.Catalog);
         var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
@@ -60,7 +60,7 @@ internal static class MagicSettingsGetSettingsPairExtensions
     /// <param name="settingsReader"></param>
     /// <param name="dSettings"></param>
     /// <param name="designReader"></param>
-    /// <param name="menuSettingPrefix"></param>
+    /// <param name="settingPrefix"></param>
     /// <param name="defaultPartNameForShow"></param>
     /// <param name="finalize"></param>
     /// <returns></returns>
@@ -71,7 +71,7 @@ internal static class MagicSettingsGetSettingsPairExtensions
         SettingsReader<TSettingsBase> settingsReader,
         TDesign? dSettings,
         SettingsReader<TDesign> designReader,
-        string menuSettingPrefix,
+        string settingPrefix,
         string defaultPartNameForShow,
         Func<TSettingsBase, TDesign, TSettings> finalize
     )
@@ -79,13 +79,13 @@ internal static class MagicSettingsGetSettingsPairExtensions
         where TDesign : class, new() where TSettingsBase : class, new()
     {
 
-        var (mergedSettings, themeCtx, part, journal) = settingsSvc.GetBestSettings(pageState, settings, settingsReader, menuSettingPrefix, defaultPartNameForShow);
+        var (mergedSettings, themeCtx, part, journal) = settingsSvc.GetBestSettings(pageState, settings, settingsReader, settingPrefix, defaultPartNameForShow);
 
         if (settings is IDebugSettings { DebugThis: true } tempForDebug)
             tempForDebug = tempForDebug;
         
         // Get Design Settings from specified reader using the provided design settings as priority to merge
-        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Design, menuSettingPrefix);
+        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Design, settingPrefix);
         if (dSettings is IDebugSettings { Catalog: not null } withDesignCatalog)
             designReader = designReader.MaybeUseCustomCatalog(withDesignCatalog.Catalog);
         var (designSettings, designJournal) = designReader.FindAndMerge(findSettings, dSettings);

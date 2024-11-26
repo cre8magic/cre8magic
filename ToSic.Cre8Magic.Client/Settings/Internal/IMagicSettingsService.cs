@@ -1,6 +1,7 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
+using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings.Internal;
@@ -27,9 +28,9 @@ public interface IMagicSettingsService
     /// <summary>
     /// Get lightweight theme context - basically the final name, settings and journal.
     /// </summary>
-    /// <param name="pageState"></param>
+    /// <param name="pageStateForCachingOnly"></param>
     /// <returns></returns>
-    internal CmThemeContext GetThemeContext(PageState pageState);
+    internal CmThemeContext GetThemeContext(PageState? pageStateForCachingOnly);
 
     internal CmThemeContextFull GetThemeContextFull(PageState pageState);
 
@@ -49,6 +50,7 @@ public interface IMagicSettingsService
     internal SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; }
     internal SettingsReader<MagicBreadcrumbSettingsData> Breadcrumbs { get; }
     internal SettingsReader<MagicPageContextSettingsData> PageContexts { get; }
+    internal SettingsReader<MagicContainerSettings> Containers { get; }
 
     internal TokenEngine PageTokenEngine(PageState pageState);
 

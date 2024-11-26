@@ -10,7 +10,7 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
     /// </summary>
     public override string Name => "Default (for Content and Admin)";
 
-    public virtual MagicContainerSettings? Settings => null;
+    public virtual MagicContainerSettingsWip? Settings => null;
 
     [Inject]
     public required IMagicHat MagicHat { get; set; }

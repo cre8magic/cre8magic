@@ -54,4 +54,18 @@ For this, see
 ## How Settings Work Internally
 
 TODO: explain how settings are used internally
-```
+
+Settings have a 2-level hierarchy, shown by the example of a breadcrumb:
+
+`MagicBreadcrumbSettings` would be the main settings which are used in your code.
+These settings have all the possible options, but also some properties which
+can only be set by code.
+
+For example, you can set a `Designer` which is a special object that can create some HTML.
+
+The `MagicBreadcrumbSettingsData` is the underlying class behind the `MagicBreadcrumbSettings`.
+It contains all the properties which can be stored externally, like in a JSON file or database.
+
+## Settings vs. DesignSettings
+
+TODO: explain the difference between settings and design settings
