@@ -24,7 +24,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
     [JsonIgnore]
     public MagicContainerDesignSettings? DesignSettings { get; init; }
 
-    public Module ModuleState { get; init; }
+    public Module? ModuleState { get; init; }
 
     internal static Defaults<MagicContainerSettings> Defaults = new(new());
 
