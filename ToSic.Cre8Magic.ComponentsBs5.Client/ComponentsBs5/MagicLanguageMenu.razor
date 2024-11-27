@@ -27,7 +27,7 @@ Nice to know:
         await base.OnParametersSetAsync();
 
         // Load defined language list. It changes unless the page is reloaded, so we can cache it on this control
-        LanguageKit ??= await MagicHat.LanguageKitAsync(PageState, Settings);
+        LanguageKit ??= await MagicHat.LanguageKitAsync((Settings ?? new()) with { PageState = PageState });
     }
 }
 @if (LanguageKit is { Show: true })

@@ -30,7 +30,11 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
 
     #endregion
 
-    protected IMagicContainerKit ContainerKit => _kit ??= MagicHat.ContainerKit((Settings ?? new()) with { ModuleState = ModuleState });
+    protected IMagicContainerKit ContainerKit => _kit ??= MagicHat.ContainerKit((Settings ?? new()) with
+    {
+        ModuleState = ModuleState,
+        PageState = PageState
+    });
     private IMagicContainerKit? _kit;
 
 }

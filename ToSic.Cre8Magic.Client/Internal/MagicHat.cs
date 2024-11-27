@@ -80,8 +80,8 @@ internal class MagicHat(
         breadcrumbSvc.Value.BreadcrumbKit(pageState, settings);
 
     /// <inheritdoc />
-    public Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = default) =>
-        languageSvc.Value.LanguageKitAsync(pageState, settings);
+    public Task<IMagicLanguageKit> LanguageKitAsync(MagicLanguageSettings? settings = null) =>
+        languageSvc.Value.LanguageKitAsync(GetPageStateOrThrow(settings?.PageState), settings);
 
 
     /// <inheritdoc />

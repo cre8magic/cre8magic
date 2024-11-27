@@ -33,8 +33,10 @@ public interface IMagicHat
     /// <inheritdoc cref="IMagicBreadcrumbService.BreadcrumbKit"/>
     IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default);
 
-    /// <inheritdoc cref="IMagicLanguageService.LanguageKitAsync"/>
-    Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = default);
+    /// <summary>
+    /// Get the kit to work with languages. Must be async, because it might need to load async data from Oqtane.
+    /// </summary>
+    Task<IMagicLanguageKit> LanguageKitAsync(MagicLanguageSettings? settings = default);
 
 
     /// <inheritdoc cref="IMagicUserService.User"/>
