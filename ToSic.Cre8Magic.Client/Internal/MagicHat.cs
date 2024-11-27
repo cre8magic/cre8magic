@@ -98,7 +98,7 @@ internal class MagicHat(
     public IMagicContainerKit ContainerKit(MagicContainerSettings settings) =>
         containerSvc.Value.ContainerKit(
             GetPageStateOrThrow(settings?.PageState),
-            settings?.ModuleState ?? throw new ArgumentException("Module is required for ContainerKit(...)")
+            settings?.ModuleState ?? throw new ArgumentException($"{nameof(settings.ModuleState)} is required for {nameof(ContainerKit)}(...)")
         );
 
     public string Link(PageState pageState, MagicLinkSpecs linkSpecs) =>

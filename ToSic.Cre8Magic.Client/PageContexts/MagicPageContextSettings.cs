@@ -23,7 +23,7 @@ public partial record MagicPageContextSettings: MagicSettingsBase, IHasDebugSett
     /// Clone constructor.
     /// </summary>
     [PrivateApi]
-    internal MagicPageContextSettings(MagicPageContextSettings? priority, MagicPageContextSettings? fallback = default)
+    private MagicPageContextSettings(MagicPageContextSettings? priority, MagicPageContextSettings? fallback = default)
         : base(priority, fallback)
     {
         UseBodyTag = priority?.UseBodyTag ?? fallback?.UseBodyTag;

@@ -7,7 +7,7 @@ public record MagicMenuDesignSettingsPart: MagicDesignSettingsPart, ICanClone<Ma
 {
     public MagicMenuDesignSettingsPart() { }
 
-    public MagicMenuDesignSettingsPart(MagicMenuDesignSettingsPart? priority, MagicMenuDesignSettingsPart? fallback = default): base(priority, fallback)
+    private MagicMenuDesignSettingsPart(MagicMenuDesignSettingsPart? priority, MagicMenuDesignSettingsPart? fallback = default): base(priority, fallback)
     {
         ByLevel = priority?.ByLevel ?? fallback?.ByLevel;
         HasChildren = priority?.HasChildren ?? fallback?.HasChildren;
@@ -15,7 +15,7 @@ public record MagicMenuDesignSettingsPart: MagicDesignSettingsPart, ICanClone<Ma
         InBreadcrumb = priority?.InBreadcrumb ?? fallback?.InBreadcrumb;
     }
 
-    public MagicMenuDesignSettingsPart CloneUnder(MagicMenuDesignSettingsPart? priority, bool forceCopy = false) =>
+    MagicMenuDesignSettingsPart ICanClone<MagicMenuDesignSettingsPart>.CloneUnder(MagicMenuDesignSettingsPart? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

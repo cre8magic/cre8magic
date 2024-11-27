@@ -8,7 +8,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
 {
     internal IMagicPageList Get(MagicBreadcrumbSettings? settings = default)
     {
-        settings ??= new(MagicBreadcrumbSettings.Defaults.Fallback, null);
+        settings ??= MagicBreadcrumbSettings.Defaults.Fallback; // new(MagicBreadcrumbSettings.Defaults.Fallback, null);
         var context = new ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner>
         {
             Designer = settings.Designer,

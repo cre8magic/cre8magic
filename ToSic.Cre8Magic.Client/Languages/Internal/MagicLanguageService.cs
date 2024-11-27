@@ -56,7 +56,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             settingsSvc.LanguageDesigns,
             OptionalPrefix,
             DefaultPartName,
-            finalize: (settingsData, designSettings) => new(settingsData, settings) { DesignSettings = designSettings });
+            finalize: (settingsData, designSettings) => settingsData with /*new(settingsData, settings)*/ { DesignSettings = designSettings });
 
 
     private async Task<List<MagicLanguage>> LanguagesToShow(PageState pageState, MagicLanguageSettings settings)

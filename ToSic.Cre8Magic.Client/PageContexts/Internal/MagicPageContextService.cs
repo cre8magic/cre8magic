@@ -21,7 +21,7 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
     private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSettings? settings)
     {
         var (settingsData, _, _, _) = MergeSettings(pageState, settings);
-        var settingsFull = new MagicPageContextSettings(settingsData, settings);
+        var settingsFull = settingsData; // new MagicPageContextSettings(settingsData, settings);
 
         var themeCtx = settingsSvc.GetThemeContextFull(pageState);
 

@@ -13,13 +13,13 @@ public record MagicBreadcrumbDesignSettings : SettingsWithInherit, ICanClone<Mag
 {
     public MagicBreadcrumbDesignSettings() { }
 
-    public MagicBreadcrumbDesignSettings(MagicBreadcrumbDesignSettings? priority, MagicBreadcrumbDesignSettings? fallback = default)
+    private MagicBreadcrumbDesignSettings(MagicBreadcrumbDesignSettings? priority, MagicBreadcrumbDesignSettings? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    public MagicBreadcrumbDesignSettings CloneUnder(MagicBreadcrumbDesignSettings? priority, bool forceCopy = false) =>
+    MagicBreadcrumbDesignSettings ICanClone<MagicBreadcrumbDesignSettings>.CloneUnder(MagicBreadcrumbDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

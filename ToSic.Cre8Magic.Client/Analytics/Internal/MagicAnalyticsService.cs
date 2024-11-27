@@ -22,17 +22,16 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
 
     private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSettings? settings = null)
     {
-        var x = 7;
-        if ((settings as IDebugSettings)?.DebugThis == true)
-            x = 8;
-
+        //var x = 7;
+        //if ((settings as IDebugSettings)?.DebugThis == true)
+        //    x = 8;
 
         var (settingsData, _, _, _) = MergeSettings(pageState, settings);
-        var settingsFull = new MagicAnalyticsSettings(settingsData, settings);
+        //var settingsFull = new MagicAnalyticsSettings(settingsData, settings);
 
         var result = new MagicAnalyticsKit
         {
-            Settings = settingsFull,
+            Settings = settingsData,
             PageState = pageState,
             Service = this
         };

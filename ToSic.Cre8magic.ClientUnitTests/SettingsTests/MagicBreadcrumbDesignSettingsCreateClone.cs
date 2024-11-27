@@ -1,4 +1,5 @@
 ﻿using ToSic.Cre8magic.Breadcrumbs;
+using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsTests;
 
@@ -20,13 +21,13 @@ public class MagicBreadcrumbDesignSettingsCreateClone
     public void ConstructorClone2() => VerifySameAsOriginal(new(null, Original()));
 
     [Fact]
-    public void CloneWithNull() => VerifySameAsOriginal(Original().CloneUnder(null));
+    public void CloneWithNull() => VerifySameAsOriginal(((ICanClone<MagicBreadcrumbDesignSettingsPart>)Original()).CloneUnder(null));
 
     [Fact]
-    public void CloneWithNull2() => VerifySameAsOriginal(Original().CloneUnder(null, true));
+    public void CloneWithNull2() => VerifySameAsOriginal(((ICanClone<MagicBreadcrumbDesignSettingsPart>)Original()).CloneUnder(null, true));
 
     [Fact]
-    public void CloneWithHalf() => VerifySameAsMix(Original().CloneUnder(Half()));
+    public void CloneWithHalf() => VerifySameAsMix(((ICanClone<MagicBreadcrumbDesignSettingsPart>)Original()).CloneUnder(Half()));
 
     private static MagicBreadcrumbDesignSettingsPart Original() =>
         new()

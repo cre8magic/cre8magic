@@ -15,7 +15,7 @@ public record MagicLanguageSettings : MagicSettingsBase, IHasDebugSettings, ICan
     public MagicLanguageSettings() {}
 
     [PrivateApi]
-    public MagicLanguageSettings(MagicLanguageSettings? priority, MagicLanguageSettings? fallback = default)
+    private MagicLanguageSettings(MagicLanguageSettings? priority, MagicLanguageSettings? fallback = default)
         : base(priority, fallback)
     {
         HideOthers = priority?.HideOthers ?? fallback?.HideOthers;
@@ -27,7 +27,7 @@ public record MagicLanguageSettings : MagicSettingsBase, IHasDebugSettings, ICan
     }
 
     [PrivateApi]
-    public MagicLanguageSettings CloneUnder(MagicLanguageSettings? priority, bool forceCopy = false) =>
+    MagicLanguageSettings ICanClone<MagicLanguageSettings>.CloneUnder(MagicLanguageSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

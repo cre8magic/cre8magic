@@ -63,7 +63,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
             settingsSvc.MenuDesigns, 
             OptionalPrefix,
             DefaultPartName,
-            finalize: (settingsData, designSettings) => new(settingsData, settings) { DesignSettings = designSettings });
+            finalize: (settingsData, designSettings) => settingsData with /*new(settingsData, settings)*/ { DesignSettings = designSettings });
 
 
     private static List<IMagicPageWithDesignWip> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)

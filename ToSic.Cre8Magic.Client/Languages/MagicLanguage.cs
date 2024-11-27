@@ -15,14 +15,14 @@ public record MagicLanguage: ICanClone<MagicLanguage>
     /// </summary>
     public MagicLanguage() { }
 
-    public MagicLanguage(MagicLanguage? priority, MagicLanguage? fallback = default)
+    private MagicLanguage(MagicLanguage? priority, MagicLanguage? fallback = default)
     {
         Culture = priority?.Culture ?? fallback?.Culture ?? "en";
         Label = priority?.Label ?? fallback?.Label;
         Description = priority?.Description ?? fallback?.Description;
     }
 
-    public MagicLanguage CloneUnder(MagicLanguage? priority, bool forceCopy = false) =>
+    MagicLanguage ICanClone<MagicLanguage>.CloneUnder(MagicLanguage? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     public string Culture { get; init; } = "en";

@@ -11,8 +11,11 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
 {
     public MagicDesignSettingsPart() { }
 
+    /// <summary>
+    /// Internal because of inheritance, and we don't want it protected because that would be public.
+    /// </summary>
     [PrivateApi]
-    public MagicDesignSettingsPart(MagicDesignSettingsPart? priority, MagicDesignSettingsPart? fallback = default)
+    internal MagicDesignSettingsPart(MagicDesignSettingsPart? priority, MagicDesignSettingsPart? fallback = default)
     {
         Classes = priority?.Classes ?? fallback?.Classes;
         Value = priority?.Value ?? fallback?.Value;
@@ -23,7 +26,7 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
     }
 
     [PrivateApi]
-    public MagicDesignSettingsPart CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy = false) =>
+    MagicDesignSettingsPart ICanClone<MagicDesignSettingsPart>.CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

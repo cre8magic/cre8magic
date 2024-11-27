@@ -22,7 +22,7 @@ public record MagicMenuSettings : MagicSettingsBase, IHasDebugSettings, IMagicPa
     public MagicMenuSettings() { }
 
     [PrivateApi]
-    internal MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default) : base(priority, fallback)
+    private MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default) : base(priority, fallback)
     {
         Id = priority?.Id ?? fallback?.Id;
         Debug = priority?.Debug ?? fallback?.Debug;

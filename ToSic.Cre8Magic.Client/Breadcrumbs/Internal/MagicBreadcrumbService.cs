@@ -37,6 +37,6 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
             settingsSvc.BreadcrumbDesigns,
             OptionalPrefix,
             DefaultPartName,
-            finalize: (settingsData, designSettings) => new(settingsData, settings) { DesignSettings = designSettings });
+            finalize: (settingsData, designSettings) => settingsData with { DesignSettings = designSettings });
 
 }

@@ -36,7 +36,7 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
             settingsSvc.ContainerDesigns,
             OptionalPrefix,
             DefaultPartName,
-            finalize: (settingsData, designSettings) => new(settingsData, settings) { DesignSettings = designSettings });
+            finalize: (settingsData, designSettings) => settingsData with /* new(settingsData, settings)*/ { DesignSettings = designSettings });
 
 
 

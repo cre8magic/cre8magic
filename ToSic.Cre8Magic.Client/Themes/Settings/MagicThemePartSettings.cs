@@ -4,19 +4,17 @@ namespace ToSic.Cre8magic.Themes.Settings;
 
 public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
 {
-    /// <summary>
-    /// For json
-    /// </summary>
+    [PrivateApi]
     public MagicThemePartSettings() {}
 
-    public MagicThemePartSettings(MagicThemePartSettings? priority, MagicThemePartSettings? fallback = default)
+    private MagicThemePartSettings(MagicThemePartSettings? priority, MagicThemePartSettings? fallback = default)
     {
         Show = priority?.Show ?? fallback?.Show;
         Design = priority?.Design ?? fallback?.Design;
         Settings = priority?.Settings ?? fallback?.Settings;
     }
 
-    public MagicThemePartSettings CloneUnder(MagicThemePartSettings? priority, bool forceCopy = false) =>
+    MagicThemePartSettings ICanClone<MagicThemePartSettings>.CloneUnder(MagicThemePartSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

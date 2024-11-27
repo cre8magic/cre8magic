@@ -10,7 +10,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
     public MagicContainerSettings() { }
 
     [PrivateApi]
-    public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
+    private MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
@@ -18,7 +18,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
     }
 
     [PrivateApi]
-    public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
+    MagicContainerSettings ICanClone<MagicContainerSettings>.CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     [JsonIgnore]

@@ -13,13 +13,13 @@ public record MagicLanguageDesignSettings : SettingsWithInherit, ICanClone<Magic
 {
     public MagicLanguageDesignSettings() { }
 
-    public MagicLanguageDesignSettings(MagicLanguageDesignSettings? priority, MagicLanguageDesignSettings? fallback = default)
+    private MagicLanguageDesignSettings(MagicLanguageDesignSettings? priority, MagicLanguageDesignSettings? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    public MagicLanguageDesignSettings CloneUnder(MagicLanguageDesignSettings? priority, bool forceCopy = false) =>
+    MagicLanguageDesignSettings ICanClone<MagicLanguageDesignSettings>.CloneUnder(MagicLanguageDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

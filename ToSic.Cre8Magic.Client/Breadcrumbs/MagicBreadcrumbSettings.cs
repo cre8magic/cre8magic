@@ -20,7 +20,7 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IM
     /// Cloning constructor
     /// </summary>
     [PrivateApi]
-    public MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = default): base(priority, fallback)
+    private MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = default): base(priority, fallback)
     {
         WithActive = priority?.WithActive ?? fallback?.WithActive ?? Defaults.Fallback.WithActive;
         WithHome = priority?.WithHome ?? fallback?.WithHome ?? Defaults.Fallback.WithHome;
@@ -39,7 +39,7 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IM
     }
 
     [PrivateApi]
-    public MagicBreadcrumbSettings CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy = false) =>
+    MagicBreadcrumbSettings ICanClone<MagicBreadcrumbSettings>.CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

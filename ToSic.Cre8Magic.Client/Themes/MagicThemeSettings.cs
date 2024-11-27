@@ -15,8 +15,7 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     [PrivateApi]
     public MagicThemeSettings() { }
 
-    [PrivateApi]
-    public MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = default)
+    private MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = default)
         : base(priority, fallback)
     {
         Logo = priority?.Logo ?? fallback?.Logo ?? Defaults.Fallback.Logo;
@@ -28,7 +27,6 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
-    [PrivateApi]
     MagicThemeSettings ICanClone<MagicThemeSettings>.CloneUnder(MagicThemeSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

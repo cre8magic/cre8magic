@@ -13,9 +13,10 @@ namespace ToSic.Cre8magic.Themes.Settings;
 /// </summary>
 public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThemeDesignSettings>
 {
+    [PrivateApi]
     public MagicThemeDesignSettings() { }
 
-    public MagicThemeDesignSettings(MagicThemeDesignSettings? priority, MagicThemeDesignSettings? fallback = default)
+    private MagicThemeDesignSettings(MagicThemeDesignSettings? priority, MagicThemeDesignSettings? fallback = default)
         : base(priority, fallback)
     {
         PaneIsEmpty = priority?.PaneIsEmpty ?? fallback?.PaneIsEmpty;
@@ -23,7 +24,7 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    public MagicThemeDesignSettings CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
+    MagicThemeDesignSettings ICanClone<MagicThemeDesignSettings>.CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     
