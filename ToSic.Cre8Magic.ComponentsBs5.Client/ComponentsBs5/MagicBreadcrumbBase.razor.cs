@@ -2,6 +2,7 @@
 using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.ComponentsBs5.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.ComponentsBs5;
@@ -39,11 +40,7 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     /// The Breadcrumb for the current page.
     /// Will be updated when the page changes.
     /// </summary>
-    protected IMagicBreadcrumbKit BreadcrumbKit => _breadcrumbKit.Get(PageState, () => MagicHat.BreadcrumbKit(Customize(
-        (Settings ?? new()) with
-        {
-            PageState = PageState
-        })));
+    protected IMagicBreadcrumbKit BreadcrumbKit => _breadcrumbKit.Get(PageState, () => MagicHat.BreadcrumbKit(Customize(Settings.With(PageState))));
     private readonly GetKeepByPageId<IMagicBreadcrumbKit> _breadcrumbKit = new();
 
 }

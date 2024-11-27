@@ -85,8 +85,8 @@ internal class MagicHat(
 
 
     /// <inheritdoc />
-    public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings = default) =>
-        pageContextSvc.Value.PageContextKit(pageState, settings);
+    public IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = null) =>
+        pageContextSvc.Value.PageContextKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     /// <inheritdoc />
     public MagicUser User(PageState pageState) =>

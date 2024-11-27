@@ -62,5 +62,7 @@ public interface IMagicHat
 
 
     string Link(PageState pageState, MagicLinkSpecs linkSpecs);
-    IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings = default);
+
+
+    IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = default);
 }

@@ -1,4 +1,5 @@
 ﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Settings
 @inherits ComponentBase
 @inject IMagicHat MagicHat;
 
@@ -29,11 +30,11 @@
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-        await MagicHat.PageContextKit(PageState, Settings).UpdateBodyTag();
+        await MagicHat.PageContextKit(Settings.With(PageState)).UpdateBodyTag();
     }
 }
 @{
-    var state = MagicHat.PageContextKit(PageState, Settings);
+    var state = MagicHat.PageContextKit(Settings.With(PageState));
 }
 @* If PutInBody a JS will place the classes in the Body tag, so no need to add it here *@
 @if (state.UseBodyTag)
