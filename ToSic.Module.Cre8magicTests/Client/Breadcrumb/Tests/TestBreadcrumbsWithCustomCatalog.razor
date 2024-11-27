@@ -24,7 +24,7 @@
         }
     };
 
-    var bcKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings().UseCatalog(catalog));
+    var bcKit = MagicHat.BreadcrumbKit(((new MagicBreadcrumbSettings() with { PageState = PageState }).UseCatalog(catalog)));
 }
 
 <div class="alert alert-info">

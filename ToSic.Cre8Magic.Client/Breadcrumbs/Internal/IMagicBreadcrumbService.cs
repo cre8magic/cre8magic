@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 public interface IMagicBreadcrumbService
 {
     /// <summary>
-    /// Get the BreadcrumbKit.
+    /// Get the Kit to work with a Breadcrumb.
     /// It will either use the provided settings, retrieve these from the global information or use a default settings.
     /// </summary>
     /// <param name="pageState"></param>

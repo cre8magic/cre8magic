@@ -12,8 +12,9 @@
 <h2>Settings directly in Code</h2>
 
 @{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
+    var breadcrumbKit = MagicHat.BreadcrumbKit(new MagicBreadcrumbSettings
     {
+        PageState = PageState,
         WithActive = true,
         WithHome = false,
     });
@@ -42,7 +43,7 @@
 @* Breadcrumb using the settings from the catalog *@
 @{
     // Note: equivalent to ... = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "default" });
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+    breadcrumbKit = MagicHat.BreadcrumbKit(new() { PageState = PageState });
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)
@@ -74,7 +75,7 @@
 
 @* Breadcrumb using the settings from the catalog *@
 @{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "productsBreadcrumb" });
+    breadcrumbKit = MagicHat.BreadcrumbKit(new() { PageState = PageState, SettingsName = "productsBreadcrumb" });
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)

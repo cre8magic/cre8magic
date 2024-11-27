@@ -39,7 +39,11 @@ public abstract class MagicBreadcrumbBase: ComponentBase
     /// The Breadcrumb for the current page.
     /// Will be updated when the page changes.
     /// </summary>
-    protected IMagicBreadcrumbKit BreadcrumbKit => _breadcrumbKit.Get(PageState, () => MagicHat.BreadcrumbKit(PageState, Customize(Settings ?? new())));
+    protected IMagicBreadcrumbKit BreadcrumbKit => _breadcrumbKit.Get(PageState, () => MagicHat.BreadcrumbKit(Customize(
+        (Settings ?? new()) with
+        {
+            PageState = PageState
+        })));
     private readonly GetKeepByPageId<IMagicBreadcrumbKit> _breadcrumbKit = new();
 
 }

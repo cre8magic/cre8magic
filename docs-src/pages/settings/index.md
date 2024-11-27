@@ -13,6 +13,7 @@ These are the things you should probably know:
 1. How to provide settings in a central location
 1. How to provide settings by name or theme part name (TODO:)
 1. How to provide design settings (TODO:)
+1. How to provide PageState (TODO:)
 1. How settings work internally
 
 ## Settings for each Scenario
@@ -27,10 +28,11 @@ TODO: list all relevant parts
 Settings can be used directly in the code, like:
 
 ```csharp
-var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
+var breadcrumbKit = MagicHat.BreadcrumbKit(new MagicBreadcrumbSettings
 {
-    WithActive = true,
-    WithHome = false,
+  PageState = PageState,
+  WithActive = true,
+  WithHome = false,
 });
 ```
 

@@ -1,11 +1,7 @@
-﻿using Oqtane.Models;
-using Oqtane.UI;
+﻿using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Analytics.Internal;
 using ToSic.Cre8magic.Breadcrumbs;
-using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
-using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Links;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings;
@@ -30,8 +26,11 @@ public interface IMagicHat
 
     #endregion
 
-    /// <inheritdoc cref="IMagicBreadcrumbService.BreadcrumbKit"/>
-    IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = default);
+    /// <summary>
+    /// Get the Kit to work with a Breadcrumb.
+    /// It will either use the provided settings, retrieve these from the global information or use a default settings.
+    /// </summary>
+    IMagicBreadcrumbKit BreadcrumbKit(MagicBreadcrumbSettings? settings = default);
 
     /// <summary>
     /// Get the kit to work with languages. Must be async, because it might need to load async data from Oqtane.
