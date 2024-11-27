@@ -36,7 +36,7 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
         };
     }
 
-    private Data3WithJournal<MagicPageContextSettingsData, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicPageContextSettings? settings) =>
+    private Data3WithJournal<MagicPageContextSettings, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicPageContextSettings? settings) =>
         settingsSvc.GetBestSettings(
             pageState,
             settings,

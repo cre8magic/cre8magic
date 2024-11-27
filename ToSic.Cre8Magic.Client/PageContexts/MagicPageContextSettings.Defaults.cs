@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.PageContexts;
 ///
 /// This configures how the page context is rendered, and what classes are added to the body tag.
 /// </summary>
-public partial record MagicPageContextSettingsData
+public partial record MagicPageContextSettings
 {
     private const string SitePrefixDefault = "site";
     private const string PagePrefixDefault = "page";
@@ -16,7 +16,7 @@ public partial record MagicPageContextSettingsData
     private const string BodyDivId = "cre8magic-root";
     internal const string SettingFromDefaults = $"{MainPrefix}-warning-this-is-from-defaults-you-should-set-your-own-value";
 
-    internal static Defaults<MagicPageContextSettingsData> Defaults = new()
+    internal static Defaults<MagicPageContextSettings> Defaults = new()
     {
         Foundation = new()
         {

@@ -90,8 +90,8 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// <summary>
     /// The menu definitions
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicPageContextSettingsData>))]
-    public Dictionary<string, MagicPageContextSettingsData> PageContexts { get; init; } = new(InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicPageContextSettings>))]
+    public Dictionary<string, MagicPageContextSettings> PageContexts { get; init; } = new(InvariantCultureIgnoreCase);
 
     /// <summary>
     /// Design definitions of the menu

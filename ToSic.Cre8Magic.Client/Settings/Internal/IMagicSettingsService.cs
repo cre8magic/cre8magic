@@ -58,7 +58,7 @@ public interface IMagicSettingsService
     internal SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; }
 
 
-    internal SettingsReader<MagicPageContextSettingsData> PageContexts { get; }
+    internal SettingsReader<MagicPageContextSettings> PageContexts { get; }
     internal SettingsReader<MagicContainerSettings> Containers { get; }
     internal SettingsReader<MagicContainerDesignSettings> ContainerDesigns { get; }
 

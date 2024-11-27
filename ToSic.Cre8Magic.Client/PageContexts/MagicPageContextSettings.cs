@@ -1,50 +1,73 @@
 ﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
-using ToSic.Cre8magic.Settings.Internal.Docs;
 
 namespace ToSic.Cre8magic.PageContexts;
 
-public record MagicPageContextSettings: MagicPageContextSettingsData, ISettingsForCodeUse, IDebugSettings
+/// <summary>
+/// Magic Page Context Settings - Data.
+///
+/// This configures how the page context is rendered, and what classes are added to the body tag.
+/// </summary>
+public partial record MagicPageContextSettings: MagicSettingsBase, IHasDebugSettings, ICanClone<MagicPageContextSettings>
 {
+    #region Constructors and Cloning
+
+    /// <summary>
+    /// Empty constructor for serialization and creating new records.
+    /// </summary>
+    [PrivateApi]
     public MagicPageContextSettings() { }
 
     /// <summary>
-    /// Constructor to re-hydrate from object of base class.
+    /// Clone constructor.
     /// </summary>
     [PrivateApi]
-    internal MagicPageContextSettings(MagicPageContextSettingsData ancestor, MagicPageContextSettings? original) : base(ancestor)
+    internal MagicPageContextSettings(MagicPageContextSettings? priority, MagicPageContextSettings? fallback = default)
+        : base(priority, fallback)
     {
-        if (original == null)
-            return;
+        UseBodyTag = priority?.UseBodyTag ?? fallback?.UseBodyTag;
 
-        PartName = original.PartName;
-        SettingsName = original.SettingsName;
-        DesignName = original.DesignName;
-
-        ((IDebugSettings)this).Catalog = ((IDebugSettings)original).Catalog;
+        ClassList = priority?.ClassList ?? fallback?.ClassList;
+        PageIsHome = priority?.PageIsHome ?? fallback?.PageIsHome;
+        TagId = priority?.TagId ?? fallback?.TagId;
+        Classes = priority?.Classes ?? fallback?.Classes;
+        
+        Debug = priority?.Debug ?? fallback?.Debug;
     }
 
+    /// <inheritdoc />
+    [PrivateApi]
+    MagicPageContextSettings ICanClone<MagicPageContextSettings>.CloneUnder(MagicPageContextSettings? priority, bool forceCopy = false) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
+    #endregion
+
+
+    /// <summary>
+    /// If true, the body tag will be used to add classes and other attributes.
+    /// If false, it will use a div around the content.
+    /// </summary>
+    public bool? UseBodyTag { get; init; }
+    internal bool UseBodyTagSafe => UseBodyTag ?? false;
+
+    /// <summary>
+    /// List of classes to add for the context.
+    /// Should usually contain placeholders.
+    /// </summary>
+    public string[]? ClassList { get; init; }
+
+    /// <summary>
+    /// Classes to use if the page is the home page - or not.
+    /// </summary>
+    public MagicSettingOnOff? PageIsHome { get; init; }
+
+    public string? TagId { get; init; }
+
+
+    public MagicDebugSettings? Debug { get; init; }
+
+
     public string? Classes { get; init; }
-
-    #region Settings for Code
-
-    /// <inheritdoc/>
-    public string? PartName { get; init; }
-
-    /// <inheritdoc/>
-    public string? SettingsName { get; init; }
-
-    /// <inheritdoc/>
-    public string? DesignName { get; init; }
-
-    #endregion
-
-    #region Debug Settings
-
-    MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
-
-    bool? IDebugSettings.DebugThis { get; set; }
-
-    #endregion
 
 }

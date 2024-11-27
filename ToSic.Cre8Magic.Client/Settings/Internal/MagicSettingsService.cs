@@ -133,9 +133,9 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #region PageContexts
 
-    public SettingsReader<MagicPageContextSettingsData> PageContexts =>
-        _pageContexts ??= new(this, MagicPageContextSettingsData.Defaults, catalog => catalog.PageContexts);
-    private SettingsReader<MagicPageContextSettingsData>? _pageContexts;
+    public SettingsReader<MagicPageContextSettings> PageContexts =>
+        _pageContexts ??= new(this, MagicPageContextSettings.Defaults, catalog => catalog.PageContexts);
+    private SettingsReader<MagicPageContextSettings>? _pageContexts;
     
 
     #endregion
