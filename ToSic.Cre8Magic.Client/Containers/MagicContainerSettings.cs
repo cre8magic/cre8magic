@@ -7,9 +7,9 @@ namespace ToSic.Cre8magic.Containers;
 
 public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContainerSettings>
 {
+    [PrivateApi]
     public MagicContainerSettings() { }
 
-    [PrivateApi]
     private MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
@@ -17,7 +17,6 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
         ModuleState = priority?.ModuleState ?? fallback?.ModuleState;
     }
 
-    [PrivateApi]
     MagicContainerSettings ICanClone<MagicContainerSettings>.CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

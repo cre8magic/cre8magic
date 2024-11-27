@@ -1,13 +1,9 @@
 ﻿@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Cre8magic.Pages
 @inherits ToSic.Cre8magic.ComponentsBs5.MagicBreadcrumbBase;
 
 @code {
-
-    protected override MagicBreadcrumbSettings Customize(MagicBreadcrumbSettings settings) =>
-        settings.Designer != null
-            ? settings
-            : settings with { Designer = new MagicBreadcrumbDesignerBs5() };
-
+    public override IMagicPageDesigner Designer { get; set; } = new MagicBreadcrumbDesignerBs5();
 }
 
 <nav aria-label="breadcrumb">

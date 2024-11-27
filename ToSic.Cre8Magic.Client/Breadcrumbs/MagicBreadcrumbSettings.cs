@@ -12,7 +12,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>
+public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IWith<IMagicPageDesigner?>
 {
     public MagicBreadcrumbSettings() { }
 
@@ -128,6 +128,8 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IM
 
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
     public IMagicPageDesigner? Designer { get; init; }
+
+    IMagicPageDesigner? IWith<IMagicPageDesigner?>.WithData { get => Designer; init => Designer = value; }
 
     [JsonIgnore]
     public MagicBreadcrumbDesignSettings? DesignSettings { get; init; }
