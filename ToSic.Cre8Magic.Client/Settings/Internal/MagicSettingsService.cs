@@ -85,7 +85,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         // Tokens engine for this specific PageState
         var pageTokens = PageTokenEngine(pageState);
 
-        var designSettings = ThemeDesignSettings(ctxLight.ThemeSettings, ctxLight.SettingsName);
+        var designSettings = ThemeDesigns.FindAndNeutralize([ctxLight.ThemeSettings.Design, ctxLight.SettingsName]);
         var ctx = new CmThemeContextFull(ctxLight.SettingsName, pageState, ctxLight.ThemeSettings, designSettings, pageTokens, ctxLight.Journal);
         _themeCtxFullCache[originalNameForCache] = ctx;
         return ctx;
@@ -136,13 +136,21 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     public SettingsReader<MagicPageContextSettings> PageContexts =>
         _pageContexts ??= new(this, MagicPageContextSettings.Defaults, catalog => catalog.PageContexts);
     private SettingsReader<MagicPageContextSettings>? _pageContexts;
-    
+
 
     #endregion
+
+    #region Themes
 
     private SettingsReader<MagicThemeSettings> Themes =>
         _getTheme ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);
     private SettingsReader<MagicThemeSettings>? _getTheme;
+
+    public SettingsReader<MagicThemeDesignSettings> ThemeDesigns =>
+        _themeDesigns ??= new(this, MagicThemeDesignSettings.Defaults, catalog => catalog.ThemeDesigns);
+    private SettingsReader<MagicThemeDesignSettings>? _themeDesigns;
+
+    #endregion
 
     public TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func)
     {
@@ -165,19 +173,6 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     private SettingsReader<MagicLanguageDesignSettings>? _languageDesigns;
 
     #endregion
-
-    public SettingsReader<MagicThemeDesignSettings> ThemeDesign =>
-        _themeDesign ??= new(this, MagicThemeDesignSettings.Defaults, catalog => catalog.ThemeDesigns);
-    private SettingsReader<MagicThemeDesignSettings>? _themeDesign;
-
-    public MagicThemeDesignSettings ThemeDesignSettings(MagicThemeSettings settings, string settingsName) =>
-        ((IMagicSettingsService)this).ThemeDesign.FindAndNeutralize(
-            [
-                settings.Design,
-                settings.Parts.GetPartSettingsNameOrFallback(nameof(settings.Design), settingsName),
-                settingsName
-            ]
-        );
 
     #region Containers
 

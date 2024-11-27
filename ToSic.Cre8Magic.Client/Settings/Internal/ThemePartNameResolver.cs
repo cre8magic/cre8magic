@@ -34,7 +34,7 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
         var betterName = themeSettingsParts.TryGetValue(initialName, out var part)
-            ? part.GetSetting(specs.Section)
+            ? part.GetSettingName(specs.Section)
             : null;
 
         // If the better name wants to use the main config name ("=") then use that and exit
@@ -43,7 +43,7 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
 
         if (betterName == null && !string.IsNullOrEmpty(specs.Prefix) && !initialName.StartsWith(specs.Prefix))
             betterName = themeSettingsParts.TryGetValue($"{specs.Prefix}{initialName}", out part)
-                ? part.GetSetting(specs.Section)
+                ? part.GetSettingName(specs.Section)
                 : null;
 
         if (!betterName.HasValue())

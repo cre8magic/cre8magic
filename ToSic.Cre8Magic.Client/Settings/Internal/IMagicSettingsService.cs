@@ -41,7 +41,7 @@ public interface IMagicSettingsService
 
 
     internal SettingsReader<MagicAnalyticsSettings> Analytics { get; }
-    internal SettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
+    internal SettingsReader<MagicThemeDesignSettings> ThemeDesigns { get; }
 
     internal SettingsReader<MagicLanguageSettings> Languages { get; }
     internal SettingsReader<MagicLanguageDesignSettings> LanguageDesigns { get; }

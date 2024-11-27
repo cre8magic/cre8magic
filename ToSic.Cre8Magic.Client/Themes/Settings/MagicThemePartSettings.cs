@@ -52,7 +52,7 @@ public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
     /// </summary>
     public string? Settings { get; init; }
 
-    internal string? GetSetting(ThemePartSectionEnum partSection) =>
+    internal string? GetSettingName(ThemePartSectionEnum partSection) =>
         partSection switch
         {
             ThemePartSectionEnum.Design => Design,
