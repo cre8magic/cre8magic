@@ -1,11 +1,13 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Designers;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
 public interface IMagicBreadcrumbKit
 {
-    IMagicPageList Pages { get; init; }
-    //MagicBreadcrumbSettings Settings { get; init; }
+    IMagicPageList Pages { get; }
+    MagicBreadcrumbSettings Settings { get; }
 
-    //IMagicPage Home { get; init; }
+    bool Show { get; }
+    IMagicDesign Design { get; init; }
 }

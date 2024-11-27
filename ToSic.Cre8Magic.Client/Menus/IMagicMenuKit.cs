@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Designers;
+using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Menus;
@@ -29,6 +30,8 @@ public interface IMagicMenuKit
     /// Usually determined by the settings.
     /// </summary>
     string Variant { get; }
+
+    IMagicDesign Design { get; init; }
 
     IMagicMenuKit Kit(IMagicPageWithDesignWip page);
 }

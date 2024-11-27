@@ -12,10 +12,4 @@ public interface IMagicPageWithDesignWip: IMagicPage, IMagicPageList
     ///// <inheritdoc cref="IMagicPageList.MenuLevel"/>
     new int MenuLevel { get; }
 
-    ///// <inheritdoc cref="IMagicPageList.Classes"/>
-    //new string? Classes(string tag);
-
-    ///// <inheritdoc cref="IMagicPageList.Value"/>
-    //new string? Value(string key);
-
 }

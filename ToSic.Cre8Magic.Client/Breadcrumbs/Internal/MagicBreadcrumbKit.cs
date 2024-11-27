@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Designers;
+using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
@@ -8,5 +9,7 @@ internal record MagicBreadcrumbKit : IMagicBreadcrumbKit
 
     public required MagicBreadcrumbSettings Settings { get; init; }
 
-    public bool Show { get; init; }
+    public required bool Show { get; init; }
+
+    public required IMagicDesign Design { get; init; }
 }

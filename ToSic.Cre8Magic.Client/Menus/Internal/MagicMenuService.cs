@@ -1,4 +1,5 @@
 ﻿using Oqtane.UI;
+using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Menus.Internal.Nodes;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
@@ -44,12 +45,13 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
 
         var nodeFactory = new MagicMenuNodeFactory(context);
         var list = new MagicPageList(pageFactory, nodeFactory, GetRootPages(context, nodeFactory));
-
+        var design = new PageListDesignWip(list);
         var kit = new MagicMenuKit
         {
             Pages = list,
             Settings = newSettings,
             Context = context,
+            Design = design
         };
         return kit;
     }

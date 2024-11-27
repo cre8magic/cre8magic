@@ -20,11 +20,13 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
         var factory = new MagicPageFactory(pageState);
         var show = themePart?.Show != false;
         var list = factory.Breadcrumb.Get(settingsFull);
+        var design = new PageListDesignWip(list);
         return new MagicBreadcrumbKit
         {
             Pages = list,
             Settings = settingsFull,
             Show = show,
+            Design = design
         };
     }
 
