@@ -62,6 +62,11 @@ public interface IMagicSettingsService
     internal SettingsReader<MagicContainerSettings> Containers { get; }
     internal SettingsReader<MagicContainerDesignSettings> ContainerDesigns { get; }
 
+    /// <summary>
+    /// WIP: PageState for this service
+    /// </summary>
+    PageState? PageState { get; }
+
     internal TokenEngine PageTokenEngine(PageState pageState);
 
     ///// <summary>
@@ -74,4 +79,5 @@ public interface IMagicSettingsService
     //internal (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback);
     MagicDebugState DebugState(PageState pageState);
 
+    IMagicSettingsService UsePageState(PageState pageState);
 }

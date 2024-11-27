@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using Oqtane.UI;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Analytics;
@@ -27,6 +28,8 @@ public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyti
         PageViewTrackFirst = priority?.PageViewTrackFirst ?? fallback?.PageViewTrackFirst;
         PageViewJs = priority?.PageViewJs ?? fallback?.PageViewJs;
         PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
+
+        PageState = priority?.PageState ?? fallback?.PageState;
     }
 
     [PrivateApi]
@@ -34,6 +37,12 @@ public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyti
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion
+
+
+    /// <summary>
+    /// WIP
+    /// </summary>
+    public PageState? PageState { get; init; }
 
     /// <summary>
     /// ID of Google Tag Manager.

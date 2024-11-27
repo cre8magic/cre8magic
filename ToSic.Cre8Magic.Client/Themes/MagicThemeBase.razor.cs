@@ -69,6 +69,12 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicHat.ThemeKit(PageState));
     private readonly GetKeepByPageId<IMagicThemeKit> _themeKit = new();
 
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        MagicHat.UsePageState(PageState);
+    }
+
     /// <summary>
     /// OnInitialized, make ure that cre8magic knows what settings this theme wants.
     /// </summary>
@@ -85,6 +91,6 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-        await MagicHat.AnalyticsKit(PageState).TrackPage(firstRender);
+        await MagicHat.AnalyticsKit().TrackPage(firstRender);
     }
 }

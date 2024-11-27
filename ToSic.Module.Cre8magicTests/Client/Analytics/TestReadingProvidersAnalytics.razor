@@ -1,26 +1,20 @@
 ﻿@using System.Diagnostics
 @using ToSic.Cre8magic
 @using ToSic.Cre8magic.Analytics
-@using ToSic.Cre8magic.Components.Internal
-@using ToSic.Cre8magic.Settings.Internal.Debug
 @inherits ComponentBase
 @inject IMagicHat MagicHat
-@code {
-    /// <inheritdoc cref="ComponentDocs.PageState"/>
-    [CascadingParameter]
-    public required PageState PageState { get; set; }
-}
 @{
-    var analyticsKit = MagicHat.AnalyticsKit(PageState, new() { SettingsName = "default" });
+    var analyticsKit = MagicHat.AnalyticsKit(new() { SettingsName = "default" });
 
     // Run some performance tests
     var stopWatch = new Stopwatch();
+    var testSettings = new MagicAnalyticsSettings { SettingsName = "analytics-test" };
     stopWatch.Start();
-    var analyticsTestKit = MagicHat.AnalyticsKit(PageState, (new MagicAnalyticsSettings { SettingsName = "analytics-test" }).Debug());
+    var analyticsTestKit = MagicHat.AnalyticsKit(testSettings);
 
     var cycles = 10000;
     for(var i=  0; i < 1000; i++)
-        analyticsTestKit = MagicHat.AnalyticsKit(PageState, (new MagicAnalyticsSettings { SettingsName = "analytics-test" }).Debug());
+        analyticsTestKit = MagicHat.AnalyticsKit(testSettings);
 
     stopWatch.Stop();
 }

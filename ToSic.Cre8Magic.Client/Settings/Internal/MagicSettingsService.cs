@@ -1,4 +1,5 @@
-﻿using Oqtane.UI;
+﻿using Oqtane.Models;
+using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
@@ -31,6 +32,17 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     private string? _layoutName;
 
+    public IMagicSettingsService UsePageState(PageState pageState)
+    {
+        PageState = pageState;
+        return this;
+    }
+
+    /// <summary>
+    /// WIP: PageState for this service
+    /// </summary>
+    public PageState? PageState { get; private set; }
+
     public MagicDebugState DebugState(PageState pageState) => ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
     MagicDebugSettings IMagicSettingsService.Debug => _debug ??= Catalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
@@ -53,6 +65,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         return tokens;
     }
     private ThemeTokens? _themeTokens;
+
+    #region Theme Context
 
     /// <inheritdoc />
     public CmThemeContext GetThemeContext(PageState pageStateForCachingOnly)
@@ -91,13 +105,16 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     private readonly Dictionary<string, CmThemeContextFull> _themeCtxFullCache = new(StringComparer.InvariantCultureIgnoreCase);
 
+    #endregion
+
+
     /// <summary>
     /// actually internal
     /// </summary>
     public List<DataWithJournal<MagicSettingsCatalog>> Catalogs =>
         catalogsLoader.Catalogs(ThemePackage, cache: false);
 
-    #region Analytics - TODO: not quite done, still has a custom accessor
+    #region Analytics
 
     SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(
@@ -106,10 +123,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
             cat => cat.Analytics
         );
     private SettingsReader<MagicAnalyticsSettings>? _analytics;
-
-
     
-
     #endregion
 
     #region Breadcrumbs

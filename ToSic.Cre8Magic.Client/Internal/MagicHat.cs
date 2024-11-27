@@ -1,4 +1,5 @@
-﻿using Oqtane.Models;
+﻿using System.Runtime.CompilerServices;
+using Oqtane.Models;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
@@ -30,9 +31,51 @@ internal class MagicHat(
     MagicLazy<IMagicLinkService> linkSvc,
     MagicLazy<IMagicContainerService> containerSvc) : IMagicHat
 {
+    #region Setup
+
+    public IMagicHat UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = null)
+    {
+        settingsSvc.Setup(themePackage, layoutName);
+        return this;
+    }
+
+    public IMagicHat UseSettingsCatalog(MagicSettingsCatalog catalog)
+    {
+        settingsProviderSvc.Value.Provide(catalog);
+        return this;
+    }
+
+    public IMagicHat UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc)
+    {
+        var provider = new MagicSettingsProvider();
+        var result = providerFunc(provider);
+        var cat = result?.Catalog;
+        if (cat != null)
+            settingsProviderSvc.Value.Provide(cat);
+        return this;
+    }
+
+    public IMagicHat UsePageState(PageState pageState)
+    {
+        settingsSvc.UsePageState(pageState);
+        return this;
+    }
+
+    
+
+    #endregion
+
+    private PageState GetPageStateOrThrow(PageState? pageStateFromSettings, [CallerMemberName] string? methodName = default)
+    {
+        var pageState = pageStateFromSettings ?? settingsSvc.PageState;
+        if (pageState == null)
+            throw new ArgumentException($"PageState is required for {methodName}. You must either supply it in the settings, or initialize the MagicHat using {nameof(UsePageState)}(...)");
+        return pageState;
+    }
+
     /// <inheritdoc />
-    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null) =>
-        analyticsSvc.Value.AnalyticsKit(pageState, settings);
+    public IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSettings? settings = null) =>
+        analyticsSvc.Value.AnalyticsKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     /// <inheritdoc />
     public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = null) =>
@@ -54,16 +97,8 @@ internal class MagicHat(
     public IMagicUserLoginKit UserLoginKit(PageState pageState) =>
         userKitSvc.Value.UserLoginKit(pageState);
 
-    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettings? settings = default)
-    {
-        return containerSvc.Value.ContainerKit(pageState, module);
-        //var designer = ContainerDesigner(pageState, module);
-        //return new MagicContainerKit
-        //{
-        //    Designer = designer,
-        //    Module = module
-        //};
-    }
+    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettings? settings = default) =>
+        containerSvc.Value.ContainerKit(pageState, module);
 
     public string Link(PageState pageState, MagicLinkSpecs linkSpecs) =>
         linkSvc.Value.Link(pageState, linkSpecs);
@@ -72,48 +107,17 @@ internal class MagicHat(
     public IMagicThemeKit ThemeKit(PageState pageState) =>
         themeSvc.Value.ThemeKit(pageState);
 
-    public void UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = default)
-    {
-        settingsSvc.Setup(themePackage, layoutName);
-    }
 
-    public void UseSettingsCatalog(MagicSettingsCatalog catalog)
-    {
-        settingsProviderSvc.Value.Provide(catalog);
-    }
-
-    public void UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc)
-    {
-        var provider = new MagicSettingsProvider();
-        var result = providerFunc(provider);
-        var cat = result?.Catalog;
-        if (cat != null)
-            settingsProviderSvc.Value.Provide(cat);
-    }
-
-
-    //private MagicContainerDesigner ContainerDesigner(PageState pageState, Module module)
+    //public MagicThemeDesigner ThemeDesigner(PageState pageState)
     //{
-    //    if (_containerDesigners.TryGetValue(pageState.Page.PageId, out var designer))
+    //    if (_themeDesigners.TryGetValue(pageState.Page.PageId, out var designer))
     //        return designer;
 
     //    var designContext = settingsSvc.GetThemeContextFull(pageState);
-    //    var container = new MagicContainerDesigner(designContext, module);
-    //    _containerDesigners[module.ModuleId] = container;
-    //    return container;
+    //    var theme = new MagicThemeDesigner(designContext);
+    //    _themeDesigners[pageState.Page.PageId] = theme;
+    //    return theme;
     //}
-    //private readonly Dictionary<int, MagicContainerDesigner> _containerDesigners = new();
-
-    public MagicThemeDesigner ThemeDesigner(PageState pageState)
-    {
-        if (_themeDesigners.TryGetValue(pageState.Page.PageId, out var designer))
-            return designer;
-
-        var designContext = settingsSvc.GetThemeContextFull(pageState);
-        var theme = new MagicThemeDesigner(designContext);
-        _themeDesigners[pageState.Page.PageId] = theme;
-        return theme;
-    }
-    private readonly Dictionary<int, MagicThemeDesigner> _themeDesigners = new();
+    //private readonly Dictionary<int, MagicThemeDesigner> _themeDesigners = new();
 
 }
