@@ -28,8 +28,6 @@ public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyti
         PageViewTrackFirst = priority?.PageViewTrackFirst ?? fallback?.PageViewTrackFirst;
         PageViewJs = priority?.PageViewJs ?? fallback?.PageViewJs;
         PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
-
-        PageState = priority?.PageState ?? fallback?.PageState;
     }
 
     [PrivateApi]

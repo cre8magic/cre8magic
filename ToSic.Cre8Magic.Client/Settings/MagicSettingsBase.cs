@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using Oqtane.UI;
 using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Docs;
 
@@ -9,7 +10,7 @@ namespace ToSic.Cre8magic.Settings;
 /// all settings share.
 /// 
 /// </summary>
-public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeUse, IDebugSettings //, ICanClone<MagicSettingsBase>
+public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeUse, IDebugSettings
 {
     #region Constructor & Cloning
 
@@ -26,21 +27,33 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
         PartName = priority?.PartName ?? fallback.PartName;
         SettingsName = priority?.SettingsName ?? fallback.SettingsName;
         DesignName = priority?.DesignName ?? fallback.DesignName;
+
+        // Page State
+        _pageState = priority?.PageState ?? fallback.PageState;
+
+        // Debug settings
         ((IDebugSettings)this).Catalog = ((IDebugSettings?)priority)?.Catalog ?? ((IDebugSettings?)fallback)?.Catalog;
-        
         ((IDebugSettings)this).DebugThis = ((IDebugSettings?)priority)?.DebugThis ?? ((IDebugSettings?)fallback)?.DebugThis;
-
-
     }
-
-    //[PrivateApi]
-    //public MagicSettingsBase CloneUnder(MagicSettingsBase? priority, bool forceCopy = false) =>
-    //    priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion
 
 
     #region Settings for Code
+
+    /// <summary>
+    /// The PageState which is needed for doing everything.
+    ///
+    /// It can be provided in the settings, or it must be provided in the theme using <see cref="IMagicHat.UsePageState"/>.
+    /// </summary>
+    [JsonIgnore]
+    public virtual PageState? PageState
+    {
+        get => _pageState;
+        init => _pageState = value;
+    }
+    private readonly PageState? _pageState;
+
 
     /// <inheritdoc/>
     [JsonIgnore]
