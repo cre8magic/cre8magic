@@ -12,7 +12,7 @@ namespace ToSic.Cre8magic.Menus.Internal.Nodes;
 /// * "*" - the top-level pages
 /// * "." - the current page
 /// </summary>
-internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, MagicMenuSettingsData settings, Log log)
+internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, MagicMenuSettings settings, Log log)
 {
     public const char PageForced = '!';
 
@@ -30,12 +30,12 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
             return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries
-        var fallback = MagicMenuSettingsData.Defaults.Fallback;
+        var fallback = MagicMenuSettings.Defaults.Fallback;
         var start = (settings.Start ?? fallback.Start)?.Trim();
 
         // Case 2: '.' - not yet tested
-        var startLevel = settings.Level ?? settings.Level ?? MagicMenuSettingsData.StartLevelFallback;
-        var getChildren = settings.Children ?? settings.Children ?? MagicMenuSettingsData.ChildrenFallback;
+        var startLevel = settings.Level ?? settings.Level ?? MagicMenuSettings.StartLevelFallback;
+        var getChildren = settings.Children ?? settings.Children ?? MagicMenuSettings.ChildrenFallback;
         var startingPoints = GetStartNodeRules(start, startLevel, getChildren);
         // Case 3: one or more IDs to start from
 

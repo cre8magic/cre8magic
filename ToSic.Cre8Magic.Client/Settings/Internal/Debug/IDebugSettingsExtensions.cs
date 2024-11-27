@@ -14,7 +14,7 @@ public static class IDebugSettingsExtensions
         return settings;
     }
 
-    public static T UseLanguageSettings<T>(this T settings, MagicLanguageSettingsData languageSettings) where T : IDebugSettings
+    public static T UseLanguageSettings<T>(this T settings, MagicLanguageSettings languageSettings) where T : IDebugSettings
     {
         settings.Catalog = (settings.Catalog ?? new MagicSettingsCatalog()) with
         {

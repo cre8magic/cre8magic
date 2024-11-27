@@ -15,14 +15,14 @@ internal class MagicMenuNodeFactory(MagicMenuContextWip context)
     /// <summary>
     /// Settings - on first access takes the one given, or creates a default.
     /// </summary>
-    public MagicMenuSettingsData SettingsTyped => _settings ??= context.Settings ?? MagicMenuSettingsData.Defaults.Fallback;
-    private MagicMenuSettingsData? _settings;
+    public MagicMenuSettings SettingsTyped => _settings ??= context.Settings ?? MagicMenuSettings.Defaults.Fallback;
+    private MagicMenuSettings? _settings;
 
     public override IMagicPageSetSettings Settings => SettingsTyped;
 
     protected override IMagicPageDesigner FallbackDesigner() => new MagicMenuDesigner(context);
 
-    public int MaxDepth => _maxDepth ??= context.Settings.Depth ?? MagicMenuSettingsData.Defaults.Fallback.Depth!.Value;
+    public int MaxDepth => _maxDepth ??= context.Settings.Depth ?? MagicMenuSettings.Defaults.Fallback.Depth!.Value;
     private int? _maxDepth;
 
     /// <summary>

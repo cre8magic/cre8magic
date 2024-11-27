@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Containers;
@@ -18,6 +19,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
     public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
+    [JsonIgnore]
     public MagicContainerDesignSettings? DesignSettings { get; init; }
 
     internal static Defaults<MagicContainerSettings> Defaults = new(new());

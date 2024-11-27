@@ -18,16 +18,16 @@
         <hr/>
     
         <h2>Various Settings</h2>
-        <h3>Only one specific page (@nameof(MagicMenuSettingsData.Start)), no other params</h3>
+        <h3>Only one specific page (@nameof(MagicMenuSettings.Start)), no other params</h3>
         <h4>Using Attributes</h4>
         <MagicMenu Start="@TopLevelWithSubpagesId"></MagicMenu>
-        <h4>Using @nameof(MagicMenuSettingsData)</h4>
+        <h4>Using @nameof(MagicMenuSettings)</h4>
         <MagicMenu MenuSettings="new() { Start = TopLevelWithSubpagesId }"></MagicMenu>
 
-        <h3>Only one specific page (@nameof(MagicMenuSettingsData.Start), @nameof(MagicMenuSettingsData.Depth) = 0)</h3>
+        <h3>Only one specific page (@nameof(MagicMenuSettings.Start), @nameof(MagicMenuSettings.Depth) = 0)</h3>
         <h4>Using Attributes</h4>
         <MagicMenu Start="@TopLevelWithSubpagesId" Depth="0"></MagicMenu>
-        <h4>Using @nameof(MagicMenuSettingsData)</h4>
+        <h4>Using @nameof(MagicMenuSettings)</h4>
         <MagicMenu MenuSettings="new() { Start = TopLevelWithSubpagesId, Depth = 0 }"></MagicMenu>
 
         <h3>Only one specific page @TopLevelWithSubpagesId, with Depth=1</h3>

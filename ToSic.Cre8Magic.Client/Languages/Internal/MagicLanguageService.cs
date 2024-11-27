@@ -59,7 +59,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             finalize: (settingsData, designSettings) => new(settingsData, settings) { DesignSettings = designSettings });
 
 
-    private async Task<List<MagicLanguage>> LanguagesToShow(PageState pageState, MagicLanguageSettingsData settings)
+    private async Task<List<MagicLanguage>> LanguagesToShow(PageState pageState, MagicLanguageSettings settings)
     {
         var siteId = pageState.Site.SiteId;
         if (_languages.TryGetValue(siteId, out var cached))

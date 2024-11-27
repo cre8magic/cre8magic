@@ -43,12 +43,12 @@ public interface IMagicSettingsService
     internal SettingsReader<MagicAnalyticsSettings> Analytics { get; }
     internal SettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
 
-    internal SettingsReader<MagicLanguageSettingsData> Languages { get; }
+    internal SettingsReader<MagicLanguageSettings> Languages { get; }
     internal SettingsReader<MagicLanguageDesignSettings> LanguageDesigns { get; }
 
 
 
-    internal SettingsReader<MagicMenuSettingsData> Menus { get; }
+    internal SettingsReader<MagicMenuSettings> Menus { get; }
     internal SettingsReader<MagicMenuDesignSettings> MenuDesigns { get; }
 
 

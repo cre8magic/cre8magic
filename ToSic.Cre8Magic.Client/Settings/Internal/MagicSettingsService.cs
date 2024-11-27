@@ -154,11 +154,11 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #region Languages
 
-    public SettingsReader<MagicLanguageSettingsData> Languages => _languages ??= new(this,
-            MagicLanguageSettingsData.Defaults,
+    public SettingsReader<MagicLanguageSettings> Languages => _languages ??= new(this,
+            MagicLanguageSettings.Defaults,
             catalog => catalog.Languages
         );
-    private SettingsReader<MagicLanguageSettingsData>? _languages;
+    private SettingsReader<MagicLanguageSettings>? _languages;
 
     public SettingsReader<MagicLanguageDesignSettings> LanguageDesigns =>
         _languageDesigns ??= new(this, MagicLanguageDesignSettings.DesignDefaults, catalog => catalog.LanguageDesigns);
@@ -194,9 +194,9 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #region Menus
 
-    public SettingsReader<MagicMenuSettingsData> Menus =>
-        _getMenuSettings ??= new(this, MagicMenuSettingsData.Defaults, catalog => catalog.Menus);
-    private SettingsReader<MagicMenuSettingsData>? _getMenuSettings;
+    public SettingsReader<MagicMenuSettings> Menus =>
+        _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, catalog => catalog.Menus);
+    private SettingsReader<MagicMenuSettings>? _getMenuSettings;
 
     public SettingsReader<MagicMenuDesignSettings> MenuDesigns =>
         _menuDesigns ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);
