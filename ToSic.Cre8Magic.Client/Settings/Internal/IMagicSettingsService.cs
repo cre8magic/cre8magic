@@ -40,7 +40,7 @@ public interface IMagicSettingsService
     internal List<DataWithJournal<MagicSettingsCatalog>> Catalogs { get; }
 
 
-    internal SettingsReader<MagicAnalyticsSettingsData> Analytics { get; }
+    internal SettingsReader<MagicAnalyticsSettings> Analytics { get; }
     internal SettingsReader<MagicThemeDesignSettings> ThemeDesign { get; }
 
     internal SettingsReader<MagicLanguageSettingsData> Languages { get; }
@@ -54,7 +54,7 @@ public interface IMagicSettingsService
 
 
 
-    internal SettingsReader<MagicBreadcrumbSettingsData> Breadcrumbs { get; }
+    internal SettingsReader<MagicBreadcrumbSettings> Breadcrumbs { get; }
     internal SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; }
 
 
@@ -75,7 +75,7 @@ public interface IMagicSettingsService
     MagicDebugState DebugState(PageState pageState);
 
 
-    MagicAnalyticsSettingsData AnalyticsSettings(string settingsName);
+    MagicAnalyticsSettings AnalyticsSettings(string settingsName);
 
     internal TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func);
 }

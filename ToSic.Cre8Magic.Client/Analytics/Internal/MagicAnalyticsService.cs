@@ -38,7 +38,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
         return result;
     }
 
-    private Data3WithJournal<MagicAnalyticsSettingsData, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicAnalyticsSettings? settings) =>
+    private Data3WithJournal<MagicAnalyticsSettings, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicAnalyticsSettings? settings) =>
         settingsSvc.GetBestSettings(
             pageState,
             settings,
@@ -55,7 +55,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
     /// <param name="settings"></param>
     /// <param name="isFirstRender"></param>
     /// <returns></returns>
-    internal async Task TrackPage(PageState pageState, MagicAnalyticsSettingsData? settings, bool isFirstRender)
+    internal async Task TrackPage(PageState pageState, MagicAnalyticsSettings? settings, bool isFirstRender)
     {
         if (settings == null) return;
         if (settings.PageViewTrack != true) return;

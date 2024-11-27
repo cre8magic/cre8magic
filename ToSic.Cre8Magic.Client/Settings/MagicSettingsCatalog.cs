@@ -49,13 +49,13 @@ public record MagicSettingsCatalog: IHasDebugSettings
     public Dictionary<string, MagicThemeDesignSettings> ThemeDesigns { get; init; } = new(InvariantCultureIgnoreCase);
 
 
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicAnalyticsSettingsData>))]
-    public Dictionary<string, MagicAnalyticsSettingsData> Analytics { get; init; } = new(InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicAnalyticsSettings>))]
+    public Dictionary<string, MagicAnalyticsSettings> Analytics { get; init; } = new(InvariantCultureIgnoreCase);
 
 
 
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbSettingsData>))]
-    public Dictionary<string, MagicBreadcrumbSettingsData> Breadcrumbs { get; init; } = new(InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbSettings>))]
+    public Dictionary<string, MagicBreadcrumbSettings> Breadcrumbs { get; init; } = new(InvariantCultureIgnoreCase);
 
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbDesignSettings>))]
     public Dictionary<string, MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; init; } = new(InvariantCultureIgnoreCase);

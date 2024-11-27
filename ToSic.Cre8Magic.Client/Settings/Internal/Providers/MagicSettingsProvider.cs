@@ -72,11 +72,11 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
 
     private MagicSettingsCatalog? _catalog;
 
-    public IMagicSettingsProviderSection<MagicAnalyticsSettingsData> Analytics => _analytics ??= new(this);
-    private MagicSettingsProviderSection<MagicAnalyticsSettingsData>? _analytics;
+    public IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
+    private MagicSettingsProviderSection<MagicAnalyticsSettings>? _analytics;
 
-    public IMagicSettingsProviderSection<MagicBreadcrumbSettingsData> Breadcrumbs => _breadcrumbs ??= new(this);
-    private MagicSettingsProviderSection<MagicBreadcrumbSettingsData>? _breadcrumbs;
+    public IMagicSettingsProviderSection<MagicBreadcrumbSettings> Breadcrumbs => _breadcrumbs ??= new(this);
+    private MagicSettingsProviderSection<MagicBreadcrumbSettings>? _breadcrumbs;
 
     public IMagicSettingsProviderSection<MagicContainerSettings> Containers => _containers ??= new(this);
     private MagicSettingsProviderSection<MagicContainerSettings>? _containers;

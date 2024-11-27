@@ -101,29 +101,29 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #region Analytics - TODO: not quite done, still has a custom accessor
 
-    SettingsReader<MagicAnalyticsSettingsData> IMagicSettingsService.Analytics =>
+    SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
         _analytics ??= new(
             this,
-            MagicAnalyticsSettingsData.Defaults,
+            MagicAnalyticsSettings.Defaults,
             cat => cat.Analytics
         );
-    private SettingsReader<MagicAnalyticsSettingsData>? _analytics;
+    private SettingsReader<MagicAnalyticsSettings>? _analytics;
 
 
-    public MagicAnalyticsSettingsData AnalyticsSettings(string settingsName) =>
+    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) =>
         ((IMagicSettingsService)this).Analytics.FindAndNeutralize([settingsName], skipCache: _bypassCaches);
 
     #endregion
 
     #region Breadcrumbs
 
-    public SettingsReader<MagicBreadcrumbSettingsData> Breadcrumbs =>
+    public SettingsReader<MagicBreadcrumbSettings> Breadcrumbs =>
         _breadcrumbs ??= new(
             this,
-            MagicBreadcrumbSettingsData.Defaults,
+            MagicBreadcrumbSettings.Defaults,
             cat => cat.Breadcrumbs
         );
-    private SettingsReader<MagicBreadcrumbSettingsData>? _breadcrumbs;
+    private SettingsReader<MagicBreadcrumbSettings>? _breadcrumbs;
 
     public SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns =>
         _breadcrumbsDesigns ??= new(this, MagicBreadcrumbDesignSettings.DesignDefaults, catalog => catalog.BreadcrumbDesigns);

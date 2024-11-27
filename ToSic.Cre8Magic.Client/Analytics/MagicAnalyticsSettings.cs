@@ -1,50 +1,70 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Debug;
-using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal.Docs;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Analytics;
 
-public record MagicAnalyticsSettings: MagicAnalyticsSettingsData, ISettingsForCodeUse, IDebugSettings
+/// <summary>
+/// Settings to set up and use Google Tag Manager to track page views.
+///
+/// BETA: Doesn't completely work yet.
+/// 
+/// * Main caveat: Integration of the Google Tag Manager still has the GTM hardwired in the JS, must be finished.
+/// * Background is that the Module currently doesn't contain its own JS, so it's still part of the theme.
+/// </summary>
+public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyticsSettings>
 {
+    #region Constructor and Clone
+
     [PrivateApi]
     public MagicAnalyticsSettings() { }
 
-    /// <summary>
-    /// Constructor to re-hydrate from object of base class.
-    /// </summary>
     [PrivateApi]
-    internal MagicAnalyticsSettings(MagicAnalyticsSettingsData ancestor, MagicAnalyticsSettings? original) : base(ancestor)
+    internal MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
+        : base(priority, fallback)
     {
-        if (original == null)
-            return;
-
-        PartName = original.PartName;
-        SettingsName = original.SettingsName;
-        DesignName = original.DesignName;
-
-        ((IDebugSettings)this).Catalog = ((IDebugSettings)original).Catalog;
+        GtmId = priority?.GtmId ?? fallback?.GtmId;
+        PageViewTrack = priority?.PageViewTrack ?? fallback?.PageViewTrack;
+        PageViewTrackFirst = priority?.PageViewTrackFirst ?? fallback?.PageViewTrackFirst;
+        PageViewJs = priority?.PageViewJs ?? fallback?.PageViewJs;
+        PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
     }
 
-
-    #region Settings for Code
-
-    /// <inheritdoc/>
-    public string? PartName { get; init; }
-
-    /// <inheritdoc/>
-    public string? SettingsName { get; init; }
-
-    /// <inheritdoc/>
-    public string? DesignName { get; init; }
+    [PrivateApi]
+    MagicAnalyticsSettings ICanClone<MagicAnalyticsSettings>.CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion
 
-    #region Debug Settings
+    /// <summary>
+    /// ID of Google Tag Manager.
+    /// </summary>
+    public string? GtmId { get; init; }
 
-    MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
+    public bool? PageViewTrack { get; init; }
 
-    bool? IDebugSettings.DebugThis { get; set; }
+    public bool? PageViewTrackFirst { get; init; }
 
-    #endregion
+    /// <summary>
+    /// JavaScript function to call for tracking page views.
+    /// Defaults to "gtag".
+    /// </summary>
+    public string? PageViewJs { get; init; }
+
+    /// <summary>
+    /// Name of the event to give to GTM which should be logged.
+    /// Defaults to "blazor_page_view".
+    /// </summary>
+    public string? PageViewEvent { get; init; }
+
+
+    internal static Defaults<MagicAnalyticsSettings> Defaults = new(new()
+    {
+        GtmId = null,
+        PageViewTrack = false,
+        PageViewTrackFirst = false,
+        PageViewJs = "gtag",
+        PageViewEvent = "blazor_page_view"
+    });
+
 
 }

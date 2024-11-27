@@ -16,12 +16,12 @@ public class SettingsProviderTestWithAnalytics
     /// Prepare a settings service and add a default value. 
     /// </summary>
     /// <returns></returns>
-    private static (IMagicSettingsService settingsSvc, IMagicSettingsProvider SettingsProvider, MagicAnalyticsSettingsData DefaultSettings) PrepareSettings()
+    private static (IMagicSettingsService settingsSvc, IMagicSettingsProvider SettingsProvider, MagicAnalyticsSettings DefaultSettings) PrepareSettings()
     {
         var di = SetupServices.Start().AddCre8magic().AddLogging().Finish();
         var settingsProvider = di.GetRequiredService<IMagicSettingsProvider>();
         var settingsSvc = di.GetRequiredService<IMagicSettingsService>();
-        var original = new MagicAnalyticsSettingsData { GtmId = DataValueOfOriginal };
+        var original = new MagicAnalyticsSettings { GtmId = DataValueOfOriginal };
         settingsProvider.Analytics.SetDefault(original);
         return (settingsSvc, settingsProvider, original);
     }
@@ -57,7 +57,7 @@ public class SettingsProviderTestWithAnalytics
         var (settingsSvc, settingsProvider, defaultSettings) = PrepareSettings();
 
         // Add a named setting which can be identified when found
-        var namedSettings = new MagicAnalyticsSettingsData { GtmId = DataValueOfOriginal + "-named" };
+        var namedSettings = new MagicAnalyticsSettings { GtmId = DataValueOfOriginal + "-named" };
         settingsProvider.Analytics.Provide(addName, namedSettings);
 
         var retrieved = settingsSvc.GetBestSettings(
