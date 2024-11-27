@@ -74,8 +74,4 @@ public interface IMagicSettingsService
     //internal (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback);
     MagicDebugState DebugState(PageState pageState);
 
-
-    MagicAnalyticsSettings AnalyticsSettings(string settingsName);
-
-    internal TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func);
 }

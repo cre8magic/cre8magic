@@ -31,8 +31,6 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     private string? _layoutName;
 
-    private bool _bypassCaches;
-
     public MagicDebugState DebugState(PageState pageState) => ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
     MagicDebugSettings IMagicSettingsService.Debug => _debug ??= Catalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
@@ -110,8 +108,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     private SettingsReader<MagicAnalyticsSettings>? _analytics;
 
 
-    public MagicAnalyticsSettings AnalyticsSettings(string settingsName) =>
-        ((IMagicSettingsService)this).Analytics.FindAndNeutralize([settingsName], skipCache: _bypassCaches);
+    
 
     #endregion
 
@@ -151,14 +148,6 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     private SettingsReader<MagicThemeDesignSettings>? _themeDesigns;
 
     #endregion
-
-    public TDebug BypassCacheInternal<TDebug>(Func<IMagicSettingsService, TDebug> func)
-    {
-        this._bypassCaches = true;
-        var result = func(this);
-        this._bypassCaches = false;
-        return result;
-    }
 
     #region Languages
 

@@ -1,9 +1,9 @@
-﻿@using ToSic.Cre8magic
+﻿@using System.Diagnostics
+@using ToSic.Cre8magic
+@using ToSic.Cre8magic.Analytics
 @using ToSic.Cre8magic.Components.Internal
-@using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Internal.Debug
 @inherits ComponentBase
-@inject IMagicSettingsService SettingsService
 @inject IMagicHat MagicHat
 @code {
     /// <inheritdoc cref="ComponentDocs.PageState"/>
@@ -11,10 +11,18 @@
     public required PageState PageState { get; set; }
 }
 @{
-    // SettingsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
-    var defAnalytics = SettingsService.AnalyticsSettings("default");
-    // defAnalytic = MagicHat.AnalyticsKit(PageState, new() { SettingsName = "default" });
-    var testAnalytics = SettingsService.NoCachingForDebug(s => s.AnalyticsSettings("analytics-test"));
+    var analyticsKit = MagicHat.AnalyticsKit(PageState, new() { SettingsName = "default" });
+
+    // Run some performance tests
+    var stopWatch = new Stopwatch();
+    stopWatch.Start();
+    var analyticsTestKit = MagicHat.AnalyticsKit(PageState, (new MagicAnalyticsSettings { SettingsName = "analytics-test" }).Debug());
+
+    var cycles = 10000;
+    for(var i=  0; i < 1000; i++)
+        analyticsTestKit = MagicHat.AnalyticsKit(PageState, (new MagicAnalyticsSettings { SettingsName = "analytics-test" }).Debug());
+
+    stopWatch.Stop();
 }
 <div class="alert alert-info">
     <h4>Debug analytics</h4>
@@ -22,6 +30,9 @@
         This will ONLY read the test-analytics.
         So if you refresh this page, it will be the same as default, if you go to the other page first, it should have that value.
     </p>
-    <p>Default Analytics: @defAnalytics.GtmId</p>
-    <p>Test Analytics: @testAnalytics.GtmId</p>
+    <p>Default Analytics: @analyticsKit.Settings.GtmId</p>
+    <p>Test Analytics: @analyticsTestKit.Settings.GtmId</p>
+    <p>
+        Time for @cycles cycles: @stopWatch.ElapsedMilliseconds ms / @stopWatch.Elapsed.Seconds seconds
+    </p>
 </div>

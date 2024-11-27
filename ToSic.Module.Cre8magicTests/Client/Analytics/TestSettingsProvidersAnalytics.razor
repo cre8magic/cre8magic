@@ -1,9 +1,9 @@
-﻿@using ToSic.Cre8magic.Components.Internal
+﻿@using ToSic.Cre8magic
+@using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Settings
-@using ToSic.Cre8magic.Settings.Internal.Debug
 @inherits ComponentBase
 @inject IMagicSettingsProvider SettingsProviders
-@inject IMagicSettingsService SettingsService
+@inject IMagicHat MagicHat
 @code {
     /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
@@ -12,14 +12,15 @@
 @{
     SettingsProviders.Reset();
     SettingsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
-    var defAnalytics = SettingsService.AnalyticsSettings("default");
-    var testAnalytics = SettingsService.NoCachingForDebug(s => s.AnalyticsSettings("analytics-test"));
+
+    var analyticsKit = MagicHat.AnalyticsKit(PageState, new() { SettingsName = "default" });
+    var analyticsTestKit = MagicHat.AnalyticsKit(PageState, new() { SettingsName = "analytics-test" });
 }
 <div class="alert alert-info">
     <h4>Debug analytics</h4>
     <p>
         This will set and read the test-analytics.
     </p>
-    <p>Default Analytics: @defAnalytics.GtmId</p>
-    <p>Test Analytics: @testAnalytics.GtmId</p>
+    <p>Default Analytics: @analyticsKit.Settings.GtmId</p>
+    <p>Test Analytics: @analyticsTestKit.Settings.GtmId</p>
 </div>

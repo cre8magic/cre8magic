@@ -33,7 +33,7 @@ internal class SettingsReader<TSettingsData>(
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
     /// </summary>
-    internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsSpecs specs, TSettingsData? priority = null, bool skipCache = false)
+    internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsSpecs specs, TSettingsData? priority = null, bool skipCache = true)
     {
         var (bestPartName, journal) = specs.Context.NameResolver.FindBestNameAccordingToParts(specs);
 
@@ -51,7 +51,7 @@ internal class SettingsReader<TSettingsData>(
     /// <param name="names"></param>
     /// <param name="skipCache"></param>
     /// <returns></returns>
-    internal TSettingsData FindAndNeutralize(string?[] names, bool skipCache = false)
+    internal TSettingsData FindAndNeutralize(string?[] names, bool skipCache = true)
     {
         // Create array of names to look up, the first one is the main name (specify type so clearly non-null)
         var cleanNames = ((string[])[ ..names, Default ])

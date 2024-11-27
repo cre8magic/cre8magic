@@ -1,12 +1,11 @@
 ﻿using Microsoft.JSInterop;
 using Oqtane.UI;
-using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
-using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Utils.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics.Internal;
@@ -19,12 +18,15 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
     private const string GtmEvent = "event";
 
     public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null) =>
-        _cache.Get(pageState, () => BuildKit(pageState, settings));
-
-    private readonly GetKeepByPageId<IMagicAnalyticsKit> _cache = new();
+        BuildKit(pageState, settings);
 
     private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSettings? settings = null)
     {
+        var x = 7;
+        if ((settings as IDebugSettings)?.DebugThis == true)
+            x = 8;
+
+
         var (settingsData, _, _, _) = MergeSettings(pageState, settings);
         var settingsFull = new MagicAnalyticsSettings(settingsData, settings);
 
