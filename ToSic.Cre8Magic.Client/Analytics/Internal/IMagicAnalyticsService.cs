@@ -1,6 +1,6 @@
 ﻿using Oqtane.UI;
 
-namespace ToSic.Cre8magic.Analytics;
+namespace ToSic.Cre8magic.Analytics.Internal;
 
 /// <summary>
 /// Service to help with Google Analytics Tracking.

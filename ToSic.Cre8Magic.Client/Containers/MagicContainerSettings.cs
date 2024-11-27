@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using Oqtane.Models;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
@@ -13,6 +14,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
         : base(priority, fallback)
     {
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+        ModuleState = priority?.ModuleState ?? fallback?.ModuleState;
     }
 
     [PrivateApi]
@@ -21,6 +23,8 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
 
     [JsonIgnore]
     public MagicContainerDesignSettings? DesignSettings { get; init; }
+
+    public Module ModuleState { get; init; }
 
     internal static Defaults<MagicContainerSettings> Defaults = new(new());
 

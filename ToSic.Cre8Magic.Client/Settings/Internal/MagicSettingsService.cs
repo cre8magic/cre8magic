@@ -39,7 +39,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     }
 
     /// <summary>
-    /// WIP: PageState for this service
+    /// PageState for this service, if shared/broadcast from the theme
     /// </summary>
     public PageState? PageState { get; private set; }
 

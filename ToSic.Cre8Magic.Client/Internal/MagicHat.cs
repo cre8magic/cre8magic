@@ -2,6 +2,7 @@
 using Oqtane.Models;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Analytics.Internal;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
@@ -12,7 +13,6 @@ using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.PageContexts.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal.Providers;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.UserLogins.Internal;
 using ToSic.Cre8magic.Users;
 
@@ -31,7 +31,7 @@ internal class MagicHat(
     MagicLazy<IMagicLinkService> linkSvc,
     MagicLazy<IMagicContainerService> containerSvc) : IMagicHat
 {
-    #region Setup
+    #region Setup & PageState
 
     public IMagicHat UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = null)
     {
@@ -61,17 +61,15 @@ internal class MagicHat(
         return this;
     }
 
-    
-
-    #endregion
-
     private PageState GetPageStateOrThrow(PageState? pageStateFromSettings, [CallerMemberName] string? methodName = default)
     {
         var pageState = pageStateFromSettings ?? settingsSvc.PageState;
         if (pageState == null)
-            throw new ArgumentException($"PageState is required for {methodName}. You must either supply it in the settings, or initialize the MagicHat using {nameof(UsePageState)}(...)");
+            throw new ArgumentException($"PageState is required for {methodName}(...). You must either supply it in the settings, or first initialize the MagicHat using {nameof(UsePageState)}(...)");
         return pageState;
     }
+
+    #endregion
 
     /// <inheritdoc />
     public IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSettings? settings = null) =>
@@ -97,8 +95,11 @@ internal class MagicHat(
     public IMagicUserLoginKit UserLoginKit(PageState pageState) =>
         userKitSvc.Value.UserLoginKit(pageState);
 
-    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettings? settings = default) =>
-        containerSvc.Value.ContainerKit(pageState, module);
+    public IMagicContainerKit ContainerKit(MagicContainerSettings settings) =>
+        containerSvc.Value.ContainerKit(
+            GetPageStateOrThrow(settings?.PageState),
+            settings?.ModuleState ?? throw new ArgumentException("Module is required for ContainerKit(...)")
+        );
 
     public string Link(PageState pageState, MagicLinkSpecs linkSpecs) =>
         linkSvc.Value.Link(pageState, linkSpecs);
@@ -106,18 +107,4 @@ internal class MagicHat(
     /// <inheritdoc />
     public IMagicThemeKit ThemeKit(PageState pageState) =>
         themeSvc.Value.ThemeKit(pageState);
-
-
-    //public MagicThemeDesigner ThemeDesigner(PageState pageState)
-    //{
-    //    if (_themeDesigners.TryGetValue(pageState.Page.PageId, out var designer))
-    //        return designer;
-
-    //    var designContext = settingsSvc.GetThemeContextFull(pageState);
-    //    var theme = new MagicThemeDesigner(designContext);
-    //    _themeDesigners[pageState.Page.PageId] = theme;
-    //    return theme;
-    //}
-    //private readonly Dictionary<int, MagicThemeDesigner> _themeDesigners = new();
-
 }

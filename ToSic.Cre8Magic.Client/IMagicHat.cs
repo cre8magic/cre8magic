@@ -1,6 +1,7 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
+using ToSic.Cre8magic.Analytics.Internal;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Containers;
@@ -39,10 +40,18 @@ public interface IMagicHat
     /// <inheritdoc cref="IMagicUserService.User"/>
     MagicUser User(PageState pageState);
 
-    /// <inheritdoc cref="IMagicContainerService.ContainerKit"/>
-    IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettings? settings = default);
+    /// <summary>
+    /// Get a kit to work with containers.
+    /// </summary>
+    /// <param name="settings">Required; must provide the ModuleState as a property and (if not specified in the Theme) also the PageState</param>
+    /// <returns></returns>
+    IMagicContainerKit ContainerKit(MagicContainerSettings settings);
 
-    /// <inheritdoc cref="IMagicAnalyticsService.AnalyticsKit"/>
+    /// <summary>
+    /// Get a kit to work with analytics.
+    /// </summary>
+    /// <param name="settings">Optional settings. If not provided, will try to automatically find the settings as configured in the Theme.</param>
+    /// <returns></returns>
     IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSettings? settings = default);
 
     /// <inheritdoc cref="IMagicThemeService.ThemeKit"/>

@@ -12,8 +12,7 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
 
     public virtual MagicContainerSettings? Settings => null;
 
-    [Inject]
-    public required IMagicHat MagicHat { get; set; }
+    [Inject] public required IMagicHat MagicHat { get; set; }
 
     #region Navigation / Close
 
@@ -31,7 +30,7 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
 
     #endregion
 
-    private IMagicContainerKit ContainerKit => _kit ??= MagicHat.ContainerKit(PageState, ModuleState);
+    protected IMagicContainerKit ContainerKit => _kit ??= MagicHat.ContainerKit((Settings ?? new()) with { ModuleState = ModuleState });
     private IMagicContainerKit? _kit;
 
 }
