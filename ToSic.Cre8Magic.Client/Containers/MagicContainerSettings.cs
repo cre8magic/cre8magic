@@ -1,55 +1,25 @@
 ﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal.Debug;
-using ToSic.Cre8magic.Settings.Internal.Docs;
+using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Containers;
 
-public record MagicContainerSettings: MagicContainerSettingsData, ISettingsForCodeUse, IDebugSettings
+public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContainerSettings>
 {
-    [PrivateApi]
     public MagicContainerSettings() { }
 
-    /// <summary>
-    /// Constructor to re-hydrate from object of base class.
-    /// </summary>
     [PrivateApi]
-    internal MagicContainerSettings(MagicContainerSettingsData ancestor, MagicContainerSettings? original) : base(ancestor)
+    public MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
+        : base(priority, fallback)
     {
-        if (original == null)
-            return;
-
-        DesignSettings = original.DesignSettings;
-
-
-        PartName = original.PartName;
-        SettingsName = original.SettingsName;
-        DesignName = original.DesignName;
-
-        ((IDebugSettings)this).Catalog = ((IDebugSettings)original).Catalog;
+        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
+
+    [PrivateApi]
+    public MagicContainerSettings CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     public MagicContainerDesignSettings? DesignSettings { get; init; }
 
-
-    #region Settings for Code
-
-    /// <inheritdoc/>
-    public string? PartName { get; init; }
-
-    /// <inheritdoc/>
-    public string? SettingsName { get; init; }
-
-    /// <inheritdoc/>
-    public string? DesignName { get; init; }
-
-    #endregion
-
-    #region Debug Settings
-
-    MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
-
-    bool IDebugSettings.DebugThis { get; set; }
-
-    #endregion
+    internal static Defaults<MagicContainerSettings> Defaults = new(new());
 
 }

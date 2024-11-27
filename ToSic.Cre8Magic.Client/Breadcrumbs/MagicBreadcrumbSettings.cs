@@ -48,5 +48,5 @@ public record MagicBreadcrumbSettings: MagicBreadcrumbSettingsData, ISettingsFor
 
 
     MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
-    bool IDebugSettings.DebugThis { get; set; }
+    bool? IDebugSettings.DebugThis { get; set; }
 }

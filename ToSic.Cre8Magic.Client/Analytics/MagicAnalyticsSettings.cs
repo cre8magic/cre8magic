@@ -6,6 +6,7 @@ namespace ToSic.Cre8magic.Analytics;
 
 public record MagicAnalyticsSettings: MagicAnalyticsSettingsData, ISettingsForCodeUse, IDebugSettings
 {
+    [PrivateApi]
     public MagicAnalyticsSettings() { }
 
     /// <summary>
@@ -42,7 +43,7 @@ public record MagicAnalyticsSettings: MagicAnalyticsSettingsData, ISettingsForCo
 
     MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
 
-    bool IDebugSettings.DebugThis { get; set; }
+    bool? IDebugSettings.DebugThis { get; set; }
 
     #endregion
 

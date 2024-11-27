@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Containers.Internal;
 
 internal record MagicContainerKit : IMagicContainerKit
 {
-    public required MagicContainerSettingsData Settings { get; init; }
+    public required MagicContainerSettings Settings { get; init; }
 
     public required MagicContainerDesigner Designer { get; init; }
 

@@ -181,9 +181,9 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #region Containers
 
-    public SettingsReader<MagicContainerSettingsData> Containers =>
-        _containers ??= new(this, MagicContainerSettingsData.Defaults, cat => cat.Containers);
-    private SettingsReader<MagicContainerSettingsData>? _containers;
+    public SettingsReader<MagicContainerSettings> Containers =>
+        _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
+    private SettingsReader<MagicContainerSettings>? _containers;
 
     public SettingsReader<MagicContainerDesignSettings> ContainerDesigns =>
         _containerDesigns ??= new(this, MagicContainerDesignSettings.Defaults, cat => cat.ContainerDesigns);

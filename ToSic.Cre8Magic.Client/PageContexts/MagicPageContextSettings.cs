@@ -43,7 +43,7 @@ public record MagicPageContextSettings: MagicPageContextSettingsData, ISettingsF
 
     MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
 
-    bool IDebugSettings.DebugThis { get; set; }
+    bool? IDebugSettings.DebugThis { get; set; }
 
     #endregion
 
