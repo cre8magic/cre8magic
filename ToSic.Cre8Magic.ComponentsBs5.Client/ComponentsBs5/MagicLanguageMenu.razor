@@ -13,9 +13,7 @@ Nice to know:
 *@
 @code
 {
-    /// <inheritdoc cref="Oqtane.UI.PageState"/>
-    [CascadingParameter]
-    public required PageState PageState { get; set; }
+    [CascadingParameter] public required PageState PageState { get; set; }
 
     // The language kit, available after ParameterSetAsync
     public IMagicLanguageKit? LanguageKit { get; private set; }

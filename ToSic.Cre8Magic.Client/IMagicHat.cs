@@ -69,4 +69,6 @@ public interface IMagicHat
 
     /// <inheritdoc />
     IMagicMenuKit MenuKit(MagicMenuSettings? settings = default);
+
+    int MenuKitAccessCounter { get; set; }
 }

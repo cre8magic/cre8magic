@@ -1,5 +1,8 @@
-﻿@using ToSic.Cre8magic.ComponentsBs5.Debug
-@inherits MagicMenuRoot
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.ComponentsBs5.Debug
+@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.Settings
+@inject IMagicHat MagicHat
 @*
 File Purpose:       Add a menu based on the parameter 'ConfigName'
 Recommendations:    -
@@ -12,7 +15,22 @@ Nice to know:
     - If necessary, you can create another type of menu and just add it to the list below
     - WIP: Later it will also be able to load a config from the page/theme settings
 *@
+@code
+{
+    /// <summary>
+    /// Page State, provided by Oqtane
+    /// </summary>
+    [CascadingParameter] public required PageState PageState { get; set; }
 
+    /// <summary>
+    /// All the menu settings.
+    /// If not provided, it will use the default settings from any other configuration.
+    /// If provided, it may still merge these with other settings (like in PartName was specified).
+    /// </summary>
+    [Parameter] public MagicMenuSettings? Settings { get; set; }
+
+    protected IMagicMenuKit MenuKit => MagicHat.MenuKit(Settings.With(PageState));
+}
 @* Special Debugging *@
 @if (true)
 {
@@ -26,6 +44,7 @@ Nice to know:
         Ul-Classes: @MenuKit.Root.Classes("ul") <br />
         Li-Classes: @MenuKit.Root.Classes("li") <br />
         A-Classes: @MenuKit.Root.Classes("a") <br />
+        AccessCounter: @MagicHat.MenuKitAccessCounter
     </div>
 }
 

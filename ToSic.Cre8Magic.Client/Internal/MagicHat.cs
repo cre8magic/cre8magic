@@ -95,8 +95,13 @@ internal class MagicHat(
         userSvc.Value.User(pageState);
 
     /// <inheritdoc />
-    public IMagicMenuKit MenuKit(MagicMenuSettings? settings = default) =>
-        menuSvc.Value.MenuKit(GetPageStateOrThrow(settings?.PageState), settings);
+    public IMagicMenuKit MenuKit(MagicMenuSettings? settings = default)
+    {
+        MenuKitAccessCounter++;
+        return menuSvc.Value.MenuKit(GetPageStateOrThrow(settings?.PageState), settings);
+    }
+
+    public int MenuKitAccessCounter { get; set; }
 
     public IMagicUserLoginKit UserLoginKit(PageState pageState) =>
         userKitSvc.Value.UserLoginKit(pageState);
