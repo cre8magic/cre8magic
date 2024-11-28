@@ -21,15 +21,14 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
     private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSettings? settings)
     {
         var (settingsData, _, _, _) = MergeSettings(pageState, settings);
-        var settingsFull = settingsData; // new MagicPageContextSettings(settingsData, settings);
 
         var themeCtx = settingsSvc.GetThemeContextFull(pageState);
 
-        var contextClasses = new MagicPageContextDesigner(settingsFull, pageState).BodyClasses(themeCtx.PageTokens, settings?.Classes);
+        var contextClasses = new MagicPageContextDesigner(settingsData, pageState).BodyClasses(themeCtx.PageTokens, settings?.Classes);
         return new MagicPageContextKit
         {
             Classes = contextClasses,
-            Settings = settingsFull,
+            Settings = settingsData,
             // Internals
             PageState = pageState,
             Service = this

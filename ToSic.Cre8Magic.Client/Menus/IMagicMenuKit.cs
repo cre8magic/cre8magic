@@ -1,6 +1,7 @@
 ﻿using ToSic.Cre8magic.Designers;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Menus;
 
@@ -10,7 +11,7 @@ public interface IMagicMenuKit
     /// INTERNAL context for this menu, WIP.
     /// For debugging.
     /// </summary>
-    internal IContextWip Context { get; }
+    internal WorkContext WorkContext { get; }
 
     /// <summary>
     /// List of pages to show at this level of the menu.

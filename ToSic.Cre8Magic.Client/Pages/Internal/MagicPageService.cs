@@ -5,6 +5,7 @@ namespace ToSic.Cre8magic.Pages.Internal;
 
 internal class MagicPageService : IMagicPageService
 {
+
     public IEnumerable<IMagicPage> GetAll(PageState pageState, bool ignorePermissions = default) =>
         ignorePermissions
             ? new MagicPageFactory(pageState).PagesAll()

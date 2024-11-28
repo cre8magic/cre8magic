@@ -5,6 +5,7 @@ using Oqtane.Shared;
 using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Pages.Internal.PageDesign;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils.Logging;
 using Log = ToSic.Cre8magic.Utils.Logging.Log;
 
@@ -18,15 +19,19 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
 {
     internal PageState PageState => pageState ?? throw new ArgumentNullException(nameof(pageState));
 
+    [field: AllowNull, MaybeNull]
+    private WorkContext WorkContext =>
+        field ??= new() { LogRoot = logRoot ?? new(), PageFactory = this, TokenEngine = new() };
+
     // TODO: MAKE use context ? 
-    internal Log Log => _log ??= (logRoot ?? new LogRoot()).GetLog("pageFact");
-    private Log? _log;
+    [field: AllowNull, MaybeNull]
+    internal Log Log => field ??= WorkContext.LogRoot.GetLog("pageFact");
 
     /// <summary>
     /// Helper to calculate URL and other page properties.
     /// </summary>
-    internal MagicPageProperties PageProperties => _pageProperties ??= new(this);
-    private MagicPageProperties? _pageProperties;
+    [field: AllowNull, MaybeNull]
+    internal MagicPageProperties PageProperties => field ??= new(this);
 
     private readonly Dictionary<Page, IMagicPage> _cache = new();
 
@@ -41,13 +46,14 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
 
     public IMagicPage? CreateOrNull(Page? page) => page == null ? null : Create(page);
 
-    public IMagicPage Home => _home ??= Create(OqtanePages.Find(p => p.Path == "") ?? throw new("Home page not found, no page with empty path"));
-    private IMagicPage? _home;
+    [field: AllowNull, MaybeNull]
+    public IMagicPage Home => field
+        ??= Create(OqtanePages.Find(p => p.Path == "") ?? throw new("Home page not found, no page with empty path"));
 
-    public IMagicPage Current => _current ??= Create(PageState.Page ?? throw new("Current Page not found"));
-    private IMagicPage? _current;
+    [field: AllowNull, MaybeNull]
+    public IMagicPage Current => field
+        ??= Create(PageState.Page ?? throw new("Current Page not found"));
 
-    
 
     public IMagicPage? GetOrNull(int? id) => id == null ? null : CreateOrNull(OqtanePages.FirstOrDefault(p => p.PageId == id));
 
@@ -100,7 +106,7 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
     #region Breadcrumb
 
     [field: AllowNull, MaybeNull]
-    internal MagicBreadcrumbBuilder Breadcrumb => field ??= new(this);
+    internal MagicBreadcrumbBuilder Breadcrumb => field ??= new(WorkContext);
 
     #endregion
 
@@ -116,7 +122,7 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
 
     public List<IMagicPage> ChildrenOf(IMagicPage page) => ChildrenOf(page.Id);
 
-    public IPageDesignHelperWip DesignHelper(IMagicPage page) => new PageDesignHelperBlank();
+    public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperBlank();
 
     #endregion
 

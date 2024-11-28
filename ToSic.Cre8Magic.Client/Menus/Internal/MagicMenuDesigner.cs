@@ -11,14 +11,14 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// </summary>
 public class MagicMenuDesigner : IMagicPageDesigner
 {
-    internal MagicMenuDesigner(MagicMenuContextWip context)
+    internal MagicMenuDesigner(MagicMenuWorkContext workContext)
     {
-        Settings = context.Settings ?? throw new ArgumentNullException(nameof(context), $"{nameof(context.Settings)} null");
+        Settings = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
 
         DesignSettingsList = [Settings.DesignSettings!];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
-        Log = context.Settings.Debug?.Detailed == true ? context.LogRoot.GetLog("MenuDesigner") : null;
+        Log = workContext.Settings.Debug?.Detailed == true ? workContext.LogRoot.GetLog("MenuDesigner") : null;
     }
     private MagicMenuSettings Settings { get; }
 

@@ -16,11 +16,11 @@ public class TokenEngine: ITokenReplace
 
     #region Constructors and Child-Makers
 
-    public TokenEngine() => Parsers = new List<ITokenReplace>().AsReadOnly();
+    public TokenEngine() { }
 
     public TokenEngine(List<ITokenReplace> parsers) => Parsers = parsers.AsReadOnly();
 
-    public ReadOnlyCollection<ITokenReplace> Parsers { get; }
+    public ReadOnlyCollection<ITokenReplace> Parsers { get; } = new List<ITokenReplace>().AsReadOnly();
 
     public TokenEngine Expanded(ITokenReplace add) => new(Parsers.Concat(new List<ITokenReplace> { add }).ToList());
 

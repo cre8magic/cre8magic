@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
@@ -108,8 +109,8 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IM
     /// Determines if this breadcrumb should be shown.
     /// </summary>
     // TODO: REVIEW NAME - Show would probably be better!
-    public bool? Display { get; init; } = DisplayDefault;
-    public const bool DisplayDefault = true;
+    public bool? Display { get; init; }
+    public bool DisplaySafe => Display ?? true;
 
     /// <summary>
     /// Start page of this breadcrumb - like home or another specific page.
@@ -120,8 +121,8 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IM
     public int? ActiveId { get; init; }
 
 
-    public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
-    private string? _menuId;
+    [field: AllowNull, MaybeNull]
+    public string MenuId => field ??= SettingsUtils.RandomLongId(Id);
 
     public string? Variant { get; init; } // TODO:
 

@@ -1,27 +1,29 @@
 ﻿using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
-using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
-internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
+internal class MagicBreadcrumbBuilder(WorkContext workContext)
 {
+    private readonly MagicPageFactory _pageFactory = workContext.PageFactory;
+
     internal (IEnumerable<IMagicPage> Pages, IMagicPageChildrenFactory ChildrenFactory) Get(MagicBreadcrumbSettings? settings = default)
     {
         settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
-        var context = new ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner>
+        var context = new WorkContext<MagicBreadcrumbSettings, IMagicPageDesigner>
         {
             Designer = settings.Designer,
-            LogRoot = null, // wip
-            PageFactory = pageFactory,
-            TokenEngineWip = null, // TODO: SHOULD provide AllSettings or whatever will replace it, so we can get the Page tokens
+            LogRoot = workContext.LogRoot,
+            PageFactory = _pageFactory,
+            TokenEngine = workContext.TokenEngine,
             Settings = settings,
         };
 
         var childrenFactory = new MagicBreadcrumbNodeFactory(context);
         var list = BuildBreadcrumbs(
             settings,
-            magicPage => new MagicPage(magicPage.OqtanePage, pageFactory, childrenFactory)
+            magicPage => new MagicPage(magicPage.OqtanePage, _pageFactory, childrenFactory)
         );
         return (list, childrenFactory);
     }
@@ -35,13 +37,13 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
         // If there is no match, exit.
         if (endPage == null && settings.ActiveId != null)
         {
-            endPage = pageFactory.GetOrNull(settings.ActiveId);
+            endPage = _pageFactory.GetOrNull(settings.ActiveId);
             if (endPage == null)
                 return new List<TPage>();
         }
 
         // In case we didn't have a hit, use the current page
-        endPage ??= pageFactory.Current;
+        endPage ??= _pageFactory.Current;
 
         // Create a new list with the current page
         var list = new List<TPage>();
@@ -50,7 +52,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
             list.Add(generator(endPage));
 
         // If we are on home, exit now.
-        var homeId = pageFactory.Home.Id;
+        var homeId = _pageFactory.Home.Id;
         if (homeId == endPage.Id)
             return list;
 
@@ -76,7 +78,7 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
 
         // Technically home is not in the breadcrumb, it's usually just the first page in the list
         if (settings.WithHomeSafe)
-            list.Add(generator(pageFactory.Home));
+            list.Add(generator(_pageFactory.Home));
 
         // Reverse is a setting where the developer will think the breadcrumb is reversed
         // but since we're creating the list in reverse, we must do the opposite check

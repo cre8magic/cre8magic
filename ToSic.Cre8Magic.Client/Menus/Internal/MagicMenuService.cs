@@ -1,7 +1,5 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
-using ToSic.Cre8magic.Menus.Internal.Nodes;
-using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
@@ -34,12 +32,12 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         var pageFactory = new MagicPageFactory(pageState, newSettings.Pages, logRoot: logRoot);
 
         // Create the Menu Context which is used in various places
-        var context = new MagicMenuContextWip
+        var context = new MagicMenuWorkContext
         {
             Designer = newSettings.Designer,
             LogRoot = logRoot,
             PageFactory = pageFactory,
-            TokenEngineWip = settingsSvc.PageTokenEngine(pageState),
+            TokenEngine = settingsSvc.PageTokenEngine(pageState),
             Settings = newSettings,
         };
 
@@ -54,7 +52,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         {
             Page = root,
             Settings = newSettings,
-            Context = context,
+            WorkContext = context,
             Design = design
         };
         return kit;

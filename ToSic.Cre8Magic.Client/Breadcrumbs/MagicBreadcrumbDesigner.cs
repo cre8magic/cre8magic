@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
@@ -11,13 +12,13 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// </summary>
 public class MagicBreadcrumbDesigner : IMagicPageDesigner
 {
-    internal MagicBreadcrumbDesigner(IContextWip context, MagicBreadcrumbSettings settings)
+    internal MagicBreadcrumbDesigner(WorkContext workContext, MagicBreadcrumbSettings settings)
     {
         BreadcrumbSettings = settings ?? throw new ArgumentException("BreadcrumbConfig must be real", nameof(BreadcrumbSettings));
 
-        DesignSettingsList = [BreadcrumbSettings.DesignSettings!];
+        DesignSettingsList = [BreadcrumbSettings.DesignSettings ?? new()];
 
-        Log = context.LogRoot.GetLog("magic-breadcrumb-designer");
+        Log = workContext.LogRoot.GetLog("magic-breadcrumb-designer");
     }
 
     private Log Log { get; }

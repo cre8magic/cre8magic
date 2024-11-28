@@ -13,5 +13,5 @@ internal interface IMagicPageChildrenFactory
     /// <returns></returns>
     List<IMagicPage> ChildrenOf(IMagicPage page);
 
-    IPageDesignHelperWip DesignHelper(IMagicPage page);
+    IPageDesignHelperWip PageDesignHelper(IMagicPage page);
 }

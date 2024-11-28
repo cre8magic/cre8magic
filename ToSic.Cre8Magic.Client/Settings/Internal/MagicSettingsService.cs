@@ -1,4 +1,4 @@
-﻿using Oqtane.Models;
+﻿using System.Diagnostics.CodeAnalysis;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
@@ -25,7 +25,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     public IMagicSettingsService Setup(MagicThemePackage themePackage, string? layoutName)
     {
         _packageSettings = themePackage;
-        _themeTokens = null;
+        ThemeTokens = null!;
         _layoutName = layoutName;
         return this;
     }
@@ -43,10 +43,12 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     /// </summary>
     public PageState? PageState { get; private set; }
 
-    public MagicDebugState DebugState(PageState pageState) => ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
+    public MagicDebugState DebugState(PageState pageState) =>
+        ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
-    MagicDebugSettings IMagicSettingsService.Debug => _debug ??= Catalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
-    private MagicDebugSettings? _debug;
+    [field: AllowNull, MaybeNull]
+    MagicDebugSettings IMagicSettingsService.Debug => field
+        ??= Catalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
 
     private MagicThemePackage ThemePackage => _packageSettings ?? MagicThemePackage.Fallback;
     private MagicThemePackage? _packageSettings;
@@ -60,16 +62,17 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     {
         var pageFactory = new MagicPageFactory(pageState);
         var pageTokens = new PageTokens(pageFactory.Current, _layoutName);
-        var themeTokens = _themeTokens ??= new(ThemePackage);
-        var tokens = new TokenEngine([pageTokens, themeTokens]);
+        var tokens = new TokenEngine([pageTokens, ThemeTokens]);
         return tokens;
     }
-    private ThemeTokens? _themeTokens;
+
+    [field: AllowNull, MaybeNull]
+    private ThemeTokens ThemeTokens { get => field ??= new(ThemePackage); set; }
 
     #region Theme Context
 
     /// <inheritdoc />
-    public CmThemeContext GetThemeContext(PageState pageStateForCachingOnly)
+    public CmThemeContext GetThemeContext(PageState? pageStateForCachingOnly)
     {
         var originalNameForCache = (_layoutName ?? "prevent-error") + (pageStateForCachingOnly?.Page.PageId ?? -1);
         if (pageStateForCachingOnly != null && _themeCtxCache.TryGetValue(key: originalNameForCache, value: out var cached2))
@@ -116,89 +119,77 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
 
     #region Analytics
 
-    SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics =>
-        _analytics ??= new(
-            this,
-            MagicAnalyticsSettings.Defaults,
-            cat => cat.Analytics
-        );
-    private SettingsReader<MagicAnalyticsSettings>? _analytics;
-    
+    [field: AllowNull, MaybeNull]
+    SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics => field
+        ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
+
     #endregion
 
     #region Breadcrumbs
 
-    public SettingsReader<MagicBreadcrumbSettings> Breadcrumbs =>
-        _breadcrumbs ??= new(
-            this,
-            MagicBreadcrumbSettings.Defaults,
-            cat => cat.Breadcrumbs
-        );
-    private SettingsReader<MagicBreadcrumbSettings>? _breadcrumbs;
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicBreadcrumbSettings> Breadcrumbs => field ??=
+        new(this, MagicBreadcrumbSettings.Defaults, cat => cat.Breadcrumbs);
 
-    public SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns =>
-        _breadcrumbsDesigns ??= new(this, MagicBreadcrumbDesignSettings.DesignDefaults, catalog => catalog.BreadcrumbDesigns);
-    private SettingsReader<MagicBreadcrumbDesignSettings>? _breadcrumbsDesigns;
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns => field
+        ??= new(this, MagicBreadcrumbDesignSettings.DesignDefaults, catalog => catalog.BreadcrumbDesigns);
 
     #endregion
 
     #region PageContexts
 
-    public SettingsReader<MagicPageContextSettings> PageContexts =>
-        _pageContexts ??= new(this, MagicPageContextSettings.Defaults, catalog => catalog.PageContexts);
-    private SettingsReader<MagicPageContextSettings>? _pageContexts;
-
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicPageContextSettings> PageContexts => field
+        ??= new(this, MagicPageContextSettings.Defaults, catalog => catalog.PageContexts);
 
     #endregion
 
     #region Themes
 
-    private SettingsReader<MagicThemeSettings> Themes =>
-        _getTheme ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);
-    private SettingsReader<MagicThemeSettings>? _getTheme;
+    [field: AllowNull, MaybeNull]
+    private SettingsReader<MagicThemeSettings> Themes => field
+        ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);
 
-    public SettingsReader<MagicThemeDesignSettings> ThemeDesigns =>
-        _themeDesigns ??= new(this, MagicThemeDesignSettings.Defaults, catalog => catalog.ThemeDesigns);
-    private SettingsReader<MagicThemeDesignSettings>? _themeDesigns;
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicThemeDesignSettings> ThemeDesigns => field
+        ??= new(this, MagicThemeDesignSettings.Defaults, catalog => catalog.ThemeDesigns);
 
     #endregion
 
     #region Languages
 
-    public SettingsReader<MagicLanguageSettings> Languages => _languages ??= new(this,
-            MagicLanguageSettings.Defaults,
-            catalog => catalog.Languages
-        );
-    private SettingsReader<MagicLanguageSettings>? _languages;
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicLanguageSettings> Languages => field
+        ??= new(this, MagicLanguageSettings.Defaults, catalog => catalog.Languages);
 
-    public SettingsReader<MagicLanguageDesignSettings> LanguageDesigns =>
-        _languageDesigns ??= new(this, MagicLanguageDesignSettings.DesignDefaults, catalog => catalog.LanguageDesigns);
-    private SettingsReader<MagicLanguageDesignSettings>? _languageDesigns;
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicLanguageDesignSettings> LanguageDesigns => field
+        ??= new(this, MagicLanguageDesignSettings.DesignDefaults, catalog => catalog.LanguageDesigns);
 
     #endregion
 
     #region Containers
 
-    public SettingsReader<MagicContainerSettings> Containers =>
-        _containers ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
-    private SettingsReader<MagicContainerSettings>? _containers;
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicContainerSettings> Containers => field
+        ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
 
-    public SettingsReader<MagicContainerDesignSettings> ContainerDesigns =>
-        _containerDesigns ??= new(this, MagicContainerDesignSettings.Defaults, cat => cat.ContainerDesigns);
-    private SettingsReader<MagicContainerDesignSettings>? _containerDesigns;
-
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicContainerDesignSettings> ContainerDesigns => field
+        ??= new(this, MagicContainerDesignSettings.Defaults, cat => cat.ContainerDesigns);
 
     #endregion
 
     #region Menus
 
-    public SettingsReader<MagicMenuSettings> Menus =>
-        _getMenuSettings ??= new(this, MagicMenuSettings.Defaults, catalog => catalog.Menus);
-    private SettingsReader<MagicMenuSettings>? _getMenuSettings;
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicMenuSettings> Menus => field
+        ??= new(this, MagicMenuSettings.Defaults, catalog => catalog.Menus);
 
-    public SettingsReader<MagicMenuDesignSettings> MenuDesigns =>
-        _menuDesigns ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);
-    private SettingsReader<MagicMenuDesignSettings>? _menuDesigns;
+    [field: AllowNull, MaybeNull]
+    public SettingsReader<MagicMenuDesignSettings> MenuDesigns => field
+        ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);
 
     #endregion
 

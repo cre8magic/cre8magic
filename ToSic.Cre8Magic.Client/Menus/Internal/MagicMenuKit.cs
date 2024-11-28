@@ -2,6 +2,7 @@
 using ToSic.Cre8magic.Designers;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Menus.Internal;
 
@@ -26,7 +27,7 @@ internal record MagicMenuKit : IMagicMenuKit
     public bool IsVariant(string variant) =>
         Variant.Equals(variant, StringComparison.OrdinalIgnoreCase);
 
-    public /* actually internal */ required IContextWip Context { get; init; }
+    public /* actually internal */ required WorkContext WorkContext { get; init; }
 
     // TODO: naming not final
     public IMagicMenuKit Kit(IMagicPage page) =>

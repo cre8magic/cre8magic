@@ -1,17 +1,17 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using ToSic.Cre8magic.Pages.Internal.PageDesign;
-using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
-internal abstract class MagicPagesFactoryBase(IContextWip context) : IMagicPageChildrenFactory
+internal abstract class MagicPagesFactoryBase(WorkContext workContext) : IMagicPageChildrenFactory
 {
     #region Logging
 
     [field: AllowNull, MaybeNull]
-    internal Log Log => field ??= context.LogRoot.GetLog(GetType().Name);
+    internal Log Log => field ??= workContext.LogRoot.GetLog(GetType().Name);
 
     #endregion
 
@@ -21,12 +21,9 @@ internal abstract class MagicPagesFactoryBase(IContextWip context) : IMagicPageC
 
     #endregion
 
-    protected abstract IMagicPageDesigner FallbackDesigner();
+    protected abstract IMagicPageDesigner PageDesigner();
 
-    [field: AllowNull, MaybeNull]
-    internal IMagicPageDesigner Design => field ??= context.PageDesigner ?? FallbackDesigner();
-
-    public IPageDesignHelperWip DesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page);
+    public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page, PageDesigner());
 
     /// <summary>
     /// 
@@ -35,10 +32,10 @@ internal abstract class MagicPagesFactoryBase(IContextWip context) : IMagicPageC
     /// <returns></returns>
     internal TokenEngine PageTokenEngine(IMagicPage page)
     {
-        var tokens = context.TokenEngineWip;
+        var tokens = workContext.TokenEngine;
         // fallback without MagicSettings return just TokenEngine with PageTokens
-        if (tokens == null)
-            return new TokenEngine([new PageTokens(page)]);
+        if (tokens == null || tokens.Parsers.Count == 0)
+            return new([new PageTokens(page)]);
 
         var originalPageTokens = (PageTokens)tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
         var updatedPageTokens = originalPageTokens.Clone(page);
@@ -59,7 +56,7 @@ internal abstract class MagicPagesFactoryBase(IContextWip context) : IMagicPageC
     {
         var l = Log.Fn<List<IMagicPage>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
 
-        var pageFactory = context.PageFactory;
+        var pageFactory = workContext.PageFactory;
         var children = pageFactory.ChildrenOf(page.Id)
             .Select(IMagicPage (child) => new MagicPage(child.OqtanePage, pageFactory, this)
             {

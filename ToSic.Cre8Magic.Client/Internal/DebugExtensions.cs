@@ -12,7 +12,7 @@ namespace ToSic.Cre8magic.Internal;
 public static class DebugExtensions
 {
     public static IEnumerable<object?>? GetLogEntries(this IMagicMenuKit menuKit) =>
-        menuKit?.Context?.LogRoot.Entries;
+        menuKit?.WorkContext?.LogRoot.Entries;
 
     public static List<Exception> GetExceptions(this IMagicSettingsService settingsSvc) =>
         settingsSvc.Catalogs.SelectMany(c => c.Journal.Exceptions).ToList();

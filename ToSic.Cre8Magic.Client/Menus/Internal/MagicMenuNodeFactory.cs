@@ -10,20 +10,20 @@ namespace ToSic.Cre8magic.Menus.Internal;
 ///
 /// Not used for the root though...
 /// </summary>
-internal class MagicMenuNodeFactory(MagicMenuContextWip context) 
-    : MagicPagesFactoryBase(context)
+internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext) 
+    : MagicPagesFactoryBase(workContext)
 {
     /// <summary>
     /// Settings - on first access takes the one given, or creates a default.
     /// </summary>
-    public MagicMenuSettings SettingsTyped => _settings ??= context.Settings ?? MagicMenuSettings.Defaults.Fallback;
+    public MagicMenuSettings SettingsTyped => _settings ??= workContext.Settings ?? MagicMenuSettings.Defaults.Fallback;
     private MagicMenuSettings? _settings;
 
     public override IMagicPageSetSettings Settings => SettingsTyped;
 
-    protected override IMagicPageDesigner FallbackDesigner() => new MagicMenuDesigner(context);
+    protected override IMagicPageDesigner PageDesigner() => workContext.Designer ?? new MagicMenuDesigner(workContext);
 
-    public int MaxDepth => _maxDepth ??= context.Settings.Depth ?? MagicMenuSettings.Defaults.Fallback.Depth!.Value;
+    public int MaxDepth => _maxDepth ??= workContext.Settings.Depth ?? MagicMenuSettings.Defaults.Fallback.Depth!.Value;
     private int? _maxDepth;
 
     /// <summary>
@@ -36,7 +36,7 @@ internal class MagicMenuNodeFactory(MagicMenuContextWip context)
 
         // On the first level, we should construct the base list
         if ((page as MagicPage)?.IsVirtualRoot == true)
-            return l.Return(GetRootPages(context, this), "Root");
+            return l.Return(GetRootPages(workContext, this), "Root");
 
 
         var levelsRemaining = MaxDepth - (page.MenuLevel - 1 /* Level is 1 based, so -1 */);
@@ -50,12 +50,12 @@ internal class MagicMenuNodeFactory(MagicMenuContextWip context)
 
 
 
-    private static List<IMagicPage> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)
+    private static List<IMagicPage> GetRootPages(MagicMenuWorkContext workContext, MagicMenuNodeFactory nodeFactory)
     {
-        var log = context.LogRoot.GetLog("get-root");
+        var log = workContext.LogRoot.GetLog("get-root");
 
-        var pageFactory = context.PageFactory;
-        var settings = context.Settings;
+        var pageFactory = workContext.PageFactory;
+        var settings = workContext.Settings;
 
         // Add break-point for debugging during development
         if (pageFactory.PageState.IsDebug())
