@@ -23,6 +23,10 @@
     <RootNamespace>ToSic.Cre8magic</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Models\**" />
     <Compile Remove="Pages\**" />

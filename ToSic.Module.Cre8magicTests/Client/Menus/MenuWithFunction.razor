@@ -7,7 +7,7 @@
     public IMagicMenuKit MenuKit { get; set; }
 }
 
-@RenderMenu(MenuKit.Page, MenuKit.Pages)
+@RenderMenu(MenuKit.Root)
 
 @* Function creating a menu *@
 @code
@@ -15,11 +15,10 @@
     /// <summary>
     /// Render a Menu - and recursively render sub-menus
     /// </summary>
-    /// <param name="pages"></param>
     /// <returns></returns>
-    RenderFragment RenderMenu(IMagicPage current, IEnumerable<IMagicPage> pages) =>
+    RenderFragment RenderMenu(IMagicPage current) =>
         @<ul class='@current.Classes("li")'>
-            @foreach (var menuPage in pages)
+            @foreach (var menuPage in current.Children)
             {
                 <li class='@menuPage.Classes("li")'>
                     <a class='@menuPage.Classes("a")' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>
@@ -27,10 +26,9 @@
                     {
                         <span class='@menuPage.Classes("span")'></span>
                         @* **RECURSION** *@
-                        @RenderMenu(menuPage, menuPage.Children)
+                        @RenderMenu(menuPage)
                     }
                 </li>
             }
         </ul>;
- 
 }

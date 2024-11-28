@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Designers;
-using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Menus;
@@ -14,12 +12,12 @@ public interface IMagicMenuKit
     internal WorkContext WorkContext { get; }
 
     /// <summary>
-    /// List of pages to show at this level of the menu.
-    /// This is a magic page list, which means it contains magic pages and some more features.
-    /// 
-    /// Can contain child pages.
+    /// The root node to start from.
+    /// This behaves like a <see cref="IMagicPage"/> but is not really a page.
+    /// It does provide <see cref="IMagicPage.Children"/> and can also do design work like apply `Classes`,
+    /// typically to the outermost `<ul></ul>` tags etc.
     /// </summary>
-    IMagicPage Page { get; init; }
+    IMagicPage Root { get; init; }
 
     /// <summary>
     /// The settings used to retrieve and build the pages.
@@ -31,11 +29,6 @@ public interface IMagicMenuKit
     /// Usually determined by the settings.
     /// </summary>
     string Variant { get; }
-
-    IMagicDesign Design { get; }
-    IEnumerable<IMagicPage> Pages { get; }
-
-    IMagicMenuKit Kit(IMagicPage page);
 
     /// <summary>
     /// Check if the menu is of a specific variant. Case-insensitive.

@@ -19,26 +19,26 @@ Nice to know:
     var debug = MenuKit.Settings.Debug;
     <div class="alert alert-info">
         @* ConfigName: @(Menu?.Settings.ConfigName) <br/> *@
-        HasChildren: @(MenuKit.Pages.Any()) - @MenuKit.Pages.Count() <br />
+        HasChildren: @(MenuKit.Root.Children.Any()) - @MenuKit.Root.Children.Count() <br />
         Debug: @debug?.Allowed / @debug?.Anonymous / @debug?.Admin <br/>
         @* This: @Menu?.Name (@Menu?.Link) <br/> *@
         Variant: @MenuKit.Variant <br/>
-        Ul-Classes: @MenuKit.Design.Classes("ul") <br />
-        Li-Classes: @MenuKit.Design.Classes("li") <br />
-        A-Classes: @MenuKit.Design.Classes("a") <br />
+        Ul-Classes: @MenuKit.Root.Classes("ul") <br />
+        Li-Classes: @MenuKit.Root.Classes("li") <br />
+        A-Classes: @MenuKit.Root.Classes("a") <br />
     </div>
 }
 
 @* Show the desired menu - in this setup we have 2 options. If you need more, change the conditions to check for Menu?.Settings.Template *@
 @if (MenuKit.IsVariant("vertical"))
 {
-    <MagicMenuVertical MenuKit="@MenuKit"></MagicMenuVertical>
+    <MagicMenuVertical Current="@MenuKit.Root"></MagicMenuVertical>
 }
 else
 {
-    <MagicMenuHorizontal MenuKit="@MenuKit" Pages="@MenuKit.Pages"></MagicMenuHorizontal>
+    <MagicMenuHorizontal Current="@MenuKit.Root"></MagicMenuHorizontal>
 }
-@if (MenuKit?.Pages?.Any() == false)
+@if (!MenuKit.Root.Children.Any())
 {
     @* Debug Information in cases where the menu doesn't even show *@
     <MagicMenuDebug MenuKit="@MenuKit" Standalone="true"></MagicMenuDebug>

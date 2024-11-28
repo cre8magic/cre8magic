@@ -1,5 +1,5 @@
-﻿@using ToSic.Cre8magic.Menus
-@using ToSic.Cre8magic.ComponentsBs5.Debug
+﻿@using System.Diagnostics.CodeAnalysis
+@using ToSic.Cre8magic.Pages
 @inherits ComponentBase;
 @*
 File Purpose:       Show a vertical menu, usually used for mobile or sidebar
@@ -9,12 +9,13 @@ Nice to know:       See `MenuDefault.razor`
 @code
 {
     [Parameter, EditorRequired]
-    public required IMagicMenuKit MenuKit { get; set; }
+    [field: AllowNull]
+    public required IMagicPage Current { get; init; }
 }
-@if (MenuKit.Pages.Any())
+@if (Current.Children.Any())
 {
-    <ul class='@MenuKit.Design.Classes("ul")'>
-        @foreach(var menuPage in MenuKit.Pages)
+    <ul class='@Current.Classes("ul")'>
+        @foreach(var menuPage in Current.Children)
         {
             <li class='@menuPage.Classes("li")'>
                 <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'
@@ -26,11 +27,9 @@ Nice to know:       See `MenuDefault.razor`
                           data-bs-toggle='collapse'
                           data-bs-target='@menuPage.Value("data-bs-target")'
                           aria-expanded='@menuPage.IsInBreadcrumb'></span>
-                    <MagicMenuVertical MenuKit="@MenuKit.Kit(menuPage)"></MagicMenuVertical>
+                    <MagicMenuVertical Current="@menuPage"></MagicMenuVertical>
                 }
             </li>
         }
-        @* Debug Information as things can get complex *@
-        <MagicMenuDebug MenuKit="@MenuKit"></MagicMenuDebug>
     </ul>
 }

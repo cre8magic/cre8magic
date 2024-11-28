@@ -11,17 +11,16 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// </summary>
 internal record MagicMenuKit : IMagicMenuKit
 {
-    public required IMagicPage Page { get; init; }
-
-    public IEnumerable<IMagicPage> Pages => Page.Children;
+    public required IMagicPage Root { get; init; }
 
     public required MagicMenuSettings Settings { get; init; }
-
-    public required IMagicDesign Design { get; init; }
 
     // TODO:
     //public object Designer => Pages.Settings.Designer;
 
+    /// <summary>
+    /// The variant - never null; defaults to ...
+    /// </summary>
     public string Variant => Settings.Variant ?? "";
 
     public bool IsVariant(string variant) =>
@@ -29,11 +28,4 @@ internal record MagicMenuKit : IMagicMenuKit
 
     public /* actually internal */ required WorkContext WorkContext { get; init; }
 
-    // TODO: naming not final
-    public IMagicMenuKit Kit(IMagicPage page) =>
-        this with
-        {
-            Page = page,
-            Design = new PageListDesignWip(page),
-        };
 }

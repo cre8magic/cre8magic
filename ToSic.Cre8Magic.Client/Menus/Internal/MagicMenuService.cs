@@ -47,13 +47,13 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
             IsVirtualRoot = true,
             MenuLevel = 0,
         };
-        var design = new PageListDesignWip(root);
+        //var design = new PageListDesignWip(root);
         var kit = new MagicMenuKit
         {
-            Page = root,
+            Root = root,
             Settings = newSettings,
             WorkContext = context,
-            Design = design
+            //Design = design
         };
         return kit;
     }

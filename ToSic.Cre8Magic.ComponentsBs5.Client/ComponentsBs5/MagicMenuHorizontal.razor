@@ -1,5 +1,4 @@
-﻿@using ToSic.Cre8magic.Menus
-@using ToSic.Cre8magic.ComponentsBs5.Debug
+﻿@using System.Diagnostics.CodeAnalysis
 @using ToSic.Cre8magic.Pages
 @inherits ComponentBase;
 @*
@@ -17,15 +16,13 @@ Nice to know:
 @code
 {
     [Parameter, EditorRequired]
-    public required IMagicMenuKit MenuKit { get; set; }
-
-    [Parameter, EditorRequired]
-    public required IEnumerable<IMagicPage> Pages { get; init; }
+    [field: AllowNull]
+    public required IMagicPage Current { get; init; }
 }
-@if (MenuKit.Pages.Any())
+@if (Current.Children.Any())
 {
-    <ul class='@MenuKit.Design.Classes("ul")'>
-        @foreach(var menuPage in MenuKit.Pages)
+    <ul class='@Current.Classes("ul")'>
+        @foreach(var menuPage in Current.Children)
         {
             <li class='@menuPage.Classes("li")'>
                 <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'
@@ -34,11 +31,9 @@ Nice to know:
 
                 @if (menuPage.HasChildren)
                 {
-                    <MagicMenuHorizontal MenuKit="@MenuKit.Kit(menuPage)" Pages="@menuPage.Children"></MagicMenuHorizontal>
+                    <MagicMenuHorizontal Current="@menuPage"></MagicMenuHorizontal>
                 }
             </li>
         }
-        @* Debug Information as things can get complex *@
-        <MagicMenuDebug MenuKit="@MenuKit"></MagicMenuDebug>
     </ul>
 }
