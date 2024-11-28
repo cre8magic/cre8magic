@@ -34,4 +34,11 @@ public interface IMagicMenuKit
     IMagicDesign Design { get; init; }
 
     IMagicMenuKit Kit(IMagicPageWithDesignWip page);
+
+    /// <summary>
+    /// Check if the menu is of a specific variant. Case-insensitive.
+    /// </summary>
+    /// <param name="variant">the variant to check, like "vertical"</param>
+    /// <returns></returns>
+    bool IsVariant(string variant);
 }

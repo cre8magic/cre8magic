@@ -43,21 +43,20 @@ public abstract class MagicMenuRoot: ThemeControlBase
 
     [Parameter] public string? Template { get; set; }
 
-    [Inject] public IMagicMenuService? MagicMenuService { get; set; }
+    [Inject] public required IMagicMenuService MagicMenuService { get; set; }
 
-    protected IMagicMenuKit? MenuKit { get; private set; }
-
-    /// <summary>
-    /// Detect if the menu is configured for vertical.
-    /// For the most common 2 kinds of menu options. 
-    /// </summary>
-    protected bool IsVertical => MagicConstants.MenuVertical.Equals(MenuKit?.Variant, StringComparison.OrdinalIgnoreCase);
-    protected bool IsHorizontal => MagicConstants.MenuHorizontal.Equals(MenuKit?.Variant, StringComparison.OrdinalIgnoreCase);
+    protected IMagicMenuKit MenuKit => _menuKit ??= GetMenuKit();
+    private IMagicMenuKit? _menuKit;
 
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
+        // if parameters changed, reset menuKit
+        _menuKit = null;
+    }
 
+    private IMagicMenuKit GetMenuKit()
+    {
         var startSettings = MenuSettings;
         var menuSettings = MenuSettings ?? new MagicMenuSettings
         {
@@ -74,7 +73,7 @@ public abstract class MagicMenuRoot: ThemeControlBase
             Start = Start ?? startSettings?.Start
         };
 
-        MenuKit = MagicMenuService?.MenuKit(PageState, menuSettings);
+        return MagicMenuService.MenuKit(PageState, menuSettings);
     }
 
 }

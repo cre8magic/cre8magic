@@ -21,6 +21,9 @@ public record MagicMenuKit : IMagicMenuKit
 
     public string Variant => Settings.Variant ?? "";
 
+    public bool IsVariant(string variant) =>
+        Variant.Equals(variant, StringComparison.OrdinalIgnoreCase);
+
     public /* actually internal */ required IContextWip Context { get; init; }
 
     // TODO: naming not final
