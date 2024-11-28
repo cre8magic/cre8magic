@@ -120,9 +120,9 @@ public interface IMagicPage
 
     #endregion
 
-    /// <inheritdoc cref="IMagicDesign.Classes" />
-    string? Classes(string tag);
+    /// <inheritdoc cref="IDocsDesign.Classes" />
+    string? Classes(string tagOrKey);
 
-    /// <inheritdoc cref="IMagicDesign.Value" />
-    string? Value(string key);
+    /// <inheritdoc cref="IDocsDesign.Value" />
+    string? Value(string tagOrKey);
 }

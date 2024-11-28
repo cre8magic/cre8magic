@@ -84,9 +84,9 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory, IMagicPa
     private IPageDesignHelperWip DesignHelper => field ??= childrenFactory.PageDesignHelper(this);
 
     /// <inheritdoc />
-    public virtual string? Classes(string tag) => DesignHelper.Classes(tag);
+    public virtual string? Classes(string tagOrKey) => DesignHelper.Classes(tagOrKey);
 
     /// <inheritdoc />
-    public virtual string? Value(string key) => DesignHelper.Value(key);
+    public virtual string? Value(string tagOrKey) => DesignHelper.Value(tagOrKey);
 
 }
