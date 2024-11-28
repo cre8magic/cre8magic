@@ -5,6 +5,7 @@ namespace ToSic.Cre8magic.Menus;
 
 public record MagicMenuDesignSettingsPart: MagicDesignSettingsPart, ICanClone<MagicMenuDesignSettingsPart>
 {
+    [PrivateApi]
     public MagicMenuDesignSettingsPart() { }
 
     private MagicMenuDesignSettingsPart(MagicMenuDesignSettingsPart? priority, MagicMenuDesignSettingsPart? fallback = default): base(priority, fallback)

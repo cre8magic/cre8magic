@@ -17,12 +17,6 @@ internal abstract class MagicPagesFactoryBase(WorkContext workContext) : IMagicP
 
     #endregion
 
-    #region Abstract
-
-    public abstract IMagicPageSetSettings Settings { get; }
-
-    #endregion
-
     protected abstract IMagicPageDesigner PageDesigner();
 
     public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page, PageDesigner());

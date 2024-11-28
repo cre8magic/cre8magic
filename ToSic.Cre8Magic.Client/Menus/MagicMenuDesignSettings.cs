@@ -11,16 +11,15 @@ namespace ToSic.Cre8magic.Menus;
 /// </summary>
 public record MagicMenuDesignSettings : SettingsWithInherit, ICanClone<MagicMenuDesignSettings>
 {
+    [PrivateApi]
     public MagicMenuDesignSettings() { }
 
-    [PrivateApi]
     private MagicMenuDesignSettings(MagicMenuDesignSettings? priority, MagicMenuDesignSettings? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    [PrivateApi]
     MagicMenuDesignSettings ICanClone<MagicMenuDesignSettings>.CloneUnder(MagicMenuDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

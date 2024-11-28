@@ -40,6 +40,4 @@ public record MagicLanguage: ICanClone<MagicLanguage>
     public string? Description { get; init; }
 
     public bool IsActive => CultureInfo.CurrentUICulture.Name.EqInvariant(Culture);
-
-    // TODO: MAYBE additional options to only enable on certain roles...?
 }

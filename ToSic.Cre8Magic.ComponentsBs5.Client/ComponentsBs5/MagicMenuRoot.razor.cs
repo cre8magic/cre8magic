@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.Themes;
 using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Settings;
 
 // TODO:
 // 1. Reduce to only use MagicMenuSettings / PartName etc.
@@ -43,7 +44,7 @@ public abstract class MagicMenuRoot: ThemeControlBase
 
     [Parameter] public string? Template { get; set; }
 
-    [Inject] public required IMagicMenuService MagicMenuService { get; set; }
+    [Inject] public required IMagicHat MagicHat { get; set; }
 
     protected IMagicMenuKit MenuKit => _menuKit ??= GetMenuKit();
     private IMagicMenuKit? _menuKit;
@@ -73,7 +74,7 @@ public abstract class MagicMenuRoot: ThemeControlBase
             Start = Start ?? startSettings?.Start
         };
 
-        return MagicMenuService.MenuKit(PageState, menuSettings);
+        return MagicHat.MenuKit(menuSettings.With(PageState));
     }
 
 }

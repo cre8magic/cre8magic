@@ -1,6 +1,6 @@
 ﻿using Oqtane.UI;
 
-namespace ToSic.Cre8magic.Menus;
+namespace ToSic.Cre8magic.Menus.Internal;
 
 /// <summary>
 /// Service to get a tree of pages for a menu.

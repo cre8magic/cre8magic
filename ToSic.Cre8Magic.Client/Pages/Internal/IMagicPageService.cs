@@ -1,7 +1,7 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
 
-namespace ToSic.Cre8magic.Pages;
+namespace ToSic.Cre8magic.Pages.Internal;
 
 public interface IMagicPageService
 {

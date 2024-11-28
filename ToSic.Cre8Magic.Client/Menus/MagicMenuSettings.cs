@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
@@ -19,9 +20,9 @@ public record MagicMenuSettings : MagicSettingsBase, IHasDebugSettings, IMagicPa
     /// <summary>
     /// Default constructor, so this record can be created anywhere.
     /// </summary>
+    [PrivateApi]
     public MagicMenuSettings() { }
 
-    [PrivateApi]
     private MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default) : base(priority, fallback)
     {
         Id = priority?.Id ?? fallback?.Id;
@@ -39,7 +40,6 @@ public record MagicMenuSettings : MagicSettingsBase, IHasDebugSettings, IMagicPa
         Pages = priority?.Pages ?? fallback?.Pages;
     }
 
-    [PrivateApi]
     MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
@@ -117,8 +117,8 @@ public record MagicMenuSettings : MagicSettingsBase, IHasDebugSettings, IMagicPa
     //public const string TemplateDefault = "Horizontal";
 
 
-    public string MenuId => _menuId ??= SettingsUtils.RandomLongId(Id);
-    private string? _menuId;
+    [field: AllowNull, MaybeNull]
+    public string MenuId => field ??= SettingsUtils.RandomLongId(Id);
 
     public string Variant => Template ?? "";
 

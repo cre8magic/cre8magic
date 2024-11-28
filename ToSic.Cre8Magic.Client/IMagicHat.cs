@@ -3,6 +3,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Links;
+using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Users;
@@ -65,4 +66,7 @@ public interface IMagicHat
 
 
     IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = default);
+
+    /// <inheritdoc />
+    IMagicMenuKit MenuKit(MagicMenuSettings? settings = default);
 }

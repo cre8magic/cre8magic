@@ -1,5 +1,4 @@
 ﻿using System.Runtime.CompilerServices;
-using Oqtane.Models;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Analytics.Internal;
@@ -9,6 +8,8 @@ using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Containers.Internal;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Links;
+using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.PageContexts.Internal;
 using ToSic.Cre8magic.Settings;
@@ -29,7 +30,8 @@ internal class MagicHat(
     MagicLazy<IMagicThemeService> themeSvc,
     MagicLazy<IMagicSettingsProvider> settingsProviderSvc,
     MagicLazy<IMagicLinkService> linkSvc,
-    MagicLazy<IMagicContainerService> containerSvc) : IMagicHat
+    MagicLazy<IMagicContainerService> containerSvc,
+    MagicLazy<IMagicMenuService> menuSvc) : IMagicHat
 {
     #region Setup & PageState
 
@@ -91,6 +93,10 @@ internal class MagicHat(
     /// <inheritdoc />
     public MagicUser User(PageState pageState) =>
         userSvc.Value.User(pageState);
+
+    /// <inheritdoc />
+    public IMagicMenuKit MenuKit(MagicMenuSettings? settings = default) =>
+        menuSvc.Value.MenuKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     public IMagicUserLoginKit UserLoginKit(PageState pageState) =>
         userKitSvc.Value.UserLoginKit(pageState);
