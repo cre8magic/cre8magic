@@ -103,6 +103,8 @@ internal class MagicHat(
 
     public int MenuKitAccessCounter { get; set; }
 
+
+
     public IMagicUserLoginKit UserLoginKit(PageState pageState) =>
         userKitSvc.Value.UserLoginKit(pageState);
 

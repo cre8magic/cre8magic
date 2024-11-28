@@ -1,5 +1,7 @@
-﻿@using Oqtane.UI
+﻿@using Oqtane.Models
+@using Oqtane.UI
 @using ToSic.Cre8magic.ComponentsBs5.Debug
+@using ToSic.Cre8magic.Internal
 @using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.Settings
 @inject IMagicHat MagicHat
@@ -29,7 +31,11 @@ Nice to know:
     /// </summary>
     [Parameter] public MagicMenuSettings? Settings { get; set; }
 
-    protected IMagicMenuKit MenuKit => MagicHat.MenuKit(Settings.With(PageState));
+    protected IMagicMenuKit MenuKit => (_debouncer ??= new(() => MagicHat.MenuKit(Settings.With(PageState)), () => PageState)).Get();
+    private Debouncer<IMagicMenuKit>? _debouncer;
+}
+@{
+    var MenuKit = MagicHat.MenuKit(Settings.With(PageState));
 }
 @* Special Debugging *@
 @if (true)
