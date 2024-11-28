@@ -27,7 +27,7 @@ public record MagicThemeSettings: MagicSettingsBase, IHasDebugSettings, ICanClon
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
-    MagicThemeSettings ICanClone<MagicThemeSettings>.CloneUnder(MagicThemeSettings? priority, bool forceCopy = false) =>
+    MagicThemeSettings ICanClone<MagicThemeSettings>.CloneUnder(MagicThemeSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion

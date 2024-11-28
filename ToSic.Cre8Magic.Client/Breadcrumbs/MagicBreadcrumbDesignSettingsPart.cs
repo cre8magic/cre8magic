@@ -15,7 +15,7 @@ public record MagicBreadcrumbDesignSettingsPart : MagicDesignSettingsPart, ICanC
         IsDisabled = priority?.IsDisabled ?? fallback?.IsDisabled;
     }
 
-    MagicBreadcrumbDesignSettingsPart ICanClone<MagicBreadcrumbDesignSettingsPart>.CloneUnder(MagicBreadcrumbDesignSettingsPart? priority, bool forceCopy = false) =>
+    MagicBreadcrumbDesignSettingsPart ICanClone<MagicBreadcrumbDesignSettingsPart>.CloneUnder(MagicBreadcrumbDesignSettingsPart? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

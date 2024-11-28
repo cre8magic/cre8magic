@@ -33,13 +33,13 @@ public record MagicUser
     /// The email address of the user.
     /// </summary>
     /// <returns>The email address or null if the user is anonymous.</returns>
-    public string Email => OqtaneUser?.Email;
+    public string? Email => OqtaneUser?.Email;
 
     /// <summary>
     /// The display name of the user.
     /// </summary>
     /// <returns>The display name or null if the user is anonymous.</returns>
-    public string DisplayName => OqtaneUser?.DisplayName;
+    public string? DisplayName => OqtaneUser?.DisplayName;
 
     /// <summary>
     /// Is the user anonymous (not authenticated)?

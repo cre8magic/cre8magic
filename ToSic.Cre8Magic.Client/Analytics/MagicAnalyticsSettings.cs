@@ -30,16 +30,10 @@ public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyti
         PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
     }
 
-    MagicAnalyticsSettings ICanClone<MagicAnalyticsSettings>.CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
+    MagicAnalyticsSettings ICanClone<MagicAnalyticsSettings>.CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy) => 
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion
-
-
-    /// <summary>
-    /// WIP
-    /// </summary>
-    public PageState? PageState { get; init; }
 
     /// <summary>
     /// ID of Google Tag Manager.

@@ -23,8 +23,9 @@ internal static class MagicSettingsGetSettings
         // Get the Theme Context - important for checking part names
         var themeCtx = settingsSvc.GetThemeContext(pageStateForCachingOnly);
 
-        if (settings is IDebugSettings { DebugThis: true } tempForDebug)
-            tempForDebug = tempForDebug;
+        // Activate this for debugging
+        //if (settings is IDebugSettings { DebugThis: true } tempForDebug)
+        //    tempForDebug = tempForDebug;
 
         // Find Part which contains information for these settings,
         // e.g. what to show
@@ -81,9 +82,10 @@ internal static class MagicSettingsGetSettings
 
         var (mergedSettings, themeCtx, part, journal) = settingsSvc.GetBestSettings(pageState, settings, settingsReader, settingPrefix, defaultPartNameForShow);
 
-        if (settings is IDebugSettings { DebugThis: true } tempForDebug)
-            tempForDebug = tempForDebug;
-        
+        // Activate this for debugging
+        //if (settings is IDebugSettings { DebugThis: true } tempForDebug)
+        //    tempForDebug = tempForDebug;
+
         // Get Design Settings from specified reader using the provided design settings as priority to merge
         var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Design, settingPrefix);
         if (dSettings is IDebugSettings { Catalog: not null } withDesignCatalog)

@@ -33,7 +33,7 @@ public partial record MagicPageContextSettings: MagicSettingsBase, ICanClone<Mag
     }
 
     /// <inheritdoc />
-    MagicPageContextSettings ICanClone<MagicPageContextSettings>.CloneUnder(MagicPageContextSettings? priority, bool forceCopy = false) =>
+    MagicPageContextSettings ICanClone<MagicPageContextSettings>.CloneUnder(MagicPageContextSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion

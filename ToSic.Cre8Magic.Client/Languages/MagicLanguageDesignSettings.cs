@@ -20,7 +20,7 @@ public record MagicLanguageDesignSettings : SettingsWithInherit, ICanClone<Magic
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicLanguageDesignSettings ICanClone<MagicLanguageDesignSettings>.CloneUnder(MagicLanguageDesignSettings? priority, bool forceCopy = false) =>
+    MagicLanguageDesignSettings ICanClone<MagicLanguageDesignSettings>.CloneUnder(MagicLanguageDesignSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

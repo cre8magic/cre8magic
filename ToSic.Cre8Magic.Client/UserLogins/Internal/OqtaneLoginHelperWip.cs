@@ -32,8 +32,7 @@ internal class OqtaneLoginHelperWip(
     ILogService loggingService,
     MagicLazy<IdentityAuthenticationStateProvider> authStateProvider,
     SiteState siteState,
-    IJSRuntime jsRuntime,
-    IServiceProvider ServiceProvider
+    IJSRuntime jsRuntime
     )
 {
     private bool AllowExternalLogin(PageState pageState)

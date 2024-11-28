@@ -24,7 +24,7 @@ public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguage
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
 
-    MagicLanguageSettings ICanClone<MagicLanguageSettings>.CloneUnder(MagicLanguageSettings? priority, bool forceCopy = false) =>
+    MagicLanguageSettings ICanClone<MagicLanguageSettings>.CloneUnder(MagicLanguageSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

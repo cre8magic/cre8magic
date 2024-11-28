@@ -25,7 +25,7 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
         IsAdmin = priority?.IsAdmin ?? fallback?.IsAdmin;
     }
 
-    MagicDesignSettingsPart ICanClone<MagicDesignSettingsPart>.CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy = false) =>
+    MagicDesignSettingsPart ICanClone<MagicDesignSettingsPart>.CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

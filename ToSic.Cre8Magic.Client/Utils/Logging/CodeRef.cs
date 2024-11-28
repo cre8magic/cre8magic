@@ -42,8 +42,8 @@ public class CodeRef
     /// <param name="cLine">auto pre filled by the compiler - the code line</param>
     // ReSharper disable once UnusedParameter.Local - 
     public CodeRef(bool autoPickup = true,
-        [CallerFilePath] string cPath = null,
-        [CallerMemberName] string cName = null,
+        [CallerFilePath] string cPath = null!,
+        [CallerMemberName] string cName = null!,
         [CallerLineNumber] int cLine = 0
         )
         : this(cPath, cName, cLine) { }

@@ -38,7 +38,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
         Pages = priority?.Pages ?? fallback?.Pages;
     }
 
-    MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy = false) =>
+    MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

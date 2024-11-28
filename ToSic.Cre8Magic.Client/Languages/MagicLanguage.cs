@@ -23,7 +23,7 @@ public record MagicLanguage: ICanClone<MagicLanguage>
         Description = priority?.Description ?? fallback?.Description;
     }
 
-    MagicLanguage ICanClone<MagicLanguage>.CloneUnder(MagicLanguage? priority, bool forceCopy = false) =>
+    MagicLanguage ICanClone<MagicLanguage>.CloneUnder(MagicLanguage? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     public string Culture { get; init; } = "en";

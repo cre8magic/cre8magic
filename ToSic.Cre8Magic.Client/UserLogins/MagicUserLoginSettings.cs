@@ -19,7 +19,7 @@ public record MagicUserLoginSettings : MagicSettingsBase, ICanClone<MagicUserLog
         //DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
 
-    MagicUserLoginSettings ICanClone<MagicUserLoginSettings>.CloneUnder(MagicUserLoginSettings? priority, bool forceCopy = false) =>
+    MagicUserLoginSettings ICanClone<MagicUserLoginSettings>.CloneUnder(MagicUserLoginSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

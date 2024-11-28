@@ -33,7 +33,7 @@ public class MagicSettingOnOff: ICanClone<MagicSettingOnOff>
     /// </summary>
     public string? Off { get; init; }
 
-    MagicSettingOnOff ICanClone<MagicSettingOnOff>.CloneUnder(MagicSettingOnOff? priority, bool forceCopy = false) =>
+    MagicSettingOnOff ICanClone<MagicSettingOnOff>.CloneUnder(MagicSettingOnOff? priority, bool forceCopy) =>
         new()
         {
             On = priority?.On ?? On,

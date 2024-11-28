@@ -1,16 +1,18 @@
-﻿namespace ToSic.Cre8magic.Utils.Logging;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace ToSic.Cre8magic.Utils.Logging;
 
 internal class LogCall<T> : LogCallBase
 {
 
-    internal LogCall(ILog? log, CodeRef code, bool isProp, string parameters = null, string message = null, bool startTimer = false)
+    internal LogCall(ILog? log, CodeRef code, bool isProp, string? parameters = null, string? message = null, bool startTimer = false)
         : base(log, code, isProp, parameters, message, startTimer)
     {
     }
 
-    public T Return(T? result) => Return(result, null);
+    public T Return(T result) => Return(result, null);
 
-    public T Return(T? result, string? message)
+    public T Return(T result, string? message)
     {
         this.DoneInternal(message);
         return result;
@@ -25,7 +27,7 @@ internal class LogCall<T> : LogCallBase
 
     public T ReturnAndLog(T result) => Return(result, $"{result}");
 
-    public T? ReturnNull() => Return(default, null);
+    public T? ReturnNull() => Return(default!, null);
 
-    public T ReturnNull(string message) => Return(default, message);
+    public T? ReturnNull(string message) => Return(default!, message);
 }

@@ -37,7 +37,7 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IMagicPageSetSettings
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
 
-    MagicBreadcrumbSettings ICanClone<MagicBreadcrumbSettings>.CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy = false) =>
+    MagicBreadcrumbSettings ICanClone<MagicBreadcrumbSettings>.CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

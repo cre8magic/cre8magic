@@ -17,7 +17,7 @@ public class MagicPageContextDesigner(MagicPageContextSettings settings, PageSta
         //if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
 
         // Make a copy...
-        var classes = settings?.ClassList.ToList() ?? [];
+        List<string?> classes = (settings.ClassList?.ToList() ?? [])!;
         classes.Add(settings.PageIsHome?.Get(pageState.Page.Path == ""));
         if (additionalClasses.HasText())
             classes.Add(additionalClasses);

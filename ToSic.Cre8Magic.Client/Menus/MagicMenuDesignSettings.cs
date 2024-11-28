@@ -20,7 +20,7 @@ public record MagicMenuDesignSettings : SettingsWithInherit, ICanClone<MagicMenu
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicMenuDesignSettings ICanClone<MagicMenuDesignSettings>.CloneUnder(MagicMenuDesignSettings? priority, bool forceCopy = false) =>
+    MagicMenuDesignSettings ICanClone<MagicMenuDesignSettings>.CloneUnder(MagicMenuDesignSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

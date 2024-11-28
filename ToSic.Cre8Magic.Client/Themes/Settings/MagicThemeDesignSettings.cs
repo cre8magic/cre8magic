@@ -24,7 +24,7 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicThemeDesignSettings ICanClone<MagicThemeDesignSettings>.CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy = false) =>
+    MagicThemeDesignSettings ICanClone<MagicThemeDesignSettings>.CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     

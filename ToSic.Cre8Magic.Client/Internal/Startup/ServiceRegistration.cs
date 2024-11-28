@@ -84,8 +84,8 @@ public static class ServiceRegistration
     {
         // Main Settings Provider, scoped, to be used on two following interfaces
         services.TryAddScoped<MagicSettingsProvider>();
-        services.TryAddTransient<IMagicSettingsProvider>(s => s.GetService<MagicSettingsProvider>());
-        services.AddTransient<IMagicSettingsSource>(s => s.GetService<MagicSettingsProvider>());
+        services.TryAddTransient<IMagicSettingsProvider>(s => s.GetRequiredService<MagicSettingsProvider>());
+        services.AddTransient<IMagicSettingsSource>(s => s.GetRequiredService<MagicSettingsProvider>());
 
         return services;
     }

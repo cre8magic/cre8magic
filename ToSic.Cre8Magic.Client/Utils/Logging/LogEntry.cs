@@ -1,10 +1,10 @@
 ﻿namespace ToSic.Cre8magic.Utils.Logging;
 
-internal class LogEntry(ILog? log, string message, int depth, CodeRef codeRef)
+internal class LogEntry(ILog? log, string? message, int depth, CodeRef codeRef)
 {
     public string Source { get; } = log?.Prefix ?? "";
 
-    public string Message { get; } = message;
+    public string? Message { get; } = message;
 
     public ILog? Log { get; } = log;
     public CodeRef CodeRef { get; } = codeRef;
@@ -15,11 +15,7 @@ internal class LogEntry(ILog? log, string message, int depth, CodeRef codeRef)
     
     public object? Data { get; set; }
 
-    public void AppendResult(string message)
-    {
-        Result = message;
-        //WrapOpenWasClosed = true;
-    }
+    public void AppendResult(string? message) => Result = message;
 
 
     public override string ToString()

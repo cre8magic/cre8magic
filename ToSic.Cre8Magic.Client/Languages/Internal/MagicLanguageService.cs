@@ -69,8 +69,8 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         var siteLanguageCodes = siteLanguages.Select(l => l.Code).ToList();
 
         // Primary order of languages. If specified, use that, otherwise use site list
-        var customList = settings.Languages.Values;
-        var primaryOrder = (customList.Any()
+        var customList = settings.Languages?.Values;
+        var primaryOrder = (customList is { Count: > 0 }
                 ? customList.Select(l => l.Culture)
                 : siteLanguageCodes)
             .ToList();
@@ -86,7 +86,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         var result = primaryOrder
             .Select(code =>
             {
-                var customLabel = customList.FirstOrDefault(l => l.Culture.EqInvariant(code));
+                var customLabel = customList?.FirstOrDefault(l => l.Culture.EqInvariant(code));
 
                 var langInSite = siteLanguages.Find(al => al.Code.EqInvariant(code));
                 return new MagicLanguage

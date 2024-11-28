@@ -18,7 +18,7 @@ public record MagicBreadcrumbDesignSettings : SettingsWithInherit, ICanClone<Mag
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicBreadcrumbDesignSettings ICanClone<MagicBreadcrumbDesignSettings>.CloneUnder(MagicBreadcrumbDesignSettings? priority, bool forceCopy = false) =>
+    MagicBreadcrumbDesignSettings ICanClone<MagicBreadcrumbDesignSettings>.CloneUnder(MagicBreadcrumbDesignSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

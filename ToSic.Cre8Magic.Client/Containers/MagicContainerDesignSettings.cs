@@ -17,7 +17,7 @@ public record MagicContainerDesignSettings: SettingsWithInherit, ICanClone<Magic
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicContainerDesignSettings ICanClone<MagicContainerDesignSettings>.CloneUnder(MagicContainerDesignSettings? priority, bool forceCopy = false) =>
+    MagicContainerDesignSettings ICanClone<MagicContainerDesignSettings>.CloneUnder(MagicContainerDesignSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

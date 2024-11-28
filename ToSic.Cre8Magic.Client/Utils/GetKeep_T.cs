@@ -3,10 +3,10 @@ namespace ToSic.Cre8magic.Utils;
 
 internal class GetKeep<TResult> where TResult : class
 {
-    public TResult Get(Func<TResult> getter, Func<TResult, bool> keep)
+    public TResult Get(Func<TResult> getter, Func<TResult?, bool> keep)
     {
         if (IsValueCreated && keep(_value))
-            return _value;
+            return _value!;
 
         _value = getter();
         IsValueCreated = true;

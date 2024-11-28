@@ -67,7 +67,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     }
 
     [field: AllowNull, MaybeNull]
-    private ThemeTokens ThemeTokens { get => field ??= new(ThemePackage); set; }
+    // ReSharper disable once RedundantAccessorBody
+    private ThemeTokens ThemeTokens { get => field ??= new(ThemePackage); set => field = value; }
 
     #region Theme Context
 

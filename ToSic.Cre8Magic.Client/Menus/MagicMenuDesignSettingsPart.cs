@@ -16,7 +16,7 @@ public record MagicMenuDesignSettingsPart: MagicDesignSettingsPart, ICanClone<Ma
         InBreadcrumb = priority?.InBreadcrumb ?? fallback?.InBreadcrumb;
     }
 
-    MagicMenuDesignSettingsPart ICanClone<MagicMenuDesignSettingsPart>.CloneUnder(MagicMenuDesignSettingsPart? priority, bool forceCopy = false) =>
+    MagicMenuDesignSettingsPart ICanClone<MagicMenuDesignSettingsPart>.CloneUnder(MagicMenuDesignSettingsPart? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

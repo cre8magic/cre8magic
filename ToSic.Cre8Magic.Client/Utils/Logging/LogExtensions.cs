@@ -30,7 +30,8 @@ internal static class LogExtensions
     internal static LogEntry AddInternalReuse(this ILog? log, string message, CodeRef code)
     {
         // Null-check
-        if (!(log != null)) return new(null, null, 0, code);
+        if (log == null)
+            return new(null, null, 0, code);
         var e = new LogEntry(log, message, log.Depth, code);
         log.AddInternal(e);
         return e;
@@ -38,31 +39,31 @@ internal static class LogExtensions
 
     public static void A(this ILog? log,
         string message,
-        [CallerFilePath] string cPath = null,
-        [CallerMemberName] string cName = null,
+        [CallerFilePath] string cPath = null!,
+        [CallerMemberName] string cName = null!,
         [CallerLineNumber] int cLine = 0
     ) => log?.AddInternal(message, new(cPath, cName, cLine));
 
-    public static LogCall Fn(this ILog log, string parameters = null, string message = null, bool startTimer = false,
-        [CallerFilePath] string cPath = null, [CallerMemberName] string cName = null,
+    public static LogCall Fn(this ILog log, string? parameters = null, string? message = null, bool startTimer = false,
+        [CallerFilePath] string cPath = null!, [CallerMemberName] string cName = null!,
         [CallerLineNumber] int cLine = 0) =>
         new(log, new(cPath, cName, cLine), false, parameters, message, startTimer);
 
     public static LogCall<T> Fn<T>(this ILog? log,
-        string parameters = null,
-        string message = null,
+        string? parameters = null,
+        string? message = null,
         bool startTimer = false,
         CodeRef? code = null,
-        [CallerFilePath] string cPath = null,
-        [CallerMemberName] string cName = null,
+        [CallerFilePath] string cPath = null!,
+        [CallerMemberName] string cName = null!,
         [CallerLineNumber] int cLine = 0
     ) => new(log, code ?? new CodeRef(cPath, cName, cLine), false, parameters, message, startTimer);
 
 
     public static void Call(this ILog? log,
         string message,
-        [CallerFilePath] string cPath = null,
-        [CallerMemberName] string cName = null,
+        [CallerFilePath] string cPath = null!,
+        [CallerMemberName] string cName = null!,
         [CallerLineNumber] int cLine = 0
     ) => log?.AddInternal($"{cName}({message})", new(cPath, cName, cLine));
 

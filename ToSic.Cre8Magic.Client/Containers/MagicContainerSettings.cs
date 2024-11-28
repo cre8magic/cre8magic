@@ -17,7 +17,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
         ModuleState = priority?.ModuleState ?? fallback?.ModuleState;
     }
 
-    MagicContainerSettings ICanClone<MagicContainerSettings>.CloneUnder(MagicContainerSettings? priority, bool forceCopy = false) =>
+    MagicContainerSettings ICanClone<MagicContainerSettings>.CloneUnder(MagicContainerSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     [JsonIgnore]
