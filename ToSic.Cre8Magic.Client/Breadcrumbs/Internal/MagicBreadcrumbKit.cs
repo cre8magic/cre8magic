@@ -11,5 +11,5 @@ internal record MagicBreadcrumbKit : IMagicBreadcrumbKit
 
     public required bool Show { get; init; }
 
-    public required IMagicDesign Design { get; init; }
+    public required IMagicPage Root { get; init; }
 }

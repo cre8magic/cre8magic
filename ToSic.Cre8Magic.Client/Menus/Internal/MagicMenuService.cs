@@ -1,5 +1,4 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
@@ -47,13 +46,11 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
             IsVirtualRoot = true,
             MenuLevel = 0,
         };
-        //var design = new PageListDesignWip(root);
         var kit = new MagicMenuKit
         {
             Root = root,
             Settings = newSettings,
             WorkContext = context,
-            //Design = design
         };
         return kit;
     }
@@ -67,34 +64,8 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
             settingsSvc.MenuDesigns, 
             OptionalPrefix,
             DefaultPartName,
-            finalize: (settingsData, designSettings) => settingsData with /*new(settingsData, settings)*/ { DesignSettings = designSettings });
+            finalize: (settingsData, designSettings) => settingsData with /* TODO: USE WITH<...> */ { DesignSettings = designSettings });
 
 
-    //private static List<IMagicPage> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)
-    //{
-    //    var log = context.LogRoot.GetLog("get-root");
-
-    //    var pageFactory = context.PageFactory;
-    //    var settings = context.Settings;
-        
-    //    // Add break-point for debugging during development
-    //    if (pageFactory.PageState.IsDebug())
-    //        pageFactory.PageState.DoNothing();
-
-    //    var l = log.Fn<List<IMagicPage>>("Root");
-    //    l.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
-
-    //    var levelsRemaining = nodeFactory.MaxDepth;
-    //    if (levelsRemaining < 0)
-    //        return l.Return([], "remaining levels 0 - return empty");
-
-    //    var rootPages = new NodeRuleHelper(pageFactory, pageFactory.Current, settings, log).GetRootPages();
-    //    l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
-
-    //    var children = rootPages
-    //        .Select(child => new MagicPageWithDesign(pageFactory, nodeFactory, child, 2 /* todo: should probably be 1 */) as IMagicPage)
-    //        .ToList();
-    //    return l.Return(children, $"{children.Count}");
-    //}
 
 }
