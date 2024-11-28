@@ -5,9 +5,6 @@ items:
   id: MagicLanguageDesignSettings
   parent: ToSic.Cre8magic.Languages
   children:
-  - ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor
-  - ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings,ToSic.Cre8magic.Languages.MagicLanguageDesignSettings)
-  - ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings,System.Boolean)
   - ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.Parts
   langs:
   - csharp
@@ -38,106 +35,6 @@ items:
   inheritedMembers:
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor
-  commentId: M:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor
-  id: '#ctor'
-  parent: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  langs:
-  - csharp
-  - vb
-  name: MagicLanguageDesignSettings()
-  nameWithType: MagicLanguageDesignSettings.MagicLanguageDesignSettings()
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.MagicLanguageDesignSettings()
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageDesignSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageDesignSettings.cs
-    startLine: 13
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Languages
-  syntax:
-    content: public MagicLanguageDesignSettings()
-    content.vb: Public Sub New()
-  overload: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor*
-  nameWithType.vb: MagicLanguageDesignSettings.New()
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.New()
-  name.vb: New()
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings,ToSic.Cre8magic.Languages.MagicLanguageDesignSettings)
-  commentId: M:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings,ToSic.Cre8magic.Languages.MagicLanguageDesignSettings)
-  id: '#ctor(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings,ToSic.Cre8magic.Languages.MagicLanguageDesignSettings)'
-  parent: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  langs:
-  - csharp
-  - vb
-  name: MagicLanguageDesignSettings(MagicLanguageDesignSettings?, MagicLanguageDesignSettings?)
-  nameWithType: MagicLanguageDesignSettings.MagicLanguageDesignSettings(MagicLanguageDesignSettings?, MagicLanguageDesignSettings?)
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.MagicLanguageDesignSettings(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings?, ToSic.Cre8magic.Languages.MagicLanguageDesignSettings?)
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageDesignSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageDesignSettings.cs
-    startLine: 15
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Languages
-  syntax:
-    content: public MagicLanguageDesignSettings(MagicLanguageDesignSettings? priority, MagicLanguageDesignSettings? fallback = null)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-    - id: fallback
-      type: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-    content.vb: Public Sub New(priority As MagicLanguageDesignSettings, fallback As MagicLanguageDesignSettings = Nothing)
-  overload: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor*
-  nameWithType.vb: MagicLanguageDesignSettings.New(MagicLanguageDesignSettings, MagicLanguageDesignSettings)
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.New(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings, ToSic.Cre8magic.Languages.MagicLanguageDesignSettings)
-  name.vb: New(MagicLanguageDesignSettings, MagicLanguageDesignSettings)
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings,System.Boolean)
-  id: CloneUnder(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings,System.Boolean)
-  parent: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  langs:
-  - csharp
-  - vb
-  name: CloneUnder(MagicLanguageDesignSettings?, bool)
-  nameWithType: MagicLanguageDesignSettings.CloneUnder(MagicLanguageDesignSettings?, bool)
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings?, bool)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageDesignSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: CloneUnder
-    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageDesignSettings.cs
-    startLine: 21
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Languages
-  example: []
-  syntax:
-    content: public MagicLanguageDesignSettings CloneUnder(MagicLanguageDesignSettings? priority, bool forceCopy = false)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-    - id: forceCopy
-      type: System.Boolean
-    return:
-      type: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-    content.vb: Public Function CloneUnder(priority As MagicLanguageDesignSettings, forceCopy As Boolean = False) As MagicLanguageDesignSettings
-  overload: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder*
-  nameWithType.vb: MagicLanguageDesignSettings.CloneUnder(MagicLanguageDesignSettings, Boolean)
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguageDesignSettings, Boolean)
-  name.vb: CloneUnder(MagicLanguageDesignSettings, Boolean)
 - uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.Parts
   commentId: P:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.Parts
   id: Parts
@@ -156,7 +53,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parts
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageDesignSettings.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -305,38 +202,6 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.#ctor
-  href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html#ToSic_Cre8magic_Languages_MagicLanguageDesignSettings__ctor
-  name: MagicLanguageDesignSettings
-  nameWithType: MagicLanguageDesignSettings.MagicLanguageDesignSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.MagicLanguageDesignSettings
-  nameWithType.vb: MagicLanguageDesignSettings.New
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.New
-  name.vb: New
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html
-  name: MagicLanguageDesignSettings
-  nameWithType: MagicLanguageDesignSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder
-  href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html#ToSic_Cre8magic_Languages_MagicLanguageDesignSettings_CloneUnder_ToSic_Cre8magic_Languages_MagicLanguageDesignSettings_System_Boolean_
-  name: CloneUnder
-  nameWithType: MagicLanguageDesignSettings.CloneUnder
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.CloneUnder
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.Parts*
   commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.Parts
   href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html#ToSic_Cre8magic_Languages_MagicLanguageDesignSettings_Parts

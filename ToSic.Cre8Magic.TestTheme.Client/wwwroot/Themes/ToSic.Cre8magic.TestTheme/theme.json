@@ -35,11 +35,9 @@
     // Default Theme - in most cases you'll just use this theme configuration
     "default": {
       // Optional: Design Names with "=" mean they inherit / use the name already existing - in this case "default"
-      //"design": "=",
-      "design": "funky",
+      "design": "=",
       "logo": "[Theme.Url]/assets/logo.svg",
-
-      // Configure various parts of this theme
+      //"languagesMin": 2, - not used any more in v0.2.0
       "parts": {
         // Show breadcrumbs. Note that on home it won't be visible due to CSS rules + MagicContext)
         "breadcrumbs": true,
@@ -62,9 +60,11 @@
         },
         "english-with-no-design": {
           "settings": "englishOnly",
-          "design": "none"
+          "design": "none",
         }
       },
+      // WIP / Testing
+      "magicContextInBody": false,
       "debug": {
         "Admin": true
       }
@@ -91,10 +91,11 @@
 
   // ********************************************************************************
 
-  "pageContexts": {
+  "themeDesigns": {
+    // This is the default design which is used unless explicitly specified
     "default": {
-      "useBodyTag": false, // bool
-      "classList": [
+      // TODO: THESE NEXT SETTINGS ARE ALL FOR THE Context - they should be separted into a new section
+      "magicContext": [
         "page-[Page.Id]",
         "page-root-[Page.RootId]",
         "page-parent-[Page.ParentId]",
@@ -103,17 +104,9 @@
         "theme-mainnav-variation-right",
         "theme-variation-[Layout.Variation]"
       ],
-      "pageIsHome": "page-is-home", // On/Off
-      "tagId": "cre8magic-root" // string
-    }
-  },
-
-  // ********************************************************************************
-
-  "themeDesigns": {
-    // This is the default design which is used unless explicitly specified
-    "default": {
-      "paneIsEmpty": "pane-is-empty test-a", // On/Off
+      "pageIsHome": "page-is-home",
+      "paneIsEmpty": "pane-is-empty",
+      "magicContextTagId": "cre8magic-root",
 
       // Custom values / classes as you need them in your code
       "parts": {
@@ -146,12 +139,22 @@
         "logo": "logo",
         "linkToTop": {
           "id": "theme-to-top"
+        },
+
+        // Languages - the li-node should be able to do active/passive if necessary
+        //"languages-li": {
+        //  "isActive": "active"
+        //},
+
+        // Container Designs determine CSS classes on containers
+        // The default/normal container
+        "container": {
+          "classes": "theme-container py-4 demo-module-[Module.Id] demo-page-[Page.Id]",
+          "isPublished": [ null, "module-unpublished" ],
+          "isAdmin": "theme-container-admin app-admin-modal",
+          "id": "module-[Module.Id]"
         }
       }
-    },
-    "funky": {
-      "@inherits": "default",
-      "paneIsEmpty": "pane-is-empty settings-funky" // On/Off
     }
   },
 
@@ -164,25 +167,6 @@
       // "PageViewJs": "window.cre8magic.gtm.pageView",
       // "PageViewJs": "gtag",
       "PageViewEvent": "blazor_page_view"
-    }
-  },
-
-  // Containers don't have settings ATM, but you can define them here
-  "containers": {
-
-  },
-
-  // Design Settings for Containers
-  "containerDesigns": {
-    "default": {
-      "parts": {
-        "top-div": {
-          "classes": "theme-container py-4 demo-module-[Module.Id] demo-page-[Page.Id]",
-          "isPublished": [ null, "module-unpublished" ],
-          "isAdmin": "theme-container-admin app-admin-modal",
-          "id": "module-[Module.Id]"
-        }
-      }
     }
   },
 
@@ -236,7 +220,7 @@
           "isActive": "nothing-to-see-here"
         }
       }
-    }
+    },
   },
 
 
@@ -304,16 +288,13 @@
       "parts": {
         "ul": {
           "byLevel": {
-            // WIP
-            "0": "navbar-nav - around menu",
             "1": "navbar-nav",
             // 2dm 2024-11-08 previously 'dropdown-menu' but then it was not visible any more in this Bootstrap5, disabled for now
             "-1": "dropdown-menu-xxx-disabled"
           }
         },
         "li": {
-          // Test with page-id in the menu
-          "classes": "nav-item nav-[Page.Id] nav-layout-[Layout.Variation]",
+          "classes": "nav-item nav-[Page.Id]",
           "hasChildren": "has-child dropdown",
           "isActive": "active",
           "isDisabled": "disabled"
@@ -332,8 +313,6 @@
       "parts": {
         "ul": {
           "byLevel": {
-            // WIP
-            "0": "navbar-nav",
             "1": "navbar-nav",
             "-1": "collapse theme-submenu-[Menu.Id]-[Page.Id]"
           },
@@ -355,7 +334,7 @@
         },
         // Special target information (not really styling) usually on the span-tag
         "data-bs-target": ".theme-submenu-[Menu.Id]-[Page.Id]"
-      }
+      },
     },
     "sidebar": {
       "@inherits": "Mobile",

@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Links
+  commentId: N:ToSic.Cre8magic.Links
+  id: Links
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.Links.IMagicLinkService
+  - ToSic.Cre8magic.Links.MagicLinkSpecs
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Links
+  nameWithType: ToSic.Cre8magic.Links
+  fullName: ToSic.Cre8magic.Links
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Links.IMagicLinkService
+  commentId: T:ToSic.Cre8magic.Links.IMagicLinkService
+  href: ToSic.Cre8magic.Links.IMagicLinkService.html
+  name: IMagicLinkService
+  nameWithType: IMagicLinkService
+  fullName: ToSic.Cre8magic.Links.IMagicLinkService
+- uid: ToSic.Cre8magic.Links.MagicLinkSpecs
+  commentId: T:ToSic.Cre8magic.Links.MagicLinkSpecs
+  parent: ToSic.Cre8magic.Links
+  href: ToSic.Cre8magic.Links.MagicLinkSpecs.html
+  name: MagicLinkSpecs
+  nameWithType: MagicLinkSpecs
+  fullName: ToSic.Cre8magic.Links.MagicLinkSpecs
+- uid: ToSic.Cre8magic.Links
+  commentId: N:ToSic.Cre8magic.Links
+  href: ToSic.html
+  name: ToSic.Cre8magic.Links
+  nameWithType: ToSic.Cre8magic.Links
+  fullName: ToSic.Cre8magic.Links
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Links
+    name: Links
+    href: ToSic.Cre8magic.Links.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Links
+    name: Links
+    href: ToSic.Cre8magic.Links.html

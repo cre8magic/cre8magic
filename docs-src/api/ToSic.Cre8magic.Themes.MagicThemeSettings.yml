@@ -5,11 +5,8 @@ items:
   id: MagicThemeSettings
   parent: ToSic.Cre8magic.Themes
   children:
-  - ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor
-  - ToSic.Cre8magic.Themes.MagicThemeSettings.Debug
   - ToSic.Cre8magic.Themes.MagicThemeSettings.Design
   - ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
-  - ToSic.Cre8magic.Themes.MagicThemeSettings.MagicContextInBody
   - ToSic.Cre8magic.Themes.MagicThemeSettings.Parts
   langs:
   - csharp
@@ -25,48 +22,28 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicThemeSettings
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
   syntax:
-    content: 'public record MagicThemeSettings : SettingsWithInherit'
-    content.vb: Public Class MagicThemeSettings Inherits SettingsWithInherit
+    content: 'public record MagicThemeSettings : MagicSettingsBase'
+    content.vb: Public Class MagicThemeSettings Inherits MagicSettingsBase
   inheritance:
   - System.Object
   - ToSic.Cre8magic.Settings.SettingsWithInherit
+  - ToSic.Cre8magic.Settings.MagicSettingsBase
   inheritedMembers:
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor
-  commentId: M:ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor
-  id: '#ctor'
-  parent: ToSic.Cre8magic.Themes.MagicThemeSettings
-  langs:
-  - csharp
-  - vb
-  name: MagicThemeSettings()
-  nameWithType: MagicThemeSettings.MagicThemeSettings()
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.MagicThemeSettings()
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 12
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  syntax:
-    content: public MagicThemeSettings()
-    content.vb: Public Sub New()
-  overload: ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor*
-  nameWithType.vb: MagicThemeSettings.New()
-  fullName.vb: ToSic.Cre8magic.Themes.MagicThemeSettings.New()
-  name.vb: New()
+  extensionMethods:
+  - ToSic.Cre8magic.Themes.MagicThemeSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
+  - ToSic.Cre8magic.Themes.MagicThemeSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2({TWith},System.Boolean)
 - uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
   commentId: P:ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
   id: Logo
@@ -85,7 +62,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Logo
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 36
+    startLine: 37
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -116,7 +93,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parts
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 43
+    startLine: 42
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -135,35 +112,6 @@ items:
 
       Public Property Parts As Dictionary(Of String, MagicThemePartSettings)
   overload: ToSic.Cre8magic.Themes.MagicThemeSettings.Parts*
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.MagicContextInBody
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeSettings.MagicContextInBody
-  id: MagicContextInBody
-  parent: ToSic.Cre8magic.Themes.MagicThemeSettings
-  langs:
-  - csharp
-  - vb
-  name: MagicContextInBody
-  nameWithType: MagicThemeSettings.MagicContextInBody
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.MagicContextInBody
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: MagicContextInBody
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 47
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  syntax:
-    content: public bool? MagicContextInBody { get; init; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Boolean}
-    content.vb: Public Property MagicContextInBody As Boolean?
-  overload: ToSic.Cre8magic.Themes.MagicThemeSettings.MagicContextInBody*
 - uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Design
   commentId: P:ToSic.Cre8magic.Themes.MagicThemeSettings.Design
   id: Design
@@ -182,7 +130,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Design
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 49
+    startLine: 45
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -193,37 +141,6 @@ items:
       type: System.String
     content.vb: Public Property Design As String
   overload: ToSic.Cre8magic.Themes.MagicThemeSettings.Design*
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Debug
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeSettings.Debug
-  id: Debug
-  parent: ToSic.Cre8magic.Themes.MagicThemeSettings
-  langs:
-  - csharp
-  - vb
-  name: Debug
-  nameWithType: MagicThemeSettings.Debug
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Debug
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Debug
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeSettings.cs
-    startLine: 51
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  summary: Debug settings for anything that can configure show/hide of debug
-  example: []
-  syntax:
-    content: public MagicDebugSettings? Debug { get; init; }
-    parameters: []
-    return:
-      type: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
-    content.vb: Public Property Debug As MagicDebugSettings
-  overload: ToSic.Cre8magic.Themes.MagicThemeSettings.Debug*
 references:
 - uid: ToSic.Cre8magic.Themes
   commentId: N:ToSic.Cre8magic.Themes
@@ -272,6 +189,48 @@ references:
   name: SettingsWithInherit
   nameWithType: SettingsWithInherit
   fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsBase
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html
+  name: MagicSettingsBase
+  nameWithType: MagicSettingsBase
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PageState
+  name: PageState
+  nameWithType: MagicSettingsBase.PageState
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PartName
+  name: PartName
+  nameWithType: MagicSettingsBase.PartName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_SettingsName
+  name: SettingsName
+  nameWithType: MagicSettingsBase.SettingsName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_DesignName
+  name: DesignName
+  nameWithType: MagicSettingsBase.DesignName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_Debug
+  name: Debug
+  nameWithType: MagicSettingsBase.Debug
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
 - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   parent: ToSic.Cre8magic.Settings.SettingsWithInherit
@@ -314,6 +273,132 @@ references:
   - name: (
   - name: )
   - name: )
+- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  name: With<MagicThemeSettings>(MagicThemeSettings, PageState, bool)
+  nameWithType: MagicSettingsExtensions.With<MagicThemeSettings>(MagicThemeSettings, PageState, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<ToSic.Cre8magic.Themes.MagicThemeSettings>(ToSic.Cre8magic.Themes.MagicThemeSettings, Oqtane.UI.PageState, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of MagicThemeSettings)(MagicThemeSettings, PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Themes.MagicThemeSettings)(ToSic.Cre8magic.Themes.MagicThemeSettings, Oqtane.UI.PageState, Boolean)
+  name.vb: With(Of MagicThemeSettings)(MagicThemeSettings, PageState, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Themes.MagicThemeSettings,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: <
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Themes.MagicThemeSettings,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2({TWith},System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  name: With<MagicThemeSettings, TWith>(MagicThemeSettings, TWith, bool)
+  nameWithType: MagicSettingsExtensions.With<MagicThemeSettings, TWith>(MagicThemeSettings, TWith, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<ToSic.Cre8magic.Themes.MagicThemeSettings, TWith>(ToSic.Cre8magic.Themes.MagicThemeSettings, TWith, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of MagicThemeSettings, TWith)(MagicThemeSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Themes.MagicThemeSettings, TWith)(ToSic.Cre8magic.Themes.MagicThemeSettings, TWith, Boolean)
+  name.vb: With(Of MagicThemeSettings, TWith)(MagicThemeSettings, TWith, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Themes.MagicThemeSettings,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: <
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Themes.MagicThemeSettings,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -351,15 +436,121 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.#ctor
-  href: ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings__ctor
-  name: MagicThemeSettings
-  nameWithType: MagicThemeSettings.MagicThemeSettings
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.MagicThemeSettings
-  nameWithType.vb: MagicThemeSettings.New
-  fullName.vb: ToSic.Cre8magic.Themes.MagicThemeSettings.New
-  name.vb: New
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  name: With<TSettings>(TSettings, PageState, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings, PageState, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<TSettings>(TSettings, Oqtane.UI.PageState, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState, Boolean)
+  name.vb: With(Of TSettings)(TSettings, PageState, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: <
+  - name: TSettings
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html
+  name: MagicSettingsExtensions
+  nameWithType: MagicSettingsExtensions
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  name: With<TSettings, TWith>(TSettings, TWith, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  name.vb: With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: <
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
 - uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Logo*
   commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
   href: ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Logo
@@ -491,118 +682,9 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.MagicContextInBody*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.MagicContextInBody
-  href: ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_MagicContextInBody
-  name: MagicContextInBody
-  nameWithType: MagicThemeSettings.MagicContextInBody
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.MagicContextInBody
-- uid: System.Nullable{System.Boolean}
-  commentId: T:System.Nullable{System.Boolean}
-  parent: System
-  definition: System.Nullable`1
-  name: bool?
-  nameWithType: bool?
-  fullName: bool?
-  nameWithType.vb: Boolean?
-  fullName.vb: Boolean?
-  name.vb: Boolean?
-  spec.csharp:
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-  - name: '?'
-  spec.vb:
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-  - name: '?'
-- uid: System.Nullable`1
-  commentId: T:System.Nullable`1
-  isExternal: true
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    isExternal: true
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Design*
   commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.Design
   href: ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Design
   name: Design
   nameWithType: MagicThemeSettings.Design
   fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Design
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Debug*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.Debug
-  href: ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Debug
-  name: Debug
-  nameWithType: MagicThemeSettings.Debug
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Debug
-- uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
-  commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
-  parent: ToSic.Cre8magic.Settings.Internal.Debug
-  name: MagicDebugSettings
-  nameWithType: MagicDebugSettings
-  fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
-- uid: ToSic.Cre8magic.Settings.Internal.Debug
-  commentId: N:ToSic.Cre8magic.Settings.Internal.Debug
-  href: ToSic.html
-  name: ToSic.Cre8magic.Settings.Internal.Debug
-  nameWithType: ToSic.Cre8magic.Settings.Internal.Debug
-  fullName: ToSic.Cre8magic.Settings.Internal.Debug
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal.Debug
-    name: Debug
-    href: ToSic.Cre8magic.Settings.Internal.Debug.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal.Debug
-    name: Debug
-    href: ToSic.Cre8magic.Settings.Internal.Debug.html

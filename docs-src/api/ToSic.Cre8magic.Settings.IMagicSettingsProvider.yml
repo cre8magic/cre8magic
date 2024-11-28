@@ -1,0 +1,512 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  id: IMagicSettingsProvider
+  parent: ToSic.Cre8magic.Settings
+  children:
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide(ToSic.Cre8magic.Settings.MagicSettingsCatalog)
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
+  langs:
+  - csharp
+  - vb
+  name: IMagicSettingsProvider
+  nameWithType: IMagicSettingsProvider
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicSettingsProvider
+    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+    startLine: 13
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Provider to give settings.
+
+
+    It is scoped, so anything added to it - typically in the Theme,
+
+    will be available in all other components.
+  example: []
+  syntax:
+    content: public interface IMagicSettingsProvider
+    content.vb: Public Interface IMagicSettingsProvider
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
+  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
+  id: Containers
+  parent: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  langs:
+  - csharp
+  - vb
+  name: Containers
+  nameWithType: IMagicSettingsProvider.Containers
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Containers
+    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+    startLine: 15
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: IMagicSettingsProviderSection<MagicContainerSettings> Containers { get; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Containers.MagicContainerSettings}
+    content.vb: ReadOnly Property Containers As IMagicSettingsProviderSection(Of MagicContainerSettings)
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers*
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
+  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
+  id: Breadcrumbs
+  parent: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  langs:
+  - csharp
+  - vb
+  name: Breadcrumbs
+  nameWithType: IMagicSettingsProvider.Breadcrumbs
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Breadcrumbs
+    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+    startLine: 17
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: IMagicSettingsProviderSection<MagicBreadcrumbSettings> Breadcrumbs { get; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings}
+    content.vb: ReadOnly Property Breadcrumbs As IMagicSettingsProviderSection(Of MagicBreadcrumbSettings)
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs*
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
+  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
+  id: Analytics
+  parent: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  langs:
+  - csharp
+  - vb
+  name: Analytics
+  nameWithType: IMagicSettingsProvider.Analytics
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Analytics
+    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+    startLine: 18
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics { get; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
+    content.vb: ReadOnly Property Analytics As IMagicSettingsProviderSection(Of MagicAnalyticsSettings)
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics*
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
+  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
+  id: MenuDesigns
+  parent: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  langs:
+  - csharp
+  - vb
+  name: MenuDesigns
+  nameWithType: IMagicSettingsProvider.MenuDesigns
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MenuDesigns
+    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+    startLine: 19
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: IMagicSettingsProviderSection<MagicMenuDesignSettings> MenuDesigns { get; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
+    content.vb: ReadOnly Property MenuDesigns As IMagicSettingsProviderSection(Of MagicMenuDesignSettings)
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns*
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
+  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
+  id: Themes
+  parent: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  langs:
+  - csharp
+  - vb
+  name: Themes
+  nameWithType: IMagicSettingsProvider.Themes
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Themes
+    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+    startLine: 20
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: IMagicSettingsProviderSection<MagicThemeSettings> Themes { get; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Themes.MagicThemeSettings}
+    content.vb: ReadOnly Property Themes As IMagicSettingsProviderSection(Of MagicThemeSettings)
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes*
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
+  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
+  id: Reset
+  parent: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: IMagicSettingsProvider.Reset()
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset()
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Reset
+    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+    startLine: 21
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: void Reset()
+    content.vb: Sub Reset()
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset*
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide(ToSic.Cre8magic.Settings.MagicSettingsCatalog)
+  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide(ToSic.Cre8magic.Settings.MagicSettingsCatalog)
+  id: Provide(ToSic.Cre8magic.Settings.MagicSettingsCatalog)
+  parent: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  langs:
+  - csharp
+  - vb
+  name: Provide(MagicSettingsCatalog)
+  nameWithType: IMagicSettingsProvider.Provide(MagicSettingsCatalog)
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide(ToSic.Cre8magic.Settings.MagicSettingsCatalog)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Provide
+    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
+    startLine: 22
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: IMagicSettingsProvider Provide(MagicSettingsCatalog catalog)
+    parameters:
+    - id: catalog
+      type: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+    return:
+      type: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+    content.vb: Function Provide(catalog As MagicSettingsCatalog) As IMagicSettingsProvider
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide*
+references:
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Containers
+  name: Containers
+  nameWithType: IMagicSettingsProvider.Containers
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Containers.MagicContainerSettings}
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Containers.MagicContainerSettings}
+  parent: ToSic.Cre8magic.Settings
+  definition: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  name: IMagicSettingsProviderSection<MagicContainerSettings>
+  nameWithType: IMagicSettingsProviderSection<MagicContainerSettings>
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<ToSic.Cre8magic.Containers.MagicContainerSettings>
+  nameWithType.vb: IMagicSettingsProviderSection(Of MagicContainerSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of ToSic.Cre8magic.Containers.MagicContainerSettings)
+  name.vb: IMagicSettingsProviderSection(Of MagicContainerSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: <
+  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
+    name: MagicContainerSettings
+    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
+    name: MagicContainerSettings
+    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
+  - name: )
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  name: IMagicSettingsProviderSection<TSettings>
+  nameWithType: IMagicSettingsProviderSection<TSettings>
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<TSettings>
+  nameWithType.vb: IMagicSettingsProviderSection(Of TSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of TSettings)
+  name.vb: IMagicSettingsProviderSection(Of TSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: <
+  - name: TSettings
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: )
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Breadcrumbs
+  name: Breadcrumbs
+  nameWithType: IMagicSettingsProvider.Breadcrumbs
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings}
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings}
+  parent: ToSic.Cre8magic.Settings
+  definition: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  name: IMagicSettingsProviderSection<MagicBreadcrumbSettings>
+  nameWithType: IMagicSettingsProviderSection<MagicBreadcrumbSettings>
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings>
+  nameWithType.vb: IMagicSettingsProviderSection(Of MagicBreadcrumbSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
+  name.vb: IMagicSettingsProviderSection(Of MagicBreadcrumbSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: <
+  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+    name: MagicBreadcrumbSettings
+    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+    name: MagicBreadcrumbSettings
+    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html
+  - name: )
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Analytics
+  name: Analytics
+  nameWithType: IMagicSettingsProvider.Analytics
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
+  parent: ToSic.Cre8magic.Settings
+  definition: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  name: IMagicSettingsProviderSection<MagicAnalyticsSettings>
+  nameWithType: IMagicSettingsProviderSection<MagicAnalyticsSettings>
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<ToSic.Cre8magic.Analytics.MagicAnalyticsSettings>
+  nameWithType.vb: IMagicSettingsProviderSection(Of MagicAnalyticsSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
+  name.vb: IMagicSettingsProviderSection(Of MagicAnalyticsSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: <
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: )
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_MenuDesigns
+  name: MenuDesigns
+  nameWithType: IMagicSettingsProvider.MenuDesigns
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
+  parent: ToSic.Cre8magic.Settings
+  definition: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  name: IMagicSettingsProviderSection<MagicMenuDesignSettings>
+  nameWithType: IMagicSettingsProviderSection<MagicMenuDesignSettings>
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<ToSic.Cre8magic.Menus.MagicMenuDesignSettings>
+  nameWithType.vb: IMagicSettingsProviderSection(Of MagicMenuDesignSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of ToSic.Cre8magic.Menus.MagicMenuDesignSettings)
+  name.vb: IMagicSettingsProviderSection(Of MagicMenuDesignSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: <
+  - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
+    name: MagicMenuDesignSettings
+    href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
+    name: MagicMenuDesignSettings
+    href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
+  - name: )
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Themes
+  name: Themes
+  nameWithType: IMagicSettingsProvider.Themes
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Themes.MagicThemeSettings}
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Themes.MagicThemeSettings}
+  parent: ToSic.Cre8magic.Settings
+  definition: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  name: IMagicSettingsProviderSection<MagicThemeSettings>
+  nameWithType: IMagicSettingsProviderSection<MagicThemeSettings>
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<ToSic.Cre8magic.Themes.MagicThemeSettings>
+  nameWithType.vb: IMagicSettingsProviderSection(Of MagicThemeSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of ToSic.Cre8magic.Themes.MagicThemeSettings)
+  name.vb: IMagicSettingsProviderSection(Of MagicThemeSettings)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: <
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+    name: MagicThemeSettings
+    href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  - name: )
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Reset
+  name: Reset
+  nameWithType: IMagicSettingsProvider.Reset
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Provide_ToSic_Cre8magic_Settings_MagicSettingsCatalog_
+  name: Provide
+  nameWithType: IMagicSettingsProvider.Provide
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsCatalog
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html
+  name: MagicSettingsCatalog
+  nameWithType: MagicSettingsCatalog
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html
+  name: IMagicSettingsProvider
+  nameWithType: IMagicSettingsProvider
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider

@@ -5,7 +5,6 @@ items:
   id: Users
   parent: ToSic.Cre8magic
   children:
-  - ToSic.Cre8magic.Users.IMagicUserLoginKit
   - ToSic.Cre8magic.Users.IMagicUserService
   - ToSic.Cre8magic.Users.MagicUser
   langs:
@@ -18,13 +17,6 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.Users.IMagicUserLoginKit
-  commentId: T:ToSic.Cre8magic.Users.IMagicUserLoginKit
-  parent: ToSic.Cre8magic.Users
-  href: ToSic.Cre8magic.Users.IMagicUserLoginKit.html
-  name: IMagicUserLoginKit
-  nameWithType: IMagicUserLoginKit
-  fullName: ToSic.Cre8magic.Users.IMagicUserLoginKit
 - uid: ToSic.Cre8magic.Users.IMagicUserService
   commentId: T:ToSic.Cre8magic.Users.IMagicUserService
   href: ToSic.Cre8magic.Users.IMagicUserService.html

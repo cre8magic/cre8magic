@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>cre8magic - Magic Settings Overview | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="cre8magic - Magic Settings Overview | cre8magic ">
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/settings/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../assets/cre8magic-logo50.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Cre8magic.MagicSettings.Index">
+<h1 id="cre8magic---magic-settings-overview">cre8magic - Magic Settings Overview</h1>
+
+<p><strong>Magic Settings</strong> are a core building block of cre8magic.
+Basically anything you do, will start of with some settings - or some invisible defaults.</p>
+<p>These are the things you should probably know:</p>
+<ol>
+<li>What settings can be used for each scenario</li>
+<li>How to provide settings in a central location</li>
+<li>How to provide settings by name or theme part name (TODO:)</li>
+<li>How to provide design settings (TODO:)</li>
+<li>How to provide PageState (TODO:)</li>
+<li>How settings work internally</li>
+</ol>
+<h2 id="settings-for-each-scenario">Settings for each Scenario</h2>
+<p>Settings will differ depending on if you're creating a menu, a breadcrumb, a Magic Context, or something else.
+So for this you should look at the respective documentation.</p>
+<p>TODO: list all relevant parts</p>
+<h2 id="providing-settings">Providing Settings</h2>
+<p>Settings can be used directly in the code, like:</p>
+<pre><code class="lang-csharp">var breadcrumbKit = MagicHat.BreadcrumbKit(new MagicBreadcrumbSettings
+{
+  PageState = PageState,
+  WithActive = true,
+  WithHome = false,
+});
+</code></pre>
+<p>Or you can have settings prepared in a central location, and just use the name of the settings:</p>
+<pre><code class="lang-csharp">var breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+</code></pre>
+<p>The second way is especially useful when the <em>identical</em> code and components should result in different outputs
+depending on the scenario, since it allows you to change the settings in one place.</p>
+<p>For example, you could define that certain menus don't appear or look different within certain parts of your site.</p>
+<p>For this, see</p>
+<ul>
+<li><a href="provide-settings.html">Providing Settings</a>.</li>
+<li>Providing Named Settings TODO:</li>
+<li>Providing Settings by Theme Part Name TODO:</li>
+</ul>
+<h2 id="how-settings-work-internally">How Settings Work Internally</h2>
+<p>TODO: explain how settings are used internally</p>
+<p>Settings have a 2-level hierarchy, shown by the example of a breadcrumb:</p>
+<p><code>MagicBreadcrumbSettings</code> would be the main settings which are used in your code.
+These settings have all the possible options, but also some properties which
+can only be set by code.</p>
+<p>For example, you can set a <code>Designer</code> which is a special object that can create some HTML.</p>
+<p>The <code>MagicBreadcrumbSettingsData</code> is the underlying class behind the <code>MagicBreadcrumbSettings</code>.
+It contains all the properties which can be stored externally, like in a JSON file or database.</p>
+<h2 id="settings-vs-designsettings">Settings vs. DesignSettings</h2>
+<p>TODO: explain the difference between settings and design settings</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/settings/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

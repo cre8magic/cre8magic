@@ -5,7 +5,6 @@ items:
   id: MagicMenuDesignSettings
   parent: ToSic.Cre8magic.Menus
   children:
-  - ToSic.Cre8magic.Menus.MagicMenuDesignSettings.#ctor
   - ToSic.Cre8magic.Menus.MagicMenuDesignSettings.Parts
   langs:
   - csharp
@@ -36,35 +35,6 @@ items:
   inheritedMembers:
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
-- uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.#ctor
-  commentId: M:ToSic.Cre8magic.Menus.MagicMenuDesignSettings.#ctor
-  id: '#ctor'
-  parent: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-  langs:
-  - csharp
-  - vb
-  name: MagicMenuDesignSettings()
-  nameWithType: MagicMenuDesignSettings.MagicMenuDesignSettings()
-  fullName: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.MagicMenuDesignSettings()
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuDesignSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuDesignSettings.cs
-    startLine: 13
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  syntax:
-    content: public MagicMenuDesignSettings()
-    content.vb: Public Sub New()
-  overload: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.#ctor*
-  nameWithType.vb: MagicMenuDesignSettings.New()
-  fullName.vb: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.New()
-  name.vb: New()
 - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.Parts
   commentId: P:ToSic.Cre8magic.Menus.MagicMenuDesignSettings.Parts
   id: Parts
@@ -83,7 +53,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parts
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuDesignSettings.cs
-    startLine: 30
+    startLine: 29
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -232,15 +202,6 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuDesignSettings.#ctor
-  href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html#ToSic_Cre8magic_Menus_MagicMenuDesignSettings__ctor
-  name: MagicMenuDesignSettings
-  nameWithType: MagicMenuDesignSettings.MagicMenuDesignSettings
-  fullName: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.MagicMenuDesignSettings
-  nameWithType.vb: MagicMenuDesignSettings.New
-  fullName.vb: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.New
-  name.vb: New
 - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.Parts*
   commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuDesignSettings.Parts
   href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html#ToSic_Cre8magic_Menus_MagicMenuDesignSettings_Parts

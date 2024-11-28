@@ -7,12 +7,12 @@ items:
   children:
   - ToSic.Cre8magic.Tokens.TokenEngine.#ctor
   - ToSic.Cre8magic.Tokens.TokenEngine.#ctor(System.Collections.Generic.List{ToSic.Cre8magic.Tokens.ITokenReplace})
+  - ToSic.Cre8magic.Tokens.TokenEngine.CloneWith(ToSic.Cre8magic.Pages.IMagicPage)
   - ToSic.Cre8magic.Tokens.TokenEngine.Expanded(ToSic.Cre8magic.Tokens.ITokenReplace)
   - ToSic.Cre8magic.Tokens.TokenEngine.NameId
   - ToSic.Cre8magic.Tokens.TokenEngine.NameIdConst
   - ToSic.Cre8magic.Tokens.TokenEngine.Parse(System.String)
   - ToSic.Cre8magic.Tokens.TokenEngine.Parsers
-  - ToSic.Cre8magic.Tokens.TokenEngine.SwapParser(ToSic.Cre8magic.Tokens.ITokenReplace)
   langs:
   - csharp
   - vb
@@ -27,7 +27,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: TokenEngine
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 11
+    startLine: 12
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
@@ -65,7 +65,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: NameIdConst
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
@@ -92,7 +92,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: NameId
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 14
+    startLine: 15
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
@@ -124,7 +124,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 18
+    startLine: 19
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
@@ -153,7 +153,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
@@ -185,7 +185,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parsers
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
@@ -214,7 +214,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Expanded
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
@@ -227,37 +227,37 @@ items:
       type: ToSic.Cre8magic.Tokens.TokenEngine
     content.vb: Public Function Expanded(add As ITokenReplace) As TokenEngine
   overload: ToSic.Cre8magic.Tokens.TokenEngine.Expanded*
-- uid: ToSic.Cre8magic.Tokens.TokenEngine.SwapParser(ToSic.Cre8magic.Tokens.ITokenReplace)
-  commentId: M:ToSic.Cre8magic.Tokens.TokenEngine.SwapParser(ToSic.Cre8magic.Tokens.ITokenReplace)
-  id: SwapParser(ToSic.Cre8magic.Tokens.ITokenReplace)
+- uid: ToSic.Cre8magic.Tokens.TokenEngine.CloneWith(ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Tokens.TokenEngine.CloneWith(ToSic.Cre8magic.Pages.IMagicPage)
+  id: CloneWith(ToSic.Cre8magic.Pages.IMagicPage)
   parent: ToSic.Cre8magic.Tokens.TokenEngine
   langs:
   - csharp
   - vb
-  name: SwapParser(ITokenReplace)
-  nameWithType: TokenEngine.SwapParser(ITokenReplace)
-  fullName: ToSic.Cre8magic.Tokens.TokenEngine.SwapParser(ToSic.Cre8magic.Tokens.ITokenReplace)
+  name: CloneWith(IMagicPage)
+  nameWithType: TokenEngine.CloneWith(IMagicPage)
+  fullName: ToSic.Cre8magic.Tokens.TokenEngine.CloneWith(ToSic.Cre8magic.Pages.IMagicPage)
   type: Method
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: SwapParser
+    id: CloneWith
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 28
+    startLine: 29
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
   syntax:
-    content: public TokenEngine SwapParser(ITokenReplace replacement)
+    content: public TokenEngine CloneWith(IMagicPage page)
     parameters:
-    - id: replacement
-      type: ToSic.Cre8magic.Tokens.ITokenReplace
+    - id: page
+      type: ToSic.Cre8magic.Pages.IMagicPage
     return:
       type: ToSic.Cre8magic.Tokens.TokenEngine
-    content.vb: Public Function SwapParser(replacement As ITokenReplace) As TokenEngine
-  overload: ToSic.Cre8magic.Tokens.TokenEngine.SwapParser*
+    content.vb: Public Function CloneWith(page As IMagicPage) As TokenEngine
+  overload: ToSic.Cre8magic.Tokens.TokenEngine.CloneWith*
 - uid: ToSic.Cre8magic.Tokens.TokenEngine.Parse(System.String)
   commentId: M:ToSic.Cre8magic.Tokens.TokenEngine.Parse(System.String)
   id: Parse(System.String)
@@ -276,7 +276,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Parse
     path: ../ToSic.Cre8Magic.Client/Tokens/TokenEngine.cs
-    startLine: 42
+    startLine: 50
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tokens
@@ -587,12 +587,49 @@ references:
   name: TokenEngine
   nameWithType: TokenEngine
   fullName: ToSic.Cre8magic.Tokens.TokenEngine
-- uid: ToSic.Cre8magic.Tokens.TokenEngine.SwapParser*
-  commentId: Overload:ToSic.Cre8magic.Tokens.TokenEngine.SwapParser
-  href: ToSic.Cre8magic.Tokens.TokenEngine.html#ToSic_Cre8magic_Tokens_TokenEngine_SwapParser_ToSic_Cre8magic_Tokens_ITokenReplace_
-  name: SwapParser
-  nameWithType: TokenEngine.SwapParser
-  fullName: ToSic.Cre8magic.Tokens.TokenEngine.SwapParser
+- uid: ToSic.Cre8magic.Tokens.TokenEngine.CloneWith*
+  commentId: Overload:ToSic.Cre8magic.Tokens.TokenEngine.CloneWith
+  href: ToSic.Cre8magic.Tokens.TokenEngine.html#ToSic_Cre8magic_Tokens_TokenEngine_CloneWith_ToSic_Cre8magic_Pages_IMagicPage_
+  name: CloneWith
+  nameWithType: TokenEngine.CloneWith
+  fullName: ToSic.Cre8magic.Tokens.TokenEngine.CloneWith
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
 - uid: ToSic.Cre8magic.Tokens.TokenEngine.Parse*
   commentId: Overload:ToSic.Cre8magic.Tokens.TokenEngine.Parse
   href: ToSic.Cre8magic.Tokens.TokenEngine.html#ToSic_Cre8magic_Tokens_TokenEngine_Parse_System_String_

@@ -7,10 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.Pages.IMagicPage
   - ToSic.Cre8magic.Pages.IMagicPageDesigner
-  - ToSic.Cre8magic.Pages.IMagicPageList
-  - ToSic.Cre8magic.Pages.IMagicPageService
   - ToSic.Cre8magic.Pages.IMagicPageSetSettings
-  - ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
   - ToSic.Cre8magic.Pages.MagicPageDesignerBase
   - ToSic.Cre8magic.Pages.MagicPageDesignerBasic
   - ToSic.Cre8magic.Pages.MagicPageEditService
@@ -38,19 +35,6 @@ references:
   name: IMagicPageDesigner
   nameWithType: IMagicPageDesigner
   fullName: ToSic.Cre8magic.Pages.IMagicPageDesigner
-- uid: ToSic.Cre8magic.Pages.IMagicPageList
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageList
-  parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageList.html
-  name: IMagicPageList
-  nameWithType: IMagicPageList
-  fullName: ToSic.Cre8magic.Pages.IMagicPageList
-- uid: ToSic.Cre8magic.Pages.IMagicPageService
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageService
-  href: ToSic.Cre8magic.Pages.IMagicPageService.html
-  name: IMagicPageService
-  nameWithType: IMagicPageService
-  fullName: ToSic.Cre8magic.Pages.IMagicPageService
 - uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings
   commentId: T:ToSic.Cre8magic.Pages.IMagicPageSetSettings
   parent: ToSic.Cre8magic.Pages
@@ -58,13 +42,6 @@ references:
   name: IMagicPageSetSettings
   nameWithType: IMagicPageSetSettings
   fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings
-- uid: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
-  parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip.html
-  name: IMagicPageWithDesignWip
-  nameWithType: IMagicPageWithDesignWip
-  fullName: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
 - uid: ToSic.Cre8magic.Pages.MagicPageDesignerBase
   commentId: T:ToSic.Cre8magic.Pages.MagicPageDesignerBase
   parent: ToSic.Cre8magic.Pages

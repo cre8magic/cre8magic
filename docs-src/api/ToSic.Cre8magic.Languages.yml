@@ -10,7 +10,6 @@ items:
   - ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
   - ToSic.Cre8magic.Languages.MagicLanguageDesigner
   - ToSic.Cre8magic.Languages.MagicLanguageSettings
-  - ToSic.Cre8magic.Languages.MagicLanguageSettingsData
   langs:
   - csharp
   - vb
@@ -55,13 +54,6 @@ references:
   name: MagicLanguageSettings
   nameWithType: MagicLanguageSettings
   fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-  parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html
-  name: MagicLanguageSettingsData
-  nameWithType: MagicLanguageSettingsData
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
 - uid: ToSic.Cre8magic.Languages
   commentId: N:ToSic.Cre8magic.Languages
   href: ToSic.html

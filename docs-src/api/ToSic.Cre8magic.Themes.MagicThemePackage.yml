@@ -1,0 +1,321 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemePackage
+  id: MagicThemePackage
+  parent: ToSic.Cre8magic.Themes
+  children:
+  - ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
+  - ToSic.Cre8magic.Themes.MagicThemePackage.PackageName
+  - ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
+  - ToSic.Cre8magic.Themes.MagicThemePackage.Url
+  - ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot
+  langs:
+  - csharp
+  - vb
+  name: MagicThemePackage
+  nameWithType: MagicThemePackage
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicThemePackage
+    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+    startLine: 12
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes
+  summary: >-
+    Settings for a Theme Package.
+
+
+    It contains things like
+
+
+    1. location of assets
+
+    1. settings for various parts like CSS
+  example: []
+  syntax:
+    content: public record MagicThemePackage
+    content.vb: Public Class MagicThemePackage
+  inheritance:
+  - System.Object
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
+  id: Defaults
+  parent: ToSic.Cre8magic.Themes.MagicThemePackage
+  langs:
+  - csharp
+  - vb
+  name: Defaults
+  nameWithType: MagicThemePackage.Defaults
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Defaults
+    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+    startLine: 18
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes
+  summary: >-
+    All kinds of settings for the layout, how it should be etc.
+
+    Should usually only serve as backup in case the JSON fails.
+  example: []
+  syntax:
+    content: public MagicSettingsCatalog? Defaults { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+    content.vb: Public Property Defaults As MagicSettingsCatalog
+  overload: ToSic.Cre8magic.Themes.MagicThemePackage.Defaults*
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot
+  id: WwwRoot
+  parent: ToSic.Cre8magic.Themes.MagicThemePackage
+  langs:
+  - csharp
+  - vb
+  name: WwwRoot
+  nameWithType: MagicThemePackage.WwwRoot
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: WwwRoot
+    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+    startLine: 25
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes
+  syntax:
+    content: public string WwwRoot { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property WwwRoot As String
+  overload: ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot*
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
+  id: SettingsJsonFile
+  parent: ToSic.Cre8magic.Themes.MagicThemePackage
+  langs:
+  - csharp
+  - vb
+  name: SettingsJsonFile
+  nameWithType: MagicThemePackage.SettingsJsonFile
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: SettingsJsonFile
+    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+    startLine: 27
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes
+  syntax:
+    content: public string SettingsJsonFile { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SettingsJsonFile As String
+  overload: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile*
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.PackageName
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.PackageName
+  id: PackageName
+  parent: ToSic.Cre8magic.Themes.MagicThemePackage
+  langs:
+  - csharp
+  - vb
+  name: PackageName
+  nameWithType: MagicThemePackage.PackageName
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.PackageName
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PackageName
+    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+    startLine: 29
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes
+  syntax:
+    content: public string PackageName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PackageName As String
+  overload: ToSic.Cre8magic.Themes.MagicThemePackage.PackageName*
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.Url
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.Url
+  id: Url
+  parent: ToSic.Cre8magic.Themes.MagicThemePackage
+  langs:
+  - csharp
+  - vb
+  name: Url
+  nameWithType: MagicThemePackage.Url
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Url
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Url
+    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs
+    startLine: 31
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes
+  syntax:
+    content: public string Url { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Url As String
+  overload: ToSic.Cre8magic.Themes.MagicThemePackage.Url*
+references:
+- uid: ToSic.Cre8magic.Themes
+  commentId: N:ToSic.Cre8magic.Themes
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes
+  nameWithType: ToSic.Cre8magic.Themes
+  fullName: ToSic.Cre8magic.Themes
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.Defaults*
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Defaults
+  name: Defaults
+  nameWithType: MagicThemePackage.Defaults
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsCatalog
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html
+  name: MagicSettingsCatalog
+  nameWithType: MagicSettingsCatalog
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot*
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_WwwRoot
+  name: WwwRoot
+  nameWithType: MagicThemePackage.WwwRoot
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile*
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_SettingsJsonFile
+  name: SettingsJsonFile
+  nameWithType: MagicThemePackage.SettingsJsonFile
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.PackageName*
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.PackageName
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_PackageName
+  name: PackageName
+  nameWithType: MagicThemePackage.PackageName
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.PackageName
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.Url*
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.Url
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Url
+  name: Url
+  nameWithType: MagicThemePackage.Url
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Url

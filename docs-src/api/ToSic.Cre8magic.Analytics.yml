@@ -6,7 +6,6 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
-  - ToSic.Cre8magic.Analytics.IMagicAnalyticsService
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
   langs:
   - csharp
@@ -25,12 +24,6 @@ references:
   name: IMagicAnalyticsKit
   nameWithType: IMagicAnalyticsKit
   fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
-- uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsService
-  commentId: T:ToSic.Cre8magic.Analytics.IMagicAnalyticsService
-  href: ToSic.Cre8magic.Analytics.IMagicAnalyticsService.html
-  name: IMagicAnalyticsService
-  nameWithType: IMagicAnalyticsService
-  fullName: ToSic.Cre8magic.Analytics.IMagicAnalyticsService
 - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
   commentId: T:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
   parent: ToSic.Cre8magic.Analytics

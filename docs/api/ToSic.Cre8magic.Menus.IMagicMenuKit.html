@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Menus_IMagicMenuKit" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit" class="text-break">
-Interface IMagicMenuKit  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L6"><i class="bi bi-code-slash"></i></a>
+Interface IMagicMenuKit  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -120,21 +120,22 @@ Interface IMagicMenuKit  <a class="header-action link-secondary" title="View sou
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Menus_IMagicMenuKit_Pages_" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.Pages*"></a>
+  <a id="ToSic_Cre8magic_Menus_IMagicMenuKit_Root_" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.Root*"></a>
 
-  <h3 id="ToSic_Cre8magic_Menus_IMagicMenuKit_Pages" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.Pages">
-  Pages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Menus_IMagicMenuKit_Root" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.Root">
+  Root
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L21"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>List of pages to show at this level of the menu.
-This is a magic page list, which means it contains magic pages and some more features.</p>
-<p>Can contain child pages.</p>
+  <div class="markdown level1 summary"><p>The root node to start from.
+This behaves like a <a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a> but is not really a page.
+It does provide <a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Children">Children</a> and can also do design work like apply <code>Classes</code>,
+typically to the outermost <code>&lt;ul&gt;&lt;/ul&gt;</code> tags etc.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicPageList Pages { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicPage Root { get; init; }</code></pre>
   </div>
 
 
@@ -143,7 +144,7 @@ This is a magic page list, which means it contains magic pages and some more fea
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageList.html">IMagicPageList</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></dt>
     <dd></dd>
   </dl>
 
@@ -158,7 +159,7 @@ This is a magic page list, which means it contains magic pages and some more fea
 
   <h3 id="ToSic_Cre8magic_Menus_IMagicMenuKit_Settings" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.Settings">
   Settings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The settings used to retrieve and build the pages.</p>
@@ -190,7 +191,7 @@ This is a magic page list, which means it contains magic pages and some more fea
 
   <h3 id="ToSic_Cre8magic_Menus_IMagicMenuKit_Variant" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.Variant">
   Variant
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The menu variant to use.
@@ -223,29 +224,31 @@ Usually determined by the settings.</p>
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Menus_IMagicMenuKit_Kit_" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.Kit*"></a>
+  <a id="ToSic_Cre8magic_Menus_IMagicMenuKit_IsVariant_" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant*"></a>
 
-  <h3 id="ToSic_Cre8magic_Menus_IMagicMenuKit_Kit_ToSic_Cre8magic_Pages_IMagicPageWithDesignWip_" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.Kit(ToSic.Cre8magic.Pages.IMagicPageWithDesignWip)">
-  Kit(IMagicPageWithDesignWip)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Menus_IMagicMenuKit_IsVariant_System_String_" data-uid="ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant(System.String)">
+  IsVariant(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Check if the menu is of a specific variant. Case-insensitive.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicMenuKit Kit(IMagicPageWithDesignWip page)</code></pre>
+    <pre><code class="lang-csharp hljs">bool IsVariant(string variant)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>page</code> <a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageWithDesignWip.html">IMagicPageWithDesignWip</a></dt>
-    <dd></dd>
+    <dt><code>variant</code> <span class="xref">string</span></dt>
+    <dd><p>the variant to check, like &quot;vertical&quot;</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Menus.IMagicMenuKit.html">IMagicMenuKit</a></dt>
+    <dt><span class="xref">bool</span></dt>
     <dd></dd>
   </dl>
 
@@ -263,7 +266,7 @@ Usually determined by the settings.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L6" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

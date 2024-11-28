@@ -6,8 +6,10 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Containers.IMagicContainerKit
+  - ToSic.Cre8magic.Containers.MagicContainerDesignSettings
   - ToSic.Cre8magic.Containers.MagicContainerDesigner
   - ToSic.Cre8magic.Containers.MagicContainerSettings
+  - ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
   langs:
   - csharp
   - vb
@@ -25,6 +27,13 @@ references:
   name: IMagicContainerKit
   nameWithType: IMagicContainerKit
   fullName: ToSic.Cre8magic.Containers.IMagicContainerKit
+- uid: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
+  commentId: T:ToSic.Cre8magic.Containers.MagicContainerDesignSettings
+  parent: ToSic.Cre8magic.Containers
+  href: ToSic.Cre8magic.Containers.MagicContainerDesignSettings.html
+  name: MagicContainerDesignSettings
+  nameWithType: MagicContainerDesignSettings
+  fullName: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
 - uid: ToSic.Cre8magic.Containers.MagicContainerDesigner
   commentId: T:ToSic.Cre8magic.Containers.MagicContainerDesigner
   parent: ToSic.Cre8magic.Containers
@@ -34,10 +43,18 @@ references:
   fullName: ToSic.Cre8magic.Containers.MagicContainerDesigner
 - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
   commentId: T:ToSic.Cre8magic.Containers.MagicContainerSettings
+  parent: ToSic.Cre8magic.Containers
   href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
   name: MagicContainerSettings
   nameWithType: MagicContainerSettings
   fullName: ToSic.Cre8magic.Containers.MagicContainerSettings
+- uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
+  commentId: T:ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
+  parent: ToSic.Cre8magic.Containers
+  href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html
+  name: MagicContainerSettingsExtensions
+  nameWithType: MagicContainerSettingsExtensions
+  fullName: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
 - uid: ToSic.Cre8magic.Containers
   commentId: N:ToSic.Cre8magic.Containers
   href: ToSic.html

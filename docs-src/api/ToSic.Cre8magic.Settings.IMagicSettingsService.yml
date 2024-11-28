@@ -5,10 +5,11 @@ items:
   id: IMagicSettingsService
   parent: ToSic.Cre8magic.Settings
   children:
-  - ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings(System.String)
   - ToSic.Cre8magic.Settings.IMagicSettingsService.Debug
   - ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState(Oqtane.UI.PageState)
-  - ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)
+  - ToSic.Cre8magic.Settings.IMagicSettingsService.PageState
+  - ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Themes.MagicThemePackage,System.String)
+  - ToSic.Cre8magic.Settings.IMagicSettingsService.UsePageState(Oqtane.UI.PageState)
   langs:
   - csharp
   - vb
@@ -18,37 +19,37 @@ items:
   type: Interface
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
+      path: ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IMagicSettingsService
-    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
-    startLine: 12
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
+    startLine: 15
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
   syntax:
     content: public interface IMagicSettingsService
     content.vb: Public Interface IMagicSettingsService
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)
-  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)
-  id: Setup(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Themes.MagicThemePackage,System.String)
+  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Themes.MagicThemePackage,System.String)
+  id: Setup(ToSic.Cre8magic.Themes.MagicThemePackage,System.String)
   parent: ToSic.Cre8magic.Settings.IMagicSettingsService
   langs:
   - csharp
   - vb
-  name: Setup(MagicPackageSettings, string?)
-  nameWithType: IMagicSettingsService.Setup(MagicPackageSettings, string?)
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings, string?)
+  name: Setup(MagicThemePackage, string?)
+  nameWithType: IMagicSettingsService.Setup(MagicThemePackage, string?)
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Themes.MagicThemePackage, string?)
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
+      path: ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Setup
-    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
-    startLine: 22
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
+    startLine: 25
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -60,10 +61,10 @@ items:
     Otherwise, the settings are just defaulted to some standard values.
   example: []
   syntax:
-    content: IMagicSettingsService Setup(MagicPackageSettings packageSettings, string? layoutName)
+    content: IMagicSettingsService Setup(MagicThemePackage themePackage, string? layoutName)
     parameters:
-    - id: packageSettings
-      type: ToSic.Cre8magic.Settings.MagicPackageSettings
+    - id: themePackage
+      type: ToSic.Cre8magic.Themes.MagicThemePackage
       description: ''
     - id: layoutName
       type: System.String
@@ -71,11 +72,11 @@ items:
     return:
       type: ToSic.Cre8magic.Settings.IMagicSettingsService
       description: ''
-    content.vb: Function Setup(packageSettings As MagicPackageSettings, layoutName As String) As IMagicSettingsService
+    content.vb: Function Setup(themePackage As MagicThemePackage, layoutName As String) As IMagicSettingsService
   overload: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup*
-  nameWithType.vb: IMagicSettingsService.Setup(MagicPackageSettings, String)
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Settings.MagicPackageSettings, String)
-  name.vb: Setup(MagicPackageSettings, String)
+  nameWithType.vb: IMagicSettingsService.Setup(MagicThemePackage, String)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup(ToSic.Cre8magic.Themes.MagicThemePackage, String)
+  name.vb: Setup(MagicThemePackage, String)
 - uid: ToSic.Cre8magic.Settings.IMagicSettingsService.Debug
   commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsService.Debug
   id: Debug
@@ -89,12 +90,12 @@ items:
   type: Property
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
+      path: ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
-    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
-    startLine: 34
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
+    startLine: 37
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -102,9 +103,40 @@ items:
     content: MagicDebugSettings Debug { get; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
+      type: ToSic.Cre8magic.Settings.MagicDebugSettings
     content.vb: ReadOnly Property Debug As MagicDebugSettings
   overload: ToSic.Cre8magic.Settings.IMagicSettingsService.Debug*
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.PageState
+  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsService.PageState
+  id: PageState
+  parent: ToSic.Cre8magic.Settings.IMagicSettingsService
+  langs:
+  - csharp
+  - vb
+  name: PageState
+  nameWithType: IMagicSettingsService.PageState
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.PageState
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PageState
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
+    startLine: 67
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: 'WIP: PageState for this service'
+  example: []
+  syntax:
+    content: PageState? PageState { get; }
+    parameters: []
+    return:
+      type: Oqtane.UI.PageState
+    content.vb: ReadOnly Property PageState As PageState
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsService.PageState*
 - uid: ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState(Oqtane.UI.PageState)
   commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState(Oqtane.UI.PageState)
   id: DebugState(Oqtane.UI.PageState)
@@ -118,12 +150,12 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
+      path: ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DebugState
-    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
-    startLine: 57
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
+    startLine: 79
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -136,40 +168,37 @@ items:
       type: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
     content.vb: Function DebugState(pageState As PageState) As MagicDebugState
   overload: ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState*
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings(System.String)
-  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings(System.String)
-  id: AnalyticsSettings(System.String)
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.UsePageState(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsService.UsePageState(Oqtane.UI.PageState)
+  id: UsePageState(Oqtane.UI.PageState)
   parent: ToSic.Cre8magic.Settings.IMagicSettingsService
   langs:
   - csharp
   - vb
-  name: AnalyticsSettings(string)
-  nameWithType: IMagicSettingsService.AnalyticsSettings(string)
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings(string)
+  name: UsePageState(PageState)
+  nameWithType: IMagicSettingsService.UsePageState(PageState)
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.UsePageState(Oqtane.UI.PageState)
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
+      path: ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: AnalyticsSettings
-    path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsService.cs
-    startLine: 60
+    id: UsePageState
+    path: ../ToSic.Cre8Magic.Client/Settings/Internal/IMagicSettingsService.cs
+    startLine: 81
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
   syntax:
-    content: MagicAnalyticsSettings AnalyticsSettings(string settingsName)
+    content: IMagicSettingsService UsePageState(PageState pageState)
     parameters:
-    - id: settingsName
-      type: System.String
+    - id: pageState
+      type: Oqtane.UI.PageState
     return:
-      type: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-    content.vb: Function AnalyticsSettings(settingsName As String) As MagicAnalyticsSettings
-  overload: ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings*
-  nameWithType.vb: IMagicSettingsService.AnalyticsSettings(String)
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings(String)
-  name.vb: AnalyticsSettings(String)
+      type: ToSic.Cre8magic.Settings.IMagicSettingsService
+    content.vb: Function UsePageState(pageState As PageState) As IMagicSettingsService
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsService.UsePageState*
 references:
 - uid: ToSic.Cre8magic.Settings
   commentId: N:ToSic.Cre8magic.Settings
@@ -203,17 +232,17 @@ references:
     href: ToSic.Cre8magic.Settings.html
 - uid: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup*
   commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsService.Setup
-  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html#ToSic_Cre8magic_Settings_IMagicSettingsService_Setup_ToSic_Cre8magic_Settings_MagicPackageSettings_System_String_
+  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html#ToSic_Cre8magic_Settings_IMagicSettingsService_Setup_ToSic_Cre8magic_Themes_MagicThemePackage_System_String_
   name: Setup
   nameWithType: IMagicSettingsService.Setup
   fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.Setup
-- uid: ToSic.Cre8magic.Settings.MagicPackageSettings
-  commentId: T:ToSic.Cre8magic.Settings.MagicPackageSettings
-  parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
-  name: MagicPackageSettings
-  nameWithType: MagicPackageSettings
-  fullName: ToSic.Cre8magic.Settings.MagicPackageSettings
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemePackage
+  parent: ToSic.Cre8magic.Themes
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html
+  name: MagicThemePackage
+  nameWithType: MagicThemePackage
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -231,6 +260,36 @@ references:
   name: IMagicSettingsService
   nameWithType: IMagicSettingsService
   fullName: ToSic.Cre8magic.Settings.IMagicSettingsService
+- uid: ToSic.Cre8magic.Themes
+  commentId: N:ToSic.Cre8magic.Themes
+  href: ToSic.html
+  name: ToSic.Cre8magic.Themes
+  nameWithType: ToSic.Cre8magic.Themes
+  fullName: ToSic.Cre8magic.Themes
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
 - uid: System
   commentId: N:System
   isExternal: true
@@ -244,12 +303,61 @@ references:
   name: Debug
   nameWithType: IMagicSettingsService.Debug
   fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.Debug
-- uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
-  commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
-  parent: ToSic.Cre8magic.Settings.Internal.Debug
+- uid: ToSic.Cre8magic.Settings.MagicDebugSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicDebugSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicDebugSettings.html
   name: MagicDebugSettings
   nameWithType: MagicDebugSettings
-  fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
+  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.PageState*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsService.PageState
+  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html#ToSic_Cre8magic_Settings_IMagicSettingsService_PageState
+  name: PageState
+  nameWithType: IMagicSettingsService.PageState
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.PageState
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState
+  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html#ToSic_Cre8magic_Settings_IMagicSettingsService_DebugState_Oqtane_UI_PageState_
+  name: DebugState
+  nameWithType: IMagicSettingsService.DebugState
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState
+- uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
+  parent: ToSic.Cre8magic.Settings.Internal.Debug
+  name: MagicDebugState
+  nameWithType: MagicDebugState
+  fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
 - uid: ToSic.Cre8magic.Settings.Internal.Debug
   commentId: N:ToSic.Cre8magic.Settings.Internal.Debug
   href: ToSic.html
@@ -296,88 +404,9 @@ references:
   - uid: ToSic.Cre8magic.Settings.Internal.Debug
     name: Debug
     href: ToSic.Cre8magic.Settings.Internal.Debug.html
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState*
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState
-  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html#ToSic_Cre8magic_Settings_IMagicSettingsService_DebugState_Oqtane_UI_PageState_
-  name: DebugState
-  nameWithType: IMagicSettingsService.DebugState
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.DebugState
-- uid: Oqtane.UI.PageState
-  commentId: T:Oqtane.UI.PageState
-  parent: Oqtane.UI
-  isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
-  name: PageState
-  nameWithType: PageState
-  fullName: Oqtane.UI.PageState
-- uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-  commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-  parent: ToSic.Cre8magic.Settings.Internal.Debug
-  name: MagicDebugState
-  nameWithType: MagicDebugState
-  fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-- uid: Oqtane.UI
-  commentId: N:Oqtane.UI
-  isExternal: true
-  name: Oqtane.UI
-  nameWithType: Oqtane.UI
-  fullName: Oqtane.UI
-  spec.csharp:
-  - uid: Oqtane
-    name: Oqtane
-    isExternal: true
-  - name: .
-  - uid: Oqtane.UI
-    name: UI
-    isExternal: true
-  spec.vb:
-  - uid: Oqtane
-    name: Oqtane
-    isExternal: true
-  - name: .
-  - uid: Oqtane.UI
-    name: UI
-    isExternal: true
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings*
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings
-  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html#ToSic_Cre8magic_Settings_IMagicSettingsService_AnalyticsSettings_System_String_
-  name: AnalyticsSettings
-  nameWithType: IMagicSettingsService.AnalyticsSettings
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.AnalyticsSettings
-- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-  commentId: T:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-  parent: ToSic.Cre8magic.Analytics
-  href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
-  name: MagicAnalyticsSettings
-  nameWithType: MagicAnalyticsSettings
-  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
-- uid: ToSic.Cre8magic.Analytics
-  commentId: N:ToSic.Cre8magic.Analytics
-  href: ToSic.html
-  name: ToSic.Cre8magic.Analytics
-  nameWithType: ToSic.Cre8magic.Analytics
-  fullName: ToSic.Cre8magic.Analytics
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Analytics
-    name: Analytics
-    href: ToSic.Cre8magic.Analytics.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Analytics
-    name: Analytics
-    href: ToSic.Cre8magic.Analytics.html
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsService.UsePageState*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsService.UsePageState
+  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html#ToSic_Cre8magic_Settings_IMagicSettingsService_UsePageState_Oqtane_UI_PageState_
+  name: UsePageState
+  nameWithType: IMagicSettingsService.UsePageState
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService.UsePageState

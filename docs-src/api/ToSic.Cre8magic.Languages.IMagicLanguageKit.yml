@@ -24,7 +24,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IMagicLanguageKit
     path: ../ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs
-    startLine: 7
+    startLine: 9
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -32,7 +32,7 @@ items:
     The Kit to Show language menus in the UI.
 
 
-    You can get it by `@inject` / `[Inject]`-ing the `IMagicHat` and calling the <xref href="ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState%2cToSic.Cre8magic.Languages.MagicLanguageSettings)" data-throw-if-not-resolved="false"></xref>.
+    You can get it by `@inject` / `[Inject]`-ing the `IMagicHat` and calling the <xref href="ToSic.Cre8magic.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public interface IMagicLanguageKit
@@ -55,7 +55,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Show
     path: ../ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs
-    startLine: 12
+    startLine: 14
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -86,7 +86,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Languages
     path: ../ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -117,7 +117,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Designer
     path: ../ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs
-    startLine: 20
+    startLine: 22
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -146,7 +146,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
     path: ../ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs
-    startLine: 22
+    startLine: 24
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -175,7 +175,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SetCultureAsync
     path: ../ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs
-    startLine: 32
+    startLine: 34
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -199,39 +199,26 @@ items:
   fullName.vb: ToSic.Cre8magic.Languages.IMagicLanguageKit.SetCultureAsync(String)
   name.vb: SetCultureAsync(String)
 references:
-- uid: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  commentId: M:ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  isExternal: true
-  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_LanguageKitAsync_Oqtane_UI_PageState_ToSic_Cre8magic_Languages_MagicLanguageSettings_
-  name: LanguageKitAsync(PageState, MagicLanguageSettings)
-  nameWithType: IMagicHat.LanguageKitAsync(PageState, MagicLanguageSettings)
-  fullName: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState, ToSic.Cre8magic.Languages.MagicLanguageSettings)
+- uid: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  commentId: M:ToSic.Cre8magic.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+  name: LanguageKitAsync(MagicLanguageSettings)
+  nameWithType: IMagicHat.LanguageKitAsync(MagicLanguageSettings)
+  fullName: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
   spec.csharp:
-  - uid: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  - uid: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
     name: LanguageKitAsync
-    href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_LanguageKitAsync_Oqtane_UI_PageState_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+    href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_
   - name: (
-  - uid: Oqtane.UI.PageState
-    name: PageState
-    isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
-  - name: ','
-  - name: " "
   - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
     name: MagicLanguageSettings
     href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  - uid: ToSic.Cre8magic.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
     name: LanguageKitAsync
-    href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_LanguageKitAsync_Oqtane_UI_PageState_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+    href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_
   - name: (
-  - uid: Oqtane.UI.PageState
-    name: PageState
-    isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
-  - name: ','
-  - name: " "
   - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
     name: MagicLanguageSettings
     href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html

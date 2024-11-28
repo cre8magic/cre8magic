@@ -12,10 +12,11 @@ items:
   - ToSic.Cre8magic.Themes.MagicThemeBase.Name
   - ToSic.Cre8magic.Themes.MagicThemeBase.OnAfterRenderAsync(System.Boolean)
   - ToSic.Cre8magic.Themes.MagicThemeBase.OnInitialized
+  - ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet
   - ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader
   - ToSic.Cre8magic.Themes.MagicThemeBase.Panes
   - ToSic.Cre8magic.Themes.MagicThemeBase.ThemeKit
-  - ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings
+  - ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
   - ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
   langs:
   - csharp
@@ -31,7 +32,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicThemeBase
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -113,7 +114,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Name
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -148,12 +149,12 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Layout
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 29
+    startLine: 28
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
   summary: >-
-    The layout name which is used to lookup configurations.
+    The layout name which is used to lookup settings.
 
     The inheriting file is required to specify it.
   example: []
@@ -182,7 +183,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicContextClasses
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 38
+    startLine: 37
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -221,7 +222,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicComponents
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 44
+    startLine: 43
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -255,7 +256,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PaneNameHeader
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 47
+    startLine: 46
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -282,7 +283,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Panes
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 52
+    startLine: 51
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -314,7 +315,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemePath
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 58
+    startLine: 57
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -327,25 +328,25 @@ items:
       description: ''
     content.vb: Public Function ThemePath() As String
   overload: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath*
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings
-  id: ThemePackageSettings
+- uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
+  id: ThemePackage
   parent: ToSic.Cre8magic.Themes.MagicThemeBase
   langs:
   - csharp
   - vb
-  name: ThemePackageSettings
-  nameWithType: MagicThemeBase.ThemePackageSettings
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings
+  name: ThemePackage
+  nameWithType: MagicThemeBase.ThemePackage
+  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: ThemePackageSettings
+    id: ThemePackage
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 64
+    startLine: 63
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -355,12 +356,12 @@ items:
     Any inheriting class must specify what it will be.
   example: []
   syntax:
-    content: public abstract MagicPackageSettings ThemePackageSettings { get; }
+    content: public abstract MagicThemePackage ThemePackage { get; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Settings.MagicPackageSettings
-    content.vb: Public MustOverride ReadOnly Property ThemePackageSettings As MagicPackageSettings
-  overload: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings*
+      type: ToSic.Cre8magic.Themes.MagicThemePackage
+    content.vb: Public MustOverride ReadOnly Property ThemePackage As MagicThemePackage
+  overload: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage*
 - uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
   commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
   id: MagicHat
@@ -379,7 +380,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicHat
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 66
+    startLine: 65
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -418,7 +419,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemeKit
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 69
+    startLine: 68
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -429,6 +430,38 @@ items:
       type: ToSic.Cre8magic.Themes.IMagicThemeKit
     content.vb: Public ReadOnly Property ThemeKit As IMagicThemeKit
   overload: ToSic.Cre8magic.Themes.MagicThemeBase.ThemeKit*
+- uid: ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet
+  commentId: M:ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet
+  id: OnParametersSet
+  parent: ToSic.Cre8magic.Themes.MagicThemeBase
+  langs:
+  - csharp
+  - vb
+  name: OnParametersSet()
+  nameWithType: MagicThemeBase.OnParametersSet()
+  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet()
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: OnParametersSet
+    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
+    startLine: 71
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Themes
+  summary: >-
+    Method invoked when the component has received parameters from its parent in
+
+    the render tree, and the incoming values have been assigned to properties.
+  example: []
+  syntax:
+    content: protected override void OnParametersSet()
+    content.vb: Protected Overrides Sub OnParametersSet()
+  overridden: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  overload: ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet*
 - uid: ToSic.Cre8magic.Themes.MagicThemeBase.OnInitialized
   commentId: M:ToSic.Cre8magic.Themes.MagicThemeBase.OnInitialized
   id: OnInitialized
@@ -447,7 +480,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnInitialized
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 75
+    startLine: 80
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -476,7 +509,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnAfterRenderAsync
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 84
+    startLine: 91
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -2443,49 +2476,19 @@ references:
   name: ThemePath
   nameWithType: MagicThemeBase.ThemePath
   fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings
-  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_ThemePackageSettings
-  name: ThemePackageSettings
-  nameWithType: MagicThemeBase.ThemePackageSettings
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackageSettings
-- uid: ToSic.Cre8magic.Settings.MagicPackageSettings
-  commentId: T:ToSic.Cre8magic.Settings.MagicPackageSettings
-  parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
-  name: MagicPackageSettings
-  nameWithType: MagicPackageSettings
-  fullName: ToSic.Cre8magic.Settings.MagicPackageSettings
-- uid: ToSic.Cre8magic.Settings
-  commentId: N:ToSic.Cre8magic.Settings
-  href: ToSic.html
-  name: ToSic.Cre8magic.Settings
-  nameWithType: ToSic.Cre8magic.Settings
-  fullName: ToSic.Cre8magic.Settings
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
+- uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage*
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
+  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_ThemePackage
+  name: ThemePackage
+  nameWithType: MagicThemeBase.ThemePackage
+  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemePackage
+  parent: ToSic.Cre8magic.Themes
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html
+  name: MagicThemePackage
+  nameWithType: MagicThemePackage
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage
 - uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat*
   commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
   href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicHat
@@ -2534,6 +2537,31 @@ references:
   name: IMagicThemeKit
   nameWithType: IMagicThemeKit
   fullName: ToSic.Cre8magic.Themes.IMagicThemeKit
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  name: OnParametersSet()
+  nameWithType: ComponentBase.OnParametersSet()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+    name: OnParametersSet
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+    name: OnParametersSet
+    isExternal: true
+  - name: (
+  - name: )
+- uid: ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet*
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet
+  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_OnParametersSet
+  name: OnParametersSet
+  nameWithType: MagicThemeBase.OnParametersSet
+  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet
 - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
   commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
   parent: Microsoft.AspNetCore.Components.ComponentBase

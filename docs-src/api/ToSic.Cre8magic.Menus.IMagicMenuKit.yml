@@ -5,8 +5,8 @@ items:
   id: IMagicMenuKit
   parent: ToSic.Cre8magic.Menus
   children:
-  - ToSic.Cre8magic.Menus.IMagicMenuKit.Kit(ToSic.Cre8magic.Pages.IMagicPageWithDesignWip)
-  - ToSic.Cre8magic.Menus.IMagicMenuKit.Pages
+  - ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant(System.String)
+  - ToSic.Cre8magic.Menus.IMagicMenuKit.Root
   - ToSic.Cre8magic.Menus.IMagicMenuKit.Settings
   - ToSic.Cre8magic.Menus.IMagicMenuKit.Variant
   langs:
@@ -23,50 +23,51 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IMagicMenuKit
     path: ../ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs
-    startLine: 5
+    startLine: 6
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
   syntax:
     content: public interface IMagicMenuKit
     content.vb: Public Interface IMagicMenuKit
-- uid: ToSic.Cre8magic.Menus.IMagicMenuKit.Pages
-  commentId: P:ToSic.Cre8magic.Menus.IMagicMenuKit.Pages
-  id: Pages
+- uid: ToSic.Cre8magic.Menus.IMagicMenuKit.Root
+  commentId: P:ToSic.Cre8magic.Menus.IMagicMenuKit.Root
+  id: Root
   parent: ToSic.Cre8magic.Menus.IMagicMenuKit
   langs:
   - csharp
   - vb
-  name: Pages
-  nameWithType: IMagicMenuKit.Pages
-  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit.Pages
+  name: Root
+  nameWithType: IMagicMenuKit.Root
+  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit.Root
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Pages
+    id: Root
     path: ../ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs
-    startLine: 19
+    startLine: 20
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
   summary: >-
-    List of pages to show at this level of the menu.
+    The root node to start from.
 
-    This is a magic page list, which means it contains magic pages and some more features.
+    This behaves like a <xref href="ToSic.Cre8magic.Pages.IMagicPage" data-throw-if-not-resolved="false"></xref> but is not really a page.
 
+    It does provide <xref href="ToSic.Cre8magic.Pages.IMagicPage.Children" data-throw-if-not-resolved="false"></xref> and can also do design work like apply `Classes`,
 
-    Can contain child pages.
+    typically to the outermost `<ul></ul>` tags etc.
   example: []
   syntax:
-    content: IMagicPageList Pages { get; init; }
+    content: IMagicPage Root { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Pages.IMagicPageList
-    content.vb: Property Pages As IMagicPageList
-  overload: ToSic.Cre8magic.Menus.IMagicMenuKit.Pages*
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    content.vb: Property Root As IMagicPage
+  overload: ToSic.Cre8magic.Menus.IMagicMenuKit.Root*
 - uid: ToSic.Cre8magic.Menus.IMagicMenuKit.Settings
   commentId: P:ToSic.Cre8magic.Menus.IMagicMenuKit.Settings
   id: Settings
@@ -85,7 +86,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
     path: ../ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -116,7 +117,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Variant
     path: ../ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs
-    startLine: 30
+    startLine: 31
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -132,37 +133,44 @@ items:
       type: System.String
     content.vb: ReadOnly Property [Variant] As String
   overload: ToSic.Cre8magic.Menus.IMagicMenuKit.Variant*
-- uid: ToSic.Cre8magic.Menus.IMagicMenuKit.Kit(ToSic.Cre8magic.Pages.IMagicPageWithDesignWip)
-  commentId: M:ToSic.Cre8magic.Menus.IMagicMenuKit.Kit(ToSic.Cre8magic.Pages.IMagicPageWithDesignWip)
-  id: Kit(ToSic.Cre8magic.Pages.IMagicPageWithDesignWip)
+- uid: ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant(System.String)
+  commentId: M:ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant(System.String)
+  id: IsVariant(System.String)
   parent: ToSic.Cre8magic.Menus.IMagicMenuKit
   langs:
   - csharp
   - vb
-  name: Kit(IMagicPageWithDesignWip)
-  nameWithType: IMagicMenuKit.Kit(IMagicPageWithDesignWip)
-  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit.Kit(ToSic.Cre8magic.Pages.IMagicPageWithDesignWip)
+  name: IsVariant(string)
+  nameWithType: IMagicMenuKit.IsVariant(string)
+  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant(string)
   type: Method
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Kit
+    id: IsVariant
     path: ../ToSic.Cre8Magic.Client/Menus/IMagicMenuKit.cs
-    startLine: 32
+    startLine: 38
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
+  summary: Check if the menu is of a specific variant. Case-insensitive.
+  example: []
   syntax:
-    content: IMagicMenuKit Kit(IMagicPageWithDesignWip page)
+    content: bool IsVariant(string variant)
     parameters:
-    - id: page
-      type: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
+    - id: variant
+      type: System.String
+      description: the variant to check, like "vertical"
     return:
-      type: ToSic.Cre8magic.Menus.IMagicMenuKit
-    content.vb: Function Kit(page As IMagicPageWithDesignWip) As IMagicMenuKit
-  overload: ToSic.Cre8magic.Menus.IMagicMenuKit.Kit*
+      type: System.Boolean
+      description: ''
+    content.vb: Function IsVariant([variant] As String) As Boolean
+  overload: ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant*
+  nameWithType.vb: IMagicMenuKit.IsVariant(String)
+  fullName.vb: ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant(String)
+  name.vb: IsVariant(String)
 references:
 - uid: ToSic.Cre8magic.Menus
   commentId: N:ToSic.Cre8magic.Menus
@@ -194,19 +202,25 @@ references:
   - uid: ToSic.Cre8magic.Menus
     name: Menus
     href: ToSic.Cre8magic.Menus.html
-- uid: ToSic.Cre8magic.Menus.IMagicMenuKit.Pages*
-  commentId: Overload:ToSic.Cre8magic.Menus.IMagicMenuKit.Pages
-  href: ToSic.Cre8magic.Menus.IMagicMenuKit.html#ToSic_Cre8magic_Menus_IMagicMenuKit_Pages
-  name: Pages
-  nameWithType: IMagicMenuKit.Pages
-  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit.Pages
-- uid: ToSic.Cre8magic.Pages.IMagicPageList
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageList
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
   parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageList.html
-  name: IMagicPageList
-  nameWithType: IMagicPageList
-  fullName: ToSic.Cre8magic.Pages.IMagicPageList
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: ToSic.Cre8magic.Pages.IMagicPage.Children
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Children
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Children
+  name: Children
+  nameWithType: IMagicPage.Children
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.Children
+- uid: ToSic.Cre8magic.Menus.IMagicMenuKit.Root*
+  commentId: Overload:ToSic.Cre8magic.Menus.IMagicMenuKit.Root
+  href: ToSic.Cre8magic.Menus.IMagicMenuKit.html#ToSic_Cre8magic_Menus_IMagicMenuKit_Root
+  name: Root
+  nameWithType: IMagicMenuKit.Root
+  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit.Root
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
   href: ToSic.html
@@ -273,23 +287,19 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Menus.IMagicMenuKit.Kit*
-  commentId: Overload:ToSic.Cre8magic.Menus.IMagicMenuKit.Kit
-  href: ToSic.Cre8magic.Menus.IMagicMenuKit.html#ToSic_Cre8magic_Menus_IMagicMenuKit_Kit_ToSic_Cre8magic_Pages_IMagicPageWithDesignWip_
-  name: Kit
-  nameWithType: IMagicMenuKit.Kit
-  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit.Kit
-- uid: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
-  parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip.html
-  name: IMagicPageWithDesignWip
-  nameWithType: IMagicPageWithDesignWip
-  fullName: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
-- uid: ToSic.Cre8magic.Menus.IMagicMenuKit
-  commentId: T:ToSic.Cre8magic.Menus.IMagicMenuKit
-  parent: ToSic.Cre8magic.Menus
-  href: ToSic.Cre8magic.Menus.IMagicMenuKit.html
-  name: IMagicMenuKit
-  nameWithType: IMagicMenuKit
-  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit
+- uid: ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant*
+  commentId: Overload:ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant
+  href: ToSic.Cre8magic.Menus.IMagicMenuKit.html#ToSic_Cre8magic_Menus_IMagicMenuKit_IsVariant_System_String_
+  name: IsVariant
+  nameWithType: IMagicMenuKit.IsVariant
+  fullName: ToSic.Cre8magic.Menus.IMagicMenuKit.IsVariant
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

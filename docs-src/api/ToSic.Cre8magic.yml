@@ -10,10 +10,11 @@ items:
   - ToSic.Cre8magic.Designers
   - ToSic.Cre8magic.IMagicHat
   - ToSic.Cre8magic.Languages
+  - ToSic.Cre8magic.Links
   - ToSic.Cre8magic.MagicConstants
   - ToSic.Cre8magic.MagicTokens
   - ToSic.Cre8magic.Menus
-  - ToSic.Cre8magic.PageContext
+  - ToSic.Cre8magic.PageContexts
   - ToSic.Cre8magic.Pages
   - ToSic.Cre8magic.Settings
   - ToSic.Cre8magic.Themes
@@ -181,6 +182,36 @@ references:
   - uid: ToSic.Cre8magic.Languages
     name: Languages
     href: ToSic.Cre8magic.Languages.html
+- uid: ToSic.Cre8magic.Links
+  commentId: N:ToSic.Cre8magic.Links
+  href: ToSic.html
+  name: ToSic.Cre8magic.Links
+  nameWithType: ToSic.Cre8magic.Links
+  fullName: ToSic.Cre8magic.Links
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Links
+    name: Links
+    href: ToSic.Cre8magic.Links.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Links
+    name: Links
+    href: ToSic.Cre8magic.Links.html
 - uid: ToSic.Cre8magic.Menus
   commentId: N:ToSic.Cre8magic.Menus
   href: ToSic.html
@@ -211,12 +242,12 @@ references:
   - uid: ToSic.Cre8magic.Menus
     name: Menus
     href: ToSic.Cre8magic.Menus.html
-- uid: ToSic.Cre8magic.PageContext
-  commentId: N:ToSic.Cre8magic.PageContext
+- uid: ToSic.Cre8magic.PageContexts
+  commentId: N:ToSic.Cre8magic.PageContexts
   href: ToSic.html
-  name: ToSic.Cre8magic.PageContext
-  nameWithType: ToSic.Cre8magic.PageContext
-  fullName: ToSic.Cre8magic.PageContext
+  name: ToSic.Cre8magic.PageContexts
+  nameWithType: ToSic.Cre8magic.PageContexts
+  fullName: ToSic.Cre8magic.PageContexts
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -226,9 +257,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.PageContext
-    name: PageContext
-    href: ToSic.Cre8magic.PageContext.html
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -238,9 +269,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.PageContext
-    name: PageContext
-    href: ToSic.Cre8magic.PageContext.html
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
   href: ToSic.html

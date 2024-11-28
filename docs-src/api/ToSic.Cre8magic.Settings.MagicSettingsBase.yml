@@ -1,0 +1,461 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsBase
+  id: MagicSettingsBase
+  parent: ToSic.Cre8magic.Settings
+  children:
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  langs:
+  - csharp
+  - vb
+  name: MagicSettingsBase
+  nameWithType: MagicSettingsBase
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicSettingsBase
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+    startLine: 12
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Internal intermediate base class containing all kinds of settings which
+
+    all settings share.
+  example: []
+  syntax:
+    content: 'public abstract record MagicSettingsBase : SettingsWithInherit'
+    content.vb: Public MustInherit Class MagicSettingsBase Inherits SettingsWithInherit
+  inheritance:
+  - System.Object
+  - ToSic.Cre8magic.Settings.SettingsWithInherit
+  derivedClasses:
+  - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  - ToSic.Cre8magic.Containers.MagicContainerSettings
+  - ToSic.Cre8magic.Languages.MagicLanguageSettings
+  - ToSic.Cre8magic.Menus.MagicMenuSettings
+  - ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  - ToSic.Cre8magic.Themes.MagicThemeSettings
+  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+  inheritedMembers:
+  - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+  - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  id: PageState
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  langs:
+  - csharp
+  - vb
+  name: PageState
+  nameWithType: MagicSettingsBase.PageState
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PageState
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+    startLine: 50
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    The PageState which is needed for doing everything.
+
+
+    It can be provided in the settings, or it must be provided in the theme using <xref href="ToSic.Cre8magic.IMagicHat.UsePageState(Oqtane.UI.PageState)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public virtual PageState? PageState { get; init; }
+    parameters: []
+    return:
+      type: Oqtane.UI.PageState
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Overridable Property PageState As PageState
+  overload: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  id: PartName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  langs:
+  - csharp
+  - vb
+  name: PartName
+  nameWithType: MagicSettingsBase.PartName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PartName
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+    startLine: 60
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Name to identify this part.
+
+    This information is used to load settings (menu settings and design settings)
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public string? PartName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property PartName As String
+  overload: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  id: SettingsName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  langs:
+  - csharp
+  - vb
+  name: SettingsName
+  nameWithType: MagicSettingsBase.SettingsName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: SettingsName
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+    startLine: 64
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Name to identify which settings to load.
+
+    This is used before looking in the Theme Part.
+
+    If not specified, will check the theme part for a name it provides, or use the theme-part name to find the settings.
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public string? SettingsName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property SettingsName As String
+  overload: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  id: DesignName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  langs:
+  - csharp
+  - vb
+  name: DesignName
+  nameWithType: MagicSettingsBase.DesignName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: DesignName
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+    startLine: 68
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Name to identify which design settings to load.
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public string? DesignName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property DesignName As String
+  overload: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  id: Debug
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  langs:
+  - csharp
+  - vb
+  name: Debug
+  nameWithType: MagicSettingsBase.Debug
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Debug
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
+    startLine: 76
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Debug settings for anything that can configure show/hide of debug
+  example: []
+  syntax:
+    content: public MagicDebugSettings? Debug { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.MagicDebugSettings
+    content.vb: Public Property Debug As MagicDebugSettings
+  overload: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug*
+references:
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit
+  commentId: T:ToSic.Cre8magic.Settings.SettingsWithInherit
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html
+  name: SettingsWithInherit
+  nameWithType: SettingsWithInherit
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+  commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+  parent: ToSic.Cre8magic.Settings.SettingsWithInherit
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits
+  name: Inherits
+  nameWithType: SettingsWithInherit.Inherits
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
+- uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+  commentId: M:ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+  parent: ToSic.Cre8magic.Settings.SettingsWithInherit
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
+  name: PickFirstNonZeroInt(int?[])
+  nameWithType: SettingsWithInherit.PickFirstNonZeroInt(int?[])
+  fullName: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(int?[])
+  nameWithType.vb: SettingsWithInherit.PickFirstNonZeroInt(Integer?())
+  fullName.vb: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(Integer?())
+  name.vb: PickFirstNonZeroInt(Integer?())
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+    name: PickFirstNonZeroInt
+    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: '?'
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
+    name: PickFirstNonZeroInt
+    href: ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: '?'
+  - name: (
+  - name: )
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.IMagicHat.UsePageState(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.IMagicHat.UsePageState(Oqtane.UI.PageState)
+  isExternal: true
+  href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_UsePageState_Oqtane_UI_PageState_
+  name: UsePageState(PageState)
+  nameWithType: IMagicHat.UsePageState(PageState)
+  fullName: ToSic.Cre8magic.IMagicHat.UsePageState(Oqtane.UI.PageState)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.IMagicHat.UsePageState(Oqtane.UI.PageState)
+    name: UsePageState
+    href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_UsePageState_Oqtane_UI_PageState_
+  - name: (
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.IMagicHat.UsePageState(Oqtane.UI.PageState)
+    name: UsePageState
+    href: ToSic.Cre8magic.IMagicHat.html#ToSic_Cre8magic_IMagicHat_UsePageState_Oqtane_UI_PageState_
+  - name: (
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: )
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PageState
+  name: PageState
+  nameWithType: MagicSettingsBase.PageState
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PartName
+  name: PartName
+  nameWithType: MagicSettingsBase.PartName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_SettingsName
+  name: SettingsName
+  nameWithType: MagicSettingsBase.SettingsName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_DesignName
+  name: DesignName
+  nameWithType: MagicSettingsBase.DesignName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_Debug
+  name: Debug
+  nameWithType: MagicSettingsBase.Debug
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+- uid: ToSic.Cre8magic.Settings.MagicDebugSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicDebugSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicDebugSettings.html
+  name: MagicDebugSettings
+  nameWithType: MagicDebugSettings
+  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings

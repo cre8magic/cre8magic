@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Languages_MagicLanguageSettings" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings" class="text-break">
-Class MagicLanguageSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L7"><i class="bi bi-code-slash"></i></a>
+Class MagicLanguageSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L8"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -101,7 +101,7 @@ Class MagicLanguageSettings  <a class="header-action link-secondary" title="View
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record MagicLanguageSettings : MagicLanguageSettingsData</code></pre>
+    <pre><code class="lang-csharp hljs">public record MagicLanguageSettings : MagicSettingsBase</code></pre>
   </div>
 
 
@@ -112,7 +112,7 @@ Class MagicLanguageSettings  <a class="header-action link-secondary" title="View
     <dd>
       <div><span class="xref">object</span></div>
       <div><a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html">MagicLanguageSettingsData</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html">MagicSettingsBase</a></div>
       <div><span class="xref">MagicLanguageSettings</span></div>
     </dd>
   </dl>
@@ -123,16 +123,19 @@ Class MagicLanguageSettings  <a class="header-action link-secondary" title="View
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html#ToSic_Cre8magic_Languages_MagicLanguageSettingsData_HideOthers">MagicLanguageSettingsData.HideOthers</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PageState">MagicSettingsBase.PageState</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html#ToSic_Cre8magic_Languages_MagicLanguageSettingsData_MinLanguagesToShow">MagicLanguageSettingsData.MinLanguagesToShow</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PartName">MagicSettingsBase.PartName</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html#ToSic_Cre8magic_Languages_MagicLanguageSettingsData_Debug">MagicLanguageSettingsData.Debug</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_SettingsName">MagicSettingsBase.SettingsName</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html#ToSic_Cre8magic_Languages_MagicLanguageSettingsData_Languages">MagicLanguageSettingsData.Languages</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_DesignName">MagicSettingsBase.DesignName</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_Debug">MagicSettingsBase.Debug</a>
     </div>
     <div>
       <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
@@ -142,36 +145,16 @@ Class MagicLanguageSettings  <a class="header-action link-secondary" title="View
     </div>
   </dd></dl>
 
-
-
-
-
-
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
-  <a id="ToSic_Cre8magic_Languages_MagicLanguageSettings__ctor_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.#ctor*"></a>
-
-  <h3 id="ToSic_Cre8magic_Languages_MagicLanguageSettings__ctor" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.#ctor">
-  MagicLanguageSettings()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L9"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicLanguageSettings()</code></pre>
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_">MagicSettingsExtensions.With&lt;TSettings&gt;(TSettings?, PageState, bool)</a>
   </div>
-
-
-
-
-
-
-
-
+  <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_">MagicSettingsExtensions.With&lt;TSettings, TWith&gt;(TSettings?, TWith?, bool)</a>
+  </div>
+  </dd></dl>
 
 
 
@@ -181,49 +164,19 @@ Class MagicLanguageSettings  <a class="header-action link-secondary" title="View
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Languages_MagicLanguageSettings_DesignName_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName*"></a>
-
-  <h3 id="ToSic_Cre8magic_Languages_MagicLanguageSettings_DesignName" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName">
-  DesignName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L32"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? DesignName { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">string</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="ToSic_Cre8magic_Languages_MagicLanguageSettings_DesignSettings_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings*"></a>
 
   <h3 id="ToSic_Cre8magic_Languages_MagicLanguageSettings_DesignSettings" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings">
   DesignSettings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicLanguageDesignSettings? DesignSettings { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public MagicLanguageDesignSettings? DesignSettings { get; init; }</code></pre>
   </div>
 
 
@@ -243,20 +196,20 @@ Class MagicLanguageSettings  <a class="header-action link-secondary" title="View
 
 
 
-  <a id="ToSic_Cre8magic_Languages_MagicLanguageSettings_PartName_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName*"></a>
+  <a id="ToSic_Cre8magic_Languages_MagicLanguageSettings_HideOthers_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers*"></a>
 
-  <h3 id="ToSic_Cre8magic_Languages_MagicLanguageSettings_PartName" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName">
-  PartName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Languages_MagicLanguageSettings_HideOthers" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers">
+  HideOthers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Name to identify this part.
-This information is used to load settings (menu settings and design settings)</p>
+  <div class="markdown level1 summary"><p>If true, will only show the languages which are explicitly configured.
+If false, will first show the configured languages, then the rest.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? PartName { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool? HideOthers { get; init; }</code></pre>
   </div>
 
 
@@ -265,7 +218,7 @@ This information is used to load settings (menu settings and design settings)</p
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">string</span></dt>
+    <dt><span class="xref">bool</span>?</dt>
     <dd></dd>
   </dl>
 
@@ -276,21 +229,20 @@ This information is used to load settings (menu settings and design settings)</p
 
 
 
-  <a id="ToSic_Cre8magic_Languages_MagicLanguageSettings_SettingsName_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName*"></a>
+  <a id="ToSic_Cre8magic_Languages_MagicLanguageSettings_Languages_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages*"></a>
 
-  <h3 id="ToSic_Cre8magic_Languages_MagicLanguageSettings_SettingsName" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName">
-  SettingsName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Languages_MagicLanguageSettings_Languages" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages">
+  Languages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L42"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Name to identify which settings to load.
-This is used before looking in the Theme Part.
-If not specified, will check the theme part for a name it provides, or use the theme-part name to find the settings.</p>
+  <div class="markdown level1 summary"><p>List of languages</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? SettingsName { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicLanguage&gt;))]
+public Dictionary&lt;string, MagicLanguage&gt;? Languages { get; init; }</code></pre>
   </div>
 
 
@@ -299,7 +251,38 @@ If not specified, will check the theme part for a name it provides, or use the t
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">string</span></dt>
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguage.html">MagicLanguage</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Languages_MagicLanguageSettings_MinLanguagesToShow_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow*"></a>
+
+  <h3 id="ToSic_Cre8magic_Languages_MagicLanguageSettings_MinLanguagesToShow" data-uid="ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow">
+  MinLanguagesToShow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinLanguagesToShow { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span></dt>
     <dd></dd>
   </dl>
 
@@ -314,7 +297,7 @@ If not specified, will check the theme part for a name it provides, or use the t
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L7" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs/#L8" class="edit-link">Edit this page</a>
         </div>
 
 

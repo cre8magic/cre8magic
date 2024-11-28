@@ -5,9 +5,6 @@ items:
   id: MagicLanguage
   parent: ToSic.Cre8magic.Languages
   children:
-  - ToSic.Cre8magic.Languages.MagicLanguage.#ctor
-  - ToSic.Cre8magic.Languages.MagicLanguage.#ctor(ToSic.Cre8magic.Languages.MagicLanguage,ToSic.Cre8magic.Languages.MagicLanguage)
-  - ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguage,System.Boolean)
   - ToSic.Cre8magic.Languages.MagicLanguage.Culture
   - ToSic.Cre8magic.Languages.MagicLanguage.Description
   - ToSic.Cre8magic.Languages.MagicLanguage.IsActive
@@ -40,108 +37,6 @@ items:
     content.vb: Public Class MagicLanguage
   inheritance:
   - System.Object
-- uid: ToSic.Cre8magic.Languages.MagicLanguage.#ctor
-  commentId: M:ToSic.Cre8magic.Languages.MagicLanguage.#ctor
-  id: '#ctor'
-  parent: ToSic.Cre8magic.Languages.MagicLanguage
-  langs:
-  - csharp
-  - vb
-  name: MagicLanguage()
-  nameWithType: MagicLanguage.MagicLanguage()
-  fullName: ToSic.Cre8magic.Languages.MagicLanguage.MagicLanguage()
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-    startLine: 15
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Languages
-  summary: Empty constructor for deserialization
-  example: []
-  syntax:
-    content: public MagicLanguage()
-    content.vb: Public Sub New()
-  overload: ToSic.Cre8magic.Languages.MagicLanguage.#ctor*
-  nameWithType.vb: MagicLanguage.New()
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguage.New()
-  name.vb: New()
-- uid: ToSic.Cre8magic.Languages.MagicLanguage.#ctor(ToSic.Cre8magic.Languages.MagicLanguage,ToSic.Cre8magic.Languages.MagicLanguage)
-  commentId: M:ToSic.Cre8magic.Languages.MagicLanguage.#ctor(ToSic.Cre8magic.Languages.MagicLanguage,ToSic.Cre8magic.Languages.MagicLanguage)
-  id: '#ctor(ToSic.Cre8magic.Languages.MagicLanguage,ToSic.Cre8magic.Languages.MagicLanguage)'
-  parent: ToSic.Cre8magic.Languages.MagicLanguage
-  langs:
-  - csharp
-  - vb
-  name: MagicLanguage(MagicLanguage?, MagicLanguage?)
-  nameWithType: MagicLanguage.MagicLanguage(MagicLanguage?, MagicLanguage?)
-  fullName: ToSic.Cre8magic.Languages.MagicLanguage.MagicLanguage(ToSic.Cre8magic.Languages.MagicLanguage?, ToSic.Cre8magic.Languages.MagicLanguage?)
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-    startLine: 17
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Languages
-  syntax:
-    content: public MagicLanguage(MagicLanguage? priority, MagicLanguage? fallback = null)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Languages.MagicLanguage
-    - id: fallback
-      type: ToSic.Cre8magic.Languages.MagicLanguage
-    content.vb: Public Sub New(priority As MagicLanguage, fallback As MagicLanguage = Nothing)
-  overload: ToSic.Cre8magic.Languages.MagicLanguage.#ctor*
-  nameWithType.vb: MagicLanguage.New(MagicLanguage, MagicLanguage)
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguage.New(ToSic.Cre8magic.Languages.MagicLanguage, ToSic.Cre8magic.Languages.MagicLanguage)
-  name.vb: New(MagicLanguage, MagicLanguage)
-- uid: ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguage,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguage,System.Boolean)
-  id: CloneUnder(ToSic.Cre8magic.Languages.MagicLanguage,System.Boolean)
-  parent: ToSic.Cre8magic.Languages.MagicLanguage
-  langs:
-  - csharp
-  - vb
-  name: CloneUnder(MagicLanguage?, bool)
-  nameWithType: MagicLanguage.CloneUnder(MagicLanguage?, bool)
-  fullName: ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguage?, bool)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: CloneUnder
-    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-    startLine: 24
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Languages
-  example: []
-  syntax:
-    content: public MagicLanguage CloneUnder(MagicLanguage? priority, bool forceCopy = false)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Languages.MagicLanguage
-    - id: forceCopy
-      type: System.Boolean
-    return:
-      type: ToSic.Cre8magic.Languages.MagicLanguage
-    content.vb: Public Function CloneUnder(priority As MagicLanguage, forceCopy As Boolean = False) As MagicLanguage
-  overload: ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder*
-  nameWithType.vb: MagicLanguage.CloneUnder(MagicLanguage, Boolean)
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder(ToSic.Cre8magic.Languages.MagicLanguage, Boolean)
-  name.vb: CloneUnder(MagicLanguage, Boolean)
 - uid: ToSic.Cre8magic.Languages.MagicLanguage.Culture
   commentId: P:ToSic.Cre8magic.Languages.MagicLanguage.Culture
   id: Culture
@@ -160,7 +55,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Culture
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -189,7 +84,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Label
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-    startLine: 33
+    startLine: 34
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -223,7 +118,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Description
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -257,7 +152,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsActive
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguage.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -316,38 +211,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Languages.MagicLanguage.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguage.#ctor
-  href: ToSic.Cre8magic.Languages.MagicLanguage.html#ToSic_Cre8magic_Languages_MagicLanguage__ctor
-  name: MagicLanguage
-  nameWithType: MagicLanguage.MagicLanguage
-  fullName: ToSic.Cre8magic.Languages.MagicLanguage.MagicLanguage
-  nameWithType.vb: MagicLanguage.New
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguage.New
-  name.vb: New
-- uid: ToSic.Cre8magic.Languages.MagicLanguage
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguage
-  parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguage.html
-  name: MagicLanguage
-  nameWithType: MagicLanguage
-  fullName: ToSic.Cre8magic.Languages.MagicLanguage
-- uid: ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder
-  href: ToSic.Cre8magic.Languages.MagicLanguage.html#ToSic_Cre8magic_Languages_MagicLanguage_CloneUnder_ToSic_Cre8magic_Languages_MagicLanguage_System_Boolean_
-  name: CloneUnder
-  nameWithType: MagicLanguage.CloneUnder
-  fullName: ToSic.Cre8magic.Languages.MagicLanguage.CloneUnder
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: ToSic.Cre8magic.Languages.MagicLanguage.Culture*
   commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguage.Culture
   href: ToSic.Cre8magic.Languages.MagicLanguage.html#ToSic_Cre8magic_Languages_MagicLanguage_Culture
@@ -382,3 +245,13 @@ references:
   name: IsActive
   nameWithType: MagicLanguage.IsActive
   fullName: ToSic.Cre8magic.Languages.MagicLanguage.IsActive
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

@@ -124,14 +124,15 @@ Interface IMagicBreadcrumbKit  <a class="header-action link-secondary" title="Vi
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Pages" data-uid="ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Pages">
   Pages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/IMagicBreadcrumbKit.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/IMagicBreadcrumbKit.cs/#L10"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Pages to show in the breadcrumb, as specified by the settings.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicPageList Pages { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;IMagicPage&gt; Pages { get; }</code></pre>
   </div>
 
 
@@ -140,7 +141,72 @@ Interface IMagicBreadcrumbKit  <a class="header-action link-secondary" title="Vi
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageList.html">IMagicPageList</a></dt>
+    <dt><span class="xref">IEnumerable</span>&lt;<a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Root_" data-uid="ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Root*"></a>
+
+  <h3 id="ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Root" data-uid="ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Root">
+  Root
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/IMagicBreadcrumbKit.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Virtual &quot;root&quot; page of the breadcrumb, mainly for styling things around the real breadcrumb.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMagicPage Root { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Show_" data-uid="ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Show*"></a>
+
+  <h3 id="ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Show" data-uid="ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Show">
+  Show
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/IMagicBreadcrumbKit.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Information if this Breadcrumb should be shown according to configuration.
+The code must decide if it respects this or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool Show { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
     <dd></dd>
   </dl>
 

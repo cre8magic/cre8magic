@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Designers_MagicDesignerBase" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase" class="text-break">
-Class MagicDesignerBase  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L8"><i class="bi bi-code-slash"></i></a>
+Class MagicDesignerBase  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L7"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -136,31 +136,29 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 
 
 
-  <h2 class="section" id="properties">Properties
+  <h2 class="section" id="constructors">Constructors
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Designers_MagicDesignerBase_Context_" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.Context*"></a>
+  <a id="ToSic_Cre8magic_Designers_MagicDesignerBase__ctor_" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.#ctor*"></a>
 
-  <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase_Context" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.Context">
-  Context
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase__ctor_ToSic_Cre8magic_Tokens_TokenEngine_System_Collections_Generic_Dictionary_System_String_ToSic_Cre8magic_Settings_MagicDesignSettingsPart__" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart})">
+  MagicDesignerBase(TokenEngine, Dictionary&lt;string, MagicDesignSettingsPart&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected MagicThemeContextFull Context { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected MagicDesignerBase(TokenEngine tokens, Dictionary&lt;string, MagicDesignSettingsPart&gt; designSettings)</code></pre>
   </div>
 
-
-
-
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull.html">MagicThemeContextFull</a></dt>
+    <dt><code>tokens</code> <a class="xref" href="ToSic.Cre8magic.Tokens.TokenEngine.html">TokenEngine</a></dt>
+    <dd></dd>
+    <dt><code>designSettings</code> <span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html">MagicDesignSettingsPart</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -171,11 +169,19 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 
 
 
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="ToSic_Cre8magic_Designers_MagicDesignerBase_DesignSettings_" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings*"></a>
 
   <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase_DesignSettings" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings">
   DesignSettings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -206,7 +212,7 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase_ParseTokens" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.ParseTokens">
   ParseTokens
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -241,7 +247,7 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase_Classes_System_String_" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.Classes(System.String)">
   Classes(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -277,7 +283,7 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase_GetSettings_System_String_" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(System.String)">
   GetSettings(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -313,7 +319,7 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase_Id_System_String_" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.Id(System.String)">
   Id(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -349,7 +355,7 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase_ProcessTokens_System_String_" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.ProcessTokens(System.String)">
   ProcessTokens(string?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -385,7 +391,7 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Designers_MagicDesignerBase_Value_System_String_" data-uid="ToSic.Cre8magic.Designers.MagicDesignerBase.Value(System.String)">
   Value(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -421,7 +427,7 @@ Class MagicDesignerBase  <a class="header-action link-secondary" title="View sou
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L8" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Designers/MagicDesignerBase.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

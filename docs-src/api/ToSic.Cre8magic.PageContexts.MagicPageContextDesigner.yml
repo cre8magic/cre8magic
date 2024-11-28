@@ -1,0 +1,163 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+  id: MagicPageContextDesigner
+  parent: ToSic.Cre8magic.PageContexts
+  children:
+  - ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.#ctor(ToSic.Cre8magic.PageContexts.MagicPageContextSettings,Oqtane.UI.PageState)
+  langs:
+  - csharp
+  - vb
+  name: MagicPageContextDesigner
+  nameWithType: MagicPageContextDesigner
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/PageContexts/MagicPageContextDesigner.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicPageContextDesigner
+    path: ../ToSic.Cre8Magic.Client/PageContexts/MagicPageContextDesigner.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.PageContexts
+  summary: Special helper to figure out what classes should be applied to the page.
+  example: []
+  syntax:
+    content: public class MagicPageContextDesigner
+    content.vb: Public Class MagicPageContextDesigner
+  inheritance:
+  - System.Object
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.#ctor(ToSic.Cre8magic.PageContexts.MagicPageContextSettings,Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.#ctor(ToSic.Cre8magic.PageContexts.MagicPageContextSettings,Oqtane.UI.PageState)
+  id: '#ctor(ToSic.Cre8magic.PageContexts.MagicPageContextSettings,Oqtane.UI.PageState)'
+  parent: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+  langs:
+  - csharp
+  - vb
+  name: MagicPageContextDesigner(MagicPageContextSettings, PageState)
+  nameWithType: MagicPageContextDesigner.MagicPageContextDesigner(MagicPageContextSettings, PageState)
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.MagicPageContextDesigner(ToSic.Cre8magic.PageContexts.MagicPageContextSettings, Oqtane.UI.PageState)
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/PageContexts/MagicPageContextDesigner.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/PageContexts/MagicPageContextDesigner.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.PageContexts
+  summary: Special helper to figure out what classes should be applied to the page.
+  example: []
+  syntax:
+    content: public MagicPageContextDesigner(MagicPageContextSettings settings, PageState pageState)
+    parameters:
+    - id: settings
+      type: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+    - id: pageState
+      type: Oqtane.UI.PageState
+    content.vb: Public Sub New(settings As MagicPageContextSettings, pageState As PageState)
+  overload: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.#ctor*
+  nameWithType.vb: MagicPageContextDesigner.New(MagicPageContextSettings, PageState)
+  fullName.vb: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.New(ToSic.Cre8magic.PageContexts.MagicPageContextSettings, Oqtane.UI.PageState)
+  name.vb: New(MagicPageContextSettings, PageState)
+references:
+- uid: ToSic.Cre8magic.PageContexts
+  commentId: N:ToSic.Cre8magic.PageContexts
+  href: ToSic.html
+  name: ToSic.Cre8magic.PageContexts
+  nameWithType: ToSic.Cre8magic.PageContexts
+  fullName: ToSic.Cre8magic.PageContexts
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.#ctor*
+  commentId: Overload:ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.#ctor
+  href: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.html#ToSic_Cre8magic_PageContexts_MagicPageContextDesigner__ctor_ToSic_Cre8magic_PageContexts_MagicPageContextSettings_Oqtane_UI_PageState_
+  name: MagicPageContextDesigner
+  nameWithType: MagicPageContextDesigner.MagicPageContextDesigner
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.MagicPageContextDesigner
+  nameWithType.vb: MagicPageContextDesigner.New
+  fullName.vb: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.New
+  name.vb: New
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  parent: ToSic.Cre8magic.PageContexts
+  href: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html
+  name: MagicPageContextSettings
+  nameWithType: MagicPageContextSettings
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true

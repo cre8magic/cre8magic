@@ -6,12 +6,9 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Menus.IMagicMenuKit
-  - ToSic.Cre8magic.Menus.IMagicMenuService
   - ToSic.Cre8magic.Menus.MagicMenuDesignSettings
   - ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
-  - ToSic.Cre8magic.Menus.MagicMenuRoot
   - ToSic.Cre8magic.Menus.MagicMenuSettings
-  - ToSic.Cre8magic.Menus.MagicMenuSettingsData
   langs:
   - csharp
   - vb
@@ -29,13 +26,6 @@ references:
   name: IMagicMenuKit
   nameWithType: IMagicMenuKit
   fullName: ToSic.Cre8magic.Menus.IMagicMenuKit
-- uid: ToSic.Cre8magic.Menus.IMagicMenuService
-  commentId: T:ToSic.Cre8magic.Menus.IMagicMenuService
-  parent: ToSic.Cre8magic.Menus
-  href: ToSic.Cre8magic.Menus.IMagicMenuService.html
-  name: IMagicMenuService
-  nameWithType: IMagicMenuService
-  fullName: ToSic.Cre8magic.Menus.IMagicMenuService
 - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
   commentId: T:ToSic.Cre8magic.Menus.MagicMenuDesignSettings
   parent: ToSic.Cre8magic.Menus
@@ -45,17 +35,10 @@ references:
   fullName: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
 - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
   commentId: T:ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
-  parent: ToSic.Cre8magic.Menus
   href: ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart.html
   name: MagicMenuDesignSettingsPart
   nameWithType: MagicMenuDesignSettingsPart
   fullName: ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
-- uid: ToSic.Cre8magic.Menus.MagicMenuRoot
-  commentId: T:ToSic.Cre8magic.Menus.MagicMenuRoot
-  href: ToSic.Cre8magic.Menus.MagicMenuRoot.html
-  name: MagicMenuRoot
-  nameWithType: MagicMenuRoot
-  fullName: ToSic.Cre8magic.Menus.MagicMenuRoot
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
   commentId: T:ToSic.Cre8magic.Menus.MagicMenuSettings
   parent: ToSic.Cre8magic.Menus
@@ -63,13 +46,6 @@ references:
   name: MagicMenuSettings
   nameWithType: MagicMenuSettings
   fullName: ToSic.Cre8magic.Menus.MagicMenuSettings
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettingsData
-  commentId: T:ToSic.Cre8magic.Menus.MagicMenuSettingsData
-  parent: ToSic.Cre8magic.Menus
-  href: ToSic.Cre8magic.Menus.MagicMenuSettingsData.html
-  name: MagicMenuSettingsData
-  nameWithType: MagicMenuSettingsData
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettingsData
 - uid: ToSic.Cre8magic.Menus
   commentId: N:ToSic.Cre8magic.Menus
   href: ToSic.html

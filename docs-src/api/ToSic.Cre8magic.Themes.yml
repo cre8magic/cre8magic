@@ -9,6 +9,7 @@ items:
   - ToSic.Cre8magic.Themes.IMagicThemeKit
   - ToSic.Cre8magic.Themes.IMagicThemeService
   - ToSic.Cre8magic.Themes.MagicThemeBase
+  - ToSic.Cre8magic.Themes.MagicThemePackage
   - ToSic.Cre8magic.Themes.MagicThemeSettings
   - ToSic.Cre8magic.Themes.Settings
   langs:
@@ -84,6 +85,13 @@ references:
   name: MagicThemeBase
   nameWithType: MagicThemeBase
   fullName: ToSic.Cre8magic.Themes.MagicThemeBase
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemePackage
+  parent: ToSic.Cre8magic.Themes
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html
+  name: MagicThemePackage
+  nameWithType: MagicThemePackage
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage
 - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
   commentId: T:ToSic.Cre8magic.Themes.MagicThemeSettings
   parent: ToSic.Cre8magic.Themes

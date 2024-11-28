@@ -123,24 +123,24 @@ Interface IMagicHat  <a class="header-action link-secondary" title="View source"
 
   <a id="ToSic_Cre8magic_IMagicHat_AnalyticsKit_" data-uid="ToSic.Cre8magic.IMagicHat.AnalyticsKit*"></a>
 
-  <h3 id="ToSic_Cre8magic_IMagicHat_AnalyticsKit_Oqtane_UI_PageState_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_" data-uid="ToSic.Cre8magic.IMagicHat.AnalyticsKit(Oqtane.UI.PageState,ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)">
-  AnalyticsKit(PageState, MagicAnalyticsSettings?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_IMagicHat_AnalyticsKit_ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_" data-uid="ToSic.Cre8magic.IMagicHat.AnalyticsKit(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)">
+  AnalyticsKit(MagicAnalyticsSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get a kit to work with analytics.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null)</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSettings? settings = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
-    <dd></dd>
     <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html">MagicAnalyticsSettings</a></dt>
-    <dd></dd>
+    <dd><p>Optional settings. If not provided, will try to automatically find the settings as configured in the Theme.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -161,24 +161,22 @@ Interface IMagicHat  <a class="header-action link-secondary" title="View source"
 
   <a id="ToSic_Cre8magic_IMagicHat_BreadcrumbKit_" data-uid="ToSic.Cre8magic.IMagicHat.BreadcrumbKit*"></a>
 
-  <h3 id="ToSic_Cre8magic_IMagicHat_BreadcrumbKit_Oqtane_UI_PageState_ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_" data-uid="ToSic.Cre8magic.IMagicHat.BreadcrumbKit(Oqtane.UI.PageState,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)">
-  BreadcrumbKit(PageState, MagicBreadcrumbSettings?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_IMagicHat_BreadcrumbKit_ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_" data-uid="ToSic.Cre8magic.IMagicHat.BreadcrumbKit(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)">
+  BreadcrumbKit(MagicBreadcrumbSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Get the BreadcrumbKit.
-It will either use the provided settings, retrieve these from the global information or use a default configuration.</p>
+  <div class="markdown level1 summary"><p>Get the Kit to work with a Breadcrumb.
+It will either use the provided settings, retrieve these from the global information or use a default settings.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = null)</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicBreadcrumbKit BreadcrumbKit(MagicBreadcrumbSettings? settings = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
-    <dd></dd>
     <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html">MagicBreadcrumbSettings</a></dt>
     <dd></dd>
   </dl>
@@ -201,24 +199,24 @@ It will either use the provided settings, retrieve these from the global informa
 
   <a id="ToSic_Cre8magic_IMagicHat_ContainerKit_" data-uid="ToSic.Cre8magic.IMagicHat.ContainerKit*"></a>
 
-  <h3 id="ToSic_Cre8magic_IMagicHat_ContainerKit_Oqtane_UI_PageState_Oqtane_Models_Module_" data-uid="ToSic.Cre8magic.IMagicHat.ContainerKit(Oqtane.UI.PageState,Oqtane.Models.Module)">
-  ContainerKit(PageState, Module)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_IMagicHat_ContainerKit_ToSic_Cre8magic_Containers_MagicContainerSettings_" data-uid="ToSic.Cre8magic.IMagicHat.ContainerKit(ToSic.Cre8magic.Containers.MagicContainerSettings)">
+  ContainerKit(MagicContainerSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L51"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get a kit to work with containers.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicContainerKit ContainerKit(PageState pageState, Module module)</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicContainerKit ContainerKit(MagicContainerSettings settings)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
-    <dd></dd>
-    <dt><code>module</code> <span class="xref">Module</span></dt>
-    <dd></dd>
+    <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Containers.MagicContainerSettings.html">MagicContainerSettings</a></dt>
+    <dd><p>Required; must provide the ModuleState as a property and (if not specified in the Theme) also the PageState</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -239,27 +237,23 @@ It will either use the provided settings, retrieve these from the global informa
 
   <a id="ToSic_Cre8magic_IMagicHat_LanguageKitAsync_" data-uid="ToSic.Cre8magic.IMagicHat.LanguageKitAsync*"></a>
 
-  <h3 id="ToSic_Cre8magic_IMagicHat_LanguageKitAsync_Oqtane_UI_PageState_ToSic_Cre8magic_Languages_MagicLanguageSettings_" data-uid="ToSic.Cre8magic.IMagicHat.LanguageKitAsync(Oqtane.UI.PageState,ToSic.Cre8magic.Languages.MagicLanguageSettings)">
-  LanguageKitAsync(PageState, MagicLanguageSettings?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_" data-uid="ToSic.Cre8magic.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)">
+  LanguageKitAsync(MagicLanguageSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Get the state. Must be async, because it might need to load data from Oqtane.</p>
+  <div class="markdown level1 summary"><p>Get the kit to work with languages. Must be async, because it might need to load async data from Oqtane.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IMagicLanguageKit&gt; LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IMagicLanguageKit&gt; LanguageKitAsync(MagicLanguageSettings? settings = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
-    <dd><p>The Oqtane PageState</p>
-</dd>
     <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettings.html">MagicLanguageSettings</a></dt>
-    <dd><p>Settings to use - or if null, just use all the defaults</p>
-</dd>
+    <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -278,29 +272,103 @@ It will either use the provided settings, retrieve these from the global informa
 
 
 
-  <a id="ToSic_Cre8magic_IMagicHat_ThemeDesigner_" data-uid="ToSic.Cre8magic.IMagicHat.ThemeDesigner*"></a>
+  <a id="ToSic_Cre8magic_IMagicHat_Link_" data-uid="ToSic.Cre8magic.IMagicHat.Link*"></a>
 
-  <h3 id="ToSic_Cre8magic_IMagicHat_ThemeDesigner_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.IMagicHat.ThemeDesigner(Oqtane.UI.PageState)">
-  ThemeDesigner(PageState)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_IMagicHat_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSpecs_" data-uid="ToSic.Cre8magic.IMagicHat.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)">
+  Link(PageState, MagicLinkSpecs)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">MagicThemeDesigner ThemeDesigner(PageState pageState)</code></pre>
+    <pre><code class="lang-csharp hljs">string Link(PageState pageState, MagicLinkSpecs linkSpecs)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
     <dd></dd>
+    <dt><code>linkSpecs</code> <a class="xref" href="ToSic.Cre8magic.Links.MagicLinkSpecs.html">MagicLinkSpecs</a></dt>
+    <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner.html">MagicThemeDesigner</a></dt>
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_IMagicHat_MenuKit_" data-uid="ToSic.Cre8magic.IMagicHat.MenuKit*"></a>
+
+  <h3 id="ToSic_Cre8magic_IMagicHat_MenuKit_ToSic_Cre8magic_Menus_MagicMenuSettings_" data-uid="ToSic.Cre8magic.IMagicHat.MenuKit(ToSic.Cre8magic.Menus.MagicMenuSettings)">
+  MenuKit(MagicMenuSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMagicMenuKit MenuKit(MagicMenuSettings? settings = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Menus.IMagicMenuKit.html">IMagicMenuKit</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_IMagicHat_PageContextKit_" data-uid="ToSic.Cre8magic.IMagicHat.PageContextKit*"></a>
+
+  <h3 id="ToSic_Cre8magic_IMagicHat_PageContextKit_ToSic_Cre8magic_PageContexts_MagicPageContextSettings_" data-uid="ToSic.Cre8magic.IMagicHat.PageContextKit(ToSic.Cre8magic.PageContexts.MagicPageContextSettings)">
+  PageContextKit(MagicPageContextSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html">MagicPageContextSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.PageContexts.IMagicPageContextKit.html">IMagicPageContextKit</a></dt>
     <dd></dd>
   </dl>
 
@@ -316,21 +384,21 @@ It will either use the provided settings, retrieve these from the global informa
 
   <a id="ToSic_Cre8magic_IMagicHat_ThemeKit_" data-uid="ToSic.Cre8magic.IMagicHat.ThemeKit*"></a>
 
-  <h3 id="ToSic_Cre8magic_IMagicHat_ThemeKit_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.IMagicHat.ThemeKit(Oqtane.UI.PageState)">
-  ThemeKit(PageState)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_IMagicHat_ThemeKit_ToSic_Cre8magic_Themes_MagicThemeSettings_" data-uid="ToSic.Cre8magic.IMagicHat.ThemeKit(ToSic.Cre8magic.Themes.MagicThemeSettings)">
+  ThemeKit(MagicThemeSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicThemeKit ThemeKit(PageState pageState)</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicThemeKit ThemeKit(MagicThemeSettings? settings = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
+    <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Themes.MagicThemeSettings.html">MagicThemeSettings</a></dt>
     <dd></dd>
   </dl>
 
@@ -350,28 +418,141 @@ It will either use the provided settings, retrieve these from the global informa
 
 
 
-  <a id="ToSic_Cre8magic_IMagicHat_UseSettings_" data-uid="ToSic.Cre8magic.IMagicHat.UseSettings*"></a>
+  <a id="ToSic_Cre8magic_IMagicHat_UsePageState_" data-uid="ToSic.Cre8magic.IMagicHat.UsePageState*"></a>
 
-  <h3 id="ToSic_Cre8magic_IMagicHat_UseSettings_ToSic_Cre8magic_Settings_MagicPackageSettings_System_String_" data-uid="ToSic.Cre8magic.IMagicHat.UseSettings(ToSic.Cre8magic.Settings.MagicPackageSettings,System.String)">
-  UseSettings(MagicPackageSettings, string?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_IMagicHat_UsePageState_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.IMagicHat.UsePageState(Oqtane.UI.PageState)">
+  UsePageState(PageState)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void UseSettings(MagicPackageSettings packageSettings, string? layoutName)</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicHat UsePageState(PageState pageState)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>packageSettings</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicPackageSettings.html">MagicPackageSettings</a></dt>
+    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.IMagicHat.html">IMagicHat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_IMagicHat_UseSettingsCatalog_" data-uid="ToSic.Cre8magic.IMagicHat.UseSettingsCatalog*"></a>
+
+  <h3 id="ToSic_Cre8magic_IMagicHat_UseSettingsCatalog_ToSic_Cre8magic_Settings_MagicSettingsCatalog_" data-uid="ToSic.Cre8magic.IMagicHat.UseSettingsCatalog(ToSic.Cre8magic.Settings.MagicSettingsCatalog)">
+  UseSettingsCatalog(MagicSettingsCatalog)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMagicHat UseSettingsCatalog(MagicSettingsCatalog catalog)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>catalog</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsCatalog.html">MagicSettingsCatalog</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.IMagicHat.html">IMagicHat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_IMagicHat_UseSettingsPackage_" data-uid="ToSic.Cre8magic.IMagicHat.UseSettingsPackage*"></a>
+
+  <h3 id="ToSic_Cre8magic_IMagicHat_UseSettingsPackage_ToSic_Cre8magic_Themes_MagicThemePackage_System_String_" data-uid="ToSic.Cre8magic.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage,System.String)">
+  UseSettingsPackage(MagicThemePackage, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMagicHat UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>themePackage</code> <a class="xref" href="ToSic.Cre8magic.Themes.MagicThemePackage.html">MagicThemePackage</a></dt>
     <dd></dd>
     <dt><code>layoutName</code> <span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.IMagicHat.html">IMagicHat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_IMagicHat_UseSettingsProvider_" data-uid="ToSic.Cre8magic.IMagicHat.UseSettingsProvider*"></a>
+
+  <h3 id="ToSic_Cre8magic_IMagicHat_UseSettingsProvider_System_Func_ToSic_Cre8magic_Settings_IMagicSettingsProvider_ToSic_Cre8magic_Settings_IMagicSettingsProvider__" data-uid="ToSic.Cre8magic.IMagicHat.UseSettingsProvider(System.Func{ToSic.Cre8magic.Settings.IMagicSettingsProvider,ToSic.Cre8magic.Settings.IMagicSettingsProvider})">
+  UseSettingsProvider(Func&lt;IMagicSettingsProvider, IMagicSettingsProvider&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMagicHat UseSettingsProvider(Func&lt;IMagicSettingsProvider, IMagicSettingsProvider&gt; providerFunc)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>providerFunc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.IMagicSettingsProvider.html">IMagicSettingsProvider</a>, <a class="xref" href="ToSic.Cre8magic.Settings.IMagicSettingsProvider.html">IMagicSettingsProvider</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.IMagicHat.html">IMagicHat</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -387,7 +568,7 @@ It will either use the provided settings, retrieve these from the global informa
 
   <h3 id="ToSic_Cre8magic_IMagicHat_User_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.IMagicHat.User(Oqtane.UI.PageState)">
   User(PageState)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -421,27 +602,27 @@ It will either use the provided settings, retrieve these from the global informa
 
   <a id="ToSic_Cre8magic_IMagicHat_UserLoginKit_" data-uid="ToSic.Cre8magic.IMagicHat.UserLoginKit*"></a>
 
-  <h3 id="ToSic_Cre8magic_IMagicHat_UserLoginKit_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.IMagicHat.UserLoginKit(Oqtane.UI.PageState)">
-  UserLoginKit(PageState)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_IMagicHat_UserLoginKit_ToSic_Cre8magic_UserLogins_MagicUserLoginSettings_" data-uid="ToSic.Cre8magic.IMagicHat.UserLoginKit(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)">
+  UserLoginKit(MagicUserLoginSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/IMagicHat.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicUserLoginKit UserLoginKit(PageState pageState)</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
+    <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html">MagicUserLoginSettings</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Users.IMagicUserLoginKit.html">IMagicUserLoginKit</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.UserLogins.IMagicUserLoginKit.html">IMagicUserLoginKit</a></dt>
     <dd></dd>
   </dl>
 

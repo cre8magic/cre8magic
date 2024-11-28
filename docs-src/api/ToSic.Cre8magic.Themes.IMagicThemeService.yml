@@ -5,7 +5,7 @@ items:
   id: IMagicThemeService
   parent: ToSic.Cre8magic.Themes
   children:
-  - ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState,ToSic.Cre8magic.Themes.MagicThemeSettings)
   langs:
   - csharp
   - vb
@@ -27,16 +27,16 @@ items:
   syntax:
     content: public interface IMagicThemeService
     content.vb: Public Interface IMagicThemeService
-- uid: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState)
-  commentId: M:ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState)
-  id: ThemeKit(Oqtane.UI.PageState)
+- uid: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState,ToSic.Cre8magic.Themes.MagicThemeSettings)
+  commentId: M:ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState,ToSic.Cre8magic.Themes.MagicThemeSettings)
+  id: ThemeKit(Oqtane.UI.PageState,ToSic.Cre8magic.Themes.MagicThemeSettings)
   parent: ToSic.Cre8magic.Themes.IMagicThemeService
   langs:
   - csharp
   - vb
-  name: ThemeKit(PageState)
-  nameWithType: IMagicThemeService.ThemeKit(PageState)
-  fullName: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState)
+  name: ThemeKit(PageState, MagicThemeSettings?)
+  nameWithType: IMagicThemeService.ThemeKit(PageState, MagicThemeSettings?)
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState, ToSic.Cre8magic.Themes.MagicThemeSettings?)
   type: Method
   source:
     remote:
@@ -50,14 +50,19 @@ items:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
   syntax:
-    content: IMagicThemeKit ThemeKit(PageState pageState)
+    content: IMagicThemeKit ThemeKit(PageState pageState, MagicThemeSettings? settings)
     parameters:
     - id: pageState
       type: Oqtane.UI.PageState
+    - id: settings
+      type: ToSic.Cre8magic.Themes.MagicThemeSettings
     return:
       type: ToSic.Cre8magic.Themes.IMagicThemeKit
-    content.vb: Function ThemeKit(pageState As PageState) As IMagicThemeKit
+    content.vb: Function ThemeKit(pageState As PageState, settings As MagicThemeSettings) As IMagicThemeKit
   overload: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit*
+  nameWithType.vb: IMagicThemeService.ThemeKit(PageState, MagicThemeSettings)
+  fullName.vb: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit(Oqtane.UI.PageState, ToSic.Cre8magic.Themes.MagicThemeSettings)
+  name.vb: ThemeKit(PageState, MagicThemeSettings)
 references:
 - uid: ToSic.Cre8magic.Themes
   commentId: N:ToSic.Cre8magic.Themes
@@ -91,7 +96,7 @@ references:
     href: ToSic.Cre8magic.Themes.html
 - uid: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit*
   commentId: Overload:ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit
-  href: ToSic.Cre8magic.Themes.IMagicThemeService.html#ToSic_Cre8magic_Themes_IMagicThemeService_ThemeKit_Oqtane_UI_PageState_
+  href: ToSic.Cre8magic.Themes.IMagicThemeService.html#ToSic_Cre8magic_Themes_IMagicThemeService_ThemeKit_Oqtane_UI_PageState_ToSic_Cre8magic_Themes_MagicThemeSettings_
   name: ThemeKit
   nameWithType: IMagicThemeService.ThemeKit
   fullName: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit
@@ -103,6 +108,13 @@ references:
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState
+- uid: ToSic.Cre8magic.Themes.MagicThemeSettings
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemeSettings
+  parent: ToSic.Cre8magic.Themes
+  href: ToSic.Cre8magic.Themes.MagicThemeSettings.html
+  name: MagicThemeSettings
+  nameWithType: MagicThemeSettings
+  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings
 - uid: ToSic.Cre8magic.Themes.IMagicThemeKit
   commentId: T:ToSic.Cre8magic.Themes.IMagicThemeKit
   parent: ToSic.Cre8magic.Themes

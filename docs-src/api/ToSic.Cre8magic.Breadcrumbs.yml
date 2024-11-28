@@ -6,6 +6,7 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesigner
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignerBs5
@@ -27,9 +28,15 @@ references:
   name: IMagicBreadcrumbKit
   nameWithType: IMagicBreadcrumbKit
   fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
+  parent: ToSic.Cre8magic.Breadcrumbs
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings.html
+  name: MagicBreadcrumbDesignSettings
+  nameWithType: MagicBreadcrumbDesignSettings
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
   commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  parent: ToSic.Cre8magic.Breadcrumbs
   href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html
   name: MagicBreadcrumbDesignSettingsPart
   nameWithType: MagicBreadcrumbDesignSettingsPart

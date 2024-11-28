@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.PageContexts
+  commentId: N:ToSic.Cre8magic.PageContexts
+  id: PageContexts
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+  - ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+  - ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.PageContexts
+  nameWithType: ToSic.Cre8magic.PageContexts
+  fullName: ToSic.Cre8magic.PageContexts
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+  commentId: T:ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+  parent: ToSic.Cre8magic.PageContexts
+  href: ToSic.Cre8magic.PageContexts.IMagicPageContextKit.html
+  name: IMagicPageContextKit
+  nameWithType: IMagicPageContextKit
+  fullName: ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+  href: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.html
+  name: MagicPageContextDesigner
+  nameWithType: MagicPageContextDesigner
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  parent: ToSic.Cre8magic.PageContexts
+  href: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html
+  name: MagicPageContextSettings
+  nameWithType: MagicPageContextSettings
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+- uid: ToSic.Cre8magic.PageContexts
+  commentId: N:ToSic.Cre8magic.PageContexts
+  href: ToSic.html
+  name: ToSic.Cre8magic.PageContexts
+  nameWithType: ToSic.Cre8magic.PageContexts
+  fullName: ToSic.Cre8magic.PageContexts
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html

@@ -102,7 +102,7 @@ Class MagicBreadcrumbSettings  <a class="header-action link-secondary" title="Vi
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record MagicBreadcrumbSettings : SettingsWithInherit, IMagicPageSetSettings</code></pre>
+    <pre><code class="lang-csharp hljs">public record MagicBreadcrumbSettings : MagicSettingsBase, IMagicPageSetSettings</code></pre>
   </div>
 
 
@@ -113,6 +113,7 @@ Class MagicBreadcrumbSettings  <a class="header-action link-secondary" title="Vi
     <dd>
       <div><span class="xref">object</span></div>
       <div><a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html">MagicSettingsBase</a></div>
       <div><span class="xref">MagicBreadcrumbSettings</span></div>
     </dd>
   </dl>
@@ -129,6 +130,21 @@ Class MagicBreadcrumbSettings  <a class="header-action link-secondary" title="Vi
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PageState">MagicSettingsBase.PageState</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PartName">MagicSettingsBase.PartName</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_SettingsName">MagicSettingsBase.SettingsName</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_DesignName">MagicSettingsBase.DesignName</a>
+    </div>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_Debug">MagicSettingsBase.Debug</a>
+    </div>
+    <div>
       <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
     </div>
     <div>
@@ -136,76 +152,22 @@ Class MagicBreadcrumbSettings  <a class="header-action link-secondary" title="Vi
     </div>
   </dd></dl>
 
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_">MagicSettingsExtensions.With&lt;TSettings&gt;(TSettings?, PageState, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_">MagicSettingsExtensions.With&lt;TSettings, TWith&gt;(TSettings?, TWith?, bool)</a>
+  </div>
+  </dd></dl>
 
 
 
   <h2 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_remarks">Remarks</h2>
   <div class="markdown level0 remarks"><p>NOTE that as of v0.2 the JSON variant is not in use.</p>
 </div>
-
-
-  <h2 class="section" id="constructors">Constructors
-</h2>
-
-
-  <a id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings__ctor_" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor*"></a>
-
-  <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings__ctor" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.#ctor">
-  MagicBreadcrumbSettings()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L17"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicBreadcrumbSettings()</code></pre>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <h2 class="section" id="fields">Fields
-</h2>
-
-
-
-  <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_DisplayDefault" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DisplayDefault">
-  DisplayDefault
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L116"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const bool DisplayDefault = true</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">bool</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
 
 
   <h2 class="section" id="properties">Properties
@@ -216,7 +178,7 @@ Class MagicBreadcrumbSettings  <a class="header-action link-secondary" title="Vi
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Active" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active">
   Active
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -248,7 +210,7 @@ public IMagicPage? Active { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_ActiveId" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId">
   ActiveId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Start page of this breadcrumb - like home or another specific page.
@@ -281,43 +243,11 @@ Can be</p>
 
 
 
-  <a id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Debug_" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug*"></a>
-
-  <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Debug" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Debug">
-  Debug
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L109"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Debug settings for anything that can configure show/hide of debug</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MagicDebugSettings? Debug { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings.html">MagicDebugSettings</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_DesignSettings_" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings*"></a>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_DesignSettings" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings">
   DesignSettings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L129"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -325,7 +255,7 @@ Can be</p>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonIgnore]
-public Dictionary&lt;string, MagicBreadcrumbDesignSettingsPart&gt;? DesignSettings { get; init; }</code></pre>
+public MagicBreadcrumbDesignSettings? DesignSettings { get; init; }</code></pre>
   </div>
 
 
@@ -334,7 +264,7 @@ public Dictionary&lt;string, MagicBreadcrumbDesignSettingsPart&gt;? DesignSettin
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html">MagicBreadcrumbDesignSettingsPart</a>&gt;</dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings.html">MagicBreadcrumbDesignSettings</a></dt>
     <dd></dd>
   </dl>
 
@@ -349,7 +279,7 @@ public Dictionary&lt;string, MagicBreadcrumbDesignSettingsPart&gt;? DesignSettin
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Designer" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer">
   Designer
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -381,7 +311,7 @@ public IMagicPageDesigner? Designer { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Display" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display">
   Display
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines if this breadcrumb should be shown.</p>
@@ -409,11 +339,42 @@ public IMagicPageDesigner? Designer { get; init; }</code></pre>
 
 
 
+  <a id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_DisplaySafe_" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DisplaySafe*"></a>
+
+  <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_DisplaySafe" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DisplaySafe">
+  DisplaySafe
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DisplaySafe { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Id_" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id*"></a>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Id" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id">
   Id
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L99"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>A unique ID to identify the breadcrumb.</p>
@@ -445,7 +406,7 @@ public IMagicPageDesigner? Designer { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_MaxDepth" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MaxDepth">
   MaxDepth
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Maximum depth of the breadcrumb, defaults to 10.
@@ -479,7 +440,7 @@ public int MaxDepth { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_MenuId" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId">
   MenuId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L118"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Menu ID for use in JavaScript etc.
@@ -512,7 +473,7 @@ Usually predefined OR a random number</p>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Pages" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages">
   Pages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>List of pages to respect when creating the breadcrumb.
@@ -543,44 +504,11 @@ public IEnumerable&lt;IMagicPage&gt;? Pages { get; init; }</code></pre>
 
 
 
-  <a id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_PartName_" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName*"></a>
-
-  <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_PartName" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.PartName">
-  PartName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L106"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Name to identify this part.
-This information is used to load settings (breadcrumb settings and design settings)</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? PartName { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">string</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
   <a id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Reverse_" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse*"></a>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Reverse" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse">
   Reverse
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>If the order of the Breadcrumb should be reversed.</p>
@@ -589,7 +517,7 @@ This information is used to load settings (breadcrumb settings and design settin
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonIgnore]
-public bool Reverse { get; init; }</code></pre>
+public bool? Reverse { get; init; }</code></pre>
   </div>
 
 
@@ -598,7 +526,7 @@ public bool Reverse { get; init; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">bool</span></dt>
+    <dt><span class="xref">bool</span>?</dt>
     <dd></dd>
   </dl>
 
@@ -613,7 +541,7 @@ public bool Reverse { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Variant" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant">
   Variant
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L121"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -644,7 +572,7 @@ public bool Reverse { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_WithActive" data-uid="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive">
   WithActive
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>If the current page should be included in the breadcrumb.</p>
@@ -655,7 +583,7 @@ or will use custom code to visualize differently.</p>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonIgnore]
-public bool WithActive { get; init; }</code></pre>
+public bool? WithActive { get; init; }</code></pre>
   </div>
 
 
@@ -664,7 +592,7 @@ public bool WithActive { get; init; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">bool</span></dt>
+    <dt><span class="xref">bool</span>?</dt>
     <dd></dd>
   </dl>
 
@@ -690,7 +618,7 @@ This is special because the home page is usually not really &quot;above&quot; th
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonIgnore]
-public bool WithHome { get; init; }</code></pre>
+public bool? WithHome { get; init; }</code></pre>
   </div>
 
 
@@ -699,7 +627,7 @@ public bool WithHome { get; init; }</code></pre>
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">bool</span></dt>
+    <dt><span class="xref">bool</span>?</dt>
     <dd></dd>
   </dl>
 

@@ -33,7 +33,6 @@ items:
   implements:
   - ToSic.Cre8magic.Designers.IMagicDesigner
   inheritedMembers:
-  - ToSic.Cre8magic.Designers.MagicDesignerBase.Context
   - ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings
   - ToSic.Cre8magic.Designers.MagicDesignerBase.GetSettings(System.String)
   - ToSic.Cre8magic.Designers.MagicDesignerBase.ParseTokens
@@ -58,7 +57,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Classes
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainerDesigner.cs
-    startLine: 14
+    startLine: 12
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Containers
@@ -131,13 +130,6 @@ references:
   name: IMagicDesigner
   nameWithType: IMagicDesigner
   fullName: ToSic.Cre8magic.Designers.IMagicDesigner
-- uid: ToSic.Cre8magic.Designers.MagicDesignerBase.Context
-  commentId: P:ToSic.Cre8magic.Designers.MagicDesignerBase.Context
-  parent: ToSic.Cre8magic.Designers.MagicDesignerBase
-  href: ToSic.Cre8magic.Designers.MagicDesignerBase.html#ToSic_Cre8magic_Designers_MagicDesignerBase_Context
-  name: Context
-  nameWithType: MagicDesignerBase.Context
-  fullName: ToSic.Cre8magic.Designers.MagicDesignerBase.Context
 - uid: ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings
   commentId: P:ToSic.Cre8magic.Designers.MagicDesignerBase.DesignSettings
   parent: ToSic.Cre8magic.Designers.MagicDesignerBase

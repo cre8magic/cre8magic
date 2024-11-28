@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class MagicSettingsCatalog | cre8magic ">
       
-      <meta name="description" content="This is a catalog of all kinds of configurations. It serves as a kind of database to manage all configurations, which will usually be retrieved using a name.">
+      <meta name="description" content="This is a catalog of all kinds of settings. It serves as a kind of database to manage all settings, which will usually be retrieved using a name.">
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog" class="text-break">
-Class MagicSettingsCatalog  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L17"><i class="bi bi-code-slash"></i></a>
+Class MagicSettingsCatalog  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,8 +97,8 @@ Class MagicSettingsCatalog  <a class="header-action link-secondary" title="View 
   <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>This is a catalog of all kinds of configurations.
-It serves as a kind of database to manage all configurations, which will usually be retrieved using a name.</p>
+  <div class="markdown summary"><p>This is a catalog of all kinds of settings.
+It serves as a kind of database to manage all settings, which will usually be retrieved using a name.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -133,7 +133,7 @@ It serves as a kind of database to manage all configurations, which will usually
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog__ctor" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.#ctor">
   MagicSettingsCatalog()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Empty Constructor so it can be created in code and Json-Deserialized</p>
@@ -163,7 +163,7 @@ It serves as a kind of database to manage all configurations, which will usually
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_SourceDefault" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.SourceDefault">
   SourceDefault
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -198,7 +198,7 @@ It serves as a kind of database to manage all configurations, which will usually
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Analytics" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Analytics">
   Analytics
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -226,11 +226,43 @@ public Dictionary&lt;string, MagicAnalyticsSettings&gt; Analytics { get; init; }
 
 
 
+  <a id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_BreadcrumbDesigns_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_BreadcrumbDesigns" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns">
+  BreadcrumbDesigns
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicBreadcrumbDesignSettings&gt;))]
+public Dictionary&lt;string, MagicBreadcrumbDesignSettings&gt; BreadcrumbDesigns { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings.html">MagicBreadcrumbDesignSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Breadcrumbs_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Breadcrumbs*"></a>
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Breadcrumbs" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Breadcrumbs">
   Breadcrumbs
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -258,11 +290,43 @@ public Dictionary&lt;string, MagicBreadcrumbSettings&gt; Breadcrumbs { get; init
 
 
 
+  <a id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_ContainerDesigns_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_ContainerDesigns" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns">
+  ContainerDesigns
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicContainerDesignSettings&gt;))]
+public Dictionary&lt;string, MagicContainerDesignSettings&gt; ContainerDesigns { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Containers.MagicContainerDesignSettings.html">MagicContainerDesignSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Containers_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Containers*"></a>
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Containers" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Containers">
   Containers
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -294,7 +358,7 @@ public Dictionary&lt;string, MagicContainerSettings&gt; Containers { get; init; 
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Debug" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Debug">
   Debug
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Master debug settings - would override other debugs</p>
@@ -311,7 +375,7 @@ public Dictionary&lt;string, MagicContainerSettings&gt; Containers { get; init; 
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings.html">MagicDebugSettings</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicDebugSettings.html">MagicDebugSettings</a></dt>
     <dd></dd>
   </dl>
 
@@ -326,7 +390,7 @@ public Dictionary&lt;string, MagicContainerSettings&gt; Containers { get; init; 
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_LanguageDesigns" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns">
   LanguageDesigns
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Design definitions of languages</p>
@@ -359,7 +423,7 @@ public Dictionary&lt;string, MagicLanguageDesignSettings&gt; LanguageDesigns { g
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Languages" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Languages">
   Languages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Language Settings</p>
@@ -367,8 +431,8 @@ public Dictionary&lt;string, MagicLanguageDesignSettings&gt; LanguageDesigns { g
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicLanguageSettingsData&gt;))]
-public Dictionary&lt;string, MagicLanguageSettingsData&gt; Languages { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicLanguageSettings&gt;))]
+public Dictionary&lt;string, MagicLanguageSettings&gt; Languages { get; init; }</code></pre>
   </div>
 
 
@@ -377,7 +441,7 @@ public Dictionary&lt;string, MagicLanguageSettingsData&gt; Languages { get; init
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html">MagicLanguageSettingsData</a>&gt;</dt>
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettings.html">MagicLanguageSettings</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -392,7 +456,7 @@ public Dictionary&lt;string, MagicLanguageSettingsData&gt; Languages { get; init
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_MenuDesigns" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns">
   MenuDesigns
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L99"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Design definitions of the menu</p>
@@ -425,7 +489,7 @@ public Dictionary&lt;string, MagicMenuDesignSettings&gt; MenuDesigns { get; init
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Menus" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Menus">
   Menus
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The menu definitions</p>
@@ -433,8 +497,8 @@ public Dictionary&lt;string, MagicMenuDesignSettings&gt; MenuDesigns { get; init
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicMenuSettingsData&gt;))]
-public Dictionary&lt;string, MagicMenuSettingsData&gt; Menus { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicMenuSettings&gt;))]
+public Dictionary&lt;string, MagicMenuSettings&gt; Menus { get; init; }</code></pre>
   </div>
 
 
@@ -443,7 +507,40 @@ public Dictionary&lt;string, MagicMenuSettingsData&gt; Menus { get; init; }</cod
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettingsData.html">MagicMenuSettingsData</a>&gt;</dt>
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_PageContexts_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.PageContexts*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_PageContexts" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.PageContexts">
+  PageContexts
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The menu definitions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicPageContextSettings&gt;))]
+public Dictionary&lt;string, MagicPageContextSettings&gt; PageContexts { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html">MagicPageContextSettings</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -458,7 +555,7 @@ public Dictionary&lt;string, MagicMenuSettingsData&gt; Menus { get; init; }</cod
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Source" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Source">
   Source
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Source of these settings / where they came from, to ensure that we can see in debug where a value was picked up from</p>
@@ -490,7 +587,7 @@ public Dictionary&lt;string, MagicMenuSettingsData&gt; Menus { get; init; }</cod
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_ThemeDesigns" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns">
   ThemeDesigns
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -522,7 +619,7 @@ public Dictionary&lt;string, MagicThemeDesignSettings&gt; ThemeDesigns { get; in
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Themes" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Themes">
   Themes
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>List of Themes and mainly what parts they want to explicitly configure (e.g. determine Show, and there these parts find their settings)</p>
@@ -555,7 +652,7 @@ public Dictionary&lt;string, MagicThemeSettings&gt; Themes { get; init; }</code>
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsCatalog_Version" data-uid="ToSic.Cre8magic.Settings.MagicSettingsCatalog.Version">
   Version
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Version number when loading from JSON to verify it's what we expect</p>
@@ -587,7 +684,7 @@ public Dictionary&lt;string, MagicThemeSettings&gt; Themes { get; init; }</code>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L17" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs/#L18" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -5,14 +5,16 @@ items:
   id: Settings
   parent: ToSic.Cre8magic
   children:
-  - ToSic.Cre8magic.Settings.IContextWip
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  - ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
   - ToSic.Cre8magic.Settings.IMagicSettingsService
+  - ToSic.Cre8magic.Settings.MagicDebugSettings
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-  - ToSic.Cre8magic.Settings.MagicPackageSettings
+  - ToSic.Cre8magic.Settings.MagicSettingOnOff
+  - ToSic.Cre8magic.Settings.MagicSettingsBase
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog
-  - ToSic.Cre8magic.Settings.PairOnOff
+  - ToSic.Cre8magic.Settings.MagicSettingsExtensions
   - ToSic.Cre8magic.Settings.PairOnOffExtensions
-  - ToSic.Cre8magic.Settings.Providers
   - ToSic.Cre8magic.Settings.SettingsWithInherit
   langs:
   - csharp
@@ -24,50 +26,38 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.Settings.Providers
-  commentId: N:ToSic.Cre8magic.Settings.Providers
-  href: ToSic.html
-  name: ToSic.Cre8magic.Settings.Providers
-  nameWithType: ToSic.Cre8magic.Settings.Providers
-  fullName: ToSic.Cre8magic.Settings.Providers
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProvider
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html
+  name: IMagicSettingsProvider
+  nameWithType: IMagicSettingsProvider
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  name: IMagicSettingsProviderSection<TSettings>
+  nameWithType: IMagicSettingsProviderSection<TSettings>
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<TSettings>
+  nameWithType.vb: IMagicSettingsProviderSection(Of TSettings)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of TSettings)
+  name.vb: IMagicSettingsProviderSection(Of TSettings)
   spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Providers
-    name: Providers
-    href: ToSic.Cre8magic.Settings.Providers.html
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: <
+  - name: TSettings
+  - name: '>'
   spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Providers
-    name: Providers
-    href: ToSic.Cre8magic.Settings.Providers.html
-- uid: ToSic.Cre8magic.Settings.IContextWip
-  commentId: T:ToSic.Cre8magic.Settings.IContextWip
-  href: ToSic.Cre8magic.Settings.IContextWip.html
-  name: IContextWip
-  nameWithType: IContextWip
-  fullName: ToSic.Cre8magic.Settings.IContextWip
+  - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+    name: IMagicSettingsProviderSection
+    href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: )
 - uid: ToSic.Cre8magic.Settings.IMagicSettingsService
   commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsService
   parent: ToSic.Cre8magic.Settings
@@ -75,6 +65,13 @@ references:
   name: IMagicSettingsService
   nameWithType: IMagicSettingsService
   fullName: ToSic.Cre8magic.Settings.IMagicSettingsService
+- uid: ToSic.Cre8magic.Settings.MagicDebugSettings
+  commentId: T:ToSic.Cre8magic.Settings.MagicDebugSettings
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicDebugSettings.html
+  name: MagicDebugSettings
+  nameWithType: MagicDebugSettings
+  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings
 - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
   commentId: T:ToSic.Cre8magic.Settings.MagicDesignSettingsPart
   parent: ToSic.Cre8magic.Settings
@@ -82,13 +79,20 @@ references:
   name: MagicDesignSettingsPart
   nameWithType: MagicDesignSettingsPart
   fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-- uid: ToSic.Cre8magic.Settings.MagicPackageSettings
-  commentId: T:ToSic.Cre8magic.Settings.MagicPackageSettings
+- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingOnOff
   parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
-  name: MagicPackageSettings
-  nameWithType: MagicPackageSettings
-  fullName: ToSic.Cre8magic.Settings.MagicPackageSettings
+  href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
+  name: MagicSettingOnOff
+  nameWithType: MagicSettingOnOff
+  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsBase
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html
+  name: MagicSettingsBase
+  nameWithType: MagicSettingsBase
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog
   commentId: T:ToSic.Cre8magic.Settings.MagicSettingsCatalog
   parent: ToSic.Cre8magic.Settings
@@ -96,13 +100,13 @@ references:
   name: MagicSettingsCatalog
   nameWithType: MagicSettingsCatalog
   fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog
-- uid: ToSic.Cre8magic.Settings.PairOnOff
-  commentId: T:ToSic.Cre8magic.Settings.PairOnOff
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsExtensions
   parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.PairOnOff.html
-  name: PairOnOff
-  nameWithType: PairOnOff
-  fullName: ToSic.Cre8magic.Settings.PairOnOff
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html
+  name: MagicSettingsExtensions
+  nameWithType: MagicSettingsExtensions
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions
 - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions
   commentId: T:ToSic.Cre8magic.Settings.PairOnOffExtensions
   parent: ToSic.Cre8magic.Settings

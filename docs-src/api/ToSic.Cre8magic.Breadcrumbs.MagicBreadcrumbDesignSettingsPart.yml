@@ -5,9 +5,6 @@ items:
   id: MagicBreadcrumbDesignSettingsPart
   parent: ToSic.Cre8magic.Breadcrumbs
   children:
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart)
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart,System.Boolean)
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.HasChildren
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.IsDisabled
   langs:
@@ -41,106 +38,6 @@ items:
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsActive
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsPublished
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart.IsAdmin
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor
-  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor
-  id: '#ctor'
-  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  langs:
-  - csharp
-  - vb
-  name: MagicBreadcrumbDesignSettingsPart()
-  nameWithType: MagicBreadcrumbDesignSettingsPart.MagicBreadcrumbDesignSettingsPart()
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.MagicBreadcrumbDesignSettingsPart()
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbDesignSettingsPart.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbDesignSettingsPart.cs
-    startLine: 7
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Breadcrumbs
-  syntax:
-    content: public MagicBreadcrumbDesignSettingsPart()
-    content.vb: Public Sub New()
-  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor*
-  nameWithType.vb: MagicBreadcrumbDesignSettingsPart.New()
-  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.New()
-  name.vb: New()
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart)
-  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart)
-  id: '#ctor(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart)'
-  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  langs:
-  - csharp
-  - vb
-  name: MagicBreadcrumbDesignSettingsPart(MagicBreadcrumbDesignSettingsPart?, MagicBreadcrumbDesignSettingsPart?)
-  nameWithType: MagicBreadcrumbDesignSettingsPart.MagicBreadcrumbDesignSettingsPart(MagicBreadcrumbDesignSettingsPart?, MagicBreadcrumbDesignSettingsPart?)
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.MagicBreadcrumbDesignSettingsPart(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart?, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart?)
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbDesignSettingsPart.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbDesignSettingsPart.cs
-    startLine: 9
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Breadcrumbs
-  syntax:
-    content: public MagicBreadcrumbDesignSettingsPart(MagicBreadcrumbDesignSettingsPart? priority, MagicBreadcrumbDesignSettingsPart? fallback = null)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-    - id: fallback
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-    content.vb: Public Sub New(priority As MagicBreadcrumbDesignSettingsPart, fallback As MagicBreadcrumbDesignSettingsPart = Nothing)
-  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor*
-  nameWithType.vb: MagicBreadcrumbDesignSettingsPart.New(MagicBreadcrumbDesignSettingsPart, MagicBreadcrumbDesignSettingsPart)
-  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.New(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart)
-  name.vb: New(MagicBreadcrumbDesignSettingsPart, MagicBreadcrumbDesignSettingsPart)
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart,System.Boolean)
-  id: CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart,System.Boolean)
-  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  langs:
-  - csharp
-  - vb
-  name: CloneUnder(MagicBreadcrumbDesignSettingsPart?, bool)
-  nameWithType: MagicBreadcrumbDesignSettingsPart.CloneUnder(MagicBreadcrumbDesignSettingsPart?, bool)
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart?, bool)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbDesignSettingsPart.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: CloneUnder
-    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbDesignSettingsPart.cs
-    startLine: 16
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Breadcrumbs
-  example: []
-  syntax:
-    content: public MagicBreadcrumbDesignSettingsPart CloneUnder(MagicBreadcrumbDesignSettingsPart? priority, bool forceCopy = false)
-    parameters:
-    - id: priority
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-    - id: forceCopy
-      type: System.Boolean
-    return:
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-    content.vb: Public Function CloneUnder(priority As MagicBreadcrumbDesignSettingsPart, forceCopy As Boolean = False) As MagicBreadcrumbDesignSettingsPart
-  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder*
-  nameWithType.vb: MagicBreadcrumbDesignSettingsPart.CloneUnder(MagicBreadcrumbDesignSettingsPart, Boolean)
-  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart, Boolean)
-  name.vb: CloneUnder(MagicBreadcrumbDesignSettingsPart, Boolean)
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.HasChildren
   commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.HasChildren
   id: HasChildren
@@ -159,18 +56,18 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: HasChildren
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbDesignSettingsPart.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
   summary: Classes to add if this node is a parent (has-children).
   example: []
   syntax:
-    content: public PairOnOff? HasChildren { get; init; }
+    content: public MagicSettingOnOff? HasChildren { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Settings.PairOnOff
-    content.vb: Public Property HasChildren As PairOnOff
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    content.vb: Public Property HasChildren As MagicSettingOnOff
   overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.HasChildren*
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.IsDisabled
   commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.IsDisabled
@@ -190,7 +87,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsDisabled
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbDesignSettingsPart.cs
-    startLine: 35
+    startLine: 36
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
@@ -200,11 +97,11 @@ items:
     TODO: unclear why it's disabled, what would cause this...
   example: []
   syntax:
-    content: public PairOnOff? IsDisabled { get; init; }
+    content: public MagicSettingOnOff? IsDisabled { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Settings.PairOnOff
-    content.vb: Public Property IsDisabled As PairOnOff
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    content.vb: Public Property IsDisabled As MagicSettingOnOff
   overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.IsDisabled*
 references:
 - uid: ToSic.Cre8magic.Breadcrumbs
@@ -333,51 +230,19 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.#ctor
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbDesignSettingsPart__ctor
-  name: MagicBreadcrumbDesignSettingsPart
-  nameWithType: MagicBreadcrumbDesignSettingsPart.MagicBreadcrumbDesignSettingsPart
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.MagicBreadcrumbDesignSettingsPart
-  nameWithType.vb: MagicBreadcrumbDesignSettingsPart.New
-  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.New
-  name.vb: New
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  parent: ToSic.Cre8magic.Breadcrumbs
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html
-  name: MagicBreadcrumbDesignSettingsPart
-  nameWithType: MagicBreadcrumbDesignSettingsPart
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder*
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbDesignSettingsPart_CloneUnder_ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbDesignSettingsPart_System_Boolean_
-  name: CloneUnder
-  nameWithType: MagicBreadcrumbDesignSettingsPart.CloneUnder
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.CloneUnder
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.HasChildren*
   commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.HasChildren
   href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbDesignSettingsPart_HasChildren
   name: HasChildren
   nameWithType: MagicBreadcrumbDesignSettingsPart.HasChildren
   fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.HasChildren
-- uid: ToSic.Cre8magic.Settings.PairOnOff
-  commentId: T:ToSic.Cre8magic.Settings.PairOnOff
+- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingOnOff
   parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.PairOnOff.html
-  name: PairOnOff
-  nameWithType: PairOnOff
-  fullName: ToSic.Cre8magic.Settings.PairOnOff
+  href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
+  name: MagicSettingOnOff
+  nameWithType: MagicSettingOnOff
+  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.IsDisabled*
   commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.IsDisabled
   href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbDesignSettingsPart_IsDisabled

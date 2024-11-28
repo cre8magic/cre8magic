@@ -5,7 +5,9 @@ items:
   id: UserLogins
   parent: ToSic.Cre8magic
   children:
+  - ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
   - ToSic.Cre8magic.UserLogins.MagicUserLoginResources
+  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
   langs:
   - csharp
   - vb
@@ -16,6 +18,13 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
+  commentId: T:ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
+  parent: ToSic.Cre8magic.UserLogins
+  href: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit.html
+  name: IMagicUserLoginKit
+  nameWithType: IMagicUserLoginKit
+  fullName: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
 - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginResources
   commentId: T:ToSic.Cre8magic.UserLogins.MagicUserLoginResources
   parent: ToSic.Cre8magic.UserLogins
@@ -23,6 +32,13 @@ references:
   name: MagicUserLoginResources
   nameWithType: MagicUserLoginResources
   fullName: ToSic.Cre8magic.UserLogins.MagicUserLoginResources
+- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+  commentId: T:ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+  parent: ToSic.Cre8magic.UserLogins
+  href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  name: MagicUserLoginSettings
+  nameWithType: MagicUserLoginSettings
+  fullName: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
 - uid: ToSic.Cre8magic.UserLogins
   commentId: N:ToSic.Cre8magic.UserLogins
   href: ToSic.html

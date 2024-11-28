@@ -11,9 +11,6 @@ items:
     - uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsKit
       name: IMagicAnalyticsKit
       type: Interface
-    - uid: ToSic.Cre8magic.Analytics.IMagicAnalyticsService
-      name: IMagicAnalyticsService
-      type: Interface
     - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
       name: MagicAnalyticsSettings
       type: Class
@@ -24,6 +21,9 @@ items:
     - uid: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
       name: IMagicBreadcrumbKit
       type: Interface
+    - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
+      name: MagicBreadcrumbDesignSettings
+      type: Class
     - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
       name: MagicBreadcrumbDesignSettingsPart
       type: Class
@@ -43,11 +43,17 @@ items:
     - uid: ToSic.Cre8magic.Containers.IMagicContainerKit
       name: IMagicContainerKit
       type: Interface
+    - uid: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
+      name: MagicContainerDesignSettings
+      type: Class
     - uid: ToSic.Cre8magic.Containers.MagicContainerDesigner
       name: MagicContainerDesigner
       type: Class
     - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
       name: MagicContainerSettings
+      type: Class
+    - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
+      name: MagicContainerSettingsExtensions
       type: Class
   - uid: ToSic.Cre8magic.Designers
     name: Designers
@@ -78,8 +84,15 @@ items:
     - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
       name: MagicLanguageSettings
       type: Class
-    - uid: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-      name: MagicLanguageSettingsData
+  - uid: ToSic.Cre8magic.Links
+    name: Links
+    type: Namespace
+    items:
+    - uid: ToSic.Cre8magic.Links.IMagicLinkService
+      name: IMagicLinkService
+      type: Interface
+    - uid: ToSic.Cre8magic.Links.MagicLinkSpecs
+      name: MagicLinkSpecs
       type: Class
   - uid: ToSic.Cre8magic.Menus
     name: Menus
@@ -88,36 +101,27 @@ items:
     - uid: ToSic.Cre8magic.Menus.IMagicMenuKit
       name: IMagicMenuKit
       type: Interface
-    - uid: ToSic.Cre8magic.Menus.IMagicMenuService
-      name: IMagicMenuService
-      type: Interface
     - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
       name: MagicMenuDesignSettings
       type: Class
     - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
       name: MagicMenuDesignSettingsPart
       type: Class
-    - uid: ToSic.Cre8magic.Menus.MagicMenuRoot
-      name: MagicMenuRoot
-      type: Class
     - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
       name: MagicMenuSettings
       type: Class
-    - uid: ToSic.Cre8magic.Menus.MagicMenuSettingsData
-      name: MagicMenuSettingsData
-      type: Class
-  - uid: ToSic.Cre8magic.PageContext
-    name: PageContext
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
     type: Namespace
     items:
-    - uid: ToSic.Cre8magic.PageContext.IMagicPageContextService
-      name: IMagicPageContextService
+    - uid: ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+      name: IMagicPageContextKit
       type: Interface
-    - uid: ToSic.Cre8magic.PageContext.MagicPageContextSettings
-      name: MagicPageContextSettings
+    - uid: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
+      name: MagicPageContextDesigner
       type: Class
-    - uid: ToSic.Cre8magic.PageContext.MagicPageContextState
-      name: MagicPageContextState
+    - uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+      name: MagicPageContextSettings
       type: Class
   - uid: ToSic.Cre8magic.Pages
     name: Pages
@@ -129,17 +133,8 @@ items:
     - uid: ToSic.Cre8magic.Pages.IMagicPageDesigner
       name: IMagicPageDesigner
       type: Interface
-    - uid: ToSic.Cre8magic.Pages.IMagicPageList
-      name: IMagicPageList
-      type: Interface
-    - uid: ToSic.Cre8magic.Pages.IMagicPageService
-      name: IMagicPageService
-      type: Interface
     - uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings
       name: IMagicPageSetSettings
-      type: Interface
-    - uid: ToSic.Cre8magic.Pages.IMagicPageWithDesignWip
-      name: IMagicPageWithDesignWip
       type: Interface
     - uid: ToSic.Cre8magic.Pages.MagicPageDesignerBase
       name: MagicPageDesignerBase
@@ -154,33 +149,32 @@ items:
     name: Settings
     type: Namespace
     items:
-    - uid: ToSic.Cre8magic.Settings.Providers
-      name: Providers
-      type: Namespace
-      items:
-      - uid: ToSic.Cre8magic.Settings.Providers.IMagicProviderSection`1
-        name: IMagicProviderSection<TSettings>
-        type: Interface
-      - uid: ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider
-        name: IMagicSettingsProvider
-        type: Interface
-    - uid: ToSic.Cre8magic.Settings.IContextWip
-      name: IContextWip
+    - uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider
+      name: IMagicSettingsProvider
+      type: Interface
+    - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+      name: IMagicSettingsProviderSection<TSettings>
       type: Interface
     - uid: ToSic.Cre8magic.Settings.IMagicSettingsService
       name: IMagicSettingsService
       type: Interface
+    - uid: ToSic.Cre8magic.Settings.MagicDebugSettings
+      name: MagicDebugSettings
+      type: Class
     - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
       name: MagicDesignSettingsPart
       type: Class
-    - uid: ToSic.Cre8magic.Settings.MagicPackageSettings
-      name: MagicPackageSettings
+    - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+      name: MagicSettingOnOff
+      type: Class
+    - uid: ToSic.Cre8magic.Settings.MagicSettingsBase
+      name: MagicSettingsBase
       type: Class
     - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog
       name: MagicSettingsCatalog
       type: Class
-    - uid: ToSic.Cre8magic.Settings.PairOnOff
-      name: PairOnOff
+    - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+      name: MagicSettingsExtensions
       type: Class
     - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions
       name: PairOnOffExtensions
@@ -217,6 +211,9 @@ items:
     - uid: ToSic.Cre8magic.Themes.MagicThemeBase
       name: MagicThemeBase
       type: Class
+    - uid: ToSic.Cre8magic.Themes.MagicThemePackage
+      name: MagicThemePackage
+      type: Class
     - uid: ToSic.Cre8magic.Themes.MagicThemeSettings
       name: MagicThemeSettings
       type: Class
@@ -234,16 +231,19 @@ items:
     name: UserLogins
     type: Namespace
     items:
+    - uid: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
+      name: IMagicUserLoginKit
+      type: Interface
     - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginResources
       name: MagicUserLoginResources
+      type: Class
+    - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+      name: MagicUserLoginSettings
       type: Class
   - uid: ToSic.Cre8magic.Users
     name: Users
     type: Namespace
     items:
-    - uid: ToSic.Cre8magic.Users.IMagicUserLoginKit
-      name: IMagicUserLoginKit
-      type: Interface
     - uid: ToSic.Cre8magic.Users.IMagicUserService
       name: IMagicUserService
       type: Interface

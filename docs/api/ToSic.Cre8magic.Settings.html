@@ -91,16 +91,16 @@
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
 
-    <h3 id="namespaces">
-Namespaces
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Settings.Providers.html">ToSic.Cre8magic.Settings.Providers</a></dt>
-      <dd></dd>
-    </dl>
     <h3 id="classes">
 Classes
 </h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicDebugSettings.html">MagicDebugSettings</a></dt>
+      <dd><p>Debug settings to help during development.</p>
+<p>These settings can also be loaded from the configuration.
+This allows you to do things like enable temporarily for admins, without restarting/recompiling anything.</p>
+</dd>
+    </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html">MagicDesignSettingsPart</a></dt>
       <dd><p>Anything that can define what classes it should have.</p>
@@ -108,26 +108,31 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicPackageSettings.html">MagicPackageSettings</a></dt>
-      <dd><p>Settings for a Theme Package.</p>
-<p>It contains things like</p>
-<ol>
-<li>location of assets</li>
-<li>configuration for various parts like CSS</li>
-</ol>
+      <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingOnOff.html">MagicSettingOnOff</a></dt>
+      <dd><p>Special Setting containing a value to be used when a state is on or off.
+Typically used to specify strings to place in classes when something:</p>
+<ul>
+<li>is active</li>
+<li>is home</li>
+<li>etc.</li>
+</ul>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html">MagicSettingsBase</a></dt>
+      <dd><p>Internal intermediate base class containing all kinds of settings which
+all settings share.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsCatalog.html">MagicSettingsCatalog</a></dt>
-      <dd><p>This is a catalog of all kinds of configurations.
-It serves as a kind of database to manage all configurations, which will usually be retrieved using a name.</p>
+      <dd><p>This is a catalog of all kinds of settings.
+It serves as a kind of database to manage all settings, which will usually be retrieved using a name.</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Settings.PairOnOff.html">PairOnOff</a></dt>
-      <dd><p>Simple Object containing a setting to be used when a value is on or off.
-Typically used to specify strings to place in classes when something is active, is home, etc.</p>
-</dd>
+      <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html">MagicSettingsExtensions</a></dt>
+      <dd></dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Settings.PairOnOffExtensions.html">PairOnOffExtensions</a></dt>
@@ -141,8 +146,16 @@ Typically used to specify strings to place in classes when something is active, 
 Interfaces
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Settings.IContextWip.html">IContextWip</a></dt>
-      <dd></dd>
+      <dt><a class="xref" href="ToSic.Cre8magic.Settings.IMagicSettingsProvider.html">IMagicSettingsProvider</a></dt>
+      <dd><p>Provider to give settings.</p>
+<p>It is scoped, so anything added to it - typically in the Theme,
+will be available in all other components.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html">IMagicSettingsProviderSection&lt;TSettings&gt;</a></dt>
+      <dd><p>A provider for one type of settings.</p>
+</dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Settings.IMagicSettingsService.html">IMagicSettingsService</a></dt>

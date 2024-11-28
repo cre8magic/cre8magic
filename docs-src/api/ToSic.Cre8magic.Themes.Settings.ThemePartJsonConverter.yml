@@ -17,11 +17,11 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+      path: ToSic.Cre8Magic.Client/Themes/Internal/Json/ThemePartJsonConverter.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemePartJsonConverter
-    path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Internal/Json/ThemePartJsonConverter.cs
     startLine: 11
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
@@ -49,11 +49,11 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+      path: ToSic.Cre8Magic.Client/Themes/Internal/Json/ThemePartJsonConverter.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetNew
-    path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Internal/Json/ThemePartJsonConverter.cs
     startLine: 24
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
@@ -80,11 +80,11 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+      path: ToSic.Cre8Magic.Client/Themes/Internal/Json/ThemePartJsonConverter.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Write
-    path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Internal/Json/ThemePartJsonConverter.cs
     startLine: 26
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
@@ -121,11 +121,11 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+      path: ToSic.Cre8Magic.Client/Themes/Internal/Json/ThemePartJsonConverter.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Read
-    path: ../ToSic.Cre8Magic.Client/Themes/Settings/ThemePartJsonConverter.cs
+    path: ../ToSic.Cre8Magic.Client/Themes/Internal/Json/ThemePartJsonConverter.cs
     startLine: 40
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane

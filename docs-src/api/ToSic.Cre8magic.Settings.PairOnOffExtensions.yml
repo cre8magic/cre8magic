@@ -5,7 +5,7 @@ items:
   id: PairOnOffExtensions
   parent: ToSic.Cre8magic.Settings
   children:
-  - ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+  - ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
   langs:
   - csharp
   - vb
@@ -15,12 +15,12 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingOnOff.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PairOnOffExtensions
-    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
-    startLine: 40
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingOnOff.cs
+    startLine: 44
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -29,36 +29,36 @@ items:
     content.vb: Public Module PairOnOffExtensions
   inheritance:
   - System.Object
-- uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
-  commentId: M:ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
-  id: Get(ToSic.Cre8magic.Settings.PairOnOff,System.Nullable{System.Boolean})
+- uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
+  commentId: M:ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
+  id: Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
   isExtensionMethod: true
   parent: ToSic.Cre8magic.Settings.PairOnOffExtensions
   langs:
   - csharp
   - vb
-  name: Get(PairOnOff?, bool?)
-  nameWithType: PairOnOffExtensions.Get(PairOnOff?, bool?)
-  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff?, bool?)
+  name: Get(MagicSettingOnOff?, bool?)
+  nameWithType: PairOnOffExtensions.Get(MagicSettingOnOff?, bool?)
+  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff?, bool?)
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
+      path: ToSic.Cre8Magic.Client/Settings/MagicSettingOnOff.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Get
-    path: ../ToSic.Cre8Magic.Client/Settings/PairOnOff.cs
-    startLine: 48
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingOnOff.cs
+    startLine: 52
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
   summary: Null-safe pair access
   example: []
   syntax:
-    content: public static string? Get(this PairOnOff? pair, bool? isOn)
+    content: public static string? Get(this MagicSettingOnOff? pair, bool? isOn)
     parameters:
     - id: pair
-      type: ToSic.Cre8magic.Settings.PairOnOff
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
       description: ''
     - id: isOn
       type: System.Nullable{System.Boolean}
@@ -66,11 +66,11 @@ items:
     return:
       type: System.String
       description: ''
-    content.vb: Public Shared Function [Get](pair As PairOnOff, isOn As Boolean?) As String
+    content.vb: Public Shared Function [Get](pair As MagicSettingOnOff, isOn As Boolean?) As String
   overload: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get*
-  nameWithType.vb: PairOnOffExtensions.Get(PairOnOff, Boolean?)
-  fullName.vb: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.PairOnOff, Boolean?)
-  name.vb: Get(PairOnOff, Boolean?)
+  nameWithType.vb: PairOnOffExtensions.Get(MagicSettingOnOff, Boolean?)
+  fullName.vb: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff, Boolean?)
+  name.vb: Get(MagicSettingOnOff, Boolean?)
 references:
 - uid: ToSic.Cre8magic.Settings
   commentId: N:ToSic.Cre8magic.Settings
@@ -121,17 +121,17 @@ references:
   fullName: System
 - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get*
   commentId: Overload:ToSic.Cre8magic.Settings.PairOnOffExtensions.Get
-  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_PairOnOff_System_Nullable_System_Boolean__
+  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_MagicSettingOnOff_System_Nullable_System_Boolean__
   name: Get
   nameWithType: PairOnOffExtensions.Get
   fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get
-- uid: ToSic.Cre8magic.Settings.PairOnOff
-  commentId: T:ToSic.Cre8magic.Settings.PairOnOff
+- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingOnOff
   parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.PairOnOff.html
-  name: PairOnOff
-  nameWithType: PairOnOff
-  fullName: ToSic.Cre8magic.Settings.PairOnOff
+  href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
+  name: MagicSettingOnOff
+  nameWithType: MagicSettingOnOff
+  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff
 - uid: System.Nullable{System.Boolean}
   commentId: T:System.Nullable{System.Boolean}
   parent: System

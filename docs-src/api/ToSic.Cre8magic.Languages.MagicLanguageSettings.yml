@@ -5,11 +5,10 @@ items:
   id: MagicLanguageSettings
   parent: ToSic.Cre8magic.Languages
   children:
-  - ToSic.Cre8magic.Languages.MagicLanguageSettings.#ctor
-  - ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName
   - ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
-  - ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName
-  - ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName
+  - ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
+  - ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
+  - ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
   langs:
   - csharp
   - vb
@@ -24,153 +23,128 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicLanguageSettings
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
-    startLine: 6
+    startLine: 7
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
   syntax:
-    content: 'public record MagicLanguageSettings : MagicLanguageSettingsData'
-    content.vb: Public Class MagicLanguageSettings Inherits MagicLanguageSettingsData
+    content: 'public record MagicLanguageSettings : MagicSettingsBase'
+    content.vb: Public Class MagicLanguageSettings Inherits MagicSettingsBase
   inheritance:
   - System.Object
   - ToSic.Cre8magic.Settings.SettingsWithInherit
-  - ToSic.Cre8magic.Languages.MagicLanguageSettingsData
+  - ToSic.Cre8magic.Settings.MagicSettingsBase
   inheritedMembers:
-  - ToSic.Cre8magic.Languages.MagicLanguageSettingsData.HideOthers
-  - ToSic.Cre8magic.Languages.MagicLanguageSettingsData.MinLanguagesToShow
-  - ToSic.Cre8magic.Languages.MagicLanguageSettingsData.Debug
-  - ToSic.Cre8magic.Languages.MagicLanguageSettingsData.Languages
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.#ctor
-  commentId: M:ToSic.Cre8magic.Languages.MagicLanguageSettings.#ctor
-  id: '#ctor'
+  extensionMethods:
+  - ToSic.Cre8magic.Languages.MagicLanguageSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
+  - ToSic.Cre8magic.Languages.MagicLanguageSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2({TWith},System.Boolean)
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
+  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
+  id: HideOthers
   parent: ToSic.Cre8magic.Languages.MagicLanguageSettings
   langs:
   - csharp
   - vb
-  name: MagicLanguageSettings()
-  nameWithType: MagicLanguageSettings.MagicLanguageSettings()
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.MagicLanguageSettings()
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
-    startLine: 8
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Languages
-  syntax:
-    content: public MagicLanguageSettings()
-    content.vb: Public Sub New()
-  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.#ctor*
-  nameWithType.vb: MagicLanguageSettings.New()
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguageSettings.New()
-  name.vb: New()
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName
-  id: PartName
-  parent: ToSic.Cre8magic.Languages.MagicLanguageSettings
-  langs:
-  - csharp
-  - vb
-  name: PartName
-  nameWithType: MagicLanguageSettings.PartName
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName
+  name: HideOthers
+  nameWithType: MagicLanguageSettings.HideOthers
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: PartName
+    id: HideOthers
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
-    startLine: 26
+    startLine: 33
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
   summary: >-
-    Name to identify this part.
+    If true, will only show the languages which are explicitly configured.
 
-    This information is used to load settings (menu settings and design settings)
+    If false, will first show the configured languages, then the rest.
   example: []
   syntax:
-    content: public string? PartName { get; init; }
+    content: public bool? HideOthers { get; init; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public Property PartName As String
-  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName*
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName
-  id: SettingsName
+      type: System.Nullable{System.Boolean}
+    content.vb: Public Property HideOthers As Boolean?
+  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers*
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
+  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
+  id: MinLanguagesToShow
   parent: ToSic.Cre8magic.Languages.MagicLanguageSettings
   langs:
   - csharp
   - vb
-  name: SettingsName
-  nameWithType: MagicLanguageSettings.SettingsName
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName
+  name: MinLanguagesToShow
+  nameWithType: MagicLanguageSettings.MinLanguagesToShow
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: SettingsName
+    id: MinLanguagesToShow
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
-    startLine: 29
+    startLine: 36
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
-  summary: >-
-    Name to identify which settings to load.
-
-    This is used before looking in the Theme Part.
-
-    If not specified, will check the theme part for a name it provides, or use the theme-part name to find the settings.
-  example: []
   syntax:
-    content: public string? SettingsName { get; init; }
+    content: public int MinLanguagesToShow { get; init; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public Property SettingsName As String
-  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName*
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName
-  id: DesignName
+      type: System.Int32
+    content.vb: Public Property MinLanguagesToShow As Integer
+  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow*
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
+  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
+  id: Languages
   parent: ToSic.Cre8magic.Languages.MagicLanguageSettings
   langs:
   - csharp
   - vb
-  name: DesignName
-  nameWithType: MagicLanguageSettings.DesignName
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName
+  name: Languages
+  nameWithType: MagicLanguageSettings.Languages
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: DesignName
+    id: Languages
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
-    startLine: 31
+    startLine: 41
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
+  summary: List of languages
   example: []
   syntax:
-    content: public string? DesignName { get; init; }
+    content: >-
+      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguage>))]
+
+      public Dictionary<string, MagicLanguage>? Languages { get; init; }
     parameters: []
     return:
-      type: System.String
-    content.vb: Public Property DesignName As String
-  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName*
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguage}
+    content.vb: >-
+      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicLanguage)))>
+
+      Public Property Languages As Dictionary(Of String, MagicLanguage)
+  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages*
 - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
   commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
   id: DesignSettings
@@ -189,17 +163,27 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DesignSettings
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
-    startLine: 33
+    startLine: 61
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
   syntax:
-    content: public MagicLanguageDesignSettings? DesignSettings { get; init; }
+    content: >-
+      [JsonIgnore]
+
+      public MagicLanguageDesignSettings? DesignSettings { get; init; }
     parameters: []
     return:
       type: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-    content.vb: Public Property DesignSettings As MagicLanguageDesignSettings
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property DesignSettings As MagicLanguageDesignSettings
   overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonIgnoreAttribute
+    ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
+    arguments: []
 references:
 - uid: ToSic.Cre8magic.Languages
   commentId: N:ToSic.Cre8magic.Languages
@@ -248,41 +232,48 @@ references:
   name: SettingsWithInherit
   nameWithType: SettingsWithInherit
   fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-  parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html
-  name: MagicLanguageSettingsData
-  nameWithType: MagicLanguageSettingsData
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.HideOthers
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettingsData.HideOthers
-  parent: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html#ToSic_Cre8magic_Languages_MagicLanguageSettingsData_HideOthers
-  name: HideOthers
-  nameWithType: MagicLanguageSettingsData.HideOthers
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.HideOthers
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.MinLanguagesToShow
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettingsData.MinLanguagesToShow
-  parent: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html#ToSic_Cre8magic_Languages_MagicLanguageSettingsData_MinLanguagesToShow
-  name: MinLanguagesToShow
-  nameWithType: MagicLanguageSettingsData.MinLanguagesToShow
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.MinLanguagesToShow
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.Debug
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettingsData.Debug
-  parent: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html#ToSic_Cre8magic_Languages_MagicLanguageSettingsData_Debug
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsBase
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html
+  name: MagicSettingsBase
+  nameWithType: MagicSettingsBase
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PageState
+  name: PageState
+  nameWithType: MagicSettingsBase.PageState
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PartName
+  name: PartName
+  nameWithType: MagicSettingsBase.PartName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_SettingsName
+  name: SettingsName
+  nameWithType: MagicSettingsBase.SettingsName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_DesignName
+  name: DesignName
+  nameWithType: MagicSettingsBase.DesignName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_Debug
   name: Debug
-  nameWithType: MagicLanguageSettingsData.Debug
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.Debug
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.Languages
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettingsData.Languages
-  parent: ToSic.Cre8magic.Languages.MagicLanguageSettingsData
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.html#ToSic_Cre8magic_Languages_MagicLanguageSettingsData_Languages
-  name: Languages
-  nameWithType: MagicLanguageSettingsData.Languages
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettingsData.Languages
+  nameWithType: MagicSettingsBase.Debug
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
 - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   parent: ToSic.Cre8magic.Settings.SettingsWithInherit
@@ -325,6 +316,132 @@ references:
   - name: (
   - name: )
   - name: )
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  name: With<MagicLanguageSettings>(MagicLanguageSettings, PageState, bool)
+  nameWithType: MagicSettingsExtensions.With<MagicLanguageSettings>(MagicLanguageSettings, PageState, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<ToSic.Cre8magic.Languages.MagicLanguageSettings>(ToSic.Cre8magic.Languages.MagicLanguageSettings, Oqtane.UI.PageState, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of MagicLanguageSettings)(MagicLanguageSettings, PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Languages.MagicLanguageSettings)(ToSic.Cre8magic.Languages.MagicLanguageSettings, Oqtane.UI.PageState, Boolean)
+  name.vb: With(Of MagicLanguageSettings)(MagicLanguageSettings, PageState, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Languages.MagicLanguageSettings,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: <
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+    name: MagicLanguageSettings
+    href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+    name: MagicLanguageSettings
+    href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Languages.MagicLanguageSettings,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+    name: MagicLanguageSettings
+    href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+    name: MagicLanguageSettings
+    href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2({TWith},System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  name: With<MagicLanguageSettings, TWith>(MagicLanguageSettings, TWith, bool)
+  nameWithType: MagicSettingsExtensions.With<MagicLanguageSettings, TWith>(MagicLanguageSettings, TWith, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<ToSic.Cre8magic.Languages.MagicLanguageSettings, TWith>(ToSic.Cre8magic.Languages.MagicLanguageSettings, TWith, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of MagicLanguageSettings, TWith)(MagicLanguageSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Languages.MagicLanguageSettings, TWith)(ToSic.Cre8magic.Languages.MagicLanguageSettings, TWith, Boolean)
+  name.vb: With(Of MagicLanguageSettings, TWith)(MagicLanguageSettings, TWith, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Languages.MagicLanguageSettings,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: <
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+    name: MagicLanguageSettings
+    href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+    name: MagicLanguageSettings
+    href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Languages.MagicLanguageSettings,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+    name: MagicLanguageSettings
+    href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+    name: MagicLanguageSettings
+    href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -362,43 +479,303 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.#ctor
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings__ctor
-  name: MagicLanguageSettings
-  nameWithType: MagicLanguageSettings.MagicLanguageSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.MagicLanguageSettings
-  nameWithType.vb: MagicLanguageSettings.New
-  fullName.vb: ToSic.Cre8magic.Languages.MagicLanguageSettings.New
-  name.vb: New
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_PartName
-  name: PartName
-  nameWithType: MagicLanguageSettings.PartName
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.PartName
-- uid: System.String
-  commentId: T:System.String
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  name: With<TSettings>(TSettings, PageState, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings, PageState, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<TSettings>(TSettings, Oqtane.UI.PageState, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState, Boolean)
+  name.vb: With(Of TSettings)(TSettings, PageState, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: <
+  - name: TSettings
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html
+  name: MagicSettingsExtensions
+  nameWithType: MagicSettingsExtensions
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  name: With<TSettings, TWith>(TSettings, TWith, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  name.vb: With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: <
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers*
+  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
+  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_HideOthers
+  name: HideOthers
+  nameWithType: MagicLanguageSettings.HideOthers
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow*
+  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
+  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_MinLanguagesToShow
+  name: MinLanguagesToShow
+  nameWithType: MagicLanguageSettings.MinLanguagesToShow
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
+- uid: System.Int32
+  commentId: T:System.Int32
   parent: System
   isExternal: true
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_SettingsName
-  name: SettingsName
-  nameWithType: MagicLanguageSettings.SettingsName
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.SettingsName
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_DesignName
-  name: DesignName
-  nameWithType: MagicLanguageSettings.DesignName
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignName
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages*
+  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
+  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_Languages
+  name: Languages
+  nameWithType: MagicLanguageSettings.Languages
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
+- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguage}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguage}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: ToSic.Cre8magic.Languages.MagicLanguage.html
+  name: Dictionary<string, MagicLanguage>
+  nameWithType: Dictionary<string, MagicLanguage>
+  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Languages.MagicLanguage>
+  nameWithType.vb: Dictionary(Of String, MagicLanguage)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Languages.MagicLanguage)
+  name.vb: Dictionary(Of String, MagicLanguage)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Languages.MagicLanguage
+    name: MagicLanguage
+    href: ToSic.Cre8magic.Languages.MagicLanguage.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Languages.MagicLanguage
+    name: MagicLanguage
+    href: ToSic.Cre8magic.Languages.MagicLanguage.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings*
   commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
   href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_DesignSettings

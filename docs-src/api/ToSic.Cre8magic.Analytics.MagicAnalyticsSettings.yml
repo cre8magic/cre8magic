@@ -5,8 +5,8 @@ items:
   id: MagicAnalyticsSettings
   parent: ToSic.Cre8magic.Analytics
   children:
-  - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId
+  - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageState
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewEvent
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewJs
   - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageViewTrack
@@ -25,7 +25,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicAnalyticsSettings
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 13
+    startLine: 14
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -41,43 +41,53 @@ items:
     * Background is that the Module currently doesn't contain its own JS, so it's still part of the theme.
   example: []
   syntax:
-    content: 'public record MagicAnalyticsSettings : SettingsWithInherit'
-    content.vb: Public Class MagicAnalyticsSettings Inherits SettingsWithInherit
+    content: 'public record MagicAnalyticsSettings : MagicSettingsBase'
+    content.vb: Public Class MagicAnalyticsSettings Inherits MagicSettingsBase
   inheritance:
   - System.Object
   - ToSic.Cre8magic.Settings.SettingsWithInherit
+  - ToSic.Cre8magic.Settings.MagicSettingsBase
   inheritedMembers:
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  - ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
-- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor
-  commentId: M:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor
-  id: '#ctor'
+  extensionMethods:
+  - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
+  - ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2({TWith},System.Boolean)
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageState
+  commentId: P:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageState
+  id: PageState
   parent: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
   langs:
   - csharp
   - vb
-  name: MagicAnalyticsSettings()
-  nameWithType: MagicAnalyticsSettings.MagicAnalyticsSettings()
-  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.MagicAnalyticsSettings()
-  type: Constructor
+  name: PageState
+  nameWithType: MagicAnalyticsSettings.PageState
+  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageState
+  type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
+    id: PageState
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 15
+    startLine: 41
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
+  summary: WIP
+  example: []
   syntax:
-    content: public MagicAnalyticsSettings()
-    content.vb: Public Sub New()
-  overload: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor*
-  nameWithType.vb: MagicAnalyticsSettings.New()
-  fullName.vb: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.New()
-  name.vb: New()
+    content: public PageState? PageState { get; init; }
+    parameters: []
+    return:
+      type: Oqtane.UI.PageState
+    content.vb: Public Property PageState As PageState
+  overload: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageState*
 - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId
   commentId: P:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId
   id: GtmId
@@ -96,7 +106,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GtmId
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 37
+    startLine: 46
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -127,7 +137,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageViewTrack
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 39
+    startLine: 48
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -156,7 +166,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageViewTrackFirst
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 41
+    startLine: 50
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -185,7 +195,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageViewJs
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 47
+    startLine: 56
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -219,7 +229,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageViewEvent
     path: ../ToSic.Cre8Magic.Client/Analytics/MagicAnalyticsSettings.cs
-    startLine: 53
+    startLine: 62
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Analytics
@@ -283,6 +293,41 @@ references:
   name: SettingsWithInherit
   nameWithType: SettingsWithInherit
   fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsBase
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html
+  name: MagicSettingsBase
+  nameWithType: MagicSettingsBase
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PartName
+  name: PartName
+  nameWithType: MagicSettingsBase.PartName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.PartName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_SettingsName
+  name: SettingsName
+  nameWithType: MagicSettingsBase.SettingsName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.SettingsName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_DesignName
+  name: DesignName
+  nameWithType: MagicSettingsBase.DesignName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.DesignName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
+  parent: ToSic.Cre8magic.Settings.MagicSettingsBase
+  href: ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_Debug
+  name: Debug
+  nameWithType: MagicSettingsBase.Debug
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsBase.Debug
 - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   parent: ToSic.Cre8magic.Settings.SettingsWithInherit
@@ -325,6 +370,132 @@ references:
   - name: (
   - name: )
   - name: )
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  name: With<MagicAnalyticsSettings>(MagicAnalyticsSettings, PageState, bool)
+  nameWithType: MagicSettingsExtensions.With<MagicAnalyticsSettings>(MagicAnalyticsSettings, PageState, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<ToSic.Cre8magic.Analytics.MagicAnalyticsSettings>(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, Oqtane.UI.PageState, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of MagicAnalyticsSettings)(MagicAnalyticsSettings, PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, Oqtane.UI.PageState, Boolean)
+  name.vb: With(Of MagicAnalyticsSettings)(MagicAnalyticsSettings, PageState, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: <
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2({TWith},System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  parent: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  name: With<MagicAnalyticsSettings, TWith>(MagicAnalyticsSettings, TWith, bool)
+  nameWithType: MagicSettingsExtensions.With<MagicAnalyticsSettings, TWith>(MagicAnalyticsSettings, TWith, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, TWith>(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, TWith, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of MagicAnalyticsSettings, TWith)(MagicAnalyticsSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, TWith)(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings, TWith, Boolean)
+  name.vb: With(Of MagicAnalyticsSettings, TWith)(MagicAnalyticsSettings, TWith, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: <
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings
+    name: MagicAnalyticsSettings
+    href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -362,15 +533,157 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.#ctor
-  href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html#ToSic_Cre8magic_Analytics_MagicAnalyticsSettings__ctor
-  name: MagicAnalyticsSettings
-  nameWithType: MagicAnalyticsSettings.MagicAnalyticsSettings
-  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.MagicAnalyticsSettings
-  nameWithType.vb: MagicAnalyticsSettings.New
-  fullName.vb: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.New
-  name.vb: New
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  name: With<TSettings>(TSettings, PageState, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings, PageState, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<TSettings>(TSettings, Oqtane.UI.PageState, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState, Boolean)
+  name.vb: With(Of TSettings)(TSettings, PageState, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: <
+  - name: TSettings
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsExtensions
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html
+  name: MagicSettingsExtensions
+  nameWithType: MagicSettingsExtensions
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions
+- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  name: With<TSettings, TWith>(TSettings, TWith, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  name.vb: With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: <
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageState*
+  commentId: Overload:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageState
+  href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html#ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_PageState
+  name: PageState
+  nameWithType: MagicAnalyticsSettings.PageState
+  fullName: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.PageState
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
 - uid: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId*
   commentId: Overload:ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.GtmId
   href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html#ToSic_Cre8magic_Analytics_MagicAnalyticsSettings_GtmId
