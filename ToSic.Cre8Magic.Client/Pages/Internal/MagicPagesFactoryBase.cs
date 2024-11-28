@@ -13,6 +13,8 @@ internal abstract class MagicPagesFactoryBase(WorkContext workContext) : IMagicP
     [field: AllowNull, MaybeNull]
     internal Log Log => field ??= workContext.LogRoot.GetLog(GetType().Name);
 
+    internal TokenEngine TokenEngine => workContext.TokenEngine;
+
     #endregion
 
     #region Abstract
@@ -24,23 +26,6 @@ internal abstract class MagicPagesFactoryBase(WorkContext workContext) : IMagicP
     protected abstract IMagicPageDesigner PageDesigner();
 
     public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page, PageDesigner());
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="page">The page which would be used if any page property is requested</param>
-    /// <returns></returns>
-    internal TokenEngine PageTokenEngine(IMagicPage page)
-    {
-        var tokens = workContext.TokenEngine;
-        // fallback without MagicSettings return just TokenEngine with PageTokens
-        if (tokens == null || tokens.Parsers.Count == 0)
-            return new([new PageTokens(page)]);
-
-        var originalPageTokens = (PageTokens)tokens.Parsers.First(p => p.NameId == PageTokens.NameIdConstant);
-        var updatedPageTokens = originalPageTokens.Clone(page);
-        return tokens.SwapParser(updatedPageTokens);
-    }
 
 
     #region Children

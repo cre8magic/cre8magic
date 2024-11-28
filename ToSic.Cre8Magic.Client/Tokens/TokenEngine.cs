@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Tokens;
@@ -26,7 +27,14 @@ public class TokenEngine: ITokenReplace
 
     #endregion
 
-    public TokenEngine SwapParser(ITokenReplace replacement)
+    public TokenEngine CloneWith(IMagicPage page) =>
+        Parsers.FirstOrDefault(p => p.NameId == PageTokens.NameIdConstant) is not PageTokens originalPageTokens
+            // Might not have any sources, or not a page-source, in which case we just create it.
+            ? new([new PageTokens(page)])
+            // In this case the original page tokens - which may have additional configuration - should be cloned
+            : SwapParser(originalPageTokens.Clone(page));
+
+    private TokenEngine SwapParser(ITokenReplace replacement)
     {
         // Create new list preserving the initial order
         var newParsers = Parsers

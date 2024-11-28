@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.Pages.Internal.PageDesign;
 internal class PageDesignHelperWip(MagicPagesFactoryBase pagesFactory, IMagicPage page, IMagicPageDesigner pageDesigner) : IPageDesignHelperWip
 {
     [field: AllowNull, MaybeNull]
-    private ITokenReplace TokenReplace => field ??= pagesFactory.PageTokenEngine(page);
+    private ITokenReplace TokenReplace => field ??= pagesFactory.TokenEngine.CloneWith(page);
 
     ///// <inheritdoc cref="IMagicPageList.Classes" />
     public string? Classes(string tag) => TokenReplace.Parse(pageDesigner.Classes(tag, page)).EmptyAsNull();
