@@ -11,8 +11,8 @@ public record MagicBreadcrumbDesignSettingsPart : MagicDesignSettingsPart, ICanC
     internal MagicBreadcrumbDesignSettingsPart(MagicBreadcrumbDesignSettingsPart? priority, MagicBreadcrumbDesignSettingsPart? fallback = default)
         : base(priority, fallback)
     {
-        HasChildren = fallback?.HasChildren ?? priority?.HasChildren;
-        IsDisabled = fallback?.IsDisabled ?? priority?.IsDisabled;
+        HasChildren = priority?.HasChildren ?? fallback?.HasChildren;
+        IsDisabled = priority?.IsDisabled ?? fallback?.IsDisabled;
     }
 
     MagicBreadcrumbDesignSettingsPart ICanClone<MagicBreadcrumbDesignSettingsPart>.CloneUnder(MagicBreadcrumbDesignSettingsPart? priority, bool forceCopy = false) =>
