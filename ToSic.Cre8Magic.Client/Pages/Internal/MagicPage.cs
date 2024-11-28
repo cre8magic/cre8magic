@@ -80,14 +80,6 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory, IMagicPa
 
     #endregion
 
-    #region Enumerator - WIP, probably remove again!
-
-    public IEnumerator<IMagicPage> GetEnumerator() => Children.GetEnumerator();
-
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-
-
-    #endregion
     [field: AllowNull, MaybeNull]
     private IPageDesignHelperWip DesignHelper => field ??= childrenFactory.PageDesignHelper(this);
 

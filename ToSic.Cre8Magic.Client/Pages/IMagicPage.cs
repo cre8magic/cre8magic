@@ -14,8 +14,6 @@ namespace ToSic.Cre8magic.Pages;
 /// 1. Navigation properties such as `Parent` and `Breadcrumb`
 /// </summary>
 public interface IMagicPage
-    // TODO: SHOULD GET RID OF ENUMERATOR LATER ON! AND CHANGE TO JUST ACCESSING THE CHILDREN
-    : IEnumerable<IMagicPage>
 {
     /// <summary>
     /// Level in the menu, starting from 1.
