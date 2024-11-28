@@ -1,9 +1,10 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Internal.Debug;
+using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Menus;
 
-public interface IMagicMenuKit
+public interface IMagicMenuKit: IHasDebugInfo
 {
     /// <summary>
     /// INTERNAL context for this menu, WIP.

@@ -1,104 +1,67 @@
 ﻿@inherits ComponentBase
-@using System.Diagnostics.CodeAnalysis
 @using System.Text.Json
 @using System.Text.Json.Serialization
 @using System.Text.Encodings.Web
 @using Oqtane.UI
-@using ToSic.Cre8magic.ComponentsBs5.Internal
+@using ToSic.Cre8magic.Internal.Debug
 @using ToSic.Cre8magic.Settings
-@using ToSic.Cre8magic.Settings.Internal.Debug
 @inject IMagicSettingsService SettingsService
 @inject IMagicHat MagicHat
 @code {
-    /// <inheritdoc cref="ComponentDocs.PageState"/>
-    [CascadingParameter]
-    public required PageState PageState { get; set; }
+    [CascadingParameter] public required PageState PageState { get; set; }
+    [Parameter, EditorRequired] public required IHasDebugInfo Target { get; set; }
+}
+@{
+    var debugInfo = Target.GetDebugInfo();
+    var settings = debugInfo.Settings;
+    var debug = SettingsService.Debug.GetState(settings, MagicHat.User(PageState).MayAdminCurrentPage);
 
-    [Parameter] public bool? Show { get; set; }
-    [Parameter, EditorRequired] public object? Target { get; set; }
-    [Parameter] public Dictionary<string, object>? More { get; set; }
-    [Parameter] public string? Title { get; set; }
+    // Exit early if debug is not allowed
+    if (!debug.Show)
+        return;
+}
+@{
+    var more = debugInfo.More;
 
-    [Parameter] public RenderFragment? Content { get; set; }
-
-    [Parameter] public RenderFragment? ContentMore { get; set; }
-
-    [Parameter] public RenderFragment? Button { get; set; }
-
-    [field: AllowNull, MaybeNull]
-    private MagicDebugState Debug => field ??= SettingsService.Debug.GetState(Target, MagicHat.User(PageState).MayAdminCurrentPage);
-
-    private static JsonSerializerOptions _showOptions = new()
+    JsonSerializerOptions jsonOptions = new()
     {
         WriteIndented = true, 
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
     };
-
-    private bool MoreContainsTarget() => More?.ContainsValue(Target ?? "something random") ?? false;
 }
-@if (Show == false || !Debug.Show)
-{
-    return;
-}
-<!-- Link to trigger modal -->
-<a href="#debug-@Target?.GetHashCode()" data-bs-toggle="modal">
-    @if (Button == null)
-    {
-        <text>🪲</text>
-    }
-    else
-    {
-        @Button
-    }
+<!-- Link to trigger open modal - shows bug-emoji -->
+<a href="#debug-@settings?.GetHashCode()" data-bs-toggle="modal">
+    <text>🪲</text>
 </a>
 
 <!-- Modal -->
 @* info to the next developer: data-backdrop=false helps avoid certain z-index issues if this debug is used in the menu etc. which has a z-index *@
-<div class="modal fade" id="debug-@Target?.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="false">
+<div class="modal fade" id="debug-@settings?.GetHashCode()" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="false">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">@(Title ?? "Debug")</h5>
+                <h5 class="modal-title" id="exampleModalLabel">@(debugInfo.Title ?? "Debug")</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                @Content
-                @if (Target == null)
+                @* Show Values *@
+                @if (debugInfo.Values != null)
                 {
-                    <div class="alert alert-danger">
-                        Trying to show debug JSON, but didn't get anything for @nameof(Target)
-                    </div>
-                }
-                else
-                {
-                    @if (!MoreContainsTarget())
-                    {
-                        <pre>@JsonSerializer.Serialize(Target, _showOptions)</pre>
-                    }
-                    @if (More?.Any() == true)
-                    {
-                        foreach (var data in More.Where(m => m.Value != default))
+                    <ul>
+                        @foreach (var valuePair in debugInfo.Values)
                         {
-                            <h4>@data.Key</h4>
-                            @if (false && data.Value is IEnumerable<string> messages)
-                            {
-                                <ol>
-                                    @foreach (var message in messages)
-                                    {
-                                        <li>@message</li>
-                                    }
-                                </ol>
-                            }
-                            else
-                            {
-                                <pre>@JsonSerializer.Serialize(data.Value, _showOptions)</pre>
-                            }
+                            <li>@valuePair.Key: @valuePair.Value </li>
                         }
-
-                    }
+                    </ul>
+                    <hr/>
                 }
-                @ContentMore
+
+                @foreach (var data in more.Where(m => m.Value != default))
+                {
+                    <h4>@data.Key</h4>
+                    <pre>@JsonSerializer.Serialize(data.Value, jsonOptions)</pre>
+                }
             </div>
         </div>
     </div>

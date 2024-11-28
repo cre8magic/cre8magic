@@ -54,12 +54,12 @@ Nice to know:
 @if (menuKit.IsVariant("vertical"))
 {
     <MagicMenuVertical Current="@menuKit.Root">
-        <Debug><li><MagicMenuDebug MenuKit="@menuKit" Standalone="true"></MagicMenuDebug></li></Debug>
+        <Debug><li><MagicDebug Target="@menuKit"></MagicDebug></li></Debug>
     </MagicMenuVertical>
 }
 else
 {
     <MagicMenuHorizontal Current="@menuKit.Root">
-        <Debug><li><MagicMenuDebug MenuKit="@menuKit" Standalone="true"></MagicMenuDebug></li></Debug>
+        <Debug><li><MagicDebug Target="@menuKit"></MagicDebug></li></Debug>
     </MagicMenuHorizontal>
 }

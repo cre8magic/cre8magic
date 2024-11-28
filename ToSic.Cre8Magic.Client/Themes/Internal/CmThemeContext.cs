@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
+﻿using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 
 namespace ToSic.Cre8magic.Themes.Internal;
@@ -15,6 +16,6 @@ public record CmThemeContext(
     Journal Journal
 )
 {
-    internal ThemePartNameResolver NameResolver => _nameResolver ??= new(this);
-    private ThemePartNameResolver? _nameResolver;
+    [field: AllowNull, MaybeNull]
+    internal ThemePartNameResolver NameResolver => field ??= new(this);
 }

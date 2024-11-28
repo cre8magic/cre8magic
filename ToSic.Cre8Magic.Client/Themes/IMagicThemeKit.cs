@@ -1,8 +1,9 @@
-﻿using ToSic.Cre8magic.Themes.Internal;
+﻿using ToSic.Cre8magic.Internal.Debug;
+using ToSic.Cre8magic.Themes.Internal;
 
 namespace ToSic.Cre8magic.Themes;
 
-public interface IMagicThemeKit
+public interface IMagicThemeKit: IHasDebugInfo
 {
     MagicThemeSettings Settings { get; }
     MagicThemeDesigner Designer { get; }

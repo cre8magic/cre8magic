@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Languages.Internal;
+﻿using ToSic.Cre8magic.Internal.Debug;
+
+namespace ToSic.Cre8magic.Languages.Internal;
 
 /// <summary>
 /// </summary>
@@ -20,4 +22,28 @@ internal record MagicLanguageKit : IMagicLanguageKit
     public required IMagicLanguageService Service { get; init; }
 
     public Task SetCultureAsync(string culture) => Service.SetCultureAsync(culture);
+
+    public DebugInfo GetDebugInfo()
+    {
+        var debugInfo = new DebugInfo
+        {
+            Title = "Language Settings (Debug)",
+            More = new()
+            {
+                { "Language Settings", Settings },
+                { "Languages To Show", Languages },
+                { "Language Design", Settings.DesignSettings },
+            },
+            Settings = Settings,
+            Values = new()
+            {
+                { "Part Name", DebugInfo.ShowNotSet(Settings.PartName) },
+                { "Show", Show + "" },
+                { "Settings Name", DebugInfo.ShowNotSet(Settings.SettingsName) },
+                { "Design Name", DebugInfo.ShowNotSet(Settings.DesignName) },
+            }
+        };
+        return debugInfo;
+
+    }
 }

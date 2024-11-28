@@ -10,6 +10,9 @@ Nice to know:       Most of the parts are again other controls (icon, navigation
     /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
     public required PageState PageState { get; set; }
+
+    [Parameter, EditorRequired]
+    public required IMagicThemeKit ThemeKit { get; set; }
 }
 @* The header containing Logo, Navigation etc. in Desktop and Mobile*@
 <nav id="@ClassPrefix-page-navigation" class="navbar navbar-expand-lg bg-white">
@@ -40,7 +43,7 @@ Nice to know:       Most of the parts are again other controls (icon, navigation
                         <ButtonLogin></ButtonLogin>
                         <ButtonEdit></ButtonEdit>
                         <ButtonControlPanel></ButtonControlPanel>
-                        <MagicThemeDebug></MagicThemeDebug>
+                        <MagicDebug Target="@ThemeKit"></MagicDebug>
                     </div>
                 </div>
             </div>
