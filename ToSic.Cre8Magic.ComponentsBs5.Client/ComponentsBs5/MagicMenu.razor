@@ -1,7 +1,5 @@
-﻿@using Oqtane.Models
-@using Oqtane.UI
+﻿@using Oqtane.UI
 @using ToSic.Cre8magic.ComponentsBs5.Debug
-@using ToSic.Cre8magic.Internal
 @using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.Settings
 @inject IMagicHat MagicHat
@@ -30,40 +28,38 @@ Nice to know:
     /// If provided, it may still merge these with other settings (like in PartName was specified).
     /// </summary>
     [Parameter] public MagicMenuSettings? Settings { get; set; }
-
-    protected IMagicMenuKit MenuKit => (_debouncer ??= new(() => MagicHat.MenuKit(Settings.With(PageState)), () => PageState)).Get();
-    private Debouncer<IMagicMenuKit>? _debouncer;
 }
 @{
-    var MenuKit = MagicHat.MenuKit(Settings.With(PageState));
+    // Get the latest menu kit on each render, using the latest PageState
+    var menuKit = MagicHat.MenuKit(Settings.With(PageState));
 }
 @* Special Debugging *@
-@if (true)
+@if (false)
 {
-    var debug = MenuKit.Settings.Debug;
+    var debug = menuKit.Settings.Debug;
     <div class="alert alert-info">
         @* ConfigName: @(Menu?.Settings.ConfigName) <br/> *@
-        HasChildren: @(MenuKit.Root.Children.Any()) - @MenuKit.Root.Children.Count() <br />
-        Debug: @debug?.Allowed / @debug?.Anonymous / @debug?.Admin <br/>
+        @* HasChildren: @(menuKit.Root.Children.Any()) - @menuKit.Root.Children.Count() <br /> *@
+        @* Debug: @debug?.Allowed / @debug?.Anonymous / @debug?.Admin <br/> *@
         @* This: @Menu?.Name (@Menu?.Link) <br/> *@
-        Variant: @MenuKit.Variant <br/>
-        Ul-Classes: @MenuKit.Root.Classes("ul") <br />
-        Li-Classes: @MenuKit.Root.Classes("li") <br />
-        A-Classes: @MenuKit.Root.Classes("a") <br />
+        @* Variant: @menuKit.Variant <br/> *@
+        @* Ul-Classes: @menuKit.Root.Classes("ul") <br /> *@
+        @* Li-Classes: @menuKit.Root.Classes("li") <br /> *@
+        @* A-Classes: @menuKit.Root.Classes("a") <br /> *@
         AccessCounter: @MagicHat.MenuKitAccessCounter
     </div>
 }
 
 @* Show the desired menu - in this setup we have 2 options. If you need more, change the conditions to check for Menu?.Settings.Template *@
-@if (MenuKit.IsVariant("vertical"))
+@if (menuKit.IsVariant("vertical"))
 {
-    <MagicMenuVertical Current="@MenuKit.Root">
-        <Debug><li><MagicMenuDebug MenuKit="@MenuKit" Standalone="true"></MagicMenuDebug></li></Debug>
+    <MagicMenuVertical Current="@menuKit.Root">
+        <Debug><li><MagicMenuDebug MenuKit="@menuKit" Standalone="true"></MagicMenuDebug></li></Debug>
     </MagicMenuVertical>
 }
 else
 {
-    <MagicMenuHorizontal Current="@MenuKit.Root">
-        <Debug><li><MagicMenuDebug MenuKit="@MenuKit" Standalone="true"></MagicMenuDebug></li></Debug>
+    <MagicMenuHorizontal Current="@menuKit.Root">
+        <Debug><li><MagicMenuDebug MenuKit="@menuKit" Standalone="true"></MagicMenuDebug></li></Debug>
     </MagicMenuHorizontal>
 }
