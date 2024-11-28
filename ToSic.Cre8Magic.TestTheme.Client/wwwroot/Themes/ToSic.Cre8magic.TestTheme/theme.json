@@ -35,9 +35,11 @@
     // Default Theme - in most cases you'll just use this theme configuration
     "default": {
       // Optional: Design Names with "=" mean they inherit / use the name already existing - in this case "default"
-      "design": "=",
+      //"design": "=",
+      "design": "funky",
       "logo": "[Theme.Url]/assets/logo.svg",
-      //"languagesMin": 2, - not used any more in v0.2.0
+
+      // Configure various parts of this theme
       "parts": {
         // Show breadcrumbs. Note that on home it won't be visible due to CSS rules + MagicContext)
         "breadcrumbs": true,
@@ -63,8 +65,6 @@
           "design": "none"
         }
       },
-      // WIP / Testing
-      "magicContextInBody": false,
       "debug": {
         "Admin": true
       }
@@ -113,7 +113,7 @@
   "themeDesigns": {
     // This is the default design which is used unless explicitly specified
     "default": {
-      "paneIsEmpty": "pane-is-empty", // On/Off
+      "paneIsEmpty": "pane-is-empty test-a", // On/Off
 
       // Custom values / classes as you need them in your code
       "parts": {
@@ -148,6 +148,10 @@
           "id": "theme-to-top"
         }
       }
+    },
+    "funky": {
+      "@inherits": "default",
+      "paneIsEmpty": "pane-is-empty settings-funky" // On/Off
     }
   },
 
@@ -300,13 +304,16 @@
       "parts": {
         "ul": {
           "byLevel": {
+            // WIP
+            "0": "navbar-nav - around menu",
             "1": "navbar-nav",
             // 2dm 2024-11-08 previously 'dropdown-menu' but then it was not visible any more in this Bootstrap5, disabled for now
             "-1": "dropdown-menu-xxx-disabled"
           }
         },
         "li": {
-          "classes": "nav-item nav-[Page.Id]",
+          // Test with page-id in the menu
+          "classes": "nav-item nav-[Page.Id] nav-layout-[Layout.Variation]",
           "hasChildren": "has-child dropdown",
           "isActive": "active",
           "isDisabled": "disabled"
@@ -325,6 +332,8 @@
       "parts": {
         "ul": {
           "byLevel": {
+            // WIP
+            "0": "navbar-nav",
             "1": "navbar-nav",
             "-1": "collapse theme-submenu-[Menu.Id]-[Page.Id]"
           },
