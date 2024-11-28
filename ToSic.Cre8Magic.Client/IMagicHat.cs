@@ -58,7 +58,7 @@ public interface IMagicHat
     IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSettings? settings = default);
 
     /// <inheritdoc cref="IMagicThemeService.ThemeKit"/>
-    IMagicThemeKit ThemeKit(PageState pageState);
+    IMagicThemeKit ThemeKit(MagicThemeSettings? settings = default);
 
     IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = default);
 

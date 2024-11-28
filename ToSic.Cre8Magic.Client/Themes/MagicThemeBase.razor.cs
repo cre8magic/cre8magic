@@ -66,7 +66,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     [Inject]
     public required IMagicHat MagicHat { get; set; }
 
-    public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicHat.ThemeKit(PageState));
+    public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicHat.ThemeKit(new() { PageState = PageState }));
     private readonly GetKeepByPageId<IMagicThemeKit> _themeKit = new();
 
     protected override void OnParametersSet()
@@ -81,6 +81,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     protected override void OnInitialized()
     {
         base.OnInitialized();
+        MagicHat.UsePageState(PageState);
         if (ThemePackage != null)
             MagicHat.UseSettingsPackage(ThemePackage, Layout);
     }

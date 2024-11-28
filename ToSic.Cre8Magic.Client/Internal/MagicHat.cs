@@ -113,6 +113,6 @@ internal class MagicHat(
         linkSvc.Value.Link(pageState, linkSpecs);
 
     /// <inheritdoc />
-    public IMagicThemeKit ThemeKit(PageState pageState) =>
-        themeSvc.Value.ThemeKit(pageState);
+    public IMagicThemeKit ThemeKit(MagicThemeSettings? settings = default) =>
+        themeSvc.Value.ThemeKit(GetPageStateOrThrow(settings?.PageState), settings);
 }

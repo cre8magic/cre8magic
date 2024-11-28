@@ -4,11 +4,12 @@ using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Themes.Settings;
+using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.MagicConstants;
 
 namespace ToSic.Cre8magic.Themes;
 
-public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanClone<MagicThemeSettings>
+public record MagicThemeSettings: MagicSettingsBase, IHasDebugSettings, ICanClone<MagicThemeSettings>
 {
     #region Constructor & Clone
     
@@ -20,10 +21,9 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     {
         Logo = priority?.Logo ?? fallback?.Logo ?? Defaults.Fallback.Logo;
 
-        // TODO: #NamedSettings
-        Parts = priority?.Parts ?? fallback?.Parts ?? new();
+        Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
 
-        Design = priority?.Design ?? fallback?.Design ?? Defaults.Fallback.Design;
+        Design = priority?.Design ?? fallback?.Design;
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
@@ -37,18 +37,15 @@ public record MagicThemeSettings: SettingsWithInherit, IHasDebugSettings, ICanCl
     /// </summary>
     public string? Logo { get; init; }
 
-    //public int LanguagesMin { get; init; }
-
     /// <summary>
     /// The parts of this theme, like breadcrumb and various menu configs
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemePartSettings>))]
     public Dictionary<string, MagicThemePartSettings> Parts { get; init; } = new();
 
-
     public string? Design { get; init; }
 
-    public MagicDebugSettings? Debug { get; init; }
+    //public MagicDebugSettings? Debug { get; init; }
 
     internal static Defaults<MagicThemeSettings> Defaults = new(new()
     {
