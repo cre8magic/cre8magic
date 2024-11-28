@@ -1,0 +1,120 @@
+﻿@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.ComponentsBs5
+<h1>Test many Menus</h1>
+
+@code {
+    public const string TopLevelWithSubpagesId = "29";
+    //public const string TopLevelWithSubpagesId = "15";
+
+    // Temp for less debugging
+    public bool ShowAll = true;
+}
+@* This wrapper sets the style so the menu is row-focused*@
+<div class="navbar-expand-lg">
+    @if (ShowAll)
+    {
+        <h1>test 2dm cleanups</h1>
+
+        <h2>No Settings</h2>
+        <h3>Basic Menu without Setting, name none</h3>
+        <MagicMenu></MagicMenu>
+        <hr/>
+    
+        <h2>Various Settings</h2>
+        <h3>Only one specific page (@nameof(MagicMenuSettings.Start)), no other params</h3>
+        <MagicMenu Settings="new() { Start = TopLevelWithSubpagesId }"></MagicMenu>
+
+        <h3>Only one specific page (@nameof(MagicMenuSettings.Start), @nameof(MagicMenuSettings.Depth) = 0)</h3>
+        <MagicMenu Settings="new() { Start = TopLevelWithSubpagesId, Depth = 0 }"></MagicMenu>
+
+        <h3>Only one specific page @TopLevelWithSubpagesId, with Depth=1</h3>
+        <MagicMenu Settings="new() { Start = TopLevelWithSubpagesId, Depth = 1 }"></MagicMenu>
+
+        <hr/>
+        <h2>Start at current level</h2>
+        <h3>Current level only (should only show one page...)</h3>
+        <MagicMenu Settings='new() { Start = ".", Id = "test2" }'></MagicMenu>
+
+
+        <h3>Current level with children</h3>
+        <MagicMenu Settings='new() { Start = ".", Depth = 1, Id = "test3" }'></MagicMenu>
+
+        <h3>Current level children only</h3>
+        <MagicMenu Settings='new() { Start = ".", Children = true, Debug = new(true) }'></MagicMenu>
+
+        <h3>Current Parent level only, no children</h3>
+        <p>Debug true</p>
+        <MagicMenu Settings='new() { Start = ".", Depth = 0, Debug = new(true) }'></MagicMenu>
+        <p>Debug false</p>
+        <MagicMenu Settings='new() { Start = ".", Depth = 0, Debug = new(false) }'></MagicMenu>
+
+        <h3>Parent level children only, depth 0 (contradiction)</h3>
+        <MagicMenu Settings='new() { Start = ".", Children = true, Depth = 0, Debug = new(true) }'></MagicMenu>
+
+
+
+
+        <h3>Current from Root Level 1, no children</h3>
+        <MagicMenu Settings='new() { Start = ".", Level = 1, Children = false, Depth = 0, Debug = new(true) }'></MagicMenu>
+
+
+        <h3>Current from Root Level 1, children</h3>
+        <MagicMenu Settings='new() { Start = ".", Level = 1, Children = true, Depth = 0, Debug = new(true) }'></MagicMenu>
+
+
+        <h3>Current from Root Level 1, no-children Depth 1</h3>
+        <p>ERROR: THIS SEEMS WRONG</p>
+        <MagicMenu Settings='new() { Start = ".", Level = 1, Children = false, Depth = 1, Debug = new(true) }'></MagicMenu>
+
+        <h3>Current from Root Level 2</h3>
+        <MagicMenu Settings='new() { Start = ".", Level = 2, Children = true, Depth = 0, Debug = new(true) }'></MagicMenu>
+
+        <hr/>
+        <hr/>
+        <hr/>
+
+        <hr/>
+        <hr/>
+        <hr/>
+
+        @* TODO: CONTINUE HERE *@
+        <pre>WIP</pre>
+
+        <hr/>
+        <h2>Start with specific numbers</h2>
+        <h3>Specific Pages Listed here (Home, myPage, Login)</h3>
+        <MagicMenu Settings='new() { Start = "1, 3, 5!" }'></MagicMenu>
+
+        <h3>Specific Pages Listed in part "Footer"</h3>
+        <p>With PartName</p>
+        <MagicMenu Settings='new() { PartName = "Footer" }'></MagicMenu>
+        <p>With SettingsName</p>
+        <MagicMenu Settings='new() { SettingsName = "Footer" }'></MagicMenu>
+
+        <hr/>
+        <h2>Json Settings</h2>
+        <h3>Basic Menu without Setting, name "Main"</h3>
+        <MagicMenu Settings='new() { PartName = "Main" }'></MagicMenu>
+
+        <h3>Basic Menu without Setting, name "Mobile"</h3>
+        <p>
+            Important - may not be visible because of CSS
+        </p>
+        <MagicMenu Settings='new() { PartName = "Mobile" }'></MagicMenu>
+    }
+
+    <h3>Basic Menu without Setting, name "Sidebar"</h3>
+    <h4>PartName: SideBar</h4>
+    <p>With PartName</p>
+    <p>With PartName in Settings and debug activated</p>
+    <MagicMenu Settings='new() { PartName = "Sidebar", Debug = new(true) }'></MagicMenu>
+    
+    <h4>PartName: menu-test-part-unchanged</h4>
+    <MagicMenu Settings='new() { PartName = "menu-test-part-unchanged", Debug = new(true) }'></MagicMenu>
+    
+    
+    <h4>PartName: menu-test-part-rename-to-menu-new-name</h4>
+    <MagicMenu Settings='new() { PartName = "menu-test-part-rename-to-menu-new-name", Debug = new(true) }'></MagicMenu>
+
+    <hr/>
+</div>

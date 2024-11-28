@@ -41,6 +41,7 @@ internal class TestDatabase
         new("menu-basic", "Menus Basic", typeof(MenuControlsBasic)),
         new("menu-functions", "Menus Functions", typeof(MenuControlsFunctions)),
         new("menu-provide-design-red", "Menus Provide Design Red", typeof(MenuProvideDesignRed)),
+        new("menu-many", "Menu - Test Many", typeof(MenuTestMany)),
 
         // Special Tests
         new("sys-random-number-by-page", "Random Number by Page", typeof(TestGetKeep)),

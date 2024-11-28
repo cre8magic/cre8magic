@@ -1,4 +1,5 @@
 ﻿@inherits ComponentBase
+@using System.Diagnostics.CodeAnalysis
 @using System.Text.Json
 @using System.Text.Json.Serialization
 @using System.Text.Encodings.Web
@@ -24,8 +25,8 @@
 
     [Parameter] public RenderFragment? Button { get; set; }
 
-    private MagicDebugState Debug => _debug ??= SettingsService.Debug.GetState(Target, MagicHat.User(PageState).MayAdminCurrentPage);
-    private MagicDebugState? _debug;
+    [field: AllowNull, MaybeNull]
+    private MagicDebugState Debug => field ??= SettingsService.Debug.GetState(Target, MagicHat.User(PageState).MayAdminCurrentPage);
 
     private static JsonSerializerOptions _showOptions = new()
     {

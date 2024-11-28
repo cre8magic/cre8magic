@@ -20,33 +20,11 @@ public abstract class MagicMenuRoot: ThemeControlBase
     /// Complex object with all settings.
     /// If this is used, all other settings will be ignored.
     /// </summary>
-    [Parameter] public MagicMenuSettings? MenuSettings { get; set; }
-
-    [Parameter] public bool? Debug { get; set; }
-
-
-    #region Properties which should not be used any more - to be removed
-
-    [Parameter] public string? MenuId { get; set; }
-    [Parameter] public string? PartName { get; set; }
-    /// <inheritdoc />
-    [Parameter] public List<int>? PageList { get; set; }
-    [Parameter] public bool? Children { get; set; }
-
-    [Parameter] public int? Depth { get; set; }
-    [Parameter] public bool? Display { get; set; } = true;
-    [Parameter] public int? Level { get; set; }
-    [Parameter] public string? Start { get; set; }
-    [Parameter] public string? Design { get; set; }
-
-    #endregion
-
-
-    [Parameter] public string? Template { get; set; }
+    [Parameter] public MagicMenuSettings? Settings { get; set; }
 
     [Inject] public required IMagicHat MagicHat { get; set; }
 
-    protected IMagicMenuKit MenuKit => _menuKit ??= GetMenuKit();
+    protected IMagicMenuKit MenuKit => _menuKit ??= MagicHat.MenuKit(Settings.With(PageState));
     private IMagicMenuKit? _menuKit;
 
     protected override async Task OnParametersSetAsync()
@@ -55,26 +33,5 @@ public abstract class MagicMenuRoot: ThemeControlBase
         // if parameters changed, reset menuKit
         _menuKit = null;
     }
-
-    private IMagicMenuKit GetMenuKit()
-    {
-        var startSettings = MenuSettings;
-        var menuSettings = MenuSettings ?? new MagicMenuSettings
-        {
-            Id = MenuId ?? startSettings?.MenuId,
-            Debug = Debug == null
-                ? startSettings?.Debug
-                : new() { Allowed = Debug, Admin = Debug, Anonymous = Debug },
-            Template = Template ?? startSettings?.Template,
-            Children = Children ?? startSettings?.Children,
-            PartName = PartName ?? startSettings?.PartName,
-            Depth = Depth ?? startSettings?.Depth,
-            Display = Display ?? startSettings?.Display,
-            Level = Level ?? startSettings?.Level,
-            Start = Start ?? startSettings?.Start
-        };
-
-        return MagicHat.MenuKit(menuSettings.With(PageState));
-    }
-
+    
 }

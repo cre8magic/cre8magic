@@ -11,7 +11,10 @@ Nice to know:       See `MenuDefault.razor`
     [Parameter, EditorRequired]
     [field: AllowNull]
     public required IMagicPage Current { get; init; }
-}
+
+    // Additional debug stuff which is only visible when activated
+    [Parameter] public RenderFragment? Debug { get; set; }
+}    
 @if (Current.Children.Any())
 {
     <ul class='@Current.Classes("ul")'>
@@ -31,5 +34,6 @@ Nice to know:       See `MenuDefault.razor`
                 }
             </li>
         }
+        @Debug
     </ul>
 }

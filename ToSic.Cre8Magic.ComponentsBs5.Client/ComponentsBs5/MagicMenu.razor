@@ -32,18 +32,13 @@ Nice to know:
 @* Show the desired menu - in this setup we have 2 options. If you need more, change the conditions to check for Menu?.Settings.Template *@
 @if (MenuKit.IsVariant("vertical"))
 {
-    <MagicMenuVertical Current="@MenuKit.Root"></MagicMenuVertical>
+    <MagicMenuVertical Current="@MenuKit.Root">
+        <Debug><li><MagicMenuDebug MenuKit="@MenuKit" Standalone="true"></MagicMenuDebug></li></Debug>
+    </MagicMenuVertical>
 }
 else
 {
-    <MagicMenuHorizontal Current="@MenuKit.Root"></MagicMenuHorizontal>
-}
-@if (!MenuKit.Root.Children.Any())
-{
-    @* Debug Information in cases where the menu doesn't even show *@
-    <MagicMenuDebug MenuKit="@MenuKit" Standalone="true"></MagicMenuDebug>
-}
-@if (true)
-{
-    <div>End-Of-Menu</div>
+    <MagicMenuHorizontal Current="@MenuKit.Root">
+        <Debug><li><MagicMenuDebug MenuKit="@MenuKit" Standalone="true"></MagicMenuDebug></li></Debug>
+    </MagicMenuHorizontal>
 }
