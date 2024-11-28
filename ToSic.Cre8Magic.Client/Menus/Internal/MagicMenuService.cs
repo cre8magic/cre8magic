@@ -44,11 +44,15 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         };
 
         var nodeFactory = new MagicMenuNodeFactory(context);
-        var list = new MagicPageList(pageFactory, nodeFactory, GetRootPages(context, nodeFactory));
-        var design = new PageListDesignWip(list);
+        var root = new MagicPage(new() /* fake page, just for providing classes / values to the root outside the menu */, pageFactory, nodeFactory)
+        {
+            IsVirtualRoot = true,
+            MenuLevel = 0,
+        };
+        var design = new PageListDesignWip(root);
         var kit = new MagicMenuKit
         {
-            Pages = list,
+            Page = root,
             Settings = newSettings,
             Context = context,
             Design = design
@@ -68,31 +72,31 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
             finalize: (settingsData, designSettings) => settingsData with /*new(settingsData, settings)*/ { DesignSettings = designSettings });
 
 
-    private static List<IMagicPageWithDesignWip> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)
-    {
-        var log = context.LogRoot.GetLog("get-root");
+    //private static List<IMagicPage> GetRootPages(MagicMenuContextWip context, MagicMenuNodeFactory nodeFactory)
+    //{
+    //    var log = context.LogRoot.GetLog("get-root");
 
-        var pageFactory = context.PageFactory;
-        var settings = context.Settings;
+    //    var pageFactory = context.PageFactory;
+    //    var settings = context.Settings;
         
-        // Add break-point for debugging during development
-        if (pageFactory.PageState.IsDebug())
-            pageFactory.PageState.DoNothing();
+    //    // Add break-point for debugging during development
+    //    if (pageFactory.PageState.IsDebug())
+    //        pageFactory.PageState.DoNothing();
 
-        var l = log.Fn<List<IMagicPageWithDesignWip>>("Root");
-        l.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
+    //    var l = log.Fn<List<IMagicPage>>("Root");
+    //    l.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
 
-        var levelsRemaining = nodeFactory.MaxDepth;
-        if (levelsRemaining < 0)
-            return l.Return([], "remaining levels 0 - return empty");
+    //    var levelsRemaining = nodeFactory.MaxDepth;
+    //    if (levelsRemaining < 0)
+    //        return l.Return([], "remaining levels 0 - return empty");
 
-        var rootPages = new NodeRuleHelper(pageFactory, pageFactory.Current, settings, log).GetRootPages();
-        l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
+    //    var rootPages = new NodeRuleHelper(pageFactory, pageFactory.Current, settings, log).GetRootPages();
+    //    l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
-        var children = rootPages
-            .Select(child => new MagicPageWithDesign(pageFactory, nodeFactory, child, 2 /* todo: should probably be 1 */) as IMagicPageWithDesignWip)
-            .ToList();
-        return l.Return(children, $"{children.Count}");
-    }
+    //    var children = rootPages
+    //        .Select(child => new MagicPageWithDesign(pageFactory, nodeFactory, child, 2 /* todo: should probably be 1 */) as IMagicPage)
+    //        .ToList();
+    //    return l.Return(children, $"{children.Count}");
+    //}
 
 }

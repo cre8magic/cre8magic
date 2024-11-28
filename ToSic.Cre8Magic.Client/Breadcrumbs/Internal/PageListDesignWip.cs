@@ -8,10 +8,10 @@ namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 ///
 /// Should be refactored afterward, to not need the page list but something better
 /// </summary>
-/// <param name="pageListWip"></param>
-internal class PageListDesignWip(IMagicPageList pageListWip) : IMagicDesign
+/// <param name="page"></param>
+internal class PageListDesignWip(IMagicPage page) : IMagicDesign
 {
-    public string? Classes(string tag) => pageListWip.Classes(tag);
+    public string? Classes(string tag) => page.Classes(tag);
 
-    public string? Value(string key) => pageListWip.Value(key);
+    public string? Value(string tagOrKey) => page.Value(tagOrKey);
 }

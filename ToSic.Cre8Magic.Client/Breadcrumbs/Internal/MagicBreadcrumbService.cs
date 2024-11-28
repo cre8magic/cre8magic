@@ -17,13 +17,24 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
     {
         var (settingsFull, _, themePart, _) = MergeSettings(pageState, settings);
 
-        var factory = new MagicPageFactory(pageState);
+        var pageFactory = new MagicPageFactory(pageState);
         var show = themePart?.Show != false;
-        var list = factory.Breadcrumb.Get(settingsFull);
-        var design = new PageListDesignWip(list);
+        var (pages, childrenFactory) = pageFactory.Breadcrumb.Get(settingsFull);
+        //var firstPage = list.FirstOrDefault();
+        //var design = new PageListDesignWip(firstPage);
+
+        var root = new MagicPage(new() /* fake page, just for providing classes / values to the root outside the menu */, pageFactory, childrenFactory)
+        {
+            IsVirtualRoot = true,
+            MenuLevel = 0,
+        };
+        var design = new PageListDesignWip(root);
+
+        //var design = childrenFactory.DesignHelper(root);
+
         return new MagicBreadcrumbKit
         {
-            Pages = list,
+            Pages = pages,
             Settings = settingsFull,
             Show = show,
             Design = design

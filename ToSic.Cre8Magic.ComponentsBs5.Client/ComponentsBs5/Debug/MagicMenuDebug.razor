@@ -15,7 +15,7 @@
         { "Log", MenuKit?.GetLogEntries() }
     };
 }
-@if (MenuKit?.Pages.MenuLevel == 1)
+@if (MenuKit?.Page.MenuLevel == 1)
 {
     <MagicDebug Target="@MenuKit?.Settings" Title="Settings (Menu)" More="GetMore()">
         <Button>

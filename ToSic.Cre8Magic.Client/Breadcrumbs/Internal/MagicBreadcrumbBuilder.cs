@@ -6,9 +6,9 @@ namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
 internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
 {
-    internal IMagicPageList Get(MagicBreadcrumbSettings? settings = default)
+    internal (IEnumerable<IMagicPage> Pages, IMagicPageChildrenFactory ChildrenFactory) Get(MagicBreadcrumbSettings? settings = default)
     {
-        settings ??= MagicBreadcrumbSettings.Defaults.Fallback; // new(MagicBreadcrumbSettings.Defaults.Fallback, null);
+        settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
         var context = new ContextWip<MagicBreadcrumbSettings, IMagicPageDesigner>
         {
             Designer = settings.Designer,
@@ -17,15 +17,16 @@ internal class MagicBreadcrumbBuilder(MagicPageFactory pageFactory)
             TokenEngineWip = null, // TODO: SHOULD provide AllSettings or whatever will replace it, so we can get the Page tokens
             Settings = settings,
         };
-        var factory = new MagicBreadcrumbNodeFactory(context);
-        var list = Get(
+
+        var childrenFactory = new MagicBreadcrumbNodeFactory(context);
+        var list = BuildBreadcrumbs(
             settings,
-            magicPage => new MagicPageWithDesign(pageFactory, factory, magicPage)
+            magicPage => new MagicPage(magicPage.OqtanePage, pageFactory, childrenFactory)
         );
-        return new MagicPageList(pageFactory, factory, list);
+        return (list, childrenFactory);
     }
 
-    private IEnumerable<TPage> Get<TPage>(MagicBreadcrumbSettings settings, Func<IMagicPage, TPage> generator)
+    private IEnumerable<TPage> BuildBreadcrumbs<TPage>(MagicBreadcrumbSettings settings, Func<IMagicPage, TPage> generator)
     {
         // Check if we have a specified current page
         var endPage = settings.Active;

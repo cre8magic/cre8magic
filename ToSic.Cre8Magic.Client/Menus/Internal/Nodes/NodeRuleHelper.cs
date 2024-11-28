@@ -22,7 +22,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
 
     private IMagicPage Current { get; } = current;
 
-    internal List<IMagicPage> GetRootPages()
+    internal List<IMagicPage> GetRootNodes()
     {
         var l = Log.Fn<List<IMagicPage>>($"{Current.Id}");
         // Give empty list if we shouldn't display it
@@ -97,16 +97,16 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
                 // If coming from the top, level 1 means top level, so skip one less
                 //var skipDown = n.Level - 1; // till 2023-11-14
                 var skipDown = n.Level; // new 2024-11-14, since the Root is now in it too...
-                var breadcrumb = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
-                var fromTop = breadcrumb.Skip(skipDown).FirstOrDefault();
+                var (pages, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
+                var fromTop = pages.Skip(skipDown).FirstOrDefault();
                 List<IMagicPage> fromTopResult = fromTop == null ? [] : [fromTop];
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
 
             case StartMode.Current when n.Level < 0:
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
-                breadcrumb = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
-                var fromCurrent = breadcrumb.Skip(skipUp).FirstOrDefault();
+                (pages, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
+                var fromCurrent = pages.Skip(skipUp).FirstOrDefault();
                 List<IMagicPage> result = fromCurrent == null ? [] : [fromCurrent];
                 return l.Return(result, $"up the ancestors by {skipUp}");
 

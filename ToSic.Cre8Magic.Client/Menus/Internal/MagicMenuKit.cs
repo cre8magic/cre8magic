@@ -8,9 +8,11 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// <summary>
 /// tbd
 /// </summary>
-public record MagicMenuKit : IMagicMenuKit
+internal record MagicMenuKit : IMagicMenuKit
 {
-    public required IMagicPageList Pages { get; init; }
+    public required IMagicPage Page { get; init; }
+
+    public IEnumerable<IMagicPage> Pages => Page.Children;
 
     public required MagicMenuSettings Settings { get; init; }
 
@@ -27,10 +29,10 @@ public record MagicMenuKit : IMagicMenuKit
     public /* actually internal */ required IContextWip Context { get; init; }
 
     // TODO: naming not final
-    public IMagicMenuKit Kit(IMagicPageWithDesignWip page) =>
+    public IMagicMenuKit Kit(IMagicPage page) =>
         this with
         {
-            Pages = page,
+            Page = page,
             Design = new PageListDesignWip(page),
         };
 }

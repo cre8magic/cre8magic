@@ -21,13 +21,22 @@
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RootNamespace>$(MSBuildProjectName.Replace(".Client", "").Replace(" ", "_"))</RootNamespace>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Models\**" />
+    <Compile Remove="Pages\Internal\Breadcrumb\**" />
+    <Compile Remove="Pages\Internal\Menu\**" />
     <Content Remove="Models\**" />
+    <Content Remove="Pages\Internal\Breadcrumb\**" />
+    <Content Remove="Pages\Internal\Menu\**" />
     <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Pages\Internal\Breadcrumb\**" />
+    <EmbeddedResource Remove="Pages\Internal\Menu\**" />
     <None Remove="Models\**" />
+    <None Remove="Pages\Internal\Breadcrumb\**" />
+    <None Remove="Pages\Internal\Menu\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,8 +68,6 @@
 
   <ItemGroup>
     <Folder Include="Blazor\" />
-    <Folder Include="Pages\Internal\Breadcrumb\" />
-    <Folder Include="Pages\Internal\Menu\" />
   </ItemGroup>
 
   <ItemGroup>

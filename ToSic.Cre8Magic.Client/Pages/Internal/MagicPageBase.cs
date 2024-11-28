@@ -51,6 +51,6 @@ internal class MagicPageBase(Page oqtanePage)
     /// <summary>
     /// Determines if there are sub-pages. True if this page has sub-pages.
     /// </summary>
-    public bool HasChildren => OqtanePage.HasChildren;
+    public virtual bool HasChildren => OqtanePage.HasChildren;
     
 }

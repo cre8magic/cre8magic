@@ -18,7 +18,7 @@ public interface IMagicMenuKit
     /// 
     /// Can contain child pages.
     /// </summary>
-    IMagicPageList Pages { get; init; }
+    IMagicPage Page { get; init; }
 
     /// <summary>
     /// The settings used to retrieve and build the pages.
@@ -31,9 +31,10 @@ public interface IMagicMenuKit
     /// </summary>
     string Variant { get; }
 
-    IMagicDesign Design { get; init; }
+    IMagicDesign Design { get; }
+    IEnumerable<IMagicPage> Pages { get; }
 
-    IMagicMenuKit Kit(IMagicPageWithDesignWip page);
+    IMagicMenuKit Kit(IMagicPage page);
 
     /// <summary>
     /// Check if the menu is of a specific variant. Case-insensitive.

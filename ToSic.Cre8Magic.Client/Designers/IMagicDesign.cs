@@ -3,16 +3,16 @@
 public interface IMagicDesign
 {
     /// <summary>
-    /// Get css class for tag.
+    /// Get css class for something - typically a tag.
     /// </summary>
-    /// <param name="tag"></param>
+    /// <param name="tagOrId"></param>
     /// <returns></returns>
-    string? Classes(string tag);
+    string? Classes(string tagOrId);
 
     /// <summary>
-    /// Get attribute value.
+    /// Get some value - often for an attribute or something similar.
     /// </summary>
-    /// <param name="key"></param>
+    /// <param name="tagOrKey"></param>
     /// <returns></returns>
-    string? Value(string key);
+    string? Value(string tagOrKey);
 }

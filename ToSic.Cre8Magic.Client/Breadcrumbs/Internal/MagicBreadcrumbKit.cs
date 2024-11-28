@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
 internal record MagicBreadcrumbKit : IMagicBreadcrumbKit
 {
-    public required IMagicPageList Pages { get; init; }
+    public required IEnumerable<IMagicPage> Pages { get; init; }
 
     public required MagicBreadcrumbSettings Settings { get; init; }
 

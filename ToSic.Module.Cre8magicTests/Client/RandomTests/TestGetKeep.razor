@@ -4,7 +4,7 @@
 
 @code{
     [Parameter, EditorRequired]
-    public IMagicPageList Menu { get; set; }
+    public IEnumerable<IMagicPage> Menu { get; set; }
 
     protected object RandomNumberPerPage => _breadcrumbs.Get(
         () => (new Random().Next(1000, 9999), PageState.Page.PageId),

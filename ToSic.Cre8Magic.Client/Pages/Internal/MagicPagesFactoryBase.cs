@@ -1,15 +1,17 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Pages.Internal.PageDesign;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
-internal abstract class MagicPagesFactoryBase(IContextWip context)
+internal abstract class MagicPagesFactoryBase(IContextWip context) : IMagicPageChildrenFactory
 {
     #region Logging
 
-    internal Log Log => _log ??= context.LogRoot.GetLog(GetType().Name);
-    private Log? _log;
+    [field: AllowNull, MaybeNull]
+    internal Log Log => field ??= context.LogRoot.GetLog(GetType().Name);
 
     #endregion
 
@@ -21,8 +23,10 @@ internal abstract class MagicPagesFactoryBase(IContextWip context)
 
     protected abstract IMagicPageDesigner FallbackDesigner();
 
-    internal IMagicPageDesigner Design => _designer ??= context.PageDesigner ?? FallbackDesigner();
-    private IMagicPageDesigner? _designer;
+    [field: AllowNull, MaybeNull]
+    internal IMagicPageDesigner Design => field ??= context.PageDesigner ?? FallbackDesigner();
+
+    public IPageDesignHelperWip DesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page);
 
     /// <summary>
     /// 
@@ -51,13 +55,16 @@ internal abstract class MagicPagesFactoryBase(IContextWip context)
     /// For example the MagicMenuPageSetHelper will stop if a certain depth has been reached.
     /// </summary>
     /// <returns></returns>
-    public virtual List<IMagicPageWithDesignWip> GetChildren(IMagicPage page)
+    public virtual List<IMagicPage> ChildrenOf(IMagicPage page)
     {
-        var l = Log.Fn<List<IMagicPageWithDesignWip>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
+        var l = Log.Fn<List<IMagicPage>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
 
         var pageFactory = context.PageFactory;
         var children = pageFactory.ChildrenOf(page.Id)
-            .Select(child => new MagicPageWithDesign(pageFactory, this, child, page.MenuLevel + 1) as IMagicPageWithDesignWip)
+            .Select(IMagicPage (child) => new MagicPage(child.OqtanePage, pageFactory, this)
+            {
+                MenuLevel = page.MenuLevel + 1,
+            })
             .ToList();
         return l.Return(children, $"{children.Count}");
     }

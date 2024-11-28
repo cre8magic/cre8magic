@@ -1,4 +1,5 @@
 ﻿using Oqtane.Models;
+using ToSic.Cre8magic.Designers;
 
 namespace ToSic.Cre8magic.Pages;
 
@@ -13,10 +14,16 @@ namespace ToSic.Cre8magic.Pages;
 /// 1. Navigation properties such as `Parent` and `Breadcrumb`
 /// </summary>
 public interface IMagicPage
+    // TODO: SHOULD GET RID OF ENUMERATOR LATER ON! AND CHANGE TO JUST ACCESSING THE CHILDREN
+    : IEnumerable<IMagicPage>
 {
     /// <summary>
     /// Level in the menu, starting from 1.
     /// As different menus may start at other depths, this is not always the same as the Oqtane level.
+    ///
+    /// Note that when building menus or breadcrumbs, this menu-level is recalculated to fit the current menu.
+    /// So if the menu itself starts at another level (e.g. showing only all pages under `Products`), then
+    /// these pages would declare they are MenuLevel=1
     /// </summary>
     int MenuLevel { get; }
 
@@ -93,10 +100,6 @@ public interface IMagicPage
     /// </summary>
     int Level { get; }
 
-    /// <summary>
-    /// Determines if there are sub-pages. True if this page has sub-pages.
-    /// </summary>
-    bool HasChildren { get; }
 
     #region Relationships
 
@@ -108,5 +111,20 @@ public interface IMagicPage
     /// </returns>
     IMagicPage? Parent { get; }
 
+    IEnumerable<IMagicPage> Children { get; }
+
+    /// <summary>
+    /// Determines if there are sub-pages.
+    /// Note that this information will vary by user (because of permissions) and scenario.
+    /// For example, when creating a menu which should only show 1 level, all pages will declare they have no children.
+    /// </summary>
+    bool HasChildren { get; }
+
     #endregion
+
+    /// <inheritdoc cref="IMagicDesign.Classes" />
+    string? Classes(string tag);
+
+    /// <inheritdoc cref="IMagicDesign.Value" />
+    string? Value(string key);
 }

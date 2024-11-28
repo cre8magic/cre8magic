@@ -1,8 +1,10 @@
-﻿using Oqtane.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+using Oqtane.Models;
 using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
+using ToSic.Cre8magic.Pages.Internal.PageDesign;
 using ToSic.Cre8magic.Utils.Logging;
 using Log = ToSic.Cre8magic.Utils.Logging.Log;
 
@@ -12,7 +14,7 @@ namespace ToSic.Cre8magic.Pages.Internal;
 /// Factory to create Magic Pages.
 /// This is necessary, because the pages need certain properties which require other services to be available.
 /// </summary>
-public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false, LogRoot? logRoot = default)
+public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false, LogRoot? logRoot = default): IMagicPageChildrenFactory
 {
     internal PageState PageState => pageState ?? throw new ArgumentNullException(nameof(pageState));
 
@@ -32,7 +34,7 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
     {
         if (_cache.TryGetValue(page, out var magicPage))
             return magicPage;
-        var newPage = new MagicPage(page, this);
+        var newPage = new MagicPage(page, this, this);
         _cache[page] = newPage;
         return newPage;
     }
@@ -64,8 +66,8 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
     public IEnumerable<IMagicPage> PagesCurrent() => _currentPages ??= restrictPages?.ToList() ?? (ignorePermissions ? PagesAll() : PagesUser()).ToList();
     private List<IMagicPage>? _currentPages;
 
-    private List<Page> OqtanePages => _oqtanePages ??= PageState.Pages.ToList();
-    private List<Page>? _oqtanePages;
+    [field: AllowNull, MaybeNull]
+    private List<Page> OqtanePages => field ??= PageState.Pages.ToList();
 
     #region Menu Pages - these are all the pages which the current user is allowed to see
 
@@ -97,8 +99,8 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
 
     #region Breadcrumb
 
-    internal MagicBreadcrumbBuilder Breadcrumb => _breadcrumbFactory ??= new(this);
-    private MagicBreadcrumbBuilder? _breadcrumbFactory;
+    [field: AllowNull, MaybeNull]
+    internal MagicBreadcrumbBuilder Breadcrumb => field ??= new(this);
 
     #endregion
 
@@ -112,8 +114,11 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
         return l.Return(result, result.LogPageList());
     }
 
+    public List<IMagicPage> ChildrenOf(IMagicPage page) => ChildrenOf(page.Id);
+
+    public IPageDesignHelperWip DesignHelper(IMagicPage page) => new PageDesignHelperBlank();
 
     #endregion
 
-    internal IMagicPage ErrPage(int id, string message) => new MagicPage(new() { PageId = id, Name = message }, this);
+    internal IMagicPage ErrPage(int id, string message) => new MagicPage(new() { PageId = id, Name = message }, this, this);
 }

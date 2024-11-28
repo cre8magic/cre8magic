@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 
 public interface IMagicBreadcrumbKit
 {
-    IMagicPageList Pages { get; }
+    IEnumerable<IMagicPage> Pages { get; }
     MagicBreadcrumbSettings Settings { get; }
 
     bool Show { get; }

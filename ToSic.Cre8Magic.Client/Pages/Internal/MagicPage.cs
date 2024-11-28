@@ -1,12 +1,16 @@
-﻿using Oqtane.Models;
-using ToSic.Cre8magic.Breadcrumbs;
+﻿using System.Collections;
+using System.Diagnostics.CodeAnalysis;
+using Oqtane.Models;
+using ToSic.Cre8magic.Pages.Internal.PageDesign;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
 /// <summary>
 /// Wrapper for the Oqtane Page.
 /// </summary>
-internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPageBase(oqtanePage), IMagicPage
+internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory, IMagicPageChildrenFactory childrenFactory)
+    : MagicPageBase(oqtanePage),
+        IMagicPage
 {
     /// <inheritdoc />
     public int MenuLevel
@@ -16,6 +20,9 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPa
     }
     private int? _menuLevel;
 
+    // TODO: WIP
+    internal bool IsVirtualRoot { get; init; }
+
     /// <inheritdoc />
     public bool IsActive => OqtanePage.PageId == pageFactory.PageState.Page.PageId;
 
@@ -23,16 +30,15 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPa
     public bool IsHome => OqtanePage.Path == "";
 
     /// <inheritdoc />
-    public string Link => _link ??= pageFactory.PageProperties.GetLink(this);
-    private string? _link;
+    [field: AllowNull, MaybeNull]
+    public string Link => field ??= pageFactory.PageProperties.GetLink(this);
 
     /// <inheritdoc />
-    public string? Target => _target ??= pageFactory.PageProperties.GetTarget(this);
-    private string? _target;
+    public string? Target => field ??= pageFactory.PageProperties.GetTarget(this);
 
     /// <inheritdoc />
-    public IEnumerable<IMagicPage> Breadcrumb => _breadcrumb ??= pageFactory.Breadcrumb.Get(new MagicBreadcrumbSettings { Active = this }).ToList();
-    private IEnumerable<IMagicPage>? _breadcrumb;
+    [field: AllowNull, MaybeNull]
+    public IEnumerable<IMagicPage> Breadcrumb => field ??= pageFactory.Breadcrumb.Get(new() { Active = this }).Pages;
 
 
     /// <inheritdoc />
@@ -58,5 +64,37 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory): MagicPa
     private IMagicPage? _parent;
     private bool _parentAlreadyTried;
 
+    /// <summary>
+    /// Get children of the current menu page.
+    /// </summary>
+    [field: AllowNull, MaybeNull]
+    public IEnumerable<IMagicPage> Children => field ??= childrenFactory.ChildrenOf(this);
+    //private IList<IMagicPage>? _children;
+
+    /// <summary>
+    /// Determines if there are sub-pages. True if this page has sub-pages.
+    /// </summary>
+    public override bool HasChildren => _hasChildren ??= Children.Any();
+    private bool? _hasChildren;
+
+
     #endregion
+
+    #region Enumerator - WIP, probably remove again!
+
+    public IEnumerator<IMagicPage> GetEnumerator() => Children.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+
+
+    #endregion
+    [field: AllowNull, MaybeNull]
+    private IPageDesignHelperWip DesignHelper => field ??= childrenFactory.DesignHelper(this);
+
+    /// <inheritdoc />
+    public virtual string? Classes(string tag) => DesignHelper.Classes(tag);
+
+    /// <inheritdoc />
+    public virtual string? Value(string key) => DesignHelper.Value(key);
+
 }

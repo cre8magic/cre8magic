@@ -1,5 +1,6 @@
 ﻿@using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.ComponentsBs5.Debug
+@using ToSic.Cre8magic.Pages
 @inherits ComponentBase;
 @*
 File Purpose:       Show a standard horizontal menu - usually on the top of the page
@@ -17,6 +18,9 @@ Nice to know:
 {
     [Parameter, EditorRequired]
     public required IMagicMenuKit MenuKit { get; set; }
+
+    [Parameter, EditorRequired]
+    public required IEnumerable<IMagicPage> Pages { get; init; }
 }
 @if (MenuKit.Pages.Any())
 {
@@ -30,7 +34,7 @@ Nice to know:
 
                 @if (menuPage.HasChildren)
                 {
-                    <MagicMenuHorizontal MenuKit="@MenuKit.Kit(menuPage)"></MagicMenuHorizontal>
+                    <MagicMenuHorizontal MenuKit="@MenuKit.Kit(menuPage)" Pages="@menuPage.Children"></MagicMenuHorizontal>
                 }
             </li>
         }
