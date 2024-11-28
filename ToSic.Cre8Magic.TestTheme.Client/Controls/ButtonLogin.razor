@@ -1,4 +1,6 @@
-﻿@inject IMagicHat MagicHat
+﻿@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.UserLogins
+@inject IMagicHat MagicHat
 @*
 File Purpose:       Show the Login buttons / state using lock icons
 Recommendations:    If you want other icons, do use inline SVGs
@@ -8,9 +10,11 @@ See also:           ButtonLoginTextInvisible.razor has the same feature but with
 @code
 {
     [CascadingParameter] public required PageState PageState { get; set; }
+
+    [Parameter] public MagicUserLoginSettings Settings { get; set; }
 }
 @{
-    var loginKit = MagicHat.UserLoginKit(PageState);
+    var loginKit = MagicHat.UserLoginKit(Settings.With(PageState));
 }
 <a title="@loginKit.Resources.Title" class='@loginKit.Designer.Classes("iconLogin")' @onclick="loginKit.ToggleLogin">
     @if (loginKit.User.IsAuthenticated)

@@ -1,4 +1,6 @@
-﻿@inject IMagicHat MagicHat
+﻿@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.UserLogins
+@inject IMagicHat MagicHat
 @*
 File Purpose:       Show the Login/Logout text buttons
 Recommendations:    -
@@ -7,10 +9,10 @@ See also:           LoginIcon.razor has the same feature but with icons
 *@
 @code
 {
-    /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter] public required PageState PageState { get; set; }
+    [Parameter] public MagicUserLoginSettings Settings { get; set; }
 }
 @{
-    var loginKit = MagicHat.UserLoginKit(PageState);
+    var loginKit = MagicHat.UserLoginKit(Settings.With(PageState));
 }
-<a Title="@loginKit.Resources.Title" class="@loginKit.Designer.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@loginKit.Resources.Title</a>
+<a title="@loginKit.Resources.Title" class="@loginKit.Designer.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@loginKit.Resources.Title</a>

@@ -60,7 +60,7 @@ public interface IMagicHat
     /// <inheritdoc cref="IMagicThemeService.ThemeKit"/>
     IMagicThemeKit ThemeKit(PageState pageState);
 
-    IMagicUserLoginKit UserLoginKit(PageState pageState);
+    IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = default);
 
 
     string Link(PageState pageState, MagicLinkSpecs linkSpecs);

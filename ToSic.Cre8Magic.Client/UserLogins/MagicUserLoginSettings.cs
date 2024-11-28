@@ -16,15 +16,15 @@ public record MagicUserLoginSettings : MagicSettingsBase, ICanClone<MagicUserLog
     private MagicUserLoginSettings(MagicUserLoginSettings? priority, MagicUserLoginSettings? fallback = default)
         : base(priority, fallback)
     {
-        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+        //DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
 
     MagicUserLoginSettings ICanClone<MagicUserLoginSettings>.CloneUnder(MagicUserLoginSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
-    [JsonIgnore]
-    public MagicLanguageDesignSettings? DesignSettings { get; init; }
+    //[JsonIgnore]
+    //public MagicLanguageDesignSettings? DesignSettings { get; init; }
 
 
     //internal static Defaults<MagicUserLoginSettings> Defaults = new()
