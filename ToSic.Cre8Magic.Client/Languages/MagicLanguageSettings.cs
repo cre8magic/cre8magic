@@ -1,32 +1,29 @@
 ﻿using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Json;
 
 namespace ToSic.Cre8magic.Languages;
 
-public record MagicLanguageSettings : MagicSettingsBase, IHasDebugSettings, ICanClone<MagicLanguageSettings>
+public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguageSettings>
 {
     /// <summary>
     /// Dummy constructor so better find cases where it's created
     /// Note it must be without parameters for json deserialization
     /// </summary>
+    [PrivateApi]
     public MagicLanguageSettings() {}
 
-    [PrivateApi]
     private MagicLanguageSettings(MagicLanguageSettings? priority, MagicLanguageSettings? fallback = default)
         : base(priority, fallback)
     {
         HideOthers = priority?.HideOthers ?? fallback?.HideOthers;
         MinLanguagesToShow = PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
-        Debug = priority?.Debug ?? fallback?.Debug;
         Languages = priority?.Languages ?? fallback?.Languages;
 
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
 
-    [PrivateApi]
     MagicLanguageSettings ICanClone<MagicLanguageSettings>.CloneUnder(MagicLanguageSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
@@ -38,9 +35,6 @@ public record MagicLanguageSettings : MagicSettingsBase, IHasDebugSettings, ICan
     internal bool HideOthersSafe => HideOthers == true;
 
     public int MinLanguagesToShow { get; init; }
-
-    /// <inheritdoc />
-    public MagicDebugSettings? Debug { get; init; }
 
     /// <summary>
     /// List of languages

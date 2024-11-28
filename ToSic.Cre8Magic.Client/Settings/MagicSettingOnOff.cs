@@ -14,6 +14,7 @@ public class MagicSettingOnOff: ICanClone<MagicSettingOnOff>
     /// <summary>
     /// Empty constructor for JSON serialization
     /// </summary>
+    [PrivateApi]
     public MagicSettingOnOff() {}
 
     public MagicSettingOnOff(string? on, string? off = null)

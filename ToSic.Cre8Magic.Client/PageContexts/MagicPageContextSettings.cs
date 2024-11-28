@@ -1,6 +1,5 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Debug;
 
 namespace ToSic.Cre8magic.PageContexts;
 
@@ -9,7 +8,7 @@ namespace ToSic.Cre8magic.PageContexts;
 ///
 /// This configures how the page context is rendered, and what classes are added to the body tag.
 /// </summary>
-public partial record MagicPageContextSettings: MagicSettingsBase, IHasDebugSettings, ICanClone<MagicPageContextSettings>
+public partial record MagicPageContextSettings: MagicSettingsBase, ICanClone<MagicPageContextSettings>
 {
     #region Constructors and Cloning
 
@@ -22,7 +21,6 @@ public partial record MagicPageContextSettings: MagicSettingsBase, IHasDebugSett
     /// <summary>
     /// Clone constructor.
     /// </summary>
-    [PrivateApi]
     private MagicPageContextSettings(MagicPageContextSettings? priority, MagicPageContextSettings? fallback = default)
         : base(priority, fallback)
     {
@@ -32,12 +30,9 @@ public partial record MagicPageContextSettings: MagicSettingsBase, IHasDebugSett
         PageIsHome = priority?.PageIsHome ?? fallback?.PageIsHome;
         TagId = priority?.TagId ?? fallback?.TagId;
         Classes = priority?.Classes ?? fallback?.Classes;
-        
-        Debug = priority?.Debug ?? fallback?.Debug;
     }
 
     /// <inheritdoc />
-    [PrivateApi]
     MagicPageContextSettings ICanClone<MagicPageContextSettings>.CloneUnder(MagicPageContextSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
@@ -63,9 +58,6 @@ public partial record MagicPageContextSettings: MagicSettingsBase, IHasDebugSett
     public MagicSettingOnOff? PageIsHome { get; init; }
 
     public string? TagId { get; init; }
-
-
-    public MagicDebugSettings? Debug { get; init; }
 
 
     public string? Classes { get; init; }

@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Debug;
 
 namespace ToSic.Cre8magic.Menus;
 
@@ -15,7 +14,7 @@ namespace ToSic.Cre8magic.Menus;
 /// <remarks>
 /// This is implemented as an immutable record.
 /// </remarks>
-public record MagicMenuSettings : MagicSettingsBase, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicMenuSettings>
+public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICanClone<MagicMenuSettings>
 {
     /// <summary>
     /// Default constructor, so this record can be created anywhere.
@@ -26,7 +25,6 @@ public record MagicMenuSettings : MagicSettingsBase, IHasDebugSettings, IMagicPa
     private MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default) : base(priority, fallback)
     {
         Id = priority?.Id ?? fallback?.Id;
-        Debug = priority?.Debug ?? fallback?.Debug;
         Display = priority?.Display ?? fallback?.Display;
         Depth = priority?.Depth ?? fallback?.Depth;
         Children = priority?.Children ?? fallback?.Children;
@@ -49,8 +47,6 @@ public record MagicMenuSettings : MagicSettingsBase, IHasDebugSettings, IMagicPa
     /// </summary>
     public string? Id { get; init; }
     
-    /// <inheritdoc />
-    public MagicDebugSettings? Debug { get; init; }
 
     /// <summary>
     /// Determines if this navigation should be shown.

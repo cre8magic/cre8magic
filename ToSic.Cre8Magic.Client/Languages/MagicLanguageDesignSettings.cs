@@ -11,6 +11,7 @@ namespace ToSic.Cre8magic.Languages;
 /// </summary>
 public record MagicLanguageDesignSettings : SettingsWithInherit, ICanClone<MagicLanguageDesignSettings>
 {
+    [PrivateApi]
     public MagicLanguageDesignSettings() { }
 
     private MagicLanguageDesignSettings(MagicLanguageDesignSettings? priority, MagicLanguageDesignSettings? fallback = default)

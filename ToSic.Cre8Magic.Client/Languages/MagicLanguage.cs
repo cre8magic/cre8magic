@@ -13,6 +13,7 @@ public record MagicLanguage: ICanClone<MagicLanguage>
     /// <summary>
     /// Empty constructor for deserialization
     /// </summary>
+    [PrivateApi]
     public MagicLanguage() { }
 
     private MagicLanguage(MagicLanguage? priority, MagicLanguage? fallback = default)

@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Settings;
 /// all settings share.
 /// 
 /// </summary>
-public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeUse, IDebugSettings
+public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeUse, IHasDebugSettings, IDebugSettings
 {
     #region Constructor & Cloning
 
@@ -27,6 +27,8 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
         PartName = priority?.PartName ?? fallback.PartName;
         SettingsName = priority?.SettingsName ?? fallback.SettingsName;
         DesignName = priority?.DesignName ?? fallback.DesignName;
+
+        Debug = priority?.Debug ?? fallback.Debug;
 
         // Page State
         _pageState = priority?.PageState ?? fallback.PageState;
@@ -69,7 +71,15 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
 
     #endregion
 
-    #region Debug Settings
+    #region Debug Settings (from store)
+
+    /// <inheritdoc />
+    public MagicDebugSettings? Debug { get; init; }
+
+
+    #endregion
+
+    #region Runtime Debug Settings
 
     [JsonIgnore]
     MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }

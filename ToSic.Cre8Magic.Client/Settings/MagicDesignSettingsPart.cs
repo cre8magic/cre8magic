@@ -9,12 +9,12 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
 {
+    [PrivateApi]
     public MagicDesignSettingsPart() { }
 
     /// <summary>
     /// Internal because of inheritance, and we don't want it protected because that would be public.
     /// </summary>
-    [PrivateApi]
     internal MagicDesignSettingsPart(MagicDesignSettingsPart? priority, MagicDesignSettingsPart? fallback = default)
     {
         Classes = priority?.Classes ?? fallback?.Classes;
@@ -25,7 +25,6 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
         IsAdmin = priority?.IsAdmin ?? fallback?.IsAdmin;
     }
 
-    [PrivateApi]
     MagicDesignSettingsPart ICanClone<MagicDesignSettingsPart>.CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

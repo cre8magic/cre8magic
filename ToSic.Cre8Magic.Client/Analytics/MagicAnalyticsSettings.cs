@@ -30,7 +30,6 @@ public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyti
         PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
     }
 
-    [PrivateApi]
     MagicAnalyticsSettings ICanClone<MagicAnalyticsSettings>.CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy = false) => 
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

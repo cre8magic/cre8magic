@@ -5,6 +5,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 
 public record MagicBreadcrumbDesignSettingsPart : MagicDesignSettingsPart, ICanClone<MagicBreadcrumbDesignSettingsPart>
 {
+    [PrivateApi]
     public MagicBreadcrumbDesignSettingsPart() { }
 
     internal MagicBreadcrumbDesignSettingsPart(MagicBreadcrumbDesignSettingsPart? priority, MagicBreadcrumbDesignSettingsPart? fallback = default)

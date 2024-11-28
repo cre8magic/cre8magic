@@ -6,6 +6,7 @@ using ToSic.Cre8magic.Links;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.UserLogins;
 using ToSic.Cre8magic.Users;
 
 namespace ToSic.Cre8magic;
@@ -70,5 +71,4 @@ public interface IMagicHat
     /// <inheritdoc />
     IMagicMenuKit MenuKit(MagicMenuSettings? settings = default);
 
-    int MenuKitAccessCounter { get; set; }
 }

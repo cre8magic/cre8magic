@@ -3,7 +3,6 @@ using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Debug;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
@@ -13,14 +12,14 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IWith<IMagicPageDesigner?>
+public record MagicBreadcrumbSettings : MagicSettingsBase, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IWith<IMagicPageDesigner?>
 {
+    [PrivateApi]
     public MagicBreadcrumbSettings() { }
 
     /// <summary>
     /// Cloning constructor
     /// </summary>
-    [PrivateApi]
     private MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = default): base(priority, fallback)
     {
         WithActive = priority?.WithActive ?? fallback?.WithActive ?? Defaults.Fallback.WithActive;
@@ -30,7 +29,6 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IM
         Pages = priority?.Pages ?? fallback?.Pages;
         Active = priority?.Active ?? fallback?.Active;
         Id = priority?.Id ?? fallback?.Id;
-        Debug = priority?.Debug ?? fallback?.Debug;
         Display = priority?.Display ?? fallback?.Display ?? Defaults.Fallback.Display;
         ActiveId = priority?.ActiveId ?? fallback?.ActiveId;
         Variant = priority?.Variant ?? fallback?.Variant;
@@ -39,7 +37,6 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IM
         DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
 
-    [PrivateApi]
     MagicBreadcrumbSettings ICanClone<MagicBreadcrumbSettings>.CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
@@ -101,9 +98,6 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IHasDebugSettings, IM
     /// </summary>
     public string? Id { get; init; }
 
-
-    /// <inheritdoc />
-    public MagicDebugSettings? Debug { get; init; }
 
     /// <summary>
     /// Determines if this breadcrumb should be shown.

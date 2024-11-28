@@ -8,16 +8,15 @@ namespace ToSic.Cre8magic.Containers;
 
 public record MagicContainerDesignSettings: SettingsWithInherit, ICanClone<MagicContainerDesignSettings>
 {
+    [PrivateApi]
     public MagicContainerDesignSettings() { }
 
-    [PrivateApi]
     private MagicContainerDesignSettings(MagicContainerDesignSettings? priority, MagicContainerDesignSettings? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    [PrivateApi]
     MagicContainerDesignSettings ICanClone<MagicContainerDesignSettings>.CloneUnder(MagicContainerDesignSettings? priority, bool forceCopy = false) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 

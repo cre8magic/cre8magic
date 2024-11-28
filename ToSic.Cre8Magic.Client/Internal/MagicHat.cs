@@ -14,6 +14,7 @@ using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.PageContexts.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal.Providers;
+using ToSic.Cre8magic.UserLogins;
 using ToSic.Cre8magic.UserLogins.Internal;
 using ToSic.Cre8magic.Users;
 
@@ -95,15 +96,9 @@ internal class MagicHat(
         userSvc.Value.User(pageState);
 
     /// <inheritdoc />
-    public IMagicMenuKit MenuKit(MagicMenuSettings? settings = default)
-    {
-        MenuKitAccessCounter++;
-        return menuSvc.Value.MenuKit(GetPageStateOrThrow(settings?.PageState), settings);
-    }
-
-    public int MenuKitAccessCounter { get; set; }
-
-
+    public IMagicMenuKit MenuKit(MagicMenuSettings? settings = default) =>
+        menuSvc.Value.MenuKit(GetPageStateOrThrow(settings?.PageState), settings);
+    
 
     public IMagicUserLoginKit UserLoginKit(PageState pageState) =>
         userKitSvc.Value.UserLoginKit(pageState);

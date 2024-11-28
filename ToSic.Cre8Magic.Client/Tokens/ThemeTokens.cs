@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Settings;
-
-namespace ToSic.Cre8magic.Tokens;
+﻿namespace ToSic.Cre8magic.Tokens;
 
 internal class ThemeTokens(MagicThemePackage themePackage) : ITokenReplace
 {
@@ -10,6 +8,6 @@ internal class ThemeTokens(MagicThemePackage themePackage) : ITokenReplace
 
     public string NameId => NameIdConstant;
 
-    public virtual string? Parse(string? value) =>
+    public string? Parse(string? value) =>
         value?.Replace(MagicTokens.ThemeUrl, ThemePackage.Url);
 }
