@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using ToSic.Cre8magic.Act;
+using ToSic.Cre8magic.Act.Internal;
 using ToSic.Cre8magic.Analytics.Internal;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Internal.JsInterops.Internal;

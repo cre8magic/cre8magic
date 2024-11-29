@@ -1,7 +1,7 @@
 ﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.ComponentsBs5.Debug
 @using ToSic.Cre8magic.Menus
-@using ToSic.Cre8magic.Settings
 @inject IMagicHat MagicHat
 @*
 File Purpose:       Add a menu based on the parameter 'ConfigName'
@@ -28,10 +28,13 @@ Nice to know:
     /// If provided, it may still merge these with other settings (like in PartName was specified).
     /// </summary>
     [Parameter] public MagicMenuSettings? Settings { get; set; }
+
+    [Parameter] public string? PartName { get; set; }
+    [Parameter] public string? SettingsName { get; set; }
 }
 @{
     // Get the latest menu kit on each render, using the latest PageState
-    var menuKit = MagicHat.MenuKit(Settings.With(PageState));
+    var menuKit = MagicHat.MenuKit(Settings.With(PageState).WithNames(PartName, SettingsName));
 }
 @* Special Debugging *@
 @if (false)
@@ -49,7 +52,7 @@ Nice to know:
     </div>
 }
 
-@* Show the desired menu - in this setup we have 2 options. If you need more, change the conditions to check for Menu?.Settings.Template *@
+@* Show the desired menu - in this setup we have 2 options. *@
 @if (menuKit.IsVariant("vertical"))
 {
     <MagicMenuVertical Current="@menuKit.Root">

@@ -9,7 +9,7 @@ using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.UserLogins;
 using ToSic.Cre8magic.Users;
 
-namespace ToSic.Cre8magic;
+namespace ToSic.Cre8magic.Act;
 
 /// <summary>
 /// This is the magic hat from which you can pull just about anything you can think of.

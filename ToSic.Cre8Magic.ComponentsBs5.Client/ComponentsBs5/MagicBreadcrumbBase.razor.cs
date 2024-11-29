@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.UI;
+using ToSic.Cre8magic.Act;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.ComponentsBs5.Internal;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.ComponentsBs5;
