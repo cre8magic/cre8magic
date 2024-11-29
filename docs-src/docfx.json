@@ -81,6 +81,13 @@
         ]
       }
     ],
+    "overwrite": [
+      {
+        "files":[
+          "apidocs/**.md"
+        ]
+      }
+    ],
     "output": "../docs",
     "template": [
       "default",

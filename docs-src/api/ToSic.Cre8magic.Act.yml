@@ -1,0 +1,63 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Act
+  commentId: N:ToSic.Cre8magic.Act
+  id: Act
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.Act.IMagicHat
+  - ToSic.Cre8magic.Act.MagicSettingsExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Act
+  nameWithType: ToSic.Cre8magic.Act
+  fullName: ToSic.Cre8magic.Act
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Act.IMagicHat
+  commentId: T:ToSic.Cre8magic.Act.IMagicHat
+  parent: ToSic.Cre8magic.Act
+  href: ToSic.Cre8magic.Act.IMagicHat.html
+  name: IMagicHat
+  nameWithType: IMagicHat
+  fullName: ToSic.Cre8magic.Act.IMagicHat
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  commentId: T:ToSic.Cre8magic.Act.MagicSettingsExtensions
+  parent: ToSic.Cre8magic.Act
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html
+  name: MagicSettingsExtensions
+  nameWithType: MagicSettingsExtensions
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions
+- uid: ToSic.Cre8magic.Act
+  commentId: N:ToSic.Cre8magic.Act
+  href: ToSic.html
+  name: ToSic.Cre8magic.Act
+  nameWithType: ToSic.Cre8magic.Act
+  fullName: ToSic.Cre8magic.Act
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html

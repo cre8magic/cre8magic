@@ -4,11 +4,11 @@ items:
   commentId: N:ToSic.Cre8magic
   id: ToSic.Cre8magic
   children:
+  - ToSic.Cre8magic.Act
   - ToSic.Cre8magic.Analytics
   - ToSic.Cre8magic.Breadcrumbs
   - ToSic.Cre8magic.Containers
   - ToSic.Cre8magic.Designers
-  - ToSic.Cre8magic.IMagicHat
   - ToSic.Cre8magic.Languages
   - ToSic.Cre8magic.Links
   - ToSic.Cre8magic.MagicConstants
@@ -32,6 +32,36 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Act
+  commentId: N:ToSic.Cre8magic.Act
+  href: ToSic.html
+  name: ToSic.Cre8magic.Act
+  nameWithType: ToSic.Cre8magic.Act
+  fullName: ToSic.Cre8magic.Act
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
 - uid: ToSic.Cre8magic.Analytics
   commentId: N:ToSic.Cre8magic.Analytics
   href: ToSic.html
@@ -482,13 +512,6 @@ references:
   - uid: ToSic.Cre8magic.Utils
     name: Utils
     href: ToSic.Cre8magic.Utils.html
-- uid: ToSic.Cre8magic.IMagicHat
-  commentId: T:ToSic.Cre8magic.IMagicHat
-  parent: ToSic.Cre8magic
-  href: ToSic.Cre8magic.IMagicHat.html
-  name: IMagicHat
-  nameWithType: IMagicHat
-  fullName: ToSic.Cre8magic.IMagicHat
 - uid: ToSic.Cre8magic.MagicConstants
   commentId: T:ToSic.Cre8magic.MagicConstants
   href: ToSic.Cre8magic.MagicConstants.html
@@ -501,25 +524,3 @@ references:
   name: MagicTokens
   nameWithType: MagicTokens
   fullName: ToSic.Cre8magic.MagicTokens
-- uid: ToSic.Cre8magic
-  commentId: N:ToSic.Cre8magic
-  href: ToSic.html
-  name: ToSic.Cre8magic
-  nameWithType: ToSic.Cre8magic
-  fullName: ToSic.Cre8magic
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html

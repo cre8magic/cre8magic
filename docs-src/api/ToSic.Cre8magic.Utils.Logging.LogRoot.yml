@@ -5,7 +5,6 @@ items:
   id: LogRoot
   parent: ToSic.Cre8magic.Utils.Logging
   children:
-  - ToSic.Cre8magic.Utils.Logging.LogRoot.#ctor
   - ToSic.Cre8magic.Utils.Logging.LogRoot.Depth
   - ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
   langs:
@@ -31,35 +30,6 @@ items:
     content.vb: Public Class LogRoot
   inheritance:
   - System.Object
-- uid: ToSic.Cre8magic.Utils.Logging.LogRoot.#ctor
-  commentId: M:ToSic.Cre8magic.Utils.Logging.LogRoot.#ctor
-  id: '#ctor'
-  parent: ToSic.Cre8magic.Utils.Logging.LogRoot
-  langs:
-  - csharp
-  - vb
-  name: LogRoot()
-  nameWithType: LogRoot.LogRoot()
-  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot.LogRoot()
-  type: Constructor
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Utils/Logging/LogRoot.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: .ctor
-    path: ../ToSic.Cre8Magic.Client/Utils/Logging/LogRoot.cs
-    startLine: 4
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Utils.Logging
-  syntax:
-    content: public LogRoot()
-    content.vb: Public Sub New()
-  overload: ToSic.Cre8magic.Utils.Logging.LogRoot.#ctor*
-  nameWithType.vb: LogRoot.New()
-  fullName.vb: ToSic.Cre8magic.Utils.Logging.LogRoot.New()
-  name.vb: New()
 - uid: ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
   commentId: P:ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
   id: Entries
@@ -184,15 +154,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Utils.Logging.LogRoot.#ctor*
-  commentId: Overload:ToSic.Cre8magic.Utils.Logging.LogRoot.#ctor
-  href: ToSic.Cre8magic.Utils.Logging.LogRoot.html#ToSic_Cre8magic_Utils_Logging_LogRoot__ctor
-  name: LogRoot
-  nameWithType: LogRoot.LogRoot
-  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot.LogRoot
-  nameWithType.vb: LogRoot.New
-  fullName.vb: ToSic.Cre8magic.Utils.Logging.LogRoot.New
-  name.vb: New
 - uid: ToSic.Cre8magic.Utils.Logging.LogRoot.Entries*
   commentId: Overload:ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
   href: ToSic.Cre8magic.Utils.Logging.LogRoot.html#ToSic_Cre8magic_Utils_Logging_LogRoot_Entries

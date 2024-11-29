@@ -88,7 +88,7 @@ Try the ToShine Theme Template, it will make things much easier to understand.
 
 1. [Magic Languages](./system/magic-languages.md)
 
-1. [Magic Menu](./controls/magic-menu.md)
+1. [Magic Menu](xref:Library.MagicMenu.Index)
 
 1. **Magic Razor Base Classes**
   _These are the important base classes which your Razor files will inherit.

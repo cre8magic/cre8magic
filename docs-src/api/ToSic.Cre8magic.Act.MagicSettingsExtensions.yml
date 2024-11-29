@@ -1,0 +1,312 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  commentId: T:ToSic.Cre8magic.Act.MagicSettingsExtensions
+  id: MagicSettingsExtensions
+  parent: ToSic.Cre8magic.Act
+  children:
+  - ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+  - ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  - ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: MagicSettingsExtensions
+  nameWithType: MagicSettingsExtensions
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicSettingsExtensions
+    path: ../ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs
+    startLine: 16
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Act
+  summary: >-
+    Extensions for working with MagicSettings,
+
+    to make the API more fluent and easier to use.
+  remarks: >-
+    Despite it being related to Settings (which would normally be in [](xref:ToSic.Cre8magic.Settings)),
+
+    it's in the Act namespace because it's usually used in the basic work which starts in this namespace.
+
+
+    This makes it easier for most components to just use this namespace and little else.
+  example: []
+  syntax:
+    content: public static class MagicSettingsExtensions
+    content.vb: Public Module MagicSettingsExtensions
+  inheritance:
+  - System.Object
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  id: With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  isExtensionMethod: true
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  langs:
+  - csharp
+  - vb
+  name: With<TSettings>(TSettings?, PageState, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings?, PageState, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings>(TSettings?, Oqtane.UI.PageState, bool)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: With
+    path: ../ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs
+    startLine: 27
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Act
+  summary: >-
+    Add a PageState to a settings object.
+
+    This uses normal record `with` manipulations, so it creates a new object but preserves all other settings.
+  example: []
+  syntax:
+    content: 'public static TSettings With<TSettings>(this TSettings? settings, PageState pageState, bool overwrite = true) where TSettings : MagicSettingsBase, new()'
+    parameters:
+    - id: settings
+      type: '{TSettings}'
+      description: The initial settings object - can be null (in which case a fresh one is created)
+    - id: pageState
+      type: Oqtane.UI.PageState
+      description: The PageState
+    - id: overwrite
+      type: System.Boolean
+      description: Determines if an existing value should be overwritten. If `false` any original value is preserved.
+    typeParameters:
+    - id: TSettings
+      description: The type of settings we're expanding with this PageState data.
+    return:
+      type: '{TSettings}'
+      description: ''
+    content.vb: Public Shared Function [With](Of TSettings As {MagicSettingsBase, New})(settings As TSettings, pageState As PageState, overwrite As Boolean = True) As TSettings
+  overload: ToSic.Cre8magic.Act.MagicSettingsExtensions.With*
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState, Boolean)
+  name.vb: With(Of TSettings)(TSettings, PageState, Boolean)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  id: With``2(``0,``1,System.Boolean)
+  isExtensionMethod: true
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  langs:
+  - csharp
+  - vb
+  name: With<TSettings, TWith>(TSettings?, TWith?, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?, bool)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: With
+    path: ../ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs
+    startLine: 36
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Act
+  syntax:
+    content: 'public static TSettings With<TSettings, TWith>(this TSettings? settings, TWith? addition, bool overwrite = true) where TSettings : MagicSettingsBase, IWith<TWith?>, new() where TWith : class'
+    parameters:
+    - id: settings
+      type: '{TSettings}'
+    - id: addition
+      type: '{TWith}'
+    - id: overwrite
+      type: System.Boolean
+    typeParameters:
+    - id: TSettings
+    - id: TWith
+    return:
+      type: '{TSettings}'
+    content.vb: Public Shared Function [With](Of TSettings As {MagicSettingsBase, IWith(Of TWith), New}, TWith As Class)(settings As TSettings, addition As TWith, overwrite As Boolean = True) As TSettings
+  overload: ToSic.Cre8magic.Act.MagicSettingsExtensions.With*
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  name.vb: With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+  id: WithNames``1(``0,System.String,System.String,System.Boolean)
+  isExtensionMethod: true
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  langs:
+  - csharp
+  - vb
+  name: WithNames<TSettings>(TSettings?, string?, string?, bool)
+  nameWithType: MagicSettingsExtensions.WithNames<TSettings>(TSettings?, string?, string?, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames<TSettings>(TSettings?, string?, string?, bool)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: WithNames
+    path: ../ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs
+    startLine: 46
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Act
+  syntax:
+    content: 'public static TSettings WithNames<TSettings>(this TSettings? settings, string? partName, string? settingsName = null, bool overwrite = true) where TSettings : MagicSettingsBase, new()'
+    parameters:
+    - id: settings
+      type: '{TSettings}'
+    - id: partName
+      type: System.String
+    - id: settingsName
+      type: System.String
+    - id: overwrite
+      type: System.Boolean
+    typeParameters:
+    - id: TSettings
+    return:
+      type: '{TSettings}'
+    content.vb: Public Shared Function WithNames(Of TSettings As {MagicSettingsBase, New})(settings As TSettings, partName As String, settingsName As String = Nothing, overwrite As Boolean = True) As TSettings
+  overload: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames*
+  nameWithType.vb: MagicSettingsExtensions.WithNames(Of TSettings)(TSettings, String, String, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames(Of TSettings)(TSettings, String, String, Boolean)
+  name.vb: WithNames(Of TSettings)(TSettings, String, String, Boolean)
+references:
+- uid: ToSic.Cre8magic.Act
+  commentId: N:ToSic.Cre8magic.Act
+  href: ToSic.html
+  name: ToSic.Cre8magic.Act
+  nameWithType: ToSic.Cre8magic.Act
+  fullName: ToSic.Cre8magic.Act
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With*
+  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.With
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  name: With
+  nameWithType: MagicSettingsExtensions.With
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With
+- uid: '{TSettings}'
+  commentId: '!:TSettings'
+  definition: TSettings
+  name: TSettings
+  nameWithType: TSettings
+  fullName: TSettings
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: TSettings
+  name: TSettings
+  nameWithType: TSettings
+  fullName: TSettings
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: '{TWith}'
+  commentId: '!:TWith'
+  definition: TWith
+  name: TWith
+  nameWithType: TWith
+  fullName: TWith
+- uid: TWith
+  commentId: '!:TWith'
+  name: TWith
+  nameWithType: TWith
+  fullName: TWith
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames*
+  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  name: WithNames
+  nameWithType: MagicSettingsExtensions.WithNames
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

@@ -163,7 +163,7 @@ items:
   summary: The email address of the user.
   example: []
   syntax:
-    content: public string Email { get; }
+    content: public string? Email { get; }
     parameters: []
     return:
       type: System.String
@@ -195,7 +195,7 @@ items:
   summary: The display name of the user.
   example: []
   syntax:
-    content: public string DisplayName { get; }
+    content: public string? DisplayName { get; }
     parameters: []
     return:
       type: System.String

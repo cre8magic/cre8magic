@@ -141,7 +141,7 @@ every time it's accessed again.</p>
 
   <h3 id="ToSic_Cre8magic_Utils_GetKeep_2_IsValueCreated" data-uid="ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated">
   IsValueCreated
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines if value has been created.
@@ -177,7 +177,7 @@ The name <code>IsValueCreated</code> is the same as in a Lazy() object</p>
   <a id="ToSic_Cre8magic_Utils_GetKeep_2_Get_" data-uid="ToSic.Cre8magic.Utils.GetKeep`2.Get*"></a>
 
   <h3 id="ToSic_Cre8magic_Utils_GetKeep_2_Get_System_Func_System_ValueTuple__0__1___System_Func__0__1_System_Boolean__" data-uid="ToSic.Cre8magic.Utils.GetKeep`2.Get(System.Func{System.ValueTuple{`0,`1}},System.Func{`0,`1,System.Boolean})">
-  Get(Func&lt;(TResult Result, TCompare Compare)&gt;, Func&lt;TResult, TCompare, bool&gt;)
+  Get(Func&lt;(TResult Result, TCompare Compare)&gt;, Func&lt;TResult?, TCompare?, bool&gt;)
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -185,7 +185,7 @@ The name <code>IsValueCreated</code> is the same as in a Lazy() object</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TResult Get(Func&lt;(TResult Result, TCompare Compare)&gt; getter, Func&lt;TResult, TCompare, bool&gt; keep)</code></pre>
+    <pre><code class="lang-csharp hljs">public TResult Get(Func&lt;(TResult Result, TCompare Compare)&gt; getter, Func&lt;TResult?, TCompare?, bool&gt; keep)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -215,15 +215,15 @@ The name <code>IsValueCreated</code> is the same as in a Lazy() object</p>
   <a id="ToSic_Cre8magic_Utils_GetKeep_2_GetAsync_" data-uid="ToSic.Cre8magic.Utils.GetKeep`2.GetAsync*"></a>
 
   <h3 id="ToSic_Cre8magic_Utils_GetKeep_2_GetAsync_System_Func_System_Threading_Tasks_Task_System_ValueTuple__0__1____System_Func__0__1_System_Boolean__" data-uid="ToSic.Cre8magic.Utils.GetKeep`2.GetAsync(System.Func{System.Threading.Tasks.Task{System.ValueTuple{`0,`1}}},System.Func{`0,`1,System.Boolean})">
-  GetAsync(Func&lt;Task&lt;(TResult Result, TCompare Compare)&gt;&gt;, Func&lt;TResult, TCompare, bool&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  GetAsync(Func&lt;Task&lt;(TResult Result, TCompare Compare)&gt;&gt;, Func&lt;TResult?, TCompare?, bool&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; GetAsync(Func&lt;Task&lt;(TResult Result, TCompare Compare)&gt;&gt; getter, Func&lt;TResult, TCompare, bool&gt; keep)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;TResult&gt; GetAsync(Func&lt;Task&lt;(TResult Result, TCompare Compare)&gt;&gt; getter, Func&lt;TResult?, TCompare?, bool&gt; keep)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>

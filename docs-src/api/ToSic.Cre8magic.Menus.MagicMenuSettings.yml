@@ -21,7 +21,6 @@ items:
   - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
   - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
   - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.Template
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   langs:
   - csharp
@@ -66,8 +65,9 @@ items:
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
   extensionMethods:
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2({TWith},System.Boolean)
+  - ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(System.String,System.String,System.Boolean)
+  - ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
+  - ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2({TWith},System.Boolean)
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Id
   commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Id
   id: Id
@@ -455,73 +455,6 @@ items:
     return:
       type: System.Int32
     content.vb: Public Const StartLevelFallback As Integer = 0
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Template
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Template
-  id: Template
-  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
-  langs:
-  - csharp
-  - vb
-  name: Template
-  nameWithType: MagicMenuSettings.Template
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Template
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Template
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 111
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  summary: The template to use - horizontal/vertical
-  example: []
-  syntax:
-    content: public string? Template { get; init; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property Template As String
-  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Template*
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  id: MenuId
-  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
-  langs:
-  - csharp
-  - vb
-  name: MenuId
-  nameWithType: MagicMenuSettings.MenuId
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: MenuId
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 115
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  summary: >-
-    Menu ID for use in JavaScript etc.
-
-    Usually predefined OR a random number
-  example: []
-  syntax:
-    content: public string MenuId { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public ReadOnly Property MenuId As String
-  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId*
-  implements:
-  - ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   id: Variant
@@ -540,20 +473,57 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Variant
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 118
+    startLine: 111
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
+  summary: The template to use - horizontal/vertical
   example: []
   syntax:
-    content: public string Variant { get; }
+    content: public string? Variant { get; init; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public ReadOnly Property [Variant] As String
+    content.vb: Public Property [Variant] As String
   overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant*
   implements:
   - ToSic.Cre8magic.Pages.IMagicPageSetSettings.Variant
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
+  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
+  id: MenuId
+  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
+  langs:
+  - csharp
+  - vb
+  name: MenuId
+  nameWithType: MagicMenuSettings.MenuId
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MenuId
+    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
+    startLine: 114
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Menus
+  summary: >-
+    Menu ID for use in JavaScript etc.
+
+    Usually predefined OR a random number
+  example: []
+  syntax:
+    content: public string MenuId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property MenuId As String
+  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId*
+  implements:
+  - ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
   commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
   id: Designer
@@ -572,7 +542,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Designer
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 122
+    startLine: 119
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -611,7 +581,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DesignSettings
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 125
+    startLine: 122
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -650,7 +620,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Pages
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 134
+    startLine: 131
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -825,21 +795,92 @@ references:
   - name: (
   - name: )
   - name: )
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-  parent: ToSic.Cre8magic.Settings.MagicSettingsExtensions
-  definition: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(System.String,System.String,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  name: WithNames<MagicMenuSettings>(MagicMenuSettings, string, string, bool)
+  nameWithType: MagicSettingsExtensions.WithNames<MagicMenuSettings>(MagicMenuSettings, string, string, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames<ToSic.Cre8magic.Menus.MagicMenuSettings>(ToSic.Cre8magic.Menus.MagicMenuSettings, string, string, bool)
+  nameWithType.vb: MagicSettingsExtensions.WithNames(Of MagicMenuSettings)(MagicMenuSettings, String, String, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames(Of ToSic.Cre8magic.Menus.MagicMenuSettings)(ToSic.Cre8magic.Menus.MagicMenuSettings, String, String, Boolean)
+  name.vb: WithNames(Of MagicMenuSettings)(MagicMenuSettings, String, String, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(ToSic.Cre8magic.Menus.MagicMenuSettings,System.String,System.String,System.Boolean)
+    name: WithNames
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  - name: <
+  - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
+    name: MagicMenuSettings
+    href: ToSic.Cre8magic.Menus.MagicMenuSettings.html
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
+    name: MagicMenuSettings
+    href: ToSic.Cre8magic.Menus.MagicMenuSettings.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(ToSic.Cre8magic.Menus.MagicMenuSettings,System.String,System.String,System.Boolean)
+    name: WithNames
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
+    name: MagicMenuSettings
+    href: ToSic.Cre8magic.Menus.MagicMenuSettings.html
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
+    name: MagicMenuSettings
+    href: ToSic.Cre8magic.Menus.MagicMenuSettings.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
   name: With<MagicMenuSettings>(MagicMenuSettings, PageState, bool)
   nameWithType: MagicSettingsExtensions.With<MagicMenuSettings>(MagicMenuSettings, PageState, bool)
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<ToSic.Cre8magic.Menus.MagicMenuSettings>(ToSic.Cre8magic.Menus.MagicMenuSettings, Oqtane.UI.PageState, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<ToSic.Cre8magic.Menus.MagicMenuSettings>(ToSic.Cre8magic.Menus.MagicMenuSettings, Oqtane.UI.PageState, bool)
   nameWithType.vb: MagicSettingsExtensions.With(Of MagicMenuSettings)(MagicMenuSettings, PageState, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Menus.MagicMenuSettings)(ToSic.Cre8magic.Menus.MagicMenuSettings, Oqtane.UI.PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Menus.MagicMenuSettings)(ToSic.Cre8magic.Menus.MagicMenuSettings, Oqtane.UI.PageState, Boolean)
   name.vb: With(Of MagicMenuSettings)(MagicMenuSettings, PageState, Boolean)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Menus.MagicMenuSettings,Oqtane.UI.PageState,System.Boolean)
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Menus.MagicMenuSettings,Oqtane.UI.PageState,System.Boolean)
     name: With
-    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
   - name: <
   - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
     name: MagicMenuSettings
@@ -862,9 +903,9 @@ references:
     isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Menus.MagicMenuSettings,Oqtane.UI.PageState,System.Boolean)
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(ToSic.Cre8magic.Menus.MagicMenuSettings,Oqtane.UI.PageState,System.Boolean)
     name: With
-    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
   - name: (
   - name: Of
   - name: " "
@@ -888,21 +929,21 @@ references:
     name: Boolean
     isExternal: true
   - name: )
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2({TWith},System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-  parent: ToSic.Cre8magic.Settings.MagicSettingsExtensions
-  definition: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2({TWith},System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
   name: With<MagicMenuSettings, TWith>(MagicMenuSettings, TWith, bool)
   nameWithType: MagicSettingsExtensions.With<MagicMenuSettings, TWith>(MagicMenuSettings, TWith, bool)
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<ToSic.Cre8magic.Menus.MagicMenuSettings, TWith>(ToSic.Cre8magic.Menus.MagicMenuSettings, TWith, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<ToSic.Cre8magic.Menus.MagicMenuSettings, TWith>(ToSic.Cre8magic.Menus.MagicMenuSettings, TWith, bool)
   nameWithType.vb: MagicSettingsExtensions.With(Of MagicMenuSettings, TWith)(MagicMenuSettings, TWith, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Menus.MagicMenuSettings, TWith)(ToSic.Cre8magic.Menus.MagicMenuSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of ToSic.Cre8magic.Menus.MagicMenuSettings, TWith)(ToSic.Cre8magic.Menus.MagicMenuSettings, TWith, Boolean)
   name.vb: With(Of MagicMenuSettings, TWith)(MagicMenuSettings, TWith, Boolean)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Menus.MagicMenuSettings,``1,System.Boolean)
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Menus.MagicMenuSettings,``1,System.Boolean)
     name: With
-    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
   - name: <
   - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
     name: MagicMenuSettings
@@ -925,9 +966,9 @@ references:
     isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Menus.MagicMenuSettings,``1,System.Boolean)
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(ToSic.Cre8magic.Menus.MagicMenuSettings,``1,System.Boolean)
     name: With
-    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
   - name: (
   - name: Of
   - name: " "
@@ -1018,20 +1059,20 @@ references:
   - uid: ToSic.Cre8magic.Pages
     name: Pages
     href: ToSic.Cre8magic.Pages.html
-- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
   isExternal: true
-  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
-  name: With<TSettings>(TSettings, PageState, bool)
-  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings, PageState, bool)
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<TSettings>(TSettings, Oqtane.UI.PageState, bool)
-  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState, Boolean)
-  name.vb: With(Of TSettings)(TSettings, PageState, Boolean)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  name: WithNames<TSettings>(TSettings, string, string, bool)
+  nameWithType: MagicSettingsExtensions.WithNames<TSettings>(TSettings, string, string, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames<TSettings>(TSettings, string, string, bool)
+  nameWithType.vb: MagicSettingsExtensions.WithNames(Of TSettings)(TSettings, String, String, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames(Of TSettings)(TSettings, String, String, Boolean)
+  name.vb: WithNames(Of TSettings)(TSettings, String, String, Boolean)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+    name: WithNames
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
   - name: <
   - name: TSettings
   - name: '>'
@@ -1039,10 +1080,14 @@ references:
   - name: TSettings
   - name: ','
   - name: " "
-  - uid: Oqtane.UI.PageState
-    name: PageState
+  - uid: System.String
+    name: string
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
   - name: ','
   - name: " "
   - uid: System.Boolean
@@ -1050,9 +1095,9 @@ references:
     isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+    name: WithNames
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
   - name: (
   - name: Of
   - name: " "
@@ -1062,37 +1107,95 @@ references:
   - name: TSettings
   - name: ','
   - name: " "
-  - uid: Oqtane.UI.PageState
-    name: PageState
+  - uid: System.String
+    name: String
     isExternal: true
-    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
   - name: ','
   - name: " "
   - uid: System.Boolean
     name: Boolean
     isExternal: true
   - name: )
-- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions
-  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsExtensions
-  parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  commentId: T:ToSic.Cre8magic.Act.MagicSettingsExtensions
+  parent: ToSic.Cre8magic.Act
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html
   name: MagicSettingsExtensions
   nameWithType: MagicSettingsExtensions
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions
-- uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
   isExternal: true
-  href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  name: With<TSettings>(TSettings, PageState, bool)
+  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings, PageState, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings>(TSettings, Oqtane.UI.PageState, bool)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState, Boolean)
+  name.vb: With(Of TSettings)(TSettings, PageState, Boolean)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: <
+  - name: TSettings
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+  - name: )
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  isExternal: true
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
   name: With<TSettings, TWith>(TSettings, TWith, bool)
   nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
   nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
   name.vb: With(Of TSettings, TWith)(TSettings, TWith, Boolean)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
     name: With
-    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
   - name: <
   - name: TSettings
   - name: ','
@@ -1111,9 +1214,9 @@ references:
     isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
     name: With
-    href: ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
   - name: (
   - name: Of
   - name: " "
@@ -1133,6 +1236,36 @@ references:
     name: Boolean
     isExternal: true
   - name: )
+- uid: ToSic.Cre8magic.Act
+  commentId: N:ToSic.Cre8magic.Act
+  href: ToSic.html
+  name: ToSic.Cre8magic.Act
+  nameWithType: ToSic.Cre8magic.Act
+  fullName: ToSic.Cre8magic.Act
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Id*
   commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Id
   href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Id
@@ -1271,25 +1404,6 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Template*
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Template
-  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Template
-  name: Template
-  nameWithType: MagicMenuSettings.Template
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Template
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId*
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_MenuId
-  name: MenuId
-  nameWithType: MagicMenuSettings.MenuId
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-- uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
-  commentId: P:ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
-  parent: ToSic.Cre8magic.Pages.IMagicPageSetSettings
-  href: ToSic.Cre8magic.Pages.IMagicPageSetSettings.html#ToSic_Cre8magic_Pages_IMagicPageSetSettings_MenuId
-  name: MenuId
-  nameWithType: IMagicPageSetSettings.MenuId
-  fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant*
   commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Variant
@@ -1303,6 +1417,19 @@ references:
   name: Variant
   nameWithType: IMagicPageSetSettings.Variant
   fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings.Variant
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId*
+  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
+  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_MenuId
+  name: MenuId
+  nameWithType: MagicMenuSettings.MenuId
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
+- uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
+  parent: ToSic.Cre8magic.Pages.IMagicPageSetSettings
+  href: ToSic.Cre8magic.Pages.IMagicPageSetSettings.html#ToSic_Cre8magic_Pages_IMagicPageSetSettings_MenuId
+  name: MenuId
+  nameWithType: IMagicPageSetSettings.MenuId
+  fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Designer*
   commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
   href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Designer

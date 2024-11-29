@@ -53,9 +53,9 @@ items:
   langs:
   - csharp
   - vb
-  name: Get(Func<(TResult Result, TCompare Compare)>, Func<TResult, TCompare, bool>)
-  nameWithType: GetKeep<TResult, TCompare>.Get(Func<(TResult Result, TCompare Compare)>, Func<TResult, TCompare, bool>)
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.Get(System.Func<(TResult Result, TCompare Compare)>, System.Func<TResult, TCompare, bool>)
+  name: Get(Func<(TResult Result, TCompare Compare)>, Func<TResult?, TCompare?, bool>)
+  nameWithType: GetKeep<TResult, TCompare>.Get(Func<(TResult Result, TCompare Compare)>, Func<TResult?, TCompare?, bool>)
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.Get(System.Func<(TResult Result, TCompare Compare)>, System.Func<TResult?, TCompare?, bool>)
   type: Method
   source:
     remote:
@@ -69,7 +69,7 @@ items:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Utils
   syntax:
-    content: public TResult Get(Func<(TResult Result, TCompare Compare)> getter, Func<TResult, TCompare, bool> keep)
+    content: public TResult Get(Func<(TResult Result, TCompare Compare)> getter, Func<TResult?, TCompare?, bool> keep)
     parameters:
     - id: getter
       type: System.Func{System.ValueTuple{{TResult},{TCompare}}}
@@ -89,9 +89,9 @@ items:
   langs:
   - csharp
   - vb
-  name: GetAsync(Func<Task<(TResult Result, TCompare Compare)>>, Func<TResult, TCompare, bool>)
-  nameWithType: GetKeep<TResult, TCompare>.GetAsync(Func<Task<(TResult Result, TCompare Compare)>>, Func<TResult, TCompare, bool>)
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.GetAsync(System.Func<System.Threading.Tasks.Task<(TResult Result, TCompare Compare)>>, System.Func<TResult, TCompare, bool>)
+  name: GetAsync(Func<Task<(TResult Result, TCompare Compare)>>, Func<TResult?, TCompare?, bool>)
+  nameWithType: GetKeep<TResult, TCompare>.GetAsync(Func<Task<(TResult Result, TCompare Compare)>>, Func<TResult?, TCompare?, bool>)
+  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.GetAsync(System.Func<System.Threading.Tasks.Task<(TResult Result, TCompare Compare)>>, System.Func<TResult?, TCompare?, bool>)
   type: Method
   source:
     remote:
@@ -100,12 +100,12 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetAsync
     path: ../ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
-    startLine: 29
+    startLine: 30
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Utils
   syntax:
-    content: public Task<TResult> GetAsync(Func<Task<(TResult Result, TCompare Compare)>> getter, Func<TResult, TCompare, bool> keep)
+    content: public Task<TResult> GetAsync(Func<Task<(TResult Result, TCompare Compare)>> getter, Func<TResult?, TCompare?, bool> keep)
     parameters:
     - id: getter
       type: System.Func{System.Threading.Tasks.Task{System.ValueTuple{{TResult},{TCompare}}}}
@@ -136,7 +136,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IsValueCreated
     path: ../ToSic.Cre8Magic.Client/Utils/GetKeep_TT.cs
-    startLine: 44
+    startLine: 46
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Utils

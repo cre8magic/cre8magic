@@ -12,6 +12,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.Act.IMagicHat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Act.IMagicHat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.Act.MagicSettingsExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.Act.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Act.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.yml",
       "output": {
         ".html": {
@@ -3395,16 +3425,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "pages/controls/magic-menu.md",
-      "output": {
-        ".html": {
-          "relative_path": "controls/magic-menu.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "pages/get-started/how-it-works.md",
       "output": {
         ".html": {
@@ -3429,6 +3449,102 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/guides/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/guides/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/guides/oqtane-cascading-parameters.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/guides/oqtane-cascading-parameters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/guides/oqtane-page-state.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/guides/oqtane-page-state.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/library/guides/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "library/guides/toc.html"
+        },
+        ".json": {
+          "relative_path": "library/guides/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-menu/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-menu/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-meta-structure.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-meta-structure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/shared/do-inherit-from-componentbase.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/shared/do-inherit-from-componentbase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/library/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "library/toc.html"
+        },
+        ".json": {
+          "relative_path": "library/toc.json"
         }
       },
       "version": ""

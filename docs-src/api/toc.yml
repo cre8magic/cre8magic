@@ -4,6 +4,16 @@ items:
   name: ToSic.Cre8magic
   type: Namespace
   items:
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    type: Namespace
+    items:
+    - uid: ToSic.Cre8magic.Act.IMagicHat
+      name: IMagicHat
+      type: Interface
+    - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions
+      name: MagicSettingsExtensions
+      type: Class
   - uid: ToSic.Cre8magic.Analytics
     name: Analytics
     type: Namespace
@@ -173,9 +183,6 @@ items:
     - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog
       name: MagicSettingsCatalog
       type: Class
-    - uid: ToSic.Cre8magic.Settings.MagicSettingsExtensions
-      name: MagicSettingsExtensions
-      type: Class
     - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions
       name: PairOnOffExtensions
       type: Class
@@ -279,9 +286,6 @@ items:
     - uid: ToSic.Cre8magic.Utils.StringExtensions
       name: StringExtensions
       type: Class
-  - uid: ToSic.Cre8magic.IMagicHat
-    name: IMagicHat
-    type: Interface
   - uid: ToSic.Cre8magic.MagicConstants
     name: MagicConstants
     type: Class

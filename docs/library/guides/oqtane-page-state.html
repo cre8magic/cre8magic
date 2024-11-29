@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Oqtane PageState and How to Use it | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Oqtane PageState and How to Use it | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/guides/oqtane-page-state.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/cre8magic-logo50.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Library.Guides.OqtanePageState">
+<h1 id="oqtane-pagestate-and-how-to-use-it">Oqtane PageState and How to Use it</h1>
+
+<p>The Oqtane <strong>PageState</strong> is an object which the platform Oqtane updates continuously
+and passes on to all components on the page.</p>
+<p>Here you'll learn what the PageState is, and how to use it in different scenarios.</p>
+<h2 id="what-is-the-oqtane-pagestate">What is the Oqtane PageState</h2>
+<p>Internally Oqtane creates the <code>PageState</code> object and updates it whenever the page changes.
+It contains various things such as:</p>
+<ol>
+<li>current-page information such as the current page, list of modules on it etc.</li>
+<li>list of all pages etc.</li>
+<li>site information to access ID, URL, etc.</li>
+<li>request information such as url parameters</li>
+</ol>
+<p>This object is provided by Oqtane automatically as a <a class="xref" href="oqtane-cascading-parameters.html">CascadingParameter</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Most operations in cre8magic will require the <code>PageState</code> object.
+There are a few ways to access it, explained below.</p>
+</div>
+<h2 id="get-the-pagestate">Get the PageState</h2>
+<p>If you inherit from any standard Oqtane component (<em>not recommended</em>), you can access the <code>PageState</code> object directly.
+This is because these components are already set up to receive the <code>PageState</code> object.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>cre8magic ♾️ strongly believes in
+<a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">Composition over Inheritance</a>
+as the pattern of choice.
+This means that you should <em>not inherit</em> from an Oqtane base class
+but instead inherit from <code>ComponentBase</code>.</p>
+</div>
+
+<p>To access the <code>PageState</code> from any normal component, just add this section to your file which
+inherits from <code>ComponentBase</code>:</p>
+<pre><code class="lang-csharp">@inherits ComponentBase
+@code {
+    [CascadingParameter] PageState PageState { get; set; }
+}
+</code></pre>
+<h2 id="use-the-pagestate-to-get-a-kit-from-the-magichat">Use the PageState to get a Kit from the MagicHat</h2>
+<p>Almost all operations in cre8magic require a <code>Kit</code> object.
+This is created for you by the <code>IMagicHat</code> service,
+which usually needs the <code>PageState</code> to figure out the context.</p>
+<p>There are two ways that the <code>MagicHat</code> can get the <code>PageState</code>:</p>
+<ol>
+<li>Directly in the request - there are a few ways to do this</li>
+<li>Provide it in the theme, so that all components can magically have it (less code)</li>
+</ol>
+<h3 id="pass-the-pagestate-to-the-magichat-in-the-call">Pass the PageState to the MagicHat in the Call</h3>
+<p>Since there will be various scenarios where you need to pass the <code>PageState</code> to the <code>MagicHat</code>,
+we have created a few ways to do this.</p>
+<p>The most simple one creates a new <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> and sets the <code>PageState</code> property:</p>
+<pre><code class="lang-csharp">@{
+  var menuKit = MagicHat.MenuKit(new() { PageState = PageState });
+}
+</code></pre>
+<p>In other scenarios you may already have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object,
+but want to extend it with the <code>PageState</code>:</p>
+<pre><code class="lang-csharp">@code {
+  // The PageState provided by Oqtane
+  [CascadingParameter] PageState PageState { get; set; }
+
+  // The Settings handed into this component as a required parameter (so it's never null)
+  [Parameter, EditorRequired] MagicMenuSettings Settings { get; set; }
+}
+@{
+  // Extend the existing settings with the PageState using the records-with syntax
+  var menuKit = MagicHat.MenuKit(Settings with { PageState = PageState });
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The snippet above uses the <code>with</code> statement to create a new object with the <code>PageState</code> property set.
+This is a core feature of the newer C# languages, and records are used extensively in cre8magic.</p>
+</div>
+<p>But the most common scenario is that you <em>might</em> have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object.
+Since it could also be null, the <code>with</code> statement above would fail.
+To make things easier, we created an extension method to allow this syntax:</p>
+<pre><code class="lang-csharp">@code {
+  // The PageState provided by Oqtane
+  [CascadingParameter] PageState PageState { get; set; }
+
+  // The Settings handed into this component; NOT required, so it could be null
+  [Parameter] MagicMenuSettings? Settings { get; set; }
+}
+@{
+  // Extend the existing settings with the PageState using the records-with syntax
+  var menuKit = MagicHat.MenuKit(Settings.With(PageState));
+}
+</code></pre>
+<p>Internally this does the same as the original <code>with</code> statement, but also creates a new object if it's null.</p>
+<h2 id="provide-the-pagestate-in-the-theme-less-code">Provide the PageState in the Theme (less code)</h2>
+<p>The above examples are the fool-proof way of doing things,
+but it does add some plumbing which isn't exactly magical.</p>
+<p>Since advanced setups will usually have a cre8magic-aware Theme,
+which has some initialization code running, you can also provide the <code>PageState</code> there.</p>
+<pre><code class="lang-csharp">// In your Theme.razor file
+@code {
+    /// &lt;summary&gt;
+    /// Get the Magic Hat from the DI
+    /// &lt;/summary&gt;
+    [Inject] public required IMagicHat MagicHat { get; set; }
+
+    /// &lt;summary&gt;
+    /// OnInitialized will run early (and once only).
+    /// It also runs before OnInitializedAsync.
+    /// &lt;/summary&gt;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        // Provide the first PageState as early as possible.
+        MagicHat.UsePageState(PageState);
+    }
+
+    /// &lt;summary&gt;
+    /// This will run whenever any parameter changes - such as PageState.
+    /// It also runs before OnParametersSetAsync.
+    /// &lt;/summary&gt;
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        // Provide the latest PageState on every change
+        MagicHat.UsePageState(PageState);
+    }
+}
+</code></pre>
+<p>The <strong>MagicHat 🎩</strong> will remember the <code>PageState</code> for you, so your components can now be simpler.
+You can now write this:</p>
+<pre><code class="lang-csharp">@{
+  var menuKit = MagicHat.MenuKit(Settings);
+}
+</code></pre>
+<p>...instead of the fairly lengthy:</p>
+<pre><code class="lang-csharp">@code {
+  // The PageState provided by Oqtane
+  [CascadingParameter] PageState PageState { get; set; }
+
+  // The Settings handed into this component; NOT required, so it could be null
+  [Parameter] MagicMenuSettings? Settings { get; set; }
+}
+@{
+  // Extend the existing settings with the PageState using the records-with syntax
+  var menuKit = MagicHat.MenuKit(Settings.With(PageState));
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When creating a theme which fully uses cre8magic, we recommend this approach.</p>
+<p>But when creating reusable components for others, you cannot be sure that
+they have configured the theme to proved the <code>PageState</code>,
+so your standalone-components should always be able to handle the <code>PageState</code> themselves.</p>
+</div>
+<hr>
+<h2 id="history">History</h2>
+<ol>
+<li>...</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/guides/oqtane-page-state.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
