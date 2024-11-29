@@ -20,7 +20,16 @@ The cre8magic Menus are a system to easily create best-practice menus in Oqtane 
 Depending on your preferences you can use pre-built components and some configuration,
 or easily build your own components with the help of the **MagicMenuKit**.
 
+A very simple menu can be added just like this:
+
+```html
+@using ToSic.Cre8magic.OqtaneBs5
+<MagicMenu Settings='new() { Start = "/" }'/>
+```
+
 ## How it Works
+
+### How it Works - Basic Setup
 
 The Magic Menu is a system to create menus in Oqtane Themes.
 It uses the standard conventions of cre8magic with the following setup:
@@ -44,11 +53,34 @@ flowchart LR
 
 1. This **MagicMenuKit 🧰** contains the **MagicPages** and various tools to easily create any menu.
 
-1. Some code will then use this kit to create the desired HTML
+1. Some code will then use this kit to create the desired **HTML 🔥**
 
     1. Either use the pre-built **MagicMenu** component in **OqtaneBs5** to quickly create a best-practice Bootstrap5 menu
 
     2. Or create your own Blazor component according to your needs
+
+### How it Works - Advanced Setup with Tailor
+
+If you are using the **MagicMenu** component,
+it can also use the **MagicMenuTailor 🧵** to tweak the output in various scenarios without changing your code.
+You can also create custom components which use the **MagicTailor 🧵**.
+The tailor also needs settings, so this looks a bit like this:
+
+```mermaid
+flowchart LR
+ subgraph s1["Magic Hat 🎩"]
+            ls["Load Settings ⚙️"]
+        n1["Load Tailor Settings<br>&amp; Magic Tailor 🧵"]
+        gk["Provide Kit 🧰
+        with Tailor 🧵"]
+  end
+    YC["<b>Component / Code &lt; / &gt;</b><br>Using 🧰 / 🧵"] -- magic 🪄 --> HTML["Blazor HTML 🔥"]
+    ls --> n1
+    n1 --> gk
+    s1 --> YC
+    S(["Settings ⚙️ or ...Name <br> (_all optional_)"]) --> s1
+
+```
 
 1. The _optional_ **MagicMenuTailor 🧵** is a helper to tweak the output in various scenarios without changing your code.
 

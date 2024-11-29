@@ -134,29 +134,162 @@ it's in the Act namespace because it's usually used in the basic work which star
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames*"></a>
+  <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup*"></a>
 
-  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)">
-  WithNames&lt;TSettings&gt;(TSettings?, string?, string?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)">
+  RefillLookup&lt;TSettings&gt;(TSettings?, MagicSettingsLookup)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings WithNames&lt;TSettings&gt;(this TSettings? settings, string? partName, string? settingsName = null, bool overwrite = true) where TSettings : MagicSettingsBase, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings RefillLookup&lt;TSettings&gt;(this TSettings? settings, MagicSettingsLookup lookup) where TSettings : MagicSettingsBase, new()</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>settings</code> <span class="xref">TSettings</span></dt>
     <dd></dd>
-    <dt><code>partName</code> <span class="xref">string</span></dt>
+    <dt><code>lookup</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsLookup.html">MagicSettingsLookup</a></dt>
     <dd></dd>
-    <dt><code>settingsName</code> <span class="xref">string</span></dt>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TSettings</span></dt>
     <dd></dd>
-    <dt><code>overwrite</code> <span class="xref">bool</span></dt>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TSettings</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill*"></a>
+
+  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)">
+  Refill&lt;TSettings&gt;(TSettings?, PageState)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fill in the PageState if not yet set.
+This is to set the value if it's missing, but preserve any existing one.
+Alternative is <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_">With&lt;TSettings&gt;(TSettings?, PageState)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TSettings Refill&lt;TSettings&gt;(this TSettings? settings, PageState pageState) where TSettings : MagicSettingsBase, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <span class="xref">TSettings</span></dt>
+    <dd><p>The initial settings object - can be null (in which case a fresh one is created)</p>
+</dd>
+    <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
+    <dd><p>The PageState to back-fill</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TSettings</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TSettings</code></dt>
+    <dd><p>The settings-type we're updating.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill*"></a>
+
+  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)">
+  Refill&lt;TSettings, TWith&gt;(TSettings?, TWith?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TSettings Refill&lt;TSettings, TWith&gt;(this TSettings? settings, TWith? addition) where TSettings : MagicSettingsBase, IWith&lt;TWith?&gt;, new() where TWith : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <span class="xref">TSettings</span></dt>
+    <dd></dd>
+    <dt><code>addition</code> <span class="xref">TWith</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TSettings</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TSettings</code></dt>
+    <dd></dd>
+    <dt><code>TWith</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup*"></a>
+
+  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)">
+  WithLookup&lt;TSettings&gt;(TSettings?, MagicSettingsLookup)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TSettings WithLookup&lt;TSettings&gt;(this TSettings? settings, MagicSettingsLookup lookup) where TSettings : MagicSettingsBase, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <span class="xref">TSettings</span></dt>
+    <dd></dd>
+    <dt><code>lookup</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsLookup.html">MagicSettingsLookup</a></dt>
     <dd></dd>
   </dl>
 
@@ -183,18 +316,19 @@ it's in the Act namespace because it's usually used in the basic work which star
 
   <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_With_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.With*"></a>
 
-  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)">
-  With&lt;TSettings&gt;(TSettings?, PageState, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)">
+  With&lt;TSettings&gt;(TSettings?, PageState)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Add a PageState to a settings object.
-This uses normal record <code>with</code> manipulations, so it creates a new object but preserves all other settings.</p>
+This uses normal record <code>with</code> manipulations, so it creates a new object but preserves all other settings.
+Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_">Refill&lt;TSettings&gt;(TSettings?, PageState)</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings With&lt;TSettings&gt;(this TSettings? settings, PageState pageState, bool overwrite = true) where TSettings : MagicSettingsBase, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings With&lt;TSettings&gt;(this TSettings? settings, PageState pageState) where TSettings : MagicSettingsBase, new()</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -205,9 +339,6 @@ This uses normal record <code>with</code> manipulations, so it creates a new obj
     <dt><code>pageState</code> <a class="xref" href="https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs">PageState</a></dt>
     <dd><p>The PageState</p>
 </dd>
-    <dt><code>overwrite</code> <span class="xref">bool</span></dt>
-    <dd><p>Determines if an existing value should be overwritten. If <code>false</code> any original value is preserved.</p>
-</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -219,7 +350,7 @@ This uses normal record <code>with</code> manipulations, so it creates a new obj
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TSettings</code></dt>
-    <dd><p>The type of settings we're expanding with this PageState data.</p>
+    <dd><p>The settings-type we're updating.</p>
 </dd>
   </dl>
 
@@ -234,16 +365,16 @@ This uses normal record <code>with</code> manipulations, so it creates a new obj
 
   <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_With_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.With*"></a>
 
-  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)">
-  With&lt;TSettings, TWith&gt;(TSettings?, TWith?, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)">
+  With&lt;TSettings, TWith&gt;(TSettings?, TWith?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings With&lt;TSettings, TWith&gt;(this TSettings? settings, TWith? addition, bool overwrite = true) where TSettings : MagicSettingsBase, IWith&lt;TWith?&gt;, new() where TWith : class</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings With&lt;TSettings, TWith&gt;(this TSettings? settings, TWith? addition) where TSettings : MagicSettingsBase, IWith&lt;TWith?&gt;, new() where TWith : class</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -251,8 +382,6 @@ This uses normal record <code>with</code> manipulations, so it creates a new obj
     <dt><code>settings</code> <span class="xref">TSettings</span></dt>
     <dd></dd>
     <dt><code>addition</code> <span class="xref">TWith</span></dt>
-    <dd></dd>
-    <dt><code>overwrite</code> <span class="xref">bool</span></dt>
     <dd></dd>
   </dl>
 

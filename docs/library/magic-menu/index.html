@@ -100,7 +100,12 @@ and have fun maintaining changes.</p>
 <p>The cre8magic Menus are a system to easily create best-practice menus in Oqtane Themes.
 Depending on your preferences you can use pre-built components and some configuration,
 or easily build your own components with the help of the <strong>MagicMenuKit</strong>.</p>
+<p>A very simple menu can be added just like this:</p>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+&lt;MagicMenu Settings='new() { Start = &quot;/&quot; }'/&gt;
+</code></pre>
 <h2 id="how-it-works">How it Works</h2>
+<h3 id="how-it-works---basic-setup">How it Works - Basic Setup</h3>
 <p>The Magic Menu is a system to create menus in Oqtane Themes.
 It uses the standard conventions of cre8magic with the following setup:</p>
 <!-- use https://www.mermaidchart.com/play to edit -->
@@ -120,7 +125,7 @@ It uses the standard conventions of cre8magic with the following setup:</p>
 </li>
 <li><p>This <strong>MagicMenuKit 🧰</strong> contains the <strong>MagicPages</strong> and various tools to easily create any menu.</p>
 </li>
-<li><p>Some code will then use this kit to create the desired HTML</p>
+<li><p>Some code will then use this kit to create the desired <strong>HTML 🔥</strong></p>
 <ol>
 <li><p>Either use the pre-built <strong>MagicMenu</strong> component in <strong>OqtaneBs5</strong> to quickly create a best-practice Bootstrap5 menu</p>
 </li>
@@ -128,6 +133,27 @@ It uses the standard conventions of cre8magic with the following setup:</p>
 </li>
 </ol>
 </li>
+</ol>
+<h3 id="how-it-works---advanced-setup-with-tailor">How it Works - Advanced Setup with Tailor</h3>
+<p>If you are using the <strong>MagicMenu</strong> component,
+it can also use the <strong>MagicMenuTailor 🧵</strong> to tweak the output in various scenarios without changing your code.
+You can also create custom components which use the <strong>MagicTailor 🧵</strong>.
+The tailor also needs settings, so this looks a bit like this:</p>
+<pre><code class="lang-mermaid">flowchart LR
+ subgraph s1[&quot;Magic Hat 🎩&quot;]
+            ls[&quot;Load Settings ⚙️&quot;]
+        n1[&quot;Load Tailor Settings&lt;br&gt;&amp;amp; Magic Tailor 🧵&quot;]
+        gk[&quot;Provide Kit 🧰
+        with Tailor 🧵&quot;]
+  end
+    YC[&quot;&lt;b&gt;Component / Code &amp;lt; / &amp;gt;&lt;/b&gt;&lt;br&gt;Using 🧰 / 🧵&quot;] -- magic 🪄 --&gt; HTML[&quot;Blazor HTML 🔥&quot;]
+    ls --&gt; n1
+    n1 --&gt; gk
+    s1 --&gt; YC
+    S([&quot;Settings ⚙️ or ...Name &lt;br&gt; (_all optional_)&quot;]) --&gt; s1
+
+</code></pre>
+<ol>
 <li><p>The <em>optional</em> <strong>MagicMenuTailor 🧵</strong> is a helper to tweak the output in various scenarios without changing your code.</p>
 <ol>
 <li><p>It is used by the <strong>MagicMenu 🎁</strong> component to allow for easy customization.</p>

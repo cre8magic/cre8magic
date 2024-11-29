@@ -13,6 +13,7 @@ items:
   - ToSic.Cre8magic.Settings.MagicSettingOnOff
   - ToSic.Cre8magic.Settings.MagicSettingsBase
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog
+  - ToSic.Cre8magic.Settings.MagicSettingsLookup
   - ToSic.Cre8magic.Settings.PairOnOffExtensions
   - ToSic.Cre8magic.Settings.SettingsWithInherit
   langs:
@@ -99,6 +100,13 @@ references:
   name: MagicSettingsCatalog
   nameWithType: MagicSettingsCatalog
   fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog
+- uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsLookup
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
+  name: MagicSettingsLookup
+  nameWithType: MagicSettingsLookup
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup
 - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions
   commentId: T:ToSic.Cre8magic.Settings.PairOnOffExtensions
   parent: ToSic.Cre8magic.Settings

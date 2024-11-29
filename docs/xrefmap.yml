@@ -264,6 +264,47 @@ references:
   commentId: T:ToSic.Cre8magic.Act.MagicSettingsExtensions
   fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions
   nameWithType: MagicSettingsExtensions
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill*
+  name: Refill
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill_
+  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill
+  nameWithType: MagicSettingsExtensions.Refill
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup*
+  name: RefillLookup
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup_
+  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup
+  nameWithType: MagicSettingsExtensions.RefillLookup
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  name: RefillLookup<TSettings>(TSettings?, MagicSettingsLookup)
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  name.vb: RefillLookup(Of TSettings)(TSettings, MagicSettingsLookup)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup<TSettings>(TSettings?, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup(Of TSettings)(TSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  nameWithType: MagicSettingsExtensions.RefillLookup<TSettings>(TSettings?, MagicSettingsLookup)
+  nameWithType.vb: MagicSettingsExtensions.RefillLookup(Of TSettings)(TSettings, MagicSettingsLookup)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
+  name: Refill<TSettings>(TSettings?, PageState)
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
+  name.vb: Refill(Of TSettings)(TSettings, PageState)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill<TSettings>(TSettings?, Oqtane.UI.PageState)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill(Of TSettings)(TSettings, Oqtane.UI.PageState)
+  nameWithType: MagicSettingsExtensions.Refill<TSettings>(TSettings?, PageState)
+  nameWithType.vb: MagicSettingsExtensions.Refill(Of TSettings)(TSettings, PageState)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
+  name: Refill<TSettings, TWith>(TSettings?, TWith?)
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
+  name.vb: Refill(Of TSettings, TWith)(TSettings, TWith)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill<TSettings, TWith>(TSettings?, TWith?)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill(Of TSettings, TWith)(TSettings, TWith)
+  nameWithType: MagicSettingsExtensions.Refill<TSettings, TWith>(TSettings?, TWith?)
+  nameWithType.vb: MagicSettingsExtensions.Refill(Of TSettings, TWith)(TSettings, TWith)
 - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With*
   name: With
   href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With_
@@ -271,40 +312,40 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With
   nameWithType: MagicSettingsExtensions.With
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames*
-  name: WithNames
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames_
-  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup*
+  name: WithLookup
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup_
+  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames
-  nameWithType: MagicSettingsExtensions.WithNames
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
-  name: WithNames<TSettings>(TSettings?, string?, string?, bool)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
-  name.vb: WithNames(Of TSettings)(TSettings, String, String, Boolean)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames<TSettings>(TSettings?, string?, string?, bool)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames(Of TSettings)(TSettings, String, String, Boolean)
-  nameWithType: MagicSettingsExtensions.WithNames<TSettings>(TSettings?, string?, string?, bool)
-  nameWithType.vb: MagicSettingsExtensions.WithNames(Of TSettings)(TSettings, String, String, Boolean)
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-  name: With<TSettings>(TSettings?, PageState, bool)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-  name.vb: With(Of TSettings)(TSettings, PageState, Boolean)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings>(TSettings?, Oqtane.UI.PageState, bool)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState, Boolean)
-  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings?, PageState, bool)
-  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState, Boolean)
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-  name: With<TSettings, TWith>(TSettings?, TWith?, bool)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-  name.vb: With(Of TSettings, TWith)(TSettings, TWith, Boolean)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?, bool)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
-  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?, bool)
-  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup
+  nameWithType: MagicSettingsExtensions.WithLookup
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  name: WithLookup<TSettings>(TSettings?, MagicSettingsLookup)
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  name.vb: WithLookup(Of TSettings)(TSettings, MagicSettingsLookup)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup<TSettings>(TSettings?, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup(Of TSettings)(TSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  nameWithType: MagicSettingsExtensions.WithLookup<TSettings>(TSettings?, MagicSettingsLookup)
+  nameWithType.vb: MagicSettingsExtensions.WithLookup(Of TSettings)(TSettings, MagicSettingsLookup)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
+  name: With<TSettings>(TSettings?, PageState)
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
+  name.vb: With(Of TSettings)(TSettings, PageState)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings>(TSettings?, Oqtane.UI.PageState)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState)
+  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings?, PageState)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
+  name: With<TSettings, TWith>(TSettings?, TWith?)
+  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
+  name.vb: With(Of TSettings, TWith)(TSettings, TWith)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith)
+  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith)
 - uid: ToSic.Cre8magic.Analytics
   name: ToSic.Cre8magic.Analytics
   href: api/ToSic.Cre8magic.Analytics.html
@@ -14676,6 +14717,51 @@ references:
   fullName.vb: ToSic.Cre8magic.Settings.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
   nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?, bool)
   nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+- uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+  name: MagicSettingsLookup
+  href: api/ToSic.Cre8magic.Settings.MagicSettingsLookup.html
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingsLookup
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup
+  nameWithType: MagicSettingsLookup
+- uid: ToSic.Cre8magic.Settings.MagicSettingsLookup.DesignName
+  name: DesignName
+  href: api/ToSic.Cre8magic.Settings.MagicSettingsLookup.html#ToSic_Cre8magic_Settings_MagicSettingsLookup_DesignName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsLookup.DesignName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup.DesignName
+  nameWithType: MagicSettingsLookup.DesignName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsLookup.DesignName*
+  name: DesignName
+  href: api/ToSic.Cre8magic.Settings.MagicSettingsLookup.html#ToSic_Cre8magic_Settings_MagicSettingsLookup_DesignName_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsLookup.DesignName
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup.DesignName
+  nameWithType: MagicSettingsLookup.DesignName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsLookup.PartName
+  name: PartName
+  href: api/ToSic.Cre8magic.Settings.MagicSettingsLookup.html#ToSic_Cre8magic_Settings_MagicSettingsLookup_PartName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsLookup.PartName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup.PartName
+  nameWithType: MagicSettingsLookup.PartName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsLookup.PartName*
+  name: PartName
+  href: api/ToSic.Cre8magic.Settings.MagicSettingsLookup.html#ToSic_Cre8magic_Settings_MagicSettingsLookup_PartName_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsLookup.PartName
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup.PartName
+  nameWithType: MagicSettingsLookup.PartName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsLookup.SettingsName
+  name: SettingsName
+  href: api/ToSic.Cre8magic.Settings.MagicSettingsLookup.html#ToSic_Cre8magic_Settings_MagicSettingsLookup_SettingsName
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsLookup.SettingsName
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup.SettingsName
+  nameWithType: MagicSettingsLookup.SettingsName
+- uid: ToSic.Cre8magic.Settings.MagicSettingsLookup.SettingsName*
+  name: SettingsName
+  href: api/ToSic.Cre8magic.Settings.MagicSettingsLookup.html#ToSic_Cre8magic_Settings_MagicSettingsLookup_SettingsName_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsLookup.SettingsName
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup.SettingsName
+  nameWithType: MagicSettingsLookup.SettingsName
 - uid: ToSic.Cre8magic.Settings.NamedSettings`1
   name: NamedSettings<T>
   href: api/ToSic.Cre8magic.Settings.NamedSettings-1.html

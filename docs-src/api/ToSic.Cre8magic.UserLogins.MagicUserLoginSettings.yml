@@ -39,9 +39,12 @@ items:
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
   extensionMethods:
-  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(System.String,System.String,System.Boolean)
-  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
-  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2({TWith},System.Boolean)
+  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2({TWith})
+  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2({TWith})
 references:
 - uid: ToSic.Cre8magic.UserLogins
   commentId: N:ToSic.Cre8magic.UserLogins
@@ -174,21 +177,21 @@ references:
   - name: (
   - name: )
   - name: )
-- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(System.String,System.String,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
+- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
   parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
-  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
-  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
-  name: WithNames<MagicUserLoginSettings>(MagicUserLoginSettings, string, string, bool)
-  nameWithType: MagicSettingsExtensions.WithNames<MagicUserLoginSettings>(MagicUserLoginSettings, string, string, bool)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, string, string, bool)
-  nameWithType.vb: MagicSettingsExtensions.WithNames(Of MagicUserLoginSettings)(MagicUserLoginSettings, String, String, Boolean)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, String, String, Boolean)
-  name.vb: WithNames(Of MagicUserLoginSettings)(MagicUserLoginSettings, String, String, Boolean)
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  name: RefillLookup<MagicUserLoginSettings>(MagicUserLoginSettings, MagicSettingsLookup)
+  nameWithType: MagicSettingsExtensions.RefillLookup<MagicUserLoginSettings>(MagicUserLoginSettings, MagicSettingsLookup)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  nameWithType.vb: MagicSettingsExtensions.RefillLookup(Of MagicUserLoginSettings)(MagicUserLoginSettings, MagicSettingsLookup)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  name.vb: RefillLookup(Of MagicUserLoginSettings)(MagicUserLoginSettings, MagicSettingsLookup)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,System.String,System.String,System.Boolean)
-    name: WithNames
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+    name: RefillLookup
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
   - name: <
   - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
     name: MagicUserLoginSettings
@@ -200,24 +203,14 @@ references:
     href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
   - name: ','
   - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+    name: MagicSettingsLookup
+    href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,System.String,System.String,System.Boolean)
-    name: WithNames
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+    name: RefillLookup
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
   - name: (
   - name: Of
   - name: " "
@@ -231,35 +224,25 @@ references:
     href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
   - name: ','
   - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+    name: MagicSettingsLookup
+    href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
   - name: )
-- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(Oqtane.UI.PageState,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
   parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
-  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
-  name: With<MagicUserLoginSettings>(MagicUserLoginSettings, PageState, bool)
-  nameWithType: MagicSettingsExtensions.With<MagicUserLoginSettings>(MagicUserLoginSettings, PageState, bool)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, Oqtane.UI.PageState, bool)
-  nameWithType.vb: MagicSettingsExtensions.With(Of MagicUserLoginSettings)(MagicUserLoginSettings, PageState, Boolean)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, Oqtane.UI.PageState, Boolean)
-  name.vb: With(Of MagicUserLoginSettings)(MagicUserLoginSettings, PageState, Boolean)
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_
+  name: Refill<MagicUserLoginSettings>(MagicUserLoginSettings, PageState)
+  nameWithType: MagicSettingsExtensions.Refill<MagicUserLoginSettings>(MagicUserLoginSettings, PageState)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, Oqtane.UI.PageState)
+  nameWithType.vb: MagicSettingsExtensions.Refill(Of MagicUserLoginSettings)(MagicUserLoginSettings, PageState)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, Oqtane.UI.PageState)
+  name.vb: Refill(Of MagicUserLoginSettings)(MagicUserLoginSettings, PageState)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,Oqtane.UI.PageState,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,Oqtane.UI.PageState)
+    name: Refill
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_
   - name: <
   - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
     name: MagicUserLoginSettings
@@ -275,16 +258,11 @@ references:
     name: PageState
     isExternal: true
     href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,Oqtane.UI.PageState,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,Oqtane.UI.PageState)
+    name: Refill
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_
   - name: (
   - name: Of
   - name: " "
@@ -302,27 +280,22 @@ references:
     name: PageState
     isExternal: true
     href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
   - name: )
-- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2({TWith},System.Boolean)
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
+- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2({TWith})
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
   parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
-  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
-  name: With<MagicUserLoginSettings, TWith>(MagicUserLoginSettings, TWith, bool)
-  nameWithType: MagicSettingsExtensions.With<MagicUserLoginSettings, TWith>(MagicUserLoginSettings, TWith, bool)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith, bool)
-  nameWithType.vb: MagicSettingsExtensions.With(Of MagicUserLoginSettings, TWith)(MagicUserLoginSettings, TWith, Boolean)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith, Boolean)
-  name.vb: With(Of MagicUserLoginSettings, TWith)(MagicUserLoginSettings, TWith, Boolean)
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_
+  name: Refill<MagicUserLoginSettings, TWith>(MagicUserLoginSettings, TWith)
+  nameWithType: MagicSettingsExtensions.Refill<MagicUserLoginSettings, TWith>(MagicUserLoginSettings, TWith)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith)
+  nameWithType.vb: MagicSettingsExtensions.Refill(Of MagicUserLoginSettings, TWith)(MagicUserLoginSettings, TWith)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith)
+  name.vb: Refill(Of MagicUserLoginSettings, TWith)(MagicUserLoginSettings, TWith)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,``1,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,``1)
+    name: Refill
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_
   - name: <
   - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
     name: MagicUserLoginSettings
@@ -338,16 +311,11 @@ references:
   - name: ','
   - name: " "
   - name: TWith
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,``1,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,``1)
+    name: Refill
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_
   - name: (
   - name: Of
   - name: " "
@@ -365,11 +333,163 @@ references:
   - name: ','
   - name: " "
   - name: TWith
+  - name: )
+- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  name: WithLookup<MagicUserLoginSettings>(MagicUserLoginSettings, MagicSettingsLookup)
+  nameWithType: MagicSettingsExtensions.WithLookup<MagicUserLoginSettings>(MagicUserLoginSettings, MagicSettingsLookup)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  nameWithType.vb: MagicSettingsExtensions.WithLookup(Of MagicUserLoginSettings)(MagicUserLoginSettings, MagicSettingsLookup)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  name.vb: WithLookup(Of MagicUserLoginSettings)(MagicUserLoginSettings, MagicSettingsLookup)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+    name: WithLookup
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  - name: <
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
   - name: ','
   - name: " "
-  - uid: System.Boolean
-    name: Boolean
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+    name: MagicSettingsLookup
+    href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+    name: WithLookup
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+    name: MagicSettingsLookup
+    href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
+  - name: )
+- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_
+  name: With<MagicUserLoginSettings>(MagicUserLoginSettings, PageState)
+  nameWithType: MagicSettingsExtensions.With<MagicUserLoginSettings>(MagicUserLoginSettings, PageState)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, Oqtane.UI.PageState)
+  nameWithType.vb: MagicSettingsExtensions.With(Of MagicUserLoginSettings)(MagicUserLoginSettings, PageState)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, Oqtane.UI.PageState)
+  name.vb: With(Of MagicUserLoginSettings)(MagicUserLoginSettings, PageState)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,Oqtane.UI.PageState)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_
+  - name: <
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
     isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,Oqtane.UI.PageState)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: )
+- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2({TWith})
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
+  parent: ToSic.Cre8magic.Act.MagicSettingsExtensions
+  definition: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_
+  name: With<MagicUserLoginSettings, TWith>(MagicUserLoginSettings, TWith)
+  nameWithType: MagicSettingsExtensions.With<MagicUserLoginSettings, TWith>(MagicUserLoginSettings, TWith)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith>(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith)
+  nameWithType.vb: MagicSettingsExtensions.With(Of MagicUserLoginSettings, TWith)(MagicUserLoginSettings, TWith)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith)(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings, TWith)
+  name.vb: With(Of MagicUserLoginSettings, TWith)(MagicUserLoginSettings, TWith)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,``1)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_
+  - name: <
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: '>'
+  - name: (
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings,``1)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  - name: (
+  - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+    name: MagicUserLoginSettings
+    href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  - name: ','
+  - name: " "
+  - name: TWith
   - name: )
 - uid: System
   commentId: N:System
@@ -408,20 +528,19 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
-  isExternal: true
-  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
-  name: WithNames<TSettings>(TSettings, string, string, bool)
-  nameWithType: MagicSettingsExtensions.WithNames<TSettings>(TSettings, string, string, bool)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames<TSettings>(TSettings, string, string, bool)
-  nameWithType.vb: MagicSettingsExtensions.WithNames(Of TSettings)(TSettings, String, String, Boolean)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames(Of TSettings)(TSettings, String, String, Boolean)
-  name.vb: WithNames(Of TSettings)(TSettings, String, String, Boolean)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  name: RefillLookup<TSettings>(TSettings, MagicSettingsLookup)
+  nameWithType: MagicSettingsExtensions.RefillLookup<TSettings>(TSettings, MagicSettingsLookup)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup<TSettings>(TSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  nameWithType.vb: MagicSettingsExtensions.RefillLookup(Of TSettings)(TSettings, MagicSettingsLookup)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup(Of TSettings)(TSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  name.vb: RefillLookup(Of TSettings)(TSettings, MagicSettingsLookup)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
-    name: WithNames
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+    name: RefillLookup
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
   - name: <
   - name: TSettings
   - name: '>'
@@ -429,24 +548,14 @@ references:
   - name: TSettings
   - name: ','
   - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: string
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+    name: MagicSettingsLookup
+    href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithNames``1(``0,System.String,System.String,System.Boolean)
-    name: WithNames
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithNames__1___0_System_String_System_String_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+    name: RefillLookup
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
   - name: (
   - name: Of
   - name: " "
@@ -456,19 +565,9 @@ references:
   - name: TSettings
   - name: ','
   - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+    name: MagicSettingsLookup
+    href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
   - name: )
 - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions
   commentId: T:ToSic.Cre8magic.Act.MagicSettingsExtensions
@@ -477,20 +576,20 @@ references:
   name: MagicSettingsExtensions
   nameWithType: MagicSettingsExtensions
   fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
   isExternal: true
-  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
-  name: With<TSettings>(TSettings, PageState, bool)
-  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings, PageState, bool)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings>(TSettings, Oqtane.UI.PageState, bool)
-  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState, Boolean)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState, Boolean)
-  name.vb: With(Of TSettings)(TSettings, PageState, Boolean)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_
+  name: Refill<TSettings>(TSettings, PageState)
+  nameWithType: MagicSettingsExtensions.Refill<TSettings>(TSettings, PageState)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill<TSettings>(TSettings, Oqtane.UI.PageState)
+  nameWithType.vb: MagicSettingsExtensions.Refill(Of TSettings)(TSettings, PageState)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill(Of TSettings)(TSettings, Oqtane.UI.PageState)
+  name.vb: Refill(Of TSettings)(TSettings, PageState)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
+    name: Refill
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_
   - name: <
   - name: TSettings
   - name: '>'
@@ -502,16 +601,11 @@ references:
     name: PageState
     isExternal: true
     href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
+    name: Refill
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_
   - name: (
   - name: Of
   - name: " "
@@ -525,26 +619,20 @@ references:
     name: PageState
     isExternal: true
     href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
   - name: )
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-  isExternal: true
-  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
-  name: With<TSettings, TWith>(TSettings, TWith, bool)
-  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith, bool)
-  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith, Boolean)
-  name.vb: With(Of TSettings, TWith)(TSettings, TWith, Boolean)
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_
+  name: Refill<TSettings, TWith>(TSettings, TWith)
+  nameWithType: MagicSettingsExtensions.Refill<TSettings, TWith>(TSettings, TWith)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill<TSettings, TWith>(TSettings, TWith)
+  nameWithType.vb: MagicSettingsExtensions.Refill(Of TSettings, TWith)(TSettings, TWith)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill(Of TSettings, TWith)(TSettings, TWith)
+  name.vb: Refill(Of TSettings, TWith)(TSettings, TWith)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
+    name: Refill
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_
   - name: <
   - name: TSettings
   - name: ','
@@ -556,16 +644,11 @@ references:
   - name: ','
   - name: " "
   - name: TWith
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1,System.Boolean)
-    name: With
-    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_System_Boolean_
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
+    name: Refill
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_
   - name: (
   - name: Of
   - name: " "
@@ -579,11 +662,134 @@ references:
   - name: ','
   - name: " "
   - name: TWith
+  - name: )
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  name: WithLookup<TSettings>(TSettings, MagicSettingsLookup)
+  nameWithType: MagicSettingsExtensions.WithLookup<TSettings>(TSettings, MagicSettingsLookup)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup<TSettings>(TSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  nameWithType.vb: MagicSettingsExtensions.WithLookup(Of TSettings)(TSettings, MagicSettingsLookup)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup(Of TSettings)(TSettings, ToSic.Cre8magic.Settings.MagicSettingsLookup)
+  name.vb: WithLookup(Of TSettings)(TSettings, MagicSettingsLookup)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+    name: WithLookup
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  - name: <
+  - name: TSettings
+  - name: '>'
+  - name: (
+  - name: TSettings
   - name: ','
   - name: " "
-  - uid: System.Boolean
-    name: Boolean
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+    name: MagicSettingsLookup
+    href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)
+    name: WithLookup
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Settings.MagicSettingsLookup
+    name: MagicSettingsLookup
+    href: ToSic.Cre8magic.Settings.MagicSettingsLookup.html
+  - name: )
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
+  isExternal: true
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_
+  name: With<TSettings>(TSettings, PageState)
+  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings, PageState)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings>(TSettings, Oqtane.UI.PageState)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState)
+  name.vb: With(Of TSettings)(TSettings, PageState)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_
+  - name: <
+  - name: TSettings
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
     isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - uid: Oqtane.UI.PageState
+    name: PageState
+    isExternal: true
+    href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  - name: )
+- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
+  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
+  href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_
+  name: With<TSettings, TWith>(TSettings, TWith)
+  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith)
+  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings, TWith>(TSettings, TWith)
+  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith)
+  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith)
+  name.vb: With(Of TSettings, TWith)(TSettings, TWith)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_
+  - name: <
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: '>'
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
+    name: With
+    href: ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
+  - name: )
+  - name: (
+  - name: TSettings
+  - name: ','
+  - name: " "
+  - name: TWith
   - name: )
 - uid: ToSic.Cre8magic.Act
   commentId: N:ToSic.Cre8magic.Act
