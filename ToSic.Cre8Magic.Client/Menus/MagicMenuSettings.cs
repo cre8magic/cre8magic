@@ -30,7 +30,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
         Children = priority?.Children ?? fallback?.Children;
         Start = priority?.Start ?? fallback?.Start;
         Level = priority?.Level ?? fallback?.Level;
-        Template = priority?.Template ?? fallback?.Template;
+        Variant = priority?.Variant ?? fallback?.Variant;
 
         // Code-Only Settings
         Designer = priority?.Designer ?? fallback?.Designer;
@@ -109,14 +109,12 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     /// <summary>
     /// The template to use - horizontal/vertical
     /// </summary>
-    public string? Template { get; init; }
+    public string? Variant { get; init; }
     //public const string TemplateDefault = "Horizontal";
 
 
     [field: AllowNull, MaybeNull]
     public string MenuId => field ??= SettingsUtils.RandomLongId(Id);
-
-    public string Variant => Template ?? "";
 
     #region Code-Only Settings
 
@@ -142,13 +140,13 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     {
         Fallback = new()
         {
-            Template = "Horizontal",
+            Variant = "Horizontal",
             Start = StartPageRoot,
             Depth = 1, // MUST be specified on the fallback, otherwise some code will break
         },
         Foundation = new()
         {
-            Template = "Horizontal",
+            Variant = "Horizontal",
             Start = StartPageRoot,
             Depth = 0,
         },
