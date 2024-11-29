@@ -17,46 +17,69 @@ namespace ToSic.Cre8magic.Act;
 public static class MagicSettingsExtensions
 {
     /// <summary>
-    /// Add a PageState to a settings object.
-    /// This uses normal record `with` manipulations, so it creates a new object but preserves all other settings.
+    /// Fill in the PageState if not yet set.
+    /// This is to set the value if it's missing, but preserve any existing one.
+    /// Alternative is <see cref="With{TSettings}"/>
     /// </summary>
-    /// <typeparam name="TSettings">The type of settings we're expanding with this PageState data.</typeparam>
+    /// <typeparam name="TSettings">The settings-type we're updating.</typeparam>
     /// <param name="settings">The initial settings object - can be null (in which case a fresh one is created)</param>
-    /// <param name="pageState">The PageState</param>
-    /// <param name="overwrite">Determines if an existing value should be overwritten. If `false` any original value is preserved.</param>
+    /// <param name="pageState">The PageState to back-fill</param>
     /// <returns></returns>
-    public static TSettings With<TSettings>(this TSettings? settings, PageState pageState, bool overwrite = true)
+    public static TSettings Refill<TSettings>(this TSettings? settings, PageState pageState)
         where TSettings : MagicSettingsBase, new()
     {
         settings ??= new();
-        return !overwrite && settings.PageState != null
-            ? settings
-            : settings with { PageState = pageState };
+        return settings.PageState != null ? settings : settings with { PageState = pageState };
     }
 
-    public static TSettings With<TSettings, TWith>(this TSettings? settings, TWith? addition, bool overwrite = true)
+
+    /// <summary>
+    /// Add a PageState to a settings object.
+    /// This uses normal record `with` manipulations, so it creates a new object but preserves all other settings.
+    /// Alternative when only filling empty <see cref="Refill{TSettings}"/>
+    /// </summary>
+    /// <typeparam name="TSettings">The settings-type we're updating.</typeparam>
+    /// <param name="settings">The initial settings object - can be null (in which case a fresh one is created)</param>
+    /// <param name="pageState">The PageState</param>
+    /// <returns></returns>
+    public static TSettings With<TSettings>(this TSettings? settings, PageState pageState)
+        where TSettings : MagicSettingsBase, new() =>
+        settings != null
+            ? settings with { PageState = pageState }
+            : new() { PageState = pageState };
+
+
+
+    public static TSettings Refill<TSettings, TWith>(this TSettings? settings, TWith? addition)
         where TSettings : MagicSettingsBase, IWith<TWith?>, new()
         where TWith : class
     {
         settings ??= new();
-        return !overwrite && settings.WithData != null
-            ? settings
-            : settings with { WithData = addition };
+        return settings.WithData != null ? settings : settings with { WithData = addition };
     }
 
-    public static TSettings WithNames<TSettings>(this TSettings? settings, string? partName, string? settingsName = default, bool overwrite = true)
-        where TSettings : MagicSettingsBase, new()
-    {
-        settings ??= new();
-        var result = !overwrite && settings.PartName != null
-            ? settings
-            : settings with { PartName = partName };
+    public static TSettings With<TSettings, TWith>(this TSettings? settings, TWith? addition)
+        where TSettings : MagicSettingsBase, IWith<TWith?>, new()
+        where TWith : class =>
+        settings != null
+            ? settings with { WithData = addition }
+            : new() { WithData = addition };
 
-        result = !overwrite && settings.SettingsName != null
-            ? result
-            : result with { SettingsName = settingsName };
+    public static TSettings RefillLookup<TSettings>(this TSettings? settings, MagicSettingsLookup lookup)
+        where TSettings : MagicSettingsBase, new() =>
+        (settings ??= new()) with
+        {
+            PartName = settings.PartName ?? lookup.PartName,
+            SettingsName = settings.SettingsName ?? lookup.SettingsName,
+            DesignName = settings.DesignName ?? lookup.DesignName,
+        };
 
-        return result;
-    }
-
+    public static TSettings WithLookup<TSettings>(this TSettings? settings, MagicSettingsLookup lookup)
+        where TSettings : MagicSettingsBase, new() =>
+        (settings ??= new()) with
+        {
+            PartName = lookup.PartName ?? settings.PartName,
+            SettingsName = lookup.SettingsName ?? settings.SettingsName,
+            DesignName = lookup.DesignName ?? settings.DesignName,
+        };
 }

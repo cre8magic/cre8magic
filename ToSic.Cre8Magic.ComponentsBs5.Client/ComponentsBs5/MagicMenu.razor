@@ -34,7 +34,7 @@ Nice to know:
 }
 @{
     // Get the latest menu kit on each render, using the latest PageState
-    var menuKit = MagicHat.MenuKit(Settings.With(PageState).WithNames(PartName, SettingsName));
+    var menuKit = MagicHat.MenuKit(Settings.With(PageState).WithLookup(new() { PartName = PartName, SettingsName = SettingsName}));
 }
 @* Special Debugging *@
 @if (false)
