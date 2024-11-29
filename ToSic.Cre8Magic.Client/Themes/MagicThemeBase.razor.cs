@@ -63,28 +63,38 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     /// </summary>
     public abstract MagicThemePackage ThemePackage { get; }
 
-    [Inject]
-    public required IMagicHat MagicHat { get; set; }
 
     public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicHat.ThemeKit(new() { PageState = PageState }));
     private readonly GetKeepByPageId<IMagicThemeKit> _themeKit = new();
 
-    protected override void OnParametersSet()
-    {
-        base.OnParametersSet();
-        MagicHat.UsePageState(PageState);
-    }
+    /// <summary>
+    /// Get the Magic Hat from the DI
+    /// </summary>
+    [Inject] public required IMagicHat MagicHat { get; set; }
 
     /// <summary>
-    /// OnInitialized, make ure that cre8magic knows what settings this theme wants.
+    /// OnInitialized will run early (and once only).
+    /// It also runs before OnInitializedAsync.
     /// </summary>
     protected override void OnInitialized()
     {
         base.OnInitialized();
+        // Provide the first PageState as early as possible.
         MagicHat.UsePageState(PageState);
-        if (ThemePackage != null)
-            MagicHat.UseSettingsPackage(ThemePackage, Layout);
+        MagicHat.UseSettingsPackage(ThemePackage, Layout);
     }
+
+    /// <summary>
+    /// This will run whenever any parameter changes - such as PageState.
+    /// It also runs before OnParametersSetAsync.
+    /// </summary>
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        // Provide the latest PageState on every change
+        MagicHat.UsePageState(PageState);
+    }
+
 
     /// <summary>
     /// OnAfterRender, track page views

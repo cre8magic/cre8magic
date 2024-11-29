@@ -110,7 +110,6 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     /// The template to use - horizontal/vertical
     /// </summary>
     public string? Variant { get; init; }
-    //public const string TemplateDefault = "Horizontal";
 
 
     [field: AllowNull, MaybeNull]
