@@ -5,6 +5,7 @@ items:
   id: Internal
   parent: ToSic.Cre8magic.Analytics
   children:
+  - ToSic.Cre8magic.Analytics.Internal.IMagicAnalyticsService
   - ToSic.Cre8magic.Analytics.Internal.MagicAnalyticsService
   langs:
   - csharp
@@ -16,9 +17,54 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Analytics.Internal.IMagicAnalyticsService
+  commentId: T:ToSic.Cre8magic.Analytics.Internal.IMagicAnalyticsService
+  parent: ToSic.Cre8magic.Analytics.Internal
+  href: ToSic.Cre8magic.Analytics.Internal.IMagicAnalyticsService.html
+  name: IMagicAnalyticsService
+  nameWithType: IMagicAnalyticsService
+  fullName: ToSic.Cre8magic.Analytics.Internal.IMagicAnalyticsService
 - uid: ToSic.Cre8magic.Analytics.Internal.MagicAnalyticsService
   commentId: T:ToSic.Cre8magic.Analytics.Internal.MagicAnalyticsService
   href: ToSic.Cre8magic.Analytics.Internal.MagicAnalyticsService.html
   name: MagicAnalyticsService
   nameWithType: MagicAnalyticsService
   fullName: ToSic.Cre8magic.Analytics.Internal.MagicAnalyticsService
+- uid: ToSic.Cre8magic.Analytics.Internal
+  commentId: N:ToSic.Cre8magic.Analytics.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.Analytics.Internal
+  nameWithType: ToSic.Cre8magic.Analytics.Internal
+  fullName: ToSic.Cre8magic.Analytics.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Analytics.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics
+    name: Analytics
+    href: ToSic.Cre8magic.Analytics.html
+  - name: .
+  - uid: ToSic.Cre8magic.Analytics.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Analytics.Internal.html

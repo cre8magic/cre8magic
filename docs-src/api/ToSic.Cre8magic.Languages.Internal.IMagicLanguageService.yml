@@ -56,7 +56,7 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages.Internal
-  summary: Get the state. Must be async, because it might need to load data from Oqtane.
+  summary: Get the language kit. Must be async, because it might need to load data from Oqtane.
   example: []
   syntax:
     content: Task<IMagicLanguageKit> LanguageKitAsync(PageState pageState, MagicLanguageSettings? settings = null)
@@ -173,7 +173,7 @@ references:
   commentId: T:System.Threading.Tasks.Task{ToSic.Cre8magic.Languages.IMagicLanguageKit}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html
   name: Task<IMagicLanguageKit>
   nameWithType: Task<IMagicLanguageKit>
   fullName: System.Threading.Tasks.Task<ToSic.Cre8magic.Languages.IMagicLanguageKit>
@@ -184,7 +184,6 @@ references:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
   - uid: ToSic.Cre8magic.Languages.IMagicLanguageKit
     name: IMagicLanguageKit
@@ -194,7 +193,6 @@ references:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: (
   - name: Of
   - name: " "
@@ -257,7 +255,6 @@ references:
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   name: Task<TResult>
   nameWithType: Task<TResult>
   fullName: System.Threading.Tasks.Task<TResult>
@@ -268,7 +265,6 @@ references:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
   - name: TResult
   - name: '>'
@@ -276,7 +272,6 @@ references:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: (
   - name: Of
   - name: " "
@@ -329,7 +324,6 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string
@@ -340,7 +334,6 @@ references:
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task

@@ -7,9 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.Settings.Internal.Debug.IDebugSettings
   - ToSic.Cre8magic.Settings.Internal.Debug.IDebugSettingsExtensions
-  - ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
   - ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-  - ToSic.Cre8magic.Settings.Internal.Debug.MagicSettingsDebugExtensions
   langs:
   - csharp
   - vb
@@ -34,13 +32,6 @@ references:
   name: IDebugSettingsExtensions
   nameWithType: IDebugSettingsExtensions
   fullName: ToSic.Cre8magic.Settings.Internal.Debug.IDebugSettingsExtensions
-- uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
-  commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
-  parent: ToSic.Cre8magic.Settings.Internal.Debug
-  href: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings.html
-  name: MagicDebugSettings
-  nameWithType: MagicDebugSettings
-  fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugSettings
 - uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
   commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
   parent: ToSic.Cre8magic.Settings.Internal.Debug
@@ -48,13 +39,6 @@ references:
   name: MagicDebugState
   nameWithType: MagicDebugState
   fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-- uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicSettingsDebugExtensions
-  commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicSettingsDebugExtensions
-  parent: ToSic.Cre8magic.Settings.Internal.Debug
-  href: ToSic.Cre8magic.Settings.Internal.Debug.MagicSettingsDebugExtensions.html
-  name: MagicSettingsDebugExtensions
-  nameWithType: MagicSettingsDebugExtensions
-  fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicSettingsDebugExtensions
 - uid: ToSic.Cre8magic.Settings.Internal.Debug
   commentId: N:ToSic.Cre8magic.Settings.Internal.Debug
   href: ToSic.html

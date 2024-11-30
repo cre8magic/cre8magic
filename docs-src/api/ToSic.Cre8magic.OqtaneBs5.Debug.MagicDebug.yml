@@ -1,0 +1,291 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug
+  id: MagicDebug
+  parent: ToSic.Cre8magic.OqtaneBs5.Debug
+  children:
+  - ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.PageState
+  - ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target
+  langs:
+  - csharp
+  - vb
+  name: MagicDebug
+  nameWithType: MagicDebug
+  fullName: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug
+  type: Class
+  source:
+    id: MagicDebug
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_Debug_MagicDebug_razor.g.cs
+    startLine: 73
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5.Debug
+  syntax:
+    content: 'public class MagicDebug : ComponentBase'
+    content.vb: Public Class MagicDebug Inherits ComponentBase
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Components.ComponentBase
+- uid: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.PageState
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.PageState
+  id: PageState
+  parent: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug
+  langs:
+  - csharp
+  - vb
+  name: PageState
+  nameWithType: MagicDebug.PageState
+  fullName: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.PageState
+  type: Property
+  source:
+    id: PageState
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_Debug_MagicDebug_razor.g.cs
+    startLine: 298
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5.Debug
+  syntax:
+    content: >-
+      [CascadingParameter]
+
+      public required PageState PageState { get; set; }
+    parameters: []
+    return:
+      type: Oqtane.UI.PageState
+    content.vb: >-
+      <CascadingParameter>
+
+      Public Property PageState As PageState
+  overload: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.PageState*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target
+  id: Target
+  parent: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug
+  langs:
+  - csharp
+  - vb
+  name: Target
+  nameWithType: MagicDebug.Target
+  fullName: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target
+  type: Property
+  source:
+    id: Target
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_Debug_MagicDebug_razor.g.cs
+    startLine: 299
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5.Debug
+  syntax:
+    content: >-
+      [Parameter]
+
+      [EditorRequired]
+
+      public required IHasDebugInfo Target { get; set; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Internal.Debug.IHasDebugInfo
+    content.vb: >-
+      <Parameter>
+
+      <EditorRequired>
+
+      Public Property Target As IHasDebugInfo
+  overload: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+  - type: Microsoft.AspNetCore.Components.EditorRequiredAttribute
+    ctor: Microsoft.AspNetCore.Components.EditorRequiredAttribute.#ctor
+    arguments: []
+references:
+- uid: ToSic.Cre8magic.OqtaneBs5.Debug
+  commentId: N:ToSic.Cre8magic.OqtaneBs5.Debug
+  href: ToSic.html
+  name: ToSic.Cre8magic.OqtaneBs5.Debug
+  nameWithType: ToSic.Cre8magic.OqtaneBs5.Debug
+  fullName: ToSic.Cre8magic.OqtaneBs5.Debug
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5.Debug
+    name: Debug
+    href: ToSic.Cre8magic.OqtaneBs5.Debug.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5.Debug
+    name: Debug
+    href: ToSic.Cre8magic.OqtaneBs5.Debug.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Components.ComponentBase
+  commentId: T:Microsoft.AspNetCore.Components.ComponentBase
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  name: ComponentBase
+  nameWithType: ComponentBase
+  fullName: Microsoft.AspNetCore.Components.ComponentBase
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Components
+  commentId: N:Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Components
+  nameWithType: Microsoft.AspNetCore.Components
+  fullName: Microsoft.AspNetCore.Components
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+- uid: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.PageState*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.PageState
+  href: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.html#ToSic_Cre8magic_OqtaneBs5_Debug_MagicDebug_PageState
+  name: PageState
+  nameWithType: MagicDebug.PageState
+  fullName: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.PageState
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target
+  href: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.html#ToSic_Cre8magic_OqtaneBs5_Debug_MagicDebug_Target
+  name: Target
+  nameWithType: MagicDebug.Target
+  fullName: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target
+- uid: ToSic.Cre8magic.Internal.Debug.IHasDebugInfo
+  commentId: T:ToSic.Cre8magic.Internal.Debug.IHasDebugInfo
+  parent: ToSic.Cre8magic.Internal.Debug
+  name: IHasDebugInfo
+  nameWithType: IHasDebugInfo
+  fullName: ToSic.Cre8magic.Internal.Debug.IHasDebugInfo
+- uid: ToSic.Cre8magic.Internal.Debug
+  commentId: N:ToSic.Cre8magic.Internal.Debug
+  href: ToSic.html
+  name: ToSic.Cre8magic.Internal.Debug
+  nameWithType: ToSic.Cre8magic.Internal.Debug
+  fullName: ToSic.Cre8magic.Internal.Debug
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Internal.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Internal.Debug.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Internal.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Internal.Debug.html

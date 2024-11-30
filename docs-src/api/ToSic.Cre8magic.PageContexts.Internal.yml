@@ -1,0 +1,24 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.PageContexts.Internal
+  commentId: N:ToSic.Cre8magic.PageContexts.Internal
+  id: Internal
+  parent: ToSic.Cre8magic.PageContexts
+  children:
+  - ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.PageContexts.Internal
+  nameWithType: ToSic.Cre8magic.PageContexts.Internal
+  fullName: ToSic.Cre8magic.PageContexts.Internal
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService
+  commentId: T:ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService
+  href: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.html
+  name: IMagicPageContextService
+  nameWithType: IMagicPageContextService
+  fullName: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService

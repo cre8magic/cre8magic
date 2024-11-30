@@ -50,9 +50,9 @@ items:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs.Internal
   summary: >-
-    Get the BreadcrumbKit.
+    Get the Kit to work with a Breadcrumb.
 
-    It will either use the provided settings, retrieve these from the global information or use a default configuration.
+    It will either use the provided settings, retrieve these from the global information or use a default settings.
   example: []
   syntax:
     content: IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = null)

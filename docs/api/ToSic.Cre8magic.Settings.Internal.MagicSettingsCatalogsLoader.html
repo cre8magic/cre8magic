@@ -98,7 +98,7 @@ Class MagicSettingsCatalogsLoader  <a class="header-action link-secondary" title
   </div>
 
   <div class="markdown summary"><p>Helper to load all the magic settings which could be used by the <a class="xref" href="ToSic.Cre8magic.Settings.IMagicSettingsService.html">IMagicSettingsService</a>.</p>
-<p>It requires that there are <a class="xref" href="ToSic.Cre8magic.Settings.MagicPackageSettings.html">MagicPackageSettings</a> which were usually configured in the theme,
+<p>It requires that there are <a class="xref" href="ToSic.Cre8magic.Themes.MagicThemePackage.html">MagicThemePackage</a> which were usually configured in the theme,
 and then passed to the SettingsService on Setup.</p>
 </div>
   <div class="markdown conceptual"></div>
@@ -120,31 +120,6 @@ and then passed to the SettingsService on Setup.</p>
 
 
 
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-    </div>
-  </dd></dl>
 
 
 
@@ -163,7 +138,7 @@ and then passed to the SettingsService on Setup.</p>
   </h3>
 
   <div class="markdown level1 summary"><p>Helper to load all the magic settings which could be used by the <a class="xref" href="ToSic.Cre8magic.Settings.IMagicSettingsService.html">IMagicSettingsService</a>.</p>
-<p>It requires that there are <a class="xref" href="ToSic.Cre8magic.Settings.MagicPackageSettings.html">MagicPackageSettings</a> which were usually configured in the theme,
+<p>It requires that there are <a class="xref" href="ToSic.Cre8magic.Themes.MagicThemePackage.html">MagicThemePackage</a> which were usually configured in the theme,
 and then passed to the SettingsService on Setup.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -174,7 +149,7 @@ and then passed to the SettingsService on Setup.</p>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>sources</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html">IMagicSettingsSource</a>&gt;</dt>
+    <dt><code>sources</code> <span class="xref">IEnumerable</span>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html">IMagicSettingsSource</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -195,8 +170,8 @@ and then passed to the SettingsService on Setup.</p>
 
   <a id="ToSic_Cre8magic_Settings_Internal_MagicSettingsCatalogsLoader_Catalogs_" data-uid="ToSic.Cre8magic.Settings.Internal.MagicSettingsCatalogsLoader.Catalogs*"></a>
 
-  <h3 id="ToSic_Cre8magic_Settings_Internal_MagicSettingsCatalogsLoader_Catalogs_ToSic_Cre8magic_Settings_MagicPackageSettings_System_Boolean_" data-uid="ToSic.Cre8magic.Settings.Internal.MagicSettingsCatalogsLoader.Catalogs(ToSic.Cre8magic.Settings.MagicPackageSettings,System.Boolean)">
-  Catalogs(MagicPackageSettings, bool)
+  <h3 id="ToSic_Cre8magic_Settings_Internal_MagicSettingsCatalogsLoader_Catalogs_ToSic_Cre8magic_Themes_MagicThemePackage_System_Boolean_" data-uid="ToSic.Cre8magic.Settings.Internal.MagicSettingsCatalogsLoader.Catalogs(ToSic.Cre8magic.Themes.MagicThemePackage,System.Boolean)">
+  Catalogs(MagicThemePackage, bool)
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/Internal/MagicSettingsCatalogsLoader.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -204,12 +179,12 @@ and then passed to the SettingsService on Setup.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;DataWithJournal&lt;MagicSettingsCatalog&gt;&gt; Catalogs(MagicPackageSettings packageSettings, bool cache = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;DataWithJournal&lt;MagicSettingsCatalog&gt;&gt; Catalogs(MagicThemePackage themePackage, bool cache = true)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>packageSettings</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicPackageSettings.html">MagicPackageSettings</a></dt>
+    <dt><code>themePackage</code> <a class="xref" href="ToSic.Cre8magic.Themes.MagicThemePackage.html">MagicThemePackage</a></dt>
     <dd></dd>
     <dt><code>cache</code> <span class="xref">bool</span></dt>
     <dd></dd>
@@ -217,7 +192,7 @@ and then passed to the SettingsService on Setup.</p>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal-1.html">DataWithJournal</a>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsCatalog.html">MagicSettingsCatalog</a>&gt;&gt;</dt>
+    <dt><span class="xref">List</span>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal-1.html">DataWithJournal</a>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsCatalog.html">MagicSettingsCatalog</a>&gt;&gt;</dt>
     <dd></dd>
   </dl>
 

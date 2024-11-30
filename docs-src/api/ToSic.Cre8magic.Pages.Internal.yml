@@ -5,7 +5,9 @@ items:
   id: Internal
   parent: ToSic.Cre8magic.Pages
   children:
+  - ToSic.Cre8magic.Pages.Internal.IMagicPageService
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory
+  - ToSic.Cre8magic.Pages.Internal.PageDesign
   - ToSic.Cre8magic.Pages.Internal.PageStateProxy
   - ToSic.Cre8magic.Pages.Internal.PageStateProxyExtensions
   langs:
@@ -18,9 +20,60 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Pages.Internal.PageDesign
+  commentId: N:ToSic.Cre8magic.Pages.Internal.PageDesign
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages.Internal.PageDesign
+  nameWithType: ToSic.Cre8magic.Pages.Internal.PageDesign
+  fullName: ToSic.Cre8magic.Pages.Internal.PageDesign
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Pages.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal.PageDesign
+    name: PageDesign
+    href: ToSic.Cre8magic.Pages.Internal.PageDesign.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Pages.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal.PageDesign
+    name: PageDesign
+    href: ToSic.Cre8magic.Pages.Internal.PageDesign.html
+- uid: ToSic.Cre8magic.Pages.Internal.IMagicPageService
+  commentId: T:ToSic.Cre8magic.Pages.Internal.IMagicPageService
+  href: ToSic.Cre8magic.Pages.Internal.IMagicPageService.html
+  name: IMagicPageService
+  nameWithType: IMagicPageService
+  fullName: ToSic.Cre8magic.Pages.Internal.IMagicPageService
 - uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
   commentId: T:ToSic.Cre8magic.Pages.Internal.MagicPageFactory
-  parent: ToSic.Cre8magic.Pages.Internal
   href: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html
   name: MagicPageFactory
   nameWithType: MagicPageFactory

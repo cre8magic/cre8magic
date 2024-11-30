@@ -4,8 +4,7 @@ items:
   commentId: T:ToSic.Cre8magic._Imports
   id: _Imports
   parent: ToSic.Cre8magic
-  children:
-  - ToSic.Cre8magic._Imports.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  children: []
   langs:
   - csharp
   - vb
@@ -16,9 +15,9 @@ items:
   source:
     id: _Imports
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\_Imports_razor.g.cs
-    startLine: 25
+    startLine: 31
   assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic
   syntax:
     content: 'public class _Imports : ComponentBase'
@@ -26,34 +25,6 @@ items:
   inheritance:
   - System.Object
   - Microsoft.AspNetCore.Components.ComponentBase
-- uid: ToSic.Cre8magic._Imports.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  commentId: M:ToSic.Cre8magic._Imports.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  id: BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  parent: ToSic.Cre8magic._Imports
-  langs:
-  - csharp
-  - vb
-  name: BuildRenderTree(RenderTreeBuilder)
-  nameWithType: _Imports.BuildRenderTree(RenderTreeBuilder)
-  fullName: ToSic.Cre8magic._Imports.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  type: Method
-  source:
-    id: BuildRenderTree
-    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\_Imports_razor.g.cs
-    startLine: 29
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic
-  summary: Renders the component to the supplied <xref href="Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: protected override void BuildRenderTree(RenderTreeBuilder __builder)
-    parameters:
-    - id: __builder
-      type: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-    content.vb: Protected Overrides Sub BuildRenderTree(__builder As RenderTreeBuilder)
-  overridden: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  overload: ToSic.Cre8magic._Imports.BuildRenderTree*
 references:
 - uid: ToSic.Cre8magic
   commentId: N:ToSic.Cre8magic
@@ -138,88 +109,3 @@ references:
     name: Components
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
-- uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-  commentId: T:Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-  parent: Microsoft.AspNetCore.Components.Rendering
-  isExternal: true
-  name: RenderTreeBuilder
-  nameWithType: RenderTreeBuilder
-  fullName: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-- uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  parent: Microsoft.AspNetCore.Components.ComponentBase
-  isExternal: true
-  name: BuildRenderTree(RenderTreeBuilder)
-  nameWithType: ComponentBase.BuildRenderTree(RenderTreeBuilder)
-  fullName: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  spec.csharp:
-  - uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-    name: BuildRenderTree
-    isExternal: true
-  - name: (
-  - uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-    name: RenderTreeBuilder
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-    name: BuildRenderTree
-    isExternal: true
-  - name: (
-  - uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-    name: RenderTreeBuilder
-    isExternal: true
-  - name: )
-- uid: ToSic.Cre8magic._Imports.BuildRenderTree*
-  commentId: Overload:ToSic.Cre8magic._Imports.BuildRenderTree
-  href: ToSic.Cre8magic._Imports.html#ToSic_Cre8magic__Imports_BuildRenderTree_Microsoft_AspNetCore_Components_Rendering_RenderTreeBuilder_
-  name: BuildRenderTree
-  nameWithType: _Imports.BuildRenderTree
-  fullName: ToSic.Cre8magic._Imports.BuildRenderTree
-- uid: Microsoft.AspNetCore.Components.Rendering
-  commentId: N:Microsoft.AspNetCore.Components.Rendering
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft
-  name: Microsoft.AspNetCore.Components.Rendering
-  nameWithType: Microsoft.AspNetCore.Components.Rendering
-  fullName: Microsoft.AspNetCore.Components.Rendering
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.AspNetCore
-    name: AspNetCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
-  - name: .
-  - uid: Microsoft.AspNetCore.Components
-    name: Components
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
-  - name: .
-  - uid: Microsoft.AspNetCore.Components.Rendering
-    name: Rendering
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.AspNetCore
-    name: AspNetCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
-  - name: .
-  - uid: Microsoft.AspNetCore.Components
-    name: Components
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
-  - name: .
-  - uid: Microsoft.AspNetCore.Components.Rendering
-    name: Rendering
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering

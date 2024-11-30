@@ -7,6 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf(System.Int32)
+  - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf(ToSic.Cre8magic.Pages.IMagicPage)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Create(Oqtane.Models.Page)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.CreateOrNull(Oqtane.Models.Page)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Current
@@ -14,6 +15,7 @@ items:
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Get(System.Collections.Generic.IEnumerable{System.Int32})
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.GetOrNull(System.Nullable{System.Int32})
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.Home
+  - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PageDesignHelper(ToSic.Cre8magic.Pages.IMagicPage)
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PagesAll
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PagesCurrent
   - ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PagesUser
@@ -31,7 +33,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicPageFactory
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -45,14 +47,6 @@ items:
     content.vb: Public Class MagicPageFactory
   inheritance:
   - System.Object
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
 - uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)
   commentId: M:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)
   id: '#ctor(Oqtane.UI.PageState,System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage},System.Boolean,ToSic.Cre8magic.Utils.Logging.LogRoot)'
@@ -71,7 +65,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 14
+    startLine: 17
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -114,7 +108,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Create
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 30
+    startLine: 37
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -145,7 +139,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: CreateOrNull
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 39
+    startLine: 46
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -179,7 +173,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Home
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 41
+    startLine: 48
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -208,7 +202,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Current
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 44
+    startLine: 52
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -237,7 +231,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetOrNull
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 49
+    startLine: 57
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -271,7 +265,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Get
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 51
+    startLine: 59
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -305,7 +299,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Get
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 54
+    startLine: 62
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -339,7 +333,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PagesAll
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 60
+    startLine: 68
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -369,7 +363,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PagesCurrent
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 63
+    startLine: 71
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -397,7 +391,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PagesUser
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 75
+    startLine: 83
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -430,7 +424,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ChildrenOf
     path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
-    startLine: 107
+    startLine: 115
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Pages.Internal
@@ -446,6 +440,78 @@ items:
   nameWithType.vb: MagicPageFactory.ChildrenOf(Integer)
   fullName.vb: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf(Integer)
   name.vb: ChildrenOf(Integer)
+- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf(ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf(ToSic.Cre8magic.Pages.IMagicPage)
+  id: ChildrenOf(ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
+  langs:
+  - csharp
+  - vb
+  name: ChildrenOf(IMagicPage)
+  nameWithType: MagicPageFactory.ChildrenOf(IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf(ToSic.Cre8magic.Pages.IMagicPage)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ChildrenOf
+    path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
+    startLine: 122
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages.Internal
+  summary: >-
+    Retrieve the children the first time it's needed.
+
+
+    It's virtual, since other SetHelpers will have different implementations.
+
+    For example the MagicMenuPageSetHelper will stop if a certain depth has been reached.
+  example: []
+  syntax:
+    content: public List<IMagicPage> ChildrenOf(IMagicPage page)
+    parameters:
+    - id: page
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    return:
+      type: System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
+      description: ''
+    content.vb: Public Function ChildrenOf(page As IMagicPage) As List(Of IMagicPage)
+  overload: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.ChildrenOf*
+- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PageDesignHelper(ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PageDesignHelper(ToSic.Cre8magic.Pages.IMagicPage)
+  id: PageDesignHelper(ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.Internal.MagicPageFactory
+  langs:
+  - csharp
+  - vb
+  name: PageDesignHelper(IMagicPage)
+  nameWithType: MagicPageFactory.PageDesignHelper(IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PageDesignHelper(ToSic.Cre8magic.Pages.IMagicPage)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PageDesignHelper
+    path: ../ToSic.Cre8Magic.Client/Pages/Internal/MagicPageFactory.cs
+    startLine: 124
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages.Internal
+  example: []
+  syntax:
+    content: public IPageDesignHelperWip PageDesignHelper(IMagicPage page)
+    parameters:
+    - id: page
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    return:
+      type: ToSic.Cre8magic.Pages.Internal.PageDesign.IPageDesignHelperWip
+    content.vb: Public Function PageDesignHelper(page As IMagicPage) As IPageDesignHelperWip
+  overload: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PageDesignHelper*
 references:
 - uid: ToSic.Cre8magic.Pages.Internal
   commentId: N:ToSic.Cre8magic.Pages.Internal
@@ -489,232 +555,12 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  name: Equals(object, object)
-  nameWithType: object.Equals(object, object)
-  fullName: object.Equals(object, object)
-  nameWithType.vb: Object.Equals(Object, Object)
-  fullName.vb: Object.Equals(Object, Object)
-  name.vb: Equals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  name: ReferenceEquals(object, object)
-  nameWithType: object.ReferenceEquals(object, object)
-  fullName: object.ReferenceEquals(object, object)
-  nameWithType.vb: Object.ReferenceEquals(Object, Object)
-  fullName.vb: Object.ReferenceEquals(Object, Object)
-  name.vb: ReferenceEquals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -743,7 +589,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Pages.IMagicPage}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
   name: IEnumerable<IMagicPage>
   nameWithType: IEnumerable<IMagicPage>
   fullName: System.Collections.Generic.IEnumerable<ToSic.Cre8magic.Pages.IMagicPage>
@@ -754,7 +600,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: ToSic.Cre8magic.Pages.IMagicPage
     name: IMagicPage
@@ -764,7 +609,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -776,7 +620,6 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
   name: bool
   nameWithType: bool
   fullName: bool
@@ -815,7 +658,6 @@ references:
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<T>
   nameWithType: IEnumerable<T>
   fullName: System.Collections.Generic.IEnumerable<T>
@@ -826,7 +668,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
@@ -834,7 +675,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1009,7 +849,6 @@ references:
   commentId: T:System.Nullable{System.Int32}
   parent: System
   definition: System.Nullable`1
-  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int?
   nameWithType: int?
   fullName: int?
@@ -1020,18 +859,15 @@ references:
   - uid: System.Int32
     name: int
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '?'
   spec.vb:
   - uid: System.Int32
     name: Integer
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '?'
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   name: Nullable<T>
   nameWithType: Nullable<T>
   fullName: System.Nullable<T>
@@ -1042,7 +878,6 @@ references:
   - uid: System.Nullable`1
     name: Nullable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   - name: <
   - name: T
   - name: '>'
@@ -1050,7 +885,6 @@ references:
   - uid: System.Nullable`1
     name: Nullable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   - name: (
   - name: Of
   - name: " "
@@ -1066,7 +900,6 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{System.Int32}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<int>
   nameWithType: IEnumerable<int>
   fullName: System.Collections.Generic.IEnumerable<int>
@@ -1077,31 +910,26 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: System.Int32
     name: int
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Int32
     name: Integer
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: )
 - uid: System.Collections.Generic.IEnumerable{Oqtane.Models.Page}
   commentId: T:System.Collections.Generic.IEnumerable{Oqtane.Models.Page}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<Page>
   nameWithType: IEnumerable<Page>
   fullName: System.Collections.Generic.IEnumerable<Oqtane.Models.Page>
@@ -1112,7 +940,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: Oqtane.Models.Page
     name: Page
@@ -1121,7 +948,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -1156,7 +982,6 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int
@@ -1167,7 +992,7 @@ references:
   commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Pages.IMagicPage}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
   name: List<IMagicPage>
   nameWithType: List<IMagicPage>
   fullName: System.Collections.Generic.List<ToSic.Cre8magic.Pages.IMagicPage>
@@ -1178,7 +1003,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - uid: ToSic.Cre8magic.Pages.IMagicPage
     name: IMagicPage
@@ -1188,7 +1012,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1199,7 +1022,6 @@ references:
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<T>
   nameWithType: List<T>
   fullName: System.Collections.Generic.List<T>
@@ -1210,7 +1032,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -1218,9 +1039,67 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
   - name: T
   - name: )
+- uid: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PageDesignHelper*
+  commentId: Overload:ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PageDesignHelper
+  href: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.html#ToSic_Cre8magic_Pages_Internal_MagicPageFactory_PageDesignHelper_ToSic_Cre8magic_Pages_IMagicPage_
+  name: PageDesignHelper
+  nameWithType: MagicPageFactory.PageDesignHelper
+  fullName: ToSic.Cre8magic.Pages.Internal.MagicPageFactory.PageDesignHelper
+- uid: ToSic.Cre8magic.Pages.Internal.PageDesign.IPageDesignHelperWip
+  commentId: T:ToSic.Cre8magic.Pages.Internal.PageDesign.IPageDesignHelperWip
+  parent: ToSic.Cre8magic.Pages.Internal.PageDesign
+  href: ToSic.Cre8magic.Pages.Internal.PageDesign.IPageDesignHelperWip.html
+  name: IPageDesignHelperWip
+  nameWithType: IPageDesignHelperWip
+  fullName: ToSic.Cre8magic.Pages.Internal.PageDesign.IPageDesignHelperWip
+- uid: ToSic.Cre8magic.Pages.Internal.PageDesign
+  commentId: N:ToSic.Cre8magic.Pages.Internal.PageDesign
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages.Internal.PageDesign
+  nameWithType: ToSic.Cre8magic.Pages.Internal.PageDesign
+  fullName: ToSic.Cre8magic.Pages.Internal.PageDesign
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Pages.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal.PageDesign
+    name: PageDesign
+    href: ToSic.Cre8magic.Pages.Internal.PageDesign.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Pages.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages.Internal.PageDesign
+    name: PageDesign
+    href: ToSic.Cre8magic.Pages.Internal.PageDesign.html

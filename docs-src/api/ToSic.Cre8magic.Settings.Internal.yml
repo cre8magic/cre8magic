@@ -6,8 +6,8 @@ items:
   parent: ToSic.Cre8magic.Settings
   children:
   - ToSic.Cre8magic.Settings.Internal.Debug
-  - ToSic.Cre8magic.Settings.Internal.Experimental
   - ToSic.Cre8magic.Settings.Internal.ICanClone`1
+  - ToSic.Cre8magic.Settings.Internal.IWith`1
   - ToSic.Cre8magic.Settings.Internal.Journal
   - ToSic.Cre8magic.Settings.Internal.Json
   - ToSic.Cre8magic.Settings.Internal.Logging
@@ -69,52 +69,6 @@ references:
   - uid: ToSic.Cre8magic.Settings.Internal.Debug
     name: Debug
     href: ToSic.Cre8magic.Settings.Internal.Debug.html
-- uid: ToSic.Cre8magic.Settings.Internal.Experimental
-  commentId: N:ToSic.Cre8magic.Settings.Internal.Experimental
-  href: ToSic.html
-  name: ToSic.Cre8magic.Settings.Internal.Experimental
-  nameWithType: ToSic.Cre8magic.Settings.Internal.Experimental
-  fullName: ToSic.Cre8magic.Settings.Internal.Experimental
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal.Experimental
-    name: Experimental
-    href: ToSic.Cre8magic.Settings.Internal.Experimental.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal.Experimental
-    name: Experimental
-    href: ToSic.Cre8magic.Settings.Internal.Experimental.html
 - uid: ToSic.Cre8magic.Settings.Internal.Journal
   commentId: N:ToSic.Cre8magic.Settings.Internal.Journal
   href: ToSic.html
@@ -319,6 +273,31 @@ references:
   - uid: ToSic.Cre8magic.Settings.Internal.ICanClone`1
     name: ICanClone
     href: ToSic.Cre8magic.Settings.Internal.ICanClone-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ToSic.Cre8magic.Settings.Internal.IWith`1
+  commentId: T:ToSic.Cre8magic.Settings.Internal.IWith`1
+  href: ToSic.Cre8magic.Settings.Internal.IWith-1.html
+  name: IWith<T>
+  nameWithType: IWith<T>
+  fullName: ToSic.Cre8magic.Settings.Internal.IWith<T>
+  nameWithType.vb: IWith(Of T)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.IWith(Of T)
+  name.vb: IWith(Of T)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Settings.Internal.IWith`1
+    name: IWith
+    href: ToSic.Cre8magic.Settings.Internal.IWith-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: ToSic.Cre8magic.Settings.Internal.IWith`1
+    name: IWith
+    href: ToSic.Cre8magic.Settings.Internal.IWith-1.html
   - name: (
   - name: Of
   - name: " "

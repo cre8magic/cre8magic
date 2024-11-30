@@ -1,0 +1,377 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  id: MagicMenu
+  parent: ToSic.Cre8magic.OqtaneBs5
+  children:
+  - ToSic.Cre8magic.OqtaneBs5.MagicMenu.PageState
+  - ToSic.Cre8magic.OqtaneBs5.MagicMenu.PartName
+  - ToSic.Cre8magic.OqtaneBs5.MagicMenu.Settings
+  - ToSic.Cre8magic.OqtaneBs5.MagicMenu.SettingsName
+  langs:
+  - csharp
+  - vb
+  name: MagicMenu
+  nameWithType: MagicMenu
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  type: Class
+  source:
+    id: MagicMenu
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicMenu_razor.g.cs
+    startLine: 55
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  syntax:
+    content: 'public class MagicMenu : ComponentBase'
+    content.vb: Public Class MagicMenu Inherits ComponentBase
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Components.ComponentBase
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PageState
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicMenu.PageState
+  id: PageState
+  parent: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  langs:
+  - csharp
+  - vb
+  name: PageState
+  nameWithType: MagicMenu.PageState
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PageState
+  type: Property
+  source:
+    id: PageState
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicMenu_razor.g.cs
+    startLine: 215
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  summary: >-
+    The PageState containing the current page, list of all pages, user, etc.
+
+    It will be injected by Blazor when the component is initialized using `[CascadingParameter]`.
+
+    In most cases, this PageState is all you need.
+  example: []
+  syntax:
+    content: >-
+      [CascadingParameter]
+
+      public required PageState PageState { get; set; }
+    parameters: []
+    return:
+      type: Oqtane.UI.PageState
+    content.vb: >-
+      <CascadingParameter>
+
+      Public Property PageState As PageState
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PageState*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu.Settings
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicMenu.Settings
+  id: Settings
+  parent: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  langs:
+  - csharp
+  - vb
+  name: Settings
+  nameWithType: MagicMenu.Settings
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu.Settings
+  type: Property
+  source:
+    id: Settings
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicMenu_razor.g.cs
+    startLine: 222
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  summary: >-
+    All the menu settings.
+
+    If not provided, it will use the default settings from any other configuration.
+
+    If provided, it may still merge these with other settings (like in PartName was specified).
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public MagicMenuSettings? Settings { get; set; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Menus.MagicMenuSettings
+    content.vb: >-
+      <Parameter>
+
+      Public Property Settings As MagicMenuSettings
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicMenu.Settings*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PartName
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicMenu.PartName
+  id: PartName
+  parent: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  langs:
+  - csharp
+  - vb
+  name: PartName
+  nameWithType: MagicMenu.PartName
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PartName
+  type: Property
+  source:
+    id: PartName
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicMenu_razor.g.cs
+    startLine: 224
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  syntax:
+    content: >-
+      [Parameter]
+
+      public string? PartName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter>
+
+      Public Property PartName As String
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PartName*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu.SettingsName
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicMenu.SettingsName
+  id: SettingsName
+  parent: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  langs:
+  - csharp
+  - vb
+  name: SettingsName
+  nameWithType: MagicMenu.SettingsName
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu.SettingsName
+  type: Property
+  source:
+    id: SettingsName
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicMenu_razor.g.cs
+    startLine: 225
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  syntax:
+    content: >-
+      [Parameter]
+
+      public string? SettingsName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter>
+
+      Public Property SettingsName As String
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicMenu.SettingsName*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+references:
+- uid: ToSic.Cre8magic.OqtaneBs5
+  commentId: N:ToSic.Cre8magic.OqtaneBs5
+  href: ToSic.html
+  name: ToSic.Cre8magic.OqtaneBs5
+  nameWithType: ToSic.Cre8magic.OqtaneBs5
+  fullName: ToSic.Cre8magic.OqtaneBs5
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Components.ComponentBase
+  commentId: T:Microsoft.AspNetCore.Components.ComponentBase
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  name: ComponentBase
+  nameWithType: ComponentBase
+  fullName: Microsoft.AspNetCore.Components.ComponentBase
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Components
+  commentId: N:Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Components
+  nameWithType: Microsoft.AspNetCore.Components
+  fullName: Microsoft.AspNetCore.Components
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PageState*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicMenu.PageState
+  href: ToSic.Cre8magic.OqtaneBs5.MagicMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicMenu_PageState
+  name: PageState
+  nameWithType: MagicMenu.PageState
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PageState
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu.Settings*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicMenu.Settings
+  href: ToSic.Cre8magic.OqtaneBs5.MagicMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicMenu_Settings
+  name: Settings
+  nameWithType: MagicMenu.Settings
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu.Settings
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings
+  commentId: T:ToSic.Cre8magic.Menus.MagicMenuSettings
+  parent: ToSic.Cre8magic.Menus
+  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html
+  name: MagicMenuSettings
+  nameWithType: MagicMenuSettings
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings
+- uid: ToSic.Cre8magic.Menus
+  commentId: N:ToSic.Cre8magic.Menus
+  href: ToSic.html
+  name: ToSic.Cre8magic.Menus
+  nameWithType: ToSic.Cre8magic.Menus
+  fullName: ToSic.Cre8magic.Menus
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Menus
+    name: Menus
+    href: ToSic.Cre8magic.Menus.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Menus
+    name: Menus
+    href: ToSic.Cre8magic.Menus.html
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PartName*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicMenu.PartName
+  href: ToSic.Cre8magic.OqtaneBs5.MagicMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicMenu_PartName
+  name: PartName
+  nameWithType: MagicMenu.PartName
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu.PartName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu.SettingsName*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicMenu.SettingsName
+  href: ToSic.Cre8magic.OqtaneBs5.MagicMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicMenu_SettingsName
+  name: SettingsName
+  nameWithType: MagicMenu.SettingsName
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu.SettingsName

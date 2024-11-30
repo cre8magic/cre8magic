@@ -18,7 +18,7 @@ items:
   source:
     id: MagicShowComponents
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Components_Internal_MagicShowComponents_razor.g.cs
-    startLine: 31
+    startLine: 20
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Components.Internal
@@ -48,13 +48,6 @@ items:
   - Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
   - Microsoft.AspNetCore.Components.ComponentBase.Assets
   - Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
 - uid: ToSic.Cre8magic.Components.Internal.MagicShowComponents.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
   commentId: M:ToSic.Cre8magic.Components.Internal.MagicShowComponents.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
   id: BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
@@ -69,7 +62,7 @@ items:
   source:
     id: BuildRenderTree
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Components_Internal_MagicShowComponents_razor.g.cs
-    startLine: 35
+    startLine: 24
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Components.Internal
@@ -97,7 +90,7 @@ items:
   source:
     id: Components
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Components_Internal_MagicShowComponents_razor.g.cs
-    startLine: 116
+    startLine: 105
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Components.Internal
@@ -132,7 +125,7 @@ items:
   source:
     id: Group
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Components_Internal_MagicShowComponents_razor.g.cs
-    startLine: 119
+    startLine: 108
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Components.Internal
@@ -196,7 +189,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -387,7 +379,6 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
@@ -398,7 +389,6 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
   commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
@@ -420,7 +410,6 @@ references:
   - uid: System.Boolean
     name: bool
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   spec.vb:
   - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
@@ -431,7 +420,6 @@ references:
   - uid: System.Boolean
     name: Boolean
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
 - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
   commentId: M:Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
@@ -450,7 +438,6 @@ references:
   - uid: System.Action
     name: Action
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action
   - name: )
   spec.vb:
   - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
@@ -461,7 +448,6 @@ references:
   - uid: System.Action
     name: Action
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.action
   - name: )
 - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
   commentId: M:Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
@@ -483,12 +469,10 @@ references:
   - uid: System.Func`1
     name: Func
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-1
   - name: <
   - uid: System.Threading.Tasks.Task
     name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
   - name: '>'
   - name: )
   spec.vb:
@@ -500,14 +484,12 @@ references:
   - uid: System.Func`1
     name: Func
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.func-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Threading.Tasks.Task
     name: Task
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
   - name: )
   - name: )
 - uid: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
@@ -527,7 +509,6 @@ references:
   - uid: System.Exception
     name: Exception
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.exception
   - name: )
   spec.vb:
   - uid: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
@@ -538,7 +519,6 @@ references:
   - uid: System.Exception
     name: Exception
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.exception
   - name: )
 - uid: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
   commentId: M:Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
@@ -594,225 +574,6 @@ references:
   name: AssignedRenderMode
   nameWithType: ComponentBase.AssignedRenderMode
   fullName: Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  name: Equals(object, object)
-  nameWithType: object.Equals(object, object)
-  fullName: object.Equals(object, object)
-  nameWithType.vb: Object.Equals(Object, Object)
-  fullName.vb: Object.Equals(Object, Object)
-  name.vb: Equals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  name: ReferenceEquals(object, object)
-  nameWithType: object.ReferenceEquals(object, object)
-  fullName: object.ReferenceEquals(object, object)
-  nameWithType.vb: Object.ReferenceEquals(Object, Object)
-  fullName.vb: Object.ReferenceEquals(Object, Object)
-  name.vb: ReferenceEquals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -958,7 +719,7 @@ references:
   commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Components.Internal.MagicDynamicComponent}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  href: ToSic.Cre8magic.Components.Internal.MagicDynamicComponent.html
   name: List<MagicDynamicComponent>
   nameWithType: List<MagicDynamicComponent>
   fullName: System.Collections.Generic.List<ToSic.Cre8magic.Components.Internal.MagicDynamicComponent>
@@ -969,7 +730,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - uid: ToSic.Cre8magic.Components.Internal.MagicDynamicComponent
     name: MagicDynamicComponent
@@ -979,7 +739,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -990,7 +749,6 @@ references:
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<T>
   nameWithType: List<T>
   fullName: System.Collections.Generic.List<T>
@@ -1001,7 +759,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -1009,7 +766,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -1062,7 +818,6 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
   name: string
   nameWithType: string
   fullName: string

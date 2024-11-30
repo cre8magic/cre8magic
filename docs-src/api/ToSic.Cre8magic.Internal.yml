@@ -5,6 +5,7 @@ items:
   id: Internal
   parent: ToSic.Cre8magic
   children:
+  - ToSic.Cre8magic.Internal.Debug
   - ToSic.Cre8magic.Internal.DebugExtensions
   - ToSic.Cre8magic.Internal.JsInterops
   - ToSic.Cre8magic.Internal.Startup
@@ -18,6 +19,44 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
+- uid: ToSic.Cre8magic.Internal.Debug
+  commentId: N:ToSic.Cre8magic.Internal.Debug
+  href: ToSic.html
+  name: ToSic.Cre8magic.Internal.Debug
+  nameWithType: ToSic.Cre8magic.Internal.Debug
+  fullName: ToSic.Cre8magic.Internal.Debug
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Internal.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Internal.Debug.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Internal
+    name: Internal
+    href: ToSic.Cre8magic.Internal.html
+  - name: .
+  - uid: ToSic.Cre8magic.Internal.Debug
+    name: Debug
+    href: ToSic.Cre8magic.Internal.Debug.html
 - uid: ToSic.Cre8magic.Internal.JsInterops
   commentId: N:ToSic.Cre8magic.Internal.JsInterops
   href: ToSic.html

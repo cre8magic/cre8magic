@@ -5,7 +5,7 @@ items:
   id: IUserLoginService
   parent: ToSic.Cre8magic.UserLogins.Internal
   children:
-  - ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState,ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)
   langs:
   - csharp
   - vb
@@ -20,23 +20,23 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IUserLoginService
     path: ../ToSic.Cre8Magic.Client/UserLogins/Internal/IUserLoginService.cs
-    startLine: 5
+    startLine: 4
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.UserLogins.Internal
   syntax:
     content: public interface IUserLoginService
     content.vb: Public Interface IUserLoginService
-- uid: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState)
-  commentId: M:ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState)
-  id: UserLoginKit(Oqtane.UI.PageState)
+- uid: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState,ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)
+  commentId: M:ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState,ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)
+  id: UserLoginKit(Oqtane.UI.PageState,ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)
   parent: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService
   langs:
   - csharp
   - vb
-  name: UserLoginKit(PageState)
-  nameWithType: IUserLoginService.UserLoginKit(PageState)
-  fullName: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState)
+  name: UserLoginKit(PageState, MagicUserLoginSettings?)
+  nameWithType: IUserLoginService.UserLoginKit(PageState, MagicUserLoginSettings?)
+  fullName: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState, ToSic.Cre8magic.UserLogins.MagicUserLoginSettings?)
   type: Method
   source:
     remote:
@@ -45,19 +45,24 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UserLoginKit
     path: ../ToSic.Cre8Magic.Client/UserLogins/Internal/IUserLoginService.cs
-    startLine: 7
+    startLine: 6
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.UserLogins.Internal
   syntax:
-    content: IMagicUserLoginKit UserLoginKit(PageState pageState)
+    content: IMagicUserLoginKit UserLoginKit(PageState pageState, MagicUserLoginSettings? settings)
     parameters:
     - id: pageState
       type: Oqtane.UI.PageState
+    - id: settings
+      type: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
     return:
-      type: ToSic.Cre8magic.Users.IMagicUserLoginKit
-    content.vb: Function UserLoginKit(pageState As PageState) As IMagicUserLoginKit
+      type: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
+    content.vb: Function UserLoginKit(pageState As PageState, settings As MagicUserLoginSettings) As IMagicUserLoginKit
   overload: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit*
+  nameWithType.vb: IUserLoginService.UserLoginKit(PageState, MagicUserLoginSettings)
+  fullName.vb: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit(Oqtane.UI.PageState, ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)
+  name.vb: UserLoginKit(PageState, MagicUserLoginSettings)
 references:
 - uid: ToSic.Cre8magic.UserLogins.Internal
   commentId: N:ToSic.Cre8magic.UserLogins.Internal
@@ -99,7 +104,7 @@ references:
     href: ToSic.Cre8magic.UserLogins.Internal.html
 - uid: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit*
   commentId: Overload:ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit
-  href: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.html#ToSic_Cre8magic_UserLogins_Internal_IUserLoginService_UserLoginKit_Oqtane_UI_PageState_
+  href: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.html#ToSic_Cre8magic_UserLogins_Internal_IUserLoginService_UserLoginKit_Oqtane_UI_PageState_ToSic_Cre8magic_UserLogins_MagicUserLoginSettings_
   name: UserLoginKit
   nameWithType: IUserLoginService.UserLoginKit
   fullName: ToSic.Cre8magic.UserLogins.Internal.IUserLoginService.UserLoginKit
@@ -111,13 +116,20 @@ references:
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState
-- uid: ToSic.Cre8magic.Users.IMagicUserLoginKit
-  commentId: T:ToSic.Cre8magic.Users.IMagicUserLoginKit
-  parent: ToSic.Cre8magic.Users
-  href: ToSic.Cre8magic.Users.IMagicUserLoginKit.html
+- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+  commentId: T:ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+  parent: ToSic.Cre8magic.UserLogins
+  href: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
+  name: MagicUserLoginSettings
+  nameWithType: MagicUserLoginSettings
+  fullName: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+- uid: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
+  commentId: T:ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
+  parent: ToSic.Cre8magic.UserLogins
+  href: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit.html
   name: IMagicUserLoginKit
   nameWithType: IMagicUserLoginKit
-  fullName: ToSic.Cre8magic.Users.IMagicUserLoginKit
+  fullName: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
 - uid: Oqtane.UI
   commentId: N:Oqtane.UI
   isExternal: true
@@ -140,12 +152,12 @@ references:
   - uid: Oqtane.UI
     name: UI
     isExternal: true
-- uid: ToSic.Cre8magic.Users
-  commentId: N:ToSic.Cre8magic.Users
+- uid: ToSic.Cre8magic.UserLogins
+  commentId: N:ToSic.Cre8magic.UserLogins
   href: ToSic.html
-  name: ToSic.Cre8magic.Users
-  nameWithType: ToSic.Cre8magic.Users
-  fullName: ToSic.Cre8magic.Users
+  name: ToSic.Cre8magic.UserLogins
+  nameWithType: ToSic.Cre8magic.UserLogins
+  fullName: ToSic.Cre8magic.UserLogins
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -155,9 +167,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Users
-    name: Users
-    href: ToSic.Cre8magic.Users.html
+  - uid: ToSic.Cre8magic.UserLogins
+    name: UserLogins
+    href: ToSic.Cre8magic.UserLogins.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -167,6 +179,6 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Users
-    name: Users
-    href: ToSic.Cre8magic.Users.html
+  - uid: ToSic.Cre8magic.UserLogins
+    name: UserLogins
+    href: ToSic.Cre8magic.UserLogins.html

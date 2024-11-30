@@ -1,0 +1,184 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService
+  commentId: T:ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService
+  id: IMagicPageContextService
+  parent: ToSic.Cre8magic.PageContexts.Internal
+  children:
+  - ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit(Oqtane.UI.PageState,ToSic.Cre8magic.PageContexts.MagicPageContextSettings)
+  langs:
+  - csharp
+  - vb
+  name: IMagicPageContextService
+  nameWithType: IMagicPageContextService
+  fullName: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/PageContexts/Internal/IMagicPageContextService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicPageContextService
+    path: ../ToSic.Cre8Magic.Client/PageContexts/Internal/IMagicPageContextService.cs
+    startLine: 4
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.PageContexts.Internal
+  syntax:
+    content: public interface IMagicPageContextService
+    content.vb: Public Interface IMagicPageContextService
+- uid: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit(Oqtane.UI.PageState,ToSic.Cre8magic.PageContexts.MagicPageContextSettings)
+  commentId: M:ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit(Oqtane.UI.PageState,ToSic.Cre8magic.PageContexts.MagicPageContextSettings)
+  id: PageContextKit(Oqtane.UI.PageState,ToSic.Cre8magic.PageContexts.MagicPageContextSettings)
+  parent: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService
+  langs:
+  - csharp
+  - vb
+  name: PageContextKit(PageState, MagicPageContextSettings?)
+  nameWithType: IMagicPageContextService.PageContextKit(PageState, MagicPageContextSettings?)
+  fullName: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit(Oqtane.UI.PageState, ToSic.Cre8magic.PageContexts.MagicPageContextSettings?)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/PageContexts/Internal/IMagicPageContextService.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PageContextKit
+    path: ../ToSic.Cre8Magic.Client/PageContexts/Internal/IMagicPageContextService.cs
+    startLine: 6
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.PageContexts.Internal
+  syntax:
+    content: IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings = null)
+    parameters:
+    - id: pageState
+      type: Oqtane.UI.PageState
+    - id: settings
+      type: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+    return:
+      type: ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+    content.vb: Function PageContextKit(pageState As PageState, settings As MagicPageContextSettings = Nothing) As IMagicPageContextKit
+  overload: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit*
+  nameWithType.vb: IMagicPageContextService.PageContextKit(PageState, MagicPageContextSettings)
+  fullName.vb: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit(Oqtane.UI.PageState, ToSic.Cre8magic.PageContexts.MagicPageContextSettings)
+  name.vb: PageContextKit(PageState, MagicPageContextSettings)
+references:
+- uid: ToSic.Cre8magic.PageContexts.Internal
+  commentId: N:ToSic.Cre8magic.PageContexts.Internal
+  href: ToSic.html
+  name: ToSic.Cre8magic.PageContexts.Internal
+  nameWithType: ToSic.Cre8magic.PageContexts.Internal
+  fullName: ToSic.Cre8magic.PageContexts.Internal
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts.Internal
+    name: Internal
+    href: ToSic.Cre8magic.PageContexts.Internal.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts.Internal
+    name: Internal
+    href: ToSic.Cre8magic.PageContexts.Internal.html
+- uid: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit*
+  commentId: Overload:ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit
+  href: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.html#ToSic_Cre8magic_PageContexts_Internal_IMagicPageContextService_PageContextKit_Oqtane_UI_PageState_ToSic_Cre8magic_PageContexts_MagicPageContextSettings_
+  name: PageContextKit
+  nameWithType: IMagicPageContextService.PageContextKit
+  fullName: ToSic.Cre8magic.PageContexts.Internal.IMagicPageContextService.PageContextKit
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  parent: ToSic.Cre8magic.PageContexts
+  href: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html
+  name: MagicPageContextSettings
+  nameWithType: MagicPageContextSettings
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+- uid: ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+  commentId: T:ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+  parent: ToSic.Cre8magic.PageContexts
+  href: ToSic.Cre8magic.PageContexts.IMagicPageContextKit.html
+  name: IMagicPageContextKit
+  nameWithType: IMagicPageContextKit
+  fullName: ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: ToSic.Cre8magic.PageContexts
+  commentId: N:ToSic.Cre8magic.PageContexts
+  href: ToSic.html
+  name: ToSic.Cre8magic.PageContexts
+  nameWithType: ToSic.Cre8magic.PageContexts
+  fullName: ToSic.Cre8magic.PageContexts
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.PageContexts
+    name: PageContexts
+    href: ToSic.Cre8magic.PageContexts.html

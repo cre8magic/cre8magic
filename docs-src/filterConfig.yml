@@ -13,20 +13,24 @@ apiRules:
 - exclude:
     uidRegex: \.Internal\.
 
-# exclude Samples
-# - exclude:
-#     uidRegex: ^Oqtane.Database\.
-# - exclude:
-#     uidRegex: ^Oqtane.Databases\.
+# Hide BuildRenderTree method on blazor components as it would confuse the reader
+- exclude:
+    type: Method
+    uidRegex: BuildRenderTree
 
+# Exclude anything marked as EditorBrowsableState.Never
+- exclude:
+    hasAttribute:
+      uid: System.ComponentModel.EditorBrowsableAttribute
+      ctorArguments:
+      - System.ComponentModel.EditorBrowsableState.Never
+
+# Exclude any Oqtane specific inherited stuff?
+- exclude:
+    uidRegex: ^Oqtane\.
     
 # Exclude anything marked as PrivateApi
 # In future, we may change this to only show things which are PublicApi (recommendation of iJungleboy)
 - exclude:
     hasAttribute:
       uid: Oqtane.Documentation.PrivateApi
-
-      # Oqtane.Modules.Admin
-      #HtmlModule
-      #MAUI
-  

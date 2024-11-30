@@ -5,7 +5,7 @@ items:
   id: IMagicSettingsSource
   parent: ToSic.Cre8magic.Settings.Internal.Sources
   children:
-  - ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  - ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalogs(ToSic.Cre8magic.Themes.MagicThemePackage)
   - ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Priority
   langs:
   - csharp
@@ -28,37 +28,37 @@ items:
   syntax:
     content: public interface IMagicSettingsSource
     content.vb: Public Interface IMagicSettingsSource
-- uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
-  commentId: M:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
-  id: Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalogs(ToSic.Cre8magic.Themes.MagicThemePackage)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalogs(ToSic.Cre8magic.Themes.MagicThemePackage)
+  id: Catalogs(ToSic.Cre8magic.Themes.MagicThemePackage)
   parent: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource
   langs:
   - csharp
   - vb
-  name: Catalog(MagicPackageSettings)
-  nameWithType: IMagicSettingsSource.Catalog(MagicPackageSettings)
-  fullName: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog(ToSic.Cre8magic.Settings.MagicPackageSettings)
+  name: Catalogs(MagicThemePackage)
+  nameWithType: IMagicSettingsSource.Catalogs(MagicThemePackage)
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalogs(ToSic.Cre8magic.Themes.MagicThemePackage)
   type: Method
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Settings/Internal/Sources/IMagicSettingsSource.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Catalog
+    id: Catalogs
     path: ../ToSic.Cre8Magic.Client/Settings/Internal/Sources/IMagicSettingsSource.cs
     startLine: 6
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings.Internal.Sources
   syntax:
-    content: List<DataWithJournal<MagicSettingsCatalog>> Catalog(MagicPackageSettings packageSettings)
+    content: List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicThemePackage themePackage)
     parameters:
-    - id: packageSettings
-      type: ToSic.Cre8magic.Settings.MagicPackageSettings
+    - id: themePackage
+      type: ToSic.Cre8magic.Themes.MagicThemePackage
     return:
       type: System.Collections.Generic.List{ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal{ToSic.Cre8magic.Settings.MagicSettingsCatalog}}
-    content.vb: Function Catalog(packageSettings As MagicPackageSettings) As List(Of DataWithJournal(Of MagicSettingsCatalog))
-  overload: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog*
+    content.vb: Function Catalogs(themePackage As MagicThemePackage) As List(Of DataWithJournal(Of MagicSettingsCatalog))
+  overload: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalogs*
 - uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Priority
   commentId: P:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Priority
   id: Priority
@@ -137,24 +137,24 @@ references:
   - uid: ToSic.Cre8magic.Settings.Internal.Sources
     name: Sources
     href: ToSic.Cre8magic.Settings.Internal.Sources.html
-- uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog*
-  commentId: Overload:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog
-  href: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html#ToSic_Cre8magic_Settings_Internal_Sources_IMagicSettingsSource_Catalog_ToSic_Cre8magic_Settings_MagicPackageSettings_
-  name: Catalog
-  nameWithType: IMagicSettingsSource.Catalog
-  fullName: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalog
-- uid: ToSic.Cre8magic.Settings.MagicPackageSettings
-  commentId: T:ToSic.Cre8magic.Settings.MagicPackageSettings
-  parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.MagicPackageSettings.html
-  name: MagicPackageSettings
-  nameWithType: MagicPackageSettings
-  fullName: ToSic.Cre8magic.Settings.MagicPackageSettings
+- uid: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalogs*
+  commentId: Overload:ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalogs
+  href: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.html#ToSic_Cre8magic_Settings_Internal_Sources_IMagicSettingsSource_Catalogs_ToSic_Cre8magic_Themes_MagicThemePackage_
+  name: Catalogs
+  nameWithType: IMagicSettingsSource.Catalogs
+  fullName: ToSic.Cre8magic.Settings.Internal.Sources.IMagicSettingsSource.Catalogs
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemePackage
+  parent: ToSic.Cre8magic.Themes
+  href: ToSic.Cre8magic.Themes.MagicThemePackage.html
+  name: MagicThemePackage
+  nameWithType: MagicThemePackage
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage
 - uid: System.Collections.Generic.List{ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal{ToSic.Cre8magic.Settings.MagicSettingsCatalog}}
   commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal{ToSic.Cre8magic.Settings.MagicSettingsCatalog}}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  href: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal-1.html
   name: List<DataWithJournal<MagicSettingsCatalog>>
   nameWithType: List<DataWithJournal<MagicSettingsCatalog>>
   fullName: System.Collections.Generic.List<ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal<ToSic.Cre8magic.Settings.MagicSettingsCatalog>>
@@ -165,7 +165,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - uid: ToSic.Cre8magic.Settings.Internal.Journal.DataWithJournal`1
     name: DataWithJournal
@@ -180,7 +179,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -195,12 +193,12 @@ references:
     href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html
   - name: )
   - name: )
-- uid: ToSic.Cre8magic.Settings
-  commentId: N:ToSic.Cre8magic.Settings
+- uid: ToSic.Cre8magic.Themes
+  commentId: N:ToSic.Cre8magic.Themes
   href: ToSic.html
-  name: ToSic.Cre8magic.Settings
-  nameWithType: ToSic.Cre8magic.Settings
-  fullName: ToSic.Cre8magic.Settings
+  name: ToSic.Cre8magic.Themes
+  nameWithType: ToSic.Cre8magic.Themes
+  fullName: ToSic.Cre8magic.Themes
   spec.csharp:
   - uid: ToSic
     name: ToSic
@@ -210,9 +208,9 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
   spec.vb:
   - uid: ToSic
     name: ToSic
@@ -222,13 +220,12 @@ references:
     name: Cre8magic
     href: ToSic.Cre8magic.html
   - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
+  - uid: ToSic.Cre8magic.Themes
+    name: Themes
+    href: ToSic.Cre8magic.Themes.html
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<T>
   nameWithType: List<T>
   fullName: System.Collections.Generic.List<T>
@@ -239,7 +236,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -247,7 +243,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -300,7 +295,6 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
   name: int
   nameWithType: int
   fullName: int

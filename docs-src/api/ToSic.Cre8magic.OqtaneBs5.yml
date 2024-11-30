@@ -5,7 +5,12 @@ items:
   id: OqtaneBs5
   parent: ToSic.Cre8magic
   children:
-  - ToSic.Cre8magic.OqtaneBs5.Class1
+  - ToSic.Cre8magic.OqtaneBs5.Debug
+  - ToSic.Cre8magic.OqtaneBs5.MagicContainer
+  - ToSic.Cre8magic.OqtaneBs5.MagicExceptions
+  - ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
+  - ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  - ToSic.Cre8magic.OqtaneBs5.MagicOqtaneControlPanel
   langs:
   - csharp
   - vb
@@ -16,9 +21,71 @@ items:
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.OqtaneBs5.Class1
-  commentId: T:ToSic.Cre8magic.OqtaneBs5.Class1
-  href: ToSic.Cre8magic.OqtaneBs5.Class1.html
-  name: Class1
-  nameWithType: Class1
-  fullName: ToSic.Cre8magic.OqtaneBs5.Class1
+- uid: ToSic.Cre8magic.OqtaneBs5.Debug
+  commentId: N:ToSic.Cre8magic.OqtaneBs5.Debug
+  href: ToSic.html
+  name: ToSic.Cre8magic.OqtaneBs5.Debug
+  nameWithType: ToSic.Cre8magic.OqtaneBs5.Debug
+  fullName: ToSic.Cre8magic.OqtaneBs5.Debug
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5.Debug
+    name: Debug
+    href: ToSic.Cre8magic.OqtaneBs5.Debug.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5.Debug
+    name: Debug
+    href: ToSic.Cre8magic.OqtaneBs5.Debug.html
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicContainer
+  href: ToSic.Cre8magic.OqtaneBs5.MagicContainer.html
+  name: MagicContainer
+  nameWithType: MagicContainer
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicExceptions
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicExceptions
+  href: ToSic.Cre8magic.OqtaneBs5.MagicExceptions.html
+  name: MagicExceptions
+  nameWithType: MagicExceptions
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicExceptions
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
+  href: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html
+  name: MagicLanguageMenu
+  nameWithType: MagicLanguageMenu
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicMenu
+  href: ToSic.Cre8magic.OqtaneBs5.MagicMenu.html
+  name: MagicMenu
+  nameWithType: MagicMenu
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicOqtaneControlPanel
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicOqtaneControlPanel
+  href: ToSic.Cre8magic.OqtaneBs5.MagicOqtaneControlPanel.html
+  name: MagicOqtaneControlPanel
+  nameWithType: MagicOqtaneControlPanel
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicOqtaneControlPanel

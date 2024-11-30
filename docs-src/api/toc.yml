@@ -124,8 +124,27 @@ items:
     name: OqtaneBs5
     type: Namespace
     items:
-    - uid: ToSic.Cre8magic.OqtaneBs5.Class1
-      name: Class1
+    - uid: ToSic.Cre8magic.OqtaneBs5.Debug
+      name: Debug
+      type: Namespace
+      items:
+      - uid: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug
+        name: MagicDebug
+        type: Class
+    - uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer
+      name: MagicContainer
+      type: Class
+    - uid: ToSic.Cre8magic.OqtaneBs5.MagicExceptions
+      name: MagicExceptions
+      type: Class
+    - uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
+      name: MagicLanguageMenu
+      type: Class
+    - uid: ToSic.Cre8magic.OqtaneBs5.MagicMenu
+      name: MagicMenu
+      type: Class
+    - uid: ToSic.Cre8magic.OqtaneBs5.MagicOqtaneControlPanel
+      name: MagicOqtaneControlPanel
       type: Class
   - uid: ToSic.Cre8magic.PageContexts
     name: PageContexts
@@ -304,5 +323,8 @@ items:
     type: Class
   - uid: ToSic.Cre8magic.MagicTokens
     name: MagicTokens
+    type: Class
+  - uid: ToSic.Cre8magic._Imports
+    name: _Imports
     type: Class
 memberLayout: SamePage

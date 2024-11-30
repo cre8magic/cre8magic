@@ -7,7 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.GetNew(Microsoft.Extensions.Logging.ILogger)
   - ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  - ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
+  - ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
   langs:
   - csharp
   - vb
@@ -29,29 +29,17 @@ items:
   summary: 'Important: NEVER use this on a'
   example: []
   syntax:
-    content: 'public class PairOnOffJsonConverter : JsonConverterBase<PairOnOff>'
-    content.vb: Public Class PairOnOffJsonConverter Inherits JsonConverterBase(Of PairOnOff)
+    content: 'public class PairOnOffJsonConverter : JsonConverterBase<MagicSettingOnOff>'
+    content.vb: Public Class PairOnOffJsonConverter Inherits JsonConverterBase(Of MagicSettingOnOff)
   inheritance:
   - System.Object
   - System.Text.Json.Serialization.JsonConverter
-  - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
-  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}
+  - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}
+  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}
   inheritedMembers:
-  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.Logger
-  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
-  - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.CanConvert(System.Type)
-  - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-  - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.HandleNull
-  - System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Type
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
+  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Logger
+  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  - ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
 - uid: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.GetNew(Microsoft.Extensions.Logging.ILogger)
   commentId: M:ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.GetNew(Microsoft.Extensions.Logging.ILogger)
   id: GetNew(Microsoft.Extensions.Logging.ILogger)
@@ -83,16 +71,16 @@ items:
       type: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter
     content.vb: Public Shared Function GetNew(logger As ILogger) As PairOnOffJsonConverter
   overload: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.GetNew*
-- uid: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-  commentId: M:ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-  id: Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
+- uid: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
+  id: Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
   parent: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter
   langs:
   - csharp
   - vb
-  name: Write(Utf8JsonWriter, PairOnOff?, JsonSerializerOptions)
-  nameWithType: PairOnOffJsonConverter.Write(Utf8JsonWriter, PairOnOff?, JsonSerializerOptions)
-  fullName: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.PairOnOff?, System.Text.Json.JsonSerializerOptions)
+  name: Write(Utf8JsonWriter, MagicSettingOnOff?, JsonSerializerOptions)
+  nameWithType: PairOnOffJsonConverter.Write(Utf8JsonWriter, MagicSettingOnOff?, JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.MagicSettingOnOff?, System.Text.Json.JsonSerializerOptions)
   type: Method
   source:
     remote:
@@ -108,22 +96,22 @@ items:
   summary: Writes a specified value as JSON.
   example: []
   syntax:
-    content: public override void Write(Utf8JsonWriter writer, PairOnOff? pair, JsonSerializerOptions options)
+    content: public override void Write(Utf8JsonWriter writer, MagicSettingOnOff? pair, JsonSerializerOptions options)
     parameters:
     - id: writer
       type: System.Text.Json.Utf8JsonWriter
       description: The writer to write to.
     - id: pair
-      type: ToSic.Cre8magic.Settings.PairOnOff
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
     - id: options
       type: System.Text.Json.JsonSerializerOptions
       description: An object that specifies serialization options to use.
-    content.vb: Public Overrides Sub Write(writer As Utf8JsonWriter, pair As PairOnOff, options As JsonSerializerOptions)
-  overridden: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
+    content.vb: Public Overrides Sub Write(writer As Utf8JsonWriter, pair As MagicSettingOnOff, options As JsonSerializerOptions)
+  overridden: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
   overload: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write*
-  nameWithType.vb: PairOnOffJsonConverter.Write(Utf8JsonWriter, PairOnOff, JsonSerializerOptions)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.PairOnOff, System.Text.Json.JsonSerializerOptions)
-  name.vb: Write(Utf8JsonWriter, PairOnOff, JsonSerializerOptions)
+  nameWithType.vb: PairOnOffJsonConverter.Write(Utf8JsonWriter, MagicSettingOnOff, JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.MagicSettingOnOff, System.Text.Json.JsonSerializerOptions)
+  name.vb: Write(Utf8JsonWriter, MagicSettingOnOff, JsonSerializerOptions)
 - uid: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
   commentId: M:ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
   id: Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
@@ -146,10 +134,10 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings.Internal.Json
-  summary: Reads and converts the JSON to type <xref href="ToSic.Cre8magic.Settings.PairOnOff" data-throw-if-not-resolved="false"></xref>.
+  summary: Reads and converts the JSON to type <xref href="ToSic.Cre8magic.Settings.MagicSettingOnOff" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public override PairOnOff? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    content: public override MagicSettingOnOff? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     parameters:
     - id: reader
       type: System.Text.Json.Utf8JsonReader
@@ -161,10 +149,10 @@ items:
       type: System.Text.Json.JsonSerializerOptions
       description: An object that specifies serialization options to use.
     return:
-      type: ToSic.Cre8magic.Settings.PairOnOff
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
       description: The converted value.
-    content.vb: Public Overrides Function Read(reader As Utf8JsonReader, typeToConvert As Type, options As JsonSerializerOptions) As PairOnOff
-  overridden: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+    content.vb: Public Overrides Function Read(reader As Utf8JsonReader, typeToConvert As Type, options As JsonSerializerOptions) As MagicSettingOnOff
+  overridden: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
   overload: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Read*
   nameWithType.vb: PairOnOffJsonConverter.Read(Utf8JsonReader, Type, JsonSerializerOptions)
   fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
@@ -220,7 +208,6 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
@@ -231,62 +218,59 @@ references:
   commentId: T:System.Text.Json.Serialization.JsonConverter
   parent: System.Text.Json.Serialization
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter
   name: JsonConverter
   nameWithType: JsonConverter
   fullName: System.Text.Json.Serialization.JsonConverter
-- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
-  commentId: T:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
+- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}
+  commentId: T:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}
   parent: System.Text.Json.Serialization
   definition: System.Text.Json.Serialization.JsonConverter`1
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
-  name: JsonConverter<PairOnOff>
-  nameWithType: JsonConverter<PairOnOff>
-  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.PairOnOff>
-  nameWithType.vb: JsonConverter(Of PairOnOff)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.PairOnOff)
-  name.vb: JsonConverter(Of PairOnOff)
+  href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
+  name: JsonConverter<MagicSettingOnOff>
+  nameWithType: JsonConverter<MagicSettingOnOff>
+  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.MagicSettingOnOff>
+  nameWithType.vb: JsonConverter(Of MagicSettingOnOff)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.MagicSettingOnOff)
+  name.vb: JsonConverter(Of MagicSettingOnOff)
   spec.csharp:
   - uid: System.Text.Json.Serialization.JsonConverter`1
     name: JsonConverter
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
   - name: <
-  - uid: ToSic.Cre8magic.Settings.PairOnOff
-    name: PairOnOff
-    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    name: MagicSettingOnOff
+    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
   - name: '>'
   spec.vb:
   - uid: System.Text.Json.Serialization.JsonConverter`1
     name: JsonConverter
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
   - name: (
   - name: Of
   - name: " "
-  - uid: ToSic.Cre8magic.Settings.PairOnOff
-    name: PairOnOff
-    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    name: MagicSettingOnOff
+    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
   - name: )
-- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}
-  commentId: T:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}
+- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}
+  commentId: T:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}
   parent: ToSic.Cre8magic.Settings.Internal.Json
   definition: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
   href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html
-  name: JsonConverterBase<PairOnOff>
-  nameWithType: JsonConverterBase<PairOnOff>
-  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Settings.PairOnOff>
-  nameWithType.vb: JsonConverterBase(Of PairOnOff)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Settings.PairOnOff)
-  name.vb: JsonConverterBase(Of PairOnOff)
+  name: JsonConverterBase<MagicSettingOnOff>
+  nameWithType: JsonConverterBase<MagicSettingOnOff>
+  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Settings.MagicSettingOnOff>
+  nameWithType.vb: JsonConverterBase(Of MagicSettingOnOff)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Settings.MagicSettingOnOff)
+  name.vb: JsonConverterBase(Of MagicSettingOnOff)
   spec.csharp:
   - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
     name: JsonConverterBase
     href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html
   - name: <
-  - uid: ToSic.Cre8magic.Settings.PairOnOff
-    name: PairOnOff
-    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    name: MagicSettingOnOff
+    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
   - name: '>'
   spec.vb:
   - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1
@@ -295,475 +279,85 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ToSic.Cre8magic.Settings.PairOnOff
-    name: PairOnOff
-    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    name: MagicSettingOnOff
+    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
   - name: )
-- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.Logger
-  commentId: P:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.Logger
-  parent: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}
+- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Logger
+  commentId: P:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Logger
+  parent: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}
   definition: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1.Logger
   href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Internal_Json_JsonConverterBase_1_Logger
   name: Logger
-  nameWithType: JsonConverterBase<PairOnOff>.Logger
-  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Settings.PairOnOff>.Logger
-  nameWithType.vb: JsonConverterBase(Of PairOnOff).Logger
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Settings.PairOnOff).Logger
-- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  commentId: M:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  parent: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}
+  nameWithType: JsonConverterBase<MagicSettingOnOff>.Logger
+  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Settings.MagicSettingOnOff>.Logger
+  nameWithType.vb: JsonConverterBase(Of MagicSettingOnOff).Logger
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Settings.MagicSettingOnOff).Logger
+- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  parent: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}
   definition: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Internal_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   name: GetOptionsWithoutThisConverter(JsonSerializerOptions)
-  nameWithType: JsonConverterBase<PairOnOff>.GetOptionsWithoutThisConverter(JsonSerializerOptions)
-  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Settings.PairOnOff>.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
-  nameWithType.vb: JsonConverterBase(Of PairOnOff).GetOptionsWithoutThisConverter(JsonSerializerOptions)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Settings.PairOnOff).GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  nameWithType: JsonConverterBase<MagicSettingOnOff>.GetOptionsWithoutThisConverter(JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Settings.MagicSettingOnOff>.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverterBase(Of MagicSettingOnOff).GetOptionsWithoutThisConverter(JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Settings.MagicSettingOnOff).GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
     name: GetOptionsWithoutThisConverter
     href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Internal_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
     name: GetOptionsWithoutThisConverter
     href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Internal_Json_JsonConverterBase_1_GetOptionsWithoutThisConverter_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
-- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
-  commentId: M:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
-  parent: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}
+- uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  commentId: M:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  parent: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}
   definition: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
   href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Internal_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   name: ConvertObject(JsonObject, JsonSerializerOptions)
-  nameWithType: JsonConverterBase<PairOnOff>.ConvertObject(JsonObject, JsonSerializerOptions)
-  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Settings.PairOnOff>.ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
-  nameWithType.vb: JsonConverterBase(Of PairOnOff).ConvertObject(JsonObject, JsonSerializerOptions)
-  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Settings.PairOnOff).ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
+  nameWithType: JsonConverterBase<MagicSettingOnOff>.ConvertObject(JsonObject, JsonSerializerOptions)
+  fullName: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase<ToSic.Cre8magic.Settings.MagicSettingOnOff>.ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverterBase(Of MagicSettingOnOff).ConvertObject(JsonObject, JsonSerializerOptions)
+  fullName.vb: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase(Of ToSic.Cre8magic.Settings.MagicSettingOnOff).ConvertObject(System.Text.Json.Nodes.JsonObject, System.Text.Json.JsonSerializerOptions)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
     name: ConvertObject
     href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Internal_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.Nodes.JsonObject
     name: JsonObject
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.PairOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
+  - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase{ToSic.Cre8magic.Settings.MagicSettingOnOff}.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
     name: ConvertObject
     href: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase-1.html#ToSic_Cre8magic_Settings_Internal_Json_JsonConverterBase_1_ConvertObject_System_Text_Json_Nodes_JsonObject_System_Text_Json_JsonSerializerOptions_
   - name: (
   - uid: System.Text.Json.Nodes.JsonObject
     name: JsonObject
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.CanConvert(System.Type)
-  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.CanConvert(System.Type)
-  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
-  definition: System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
-  name: CanConvert(Type)
-  nameWithType: JsonConverter<PairOnOff>.CanConvert(Type)
-  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.PairOnOff>.CanConvert(System.Type)
-  nameWithType.vb: JsonConverter(Of PairOnOff).CanConvert(Type)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.PairOnOff).CanConvert(System.Type)
-  spec.csharp:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.CanConvert(System.Type)
-    name: CanConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.CanConvert(System.Type)
-    name: CanConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
-  definition: System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
-  name: ReadAsPropertyName(ref Utf8JsonReader, Type, JsonSerializerOptions)
-  nameWithType: JsonConverter<PairOnOff>.ReadAsPropertyName(ref Utf8JsonReader, Type, JsonSerializerOptions)
-  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.PairOnOff>.ReadAsPropertyName(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
-  nameWithType.vb: JsonConverter(Of PairOnOff).ReadAsPropertyName(Utf8JsonReader, Type, JsonSerializerOptions)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.PairOnOff).ReadAsPropertyName(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
-  name.vb: ReadAsPropertyName(Utf8JsonReader, Type, JsonSerializerOptions)
-  spec.csharp:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-    name: ReadAsPropertyName
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
-  - name: (
-  - name: ref
-  - name: " "
-  - uid: System.Text.Json.Utf8JsonReader
-    name: Utf8JsonReader
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: System.Text.Json.JsonSerializerOptions
-    name: JsonSerializerOptions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-  spec.vb:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-    name: ReadAsPropertyName
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
-  - name: (
-  - uid: System.Text.Json.Utf8JsonReader
-    name: Utf8JsonReader
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: System.Text.Json.JsonSerializerOptions
-    name: JsonSerializerOptions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
-  definition: System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
-  name: WriteAsPropertyName(Utf8JsonWriter, PairOnOff, JsonSerializerOptions)
-  nameWithType: JsonConverter<PairOnOff>.WriteAsPropertyName(Utf8JsonWriter, PairOnOff, JsonSerializerOptions)
-  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.PairOnOff>.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.PairOnOff, System.Text.Json.JsonSerializerOptions)
-  nameWithType.vb: JsonConverter(Of PairOnOff).WriteAsPropertyName(Utf8JsonWriter, PairOnOff, JsonSerializerOptions)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.PairOnOff).WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.PairOnOff, System.Text.Json.JsonSerializerOptions)
-  spec.csharp:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-    name: WriteAsPropertyName
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
-  - name: (
-  - uid: System.Text.Json.Utf8JsonWriter
-    name: Utf8JsonWriter
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
-  - name: ','
-  - name: " "
-  - uid: ToSic.Cre8magic.Settings.PairOnOff
-    name: PairOnOff
-    href: ToSic.Cre8magic.Settings.PairOnOff.html
-  - name: ','
-  - name: " "
-  - uid: System.Text.Json.JsonSerializerOptions
-    name: JsonSerializerOptions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-  spec.vb:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-    name: WriteAsPropertyName
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
-  - name: (
-  - uid: System.Text.Json.Utf8JsonWriter
-    name: Utf8JsonWriter
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
-  - name: ','
-  - name: " "
-  - uid: ToSic.Cre8magic.Settings.PairOnOff
-    name: PairOnOff
-    href: ToSic.Cre8magic.Settings.PairOnOff.html
-  - name: ','
-  - name: " "
-  - uid: System.Text.Json.JsonSerializerOptions
-    name: JsonSerializerOptions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.HandleNull
-  commentId: P:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.HandleNull
-  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
-  definition: System.Text.Json.Serialization.JsonConverter`1.HandleNull
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.handlenull
-  name: HandleNull
-  nameWithType: JsonConverter<PairOnOff>.HandleNull
-  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.PairOnOff>.HandleNull
-  nameWithType.vb: JsonConverter(Of PairOnOff).HandleNull
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.PairOnOff).HandleNull
-- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Type
-  commentId: P:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Type
-  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
-  definition: System.Text.Json.Serialization.JsonConverter`1.Type
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.type
-  name: Type
-  nameWithType: JsonConverter<PairOnOff>.Type
-  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.PairOnOff>.Type
-  nameWithType.vb: JsonConverter(Of PairOnOff).Type
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.PairOnOff).Type
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  name: Equals(object, object)
-  nameWithType: object.Equals(object, object)
-  fullName: object.Equals(object, object)
-  nameWithType.vb: Object.Equals(Object, Object)
-  fullName.vb: Object.Equals(Object, Object)
-  name.vb: Equals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  name: ReferenceEquals(object, object)
-  nameWithType: object.ReferenceEquals(object, object)
-  fullName: object.ReferenceEquals(object, object)
-  nameWithType.vb: Object.ReferenceEquals(Object, Object)
-  fullName.vb: Object.ReferenceEquals(Object, Object)
-  name.vb: ReferenceEquals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
   - name: )
 - uid: System
   commentId: N:System
@@ -822,7 +416,6 @@ references:
 - uid: System.Text.Json.Serialization.JsonConverter`1
   commentId: T:System.Text.Json.Serialization.JsonConverter`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
   name: JsonConverter<T>
   nameWithType: JsonConverter<T>
   fullName: System.Text.Json.Serialization.JsonConverter<T>
@@ -833,7 +426,6 @@ references:
   - uid: System.Text.Json.Serialization.JsonConverter`1
     name: JsonConverter
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
   - name: <
   - name: T
   - name: '>'
@@ -841,7 +433,6 @@ references:
   - uid: System.Text.Json.Serialization.JsonConverter`1
     name: JsonConverter
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1
   - name: (
   - name: Of
   - name: " "
@@ -897,7 +488,6 @@ references:
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
   - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1.GetOptionsWithoutThisConverter(System.Text.Json.JsonSerializerOptions)
@@ -907,7 +497,6 @@ references:
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
 - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
   commentId: M:ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
@@ -926,13 +515,11 @@ references:
   - uid: System.Text.Json.Nodes.JsonObject
     name: JsonObject
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
   - uid: ToSic.Cre8magic.Settings.Internal.Json.JsonConverterBase`1.ConvertObject(System.Text.Json.Nodes.JsonObject,System.Text.Json.JsonSerializerOptions)
@@ -942,170 +529,12 @@ references:
   - uid: System.Text.Json.Nodes.JsonObject
     name: JsonObject
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.nodes.jsonobject
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
-- uid: System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
-  commentId: M:System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
-  name: CanConvert(Type)
-  nameWithType: JsonConverter<T>.CanConvert(Type)
-  fullName: System.Text.Json.Serialization.JsonConverter<T>.CanConvert(System.Type)
-  nameWithType.vb: JsonConverter(Of T).CanConvert(Type)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).CanConvert(System.Type)
-  spec.csharp:
-  - uid: System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
-    name: CanConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-  spec.vb:
-  - uid: System.Text.Json.Serialization.JsonConverter`1.CanConvert(System.Type)
-    name: CanConvert
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.canconvert
-  - name: (
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: )
-- uid: System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  commentId: M:System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
-  name: ReadAsPropertyName(ref Utf8JsonReader, Type, JsonSerializerOptions)
-  nameWithType: JsonConverter<T>.ReadAsPropertyName(ref Utf8JsonReader, Type, JsonSerializerOptions)
-  fullName: System.Text.Json.Serialization.JsonConverter<T>.ReadAsPropertyName(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
-  nameWithType.vb: JsonConverter(Of T).ReadAsPropertyName(Utf8JsonReader, Type, JsonSerializerOptions)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).ReadAsPropertyName(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
-  name.vb: ReadAsPropertyName(Utf8JsonReader, Type, JsonSerializerOptions)
-  spec.csharp:
-  - uid: System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-    name: ReadAsPropertyName
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
-  - name: (
-  - name: ref
-  - name: " "
-  - uid: System.Text.Json.Utf8JsonReader
-    name: Utf8JsonReader
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: System.Text.Json.JsonSerializerOptions
-    name: JsonSerializerOptions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-  spec.vb:
-  - uid: System.Text.Json.Serialization.JsonConverter`1.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-    name: ReadAsPropertyName
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.readaspropertyname
-  - name: (
-  - uid: System.Text.Json.Utf8JsonReader
-    name: Utf8JsonReader
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
-  - name: ','
-  - name: " "
-  - uid: System.Type
-    name: Type
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
-  - name: ','
-  - name: " "
-  - uid: System.Text.Json.JsonSerializerOptions
-    name: JsonSerializerOptions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-- uid: System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
-  commentId: M:System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
-  name: WriteAsPropertyName(Utf8JsonWriter, T, JsonSerializerOptions)
-  nameWithType: JsonConverter<T>.WriteAsPropertyName(Utf8JsonWriter, T, JsonSerializerOptions)
-  fullName: System.Text.Json.Serialization.JsonConverter<T>.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
-  nameWithType.vb: JsonConverter(Of T).WriteAsPropertyName(Utf8JsonWriter, T, JsonSerializerOptions)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).WriteAsPropertyName(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
-  spec.csharp:
-  - uid: System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
-    name: WriteAsPropertyName
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
-  - name: (
-  - uid: System.Text.Json.Utf8JsonWriter
-    name: Utf8JsonWriter
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.Text.Json.JsonSerializerOptions
-    name: JsonSerializerOptions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-  spec.vb:
-  - uid: System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
-    name: WriteAsPropertyName
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.writeaspropertyname
-  - name: (
-  - uid: System.Text.Json.Utf8JsonWriter
-    name: Utf8JsonWriter
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
-  - name: ','
-  - name: " "
-  - name: T
-  - name: ','
-  - name: " "
-  - uid: System.Text.Json.JsonSerializerOptions
-    name: JsonSerializerOptions
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
-  - name: )
-- uid: System.Text.Json.Serialization.JsonConverter`1.HandleNull
-  commentId: P:System.Text.Json.Serialization.JsonConverter`1.HandleNull
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.handlenull
-  name: HandleNull
-  nameWithType: JsonConverter<T>.HandleNull
-  fullName: System.Text.Json.Serialization.JsonConverter<T>.HandleNull
-  nameWithType.vb: JsonConverter(Of T).HandleNull
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).HandleNull
-- uid: System.Text.Json.Serialization.JsonConverter`1.Type
-  commentId: P:System.Text.Json.Serialization.JsonConverter`1.Type
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.type
-  name: Type
-  nameWithType: JsonConverter<T>.Type
-  fullName: System.Text.Json.Serialization.JsonConverter<T>.Type
-  nameWithType.vb: JsonConverter(Of T).Type
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of T).Type
 - uid: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.GetNew*
   commentId: Overload:ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.GetNew
   href: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.html#ToSic_Cre8magic_Settings_Internal_Json_PairOnOffJsonConverter_GetNew_Microsoft_Extensions_Logging_ILogger_
@@ -1164,63 +593,57 @@ references:
     name: Logging
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
-- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
-  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
+- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
+  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}
   definition: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
-  name: Write(Utf8JsonWriter, PairOnOff, JsonSerializerOptions)
-  nameWithType: JsonConverter<PairOnOff>.Write(Utf8JsonWriter, PairOnOff, JsonSerializerOptions)
-  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.PairOnOff>.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.PairOnOff, System.Text.Json.JsonSerializerOptions)
-  nameWithType.vb: JsonConverter(Of PairOnOff).Write(Utf8JsonWriter, PairOnOff, JsonSerializerOptions)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.PairOnOff).Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.PairOnOff, System.Text.Json.JsonSerializerOptions)
+  href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
+  name: Write(Utf8JsonWriter, MagicSettingOnOff, JsonSerializerOptions)
+  nameWithType: JsonConverter<MagicSettingOnOff>.Write(Utf8JsonWriter, MagicSettingOnOff, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.MagicSettingOnOff>.Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.MagicSettingOnOff, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of MagicSettingOnOff).Write(Utf8JsonWriter, MagicSettingOnOff, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.MagicSettingOnOff).Write(System.Text.Json.Utf8JsonWriter, ToSic.Cre8magic.Settings.MagicSettingOnOff, System.Text.Json.JsonSerializerOptions)
   spec.csharp:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
+  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
     name: Write
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
   - name: (
   - uid: System.Text.Json.Utf8JsonWriter
     name: Utf8JsonWriter
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Settings.PairOnOff
-    name: PairOnOff
-    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    name: MagicSettingOnOff
+    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.PairOnOff,System.Text.Json.JsonSerializerOptions)
+  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Write(System.Text.Json.Utf8JsonWriter,ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Text.Json.JsonSerializerOptions)
     name: Write
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
   - name: (
   - uid: System.Text.Json.Utf8JsonWriter
     name: Utf8JsonWriter
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Settings.PairOnOff
-    name: PairOnOff
-    href: ToSic.Cre8magic.Settings.PairOnOff.html
+  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    name: MagicSettingOnOff
+    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
 - uid: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write*
   commentId: Overload:ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write
-  href: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.html#ToSic_Cre8magic_Settings_Internal_Json_PairOnOffJsonConverter_Write_System_Text_Json_Utf8JsonWriter_ToSic_Cre8magic_Settings_PairOnOff_System_Text_Json_JsonSerializerOptions_
+  href: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.html#ToSic_Cre8magic_Settings_Internal_Json_PairOnOffJsonConverter_Write_System_Text_Json_Utf8JsonWriter_ToSic_Cre8magic_Settings_MagicSettingOnOff_System_Text_Json_JsonSerializerOptions_
   name: Write
   nameWithType: PairOnOffJsonConverter.Write
   fullName: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Write
@@ -1228,29 +651,26 @@ references:
   commentId: T:System.Text.Json.Utf8JsonWriter
   parent: System.Text.Json
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
   name: Utf8JsonWriter
   nameWithType: Utf8JsonWriter
   fullName: System.Text.Json.Utf8JsonWriter
-- uid: ToSic.Cre8magic.Settings.PairOnOff
-  commentId: T:ToSic.Cre8magic.Settings.PairOnOff
+- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingOnOff
   parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.PairOnOff.html
-  name: PairOnOff
-  nameWithType: PairOnOff
-  fullName: ToSic.Cre8magic.Settings.PairOnOff
+  href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
+  name: MagicSettingOnOff
+  nameWithType: MagicSettingOnOff
+  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff
 - uid: System.Text.Json.JsonSerializerOptions
   commentId: T:System.Text.Json.JsonSerializerOptions
   parent: System.Text.Json
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   name: JsonSerializerOptions
   nameWithType: JsonSerializerOptions
   fullName: System.Text.Json.JsonSerializerOptions
 - uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
   commentId: M:System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
   name: Write(Utf8JsonWriter, T, JsonSerializerOptions)
   nameWithType: JsonConverter<T>.Write(Utf8JsonWriter, T, JsonSerializerOptions)
   fullName: System.Text.Json.Serialization.JsonConverter<T>.Write(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
@@ -1260,12 +680,10 @@ references:
   - uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
     name: Write
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
   - name: (
   - uid: System.Text.Json.Utf8JsonWriter
     name: Utf8JsonWriter
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
   - name: ','
   - name: " "
   - name: T
@@ -1274,18 +692,15 @@ references:
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
   - uid: System.Text.Json.Serialization.JsonConverter`1.Write(System.Text.Json.Utf8JsonWriter,`0,System.Text.Json.JsonSerializerOptions)
     name: Write
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.write
   - name: (
   - uid: System.Text.Json.Utf8JsonWriter
     name: Utf8JsonWriter
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter
   - name: ','
   - name: " "
   - name: T
@@ -1294,7 +709,6 @@ references:
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
 - uid: System.Text.Json
   commentId: N:System.Text.Json
@@ -1363,64 +777,55 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}
+- uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  commentId: M:System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  parent: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}
   definition: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
   name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
-  nameWithType: JsonConverter<PairOnOff>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
-  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.PairOnOff>.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
-  nameWithType.vb: JsonConverter(Of PairOnOff).Read(Utf8JsonReader, Type, JsonSerializerOptions)
-  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.PairOnOff).Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  nameWithType: JsonConverter<MagicSettingOnOff>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: System.Text.Json.Serialization.JsonConverter<ToSic.Cre8magic.Settings.MagicSettingOnOff>.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
+  nameWithType.vb: JsonConverter(Of MagicSettingOnOff).Read(Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName.vb: System.Text.Json.Serialization.JsonConverter(Of ToSic.Cre8magic.Settings.MagicSettingOnOff).Read(System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
   name.vb: Read(Utf8JsonReader, Type, JsonSerializerOptions)
   spec.csharp:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
     name: Read
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
   - name: (
   - name: ref
   - name: " "
   - uid: System.Text.Json.Utf8JsonReader
     name: Utf8JsonReader
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
   - name: ','
   - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
-  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.PairOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
+  - uid: System.Text.Json.Serialization.JsonConverter{ToSic.Cre8magic.Settings.MagicSettingOnOff}.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
     name: Read
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
   - name: (
   - uid: System.Text.Json.Utf8JsonReader
     name: Utf8JsonReader
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
   - name: ','
   - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
 - uid: ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Read*
   commentId: Overload:ToSic.Cre8magic.Settings.Internal.Json.PairOnOffJsonConverter.Read
@@ -1432,7 +837,6 @@ references:
   commentId: T:System.Text.Json.Utf8JsonReader
   parent: System.Text.Json
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
   name: Utf8JsonReader
   nameWithType: Utf8JsonReader
   fullName: System.Text.Json.Utf8JsonReader
@@ -1440,14 +844,12 @@ references:
   commentId: T:System.Type
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.type
   name: Type
   nameWithType: Type
   fullName: System.Type
 - uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
   commentId: M:System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
   name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
   nameWithType: JsonConverter<T>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
   fullName: System.Text.Json.Serialization.JsonConverter<T>.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
@@ -1458,47 +860,39 @@ references:
   - uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
     name: Read
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
   - name: (
   - name: ref
   - name: " "
   - uid: System.Text.Json.Utf8JsonReader
     name: Utf8JsonReader
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
   - name: ','
   - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )
   spec.vb:
   - uid: System.Text.Json.Serialization.JsonConverter`1.Read(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)
     name: Read
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.serialization.jsonconverter-1.read
   - name: (
   - uid: System.Text.Json.Utf8JsonReader
     name: Utf8JsonReader
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.utf8jsonreader
   - name: ','
   - name: " "
   - uid: System.Type
     name: Type
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.type
   - name: ','
   - name: " "
   - uid: System.Text.Json.JsonSerializerOptions
     name: JsonSerializerOptions
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.text.json.jsonserializeroptions
   - name: )

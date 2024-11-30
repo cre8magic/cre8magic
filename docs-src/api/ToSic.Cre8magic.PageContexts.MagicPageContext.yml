@@ -5,7 +5,6 @@ items:
   id: MagicPageContext
   parent: ToSic.Cre8magic.PageContexts
   children:
-  - ToSic.Cre8magic.PageContexts.MagicPageContext.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
   - ToSic.Cre8magic.PageContexts.MagicPageContext.ChildContent
   - ToSic.Cre8magic.PageContexts.MagicPageContext.OnAfterRenderAsync(System.Boolean)
   - ToSic.Cre8magic.PageContexts.MagicPageContext.PageState
@@ -30,34 +29,6 @@ items:
   inheritance:
   - System.Object
   - Microsoft.AspNetCore.Components.ComponentBase
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContext.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  commentId: M:ToSic.Cre8magic.PageContexts.MagicPageContext.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  id: BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  parent: ToSic.Cre8magic.PageContexts.MagicPageContext
-  langs:
-  - csharp
-  - vb
-  name: BuildRenderTree(RenderTreeBuilder)
-  nameWithType: MagicPageContext.BuildRenderTree(RenderTreeBuilder)
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContext.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  type: Method
-  source:
-    id: BuildRenderTree
-    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\PageContexts_MagicPageContext_razor.g.cs
-    startLine: 44
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.PageContexts
-  summary: Renders the component to the supplied <xref href="Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder" data-throw-if-not-resolved="false"></xref>.
-  example: []
-  syntax:
-    content: protected override void BuildRenderTree(RenderTreeBuilder __builder)
-    parameters:
-    - id: __builder
-      type: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-    content.vb: Protected Overrides Sub BuildRenderTree(__builder As RenderTreeBuilder)
-  overridden: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  overload: ToSic.Cre8magic.PageContexts.MagicPageContext.BuildRenderTree*
 - uid: ToSic.Cre8magic.PageContexts.MagicPageContext.PageState
   commentId: P:ToSic.Cre8magic.PageContexts.MagicPageContext.PageState
   id: PageState
@@ -325,91 +296,6 @@ references:
     name: Components
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
-- uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-  commentId: T:Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-  parent: Microsoft.AspNetCore.Components.Rendering
-  isExternal: true
-  name: RenderTreeBuilder
-  nameWithType: RenderTreeBuilder
-  fullName: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-- uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  parent: Microsoft.AspNetCore.Components.ComponentBase
-  isExternal: true
-  name: BuildRenderTree(RenderTreeBuilder)
-  nameWithType: ComponentBase.BuildRenderTree(RenderTreeBuilder)
-  fullName: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-  spec.csharp:
-  - uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-    name: BuildRenderTree
-    isExternal: true
-  - name: (
-  - uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-    name: RenderTreeBuilder
-    isExternal: true
-  - name: )
-  spec.vb:
-  - uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
-    name: BuildRenderTree
-    isExternal: true
-  - name: (
-  - uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
-    name: RenderTreeBuilder
-    isExternal: true
-  - name: )
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContext.BuildRenderTree*
-  commentId: Overload:ToSic.Cre8magic.PageContexts.MagicPageContext.BuildRenderTree
-  href: ToSic.Cre8magic.PageContexts.MagicPageContext.html#ToSic_Cre8magic_PageContexts_MagicPageContext_BuildRenderTree_Microsoft_AspNetCore_Components_Rendering_RenderTreeBuilder_
-  name: BuildRenderTree
-  nameWithType: MagicPageContext.BuildRenderTree
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContext.BuildRenderTree
-- uid: Microsoft.AspNetCore.Components.Rendering
-  commentId: N:Microsoft.AspNetCore.Components.Rendering
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft
-  name: Microsoft.AspNetCore.Components.Rendering
-  nameWithType: Microsoft.AspNetCore.Components.Rendering
-  fullName: Microsoft.AspNetCore.Components.Rendering
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.AspNetCore
-    name: AspNetCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
-  - name: .
-  - uid: Microsoft.AspNetCore.Components
-    name: Components
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
-  - name: .
-  - uid: Microsoft.AspNetCore.Components.Rendering
-    name: Rendering
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.AspNetCore
-    name: AspNetCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
-  - name: .
-  - uid: Microsoft.AspNetCore.Components
-    name: Components
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
-  - name: .
-  - uid: Microsoft.AspNetCore.Components.Rendering
-    name: Rendering
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering
 - uid: ToSic.Cre8magic.PageContexts.MagicPageContext.PageState*
   commentId: Overload:ToSic.Cre8magic.PageContexts.MagicPageContext.PageState
   href: ToSic.Cre8magic.PageContexts.MagicPageContext.html#ToSic_Cre8magic_PageContexts_MagicPageContext_PageState
@@ -420,7 +306,6 @@ references:
   commentId: T:Oqtane.UI.PageState
   parent: Oqtane.UI
   isExternal: true
-  href: https://github.com/sbwalker/oqtane.framework/blob/5e9567158f0f5ea11a746a02b9359695423d7608/Oqtane.Client/UI/PageState.cs
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState

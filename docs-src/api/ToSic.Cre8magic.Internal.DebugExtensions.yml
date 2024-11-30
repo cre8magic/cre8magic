@@ -17,11 +17,11 @@ items:
   type: Class
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Internal/DebugExtensions.cs
+      path: ToSic.Cre8Magic.Client/Internal/Debug/DebugExtensions.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DebugExtensions
-    path: ../ToSic.Cre8Magic.Client/Internal/DebugExtensions.cs
+    path: ../ToSic.Cre8Magic.Client/Internal/Debug/DebugExtensions.cs
     startLine: 11
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
@@ -36,14 +36,6 @@ items:
     content.vb: Public Module DebugExtensions
   inheritance:
   - System.Object
-  inheritedMembers:
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.ToString
 - uid: ToSic.Cre8magic.Internal.DebugExtensions.GetLogEntries(ToSic.Cre8magic.Menus.IMagicMenuKit)
   commentId: M:ToSic.Cre8magic.Internal.DebugExtensions.GetLogEntries(ToSic.Cre8magic.Menus.IMagicMenuKit)
   id: GetLogEntries(ToSic.Cre8magic.Menus.IMagicMenuKit)
@@ -58,11 +50,11 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Internal/DebugExtensions.cs
+      path: ToSic.Cre8Magic.Client/Internal/Debug/DebugExtensions.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetLogEntries
-    path: ../ToSic.Cre8Magic.Client/Internal/DebugExtensions.cs
+    path: ../ToSic.Cre8Magic.Client/Internal/Debug/DebugExtensions.cs
     startLine: 13
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
@@ -90,11 +82,11 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Internal/DebugExtensions.cs
+      path: ToSic.Cre8Magic.Client/Internal/Debug/DebugExtensions.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetExceptions
-    path: ../ToSic.Cre8Magic.Client/Internal/DebugExtensions.cs
+    path: ../ToSic.Cre8Magic.Client/Internal/Debug/DebugExtensions.cs
     startLine: 16
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
@@ -122,25 +114,25 @@ items:
   type: Method
   source:
     remote:
-      path: ToSic.Cre8Magic.Client/Internal/DebugExtensions.cs
+      path: ToSic.Cre8Magic.Client/Internal/Debug/DebugExtensions.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
     id: GetThemeContext
-    path: ../ToSic.Cre8Magic.Client/Internal/DebugExtensions.cs
+    path: ../ToSic.Cre8Magic.Client/Internal/Debug/DebugExtensions.cs
     startLine: 19
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Internal
   syntax:
-    content: public static MagicThemeContext GetThemeContext(this IMagicSettingsService settingsSvc, PageState pageState)
+    content: public static CmThemeContext GetThemeContext(this IMagicSettingsService settingsSvc, PageState pageState)
     parameters:
     - id: settingsSvc
       type: ToSic.Cre8magic.Settings.IMagicSettingsService
     - id: pageState
       type: Oqtane.UI.PageState
     return:
-      type: ToSic.Cre8magic.Themes.Internal.MagicThemeContext
-    content.vb: Public Shared Function GetThemeContext(settingsSvc As IMagicSettingsService, pageState As PageState) As MagicThemeContext
+      type: ToSic.Cre8magic.Themes.Internal.CmThemeContext
+    content.vb: Public Shared Function GetThemeContext(settingsSvc As IMagicSettingsService, pageState As PageState) As CmThemeContext
   overload: ToSic.Cre8magic.Internal.DebugExtensions.GetThemeContext*
 references:
 - uid: ToSic.Cre8magic.Internal
@@ -177,232 +169,12 @@ references:
   commentId: T:System.Object
   parent: System
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object
   name: object
   nameWithType: object
   fullName: object
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  name: Equals(object, object)
-  nameWithType: object.Equals(object, object)
-  fullName: object.Equals(object, object)
-  nameWithType.vb: Object.Equals(Object, Object)
-  fullName.vb: Object.Equals(Object, Object)
-  name.vb: Equals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  name: GetType()
-  nameWithType: object.GetType()
-  fullName: object.GetType()
-  nameWithType.vb: Object.GetType()
-  fullName.vb: Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  name: ReferenceEquals(object, object)
-  nameWithType: object.ReferenceEquals(object, object)
-  fullName: object.ReferenceEquals(object, object)
-  nameWithType.vb: Object.ReferenceEquals(Object, Object)
-  fullName.vb: Object.ReferenceEquals(Object, Object)
-  name.vb: ReferenceEquals(Object, Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: ','
-  - name: " "
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -427,7 +199,6 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{System.Object}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<object>
   nameWithType: IEnumerable<object>
   fullName: System.Collections.Generic.IEnumerable<object>
@@ -438,25 +209,21 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - uid: System.Object
     name: object
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Object
     name: Object
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: ToSic.Cre8magic.Menus
   commentId: N:ToSic.Cre8magic.Menus
@@ -491,7 +258,6 @@ references:
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<T>
   nameWithType: IEnumerable<T>
   fullName: System.Collections.Generic.IEnumerable<T>
@@ -502,7 +268,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
   - name: T
   - name: '>'
@@ -510,7 +275,6 @@ references:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: (
   - name: Of
   - name: " "
@@ -570,7 +334,6 @@ references:
   commentId: T:System.Collections.Generic.List{System.Exception}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<Exception>
   nameWithType: List<Exception>
   fullName: System.Collections.Generic.List<System.Exception>
@@ -581,25 +344,21 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - uid: System.Exception
     name: Exception
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.exception
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
   - uid: System.Exception
     name: Exception
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.exception
   - name: )
 - uid: ToSic.Cre8magic.Settings
   commentId: N:ToSic.Cre8magic.Settings
@@ -634,7 +393,6 @@ references:
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<T>
   nameWithType: List<T>
   fullName: System.Collections.Generic.List<T>
@@ -645,7 +403,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
@@ -653,7 +410,6 @@ references:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
@@ -673,13 +429,13 @@ references:
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState
-- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeContext
-  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeContext
+- uid: ToSic.Cre8magic.Themes.Internal.CmThemeContext
+  commentId: T:ToSic.Cre8magic.Themes.Internal.CmThemeContext
   parent: ToSic.Cre8magic.Themes.Internal
-  href: ToSic.Cre8magic.Themes.Internal.MagicThemeContext.html
-  name: MagicThemeContext
-  nameWithType: MagicThemeContext
-  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeContext
+  href: ToSic.Cre8magic.Themes.Internal.CmThemeContext.html
+  name: CmThemeContext
+  nameWithType: CmThemeContext
+  fullName: ToSic.Cre8magic.Themes.Internal.CmThemeContext
 - uid: Oqtane.UI
   commentId: N:Oqtane.UI
   isExternal: true

@@ -5,8 +5,8 @@ items:
   id: Internal
   parent: ToSic.Cre8magic.Themes
   children:
-  - ToSic.Cre8magic.Themes.Internal.MagicThemeContext
-  - ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull
+  - ToSic.Cre8magic.Themes.Internal.CmThemeContext
+  - ToSic.Cre8magic.Themes.Internal.CmThemeContextFull
   - ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
   langs:
   - csharp
@@ -18,20 +18,20 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeContext
-  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeContext
+- uid: ToSic.Cre8magic.Themes.Internal.CmThemeContext
+  commentId: T:ToSic.Cre8magic.Themes.Internal.CmThemeContext
   parent: ToSic.Cre8magic.Themes.Internal
-  href: ToSic.Cre8magic.Themes.Internal.MagicThemeContext.html
-  name: MagicThemeContext
-  nameWithType: MagicThemeContext
-  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeContext
-- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull
-  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull
+  href: ToSic.Cre8magic.Themes.Internal.CmThemeContext.html
+  name: CmThemeContext
+  nameWithType: CmThemeContext
+  fullName: ToSic.Cre8magic.Themes.Internal.CmThemeContext
+- uid: ToSic.Cre8magic.Themes.Internal.CmThemeContextFull
+  commentId: T:ToSic.Cre8magic.Themes.Internal.CmThemeContextFull
   parent: ToSic.Cre8magic.Themes.Internal
-  href: ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull.html
-  name: MagicThemeContextFull
-  nameWithType: MagicThemeContextFull
-  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeContextFull
+  href: ToSic.Cre8magic.Themes.Internal.CmThemeContextFull.html
+  name: CmThemeContextFull
+  nameWithType: CmThemeContextFull
+  fullName: ToSic.Cre8magic.Themes.Internal.CmThemeContextFull
 - uid: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
   commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
   parent: ToSic.Cre8magic.Themes.Internal

@@ -1,0 +1,254 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal
+  id: MagicMenuHorizontal
+  parent: ToSic.Cre8magic.OqtaneBs5
+  children:
+  - ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Current
+  - ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Debug
+  langs:
+  - csharp
+  - vb
+  name: MagicMenuHorizontal
+  nameWithType: MagicMenuHorizontal
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal
+  type: Class
+  source:
+    id: MagicMenuHorizontal
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicMenuHorizontal_razor.g.cs
+    startLine: 37
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  syntax:
+    content: 'public class MagicMenuHorizontal : ComponentBase'
+    content.vb: Public Class MagicMenuHorizontal Inherits ComponentBase
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Components.ComponentBase
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Current
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Current
+  id: Current
+  parent: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: MagicMenuHorizontal.Current
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Current
+  type: Property
+  source:
+    id: Current
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicMenuHorizontal_razor.g.cs
+    startLine: 216
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  syntax:
+    content: >-
+      [Parameter]
+
+      [EditorRequired]
+
+      public required IMagicPage Current { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    content.vb: >-
+      <Parameter>
+
+      <EditorRequired>
+
+      Public Property Current As IMagicPage
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Current*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+  - type: Microsoft.AspNetCore.Components.EditorRequiredAttribute
+    ctor: Microsoft.AspNetCore.Components.EditorRequiredAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Debug
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Debug
+  id: Debug
+  parent: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal
+  langs:
+  - csharp
+  - vb
+  name: Debug
+  nameWithType: MagicMenuHorizontal.Debug
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Debug
+  type: Property
+  source:
+    id: Debug
+    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicMenuHorizontal_razor.g.cs
+    startLine: 221
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  syntax:
+    content: >-
+      [Parameter]
+
+      public RenderFragment? Debug { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.AspNetCore.Components.RenderFragment
+    content.vb: >-
+      <Parameter>
+
+      Public Property Debug As RenderFragment
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Debug*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+references:
+- uid: ToSic.Cre8magic.OqtaneBs5
+  commentId: N:ToSic.Cre8magic.OqtaneBs5
+  href: ToSic.html
+  name: ToSic.Cre8magic.OqtaneBs5
+  nameWithType: ToSic.Cre8magic.OqtaneBs5
+  fullName: ToSic.Cre8magic.OqtaneBs5
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Components.ComponentBase
+  commentId: T:Microsoft.AspNetCore.Components.ComponentBase
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  name: ComponentBase
+  nameWithType: ComponentBase
+  fullName: Microsoft.AspNetCore.Components.ComponentBase
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Components
+  commentId: N:Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Components
+  nameWithType: Microsoft.AspNetCore.Components
+  fullName: Microsoft.AspNetCore.Components
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Current*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Current
+  href: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.html#ToSic_Cre8magic_OqtaneBs5_MagicMenuHorizontal_Current
+  name: Current
+  nameWithType: MagicMenuHorizontal.Current
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Current
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Debug*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Debug
+  href: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.html#ToSic_Cre8magic_OqtaneBs5_MagicMenuHorizontal_Debug
+  name: Debug
+  nameWithType: MagicMenuHorizontal.Debug
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicMenuHorizontal.Debug
+- uid: Microsoft.AspNetCore.Components.RenderFragment
+  commentId: T:Microsoft.AspNetCore.Components.RenderFragment
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  name: RenderFragment
+  nameWithType: RenderFragment
+  fullName: Microsoft.AspNetCore.Components.RenderFragment
