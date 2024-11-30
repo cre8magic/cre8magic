@@ -10,9 +10,9 @@ internal record MagicThemeKit : IMagicThemeKit
 
     public MagicThemeSettings Settings => Context.ThemeSettings;
 
-    public MagicThemeDesignSettings DesignSettings => Context.ThemeDesignSettings;
+    public MagicThemeBlueprint Blueprint => Context.ThemeBlueprint;
 
-    public required MagicThemeDesigner Designer { get; init; }
+    public required MagicThemeTailor Tailor { get; init; }
 
     [field: AllowNull, MaybeNull]
     public string Logo => field ??= Context.PageTokens.Parse(Settings.Logo) ?? "";
@@ -31,7 +31,7 @@ internal record MagicThemeKit : IMagicThemeKit
             More = new()
             {
                 { "Theme Parts", Settings },
-                { "Theme Design", DesignSettings },
+                { "Theme Design", Blueprint },
             },
             Settings = Settings,
             Values = new()

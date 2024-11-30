@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Themes;
 public interface IMagicThemeKit: IHasDebugInfo
 {
     MagicThemeSettings Settings { get; }
-    MagicThemeDesigner Designer { get; }
+    MagicThemeTailor Tailor { get; }
     string Logo { get; }
 
     /// <summary>

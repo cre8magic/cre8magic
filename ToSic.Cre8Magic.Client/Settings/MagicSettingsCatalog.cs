@@ -45,8 +45,8 @@ public record MagicSettingsCatalog: IHasDebugSettings
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeSettings>))]
     public Dictionary<string, MagicThemeSettings> Themes { get; init; } = new(InvariantCultureIgnoreCase);
 
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeDesignSettings>))]
-    public Dictionary<string, MagicThemeDesignSettings> ThemeDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeBlueprint>))]
+    public Dictionary<string, MagicThemeBlueprint> ThemeBlueprints { get; init; } = new(InvariantCultureIgnoreCase);
 
 
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicAnalyticsSettings>))]

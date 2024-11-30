@@ -17,11 +17,11 @@ internal class MagicThemeService(IMagicSettingsService settingsSvc, ScopedDictio
             return value;
 
         var themeContext = settingsSvc.GetThemeContextFull(pageState);
-        var designer = new MagicThemeDesigner(themeContext);
+        var designer = new MagicThemeTailor(themeContext);
         var result = new MagicThemeKit
         {
             Context = themeContext,
-            Designer = designer,
+            Tailor = designer,
         };
         cacheSvc[cacheId] = result;
         return result;

@@ -98,12 +98,12 @@ Nice to know:
 
 
     @* Header Pane *@
-    <div id="@ThemeKit.Designer.Id("sectionHeader")" class='@ThemeKit.Designer.Classes("sectionHeader") @ThemeKit.Designer.PaneClasses("Header")'>
+    <div id="@ThemeKit.Tailor.Id("sectionHeader")" class='@ThemeKit.Tailor.Classes("sectionHeader") @ThemeKit.Tailor.PaneClasses("Header")'>
         <Pane Name="Header"/>
     </div>
 
     @* Main Section *@
-    <main id="@ThemeKit.Designer.Id("sectionMain")" class="@ThemeKit.Designer.Classes("sectionMain")">
+    <main id="@ThemeKit.Tailor.Id("sectionMain")" class="@ThemeKit.Tailor.Classes("sectionMain")">
 
         @* Show Breadcrumb if desired *@
         @if (ThemeKit.ShowPart("breadcrumbs"))
@@ -116,12 +116,12 @@ Nice to know:
         {
             <div class="container">
                 <div class="row">
-                    <div class='@ThemeKit.Designer.Classes("sidebarBody")'>
+                    <div class='@ThemeKit.Tailor.Classes("sidebarBody")'>
                         <Pane Name="@PaneNames.Default"/>
                         <MagicShowComponents Components="@MagicComponents"></MagicShowComponents>
                     </div>
-                    <div class='@ThemeKit.Designer.Classes("sidebarMenu")'>
-                        <div id="@ThemeKit.Designer.Id("sidebarMenu-inner")" class="@ThemeKit.Designer.Classes("sidebarMenu-inner")">
+                    <div class='@ThemeKit.Tailor.Classes("sidebarMenu")'>
+                        <div id="@ThemeKit.Tailor.Id("sidebarMenu-inner")" class="@ThemeKit.Tailor.Classes("sidebarMenu-inner")">
                             <MagicMenu Settings="new() { PartName = ThemeInfo.MenuSidebar }"></MagicMenu>
                         </div>
                     </div>

@@ -16,4 +16,4 @@ See also:           LoginIcon.razor has the same feature but with icons
 @{
     var loginKit = MagicHat.UserLoginKit(Settings.With(PageState));
 }
-<a title="@loginKit.Resources.Title" class="@loginKit.Designer.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@loginKit.Resources.Title</a>
+<a title="@loginKit.Resources.Title" class="@loginKit.Tailor.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@loginKit.Resources.Title</a>

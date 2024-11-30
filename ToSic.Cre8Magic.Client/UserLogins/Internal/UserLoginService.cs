@@ -20,7 +20,7 @@ internal class UserLoginService(OqtaneLoginHelperWip loginHelper, IMagicSettings
         {
             User = user,
             LoginHelper = loginHelper,
-            Designer = new(themeCtx),
+            Tailor = new(themeCtx),
             Resources = new(localizer, user),
         };
     }

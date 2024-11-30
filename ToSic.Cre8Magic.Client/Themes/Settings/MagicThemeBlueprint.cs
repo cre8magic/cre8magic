@@ -11,12 +11,12 @@ namespace ToSic.Cre8magic.Themes.Settings;
 ///
 /// If you change these, you must also update the SCSS files. 
 /// </summary>
-public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<MagicThemeDesignSettings>
+public partial record MagicThemeBlueprint: SettingsWithInherit, ICanClone<MagicThemeBlueprint>
 {
     [PrivateApi]
-    public MagicThemeDesignSettings() { }
+    public MagicThemeBlueprint() { }
 
-    private MagicThemeDesignSettings(MagicThemeDesignSettings? priority, MagicThemeDesignSettings? fallback = default)
+    private MagicThemeBlueprint(MagicThemeBlueprint? priority, MagicThemeBlueprint? fallback = default)
         : base(priority, fallback)
     {
         PaneIsEmpty = priority?.PaneIsEmpty ?? fallback?.PaneIsEmpty;
@@ -24,7 +24,7 @@ public partial record MagicThemeDesignSettings: SettingsWithInherit, ICanClone<M
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicThemeDesignSettings ICanClone<MagicThemeDesignSettings>.CloneUnder(MagicThemeDesignSettings? priority, bool forceCopy) =>
+    MagicThemeBlueprint ICanClone<MagicThemeBlueprint>.CloneUnder(MagicThemeBlueprint? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     

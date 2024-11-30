@@ -10,7 +10,7 @@ public interface IMagicUserLoginKit
     /// <summary>
     /// TODO: not final, probably not correct!
     /// </summary>
-    MagicThemeDesigner Designer { get; init; }
+    MagicThemeTailor Tailor { get; init; }
 
     MagicUserLoginResources Resources { get; init; }
 

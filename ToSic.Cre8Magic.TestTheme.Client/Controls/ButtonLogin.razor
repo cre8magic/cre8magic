@@ -17,7 +17,7 @@ See also:           ButtonLoginTextInvisible.razor has the same feature but with
 @{
     var loginKit = MagicHat.UserLoginKit(Settings.With(PageState));
 }
-<a title="@loginKit.Resources.Title" class='@loginKit.Designer.Classes("iconLogin")' @onclick="loginKit.ToggleLogin">
+<a title="@loginKit.Resources.Title" class='@loginKit.Tailor.Classes("iconLogin")' @onclick="loginKit.ToggleLogin">
     @if (loginKit.User.IsAuthenticated)
     {
         <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 

@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicThemeDesigner(CmThemeContextFull context) : MagicDesignerBase(context.PageTokens, context.ThemeDesignSettings.Parts)
+public class MagicThemeTailor(CmThemeContextFull context) : MagicDesignerBase(context.PageTokens, context.ThemeBlueprint.Parts)
 {
     private bool PaneIsEmpty(string paneName)
     {
@@ -23,5 +23,5 @@ public class MagicThemeDesigner(CmThemeContextFull context) : MagicDesignerBase(
     /// Special classes for divs surrounding panes pane, especially to indicate when it's empty
     /// </summary>
     public string? PaneClasses(string paneName) =>
-        context?.ThemeDesignSettings.PaneIsEmpty.Get(PaneIsEmpty(paneName));
+        context?.ThemeBlueprint.PaneIsEmpty.Get(PaneIsEmpty(paneName));
 }

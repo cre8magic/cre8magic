@@ -12,7 +12,7 @@ internal class MagicUserLoginKit : IMagicUserLoginKit
     /// <summary>
     /// TODO: not final, probably not correct!
     /// </summary>
-    public required MagicThemeDesigner Designer { get; init; }
+    public required MagicThemeTailor Tailor { get; init; }
 
     internal required OqtaneLoginHelperWip LoginHelper { get; init; }
 

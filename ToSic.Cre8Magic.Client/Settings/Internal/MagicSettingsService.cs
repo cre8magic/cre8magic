@@ -101,7 +101,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         // Tokens engine for this specific PageState
         var pageTokens = PageTokenEngine(pageState);
 
-        var designSettings = ThemeDesigns.FindAndNeutralize([ctxLight.ThemeSettings.Design, ctxLight.SettingsName]);
+        var designSettings = ThemeBlueprints.FindAndNeutralize([ctxLight.ThemeSettings.Design, ctxLight.SettingsName]);
         var ctx = new CmThemeContextFull(ctxLight.SettingsName, pageState, ctxLight.ThemeSettings, designSettings, pageTokens, ctxLight.Journal);
         _themeCtxFullCache[originalNameForCache] = ctx;
         return ctx;
@@ -153,8 +153,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         ??= new(this, MagicThemeSettings.Defaults, catalog => catalog.Themes);
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicThemeDesignSettings> ThemeDesigns => field
-        ??= new(this, MagicThemeDesignSettings.Defaults, catalog => catalog.ThemeDesigns);
+    public SettingsReader<MagicThemeBlueprint> ThemeBlueprints => field
+        ??= new(this, MagicThemeBlueprint.Defaults, catalog => catalog.ThemeBlueprints);
 
     #endregion
 

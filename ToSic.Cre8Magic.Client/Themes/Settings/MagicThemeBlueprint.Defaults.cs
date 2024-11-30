@@ -2,7 +2,7 @@
 
 namespace ToSic.Cre8magic.Themes.Settings;
 
-public partial record MagicThemeDesignSettings
+public partial record MagicThemeBlueprint
 {
     internal const string MainPrefix = "theme";
     private const string PanePrefix = "pane";
@@ -12,7 +12,7 @@ public partial record MagicThemeDesignSettings
     internal const string ModulePrefixDefault = "module";
 
 
-    internal static Defaults<MagicThemeDesignSettings> Defaults = new()
+    internal static Defaults<MagicThemeBlueprint> Defaults = new()
     {
         Fallback = new()
         {

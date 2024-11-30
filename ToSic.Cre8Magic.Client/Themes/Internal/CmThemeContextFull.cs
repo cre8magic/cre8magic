@@ -9,7 +9,7 @@ public record CmThemeContextFull(
     string SettingsName,
     PageState PageState,
     MagicThemeSettings ThemeSettings,
-    MagicThemeDesignSettings ThemeDesignSettings,
+    MagicThemeBlueprint ThemeBlueprint,
     TokenEngine PageTokens,
     Journal Journal
 ): CmThemeContext(SettingsName, ThemeSettings, Journal);
