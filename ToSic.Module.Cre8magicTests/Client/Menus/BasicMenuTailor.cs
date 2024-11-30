@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Module.Cre8MagicTests.Client.Menus;
 
-internal class BasicMenuDesigner : IMagicPageDesigner
+internal class BasicMenuTailor : IMagicPageDesigner
 {
     public string Classes(string tag, IMagicPage page)
     {

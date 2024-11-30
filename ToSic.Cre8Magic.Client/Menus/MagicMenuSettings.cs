@@ -33,8 +33,8 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
         Variant = priority?.Variant ?? fallback?.Variant;
 
         // Code-Only Settings
-        Designer = priority?.Designer ?? fallback?.Designer;
-        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+        Tailor = priority?.Tailor ?? fallback?.Tailor;
+        Blueprint = priority?.Blueprint ?? fallback?.Blueprint;
         Pages = priority?.Pages ?? fallback?.Pages;
     }
 
@@ -118,10 +118,10 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     #region Code-Only Settings
 
     [JsonIgnore]    // Not meant for JSON at all...
-    public IMagicPageDesigner? Designer { get; init; }
+    public IMagicPageDesigner? Tailor { get; init; }
 
     [JsonIgnore]
-    public MagicMenuDesignSettings? DesignSettings { get; init; } = new();
+    public MagicMenuBlueprint? Blueprint { get; init; } = new();
 
     /// <summary>
     /// List of pages to respect when creating the breadcrumb.

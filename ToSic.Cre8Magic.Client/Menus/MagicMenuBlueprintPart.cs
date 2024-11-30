@@ -3,12 +3,12 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Menus;
 
-public record MagicMenuDesignSettingsPart: MagicDesignSettingsPart, ICanClone<MagicMenuDesignSettingsPart>
+public record MagicMenuBlueprintPart: MagicDesignSettingsPart, ICanClone<MagicMenuBlueprintPart>
 {
     [PrivateApi]
-    public MagicMenuDesignSettingsPart() { }
+    public MagicMenuBlueprintPart() { }
 
-    private MagicMenuDesignSettingsPart(MagicMenuDesignSettingsPart? priority, MagicMenuDesignSettingsPart? fallback = default): base(priority, fallback)
+    private MagicMenuBlueprintPart(MagicMenuBlueprintPart? priority, MagicMenuBlueprintPart? fallback = default): base(priority, fallback)
     {
         ByLevel = priority?.ByLevel ?? fallback?.ByLevel;
         HasChildren = priority?.HasChildren ?? fallback?.HasChildren;
@@ -16,7 +16,7 @@ public record MagicMenuDesignSettingsPart: MagicDesignSettingsPart, ICanClone<Ma
         InBreadcrumb = priority?.InBreadcrumb ?? fallback?.InBreadcrumb;
     }
 
-    MagicMenuDesignSettingsPart ICanClone<MagicMenuDesignSettingsPart>.CloneUnder(MagicMenuDesignSettingsPart? priority, bool forceCopy) =>
+    MagicMenuBlueprintPart ICanClone<MagicMenuBlueprintPart>.CloneUnder(MagicMenuBlueprintPart? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

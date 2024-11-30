@@ -32,12 +32,12 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
                 Analytics = _analytics?.Values != null ? new(_analytics.Values) : catalog.Analytics,
                 Breadcrumbs = _breadcrumbs?.Values != null ? new(_breadcrumbs.Values) : catalog.Breadcrumbs,
                 Containers = _containers?.Values != null ? new(_containers.Values) : catalog.Containers,
-                MenuDesigns = _menuDesigns?.Values != null
+                MenuBlueprints = _menuDesigns?.Values != null
                     ? new(_menuDesigns.Values.ToDictionary(
                         dic => dic.Key,
                         dic => dic.Value
                     ))
-                    : catalog.MenuDesigns,
+                    : catalog.MenuBlueprints,
                 Themes = _themes?.Values != null ? new(_themes.Values) : catalog.Themes,
             };
 
@@ -81,8 +81,8 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
     public IMagicSettingsProviderSection<MagicContainerSettings> Containers => _containers ??= new(this);
     private MagicSettingsProviderSection<MagicContainerSettings>? _containers;
 
-    public IMagicSettingsProviderSection<MagicMenuDesignSettings> MenuDesigns => _menuDesigns ??= new(this);
-    private MagicSettingsProviderSection<MagicMenuDesignSettings>? _menuDesigns;
+    public IMagicSettingsProviderSection<MagicMenuBlueprint> MenuBlueprints => _menuDesigns ??= new(this);
+    private MagicSettingsProviderSection<MagicMenuBlueprint>? _menuDesigns;
 
     public IMagicSettingsProviderSection<MagicThemeSettings> Themes => _themes ??= new(this);
     private MagicSettingsProviderSection<MagicThemeSettings>? _themes;

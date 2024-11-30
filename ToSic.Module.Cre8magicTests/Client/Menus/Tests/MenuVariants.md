@@ -12,7 +12,7 @@ Examples:
 @{
     var menuSettings = new MagicMenuSettings
     {
-        MenuDesigner = basicDesigner,
+        Tailor = basicDesigner,
         MenuItems = MenuTestData.dicTopLevelThreePage[currentEnv]
     };
     var menu = MenuSvc.GetMenu(PageState, menuSettings);
@@ -65,7 +65,7 @@ Basically you would use the service and a designer, to simply organize the code 
 
 ```razor
 @{
-    var myDesigner = new MyMenuDesigner();
+    var myDesigner = new MyMenuTailor();
     var menu = MenuSvc.GetMenu(PageState, new() { Designer = myDesigner });
 }
 
@@ -92,7 +92,7 @@ This would use the pre-built controls, which are already there.
 ```razor
 <MagicMenu Settings="new()"></MagicMenu>
 
-<MagicMenu Settings="new() { Designer = new MyMenuDesigner() }"></MagicMenu>
+<MagicMenu Settings="new() { Designer = new MyMenuTailor() }"></MagicMenu>
 
 <MagicMenu Settings="new() { DesignerProvider = injectedProvider }"></MagicMenu>
 

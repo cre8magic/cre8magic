@@ -189,8 +189,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         ??= new(this, MagicMenuSettings.Defaults, catalog => catalog.Menus);
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicMenuDesignSettings> MenuDesigns => field
-        ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuDesigns);
+    public SettingsReader<MagicMenuBlueprint> MenuBlueprints => field
+        ??= new(this, DefaultSettings.Defaults, catalog => catalog.MenuBlueprints);
 
     #endregion
 

@@ -14,7 +14,7 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
     : MagicPagesFactoryBase(workContext)
 {
     protected override IMagicPageDesigner PageDesigner() =>
-        workContext.Designer ?? new MagicMenuDesigner(workContext);
+        workContext.Designer ?? new MagicMenuTailor(workContext);
 
     public int MaxDepth => _maxDepth ??= workContext.Settings.Depth ?? MagicMenuSettings.Defaults.Fallback.Depth!.Value;
     private int? _maxDepth;

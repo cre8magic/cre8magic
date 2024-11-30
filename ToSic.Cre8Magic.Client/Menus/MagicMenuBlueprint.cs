@@ -9,25 +9,25 @@ namespace ToSic.Cre8magic.Menus;
 /// <summary>
 /// Menu Design Settings
 /// </summary>
-public record MagicMenuDesignSettings : SettingsWithInherit, ICanClone<MagicMenuDesignSettings>
+public record MagicMenuBlueprint : SettingsWithInherit, ICanClone<MagicMenuBlueprint>
 {
     [PrivateApi]
-    public MagicMenuDesignSettings() { }
+    public MagicMenuBlueprint() { }
 
-    private MagicMenuDesignSettings(MagicMenuDesignSettings? priority, MagicMenuDesignSettings? fallback = default)
+    private MagicMenuBlueprint(MagicMenuBlueprint? priority, MagicMenuBlueprint? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicMenuDesignSettings ICanClone<MagicMenuDesignSettings>.CloneUnder(MagicMenuDesignSettings? priority, bool forceCopy) =>
+    MagicMenuBlueprint ICanClone<MagicMenuBlueprint>.CloneUnder(MagicMenuBlueprint? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
     /// Custom, named settings for classes, values etc. as you need them in your code.
     /// For things such as `ul` or `li` or `a` tags.
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuDesignSettingsPart>))]
-    public Dictionary<string, MagicMenuDesignSettingsPart> Parts { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuBlueprintPart>))]
+    public Dictionary<string, MagicMenuBlueprintPart> Parts { get; init; } = new();
 
 }

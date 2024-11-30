@@ -9,21 +9,21 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MagicMenuDesigner : IMagicPageDesigner
+public class MagicMenuTailor : IMagicPageDesigner
 {
-    internal MagicMenuDesigner(MagicMenuWorkContext workContext)
+    internal MagicMenuTailor(MagicMenuWorkContext workContext)
     {
         Settings = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
 
-        DesignSettingsList = [Settings.DesignSettings!];
+        DesignSettingsList = [Settings.Blueprint!];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
-        Log = workContext.Settings.Debug?.Detailed == true ? workContext.LogRoot.GetLog("MenuDesigner") : null;
+        Log = workContext.Settings.Debug?.Detailed == true ? workContext.LogRoot.GetLog(nameof(MagicMenuTailor)) : null;
     }
     private MagicMenuSettings Settings { get; }
 
     // TODO: unclear why this is a list, it can only contain one...?
-    internal List<MagicMenuDesignSettings> DesignSettingsList { get; }
+    internal List<MagicMenuBlueprint> DesignSettingsList { get; }
 
     private ILog? Log { get; }
 
@@ -48,13 +48,13 @@ public class MagicMenuDesigner : IMagicPageDesigner
         return l.ReturnAndLog(string.Join(" ", configsForKey));
     }
 
-    private List<MagicMenuDesignSettingsPart> ConfigsForTag(string tag) =>
+    private List<MagicMenuBlueprintPart> ConfigsForTag(string tag) =>
         DesignSettingsList
             .Select(c => c.Parts.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 
-    private static List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuDesignSettingsPart> configs)
+    private static List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicMenuBlueprintPart> configs)
     {
         var classes = new List<string?>();
 

@@ -49,7 +49,7 @@ public interface IMagicSettingsService
 
 
     internal SettingsReader<MagicMenuSettings> Menus { get; }
-    internal SettingsReader<MagicMenuDesignSettings> MenuDesigns { get; }
+    internal SettingsReader<MagicMenuBlueprint> MenuBlueprints { get; }
 
 
 

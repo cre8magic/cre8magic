@@ -16,7 +16,7 @@
     var unknownMenuName = "unknown-menu";
     var redPartName = "red-part";
 
-    var redDesign = new MagicMenuDesignSettings
+    var redDesign = new MagicMenuBlueprint
     {
         Parts = new()
         {
@@ -25,7 +25,7 @@
     };
 
     SettingsProviders.Reset();
-    SettingsProviders.MenuDesigns.Provide(redMenuName, redDesign);
+    SettingsProviders.MenuBlueprints.Provide(redMenuName, redDesign);
 
     var themeSettings = new MagicThemeSettings
     {
