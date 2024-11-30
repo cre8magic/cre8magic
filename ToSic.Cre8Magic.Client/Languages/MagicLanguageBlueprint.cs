@@ -9,18 +9,18 @@ namespace ToSic.Cre8magic.Languages;
 /// <summary>
 /// Language Design Settings
 /// </summary>
-public record MagicLanguageDesignSettings : SettingsWithInherit, ICanClone<MagicLanguageDesignSettings>
+public record MagicLanguageBlueprint : SettingsWithInherit, ICanClone<MagicLanguageBlueprint>
 {
     [PrivateApi]
-    public MagicLanguageDesignSettings() { }
+    public MagicLanguageBlueprint() { }
 
-    private MagicLanguageDesignSettings(MagicLanguageDesignSettings? priority, MagicLanguageDesignSettings? fallback = default)
+    private MagicLanguageBlueprint(MagicLanguageBlueprint? priority, MagicLanguageBlueprint? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicLanguageDesignSettings ICanClone<MagicLanguageDesignSettings>.CloneUnder(MagicLanguageDesignSettings? priority, bool forceCopy) =>
+    MagicLanguageBlueprint ICanClone<MagicLanguageBlueprint>.CloneUnder(MagicLanguageBlueprint? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
@@ -31,7 +31,7 @@ public record MagicLanguageDesignSettings : SettingsWithInherit, ICanClone<Magic
     public Dictionary<string, MagicDesignSettingsPart> Parts { get; init; } = new();
 
 
-    internal static Defaults<MagicLanguageDesignSettings> DesignDefaults = new()
+    internal static Defaults<MagicLanguageBlueprint> DesignDefaults = new()
     {
         Fallback = new()
         {

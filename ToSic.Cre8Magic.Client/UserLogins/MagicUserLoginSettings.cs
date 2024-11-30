@@ -1,5 +1,4 @@
-﻿using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.UserLogins;
@@ -26,22 +25,4 @@ public record MagicUserLoginSettings : MagicSettingsBase, ICanClone<MagicUserLog
     //[JsonIgnore]
     //public MagicLanguageDesignSettings? DesignSettings { get; init; }
 
-
-    //internal static Defaults<MagicUserLoginSettings> Defaults = new()
-    //{
-    //    Fallback = new()
-    //    {
-    //        HideOthers = false,
-    //        MinLanguagesToShow = 2,
-    //        Languages = new()
-    //        {
-    //            { "en", new() { Culture = "en", Description = "English" } }
-    //        },
-    //    },
-    //    Foundation = new()
-    //    {
-    //        HideOthers = false,
-    //        Languages = new(),
-    //    }
-    //};
 }

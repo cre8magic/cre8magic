@@ -77,8 +77,8 @@ public record MagicSettingsCatalog: IHasDebugSettings
     /// <summary>
     /// Design definitions of languages
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguageDesignSettings>))]
-    public Dictionary<string, MagicLanguageDesignSettings> LanguageDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguageBlueprint>))]
+    public Dictionary<string, MagicLanguageBlueprint> LanguageBlueprints { get; init; } = new(InvariantCultureIgnoreCase);
 
 
     /// <summary>

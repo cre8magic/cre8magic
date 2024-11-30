@@ -13,7 +13,7 @@ internal record MagicLanguageKit : IMagicLanguageKit
 
     public required IEnumerable<MagicLanguage> Languages { get; init; }
 
-    public required MagicLanguageDesigner Designer { get; init; }
+    public required MagicLanguageTailor Tailor { get; init; }
 
     public /* actually internal */ required MagicLanguageSettings Settings { get; init; }
 

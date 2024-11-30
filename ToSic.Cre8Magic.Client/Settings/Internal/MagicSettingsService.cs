@@ -165,8 +165,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         ??= new(this, MagicLanguageSettings.Defaults, catalog => catalog.Languages);
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicLanguageDesignSettings> LanguageDesigns => field
-        ??= new(this, MagicLanguageDesignSettings.DesignDefaults, catalog => catalog.LanguageDesigns);
+    public SettingsReader<MagicLanguageBlueprint> LanguageBlueprints => field
+        ??= new(this, MagicLanguageBlueprint.DesignDefaults, catalog => catalog.LanguageBlueprints);
 
     #endregion
 

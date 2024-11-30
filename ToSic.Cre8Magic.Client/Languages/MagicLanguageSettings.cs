@@ -60,7 +60,7 @@ public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguage
     }
 
     [JsonIgnore]
-    public MagicLanguageDesignSettings? DesignSettings { get; init; }
+    public MagicLanguageBlueprint? DesignSettings { get; init; }
 
 
     internal static Defaults<MagicLanguageSettings> Defaults = new()

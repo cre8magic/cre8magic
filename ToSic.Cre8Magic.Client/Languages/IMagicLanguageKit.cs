@@ -21,7 +21,7 @@ public interface IMagicLanguageKit: IHasDebugInfo
     IEnumerable<MagicLanguage> Languages { get; init; }
 
 
-    MagicLanguageDesigner Designer { get; init; }
+    MagicLanguageTailor Tailor { get; init; }
 
     MagicLanguageSettings Settings { get; init; }
 

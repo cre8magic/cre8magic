@@ -36,12 +36,12 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
 
         var languages = await LanguagesToShow(pageState, settingsFull);
         var show = themePart?.Show != false && settingsFull.MinLanguagesToShow <= languages.Count;
-        var designer = LanguageDesigner(pageState, settingsFull);
+        var designer = Tailor(pageState, settingsFull);
         return new MagicLanguageKit
         {
             Show = show,
             Languages = languages,
-            Designer = designer,
+            Tailor = designer,
             Settings = settingsFull,
             Service = this,
         };
@@ -53,7 +53,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             settings,
             settingsSvc.Languages,
             settings?.DesignSettings,
-            settingsSvc.LanguageDesigns,
+            settingsSvc.LanguageBlueprints,
             OptionalPrefix,
             DefaultPartName,
             finalize: (settingsData, designSettings) => settingsData with /*new(settingsData, settings)*/ { DesignSettings = designSettings });
@@ -105,17 +105,17 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     private readonly Dictionary<int, List<MagicLanguage>> _languages = new();
 
 
-    public MagicLanguageDesigner LanguageDesigner(PageState pageState, MagicLanguageSettings settingsFull)
+    public MagicLanguageTailor Tailor(PageState pageState, MagicLanguageSettings settingsFull)
     {
         if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
         var themeContext = settingsSvc.GetThemeContextFull(pageState);
 
-        var languages = new MagicLanguageDesigner(themeContext, settingsFull);
+        var languages = new MagicLanguageTailor(themeContext, settingsFull);
         _languagesDesigners[pageState.Page.PageId] = languages;
         return languages;
     }
-    private readonly Dictionary<int, MagicLanguageDesigner> _languagesDesigners = new();
+    private readonly Dictionary<int, MagicLanguageTailor> _languagesDesigners = new();
 
 
     public async Task SetCultureAsync(string culture)
