@@ -1,6 +1,5 @@
 ﻿using Oqtane.Models;
 using Oqtane.Shared;
-using ToSic.Cre8magic.Settings;
 using static Oqtane.Shared.ResourceType;
 
 // ReSharper disable once CheckNamespace

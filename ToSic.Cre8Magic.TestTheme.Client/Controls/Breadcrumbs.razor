@@ -1,4 +1,8 @@
-﻿@inherits ToSic.Cre8magic.ComponentsBs5.MagicBreadcrumbBase
+﻿@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Cre8magic.Pages
+@inherits ComponentBase
+@inject IMagicHat MagicHat
 @*
 File Purpose:       Show the Breadcrumb
 Recommendations:    -
@@ -7,14 +11,26 @@ TODO:
 - make divs and classes configurable
 - fix breadcrumb-trigger, ATM not working, possibly configurable
 *@
-@if (false) @* Debug *@
+@code
 {
-    <div class="alert alert-info">Breadcrumb Razor</div>
-}
+    [CascadingParameter] public required PageState PageState { get; set; }
 
+    /// <summary>
+    /// Settings for retrieving the breadcrumbs; optional.
+    /// If not set, the current page will be used as the active page.
+    /// </summary>
+    [Parameter] public MagicBreadcrumbSettings? Settings { get; set; }
+
+    [Parameter] public IMagicPageDesigner? Designer { get; set; }
+
+    // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
+}
+@{
+    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).With(Designer));
+}
 <div class="container theme-breadcrumbs d-flex py-2" aria-label="breadcrumb">
     @* Show an > arrow and the page name with link to it for each page in the breadcrumb *@
-    @foreach (var p in BreadcrumbKit.Pages)
+    @foreach (var p in breadcrumbKit.Pages)
     {
         <div class="theme-breadcrumbs-item">
             @* Show a separator like ">" *@

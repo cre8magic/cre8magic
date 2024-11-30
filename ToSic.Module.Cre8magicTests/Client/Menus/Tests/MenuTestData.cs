@@ -5,7 +5,7 @@ namespace ToSic.Module.Cre8MagicTests.Client.Menus.Tests;
 
 internal class MenuTestData
 {
-    public static Dictionary<string, List<int>> dicTopLevelThreePage = new Dictionary<string, List<int>>()
+    public static Dictionary<string, List<int>> DicTopLevelThreePage = new()
     {
         { TestParameters.EnvTonci, [97, 98, 99] },
         {
@@ -17,12 +17,12 @@ internal class MenuTestData
         }
     };
 
-    public static Dictionary<string, List<int>> dicRestrictPages = new Dictionary<string, List<int>>()
+    public static Dictionary<string, List<int>> DicRestrictPages = new()
     {
-        { TestParameters.EnvTonci, MenuTestData.dicTopLevelThreePage[TestParameters.EnvTonci] },
+        { TestParameters.EnvTonci, MenuTestData.DicTopLevelThreePage[TestParameters.EnvTonci] },
         {
             TestParameters.EnvIJungleboy, [
-                ..MenuTestData.dicTopLevelThreePage[TestParameters.EnvIJungleboy],
+                ..MenuTestData.DicTopLevelThreePage[TestParameters.EnvIJungleboy],
                 36, // "Page with Content" under "TopLevel"
             ]
         }

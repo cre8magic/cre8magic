@@ -1,6 +1,5 @@
 using Oqtane.Models;
 using Oqtane.Themes;
-using ToSic.Cre8magic.Settings;
 
 // Important: This must match the namespace of the layouts
 // otherwise the Oqtane registration won't work as expected.

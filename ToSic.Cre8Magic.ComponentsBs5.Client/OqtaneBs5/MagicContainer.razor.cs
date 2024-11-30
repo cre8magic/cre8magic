@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Act;
 using ToSic.Cre8magic.Containers;
 
-namespace ToSic.Cre8magic.ComponentsBs5;
+namespace ToSic.Cre8magic.OqtaneBs5;
 
 public partial class MagicContainer: Oqtane.Themes.ContainerBase
 {
@@ -11,6 +12,11 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
     /// </summary>
     public override string Name => "Default (for Content and Admin)";
 
+    /// <summary>
+    /// Settings for this container.
+    /// Defaults to null, in which case it asks the theme etc. for settings.
+    /// Inheriting code could overwrite it, to specify settings directly.
+    /// </summary>
     public virtual MagicContainerSettings? Settings => null;
 
     [Inject] public required IMagicHat MagicHat { get; set; }
@@ -31,7 +37,9 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
 
     #endregion
 
-    protected IMagicContainerKit ContainerKit => _kit ??= MagicHat.ContainerKit(Settings.With(PageState, ModuleState));
-    private IMagicContainerKit? _kit;
-
+    /// <summary>
+    /// some comments
+    /// </summary>
+    [field: AllowNull, MaybeNull]
+    protected IMagicContainerKit ContainerKit => field ??= MagicHat.ContainerKit(Settings.With(PageState, ModuleState));
 }

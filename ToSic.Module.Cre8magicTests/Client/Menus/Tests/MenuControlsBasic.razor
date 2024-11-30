@@ -1,6 +1,4 @@
-@using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.Menus.Internal
-@using ToSic.Cre8magic.Pages
 @using ToSic.Cre8magic.Pages.Internal
 @using ToSic.Theme.Cre8magicTests.Client
 @inherits ThemeControlBase
@@ -13,10 +11,10 @@
 
     var topLevelWithSubpagesId = TestParameters.TopLevelWithSubpagesIdDic[currentEnv];
 
-    var topLevelThreePages = string.Join(", ", MenuTestData.dicTopLevelThreePage[currentEnv]);
+    var topLevelThreePages = string.Join(", ", MenuTestData.DicTopLevelThreePage[currentEnv]);
 
     var restrictPossiblePages = PageSvc
-        .GetPages(PageState, MenuTestData.dicRestrictPages[currentEnv])
+        .GetPages(PageState, MenuTestData.DicRestrictPages[currentEnv])
         .ToList();
 
     MenuSvc.NoInheritSettingsWip = true;
