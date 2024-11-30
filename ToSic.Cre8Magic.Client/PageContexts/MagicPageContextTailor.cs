@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic.PageContexts;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicPageContextDesigner(MagicPageContextSettings settings, PageState pageState)
+public class MagicPageContextTailor(MagicPageContextSettings settings, PageState pageState)
 {
     internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
     {

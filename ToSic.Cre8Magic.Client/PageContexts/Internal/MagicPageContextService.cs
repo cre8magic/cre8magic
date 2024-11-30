@@ -24,7 +24,7 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
 
         var themeCtx = settingsSvc.GetThemeContextFull(pageState);
 
-        var contextClasses = new MagicPageContextDesigner(settingsData, pageState).BodyClasses(themeCtx.PageTokens, settings?.Classes);
+        var contextClasses = new MagicPageContextTailor(settingsData, pageState).BodyClasses(themeCtx.PageTokens, settings?.Classes);
         return new MagicPageContextKit
         {
             Classes = contextClasses,
