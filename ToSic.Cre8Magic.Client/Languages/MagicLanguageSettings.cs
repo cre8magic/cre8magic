@@ -40,7 +40,8 @@ public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguage
     /// List of languages
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguage>))]
-    public Dictionary<string, MagicLanguage>? Languages { get; init => field = InitList(value); }
+    // ReSharper disable once RedundantAccessorBody
+    public Dictionary<string, MagicLanguage>? Languages { get => field; init => field = InitList(value); }
 
     private static Dictionary<string, MagicLanguage>? InitList(Dictionary<string, MagicLanguage>? dic)
     {
