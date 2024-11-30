@@ -52,11 +52,11 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             pageState,
             settings,
             settingsSvc.Languages,
-            settings?.DesignSettings,
+            settings?.Blueprint,
             settingsSvc.LanguageBlueprints,
             OptionalPrefix,
             DefaultPartName,
-            finalize: (settingsData, designSettings) => settingsData with /*new(settingsData, settings)*/ { DesignSettings = designSettings });
+            finalize: (settingsData, designSettings) => settingsData with /*new(settingsData, settings)*/ { Blueprint = designSettings });
 
 
     private async Task<List<MagicLanguage>> LanguagesToShow(PageState pageState, MagicLanguageSettings settings)

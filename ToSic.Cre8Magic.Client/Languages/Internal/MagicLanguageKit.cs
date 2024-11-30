@@ -32,7 +32,7 @@ internal record MagicLanguageKit : IMagicLanguageKit
             {
                 { "Language Settings", Settings },
                 { "Languages To Show", Languages },
-                { "Language Design", Settings.DesignSettings },
+                { "Language Design", Settings.Blueprint },
             },
             Settings = Settings,
             Values = new()

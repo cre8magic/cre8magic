@@ -17,7 +17,7 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
     {
         var (settingsFull, _, _, journal) = MergeSettings(pageState, settings);
 
-        var designer = ContainerTailor(pageState, module, settingsFull.DesignSettings!);
+        var designer = ContainerTailor(pageState, module, settingsFull.Blueprint!);
         return new MagicContainerKit
         {
             Tailor = designer,
@@ -32,11 +32,11 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
             pageState,
             settings,
             settingsSvc.Containers,
-            settings?.DesignSettings,
+            settings?.Blueprint,
             settingsSvc.ContainerBlueprints,
             OptionalPrefix,
             DefaultPartName,
-            finalize: (settingsData, designSettings) => settingsData with /* new(settingsData, settings)*/ { DesignSettings = designSettings });
+            finalize: (settingsData, designSettings) => settingsData with /* new(settingsData, settings)*/ { Blueprint = designSettings });
 
 
 

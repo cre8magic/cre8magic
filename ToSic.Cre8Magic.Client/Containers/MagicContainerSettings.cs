@@ -13,7 +13,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
     private MagicContainerSettings(MagicContainerSettings? priority, MagicContainerSettings? fallback = default)
         : base(priority, fallback)
     {
-        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+        Blueprint = priority?.Blueprint ?? fallback?.Blueprint;
         ModuleState = priority?.ModuleState ?? fallback?.ModuleState;
     }
 
@@ -21,7 +21,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     [JsonIgnore]
-    public MagicContainerBlueprint? DesignSettings { get; init; }
+    public MagicContainerBlueprint? Blueprint { get; init; }
 
     public Module? ModuleState { get; init; }
 

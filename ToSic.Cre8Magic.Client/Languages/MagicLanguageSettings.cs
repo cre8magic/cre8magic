@@ -21,7 +21,7 @@ public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguage
         MinLanguagesToShow = PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
         Languages = priority?.Languages ?? fallback?.Languages;
 
-        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+        Blueprint = priority?.Blueprint ?? fallback?.Blueprint;
     }
 
     MagicLanguageSettings ICanClone<MagicLanguageSettings>.CloneUnder(MagicLanguageSettings? priority, bool forceCopy) =>
@@ -40,12 +40,7 @@ public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguage
     /// List of languages
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguage>))]
-    public Dictionary<string, MagicLanguage>? Languages
-    {
-        get => _languages;
-        init => _languages = InitList(value);
-    }
-    private readonly Dictionary<string, MagicLanguage>? _languages;
+    public Dictionary<string, MagicLanguage>? Languages { get; init => field = InitList(value); }
 
     private static Dictionary<string, MagicLanguage>? InitList(Dictionary<string, MagicLanguage>? dic)
     {
@@ -60,7 +55,7 @@ public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguage
     }
 
     [JsonIgnore]
-    public MagicLanguageBlueprint? DesignSettings { get; init; }
+    public MagicLanguageBlueprint? Blueprint { get; init; }
 
 
     internal static Defaults<MagicLanguageSettings> Defaults = new()

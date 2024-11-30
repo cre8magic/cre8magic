@@ -6,7 +6,7 @@ using ToSic.Cre8magic.Utils;
 namespace ToSic.Cre8magic.Languages;
 
 public class MagicLanguageTailor(CmThemeContextFull context, MagicLanguageSettings settingsFull)
-    : MagicDesignerBase(context.PageTokens, settingsFull.DesignSettings?.Parts ?? new())
+    : MagicDesignerBase(context.PageTokens, settingsFull.Blueprint?.Parts ?? new())
 {
     /// <summary>
     /// TODO: PROBABLY MOVE TO Language?
