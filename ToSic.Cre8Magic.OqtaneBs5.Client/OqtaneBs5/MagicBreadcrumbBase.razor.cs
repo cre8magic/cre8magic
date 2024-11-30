@@ -2,11 +2,11 @@
 //using Oqtane.UI;
 //using ToSic.Cre8magic.Act;
 //using ToSic.Cre8magic.Breadcrumbs;
-//using ToSic.Cre8magic.ComponentsBs5.Internal;
+//using ToSic.Cre8magic.OqtaneBs5.Internal;
 //using ToSic.Cre8magic.Pages;
 //using ToSic.Cre8magic.Utils;
 
-//namespace ToSic.Cre8magic.ComponentsBs5;
+//namespace ToSic.Cre8magic.OqtaneBs5;
 
 ///// <summary>
 ///// Recommended base class for all breadcrumb components.

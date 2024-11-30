@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.UI;
 
-namespace ToSic.Cre8magic.ComponentsBs5.Internal;
+namespace ToSic.Cre8magic.OqtaneBs5.Internal;
 
 /// <summary>
 /// Just a helper class to store documentations for other components to inherit from.
