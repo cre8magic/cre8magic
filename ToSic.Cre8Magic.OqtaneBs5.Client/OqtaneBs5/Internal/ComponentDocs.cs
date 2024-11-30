@@ -10,9 +10,8 @@ internal abstract class ComponentDocs
 {
     /// <summary>
     /// The PageState containing the current page, list of all pages, user, etc.
-    /// It will be injected automatically by Blazor when the component is initialized using CascadingParameter.
-    ///
-    /// In most cases, this is all you need to do everything you want.
+    /// It will be injected by Blazor when the component is initialized using `[CascadingParameter]`.
+    /// In most cases, this PageState is all you need.
     /// </summary>
     [CascadingParameter]
     public required PageState PageState { get; set; }
