@@ -5,7 +5,7 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Containers;
 
-public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContainerSettings>
+public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContainerSettings>, IWith<Module>
 {
     [PrivateApi]
     public MagicContainerSettings() { }
@@ -27,4 +27,5 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
 
     internal static Defaults<MagicContainerSettings> Defaults = new(new());
 
+    Module? IWith<Module>.WithData { get => ModuleState; init => ModuleState = value; }
 }

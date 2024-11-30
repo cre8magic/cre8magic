@@ -54,5 +54,5 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
     /// some comments
     /// </summary>
     [field: AllowNull, MaybeNull]
-    protected IMagicContainerKit ContainerKit => field ??= MagicHat.ContainerKit(Settings.With(PageState, ModuleState));
+    protected IMagicContainerKit ContainerKit => field ??= MagicHat.ContainerKit(Settings.With(PageState).With(ModuleState));
 }
