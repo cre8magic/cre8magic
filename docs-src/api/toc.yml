@@ -120,6 +120,13 @@ items:
     - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
       name: MagicMenuSettings
       type: Class
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    type: Namespace
+    items:
+    - uid: ToSic.Cre8magic.OqtaneBs5.Class1
+      name: Class1
+      type: Class
   - uid: ToSic.Cre8magic.PageContexts
     name: PageContexts
     type: Namespace
@@ -127,6 +134,9 @@ items:
     - uid: ToSic.Cre8magic.PageContexts.IMagicPageContextKit
       name: IMagicPageContextKit
       type: Interface
+    - uid: ToSic.Cre8magic.PageContexts.MagicPageContext
+      name: MagicPageContext
+      type: Class
     - uid: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
       name: MagicPageContextDesigner
       type: Class

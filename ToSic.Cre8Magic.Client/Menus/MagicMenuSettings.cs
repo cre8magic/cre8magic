@@ -59,7 +59,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     /// <summary>
     /// How many level deep the navigation should show.
     /// The number is ??? relative,
-    /// so if the navigation starts an level 2 then levelDepth 2 means to show levels 2 & 3 ??? verify
+    /// so if the navigation starts a level 2 then levelDepth 2 means to show levels 2 and 3 ??? verify
     /// </summary>
     public int? Depth { get; init; }
     //public const int DepthFallback = 1;

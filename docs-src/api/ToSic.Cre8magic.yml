@@ -14,6 +14,7 @@ items:
   - ToSic.Cre8magic.MagicConstants
   - ToSic.Cre8magic.MagicTokens
   - ToSic.Cre8magic.Menus
+  - ToSic.Cre8magic.OqtaneBs5
   - ToSic.Cre8magic.PageContexts
   - ToSic.Cre8magic.Pages
   - ToSic.Cre8magic.Settings
@@ -272,6 +273,36 @@ references:
   - uid: ToSic.Cre8magic.Menus
     name: Menus
     href: ToSic.Cre8magic.Menus.html
+- uid: ToSic.Cre8magic.OqtaneBs5
+  commentId: N:ToSic.Cre8magic.OqtaneBs5
+  href: ToSic.html
+  name: ToSic.Cre8magic.OqtaneBs5
+  nameWithType: ToSic.Cre8magic.OqtaneBs5
+  fullName: ToSic.Cre8magic.OqtaneBs5
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.OqtaneBs5
+    name: OqtaneBs5
+    href: ToSic.Cre8magic.OqtaneBs5.html
 - uid: ToSic.Cre8magic.PageContexts
   commentId: N:ToSic.Cre8magic.PageContexts
   href: ToSic.html

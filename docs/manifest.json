@@ -272,6 +272,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.Class1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Class1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ToSic.Cre8magic.Client.Analytics.MagicAnalyticsService.yml",
       "output": {
         ".html": {
@@ -2022,6 +2032,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.OqtaneBs5.Class1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.Class1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.OqtaneBs5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ToSic.Cre8magic.PageContext.IMagicPageContextService.yml",
       "output": {
         ".html": {
@@ -2066,6 +2096,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.PageContexts.IMagicPageContextKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContext.html"
         }
       },
       "version": ""
@@ -3329,6 +3369,16 @@
       "output": {
         "resource": {
           "relative_path": "assets/icon50.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
         }
       },
       "version": ""

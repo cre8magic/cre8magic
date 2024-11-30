@@ -6,6 +6,7 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+  - ToSic.Cre8magic.PageContexts.MagicPageContext
   - ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
   - ToSic.Cre8magic.PageContexts.MagicPageContextSettings
   langs:
@@ -25,6 +26,12 @@ references:
   name: IMagicPageContextKit
   nameWithType: IMagicPageContextKit
   fullName: ToSic.Cre8magic.PageContexts.IMagicPageContextKit
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContext
+  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContext
+  href: ToSic.Cre8magic.PageContexts.MagicPageContext.html
+  name: MagicPageContext
+  nameWithType: MagicPageContext
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContext
 - uid: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
   commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
   href: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.html
