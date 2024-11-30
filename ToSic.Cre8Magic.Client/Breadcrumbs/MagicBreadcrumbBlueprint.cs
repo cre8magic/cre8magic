@@ -1,5 +1,7 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
@@ -7,29 +9,29 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <summary>
 /// Language Design Settings
 /// </summary>
-public record MagicBreadcrumbDesignSettings : SettingsWithInherit, ICanClone<MagicBreadcrumbDesignSettings>
+public record MagicBreadcrumbBlueprint : SettingsWithInherit, ICanClone<MagicBreadcrumbBlueprint>
 {
     [PrivateApi]
-    public MagicBreadcrumbDesignSettings() { }
+    public MagicBreadcrumbBlueprint() { }
 
-    private MagicBreadcrumbDesignSettings(MagicBreadcrumbDesignSettings? priority, MagicBreadcrumbDesignSettings? fallback = default)
+    private MagicBreadcrumbBlueprint(MagicBreadcrumbBlueprint? priority, MagicBreadcrumbBlueprint? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicBreadcrumbDesignSettings ICanClone<MagicBreadcrumbDesignSettings>.CloneUnder(MagicBreadcrumbDesignSettings? priority, bool forceCopy) =>
+    MagicBreadcrumbBlueprint ICanClone<MagicBreadcrumbBlueprint>.CloneUnder(MagicBreadcrumbBlueprint? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
     /// Custom, named settings for classes, values etc. as you need them in your code.
     /// For things such as `ul` or `li` or `a` tags.
     /// </summary>
-    //[JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbDesignSettingsPart>))]
-    public Dictionary<string, MagicBreadcrumbDesignSettingsPart> Parts { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbBlueprintPart>))]
+    public Dictionary<string, MagicBreadcrumbBlueprintPart> Parts { get; init; } = new();
 
 
-    internal static Defaults<MagicBreadcrumbDesignSettings> DesignDefaults = new()
+    internal static Defaults<MagicBreadcrumbBlueprint> DesignDefaults = new()
     {
         Fallback = new()
         {

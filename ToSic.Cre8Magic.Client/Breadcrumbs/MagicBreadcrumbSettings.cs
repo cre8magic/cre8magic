@@ -33,8 +33,8 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IMagicPageSetSettings
         ActiveId = priority?.ActiveId ?? fallback?.ActiveId;
         Variant = priority?.Variant ?? fallback?.Variant;
 
-        Designer = priority?.Designer ?? fallback?.Designer;
-        DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
+        Tailor = priority?.Tailor ?? fallback?.Tailor;
+        Blueprint = priority?.Blueprint ?? fallback?.Blueprint;
     }
 
     MagicBreadcrumbSettings ICanClone<MagicBreadcrumbSettings>.CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy) =>
@@ -122,12 +122,12 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IMagicPageSetSettings
 
 
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
-    public IMagicPageDesigner? Designer { get; init; }
+    public IMagicPageDesigner? Tailor { get; init; }
 
-    IMagicPageDesigner? IWith<IMagicPageDesigner?>.WithData { get => Designer; init => Designer = value; }
+    IMagicPageDesigner? IWith<IMagicPageDesigner?>.WithData { get => Tailor; init => Tailor = value; }
 
     [JsonIgnore]
-    public MagicBreadcrumbDesignSettings? DesignSettings { get; init; }
+    public MagicBreadcrumbBlueprint? Blueprint { get; init; }
 
 
     /// <summary>

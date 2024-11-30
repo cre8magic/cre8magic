@@ -57,8 +57,8 @@ public record MagicSettingsCatalog: IHasDebugSettings
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbSettings>))]
     public Dictionary<string, MagicBreadcrumbSettings> Breadcrumbs { get; init; } = new(InvariantCultureIgnoreCase);
 
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbDesignSettings>))]
-    public Dictionary<string, MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; init; } = new(InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbBlueprint>))]
+    public Dictionary<string, MagicBreadcrumbBlueprint> BreadcrumbBlueprints { get; init; } = new(InvariantCultureIgnoreCase);
 
 
 

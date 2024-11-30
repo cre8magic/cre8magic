@@ -8,5 +8,5 @@ internal class MagicBreadcrumbNodeFactory(WorkContext<MagicBreadcrumbSettings, I
     : MagicPagesFactoryBase(workContext)
 {
     protected override IMagicPageDesigner PageDesigner() =>
-        workContext.Designer ?? new MagicBreadcrumbDesigner(workContext, workContext.Settings);
+        workContext.Designer ?? new MagicBreadcrumbTailor(workContext, workContext.Settings);
 }

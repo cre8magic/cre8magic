@@ -70,7 +70,7 @@ The tailor also needs settings, so this looks a bit like this:
 flowchart LR
  subgraph s1["Magic Hat 🎩"]
             ls["Load Settings ⚙️"]
-        n1["Load Tailor Settings<br>&amp; Magic Tailor 🧵"]
+        n1["Load Blueprints 📘<br>&amp; Magic Tailor 🧵"]
         gk["Provide Kit 🧰
         with Tailor 🧵"]
   end
@@ -81,6 +81,30 @@ flowchart LR
     S(["Settings ⚙️ or ...Name <br> (_all optional_)"]) --> s1
 
 ```
+
+NEW
+
+1. The _optional_ **MagicMenuTailor 🧵** is a helper to tweak the output in various scenarios without changing your code.
+
+    1. It is used by the **MagicMenu 🎁** component to allow for easy customization.
+
+    1. You can also create your own **Tailors 🧵** to further customize the output.
+
+1. The _optional_ **MagicMenuBlueprints 📘** are used to configure the **MagicMenuTailor 🧵** to your needs.
+
+    1. For example, you can specify HTML `class` for any tag such as `<ul>`, `<li>`, `<a>`, `<span>`
+
+    1. ...or specify `data-`, `title` or any attributes for special cases
+
+    1. You can also specify conditional classes to add if a node is `active` or _not_ active, is in breadcrumb, etc.
+
+1. The _optional_ **MagicPackageSettings** allows you to configure _everything_ in a central location.
+    This can be either in code or in a `theme.json` file.
+
+
+---
+
+OLD
 
 1. The _optional_ **MagicMenuTailor 🧵** is a helper to tweak the output in various scenarios without changing your code.
 

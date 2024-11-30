@@ -3,19 +3,19 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
-public record MagicBreadcrumbDesignSettingsPart : MagicDesignSettingsPart, ICanClone<MagicBreadcrumbDesignSettingsPart>
+public record MagicBreadcrumbBlueprintPart : MagicDesignSettingsPart, ICanClone<MagicBreadcrumbBlueprintPart>
 {
     [PrivateApi]
-    public MagicBreadcrumbDesignSettingsPart() { }
+    public MagicBreadcrumbBlueprintPart() { }
 
-    internal MagicBreadcrumbDesignSettingsPart(MagicBreadcrumbDesignSettingsPart? priority, MagicBreadcrumbDesignSettingsPart? fallback = default)
+    internal MagicBreadcrumbBlueprintPart(MagicBreadcrumbBlueprintPart? priority, MagicBreadcrumbBlueprintPart? fallback = default)
         : base(priority, fallback)
     {
         HasChildren = priority?.HasChildren ?? fallback?.HasChildren;
         IsDisabled = priority?.IsDisabled ?? fallback?.IsDisabled;
     }
 
-    MagicBreadcrumbDesignSettingsPart ICanClone<MagicBreadcrumbDesignSettingsPart>.CloneUnder(MagicBreadcrumbDesignSettingsPart? priority, bool forceCopy) =>
+    MagicBreadcrumbBlueprintPart ICanClone<MagicBreadcrumbBlueprintPart>.CloneUnder(MagicBreadcrumbBlueprintPart? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

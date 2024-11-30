@@ -13,7 +13,7 @@ internal class MagicBreadcrumbBuilder(WorkContext workContext)
         settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
         var context = new WorkContext<MagicBreadcrumbSettings, IMagicPageDesigner>
         {
-            Designer = settings.Designer,
+            Designer = settings.Tailor,
             LogRoot = workContext.LogRoot,
             PageFactory = _pageFactory,
             TokenEngine = workContext.TokenEngine,

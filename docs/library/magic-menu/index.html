@@ -142,7 +142,7 @@ The tailor also needs settings, so this looks a bit like this:</p>
 <pre><code class="lang-mermaid">flowchart LR
  subgraph s1[&quot;Magic Hat 🎩&quot;]
             ls[&quot;Load Settings ⚙️&quot;]
-        n1[&quot;Load Tailor Settings&lt;br&gt;&amp;amp; Magic Tailor 🧵&quot;]
+        n1[&quot;Load Blueprints 📘&lt;br&gt;&amp;amp; Magic Tailor 🧵&quot;]
         gk[&quot;Provide Kit 🧰
         with Tailor 🧵&quot;]
   end
@@ -153,6 +153,32 @@ The tailor also needs settings, so this looks a bit like this:</p>
     S([&quot;Settings ⚙️ or ...Name &lt;br&gt; (_all optional_)&quot;]) --&gt; s1
 
 </code></pre>
+<p>NEW</p>
+<ol>
+<li><p>The <em>optional</em> <strong>MagicMenuTailor 🧵</strong> is a helper to tweak the output in various scenarios without changing your code.</p>
+<ol>
+<li><p>It is used by the <strong>MagicMenu 🎁</strong> component to allow for easy customization.</p>
+</li>
+<li><p>You can also create your own <strong>Tailors 🧵</strong> to further customize the output.</p>
+</li>
+</ol>
+</li>
+<li><p>The <em>optional</em> <strong>MagicMenuBlueprints 📘</strong> are used to configure the <strong>MagicMenuTailor 🧵</strong> to your needs.</p>
+<ol>
+<li><p>For example, you can specify HTML <code>class</code> for any tag such as <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;span&gt;</code></p>
+</li>
+<li><p>...or specify <code>data-</code>, <code>title</code> or any attributes for special cases</p>
+</li>
+<li><p>You can also specify conditional classes to add if a node is <code>active</code> or <em>not</em> active, is in breadcrumb, etc.</p>
+</li>
+</ol>
+</li>
+<li><p>The <em>optional</em> <strong>MagicPackageSettings</strong> allows you to configure <em>everything</em> in a central location.
+This can be either in code or in a <code>theme.json</code> file.</p>
+</li>
+</ol>
+<hr>
+<p>OLD</p>
 <ol>
 <li><p>The <em>optional</em> <strong>MagicMenuTailor 🧵</strong> is a helper to tweak the output in various scenarios without changing your code.</p>
 <ol>

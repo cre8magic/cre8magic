@@ -133,8 +133,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         new(this, MagicBreadcrumbSettings.Defaults, cat => cat.Breadcrumbs);
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicBreadcrumbDesignSettings> BreadcrumbDesigns => field
-        ??= new(this, MagicBreadcrumbDesignSettings.DesignDefaults, catalog => catalog.BreadcrumbDesigns);
+    public SettingsReader<MagicBreadcrumbBlueprint> BreadcrumbBlueprints => field
+        ??= new(this, MagicBreadcrumbBlueprint.DesignDefaults, catalog => catalog.BreadcrumbBlueprints);
 
     #endregion
 

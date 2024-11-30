@@ -10,13 +10,13 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MagicBreadcrumbDesigner : IMagicPageDesigner
+public class MagicBreadcrumbTailor : IMagicPageDesigner
 {
-    internal MagicBreadcrumbDesigner(WorkContext workContext, MagicBreadcrumbSettings settings)
+    internal MagicBreadcrumbTailor(WorkContext workContext, MagicBreadcrumbSettings settings)
     {
         BreadcrumbSettings = settings ?? throw new ArgumentException("BreadcrumbConfig must be real", nameof(BreadcrumbSettings));
 
-        DesignSettingsList = [BreadcrumbSettings.DesignSettings ?? new()];
+        DesignSettingsList = [BreadcrumbSettings.Blueprint ?? new()];
 
         Log = workContext.LogRoot.GetLog("magic-breadcrumb-designer");
     }
@@ -24,7 +24,7 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
     private Log Log { get; }
 
     private MagicBreadcrumbSettings BreadcrumbSettings { get; }
-    internal List<MagicBreadcrumbDesignSettings> DesignSettingsList { get; }
+    internal List<MagicBreadcrumbBlueprint> DesignSettingsList { get; }
 
 
     public string Classes(string tag, IMagicPage item)
@@ -45,13 +45,13 @@ public class MagicBreadcrumbDesigner : IMagicPageDesigner
         return string.Join(" ", configsForKey);
     }
 
-    private List<MagicBreadcrumbDesignSettingsPart> ConfigsForTag(string tag) =>
+    private List<MagicBreadcrumbBlueprintPart> ConfigsForTag(string tag) =>
         DesignSettingsList
             .Select(c => c?.Parts?.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 
-    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbDesignSettingsPart> configs)
+    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbBlueprintPart> configs)
     {
         var classes = new List<string?>();
 

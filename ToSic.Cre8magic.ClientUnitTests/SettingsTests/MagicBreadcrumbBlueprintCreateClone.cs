@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsTests;
 
-public class MagicBreadcrumbDesignSettingsCreateClone
+public class MagicBreadcrumbBlueprintCreateClone
 {
     [Fact]
     public void Empty() => VerifyIsEmpty(new());
@@ -21,15 +21,15 @@ public class MagicBreadcrumbDesignSettingsCreateClone
     public void ConstructorClone2() => VerifySameAsOriginal(new(null, Original()));
 
     [Fact]
-    public void CloneWithNull() => VerifySameAsOriginal(((ICanClone<MagicBreadcrumbDesignSettingsPart>)Original()).CloneUnder(null));
+    public void CloneWithNull() => VerifySameAsOriginal(((ICanClone<MagicBreadcrumbBlueprintPart>)Original()).CloneUnder(null));
 
     [Fact]
-    public void CloneWithNull2() => VerifySameAsOriginal(((ICanClone<MagicBreadcrumbDesignSettingsPart>)Original()).CloneUnder(null, true));
+    public void CloneWithNull2() => VerifySameAsOriginal(((ICanClone<MagicBreadcrumbBlueprintPart>)Original()).CloneUnder(null, true));
 
     [Fact]
-    public void CloneWithHalf() => VerifySameAsMix(((ICanClone<MagicBreadcrumbDesignSettingsPart>)Original()).CloneUnder(Half()));
+    public void CloneWithHalf() => VerifySameAsMix(((ICanClone<MagicBreadcrumbBlueprintPart>)Original()).CloneUnder(Half()));
 
-    private static MagicBreadcrumbDesignSettingsPart Original() =>
+    private static MagicBreadcrumbBlueprintPart Original() =>
         new()
         {
             HasChildren = new()
@@ -43,7 +43,7 @@ public class MagicBreadcrumbDesignSettingsCreateClone
                 Off = "off"
             }
         };
-    private static MagicBreadcrumbDesignSettingsPart Half() =>
+    private static MagicBreadcrumbBlueprintPart Half() =>
         new()
         {
             HasChildren = new()
@@ -53,13 +53,13 @@ public class MagicBreadcrumbDesignSettingsCreateClone
             }
         };
 
-    private static void VerifyIsEmpty(MagicBreadcrumbDesignSettingsPart x)
+    private static void VerifyIsEmpty(MagicBreadcrumbBlueprintPart x)
     {
         Assert.Null(x.HasChildren);
         Assert.Null(x.IsDisabled);
     }
 
-    private static void VerifySameAsOriginal(MagicBreadcrumbDesignSettingsPart y)
+    private static void VerifySameAsOriginal(MagicBreadcrumbBlueprintPart y)
     {
         Assert.Equal("on", y.HasChildren.On);
         Assert.Equal("off", y.HasChildren.Off);
@@ -67,14 +67,14 @@ public class MagicBreadcrumbDesignSettingsCreateClone
         Assert.Equal("off", y.IsDisabled.Off);
     }
 
-    private static void VerifySameAsHalf(MagicBreadcrumbDesignSettingsPart y)
+    private static void VerifySameAsHalf(MagicBreadcrumbBlueprintPart y)
     {
         Assert.Equal("half-on", y.HasChildren.On);
         Assert.Equal("half-off", y.HasChildren.Off);
         Assert.Null(y.IsDisabled);
     }
 
-    private static void VerifySameAsMix(MagicBreadcrumbDesignSettingsPart y)
+    private static void VerifySameAsMix(MagicBreadcrumbBlueprintPart y)
     {
         Assert.Equal("half-on", y.HasChildren.On);
         Assert.Equal("half-off", y.HasChildren.Off);

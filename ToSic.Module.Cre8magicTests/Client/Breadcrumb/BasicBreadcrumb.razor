@@ -10,10 +10,10 @@
 
     // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
 
-    [Parameter] public IMagicPageDesigner Designer { get; set; } = new MagicBreadcrumbDesignerBs5();
+    [Parameter] public IMagicPageDesigner Tailor { get; set; } = new MagicBreadcrumbTailorBs5();
 }
 @{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).Refill(Designer));
+    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).Refill(Tailor));
 }
 <nav aria-label="breadcrumb">
     <ol class='@breadcrumbKit.Root.Classes("ol")'>

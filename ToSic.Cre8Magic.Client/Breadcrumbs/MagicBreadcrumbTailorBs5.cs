@@ -9,9 +9,9 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// - li: breadcrumb-item
 /// - active state: "active"
 /// </summary>
-public class MagicBreadcrumbDesignerBs5 : MagicPageDesignerBasic
+public class MagicBreadcrumbTailorBs5 : MagicPageDesignerBasic
 {
-    public MagicBreadcrumbDesignerBs5()
+    public MagicBreadcrumbTailorBs5()
     {
         LookupClassActive = "active";
         LookupClasses = new Dictionary<string, string>

@@ -3,9 +3,9 @@ using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Module.Cre8MagicTests.Client.Breadcrumb;
 
-internal class BreadcrumbDesignerDark : MagicPageDesignerBasic
+internal class BreadcrumbTailorDark : MagicPageDesignerBasic
 {
-    public BreadcrumbDesignerDark()
+    public BreadcrumbTailorDark()
     {
         LookupClassActive = "active";
         LookupClasses = new Dictionary<string, string>

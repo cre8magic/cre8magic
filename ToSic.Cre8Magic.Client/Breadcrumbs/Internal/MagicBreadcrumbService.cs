@@ -41,10 +41,10 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
             pageState,
             settings,
             settingsSvc.Breadcrumbs,
-            settings?.DesignSettings,
-            settingsSvc.BreadcrumbDesigns,
+            settings?.Blueprint,
+            settingsSvc.BreadcrumbBlueprints,
             OptionalPrefix,
             DefaultPartName,
-            finalize: (settingsData, designSettings) => settingsData with { DesignSettings = designSettings });
+            finalize: (settingsData, designSettings) => settingsData with { Blueprint = designSettings });
 
 }
