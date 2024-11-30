@@ -1,0 +1,582 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  id: MagicPageTailorBasic
+  parent: ToSic.Cre8magic.Pages
+  children:
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.All
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  langs:
+  - csharp
+  - vb
+  name: MagicPageTailorBasic
+  nameWithType: MagicPageTailorBasic
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicPageTailorBasic
+    path: ../ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+    startLine: 10
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    Simple page designer for breadcrumbs or menus.
+
+    If no lookups are specified, the Classes(...) and Data(...) methods will return empty strings.
+  remarks: >-
+    This is also a great candidate to inherit from, as you can specify the Lookups in the constructor.
+
+    The methods are also virtual, so you can override them as needed.
+  example: []
+  syntax:
+    content: 'public class MagicPageTailorBasic : MagicPageTailorBase, IMagicPageTailor'
+    content.vb: Public Class MagicPageTailorBasic Inherits MagicPageTailorBase Implements IMagicPageTailor
+  inheritance:
+  - System.Object
+  - ToSic.Cre8magic.Pages.MagicPageTailorBase
+  derivedClasses:
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
+  implements:
+  - ToSic.Cre8magic.Pages.IMagicPageTailor
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.All
+  commentId: F:ToSic.Cre8magic.Pages.MagicPageTailorBasic.All
+  id: All
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: MagicPageTailorBasic.All
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.All
+  type: Field
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: All
+    path: ../ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+    startLine: 12
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  syntax:
+    content: public static string All
+    return:
+      type: System.String
+    content.vb: Public Shared All As String
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+  commentId: P:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+  id: LookupClasses
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  langs:
+  - csharp
+  - vb
+  name: LookupClasses
+  nameWithType: MagicPageTailorBasic.LookupClasses
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: LookupClasses
+    path: ../ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+    startLine: 19
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    Dictionary which is used to lookup what classes to provide for each tag.
+
+    Can be specified when creating an instance of this class.
+
+    We recommend to supply a case-insensitive dictionary.
+  example: []
+  syntax:
+    content: public IDictionary<string, string> LookupClasses { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Property LookupClasses As IDictionary(Of String, String)
+  overload: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses*
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+  commentId: P:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+  id: LookupClassActive
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  langs:
+  - csharp
+  - vb
+  name: LookupClassActive
+  nameWithType: MagicPageTailorBasic.LookupClassActive
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: LookupClassActive
+    path: ../ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+    startLine: 26
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    The class to add to the active item.
+
+    Note that it will be applied to all tags.
+
+    For more advanced scenarios, you may want to override the Classes method.
+  example: []
+  syntax:
+    content: public string? LookupClassActive { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LookupClassActive As String
+  overload: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive*
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  id: Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  langs:
+  - csharp
+  - vb
+  name: Classes(string, IMagicPage)
+  nameWithType: MagicPageTailorBasic.Classes(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(string, ToSic.Cre8magic.Pages.IMagicPage)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Classes
+    path: ../ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+    startLine: 33
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    Very basic implementation of the Classes generator.
+
+    Will combine classes from the ClassLookup and ClassActive properties.
+  example: []
+  syntax:
+    content: public override string? Classes(string tag, IMagicPage item)
+    parameters:
+    - id: tag
+      type: System.String
+    - id: item
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    return:
+      type: System.String
+      description: a space-separated list of classes, or null
+    content.vb: Public Overrides Function Classes(tag As String, item As IMagicPage) As String
+  overridden: ToSic.Cre8magic.Pages.MagicPageTailorBase.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  overload: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes*
+  nameWithType.vb: MagicPageTailorBasic.Classes(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Classes(String, IMagicPage)
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  commentId: P:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  id: LookupData
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  langs:
+  - csharp
+  - vb
+  name: LookupData
+  nameWithType: MagicPageTailorBasic.LookupData
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: LookupData
+    path: ../ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+    startLine: 56
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    Dictionary which is used to lookup what data/values to provide for each tag.
+
+    Can be specified when creating an instance of this class.
+
+    We recommend to supply a case-insensitive dictionary.
+  example: []
+  syntax:
+    content: public IDictionary<string, string> LookupData { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Property LookupData As IDictionary(Of String, String)
+  overload: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData*
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  id: Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  langs:
+  - csharp
+  - vb
+  name: Value(string, IMagicPage)
+  nameWithType: MagicPageTailorBasic.Value(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(string, ToSic.Cre8magic.Pages.IMagicPage)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Value
+    path: ../ToSic.Cre8Magic.Client/Pages/MagicPageTailorBasic.cs
+    startLine: 65
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    Very basic implementation of the Data/Value generator.
+
+    Will use the <xref href="ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData" data-throw-if-not-resolved="false"></xref> to find the value for the key.
+  example: []
+  syntax:
+    content: public override string? Value(string key, IMagicPage item)
+    parameters:
+    - id: key
+      type: System.String
+      description: ''
+    - id: item
+      type: ToSic.Cre8magic.Pages.IMagicPage
+      description: ''
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Overrides Function Value(key As String, item As IMagicPage) As String
+  overridden: ToSic.Cre8magic.Pages.MagicPageTailorBase.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  overload: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value*
+  nameWithType.vb: MagicPageTailorBasic.Value(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Value(String, IMagicPage)
+references:
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBase
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageTailorBase
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html
+  name: MagicPageTailorBase
+  nameWithType: MagicPageTailorBase
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBase
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageTailor
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageTailor.html
+  name: IMagicPageTailor
+  nameWithType: IMagicPageTailor
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses*
+  commentId: Overload:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_LookupClasses
+  name: LookupClasses
+  nameWithType: MagicPageTailorBasic.LookupClasses
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+- uid: System.Collections.Generic.IDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<string, string>
+  nameWithType: IDictionary<string, string>
+  fullName: System.Collections.Generic.IDictionary<string, string>
+  nameWithType.vb: IDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, String)
+  name.vb: IDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive*
+  commentId: Overload:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_LookupClassActive
+  name: LookupClassActive
+  nameWithType: MagicPageTailorBasic.LookupClassActive
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBase.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.MagicPageTailorBase.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBase
+  isExternal: true
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html#ToSic_Cre8magic_Pages_MagicPageTailorBase_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Classes(string, IMagicPage)
+  nameWithType: MagicPageTailorBase.Classes(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBase.Classes(string, ToSic.Cre8magic.Pages.IMagicPage)
+  nameWithType.vb: MagicPageTailorBase.Classes(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Pages.MagicPageTailorBase.Classes(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Classes(String, IMagicPage)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Pages.MagicPageTailorBase.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+    name: Classes
+    href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html#ToSic_Cre8magic_Pages_MagicPageTailorBase_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Pages.MagicPageTailorBase.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+    name: Classes
+    href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html#ToSic_Cre8magic_Pages_MagicPageTailorBase_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes*
+  commentId: Overload:ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Classes
+  nameWithType: MagicPageTailorBasic.Classes
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData*
+  commentId: Overload:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_LookupData
+  name: LookupData
+  nameWithType: MagicPageTailorBasic.LookupData
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  commentId: P:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_LookupData
+  name: LookupData
+  nameWithType: MagicPageTailorBasic.LookupData
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBase.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.MagicPageTailorBase.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBase
+  isExternal: true
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html#ToSic_Cre8magic_Pages_MagicPageTailorBase_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Value(string, IMagicPage)
+  nameWithType: MagicPageTailorBase.Value(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBase.Value(string, ToSic.Cre8magic.Pages.IMagicPage)
+  nameWithType.vb: MagicPageTailorBase.Value(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Pages.MagicPageTailorBase.Value(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Value(String, IMagicPage)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Pages.MagicPageTailorBase.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+    name: Value
+    href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html#ToSic_Cre8magic_Pages_MagicPageTailorBase_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Pages.MagicPageTailorBase.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+    name: Value
+    href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html#ToSic_Cre8magic_Pages_MagicPageTailorBase_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value*
+  commentId: Overload:ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Value
+  nameWithType: MagicPageTailorBasic.Value
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html
+  name: MagicPageTailorBasic
+  nameWithType: MagicPageTailorBasic
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic

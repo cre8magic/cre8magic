@@ -16,6 +16,8 @@
       "force": true, // Re-build all the documentation
       "properties": {
         "TargetFramework": "net9.0",
+        // experiment to get rid of field-warnings, doesn't work; unsure how to do this
+        "LangVersion": "preview",
         // "GenerateDocumentationFile": true,
         // "ProduceReferenceAssembly": true
       },

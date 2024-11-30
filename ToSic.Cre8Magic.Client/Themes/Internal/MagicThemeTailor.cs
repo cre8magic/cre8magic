@@ -1,4 +1,5 @@
 ﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Themes.Internal;

@@ -7,19 +7,19 @@ items:
   children:
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.#ctor
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Analytics
-  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns
+  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbBlueprints
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Breadcrumbs
-  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns
+  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerBlueprints
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Containers
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Debug
-  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns
+  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageBlueprints
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Languages
-  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns
+  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuBlueprints
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Menus
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.PageContexts
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Source
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.SourceDefault
-  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns
+  - ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeBlueprints
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Themes
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog.Version
   langs:
@@ -238,23 +238,23 @@ items:
 
       Public Property Themes As Dictionary(Of String, MagicThemeSettings)
   overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Themes*
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns
-  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns
-  id: ThemeDesigns
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeBlueprints
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeBlueprints
+  id: ThemeBlueprints
   parent: ToSic.Cre8magic.Settings.MagicSettingsCatalog
   langs:
   - csharp
   - vb
-  name: ThemeDesigns
-  nameWithType: MagicSettingsCatalog.ThemeDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns
+  name: ThemeBlueprints
+  nameWithType: MagicSettingsCatalog.ThemeBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeBlueprints
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: ThemeDesigns
+    id: ThemeBlueprints
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 47
   assemblies:
@@ -262,17 +262,17 @@ items:
   namespace: ToSic.Cre8magic.Settings
   syntax:
     content: >-
-      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeDesignSettings>))]
+      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemeBlueprint>))]
 
-      public Dictionary<string, MagicThemeDesignSettings> ThemeDesigns { get; init; }
+      public Dictionary<string, MagicThemeBlueprint> ThemeBlueprints { get; init; }
     parameters: []
     return:
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings}
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint}
     content.vb: >-
-      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicThemeDesignSettings)))>
+      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicThemeBlueprint)))>
 
-      Public Property ThemeDesigns As Dictionary(Of String, MagicThemeDesignSettings)
-  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns*
+      Public Property ThemeBlueprints As Dictionary(Of String, MagicThemeBlueprint)
+  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeBlueprints*
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Analytics
   commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.Analytics
   id: Analytics
@@ -343,23 +343,23 @@ items:
 
       Public Property Breadcrumbs As Dictionary(Of String, MagicBreadcrumbSettings)
   overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Breadcrumbs*
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns
-  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns
-  id: BreadcrumbDesigns
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbBlueprints
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbBlueprints
+  id: BreadcrumbBlueprints
   parent: ToSic.Cre8magic.Settings.MagicSettingsCatalog
   langs:
   - csharp
   - vb
-  name: BreadcrumbDesigns
-  nameWithType: MagicSettingsCatalog.BreadcrumbDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns
+  name: BreadcrumbBlueprints
+  nameWithType: MagicSettingsCatalog.BreadcrumbBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbBlueprints
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: BreadcrumbDesigns
+    id: BreadcrumbBlueprints
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 59
   assemblies:
@@ -367,17 +367,17 @@ items:
   namespace: ToSic.Cre8magic.Settings
   syntax:
     content: >-
-      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbDesignSettings>))]
+      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbBlueprint>))]
 
-      public Dictionary<string, MagicBreadcrumbDesignSettings> BreadcrumbDesigns { get; init; }
+      public Dictionary<string, MagicBreadcrumbBlueprint> BreadcrumbBlueprints { get; init; }
     parameters: []
     return:
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings}
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint}
     content.vb: >-
-      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicBreadcrumbDesignSettings)))>
+      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicBreadcrumbBlueprint)))>
 
-      Public Property BreadcrumbDesigns As Dictionary(Of String, MagicBreadcrumbDesignSettings)
-  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns*
+      Public Property BreadcrumbBlueprints As Dictionary(Of String, MagicBreadcrumbBlueprint)
+  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbBlueprints*
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Containers
   commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.Containers
   id: Containers
@@ -413,23 +413,23 @@ items:
 
       Public Property Containers As Dictionary(Of String, MagicContainerSettings)
   overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Containers*
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns
-  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns
-  id: ContainerDesigns
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerBlueprints
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerBlueprints
+  id: ContainerBlueprints
   parent: ToSic.Cre8magic.Settings.MagicSettingsCatalog
   langs:
   - csharp
   - vb
-  name: ContainerDesigns
-  nameWithType: MagicSettingsCatalog.ContainerDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns
+  name: ContainerBlueprints
+  nameWithType: MagicSettingsCatalog.ContainerBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerBlueprints
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: ContainerDesigns
+    id: ContainerBlueprints
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 67
   assemblies:
@@ -437,17 +437,17 @@ items:
   namespace: ToSic.Cre8magic.Settings
   syntax:
     content: >-
-      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicContainerDesignSettings>))]
+      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicContainerBlueprint>))]
 
-      public Dictionary<string, MagicContainerDesignSettings> ContainerDesigns { get; init; }
+      public Dictionary<string, MagicContainerBlueprint> ContainerBlueprints { get; init; }
     parameters: []
     return:
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Containers.MagicContainerDesignSettings}
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Containers.MagicContainerBlueprint}
     content.vb: >-
-      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicContainerDesignSettings)))>
+      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicContainerBlueprint)))>
 
-      Public Property ContainerDesigns As Dictionary(Of String, MagicContainerDesignSettings)
-  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns*
+      Public Property ContainerBlueprints As Dictionary(Of String, MagicContainerBlueprint)
+  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerBlueprints*
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Languages
   commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.Languages
   id: Languages
@@ -485,23 +485,23 @@ items:
 
       Public Property Languages As Dictionary(Of String, MagicLanguageSettings)
   overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Languages*
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns
-  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns
-  id: LanguageDesigns
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageBlueprints
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageBlueprints
+  id: LanguageBlueprints
   parent: ToSic.Cre8magic.Settings.MagicSettingsCatalog
   langs:
   - csharp
   - vb
-  name: LanguageDesigns
-  nameWithType: MagicSettingsCatalog.LanguageDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns
+  name: LanguageBlueprints
+  nameWithType: MagicSettingsCatalog.LanguageBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageBlueprints
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: LanguageDesigns
+    id: LanguageBlueprints
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 79
   assemblies:
@@ -511,17 +511,17 @@ items:
   example: []
   syntax:
     content: >-
-      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguageDesignSettings>))]
+      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicLanguageBlueprint>))]
 
-      public Dictionary<string, MagicLanguageDesignSettings> LanguageDesigns { get; init; }
+      public Dictionary<string, MagicLanguageBlueprint> LanguageBlueprints { get; init; }
     parameters: []
     return:
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguageDesignSettings}
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguageBlueprint}
     content.vb: >-
-      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicLanguageDesignSettings)))>
+      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicLanguageBlueprint)))>
 
-      Public Property LanguageDesigns As Dictionary(Of String, MagicLanguageDesignSettings)
-  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns*
+      Public Property LanguageBlueprints As Dictionary(Of String, MagicLanguageBlueprint)
+  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageBlueprints*
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Menus
   commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.Menus
   id: Menus
@@ -596,23 +596,23 @@ items:
 
       Public Property PageContexts As Dictionary(Of String, MagicPageContextSettings)
   overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.PageContexts*
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns
-  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns
-  id: MenuDesigns
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuBlueprints
+  commentId: P:ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuBlueprints
+  id: MenuBlueprints
   parent: ToSic.Cre8magic.Settings.MagicSettingsCatalog
   langs:
   - csharp
   - vb
-  name: MenuDesigns
-  nameWithType: MagicSettingsCatalog.MenuDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns
+  name: MenuBlueprints
+  nameWithType: MagicSettingsCatalog.MenuBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuBlueprints
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: MenuDesigns
+    id: MenuBlueprints
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsCatalog.cs
     startLine: 98
   assemblies:
@@ -622,17 +622,17 @@ items:
   example: []
   syntax:
     content: >-
-      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuDesignSettings>))]
+      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuBlueprint>))]
 
-      public Dictionary<string, MagicMenuDesignSettings> MenuDesigns { get; init; }
+      public Dictionary<string, MagicMenuBlueprint> MenuBlueprints { get; init; }
     parameters: []
     return:
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Menus.MagicMenuBlueprint}
     content.vb: >-
-      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicMenuDesignSettings)))>
+      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicMenuBlueprint)))>
 
-      Public Property MenuDesigns As Dictionary(Of String, MagicMenuDesignSettings)
-  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns*
+      Public Property MenuBlueprints As Dictionary(Of String, MagicMenuBlueprint)
+  overload: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuBlueprints*
 references:
 - uid: ToSic.Cre8magic.Settings
   commentId: N:ToSic.Cre8magic.Settings
@@ -850,23 +850,23 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns*
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns
-  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_ThemeDesigns
-  name: ThemeDesigns
-  nameWithType: MagicSettingsCatalog.ThemeDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeDesigns
-- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings}
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeBlueprints*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeBlueprints
+  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_ThemeBlueprints
+  name: ThemeBlueprints
+  nameWithType: MagicSettingsCatalog.ThemeBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ThemeBlueprints
+- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  href: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings.html
-  name: Dictionary<string, MagicThemeDesignSettings>
-  nameWithType: Dictionary<string, MagicThemeDesignSettings>
-  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings>
-  nameWithType.vb: Dictionary(Of String, MagicThemeDesignSettings)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings)
-  name.vb: Dictionary(Of String, MagicThemeDesignSettings)
+  href: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html
+  name: Dictionary<string, MagicThemeBlueprint>
+  nameWithType: Dictionary<string, MagicThemeBlueprint>
+  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint>
+  nameWithType.vb: Dictionary(Of String, MagicThemeBlueprint)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint)
+  name.vb: Dictionary(Of String, MagicThemeBlueprint)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
@@ -877,9 +877,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings
-    name: MagicThemeDesignSettings
-    href: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings.html
+  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
+    name: MagicThemeBlueprint
+    href: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
@@ -893,9 +893,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings
-    name: MagicThemeDesignSettings
-    href: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings.html
+  - uid: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
+    name: MagicThemeBlueprint
+    href: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html
   - name: )
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Analytics*
   commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.Analytics
@@ -991,23 +991,23 @@ references:
     name: MagicBreadcrumbSettings
     href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html
   - name: )
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns*
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns
-  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_BreadcrumbDesigns
-  name: BreadcrumbDesigns
-  nameWithType: MagicSettingsCatalog.BreadcrumbDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbDesigns
-- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings}
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbBlueprints*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbBlueprints
+  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_BreadcrumbBlueprints
+  name: BreadcrumbBlueprints
+  nameWithType: MagicSettingsCatalog.BreadcrumbBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.BreadcrumbBlueprints
+- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings.html
-  name: Dictionary<string, MagicBreadcrumbDesignSettings>
-  nameWithType: Dictionary<string, MagicBreadcrumbDesignSettings>
-  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings>
-  nameWithType.vb: Dictionary(Of String, MagicBreadcrumbDesignSettings)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings)
-  name.vb: Dictionary(Of String, MagicBreadcrumbDesignSettings)
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html
+  name: Dictionary<string, MagicBreadcrumbBlueprint>
+  nameWithType: Dictionary<string, MagicBreadcrumbBlueprint>
+  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint>
+  nameWithType.vb: Dictionary(Of String, MagicBreadcrumbBlueprint)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint)
+  name.vb: Dictionary(Of String, MagicBreadcrumbBlueprint)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
@@ -1018,9 +1018,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
-    name: MagicBreadcrumbDesignSettings
-    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings.html
+  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
+    name: MagicBreadcrumbBlueprint
+    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
@@ -1034,9 +1034,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
-    name: MagicBreadcrumbDesignSettings
-    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings.html
+  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
+    name: MagicBreadcrumbBlueprint
+    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html
   - name: )
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Containers*
   commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.Containers
@@ -1085,23 +1085,23 @@ references:
     name: MagicContainerSettings
     href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
   - name: )
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns*
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns
-  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_ContainerDesigns
-  name: ContainerDesigns
-  nameWithType: MagicSettingsCatalog.ContainerDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerDesigns
-- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Containers.MagicContainerDesignSettings}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Containers.MagicContainerDesignSettings}
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerBlueprints*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerBlueprints
+  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_ContainerBlueprints
+  name: ContainerBlueprints
+  nameWithType: MagicSettingsCatalog.ContainerBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.ContainerBlueprints
+- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Containers.MagicContainerBlueprint}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Containers.MagicContainerBlueprint}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  href: ToSic.Cre8magic.Containers.MagicContainerDesignSettings.html
-  name: Dictionary<string, MagicContainerDesignSettings>
-  nameWithType: Dictionary<string, MagicContainerDesignSettings>
-  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Containers.MagicContainerDesignSettings>
-  nameWithType.vb: Dictionary(Of String, MagicContainerDesignSettings)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Containers.MagicContainerDesignSettings)
-  name.vb: Dictionary(Of String, MagicContainerDesignSettings)
+  href: ToSic.Cre8magic.Containers.MagicContainerBlueprint.html
+  name: Dictionary<string, MagicContainerBlueprint>
+  nameWithType: Dictionary<string, MagicContainerBlueprint>
+  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Containers.MagicContainerBlueprint>
+  nameWithType.vb: Dictionary(Of String, MagicContainerBlueprint)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Containers.MagicContainerBlueprint)
+  name.vb: Dictionary(Of String, MagicContainerBlueprint)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
@@ -1112,9 +1112,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
-    name: MagicContainerDesignSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerDesignSettings.html
+  - uid: ToSic.Cre8magic.Containers.MagicContainerBlueprint
+    name: MagicContainerBlueprint
+    href: ToSic.Cre8magic.Containers.MagicContainerBlueprint.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
@@ -1128,9 +1128,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
-    name: MagicContainerDesignSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerDesignSettings.html
+  - uid: ToSic.Cre8magic.Containers.MagicContainerBlueprint
+    name: MagicContainerBlueprint
+    href: ToSic.Cre8magic.Containers.MagicContainerBlueprint.html
   - name: )
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Languages*
   commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.Languages
@@ -1179,23 +1179,23 @@ references:
     name: MagicLanguageSettings
     href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
   - name: )
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns*
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns
-  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_LanguageDesigns
-  name: LanguageDesigns
-  nameWithType: MagicSettingsCatalog.LanguageDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageDesigns
-- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguageDesignSettings}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguageDesignSettings}
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageBlueprints*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageBlueprints
+  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_LanguageBlueprints
+  name: LanguageBlueprints
+  nameWithType: MagicSettingsCatalog.LanguageBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.LanguageBlueprints
+- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguageBlueprint}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Languages.MagicLanguageBlueprint}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html
-  name: Dictionary<string, MagicLanguageDesignSettings>
-  nameWithType: Dictionary<string, MagicLanguageDesignSettings>
-  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Languages.MagicLanguageDesignSettings>
-  nameWithType.vb: Dictionary(Of String, MagicLanguageDesignSettings)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Languages.MagicLanguageDesignSettings)
-  name.vb: Dictionary(Of String, MagicLanguageDesignSettings)
+  href: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html
+  name: Dictionary<string, MagicLanguageBlueprint>
+  nameWithType: Dictionary<string, MagicLanguageBlueprint>
+  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Languages.MagicLanguageBlueprint>
+  nameWithType.vb: Dictionary(Of String, MagicLanguageBlueprint)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Languages.MagicLanguageBlueprint)
+  name.vb: Dictionary(Of String, MagicLanguageBlueprint)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
@@ -1206,9 +1206,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-    name: MagicLanguageDesignSettings
-    href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageBlueprint
+    name: MagicLanguageBlueprint
+    href: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
@@ -1222,9 +1222,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-    name: MagicLanguageDesignSettings
-    href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html
+  - uid: ToSic.Cre8magic.Languages.MagicLanguageBlueprint
+    name: MagicLanguageBlueprint
+    href: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html
   - name: )
 - uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.Menus*
   commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.Menus
@@ -1320,23 +1320,23 @@ references:
     name: MagicPageContextSettings
     href: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html
   - name: )
-- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns*
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns
-  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_MenuDesigns
-  name: MenuDesigns
-  nameWithType: MagicSettingsCatalog.MenuDesigns
-  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuDesigns
-- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
+- uid: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuBlueprints*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuBlueprints
+  href: ToSic.Cre8magic.Settings.MagicSettingsCatalog.html#ToSic_Cre8magic_Settings_MagicSettingsCatalog_MenuBlueprints
+  name: MenuBlueprints
+  nameWithType: MagicSettingsCatalog.MenuBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicSettingsCatalog.MenuBlueprints
+- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Menus.MagicMenuBlueprint}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Menus.MagicMenuBlueprint}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
-  name: Dictionary<string, MagicMenuDesignSettings>
-  nameWithType: Dictionary<string, MagicMenuDesignSettings>
-  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Menus.MagicMenuDesignSettings>
-  nameWithType.vb: Dictionary(Of String, MagicMenuDesignSettings)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Menus.MagicMenuDesignSettings)
-  name.vb: Dictionary(Of String, MagicMenuDesignSettings)
+  href: ToSic.Cre8magic.Menus.MagicMenuBlueprint.html
+  name: Dictionary<string, MagicMenuBlueprint>
+  nameWithType: Dictionary<string, MagicMenuBlueprint>
+  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Menus.MagicMenuBlueprint>
+  nameWithType.vb: Dictionary(Of String, MagicMenuBlueprint)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Menus.MagicMenuBlueprint)
+  name.vb: Dictionary(Of String, MagicMenuBlueprint)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
@@ -1347,9 +1347,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-    name: MagicMenuDesignSettings
-    href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
+  - uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint
+    name: MagicMenuBlueprint
+    href: ToSic.Cre8magic.Menus.MagicMenuBlueprint.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
@@ -1363,7 +1363,7 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-    name: MagicMenuDesignSettings
-    href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
+  - uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint
+    name: MagicMenuBlueprint
+    href: ToSic.Cre8magic.Menus.MagicMenuBlueprint.html
   - name: )

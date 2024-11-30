@@ -95,7 +95,14 @@
 Classes
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageDesignerBase.html">MagicPageDesignerBase</a></dt>
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageEditService.html">MagicPageEditService</a></dt>
+      <dd><p>Helper to remove the logic/code from the razor file.
+It's just meant to support the AdminButtons,
+without placing the logic code inside that.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageTailorBase.html">MagicPageTailorBase</a></dt>
       <dd><p>Base class for page designers.
 Can be used as a foundation for creating your custom designers.</p>
 <p>This is a bit safer than just implementing the interface, as future enhancements
@@ -103,16 +110,9 @@ would appear on this class so your implementation would work even on an upgrade.
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageDesignerBasic.html">MagicPageDesignerBasic</a></dt>
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageTailorBasic.html">MagicPageTailorBasic</a></dt>
       <dd><p>Simple page designer for breadcrumbs or menus.
 If no lookups are specified, the Classes(...) and Data(...) methods will return empty strings.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageEditService.html">MagicPageEditService</a></dt>
-      <dd><p>Helper to remove the logic/code from the razor file.
-It's just meant to support the AdminButtons,
-without placing the logic code inside that.</p>
 </dd>
     </dl>
     <h3 id="interfaces">
@@ -132,16 +132,16 @@ They offer many benefits such as:</p>
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageDesigner.html">IMagicPageDesigner</a></dt>
-      <dd><p>Interface for a designer of a magic page.</p>
-<p>Anything implementing this interface can be used as a designer for a magic page,
-providing custom classes and values when generating the HTML for the page.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageSetSettings.html">IMagicPageSetSettings</a></dt>
       <dd><p>WIP
 TODO: naming not final</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageTailor.html">IMagicPageTailor</a></dt>
+      <dd><p>Interface for a designer of a magic page.</p>
+<p>Anything implementing this interface can be used as a designer for a magic page,
+providing custom classes and values when generating the HTML for the page.</p>
 </dd>
     </dl>
 

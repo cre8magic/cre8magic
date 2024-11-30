@@ -5,7 +5,7 @@ items:
   id: MagicContainerSettings
   parent: ToSic.Cre8magic.Containers
   children:
-  - ToSic.Cre8magic.Containers.MagicContainerSettings.DesignSettings
+  - ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
   - ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState
   langs:
   - csharp
@@ -47,25 +47,23 @@ items:
   - ToSic.Cre8magic.Containers.MagicContainerSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(ToSic.Cre8magic.Settings.MagicSettingsLookup)
   - ToSic.Cre8magic.Containers.MagicContainerSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(Oqtane.UI.PageState)
   - ToSic.Cre8magic.Containers.MagicContainerSettings.ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2({TWith})
-  - ToSic.Cre8magic.Containers.MagicContainerSettings.ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(Oqtane.Models.Module)
-  - ToSic.Cre8magic.Containers.MagicContainerSettings.ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(Oqtane.UI.PageState,Oqtane.Models.Module)
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.DesignSettings
-  commentId: P:ToSic.Cre8magic.Containers.MagicContainerSettings.DesignSettings
-  id: DesignSettings
+- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
+  commentId: P:ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
+  id: Blueprint
   parent: ToSic.Cre8magic.Containers.MagicContainerSettings
   langs:
   - csharp
   - vb
-  name: DesignSettings
-  nameWithType: MagicContainerSettings.DesignSettings
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings.DesignSettings
+  name: Blueprint
+  nameWithType: MagicContainerSettings.Blueprint
+  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Containers/MagicContainerSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: DesignSettings
+    id: Blueprint
     path: ../ToSic.Cre8Magic.Client/Containers/MagicContainerSettings.cs
     startLine: 22
   assemblies:
@@ -75,15 +73,15 @@ items:
     content: >-
       [JsonIgnore]
 
-      public MagicContainerDesignSettings? DesignSettings { get; init; }
+      public MagicContainerBlueprint? Blueprint { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
+      type: ToSic.Cre8magic.Containers.MagicContainerBlueprint
     content.vb: >-
       <JsonIgnore>
 
-      Public Property DesignSettings As MagicContainerDesignSettings
-  overload: ToSic.Cre8magic.Containers.MagicContainerSettings.DesignSettings*
+      Public Property Blueprint As MagicContainerBlueprint
+  overload: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint*
   attributes:
   - type: System.Text.Json.Serialization.JsonIgnoreAttribute
     ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
@@ -559,84 +557,6 @@ references:
   - name: " "
   - name: TWith
   - name: )
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(Oqtane.Models.Module)
-  commentId: M:ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.Models.Module)
-  parent: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
-  definition: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.Models.Module)
-  href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_Models_Module_
-  name: With(MagicContainerSettings, Module)
-  nameWithType: MagicContainerSettingsExtensions.With(MagicContainerSettings, Module)
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings, Oqtane.Models.Module)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.Models.Module)
-    name: With
-    href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_Models_Module_
-  - name: (
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-    name: MagicContainerSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  - name: ','
-  - name: " "
-  - uid: Oqtane.Models.Module
-    name: Module
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.Models.Module)
-    name: With
-    href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_Models_Module_
-  - name: (
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-    name: MagicContainerSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  - name: ','
-  - name: " "
-  - uid: Oqtane.Models.Module
-    name: Module
-  - name: )
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(Oqtane.UI.PageState,Oqtane.Models.Module)
-  commentId: M:ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.UI.PageState,Oqtane.Models.Module)
-  parent: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
-  definition: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.UI.PageState,Oqtane.Models.Module)
-  href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_UI_PageState_Oqtane_Models_Module_
-  name: With(MagicContainerSettings, PageState, Module)
-  nameWithType: MagicContainerSettingsExtensions.With(MagicContainerSettings, PageState, Module)
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings, Oqtane.UI.PageState, Oqtane.Models.Module)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.UI.PageState,Oqtane.Models.Module)
-    name: With
-    href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_UI_PageState_Oqtane_Models_Module_
-  - name: (
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-    name: MagicContainerSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  - name: ','
-  - name: " "
-  - uid: Oqtane.UI.PageState
-    name: PageState
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Oqtane.Models.Module
-    name: Module
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.UI.PageState,Oqtane.Models.Module)
-    name: With
-    href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_UI_PageState_Oqtane_Models_Module_
-  - name: (
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-    name: MagicContainerSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  - name: ','
-  - name: " "
-  - uid: Oqtane.UI.PageState
-    name: PageState
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Oqtane.Models.Module
-    name: Module
-  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -933,88 +853,6 @@ references:
   - name: " "
   - name: TWith
   - name: )
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.Models.Module)
-  commentId: M:ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.Models.Module)
-  href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_Models_Module_
-  name: With(MagicContainerSettings, Module)
-  nameWithType: MagicContainerSettingsExtensions.With(MagicContainerSettings, Module)
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings, Oqtane.Models.Module)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.Models.Module)
-    name: With
-    href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_Models_Module_
-  - name: (
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-    name: MagicContainerSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  - name: ','
-  - name: " "
-  - uid: Oqtane.Models.Module
-    name: Module
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.Models.Module)
-    name: With
-    href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_Models_Module_
-  - name: (
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-    name: MagicContainerSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  - name: ','
-  - name: " "
-  - uid: Oqtane.Models.Module
-    name: Module
-  - name: )
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
-  commentId: T:ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
-  parent: ToSic.Cre8magic.Containers
-  href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html
-  name: MagicContainerSettingsExtensions
-  nameWithType: MagicContainerSettingsExtensions
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.UI.PageState,Oqtane.Models.Module)
-  commentId: M:ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.UI.PageState,Oqtane.Models.Module)
-  isExternal: true
-  href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_UI_PageState_Oqtane_Models_Module_
-  name: With(MagicContainerSettings, PageState, Module)
-  nameWithType: MagicContainerSettingsExtensions.With(MagicContainerSettings, PageState, Module)
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings, Oqtane.UI.PageState, Oqtane.Models.Module)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.UI.PageState,Oqtane.Models.Module)
-    name: With
-    href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_UI_PageState_Oqtane_Models_Module_
-  - name: (
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-    name: MagicContainerSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  - name: ','
-  - name: " "
-  - uid: Oqtane.UI.PageState
-    name: PageState
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Oqtane.Models.Module
-    name: Module
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.With(ToSic.Cre8magic.Containers.MagicContainerSettings,Oqtane.UI.PageState,Oqtane.Models.Module)
-    name: With
-    href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html#ToSic_Cre8magic_Containers_MagicContainerSettingsExtensions_With_ToSic_Cre8magic_Containers_MagicContainerSettings_Oqtane_UI_PageState_Oqtane_Models_Module_
-  - name: (
-  - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-    name: MagicContainerSettings
-    href: ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  - name: ','
-  - name: " "
-  - uid: Oqtane.UI.PageState
-    name: PageState
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: Oqtane.Models.Module
-    name: Module
-  - name: )
 - uid: ToSic.Cre8magic.Act
   commentId: N:ToSic.Cre8magic.Act
   href: ToSic.html
@@ -1045,19 +883,19 @@ references:
   - uid: ToSic.Cre8magic.Act
     name: Act
     href: ToSic.Cre8magic.Act.html
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.DesignSettings*
-  commentId: Overload:ToSic.Cre8magic.Containers.MagicContainerSettings.DesignSettings
-  href: ToSic.Cre8magic.Containers.MagicContainerSettings.html#ToSic_Cre8magic_Containers_MagicContainerSettings_DesignSettings
-  name: DesignSettings
-  nameWithType: MagicContainerSettings.DesignSettings
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings.DesignSettings
-- uid: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
-  commentId: T:ToSic.Cre8magic.Containers.MagicContainerDesignSettings
+- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint*
+  commentId: Overload:ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
+  href: ToSic.Cre8magic.Containers.MagicContainerSettings.html#ToSic_Cre8magic_Containers_MagicContainerSettings_Blueprint
+  name: Blueprint
+  nameWithType: MagicContainerSettings.Blueprint
+  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
+- uid: ToSic.Cre8magic.Containers.MagicContainerBlueprint
+  commentId: T:ToSic.Cre8magic.Containers.MagicContainerBlueprint
   parent: ToSic.Cre8magic.Containers
-  href: ToSic.Cre8magic.Containers.MagicContainerDesignSettings.html
-  name: MagicContainerDesignSettings
-  nameWithType: MagicContainerDesignSettings
-  fullName: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
+  href: ToSic.Cre8magic.Containers.MagicContainerBlueprint.html
+  name: MagicContainerBlueprint
+  nameWithType: MagicContainerBlueprint
+  fullName: ToSic.Cre8magic.Containers.MagicContainerBlueprint
 - uid: ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState*
   commentId: Overload:ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState
   href: ToSic.Cre8magic.Containers.MagicContainerSettings.html#ToSic_Cre8magic_Containers_MagicContainerSettings_ModuleState

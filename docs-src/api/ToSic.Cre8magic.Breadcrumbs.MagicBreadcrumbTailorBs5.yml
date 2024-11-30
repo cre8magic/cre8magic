@@ -1,0 +1,296 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
+  id: MagicBreadcrumbTailorBs5
+  parent: ToSic.Cre8magic.Breadcrumbs
+  children:
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.#ctor
+  langs:
+  - csharp
+  - vb
+  name: MagicBreadcrumbTailorBs5
+  nameWithType: MagicBreadcrumbTailorBs5
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbTailorBs5.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicBreadcrumbTailorBs5
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbTailorBs5.cs
+    startLine: 11
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  summary: >-
+    Default designer for breadcrumbs in Bootstrap 5.
+
+    Will use the standard Bootstrap 5 classes for breadcrumbs.
+
+    - ol: breadcrumb
+
+    - li: breadcrumb-item
+
+    - active state: "active"
+  example: []
+  syntax:
+    content: 'public class MagicBreadcrumbTailorBs5 : MagicPageTailorBasic, IMagicPageTailor'
+    content.vb: Public Class MagicBreadcrumbTailorBs5 Inherits MagicPageTailorBasic Implements IMagicPageTailor
+  inheritance:
+  - System.Object
+  - ToSic.Cre8magic.Pages.MagicPageTailorBase
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  implements:
+  - ToSic.Cre8magic.Pages.IMagicPageTailor
+  inheritedMembers:
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.All
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.#ctor
+  commentId: M:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.#ctor
+  id: '#ctor'
+  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
+  langs:
+  - csharp
+  - vb
+  name: MagicBreadcrumbTailorBs5()
+  nameWithType: MagicBreadcrumbTailorBs5.MagicBreadcrumbTailorBs5()
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.MagicBreadcrumbTailorBs5()
+  type: Constructor
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbTailorBs5.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: .ctor
+    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbTailorBs5.cs
+    startLine: 13
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Breadcrumbs
+  syntax:
+    content: public MagicBreadcrumbTailorBs5()
+    content.vb: Public Sub New()
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.#ctor*
+  nameWithType.vb: MagicBreadcrumbTailorBs5.New()
+  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.New()
+  name.vb: New()
+references:
+- uid: ToSic.Cre8magic.Breadcrumbs
+  commentId: N:ToSic.Cre8magic.Breadcrumbs
+  href: ToSic.html
+  name: ToSic.Cre8magic.Breadcrumbs
+  nameWithType: ToSic.Cre8magic.Breadcrumbs
+  fullName: ToSic.Cre8magic.Breadcrumbs
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumbs
+    name: Breadcrumbs
+    href: ToSic.Cre8magic.Breadcrumbs.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Breadcrumbs
+    name: Breadcrumbs
+    href: ToSic.Cre8magic.Breadcrumbs.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBase
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageTailorBase
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html
+  name: MagicPageTailorBase
+  nameWithType: MagicPageTailorBase
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBase
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html
+  name: MagicPageTailorBasic
+  nameWithType: MagicPageTailorBasic
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageTailor
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPageTailor.html
+  name: IMagicPageTailor
+  nameWithType: IMagicPageTailor
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.All
+  commentId: F:ToSic.Cre8magic.Pages.MagicPageTailorBasic.All
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_All
+  name: All
+  nameWithType: MagicPageTailorBasic.All
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.All
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+  commentId: P:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_LookupClasses
+  name: LookupClasses
+  nameWithType: MagicPageTailorBasic.LookupClasses
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClasses
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+  commentId: P:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_LookupClassActive
+  name: LookupClassActive
+  nameWithType: MagicPageTailorBasic.LookupClassActive
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupClassActive
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  isExternal: true
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Classes(string, IMagicPage)
+  nameWithType: MagicPageTailorBasic.Classes(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(string, ToSic.Cre8magic.Pages.IMagicPage)
+  nameWithType.vb: MagicPageTailorBasic.Classes(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Classes(String, IMagicPage)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+    name: Classes
+    href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+    name: Classes
+    href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  commentId: P:ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_LookupData
+  name: LookupData
+  nameWithType: MagicPageTailorBasic.LookupData
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.LookupData
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  isExternal: true
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Value(string, IMagicPage)
+  nameWithType: MagicPageTailorBasic.Value(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(string, ToSic.Cre8magic.Pages.IMagicPage)
+  nameWithType.vb: MagicPageTailorBasic.Value(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Value(String, IMagicPage)
+  spec.csharp:
+  - uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+    name: Value
+    href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+  spec.vb:
+  - uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+    name: Value
+    href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html#ToSic_Cre8magic_Pages_MagicPageTailorBasic_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: ToSic.Cre8magic.Pages.IMagicPage
+    name: IMagicPage
+    href: ToSic.Cre8magic.Pages.IMagicPage.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.#ctor*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.#ctor
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbTailorBs5__ctor
+  name: MagicBreadcrumbTailorBs5
+  nameWithType: MagicBreadcrumbTailorBs5.MagicBreadcrumbTailorBs5
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.MagicBreadcrumbTailorBs5
+  nameWithType.vb: MagicBreadcrumbTailorBs5.New
+  fullName.vb: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.New
+  name.vb: New

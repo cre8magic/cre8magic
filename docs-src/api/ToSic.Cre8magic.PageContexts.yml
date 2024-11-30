@@ -7,8 +7,8 @@ items:
   children:
   - ToSic.Cre8magic.PageContexts.IMagicPageContextKit
   - ToSic.Cre8magic.PageContexts.MagicPageContext
-  - ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
   - ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+  - ToSic.Cre8magic.PageContexts.MagicPageContextTailor
   langs:
   - csharp
   - vb
@@ -32,12 +32,6 @@ references:
   name: MagicPageContext
   nameWithType: MagicPageContext
   fullName: ToSic.Cre8magic.PageContexts.MagicPageContext
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
-  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
-  href: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner.html
-  name: MagicPageContextDesigner
-  nameWithType: MagicPageContextDesigner
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextDesigner
 - uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
   commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextSettings
   parent: ToSic.Cre8magic.PageContexts
@@ -45,6 +39,12 @@ references:
   name: MagicPageContextSettings
   nameWithType: MagicPageContextSettings
   fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
+- uid: ToSic.Cre8magic.PageContexts.MagicPageContextTailor
+  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextTailor
+  href: ToSic.Cre8magic.PageContexts.MagicPageContextTailor.html
+  name: MagicPageContextTailor
+  nameWithType: MagicPageContextTailor
+  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextTailor
 - uid: ToSic.Cre8magic.PageContexts
   commentId: N:ToSic.Cre8magic.PageContexts
   href: ToSic.html

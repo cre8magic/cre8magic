@@ -5,8 +5,8 @@ items:
   id: IMagicContainerKit
   parent: ToSic.Cre8magic.Containers
   children:
-  - ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
   - ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
+  - ToSic.Cre8magic.Containers.IMagicContainerKit.Tailor
   langs:
   - csharp
   - vb
@@ -28,35 +28,35 @@ items:
   syntax:
     content: public interface IMagicContainerKit
     content.vb: Public Interface IMagicContainerKit
-- uid: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
-  commentId: P:ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
-  id: Designer
+- uid: ToSic.Cre8magic.Containers.IMagicContainerKit.Tailor
+  commentId: P:ToSic.Cre8magic.Containers.IMagicContainerKit.Tailor
+  id: Tailor
   parent: ToSic.Cre8magic.Containers.IMagicContainerKit
   langs:
   - csharp
   - vb
-  name: Designer
-  nameWithType: IMagicContainerKit.Designer
-  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
+  name: Tailor
+  nameWithType: IMagicContainerKit.Tailor
+  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit.Tailor
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Containers/IMagicContainerKit.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Designer
+    id: Tailor
     path: ../ToSic.Cre8Magic.Client/Containers/IMagicContainerKit.cs
     startLine: 4
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Containers
   syntax:
-    content: MagicContainerDesigner Designer { get; init; }
+    content: MagicContainerTailor Tailor { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Containers.MagicContainerDesigner
-    content.vb: Property Designer As MagicContainerDesigner
-  overload: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer*
+      type: ToSic.Cre8magic.Containers.MagicContainerTailor
+    content.vb: Property Tailor As MagicContainerTailor
+  overload: ToSic.Cre8magic.Containers.IMagicContainerKit.Tailor*
 - uid: ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
   commentId: P:ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
   id: IsForAdminModule
@@ -120,19 +120,19 @@ references:
   - uid: ToSic.Cre8magic.Containers
     name: Containers
     href: ToSic.Cre8magic.Containers.html
-- uid: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer*
-  commentId: Overload:ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
-  href: ToSic.Cre8magic.Containers.IMagicContainerKit.html#ToSic_Cre8magic_Containers_IMagicContainerKit_Designer
-  name: Designer
-  nameWithType: IMagicContainerKit.Designer
-  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit.Designer
-- uid: ToSic.Cre8magic.Containers.MagicContainerDesigner
-  commentId: T:ToSic.Cre8magic.Containers.MagicContainerDesigner
+- uid: ToSic.Cre8magic.Containers.IMagicContainerKit.Tailor*
+  commentId: Overload:ToSic.Cre8magic.Containers.IMagicContainerKit.Tailor
+  href: ToSic.Cre8magic.Containers.IMagicContainerKit.html#ToSic_Cre8magic_Containers_IMagicContainerKit_Tailor
+  name: Tailor
+  nameWithType: IMagicContainerKit.Tailor
+  fullName: ToSic.Cre8magic.Containers.IMagicContainerKit.Tailor
+- uid: ToSic.Cre8magic.Containers.MagicContainerTailor
+  commentId: T:ToSic.Cre8magic.Containers.MagicContainerTailor
   parent: ToSic.Cre8magic.Containers
-  href: ToSic.Cre8magic.Containers.MagicContainerDesigner.html
-  name: MagicContainerDesigner
-  nameWithType: MagicContainerDesigner
-  fullName: ToSic.Cre8magic.Containers.MagicContainerDesigner
+  href: ToSic.Cre8magic.Containers.MagicContainerTailor.html
+  name: MagicContainerTailor
+  nameWithType: MagicContainerTailor
+  fullName: ToSic.Cre8magic.Containers.MagicContainerTailor
 - uid: ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule*
   commentId: Overload:ToSic.Cre8magic.Containers.IMagicContainerKit.IsForAdminModule
   href: ToSic.Cre8magic.Containers.IMagicContainerKit.html#ToSic_Cre8magic_Containers_IMagicContainerKit_IsForAdminModule

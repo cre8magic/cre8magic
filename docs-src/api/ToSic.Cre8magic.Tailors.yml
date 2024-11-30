@@ -1,0 +1,63 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Tailors
+  commentId: N:ToSic.Cre8magic.Tailors
+  id: Tailors
+  parent: ToSic.Cre8magic
+  children:
+  - ToSic.Cre8magic.Tailors.IMagicTailor
+  - ToSic.Cre8magic.Tailors.MagicTailorBase
+  langs:
+  - csharp
+  - vb
+  name: ToSic.Cre8magic.Tailors
+  nameWithType: ToSic.Cre8magic.Tailors
+  fullName: ToSic.Cre8magic.Tailors
+  type: Namespace
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+references:
+- uid: ToSic.Cre8magic.Tailors.IMagicTailor
+  commentId: T:ToSic.Cre8magic.Tailors.IMagicTailor
+  parent: ToSic.Cre8magic.Tailors
+  href: ToSic.Cre8magic.Tailors.IMagicTailor.html
+  name: IMagicTailor
+  nameWithType: IMagicTailor
+  fullName: ToSic.Cre8magic.Tailors.IMagicTailor
+- uid: ToSic.Cre8magic.Tailors.MagicTailorBase
+  commentId: T:ToSic.Cre8magic.Tailors.MagicTailorBase
+  parent: ToSic.Cre8magic.Tailors
+  href: ToSic.Cre8magic.Tailors.MagicTailorBase.html
+  name: MagicTailorBase
+  nameWithType: MagicTailorBase
+  fullName: ToSic.Cre8magic.Tailors.MagicTailorBase
+- uid: ToSic.Cre8magic.Tailors
+  commentId: N:ToSic.Cre8magic.Tailors
+  href: ToSic.html
+  name: ToSic.Cre8magic.Tailors
+  nameWithType: ToSic.Cre8magic.Tailors
+  fullName: ToSic.Cre8magic.Tailors
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Tailors
+    name: Tailors
+    href: ToSic.Cre8magic.Tailors.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Tailors
+    name: Tailors
+    href: ToSic.Cre8magic.Tailors.html

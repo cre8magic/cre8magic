@@ -25,6 +25,17 @@ items:
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
+  summary: >-
+    The recommended base container for all themes which use cre8magic.
+
+
+    It will simply remain invisible for the normal user,
+
+    and except for a DIV containing some classes, it will not render anything.
+
+
+    Admin-users will see a bit more, since the title etc. is necessary for the editing tools.
+  example: []
   syntax:
     content: 'public class MagicContainer : ContainerBase'
     content.vb: Public Class MagicContainer Inherits ContainerBase
@@ -51,7 +62,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Name
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 12
+    startLine: 25
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -83,7 +94,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 19
+    startLine: 32
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -119,7 +130,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicHat
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 21
+    startLine: 34
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -158,7 +169,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: CloseUrl
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 25
+    startLine: 38
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -187,7 +198,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnParametersSet
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 34
+    startLine: 47
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -224,7 +235,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ContainerKit
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 42
+    startLine: 55
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5

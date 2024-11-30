@@ -6,8 +6,8 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Menus.IMagicMenuKit
-  - ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-  - ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
+  - ToSic.Cre8magic.Menus.MagicMenuBlueprint
+  - ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
   - ToSic.Cre8magic.Menus.MagicMenuSettings
   langs:
   - csharp
@@ -26,19 +26,19 @@ references:
   name: IMagicMenuKit
   nameWithType: IMagicMenuKit
   fullName: ToSic.Cre8magic.Menus.IMagicMenuKit
-- uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-  commentId: T:ToSic.Cre8magic.Menus.MagicMenuDesignSettings
+- uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint
+  commentId: T:ToSic.Cre8magic.Menus.MagicMenuBlueprint
   parent: ToSic.Cre8magic.Menus
-  href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
-  name: MagicMenuDesignSettings
-  nameWithType: MagicMenuDesignSettings
-  fullName: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-- uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
-  commentId: T:ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
-  href: ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart.html
-  name: MagicMenuDesignSettingsPart
-  nameWithType: MagicMenuDesignSettingsPart
-  fullName: ToSic.Cre8magic.Menus.MagicMenuDesignSettingsPart
+  href: ToSic.Cre8magic.Menus.MagicMenuBlueprint.html
+  name: MagicMenuBlueprint
+  nameWithType: MagicMenuBlueprint
+  fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprint
+- uid: ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
+  commentId: T:ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
+  href: ToSic.Cre8magic.Menus.MagicMenuBlueprintPart.html
+  name: MagicMenuBlueprintPart
+  nameWithType: MagicMenuBlueprintPart
+  fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
   commentId: T:ToSic.Cre8magic.Menus.MagicMenuSettings
   parent: ToSic.Cre8magic.Menus

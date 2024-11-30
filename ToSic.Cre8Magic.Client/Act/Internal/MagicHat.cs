@@ -14,6 +14,7 @@ using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.PageContexts.Internal;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Providers;
 using ToSic.Cre8magic.UserLogins;
 using ToSic.Cre8magic.UserLogins.Internal;

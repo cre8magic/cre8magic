@@ -7,8 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Active
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.ActiveId
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Blueprint
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Display
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DisplaySafe
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Id
@@ -16,6 +15,7 @@ items:
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.MenuId
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Pages
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Reverse
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Tailor
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithActive
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.WithHome
@@ -528,23 +528,23 @@ items:
   overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Variant*
   implements:
   - ToSic.Cre8magic.Pages.IMagicPageSetSettings.Variant
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
-  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
-  id: Designer
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Tailor
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Tailor
+  id: Tailor
   parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
   langs:
   - csharp
   - vb
-  name: Designer
-  nameWithType: MagicBreadcrumbSettings.Designer
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
+  name: Tailor
+  nameWithType: MagicBreadcrumbSettings.Tailor
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Tailor
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Designer
+    id: Tailor
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
     startLine: 123
   assemblies:
@@ -554,36 +554,36 @@ items:
     content: >-
       [JsonIgnore]
 
-      public IMagicPageDesigner? Designer { get; init; }
+      public IMagicPageTailor? Tailor { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Pages.IMagicPageDesigner
+      type: ToSic.Cre8magic.Pages.IMagicPageTailor
     content.vb: >-
       <JsonIgnore>
 
-      Public Property Designer As IMagicPageDesigner
-  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer*
+      Public Property Tailor As IMagicPageTailor
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Tailor*
   attributes:
   - type: System.Text.Json.Serialization.JsonIgnoreAttribute
     ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
     arguments: []
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
-  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
-  id: DesignSettings
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Blueprint
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Blueprint
+  id: Blueprint
   parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
   langs:
   - csharp
   - vb
-  name: DesignSettings
-  nameWithType: MagicBreadcrumbSettings.DesignSettings
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
+  name: Blueprint
+  nameWithType: MagicBreadcrumbSettings.Blueprint
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Blueprint
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: DesignSettings
+    id: Blueprint
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbSettings.cs
     startLine: 128
   assemblies:
@@ -593,15 +593,15 @@ items:
     content: >-
       [JsonIgnore]
 
-      public MagicBreadcrumbDesignSettings? DesignSettings { get; init; }
+      public MagicBreadcrumbBlueprint? Blueprint { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
+      type: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
     content.vb: >-
       <JsonIgnore>
 
-      Public Property DesignSettings As MagicBreadcrumbDesignSettings
-  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings*
+      Public Property Blueprint As MagicBreadcrumbBlueprint
+  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Blueprint*
   attributes:
   - type: System.Text.Json.Serialization.JsonIgnoreAttribute
     ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
@@ -1699,29 +1699,29 @@ references:
   name: Variant
   nameWithType: IMagicPageSetSettings.Variant
   fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings.Variant
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer*
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Designer
-  name: Designer
-  nameWithType: MagicBreadcrumbSettings.Designer
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Designer
-- uid: ToSic.Cre8magic.Pages.IMagicPageDesigner
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageDesigner
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Tailor*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Tailor
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Tailor
+  name: Tailor
+  nameWithType: MagicBreadcrumbSettings.Tailor
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Tailor
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageTailor
   parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageDesigner.html
-  name: IMagicPageDesigner
-  nameWithType: IMagicPageDesigner
-  fullName: ToSic.Cre8magic.Pages.IMagicPageDesigner
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings*
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_DesignSettings
-  name: DesignSettings
-  nameWithType: MagicBreadcrumbSettings.DesignSettings
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.DesignSettings
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
-  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
+  href: ToSic.Cre8magic.Pages.IMagicPageTailor.html
+  name: IMagicPageTailor
+  nameWithType: IMagicPageTailor
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Blueprint*
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Blueprint
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbSettings_Blueprint
+  name: Blueprint
+  nameWithType: MagicBreadcrumbSettings.Blueprint
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.Blueprint
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
   parent: ToSic.Cre8magic.Breadcrumbs
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings.html
-  name: MagicBreadcrumbDesignSettings
-  nameWithType: MagicBreadcrumbDesignSettings
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html
+  name: MagicBreadcrumbBlueprint
+  nameWithType: MagicBreadcrumbBlueprint
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint

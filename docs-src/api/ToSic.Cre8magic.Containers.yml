@@ -6,10 +6,9 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Containers.IMagicContainerKit
-  - ToSic.Cre8magic.Containers.MagicContainerDesignSettings
-  - ToSic.Cre8magic.Containers.MagicContainerDesigner
+  - ToSic.Cre8magic.Containers.MagicContainerBlueprint
   - ToSic.Cre8magic.Containers.MagicContainerSettings
-  - ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
+  - ToSic.Cre8magic.Containers.MagicContainerTailor
   langs:
   - csharp
   - vb
@@ -27,20 +26,13 @@ references:
   name: IMagicContainerKit
   nameWithType: IMagicContainerKit
   fullName: ToSic.Cre8magic.Containers.IMagicContainerKit
-- uid: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
-  commentId: T:ToSic.Cre8magic.Containers.MagicContainerDesignSettings
+- uid: ToSic.Cre8magic.Containers.MagicContainerBlueprint
+  commentId: T:ToSic.Cre8magic.Containers.MagicContainerBlueprint
   parent: ToSic.Cre8magic.Containers
-  href: ToSic.Cre8magic.Containers.MagicContainerDesignSettings.html
-  name: MagicContainerDesignSettings
-  nameWithType: MagicContainerDesignSettings
-  fullName: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
-- uid: ToSic.Cre8magic.Containers.MagicContainerDesigner
-  commentId: T:ToSic.Cre8magic.Containers.MagicContainerDesigner
-  parent: ToSic.Cre8magic.Containers
-  href: ToSic.Cre8magic.Containers.MagicContainerDesigner.html
-  name: MagicContainerDesigner
-  nameWithType: MagicContainerDesigner
-  fullName: ToSic.Cre8magic.Containers.MagicContainerDesigner
+  href: ToSic.Cre8magic.Containers.MagicContainerBlueprint.html
+  name: MagicContainerBlueprint
+  nameWithType: MagicContainerBlueprint
+  fullName: ToSic.Cre8magic.Containers.MagicContainerBlueprint
 - uid: ToSic.Cre8magic.Containers.MagicContainerSettings
   commentId: T:ToSic.Cre8magic.Containers.MagicContainerSettings
   parent: ToSic.Cre8magic.Containers
@@ -48,13 +40,13 @@ references:
   name: MagicContainerSettings
   nameWithType: MagicContainerSettings
   fullName: ToSic.Cre8magic.Containers.MagicContainerSettings
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
-  commentId: T:ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
+- uid: ToSic.Cre8magic.Containers.MagicContainerTailor
+  commentId: T:ToSic.Cre8magic.Containers.MagicContainerTailor
   parent: ToSic.Cre8magic.Containers
-  href: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions.html
-  name: MagicContainerSettingsExtensions
-  nameWithType: MagicContainerSettingsExtensions
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettingsExtensions
+  href: ToSic.Cre8magic.Containers.MagicContainerTailor.html
+  name: MagicContainerTailor
+  nameWithType: MagicContainerTailor
+  fullName: ToSic.Cre8magic.Containers.MagicContainerTailor
 - uid: ToSic.Cre8magic.Containers
   commentId: N:ToSic.Cre8magic.Containers
   href: ToSic.html

@@ -33,12 +33,12 @@ items:
   inheritance:
   - System.Object
   derivedClasses:
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
-  - ToSic.Cre8magic.Containers.MagicContainerDesignSettings
-  - ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  - ToSic.Cre8magic.Menus.MagicMenuDesignSettings
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
+  - ToSic.Cre8magic.Containers.MagicContainerBlueprint
+  - ToSic.Cre8magic.Languages.MagicLanguageBlueprint
+  - ToSic.Cre8magic.Menus.MagicMenuBlueprint
   - ToSic.Cre8magic.Settings.MagicSettingsBase
-  - ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings
+  - ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
 - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.#ctor
   commentId: M:ToSic.Cre8magic.Settings.SettingsWithInherit.#ctor
   id: '#ctor'

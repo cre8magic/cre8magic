@@ -5,10 +5,10 @@ items:
   id: IMagicThemeKit
   parent: ToSic.Cre8magic.Themes
   children:
-  - ToSic.Cre8magic.Themes.IMagicThemeKit.Designer
   - ToSic.Cre8magic.Themes.IMagicThemeKit.Logo
   - ToSic.Cre8magic.Themes.IMagicThemeKit.Settings
   - ToSic.Cre8magic.Themes.IMagicThemeKit.ShowPart(System.String)
+  - ToSic.Cre8magic.Themes.IMagicThemeKit.Tailor
   langs:
   - csharp
   - vb
@@ -59,35 +59,35 @@ items:
       type: ToSic.Cre8magic.Themes.MagicThemeSettings
     content.vb: ReadOnly Property Settings As MagicThemeSettings
   overload: ToSic.Cre8magic.Themes.IMagicThemeKit.Settings*
-- uid: ToSic.Cre8magic.Themes.IMagicThemeKit.Designer
-  commentId: P:ToSic.Cre8magic.Themes.IMagicThemeKit.Designer
-  id: Designer
+- uid: ToSic.Cre8magic.Themes.IMagicThemeKit.Tailor
+  commentId: P:ToSic.Cre8magic.Themes.IMagicThemeKit.Tailor
+  id: Tailor
   parent: ToSic.Cre8magic.Themes.IMagicThemeKit
   langs:
   - csharp
   - vb
-  name: Designer
-  nameWithType: IMagicThemeKit.Designer
-  fullName: ToSic.Cre8magic.Themes.IMagicThemeKit.Designer
+  name: Tailor
+  nameWithType: IMagicThemeKit.Tailor
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeKit.Tailor
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Themes/IMagicThemeKit.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Designer
+    id: Tailor
     path: ../ToSic.Cre8Magic.Client/Themes/IMagicThemeKit.cs
     startLine: 8
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
   syntax:
-    content: MagicThemeDesigner Designer { get; }
+    content: MagicThemeTailor Tailor { get; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
-    content.vb: ReadOnly Property Designer As MagicThemeDesigner
-  overload: ToSic.Cre8magic.Themes.IMagicThemeKit.Designer*
+      type: ToSic.Cre8magic.Themes.Internal.MagicThemeTailor
+    content.vb: ReadOnly Property Tailor As MagicThemeTailor
+  overload: ToSic.Cre8magic.Themes.IMagicThemeKit.Tailor*
 - uid: ToSic.Cre8magic.Themes.IMagicThemeKit.Logo
   commentId: P:ToSic.Cre8magic.Themes.IMagicThemeKit.Logo
   id: Logo
@@ -197,18 +197,18 @@ references:
   name: MagicThemeSettings
   nameWithType: MagicThemeSettings
   fullName: ToSic.Cre8magic.Themes.MagicThemeSettings
-- uid: ToSic.Cre8magic.Themes.IMagicThemeKit.Designer*
-  commentId: Overload:ToSic.Cre8magic.Themes.IMagicThemeKit.Designer
-  href: ToSic.Cre8magic.Themes.IMagicThemeKit.html#ToSic_Cre8magic_Themes_IMagicThemeKit_Designer
-  name: Designer
-  nameWithType: IMagicThemeKit.Designer
-  fullName: ToSic.Cre8magic.Themes.IMagicThemeKit.Designer
-- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
-  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+- uid: ToSic.Cre8magic.Themes.IMagicThemeKit.Tailor*
+  commentId: Overload:ToSic.Cre8magic.Themes.IMagicThemeKit.Tailor
+  href: ToSic.Cre8magic.Themes.IMagicThemeKit.html#ToSic_Cre8magic_Themes_IMagicThemeKit_Tailor
+  name: Tailor
+  nameWithType: IMagicThemeKit.Tailor
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeKit.Tailor
+- uid: ToSic.Cre8magic.Themes.Internal.MagicThemeTailor
+  commentId: T:ToSic.Cre8magic.Themes.Internal.MagicThemeTailor
   parent: ToSic.Cre8magic.Themes.Internal
-  name: MagicThemeDesigner
-  nameWithType: MagicThemeDesigner
-  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeDesigner
+  name: MagicThemeTailor
+  nameWithType: MagicThemeTailor
+  fullName: ToSic.Cre8magic.Themes.Internal.MagicThemeTailor
 - uid: ToSic.Cre8magic.Themes.Internal
   commentId: N:ToSic.Cre8magic.Themes.Internal
   href: ToSic.html

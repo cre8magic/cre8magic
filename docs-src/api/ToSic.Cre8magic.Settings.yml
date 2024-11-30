@@ -7,14 +7,12 @@ items:
   children:
   - ToSic.Cre8magic.Settings.IMagicSettingsProvider
   - ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
-  - ToSic.Cre8magic.Settings.IMagicSettingsService
   - ToSic.Cre8magic.Settings.MagicDebugSettings
   - ToSic.Cre8magic.Settings.MagicDesignSettingsPart
   - ToSic.Cre8magic.Settings.MagicSettingOnOff
   - ToSic.Cre8magic.Settings.MagicSettingsBase
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog
   - ToSic.Cre8magic.Settings.MagicSettingsLookup
-  - ToSic.Cre8magic.Settings.PairOnOffExtensions
   - ToSic.Cre8magic.Settings.SettingsWithInherit
   langs:
   - csharp
@@ -58,13 +56,6 @@ references:
   - name: " "
   - name: TSettings
   - name: )
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsService
-  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsService
-  parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.IMagicSettingsService.html
-  name: IMagicSettingsService
-  nameWithType: IMagicSettingsService
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsService
 - uid: ToSic.Cre8magic.Settings.MagicDebugSettings
   commentId: T:ToSic.Cre8magic.Settings.MagicDebugSettings
   parent: ToSic.Cre8magic.Settings
@@ -107,13 +98,6 @@ references:
   name: MagicSettingsLookup
   nameWithType: MagicSettingsLookup
   fullName: ToSic.Cre8magic.Settings.MagicSettingsLookup
-- uid: ToSic.Cre8magic.Settings.PairOnOffExtensions
-  commentId: T:ToSic.Cre8magic.Settings.PairOnOffExtensions
-  parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html
-  name: PairOnOffExtensions
-  nameWithType: PairOnOffExtensions
-  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions
 - uid: ToSic.Cre8magic.Settings.SettingsWithInherit
   commentId: T:ToSic.Cre8magic.Settings.SettingsWithInherit
   parent: ToSic.Cre8magic.Settings

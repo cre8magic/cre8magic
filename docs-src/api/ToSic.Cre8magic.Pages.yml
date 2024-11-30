@@ -6,11 +6,11 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Pages.IMagicPage
-  - ToSic.Cre8magic.Pages.IMagicPageDesigner
   - ToSic.Cre8magic.Pages.IMagicPageSetSettings
-  - ToSic.Cre8magic.Pages.MagicPageDesignerBase
-  - ToSic.Cre8magic.Pages.MagicPageDesignerBasic
+  - ToSic.Cre8magic.Pages.IMagicPageTailor
   - ToSic.Cre8magic.Pages.MagicPageEditService
+  - ToSic.Cre8magic.Pages.MagicPageTailorBase
+  - ToSic.Cre8magic.Pages.MagicPageTailorBasic
   langs:
   - csharp
   - vb
@@ -28,13 +28,6 @@ references:
   name: IMagicPage
   nameWithType: IMagicPage
   fullName: ToSic.Cre8magic.Pages.IMagicPage
-- uid: ToSic.Cre8magic.Pages.IMagicPageDesigner
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageDesigner
-  parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageDesigner.html
-  name: IMagicPageDesigner
-  nameWithType: IMagicPageDesigner
-  fullName: ToSic.Cre8magic.Pages.IMagicPageDesigner
 - uid: ToSic.Cre8magic.Pages.IMagicPageSetSettings
   commentId: T:ToSic.Cre8magic.Pages.IMagicPageSetSettings
   parent: ToSic.Cre8magic.Pages
@@ -42,26 +35,33 @@ references:
   name: IMagicPageSetSettings
   nameWithType: IMagicPageSetSettings
   fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings
-- uid: ToSic.Cre8magic.Pages.MagicPageDesignerBase
-  commentId: T:ToSic.Cre8magic.Pages.MagicPageDesignerBase
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageTailor
   parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.MagicPageDesignerBase.html
-  name: MagicPageDesignerBase
-  nameWithType: MagicPageDesignerBase
-  fullName: ToSic.Cre8magic.Pages.MagicPageDesignerBase
-- uid: ToSic.Cre8magic.Pages.MagicPageDesignerBasic
-  commentId: T:ToSic.Cre8magic.Pages.MagicPageDesignerBasic
-  parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.MagicPageDesignerBasic.html
-  name: MagicPageDesignerBasic
-  nameWithType: MagicPageDesignerBasic
-  fullName: ToSic.Cre8magic.Pages.MagicPageDesignerBasic
+  href: ToSic.Cre8magic.Pages.IMagicPageTailor.html
+  name: IMagicPageTailor
+  nameWithType: IMagicPageTailor
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor
 - uid: ToSic.Cre8magic.Pages.MagicPageEditService
   commentId: T:ToSic.Cre8magic.Pages.MagicPageEditService
   href: ToSic.Cre8magic.Pages.MagicPageEditService.html
   name: MagicPageEditService
   nameWithType: MagicPageEditService
   fullName: ToSic.Cre8magic.Pages.MagicPageEditService
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBase
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageTailorBase
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBase.html
+  name: MagicPageTailorBase
+  nameWithType: MagicPageTailorBase
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBase
+- uid: ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  commentId: T:ToSic.Cre8magic.Pages.MagicPageTailorBasic
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.MagicPageTailorBasic.html
+  name: MagicPageTailorBasic
+  nameWithType: MagicPageTailorBasic
+  fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic
 - uid: ToSic.Cre8magic.Pages
   commentId: N:ToSic.Cre8magic.Pages
   href: ToSic.html

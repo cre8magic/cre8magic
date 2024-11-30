@@ -8,7 +8,7 @@ items:
   - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
   - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
   - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
-  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
+  - ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
   - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide(ToSic.Cre8magic.Settings.MagicSettingsCatalog)
   - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
   - ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
@@ -128,35 +128,35 @@ items:
       type: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Analytics.MagicAnalyticsSettings}
     content.vb: ReadOnly Property Analytics As IMagicSettingsProviderSection(Of MagicAnalyticsSettings)
   overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics*
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
-  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
-  id: MenuDesigns
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
+  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
+  id: MenuBlueprints
   parent: ToSic.Cre8magic.Settings.IMagicSettingsProvider
   langs:
   - csharp
   - vb
-  name: MenuDesigns
-  nameWithType: IMagicSettingsProvider.MenuDesigns
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
+  name: MenuBlueprints
+  nameWithType: IMagicSettingsProvider.MenuBlueprints
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: MenuDesigns
+    id: MenuBlueprints
     path: ../ToSic.Cre8Magic.Client/Settings/IMagicSettingsProvider.cs
     startLine: 19
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
   syntax:
-    content: IMagicSettingsProviderSection<MagicMenuDesignSettings> MenuDesigns { get; }
+    content: IMagicSettingsProviderSection<MagicMenuBlueprint> MenuBlueprints { get; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
-    content.vb: ReadOnly Property MenuDesigns As IMagicSettingsProviderSection(Of MagicMenuDesignSettings)
-  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns*
+      type: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuBlueprint}
+    content.vb: ReadOnly Property MenuBlueprints As IMagicSettingsProviderSection(Of MagicMenuBlueprint)
+  overload: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints*
 - uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
   commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
   id: Themes
@@ -410,31 +410,31 @@ references:
     name: MagicAnalyticsSettings
     href: ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html
   - name: )
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns*
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
-  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_MenuDesigns
-  name: MenuDesigns
-  nameWithType: IMagicSettingsProvider.MenuDesigns
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuDesigns
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
-  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuDesignSettings}
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints*
+  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
+  href: ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_MenuBlueprints
+  name: MenuBlueprints
+  nameWithType: IMagicSettingsProvider.MenuBlueprints
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
+- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuBlueprint}
+  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection{ToSic.Cre8magic.Menus.MagicMenuBlueprint}
   parent: ToSic.Cre8magic.Settings
   definition: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
   href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
-  name: IMagicSettingsProviderSection<MagicMenuDesignSettings>
-  nameWithType: IMagicSettingsProviderSection<MagicMenuDesignSettings>
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<ToSic.Cre8magic.Menus.MagicMenuDesignSettings>
-  nameWithType.vb: IMagicSettingsProviderSection(Of MagicMenuDesignSettings)
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of ToSic.Cre8magic.Menus.MagicMenuDesignSettings)
-  name.vb: IMagicSettingsProviderSection(Of MagicMenuDesignSettings)
+  name: IMagicSettingsProviderSection<MagicMenuBlueprint>
+  nameWithType: IMagicSettingsProviderSection<MagicMenuBlueprint>
+  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<ToSic.Cre8magic.Menus.MagicMenuBlueprint>
+  nameWithType.vb: IMagicSettingsProviderSection(Of MagicMenuBlueprint)
+  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of ToSic.Cre8magic.Menus.MagicMenuBlueprint)
+  name.vb: IMagicSettingsProviderSection(Of MagicMenuBlueprint)
   spec.csharp:
   - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
     name: IMagicSettingsProviderSection
     href: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
   - name: <
-  - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-    name: MagicMenuDesignSettings
-    href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
+  - uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint
+    name: MagicMenuBlueprint
+    href: ToSic.Cre8magic.Menus.MagicMenuBlueprint.html
   - name: '>'
   spec.vb:
   - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
@@ -443,9 +443,9 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-    name: MagicMenuDesignSettings
-    href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
+  - uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint
+    name: MagicMenuBlueprint
+    href: ToSic.Cre8magic.Menus.MagicMenuBlueprint.html
   - name: )
 - uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes*
   commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes

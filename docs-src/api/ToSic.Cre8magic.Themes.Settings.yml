@@ -5,7 +5,7 @@ items:
   id: Settings
   parent: ToSic.Cre8magic.Themes
   children:
-  - ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings
+  - ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
   - ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
   - ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
   langs:
@@ -18,12 +18,12 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings
-  commentId: T:ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings
-  href: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings.html
-  name: MagicThemeDesignSettings
-  nameWithType: MagicThemeDesignSettings
-  fullName: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings
+- uid: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
+  commentId: T:ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
+  href: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html
+  name: MagicThemeBlueprint
+  nameWithType: MagicThemeBlueprint
+  fullName: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
 - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
   commentId: T:ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
   parent: ToSic.Cre8magic.Themes.Settings

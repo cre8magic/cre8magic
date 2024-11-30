@@ -5,11 +5,10 @@ items:
   id: MagicMenuSettings
   parent: ToSic.Cre8magic.Menus
   children:
+  - ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Children
   - ToSic.Cre8magic.Menus.MagicMenuSettings.ChildrenFallback
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.DesignSettings
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Display
   - ToSic.Cre8magic.Menus.MagicMenuSettings.DisplayDefault
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Id
@@ -21,6 +20,7 @@ items:
   - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
   - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
   - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
+  - ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   langs:
   - csharp
@@ -534,23 +534,23 @@ items:
   overload: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId*
   implements:
   - ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
-  id: Designer
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
+  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
+  id: Tailor
   parent: ToSic.Cre8magic.Menus.MagicMenuSettings
   langs:
   - csharp
   - vb
-  name: Designer
-  nameWithType: MagicMenuSettings.Designer
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
+  name: Tailor
+  nameWithType: MagicMenuSettings.Tailor
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Designer
+    id: Tailor
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
     startLine: 119
   assemblies:
@@ -560,36 +560,36 @@ items:
     content: >-
       [JsonIgnore]
 
-      public IMagicPageDesigner? Designer { get; init; }
+      public IMagicPageTailor? Tailor { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Pages.IMagicPageDesigner
+      type: ToSic.Cre8magic.Pages.IMagicPageTailor
     content.vb: >-
       <JsonIgnore>
 
-      Public Property Designer As IMagicPageDesigner
-  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Designer*
+      Public Property Tailor As IMagicPageTailor
+  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor*
   attributes:
   - type: System.Text.Json.Serialization.JsonIgnoreAttribute
     ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
     arguments: []
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.DesignSettings
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.DesignSettings
-  id: DesignSettings
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
+  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
+  id: Blueprint
   parent: ToSic.Cre8magic.Menus.MagicMenuSettings
   langs:
   - csharp
   - vb
-  name: DesignSettings
-  nameWithType: MagicMenuSettings.DesignSettings
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.DesignSettings
+  name: Blueprint
+  nameWithType: MagicMenuSettings.Blueprint
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: DesignSettings
+    id: Blueprint
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
     startLine: 122
   assemblies:
@@ -599,15 +599,15 @@ items:
     content: >-
       [JsonIgnore]
 
-      public MagicMenuDesignSettings? DesignSettings { get; init; }
+      public MagicMenuBlueprint? Blueprint { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
+      type: ToSic.Cre8magic.Menus.MagicMenuBlueprint
     content.vb: >-
       <JsonIgnore>
 
-      Public Property DesignSettings As MagicMenuDesignSettings
-  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.DesignSettings*
+      Public Property Blueprint As MagicMenuBlueprint
+  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint*
   attributes:
   - type: System.Text.Json.Serialization.JsonIgnoreAttribute
     ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
@@ -1635,32 +1635,32 @@ references:
   name: MenuId
   nameWithType: IMagicPageSetSettings.MenuId
   fullName: ToSic.Cre8magic.Pages.IMagicPageSetSettings.MenuId
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Designer*
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
-  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Designer
-  name: Designer
-  nameWithType: MagicMenuSettings.Designer
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Designer
-- uid: ToSic.Cre8magic.Pages.IMagicPageDesigner
-  commentId: T:ToSic.Cre8magic.Pages.IMagicPageDesigner
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor*
+  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
+  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Tailor
+  name: Tailor
+  nameWithType: MagicMenuSettings.Tailor
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageTailor
   parent: ToSic.Cre8magic.Pages
-  href: ToSic.Cre8magic.Pages.IMagicPageDesigner.html
-  name: IMagicPageDesigner
-  nameWithType: IMagicPageDesigner
-  fullName: ToSic.Cre8magic.Pages.IMagicPageDesigner
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.DesignSettings*
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.DesignSettings
-  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_DesignSettings
-  name: DesignSettings
-  nameWithType: MagicMenuSettings.DesignSettings
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.DesignSettings
-- uid: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
-  commentId: T:ToSic.Cre8magic.Menus.MagicMenuDesignSettings
+  href: ToSic.Cre8magic.Pages.IMagicPageTailor.html
+  name: IMagicPageTailor
+  nameWithType: IMagicPageTailor
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint*
+  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
+  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Blueprint
+  name: Blueprint
+  nameWithType: MagicMenuSettings.Blueprint
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
+- uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint
+  commentId: T:ToSic.Cre8magic.Menus.MagicMenuBlueprint
   parent: ToSic.Cre8magic.Menus
-  href: ToSic.Cre8magic.Menus.MagicMenuDesignSettings.html
-  name: MagicMenuDesignSettings
-  nameWithType: MagicMenuDesignSettings
-  fullName: ToSic.Cre8magic.Menus.MagicMenuDesignSettings
+  href: ToSic.Cre8magic.Menus.MagicMenuBlueprint.html
+  name: MagicMenuBlueprint
+  nameWithType: MagicMenuBlueprint
+  fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprint
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Pages*
   commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Pages
   href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Pages

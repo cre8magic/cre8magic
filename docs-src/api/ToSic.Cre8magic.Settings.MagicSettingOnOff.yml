@@ -42,8 +42,6 @@ items:
     content.vb: Public Class MagicSettingOnOff
   inheritance:
   - System.Object
-  extensionMethods:
-  - ToSic.Cre8magic.Settings.MagicSettingOnOff.ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(System.Nullable{System.Boolean})
 - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.#ctor(System.String,System.String)
   commentId: M:ToSic.Cre8magic.Settings.MagicSettingOnOff.#ctor(System.String,System.String)
   id: '#ctor(System.String,System.String)'
@@ -181,47 +179,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(System.Nullable{System.Boolean})
-  commentId: M:ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
-  parent: ToSic.Cre8magic.Settings.PairOnOffExtensions
-  definition: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
-  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_MagicSettingOnOff_System_Nullable_System_Boolean__
-  name: Get(MagicSettingOnOff, bool?)
-  nameWithType: PairOnOffExtensions.Get(MagicSettingOnOff, bool?)
-  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff, bool?)
-  nameWithType.vb: PairOnOffExtensions.Get(MagicSettingOnOff, Boolean?)
-  fullName.vb: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff, Boolean?)
-  name.vb: Get(MagicSettingOnOff, Boolean?)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
-    name: Get
-    href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_MagicSettingOnOff_System_Nullable_System_Boolean__
-  - name: (
-  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
-    name: MagicSettingOnOff
-    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-  - name: '?'
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
-    name: Get
-    href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_MagicSettingOnOff_System_Nullable_System_Boolean__
-  - name: (
-  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
-    name: MagicSettingOnOff
-    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-  - name: '?'
-  - name: )
 - uid: System
   commentId: N:System
   isExternal: true
@@ -229,53 +186,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
-  commentId: M:ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
-  isExternal: true
-  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_MagicSettingOnOff_System_Nullable_System_Boolean__
-  name: Get(MagicSettingOnOff, bool?)
-  nameWithType: PairOnOffExtensions.Get(MagicSettingOnOff, bool?)
-  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff, bool?)
-  nameWithType.vb: PairOnOffExtensions.Get(MagicSettingOnOff, Boolean?)
-  fullName.vb: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff, Boolean?)
-  name.vb: Get(MagicSettingOnOff, Boolean?)
-  spec.csharp:
-  - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
-    name: Get
-    href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_MagicSettingOnOff_System_Nullable_System_Boolean__
-  - name: (
-  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
-    name: MagicSettingOnOff
-    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: bool
-    isExternal: true
-  - name: '?'
-  - name: )
-  spec.vb:
-  - uid: ToSic.Cre8magic.Settings.PairOnOffExtensions.Get(ToSic.Cre8magic.Settings.MagicSettingOnOff,System.Nullable{System.Boolean})
-    name: Get
-    href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html#ToSic_Cre8magic_Settings_PairOnOffExtensions_Get_ToSic_Cre8magic_Settings_MagicSettingOnOff_System_Nullable_System_Boolean__
-  - name: (
-  - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
-    name: MagicSettingOnOff
-    href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
-  - name: ','
-  - name: " "
-  - uid: System.Boolean
-    name: Boolean
-    isExternal: true
-  - name: '?'
-  - name: )
-- uid: ToSic.Cre8magic.Settings.PairOnOffExtensions
-  commentId: T:ToSic.Cre8magic.Settings.PairOnOffExtensions
-  parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.PairOnOffExtensions.html
-  name: PairOnOffExtensions
-  nameWithType: PairOnOffExtensions
-  fullName: ToSic.Cre8magic.Settings.PairOnOffExtensions
 - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.#ctor*
   commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingOnOff.#ctor
   href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Settings_MagicSettingOnOff__ctor_System_String_System_String_

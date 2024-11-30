@@ -5,7 +5,7 @@ items:
   id: MagicLanguageSettings
   parent: ToSic.Cre8magic.Languages
   children:
-  - ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
+  - ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
   - ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
   - ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
   - ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
@@ -149,25 +149,25 @@ items:
 
       Public Property Languages As Dictionary(Of String, MagicLanguage)
   overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages*
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
-  id: DesignSettings
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
+  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
+  id: Blueprint
   parent: ToSic.Cre8magic.Languages.MagicLanguageSettings
   langs:
   - csharp
   - vb
-  name: DesignSettings
-  nameWithType: MagicLanguageSettings.DesignSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
+  name: Blueprint
+  nameWithType: MagicLanguageSettings.Blueprint
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: DesignSettings
+    id: Blueprint
     path: ../ToSic.Cre8Magic.Client/Languages/MagicLanguageSettings.cs
-    startLine: 61
+    startLine: 57
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
@@ -175,15 +175,15 @@ items:
     content: >-
       [JsonIgnore]
 
-      public MagicLanguageDesignSettings? DesignSettings { get; init; }
+      public MagicLanguageBlueprint? Blueprint { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
+      type: ToSic.Cre8magic.Languages.MagicLanguageBlueprint
     content.vb: >-
       <JsonIgnore>
 
-      Public Property DesignSettings As MagicLanguageDesignSettings
-  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings*
+      Public Property Blueprint As MagicLanguageBlueprint
+  overload: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint*
   attributes:
   - type: System.Text.Json.Serialization.JsonIgnoreAttribute
     ctor: System.Text.Json.Serialization.JsonIgnoreAttribute.#ctor
@@ -1138,16 +1138,16 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings*
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_DesignSettings
-  name: DesignSettings
-  nameWithType: MagicLanguageSettings.DesignSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.DesignSettings
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint*
+  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
+  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_Blueprint
+  name: Blueprint
+  nameWithType: MagicLanguageSettings.Blueprint
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
+- uid: ToSic.Cre8magic.Languages.MagicLanguageBlueprint
+  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageBlueprint
   parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html
-  name: MagicLanguageDesignSettings
-  nameWithType: MagicLanguageDesignSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
+  href: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html
+  name: MagicLanguageBlueprint
+  nameWithType: MagicLanguageBlueprint
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageBlueprint

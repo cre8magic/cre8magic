@@ -6,11 +6,11 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesigner
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignerBs5
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart
   - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor
+  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
   langs:
   - csharp
   - vb
@@ -28,31 +28,19 @@ references:
   name: IMagicBreadcrumbKit
   nameWithType: IMagicBreadcrumbKit
   fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
-  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
   parent: ToSic.Cre8magic.Breadcrumbs
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings.html
-  name: MagicBreadcrumbDesignSettings
-  nameWithType: MagicBreadcrumbDesignSettings
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettings
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart.html
-  name: MagicBreadcrumbDesignSettingsPart
-  nameWithType: MagicBreadcrumbDesignSettingsPart
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignSettingsPart
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesigner
-  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesigner
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesigner.html
-  name: MagicBreadcrumbDesigner
-  nameWithType: MagicBreadcrumbDesigner
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesigner
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignerBs5
-  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignerBs5
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignerBs5.html
-  name: MagicBreadcrumbDesignerBs5
-  nameWithType: MagicBreadcrumbDesignerBs5
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbDesignerBs5
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html
+  name: MagicBreadcrumbBlueprint
+  nameWithType: MagicBreadcrumbBlueprint
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart.html
+  name: MagicBreadcrumbBlueprintPart
+  nameWithType: MagicBreadcrumbBlueprintPart
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
   commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
   parent: ToSic.Cre8magic.Breadcrumbs
@@ -60,6 +48,18 @@ references:
   name: MagicBreadcrumbSettings
   nameWithType: MagicBreadcrumbSettings
   fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor.html
+  name: MagicBreadcrumbTailor
+  nameWithType: MagicBreadcrumbTailor
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor
+- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
+  commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
+  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.html
+  name: MagicBreadcrumbTailorBs5
+  nameWithType: MagicBreadcrumbTailorBs5
+  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5
 - uid: ToSic.Cre8magic.Breadcrumbs
   commentId: N:ToSic.Cre8magic.Breadcrumbs
   href: ToSic.html

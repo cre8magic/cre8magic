@@ -1,0 +1,177 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPageTailor
+  id: IMagicPageTailor
+  parent: ToSic.Cre8magic.Pages
+  children:
+  - ToSic.Cre8magic.Pages.IMagicPageTailor.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  - ToSic.Cre8magic.Pages.IMagicPageTailor.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  langs:
+  - csharp
+  - vb
+  name: IMagicPageTailor
+  nameWithType: IMagicPageTailor
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor
+  type: Interface
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPageTailor.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IMagicPageTailor
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageTailor.cs
+    startLine: 9
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  summary: >-
+    Interface for a designer of a magic page.
+
+
+    Anything implementing this interface can be used as a designer for a magic page,
+
+    providing custom classes and values when generating the HTML for the page.
+  example: []
+  syntax:
+    content: public interface IMagicPageTailor
+    content.vb: Public Interface IMagicPageTailor
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageTailor.Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  id: Classes(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.IMagicPageTailor
+  langs:
+  - csharp
+  - vb
+  name: Classes(string, IMagicPage)
+  nameWithType: IMagicPageTailor.Classes(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor.Classes(string, ToSic.Cre8magic.Pages.IMagicPage)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPageTailor.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Classes
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageTailor.cs
+    startLine: 11
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  syntax:
+    content: string? Classes(string tag, IMagicPage page)
+    parameters:
+    - id: tag
+      type: System.String
+    - id: page
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    return:
+      type: System.String
+    content.vb: Function Classes(tag As String, page As IMagicPage) As String
+  overload: ToSic.Cre8magic.Pages.IMagicPageTailor.Classes*
+  nameWithType.vb: IMagicPageTailor.Classes(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageTailor.Classes(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Classes(String, IMagicPage)
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  commentId: M:ToSic.Cre8magic.Pages.IMagicPageTailor.Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  id: Value(System.String,ToSic.Cre8magic.Pages.IMagicPage)
+  parent: ToSic.Cre8magic.Pages.IMagicPageTailor
+  langs:
+  - csharp
+  - vb
+  name: Value(string, IMagicPage)
+  nameWithType: IMagicPageTailor.Value(string, IMagicPage)
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor.Value(string, ToSic.Cre8magic.Pages.IMagicPage)
+  type: Method
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Pages/IMagicPageTailor.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Value
+    path: ../ToSic.Cre8Magic.Client/Pages/IMagicPageTailor.cs
+    startLine: 12
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Pages
+  syntax:
+    content: string? Value(string key, IMagicPage page)
+    parameters:
+    - id: key
+      type: System.String
+    - id: page
+      type: ToSic.Cre8magic.Pages.IMagicPage
+    return:
+      type: System.String
+    content.vb: Function Value(key As String, page As IMagicPage) As String
+  overload: ToSic.Cre8magic.Pages.IMagicPageTailor.Value*
+  nameWithType.vb: IMagicPageTailor.Value(String, IMagicPage)
+  fullName.vb: ToSic.Cre8magic.Pages.IMagicPageTailor.Value(String, ToSic.Cre8magic.Pages.IMagicPage)
+  name.vb: Value(String, IMagicPage)
+references:
+- uid: ToSic.Cre8magic.Pages
+  commentId: N:ToSic.Cre8magic.Pages
+  href: ToSic.html
+  name: ToSic.Cre8magic.Pages
+  nameWithType: ToSic.Cre8magic.Pages
+  fullName: ToSic.Cre8magic.Pages
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Pages
+    name: Pages
+    href: ToSic.Cre8magic.Pages.html
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor.Classes*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageTailor.Classes
+  href: ToSic.Cre8magic.Pages.IMagicPageTailor.html#ToSic_Cre8magic_Pages_IMagicPageTailor_Classes_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Classes
+  nameWithType: IMagicPageTailor.Classes
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor.Classes
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Pages.IMagicPage
+  commentId: T:ToSic.Cre8magic.Pages.IMagicPage
+  parent: ToSic.Cre8magic.Pages
+  href: ToSic.Cre8magic.Pages.IMagicPage.html
+  name: IMagicPage
+  nameWithType: IMagicPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Pages.IMagicPageTailor.Value*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPageTailor.Value
+  href: ToSic.Cre8magic.Pages.IMagicPageTailor.html#ToSic_Cre8magic_Pages_IMagicPageTailor_Value_System_String_ToSic_Cre8magic_Pages_IMagicPage_
+  name: Value
+  nameWithType: IMagicPageTailor.Value
+  fullName: ToSic.Cre8magic.Pages.IMagicPageTailor.Value

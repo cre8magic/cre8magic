@@ -7,9 +7,9 @@ items:
   children:
   - ToSic.Cre8magic.Languages.IMagicLanguageKit
   - ToSic.Cre8magic.Languages.MagicLanguage
-  - ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  - ToSic.Cre8magic.Languages.MagicLanguageDesigner
+  - ToSic.Cre8magic.Languages.MagicLanguageBlueprint
   - ToSic.Cre8magic.Languages.MagicLanguageSettings
+  - ToSic.Cre8magic.Languages.MagicLanguageTailor
   langs:
   - csharp
   - vb
@@ -34,20 +34,13 @@ references:
   name: MagicLanguage
   nameWithType: MagicLanguage
   fullName: ToSic.Cre8magic.Languages.MagicLanguage
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
+- uid: ToSic.Cre8magic.Languages.MagicLanguageBlueprint
+  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageBlueprint
   parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings.html
-  name: MagicLanguageDesignSettings
-  nameWithType: MagicLanguageDesignSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesignSettings
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesigner
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageDesigner
-  parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguageDesigner.html
-  name: MagicLanguageDesigner
-  nameWithType: MagicLanguageDesigner
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesigner
+  href: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html
+  name: MagicLanguageBlueprint
+  nameWithType: MagicLanguageBlueprint
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageBlueprint
 - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
   commentId: T:ToSic.Cre8magic.Languages.MagicLanguageSettings
   parent: ToSic.Cre8magic.Languages
@@ -55,6 +48,13 @@ references:
   name: MagicLanguageSettings
   nameWithType: MagicLanguageSettings
   fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings
+- uid: ToSic.Cre8magic.Languages.MagicLanguageTailor
+  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageTailor
+  parent: ToSic.Cre8magic.Languages
+  href: ToSic.Cre8magic.Languages.MagicLanguageTailor.html
+  name: MagicLanguageTailor
+  nameWithType: MagicLanguageTailor
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageTailor
 - uid: ToSic.Cre8magic.Languages
   commentId: N:ToSic.Cre8magic.Languages
   href: ToSic.html

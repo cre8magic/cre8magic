@@ -5,11 +5,11 @@ items:
   id: IMagicLanguageKit
   parent: ToSic.Cre8magic.Languages
   children:
-  - ToSic.Cre8magic.Languages.IMagicLanguageKit.Designer
   - ToSic.Cre8magic.Languages.IMagicLanguageKit.Languages
   - ToSic.Cre8magic.Languages.IMagicLanguageKit.SetCultureAsync(System.String)
   - ToSic.Cre8magic.Languages.IMagicLanguageKit.Settings
   - ToSic.Cre8magic.Languages.IMagicLanguageKit.Show
+  - ToSic.Cre8magic.Languages.IMagicLanguageKit.Tailor
   langs:
   - csharp
   - vb
@@ -99,35 +99,35 @@ items:
       type: System.Collections.Generic.IEnumerable{ToSic.Cre8magic.Languages.MagicLanguage}
     content.vb: Property Languages As IEnumerable(Of MagicLanguage)
   overload: ToSic.Cre8magic.Languages.IMagicLanguageKit.Languages*
-- uid: ToSic.Cre8magic.Languages.IMagicLanguageKit.Designer
-  commentId: P:ToSic.Cre8magic.Languages.IMagicLanguageKit.Designer
-  id: Designer
+- uid: ToSic.Cre8magic.Languages.IMagicLanguageKit.Tailor
+  commentId: P:ToSic.Cre8magic.Languages.IMagicLanguageKit.Tailor
+  id: Tailor
   parent: ToSic.Cre8magic.Languages.IMagicLanguageKit
   langs:
   - csharp
   - vb
-  name: Designer
-  nameWithType: IMagicLanguageKit.Designer
-  fullName: ToSic.Cre8magic.Languages.IMagicLanguageKit.Designer
+  name: Tailor
+  nameWithType: IMagicLanguageKit.Tailor
+  fullName: ToSic.Cre8magic.Languages.IMagicLanguageKit.Tailor
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: Designer
+    id: Tailor
     path: ../ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs
     startLine: 23
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Languages
   syntax:
-    content: MagicLanguageDesigner Designer { get; init; }
+    content: MagicLanguageTailor Tailor { get; init; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Languages.MagicLanguageDesigner
-    content.vb: Property Designer As MagicLanguageDesigner
-  overload: ToSic.Cre8magic.Languages.IMagicLanguageKit.Designer*
+      type: ToSic.Cre8magic.Languages.MagicLanguageTailor
+    content.vb: Property Tailor As MagicLanguageTailor
+  overload: ToSic.Cre8magic.Languages.IMagicLanguageKit.Tailor*
 - uid: ToSic.Cre8magic.Languages.IMagicLanguageKit.Settings
   commentId: P:ToSic.Cre8magic.Languages.IMagicLanguageKit.Settings
   id: Settings
@@ -375,19 +375,19 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: ToSic.Cre8magic.Languages.IMagicLanguageKit.Designer*
-  commentId: Overload:ToSic.Cre8magic.Languages.IMagicLanguageKit.Designer
-  href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html#ToSic_Cre8magic_Languages_IMagicLanguageKit_Designer
-  name: Designer
-  nameWithType: IMagicLanguageKit.Designer
-  fullName: ToSic.Cre8magic.Languages.IMagicLanguageKit.Designer
-- uid: ToSic.Cre8magic.Languages.MagicLanguageDesigner
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageDesigner
+- uid: ToSic.Cre8magic.Languages.IMagicLanguageKit.Tailor*
+  commentId: Overload:ToSic.Cre8magic.Languages.IMagicLanguageKit.Tailor
+  href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html#ToSic_Cre8magic_Languages_IMagicLanguageKit_Tailor
+  name: Tailor
+  nameWithType: IMagicLanguageKit.Tailor
+  fullName: ToSic.Cre8magic.Languages.IMagicLanguageKit.Tailor
+- uid: ToSic.Cre8magic.Languages.MagicLanguageTailor
+  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageTailor
   parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguageDesigner.html
-  name: MagicLanguageDesigner
-  nameWithType: MagicLanguageDesigner
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageDesigner
+  href: ToSic.Cre8magic.Languages.MagicLanguageTailor.html
+  name: MagicLanguageTailor
+  nameWithType: MagicLanguageTailor
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageTailor
 - uid: ToSic.Cre8magic.Languages.IMagicLanguageKit.Settings*
   commentId: Overload:ToSic.Cre8magic.Languages.IMagicLanguageKit.Settings
   href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html#ToSic_Cre8magic_Languages_IMagicLanguageKit_Settings
