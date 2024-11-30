@@ -7,7 +7,7 @@ internal record MagicContainerKit : IMagicContainerKit
 {
     public required MagicContainerSettings Settings { get; init; }
 
-    public required MagicContainerDesigner Designer { get; init; }
+    public required MagicContainerTailor Tailor { get; init; }
 
     internal required Module Module { get; init; }
 

@@ -21,7 +21,7 @@ public record MagicContainerSettings: MagicSettingsBase, ICanClone<MagicContaine
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     [JsonIgnore]
-    public MagicContainerDesignSettings? DesignSettings { get; init; }
+    public MagicContainerBlueprint? DesignSettings { get; init; }
 
     public Module? ModuleState { get; init; }
 

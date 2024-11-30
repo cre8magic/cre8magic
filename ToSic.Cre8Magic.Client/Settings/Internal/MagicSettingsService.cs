@@ -177,8 +177,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
         ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicContainerDesignSettings> ContainerDesigns => field
-        ??= new(this, MagicContainerDesignSettings.Defaults, cat => cat.ContainerDesigns);
+    public SettingsReader<MagicContainerBlueprint> ContainerBlueprints => field
+        ??= new(this, MagicContainerBlueprint.Defaults, cat => cat.ContainerBlueprints);
 
     #endregion
 

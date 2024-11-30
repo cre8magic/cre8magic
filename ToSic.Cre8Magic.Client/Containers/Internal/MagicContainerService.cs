@@ -17,10 +17,10 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
     {
         var (settingsFull, _, _, journal) = MergeSettings(pageState, settings);
 
-        var designer = ContainerDesigner(pageState, module, settingsFull.DesignSettings!);
+        var designer = ContainerTailor(pageState, module, settingsFull.DesignSettings!);
         return new MagicContainerKit
         {
-            Designer = designer,
+            Tailor = designer,
             Module = module,
 
             Settings = settingsFull,
@@ -33,7 +33,7 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
             settings,
             settingsSvc.Containers,
             settings?.DesignSettings,
-            settingsSvc.ContainerDesigns,
+            settingsSvc.ContainerBlueprints,
             OptionalPrefix,
             DefaultPartName,
             finalize: (settingsData, designSettings) => settingsData with /* new(settingsData, settings)*/ { DesignSettings = designSettings });
@@ -41,15 +41,15 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
 
 
 
-    private MagicContainerDesigner ContainerDesigner(PageState pageState, Module module, MagicContainerDesignSettings designSettings)
+    private MagicContainerTailor ContainerTailor(PageState pageState, Module module, MagicContainerBlueprint blueprint)
     {
         if (_containerDesigners.TryGetValue(pageState.Page.PageId, out var designer))
             return designer;
 
         var designContext = settingsSvc.GetThemeContextFull(pageState);
-        var container = new MagicContainerDesigner(designContext, module, designSettings);
+        var container = new MagicContainerTailor(designContext, module, blueprint);
         _containerDesigners[module.ModuleId] = container;
         return container;
     }
-    private readonly Dictionary<int, MagicContainerDesigner> _containerDesigners = new();
+    private readonly Dictionary<int, MagicContainerTailor> _containerDesigners = new();
 }

@@ -6,18 +6,18 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Containers;
 
-public record MagicContainerDesignSettings: SettingsWithInherit, ICanClone<MagicContainerDesignSettings>
+public record MagicContainerBlueprint: SettingsWithInherit, ICanClone<MagicContainerBlueprint>
 {
     [PrivateApi]
-    public MagicContainerDesignSettings() { }
+    public MagicContainerBlueprint() { }
 
-    private MagicContainerDesignSettings(MagicContainerDesignSettings? priority, MagicContainerDesignSettings? fallback = default)
+    private MagicContainerBlueprint(MagicContainerBlueprint? priority, MagicContainerBlueprint? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicContainerDesignSettings ICanClone<MagicContainerDesignSettings>.CloneUnder(MagicContainerDesignSettings? priority, bool forceCopy) =>
+    MagicContainerBlueprint ICanClone<MagicContainerBlueprint>.CloneUnder(MagicContainerBlueprint? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
@@ -25,7 +25,7 @@ public record MagicContainerDesignSettings: SettingsWithInherit, ICanClone<Magic
     public Dictionary<string, MagicDesignSettingsPart> Parts { get; init; } = new(StringComparer.InvariantCultureIgnoreCase);
 
 
-    internal static Defaults<MagicContainerDesignSettings> Defaults = new(new()
+    internal static Defaults<MagicContainerBlueprint> Defaults = new(new()
     {
         Parts = new()
     });

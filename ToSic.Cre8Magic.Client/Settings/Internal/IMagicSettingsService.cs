@@ -60,7 +60,7 @@ public interface IMagicSettingsService
 
     internal SettingsReader<MagicPageContextSettings> PageContexts { get; }
     internal SettingsReader<MagicContainerSettings> Containers { get; }
-    internal SettingsReader<MagicContainerDesignSettings> ContainerDesigns { get; }
+    internal SettingsReader<MagicContainerBlueprint> ContainerBlueprints { get; }
 
     /// <summary>
     /// WIP: PageState for this service
