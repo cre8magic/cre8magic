@@ -107,15 +107,10 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
 
     public MagicLanguageTailor Tailor(PageState pageState, MagicLanguageSettings settingsFull)
     {
-        if (_languagesDesigners.TryGetValue(pageState.Page.PageId, out var designer))
-            return designer;
         var themeContext = settingsSvc.GetThemeContextFull(pageState);
-
         var languages = new MagicLanguageTailor(themeContext, settingsFull);
-        _languagesDesigners[pageState.Page.PageId] = languages;
         return languages;
     }
-    private readonly Dictionary<int, MagicLanguageTailor> _languagesDesigners = new();
 
 
     public async Task SetCultureAsync(string culture)

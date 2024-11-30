@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Pages;
 
 namespace ToSic.Module.Cre8MagicTests.Client.Breadcrumb;
 
-internal class BreadcrumbTailorCustom: MagicPageDesignerBasic
+internal class BreadcrumbTailorCustom: MagicPageTailorBasic
 {
     public override string Classes(string tag, IMagicPage item)
     {

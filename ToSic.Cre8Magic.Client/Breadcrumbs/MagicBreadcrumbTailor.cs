@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MagicBreadcrumbTailor : IMagicPageDesigner
+public class MagicBreadcrumbTailor : IMagicPageTailor
 {
     internal MagicBreadcrumbTailor(WorkContext workContext, MagicBreadcrumbSettings settings)
     {

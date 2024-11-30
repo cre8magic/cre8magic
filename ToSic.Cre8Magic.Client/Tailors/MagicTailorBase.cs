@@ -2,11 +2,11 @@
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Designers;
+namespace ToSic.Cre8magic.Tailors;
 
-public abstract class MagicDesignerBase: IMagicDesigner
+public abstract class MagicTailorBase: IMagicTailor
 {
-    protected internal MagicDesignerBase(TokenEngine tokens, Dictionary<string, MagicDesignSettingsPart> designSettings)
+    protected internal MagicTailorBase(TokenEngine tokens, Dictionary<string, MagicDesignSettingsPart> designSettings)
     {
         DesignSettings = designSettings;
         Tokens = tokens;

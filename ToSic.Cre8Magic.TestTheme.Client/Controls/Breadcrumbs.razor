@@ -21,12 +21,12 @@ TODO:
     /// </summary>
     [Parameter] public MagicBreadcrumbSettings? Settings { get; set; }
 
-    [Parameter] public IMagicPageDesigner? Designer { get; set; }
+    [Parameter] public IMagicPageTailor? Tailor { get; set; }
 
     // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
 }
 @{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).With(Designer));
+    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).With(Tailor));
 }
 <div class="container theme-breadcrumbs d-flex py-2" aria-label="breadcrumb">
     @* Show an > arrow and the page name with link to it for each page in the breadcrumb *@

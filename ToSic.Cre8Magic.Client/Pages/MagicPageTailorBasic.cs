@@ -8,7 +8,7 @@
 /// This is also a great candidate to inherit from, as you can specify the Lookups in the constructor.
 /// The methods are also virtual, so you can override them as needed.
 /// </remarks>
-public class MagicPageDesignerBasic : MagicPageDesignerBase
+public class MagicPageTailorBasic : MagicPageTailorBase
 {
     public static string All = "*";
 

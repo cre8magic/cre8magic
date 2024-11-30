@@ -10,7 +10,7 @@
 
     // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
 
-    [Parameter] public IMagicPageDesigner Tailor { get; set; } = new MagicBreadcrumbTailorBs5();
+    [Parameter] public IMagicPageTailor Tailor { get; set; } = new MagicBreadcrumbTailorBs5();
 }
 @{
     var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).Refill(Tailor));

@@ -118,7 +118,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     #region Code-Only Settings
 
     [JsonIgnore]    // Not meant for JSON at all...
-    public IMagicPageDesigner? Tailor { get; init; }
+    public IMagicPageTailor? Tailor { get; init; }
 
     [JsonIgnore]
     public MagicMenuBlueprint? Blueprint { get; init; } = new();

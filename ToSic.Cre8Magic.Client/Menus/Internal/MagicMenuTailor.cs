@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// <summary>
 /// Special helper to provide Css classes to menus
 /// </summary>
-public class MagicMenuTailor : IMagicPageDesigner
+public class MagicMenuTailor : IMagicPageTailor
 {
     internal MagicMenuTailor(MagicMenuWorkContext workContext)
     {

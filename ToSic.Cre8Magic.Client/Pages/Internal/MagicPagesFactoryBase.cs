@@ -17,9 +17,9 @@ internal abstract class MagicPagesFactoryBase(WorkContext workContext) : IMagicP
 
     #endregion
 
-    protected abstract IMagicPageDesigner PageDesigner();
+    protected abstract IMagicPageTailor PageTailor();
 
-    public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page, PageDesigner());
+    public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page, PageTailor());
 
 
     #region Children

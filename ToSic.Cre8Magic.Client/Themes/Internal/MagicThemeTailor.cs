@@ -1,12 +1,12 @@
-﻿using ToSic.Cre8magic.Designers;
-using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Themes.Internal;
 
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicThemeTailor(CmThemeContextFull context) : MagicDesignerBase(context.PageTokens, context.ThemeBlueprint.Parts)
+public class MagicThemeTailor(CmThemeContextFull context) : MagicTailorBase(context.PageTokens, context.ThemeBlueprint.Parts)
 {
     private bool PaneIsEmpty(string paneName)
     {

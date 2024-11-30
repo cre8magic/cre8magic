@@ -1,12 +1,12 @@
-﻿using ToSic.Cre8magic.Designers;
-using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Tailors;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
 public class MagicLanguageTailor(CmThemeContextFull context, MagicLanguageSettings settingsFull)
-    : MagicDesignerBase(context.PageTokens, settingsFull.Blueprint?.Parts ?? new())
+    : MagicTailorBase(context.PageTokens, settingsFull.Blueprint?.Parts ?? new())
 {
     /// <summary>
     /// TODO: PROBABLY MOVE TO Language?

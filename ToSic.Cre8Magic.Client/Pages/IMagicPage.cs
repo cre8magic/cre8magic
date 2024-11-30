@@ -1,5 +1,5 @@
 ﻿using Oqtane.Models;
-using ToSic.Cre8magic.Designers;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Pages;
 

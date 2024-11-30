@@ -1,6 +1,6 @@
-﻿namespace ToSic.Cre8magic.Designers;
+﻿namespace ToSic.Cre8magic.Tailors;
 
-public interface IMagicDesigner
+public interface IMagicTailor
 {
     public string? Classes(string target);
 

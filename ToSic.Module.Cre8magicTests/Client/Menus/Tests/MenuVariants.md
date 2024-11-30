@@ -81,7 +81,7 @@ Notes:
 - in other cases the designer should know about the current settings - TODO: how?
 - in other cases the designer should know about more global settings - TODO: how?
 
-- We probably need to differentiate between Designer vs. DesigerFactory - the factory would be used to create a designer, and the designer would be used to render the menu
+- We probably need to differentiate between Tailor vs. DesigerFactory - the factory would be used to create a designer, and the designer would be used to render the menu
 - ...or maybe also DesignerName / DesignerType, which would then use DI?
 
 
@@ -92,7 +92,7 @@ This would use the pre-built controls, which are already there.
 ```razor
 <MagicMenu Settings="new()"></MagicMenu>
 
-<MagicMenu Settings="new() { Designer = new MyMenuTailor() }"></MagicMenu>
+<MagicMenu Settings="new() { Tailor = new MyMenuTailor() }"></MagicMenu>
 
 <MagicMenu Settings="new() { DesignerProvider = injectedProvider }"></MagicMenu>
 

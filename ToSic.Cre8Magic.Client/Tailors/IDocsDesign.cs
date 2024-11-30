@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Designers;
+﻿namespace ToSic.Cre8magic.Tailors;
 
 /// <summary>
 /// Dummy interface to store shared docs on certain methods.

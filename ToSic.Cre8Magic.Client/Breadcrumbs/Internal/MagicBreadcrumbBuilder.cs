@@ -11,9 +11,9 @@ internal class MagicBreadcrumbBuilder(WorkContext workContext)
     internal (IEnumerable<IMagicPage> Pages, IMagicPageChildrenFactory ChildrenFactory) Get(MagicBreadcrumbSettings? settings = default)
     {
         settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
-        var context = new WorkContext<MagicBreadcrumbSettings, IMagicPageDesigner>
+        var context = new WorkContext<MagicBreadcrumbSettings, IMagicPageTailor>
         {
-            Designer = settings.Tailor,
+            Tailor = settings.Tailor,
             LogRoot = workContext.LogRoot,
             PageFactory = _pageFactory,
             TokenEngine = workContext.TokenEngine,

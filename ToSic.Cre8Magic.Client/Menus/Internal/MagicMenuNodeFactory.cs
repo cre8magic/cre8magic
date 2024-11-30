@@ -13,8 +13,8 @@ namespace ToSic.Cre8magic.Menus.Internal;
 internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext) 
     : MagicPagesFactoryBase(workContext)
 {
-    protected override IMagicPageDesigner PageDesigner() =>
-        workContext.Designer ?? new MagicMenuTailor(workContext);
+    protected override IMagicPageTailor PageTailor() =>
+        workContext.Tailor ?? new MagicMenuTailor(workContext);
 
     public int MaxDepth => _maxDepth ??= workContext.Settings.Depth ?? MagicMenuSettings.Defaults.Fallback.Depth!.Value;
     private int? _maxDepth;

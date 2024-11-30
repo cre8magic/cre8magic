@@ -43,13 +43,8 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
 
     private MagicContainerTailor ContainerTailor(PageState pageState, Module module, MagicContainerBlueprint blueprint)
     {
-        if (_containerDesigners.TryGetValue(pageState.Page.PageId, out var designer))
-            return designer;
-
         var designContext = settingsSvc.GetThemeContextFull(pageState);
         var container = new MagicContainerTailor(designContext, module, blueprint);
-        _containerDesigners[module.ModuleId] = container;
         return container;
     }
-    private readonly Dictionary<int, MagicContainerTailor> _containerDesigners = new();
 }

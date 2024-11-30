@@ -7,7 +7,7 @@
 /// This is a bit safer than just implementing the interface, as future enhancements
 /// would appear on this class so your implementation would work even on an upgrade.
 /// </summary>
-public class MagicPageDesignerBase: IMagicPageDesigner
+public class MagicPageTailorBase: IMagicPageTailor
 {
     /// <summary>
     /// Very basic implementation of the Classes generator.

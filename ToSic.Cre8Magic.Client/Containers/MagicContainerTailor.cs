@@ -1,6 +1,6 @@
 ﻿using Oqtane.Models;
-using ToSic.Cre8magic.Designers;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Tailors;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
@@ -8,7 +8,7 @@ using ToSic.Cre8magic.Utils;
 namespace ToSic.Cre8magic.Containers;
 
 public class MagicContainerTailor(CmThemeContextFull context, Module module, MagicContainerBlueprint blueprint)
-    : MagicDesignerBase(context.PageTokens.Expanded(new ModuleTokens(module)), designSettings: blueprint.Parts ?? new())
+    : MagicTailorBase(context.PageTokens.Expanded(new ModuleTokens(module)), designSettings: blueprint.Parts ?? new())
 {
     public override string? Classes(string tag)
     {

@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// - li: breadcrumb-item
 /// - active state: "active"
 /// </summary>
-public class MagicBreadcrumbTailorBs5 : MagicPageDesignerBasic
+public class MagicBreadcrumbTailorBs5 : MagicPageTailorBasic
 {
     public MagicBreadcrumbTailorBs5()
     {
