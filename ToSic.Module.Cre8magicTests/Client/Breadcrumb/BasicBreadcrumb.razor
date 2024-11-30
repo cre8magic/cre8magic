@@ -13,7 +13,7 @@
     [Parameter] public IMagicPageDesigner Designer { get; set; } = new MagicBreadcrumbDesignerBs5();
 }
 @{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).With(Designer));
+    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).Refill(Designer));
 }
 <nav aria-label="breadcrumb">
     <ol class='@breadcrumbKit.Root.Classes("ol")'>
