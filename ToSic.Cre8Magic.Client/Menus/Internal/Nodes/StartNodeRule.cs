@@ -1,29 +1,17 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace ToSic.Cre8magic.Menus.Internal.Nodes;
 
-namespace ToSic.Cre8magic.Menus.Internal.Nodes;
-
-internal class StartNodeRule
+internal record StartNodeRule
 {
-    public int Id { get; set; }
+    public int Id { get; init; }
 
-    public bool Force { get; set; } = false;
+    public bool Force { get; init; } = false;
 
-    public string From { get; set; } = "*"; // "*", ".", "43"
 
-    public int Level { get; set; } = 0; // 0 meaning current, not top...// -1, -2, -3; 1, 2, 3
+    public int Level { get; init; } = 0; // 0 meaning current, not top...// -1, -2, -3; 1, 2, 3
 
-    public bool ShowChildren { get; set; } = false;
+    public bool ShowChildren { get; init; } = false;
 
-    [JsonIgnore]
-    internal StartMode ModeInfo => _mode != default
-        ? _mode
-        : _mode = Id != default
-            ? StartMode.PageId
-            : From is MagicMenuSettings.StartPageRoot or MagicMenuSettings.StartPageRoot2
-                ? StartMode.Root
-                : From == MagicMenuSettings.StartPageCurrent
-                    ? StartMode.Current
-                    : StartMode.Unknown;
+    public StartMode ModeInfo { get; init; }
 
-    private StartMode _mode;
+    public required string Raw { get; init; }
 }

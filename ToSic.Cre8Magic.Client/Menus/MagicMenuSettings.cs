@@ -92,8 +92,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     /// - blank / null, to use another start ???
     /// </summary>
     public string? Start { get; init; }
-    public const string StartPageRoot = "*";
-    public const string StartPageRoot2 = "/";
+    public const char StartPageRootSlash = '/';
     public const string StartPageCurrent = ".";
 
     /// <summary>
@@ -140,13 +139,13 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
         Fallback = new()
         {
             Variant = "Horizontal",
-            Start = StartPageRoot,
+            Start = StartPageRootSlash.ToString(),
             Depth = 1, // MUST be specified on the fallback, otherwise some code will break
         },
         Foundation = new()
         {
             Variant = "Horizontal",
-            Start = StartPageRoot,
+            Start = StartPageRootSlash.ToString(),
             Depth = 0,
         },
     };

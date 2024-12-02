@@ -1,21 +1,12 @@
 ﻿using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
-using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal.Nodes;
 
-/// <summary>
-/// Helper to find various pages based on rules such as
-/// * "27" - the page 27
-/// * "27,28" - the pages 27 and 28
-/// * "*" - the top-level pages
-/// * "." - the current page
-/// </summary>
+
 internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, MagicMenuSettings settings, Log log)
 {
-    public const char PageForced = '!';
-
     internal Log Log { get; } = log;
 
     internal MagicPageFactory PageFactory { get; } = pageFactory;
@@ -34,9 +25,9 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         var start = (settings.Start ?? fallback.Start)?.Trim();
 
         // Case 2: '.' - not yet tested
-        var startLevel = settings.Level ?? settings.Level ?? MagicMenuSettings.StartLevelFallback;
-        var getChildren = settings.Children ?? settings.Children ?? MagicMenuSettings.ChildrenFallback;
-        var startingPoints = GetStartNodeRules(start, startLevel, getChildren);
+        var startLevel = settings.Level ?? MagicMenuSettings.StartLevelFallback;
+        var getChildren = settings.Children; // ?? MagicMenuSettings.ChildrenFallback;
+        var startingPoints = new NodeRuleParser(Log.LogRoot).GetStartNodeRules(start, startLevel, getChildren);
         // Case 3: one or more IDs to start from
 
         var startPages = FindStartPageOfManyRules(startingPoints);
@@ -62,7 +53,10 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         // Three cases: root, current, ...
         var anchorPages = FindInitialAnchorPages(n);
 
-        var result = n.ShowChildren
+        // only get children if we are not on root (because then we already have the children)
+        var getChildren = n.ShowChildren && n.ModeInfo != StartMode.Root;
+
+        var result = getChildren
             ? anchorPages.SelectMany(p => GetRelatedPagesByLevel(p, 1)).ToList()
             : anchorPages;
 
@@ -96,10 +90,10 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
             case StartMode.Current when n.Level > 0:
                 // If coming from the top, level 1 means top level, so skip one less
                 //var skipDown = n.Level - 1; // till 2023-11-14
-                var skipDown = n.Level; // new 2024-11-14, since the Root is now in it too...
+                var skipDown = n.Level - 1 + (n.ShowChildren ? 1 : 0); // new 2024-11-14, since the Root is now in it too...
                 var (pages, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
                 var fromTop = pages.Skip(skipDown).FirstOrDefault();
-                List<IMagicPage> fromTopResult = fromTop == null ? [] : [fromTop];
+                List<IMagicPage> fromTopResult = fromTop == null ? [] : [..fromTop.Children];
                 return l.Return(fromTopResult, $"from root to breadcrumb by {skipDown}");
 
             case StartMode.Current when n.Level < 0:
@@ -140,40 +134,4 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         }
     }
 
-    private List<StartNodeRule> GetStartNodeRules(string? value, int level, bool showChildren)
-    {
-        var l = Log.Fn<List<StartNodeRule>>($"{nameof(value)}: '{value}'; {nameof(level)}: {level}; {nameof(showChildren)}: {showChildren}");
-
-        if (!value.HasText())
-            return l.Return([], "no value, empty list");
-
-        var parts = value.Split(',')
-            .Select(s => s.Trim())
-            .Where(s => s.HasText())
-            .ToList();
-
-        var result = parts
-            .Select(fromNode =>
-            {
-                //fromNode = fromNode.Trim();
-                //if (!fromNode.HasText()) return null;
-                var important = fromNode.EndsWith(PageForced);
-                if (important)
-                    fromNode = fromNode.TrimEnd(PageForced);
-                fromNode = fromNode.Trim();
-                int.TryParse(fromNode, out var id);
-                return new StartNodeRule
-                {
-                    Id = id,
-                    From = fromNode,
-                    Force = important,
-                    ShowChildren = showChildren,
-                    Level = level
-                };
-            })
-            .Where(n => n != null)
-            .ToList();
-
-        return l.ReturnAndKeepData(result, result.Count.ToString());
-    }
 }

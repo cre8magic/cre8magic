@@ -5,7 +5,7 @@ uid: Library.MagicMenu.Index
 # cre8magic – Magic Menu System for Oqtane Themes
 
 > [!TIP]
-> Menus are really simple to build yourself - not 😠!
+> Menus are really simple to build yourself - not 🤦🏽!
 >
 > Not if you want them to be reactive, mobile-friendly, accessible, Bootstrap5 standard...
 > and you want the footer menus to only show certain pages...
@@ -62,7 +62,7 @@ flowchart LR
 ### How it Works - Advanced Setup with Tailor
 
 If you are using the **MagicMenu** component,
-it can also use the **MagicMenuTailor 🧵** to tweak the output in various scenarios without changing your code.
+it can _optionally_ use the **MagicMenuTailor 🧵** to tweak the output in various scenarios without changing your code.
 You can also create custom components which use the **MagicTailor 🧵**.
 The tailor also needs settings, so this looks a bit like this:
 
@@ -82,8 +82,6 @@ flowchart LR
 
 ```
 
-NEW
-
 1. The _optional_ **MagicMenuTailor 🧵** is a helper to tweak the output in various scenarios without changing your code.
 
     1. It is used by the **MagicMenu 🎁** component to allow for easy customization.
@@ -102,26 +100,6 @@ NEW
     This can be either in code or in a `theme.json` file.
 
 
----
-
-OLD
-
-1. The _optional_ **MagicMenuTailor 🧵** is a helper to tweak the output in various scenarios without changing your code.
-
-    1. It is used by the **MagicMenu 🎁** component to allow for easy customization.
-
-    1. You can also create your own **Tailors** to further customize the output.
-
-1. The _optional_ **MagicMenuTailorSettings** are used to configure the **MagicMenuTailor** to your needs.
-
-    1. For example, you can specify HTML `class` for any tag such as `<ul>`, `<li>`, `<a>`, `<span>`
-
-    1. ...or specify `data-`, `title` or any attributes for special cases
-
-    1. You can also specify conditional classes to add if a node is `active` or _not_ active, is in breadcrumb, etc.
-
-1. The _optional_ **MagicPackageSettings** allows you to configure _everything_ in a central location.
-    This can be either in code or in a `theme.json` file.
 
 ## Intro Examples
 
@@ -279,13 +257,31 @@ All this is configured in the `menus` section of the JSON.
 
 These are accepted values of the node `start`:
 
-* `*` root
+* `/` ~~`*`~~ root (actually all children of root)
+* `//` same (not recommended, just for API consistency)
+* `//1` same (not recommended, just for API consistency)
+* `//2` all second level pages (not typical/recommended, just for API consistency)
+* ~~`//1/`~~ all second level pages (not typical/recommended, just for API consistency)
+* `//3` all third level pages (not typical/recommended, just for API consistency)
+
 * `.` current page
+* `./` children of the current page
+* `.//` all root nodes above the current page (not useful, like `/`)
+
+* `..` parent of the current page (just that page)
+* `../` children of the parent of the current page (this page and siblings)
+
+* `.//2` all second-level nodes below the current page
+
+* `..-1` identical to `..`
+* `..-2` up two levels
+
 * `42` the page 42
+* `42/` children of the page 42
 * `5!` the page 5 even if it's normally not visible in a menu
 * `42, 5!` combinations thereof
 
-The following parameters will also influece what is shown on the first level:
+The following parameters will also influence what is shown on the first level:
 
 * `"start": ".", "children": true` starts with children of the current page
 * `"start": "42", "children": true` starts with children of page 42 - ideal for footer or system-menus
