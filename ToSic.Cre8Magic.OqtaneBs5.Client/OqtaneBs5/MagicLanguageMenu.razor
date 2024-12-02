@@ -15,29 +15,21 @@ Nice to know:
 {
     [CascadingParameter] public required PageState PageState { get; set; }
 
-    // The language kit, available after ParameterSetAsync
-    public IMagicLanguageKit? LanguageKit { get; private set; }
-
     [Parameter]
     public MagicLanguageSettings? Settings { get; set; }
-
-    protected override async Task OnParametersSetAsync()
-    {
-        await base.OnParametersSetAsync();
-
-        // Load defined language list. It changes unless the page is reloaded, so we can cache it on this control
-        LanguageKit ??= await MagicHat.LanguageKitAsync(Settings.With(PageState));
-    }
 }
-@if (LanguageKit is { Show: true })
+@{
+    var languageKit = MagicHat.LanguageKit(Settings.With(PageState));
+}
+@if (languageKit is { Show: true })
 {
-    <ul class='@(LanguageKit.Tailor.Classes("ul") ?? "theme-languages")'>
-        @foreach (var lang in LanguageKit.Languages)
+    <ul class='@(languageKit.Tailor.Classes("ul") ?? "theme-languages")'>
+        @foreach (var lang in languageKit.Languages)
         {
-            <li class='@LanguageKit.Tailor.Classes("li", lang)'>
-                <a href="#" @onclick="@(async _ => await LanguageKit.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
+            <li class='@languageKit.Tailor.Classes("li", lang)'>
+                <a href="#" @onclick="@(async _ => await languageKit.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
             </li>
         }
     </ul>
-    <MagicDebug Target="@LanguageKit"></MagicDebug>
+    <MagicDebug Target="@languageKit"></MagicDebug>
 }

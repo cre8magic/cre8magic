@@ -37,7 +37,7 @@ public interface IMagicHat
     /// <summary>
     /// Get the kit to work with languages. Must be async, because it might need to load async data from Oqtane.
     /// </summary>
-    Task<IMagicLanguageKit> LanguageKitAsync(MagicLanguageSettings? settings = default);
+    IMagicLanguageKit LanguageKit(MagicLanguageSettings? settings = default);
 
 
     /// <inheritdoc cref="IMagicUserService.User"/>
