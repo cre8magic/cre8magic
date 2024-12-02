@@ -55,7 +55,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         var getChildren = n.ShowChildren; // && n.ModeInfo != StartMode.Root;
 
         var result = getChildren
-            ? anchorPages.SelectMany(p => GetRelatedPagesByLevel(p/*, 1*/)).ToList()
+            ? anchorPages.SelectMany(GetPageChildren).ToList()
             : anchorPages;
 
         return l.Return(result, result.LogPageList());
@@ -109,33 +109,19 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
     }
 
 
-    private List<IMagicPage> GetRelatedPagesByLevel(IMagicPage referencePage/*, int level*/)
+    private List<IMagicPage> GetPageChildren(IMagicPage referencePage)
     {
         var l = Log.Fn<List<IMagicPage>>($"{referencePage.Id}; level");
-        //List<IMagicPage> result;
-        //switch (level)
-        //{
-        //case -1:
-        //    result = PageFactory.ChildrenOf(referencePage.ParentId ?? 0);
-        //    return l.Return(result, "siblings - " + result.LogPageList());
-        //case 0:
-        //    result = [referencePage];
-        //    return l.Return(result, "current page - " + result.LogPageList());
-        //case 1:
-        //var result = PageFactory.ChildrenOf(referencePage.Id);
         var result = referencePage.Children.ToList();
         if (result.Count > 0 || !referencePage.IsHome)
             return l.Return(result, "children - " + result.LogPageList());
 
         // special case: if it's home, then we may just want to show all level1 pages
         // since "Home" usually doesn't have direct child pages, but behaves as if it does
-        result = PageFactory.PagesCurrent().Where(p => p.MenuLevel == 1).ToList();
+        result = PageFactory.PagesCurrent()
+            .Where(p => p.MenuLevel == 1)
+            .ToList();
         return l.Return(result, "children of home - " + result.LogPageList());
-            //case > 1:
-            //    return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level > 1")], "err");
-            //default:
-            //    return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level < -1, not yet implemented")], "err");
-        //}
     }
 
 }
