@@ -16,7 +16,7 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
     protected override IMagicPageTailor PageTailor() =>
         workContext.Tailor ?? new MagicMenuTailor(workContext);
 
-    public int MaxDepth => _maxDepth ??= workContext.Settings.Depth ?? MagicMenuSettings.Defaults.Fallback.Depth!.Value;
+    public int MaxDepth => _maxDepth ??= workContext.Settings.DepthSafe;
     private int? _maxDepth;
 
     /// <summary>
@@ -32,7 +32,7 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
             return l.Return(GetRootPages(workContext, this), "Root");
 
 
-        var levelsRemaining = MaxDepth - (page.MenuLevel - 1 /* Level is 1 based, so -1 */);
+        var levelsRemaining = MaxDepth - (page.MenuLevel /*- 1*/ /* Level is 1 based, so -1 */);
         if (levelsRemaining < 0)
             return l.Return([], "remaining levels 0 - return empty");
 

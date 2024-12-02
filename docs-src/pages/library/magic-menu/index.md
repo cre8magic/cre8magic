@@ -11,6 +11,8 @@ uid: Library.MagicMenu.Index
 > and you want the footer menus to only show certain pages...
 > ...and the side menu to use different styling...
 >
+> And you would prefer a configuration-based approach over custom loops and conditions.
+>
 > And you want to use best-practice SOLID principles
 > and have fun maintaining changes.
 

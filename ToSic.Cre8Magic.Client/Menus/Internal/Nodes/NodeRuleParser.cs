@@ -21,9 +21,9 @@ internal partial class NodeRuleParser(LogRoot logRoot)
 
     internal Log Log { get; } = logRoot.GetLog("RuleParser");
 
-    public List<StartNodeRule> GetStartNodeRules(string? value, int level, bool? showChildren)
+    public List<StartNodeRule> GetStartNodeRules(string? value)
     {
-        var l = Log.Fn<List<StartNodeRule>>($"{nameof(value)}: '{value}'; {nameof(level)}: {level}; {nameof(showChildren)}: {showChildren}");
+        var l = Log.Fn<List<StartNodeRule>>($"{nameof(value)}: '{value}'");
 
         if (!value.HasText())
             return l.Return([], "no value, empty list");
@@ -88,7 +88,7 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                     ? StartMode.PageId
                     : fromRoot
                         ? StartMode.Root
-                        : fromCurrent
+                        : fromCurrent || fromParent
                             ? StartMode.Current
                             : StartMode.Unknown;
 

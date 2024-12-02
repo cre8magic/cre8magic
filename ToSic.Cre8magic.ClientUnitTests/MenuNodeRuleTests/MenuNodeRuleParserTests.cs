@@ -8,7 +8,7 @@ public class MenuNodeRuleParserTests
 
     private void AssertRule(StartNodeRule expected)
     {
-        var rules = Parser.GetStartNodeRules(expected.Raw, 0, null);
+        var rules = Parser.GetStartNodeRules(expected.Raw);
         Assert.Single(rules);
         Assert.Equal(expected, rules[0]);
     }
@@ -154,5 +154,28 @@ public class MenuNodeRuleParserTests
             ModeInfo = StartMode.PageId,
         });
 
+    [Fact]
+    public void RuleParent() =>
+        AssertRule(new()
+        {
+            Raw = "..",
+            Id = 0,
+            Force = false,
+            Level = -1,
+            ShowChildren = false,
+            ModeInfo = StartMode.Current,
+        });
+
+    [Fact]
+    public void RuleSiblings() =>
+        AssertRule(new()
+        {
+            Raw = "../",
+            Id = 0,
+            Force = false,
+            Level = -1,
+            ShowChildren = true,
+            ModeInfo = StartMode.Current,
+        });
 
 }

@@ -122,7 +122,20 @@ Nice to know:
                     </div>
                     <div class='@ThemeKit.Tailor.Classes("sidebarMenu")'>
                         <div id="@ThemeKit.Tailor.Id("sidebarMenu-inner")" class="@ThemeKit.Tailor.Classes("sidebarMenu-inner")">
+                            <pre>Test sidebar normal</pre>
                             <MagicMenu Settings="new() { PartName = ThemeInfo.MenuSidebar }"></MagicMenu>
+                            <hr/>
+                            <pre>Sidebar-current-only</pre>
+                            <MagicMenu Settings='new() { PartName = ThemeInfo.MenuSidebar, Start = ".", Depth = 1 }'></MagicMenu>
+                            <hr/>
+                            <pre>Sidebar-current-children</pre>
+                            <MagicMenu Settings='new() { PartName = ThemeInfo.MenuSidebar, Start = "./", Depth = 1 }'></MagicMenu>
+                            <hr/>
+                            <pre>Sidebar-parents</pre>
+                            <MagicMenu Settings='new() { PartName = ThemeInfo.MenuSidebar, Start = "..", Depth = 1 }'></MagicMenu>
+                            <hr/>
+                            <pre>Sidebar-parents-children</pre>
+                            <MagicMenu Settings='new() { PartName = ThemeInfo.MenuSidebar, Start = "../", Depth = 1 }'></MagicMenu>
                         </div>
                     </div>
                 </div>

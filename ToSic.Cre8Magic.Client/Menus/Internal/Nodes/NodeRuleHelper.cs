@@ -25,9 +25,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         var start = (settings.Start ?? fallback.Start)?.Trim();
 
         // Case 2: '.' - not yet tested
-        var startLevel = settings.Level ?? MagicMenuSettings.StartLevelFallback;
-        var getChildren = settings.Children; // ?? MagicMenuSettings.ChildrenFallback;
-        var startingPoints = new NodeRuleParser(Log.LogRoot).GetStartNodeRules(start, startLevel, getChildren);
+        var startingPoints = new NodeRuleParser(Log.LogRoot).GetStartNodeRules(start);
         // Case 3: one or more IDs to start from
 
         var startPages = FindStartPageOfManyRules(startingPoints);
@@ -54,10 +52,10 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         var anchorPages = FindInitialAnchorPages(n);
 
         // only get children if we are not on root (because then we already have the children)
-        var getChildren = n.ShowChildren && n.ModeInfo != StartMode.Root;
+        var getChildren = n.ShowChildren; // && n.ModeInfo != StartMode.Root;
 
         var result = getChildren
-            ? anchorPages.SelectMany(p => GetRelatedPagesByLevel(p, 1)).ToList()
+            ? anchorPages.SelectMany(p => GetRelatedPagesByLevel(p/*, 1*/)).ToList()
             : anchorPages;
 
         return l.Return(result, result.LogPageList());
@@ -89,8 +87,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
 
             case StartMode.Current when n.Level > 0:
                 // If coming from the top, level 1 means top level, so skip one less
-                //var skipDown = n.Level - 1; // till 2023-11-14
-                var skipDown = n.Level - 1 + (n.ShowChildren ? 1 : 0); // new 2024-11-14, since the Root is now in it too...
+                var skipDown = n.Level - 1 + (n.ShowChildren ? 1 : 0);
                 var (pages, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
                 var fromTop = pages.Skip(skipDown).FirstOrDefault();
                 List<IMagicPage> fromTopResult = fromTop == null ? [] : [..fromTop.Children];
@@ -100,7 +97,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
                 // If going up, must change skip to normal
                 var skipUp = Math.Abs(n.Level);
                 (pages, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
-                var fromCurrent = pages.Skip(skipUp).FirstOrDefault();
+                var fromCurrent = pages.Reverse().Skip(skipUp).FirstOrDefault();
                 List<IMagicPage> result = fromCurrent == null ? [] : [fromCurrent];
                 return l.Return(result, $"up the ancestors by {skipUp}");
 
@@ -112,26 +109,33 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
     }
 
 
-    private List<IMagicPage> GetRelatedPagesByLevel(IMagicPage referencePage, int level)
+    private List<IMagicPage> GetRelatedPagesByLevel(IMagicPage referencePage/*, int level*/)
     {
-        var l = Log.Fn<List<IMagicPage>>($"{referencePage.Id}; {level}");
-        List<IMagicPage> result;
-        switch (level)
-        {
-            case -1:
-                result = PageFactory.ChildrenOf(referencePage.ParentId ?? 0);
-                return l.Return(result, "siblings - " + result.LogPageList());
-            case 0:
-                result = [referencePage];
-                return l.Return(result, "current page - " + result.LogPageList());
-            case 1:
-                result = PageFactory.ChildrenOf(referencePage.Id);
-                return l.Return(result, "children - " + result.LogPageList());
-            case > 1:
-                return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level > 1")], "err");
-            default:
-                return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level < -1, not yet implemented")], "err");
-        }
+        var l = Log.Fn<List<IMagicPage>>($"{referencePage.Id}; level");
+        //List<IMagicPage> result;
+        //switch (level)
+        //{
+        //case -1:
+        //    result = PageFactory.ChildrenOf(referencePage.ParentId ?? 0);
+        //    return l.Return(result, "siblings - " + result.LogPageList());
+        //case 0:
+        //    result = [referencePage];
+        //    return l.Return(result, "current page - " + result.LogPageList());
+        //case 1:
+        //var result = PageFactory.ChildrenOf(referencePage.Id);
+        var result = referencePage.Children.ToList();
+        if (result.Count > 0 || !referencePage.IsHome)
+            return l.Return(result, "children - " + result.LogPageList());
+
+        // special case: if it's home, then we may just want to show all level1 pages
+        // since "Home" usually doesn't have direct child pages, but behaves as if it does
+        result = PageFactory.PagesCurrent().Where(p => p.MenuLevel == 1).ToList();
+        return l.Return(result, "children of home - " + result.LogPageList());
+            //case > 1:
+            //    return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level > 1")], "err");
+            //default:
+            //    return l.Return([PageFactory.ErrPage(0, "Error: Create menu from current page but level < -1, not yet implemented")], "err");
+        //}
     }
 
 }
