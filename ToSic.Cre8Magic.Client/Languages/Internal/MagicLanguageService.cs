@@ -4,7 +4,6 @@ using Microsoft.JSInterop;
 using Oqtane.Services;
 using Oqtane.Shared;
 using Oqtane.UI;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Themes.Internal;

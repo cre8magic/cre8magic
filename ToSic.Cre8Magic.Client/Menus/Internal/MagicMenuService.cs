@@ -1,6 +1,5 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Pages.Internal;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Utils.Logging;

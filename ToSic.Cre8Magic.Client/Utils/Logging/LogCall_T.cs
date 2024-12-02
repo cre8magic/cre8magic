@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace ToSic.Cre8magic.Utils.Logging;
+﻿namespace ToSic.Cre8magic.Utils.Logging;
 
 internal class LogCall<T> : LogCallBase
 {
