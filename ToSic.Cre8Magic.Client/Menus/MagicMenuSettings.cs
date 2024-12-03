@@ -26,7 +26,6 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     {
         Id = priority?.Id ?? fallback?.Id;
         Display = priority?.Display ?? fallback?.Display;
-        Depth = priority?.Depth ?? fallback?.Depth;
         Children = priority?.Children ?? fallback?.Children;
         Start = priority?.Start ?? fallback?.Start;
         Level = priority?.Level ?? fallback?.Level;
@@ -55,13 +54,6 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     // TODO: REVIEW NAME - Show would probably be better!
     public bool? Display { get; init; } = DisplayDefault;
     public const bool DisplayDefault = true;
-
-    /// <summary>
-    /// How many level deep the navigation should show.
-    /// The number is ??? relative,
-    /// so if the navigation starts a level 2 then levelDepth 2 means to show levels 2 and 3 ??? verify
-    /// </summary>
-    public int? Depth { get; init; }
 
     /// <summary>
     /// Levels to skip from the initial stating point.
@@ -139,13 +131,11 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
         {
             Variant = "Horizontal",
             Start = StartPageRootSlash.ToString(),
-            Depth = 1, // MUST be specified on the fallback, otherwise some code will break
         },
         Foundation = new()
         {
             Variant = "Horizontal",
             Start = StartPageRootSlash.ToString(),
-            Depth = 1,
         },
     };
 }

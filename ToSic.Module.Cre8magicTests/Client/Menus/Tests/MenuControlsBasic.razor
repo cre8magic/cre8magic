@@ -55,13 +55,13 @@
     <h3>Only 3 specific pages (@topLevelThreePages), no other params</h3>
     <BasicMenu MenuKit="MenuSvc.MenuKit(PageState, new() { Start = topLevelThreePages, Tailor = basicTailor })"></BasicMenu>
 
-    <h3>Only one specific page @topLevelWithSubpagesId, Depth = 0</h3>
-    <BasicMenu MenuKit="MenuSvc.MenuKit(PageState, new() { Start = topLevelWithSubpagesId, Tailor = basicTailor, Depth = 0 })"></BasicMenu>
+    <h3>Only one specific page @topLevelWithSubpagesId</h3>
+    <BasicMenu MenuKit="MenuSvc.MenuKit(PageState, new() { Start = topLevelWithSubpagesId, Tailor = basicTailor })"></BasicMenu>
     
     ---
 
     <h3>Only one specific page @topLevelWithSubpagesId, Depth = 2</h3>
-    <BasicMenu MenuKit="MenuSvc.MenuKit(PageState, new() { Start = topLevelWithSubpagesId, Tailor = basicTailor, Depth = 2 })"></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = topLevelWithSubpagesId + "+", Tailor = basicTailor })'></BasicMenu>
 
     <hr/>
     <h2>Start at current level</h2>
@@ -69,26 +69,26 @@
     <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".", Tailor = basicTailor })'></BasicMenu>
 
     <h3>Current level with children</h3>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".", Depth = 1, Tailor = basicTailor })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".+", Tailor = basicTailor })'></BasicMenu>
 
 
     <h3>Current level children only</h3>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() {  Start = ".", Children = true, Depth = 0, Tailor = basicTailor })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() {  Start = "./", Tailor = basicTailor })'></BasicMenu>
 
     <h3>Parent level only</h3>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".", Level = -1, Depth = 0, Tailor = basicTailor })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = "..", Tailor = basicTailor })'></BasicMenu>
 
     <h3>Current from Root Level 1, no children</h3>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".", Level = 1, Children = false, Depth = 0, Tailor = basicTailor })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".", Tailor = basicTailor })'></BasicMenu>
 
     <h3>Current from Root Level 1, children</h3>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".", Level = 1, Children = true, Depth = 0, Tailor = basicTailor })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = "./", Tailor = basicTailor })'></BasicMenu>
 
-    <h3>Current from Root Level 1, no-children Depth 1</h3>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".", Level = 1, Children = false, Depth = 1, Tailor = basicTailor })'></BasicMenu>
+    <h3>Current from Root Level 1, no-children Depth 2</h3>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".//+", Tailor = basicTailor })'></BasicMenu>
 
     <h3>Current from Root Level 2</h3>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".", Level = 2, Children = true, Depth = 0, Tailor = basicTailor })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = ".//2", Tailor = basicTailor })'></BasicMenu>
 
 
     <hr/>

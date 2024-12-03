@@ -66,6 +66,18 @@ public class MenuNodeRuleParserTests
     });
 
     [Fact]
+    public void RuleCurrentWithChildren() => AssertRule(new()
+    {
+        Raw = ".+",
+        Id = 0,
+        Depth = 2,
+        Force = false,
+        Level = 0,
+        ShowChildren = false,
+        ModeInfo = StartMode.Current,
+    });
+
+    [Fact]
     public void RuleChildren() => AssertRule(new()
     {
         Raw = "./",

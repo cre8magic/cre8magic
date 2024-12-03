@@ -1,17 +1,20 @@
 ﻿@using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.OqtaneBs5
+@using ToSic.Theme.Cre8magicTests.Client
+
 <h1>Test many Menus</h1>
 
-@code {
-    public const string TopLevelWithSubpagesId = "29";
-    //public const string TopLevelWithSubpagesId = "15";
+@{
+    // Get the current environment - separate step, as we may change the mechanics later
+    const string currentEnv = TestParameters.EnvCurrent;
+    var topLevelWithSubpagesId = TestParameters.TopLevelWithSubpagesIdDic[currentEnv];
 
     // Temp for less debugging
-    public bool ShowAll = true;
+    const bool showAll = true;
 }
 @* This wrapper sets the style so the menu is row-focused*@
 <div class="navbar-expand-lg">
-    @if (ShowAll)
+    @if (showAll)
     {
         <h2>No Settings</h2>
         <h3>Basic Menu without Setting, name none</h3>
@@ -20,13 +23,10 @@
     
         <h2>Various Settings</h2>
         <h3>Only one specific page (@nameof(MagicMenuSettings.Start)), no other params</h3>
-        <MagicMenu Settings="new() { Start = TopLevelWithSubpagesId }"></MagicMenu>
+        <MagicMenu Settings="new() { Start = topLevelWithSubpagesId }"></MagicMenu>
 
-        <h3>Only one specific page (@nameof(MagicMenuSettings.Start), @nameof(MagicMenuSettings.Depth) = 0)</h3>
-        <MagicMenu Settings="new() { Start = TopLevelWithSubpagesId, Depth = 0 }"></MagicMenu>
-
-        <h3>Only one specific page @TopLevelWithSubpagesId, with Depth=1</h3>
-        <MagicMenu Settings="new() { Start = TopLevelWithSubpagesId, Depth = 1 }"></MagicMenu>
+        <h3>Only one specific page @topLevelWithSubpagesId, with Depth=+</h3>
+        <MagicMenu Settings='new() { Start = topLevelWithSubpagesId + "+" }'></MagicMenu>
 
         <hr/>
         <h2>Start at current level</h2>
@@ -35,37 +35,36 @@
 
 
         <h3>Current level with children</h3>
-        <MagicMenu Settings='new() { Start = ".", Depth = 1, Id = "test3" }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = ".+", Id = "test3" }'></MagicMenu>
 
         <h3>Current level children only</h3>
-        <MagicMenu Settings='new() { Start = ".", Children = true, Debug = new(true) }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = "./", Debug = new(true) }'></MagicMenu>
 
         <h3>Current Parent level only, no children</h3>
         <p>Debug true</p>
-        <MagicMenu Settings='new() { Start = ".", Depth = 0, Debug = new(true) }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = ".", Debug = new(true) }'></MagicMenu>
         <p>Debug false</p>
-        <MagicMenu Settings='new() { Start = ".", Depth = 0, Debug = new(false) }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = ".", Debug = new(false) }'></MagicMenu>
 
         <h3>Parent level children only, depth 0 (contradiction)</h3>
-        <MagicMenu Settings='new() { Start = ".", Children = true, Depth = 0, Debug = new(true) }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = "./", Debug = new(true) }'></MagicMenu>
 
 
 
 
         <h3>Current from Root Level 1, no children</h3>
-        <MagicMenu Settings='new() { Start = ".", Level = 1, Children = false, Depth = 0, Debug = new(true) }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = ".//", Level = 1, Children = false, Debug = new(true) }'></MagicMenu>
 
 
         <h3>Current from Root Level 1, children</h3>
-        <MagicMenu Settings='new() { Start = ".", Level = 1, Children = true, Depth = 0, Debug = new(true) }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = ".//+", Debug = new(true) }'></MagicMenu>
 
 
         <h3>Current from Root Level 1, no-children Depth 1</h3>
-        <p>ERROR: THIS SEEMS WRONG</p>
-        <MagicMenu Settings='new() { Start = ".", Level = 1, Children = false, Depth = 1, Debug = new(true) }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = ".//", Debug = new(true) }'></MagicMenu>
 
         <h3>Current from Root Level 2</h3>
-        <MagicMenu Settings='new() { Start = ".", Level = 2, Children = true, Depth = 0, Debug = new(true) }'></MagicMenu>
+        <MagicMenu Settings='new() { Start = ".//2", Debug = new(true) }'></MagicMenu>
 
         <hr/>
         <h2>Start with specific numbers</h2>
