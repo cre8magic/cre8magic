@@ -39,7 +39,7 @@ public class ThemePartJsonConverter : JsonConverter<MagicThemePartSettings>
         };
     }
 
-    private MagicThemePartSettings ConvertValue(JsonValue value)
+    private static MagicThemePartSettings ConvertValue(JsonValue value)
     {
         if (value.TryGetValue<string>(out var str))
         {
@@ -47,13 +47,10 @@ public class ThemePartJsonConverter : JsonConverter<MagicThemePartSettings>
             return asBool != null ? new(asBool.Value) : new(str);
         }
 
-        if (value.TryGetValue<bool>(out var bln))
-            return new(bln);
-
-        return Dummy();
+        return value.TryGetValue<bool>(out var bln) ? new(bln) : Dummy();
     }
 
-    private bool? IsBoolean(string value)
+    private static bool? IsBoolean(string value)
     {
         if (!value.HasValue()) return null;
         if (value.EqInvariant(true.ToString())) return true;
@@ -61,7 +58,7 @@ public class ThemePartJsonConverter : JsonConverter<MagicThemePartSettings>
         return null;
     }
 
-    private MagicThemePartSettings Dummy() => new()
+    private static MagicThemePartSettings Dummy() => new()
     {
         Show = null,
         Design = null,

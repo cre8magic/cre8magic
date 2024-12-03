@@ -1,4 +1,6 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Json;
 
 namespace ToSic.Cre8magic.Settings;
 
@@ -7,6 +9,7 @@ namespace ToSic.Cre8magic.Settings;
 ///
 /// This is usually the base class for something that can also have more information.
 /// </summary>
+[JsonConverter(typeof(DesignSettingsJsonConverter))]
 public record MagicBlueprintPart: ICanClone<MagicBlueprintPart>
 {
     [PrivateApi]
@@ -94,4 +97,14 @@ public record MagicBlueprintPart: ICanClone<MagicBlueprintPart>
     public MagicSettingOnOff? InBreadcrumb { get; init; }
 
     #endregion
+
+    /// <summary>
+    /// Special Class just for json serialization, which will have the values but not the converter
+    /// </summary>
+    internal record NoJsonConverter : MagicBlueprintPart
+    {
+        public NoJsonConverter() { }    // for Deserialization
+        public NoJsonConverter(MagicBlueprintPart original) : base(original) { } // For Serialization; explicit constructor, so original doesn't become a property
+    }
+
 }

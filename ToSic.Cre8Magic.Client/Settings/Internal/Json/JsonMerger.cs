@@ -1,7 +1,5 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using Microsoft.Extensions.Logging;
-using ToSic.Cre8magic.Menus;
 
 namespace ToSic.Cre8magic.Settings.Internal.Json;
 
@@ -10,14 +8,9 @@ namespace ToSic.Cre8magic.Settings.Internal.Json;
 /// </summary>
 internal class JsonMerger
 {
-    public static JsonSerializerOptions GetNewOptionsForPreMerge(ILogger logger) => new()
+    public static JsonSerializerOptions GetNewOptionsForPreMerge() => new()
     {
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
-        Converters =
-        {
-            DesignSettingsJsonConverter<MagicBlueprintPart>.GetNew(logger),
-            //DesignSettingsJsonConverter<MagicMenuBlueprintPart>.GetNew(logger),
-        },
         ReadCommentHandling = JsonCommentHandling.Skip,
         AllowTrailingCommas = true,
     };

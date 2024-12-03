@@ -1,14 +1,12 @@
 ﻿using System.Text.Json;
-using Microsoft.Extensions.Logging;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal.Logging;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Internal.Json;
 
-public class MagicSettingsCatalogLoaderJson(ILogger<MagicSettingsCatalogLoaderJson> logger)
+public class MagicSettingsCatalogLoaderJson()
 {
-    public ILogger<MagicSettingsCatalogLoaderJson> Logger { get; } = logger;
 
     public DataWithJournal<MagicSettingsCatalog> LoadJson(MagicThemePackage themeConfig)
     {
@@ -19,7 +17,7 @@ public class MagicSettingsCatalogLoaderJson(ILogger<MagicSettingsCatalogLoaderJs
         {
             var jsonString = File.ReadAllText(jsonFileName);
 
-            var deserializeOptions = new JsonSerializerOptions(JsonMerger.GetNewOptionsForPreMerge(Logger)) {
+            var deserializeOptions = new JsonSerializerOptions(JsonMerger.GetNewOptionsForPreMerge()) {
                 PropertyNameCaseInsensitive = true,
             };
 
