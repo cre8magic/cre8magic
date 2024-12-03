@@ -27,7 +27,7 @@ public record MagicMenuBlueprint : SettingsWithInherit, ICanClone<MagicMenuBluep
     /// Custom, named settings for classes, values etc. as you need them in your code.
     /// For things such as `ul` or `li` or `a` tags.
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuBlueprintPart>))]
-    public Dictionary<string, MagicMenuBlueprintPart> Parts { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBlueprintPart>))]
+    public Dictionary<string, MagicBlueprintPart> Parts { get; init; } = new();
 
 }

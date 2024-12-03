@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
@@ -44,13 +45,13 @@ public class MagicBreadcrumbTailor : IMagicPageTailor
         return string.Join(" ", configsForKey);
     }
 
-    private List<MagicBreadcrumbBlueprintPart> ConfigsForTag(string tag) =>
+    private List<MagicBlueprintPart> ConfigsForTag(string tag) =>
         DesignSettingsList
             .Select(c => c?.Parts?.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 
-    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBreadcrumbBlueprintPart> configs)
+    private List<string?> TagClasses(IMagicPage page, IReadOnlyCollection<MagicBlueprintPart> configs)
     {
         var classes = new List<string?>();
 

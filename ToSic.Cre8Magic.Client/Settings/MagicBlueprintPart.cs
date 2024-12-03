@@ -23,6 +23,13 @@ public record MagicBlueprintPart: ICanClone<MagicBlueprintPart>
         IsActive = priority?.IsActive ?? fallback?.IsActive;
         IsPublished = priority?.IsPublished ?? fallback?.IsPublished;
         IsAdmin = priority?.IsAdmin ?? fallback?.IsAdmin;
+
+        // Mostly for menus and breadcrumbs
+        ByLevel = priority?.ByLevel ?? fallback?.ByLevel;
+        HasChildren = priority?.HasChildren ?? fallback?.HasChildren;
+        IsDisabled = priority?.IsDisabled ?? fallback?.IsDisabled;
+        InBreadcrumb = priority?.InBreadcrumb ?? fallback?.InBreadcrumb;
+
     }
 
     MagicBlueprintPart ICanClone<MagicBlueprintPart>.CloneUnder(MagicBlueprintPart? priority, bool forceCopy) =>
@@ -58,6 +65,33 @@ public record MagicBlueprintPart: ICanClone<MagicBlueprintPart>
     /// If a module is admin or not, usually just for containers
     /// </summary>
     public MagicSettingOnOff? IsAdmin { get; init; }
+
+    #endregion
+
+    #region Settings for Menus and Breadcrumbs
+
+
+    /// <summary>
+    /// List of classes to add on certain levels only.
+    /// Use level -1 to specify classes to apply to all the remaining ones which are not explicitly listed.
+    /// </summary>
+    public Dictionary<int, string>? ByLevel { get; init; }
+
+    /// <summary>
+    /// Classes to add if this node is a parent (has-children).
+    /// </summary>
+    public MagicSettingOnOff? HasChildren { get; init; }
+
+    /// <summary>
+    /// Classes to add if the node is disabled.
+    /// TODO: unclear why it's disabled, what would cause this...
+    /// </summary>
+    public MagicSettingOnOff? IsDisabled { get; init; }
+
+    /// <summary>
+    /// Classes to add if this node is in the path / breadcrumb of the current page.
+    /// </summary>
+    public MagicSettingOnOff? InBreadcrumb { get; init; }
 
     #endregion
 }

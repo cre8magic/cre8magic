@@ -27,8 +27,8 @@ public record MagicBreadcrumbBlueprint : SettingsWithInherit, ICanClone<MagicBre
     /// Custom, named settings for classes, values etc. as you need them in your code.
     /// For things such as `ul` or `li` or `a` tags.
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbBlueprintPart>))]
-    public Dictionary<string, MagicBreadcrumbBlueprintPart> Parts { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBlueprintPart>))]
+    public Dictionary<string, MagicBlueprintPart> Parts { get; init; } = new();
 
 
     internal static Defaults<MagicBreadcrumbBlueprint> DesignDefaults = new()
