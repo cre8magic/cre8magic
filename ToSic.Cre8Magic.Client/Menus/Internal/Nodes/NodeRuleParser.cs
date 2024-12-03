@@ -23,6 +23,16 @@ internal partial class NodeRuleParser(LogRoot logRoot)
 
     public List<StartNodeRule> GetStartNodeRules(string? value)
     {
+        if (_cache.TryGetValue(value ?? "", out var result))
+            return result;
+        _cache[value ?? ""] = result = GenerateStartNodeRules(value);
+        return result;
+    }
+
+    private readonly Dictionary<string, List<StartNodeRule>> _cache = new();
+
+    public List<StartNodeRule> GenerateStartNodeRules(string? value)
+    {
         var l = Log.Fn<List<StartNodeRule>>($"{nameof(value)}: '{value}'");
 
         if (!value.HasText())
@@ -38,10 +48,14 @@ internal partial class NodeRuleParser(LogRoot logRoot)
             {
                 var processed = startCode;
 
-                // Check for trailing "!" to force the page
-                var force = processed.EndsWith(PageForced);
-                if (force)
-                    processed = processed.TrimEnd(PageForced);
+                // Check if starting with a Page ID
+                var idMatch = FindPageId().Match(processed);
+                var id = idMatch.Success
+                    ? int.TryParse(idMatch.Groups["page"].Value, out var idTemp) ? idTemp : 0
+                    : 0;
+
+                if (idMatch.Success)
+                    processed = idMatch.Groups["rest"].Value;
 
                 // Start checking leading ".." or "." and remove them
                 var fromParent = processed.StartsWith("..");
@@ -49,9 +63,13 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                 if (fromParent || fromCurrent)
                     processed = processed.TrimStart('.');
 
+                // Check for trailing "!" to force the page (only for PageId)
+                var force = processed.StartsWith(PageForced);
+                if (force)
+                    processed = processed.TrimEnd(PageForced);
+
                 // Check starting "/" or "//"
-                var fromRoot = !(fromCurrent || fromParent)
-                               && (/*processed is MagicMenuSettings.StartPageRoot ||*/ processed.StartsWith(MagicMenuSettings.StartPageRootSlash));
+                var fromRoot = !(fromCurrent || fromParent || id != 0) && processed.StartsWith(MagicMenuSettings.StartPageRootSlash);
 
                 // The string processed now should start with a number, which we should extract using regex
                 var levelMatch = FindLevelNumber().Match(processed);
@@ -73,16 +91,14 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                 }
 
 
-                // Also check simple ID scenario - TODO: not done
-                var idMatch = FindPageId().Match(processed);
-                var id = idMatch.Success ? int.TryParse(idMatch.Groups["page"].Value, out var idTemp) ? idTemp : 0 : 0;
-                if (idMatch.Success)
-                    processed = idMatch.Groups["rest"].Value;
-
                 // If we now have "//" as the from - root, or as the left - over from current/ parent, it could have a trailing level number
                 var endWithSingleSlash = processed.StartsWith(MagicMenuSettings.StartPageRootSlash);
 
                 processed = processed.TrimStart(MagicMenuSettings.StartPageRootSlash);
+
+                // Count + characters to determine level
+                var depth = processed.TakeWhile(c => c == '+').Count() + 1;
+                processed = processed.TrimStart('+');
 
                 var modeInfo = id != default
                     ? StartMode.PageId
@@ -96,13 +112,13 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                 {
                     Id = id,
                     Force = force,
+                    Depth = depth,
                     ShowChildren = !fromRoot && endWithSingleSlash,
                     Level = level,
                     ModeInfo = modeInfo,
                     Raw = startCode
                 };
             })
-            .Where(n => n != null)
             .ToList();
 
         return l.ReturnAndKeepData(result, result.Count.ToString());

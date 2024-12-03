@@ -4,21 +4,23 @@ uid: Library.MagicMenu.Index
 
 # cre8magic – Magic Menu System for Oqtane Themes
 
-> [!TIP]
-> Menus are really simple to build yourself - not 🤦🏽!
->
-> Not if you want them to be reactive, mobile-friendly, accessible, Bootstrap5 standard...
-> and you want the footer menus to only show certain pages...
-> ...and the side menu to use different styling...
->
-> And you would prefer a configuration-based approach over custom loops and conditions.
->
-> And you want to use best-practice SOLID principles
-> and have fun maintaining changes.
+The cre8magic Menu System helps you to easily create best-practice menus in Oqtane.
+The goal is that your menus are:
+
+1. Configuration-based
+1. Mobile-friendly & reactive
+1. Accessible
+1. Bootstrap5 standard
+1. Respect user permissions
+1. Highlight the current page
+1. Easy to customize
+1. flexible
+
+You can work with pre-built components or leverage the **MagicMenuKit** to build your own components.
 
 ## About Magic Menus
 
-The cre8magic Menus are a system to easily create best-practice menus in Oqtane Themes.
+The cre8magic Menu System helps you to easily create best-practice menus in Oqtane Themes.
 Depending on your preferences you can use pre-built components and some configuration,
 or easily build your own components with the help of the **MagicMenuKit**.
 
@@ -188,7 +190,7 @@ These are the main settings.
     1. PartName - the theme part name which can reference other settings/tailor-settings TODO: link to why you would use this
     1. SettingsName - name of the settings in the full configuration under `Menus` (or `menus` in JSON)
     1. ~~TailorName - name of the tailor to apply WIP~~
-    1. TailorSettings - settings for the tailor in the full configuration under `MenuTailorSettings` (or `menuTailorSettings` in JSON)
+    1. Blueprints - settings for the tailor in the full configuration under `MenuBlueprints` (or `menuBlueprints` in JSON)
 1. Settings to specify what to show
     1. Start - where to start, eg. `*` for root, `.` for current page, `42` for page 42
     1. Level - how many levels above the start to show, eg. `-1` for one above, `2` for two below
@@ -246,7 +248,10 @@ This is configured in the `parts` of the `themes` section of the JSON file.
 
 The menu configuration determines some important aspects such as
 
-* What node to `start` from - eg. `*` is the top level, `.` is the current page
+NEW
+
+* What node to `start` from - eg. `` = root, `.` = current page, `..` = parent, `42` = page 42
+* Children (necessary for root): `/`, `./`, `42/`
 * What to do from the start - like `"children": true` means
 "begin with the children" of the start-node
 * What level to show - so `"start": ".", "level": -1` means to start
@@ -259,7 +264,7 @@ All this is configured in the `menus` section of the JSON.
 
 These are accepted values of the node `start`:
 
-* `/` ~~`*`~~ root (actually all children of root)
+* `/` root (actually all top-level pages)
 * `//` same (not recommended, just for API consistency)
 * `//1` same (not recommended, just for API consistency)
 * `//2` all second level pages (not typical/recommended, just for API consistency)
@@ -273,7 +278,8 @@ These are accepted values of the node `start`:
 * `..` parent of the current page (just that page)
 * `../` children of the parent of the current page (this page and siblings)
 
-* `.//2` all second-level nodes below the current page
+* `.//2` ancestor of the current page on the second-level
+* `.//2/` children of the ancestor of the current page on the second-level
 
 * `..-1` identical to `..`
 * `..-2` up two levels

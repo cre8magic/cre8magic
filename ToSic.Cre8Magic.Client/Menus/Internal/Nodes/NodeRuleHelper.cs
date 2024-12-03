@@ -52,14 +52,22 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
         var anchorPages = FindInitialAnchorPages(n);
 
         // only get children if we are not on root (because then we already have the children)
-        var getChildren = n.ShowChildren; // && n.ModeInfo != StartMode.Root;
+        var getChildren = n.ShowChildren;
 
         var result = getChildren
             ? anchorPages.SelectMany(GetPageChildren).ToList()
             : anchorPages;
 
+        // Attach Node Rule to each Page, so further processing knows the depth etc.
+        result = result
+            .Cast<MagicPage>()
+            .Select(mp => mp with { NodeRule = n })
+            .Cast<IMagicPage>()
+            .ToList();
+
         return l.Return(result, result.LogPageList());
     }
+
 
     private List<IMagicPage> FindInitialAnchorPages(StartNodeRule n)
     {

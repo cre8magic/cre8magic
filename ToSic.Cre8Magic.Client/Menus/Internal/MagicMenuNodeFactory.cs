@@ -65,7 +65,7 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
-            .Select(IMagicPage (child) => new MagicPage(child.OqtanePage, pageFactory, nodeFactory)
+            .Select(IMagicPage (child) => new MagicPage(child.RawPage, pageFactory, nodeFactory)
             {
                 MenuLevel = 2 /* todo: should probably be 1 */
             })

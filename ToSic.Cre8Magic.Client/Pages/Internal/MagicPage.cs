@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Oqtane.Models;
+using ToSic.Cre8magic.Menus.Internal.Nodes;
 using ToSic.Cre8magic.Pages.Internal.PageDesign;
 
 namespace ToSic.Cre8magic.Pages.Internal;
@@ -7,8 +8,8 @@ namespace ToSic.Cre8magic.Pages.Internal;
 /// <summary>
 /// Wrapper for the Oqtane Page.
 /// </summary>
-internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory, IMagicPageChildrenFactory childrenFactory)
-    : MagicPageBase(oqtanePage),
+internal record MagicPage(Page RawPage, MagicPageFactory pageFactory, IMagicPageChildrenFactory childrenFactory)
+    : MagicPageBase(RawPage),
         IMagicPage
 {
     /// <inheritdoc />
@@ -23,10 +24,10 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory, IMagicPa
     internal bool IsVirtualRoot { get; init; }
 
     /// <inheritdoc />
-    public bool IsActive => OqtanePage.PageId == pageFactory.PageState.Page.PageId;
+    public bool IsActive => RawPage.PageId == pageFactory.PageState.Page.PageId;
 
     /// <inheritdoc />
-    public bool IsHome => OqtanePage.Path == "";
+    public bool IsHome => RawPage.Path == "";
 
     /// <inheritdoc />
     [field: AllowNull, MaybeNull]
@@ -68,7 +69,6 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory, IMagicPa
     /// </summary>
     [field: AllowNull, MaybeNull]
     public IEnumerable<IMagicPage> Children => field ??= childrenFactory.ChildrenOf(this);
-    //private IList<IMagicPage>? _children;
 
     /// <summary>
     /// Determines if there are sub-pages. True if this page has sub-pages.
@@ -88,4 +88,5 @@ internal class MagicPage(Page oqtanePage, MagicPageFactory pageFactory, IMagicPa
     /// <inheritdoc />
     public virtual string? Value(string tagOrKey) => DesignHelper.Value(tagOrKey);
 
+    internal StartNodeRule? NodeRule { get; init; }
 }

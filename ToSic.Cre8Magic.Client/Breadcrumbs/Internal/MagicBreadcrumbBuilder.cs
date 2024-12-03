@@ -23,7 +23,7 @@ internal class MagicBreadcrumbBuilder(WorkContext workContext)
         var childrenFactory = new MagicBreadcrumbNodeFactory(context);
         var list = BuildBreadcrumbs(
             settings,
-            magicPage => new MagicPage(magicPage.OqtanePage, _pageFactory, childrenFactory)
+            magicPage => new MagicPage(magicPage.RawPage, _pageFactory, childrenFactory)
         );
         return (list, childrenFactory);
     }

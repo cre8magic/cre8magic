@@ -2,10 +2,11 @@
 
 internal record StartNodeRule
 {
-    public int Id { get; init; }
+    public int Id { get; init; } = 0;
 
     public bool Force { get; init; } = false;
 
+    public int Depth { get; init; } = 1;
 
     public int Level { get; init; } = 0; // 0 meaning current, not top...// -1, -2, -3; 1, 2, 3
 

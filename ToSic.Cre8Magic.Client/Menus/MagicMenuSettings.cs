@@ -63,7 +63,6 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     /// </summary>
     public int? Depth { get; init; }
     internal int DepthSafe => Depth ?? 1;
-    //public const int DepthFallback = 1;
 
     /// <summary>
     /// Levels to skip from the initial stating point.

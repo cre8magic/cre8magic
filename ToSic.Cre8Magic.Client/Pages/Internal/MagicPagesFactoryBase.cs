@@ -37,7 +37,7 @@ internal abstract class MagicPagesFactoryBase(WorkContext workContext) : IMagicP
 
         var pageFactory = workContext.PageFactory;
         var children = pageFactory.ChildrenOf(page.Id)
-            .Select(IMagicPage (child) => new MagicPage(child.OqtanePage, pageFactory, this)
+            .Select(IMagicPage (child) => new MagicPage(child.RawPage, pageFactory, this)
             {
                 MenuLevel = page.MenuLevel + 1,
             })

@@ -13,77 +13,68 @@ public class MenuNodeRuleParserTests
         Assert.Equal(expected, rules[0]);
     }
 
-    [Fact]
-    public void RuleRoot() =>
-        AssertRule(new()
-        {
-            Id = 0,
-            Force = false,
-            Level = 1,
-            ShowChildren = false,
-            ModeInfo = StartMode.Root,
-            Raw = "/",
-        });
+    [Theory]
+    [InlineData("/")]
+    [InlineData("//")]
+    [InlineData("//1")]
+    public void RuleRoot(string raw) => AssertRule(new()
+    {
+        Raw = raw,
+        Id = 0,
+        Depth = 1,
+        Force = false,
+        Level = 1,
+        ShowChildren = false,
+        ModeInfo = StartMode.Root,
+    });
+
+
+    [Theory]
+    [InlineData("/+", 2)]
+    [InlineData("/++", 3)]
+    public void RuleRootPlus1(string raw, int depth) => AssertRule(new()
+    {
+        Raw = raw,
+        Id = 0,
+        Depth = depth,
+        Force = false,
+        Level = 1,
+        ShowChildren = false,
+        ModeInfo = StartMode.Root,
+    });
 
     [Fact]
-    public void RuleRootDoubleSlash() =>
-        AssertRule(new()
-        {
-            Id = 0,
-            Force = false,
-            Level = 1,
-            ShowChildren = false,
-            ModeInfo = StartMode.Root,
-            Raw = "//",
-        });
+    public void RuleRootLevel2() => AssertRule(new()
+    {
+        Raw = "//2",
+        Id = 0,
+        Force = false,
+        Level = 2,
+        ShowChildren = false,
+        ModeInfo = StartMode.Root,
+    });
 
     [Fact]
-    public void RuleRootLevel1() =>
-        AssertRule(new()
-        {
-            Id = 0,
-            Force = false,
-            Level = 1,
-            ShowChildren = false,
-            ModeInfo = StartMode.Root,
-            Raw = "//1",
-        });
+    public void RuleCurrent() => AssertRule(new()
+    {
+        Raw = ".",
+        Id = 0,
+        Force = false,
+        Level = 0,
+        ShowChildren = false,
+        ModeInfo = StartMode.Current,
+    });
 
     [Fact]
-    public void RuleRootLevel2() =>
-        AssertRule(new()
-        {
-            Id = 0,
-            Force = false,
-            Level = 2,
-            ShowChildren = false,
-            ModeInfo = StartMode.Root,
-            Raw = "//2",
-        });
-
-    [Fact]
-    public void RuleCurrent() =>
-        AssertRule(new()
-        {
-            Id = 0,
-            Force = false,
-            Level = 0,
-            ShowChildren = false,
-            ModeInfo = StartMode.Current,
-            Raw = ".",
-        });
-
-    [Fact]
-    public void RuleChildren() =>
-        AssertRule(new()
-        {
-            Raw = "./",
-            Id = 0,
-            Force = false,
-            Level = 0,
-            ShowChildren = true,
-            ModeInfo = StartMode.Current,
-        });
+    public void RuleChildren() => AssertRule(new()
+    {
+        Raw = "./",
+        Id = 0,
+        Force = false,
+        Level = 0,
+        ShowChildren = true,
+        ModeInfo = StartMode.Current,
+    });
 
     [Fact]
     public void RuleCurrentFromRoot() => AssertRule(new()
@@ -118,64 +109,59 @@ public class MenuNodeRuleParserTests
     });
 
     [Fact]
-    public void RulePageId() =>
-        AssertRule(new()
-        {
-            Raw = "42",
-            Id = 42,
-            Force = false,
-            Level = 1,
-            ShowChildren = false,
-            ModeInfo = StartMode.PageId,
-        });
+    public void RulePageId() => AssertRule(new()
+    {
+        Raw = "42",
+        Id = 42,
+        Force = false,
+        Level = 1,
+        ShowChildren = false,
+        ModeInfo = StartMode.PageId,
+    });
 
     [Fact]
-    public void RulePageIdForce() =>
-        AssertRule(new()
-        {
-            Raw = "42!",
-            Id = 42,
-            Force = true,
-            Level = 1,
-            ShowChildren = false,
-            ModeInfo = StartMode.PageId,
-        });
+    public void RulePageIdForce() => AssertRule(new()
+    {
+        Raw = "42!",
+        Id = 42,
+        Force = true,
+        Level = 1,
+        ShowChildren = false,
+        ModeInfo = StartMode.PageId,
+    });
 
 
     [Fact]
-    public void RulePageIdChildren() =>
-        AssertRule(new()
-        {
-            Raw = "42/",
-            Id = 42,
-            Force = false,
-            Level = 1,
-            ShowChildren = true,
-            ModeInfo = StartMode.PageId,
-        });
+    public void RulePageIdChildren() => AssertRule(new()
+    {
+        Raw = "42/",
+        Id = 42,
+        Force = false,
+        Level = 1,
+        ShowChildren = true,
+        ModeInfo = StartMode.PageId,
+    });
 
     [Fact]
-    public void RuleParent() =>
-        AssertRule(new()
-        {
-            Raw = "..",
-            Id = 0,
-            Force = false,
-            Level = -1,
-            ShowChildren = false,
-            ModeInfo = StartMode.Current,
-        });
+    public void RuleParent() => AssertRule(new()
+    {
+        Raw = "..",
+        Id = 0,
+        Force = false,
+        Level = -1,
+        ShowChildren = false,
+        ModeInfo = StartMode.Current,
+    });
 
     [Fact]
-    public void RuleSiblings() =>
-        AssertRule(new()
-        {
-            Raw = "../",
-            Id = 0,
-            Force = false,
-            Level = -1,
-            ShowChildren = true,
-            ModeInfo = StartMode.Current,
-        });
+    public void RuleSiblings() => AssertRule(new()
+    {
+        Raw = "../",
+        Id = 0,
+        Force = false,
+        Level = -1,
+        ShowChildren = true,
+        ModeInfo = StartMode.Current,
+    });
 
 }

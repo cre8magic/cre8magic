@@ -60,7 +60,7 @@ public interface IMagicPage
     /// Original Oqtane page wrapped in MagicPage.
     /// Can be used to access additional properties of the Oqtane page.
     /// </summary>
-    Page OqtanePage { get; }
+    Page RawPage { get; }
 
     /// <summary>
     /// ID of this Page

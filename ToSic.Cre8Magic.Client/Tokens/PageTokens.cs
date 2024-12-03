@@ -32,7 +32,7 @@ internal class PageTokens(IMagicPage page, string? layoutVariant = null, string?
 
         result = result
             .Replace(MagicTokens.PageParentId, Page.ParentId != null ? $"{Page.ParentId}" : MagicTokens.None)
-            .Replace(MagicTokens.SiteId, $"{Page.OqtanePage.SiteId}", InvariantCultureIgnoreCase)
+            .Replace(MagicTokens.SiteId, $"{Page.RawPage.SiteId}", InvariantCultureIgnoreCase)
             .Replace(MagicTokens.LayoutVariation, layoutVariant ?? MagicTokens.None)
             .Replace(MagicTokens.MenuLevel, $"{Page.MenuLevel}")
             .Replace(MagicTokens.MenuId, menuId ?? MagicTokens.None);
