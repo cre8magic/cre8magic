@@ -5,8 +5,6 @@ items:
   id: MagicLanguageMenu
   parent: ToSic.Cre8magic.OqtaneBs5
   children:
-  - ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  - ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
   - ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.PageState
   - ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings
   langs:
@@ -43,7 +41,7 @@ items:
   source:
     id: PageState
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicLanguageMenu_razor.g.cs
-    startLine: 180
+    startLine: 189
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -64,31 +62,6 @@ items:
   - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
     ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
     arguments: []
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  id: LanguageKit
-  parent: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
-  langs:
-  - csharp
-  - vb
-  name: LanguageKit
-  nameWithType: MagicLanguageMenu.LanguageKit
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  type: Property
-  source:
-    id: LanguageKit
-    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicLanguageMenu_razor.g.cs
-    startLine: 183
-  assemblies:
-  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
-  namespace: ToSic.Cre8magic.OqtaneBs5
-  syntax:
-    content: public IMagicLanguageKit? LanguageKit { get; }
-    parameters: []
-    return:
-      type: ToSic.Cre8magic.Languages.IMagicLanguageKit
-    content.vb: Public Property LanguageKit As IMagicLanguageKit
-  overload: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit*
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings
   commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings
   id: Settings
@@ -103,7 +76,7 @@ items:
   source:
     id: Settings
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicLanguageMenu_razor.g.cs
-    startLine: 185
+    startLine: 191
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -124,37 +97,6 @@ items:
   - type: Microsoft.AspNetCore.Components.ParameterAttribute
     ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
     arguments: []
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
-  commentId: M:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
-  id: OnParametersSetAsync
-  parent: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
-  langs:
-  - csharp
-  - vb
-  name: OnParametersSetAsync()
-  nameWithType: MagicLanguageMenu.OnParametersSetAsync()
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync()
-  type: Method
-  source:
-    id: OnParametersSetAsync
-    path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\OqtaneBs5_MagicLanguageMenu_razor.g.cs
-    startLine: 188
-  assemblies:
-  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
-  namespace: ToSic.Cre8magic.OqtaneBs5
-  summary: >-
-    Method invoked when the component has received parameters from its parent in
-
-    the render tree, and the incoming values have been assigned to properties.
-  example: []
-  syntax:
-    content: protected override Task OnParametersSetAsync()
-    return:
-      type: System.Threading.Tasks.Task
-      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> representing any asynchronous operation.
-    content.vb: Protected Overrides Function OnParametersSetAsync() As Task
-  overridden: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
-  overload: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync*
 references:
 - uid: ToSic.Cre8magic.OqtaneBs5
   commentId: N:ToSic.Cre8magic.OqtaneBs5
@@ -282,19 +224,19 @@ references:
   - uid: Oqtane.UI
     name: UI
     isExternal: true
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit*
-  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  href: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_LanguageKit
-  name: LanguageKit
-  nameWithType: MagicLanguageMenu.LanguageKit
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-- uid: ToSic.Cre8magic.Languages.IMagicLanguageKit
-  commentId: T:ToSic.Cre8magic.Languages.IMagicLanguageKit
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings
+  href: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_Settings
+  name: Settings
+  nameWithType: MagicLanguageMenu.Settings
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings
+- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
+  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageSettings
   parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html
-  name: IMagicLanguageKit
-  nameWithType: IMagicLanguageKit
-  fullName: ToSic.Cre8magic.Languages.IMagicLanguageKit
+  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
+  name: MagicLanguageSettings
+  nameWithType: MagicLanguageSettings
+  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings
 - uid: ToSic.Cre8magic.Languages
   commentId: N:ToSic.Cre8magic.Languages
   href: ToSic.html
@@ -325,85 +267,3 @@ references:
   - uid: ToSic.Cre8magic.Languages
     name: Languages
     href: ToSic.Cre8magic.Languages.html
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings*
-  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings
-  href: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_Settings
-  name: Settings
-  nameWithType: MagicLanguageMenu.Settings
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.Settings
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageSettings
-  parent: ToSic.Cre8magic.Languages
-  href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
-  name: MagicLanguageSettings
-  nameWithType: MagicLanguageSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
-  parent: System.Threading.Tasks
-  isExternal: true
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
-- uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
-  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
-  parent: Microsoft.AspNetCore.Components.ComponentBase
-  isExternal: true
-  name: OnParametersSetAsync()
-  nameWithType: ComponentBase.OnParametersSetAsync()
-  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync()
-  spec.csharp:
-  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
-    name: OnParametersSetAsync
-    isExternal: true
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
-    name: OnParametersSetAsync
-    isExternal: true
-  - name: (
-  - name: )
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync*
-  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
-  href: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_OnParametersSetAsync
-  name: OnParametersSetAsync
-  nameWithType: MagicLanguageMenu.OnParametersSetAsync
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

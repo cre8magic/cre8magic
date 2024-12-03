@@ -26,10 +26,7 @@ The goal is that your menus are:
 1. highlight the current page
 1. easy to customize & flexible
 
-You can work with pre-built components or leverage the **MagicMenuKit** to build your own components.
-
-Depending on your preferences you can use pre-built components and some configuration,
-or easily build your own components with the help of the **MagicMenuKit**.
+You can work with pre-built components such as **MagicMenu 🧩** or leverage the **MagicMenuKit 🧰** to build your own components.
 
 A very simple menu can be added just like this:
 
@@ -50,7 +47,7 @@ It uses the standard conventions of cre8magic with the following setup:
 ```mermaid
 flowchart LR
     S(["Settings ⚙️ or ...Name <br> (_all optional_)"]) --> PC{"Use <br> Comp. <br> ?"}
-    PC -- yes --> MC["MagicMenu 🎁 Component <br> uses 🎩 & 🧰"]
+    PC -- yes --> MC["MagicMenu 🧩 Component <br> uses 🎩 & 🧰"]
     MC -- get --> MT["Magic Tailor 🧵"]
     MT -- magic 🪄 --> HTML["Blazor HTML 🔥"]
     PC -- no --> MH("Magic Hat 🎩 <br> (get MenuKit 🧰)")
@@ -66,13 +63,13 @@ flowchart LR
 
 1. Some code will then use this kit to create the desired **HTML 🔥**
 
-    1. Either use the pre-built **MagicMenu** component in **OqtaneBs5** to quickly create a best-practice Bootstrap5 menu
+    1. Either use the pre-built **MagicMenu 🧩** component in **OqtaneBs5** to quickly create a best-practice Bootstrap5 menu
 
     2. Or create your own Blazor component according to your needs
 
 ### How it Works - Advanced Setup with Tailor
 
-If you are using the **MagicMenu** component,
+If you are using the **MagicMenu 🧩** component,
 it can _optionally_ use the **MagicMenuTailor 🧵** to tweak the output in various scenarios without changing your code.
 You can also create custom components which use the **MagicTailor 🧵**.
 The tailor also needs settings, so this looks a bit like this:
@@ -95,7 +92,7 @@ flowchart LR
 
 1. The _optional_ **MagicMenuTailor 🧵** is a helper to tweak the output in various scenarios without changing your code.
 
-    1. It is used by the **MagicMenu 🎁** component to allow for easy customization.
+    1. It is used by the **MagicMenu 🧩** component to allow for easy customization.
 
     1. You can also create your own **Tailors 🧵** to further customize the output.
 
@@ -116,7 +113,7 @@ flowchart LR
 
 ### 1. Simple Top-Level Menu
 
-This bit of blazor code will create a Bootstrap5 top-level menu with the default settings,
+This bit of blazor code will create **Simple Top-Level Bootstrap5 Menu** with the default settings,
 respecting user permissions and highlighting the current page:
 
 ```html
@@ -135,7 +132,7 @@ with collapsing arrows and highlighting the current page:
 
 ```html
 @using ToSic.Cre8magic.OqtaneBs5
-<MagicMenu Settings='new() { Start = ".", Level = 2, Depth = 2, Variant = "Vertical" }'/>
+<MagicMenu Settings='new() { Start = ".//2+", Variant = "Vertical" }'/>
 ```
 
 TODO: PIC of output
@@ -205,7 +202,7 @@ These are the main settings.
     1. ~~Children~~
 1. Settings to specify how to show
     1. Variant - it is up to the code do determine what do do with this.
-        The `MagicMenu` currently supports `Vertical` for a sidebar, `Horizontal` for a top menu and will create different outputs like collapsing features.
+        The `MagicMenu` 🧩 currently supports `Vertical` for a sidebar, `Horizontal` for a top menu and will create different outputs like collapsing features.
     1. ~~Design - name of the design to use WIP~~
 1. Settings to specify Context
     1. PageState - required IF it is not already broadcast by the theme
@@ -308,15 +305,15 @@ The following parameters will also influence what is shown on the first level:
 
 The depth must always be at least 1 and determines how many levels downwards the nodes are rendered.
 
-## Menu Design
+## Menu Blueprints
 
 This is one of the most sophisticated bits of the JSON settings.
-You can configure this in the `menuDesigns` section of the JSON.
+You can configure this in the `menuBlueprints` section of the JSON.
 Note that this uses the [Magic Classes](../../system/magic-values.md) and [Magic Tokens](../../system/magic-tokens.md).
 Example:
 
 ```jsonc
-"menuDesigns": {
+"menuBlueprints": {
   "Mobile": {
     "ul": {
       "byLevel": {

@@ -19,7 +19,7 @@ items:
   source:
     id: MagicPageContext
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\PageContexts_MagicPageContext_razor.g.cs
-    startLine: 32
+    startLine: 26
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.PageContexts
@@ -43,7 +43,7 @@ items:
   source:
     id: PageState
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\PageContexts_MagicPageContext_razor.g.cs
-    startLine: 134
+    startLine: 128
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.PageContexts
@@ -80,7 +80,7 @@ items:
   source:
     id: Settings
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\PageContexts_MagicPageContext_razor.g.cs
-    startLine: 137
+    startLine: 131
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.PageContexts
@@ -115,7 +115,7 @@ items:
   source:
     id: ChildContent
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\PageContexts_MagicPageContext_razor.g.cs
-    startLine: 145
+    startLine: 139
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.PageContexts
@@ -157,7 +157,7 @@ items:
   source:
     id: OnAfterRenderAsync
     path: Microsoft.CodeAnalysis.Razor.Compiler\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\PageContexts_MagicPageContext_razor.g.cs
-    startLine: 148
+    startLine: 142
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.PageContexts

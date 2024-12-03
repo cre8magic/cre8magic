@@ -56,9 +56,9 @@ In addition, the settings mechanisms should be seamless, magical but still very 
     1. After the setup it will also be found on the `.Settings` property of the `MagicMenuKit`.
     1. After the setup it will have more values filled (from the `MagicMenuSettingsData`).
 1. Design
-    1. **MagicMenuDesignSettings** ...
-    1. **MagicMenuDesignSettingsPart** ... TODO: NAMING NOT FINAL
-    1. **MagicMenuDesigner** ...
+    1. **MagicMenuBlueprints** ...
+    1. **MagicMenuBlueprintPart** ... TODO: NAMING NOT FINAL
+    1. **MagicMenuTailor** ...
 1. The **/Menus/Components/MagicMenu** is a primary or sample component for using the menu.
     1. It will expect a `Settings` parameter which is the `MagicMenuSettings`.
     1. It will usually use the `MagicHat` to prepare the `MagicMenuKit`
@@ -79,7 +79,7 @@ A Catalog contain all the settings which can be requested by any part of the sys
 
 It follows two important conventions:
 
-1. Flat Structure with Topic first (e.g. `Themes`, `ThemeDesigns` `Menus`, `MenuDesigns`, `Breadcrumbs`, ...)
+1. Flat Structure with Topic first (e.g. `Themes`, `ThemeDesigns` `Menus`, `MenuBlueprints`, `Breadcrumbs`, ...)
 1. Each of these Settings Groups will have a dictionary of settings, so each section can contain multiple named settings.
 1. Everything is a `record` object, so it's immutable and can't cause side-effects.
 1. Everything inside the catalog should support the `ICanClone<T>` interface, so these records can be duplicated & modified easily.
@@ -90,7 +90,7 @@ The catalog always follows the following conventions
     1. to configure a theme
     1. and (for example) determine which parts should be shown and where they can find their settings.
 1. `Menus` contains menu settings
-1. `MenuDesigns` contains menu design settings
+1. `MenuBlueprints` contains menu design settings
 
 ## Settings Json
 

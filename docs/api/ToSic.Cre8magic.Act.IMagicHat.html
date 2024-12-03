@@ -235,10 +235,10 @@ It will either use the provided settings, retrieve these from the global informa
 
 
 
-  <a id="ToSic_Cre8magic_Act_IMagicHat_LanguageKitAsync_" data-uid="ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync*"></a>
+  <a id="ToSic_Cre8magic_Act_IMagicHat_LanguageKit_" data-uid="ToSic.Cre8magic.Act.IMagicHat.LanguageKit*"></a>
 
-  <h3 id="ToSic_Cre8magic_Act_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_" data-uid="ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)">
-  LanguageKitAsync(MagicLanguageSettings?)
+  <h3 id="ToSic_Cre8magic_Act_IMagicHat_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_" data-uid="ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)">
+  LanguageKit(MagicLanguageSettings?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/IMagicHat.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -247,7 +247,7 @@ It will either use the provided settings, retrieve these from the global informa
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IMagicLanguageKit&gt; LanguageKitAsync(MagicLanguageSettings? settings = null)</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicLanguageKit LanguageKit(MagicLanguageSettings? settings = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -258,7 +258,7 @@ It will either use the provided settings, retrieve these from the global informa
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">Task</span>&lt;<a class="xref" href="ToSic.Cre8magic.Languages.IMagicLanguageKit.html">IMagicLanguageKit</a>&gt;</dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Languages.IMagicLanguageKit.html">IMagicLanguageKit</a></dt>
     <dd></dd>
   </dl>
 
@@ -492,8 +492,8 @@ It will either use the provided settings, retrieve these from the global informa
 
   <a id="ToSic_Cre8magic_Act_IMagicHat_UseSettingsPackage_" data-uid="ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage*"></a>
 
-  <h3 id="ToSic_Cre8magic_Act_IMagicHat_UseSettingsPackage_ToSic_Cre8magic_Themes_MagicThemePackage_System_String_" data-uid="ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage,System.String)">
-  UseSettingsPackage(MagicThemePackage, string?)
+  <h3 id="ToSic_Cre8magic_Act_IMagicHat_UseSettingsPackage_ToSic_Cre8magic_Themes_MagicThemePackage_" data-uid="ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)">
+  UseSettingsPackage(MagicThemePackage)
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/IMagicHat.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -501,14 +501,12 @@ It will either use the provided settings, retrieve these from the global informa
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">IMagicHat UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = null)</code></pre>
+    <pre><code class="lang-csharp hljs">IMagicHat UseSettingsPackage(MagicThemePackage themePackage)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>themePackage</code> <a class="xref" href="ToSic.Cre8magic.Themes.MagicThemePackage.html">MagicThemePackage</a></dt>
-    <dd></dd>
-    <dt><code>layoutName</code> <span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 

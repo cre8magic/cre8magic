@@ -32,7 +32,7 @@ items:
     The Kit to Show language menus in the UI.
 
 
-    You can get it by `@inject` / `[Inject]`-ing the `IMagicHat` and calling the <xref href="ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)" data-throw-if-not-resolved="false"></xref>.
+    You can get it by `@inject` / `[Inject]`-ing the `IMagicHat` and calling the <xref href="ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public interface IMagicLanguageKit
@@ -199,25 +199,25 @@ items:
   fullName.vb: ToSic.Cre8magic.Languages.IMagicLanguageKit.SetCultureAsync(String)
   name.vb: SetCultureAsync(String)
 references:
-- uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  commentId: M:ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_
-  name: LanguageKitAsync(MagicLanguageSettings)
-  nameWithType: IMagicHat.LanguageKitAsync(MagicLanguageSettings)
-  fullName: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+- uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  commentId: M:ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+  name: LanguageKit(MagicLanguageSettings)
+  nameWithType: IMagicHat.LanguageKit(MagicLanguageSettings)
+  fullName: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-    name: LanguageKitAsync
-    href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+  - uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+    name: LanguageKit
+    href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
   - name: (
   - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
     name: MagicLanguageSettings
     href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-    name: LanguageKitAsync
-    href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+  - uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+    name: LanguageKit
+    href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
   - name: (
   - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
     name: MagicLanguageSettings

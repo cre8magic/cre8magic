@@ -23,8 +23,11 @@
     href: system/magic-tokens.md
   - name: Magic Languages
     href: system/magic-languages.md
+# This mechanism ensures that we don't have dropdown-menus but instead a sidebar
 - name: Magic Library
   href: library/
+  # href: library/toc.yml
+  # topicUid: Library.MagicMenu.Index
 
   # items:
   # - name: Magic Menu

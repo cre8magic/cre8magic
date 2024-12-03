@@ -6,20 +6,14 @@ items:
   parent: ToSic.Cre8magic.Menus
   children:
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.ChildrenFallback
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Display
   - ToSic.Cre8magic.Menus.MagicMenuSettings.DisplayDefault
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Id
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.Level
   - ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Pages
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Start
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.StartLevelFallback
   - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
-  - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
+  - ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
   - ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   langs:
@@ -89,7 +83,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Id
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 47
+    startLine: 44
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -125,7 +119,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Display
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 55
+    startLine: 52
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -159,7 +153,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DisplayDefault
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 56
+    startLine: 53
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -168,111 +162,6 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Const DisplayDefault As Boolean = True
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  id: Depth
-  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
-  langs:
-  - csharp
-  - vb
-  name: Depth
-  nameWithType: MagicMenuSettings.Depth
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Depth
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 63
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  summary: >-
-    How many level deep the navigation should show.
-
-    The number is ??? relative,
-
-    so if the navigation starts a level 2 then levelDepth 2 means to show levels 2 and 3 ??? verify
-  example: []
-  syntax:
-    content: public int? Depth { get; init; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Int32}
-    content.vb: Public Property Depth As Integer?
-  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth*
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  id: Children
-  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
-  langs:
-  - csharp
-  - vb
-  name: Children
-  nameWithType: MagicMenuSettings.Children
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Children
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 74
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  summary: >-
-    Levels to skip from the initial stating point.
-
-    - 0 means don't skip any, so if we're starting at the root, show that level
-
-    - 1 means skip the first level, so if we're starting at the root, show the children
-
-    See inspiration context from DDRMenu https://www.dnnsoftware.com/wiki/ddrmenu-reference-guide
-
-    in DDR it was called 'skip' but it didn't make sense IMHO
-
-    TODO: possibly rename to StartOnChildren or StartSkip?
-  example: []
-  syntax:
-    content: public bool? Children { get; init; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Boolean}
-    content.vb: Public Property Children As Boolean?
-  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Children*
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.ChildrenFallback
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.ChildrenFallback
-  id: ChildrenFallback
-  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
-  langs:
-  - csharp
-  - vb
-  name: ChildrenFallback
-  nameWithType: MagicMenuSettings.ChildrenFallback
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.ChildrenFallback
-  type: Field
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: ChildrenFallback
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 75
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  syntax:
-    content: public const bool ChildrenFallback = false
-    return:
-      type: System.Boolean
-    content.vb: Public Const ChildrenFallback As Boolean = False
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Start
   commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Start
   id: Start
@@ -291,7 +180,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Start
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 93
+    startLine: 71
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -317,60 +206,33 @@ items:
       type: System.String
     content.vb: Public Property Start As String
   overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Start*
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
-  id: StartPageRoot
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
+  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
+  id: StartPageRootSlash
   parent: ToSic.Cre8magic.Menus.MagicMenuSettings
   langs:
   - csharp
   - vb
-  name: StartPageRoot
-  nameWithType: MagicMenuSettings.StartPageRoot
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
+  name: StartPageRootSlash
+  nameWithType: MagicMenuSettings.StartPageRootSlash
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
   type: Field
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: StartPageRoot
+    id: StartPageRootSlash
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 94
+    startLine: 72
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
   syntax:
-    content: public const string StartPageRoot = "*"
+    content: public const char StartPageRootSlash = '/'
     return:
-      type: System.String
-    content.vb: Public Const StartPageRoot As String = "*"
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
-  id: StartPageRoot2
-  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
-  langs:
-  - csharp
-  - vb
-  name: StartPageRoot2
-  nameWithType: MagicMenuSettings.StartPageRoot2
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
-  type: Field
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: StartPageRoot2
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 95
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  syntax:
-    content: public const string StartPageRoot2 = "/"
-    return:
-      type: System.String
-    content.vb: Public Const StartPageRoot2 As String = "/"
+      type: System.Char
+    content.vb: Public Const StartPageRootSlash As Char = "/"c
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
   commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
   id: StartPageCurrent
@@ -389,7 +251,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: StartPageCurrent
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 96
+    startLine: 73
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -398,73 +260,6 @@ items:
     return:
       type: System.String
     content.vb: Public Const StartPageCurrent As String = "."
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  id: Level
-  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
-  langs:
-  - csharp
-  - vb
-  name: Level
-  nameWithType: MagicMenuSettings.Level
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Level
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 105
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  summary: >-
-    The level this menu should start from.
-
-    - `0` is the top level (default)
-
-    - `1` is the top level containing home and other pages
-
-    - `-1` is one level up from the current node
-
-    - `-2` is two levels up from the current node
-  example: []
-  syntax:
-    content: public int? Level { get; init; }
-    parameters: []
-    return:
-      type: System.Nullable{System.Int32}
-    content.vb: Public Property Level As Integer?
-  overload: ToSic.Cre8magic.Menus.MagicMenuSettings.Level*
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartLevelFallback
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartLevelFallback
-  id: StartLevelFallback
-  parent: ToSic.Cre8magic.Menus.MagicMenuSettings
-  langs:
-  - csharp
-  - vb
-  name: StartLevelFallback
-  nameWithType: MagicMenuSettings.StartLevelFallback
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartLevelFallback
-  type: Field
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: StartLevelFallback
-    path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 106
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Menus
-  syntax:
-    content: public const int StartLevelFallback = 0
-    return:
-      type: System.Int32
-    content.vb: Public Const StartLevelFallback As Integer = 0
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   id: Variant
@@ -483,7 +278,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Variant
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 111
+    startLine: 78
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -516,7 +311,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuId
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 114
+    startLine: 81
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -552,7 +347,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Tailor
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 119
+    startLine: 86
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -591,7 +386,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Blueprint
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 122
+    startLine: 89
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -630,7 +425,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Pages
     path: ../ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs
-    startLine: 131
+    startLine: 98
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Menus
@@ -1555,60 +1350,22 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth*
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Depth
-  name: Depth
-  nameWithType: MagicMenuSettings.Depth
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-- uid: System.Nullable{System.Int32}
-  commentId: T:System.Nullable{System.Int32}
-  parent: System
-  definition: System.Nullable`1
-  name: int?
-  nameWithType: int?
-  fullName: int?
-  nameWithType.vb: Integer?
-  fullName.vb: Integer?
-  name.vb: Integer?
-  spec.csharp:
-  - uid: System.Int32
-    name: int
-    isExternal: true
-  - name: '?'
-  spec.vb:
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-  - name: '?'
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Children*
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Children
-  name: Children
-  nameWithType: MagicMenuSettings.Children
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Children
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Start*
   commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Start
   href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Start
   name: Start
   nameWithType: MagicMenuSettings.Start
   fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Start
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Level*
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Level
-  name: Level
-  nameWithType: MagicMenuSettings.Level
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: System.Char
+  commentId: T:System.Char
   parent: System
   isExternal: true
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant*
   commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
   href: ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Variant

@@ -94,22 +94,22 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Act.IMagicHat.ContainerKit
   nameWithType: IMagicHat.ContainerKit
-- uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  name: LanguageKitAsync(MagicLanguageSettings?)
-  href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKitAsync_ToSic_Cre8magic_Languages_MagicLanguageSettings_
-  commentId: M:ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  name.vb: LanguageKitAsync(MagicLanguageSettings)
-  fullName: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings?)
-  fullName.vb: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  nameWithType: IMagicHat.LanguageKitAsync(MagicLanguageSettings?)
-  nameWithType.vb: IMagicHat.LanguageKitAsync(MagicLanguageSettings)
-- uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync*
-  name: LanguageKitAsync
-  href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKitAsync_
-  commentId: Overload:ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync
+- uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  name: LanguageKit(MagicLanguageSettings?)
+  href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+  commentId: M:ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  name.vb: LanguageKit(MagicLanguageSettings)
+  fullName: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings?)
+  fullName.vb: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  nameWithType: IMagicHat.LanguageKit(MagicLanguageSettings?)
+  nameWithType.vb: IMagicHat.LanguageKit(MagicLanguageSettings)
+- uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKit*
+  name: LanguageKit
+  href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKit_
+  commentId: Overload:ToSic.Cre8magic.Act.IMagicHat.LanguageKit
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Act.IMagicHat.LanguageKitAsync
-  nameWithType: IMagicHat.LanguageKitAsync
+  fullName: ToSic.Cre8magic.Act.IMagicHat.LanguageKit
+  nameWithType: IMagicHat.LanguageKit
 - uid: ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
   name: Link(PageState, MagicLinkSpecs)
   href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSpecs_
@@ -197,15 +197,12 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Act.IMagicHat.UseSettingsCatalog
   nameWithType: IMagicHat.UseSettingsCatalog
-- uid: ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage,System.String)
-  name: UseSettingsPackage(MagicThemePackage, string?)
-  href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_UseSettingsPackage_ToSic_Cre8magic_Themes_MagicThemePackage_System_String_
-  commentId: M:ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage,System.String)
-  name.vb: UseSettingsPackage(MagicThemePackage, String)
-  fullName: ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage, string?)
-  fullName.vb: ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage, String)
-  nameWithType: IMagicHat.UseSettingsPackage(MagicThemePackage, string?)
-  nameWithType.vb: IMagicHat.UseSettingsPackage(MagicThemePackage, String)
+- uid: ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)
+  name: UseSettingsPackage(MagicThemePackage)
+  href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_UseSettingsPackage_ToSic_Cre8magic_Themes_MagicThemePackage_
+  commentId: M:ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)
+  fullName: ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)
+  nameWithType: IMagicHat.UseSettingsPackage(MagicThemePackage)
 - uid: ToSic.Cre8magic.Act.IMagicHat.UseSettingsPackage*
   name: UseSettingsPackage
   href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_UseSettingsPackage_
@@ -10841,38 +10838,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
   nameWithType: MagicMenuSettings.Blueprint
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  name: Children
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Children
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  nameWithType: MagicMenuSettings.Children
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Children*
-  name: Children
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Children_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Children
-  nameWithType: MagicMenuSettings.Children
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.ChildrenFallback
-  name: ChildrenFallback
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_ChildrenFallback
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.ChildrenFallback
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.ChildrenFallback
-  nameWithType: MagicMenuSettings.ChildrenFallback
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  name: Depth
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Depth
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  nameWithType: MagicMenuSettings.Depth
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth*
-  name: Depth
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Depth_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Depth
-  nameWithType: MagicMenuSettings.Depth
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Display
   name: Display
   href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Display
@@ -10905,19 +10870,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Id
   nameWithType: MagicMenuSettings.Id
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  name: Level
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Level
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  nameWithType: MagicMenuSettings.Level
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Level*
-  name: Level
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Level_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Level
-  nameWithType: MagicMenuSettings.Level
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
   name: MenuId
   href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_MenuId
@@ -10957,30 +10909,18 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Start
   nameWithType: MagicMenuSettings.Start
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartLevelFallback
-  name: StartLevelFallback
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_StartLevelFallback
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartLevelFallback
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartLevelFallback
-  nameWithType: MagicMenuSettings.StartLevelFallback
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
   name: StartPageCurrent
   href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageCurrent
   commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
   fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
   nameWithType: MagicMenuSettings.StartPageCurrent
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
-  name: StartPageRoot
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageRoot
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot
-  nameWithType: MagicMenuSettings.StartPageRoot
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
-  name: StartPageRoot2
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageRoot2
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRoot2
-  nameWithType: MagicMenuSettings.StartPageRoot2
+- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
+  name: StartPageRootSlash
+  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageRootSlash
+  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
+  nameWithType: MagicMenuSettings.StartPageRootSlash
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
   name: Tailor
   href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Tailor
@@ -11401,32 +11341,6 @@ references:
   commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
   fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu
   nameWithType: MagicLanguageMenu
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  name: LanguageKit
-  href: api/ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_LanguageKit
-  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  nameWithType: MagicLanguageMenu.LanguageKit
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit*
-  name: LanguageKit
-  href: api/ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_LanguageKit_
-  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.LanguageKit
-  nameWithType: MagicLanguageMenu.LanguageKit
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
-  name: OnParametersSetAsync()
-  href: api/ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_OnParametersSetAsync
-  commentId: M:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync()
-  nameWithType: MagicLanguageMenu.OnParametersSetAsync()
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync*
-  name: OnParametersSetAsync
-  href: api/ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_OnParametersSetAsync_
-  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.OnParametersSetAsync
-  nameWithType: MagicLanguageMenu.OnParametersSetAsync
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.PageState
   name: PageState
   href: api/ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html#ToSic_Cre8magic_OqtaneBs5_MagicLanguageMenu_PageState
@@ -12218,19 +12132,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Pages.IMagicPage.Name
   nameWithType: IMagicPage.Name
-- uid: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
-  name: OqtanePage
-  href: api/ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_OqtanePage
-  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
-  fullName: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
-  nameWithType: IMagicPage.OqtanePage
-- uid: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage*
-  name: OqtanePage
-  href: api/ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_OqtanePage_
-  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
-  nameWithType: IMagicPage.OqtanePage
 - uid: ToSic.Cre8magic.Pages.IMagicPage.Parent
   name: Parent
   href: api/ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Parent
@@ -12270,6 +12171,19 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Pages.IMagicPage.Path
   nameWithType: IMagicPage.Path
+- uid: ToSic.Cre8magic.Pages.IMagicPage.RawPage
+  name: RawPage
+  href: api/ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_RawPage
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.RawPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.RawPage
+  nameWithType: IMagicPage.RawPage
+- uid: ToSic.Cre8magic.Pages.IMagicPage.RawPage*
+  name: RawPage
+  href: api/ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_RawPage_
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.RawPage
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.RawPage
+  nameWithType: IMagicPage.RawPage
 - uid: ToSic.Cre8magic.Pages.IMagicPage.Target
   name: Target
   href: api/ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_Target
@@ -17311,45 +17225,6 @@ references:
   commentId: T:ToSic.Cre8magic.Themes.MagicThemeBase
   fullName: ToSic.Cre8magic.Themes.MagicThemeBase
   nameWithType: MagicThemeBase
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  name: Layout
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_Layout
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  nameWithType: MagicThemeBase.Layout
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.Layout*
-  name: Layout
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_Layout_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  nameWithType: MagicThemeBase.Layout
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  name: MagicComponents
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicComponents
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  nameWithType: MagicThemeBase.MagicComponents
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents*
-  name: MagicComponents
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicComponents_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  nameWithType: MagicThemeBase.MagicComponents
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  name: MagicContextClasses
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicContextClasses
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  nameWithType: MagicThemeBase.MagicContextClasses
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses*
-  name: MagicContextClasses
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicContextClasses_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  nameWithType: MagicThemeBase.MagicContextClasses
 - uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
   name: MagicHat
   href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicHat
@@ -17418,25 +17293,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet
   nameWithType: MagicThemeBase.OnParametersSet
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader
-  name: PaneNameHeader
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_PaneNameHeader
-  commentId: F:ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader
-  nameWithType: MagicThemeBase.PaneNameHeader
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  name: Panes
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_Panes
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  nameWithType: MagicThemeBase.Panes
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.Panes*
-  name: Panes
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_Panes_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  nameWithType: MagicThemeBase.Panes
 - uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemeKit
   name: ThemeKit
   href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_ThemeKit
@@ -17463,19 +17319,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
   nameWithType: MagicThemeBase.ThemePackage
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
-  name: ThemePath()
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_ThemePath
-  commentId: M:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath()
-  nameWithType: MagicThemeBase.ThemePath()
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath*
-  name: ThemePath
-  href: api/ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_ThemePath_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
-  nameWithType: MagicThemeBase.ThemePath
 - uid: ToSic.Cre8magic.Themes.MagicThemeDebug
   name: MagicThemeDebug
   href: api/ToSic.Cre8magic.Themes.MagicThemeDebug.html
@@ -17501,6 +17344,34 @@ references:
   commentId: T:ToSic.Cre8magic.Themes.MagicThemePackage
   fullName: ToSic.Cre8magic.Themes.MagicThemePackage
   nameWithType: MagicThemePackage
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.#ctor
+  name: MagicThemePackage()
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage__ctor
+  commentId: M:ToSic.Cre8magic.Themes.MagicThemePackage.#ctor
+  name.vb: New()
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.MagicThemePackage()
+  fullName.vb: ToSic.Cre8magic.Themes.MagicThemePackage.New()
+  nameWithType: MagicThemePackage.MagicThemePackage()
+  nameWithType.vb: MagicThemePackage.New()
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.#ctor(Oqtane.Themes.ITheme,System.String)
+  name: MagicThemePackage(ITheme, string?)
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage__ctor_Oqtane_Themes_ITheme_System_String_
+  commentId: M:ToSic.Cre8magic.Themes.MagicThemePackage.#ctor(Oqtane.Themes.ITheme,System.String)
+  name.vb: New(ITheme, String)
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.MagicThemePackage(Oqtane.Themes.ITheme, string?)
+  fullName.vb: ToSic.Cre8magic.Themes.MagicThemePackage.New(Oqtane.Themes.ITheme, String)
+  nameWithType: MagicThemePackage.MagicThemePackage(ITheme, string?)
+  nameWithType.vb: MagicThemePackage.New(ITheme, String)
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.#ctor*
+  name: MagicThemePackage
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage__ctor_
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.MagicThemePackage
+  fullName.vb: ToSic.Cre8magic.Themes.MagicThemePackage.New
+  nameWithType: MagicThemePackage.MagicThemePackage
+  nameWithType.vb: MagicThemePackage.New
 - uid: ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
   name: Defaults
   href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Defaults
@@ -17514,6 +17385,19 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
   nameWithType: MagicThemePackage.Defaults
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.Layout
+  name: Layout
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Layout
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.Layout
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Layout
+  nameWithType: MagicThemePackage.Layout
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.Layout*
+  name: Layout
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Layout_
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.Layout
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Layout
+  nameWithType: MagicThemePackage.Layout
 - uid: ToSic.Cre8magic.Themes.MagicThemePackage.PackageName
   name: PackageName
   href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_PackageName
@@ -17540,6 +17424,19 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
   nameWithType: MagicThemePackage.SettingsJsonFile
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath
+  name: ThemePath
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_ThemePath
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath
+  nameWithType: MagicThemePackage.ThemePath
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath*
+  name: ThemePath
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_ThemePath_
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath
+  nameWithType: MagicThemePackage.ThemePath
 - uid: ToSic.Cre8magic.Themes.MagicThemePackage.Url
   name: Url
   href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Url

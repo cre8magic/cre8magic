@@ -85,7 +85,7 @@ The `theme-settings.json` contains these primary nodes:
 1. `themeDesigns` has the configuration for CSS classes to be used in various places
 1. `languages` contains configuration for languages to show in the menu
 1. `menus` contains configuration for what menus show what nodes, like top-level with sub-level, etc.
-1. `menuDesigns` contains a bunch of rules for how menus should be styled, such as classes to use on the active node etc.
+1. `menuBlueprints` contains a bunch of rules for how menus should be styled, such as classes to use on the active node etc.
 
 ### Named Configurations
 
@@ -112,7 +112,7 @@ This means that there is a configuration called `Default` and one called `Sideba
 
 ### @inherits Does Exactly What it Says
 
-Example from the `menuDesigns`
+Example from the `menuBlueprints`
 
 ```json
 {

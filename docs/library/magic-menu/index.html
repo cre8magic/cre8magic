@@ -87,19 +87,28 @@
         <article data-uid="Library.MagicMenu.Index">
 <h1 id="cre8magic--magic-menu-system-for-oqtane-themes">cre8magic – Magic Menu System for Oqtane Themes</h1>
 
-<div class="TIP">
-<h5>Tip</h5>
-<p>Menus are really simple to build yourself - not 🤦🏽!</p>
-<p>Not if you want them to be reactive, mobile-friendly, accessible, Bootstrap5 standard...
-and you want the footer menus to only show certain pages...
-...and the side menu to use different styling...</p>
-<p>And you want to use best-practice SOLID principles
-and have fun maintaining changes.</p>
-</div>
+<p>Menus are used in Oqtane solutions as the main way to navigate the user through the website.
+A typical website will have a main menu, mobile menu, a footer menu and possibly more.
+Each menu can have different requirements, such as:</p>
+<ul>
+<li>showing specific pages the top-level pages (main menu), exact IDs (footer) or showing all pages below the current page (sidebar)</li>
+<li>show a different depth of pages, such as only the first level, or all levels below the current page</li>
+<li>behaving in a certain way, such as collapsing sub-menus</li>
+<li>look a certain way, such as highlighting the current page</li>
+</ul>
 <h2 id="about-magic-menus">About Magic Menus</h2>
-<p>The cre8magic Menus are a system to easily create best-practice menus in Oqtane Themes.
-Depending on your preferences you can use pre-built components and some configuration,
-or easily build your own components with the help of the <strong>MagicMenuKit</strong>.</p>
+<p>The cre8magic Menu System helps you to easily create best-practice menus in Oqtane.
+The goal is that your menus are:</p>
+<ol>
+<li>configuration-based</li>
+<li>mobile-friendly &amp; reactive</li>
+<li>ARIA-Accessible</li>
+<li>use HTML5 and Bootstrap5 conventions</li>
+<li>respect user permissions</li>
+<li>highlight the current page</li>
+<li>easy to customize &amp; flexible</li>
+</ol>
+<p>You can work with pre-built components such as <strong>MagicMenu 🧩</strong> or leverage the <strong>MagicMenuKit 🧰</strong> to build your own components.</p>
 <p>A very simple menu can be added just like this:</p>
 <pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
 &lt;MagicMenu Settings='new() { Start = &quot;/&quot; }'/&gt;
@@ -111,7 +120,7 @@ It uses the standard conventions of cre8magic with the following setup:</p>
 <!-- use https://www.mermaidchart.com/play to edit -->
 <pre><code class="lang-mermaid">flowchart LR
     S([&quot;Settings ⚙️ or ...Name &lt;br&gt; (_all optional_)&quot;]) --&gt; PC{&quot;Use &lt;br&gt; Comp. &lt;br&gt; ?&quot;}
-    PC -- yes --&gt; MC[&quot;MagicMenu 🎁 Component &lt;br&gt; uses 🎩 &amp; 🧰&quot;]
+    PC -- yes --&gt; MC[&quot;MagicMenu 🧩 Component &lt;br&gt; uses 🎩 &amp; 🧰&quot;]
     MC -- get --&gt; MT[&quot;Magic Tailor 🧵&quot;]
     MT -- magic 🪄 --&gt; HTML[&quot;Blazor HTML 🔥&quot;]
     PC -- no --&gt; MH(&quot;Magic Hat 🎩 &lt;br&gt; (get MenuKit 🧰)&quot;)
@@ -127,7 +136,7 @@ It uses the standard conventions of cre8magic with the following setup:</p>
 </li>
 <li><p>Some code will then use this kit to create the desired <strong>HTML 🔥</strong></p>
 <ol>
-<li><p>Either use the pre-built <strong>MagicMenu</strong> component in <strong>OqtaneBs5</strong> to quickly create a best-practice Bootstrap5 menu</p>
+<li><p>Either use the pre-built <strong>MagicMenu 🧩</strong> component in <strong>OqtaneBs5</strong> to quickly create a best-practice Bootstrap5 menu</p>
 </li>
 <li><p>Or create your own Blazor component according to your needs</p>
 </li>
@@ -135,8 +144,8 @@ It uses the standard conventions of cre8magic with the following setup:</p>
 </li>
 </ol>
 <h3 id="how-it-works---advanced-setup-with-tailor">How it Works - Advanced Setup with Tailor</h3>
-<p>If you are using the <strong>MagicMenu</strong> component,
-it can also use the <strong>MagicMenuTailor 🧵</strong> to tweak the output in various scenarios without changing your code.
+<p>If you are using the <strong>MagicMenu 🧩</strong> component,
+it can <em>optionally</em> use the <strong>MagicMenuTailor 🧵</strong> to tweak the output in various scenarios without changing your code.
 You can also create custom components which use the <strong>MagicTailor 🧵</strong>.
 The tailor also needs settings, so this looks a bit like this:</p>
 <pre><code class="lang-mermaid">flowchart LR
@@ -153,42 +162,16 @@ The tailor also needs settings, so this looks a bit like this:</p>
     S([&quot;Settings ⚙️ or ...Name &lt;br&gt; (_all optional_)&quot;]) --&gt; s1
 
 </code></pre>
-<p>NEW</p>
 <ol>
 <li><p>The <em>optional</em> <strong>MagicMenuTailor 🧵</strong> is a helper to tweak the output in various scenarios without changing your code.</p>
 <ol>
-<li><p>It is used by the <strong>MagicMenu 🎁</strong> component to allow for easy customization.</p>
+<li><p>It is used by the <strong>MagicMenu 🧩</strong> component to allow for easy customization.</p>
 </li>
 <li><p>You can also create your own <strong>Tailors 🧵</strong> to further customize the output.</p>
 </li>
 </ol>
 </li>
 <li><p>The <em>optional</em> <strong>MagicMenuBlueprints 📘</strong> are used to configure the <strong>MagicMenuTailor 🧵</strong> to your needs.</p>
-<ol>
-<li><p>For example, you can specify HTML <code>class</code> for any tag such as <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;span&gt;</code></p>
-</li>
-<li><p>...or specify <code>data-</code>, <code>title</code> or any attributes for special cases</p>
-</li>
-<li><p>You can also specify conditional classes to add if a node is <code>active</code> or <em>not</em> active, is in breadcrumb, etc.</p>
-</li>
-</ol>
-</li>
-<li><p>The <em>optional</em> <strong>MagicPackageSettings</strong> allows you to configure <em>everything</em> in a central location.
-This can be either in code or in a <code>theme.json</code> file.</p>
-</li>
-</ol>
-<hr>
-<p>OLD</p>
-<ol>
-<li><p>The <em>optional</em> <strong>MagicMenuTailor 🧵</strong> is a helper to tweak the output in various scenarios without changing your code.</p>
-<ol>
-<li><p>It is used by the <strong>MagicMenu 🎁</strong> component to allow for easy customization.</p>
-</li>
-<li><p>You can also create your own <strong>Tailors</strong> to further customize the output.</p>
-</li>
-</ol>
-</li>
-<li><p>The <em>optional</em> <strong>MagicMenuTailorSettings</strong> are used to configure the <strong>MagicMenuTailor</strong> to your needs.</p>
 <ol>
 <li><p>For example, you can specify HTML <code>class</code> for any tag such as <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;span&gt;</code></p>
 </li>
@@ -264,7 +247,7 @@ So these are the real-life challenges we wanted to solve:</p>
 <li>PartName - the theme part name which can reference other settings/tailor-settings TODO: link to why you would use this</li>
 <li>SettingsName - name of the settings in the full configuration under <code>Menus</code> (or <code>menus</code> in JSON)</li>
 <li><del>TailorName - name of the tailor to apply WIP</del></li>
-<li>TailorSettings - settings for the tailor in the full configuration under <code>MenuTailorSettings</code> (or <code>menuTailorSettings</code> in JSON)</li>
+<li>Blueprints - settings for the tailor in the full configuration under <code>MenuBlueprints</code> (or <code>menuBlueprints</code> in JSON)</li>
 </ol>
 </li>
 <li>Settings to specify what to show
@@ -278,7 +261,7 @@ So these are the real-life challenges we wanted to solve:</p>
 <li>Settings to specify how to show
 <ol>
 <li>Variant - it is up to the code do determine what do do with this.
-The <code>MagicMenu</code> currently supports <code>Vertical</code> for a sidebar, <code>Horizontal</code> for a top menu and will create different outputs like collapsing features.</li>
+The <code>MagicMenu</code> 🧩 currently supports <code>Vertical</code> for a sidebar, <code>Horizontal</code> for a top menu and will create different outputs like collapsing features.</li>
 <li><del>Design - name of the design to use WIP</del></li>
 </ol>
 </li>
@@ -331,8 +314,10 @@ the configuration <code>TopLevelOnly</code> for the <code>Main</code> menu.
 This is configured in the <code>parts</code> of the <code>themes</code> section of the JSON file.</p>
 <h2 id="menu-configuration">Menu Configuration</h2>
 <p>The menu configuration determines some important aspects such as</p>
+<p>NEW</p>
 <ul>
-<li>What node to <code>start</code> from - eg. <code>*</code> is the top level, <code>.</code> is the current page</li>
+<li>What node to <code>start</code> from - eg. `` = root, <code>.</code> = current page, <code>..</code> = parent, <code>42</code> = page 42</li>
+<li>Children (necessary for root): <code>/</code>, <code>./</code>, <code>42/</code></li>
 <li>What to do from the start - like <code>&quot;children&quot;: true</code> means
 &quot;begin with the children&quot; of the start-node</li>
 <li>What level to show - so <code>&quot;start&quot;: &quot;.&quot;, &quot;level&quot;: -1</code> means to start
@@ -343,13 +328,46 @@ one level above the current page</li>
 <h3 id="start-values">Start Values</h3>
 <p>These are accepted values of the node <code>start</code>:</p>
 <ul>
-<li><code>*</code> root</li>
-<li><code>.</code> current page</li>
-<li><code>42</code> the page 42</li>
-<li><code>5!</code> the page 5 even if it's normally not visible in a menu</li>
-<li><code>42, 5!</code> combinations thereof</li>
+<li><p><code>/</code> root (actually all top-level pages)</p>
+</li>
+<li><p><code>//</code> same (not recommended, just for API consistency)</p>
+</li>
+<li><p><code>//1</code> same (not recommended, just for API consistency)</p>
+</li>
+<li><p><code>//2</code> all second level pages (not typical/recommended, just for API consistency)</p>
+</li>
+<li><p><del><code>//1/</code></del> all second level pages (not typical/recommended, just for API consistency)</p>
+</li>
+<li><p><code>//3</code> all third level pages (not typical/recommended, just for API consistency)</p>
+</li>
+<li><p><code>.</code> current page</p>
+</li>
+<li><p><code>./</code> children of the current page</p>
+</li>
+<li><p><code>.//</code> all root nodes above the current page (not useful, like <code>/</code>)</p>
+</li>
+<li><p><code>..</code> parent of the current page (just that page)</p>
+</li>
+<li><p><code>../</code> children of the parent of the current page (this page and siblings)</p>
+</li>
+<li><p><code>.//2</code> ancestor of the current page on the second-level</p>
+</li>
+<li><p><code>.//2/</code> children of the ancestor of the current page on the second-level</p>
+</li>
+<li><p><code>..-1</code> identical to <code>..</code></p>
+</li>
+<li><p><code>..-2</code> up two levels</p>
+</li>
+<li><p><code>42</code> the page 42</p>
+</li>
+<li><p><code>42/</code> children of the page 42</p>
+</li>
+<li><p><code>5!</code> the page 5 even if it's normally not visible in a menu</p>
+</li>
+<li><p><code>42, 5!</code> combinations thereof</p>
+</li>
 </ul>
-<p>The following parameters will also influece what is shown on the first level:</p>
+<p>The following parameters will also influence what is shown on the first level:</p>
 <ul>
 <li><code>&quot;start&quot;: &quot;.&quot;, &quot;children&quot;: true</code> starts with children of the current page</li>
 <li><code>&quot;start&quot;: &quot;42&quot;, &quot;children&quot;: true</code> starts with children of page 42 - ideal for footer or system-menus</li>
@@ -359,12 +377,12 @@ one level above the current page</li>
 </ul>
 <h3 id="depth">Depth</h3>
 <p>The depth must always be at least 1 and determines how many levels downwards the nodes are rendered.</p>
-<h2 id="menu-design">Menu Design</h2>
+<h2 id="menu-blueprints">Menu Blueprints</h2>
 <p>This is one of the most sophisticated bits of the JSON settings.
-You can configure this in the <code>menuDesigns</code> section of the JSON.
+You can configure this in the <code>menuBlueprints</code> section of the JSON.
 Note that this uses the <a href="../../system/magic-values.html">Magic Classes</a> and <a href="../../system/magic-tokens.html">Magic Tokens</a>.
 Example:</p>
-<pre><code class="lang-jsonc">&quot;menuDesigns&quot;: {
+<pre><code class="lang-jsonc">&quot;menuBlueprints&quot;: {
   &quot;Mobile&quot;: {
     &quot;ul&quot;: {
       &quot;byLevel&quot;: {

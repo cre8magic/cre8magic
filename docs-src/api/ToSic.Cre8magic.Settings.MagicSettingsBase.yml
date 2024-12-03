@@ -83,14 +83,14 @@ items:
     content: >-
       [JsonIgnore]
 
-      public virtual PageState? PageState { get; init; }
+      public PageState? PageState { get; init; }
     parameters: []
     return:
       type: Oqtane.UI.PageState
     content.vb: >-
       <JsonIgnore>
 
-      Public Overridable Property PageState As PageState
+      Public Property PageState As PageState
   overload: ToSic.Cre8magic.Settings.MagicSettingsBase.PageState*
   attributes:
   - type: System.Text.Json.Serialization.JsonIgnoreAttribute
@@ -114,7 +114,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PartName
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
-    startLine: 61
+    startLine: 56
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -158,7 +158,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: SettingsName
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
-    startLine: 65
+    startLine: 60
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -204,7 +204,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: DesignName
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
-    startLine: 69
+    startLine: 64
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -245,7 +245,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Debug
     path: ../ToSic.Cre8Magic.Client/Settings/MagicSettingsBase.cs
-    startLine: 77
+    startLine: 72
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings

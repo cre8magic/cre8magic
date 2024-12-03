@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_Themes_MagicThemePackage" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage" class="text-break">
-Class MagicThemePackage  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class MagicThemePackage  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -129,6 +129,71 @@ Class MagicThemePackage  <a class="header-action link-secondary" title="View sou
 
 
 
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Themes_MagicThemePackage__ctor_" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.#ctor*"></a>
+
+  <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage__ctor" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.#ctor">
+  MagicThemePackage()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Default / empty constructor; set properties manually.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicThemePackage()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Themes_MagicThemePackage__ctor_" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.#ctor*"></a>
+
+  <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage__ctor_Oqtane_Themes_ITheme_System_String_" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.#ctor(Oqtane.Themes.ITheme,System.String)">
+  MagicThemePackage(ITheme, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructor to create a new theme package definition from an existing theme.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicThemePackage(ITheme themeInfo, string? layoutName = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>themeInfo</code> <span class="xref">ITheme</span></dt>
+    <dd></dd>
+    <dt><code>layoutName</code> <span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <h2 class="section" id="properties">Properties
 </h2>
 
@@ -137,7 +202,7 @@ Class MagicThemePackage  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage_Defaults" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.Defaults">
   Defaults
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>All kinds of settings for the layout, how it should be etc.
@@ -166,14 +231,46 @@ Should usually only serve as backup in case the JSON fails.</p>
 
 
 
+  <a id="ToSic_Cre8magic_Themes_MagicThemePackage_Layout_" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.Layout*"></a>
+
+  <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage_Layout" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.Layout">
+  Layout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Layout { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ToSic_Cre8magic_Themes_MagicThemePackage_PackageName_" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.PackageName*"></a>
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage_PackageName" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.PackageName">
   PackageName
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The PackageName which is used for paths etc.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -201,10 +298,12 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage_SettingsJsonFile" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile">
   SettingsJsonFile
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L54"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Name of the settings file in the theme folder.
+Usually <code>theme.json</code> (default)</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -228,11 +327,42 @@ Should usually only serve as backup in case the JSON fails.</p>
 
 
 
+  <a id="ToSic_Cre8magic_Themes_MagicThemePackage_ThemePath_" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath*"></a>
+
+  <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage_ThemePath" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath">
+  ThemePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ThemePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ToSic_Cre8magic_Themes_MagicThemePackage_Url_" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.Url*"></a>
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage_Url" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.Url">
   Url
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -263,10 +393,11 @@ Should usually only serve as backup in case the JSON fails.</p>
 
   <h3 id="ToSic_Cre8magic_Themes_MagicThemePackage_WwwRoot" data-uid="ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot">
   WwwRoot
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Root of the WWW files - usually <code>wwwroot</code> (default)</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -294,7 +425,7 @@ Should usually only serve as backup in case the JSON fails.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/MagicThemePackage.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -18,10 +18,10 @@ items:
   - ToSic.Cre8magic.Pages.IMagicPage.Link
   - ToSic.Cre8magic.Pages.IMagicPage.MenuLevel
   - ToSic.Cre8magic.Pages.IMagicPage.Name
-  - ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
   - ToSic.Cre8magic.Pages.IMagicPage.Parent
   - ToSic.Cre8magic.Pages.IMagicPage.ParentId
   - ToSic.Cre8magic.Pages.IMagicPage.Path
+  - ToSic.Cre8magic.Pages.IMagicPage.RawPage
   - ToSic.Cre8magic.Pages.IMagicPage.Target
   - ToSic.Cre8magic.Pages.IMagicPage.Url
   - ToSic.Cre8magic.Pages.IMagicPage.Value(System.String)
@@ -292,23 +292,23 @@ items:
       type: System.Boolean
     content.vb: ReadOnly Property IsInBreadcrumb As Boolean
   overload: ToSic.Cre8magic.Pages.IMagicPage.IsInBreadcrumb*
-- uid: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
-  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
-  id: OqtanePage
+- uid: ToSic.Cre8magic.Pages.IMagicPage.RawPage
+  commentId: P:ToSic.Cre8magic.Pages.IMagicPage.RawPage
+  id: RawPage
   parent: ToSic.Cre8magic.Pages.IMagicPage
   langs:
   - csharp
   - vb
-  name: OqtanePage
-  nameWithType: IMagicPage.OqtanePage
-  fullName: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
+  name: RawPage
+  nameWithType: IMagicPage.RawPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.RawPage
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: OqtanePage
+    id: RawPage
     path: ../ToSic.Cre8Magic.Client/Pages/IMagicPage.cs
     startLine: 62
   assemblies:
@@ -320,12 +320,12 @@ items:
     Can be used to access additional properties of the Oqtane page.
   example: []
   syntax:
-    content: Page OqtanePage { get; }
+    content: Page RawPage { get; }
     parameters: []
     return:
       type: Oqtane.Models.Page
-    content.vb: ReadOnly Property OqtanePage As Page
-  overload: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage*
+    content.vb: ReadOnly Property RawPage As Page
+  overload: ToSic.Cre8magic.Pages.IMagicPage.RawPage*
 - uid: ToSic.Cre8magic.Pages.IMagicPage.Id
   commentId: P:ToSic.Cre8magic.Pages.IMagicPage.Id
   id: Id
@@ -921,12 +921,12 @@ references:
   name: IsInBreadcrumb
   nameWithType: IMagicPage.IsInBreadcrumb
   fullName: ToSic.Cre8magic.Pages.IMagicPage.IsInBreadcrumb
-- uid: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage*
-  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
-  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_OqtanePage
-  name: OqtanePage
-  nameWithType: IMagicPage.OqtanePage
-  fullName: ToSic.Cre8magic.Pages.IMagicPage.OqtanePage
+- uid: ToSic.Cre8magic.Pages.IMagicPage.RawPage*
+  commentId: Overload:ToSic.Cre8magic.Pages.IMagicPage.RawPage
+  href: ToSic.Cre8magic.Pages.IMagicPage.html#ToSic_Cre8magic_Pages_IMagicPage_RawPage
+  name: RawPage
+  nameWithType: IMagicPage.RawPage
+  fullName: ToSic.Cre8magic.Pages.IMagicPage.RawPage
 - uid: Oqtane.Models.Page
   commentId: T:Oqtane.Models.Page
   parent: Oqtane.Models

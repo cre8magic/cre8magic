@@ -5,19 +5,13 @@ items:
   id: MagicThemeBase
   parent: ToSic.Cre8magic.Themes
   children:
-  - ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  - ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  - ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
   - ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
   - ToSic.Cre8magic.Themes.MagicThemeBase.Name
   - ToSic.Cre8magic.Themes.MagicThemeBase.OnAfterRenderAsync(System.Boolean)
   - ToSic.Cre8magic.Themes.MagicThemeBase.OnInitialized
   - ToSic.Cre8magic.Themes.MagicThemeBase.OnParametersSet
-  - ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader
-  - ToSic.Cre8magic.Themes.MagicThemeBase.Panes
   - ToSic.Cre8magic.Themes.MagicThemeBase.ThemeKit
   - ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
-  - ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
   langs:
   - csharp
   - vb
@@ -32,7 +26,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicThemeBase
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 17
+    startLine: 16
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -73,7 +67,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Name
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -90,203 +84,6 @@ items:
     content.vb: Public MustOverride Overrides Property Name As String
   overridden: Oqtane.Themes.ThemeBase.Name
   overload: ToSic.Cre8magic.Themes.MagicThemeBase.Name*
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  id: Layout
-  parent: ToSic.Cre8magic.Themes.MagicThemeBase
-  langs:
-  - csharp
-  - vb
-  name: Layout
-  nameWithType: MagicThemeBase.Layout
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Layout
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 29
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  summary: >-
-    The layout name which is used to lookup settings.
-
-    The inheriting file is required to specify it.
-  example: []
-  syntax:
-    content: public abstract string Layout { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public MustOverride ReadOnly Property Layout As String
-  overload: ToSic.Cre8magic.Themes.MagicThemeBase.Layout*
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  id: MagicContextClasses
-  parent: ToSic.Cre8magic.Themes.MagicThemeBase
-  langs:
-  - csharp
-  - vb
-  name: MagicContextClasses
-  nameWithType: MagicThemeBase.MagicContextClasses
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: MagicContextClasses
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 38
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  summary: >-
-    Sets additional body classes - usually to activate CSS variations for this theme
-
-
-    Note that ATM they are not set on the body, but on a div wrapping the entire contents.
-
-    This is because of some shortcomings in Oqtane, which doesn't allow to reliably set classes on the body.
-
-    Just remember that when you write your CSS ;).
-  example: []
-  syntax:
-    content: protected abstract string MagicContextClasses { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Protected MustOverride ReadOnly Property MagicContextClasses As String
-  overload: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses*
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  id: MagicComponents
-  parent: ToSic.Cre8magic.Themes.MagicThemeBase
-  langs:
-  - csharp
-  - vb
-  name: MagicComponents
-  nameWithType: MagicThemeBase.MagicComponents
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: MagicComponents
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 44
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  summary: >-
-    Option to inject dynamic components - mainly for testing
-
-    inspired by http://www.binaryintellect.net/articles/a92dea29-3218-4d1c-a132-9671b518d1f4.aspx
-  example: []
-  syntax:
-    content: protected List<MagicDynamicComponent> MagicComponents { get; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.List{ToSic.Cre8magic.Components.Internal.MagicDynamicComponent}
-    content.vb: Protected ReadOnly Property MagicComponents As List(Of MagicDynamicComponent)
-  overload: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents*
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader
-  commentId: F:ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader
-  id: PaneNameHeader
-  parent: ToSic.Cre8magic.Themes.MagicThemeBase
-  langs:
-  - csharp
-  - vb
-  name: PaneNameHeader
-  nameWithType: MagicThemeBase.PaneNameHeader
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.PaneNameHeader
-  type: Field
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: PaneNameHeader
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 47
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  syntax:
-    content: public const string PaneNameHeader = "Header"
-    return:
-      type: System.String
-    content.vb: Public Const PaneNameHeader As String = "Header"
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  id: Panes
-  parent: ToSic.Cre8magic.Themes.MagicThemeBase
-  langs:
-  - csharp
-  - vb
-  name: Panes
-  nameWithType: MagicThemeBase.Panes
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Panes
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 52
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  summary: Force the user to overwrite panes.
-  example: []
-  syntax:
-    content: public override abstract string Panes { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public MustOverride Overrides Property Panes As String
-  overridden: Oqtane.Themes.ThemeBase.Panes
-  overload: ToSic.Cre8magic.Themes.MagicThemeBase.Panes*
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
-  commentId: M:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
-  id: ThemePath
-  parent: ToSic.Cre8magic.Themes.MagicThemeBase
-  langs:
-  - csharp
-  - vb
-  name: ThemePath()
-  nameWithType: MagicThemeBase.ThemePath()
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath()
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: ThemePath
-    path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 58
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes
-  summary: Make a nicer theme path without the ".Client"
-  example: []
-  syntax:
-    content: public string ThemePath()
-    return:
-      type: System.String
-      description: ''
-    content.vb: Public Function ThemePath() As String
-  overload: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath*
 - uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
   commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
   id: ThemePackage
@@ -305,7 +102,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemePackage
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 64
+    startLine: 28
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -339,7 +136,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemeKit
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 67
+    startLine: 31
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -368,7 +165,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicHat
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 73
+    startLine: 37
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -409,7 +206,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnInitialized
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 79
+    startLine: 43
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -441,7 +238,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnParametersSet
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 91
+    startLine: 55
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -473,7 +270,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnAfterRenderAsync
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
-    startLine: 102
+    startLine: 66
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
@@ -636,133 +433,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.Layout*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_Layout
-  name: Layout
-  nameWithType: MagicThemeBase.Layout
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.Layout
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicContextClasses
-  name: MagicContextClasses
-  nameWithType: MagicThemeBase.MagicContextClasses
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicContextClasses
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicComponents
-  name: MagicComponents
-  nameWithType: MagicThemeBase.MagicComponents
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicComponents
-- uid: System.Collections.Generic.List{ToSic.Cre8magic.Components.Internal.MagicDynamicComponent}
-  commentId: T:System.Collections.Generic.List{ToSic.Cre8magic.Components.Internal.MagicDynamicComponent}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  name: List<MagicDynamicComponent>
-  nameWithType: List<MagicDynamicComponent>
-  fullName: System.Collections.Generic.List<ToSic.Cre8magic.Components.Internal.MagicDynamicComponent>
-  nameWithType.vb: List(Of MagicDynamicComponent)
-  fullName.vb: System.Collections.Generic.List(Of ToSic.Cre8magic.Components.Internal.MagicDynamicComponent)
-  name.vb: List(Of MagicDynamicComponent)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-  - name: <
-  - uid: ToSic.Cre8magic.Components.Internal.MagicDynamicComponent
-    name: MagicDynamicComponent
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: ToSic.Cre8magic.Components.Internal.MagicDynamicComponent
-    name: MagicDynamicComponent
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: Oqtane.Themes.ThemeBase.Panes
-  commentId: P:Oqtane.Themes.ThemeBase.Panes
-  parent: Oqtane.Themes.ThemeBase
-  isExternal: true
-  name: Panes
-  nameWithType: ThemeBase.Panes
-  fullName: Oqtane.Themes.ThemeBase.Panes
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.Panes*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_Panes
-  name: Panes
-  nameWithType: MagicThemeBase.Panes
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.Panes
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
-  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_ThemePath
-  name: ThemePath
-  nameWithType: MagicThemeBase.ThemePath
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePath
 - uid: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage*
   commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
   href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_ThemePackage

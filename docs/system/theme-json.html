@@ -141,7 +141,7 @@ It is used by <a href="magic-settings.html">Magic Settings</a> to load all the i
 <li><code>themeDesigns</code> has the configuration for CSS classes to be used in various places</li>
 <li><code>languages</code> contains configuration for languages to show in the menu</li>
 <li><code>menus</code> contains configuration for what menus show what nodes, like top-level with sub-level, etc.</li>
-<li><code>menuDesigns</code> contains a bunch of rules for how menus should be styled, such as classes to use on the active node etc.</li>
+<li><code>menuBlueprints</code> contains a bunch of rules for how menus should be styled, such as classes to use on the active node etc.</li>
 </ol>
 <h3 id="named-configurations">Named Configurations</h3>
 <p>All of the nodes above (except those marked with <em>*</em>) can have many different, named configurations.
@@ -161,7 +161,7 @@ So you'll see something like this:</p>
 </code></pre>
 <p>This means that there is a configuration called <code>Default</code> and one called <code>Sidebar</code> which will do something different.</p>
 <h3 id="-does-exactly-what-it-says">@inherits Does Exactly What it Says</h3>
-<p>Example from the <code>menuDesigns</code></p>
+<p>Example from the <code>menuBlueprints</code></p>
 <pre><code class="lang-json">{
   &quot;mobile&quot;: {
     &quot;ul&quot;: {

@@ -139,9 +139,9 @@ This object is usually not used the outside, as the outside will use the <strong
 </li>
 <li>Design
 <ol>
-<li><strong>MagicMenuDesignSettings</strong> ...</li>
-<li><strong>MagicMenuDesignSettingsPart</strong> ... TODO: NAMING NOT FINAL</li>
-<li><strong>MagicMenuDesigner</strong> ...</li>
+<li><strong>MagicMenuBlueprints</strong> ...</li>
+<li><strong>MagicMenuBlueprintPart</strong> ... TODO: NAMING NOT FINAL</li>
+<li><strong>MagicMenuTailor</strong> ...</li>
 </ol>
 </li>
 <li>The <strong>/Menus/Components/MagicMenu</strong> is a primary or sample component for using the menu.
@@ -168,7 +168,7 @@ This object is usually not used the outside, as the outside will use the <strong
 <p>A Catalog contain all the settings which can be requested by any part of the system.</p>
 <p>It follows two important conventions:</p>
 <ol>
-<li>Flat Structure with Topic first (e.g. <code>Themes</code>, <code>ThemeDesigns</code> <code>Menus</code>, <code>MenuDesigns</code>, <code>Breadcrumbs</code>, ...)</li>
+<li>Flat Structure with Topic first (e.g. <code>Themes</code>, <code>ThemeDesigns</code> <code>Menus</code>, <code>MenuBlueprints</code>, <code>Breadcrumbs</code>, ...)</li>
 <li>Each of these Settings Groups will have a dictionary of settings, so each section can contain multiple named settings.</li>
 <li>Everything is a <code>record</code> object, so it's immutable and can't cause side-effects.</li>
 <li>Everything inside the catalog should support the <code>ICanClone&lt;T&gt;</code> interface, so these records can be duplicated &amp; modified easily.</li>
@@ -182,7 +182,7 @@ This object is usually not used the outside, as the outside will use the <strong
 </ol>
 </li>
 <li><code>Menus</code> contains menu settings</li>
-<li><code>MenuDesigns</code> contains menu design settings</li>
+<li><code>MenuBlueprints</code> contains menu design settings</li>
 </ol>
 <h2 id="settings-json">Settings Json</h2>
 <p>...usually <code>theme.json</code></p>
