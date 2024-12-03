@@ -7,15 +7,15 @@ namespace ToSic.Cre8magic.Settings;
 ///
 /// This is usually the base class for something that can also have more information.
 /// </summary>
-public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
+public record MagicBlueprintPart: ICanClone<MagicBlueprintPart>
 {
     [PrivateApi]
-    public MagicDesignSettingsPart() { }
+    public MagicBlueprintPart() { }
 
     /// <summary>
     /// Internal because of inheritance, and we don't want it protected because that would be public.
     /// </summary>
-    internal MagicDesignSettingsPart(MagicDesignSettingsPart? priority, MagicDesignSettingsPart? fallback = default)
+    internal MagicBlueprintPart(MagicBlueprintPart? priority, MagicBlueprintPart? fallback = default)
     {
         Classes = priority?.Classes ?? fallback?.Classes;
         Value = priority?.Value ?? fallback?.Value;
@@ -25,7 +25,7 @@ public record MagicDesignSettingsPart: ICanClone<MagicDesignSettingsPart>
         IsAdmin = priority?.IsAdmin ?? fallback?.IsAdmin;
     }
 
-    MagicDesignSettingsPart ICanClone<MagicDesignSettingsPart>.CloneUnder(MagicDesignSettingsPart? priority, bool forceCopy) =>
+    MagicBlueprintPart ICanClone<MagicBlueprintPart>.CloneUnder(MagicBlueprintPart? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

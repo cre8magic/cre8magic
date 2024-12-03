@@ -27,8 +27,8 @@ public record MagicLanguageBlueprint : SettingsWithInherit, ICanClone<MagicLangu
     /// Custom, named settings for classes, values etc. as you need them in your code.
     /// For things such as `ul` or `li` or `a` tags.
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettingsPart>))]
-    public Dictionary<string, MagicDesignSettingsPart> Parts { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBlueprintPart>))]
+    public Dictionary<string, MagicBlueprintPart> Parts { get; init; } = new();
 
 
     internal static Defaults<MagicLanguageBlueprint> DesignDefaults = new()

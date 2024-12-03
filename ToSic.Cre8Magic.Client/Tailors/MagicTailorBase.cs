@@ -6,15 +6,15 @@ namespace ToSic.Cre8magic.Tailors;
 
 public abstract class MagicTailorBase: IMagicTailor
 {
-    protected internal MagicTailorBase(TokenEngine tokens, Dictionary<string, MagicDesignSettingsPart> designSettings)
+    protected internal MagicTailorBase(TokenEngine tokens, Dictionary<string, MagicBlueprintPart> designSettings)
     {
         DesignSettings = designSettings;
         Tokens = tokens;
     }
-    protected Dictionary<string, MagicDesignSettingsPart> DesignSettings { get; }
+    protected Dictionary<string, MagicBlueprintPart> DesignSettings { get; }
 
 
-    protected MagicDesignSettingsPart? GetSettings(string name) =>
+    protected MagicBlueprintPart? GetSettings(string name) =>
         DesignSettings.GetValueOrDefault(name);
 
     internal virtual TokenEngine Tokens { get; }

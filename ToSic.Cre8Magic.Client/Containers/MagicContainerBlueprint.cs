@@ -21,8 +21,8 @@ public record MagicContainerBlueprint: SettingsWithInherit, ICanClone<MagicConta
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettingsPart>))]
-    public Dictionary<string, MagicDesignSettingsPart> Parts { get; init; } = new(StringComparer.InvariantCultureIgnoreCase);
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBlueprintPart>))]
+    public Dictionary<string, MagicBlueprintPart> Parts { get; init; } = new(StringComparer.InvariantCultureIgnoreCase);
 
 
     internal static Defaults<MagicContainerBlueprint> Defaults = new(new()

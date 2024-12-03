@@ -24,7 +24,7 @@ public class MagicContainerTailor(CmThemeContextFull context, Module module, Mag
     /// </summary>
     /// <param name="styles"></param>
     /// <returns></returns>
-    private string CombineWithModuleClasses(MagicDesignSettingsPart styles)
+    private string CombineWithModuleClasses(MagicBlueprintPart styles)
     {
         var value =  string.Join(" ", new[]
         {

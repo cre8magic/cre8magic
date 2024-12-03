@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
-public record MagicBreadcrumbBlueprintPart : MagicDesignSettingsPart, ICanClone<MagicBreadcrumbBlueprintPart>
+public record MagicBreadcrumbBlueprintPart : MagicBlueprintPart, ICanClone<MagicBreadcrumbBlueprintPart>
 {
     [PrivateApi]
     public MagicBreadcrumbBlueprintPart() { }

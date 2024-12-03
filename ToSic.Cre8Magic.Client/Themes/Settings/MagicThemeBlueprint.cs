@@ -33,7 +33,7 @@ public partial record MagicThemeBlueprint: SettingsWithInherit, ICanClone<MagicT
     /// <summary>
     /// Custom values / classes as you need them in your code
     /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettingsPart>))]
-    public Dictionary<string, MagicDesignSettingsPart> Parts { get; init; } = new();
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBlueprintPart>))]
+    public Dictionary<string, MagicBlueprintPart> Parts { get; init; } = new();
 
 }

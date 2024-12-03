@@ -17,7 +17,7 @@ internal class JsonMerger
         Converters =
         {
             PairOnOffJsonConverter.GetNew(logger),
-            DesignSettingsJsonConverter<MagicDesignSettingsPart>.GetNew(logger),
+            DesignSettingsJsonConverter<MagicBlueprintPart>.GetNew(logger),
             DesignSettingsJsonConverter<MagicMenuBlueprintPart>.GetNew(logger),
             ThemePartJsonConverter.GetNew(logger),
         },
