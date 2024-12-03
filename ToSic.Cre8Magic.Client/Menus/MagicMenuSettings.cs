@@ -26,9 +26,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     {
         Id = priority?.Id ?? fallback?.Id;
         Display = priority?.Display ?? fallback?.Display;
-        Children = priority?.Children ?? fallback?.Children;
         Start = priority?.Start ?? fallback?.Start;
-        Level = priority?.Level ?? fallback?.Level;
         Variant = priority?.Variant ?? fallback?.Variant;
 
         // Code-Only Settings
@@ -55,17 +53,6 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     public bool? Display { get; init; } = DisplayDefault;
     public const bool DisplayDefault = true;
 
-    /// <summary>
-    /// Levels to skip from the initial stating point.
-    /// - 0 means don't skip any, so if we're starting at the root, show that level
-    /// - 1 means skip the first level, so if we're starting at the root, show the children
-    /// See inspiration context from DDRMenu https://www.dnnsoftware.com/wiki/ddrmenu-reference-guide
-    /// in DDR it was called 'skip' but it didn't make sense IMHO
-    /// TODO: possibly rename to StartOnChildren or StartSkip?
-    /// </summary>
-    public bool? Children { get; init; }
-    public const bool ChildrenFallback = default;
-
     //// TODO: NOT YET IMPLEMENTED
     ///// <summary>
     ///// Exact list of pages to show in this menu.
@@ -85,16 +72,6 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     public string? Start { get; init; }
     public const char StartPageRootSlash = '/';
     public const string StartPageCurrent = ".";
-
-    /// <summary>
-    /// The level this menu should start from.
-    /// - `0` is the top level (default)
-    /// - `1` is the top level containing home and other pages
-    /// - `-1` is one level up from the current node
-    /// - `-2` is two levels up from the current node
-    /// </summary>
-    public int? Level { get; init; }
-    public const int StartLevelFallback = default;
 
     /// <summary>
     /// The template to use - horizontal/vertical
