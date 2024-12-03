@@ -66,6 +66,8 @@ public interface IMagicSettingsService
     /// </summary>
     PageState? PageState { get; }
 
+    MagicThemePackage ThemePackage { get; }
+
     internal TokenEngine PageTokenEngine(PageState pageState);
 
     ///// <summary>

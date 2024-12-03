@@ -1,4 +1,6 @@
-﻿using Microsoft.JSInterop;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.JSInterop;
+using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Internal.JsInterops;
 
@@ -7,19 +9,26 @@ namespace ToSic.Cre8magic.Internal.JsInterops;
 /// </summary>
 public abstract class MagicJsServiceBase
 {
+    protected const string ThemePathPlaceholder = "[ThemePath]";
+
     /// <summary>
     /// Constructor
     /// </summary>
     /// <param name="jsRuntime">JS Runtime of the control, usually available later, like in the OnAfterRenderAsync</param>
     /// <param name="modulePath">Path to the javascript file, must be a JS6 Module</param>
-    protected MagicJsServiceBase(IJSRuntime jsRuntime, string modulePath)
+    protected MagicJsServiceBase(IJSRuntime jsRuntime, IMagicSettingsService settingSvc, string modulePath)
     {
+        _settingSvc = settingSvc;
         JsRuntime = jsRuntime;
+        // ModulePath = modulePath;
         ModulePath = modulePath;
     }
+    private readonly IMagicSettingsService _settingSvc;
 
     protected IJSRuntime JsRuntime { get; }
-    protected string ModulePath { get; }
+
+    [field: AllowNull, MaybeNull]
+    protected string ModulePath => field?.Replace(ThemePathPlaceholder, _settingSvc.ThemePackage.ThemePath);
 
     public async Task Log(params object[] args) => await JsRuntime.InvokeVoidAsync("console.log", args);
 

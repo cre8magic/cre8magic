@@ -50,7 +50,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     MagicDebugSettings IMagicSettingsService.Debug => field
         ??= Catalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
 
-    private MagicThemePackage ThemePackage => _packageSettings ?? MagicThemePackage.Fallback;
+    public MagicThemePackage ThemePackage => _packageSettings ?? MagicThemePackage.Fallback;
     private MagicThemePackage? _packageSettings;
 
     /// <summary>

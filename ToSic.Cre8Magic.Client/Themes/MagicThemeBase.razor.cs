@@ -44,12 +44,6 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     public abstract override string Panes { get; }
 
     /// <summary>
-    /// Make a nicer theme path without the ".Client"
-    /// </summary>
-    /// <returns></returns>
-    public new string ThemePath() => base.ThemePath().Replace(".Client", "");
-
-    /// <summary>
     /// This contains the default settings which must be used in this theme.
     /// Any inheriting class must specify what it will be. 
     /// </summary>

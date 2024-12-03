@@ -24,6 +24,8 @@ public class ThemeInfo : ITheme
         // Settings still very WIP
         //ThemeSettingsType = typeof(ThemeSettingsUi.Settings).AssemblyQualifiedName,
         //ContainerSettingsType = "Oqtane.Theme.ToSic.ContainerSettings, Oqtane.Theme.ToSic.Oqtane",
+
+        // Package Name - used for NuGet and also for paths
         PackageName = "ToSic.Cre8magic.TestTheme",
         Dependencies = typeof(MagicThemeBase).AssemblyQualifiedName
     };
@@ -41,33 +43,6 @@ public class ThemeInfo : ITheme
 
     // Note: not "theme-" because we need the "-" as separator in razor files it must be @ThemeInfo.ClassPrefix-something-else
     public const string ClassPrefix = "theme";
-
-    #endregion
-
-
-    #region Paths used in the Theme for getting JS and CSS files
-
-    internal static string ThemePath => _themePath ??= "Themes/" + new ThemeInfo().Theme.PackageName;
-    private static string _themePath;
-
-    #endregion
-
-    #region Package Theme Defaults / Settings etc.
-
-    /// <summary>
-    /// Default settings used in this package.
-    /// They are defined here and given as initial values to the ThemeSettingsService in the Default Razor file.
-    ///
-    /// You don't need to do much here, because all settings should then come from the json file.
-    /// </summary>
-    public static MagicThemePackage ThemePackageDefaults = new()
-    {
-        // The package name is important, as it's used to find assets etc.
-        PackageName = new ThemeInfo().Theme.PackageName,
-
-        // The json file in the theme folder containing all kinds of settings etc.
-        SettingsJsonFile = "theme.json",
-    };
 
     #endregion
 
