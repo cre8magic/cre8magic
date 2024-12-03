@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ToSic.Cre8magic.Act;
-using ToSic.Cre8magic.Components.Internal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Themes;
@@ -22,26 +21,6 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     /// Must be set by each inheriting theme, which is why it's marked abstract to enforce this.
     /// </summary>
     public abstract override string Name { get; }
-
-    /// <summary>
-    /// The layout name which is used to lookup settings.
-    /// The inheriting file is required to specify it. 
-    /// </summary>
-    public abstract string Layout { get; }
-
-    /// <summary>
-    /// Option to inject dynamic components - mainly for testing
-    /// inspired by http://www.binaryintellect.net/articles/a92dea29-3218-4d1c-a132-9671b518d1f4.aspx
-    /// </summary>
-    protected List<MagicDynamicComponent> MagicComponents { get; } = [];
-
-    // Panes of the layout
-    public const string PaneNameHeader = "Header";
-
-    /// <summary>
-    /// Force the user to overwrite panes.
-    /// </summary>
-    public abstract override string Panes { get; }
 
     /// <summary>
     /// This contains the default settings which must be used in this theme.
@@ -67,7 +46,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
         base.OnInitialized();
         // Provide the first PageState as early as possible.
         MagicHat.UsePageState(PageState);
-        MagicHat.UseSettingsPackage(ThemePackage, Layout);
+        MagicHat.UseSettingsPackage(ThemePackage);
     }
 
     /// <summary>

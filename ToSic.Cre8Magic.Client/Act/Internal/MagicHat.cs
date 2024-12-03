@@ -38,9 +38,9 @@ internal class MagicHat(
 {
     #region Setup & PageState
 
-    public IMagicHat UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = null)
+    public IMagicHat UseSettingsPackage(MagicThemePackage themePackage)
     {
-        settingsSvc.Setup(themePackage, layoutName);
+        settingsSvc.Setup(themePackage);
         return this;
     }
 

@@ -22,7 +22,7 @@ public interface IMagicHat
 
     IMagicHat UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
     
-    IMagicHat UseSettingsPackage(MagicThemePackage themePackage, string? layoutName = default);
+    IMagicHat UseSettingsPackage(MagicThemePackage themePackage);
 
     IMagicHat UsePageState(PageState pageState);
 

@@ -20,9 +20,8 @@ public interface IMagicSettingsService
     /// Otherwise, the settings are just defaulted to some standard values.
     /// </summary>
     /// <param name="themePackage"></param>
-    /// <param name="layoutName"></param>
     /// <returns></returns>
-    IMagicSettingsService Setup(MagicThemePackage themePackage, string? layoutName);
+    IMagicSettingsService Setup(MagicThemePackage themePackage);
 
     /// <summary>
     /// Get lightweight theme context - basically the final name, settings and journal.

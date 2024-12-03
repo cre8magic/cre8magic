@@ -22,11 +22,11 @@ namespace ToSic.Cre8magic.Settings.Internal;
 internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) : IMagicSettingsService, IHasCatalogs
 {
     /// <inheritdoc />>
-    public IMagicSettingsService Setup(MagicThemePackage themePackage, string? layoutName)
+    public IMagicSettingsService Setup(MagicThemePackage themePackage)
     {
         _packageSettings = themePackage;
         ThemeTokens = null!;
-        _layoutName = layoutName;
+        _layoutName = themePackage.Layout;
         return this;
     }
 

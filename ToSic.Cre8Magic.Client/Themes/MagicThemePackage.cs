@@ -23,10 +23,12 @@ public record MagicThemePackage
     /// Constructor to create a new theme package definition from an existing theme.
     /// </summary>
     /// <param name="themeInfo"></param>
-    public MagicThemePackage(ITheme themeInfo)
+    /// <param name="layoutName"></param>
+    public MagicThemePackage(ITheme themeInfo, string? layoutName = default)
     {
         // The package name is important, as it's used to find assets etc.
         PackageName = themeInfo.Theme.PackageName;
+        Layout = layoutName;
 
         // The json file in the theme folder containing all kinds of settings etc.
         SettingsJsonFile = "theme.json";
@@ -38,10 +40,22 @@ public record MagicThemePackage
     /// </summary>
     public MagicSettingsCatalog? Defaults { get; init; }
 
+    public string? Layout { get; init; }
+
+    /// <summary>
+    /// Root of the WWW files - usually `wwwroot` (default)
+    /// </summary>
     public string WwwRoot { get; init; } = "wwwroot";
 
+    /// <summary>
+    /// Name of the settings file in the theme folder.
+    /// Usually `theme.json` (default)
+    /// </summary>
     public string SettingsJsonFile { get; init; } = "theme.json";
 
+    /// <summary>
+    /// The PackageName which is used for paths etc.
+    /// </summary>
     public string PackageName { get; init; } = "todo: set theme package name in your constructor";
 
     [field: AllowNull, MaybeNull]

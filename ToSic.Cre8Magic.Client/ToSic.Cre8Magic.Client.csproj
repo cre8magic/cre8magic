@@ -24,6 +24,15 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
+  <!-- Suppress 'field' not allowed in Docs-compiling CS0657 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS0657</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS0657</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Models\**" />
     <Compile Remove="Pages\Internal\Breadcrumb\**" />

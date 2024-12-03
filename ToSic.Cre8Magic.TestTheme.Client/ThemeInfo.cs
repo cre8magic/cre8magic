@@ -21,9 +21,6 @@ public class ThemeInfo : ITheme
     {
         Name = "cre8magic Test Theme",
         Version = "0.3.1",
-        // Settings still very WIP
-        //ThemeSettingsType = typeof(ThemeSettingsUi.Settings).AssemblyQualifiedName,
-        //ContainerSettingsType = "Oqtane.Theme.ToSic.ContainerSettings, Oqtane.Theme.ToSic.Oqtane",
 
         // Package Name - used for NuGet and also for paths
         PackageName = "ToSic.Cre8magic.TestTheme",
