@@ -59,11 +59,7 @@ internal class NodeRuleHelper(MagicPageFactory pageFactory, IMagicPage current, 
             : anchorPages;
 
         // Attach Node Rule to each Page, so further processing knows the depth etc.
-        result = result
-            .Cast<MagicPage>()
-            .Select(mp => mp with { NodeRule = n })
-            .Cast<IMagicPage>()
-            .ToList();
+        result = MagicPageFactory.CloneWithNodeRule(result, n);
 
         return l.Return(result, result.LogPageList());
     }

@@ -36,10 +36,11 @@ internal abstract class MagicPagesFactoryBase(WorkContext workContext) : IMagicP
         var l = Log.Fn<List<IMagicPage>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
 
         var pageFactory = workContext.PageFactory;
-        var children = pageFactory.ChildrenOf(page.Id)
+        var children = pageFactory.ChildrenOf(page)
             .Select(IMagicPage (child) => new MagicPage(child.RawPage, pageFactory, this)
             {
                 MenuLevel = page.MenuLevel + 1,
+                NodeRule = ((MagicPage)child).NodeRule,
             })
             .ToList();
         return l.Return(children, $"{children.Count}");

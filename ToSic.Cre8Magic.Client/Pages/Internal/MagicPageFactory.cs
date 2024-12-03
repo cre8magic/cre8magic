@@ -4,6 +4,7 @@ using Oqtane.Security;
 using Oqtane.Shared;
 using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
+using ToSic.Cre8magic.Menus.Internal.Nodes;
 using ToSic.Cre8magic.Pages.Internal.PageDesign;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils.Logging;
@@ -120,7 +121,20 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
         return l.Return(result, result.LogPageList());
     }
 
-    public List<IMagicPage> ChildrenOf(IMagicPage page) => ChildrenOf(page.Id);
+    public List<IMagicPage> ChildrenOf(IMagicPage page)
+    {
+        var result = ChildrenOf(page.Id);
+        return page is MagicPage { NodeRule: not null } magicPage
+            ? CloneWithNodeRule(result, magicPage.NodeRule)
+            : result;
+    }
+
+    internal static List<IMagicPage> CloneWithNodeRule(List<IMagicPage> result, StartNodeRule nodeRule) =>
+        result
+            .Cast<MagicPage>()
+            .Select(mp => mp with { NodeRule = nodeRule })
+            .Cast<IMagicPage>()
+            .ToList();
 
     public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperBlank();
 

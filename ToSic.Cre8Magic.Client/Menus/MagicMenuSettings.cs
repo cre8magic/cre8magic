@@ -62,7 +62,6 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     /// so if the navigation starts a level 2 then levelDepth 2 means to show levels 2 and 3 ??? verify
     /// </summary>
     public int? Depth { get; init; }
-    internal int DepthSafe => Depth ?? 1;
 
     /// <summary>
     /// Levels to skip from the initial stating point.

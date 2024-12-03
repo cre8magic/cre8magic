@@ -16,9 +16,6 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
     protected override IMagicPageTailor PageTailor() =>
         workContext.Tailor ?? new MagicMenuTailor(workContext);
 
-    public int MaxDepth => _maxDepth ??= workContext.Settings.DepthSafe;
-    private int? _maxDepth;
-
     /// <summary>
     /// Retrieve the children the first time it's needed.
     /// </summary>
@@ -32,8 +29,8 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
             return l.Return(GetRootPages(workContext, this), "Root");
 
 
-        var levelsRemaining = MaxDepth - (page.MenuLevel /*- 1*/ /* Level is 1 based, so -1 */);
-        if (levelsRemaining < 0)
+        var levelsRemaining = ((MagicPage)page).NodeRule.Depth - (page.MenuLevel /*- 1*/ /* Level is 1 based, so -1 */);
+        if (levelsRemaining <= 0)
             return l.Return([], "remaining levels 0 - return empty");
 
         var children = base.ChildrenOf(page);
@@ -57,17 +54,14 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
         var l = log.Fn<List<IMagicPage>>("Root");
         l.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
 
-        var levelsRemaining = nodeFactory.MaxDepth;
-        if (levelsRemaining < 0)
-            return l.Return([], "remaining levels 0 - return empty");
-
         var rootPages = new NodeRuleHelper(pageFactory, pageFactory.Current, settings, log).GetRootNodes();
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
             .Select(IMagicPage (child) => new MagicPage(child.RawPage, pageFactory, nodeFactory)
             {
-                MenuLevel = 2 /* todo: should probably be 1 */
+                MenuLevel = 1, /* todo: should probably be 1 */
+                NodeRule = ((MagicPage)child).NodeRule,
             })
             .ToList();
         return l.Return(children, $"{children.Count}");
