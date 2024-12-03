@@ -16,7 +16,7 @@ internal class JsonMerger
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
         Converters =
         {
-            PairOnOffJsonConverter.GetNew(logger),
+            //PairOnOffJsonConverter.GetNew(logger),
             DesignSettingsJsonConverter<MagicBlueprintPart>.GetNew(logger),
             DesignSettingsJsonConverter<MagicMenuBlueprintPart>.GetNew(logger),
             ThemePartJsonConverter.GetNew(logger),

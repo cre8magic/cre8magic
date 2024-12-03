@@ -1,4 +1,6 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Json;
 
 namespace ToSic.Cre8magic.Settings;
 
@@ -9,6 +11,7 @@ namespace ToSic.Cre8magic.Settings;
 /// * is home
 /// * etc.
 /// </summary>
+[JsonConverter(typeof(PairOnOffJsonConverter))]
 public class MagicSettingOnOff: ICanClone<MagicSettingOnOff>
 {
     /// <summary>
@@ -39,4 +42,11 @@ public class MagicSettingOnOff: ICanClone<MagicSettingOnOff>
             On = priority?.On ?? On,
             Off = priority?.Off ?? Off
         };
+
+    /// <summary>
+    /// Special class just for deserialization, which does not have the JsonConverter attribute.
+    /// </summary>
+    internal class NoConverterForJsonRead: MagicSettingOnOff;
+
+    internal class NoConverterForJsonWrite(MagicSettingOnOff original) : MagicSettingOnOff(original?.On, original?.Off);
 }
