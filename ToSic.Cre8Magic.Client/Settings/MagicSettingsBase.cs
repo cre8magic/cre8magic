@@ -32,7 +32,7 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
         Debug = priority?.Debug ?? fallback.Debug;
 
         // Page State
-        _pageState = priority?.PageState ?? fallback.PageState;
+        PageState = priority?.PageState ?? fallback.PageState;
 
         // Debug settings
         ((IDebugSettings)this).Catalog = ((IDebugSettings?)priority)?.Catalog ?? ((IDebugSettings?)fallback)?.Catalog;
@@ -50,12 +50,7 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
     /// It can be provided in the settings, or it must be provided in the theme using <see cref="IMagicHat.UsePageState"/>.
     /// </summary>
     [JsonIgnore]
-    public virtual PageState? PageState
-    {
-        get => _pageState;
-        init => _pageState = value;
-    }
-    private readonly PageState? _pageState;
+    public PageState? PageState { get; init; }
 
 
     /// <inheritdoc/>

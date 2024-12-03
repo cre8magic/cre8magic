@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Themes;
 
@@ -18,31 +19,18 @@ public record MagicThemePackage
     /// </summary>
     public MagicSettingsCatalog? Defaults { get; init; }
 
-    ///// <summary>
-    ///// WIP
-    ///// </summary>
-    //public MagicSettingsCatalog? Catalog { get; init; }
-
     public string WwwRoot { get; init; } = "wwwroot";
 
     public string SettingsJsonFile { get; init; } = "theme.json";
 
     public string PackageName { get; init; } = "todo: set theme package name in your constructor";
 
+    [field: AllowNull, MaybeNull]
     public string Url
     {
-        get => _url ??= "Themes/" + PackageName;
-        init => _url = value;
+        get => field ??= "Themes/" + PackageName;
+        init => field = value;
     }
-    private string? _url;
-
-    /// <summary>
-    /// `IsConfigured` is for internal use only.
-    /// Basically every instance of this will report true,
-    /// unless our default / fallback instance is used,
-    /// which will set this to false.
-    /// </summary>
-    internal bool IsConfigured { get; init; } = true;
 
     internal static MagicThemePackage Fallback = new()
     {
@@ -50,6 +38,5 @@ public record MagicThemePackage
         WwwRoot = "wwwroot",
         SettingsJsonFile = "",
         PackageName = "Fallback-Not-Configured",
-        IsConfigured = false,
     };
 }

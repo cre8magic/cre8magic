@@ -17,7 +17,19 @@ Nice to know:
 {
     public override string Name => "Default";
     public override string Layout => "default";
-    protected override string MagicContextClasses => "floatwideheader";
+
+    /// <summary>
+    /// Sets additional body classes - usually to activate CSS variations for this theme
+    /// 
+    /// Note that ATM they are not set on the body, but on a div wrapping the entire contents.
+    /// This is because of some shortcomings in Oqtane, which doesn't allow to reliably set classes on the body.
+    /// Just remember that when you write your CSS ;).
+    /// </summary>
+    protected virtual string MagicContextClasses => "floatwideheader";
+
+
+
+    #region Test Stuff
 
     [Parameter, SupplyParameterFromQuery]
     public string TestSettings { get; set; }
@@ -68,6 +80,8 @@ Nice to know:
                 : null;
         }
     }
+    #endregion
+
 
 }
 @*

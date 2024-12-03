@@ -4,23 +4,30 @@ uid: Library.MagicMenu.Index
 
 # cre8magic – Magic Menu System for Oqtane Themes
 
-The cre8magic Menu System helps you to easily create best-practice menus in Oqtane.
-The goal is that your menus are:
+Menus are used in Oqtane solutions as the main way to navigate the user through the website.
+A typical website will have a main menu, mobile menu, a footer menu and possibly more.
+Each menu can have different requirements, such as:
 
-1. Configuration-based
-1. Mobile-friendly & reactive
-1. Accessible
-1. Bootstrap5 standard
-1. Respect user permissions
-1. Highlight the current page
-1. Easy to customize
-1. flexible
-
-You can work with pre-built components or leverage the **MagicMenuKit** to build your own components.
+* showing specific pages the top-level pages (main menu), exact IDs (footer) or showing all pages below the current page (sidebar)
+* show a different depth of pages, such as only the first level, or all levels below the current page
+* behaving in a certain way, such as collapsing sub-menus
+* look a certain way, such as highlighting the current page
 
 ## About Magic Menus
 
-The cre8magic Menu System helps you to easily create best-practice menus in Oqtane Themes.
+The cre8magic Menu System helps you to easily create best-practice menus in Oqtane.
+The goal is that your menus are:
+
+1. configuration-based
+1. mobile-friendly & reactive
+1. ARIA-Accessible
+1. use HTML5 and Bootstrap5 conventions
+1. respect user permissions
+1. highlight the current page
+1. easy to customize & flexible
+
+You can work with pre-built components or leverage the **MagicMenuKit** to build your own components.
+
 Depending on your preferences you can use pre-built components and some configuration,
 or easily build your own components with the help of the **MagicMenuKit**.
 

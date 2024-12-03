@@ -30,15 +30,6 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     public abstract string Layout { get; }
 
     /// <summary>
-    /// Sets additional body classes - usually to activate CSS variations for this theme
-    /// 
-    /// Note that ATM they are not set on the body, but on a div wrapping the entire contents.
-    /// This is because of some shortcomings in Oqtane, which doesn't allow to reliably set classes on the body.
-    /// Just remember that when you write your CSS ;).
-    /// </summary>
-    protected abstract string MagicContextClasses { get; }
-
-    /// <summary>
     /// Option to inject dynamic components - mainly for testing
     /// inspired by http://www.binaryintellect.net/articles/a92dea29-3218-4d1c-a132-9671b518d1f4.aspx
     /// </summary>

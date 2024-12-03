@@ -17,10 +17,15 @@ namespace ToSic.Cre8magic.TestTheme.Client;
 /// </remarks>
 public abstract class MyThemeBase : MagicThemeBase
 {
+    /// <summary>
+    /// Standard Oqtane Resources
+    /// </summary>
     public override List<Resource> Resources =>
     [
         new() { ResourceType = Stylesheet, Url = $"{ThemePath()}theme.min.css" }, // Bootstrap generated with Sass/Webpack
         new() { ResourceType = Script, Url = $"{ThemePath()}bootstrap.bundle.min.js" }, // Bootstrap JS
+
+        // TODO: cre8magic JS/RESOURCES should be supplied by composition
         new() { ResourceType = Script, Url = $"{ThemePath()}ambient.js", } // Ambient JS for page Up-button etc.
     ];
 
