@@ -1,28 +1,16 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
-using Microsoft.Extensions.Logging;
-using ToSic.Cre8magic.Settings.Internal.Json;
+using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Themes.Settings;
+namespace ToSic.Cre8magic.Themes.Internal.Json;
 
 /// <summary>
-/// Important: NEVER use this on a 
+/// ... 
 /// </summary>
-public class ThemePartJsonConverter : JsonConverterBase<MagicThemePartSettings>
+public class ThemePartJsonConverter : JsonConverter<MagicThemePartSettings>
 {
-    /// <summary>
-    /// Private constructor to prevent use in attributes.
-    /// So this is NOT allowed:
-    /// [JsonConverter(typeof(PairOnOffJsonConverter))]
-    ///
-    /// ...because the converter must be enabled sometimes,
-    /// but removed at other times to use default conversion.
-    /// That is only possible if it's not used in a POCO attribute, but added in the serializer options.
-    /// </summary>
-    private ThemePartJsonConverter(ILogger logger) : base(logger) {}
-
-    public static ThemePartJsonConverter GetNew(ILogger logger) => new(logger);
 
     public override void Write(Utf8JsonWriter writer, MagicThemePartSettings? part, JsonSerializerOptions options)
     {
@@ -33,21 +21,20 @@ public class ThemePartJsonConverter : JsonConverterBase<MagicThemePartSettings>
         }
 
         // Copy options to remove this serializer, then serialize with default method
-        JsonSerializer.Serialize(writer, part, GetOptionsWithoutThisConverter(options));
+        JsonSerializer.Serialize(writer, new MagicThemePartSettings.NoJsonConverter(part), options);
     }
 
 
 
     public override MagicThemePartSettings? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        Logger.LogInformation($"cre8magic# Reading ThemePartJsonConverter / {typeToConvert}.");
         var x = JsonNode.Parse(ref reader);
         return x switch
         {
             null => null,
-            JsonArray jArray => Dummy(),
+            JsonArray => Dummy(),
             JsonValue jValue => ConvertValue(jValue),
-            JsonObject jObject => ConvertObject(jObject, GetOptionsWithoutThisConverter(options)),
+            JsonObject jObject => jObject.Deserialize<MagicThemePartSettings.NoJsonConverter>(options),
             _ => Dummy(),
         };
     }

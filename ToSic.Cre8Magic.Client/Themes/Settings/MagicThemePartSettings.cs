@@ -1,7 +1,10 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
+﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Themes.Internal.Json;
 
 namespace ToSic.Cre8magic.Themes.Settings;
 
+[JsonConverter(typeof(ThemePartJsonConverter))]
 public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
 {
     [PrivateApi]
@@ -57,4 +60,14 @@ public record MagicThemePartSettings: ICanClone<MagicThemePartSettings>
             ThemePartSectionEnum.Settings => Settings,
             _ => null
         };
+
+    /// <summary>
+    /// Special Class just for json serialization, which will have the values but not the converter
+    /// </summary>
+    internal record NoJsonConverter : MagicThemePartSettings
+    {
+        public NoJsonConverter() { }    // for Deserialization
+        public NoJsonConverter(MagicThemePartSettings original) : base(original) { } // For Serialization; explicit constructor, so original doesn't become a property
+    }
+
 }
