@@ -12,7 +12,7 @@ namespace ToSic.Cre8magic.Settings;
 /// * etc.
 /// </summary>
 [JsonConverter(typeof(PairOnOffJsonConverter))]
-public class MagicSettingOnOff: ICanClone<MagicSettingOnOff>
+public record MagicSettingOnOff: ICanClone<MagicSettingOnOff>
 {
     /// <summary>
     /// Empty constructor for JSON serialization
@@ -44,9 +44,11 @@ public class MagicSettingOnOff: ICanClone<MagicSettingOnOff>
         };
 
     /// <summary>
-    /// Special class just for deserialization, which does not have the JsonConverter attribute.
+    /// Special Class just for json serialization, which will have the values but not the converter
     /// </summary>
-    internal class NoConverterForJsonRead: MagicSettingOnOff;
-
-    internal class NoConverterForJsonWrite(MagicSettingOnOff original) : MagicSettingOnOff(original?.On, original?.Off);
+    internal record NoJsonConverter : MagicSettingOnOff
+    {
+        public NoJsonConverter() { }    // for Deserialization
+        public NoJsonConverter(MagicSettingOnOff original) : base(original) { } // For Serialization; explicit constructor, so original doesn't become a property
+    }
 }

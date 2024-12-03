@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace ToSic.Cre8magic.Settings.Internal.Json;
 
 /// <summary>
-/// Important: NEVER use this on a 
+/// Custom converter for <see cref="MagicSettingOnOff"/> to handle different JSON formats.
 /// </summary>
 public class PairOnOffJsonConverter : JsonConverter<MagicSettingOnOff>
 {
@@ -19,7 +19,7 @@ public class PairOnOffJsonConverter : JsonConverter<MagicSettingOnOff>
         }
 
         // Copy options to remove this serializer, then serialize with default method
-        JsonSerializer.Serialize(writer, new MagicSettingOnOff.NoConverterForJsonWrite(pair), options);
+        JsonSerializer.Serialize(writer, new MagicSettingOnOff.NoJsonConverter(pair), options);
     }
 
     public override MagicSettingOnOff? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -30,7 +30,7 @@ public class PairOnOffJsonConverter : JsonConverter<MagicSettingOnOff>
             null => null,
             JsonArray jArray => ConvertArray(jArray),
             JsonValue jValue => new() { On = jValue.ToString() },
-            JsonObject jObject => jObject.Deserialize<MagicSettingOnOff.NoConverterForJsonRead>(options),
+            JsonObject jObject => jObject.Deserialize<MagicSettingOnOff.NoJsonConverter>(options),
             _ => new() { On = "error", Off = "error" },
         };
     }
