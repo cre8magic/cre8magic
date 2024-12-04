@@ -7,7 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.CloseUrl
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.ContainerKit
-  - ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicHat
+  - ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.Name
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.OnParametersSet
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.Settings
@@ -112,23 +112,23 @@ items:
       type: ToSic.Cre8magic.Containers.MagicContainerSettings
     content.vb: Public Overridable ReadOnly Property Settings As MagicContainerSettings
   overload: ToSic.Cre8magic.OqtaneBs5.MagicContainer.Settings*
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicHat
-  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicHat
-  id: MagicHat
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct
+  id: MagicAct
   parent: ToSic.Cre8magic.OqtaneBs5.MagicContainer
   langs:
   - csharp
   - vb
-  name: MagicHat
-  nameWithType: MagicContainer.MagicHat
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicHat
+  name: MagicAct
+  nameWithType: MagicContainer.MagicAct
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: MagicHat
+    id: MagicAct
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
     startLine: 34
   assemblies:
@@ -138,15 +138,15 @@ items:
     content: >-
       [Inject]
 
-      public required IMagicHat MagicHat { get; set; }
+      public required IMagicAct MagicAct { get; set; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Act.IMagicHat
+      type: ToSic.Cre8magic.Act.IMagicAct
     content.vb: >-
       <Inject>
 
-      Public Property MagicHat As IMagicHat
-  overload: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicHat*
+      Public Property MagicAct As IMagicAct
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct*
   attributes:
   - type: Microsoft.AspNetCore.Components.InjectAttribute
     ctor: Microsoft.AspNetCore.Components.InjectAttribute.#ctor
@@ -442,19 +442,19 @@ references:
   - uid: ToSic.Cre8magic.Containers
     name: Containers
     href: ToSic.Cre8magic.Containers.html
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicHat*
-  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicHat
-  href: ToSic.Cre8magic.OqtaneBs5.MagicContainer.html#ToSic_Cre8magic_OqtaneBs5_MagicContainer_MagicHat
-  name: MagicHat
-  nameWithType: MagicContainer.MagicHat
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicHat
-- uid: ToSic.Cre8magic.Act.IMagicHat
-  commentId: T:ToSic.Cre8magic.Act.IMagicHat
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct
+  href: ToSic.Cre8magic.OqtaneBs5.MagicContainer.html#ToSic_Cre8magic_OqtaneBs5_MagicContainer_MagicAct
+  name: MagicAct
+  nameWithType: MagicContainer.MagicAct
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct
+- uid: ToSic.Cre8magic.Act.IMagicAct
+  commentId: T:ToSic.Cre8magic.Act.IMagicAct
   parent: ToSic.Cre8magic.Act
-  href: ToSic.Cre8magic.Act.IMagicHat.html
-  name: IMagicHat
-  nameWithType: IMagicHat
-  fullName: ToSic.Cre8magic.Act.IMagicHat
+  href: ToSic.Cre8magic.Act.IMagicAct.html
+  name: IMagicAct
+  nameWithType: IMagicAct
+  fullName: ToSic.Cre8magic.Act.IMagicAct
 - uid: ToSic.Cre8magic.Act
   commentId: N:ToSic.Cre8magic.Act
   href: ToSic.html

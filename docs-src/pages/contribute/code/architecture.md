@@ -47,12 +47,12 @@ In addition, the settings mechanisms should be seamless, magical but still very 
 
 1. **IMagicMenuKit** will be the object that contains everything to do with the menu.
 1. **Internal.IMagicMenuService** will be the service that contains the logic to get the Kit.
-1. **IMagicHat** is the main entry point which is usually used to call the service.
+1. **IMagicAct** is the main entry point which is usually used to call the service.
 1. **MagicMenuSettingsData** (`record`) is the data object that is used for settings which can be stored.
     This object is usually not used the outside, as the outside will use the **MagicMenuSettings** (without the `Data`).
 1. **MagicMenuSettings** (`record`) will be the settings object that is used to configure what the service should provide.
     1. It extends the `MagicMenuSettingsData` and adds some additional properties, like the `PartName` which would be used to retrieve named settings.
-    1. This object will usually be provided to the `MagicHat` to get everything set up.
+    1. This object will usually be provided to the `MagicAct` to get everything set up.
     1. After the setup it will also be found on the `.Settings` property of the `MagicMenuKit`.
     1. After the setup it will have more values filled (from the `MagicMenuSettingsData`).
 1. Design
@@ -61,7 +61,7 @@ In addition, the settings mechanisms should be seamless, magical but still very 
     1. **MagicMenuTailor** ...
 1. The **/Menus/Components/MagicMenu** is a primary or sample component for using the menu.
     1. It will expect a `Settings` parameter which is the `MagicMenuSettings`.
-    1. It will usually use the `MagicHat` to prepare the `MagicMenuKit`
+    1. It will usually use the `MagicAct` to prepare the `MagicMenuKit`
     1. It will then use the `MagicMenuKit` to iterate the data, and render the menu.
 
 ## Settings Structures

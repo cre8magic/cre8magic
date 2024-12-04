@@ -77,7 +77,7 @@ items:
     The PageState which is needed for doing everything.
 
 
-    It can be provided in the settings, or it must be provided in the theme using <xref href="ToSic.Cre8magic.Act.IMagicHat.UsePageState(Oqtane.UI.PageState)" data-throw-if-not-resolved="false"></xref>.
+    It can be provided in the settings, or it must be provided in the theme using <xref href="ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: >-
@@ -355,26 +355,26 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Act.IMagicHat.UsePageState(Oqtane.UI.PageState)
-  commentId: M:ToSic.Cre8magic.Act.IMagicHat.UsePageState(Oqtane.UI.PageState)
+- uid: ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)
+  commentId: M:ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)
   isExternal: true
-  href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_UsePageState_Oqtane_UI_PageState_
+  href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UsePageState_Oqtane_UI_PageState_
   name: UsePageState(PageState)
-  nameWithType: IMagicHat.UsePageState(PageState)
-  fullName: ToSic.Cre8magic.Act.IMagicHat.UsePageState(Oqtane.UI.PageState)
+  nameWithType: IMagicAct.UsePageState(PageState)
+  fullName: ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.IMagicHat.UsePageState(Oqtane.UI.PageState)
+  - uid: ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)
     name: UsePageState
-    href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_UsePageState_Oqtane_UI_PageState_
+    href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UsePageState_Oqtane_UI_PageState_
   - name: (
   - uid: Oqtane.UI.PageState
     name: PageState
     isExternal: true
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.IMagicHat.UsePageState(Oqtane.UI.PageState)
+  - uid: ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)
     name: UsePageState
-    href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_UsePageState_Oqtane_UI_PageState_
+    href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UsePageState_Oqtane_UI_PageState_
   - name: (
   - uid: Oqtane.UI.PageState
     name: PageState

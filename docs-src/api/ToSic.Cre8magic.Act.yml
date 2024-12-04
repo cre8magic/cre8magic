@@ -5,7 +5,7 @@ items:
   id: Act
   parent: ToSic.Cre8magic
   children:
-  - ToSic.Cre8magic.Act.IMagicHat
+  - ToSic.Cre8magic.Act.IMagicAct
   - ToSic.Cre8magic.Act.MagicSettingsExtensions
   langs:
   - csharp
@@ -17,13 +17,13 @@ items:
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
 references:
-- uid: ToSic.Cre8magic.Act.IMagicHat
-  commentId: T:ToSic.Cre8magic.Act.IMagicHat
+- uid: ToSic.Cre8magic.Act.IMagicAct
+  commentId: T:ToSic.Cre8magic.Act.IMagicAct
   parent: ToSic.Cre8magic.Act
-  href: ToSic.Cre8magic.Act.IMagicHat.html
-  name: IMagicHat
-  nameWithType: IMagicHat
-  fullName: ToSic.Cre8magic.Act.IMagicHat
+  href: ToSic.Cre8magic.Act.IMagicAct.html
+  name: IMagicAct
+  nameWithType: IMagicAct
+  fullName: ToSic.Cre8magic.Act.IMagicAct
 - uid: ToSic.Cre8magic.Act.MagicSettingsExtensions
   commentId: T:ToSic.Cre8magic.Act.MagicSettingsExtensions
   parent: ToSic.Cre8magic.Act

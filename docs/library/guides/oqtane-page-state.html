@@ -124,21 +124,21 @@ inherits from <code>ComponentBase</code>:</p>
     [CascadingParameter] PageState PageState { get; set; }
 }
 </code></pre>
-<h2 id="use-the-pagestate-to-get-a-kit-from-the-magichat">Use the PageState to get a Kit from the MagicHat</h2>
+<h2 id="use-the-pagestate-to-get-a-kit-from-the-magicact">Use the PageState to get a Kit from the MagicAct</h2>
 <p>Almost all operations in cre8magic require a <code>Kit</code> object.
-This is created for you by the <code>IMagicHat</code> service,
+This is created for you by the <code>IMagicAct</code> service,
 which usually needs the <code>PageState</code> to figure out the context.</p>
-<p>There are two ways that the <code>MagicHat</code> can get the <code>PageState</code>:</p>
+<p>There are two ways that the <code>MagicAct</code> can get the <code>PageState</code>:</p>
 <ol>
 <li>Directly in the request - there are a few ways to do this</li>
 <li>Provide it in the theme, so that all components can magically have it (less code)</li>
 </ol>
-<h3 id="pass-the-pagestate-to-the-magichat-in-the-call">Pass the PageState to the MagicHat in the Call</h3>
-<p>Since there will be various scenarios where you need to pass the <code>PageState</code> to the <code>MagicHat</code>,
+<h3 id="pass-the-pagestate-to-the-magicact-in-the-call">Pass the PageState to the MagicAct in the Call</h3>
+<p>Since there will be various scenarios where you need to pass the <code>PageState</code> to the <code>MagicAct</code>,
 we have created a few ways to do this.</p>
 <p>The most simple one creates a new <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> and sets the <code>PageState</code> property:</p>
 <pre><code class="lang-csharp">@{
-  var menuKit = MagicHat.MenuKit(new() { PageState = PageState });
+  var menuKit = MagicAct.MenuKit(new() { PageState = PageState });
 }
 </code></pre>
 <p>In other scenarios you may already have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object,
@@ -152,7 +152,7 @@ but want to extend it with the <code>PageState</code>:</p>
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax
-  var menuKit = MagicHat.MenuKit(Settings with { PageState = PageState });
+  var menuKit = MagicAct.MenuKit(Settings with { PageState = PageState });
 }
 </code></pre>
 <div class="TIP">
@@ -172,7 +172,7 @@ To make things easier, we created an extension method to allow this syntax:</p>
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax
-  var menuKit = MagicHat.MenuKit(Settings.With(PageState));
+  var menuKit = MagicAct.MenuKit(Settings.With(PageState));
 }
 </code></pre>
 <p>Internally this does the same as the original <code>with</code> statement, but also creates a new object if it's null.</p>
@@ -184,9 +184,9 @@ which has some initialization code running, you can also provide the <code>PageS
 <pre><code class="lang-csharp">// In your Theme.razor file
 @code {
     /// &lt;summary&gt;
-    /// Get the Magic Hat from the DI
+    /// Get the Magic Act from the DI
     /// &lt;/summary&gt;
-    [Inject] public required IMagicHat MagicHat { get; set; }
+    [Inject] public required IMagicAct MagicAct { get; set; }
 
     /// &lt;summary&gt;
     /// OnInitialized will run early (and once only).
@@ -196,7 +196,7 @@ which has some initialization code running, you can also provide the <code>PageS
     {
         base.OnInitialized();
         // Provide the first PageState as early as possible.
-        MagicHat.UsePageState(PageState);
+        MagicAct.UsePageState(PageState);
     }
 
     /// &lt;summary&gt;
@@ -207,14 +207,14 @@ which has some initialization code running, you can also provide the <code>PageS
     {
         base.OnParametersSet();
         // Provide the latest PageState on every change
-        MagicHat.UsePageState(PageState);
+        MagicAct.UsePageState(PageState);
     }
 }
 </code></pre>
-<p>The <strong>MagicHat 🎩</strong> will remember the <code>PageState</code> for you, so your components can now be simpler.
+<p>The <strong>MagicAct 🎩</strong> will remember the <code>PageState</code> for you, so your components can now be simpler.
 You can now write this:</p>
 <pre><code class="lang-csharp">@{
-  var menuKit = MagicHat.MenuKit(Settings);
+  var menuKit = MagicAct.MenuKit(Settings);
 }
 </code></pre>
 <p>...instead of the fairly lengthy:</p>
@@ -227,7 +227,7 @@ You can now write this:</p>
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax
-  var menuKit = MagicHat.MenuKit(Settings.With(PageState));
+  var menuKit = MagicAct.MenuKit(Settings.With(PageState));
 }
 </code></pre>
 <div class="TIP">

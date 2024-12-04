@@ -12,21 +12,21 @@ Everything in cre8magic will do something based on settings.
 These can come from various places
 
 1. Directly in the API call which retrieves a Kit like:  
-    `var kit = MagicHat.MenuKit(PageState, new MagicMenuSettings() { ... })`
+    `var kit = MagicAct.MenuKit(PageState, new MagicMenuSettings() { ... })`
 
 1. Directly in the Component tag which shows the thing like  
     `<MagicMenu Settings="new MagicMenuSettings() { ... }" />`
 
 1. Provided elsewhere and named `default` so it's automatically used like  
-    `var kit = MagicHat.MenuKit(PageState)`  
+    `var kit = MagicAct.MenuKit(PageState)`  
     `<MagicMenu />`
 
 1. Provided elsewhere and retrieved by name like  
-    `var kit = MagicHat.MenuKit(PageState, settingsName: "my-menu")`  
+    `var kit = MagicAct.MenuKit(PageState, settingsName: "my-menu")`  
     `<MagicMenu SettingsName="my-menu" />`
 
 1. Provided elsewhere and retrieved by Theme Part Name like
-    `var kit = MagicHat.MenuKit(PageState, partName: "my-menu")`  
+    `var kit = MagicAct.MenuKit(PageState, partName: "my-menu")`  
     `<MagicMenu PartName="my-menu" />`
 
 What's also important is that there are settings related to how/what data to get,

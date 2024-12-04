@@ -29,7 +29,7 @@ This example assumes you want to create a Breadcrumb, with all the code directly
 
 ```csharp
 @{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
+    var breadcrumbKit = MagicAct.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
     {
         WithActive = true,
         WithHome = false,
@@ -57,7 +57,7 @@ So the code is simply:
 ```csharp
 @* Breadcrumb using the settings from the catalog *@
 @{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+    breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)
@@ -86,8 +86,8 @@ In this case, you should know that these two things are equivalent:
 
 ```csharp
 @{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
-    breadcrumbKit = = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "default" });
+    breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
+    breadcrumbKit = = MagicAct.BreadcrumbKit(PageState, new() { SettingsName = "default" });
 }
 ```
 
@@ -109,8 +109,8 @@ The settings are prepared and provided in a central location.
 There are different ways to provide settings:
 
 1. You could just write your own code to keep all settings in one place.
-1. The theme code can setup the [MagicHat](xref:ToSic.Cre8magic.IMagicHat) with the settings.
-1. The theme code can load settings from a JSON file into the [MagicHat](xref:ToSic.Cre8magic.IMagicHat)
+1. The theme code can setup the [MagicAct](xref:ToSic.Cre8magic.Act.IMagicAct) with the settings.
+1. The theme code can load settings from a JSON file into the [MagicAct](xref:ToSic.Cre8magic.Act.IMagicAct)
 1. _The theme code could load settings from a database (not supported yet)._
 
 ### Option 1: Just Write Some Shared Code
@@ -135,7 +135,7 @@ And then use it like this:
 
 ```csharp
 @{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, MySettingsProvider.BreadcrumbSettings);
+    breadcrumbKit = MagicAct.BreadcrumbKit(PageState, MySettingsProvider.BreadcrumbSettings);
 }
 ```
 
@@ -155,7 +155,7 @@ This is the code you would use in your theme:
 protected override void OnInitialized()
 {
     base.OnInitialized();
-    MagicHat.UseSettingsProvider(p => p
+    MagicAct.UseSettingsProvider(p => p
       .Breadcrumbs.SetDefault(MySettingsProvider.BreadcrumbSettings)
       .Menus.SetDefault(MySettingsProvider.MenuSettings)
       .UserLogin.SetDefault(MySettingsProvider.UserLoginSettings)
@@ -167,7 +167,7 @@ And then use it like this:
 
 ```csharp
 @{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+    breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 }
 ```
 

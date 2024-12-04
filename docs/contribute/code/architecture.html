@@ -126,13 +126,13 @@
 <ol>
 <li><strong>IMagicMenuKit</strong> will be the object that contains everything to do with the menu.</li>
 <li><strong>Internal.IMagicMenuService</strong> will be the service that contains the logic to get the Kit.</li>
-<li><strong>IMagicHat</strong> is the main entry point which is usually used to call the service.</li>
+<li><strong>IMagicAct</strong> is the main entry point which is usually used to call the service.</li>
 <li><strong>MagicMenuSettingsData</strong> (<code>record</code>) is the data object that is used for settings which can be stored.
 This object is usually not used the outside, as the outside will use the <strong>MagicMenuSettings</strong> (without the <code>Data</code>).</li>
 <li><strong>MagicMenuSettings</strong> (<code>record</code>) will be the settings object that is used to configure what the service should provide.
 <ol>
 <li>It extends the <code>MagicMenuSettingsData</code> and adds some additional properties, like the <code>PartName</code> which would be used to retrieve named settings.</li>
-<li>This object will usually be provided to the <code>MagicHat</code> to get everything set up.</li>
+<li>This object will usually be provided to the <code>MagicAct</code> to get everything set up.</li>
 <li>After the setup it will also be found on the <code>.Settings</code> property of the <code>MagicMenuKit</code>.</li>
 <li>After the setup it will have more values filled (from the <code>MagicMenuSettingsData</code>).</li>
 </ol>
@@ -147,7 +147,7 @@ This object is usually not used the outside, as the outside will use the <strong
 <li>The <strong>/Menus/Components/MagicMenu</strong> is a primary or sample component for using the menu.
 <ol>
 <li>It will expect a <code>Settings</code> parameter which is the <code>MagicMenuSettings</code>.</li>
-<li>It will usually use the <code>MagicHat</code> to prepare the <code>MagicMenuKit</code></li>
+<li>It will usually use the <code>MagicAct</code> to prepare the <code>MagicMenuKit</code></li>
 <li>It will then use the <code>MagicMenuKit</code> to iterate the data, and render the menu.</li>
 </ol>
 </li>

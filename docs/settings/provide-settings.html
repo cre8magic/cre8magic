@@ -93,7 +93,7 @@ This could be confusing to start with, but very powerful once you understand it.
 <li>and you want the current page to be shown as the last node, but not as a link</li>
 </ol>
 <pre><code class="lang-csharp">@{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
+    var breadcrumbKit = MagicAct.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
     {
         WithActive = true,
         WithHome = false,
@@ -114,7 +114,7 @@ This could be confusing to start with, but very powerful once you understand it.
 So the code is simply:</p>
 <pre><code class="lang-csharp">@* Breadcrumb using the settings from the catalog *@
 @{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+    breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 }
 &lt;ol class=&quot;breadcrumb&quot;&gt;
     @foreach (var item in breadcrumbKit.Pages)
@@ -136,8 +136,8 @@ This may not be common for breadcrumbs, but typical for menus where you would ha
 </ul>
 <p>In this case, you should know that these two things are equivalent:</p>
 <pre><code class="lang-csharp">@{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
-    breadcrumbKit = = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = &quot;default&quot; });
+    breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
+    breadcrumbKit = = MagicAct.BreadcrumbKit(PageState, new() { SettingsName = &quot;default&quot; });
 }
 </code></pre>
 <p>Or when using a MagicBreadcrumb component:</p>
@@ -154,8 +154,8 @@ the central location to prepare settings is in the Theme code.</p>
 <p>There are different ways to provide settings:</p>
 <ol>
 <li>You could just write your own code to keep all settings in one place.</li>
-<li>The theme code can setup the <a class="xref" href="../api/ToSic.Cre8magic.IMagicHat.html">MagicHat</a> with the settings.</li>
-<li>The theme code can load settings from a JSON file into the <a class="xref" href="../api/ToSic.Cre8magic.IMagicHat.html">MagicHat</a></li>
+<li>The theme code can setup the <a class="xref" href="../api/ToSic.Cre8magic.Act.IMagicAct.html">MagicAct</a> with the settings.</li>
+<li>The theme code can load settings from a JSON file into the <a class="xref" href="../api/ToSic.Cre8magic.Act.IMagicAct.html">MagicAct</a></li>
 <li><em>The theme code could load settings from a database (not supported yet).</em></li>
 </ol>
 <h3 id="option-1-just-write-some-shared-code">Option 1: Just Write Some Shared Code</h3>
@@ -174,7 +174,7 @@ public class MySettingsProvider
 </code></pre>
 <p>And then use it like this:</p>
 <pre><code class="lang-csharp">@{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState, MySettingsProvider.BreadcrumbSettings);
+    breadcrumbKit = MagicAct.BreadcrumbKit(PageState, MySettingsProvider.BreadcrumbSettings);
 }
 </code></pre>
 <h3 id="option-2-broadcast-from-theme">Option 2: Broadcast from Theme</h3>
@@ -189,7 +189,7 @@ in it's own class (similar to the previous example).</p>
 protected override void OnInitialized()
 {
     base.OnInitialized();
-    MagicHat.UseSettingsProvider(p =&gt; p
+    MagicAct.UseSettingsProvider(p =&gt; p
       .Breadcrumbs.SetDefault(MySettingsProvider.BreadcrumbSettings)
       .Menus.SetDefault(MySettingsProvider.MenuSettings)
       .UserLogin.SetDefault(MySettingsProvider.UserLoginSettings)
@@ -198,7 +198,7 @@ protected override void OnInitialized()
 </code></pre>
 <p>And then use it like this:</p>
 <pre><code class="lang-csharp">@{
-    breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+    breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 }
 </code></pre>
 <h3 id="3-load-settings-from-json">3. Load Settings from JSON</h3>

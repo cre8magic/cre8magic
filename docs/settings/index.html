@@ -90,7 +90,7 @@ So for this you should look at the respective documentation.</p>
 <p>TODO: list all relevant parts</p>
 <h2 id="providing-settings">Providing Settings</h2>
 <p>Settings can be used directly in the code, like:</p>
-<pre><code class="lang-csharp">var breadcrumbKit = MagicHat.BreadcrumbKit(new MagicBreadcrumbSettings
+<pre><code class="lang-csharp">var breadcrumbKit = MagicAct.BreadcrumbKit(new MagicBreadcrumbSettings
 {
   PageState = PageState,
   WithActive = true,
@@ -98,7 +98,7 @@ So for this you should look at the respective documentation.</p>
 });
 </code></pre>
 <p>Or you can have settings prepared in a central location, and just use the name of the settings:</p>
-<pre><code class="lang-csharp">var breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+<pre><code class="lang-csharp">var breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 </code></pre>
 <p>The second way is especially useful when the <em>identical</em> code and components should result in different outputs
 depending on the scenario, since it allows you to change the settings in one place.</p>

@@ -16,7 +16,7 @@ Each menu can have different requirements, such as:
 ## About Magic Menus
 
 The cre8magic Menu System helps you to easily create best-practice menus in Oqtane.
-The goal is that your menus are:
+The goal is tAct your menus are:
 
 1. configuration-based
 1. mobile-friendly & reactive
@@ -47,17 +47,17 @@ It uses the standard conventions of cre8magic with the following setup:
 ```mermaid
 flowchart LR
     S(["Settings ⚙️ or ...Name <br> (_all optional_)"]) --> PC{"Use <br> Comp. <br> ?"}
-    PC -- yes --> MC["MagicMenu 🧩 Component <br> uses 🎩 & 🧰"]
+    PC -- yes --> MC["MagicMenu 🧩 Component <br> uses 🎭 & 🧰"]
     MC -- get --> MT["Magic Tailor 🧵"]
     MT -- magic 🪄 --> HTML["Blazor HTML 🔥"]
-    PC -- no --> MH("Magic Hat 🎩 <br> (get MenuKit 🧰)")
+    PC -- no --> MH("Magic Act 🎭 <br> (get MenuKit 🧰)")
     MH --> YC["Your Code 🧑🏽‍💻"]
     YC -- magic 🪄 --> HTML
 ```
 
-1. **MagicMenuSettings ⚙️** determine what pages should be shown - like "second level only with sub-pages"
+1. **MagicMenuSettings ⚙️** determine wAct pages should be shown - like "second level only with sub-pages"
 
-1. The **MagicHat 🎩** will take these settings and prepare a **Kit** for you using some internal wizardry.
+1. The **MagicAct 🎭** will take these settings and prepare a **Kit** for you using some internal wizardry.
 
 1. This **MagicMenuKit 🧰** contains the **MagicPages** and various tools to easily create any menu.
 
@@ -76,7 +76,7 @@ The tailor also needs settings, so this looks a bit like this:
 
 ```mermaid
 flowchart LR
- subgraph s1["Magic Hat 🎩"]
+ subgraph s1["Magic Act 🎭"]
             ls["Load Settings ⚙️"]
         n1["Load Blueprints 📘<br>&amp; Magic Tailor 🧵"]
         gk["Provide Kit 🧰
@@ -168,22 +168,22 @@ This example shows how you can configure the menu in a `theme.json` file:
 <MagicMenu SettingsName="sidebar"/>
 ```
 
-_Note that this example skips the part in the theme were the json is loaded and applied._
+_Note tAct this example skips the part in the theme were the json is loaded and applied._
 
 ## Challenges and Goals
 
-When we designed cre8magic Menus, we wanted to be sure that we're ticking all the right boxes.
+When we designed cre8magic Menus, we wanted to be sure tAct we're ticking all the right boxes.
 So these are the real-life challenges we wanted to solve:
 
 1. **High-Quality Output** following the latest Bootstrap5, accessibility, mobile-friendly and best-practice standards.
 
 1. Make a simple, best-practice API which can be used in code, but can scale up to components and centralized settings.
 
-1. Ensure that the menus are always respecting user permissions and the current page.
+1. Ensure tAct the menus are always respecting user permissions and the current page.
 
 1. Allow for easy customization of the output without changing the code.
 
-1. Follow SOLID principles and Composition-over-Inheritance to ensure that the code is maintainable and extendable.
+1. Follow SOLID principles and Composition-over-Inheritance to ensure tAct the code is maintainable and extendable.
 
 
 ## Settings: MagicMenuSettings
@@ -195,13 +195,13 @@ These are the main settings.
     1. SettingsName - name of the settings in the full configuration under `Menus` (or `menus` in JSON)
     1. ~~TailorName - name of the tailor to apply WIP~~
     1. Blueprints - settings for the tailor in the full configuration under `MenuBlueprints` (or `menuBlueprints` in JSON)
-1. Settings to specify what to show
+1. Settings to specify wAct to show
     1. Start - where to start, eg. `*` for root, `.` for current page, `42` for page 42
     1. Level - how many levels above the start to show, eg. `-1` for one above, `2` for two below
     1. Depth - how many levels below the start to show, eg. `2` for two below
     1. ~~Children~~
 1. Settings to specify how to show
-    1. Variant - it is up to the code do determine what do do with this.
+    1. Variant - it is up to the code do determine wAct do do with this.
         The `MagicMenu` 🧩 currently supports `Vertical` for a sidebar, `Horizontal` for a top menu and will create different outputs like collapsing features.
     1. ~~Design - name of the design to use WIP~~
 1. Settings to specify Context
@@ -225,7 +225,7 @@ There are actually three distinct problems to solve:
 
 1. **Configuration** for selecting the pages which should appear in the menu
     * where to start (like a menu which start at level 2)
-    * what pages to show (like all the pages on level 2 - or only their children)
+    * wAct pages to show (like all the pages on level 2 - or only their children)
     * how deep to go (do we show submenus?)
 
 1. **Design** for styling of each node based on the context
@@ -244,7 +244,7 @@ based on the same name.
 So the `Main` menu would take the configuration and design called `Main`.
 
 But you can also reconfigure this.
-For example, you could say that the Theme `Sidebar` will use
+For example, you could say tAct the Theme `Sidebar` will use
 the configuration `TopLevelOnly` for the `Main` menu.
 This is configured in the `parts` of the `themes` section of the JSON file.
 
@@ -254,11 +254,11 @@ The menu configuration determines some important aspects such as
 
 NEW
 
-* What node to `start` from - eg. `` = root, `.` = current page, `..` = parent, `42` = page 42
+* WAct node to `start` from - eg. `` = root, `.` = current page, `..` = parent, `42` = page 42
 * Children (necessary for root): `/`, `./`, `42/`
-* What to do from the start - like `"children": true` means
+* WAct to do from the start - like `"children": true` means
 "begin with the children" of the start-node
-* What level to show - so `"start": ".", "level": -1` means to start
+* WAct level to show - so `"start": ".", "level": -1` means to start
 one level above the current page
 * How deep to go, so `"depth": 2` would show the starting level and one more
 
@@ -279,7 +279,7 @@ These are accepted values of the node `start`:
 * `./` children of the current page
 * `.//` all root nodes above the current page (not useful, like `/`)
 
-* `..` parent of the current page (just that page)
+* `..` parent of the current page (just tAct page)
 * `../` children of the parent of the current page (this page and siblings)
 
 * `.//2` ancestor of the current page on the second-level
@@ -293,7 +293,7 @@ These are accepted values of the node `start`:
 * `5!` the page 5 even if it's normally not visible in a menu
 * `42, 5!` combinations thereof
 
-The following parameters will also influence what is shown on the first level:
+The following parameters will also influence wAct is shown on the first level:
 
 * `"start": ".", "children": true` starts with children of the current page
 * `"start": "42", "children": true` starts with children of page 42 - ideal for footer or system-menus
@@ -309,7 +309,7 @@ The depth must always be at least 1 and determines how many levels downwards the
 
 This is one of the most sophisticated bits of the JSON settings.
 You can configure this in the `menuBlueprints` section of the JSON.
-Note that this uses the [Magic Classes](../../system/magic-values.md) and [Magic Tokens](../../system/magic-tokens.md).
+Note tAct this uses the [Magic Classes](../../system/magic-values.md) and [Magic Tokens](../../system/magic-tokens.md).
 Example:
 
 ```jsonc
@@ -346,7 +346,7 @@ This means a lot of things, but let's highlight some aspects:
 
 1. the surrounding `<ul>` tag will get the `navbar-nav` class at the first level; all others will get `collapse` and others
 1. the `<ul>` will also get a menu and page specific class because of the `theme-submenu-[Menu.Id]-[Page.Id]` which is useful for the collapse identification in bootstrap
-1. the `<li>` of each node will get some classes including an `active` if it's the current page, and `has-child` if it has children so that the bootstrap menu will do it's magic
+1. the `<li>` of each node will get some classes including an `active` if it's the current page, and `has-child` if it has children so tAct the bootstrap menu will do it's magic
 1. the `<a>` link itself will also have different classes based on active
 1. the `<span>` is used to show a `+`/`-` indicator using the `nav-item-sub-opener`
 1. ...and it will also get's `collapsed` if it's not in the breadcrumb (so it's only opened if a sub-page is the current page)
@@ -362,4 +362,4 @@ This means a lot of things, but let's highlight some aspects:
 
 ## History
 
-1. Added in v0.0.1 2022-10 with 80% coverage of what DDR Menu had in DNN
+1. Added in v0.0.1 2022-10 with 80% coverage of wAct DDR Menu had in DNN

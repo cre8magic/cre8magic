@@ -28,7 +28,7 @@ TODO: list all relevant parts
 Settings can be used directly in the code, like:
 
 ```csharp
-var breadcrumbKit = MagicHat.BreadcrumbKit(new MagicBreadcrumbSettings
+var breadcrumbKit = MagicAct.BreadcrumbKit(new MagicBreadcrumbSettings
 {
   PageState = PageState,
   WithActive = true,
@@ -39,7 +39,7 @@ var breadcrumbKit = MagicHat.BreadcrumbKit(new MagicBreadcrumbSettings
 Or you can have settings prepared in a central location, and just use the name of the settings:
 
 ```csharp
-var breadcrumbKit = MagicHat.BreadcrumbKit(PageState);
+var breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 ```
 
 The second way is especially useful when the _identical_ code and components should result in different outputs

@@ -79,21 +79,21 @@
 These can come from various places</p>
 <ol>
 <li><p>Directly in the API call which retrieves a Kit like:<br>
-<code>var kit = MagicHat.MenuKit(PageState, new MagicMenuSettings() { ... })</code></p>
+<code>var kit = MagicAct.MenuKit(PageState, new MagicMenuSettings() { ... })</code></p>
 </li>
 <li><p>Directly in the Component tag which shows the thing like<br>
 <code>&lt;MagicMenu Settings=&quot;new MagicMenuSettings() { ... }&quot; /&gt;</code></p>
 </li>
 <li><p>Provided elsewhere and named <code>default</code> so it's automatically used like<br>
-<code>var kit = MagicHat.MenuKit(PageState)</code><br>
+<code>var kit = MagicAct.MenuKit(PageState)</code><br>
 <code>&lt;MagicMenu /&gt;</code></p>
 </li>
 <li><p>Provided elsewhere and retrieved by name like<br>
-<code>var kit = MagicHat.MenuKit(PageState, settingsName: &quot;my-menu&quot;)</code><br>
+<code>var kit = MagicAct.MenuKit(PageState, settingsName: &quot;my-menu&quot;)</code><br>
 <code>&lt;MagicMenu SettingsName=&quot;my-menu&quot; /&gt;</code></p>
 </li>
 <li><p>Provided elsewhere and retrieved by Theme Part Name like
-<code>var kit = MagicHat.MenuKit(PageState, partName: &quot;my-menu&quot;)</code><br>
+<code>var kit = MagicAct.MenuKit(PageState, partName: &quot;my-menu&quot;)</code><br>
 <code>&lt;MagicMenu PartName=&quot;my-menu&quot; /&gt;</code></p>
 </li>
 </ol>

@@ -1,7 +1,7 @@
 
 # cre8magic Terminology WIP
 
-* MagicHat
+* MagicAct
 * Kit
 
 * Settings

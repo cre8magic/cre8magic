@@ -32,7 +32,7 @@ items:
     The Kit to Show language menus in the UI.
 
 
-    You can get it by `@inject` / `[Inject]`-ing the `IMagicHat` and calling the <xref href="ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)" data-throw-if-not-resolved="false"></xref>.
+    You can get it by `@inject` / `[Inject]`-ing the <xref href="ToSic.Cre8magic.Act.IMagicAct" data-throw-if-not-resolved="false"></xref> and calling the <xref href="ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: public interface IMagicLanguageKit
@@ -199,25 +199,32 @@ items:
   fullName.vb: ToSic.Cre8magic.Languages.IMagicLanguageKit.SetCultureAsync(String)
   name.vb: SetCultureAsync(String)
 references:
-- uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  commentId: M:ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+- uid: ToSic.Cre8magic.Act.IMagicAct
+  commentId: T:ToSic.Cre8magic.Act.IMagicAct
+  parent: ToSic.Cre8magic.Act
+  href: ToSic.Cre8magic.Act.IMagicAct.html
+  name: IMagicAct
+  nameWithType: IMagicAct
+  fullName: ToSic.Cre8magic.Act.IMagicAct
+- uid: ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  commentId: M:ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
   name: LanguageKit(MagicLanguageSettings)
-  nameWithType: IMagicHat.LanguageKit(MagicLanguageSettings)
-  fullName: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  nameWithType: IMagicAct.LanguageKit(MagicLanguageSettings)
+  fullName: ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
   spec.csharp:
-  - uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  - uid: ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
     name: LanguageKit
-    href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+    href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
   - name: (
   - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
     name: MagicLanguageSettings
     href: ToSic.Cre8magic.Languages.MagicLanguageSettings.html
   - name: )
   spec.vb:
-  - uid: ToSic.Cre8magic.Act.IMagicHat.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
+  - uid: ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
     name: LanguageKit
-    href: ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
+    href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_
   - name: (
   - uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
     name: MagicLanguageSettings
@@ -253,6 +260,36 @@ references:
   - uid: ToSic.Cre8magic.Languages
     name: Languages
     href: ToSic.Cre8magic.Languages.html
+- uid: ToSic.Cre8magic.Act
+  commentId: N:ToSic.Cre8magic.Act
+  href: ToSic.html
+  name: ToSic.Cre8magic.Act
+  nameWithType: ToSic.Cre8magic.Act
+  fullName: ToSic.Cre8magic.Act
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Act
+    name: Act
+    href: ToSic.Cre8magic.Act.html
 - uid: ToSic.Cre8magic.Languages.IMagicLanguageKit.Show*
   commentId: Overload:ToSic.Cre8magic.Languages.IMagicLanguageKit.Show
   href: ToSic.Cre8magic.Languages.IMagicLanguageKit.html#ToSic_Cre8magic_Languages_IMagicLanguageKit_Show

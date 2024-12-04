@@ -5,7 +5,7 @@ items:
   id: MagicThemeBase
   parent: ToSic.Cre8magic.Themes
   children:
-  - ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
+  - ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
   - ToSic.Cre8magic.Themes.MagicThemeBase.Name
   - ToSic.Cre8magic.Themes.MagicThemeBase.OnAfterRenderAsync(System.Boolean)
   - ToSic.Cre8magic.Themes.MagicThemeBase.OnInitialized
@@ -147,43 +147,43 @@ items:
       type: ToSic.Cre8magic.Themes.IMagicThemeKit
     content.vb: Public ReadOnly Property ThemeKit As IMagicThemeKit
   overload: ToSic.Cre8magic.Themes.MagicThemeBase.ThemeKit*
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
-  id: MagicHat
+- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
+  id: MagicAct
   parent: ToSic.Cre8magic.Themes.MagicThemeBase
   langs:
   - csharp
   - vb
-  name: MagicHat
-  nameWithType: MagicThemeBase.MagicHat
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
+  name: MagicAct
+  nameWithType: MagicThemeBase.MagicAct
+  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
   type: Property
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: MagicHat
+    id: MagicAct
     path: ../ToSic.Cre8Magic.Client/Themes/MagicThemeBase.razor.cs
     startLine: 37
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
-  summary: Get the Magic Hat from the DI
+  summary: Get the <xref href="ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct" data-throw-if-not-resolved="false"></xref> from the DI
   example: []
   syntax:
     content: >-
       [Inject]
 
-      public required IMagicHat MagicHat { get; set; }
+      public required IMagicAct MagicAct { get; set; }
     parameters: []
     return:
-      type: ToSic.Cre8magic.Act.IMagicHat
+      type: ToSic.Cre8magic.Act.IMagicAct
     content.vb: >-
       <Inject>
 
-      Public Property MagicHat As IMagicHat
-  overload: ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat*
+      Public Property MagicAct As IMagicAct
+  overload: ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct*
   attributes:
   - type: Microsoft.AspNetCore.Components.InjectAttribute
     ctor: Microsoft.AspNetCore.Components.InjectAttribute.#ctor
@@ -459,19 +459,25 @@ references:
   name: IMagicThemeKit
   nameWithType: IMagicThemeKit
   fullName: ToSic.Cre8magic.Themes.IMagicThemeKit
-- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat*
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
-  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicHat
-  name: MagicHat
-  nameWithType: MagicThemeBase.MagicHat
-  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicHat
-- uid: ToSic.Cre8magic.Act.IMagicHat
-  commentId: T:ToSic.Cre8magic.Act.IMagicHat
+- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
+  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicAct
+  name: MagicAct
+  nameWithType: MagicThemeBase.MagicAct
+  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
+- uid: ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct*
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
+  href: ToSic.Cre8magic.Themes.MagicThemeBase.html#ToSic_Cre8magic_Themes_MagicThemeBase_MagicAct
+  name: MagicAct
+  nameWithType: MagicThemeBase.MagicAct
+  fullName: ToSic.Cre8magic.Themes.MagicThemeBase.MagicAct
+- uid: ToSic.Cre8magic.Act.IMagicAct
+  commentId: T:ToSic.Cre8magic.Act.IMagicAct
   parent: ToSic.Cre8magic.Act
-  href: ToSic.Cre8magic.Act.IMagicHat.html
-  name: IMagicHat
-  nameWithType: IMagicHat
-  fullName: ToSic.Cre8magic.Act.IMagicHat
+  href: ToSic.Cre8magic.Act.IMagicAct.html
+  name: IMagicAct
+  nameWithType: IMagicAct
+  fullName: ToSic.Cre8magic.Act.IMagicAct
 - uid: ToSic.Cre8magic.Act
   commentId: N:ToSic.Cre8magic.Act
   href: ToSic.html
