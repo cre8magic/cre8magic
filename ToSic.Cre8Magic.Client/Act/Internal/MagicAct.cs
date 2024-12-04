@@ -38,7 +38,7 @@ internal class MagicAct(
 {
     #region Setup & PageState
 
-    public IMagicAct UseSettingsPackage(MagicThemePackage themePackage)
+    public IMagicAct UseThemePackage(MagicThemePackage themePackage)
     {
         settingsSvc.Setup(themePackage);
         return this;
@@ -84,7 +84,7 @@ internal class MagicAct(
     public IMagicBreadcrumbKit BreadcrumbKit(MagicBreadcrumbSettings? settings = null) =>
         breadcrumbSvc.Value.BreadcrumbKit(GetPageStateOrThrow(settings?.PageState), settings);
 
-    public IMagicContainerKit ContainerKit(MagicContainerSettings settings) =>
+    public IMagicContainerKit ContainerKit(MagicContainerSettings? settings = default) =>
         containerSvc.Value.ContainerKit(
             GetPageStateOrThrow(settings?.PageState),
             settings?.ModuleState ?? throw new ArgumentException($"{nameof(settings.ModuleState)} is required for {nameof(ContainerKit)}(...)")

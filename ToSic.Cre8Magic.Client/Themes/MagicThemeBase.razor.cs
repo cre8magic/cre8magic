@@ -46,7 +46,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
         base.OnInitialized();
         // Provide the first PageState as early as possible.
         MagicAct.UsePageState(PageState);
-        MagicAct.UseSettingsPackage(ThemePackage);
+        MagicAct.UseThemePackage(ThemePackage);
     }
 
     /// <summary>

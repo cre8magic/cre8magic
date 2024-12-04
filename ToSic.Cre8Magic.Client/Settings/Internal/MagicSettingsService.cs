@@ -24,7 +24,7 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     /// <inheritdoc />>
     public IMagicSettingsService Setup(MagicThemePackage themePackage)
     {
-        _packageSettings = themePackage;
+        ThemePackage = themePackage;
         ThemeTokens = null!;
         _layoutName = themePackage.Layout;
         return this;
@@ -50,8 +50,8 @@ internal class MagicSettingsService(MagicSettingsCatalogsLoader catalogsLoader) 
     MagicDebugSettings IMagicSettingsService.Debug => field
         ??= Catalogs.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
 
-    public MagicThemePackage ThemePackage => _packageSettings ?? MagicThemePackage.Fallback;
-    private MagicThemePackage? _packageSettings;
+    [field: AllowNull, MaybeNull]
+    public MagicThemePackage ThemePackage { get => field ??= MagicThemePackage.Fallback; private set => field = value; }
 
     /// <summary>
     /// Tokens engine for this specific PageState

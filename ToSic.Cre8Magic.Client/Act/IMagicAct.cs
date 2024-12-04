@@ -23,7 +23,7 @@ public interface IMagicAct
 
     IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
     
-    IMagicAct UseSettingsPackage(MagicThemePackage themePackage);
+    IMagicAct UseThemePackage(MagicThemePackage themePackage);
 
     IMagicAct UsePageState(PageState pageState);
 
@@ -47,9 +47,9 @@ public interface IMagicAct
     /// <summary>
     /// Get a kit to work with containers.
     /// </summary>
-    /// <param name="settings">Required; must provide the ModuleState as a property and (if not specified in the Theme) also the PageState</param>
+    /// <param name="settings">**Required**; must provide the ModuleState as a property and usually the PageState (if not specified in the Theme)</param>
     /// <returns></returns>
-    IMagicContainerKit ContainerKit(MagicContainerSettings settings);
+    IMagicContainerKit ContainerKit(MagicContainerSettings? settings = default);
 
     /// <summary>
     /// Get a kit to work with analytics.
