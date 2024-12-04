@@ -102,7 +102,7 @@ Class MagicLanguageBlueprint  <a class="header-action link-secondary" title="Vie
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record MagicLanguageBlueprint : SettingsWithInherit</code></pre>
+    <pre><code class="lang-csharp hljs">public record MagicLanguageBlueprint : MagicBlueprints</code></pre>
   </div>
 
 
@@ -113,6 +113,7 @@ Class MagicLanguageBlueprint  <a class="header-action link-secondary" title="Vie
     <dd>
       <div><span class="xref">object</span></div>
       <div><a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.MagicBlueprints.html">MagicBlueprints</a></div>
       <div><span class="xref">MagicLanguageBlueprint</span></div>
     </dd>
   </dl>
@@ -123,50 +124,15 @@ Class MagicLanguageBlueprint  <a class="header-action link-secondary" title="Vie
     <dt>Inherited Members</dt>
     <dd>
     <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicBlueprints.html#ToSic_Cre8magic_Settings_MagicBlueprints_Parts">MagicBlueprints.Parts</a>
+    </div>
+    <div>
       <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
     </div>
     <div>
       <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____">SettingsWithInherit.PickFirstNonZeroInt(int?[])</a>
     </div>
   </dd></dl>
-
-
-
-
-
-
-  <h2 class="section" id="properties">Properties
-</h2>
-
-
-  <a id="ToSic_Cre8magic_Languages_MagicLanguageBlueprint_Parts_" data-uid="ToSic.Cre8magic.Languages.MagicLanguageBlueprint.Parts*"></a>
-
-  <h3 id="ToSic_Cre8magic_Languages_MagicLanguageBlueprint_Parts" data-uid="ToSic.Cre8magic.Languages.MagicLanguageBlueprint.Parts">
-  Parts
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/MagicLanguageBlueprint.cs/#L30"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Custom, named settings for classes, values etc. as you need them in your code.
-For things such as <code>ul</code> or <code>li</code> or <code>a</code> tags.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicDesignSettingsPart&gt;))]
-public Dictionary&lt;string, MagicDesignSettingsPart&gt; Parts { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html">MagicDesignSettingsPart</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
 
 
 

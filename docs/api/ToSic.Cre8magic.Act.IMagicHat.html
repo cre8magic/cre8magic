@@ -274,8 +274,8 @@ It will either use the provided settings, retrieve these from the global informa
 
   <a id="ToSic_Cre8magic_Act_IMagicHat_Link_" data-uid="ToSic.Cre8magic.Act.IMagicHat.Link*"></a>
 
-  <h3 id="ToSic_Cre8magic_Act_IMagicHat_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSpecs_" data-uid="ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)">
-  Link(PageState, MagicLinkSpecs)
+  <h3 id="ToSic_Cre8magic_Act_IMagicHat_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSettings_" data-uid="ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)">
+  Link(PageState, MagicLinkSettings)
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/IMagicHat.cs/#L66"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -283,14 +283,14 @@ It will either use the provided settings, retrieve these from the global informa
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string Link(PageState pageState, MagicLinkSpecs linkSpecs)</code></pre>
+    <pre><code class="lang-csharp hljs">string Link(PageState pageState, MagicLinkSettings settings)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pageState</code> <span class="xref">PageState</span></dt>
     <dd></dd>
-    <dt><code>linkSpecs</code> <a class="xref" href="ToSic.Cre8magic.Links.MagicLinkSpecs.html">MagicLinkSpecs</a></dt>
+    <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Links.MagicLinkSettings.html">MagicLinkSettings</a></dt>
     <dd></dd>
   </dl>
 
@@ -389,7 +389,8 @@ It will either use the provided settings, retrieve these from the global informa
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/IMagicHat.cs/#L61"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get a theme kit for the current page, to customize the theme.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -399,7 +400,8 @@ It will either use the provided settings, retrieve these from the global informa
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Themes.MagicThemeSettings.html">MagicThemeSettings</a></dt>
-    <dd></dd>
+    <dd><p>The Settings; optional</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>

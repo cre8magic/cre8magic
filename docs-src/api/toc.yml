@@ -34,9 +34,6 @@ items:
     - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
       name: MagicBreadcrumbBlueprint
       type: Class
-    - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart
-      name: MagicBreadcrumbBlueprintPart
-      type: Class
     - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings
       name: MagicBreadcrumbSettings
       type: Class
@@ -88,8 +85,8 @@ items:
     - uid: ToSic.Cre8magic.Links.IMagicLinkService
       name: IMagicLinkService
       type: Interface
-    - uid: ToSic.Cre8magic.Links.MagicLinkSpecs
-      name: MagicLinkSpecs
+    - uid: ToSic.Cre8magic.Links.MagicLinkSettings
+      name: MagicLinkSettings
       type: Class
   - uid: ToSic.Cre8magic.Menus
     name: Menus
@@ -100,9 +97,6 @@ items:
       type: Interface
     - uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint
       name: MagicMenuBlueprint
-      type: Class
-    - uid: ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
-      name: MagicMenuBlueprintPart
       type: Class
     - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
       name: MagicMenuSettings
@@ -181,11 +175,14 @@ items:
     - uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
       name: IMagicSettingsProviderSection<TSettings>
       type: Interface
+    - uid: ToSic.Cre8magic.Settings.MagicBlueprintPart
+      name: MagicBlueprintPart
+      type: Class
+    - uid: ToSic.Cre8magic.Settings.MagicBlueprints
+      name: MagicBlueprints
+      type: Class
     - uid: ToSic.Cre8magic.Settings.MagicDebugSettings
       name: MagicDebugSettings
-      type: Class
-    - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-      name: MagicDesignSettingsPart
       type: Class
     - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
       name: MagicSettingOnOff
@@ -225,9 +222,6 @@ items:
         type: Class
       - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
         name: MagicThemePartSettings
-        type: Class
-      - uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
-        name: ThemePartJsonConverter
         type: Class
     - uid: ToSic.Cre8magic.Themes.IMagicThemeJsService
       name: IMagicThemeJsService
@@ -314,8 +308,5 @@ items:
     type: Class
   - uid: ToSic.Cre8magic.MagicTokens
     name: MagicTokens
-    type: Class
-  - uid: ToSic.Cre8magic._Imports
-    name: _Imports
     type: Class
 memberLayout: SamePage

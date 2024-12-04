@@ -1,0 +1,160 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings
+  commentId: T:ToSic.Cre8magic.Links.MagicLinkSettings
+  id: MagicLinkSettings
+  parent: ToSic.Cre8magic.Links
+  children:
+  - ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  - ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  langs:
+  - csharp
+  - vb
+  name: MagicLinkSettings
+  nameWithType: MagicLinkSettings
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Links/MagicLinkSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicLinkSettings
+    path: ../ToSic.Cre8Magic.Client/Links/MagicLinkSettings.cs
+    startLine: 2
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Links
+  syntax:
+    content: public record MagicLinkSettings
+    content.vb: Public Class MagicLinkSettings
+  inheritance:
+  - System.Object
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  commentId: P:ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  id: Path
+  parent: ToSic.Cre8magic.Links.MagicLinkSettings
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: MagicLinkSettings.Path
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Links/MagicLinkSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Path
+    path: ../ToSic.Cre8Magic.Client/Links/MagicLinkSettings.cs
+    startLine: 4
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Links
+  syntax:
+    content: public string? Path { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Path As String
+  overload: ToSic.Cre8magic.Links.MagicLinkSettings.Path*
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  commentId: P:ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  id: QueryString
+  parent: ToSic.Cre8magic.Links.MagicLinkSettings
+  langs:
+  - csharp
+  - vb
+  name: QueryString
+  nameWithType: MagicLinkSettings.QueryString
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Links/MagicLinkSettings.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: QueryString
+    path: ../ToSic.Cre8Magic.Client/Links/MagicLinkSettings.cs
+    startLine: 6
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Links
+  syntax:
+    content: public string? QueryString { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property QueryString As String
+  overload: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString*
+references:
+- uid: ToSic.Cre8magic.Links
+  commentId: N:ToSic.Cre8magic.Links
+  href: ToSic.html
+  name: ToSic.Cre8magic.Links
+  nameWithType: ToSic.Cre8magic.Links
+  fullName: ToSic.Cre8magic.Links
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Links
+    name: Links
+    href: ToSic.Cre8magic.Links.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Links
+    name: Links
+    href: ToSic.Cre8magic.Links.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings.Path*
+  commentId: Overload:ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  href: ToSic.Cre8magic.Links.MagicLinkSettings.html#ToSic_Cre8magic_Links_MagicLinkSettings_Path
+  name: Path
+  nameWithType: MagicLinkSettings.Path
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings.Path
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString*
+  commentId: Overload:ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  href: ToSic.Cre8magic.Links.MagicLinkSettings.html#ToSic_Cre8magic_Links_MagicLinkSettings_QueryString
+  name: QueryString
+  nameWithType: MagicLinkSettings.QueryString
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString

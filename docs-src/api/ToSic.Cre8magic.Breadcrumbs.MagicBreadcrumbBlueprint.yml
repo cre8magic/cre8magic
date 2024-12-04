@@ -4,8 +4,7 @@ items:
   commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
   id: MagicBreadcrumbBlueprint
   parent: ToSic.Cre8magic.Breadcrumbs
-  children:
-  - ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
+  children: []
   langs:
   - csharp
   - vb
@@ -20,61 +19,23 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicBreadcrumbBlueprint
     path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbBlueprint.cs
-    startLine: 11
+    startLine: 8
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Breadcrumbs
   summary: Language Design Settings
   example: []
   syntax:
-    content: 'public record MagicBreadcrumbBlueprint : SettingsWithInherit'
-    content.vb: Public Class MagicBreadcrumbBlueprint Inherits SettingsWithInherit
+    content: 'public record MagicBreadcrumbBlueprint : MagicBlueprints'
+    content.vb: Public Class MagicBreadcrumbBlueprint Inherits MagicBlueprints
   inheritance:
   - System.Object
   - ToSic.Cre8magic.Settings.SettingsWithInherit
+  - ToSic.Cre8magic.Settings.MagicBlueprints
   inheritedMembers:
+  - ToSic.Cre8magic.Settings.MagicBlueprints.Parts
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  id: Parts
-  parent: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
-  langs:
-  - csharp
-  - vb
-  name: Parts
-  nameWithType: MagicBreadcrumbBlueprint.Parts
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbBlueprint.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Parts
-    path: ../ToSic.Cre8Magic.Client/Breadcrumbs/MagicBreadcrumbBlueprint.cs
-    startLine: 29
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Breadcrumbs
-  summary: >-
-    Custom, named settings for classes, values etc. as you need them in your code.
-
-    For things such as `ul` or `li` or `a` tags.
-  example: []
-  syntax:
-    content: >-
-      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBreadcrumbBlueprintPart>))]
-
-      public Dictionary<string, MagicBreadcrumbBlueprintPart> Parts { get; init; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart}
-    content.vb: >-
-      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicBreadcrumbBlueprintPart)))>
-
-      Public Property Parts As Dictionary(Of String, MagicBreadcrumbBlueprintPart)
-  overload: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts*
 references:
 - uid: ToSic.Cre8magic.Breadcrumbs
   commentId: N:ToSic.Cre8magic.Breadcrumbs
@@ -123,6 +84,20 @@ references:
   name: SettingsWithInherit
   nameWithType: SettingsWithInherit
   fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
+- uid: ToSic.Cre8magic.Settings.MagicBlueprints
+  commentId: T:ToSic.Cre8magic.Settings.MagicBlueprints
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicBlueprints.html
+  name: MagicBlueprints
+  nameWithType: MagicBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprints
+- uid: ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  parent: ToSic.Cre8magic.Settings.MagicBlueprints
+  href: ToSic.Cre8magic.Settings.MagicBlueprints.html#ToSic_Cre8magic_Settings_MagicBlueprints_Parts
+  name: Parts
+  nameWithType: MagicBlueprints.Parts
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprints.Parts
 - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   parent: ToSic.Cre8magic.Settings.SettingsWithInherit
@@ -202,118 +177,3 @@ references:
   - uid: ToSic.Cre8magic.Settings
     name: Settings
     href: ToSic.Cre8magic.Settings.html
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts*
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbBlueprint_Parts
-  name: Parts
-  nameWithType: MagicBreadcrumbBlueprint.Parts
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart.html
-  name: Dictionary<string, MagicBreadcrumbBlueprintPart>
-  nameWithType: Dictionary<string, MagicBreadcrumbBlueprintPart>
-  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart>
-  nameWithType.vb: Dictionary(Of String, MagicBreadcrumbBlueprintPart)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart)
-  name.vb: Dictionary(Of String, MagicBreadcrumbBlueprintPart)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart
-    name: MagicBreadcrumbBlueprintPart
-    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart
-    name: MagicBreadcrumbBlueprintPart
-    href: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart.html
-  - name: )
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
-  isExternal: true
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

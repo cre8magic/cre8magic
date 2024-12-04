@@ -110,12 +110,12 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Act.IMagicHat.LanguageKit
   nameWithType: IMagicHat.LanguageKit
-- uid: ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
-  name: Link(PageState, MagicLinkSpecs)
-  href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSpecs_
-  commentId: M:ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
-  fullName: ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSpecs)
-  nameWithType: IMagicHat.Link(PageState, MagicLinkSpecs)
+- uid: ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
+  name: Link(PageState, MagicLinkSettings)
+  href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSettings_
+  commentId: M:ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
+  fullName: ToSic.Cre8magic.Act.IMagicHat.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSettings)
+  nameWithType: IMagicHat.Link(PageState, MagicLinkSettings)
 - uid: ToSic.Cre8magic.Act.IMagicHat.Link*
   name: Link
   href: api/ToSic.Cre8magic.Act.IMagicHat.html#ToSic_Cre8magic_Act_IMagicHat_Link_
@@ -1142,19 +1142,6 @@ references:
   commentId: T:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
   fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
   nameWithType: MagicBreadcrumbBlueprint
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  name: Parts
-  href: api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbBlueprint_Parts
-  commentId: P:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  nameWithType: MagicBreadcrumbBlueprint.Parts
-- uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts*
-  name: Parts
-  href: api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html#ToSic_Cre8magic_Breadcrumbs_MagicBreadcrumbBlueprint_Parts_
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.Parts
-  nameWithType: MagicBreadcrumbBlueprint.Parts
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart
   name: MagicBreadcrumbBlueprintPart
   href: api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprintPart.html
@@ -7857,19 +7844,6 @@ references:
   commentId: T:ToSic.Cre8magic.Containers.MagicContainerBlueprint
   fullName: ToSic.Cre8magic.Containers.MagicContainerBlueprint
   nameWithType: MagicContainerBlueprint
-- uid: ToSic.Cre8magic.Containers.MagicContainerBlueprint.Parts
-  name: Parts
-  href: api/ToSic.Cre8magic.Containers.MagicContainerBlueprint.html#ToSic_Cre8magic_Containers_MagicContainerBlueprint_Parts
-  commentId: P:ToSic.Cre8magic.Containers.MagicContainerBlueprint.Parts
-  fullName: ToSic.Cre8magic.Containers.MagicContainerBlueprint.Parts
-  nameWithType: MagicContainerBlueprint.Parts
-- uid: ToSic.Cre8magic.Containers.MagicContainerBlueprint.Parts*
-  name: Parts
-  href: api/ToSic.Cre8magic.Containers.MagicContainerBlueprint.html#ToSic_Cre8magic_Containers_MagicContainerBlueprint_Parts_
-  commentId: Overload:ToSic.Cre8magic.Containers.MagicContainerBlueprint.Parts
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Containers.MagicContainerBlueprint.Parts
-  nameWithType: MagicContainerBlueprint.Parts
 - uid: ToSic.Cre8magic.Containers.MagicContainerDesignSettings
   name: MagicContainerDesignSettings
   href: api/ToSic.Cre8magic.Containers.MagicContainerDesignSettings.html
@@ -9340,19 +9314,6 @@ references:
   commentId: T:ToSic.Cre8magic.Languages.MagicLanguageBlueprint
   fullName: ToSic.Cre8magic.Languages.MagicLanguageBlueprint
   nameWithType: MagicLanguageBlueprint
-- uid: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.Parts
-  name: Parts
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html#ToSic_Cre8magic_Languages_MagicLanguageBlueprint_Parts
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageBlueprint.Parts
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.Parts
-  nameWithType: MagicLanguageBlueprint.Parts
-- uid: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.Parts*
-  name: Parts
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html#ToSic_Cre8magic_Languages_MagicLanguageBlueprint_Parts_
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageBlueprint.Parts
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageBlueprint.Parts
-  nameWithType: MagicLanguageBlueprint.Parts
 - uid: ToSic.Cre8magic.Languages.MagicLanguageDebug
   name: MagicLanguageDebug
   href: api/ToSic.Cre8magic.Languages.MagicLanguageDebug.html
@@ -9921,12 +9882,12 @@ references:
   commentId: T:ToSic.Cre8magic.Links.IMagicLinkService
   fullName: ToSic.Cre8magic.Links.IMagicLinkService
   nameWithType: IMagicLinkService
-- uid: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
-  name: Link(PageState, MagicLinkSpecs)
-  href: api/ToSic.Cre8magic.Links.IMagicLinkService.html#ToSic_Cre8magic_Links_IMagicLinkService_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSpecs_
-  commentId: M:ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
-  fullName: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSpecs)
-  nameWithType: IMagicLinkService.Link(PageState, MagicLinkSpecs)
+- uid: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
+  name: Link(PageState, MagicLinkSettings)
+  href: api/ToSic.Cre8magic.Links.IMagicLinkService.html#ToSic_Cre8magic_Links_IMagicLinkService_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSettings_
+  commentId: M:ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
+  fullName: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSettings)
+  nameWithType: IMagicLinkService.Link(PageState, MagicLinkSettings)
 - uid: ToSic.Cre8magic.Links.IMagicLinkService.Link*
   name: Link
   href: api/ToSic.Cre8magic.Links.IMagicLinkService.html#ToSic_Cre8magic_Links_IMagicLinkService_Link_
@@ -9934,6 +9895,38 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Links.IMagicLinkService.Link
   nameWithType: IMagicLinkService.Link
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings
+  name: MagicLinkSettings
+  href: api/ToSic.Cre8magic.Links.MagicLinkSettings.html
+  commentId: T:ToSic.Cre8magic.Links.MagicLinkSettings
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings
+  nameWithType: MagicLinkSettings
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  name: Path
+  href: api/ToSic.Cre8magic.Links.MagicLinkSettings.html#ToSic_Cre8magic_Links_MagicLinkSettings_Path
+  commentId: P:ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  nameWithType: MagicLinkSettings.Path
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings.Path*
+  name: Path
+  href: api/ToSic.Cre8magic.Links.MagicLinkSettings.html#ToSic_Cre8magic_Links_MagicLinkSettings_Path_
+  commentId: Overload:ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings.Path
+  nameWithType: MagicLinkSettings.Path
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  name: QueryString
+  href: api/ToSic.Cre8magic.Links.MagicLinkSettings.html#ToSic_Cre8magic_Links_MagicLinkSettings_QueryString
+  commentId: P:ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  nameWithType: MagicLinkSettings.QueryString
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString*
+  name: QueryString
+  href: api/ToSic.Cre8magic.Links.MagicLinkSettings.html#ToSic_Cre8magic_Links_MagicLinkSettings_QueryString_
+  commentId: Overload:ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings.QueryString
+  nameWithType: MagicLinkSettings.QueryString
 - uid: ToSic.Cre8magic.Links.MagicLinkSpecs
   name: MagicLinkSpecs
   href: api/ToSic.Cre8magic.Links.MagicLinkSpecs.html
@@ -10399,19 +10392,6 @@ references:
   commentId: T:ToSic.Cre8magic.Menus.MagicMenuBlueprint
   fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprint
   nameWithType: MagicMenuBlueprint
-- uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint.Parts
-  name: Parts
-  href: api/ToSic.Cre8magic.Menus.MagicMenuBlueprint.html#ToSic_Cre8magic_Menus_MagicMenuBlueprint_Parts
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuBlueprint.Parts
-  fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprint.Parts
-  nameWithType: MagicMenuBlueprint.Parts
-- uid: ToSic.Cre8magic.Menus.MagicMenuBlueprint.Parts*
-  name: Parts
-  href: api/ToSic.Cre8magic.Menus.MagicMenuBlueprint.html#ToSic_Cre8magic_Menus_MagicMenuBlueprint_Parts_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuBlueprint.Parts
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprint.Parts
-  nameWithType: MagicMenuBlueprint.Parts
 - uid: ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
   name: MagicMenuBlueprintPart
   href: api/ToSic.Cre8magic.Menus.MagicMenuBlueprintPart.html
@@ -15270,6 +15250,161 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Settings.MagicAllSettings.ThemeDesign
   nameWithType: MagicAllSettings.ThemeDesign
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  name: MagicBlueprintPart
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html
+  commentId: T:ToSic.Cre8magic.Settings.MagicBlueprintPart
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  nameWithType: MagicBlueprintPart
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  name: ByLevel
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_ByLevel
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  nameWithType: MagicBlueprintPart.ByLevel
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel*
+  name: ByLevel
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_ByLevel_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  nameWithType: MagicBlueprintPart.ByLevel
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  name: Classes
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Classes
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  nameWithType: MagicBlueprintPart.Classes
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes*
+  name: Classes
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Classes_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  nameWithType: MagicBlueprintPart.Classes
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  name: HasChildren
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_HasChildren
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  nameWithType: MagicBlueprintPart.HasChildren
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren*
+  name: HasChildren
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_HasChildren_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  nameWithType: MagicBlueprintPart.HasChildren
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  name: Id
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Id
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  nameWithType: MagicBlueprintPart.Id
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id*
+  name: Id
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Id_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  nameWithType: MagicBlueprintPart.Id
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  name: InBreadcrumb
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_InBreadcrumb
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  nameWithType: MagicBlueprintPart.InBreadcrumb
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb*
+  name: InBreadcrumb
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_InBreadcrumb_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  nameWithType: MagicBlueprintPart.InBreadcrumb
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  name: IsActive
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsActive
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  nameWithType: MagicBlueprintPart.IsActive
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive*
+  name: IsActive
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsActive_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  nameWithType: MagicBlueprintPart.IsActive
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  name: IsAdmin
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsAdmin
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  nameWithType: MagicBlueprintPart.IsAdmin
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin*
+  name: IsAdmin
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsAdmin_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  nameWithType: MagicBlueprintPart.IsAdmin
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  name: IsDisabled
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsDisabled
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  nameWithType: MagicBlueprintPart.IsDisabled
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled*
+  name: IsDisabled
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsDisabled_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  nameWithType: MagicBlueprintPart.IsDisabled
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  name: IsPublished
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsPublished
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  nameWithType: MagicBlueprintPart.IsPublished
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished*
+  name: IsPublished
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsPublished_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  nameWithType: MagicBlueprintPart.IsPublished
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  name: Value
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Value
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  nameWithType: MagicBlueprintPart.Value
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value*
+  name: Value
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Value_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  nameWithType: MagicBlueprintPart.Value
+- uid: ToSic.Cre8magic.Settings.MagicBlueprints
+  name: MagicBlueprints
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprints.html
+  commentId: T:ToSic.Cre8magic.Settings.MagicBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprints
+  nameWithType: MagicBlueprints
+- uid: ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  name: Parts
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprints.html#ToSic_Cre8magic_Settings_MagicBlueprints_Parts
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  nameWithType: MagicBlueprints.Parts
+- uid: ToSic.Cre8magic.Settings.MagicBlueprints.Parts*
+  name: Parts
+  href: api/ToSic.Cre8magic.Settings.MagicBlueprints.html#ToSic_Cre8magic_Settings_MagicBlueprints_Parts_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  nameWithType: MagicBlueprints.Parts
 - uid: ToSic.Cre8magic.Settings.MagicDebugSettings
   name: MagicDebugSettings
   href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html
@@ -15347,22 +15482,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Detailed
   nameWithType: MagicDebugSettings.Detailed
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(System.Object,System.Boolean)
-  name: GetState(object?, bool)
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_GetState_System_Object_System_Boolean_
-  commentId: M:ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(System.Object,System.Boolean)
-  name.vb: GetState(Object, Boolean)
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(object?, bool)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(Object, Boolean)
-  nameWithType: MagicDebugSettings.GetState(object?, bool)
-  nameWithType.vb: MagicDebugSettings.GetState(Object, Boolean)
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState*
-  name: GetState
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_GetState_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicDebugSettings.GetState
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState
-  nameWithType: MagicDebugSettings.GetState
 - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
   name: MagicDesignSettingsPart
   href: api/ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
@@ -16590,15 +16709,15 @@ references:
   commentId: T:ToSic.Cre8magic.Tailors.MagicTailorBase
   fullName: ToSic.Cre8magic.Tailors.MagicTailorBase
   nameWithType: MagicTailorBase
-- uid: ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart})
-  name: MagicTailorBase(TokenEngine, Dictionary<string, MagicDesignSettingsPart>)
-  href: api/ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase__ctor_ToSic_Cre8magic_Tokens_TokenEngine_System_Collections_Generic_Dictionary_System_String_ToSic_Cre8magic_Settings_MagicDesignSettingsPart__
-  commentId: M:ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart})
-  name.vb: New(TokenEngine, Dictionary(Of String, MagicDesignSettingsPart))
-  fullName: ToSic.Cre8magic.Tailors.MagicTailorBase.MagicTailorBase(ToSic.Cre8magic.Tokens.TokenEngine, System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Settings.MagicDesignSettingsPart>)
-  fullName.vb: ToSic.Cre8magic.Tailors.MagicTailorBase.New(ToSic.Cre8magic.Tokens.TokenEngine, System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Settings.MagicDesignSettingsPart))
-  nameWithType: MagicTailorBase.MagicTailorBase(TokenEngine, Dictionary<string, MagicDesignSettingsPart>)
-  nameWithType.vb: MagicTailorBase.New(TokenEngine, Dictionary(Of String, MagicDesignSettingsPart))
+- uid: ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart})
+  name: MagicTailorBase(TokenEngine, Dictionary<string, MagicBlueprintPart>)
+  href: api/ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase__ctor_ToSic_Cre8magic_Tokens_TokenEngine_System_Collections_Generic_Dictionary_System_String_ToSic_Cre8magic_Settings_MagicBlueprintPart__
+  commentId: M:ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart})
+  name.vb: New(TokenEngine, Dictionary(Of String, MagicBlueprintPart))
+  fullName: ToSic.Cre8magic.Tailors.MagicTailorBase.MagicTailorBase(ToSic.Cre8magic.Tokens.TokenEngine, System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Settings.MagicBlueprintPart>)
+  fullName.vb: ToSic.Cre8magic.Tailors.MagicTailorBase.New(ToSic.Cre8magic.Tokens.TokenEngine, System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Settings.MagicBlueprintPart))
+  nameWithType: MagicTailorBase.MagicTailorBase(TokenEngine, Dictionary<string, MagicBlueprintPart>)
+  nameWithType.vb: MagicTailorBase.New(TokenEngine, Dictionary(Of String, MagicBlueprintPart))
 - uid: ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor*
   name: MagicTailorBase
   href: api/ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase__ctor_
@@ -17533,19 +17652,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.PaneIsEmpty
   nameWithType: MagicThemeBlueprint.PaneIsEmpty
-- uid: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  name: Parts
-  href: api/ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html#ToSic_Cre8magic_Themes_Settings_MagicThemeBlueprint_Parts
-  commentId: P:ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  fullName: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  nameWithType: MagicThemeBlueprint.Parts
-- uid: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts*
-  name: Parts
-  href: api/ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html#ToSic_Cre8magic_Themes_Settings_MagicThemeBlueprint_Parts_
-  commentId: Overload:ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  nameWithType: MagicThemeBlueprint.Parts
 - uid: ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings
   name: MagicThemeDesignSettings
   href: api/ToSic.Cre8magic.Themes.Settings.MagicThemeDesignSettings.html

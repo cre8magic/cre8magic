@@ -5,7 +5,7 @@ items:
   id: MagicTailorBase
   parent: ToSic.Cre8magic.Tailors
   children:
-  - ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart})
+  - ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart})
   - ToSic.Cre8magic.Tailors.MagicTailorBase.Classes(System.String)
   - ToSic.Cre8magic.Tailors.MagicTailorBase.DesignSettings
   - ToSic.Cre8magic.Tailors.MagicTailorBase.GetSettings(System.String)
@@ -41,16 +41,16 @@ items:
   - ToSic.Cre8magic.Languages.MagicLanguageTailor
   implements:
   - ToSic.Cre8magic.Tailors.IMagicTailor
-- uid: ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart})
-  commentId: M:ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart})
-  id: '#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart})'
+- uid: ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart})
+  commentId: M:ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart})
+  id: '#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart})'
   parent: ToSic.Cre8magic.Tailors.MagicTailorBase
   langs:
   - csharp
   - vb
-  name: MagicTailorBase(TokenEngine, Dictionary<string, MagicDesignSettingsPart>)
-  nameWithType: MagicTailorBase.MagicTailorBase(TokenEngine, Dictionary<string, MagicDesignSettingsPart>)
-  fullName: ToSic.Cre8magic.Tailors.MagicTailorBase.MagicTailorBase(ToSic.Cre8magic.Tokens.TokenEngine, System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Settings.MagicDesignSettingsPart>)
+  name: MagicTailorBase(TokenEngine, Dictionary<string, MagicBlueprintPart>)
+  nameWithType: MagicTailorBase.MagicTailorBase(TokenEngine, Dictionary<string, MagicBlueprintPart>)
+  fullName: ToSic.Cre8magic.Tailors.MagicTailorBase.MagicTailorBase(ToSic.Cre8magic.Tokens.TokenEngine, System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Settings.MagicBlueprintPart>)
   type: Constructor
   source:
     remote:
@@ -64,17 +64,17 @@ items:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tailors
   syntax:
-    content: protected MagicTailorBase(TokenEngine tokens, Dictionary<string, MagicDesignSettingsPart> designSettings)
+    content: protected MagicTailorBase(TokenEngine tokens, Dictionary<string, MagicBlueprintPart> designSettings)
     parameters:
     - id: tokens
       type: ToSic.Cre8magic.Tokens.TokenEngine
     - id: designSettings
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart}
-    content.vb: Protected Sub New(tokens As TokenEngine, designSettings As Dictionary(Of String, MagicDesignSettingsPart))
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart}
+    content.vb: Protected Sub New(tokens As TokenEngine, designSettings As Dictionary(Of String, MagicBlueprintPart))
   overload: ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor*
-  nameWithType.vb: MagicTailorBase.New(TokenEngine, Dictionary(Of String, MagicDesignSettingsPart))
-  fullName.vb: ToSic.Cre8magic.Tailors.MagicTailorBase.New(ToSic.Cre8magic.Tokens.TokenEngine, System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Settings.MagicDesignSettingsPart))
-  name.vb: New(TokenEngine, Dictionary(Of String, MagicDesignSettingsPart))
+  nameWithType.vb: MagicTailorBase.New(TokenEngine, Dictionary(Of String, MagicBlueprintPart))
+  fullName.vb: ToSic.Cre8magic.Tailors.MagicTailorBase.New(ToSic.Cre8magic.Tokens.TokenEngine, System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Settings.MagicBlueprintPart))
+  name.vb: New(TokenEngine, Dictionary(Of String, MagicBlueprintPart))
 - uid: ToSic.Cre8magic.Tailors.MagicTailorBase.DesignSettings
   commentId: P:ToSic.Cre8magic.Tailors.MagicTailorBase.DesignSettings
   id: DesignSettings
@@ -98,11 +98,11 @@ items:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tailors
   syntax:
-    content: protected Dictionary<string, MagicDesignSettingsPart> DesignSettings { get; }
+    content: protected Dictionary<string, MagicBlueprintPart> DesignSettings { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart}
-    content.vb: Protected ReadOnly Property DesignSettings As Dictionary(Of String, MagicDesignSettingsPart)
+      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart}
+    content.vb: Protected ReadOnly Property DesignSettings As Dictionary(Of String, MagicBlueprintPart)
   overload: ToSic.Cre8magic.Tailors.MagicTailorBase.DesignSettings*
 - uid: ToSic.Cre8magic.Tailors.MagicTailorBase.GetSettings(System.String)
   commentId: M:ToSic.Cre8magic.Tailors.MagicTailorBase.GetSettings(System.String)
@@ -127,13 +127,13 @@ items:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Tailors
   syntax:
-    content: protected MagicDesignSettingsPart? GetSettings(string name)
+    content: protected MagicBlueprintPart? GetSettings(string name)
     parameters:
     - id: name
       type: System.String
     return:
-      type: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-    content.vb: Protected Function GetSettings(name As String) As MagicDesignSettingsPart
+      type: ToSic.Cre8magic.Settings.MagicBlueprintPart
+    content.vb: Protected Function GetSettings(name As String) As MagicBlueprintPart
   overload: ToSic.Cre8magic.Tailors.MagicTailorBase.GetSettings*
   nameWithType.vb: MagicTailorBase.GetSettings(String)
   fullName.vb: ToSic.Cre8magic.Tailors.MagicTailorBase.GetSettings(String)
@@ -369,7 +369,7 @@ references:
   fullName: System
 - uid: ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor*
   commentId: Overload:ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor
-  href: ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase__ctor_ToSic_Cre8magic_Tokens_TokenEngine_System_Collections_Generic_Dictionary_System_String_ToSic_Cre8magic_Settings_MagicDesignSettingsPart__
+  href: ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase__ctor_ToSic_Cre8magic_Tokens_TokenEngine_System_Collections_Generic_Dictionary_System_String_ToSic_Cre8magic_Settings_MagicBlueprintPart__
   name: MagicTailorBase
   nameWithType: MagicTailorBase.MagicTailorBase
   fullName: ToSic.Cre8magic.Tailors.MagicTailorBase.MagicTailorBase
@@ -383,17 +383,17 @@ references:
   name: TokenEngine
   nameWithType: TokenEngine
   fullName: ToSic.Cre8magic.Tokens.TokenEngine
-- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart}
+- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
-  name: Dictionary<string, MagicDesignSettingsPart>
-  nameWithType: Dictionary<string, MagicDesignSettingsPart>
-  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Settings.MagicDesignSettingsPart>
-  nameWithType.vb: Dictionary(Of String, MagicDesignSettingsPart)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Settings.MagicDesignSettingsPart)
-  name.vb: Dictionary(Of String, MagicDesignSettingsPart)
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html
+  name: Dictionary<string, MagicBlueprintPart>
+  nameWithType: Dictionary<string, MagicBlueprintPart>
+  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Settings.MagicBlueprintPart>
+  nameWithType.vb: Dictionary(Of String, MagicBlueprintPart)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Settings.MagicBlueprintPart)
+  name.vb: Dictionary(Of String, MagicBlueprintPart)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
@@ -404,9 +404,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-    name: MagicDesignSettingsPart
-    href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
+  - uid: ToSic.Cre8magic.Settings.MagicBlueprintPart
+    name: MagicBlueprintPart
+    href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
@@ -420,9 +420,9 @@ references:
     isExternal: true
   - name: ','
   - name: " "
-  - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-    name: MagicDesignSettingsPart
-    href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
+  - uid: ToSic.Cre8magic.Settings.MagicBlueprintPart
+    name: MagicBlueprintPart
+    href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html
   - name: )
 - uid: ToSic.Cre8magic.Tokens
   commentId: N:ToSic.Cre8magic.Tokens
@@ -544,13 +544,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-  commentId: T:ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  commentId: T:ToSic.Cre8magic.Settings.MagicBlueprintPart
   parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
-  name: MagicDesignSettingsPart
-  nameWithType: MagicDesignSettingsPart
-  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html
+  name: MagicBlueprintPart
+  nameWithType: MagicBlueprintPart
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart
 - uid: ToSic.Cre8magic.Settings
   commentId: N:ToSic.Cre8magic.Settings
   href: ToSic.html

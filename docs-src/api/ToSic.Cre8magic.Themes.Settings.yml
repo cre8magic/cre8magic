@@ -7,7 +7,6 @@ items:
   children:
   - ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
   - ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
-  - ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
   langs:
   - csharp
   - vb
@@ -26,53 +25,7 @@ references:
   fullName: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
 - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
   commentId: T:ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
-  parent: ToSic.Cre8magic.Themes.Settings
   href: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html
   name: MagicThemePartSettings
   nameWithType: MagicThemePartSettings
   fullName: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings
-- uid: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
-  commentId: T:ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
-  parent: ToSic.Cre8magic.Themes.Settings
-  href: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter.html
-  name: ThemePartJsonConverter
-  nameWithType: ThemePartJsonConverter
-  fullName: ToSic.Cre8magic.Themes.Settings.ThemePartJsonConverter
-- uid: ToSic.Cre8magic.Themes.Settings
-  commentId: N:ToSic.Cre8magic.Themes.Settings
-  href: ToSic.html
-  name: ToSic.Cre8magic.Themes.Settings
-  nameWithType: ToSic.Cre8magic.Themes.Settings
-  fullName: ToSic.Cre8magic.Themes.Settings
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Themes
-    name: Themes
-    href: ToSic.Cre8magic.Themes.html
-  - name: .
-  - uid: ToSic.Cre8magic.Themes.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Themes.Settings.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Themes
-    name: Themes
-    href: ToSic.Cre8magic.Themes.html
-  - name: .
-  - uid: ToSic.Cre8magic.Themes.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Themes.Settings.html

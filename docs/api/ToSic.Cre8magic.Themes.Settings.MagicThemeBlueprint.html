@@ -103,7 +103,7 @@ Class MagicThemeBlueprint  <a class="header-action link-secondary" title="View s
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record MagicThemeBlueprint : SettingsWithInherit</code></pre>
+    <pre><code class="lang-csharp hljs">public record MagicThemeBlueprint : MagicBlueprints</code></pre>
   </div>
 
 
@@ -114,6 +114,7 @@ Class MagicThemeBlueprint  <a class="header-action link-secondary" title="View s
     <dd>
       <div><span class="xref">object</span></div>
       <div><a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.MagicBlueprints.html">MagicBlueprints</a></div>
       <div><span class="xref">MagicThemeBlueprint</span></div>
     </dd>
   </dl>
@@ -123,6 +124,9 @@ Class MagicThemeBlueprint  <a class="header-action link-secondary" title="View s
   <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
+    <div>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicBlueprints.html#ToSic_Cre8magic_Settings_MagicBlueprints_Parts">MagicBlueprints.Parts</a>
+    </div>
     <div>
       <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
     </div>
@@ -144,7 +148,7 @@ Class MagicThemeBlueprint  <a class="header-action link-secondary" title="View s
 
   <h3 id="ToSic_Cre8magic_Themes_Settings_MagicThemeBlueprint_PaneIsEmpty" data-uid="ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.PaneIsEmpty">
   PaneIsEmpty
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeBlueprint.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeBlueprint.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -161,39 +165,6 @@ Class MagicThemeBlueprint  <a class="header-action link-secondary" title="View s
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingOnOff.html">MagicSettingOnOff</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Themes_Settings_MagicThemeBlueprint_Parts_" data-uid="ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts*"></a>
-
-  <h3 id="ToSic_Cre8magic_Themes_Settings_MagicThemeBlueprint_Parts" data-uid="ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts">
-  Parts
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeBlueprint.cs/#L36"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Custom values / classes as you need them in your code</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicDesignSettingsPart&gt;))]
-public Dictionary&lt;string, MagicDesignSettingsPart&gt; Parts { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html">MagicDesignSettingsPart</a>&gt;</dt>
     <dd></dd>
   </dl>
 

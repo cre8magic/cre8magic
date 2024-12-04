@@ -10,7 +10,6 @@ items:
   - ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
   - ToSic.Cre8magic.Settings.MagicDebugSettings.Anonymous
   - ToSic.Cre8magic.Settings.MagicDebugSettings.Detailed
-  - ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(System.Object,System.Boolean)
   langs:
   - csharp
   - vb
@@ -80,42 +79,6 @@ items:
   nameWithType.vb: MagicDebugSettings.New(Boolean)
   fullName.vb: ToSic.Cre8magic.Settings.MagicDebugSettings.New(Boolean)
   name.vb: New(Boolean)
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(System.Object,System.Boolean)
-  commentId: M:ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(System.Object,System.Boolean)
-  id: GetState(System.Object,System.Boolean)
-  parent: ToSic.Cre8magic.Settings.MagicDebugSettings
-  langs:
-  - csharp
-  - vb
-  name: GetState(object?, bool)
-  nameWithType: MagicDebugSettings.GetState(object?, bool)
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(object?, bool)
-  type: Method
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Settings/MagicDebugSettings.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: GetState
-    path: ../ToSic.Cre8Magic.Client/Settings/MagicDebugSettings.cs
-    startLine: 37
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Settings
-  syntax:
-    content: public MagicDebugState GetState(object? target, bool isAdmin)
-    parameters:
-    - id: target
-      type: System.Object
-    - id: isAdmin
-      type: System.Boolean
-    return:
-      type: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-    content.vb: Public Function GetState(target As Object, isAdmin As Boolean) As MagicDebugState
-  overload: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState*
-  nameWithType.vb: MagicDebugSettings.GetState(Object, Boolean)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState(Object, Boolean)
-  name.vb: GetState(Object, Boolean)
 - uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
   commentId: P:ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
   id: Allowed
@@ -134,7 +97,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Allowed
     path: ../ToSic.Cre8Magic.Client/Settings/MagicDebugSettings.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -163,7 +126,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Anonymous
     path: ../ToSic.Cre8Magic.Client/Settings/MagicDebugSettings.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -192,7 +155,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Admin
     path: ../ToSic.Cre8Magic.Client/Settings/MagicDebugSettings.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -221,7 +184,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Detailed
     path: ../ToSic.Cre8Magic.Client/Settings/MagicDebugSettings.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Settings
@@ -299,64 +262,6 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState*
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicDebugSettings.GetState
-  href: ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_GetState_System_Object_System_Boolean_
-  name: GetState
-  nameWithType: MagicDebugSettings.GetState
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.GetState
-- uid: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-  commentId: T:ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-  parent: ToSic.Cre8magic.Settings.Internal.Debug
-  name: MagicDebugState
-  nameWithType: MagicDebugState
-  fullName: ToSic.Cre8magic.Settings.Internal.Debug.MagicDebugState
-- uid: ToSic.Cre8magic.Settings.Internal.Debug
-  commentId: N:ToSic.Cre8magic.Settings.Internal.Debug
-  href: ToSic.html
-  name: ToSic.Cre8magic.Settings.Internal.Debug
-  nameWithType: ToSic.Cre8magic.Settings.Internal.Debug
-  fullName: ToSic.Cre8magic.Settings.Internal.Debug
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal.Debug
-    name: Debug
-    href: ToSic.Cre8magic.Settings.Internal.Debug.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings
-    name: Settings
-    href: ToSic.Cre8magic.Settings.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal
-    name: Internal
-    href: ToSic.Cre8magic.Settings.Internal.html
-  - name: .
-  - uid: ToSic.Cre8magic.Settings.Internal.Debug
-    name: Debug
-    href: ToSic.Cre8magic.Settings.Internal.Debug.html
 - uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed*
   commentId: Overload:ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
   href: ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Allowed

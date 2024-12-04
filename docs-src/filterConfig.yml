@@ -13,6 +13,10 @@ apiRules:
 - exclude:
     uidRegex: \.Internal\.
 
+
+- exclude:
+    uidRegex: \._Imports$
+
 # Hide BuildRenderTree method on blazor components as it would confuse the reader
 - exclude:
     type: Method

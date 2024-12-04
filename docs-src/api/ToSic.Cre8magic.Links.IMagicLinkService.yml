@@ -5,7 +5,7 @@ items:
   id: IMagicLinkService
   parent: ToSic.Cre8magic.Links
   children:
-  - ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
+  - ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
   langs:
   - csharp
   - vb
@@ -27,16 +27,16 @@ items:
   syntax:
     content: public interface IMagicLinkService
     content.vb: Public Interface IMagicLinkService
-- uid: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
-  commentId: M:ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
-  id: Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSpecs)
+- uid: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
+  commentId: M:ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
+  id: Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
   parent: ToSic.Cre8magic.Links.IMagicLinkService
   langs:
   - csharp
   - vb
-  name: Link(PageState, MagicLinkSpecs)
-  nameWithType: IMagicLinkService.Link(PageState, MagicLinkSpecs)
-  fullName: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSpecs)
+  name: Link(PageState, MagicLinkSettings)
+  nameWithType: IMagicLinkService.Link(PageState, MagicLinkSettings)
+  fullName: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSettings)
   type: Method
   source:
     remote:
@@ -50,15 +50,15 @@ items:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Links
   syntax:
-    content: string Link(PageState pageState, MagicLinkSpecs linkSpecs)
+    content: string Link(PageState pageState, MagicLinkSettings settings)
     parameters:
     - id: pageState
       type: Oqtane.UI.PageState
-    - id: linkSpecs
-      type: ToSic.Cre8magic.Links.MagicLinkSpecs
+    - id: settings
+      type: ToSic.Cre8magic.Links.MagicLinkSettings
     return:
       type: System.String
-    content.vb: Function Link(pageState As PageState, linkSpecs As MagicLinkSpecs) As String
+    content.vb: Function Link(pageState As PageState, settings As MagicLinkSettings) As String
   overload: ToSic.Cre8magic.Links.IMagicLinkService.Link*
 references:
 - uid: ToSic.Cre8magic.Links
@@ -93,7 +93,7 @@ references:
     href: ToSic.Cre8magic.Links.html
 - uid: ToSic.Cre8magic.Links.IMagicLinkService.Link*
   commentId: Overload:ToSic.Cre8magic.Links.IMagicLinkService.Link
-  href: ToSic.Cre8magic.Links.IMagicLinkService.html#ToSic_Cre8magic_Links_IMagicLinkService_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSpecs_
+  href: ToSic.Cre8magic.Links.IMagicLinkService.html#ToSic_Cre8magic_Links_IMagicLinkService_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSettings_
   name: Link
   nameWithType: IMagicLinkService.Link
   fullName: ToSic.Cre8magic.Links.IMagicLinkService.Link
@@ -104,13 +104,13 @@ references:
   name: PageState
   nameWithType: PageState
   fullName: Oqtane.UI.PageState
-- uid: ToSic.Cre8magic.Links.MagicLinkSpecs
-  commentId: T:ToSic.Cre8magic.Links.MagicLinkSpecs
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings
+  commentId: T:ToSic.Cre8magic.Links.MagicLinkSettings
   parent: ToSic.Cre8magic.Links
-  href: ToSic.Cre8magic.Links.MagicLinkSpecs.html
-  name: MagicLinkSpecs
-  nameWithType: MagicLinkSpecs
-  fullName: ToSic.Cre8magic.Links.MagicLinkSpecs
+  href: ToSic.Cre8magic.Links.MagicLinkSettings.html
+  name: MagicLinkSettings
+  nameWithType: MagicLinkSettings
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings
 - uid: System.String
   commentId: T:System.String
   parent: System

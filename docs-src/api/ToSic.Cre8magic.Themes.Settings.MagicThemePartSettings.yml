@@ -24,13 +24,19 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicThemePartSettings
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
-    startLine: 4
+    startLine: 6
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes.Settings
   syntax:
-    content: public record MagicThemePartSettings
-    content.vb: Public Class MagicThemePartSettings
+    content: >-
+      [JsonConverter(typeof(ThemePartJsonConverter))]
+
+      public record MagicThemePartSettings
+    content.vb: >-
+      <JsonConverter(GetType(ThemePartJsonConverter))>
+
+      Public Class MagicThemePartSettings
   inheritance:
   - System.Object
 - uid: ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.#ctor(System.Boolean)
@@ -51,7 +57,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
-    startLine: 21
+    startLine: 24
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes.Settings
@@ -83,7 +89,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: .ctor
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
-    startLine: 28
+    startLine: 31
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes.Settings
@@ -115,7 +121,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Show
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
-    startLine: 40
+    startLine: 43
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes.Settings
@@ -150,7 +156,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Design
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
-    startLine: 45
+    startLine: 48
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes.Settings
@@ -181,7 +187,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemePartSettings.cs
-    startLine: 50
+    startLine: 53
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes.Settings

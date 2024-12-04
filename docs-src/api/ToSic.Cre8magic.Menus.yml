@@ -7,7 +7,6 @@ items:
   children:
   - ToSic.Cre8magic.Menus.IMagicMenuKit
   - ToSic.Cre8magic.Menus.MagicMenuBlueprint
-  - ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
   - ToSic.Cre8magic.Menus.MagicMenuSettings
   langs:
   - csharp
@@ -33,12 +32,6 @@ references:
   name: MagicMenuBlueprint
   nameWithType: MagicMenuBlueprint
   fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprint
-- uid: ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
-  commentId: T:ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
-  href: ToSic.Cre8magic.Menus.MagicMenuBlueprintPart.html
-  name: MagicMenuBlueprintPart
-  nameWithType: MagicMenuBlueprintPart
-  fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprintPart
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings
   commentId: T:ToSic.Cre8magic.Menus.MagicMenuSettings
   parent: ToSic.Cre8magic.Menus

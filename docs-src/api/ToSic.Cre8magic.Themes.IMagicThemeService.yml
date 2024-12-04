@@ -45,19 +45,24 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemeKit
     path: ../ToSic.Cre8Magic.Client/Themes/IMagicThemeService.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes
+  summary: Get a theme kit for the current page, to customize the theme.
+  example: []
   syntax:
     content: IMagicThemeKit ThemeKit(PageState pageState, MagicThemeSettings? settings)
     parameters:
     - id: pageState
       type: Oqtane.UI.PageState
+      description: The Page State
     - id: settings
       type: ToSic.Cre8magic.Themes.MagicThemeSettings
+      description: The Settings; optional
     return:
       type: ToSic.Cre8magic.Themes.IMagicThemeKit
+      description: ''
     content.vb: Function ThemeKit(pageState As PageState, settings As MagicThemeSettings) As IMagicThemeKit
   overload: ToSic.Cre8magic.Themes.IMagicThemeService.ThemeKit*
   nameWithType.vb: IMagicThemeService.ThemeKit(PageState, MagicThemeSettings)

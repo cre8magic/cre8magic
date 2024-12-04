@@ -6,7 +6,7 @@ items:
   parent: ToSic.Cre8magic
   children:
   - ToSic.Cre8magic.Links.IMagicLinkService
-  - ToSic.Cre8magic.Links.MagicLinkSpecs
+  - ToSic.Cre8magic.Links.MagicLinkSettings
   langs:
   - csharp
   - vb
@@ -23,13 +23,13 @@ references:
   name: IMagicLinkService
   nameWithType: IMagicLinkService
   fullName: ToSic.Cre8magic.Links.IMagicLinkService
-- uid: ToSic.Cre8magic.Links.MagicLinkSpecs
-  commentId: T:ToSic.Cre8magic.Links.MagicLinkSpecs
+- uid: ToSic.Cre8magic.Links.MagicLinkSettings
+  commentId: T:ToSic.Cre8magic.Links.MagicLinkSettings
   parent: ToSic.Cre8magic.Links
-  href: ToSic.Cre8magic.Links.MagicLinkSpecs.html
-  name: MagicLinkSpecs
-  nameWithType: MagicLinkSpecs
-  fullName: ToSic.Cre8magic.Links.MagicLinkSpecs
+  href: ToSic.Cre8magic.Links.MagicLinkSettings.html
+  name: MagicLinkSettings
+  nameWithType: MagicLinkSettings
+  fullName: ToSic.Cre8magic.Links.MagicLinkSettings
 - uid: ToSic.Cre8magic.Links
   commentId: N:ToSic.Cre8magic.Links
   href: ToSic.html

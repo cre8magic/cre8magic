@@ -1,0 +1,602 @@
+### YamlMime:ManagedReference
+items:
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  commentId: T:ToSic.Cre8magic.Settings.MagicBlueprintPart
+  id: MagicBlueprintPart
+  parent: ToSic.Cre8magic.Settings
+  children:
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  langs:
+  - csharp
+  - vb
+  name: MagicBlueprintPart
+  nameWithType: MagicBlueprintPart
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  type: Class
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: MagicBlueprintPart
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 11
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Anything that can define what classes it should have.
+
+
+    This is usually the base class for something that can also have more information.
+  example: []
+  syntax:
+    content: >-
+      [JsonConverter(typeof(BlueprintPartJsonConverter))]
+
+      public record MagicBlueprintPart
+    content.vb: >-
+      <JsonConverter(GetType(BlueprintPartJsonConverter))>
+
+      Public Class MagicBlueprintPart
+  inheritance:
+  - System.Object
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  id: Classes
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: Classes
+  nameWithType: MagicBlueprintPart.Classes
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Classes
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 43
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Classes which are applied to all the tags of this type
+  example: []
+  syntax:
+    content: public string? Classes { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Classes As String
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  id: Value
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: MagicBlueprintPart.Value
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Value
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 48
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Special key to get a value - for non-css settings
+  example: []
+  syntax:
+    content: public string? Value { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Value As String
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  id: Id
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: MagicBlueprintPart.Id
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: Id
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 51
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  syntax:
+    content: public string? Id { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  id: IsActive
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: IsActive
+  nameWithType: MagicBlueprintPart.IsActive
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsActive
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 57
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Classes to apply if this thing is active.
+
+    For example, the current page or language.
+  example: []
+  syntax:
+    content: public MagicSettingOnOff? IsActive { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    content.vb: Public Property IsActive As MagicSettingOnOff
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  id: IsPublished
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: IsPublished
+  nameWithType: MagicBlueprintPart.IsPublished
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsPublished
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 64
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: If something is published or not, usually just for Containers
+  example: []
+  syntax:
+    content: public MagicSettingOnOff? IsPublished { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    content.vb: Public Property IsPublished As MagicSettingOnOff
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  id: IsAdmin
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: IsAdmin
+  nameWithType: MagicBlueprintPart.IsAdmin
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsAdmin
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 69
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: If a module is admin or not, usually just for containers
+  example: []
+  syntax:
+    content: public MagicSettingOnOff? IsAdmin { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    content.vb: Public Property IsAdmin As MagicSettingOnOff
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  id: ByLevel
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: ByLevel
+  nameWithType: MagicBlueprintPart.ByLevel
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ByLevel
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 80
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    List of classes to add on certain levels only.
+
+    Use level -1 to specify classes to apply to all the remaining ones which are not explicitly listed.
+  example: []
+  syntax:
+    content: public Dictionary<int, string>? ByLevel { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Int32,System.String}
+    content.vb: Public Property ByLevel As Dictionary(Of Integer, String)
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  id: HasChildren
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: HasChildren
+  nameWithType: MagicBlueprintPart.HasChildren
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: HasChildren
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 85
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Classes to add if this node is a parent (has-children).
+  example: []
+  syntax:
+    content: public MagicSettingOnOff? HasChildren { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    content.vb: Public Property HasChildren As MagicSettingOnOff
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  id: IsDisabled
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: IsDisabled
+  nameWithType: MagicBlueprintPart.IsDisabled
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: IsDisabled
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 91
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: >-
+    Classes to add if the node is disabled.
+
+    TODO: unclear why it's disabled, what would cause this...
+  example: []
+  syntax:
+    content: public MagicSettingOnOff? IsDisabled { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    content.vb: Public Property IsDisabled As MagicSettingOnOff
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled*
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  id: InBreadcrumb
+  parent: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  langs:
+  - csharp
+  - vb
+  name: InBreadcrumb
+  nameWithType: MagicBlueprintPart.InBreadcrumb
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: InBreadcrumb
+    path: ../ToSic.Cre8Magic.Client/Settings/MagicBlueprintPart.cs
+    startLine: 96
+  assemblies:
+  - ToSic.Cre8magic.Client.Oqtane
+  namespace: ToSic.Cre8magic.Settings
+  summary: Classes to add if this node is in the path / breadcrumb of the current page.
+  example: []
+  syntax:
+    content: public MagicSettingOnOff? InBreadcrumb { get; init; }
+    parameters: []
+    return:
+      type: ToSic.Cre8magic.Settings.MagicSettingOnOff
+    content.vb: Public Property InBreadcrumb As MagicSettingOnOff
+  overload: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb*
+references:
+- uid: ToSic.Cre8magic.Settings
+  commentId: N:ToSic.Cre8magic.Settings
+  href: ToSic.html
+  name: ToSic.Cre8magic.Settings
+  nameWithType: ToSic.Cre8magic.Settings
+  fullName: ToSic.Cre8magic.Settings
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.Settings
+    name: Settings
+    href: ToSic.Cre8magic.Settings.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Classes
+  name: Classes
+  nameWithType: MagicBlueprintPart.Classes
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Classes
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Value
+  name: Value
+  nameWithType: MagicBlueprintPart.Value
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Value
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_Id
+  name: Id
+  nameWithType: MagicBlueprintPart.Id
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.Id
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsActive
+  name: IsActive
+  nameWithType: MagicBlueprintPart.IsActive
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsActive
+- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
+  commentId: T:ToSic.Cre8magic.Settings.MagicSettingOnOff
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicSettingOnOff.html
+  name: MagicSettingOnOff
+  nameWithType: MagicSettingOnOff
+  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsPublished
+  name: IsPublished
+  nameWithType: MagicBlueprintPart.IsPublished
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsPublished
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsAdmin
+  name: IsAdmin
+  nameWithType: MagicBlueprintPart.IsAdmin
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsAdmin
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_ByLevel
+  name: ByLevel
+  nameWithType: MagicBlueprintPart.ByLevel
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.ByLevel
+- uid: System.Collections.Generic.Dictionary{System.Int32,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.Int32,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<int, string>
+  nameWithType: Dictionary<int, string>
+  fullName: System.Collections.Generic.Dictionary<int, string>
+  nameWithType.vb: Dictionary(Of Integer, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of Integer, String)
+  name.vb: Dictionary(Of Integer, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_HasChildren
+  name: HasChildren
+  nameWithType: MagicBlueprintPart.HasChildren
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.HasChildren
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_IsDisabled
+  name: IsDisabled
+  nameWithType: MagicBlueprintPart.IsDisabled
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.IsDisabled
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb*
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html#ToSic_Cre8magic_Settings_MagicBlueprintPart_InBreadcrumb
+  name: InBreadcrumb
+  nameWithType: MagicBlueprintPart.InBreadcrumb
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart.InBreadcrumb

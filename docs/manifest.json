@@ -1962,6 +1962,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.Links.MagicLinkSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Links.MagicLinkSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ToSic.Cre8magic.Links.MagicLinkSpecs.yml",
       "output": {
         ".html": {
@@ -3066,6 +3076,26 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Settings.MagicAllSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.Settings.MagicBlueprintPart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ToSic.Cre8magic.Settings.MagicBlueprints.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicBlueprints.html"
         }
       },
       "version": ""

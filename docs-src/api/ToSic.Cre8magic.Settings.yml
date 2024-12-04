@@ -7,8 +7,9 @@ items:
   children:
   - ToSic.Cre8magic.Settings.IMagicSettingsProvider
   - ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
+  - ToSic.Cre8magic.Settings.MagicBlueprintPart
+  - ToSic.Cre8magic.Settings.MagicBlueprints
   - ToSic.Cre8magic.Settings.MagicDebugSettings
-  - ToSic.Cre8magic.Settings.MagicDesignSettingsPart
   - ToSic.Cre8magic.Settings.MagicSettingOnOff
   - ToSic.Cre8magic.Settings.MagicSettingsBase
   - ToSic.Cre8magic.Settings.MagicSettingsCatalog
@@ -56,6 +57,20 @@ references:
   - name: " "
   - name: TSettings
   - name: )
+- uid: ToSic.Cre8magic.Settings.MagicBlueprintPart
+  commentId: T:ToSic.Cre8magic.Settings.MagicBlueprintPart
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicBlueprintPart.html
+  name: MagicBlueprintPart
+  nameWithType: MagicBlueprintPart
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprintPart
+- uid: ToSic.Cre8magic.Settings.MagicBlueprints
+  commentId: T:ToSic.Cre8magic.Settings.MagicBlueprints
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicBlueprints.html
+  name: MagicBlueprints
+  nameWithType: MagicBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprints
 - uid: ToSic.Cre8magic.Settings.MagicDebugSettings
   commentId: T:ToSic.Cre8magic.Settings.MagicDebugSettings
   parent: ToSic.Cre8magic.Settings
@@ -63,13 +78,6 @@ references:
   name: MagicDebugSettings
   nameWithType: MagicDebugSettings
   fullName: ToSic.Cre8magic.Settings.MagicDebugSettings
-- uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-  commentId: T:ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-  parent: ToSic.Cre8magic.Settings
-  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
-  name: MagicDesignSettingsPart
-  nameWithType: MagicDesignSettingsPart
-  fullName: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
 - uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
   commentId: T:ToSic.Cre8magic.Settings.MagicSettingOnOff
   parent: ToSic.Cre8magic.Settings

@@ -6,7 +6,6 @@ items:
   parent: ToSic.Cre8magic.Themes.Settings
   children:
   - ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.PaneIsEmpty
-  - ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
   langs:
   - csharp
   - vb
@@ -32,12 +31,14 @@ items:
     If you change these, you must also update the SCSS files.
   example: []
   syntax:
-    content: 'public record MagicThemeBlueprint : SettingsWithInherit'
-    content.vb: Public Class MagicThemeBlueprint Inherits SettingsWithInherit
+    content: 'public record MagicThemeBlueprint : MagicBlueprints'
+    content.vb: Public Class MagicThemeBlueprint Inherits MagicBlueprints
   inheritance:
   - System.Object
   - ToSic.Cre8magic.Settings.SettingsWithInherit
+  - ToSic.Cre8magic.Settings.MagicBlueprints
   inheritedMembers:
+  - ToSic.Cre8magic.Settings.MagicBlueprints.Parts
   - ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   - ToSic.Cre8magic.Settings.SettingsWithInherit.PickFirstNonZeroInt(System.Nullable{System.Int32}[])
 - uid: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.PaneIsEmpty
@@ -58,7 +59,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PaneIsEmpty
     path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeBlueprint.cs
-    startLine: 30
+    startLine: 25
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Themes.Settings
@@ -69,43 +70,6 @@ items:
       type: ToSic.Cre8magic.Settings.MagicSettingOnOff
     content.vb: Public Property PaneIsEmpty As MagicSettingOnOff
   overload: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.PaneIsEmpty*
-- uid: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  commentId: P:ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  id: Parts
-  parent: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint
-  langs:
-  - csharp
-  - vb
-  name: Parts
-  nameWithType: MagicThemeBlueprint.Parts
-  fullName: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  type: Property
-  source:
-    remote:
-      path: ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeBlueprint.cs
-      branch: feature/v5
-      repo: https://github.com/2sic/oqtane-cre8magic
-    id: Parts
-    path: ../ToSic.Cre8Magic.Client/Themes/Settings/MagicThemeBlueprint.cs
-    startLine: 35
-  assemblies:
-  - ToSic.Cre8magic.Client.Oqtane
-  namespace: ToSic.Cre8magic.Themes.Settings
-  summary: Custom values / classes as you need them in your code
-  example: []
-  syntax:
-    content: >-
-      [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicDesignSettingsPart>))]
-
-      public Dictionary<string, MagicDesignSettingsPart> Parts { get; init; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart}
-    content.vb: >-
-      <JsonConverter(GetType(CaseInsensitiveDictionaryConverter(Of MagicDesignSettingsPart)))>
-
-      Public Property Parts As Dictionary(Of String, MagicDesignSettingsPart)
-  overload: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts*
 references:
 - uid: ToSic.Cre8magic.Themes.Settings
   commentId: N:ToSic.Cre8magic.Themes.Settings
@@ -162,6 +126,20 @@ references:
   name: SettingsWithInherit
   nameWithType: SettingsWithInherit
   fullName: ToSic.Cre8magic.Settings.SettingsWithInherit
+- uid: ToSic.Cre8magic.Settings.MagicBlueprints
+  commentId: T:ToSic.Cre8magic.Settings.MagicBlueprints
+  parent: ToSic.Cre8magic.Settings
+  href: ToSic.Cre8magic.Settings.MagicBlueprints.html
+  name: MagicBlueprints
+  nameWithType: MagicBlueprints
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprints
+- uid: ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  commentId: P:ToSic.Cre8magic.Settings.MagicBlueprints.Parts
+  parent: ToSic.Cre8magic.Settings.MagicBlueprints
+  href: ToSic.Cre8magic.Settings.MagicBlueprints.html#ToSic_Cre8magic_Settings_MagicBlueprints_Parts
+  name: Parts
+  nameWithType: MagicBlueprints.Parts
+  fullName: ToSic.Cre8magic.Settings.MagicBlueprints.Parts
 - uid: ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   commentId: P:ToSic.Cre8magic.Settings.SettingsWithInherit.Inherits
   parent: ToSic.Cre8magic.Settings.SettingsWithInherit
@@ -254,118 +232,3 @@ references:
   name: MagicSettingOnOff
   nameWithType: MagicSettingOnOff
   fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff
-- uid: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts*
-  commentId: Overload:ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-  href: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html#ToSic_Cre8magic_Themes_Settings_MagicThemeBlueprint_Parts
-  name: Parts
-  nameWithType: MagicThemeBlueprint.Parts
-  fullName: ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.Parts
-- uid: System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicDesignSettingsPart}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
-  name: Dictionary<string, MagicDesignSettingsPart>
-  nameWithType: Dictionary<string, MagicDesignSettingsPart>
-  fullName: System.Collections.Generic.Dictionary<string, ToSic.Cre8magic.Settings.MagicDesignSettingsPart>
-  nameWithType.vb: Dictionary(Of String, MagicDesignSettingsPart)
-  fullName.vb: System.Collections.Generic.Dictionary(Of String, ToSic.Cre8magic.Settings.MagicDesignSettingsPart)
-  name.vb: Dictionary(Of String, MagicDesignSettingsPart)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-    name: MagicDesignSettingsPart
-    href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-  - name: ','
-  - name: " "
-  - uid: ToSic.Cre8magic.Settings.MagicDesignSettingsPart
-    name: MagicDesignSettingsPart
-    href: ToSic.Cre8magic.Settings.MagicDesignSettingsPart.html
-  - name: )
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
-  isExternal: true
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-  - name: <
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    isExternal: true
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: ','
-  - name: " "
-  - name: TValue
-  - name: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Collections
-    name: Collections
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections
-  - name: .
-  - uid: System.Collections.Generic
-    name: Generic
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
