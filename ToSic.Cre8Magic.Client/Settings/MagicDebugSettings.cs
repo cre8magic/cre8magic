@@ -35,6 +35,7 @@ public record MagicDebugSettings
     }
 
     // TODO: make internal or something
+    [PrivateApi]
     public MagicDebugState GetState(object? target, bool isAdmin)
         => (target is not IHasDebugSettings debugTarget ? this : new(debugTarget.Debug, this))
             .Parsed(isAdmin);

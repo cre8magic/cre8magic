@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Themes.Internal.Json;
 /// <summary>
 /// ... 
 /// </summary>
-public class ThemePartJsonConverter : JsonConverter<MagicThemePartSettings>
+internal class ThemePartJsonConverter : JsonConverter<MagicThemePartSettings>
 {
 
     public override void Write(Utf8JsonWriter writer, MagicThemePartSettings? part, JsonSerializerOptions options)
@@ -32,9 +32,9 @@ public class ThemePartJsonConverter : JsonConverter<MagicThemePartSettings>
         return x switch
         {
             null => null,
-            JsonArray => Dummy(),
             JsonValue jValue => ConvertValue(jValue),
             JsonObject jObject => jObject.Deserialize<MagicThemePartSettings.NoJsonConverter>(options),
+            // Default, Array, etc.
             _ => Dummy(),
         };
     }

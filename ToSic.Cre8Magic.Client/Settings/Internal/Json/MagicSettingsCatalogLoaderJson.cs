@@ -1,13 +1,14 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal.Logging;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Internal.Json;
 
-public class MagicSettingsCatalogLoaderJson()
+internal class MagicSettingsCatalogLoaderJson
 {
-
     public DataWithJournal<MagicSettingsCatalog> LoadJson(MagicThemePackage themeConfig)
     {
         List<Exception> exceptions = [];
@@ -17,9 +18,7 @@ public class MagicSettingsCatalogLoaderJson()
         {
             var jsonString = File.ReadAllText(jsonFileName);
 
-            var deserializeOptions = new JsonSerializerOptions(JsonMerger.GetNewOptionsForPreMerge()) {
-                PropertyNameCaseInsensitive = true,
-            };
+            var deserializeOptions = GetNewOptionsForPreMerge;
 
             var result = JsonSerializer.Deserialize<MagicSettingsCatalog>(jsonString, deserializeOptions)!;
 
@@ -43,4 +42,14 @@ public class MagicSettingsCatalogLoaderJson()
             exceptions.Add(new SettingsException($"Error loading json settings file '{themeConfig.SettingsJsonFile}'. {ex.Message}"));
         }
     }
+
+    [field: AllowNull, MaybeNull]
+    public static JsonSerializerOptions GetNewOptionsForPreMerge => field??= new()
+    {
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+        ReadCommentHandling = JsonCommentHandling.Skip,
+        AllowTrailingCommas = true,
+        PropertyNameCaseInsensitive = true,
+    };
+
 }

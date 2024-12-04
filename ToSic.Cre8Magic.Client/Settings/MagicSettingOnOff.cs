@@ -11,7 +11,7 @@ namespace ToSic.Cre8magic.Settings;
 /// * is home
 /// * etc.
 /// </summary>
-[JsonConverter(typeof(PairOnOffJsonConverter))]
+[JsonConverter(typeof(SettingOnOffJsonConverter))]
 public record MagicSettingOnOff: ICanClone<MagicSettingOnOff>
 {
     /// <summary>

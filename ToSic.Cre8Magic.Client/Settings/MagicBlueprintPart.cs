@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Settings;
 ///
 /// This is usually the base class for something that can also have more information.
 /// </summary>
-[JsonConverter(typeof(DesignSettingsJsonConverter))]
+[JsonConverter(typeof(BlueprintPartJsonConverter))]
 public record MagicBlueprintPart: ICanClone<MagicBlueprintPart>
 {
     [PrivateApi]

@@ -8,10 +8,4 @@ namespace ToSic.Cre8magic.Settings.Internal.Json;
 /// </summary>
 internal class JsonMerger
 {
-    public static JsonSerializerOptions GetNewOptionsForPreMerge() => new()
-    {
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
-        ReadCommentHandling = JsonCommentHandling.Skip,
-        AllowTrailingCommas = true,
-    };
 }

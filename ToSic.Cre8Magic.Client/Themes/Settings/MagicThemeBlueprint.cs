@@ -1,8 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Settings;
+﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Json;
-using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Themes.Settings;
 
@@ -11,7 +8,7 @@ namespace ToSic.Cre8magic.Themes.Settings;
 ///
 /// If you change these, you must also update the SCSS files. 
 /// </summary>
-public partial record MagicThemeBlueprint: SettingsWithInherit, ICanClone<MagicThemeBlueprint>
+public partial record MagicThemeBlueprint: MagicBlueprints, ICanClone<MagicThemeBlueprint>
 {
     [PrivateApi]
     public MagicThemeBlueprint() { }
@@ -20,8 +17,6 @@ public partial record MagicThemeBlueprint: SettingsWithInherit, ICanClone<MagicT
         : base(priority, fallback)
     {
         PaneIsEmpty = priority?.PaneIsEmpty ?? fallback?.PaneIsEmpty;
-
-        Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
     MagicThemeBlueprint ICanClone<MagicThemeBlueprint>.CloneUnder(MagicThemeBlueprint? priority, bool forceCopy) =>
@@ -29,11 +24,4 @@ public partial record MagicThemeBlueprint: SettingsWithInherit, ICanClone<MagicT
 
     
     public MagicSettingOnOff? PaneIsEmpty { get; init; }
-
-    /// <summary>
-    /// Custom values / classes as you need them in your code
-    /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBlueprintPart>))]
-    public Dictionary<string, MagicBlueprintPart> Parts { get; init; } = new();
-
 }

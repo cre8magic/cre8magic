@@ -16,7 +16,7 @@ internal static class OnOffConverterHelpers
         //var logger = sp.GetRequiredService<ILogger<JsonConverterBase<MagicSettingOnOff>>>();
         return new(JsonSerializerOptions.Web)
         {
-            Converters = { new PairOnOffJsonConverter() /*.GetNew(logger)*/ }
+            Converters = { new Settings.Internal.Json.SettingOnOffJsonConverter() /*.GetNew(logger)*/ }
         };
     }
 

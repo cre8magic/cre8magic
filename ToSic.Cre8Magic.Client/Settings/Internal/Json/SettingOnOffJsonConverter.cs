@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.Settings.Internal.Json;
 /// <summary>
 /// Custom converter for <see cref="MagicSettingOnOff"/> to handle different JSON formats.
 /// </summary>
-public class PairOnOffJsonConverter : JsonConverter<MagicSettingOnOff>
+internal class SettingOnOffJsonConverter : JsonConverter<MagicSettingOnOff>
 {
 
     public override void Write(Utf8JsonWriter writer, MagicSettingOnOff? pair, JsonSerializerOptions options)

@@ -1,14 +1,13 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
-using Microsoft.Extensions.Logging;
 
 namespace ToSic.Cre8magic.Settings.Internal.Json;
 
 /// <summary>
 /// ...
 /// </summary>
-public class DesignSettingsJsonConverter : JsonConverter<MagicBlueprintPart>
+internal class BlueprintPartJsonConverter : JsonConverter<MagicBlueprintPart>
 {
     public override void Write(Utf8JsonWriter writer, MagicBlueprintPart? part, JsonSerializerOptions options) =>
         JsonSerializer.Serialize(writer, new MagicBlueprintPart.NoJsonConverter(part), options);
