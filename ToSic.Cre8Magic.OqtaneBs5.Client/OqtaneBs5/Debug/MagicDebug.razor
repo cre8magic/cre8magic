@@ -5,8 +5,8 @@
 @using Oqtane.UI
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Internal.Debug
-@using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Internal
+@using ToSic.Cre8magic.Users
 @inject IMagicSettingsService SettingsService
 @inject IMagicAct MagicAct
 @code {
@@ -16,7 +16,7 @@
 @{
     var debugInfo = Target.GetDebugInfo();
     var settings = debugInfo.Settings;
-    var debug = SettingsService.Debug.GetState(settings, MagicAct.User(PageState).MayAdminCurrentPage);
+    var debug = SettingsService.Debug.GetState(settings, PageState.UserMayEditCurrentPage());
 
     // Exit early if debug is not allowed
     if (!debug.Show)

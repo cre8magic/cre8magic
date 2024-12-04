@@ -1,6 +1,5 @@
 ﻿using System.Text.Json.Serialization;
 using Oqtane.UI;
-using ToSic.Cre8magic.Act;
 using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Docs;
 
@@ -47,7 +46,7 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
     /// <summary>
     /// The PageState which is needed for doing everything.
     ///
-    /// It can be provided in the settings, or it must be provided in the theme using <see cref="IMagicAct.UsePageState"/>.
+    /// It can be provided in the settings, or it must be provided in the theme using <see cref="ToSic.Cre8magic.Act.IMagicAct.UsePageState"/>.
     /// </summary>
     [JsonIgnore]
     public PageState? PageState { get; init; }

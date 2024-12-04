@@ -1,6 +1,5 @@
 ﻿using Oqtane.Models;
 using Oqtane.UI;
-using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Users;
 
@@ -57,7 +56,7 @@ public record MagicUser
 
     public bool IsRegistered => PageState.UserIsRegistered();
 
-    public bool MayEditCurrentPage => PageState.UserIsEditor() || (PageState.Page.IsPersonalizable && IsRegistered);
+    public bool MayEditCurrentPage => PageState.UserMayEditCurrentPage() || (PageState.Page.IsPersonalizable && IsRegistered);
 
     /// <summary>
     /// The underlying Oqtane User object.

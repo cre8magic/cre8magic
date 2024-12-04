@@ -12,7 +12,7 @@ Nice to know:       Will use Bootstrap toggle functionality to show the hidden c
 }
 @{
     var kit = MagicAct.ThemeKit(Settings.With(PageState));
-    var user = MagicAct.User(PageState);
+    var user = MagicAct.User(new() { PageState = PageState });
 }
 @if (user.MayAdminCurrentPage)
 {

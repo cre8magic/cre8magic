@@ -11,7 +11,7 @@ using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
-using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Users;
 using static ToSic.Cre8magic.MagicConstants;
 
 namespace ToSic.Cre8magic.Settings.Internal;

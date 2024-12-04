@@ -42,7 +42,7 @@ public interface IMagicAct
 
 
     /// <inheritdoc cref="IMagicUserService.User"/>
-    MagicUser User(PageState pageState);
+    MagicUser User(MagicUserSettings? settings = default);
 
     /// <summary>
     /// Get a kit to work with containers.

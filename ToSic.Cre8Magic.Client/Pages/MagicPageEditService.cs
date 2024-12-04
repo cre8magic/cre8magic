@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Oqtane.Services;
 using Oqtane.UI;
-using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Users;
 
 namespace ToSic.Cre8magic.Pages;
 
@@ -15,7 +15,7 @@ public class MagicPageEditService(IPageService pageService, NavigationManager na
     // Code basically copied from ControlPanel.razor
     public async Task ToggleEditMode(PageState pageState)
     {
-        if (pageState.UserIsEditor())
+        if (pageState.UserMayEditCurrentPage())
             pageState.EditMode = !pageState.EditMode;
         else if (pageState.Page.IsPersonalizable && pageState.User != null)
         {

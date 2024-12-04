@@ -84,38 +84,37 @@ internal class MagicAct(
     public IMagicBreadcrumbKit BreadcrumbKit(MagicBreadcrumbSettings? settings = null) =>
         breadcrumbSvc.Value.BreadcrumbKit(GetPageStateOrThrow(settings?.PageState), settings);
 
-    /// <inheritdoc />
-    public IMagicLanguageKit LanguageKit(MagicLanguageSettings? settings = null) =>
-        languageSvc.Value.LanguageKit(GetPageStateOrThrow(settings?.PageState), settings);
-
-
-    /// <inheritdoc />
-    public IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = null) =>
-        pageContextSvc.Value.PageContextKit(GetPageStateOrThrow(settings?.PageState), settings);
-
-    // TODO:
-    /// <inheritdoc />
-    public MagicUser User(PageState pageState) =>
-        userSvc.Value.User(pageState);
-
-    /// <inheritdoc />
-    public IMagicMenuKit MenuKit(MagicMenuSettings? settings = default) =>
-        menuSvc.Value.MenuKit(GetPageStateOrThrow(settings?.PageState), settings);
-    
-
-    public IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = default) =>
-        userKitSvc.Value.UserLoginKit(GetPageStateOrThrow(settings?.PageState), settings);
-
     public IMagicContainerKit ContainerKit(MagicContainerSettings settings) =>
         containerSvc.Value.ContainerKit(
             GetPageStateOrThrow(settings?.PageState),
             settings?.ModuleState ?? throw new ArgumentException($"{nameof(settings.ModuleState)} is required for {nameof(ContainerKit)}(...)")
         );
 
-    public string Link(MagicLinkSettings settings) =>
-        linkSvc.Value.Link(GetPageStateOrThrow(settings.PageState), settings);
+    /// <inheritdoc />
+    public IMagicLanguageKit LanguageKit(MagicLanguageSettings? settings = null) =>
+        languageSvc.Value.LanguageKit(GetPageStateOrThrow(settings?.PageState), settings);
+
+
+    /// <inheritdoc />
+    public IMagicMenuKit MenuKit(MagicMenuSettings? settings = default) =>
+        menuSvc.Value.MenuKit(GetPageStateOrThrow(settings?.PageState), settings);
+
+    /// <inheritdoc />
+    public IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = null) =>
+        pageContextSvc.Value.PageContextKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     /// <inheritdoc />
     public IMagicThemeKit ThemeKit(MagicThemeSettings? settings = default) =>
         themeSvc.Value.ThemeKit(GetPageStateOrThrow(settings?.PageState), settings);
+
+    /// <inheritdoc />
+    public MagicUser User(MagicUserSettings? settings = default) =>
+        userSvc.Value.User(GetPageStateOrThrow(settings?.PageState));
+
+    public IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = default) =>
+        userKitSvc.Value.UserLoginKit(GetPageStateOrThrow(settings?.PageState), settings);
+
+    public string Link(MagicLinkSettings settings) =>
+        linkSvc.Value.Link(GetPageStateOrThrow(settings.PageState), settings);
+
 }
