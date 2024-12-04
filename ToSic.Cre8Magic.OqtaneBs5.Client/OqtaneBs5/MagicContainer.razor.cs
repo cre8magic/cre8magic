@@ -1,5 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Components;
+using Oqtane.Models;
+using Oqtane.Themes;
+using Oqtane.UI;
 using ToSic.Cre8magic.Act;
 using ToSic.Cre8magic.Containers;
 
@@ -18,12 +21,24 @@ namespace ToSic.Cre8magic.OqtaneBs5;
 /// this is a case we are forced to inherit the large object from Oqtane, because of the way Oqtane works.
 /// We may some day choose to change this, if Oqtane improves it's architecture.
 /// </returns>
-public partial class MagicContainer: Oqtane.Themes.ContainerBase
+public partial class MagicContainer: ComponentBase /*Oqtane.Themes.ContainerBase*/, IContainerControl, /* temp*/ IThemeControl
 {
     /// <summary>
     /// Visible name in the UI (unless overridden again in the inheriting container)
     /// </summary>
-    public override string Name => "Default (for Content and Admin)";
+    public /*override*/ string Name => "Default (for Content and Admin)";
+
+    #region ThemeControl implementation - ATM necessary see https://github.com/oqtane/oqtane.framework/issues/4886
+
+    string IThemeControl.Thumbnail { get; }
+    string IThemeControl.Panes { get; }
+    List<Resource> IThemeControl.Resources { get; }
+
+    #endregion
+
+
+    [CascadingParameter] public required PageState PageState { get; set; }
+    [CascadingParameter] public required Module ModuleState { get; set; }
 
     /// <summary>
     /// Settings for this container.
@@ -45,8 +60,10 @@ public partial class MagicContainer: Oqtane.Themes.ContainerBase
     ///
     /// TODO: figure out a better way to remember the way back...
     /// </summary>
-    protected override void OnParametersSet() => 
-        CloseUrl = !string.IsNullOrEmpty(PageState.ReturnUrl) ? PageState.ReturnUrl : NavigateUrl();
+    protected override void OnParametersSet() =>
+        CloseUrl = !string.IsNullOrEmpty(PageState.ReturnUrl)
+            ? PageState.ReturnUrl
+            : MagicAct.Link(new() { PageState = PageState });
 
     #endregion
 
