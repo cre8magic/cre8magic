@@ -1,7 +1,7 @@
 ﻿@using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.UserLogins
 @inherits ComponentBase
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Show the Login/Logout text buttons
 Recommendations:    -
@@ -14,6 +14,6 @@ See also:           LoginIcon.razor has the same feature but with icons
     [Parameter] public MagicUserLoginSettings Settings { get; set; }
 }
 @{
-    var loginKit = MagicHat.UserLoginKit(Settings.With(PageState));
+    var loginKit = MagicAct.UserLoginKit(Settings.With(PageState));
 }
 <a title="@loginKit.Resources.Title" class="@loginKit.Tailor.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@loginKit.Resources.Title</a>

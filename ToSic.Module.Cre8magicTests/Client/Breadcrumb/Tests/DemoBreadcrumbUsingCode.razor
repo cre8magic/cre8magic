@@ -1,7 +1,7 @@
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Breadcrumbs
 @using ToSic.Cre8magic.Settings
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 
 @code {
     [CascadingParameter] public required PageState PageState { get; set; }
@@ -12,7 +12,7 @@
 <h2>Settings directly in Code</h2>
 
 @{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(new MagicBreadcrumbSettings
+    var breadcrumbKit = MagicAct.BreadcrumbKit(new MagicBreadcrumbSettings
     {
         PageState = PageState,
         WithActive = true,
@@ -33,7 +33,7 @@
 @* Setup Code to ensure it uses the settings we want to provide for the demo *@
 
 @{
-    MagicHat.UseSettingsProvider(p => p.Breadcrumbs.SetDefault(new()
+    MagicAct.UseSettingsProvider(p => p.Breadcrumbs.SetDefault(new()
     {
         WithHome = false,
         WithActive = true
@@ -42,8 +42,8 @@
 
 @* Breadcrumb using the settings from the catalog *@
 @{
-    // Note: equivalent to ... = MagicHat.BreadcrumbKit(PageState, new() { SettingsName = "default" });
-    breadcrumbKit = MagicHat.BreadcrumbKit(new() { PageState = PageState });
+    // Note: equivalent to ... = MagicAct.BreadcrumbKit(PageState, new() { SettingsName = "default" });
+    breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState });
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)
@@ -70,12 +70,12 @@
             }
         }
     };
-    MagicHat.UseSettingsCatalog(settingsCatalog);
+    MagicAct.UseSettingsCatalog(settingsCatalog);
 }
 
 @* Breadcrumb using the settings from the catalog *@
 @{
-    breadcrumbKit = MagicHat.BreadcrumbKit(new() { PageState = PageState, SettingsName = "productsBreadcrumb" });
+    breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState, SettingsName = "productsBreadcrumb" });
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)

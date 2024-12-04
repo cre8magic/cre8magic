@@ -2,7 +2,7 @@
 @using ToSic.Cre8magic.Breadcrumbs
 @using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Internal.Debug
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 <h3>TestLanguagesWithCustomCatalog</h3>
 @code
 {
@@ -24,7 +24,7 @@
         }
     };
 
-    var bcKit = MagicHat.BreadcrumbKit(((new MagicBreadcrumbSettings() with { PageState = PageState }).UseCatalog(catalog)));
+    var bcKit = MagicAct.BreadcrumbKit(((new MagicBreadcrumbSettings() with { PageState = PageState }).UseCatalog(catalog)));
 }
 
 <div class="alert alert-info">

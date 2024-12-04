@@ -2,7 +2,7 @@
 @using ToSic.Cre8magic.Breadcrumbs
 @using ToSic.Cre8magic.Pages
 @inherits ComponentBase
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Show the Breadcrumb
 Recommendations:    -
@@ -26,7 +26,7 @@ TODO:
     // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
 }
 @{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).With(Tailor));
+    var breadcrumbKit = MagicAct.BreadcrumbKit(Settings.With(PageState).With(Tailor));
 }
 <div class="container theme-breadcrumbs d-flex py-2" aria-label="breadcrumb">
     @* Show an > arrow and the page name with link to it for each page in the breadcrumb *@

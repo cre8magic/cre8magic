@@ -2,7 +2,7 @@
 @using ToSic.Cre8magic.Breadcrumbs
 @using ToSic.Cre8magic.Pages
 @inherits ComponentBase
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @code {
     [CascadingParameter] public required PageState PageState { get; set; }
 
@@ -13,7 +13,7 @@
     [Parameter] public IMagicPageTailor Tailor { get; set; } = new MagicBreadcrumbTailorBs5();
 }
 @{
-    var breadcrumbKit = MagicHat.BreadcrumbKit(Settings.With(PageState).Refill(Tailor));
+    var breadcrumbKit = MagicAct.BreadcrumbKit(Settings.With(PageState).Refill(Tailor));
 }
 <nav aria-label="breadcrumb">
     <ol class='@breadcrumbKit.Root.Classes("ol")'>

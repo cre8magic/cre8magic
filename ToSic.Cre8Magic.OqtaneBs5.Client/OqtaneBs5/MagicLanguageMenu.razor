@@ -2,7 +2,7 @@
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.OqtaneBs5.Debug
 @using ToSic.Cre8magic.Languages
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Show the Language Navigation / Selector
 Recommendations:    -
@@ -19,7 +19,7 @@ Nice to know:
     public MagicLanguageSettings? Settings { get; set; }
 }
 @{
-    var languageKit = MagicHat.LanguageKit(Settings.With(PageState));
+    var languageKit = MagicAct.LanguageKit(Settings.With(PageState));
 }
 @if (languageKit is { Show: true })
 {

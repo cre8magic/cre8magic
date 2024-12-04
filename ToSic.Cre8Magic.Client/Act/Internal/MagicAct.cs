@@ -22,7 +22,7 @@ using ToSic.Cre8magic.Users;
 
 namespace ToSic.Cre8magic.Act.Internal;
 
-internal class MagicHat(
+internal class MagicAct(
     MagicLazy<IMagicAnalyticsService> analyticsSvc,
     MagicLazy<IMagicBreadcrumbService> breadcrumbSvc,
     IMagicSettingsService settingsSvc,
@@ -34,23 +34,23 @@ internal class MagicHat(
     MagicLazy<IMagicSettingsProvider> settingsProviderSvc,
     MagicLazy<IMagicLinkService> linkSvc,
     MagicLazy<IMagicContainerService> containerSvc,
-    MagicLazy<IMagicMenuService> menuSvc) : IMagicHat
+    MagicLazy<IMagicMenuService> menuSvc) : IMagicAct
 {
     #region Setup & PageState
 
-    public IMagicHat UseSettingsPackage(MagicThemePackage themePackage)
+    public IMagicAct UseSettingsPackage(MagicThemePackage themePackage)
     {
         settingsSvc.Setup(themePackage);
         return this;
     }
 
-    public IMagicHat UseSettingsCatalog(MagicSettingsCatalog catalog)
+    public IMagicAct UseSettingsCatalog(MagicSettingsCatalog catalog)
     {
         settingsProviderSvc.Value.Provide(catalog);
         return this;
     }
 
-    public IMagicHat UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc)
+    public IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc)
     {
         var provider = new MagicSettingsProvider();
         var result = providerFunc(provider);
@@ -60,7 +60,7 @@ internal class MagicHat(
         return this;
     }
 
-    public IMagicHat UsePageState(PageState pageState)
+    public IMagicAct UsePageState(PageState pageState)
     {
         settingsSvc.UsePageState(pageState);
         return this;
@@ -70,7 +70,7 @@ internal class MagicHat(
     {
         var pageState = pageStateFromSettings ?? settingsSvc.PageState;
         if (pageState == null)
-            throw new ArgumentException($"PageState is required for {methodName}(...). You must either supply it in the settings, or first initialize the MagicHat using {nameof(UsePageState)}(...)");
+            throw new ArgumentException($"PageState is required for {methodName}(...). You must either supply it in the settings, or first initialize the {nameof(MagicAct)} using {nameof(UsePageState)}(...)");
         return pageState;
     }
 

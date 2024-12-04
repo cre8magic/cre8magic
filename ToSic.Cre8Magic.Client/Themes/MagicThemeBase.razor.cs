@@ -29,13 +29,13 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     public abstract MagicThemePackage ThemePackage { get; }
 
 
-    public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicHat.ThemeKit(new() { PageState = PageState }));
+    public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicAct.ThemeKit(new() { PageState = PageState }));
     private readonly GetKeepByPageId<IMagicThemeKit> _themeKit = new();
 
     /// <summary>
-    /// Get the Magic Hat from the DI
+    /// Get the <see cref="MagicAct"/> from the DI
     /// </summary>
-    [Inject] public required IMagicHat MagicHat { get; set; }
+    [Inject] public required IMagicAct MagicAct { get; set; }
 
     /// <summary>
     /// OnInitialized will run early (and once only).
@@ -45,8 +45,8 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     {
         base.OnInitialized();
         // Provide the first PageState as early as possible.
-        MagicHat.UsePageState(PageState);
-        MagicHat.UseSettingsPackage(ThemePackage);
+        MagicAct.UsePageState(PageState);
+        MagicAct.UseSettingsPackage(ThemePackage);
     }
 
     /// <summary>
@@ -57,7 +57,7 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     {
         base.OnParametersSet();
         // Provide the latest PageState on every change
-        MagicHat.UsePageState(PageState);
+        MagicAct.UsePageState(PageState);
     }
 
 
@@ -67,6 +67,6 @@ public abstract class MagicThemeBase : Oqtane.Themes.ThemeBase
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
-        await MagicHat.AnalyticsKit().TrackPage(firstRender);
+        await MagicAct.AnalyticsKit().TrackPage(firstRender);
     }
 }

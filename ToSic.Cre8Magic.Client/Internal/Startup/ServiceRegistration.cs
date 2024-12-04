@@ -109,7 +109,7 @@ public static class ServiceRegistration
         services.TryAddTransient<IMagicLinkService, MagicLinkService>();
         services.TryAddTransient<IMagicContainerService, MagicContainerService>();
 
-        services.TryAddTransient<IMagicHat, MagicHat>();
+        services.TryAddTransient<IMagicAct, MagicAct>();
 
         // Logic parts for Controls - TODO: naming / purpose etc. needs to be adjusted
         services.TryAddTransient<MagicPageEditService>();

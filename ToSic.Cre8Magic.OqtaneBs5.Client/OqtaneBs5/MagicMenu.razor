@@ -2,7 +2,7 @@
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.OqtaneBs5.Debug
 @using ToSic.Cre8magic.Menus
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Add a menu based on the parameter 'ConfigName'
 Recommendations:    -
@@ -32,7 +32,7 @@ Nice to know:
 }
 @{
     // Get the latest menu kit on each render, using the latest PageState
-    var menuKit = MagicHat.MenuKit(Settings.With(PageState).WithLookup(new() { PartName = PartName, SettingsName = SettingsName}));
+    var menuKit = MagicAct.MenuKit(Settings.With(PageState).WithLookup(new() { PartName = PartName, SettingsName = SettingsName}));
 }
 @* Special Debugging *@
 @if (false)

@@ -2,13 +2,13 @@
 @using ToSic.Cre8magic.Settings
 @inherits ComponentBase
 @inject IMagicSettingsProvider SettingsProviders
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @{
     SettingsProviders.Reset();
     SettingsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
 
-    var analyticsKit = MagicHat.AnalyticsKit(new() { SettingsName = "default" });
-    var analyticsTestKit = MagicHat.AnalyticsKit(new() { SettingsName = "analytics-test" });
+    var analyticsKit = MagicAct.AnalyticsKit(new() { SettingsName = "default" });
+    var analyticsTestKit = MagicAct.AnalyticsKit(new() { SettingsName = "analytics-test" });
 }
 <div class="alert alert-info">
     <h4>Debug analytics</h4>

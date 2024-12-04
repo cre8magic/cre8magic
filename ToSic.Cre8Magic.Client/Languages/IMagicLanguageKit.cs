@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Languages;
 /// <summary>
 /// The Kit to Show language menus in the UI.
 ///
-/// You can get it by `@inject` / `[Inject]`-ing the `IMagicHat` and calling the <see cref="IMagicHat.LanguageKit"/>.
+/// You can get it by `@inject` / `[Inject]`-ing the <see cref="IMagicAct"/> and calling the <see cref="IMagicAct.LanguageKit"/>.
 /// </summary>
 public interface IMagicLanguageKit: IHasDebugInfo
 {

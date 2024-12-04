@@ -8,7 +8,7 @@
 @using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Internal
 @inject IMagicSettingsService SettingsService
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @code {
     [CascadingParameter] public required PageState PageState { get; set; }
     [Parameter, EditorRequired] public required IHasDebugInfo Target { get; set; }
@@ -16,7 +16,7 @@
 @{
     var debugInfo = Target.GetDebugInfo();
     var settings = debugInfo.Settings;
-    var debug = SettingsService.Debug.GetState(settings, MagicHat.User(PageState).MayAdminCurrentPage);
+    var debug = SettingsService.Debug.GetState(settings, MagicAct.User(PageState).MayAdminCurrentPage);
 
     // Exit early if debug is not allowed
     if (!debug.Show)

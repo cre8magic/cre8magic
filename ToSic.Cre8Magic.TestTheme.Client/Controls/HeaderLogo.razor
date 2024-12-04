@@ -1,6 +1,6 @@
 @using ToSic.Cre8magic.Act
 @inherits ComponentBase
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Contains the logo in the layout. 
 Recommendations:    We recommend to use an inline SVG for the logo.
@@ -16,7 +16,7 @@ TODO:
     [Parameter] public MagicThemeSettings Settings { get; set; }
 }
 @{
-    var kit = MagicHat.ThemeKit(Settings.With(PageState));
+    var kit = MagicAct.ThemeKit(Settings.With(PageState));
 }
 <a class="@kit.Tailor.Classes("logo")" href="/" title="2shine Oqtane BS5 2sxc (change this in the ToShineLogo.razor)">
     <img alt="Logo" class="img-fluid" src="@kit.Logo">

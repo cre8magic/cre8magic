@@ -14,17 +14,17 @@ namespace ToSic.Cre8magic.Act;
 /// <summary>
 /// This is the magic hat from which you can pull just about anything you can think of.
 /// </summary>
-public interface IMagicHat
+public interface IMagicAct
 {
     #region Setup Methods
 
-    IMagicHat UseSettingsCatalog(MagicSettingsCatalog catalog);
+    IMagicAct UseSettingsCatalog(MagicSettingsCatalog catalog);
 
-    IMagicHat UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
+    IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
     
-    IMagicHat UseSettingsPackage(MagicThemePackage themePackage);
+    IMagicAct UseSettingsPackage(MagicThemePackage themePackage);
 
-    IMagicHat UsePageState(PageState pageState);
+    IMagicAct UsePageState(PageState pageState);
 
     #endregion
 

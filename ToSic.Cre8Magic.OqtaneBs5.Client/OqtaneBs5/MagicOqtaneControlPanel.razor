@@ -1,7 +1,7 @@
 ﻿@using Oqtane.UI
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.OqtaneBs5.Internal
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Add the Oqtane Control Panel to the Page
 Recommendations:    -
@@ -15,7 +15,7 @@ Nice to know:
     [CascadingParameter]
     public required PageState PageState { get; set; }
 }
-@if (MagicHat.User(PageState).MayAdminCurrentPage)
+@if (MagicAct.User(PageState).MayAdminCurrentPage)
 {
     <div id="oqtane-control-panel">
         <Oqtane.Themes.Controls.ControlPanel ShowLanguageSwitcher="false"></Oqtane.Themes.Controls.ControlPanel>

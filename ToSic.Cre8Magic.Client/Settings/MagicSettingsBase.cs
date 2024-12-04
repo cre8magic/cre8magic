@@ -47,7 +47,7 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
     /// <summary>
     /// The PageState which is needed for doing everything.
     ///
-    /// It can be provided in the settings, or it must be provided in the theme using <see cref="IMagicHat.UsePageState"/>.
+    /// It can be provided in the settings, or it must be provided in the theme using <see cref="IMagicAct.UsePageState"/>.
     /// </summary>
     [JsonIgnore]
     public PageState? PageState { get; init; }

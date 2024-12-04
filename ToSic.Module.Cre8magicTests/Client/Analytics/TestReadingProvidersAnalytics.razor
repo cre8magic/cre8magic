@@ -2,19 +2,19 @@
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Analytics
 @inherits ComponentBase
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @{
-    var analyticsKit = MagicHat.AnalyticsKit(new() { SettingsName = "default" });
+    var analyticsKit = MagicAct.AnalyticsKit(new() { SettingsName = "default" });
 
     // Run some performance tests
     var stopWatch = new Stopwatch();
     var testSettings = new MagicAnalyticsSettings { SettingsName = "analytics-test" };
     stopWatch.Start();
-    var analyticsTestKit = MagicHat.AnalyticsKit(testSettings);
+    var analyticsTestKit = MagicAct.AnalyticsKit(testSettings);
 
     var cycles = 10000;
     for(var i=  0; i < 1000; i++)
-        analyticsTestKit = MagicHat.AnalyticsKit(testSettings);
+        analyticsTestKit = MagicAct.AnalyticsKit(testSettings);
 
     stopWatch.Stop();
 }

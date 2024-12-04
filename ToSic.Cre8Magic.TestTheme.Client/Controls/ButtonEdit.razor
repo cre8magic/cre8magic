@@ -3,7 +3,7 @@
 @using ToSic.Cre8magic.Users
 @inherits ComponentBase
 @inject MagicPageEditService PageEditService
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @inject IMagicUserService UserService
 @*
 File Purpose:       Shows the Toggle-Edit Button
@@ -15,7 +15,7 @@ Nice to know:       -
     [Parameter] public MagicThemeSettings Settings { get; set; }
 }
 @{
-    var kit = MagicHat.ThemeKit(Settings.With(PageState));
+    var kit = MagicAct.ThemeKit(Settings.With(PageState));
     var user = UserService.User(PageState);
 }
 @if (user.MayEditCurrentPage)

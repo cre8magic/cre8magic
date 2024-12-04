@@ -1,6 +1,6 @@
 @using ToSic.Cre8magic.Act
 @inherits ComponentBase
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Button: Show Control Panel
 Recommendations:    We recommend to use inline SVGs for performance reasons.
@@ -11,8 +11,8 @@ Nice to know:       Will use Bootstrap toggle functionality to show the hidden c
     [Parameter] public MagicThemeSettings Settings { get; set; }
 }
 @{
-    var kit = MagicHat.ThemeKit(Settings.With(PageState));
-    var user = MagicHat.User(PageState);
+    var kit = MagicAct.ThemeKit(Settings.With(PageState));
+    var user = MagicAct.User(PageState);
 }
 @if (user.MayAdminCurrentPage)
 {

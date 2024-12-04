@@ -1,6 +1,6 @@
 ﻿@using ToSic.Cre8magic.Act
 @inherits ComponentBase
-@inject IMagicHat MagicHat
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Contains the floating "UP" button it the corner. 
 Recommendations:    We recommend to use an SVG for the logo.
@@ -13,7 +13,7 @@ TODO:
     [Parameter] public MagicThemeSettings Settings { get; set; }
 }
 @{
-    var kit = MagicHat.ThemeKit(Settings.With(PageState));
+    var kit = MagicAct.ThemeKit(Settings.With(PageState));
 }
 <a id="@kit.Tailor.Id("linkToTop")" title="Up" rel="nofollow">
     <svg xmlns="http://www.w3.org/2000/svg" width="19.032" height="20.034" viewBox="0 0 19.032 20.034">
