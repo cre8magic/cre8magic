@@ -4,6 +4,7 @@ using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Links;
 using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.UserLogins;
@@ -63,12 +64,13 @@ public interface IMagicAct
     IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = default);
 
 
-    string Link(PageState pageState, MagicLinkSettings settings);
+    /// <inheritdoc cref="IMagicLinkService.Link" />
+    string Link(MagicLinkSettings settings);
 
 
     IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = default);
 
-    /// <inheritdoc />
+    /// <inheritdoc cref="IMagicMenuService.MenuKit" />
     IMagicMenuKit MenuKit(MagicMenuSettings? settings = default);
 
 }

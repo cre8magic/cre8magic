@@ -93,6 +93,7 @@ internal class MagicAct(
     public IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = null) =>
         pageContextSvc.Value.PageContextKit(GetPageStateOrThrow(settings?.PageState), settings);
 
+    // TODO:
     /// <inheritdoc />
     public MagicUser User(PageState pageState) =>
         userSvc.Value.User(pageState);
@@ -111,8 +112,8 @@ internal class MagicAct(
             settings?.ModuleState ?? throw new ArgumentException($"{nameof(settings.ModuleState)} is required for {nameof(ContainerKit)}(...)")
         );
 
-    public string Link(PageState pageState, MagicLinkSettings settings) =>
-        linkSvc.Value.Link(pageState, settings);
+    public string Link(MagicLinkSettings settings) =>
+        linkSvc.Value.Link(GetPageStateOrThrow(settings.PageState), settings);
 
     /// <inheritdoc />
     public IMagicThemeKit ThemeKit(MagicThemeSettings? settings = default) =>
