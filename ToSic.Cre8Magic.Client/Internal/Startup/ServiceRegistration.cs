@@ -22,6 +22,8 @@ using ToSic.Cre8magic.Users;
 using ToSic.Cre8magic.Users.Internal;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Containers.Internal;
+using ToSic.Cre8magic.Links.Internal;
+
 // ReSharper disable InconsistentNaming
 
 namespace ToSic.Cre8magic.Internal.Startup;

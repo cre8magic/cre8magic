@@ -111,8 +111,8 @@ internal class MagicHat(
             settings?.ModuleState ?? throw new ArgumentException($"{nameof(settings.ModuleState)} is required for {nameof(ContainerKit)}(...)")
         );
 
-    public string Link(PageState pageState, MagicLinkSpecs linkSpecs) =>
-        linkSvc.Value.Link(pageState, linkSpecs);
+    public string Link(PageState pageState, MagicLinkSettings settings) =>
+        linkSvc.Value.Link(pageState, settings);
 
     /// <inheritdoc />
     public IMagicThemeKit ThemeKit(MagicThemeSettings? settings = default) =>

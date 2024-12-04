@@ -63,7 +63,7 @@ public interface IMagicHat
     IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = default);
 
 
-    string Link(PageState pageState, MagicLinkSpecs linkSpecs);
+    string Link(PageState pageState, MagicLinkSettings settings);
 
 
     IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = default);

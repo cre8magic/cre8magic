@@ -1,6 +1,6 @@
 ﻿namespace ToSic.Cre8magic.Links;
 
-public record MagicLinkSpecs
+public record MagicLinkSettings
 {
     public string? Path { get; init; }
 
