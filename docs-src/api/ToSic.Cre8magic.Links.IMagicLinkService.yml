@@ -34,9 +34,9 @@ items:
   langs:
   - csharp
   - vb
-  name: Link(PageState, MagicLinkSettings)
-  nameWithType: IMagicLinkService.Link(PageState, MagicLinkSettings)
-  fullName: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSettings)
+  name: Link(PageState, MagicLinkSettings?)
+  nameWithType: IMagicLinkService.Link(PageState, MagicLinkSettings?)
+  fullName: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSettings?)
   type: Method
   source:
     remote:
@@ -45,21 +45,29 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Link
     path: ../ToSic.Cre8Magic.Client/Links/IMagicLinkService.cs
-    startLine: 6
+    startLine: 12
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Links
+  summary: Get a link based on the settings.
+  example: []
   syntax:
-    content: string Link(PageState pageState, MagicLinkSettings settings)
+    content: string Link(PageState pageState, MagicLinkSettings? settings = null)
     parameters:
     - id: pageState
       type: Oqtane.UI.PageState
+      description: ''
     - id: settings
       type: ToSic.Cre8magic.Links.MagicLinkSettings
+      description: Settings to specify what link; if not provided, will currently return the link to the current page, but this may change.
     return:
       type: System.String
-    content.vb: Function Link(pageState As PageState, settings As MagicLinkSettings) As String
+      description: ''
+    content.vb: Function Link(pageState As PageState, settings As MagicLinkSettings = Nothing) As String
   overload: ToSic.Cre8magic.Links.IMagicLinkService.Link*
+  nameWithType.vb: IMagicLinkService.Link(PageState, MagicLinkSettings)
+  fullName.vb: ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSettings)
+  name.vb: Link(PageState, MagicLinkSettings)
 references:
 - uid: ToSic.Cre8magic.Links
   commentId: N:ToSic.Cre8magic.Links

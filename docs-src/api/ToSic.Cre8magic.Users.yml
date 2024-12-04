@@ -7,6 +7,7 @@ items:
   children:
   - ToSic.Cre8magic.Users.IMagicUserService
   - ToSic.Cre8magic.Users.MagicUser
+  - ToSic.Cre8magic.Users.UserExtensions
   langs:
   - csharp
   - vb
@@ -30,6 +31,12 @@ references:
   name: MagicUser
   nameWithType: MagicUser
   fullName: ToSic.Cre8magic.Users.MagicUser
+- uid: ToSic.Cre8magic.Users.UserExtensions
+  commentId: T:ToSic.Cre8magic.Users.UserExtensions
+  href: ToSic.Cre8magic.Users.UserExtensions.html
+  name: UserExtensions
+  nameWithType: UserExtensions
+  fullName: ToSic.Cre8magic.Users.UserExtensions
 - uid: ToSic.Cre8magic.Users
   commentId: N:ToSic.Cre8magic.Users
   href: ToSic.html

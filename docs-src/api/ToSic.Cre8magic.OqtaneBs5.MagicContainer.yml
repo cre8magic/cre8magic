@@ -8,8 +8,10 @@ items:
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.CloseUrl
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.ContainerKit
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.MagicAct
+  - ToSic.Cre8magic.OqtaneBs5.MagicContainer.ModuleState
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.Name
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.OnParametersSet
+  - ToSic.Cre8magic.OqtaneBs5.MagicContainer.PageState
   - ToSic.Cre8magic.OqtaneBs5.MagicContainer.Settings
   langs:
   - csharp
@@ -37,13 +39,11 @@ items:
     Admin-users will see a bit more, since the title etc. is necessary for the editing tools.
   example: []
   syntax:
-    content: 'public class MagicContainer : ContainerBase'
-    content.vb: Public Class MagicContainer Inherits ContainerBase
+    content: 'public class MagicContainer : ComponentBase'
+    content.vb: Public Class MagicContainer Inherits ComponentBase
   inheritance:
   - System.Object
   - Microsoft.AspNetCore.Components.ComponentBase
-  - Oqtane.Themes.ThemeBase
-  - Oqtane.Themes.ContainerBase
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.Name
   commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicContainer.Name
   id: Name
@@ -62,20 +62,97 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Name
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 25
+    startLine: 28
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
   summary: Visible name in the UI (unless overridden again in the inheriting container)
   example: []
   syntax:
-    content: public override string Name { get; }
+    content: public string Name { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overrides Property Name As String
-  overridden: Oqtane.Themes.ThemeBase.Name
+    content.vb: Public ReadOnly Property Name As String
   overload: ToSic.Cre8magic.OqtaneBs5.MagicContainer.Name*
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.PageState
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicContainer.PageState
+  id: PageState
+  parent: ToSic.Cre8magic.OqtaneBs5.MagicContainer
+  langs:
+  - csharp
+  - vb
+  name: PageState
+  nameWithType: MagicContainer.PageState
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer.PageState
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: PageState
+    path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
+    startLine: 39
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  syntax:
+    content: >-
+      [CascadingParameter]
+
+      public required PageState PageState { get; set; }
+    parameters: []
+    return:
+      type: Oqtane.UI.PageState
+    content.vb: >-
+      <CascadingParameter>
+
+      Public Property PageState As PageState
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicContainer.PageState*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
+    arguments: []
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.ModuleState
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicContainer.ModuleState
+  id: ModuleState
+  parent: ToSic.Cre8magic.OqtaneBs5.MagicContainer
+  langs:
+  - csharp
+  - vb
+  name: ModuleState
+  nameWithType: MagicContainer.ModuleState
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer.ModuleState
+  type: Property
+  source:
+    remote:
+      path: ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
+      branch: feature/v5
+      repo: https://github.com/2sic/oqtane-cre8magic
+    id: ModuleState
+    path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
+    startLine: 40
+  assemblies:
+  - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
+  namespace: ToSic.Cre8magic.OqtaneBs5
+  syntax:
+    content: >-
+      [CascadingParameter]
+
+      public required Module ModuleState { get; set; }
+    parameters: []
+    return:
+      type: Oqtane.Models.Module
+    content.vb: >-
+      <CascadingParameter>
+
+      Public Property ModuleState As [Module]
+  overload: ToSic.Cre8magic.OqtaneBs5.MagicContainer.ModuleState*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.CascadingParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.CascadingParameterAttribute.#ctor
+    arguments: []
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.Settings
   commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicContainer.Settings
   id: Settings
@@ -94,7 +171,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Settings
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 32
+    startLine: 47
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -130,7 +207,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MagicAct
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 34
+    startLine: 49
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -169,7 +246,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: CloseUrl
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 38
+    startLine: 53
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -198,7 +275,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: OnParametersSet
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 47
+    startLine: 62
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -235,7 +312,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ContainerKit
     path: ../ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/MagicContainer.razor.cs
-    startLine: 55
+    startLine: 72
   assemblies:
   - ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane
   namespace: ToSic.Cre8magic.OqtaneBs5
@@ -296,20 +373,6 @@ references:
   name: ComponentBase
   nameWithType: ComponentBase
   fullName: Microsoft.AspNetCore.Components.ComponentBase
-- uid: Oqtane.Themes.ThemeBase
-  commentId: T:Oqtane.Themes.ThemeBase
-  parent: Oqtane.Themes
-  isExternal: true
-  name: ThemeBase
-  nameWithType: ThemeBase
-  fullName: Oqtane.Themes.ThemeBase
-- uid: Oqtane.Themes.ContainerBase
-  commentId: T:Oqtane.Themes.ContainerBase
-  parent: Oqtane.Themes
-  isExternal: true
-  name: ContainerBase
-  nameWithType: ContainerBase
-  fullName: Oqtane.Themes.ContainerBase
 - uid: System
   commentId: N:System
   isExternal: true
@@ -354,35 +417,6 @@ references:
     name: Components
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
-- uid: Oqtane.Themes
-  commentId: N:Oqtane.Themes
-  isExternal: true
-  name: Oqtane.Themes
-  nameWithType: Oqtane.Themes
-  fullName: Oqtane.Themes
-  spec.csharp:
-  - uid: Oqtane
-    name: Oqtane
-    isExternal: true
-  - name: .
-  - uid: Oqtane.Themes
-    name: Themes
-    isExternal: true
-  spec.vb:
-  - uid: Oqtane
-    name: Oqtane
-    isExternal: true
-  - name: .
-  - uid: Oqtane.Themes
-    name: Themes
-    isExternal: true
-- uid: Oqtane.Themes.ThemeBase.Name
-  commentId: P:Oqtane.Themes.ThemeBase.Name
-  parent: Oqtane.Themes.ThemeBase
-  isExternal: true
-  name: Name
-  nameWithType: ThemeBase.Name
-  fullName: Oqtane.Themes.ThemeBase.Name
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.Name*
   commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicContainer.Name
   href: ToSic.Cre8magic.OqtaneBs5.MagicContainer.html#ToSic_Cre8magic_OqtaneBs5_MagicContainer_Name
@@ -399,6 +433,70 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.PageState*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicContainer.PageState
+  href: ToSic.Cre8magic.OqtaneBs5.MagicContainer.html#ToSic_Cre8magic_OqtaneBs5_MagicContainer_PageState
+  name: PageState
+  nameWithType: MagicContainer.PageState
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer.PageState
+- uid: Oqtane.UI.PageState
+  commentId: T:Oqtane.UI.PageState
+  parent: Oqtane.UI
+  isExternal: true
+  name: PageState
+  nameWithType: PageState
+  fullName: Oqtane.UI.PageState
+- uid: Oqtane.UI
+  commentId: N:Oqtane.UI
+  isExternal: true
+  name: Oqtane.UI
+  nameWithType: Oqtane.UI
+  fullName: Oqtane.UI
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+    isExternal: true
+  - name: .
+  - uid: Oqtane.UI
+    name: UI
+    isExternal: true
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.ModuleState*
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicContainer.ModuleState
+  href: ToSic.Cre8magic.OqtaneBs5.MagicContainer.html#ToSic_Cre8magic_OqtaneBs5_MagicContainer_ModuleState
+  name: ModuleState
+  nameWithType: MagicContainer.ModuleState
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicContainer.ModuleState
+- uid: Oqtane.Models.Module
+  commentId: T:Oqtane.Models.Module
+  parent: Oqtane.Models
+  name: Module
+  nameWithType: Module
+  fullName: Oqtane.Models.Module
+- uid: Oqtane.Models
+  commentId: N:Oqtane.Models
+  name: Oqtane.Models
+  nameWithType: Oqtane.Models
+  fullName: Oqtane.Models
+  spec.csharp:
+  - uid: Oqtane
+    name: Oqtane
+  - name: .
+  - uid: Oqtane.Models
+    name: Models
+  spec.vb:
+  - uid: Oqtane
+    name: Oqtane
+  - name: .
+  - uid: Oqtane.Models
+    name: Models
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer.Settings*
   commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicContainer.Settings
   href: ToSic.Cre8magic.OqtaneBs5.MagicContainer.html#ToSic_Cre8magic_OqtaneBs5_MagicContainer_Settings

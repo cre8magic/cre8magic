@@ -8,6 +8,7 @@ items:
   - ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
   - ToSic.Cre8magic.UserLogins.MagicUserLoginResources
   - ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+  - ToSic.Cre8magic.UserLogins.MagicUserSettings
   langs:
   - csharp
   - vb
@@ -39,6 +40,13 @@ references:
   name: MagicUserLoginSettings
   nameWithType: MagicUserLoginSettings
   fullName: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
+- uid: ToSic.Cre8magic.UserLogins.MagicUserSettings
+  commentId: T:ToSic.Cre8magic.UserLogins.MagicUserSettings
+  parent: ToSic.Cre8magic.UserLogins
+  href: ToSic.Cre8magic.UserLogins.MagicUserSettings.html
+  name: MagicUserSettings
+  nameWithType: MagicUserSettings
+  fullName: ToSic.Cre8magic.UserLogins.MagicUserSettings
 - uid: ToSic.Cre8magic.UserLogins
   commentId: N:ToSic.Cre8magic.UserLogins
   href: ToSic.html

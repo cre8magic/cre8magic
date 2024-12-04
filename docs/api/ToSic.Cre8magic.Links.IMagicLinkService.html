@@ -123,15 +123,16 @@ Interface IMagicLinkService  <a class="header-action link-secondary" title="View
   <a id="ToSic_Cre8magic_Links_IMagicLinkService_Link_" data-uid="ToSic.Cre8magic.Links.IMagicLinkService.Link*"></a>
 
   <h3 id="ToSic_Cre8magic_Links_IMagicLinkService_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSettings_" data-uid="ToSic.Cre8magic.Links.IMagicLinkService.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)">
-  Link(PageState, MagicLinkSettings)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Links/IMagicLinkService.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  Link(PageState, MagicLinkSettings?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Links/IMagicLinkService.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Get a link based on the settings.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string Link(PageState pageState, MagicLinkSettings settings)</code></pre>
+    <pre><code class="lang-csharp hljs">string Link(PageState pageState, MagicLinkSettings? settings = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -139,7 +140,8 @@ Interface IMagicLinkService  <a class="header-action link-secondary" title="View
     <dt><code>pageState</code> <span class="xref">PageState</span></dt>
     <dd></dd>
     <dt><code>settings</code> <a class="xref" href="ToSic.Cre8magic.Links.MagicLinkSettings.html">MagicLinkSettings</a></dt>
-    <dd></dd>
+    <dd><p>Settings to specify what link; if not provided, will currently return the link to the current page, but this may change.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>

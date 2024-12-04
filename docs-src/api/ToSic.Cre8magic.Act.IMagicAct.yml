@@ -9,15 +9,15 @@ items:
   - ToSic.Cre8magic.Act.IMagicAct.BreadcrumbKit(ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings)
   - ToSic.Cre8magic.Act.IMagicAct.ContainerKit(ToSic.Cre8magic.Containers.MagicContainerSettings)
   - ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
-  - ToSic.Cre8magic.Act.IMagicAct.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
+  - ToSic.Cre8magic.Act.IMagicAct.Link(ToSic.Cre8magic.Links.MagicLinkSettings)
   - ToSic.Cre8magic.Act.IMagicAct.MenuKit(ToSic.Cre8magic.Menus.MagicMenuSettings)
   - ToSic.Cre8magic.Act.IMagicAct.PageContextKit(ToSic.Cre8magic.PageContexts.MagicPageContextSettings)
   - ToSic.Cre8magic.Act.IMagicAct.ThemeKit(ToSic.Cre8magic.Themes.MagicThemeSettings)
   - ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)
   - ToSic.Cre8magic.Act.IMagicAct.UseSettingsCatalog(ToSic.Cre8magic.Settings.MagicSettingsCatalog)
-  - ToSic.Cre8magic.Act.IMagicAct.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)
   - ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func{ToSic.Cre8magic.Settings.IMagicSettingsProvider,ToSic.Cre8magic.Settings.IMagicSettingsProvider})
-  - ToSic.Cre8magic.Act.IMagicAct.User(Oqtane.UI.PageState)
+  - ToSic.Cre8magic.Act.IMagicAct.UseThemePackage(ToSic.Cre8magic.Themes.MagicThemePackage)
+  - ToSic.Cre8magic.Act.IMagicAct.User(ToSic.Cre8magic.UserLogins.MagicUserSettings)
   - ToSic.Cre8magic.Act.IMagicAct.UserLoginKit(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)
   langs:
   - csharp
@@ -33,7 +33,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: IMagicAct
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -60,7 +60,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UseSettingsCatalog
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 20
+    startLine: 21
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -91,7 +91,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UseSettingsProvider
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -107,37 +107,37 @@ items:
   nameWithType.vb: IMagicAct.UseSettingsProvider(Func(Of IMagicSettingsProvider, IMagicSettingsProvider))
   fullName.vb: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func(Of ToSic.Cre8magic.Settings.IMagicSettingsProvider, ToSic.Cre8magic.Settings.IMagicSettingsProvider))
   name.vb: UseSettingsProvider(Func(Of IMagicSettingsProvider, IMagicSettingsProvider))
-- uid: ToSic.Cre8magic.Act.IMagicAct.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)
-  commentId: M:ToSic.Cre8magic.Act.IMagicAct.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)
-  id: UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)
+- uid: ToSic.Cre8magic.Act.IMagicAct.UseThemePackage(ToSic.Cre8magic.Themes.MagicThemePackage)
+  commentId: M:ToSic.Cre8magic.Act.IMagicAct.UseThemePackage(ToSic.Cre8magic.Themes.MagicThemePackage)
+  id: UseThemePackage(ToSic.Cre8magic.Themes.MagicThemePackage)
   parent: ToSic.Cre8magic.Act.IMagicAct
   langs:
   - csharp
   - vb
-  name: UseSettingsPackage(MagicThemePackage)
-  nameWithType: IMagicAct.UseSettingsPackage(MagicThemePackage)
-  fullName: ToSic.Cre8magic.Act.IMagicAct.UseSettingsPackage(ToSic.Cre8magic.Themes.MagicThemePackage)
+  name: UseThemePackage(MagicThemePackage)
+  nameWithType: IMagicAct.UseThemePackage(MagicThemePackage)
+  fullName: ToSic.Cre8magic.Act.IMagicAct.UseThemePackage(ToSic.Cre8magic.Themes.MagicThemePackage)
   type: Method
   source:
     remote:
       path: ToSic.Cre8Magic.Client/Act/IMagicAct.cs
       branch: feature/v5
       repo: https://github.com/2sic/oqtane-cre8magic
-    id: UseSettingsPackage
+    id: UseThemePackage
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 24
+    startLine: 25
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
   syntax:
-    content: IMagicAct UseSettingsPackage(MagicThemePackage themePackage)
+    content: IMagicAct UseThemePackage(MagicThemePackage themePackage)
     parameters:
     - id: themePackage
       type: ToSic.Cre8magic.Themes.MagicThemePackage
     return:
       type: ToSic.Cre8magic.Act.IMagicAct
-    content.vb: Function UseSettingsPackage(themePackage As MagicThemePackage) As IMagicAct
-  overload: ToSic.Cre8magic.Act.IMagicAct.UseSettingsPackage*
+    content.vb: Function UseThemePackage(themePackage As MagicThemePackage) As IMagicAct
+  overload: ToSic.Cre8magic.Act.IMagicAct.UseThemePackage*
 - uid: ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)
   commentId: M:ToSic.Cre8magic.Act.IMagicAct.UsePageState(Oqtane.UI.PageState)
   id: UsePageState(Oqtane.UI.PageState)
@@ -156,7 +156,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UsePageState
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 26
+    startLine: 27
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -187,7 +187,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: BreadcrumbKit
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -226,7 +226,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: LanguageKit
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 39
+    startLine: 40
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -244,16 +244,16 @@ items:
   nameWithType.vb: IMagicAct.LanguageKit(MagicLanguageSettings)
   fullName.vb: ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)
   name.vb: LanguageKit(MagicLanguageSettings)
-- uid: ToSic.Cre8magic.Act.IMagicAct.User(Oqtane.UI.PageState)
-  commentId: M:ToSic.Cre8magic.Act.IMagicAct.User(Oqtane.UI.PageState)
-  id: User(Oqtane.UI.PageState)
+- uid: ToSic.Cre8magic.Act.IMagicAct.User(ToSic.Cre8magic.UserLogins.MagicUserSettings)
+  commentId: M:ToSic.Cre8magic.Act.IMagicAct.User(ToSic.Cre8magic.UserLogins.MagicUserSettings)
+  id: User(ToSic.Cre8magic.UserLogins.MagicUserSettings)
   parent: ToSic.Cre8magic.Act.IMagicAct
   langs:
   - csharp
   - vb
-  name: User(PageState)
-  nameWithType: IMagicAct.User(PageState)
-  fullName: ToSic.Cre8magic.Act.IMagicAct.User(Oqtane.UI.PageState)
+  name: User(MagicUserSettings?)
+  nameWithType: IMagicAct.User(MagicUserSettings?)
+  fullName: ToSic.Cre8magic.Act.IMagicAct.User(ToSic.Cre8magic.UserLogins.MagicUserSettings?)
   type: Method
   source:
     remote:
@@ -262,20 +262,23 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: User
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 43
+    startLine: 44
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
   example: []
   syntax:
-    content: MagicUser User(PageState pageState)
+    content: MagicUser User(MagicUserSettings? settings = null)
     parameters:
-    - id: pageState
-      type: Oqtane.UI.PageState
+    - id: settings
+      type: ToSic.Cre8magic.UserLogins.MagicUserSettings
     return:
       type: ToSic.Cre8magic.Users.MagicUser
-    content.vb: Function User(pageState As PageState) As MagicUser
+    content.vb: Function User(settings As MagicUserSettings = Nothing) As MagicUser
   overload: ToSic.Cre8magic.Act.IMagicAct.User*
+  nameWithType.vb: IMagicAct.User(MagicUserSettings)
+  fullName.vb: ToSic.Cre8magic.Act.IMagicAct.User(ToSic.Cre8magic.UserLogins.MagicUserSettings)
+  name.vb: User(MagicUserSettings)
 - uid: ToSic.Cre8magic.Act.IMagicAct.ContainerKit(ToSic.Cre8magic.Containers.MagicContainerSettings)
   commentId: M:ToSic.Cre8magic.Act.IMagicAct.ContainerKit(ToSic.Cre8magic.Containers.MagicContainerSettings)
   id: ContainerKit(ToSic.Cre8magic.Containers.MagicContainerSettings)
@@ -283,9 +286,9 @@ items:
   langs:
   - csharp
   - vb
-  name: ContainerKit(MagicContainerSettings)
-  nameWithType: IMagicAct.ContainerKit(MagicContainerSettings)
-  fullName: ToSic.Cre8magic.Act.IMagicAct.ContainerKit(ToSic.Cre8magic.Containers.MagicContainerSettings)
+  name: ContainerKit(MagicContainerSettings?)
+  nameWithType: IMagicAct.ContainerKit(MagicContainerSettings?)
+  fullName: ToSic.Cre8magic.Act.IMagicAct.ContainerKit(ToSic.Cre8magic.Containers.MagicContainerSettings?)
   type: Method
   source:
     remote:
@@ -294,23 +297,26 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ContainerKit
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
   summary: Get a kit to work with containers.
   example: []
   syntax:
-    content: IMagicContainerKit ContainerKit(MagicContainerSettings settings)
+    content: IMagicContainerKit ContainerKit(MagicContainerSettings? settings = null)
     parameters:
     - id: settings
       type: ToSic.Cre8magic.Containers.MagicContainerSettings
-      description: Required; must provide the ModuleState as a property and (if not specified in the Theme) also the PageState
+      description: '**Required**; must provide the ModuleState as a property and usually the PageState (if not specified in the Theme)'
     return:
       type: ToSic.Cre8magic.Containers.IMagicContainerKit
       description: ''
-    content.vb: Function ContainerKit(settings As MagicContainerSettings) As IMagicContainerKit
+    content.vb: Function ContainerKit(settings As MagicContainerSettings = Nothing) As IMagicContainerKit
   overload: ToSic.Cre8magic.Act.IMagicAct.ContainerKit*
+  nameWithType.vb: IMagicAct.ContainerKit(MagicContainerSettings)
+  fullName.vb: ToSic.Cre8magic.Act.IMagicAct.ContainerKit(ToSic.Cre8magic.Containers.MagicContainerSettings)
+  name.vb: ContainerKit(MagicContainerSettings)
 - uid: ToSic.Cre8magic.Act.IMagicAct.AnalyticsKit(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
   commentId: M:ToSic.Cre8magic.Act.IMagicAct.AnalyticsKit(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
   id: AnalyticsKit(ToSic.Cre8magic.Analytics.MagicAnalyticsSettings)
@@ -329,7 +335,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: AnalyticsKit
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 57
+    startLine: 58
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -367,7 +373,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: ThemeKit
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 60
+    startLine: 61
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -405,7 +411,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: UserLoginKit
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 62
+    startLine: 63
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -421,16 +427,16 @@ items:
   nameWithType.vb: IMagicAct.UserLoginKit(MagicUserLoginSettings)
   fullName.vb: ToSic.Cre8magic.Act.IMagicAct.UserLoginKit(ToSic.Cre8magic.UserLogins.MagicUserLoginSettings)
   name.vb: UserLoginKit(MagicUserLoginSettings)
-- uid: ToSic.Cre8magic.Act.IMagicAct.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
-  commentId: M:ToSic.Cre8magic.Act.IMagicAct.Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
-  id: Link(Oqtane.UI.PageState,ToSic.Cre8magic.Links.MagicLinkSettings)
+- uid: ToSic.Cre8magic.Act.IMagicAct.Link(ToSic.Cre8magic.Links.MagicLinkSettings)
+  commentId: M:ToSic.Cre8magic.Act.IMagicAct.Link(ToSic.Cre8magic.Links.MagicLinkSettings)
+  id: Link(ToSic.Cre8magic.Links.MagicLinkSettings)
   parent: ToSic.Cre8magic.Act.IMagicAct
   langs:
   - csharp
   - vb
-  name: Link(PageState, MagicLinkSettings)
-  nameWithType: IMagicAct.Link(PageState, MagicLinkSettings)
-  fullName: ToSic.Cre8magic.Act.IMagicAct.Link(Oqtane.UI.PageState, ToSic.Cre8magic.Links.MagicLinkSettings)
+  name: Link(MagicLinkSettings)
+  nameWithType: IMagicAct.Link(MagicLinkSettings)
+  fullName: ToSic.Cre8magic.Act.IMagicAct.Link(ToSic.Cre8magic.Links.MagicLinkSettings)
   type: Method
   source:
     remote:
@@ -439,20 +445,22 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: Link
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 65
+    startLine: 67
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
+  summary: Get a link based on the settings.
+  example: []
   syntax:
-    content: string Link(PageState pageState, MagicLinkSettings settings)
+    content: string Link(MagicLinkSettings settings)
     parameters:
-    - id: pageState
-      type: Oqtane.UI.PageState
     - id: settings
       type: ToSic.Cre8magic.Links.MagicLinkSettings
+      description: Settings to specify what link; if not provided, will currently return the link to the current page, but this may change.
     return:
       type: System.String
-    content.vb: Function Link(pageState As PageState, settings As MagicLinkSettings) As String
+      description: ''
+    content.vb: Function Link(settings As MagicLinkSettings) As String
   overload: ToSic.Cre8magic.Act.IMagicAct.Link*
 - uid: ToSic.Cre8magic.Act.IMagicAct.PageContextKit(ToSic.Cre8magic.PageContexts.MagicPageContextSettings)
   commentId: M:ToSic.Cre8magic.Act.IMagicAct.PageContextKit(ToSic.Cre8magic.PageContexts.MagicPageContextSettings)
@@ -472,7 +480,7 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: PageContextKit
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 68
+    startLine: 70
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
@@ -506,18 +514,21 @@ items:
       repo: https://github.com/2sic/oqtane-cre8magic
     id: MenuKit
     path: ../ToSic.Cre8Magic.Client/Act/IMagicAct.cs
-    startLine: 71
+    startLine: 73
   assemblies:
   - ToSic.Cre8magic.Client.Oqtane
   namespace: ToSic.Cre8magic.Act
+  summary: Get the menu kit containing all items for the current page and specified settings.
   example: []
   syntax:
     content: IMagicMenuKit MenuKit(MagicMenuSettings? settings = null)
     parameters:
     - id: settings
       type: ToSic.Cre8magic.Menus.MagicMenuSettings
+      description: ''
     return:
       type: ToSic.Cre8magic.Menus.IMagicMenuKit
+      description: ''
     content.vb: Function MenuKit(settings As MagicMenuSettings = Nothing) As IMagicMenuKit
   overload: ToSic.Cre8magic.Act.IMagicAct.MenuKit*
   nameWithType.vb: IMagicAct.MenuKit(MagicMenuSettings)
@@ -689,12 +700,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ToSic.Cre8magic.Act.IMagicAct.UseSettingsPackage*
-  commentId: Overload:ToSic.Cre8magic.Act.IMagicAct.UseSettingsPackage
-  href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UseSettingsPackage_ToSic_Cre8magic_Themes_MagicThemePackage_
-  name: UseSettingsPackage
-  nameWithType: IMagicAct.UseSettingsPackage
-  fullName: ToSic.Cre8magic.Act.IMagicAct.UseSettingsPackage
+- uid: ToSic.Cre8magic.Act.IMagicAct.UseThemePackage*
+  commentId: Overload:ToSic.Cre8magic.Act.IMagicAct.UseThemePackage
+  href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UseThemePackage_ToSic_Cre8magic_Themes_MagicThemePackage_
+  name: UseThemePackage
+  nameWithType: IMagicAct.UseThemePackage
+  fullName: ToSic.Cre8magic.Act.IMagicAct.UseThemePackage
 - uid: ToSic.Cre8magic.Themes.MagicThemePackage
   commentId: T:ToSic.Cre8magic.Themes.MagicThemePackage
   parent: ToSic.Cre8magic.Themes
@@ -869,10 +880,17 @@ references:
     href: ToSic.Cre8magic.Languages.html
 - uid: ToSic.Cre8magic.Act.IMagicAct.User*
   commentId: Overload:ToSic.Cre8magic.Act.IMagicAct.User
-  href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_User_Oqtane_UI_PageState_
+  href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_User_ToSic_Cre8magic_UserLogins_MagicUserSettings_
   name: User
   nameWithType: IMagicAct.User
   fullName: ToSic.Cre8magic.Act.IMagicAct.User
+- uid: ToSic.Cre8magic.UserLogins.MagicUserSettings
+  commentId: T:ToSic.Cre8magic.UserLogins.MagicUserSettings
+  parent: ToSic.Cre8magic.UserLogins
+  href: ToSic.Cre8magic.UserLogins.MagicUserSettings.html
+  name: MagicUserSettings
+  nameWithType: MagicUserSettings
+  fullName: ToSic.Cre8magic.UserLogins.MagicUserSettings
 - uid: ToSic.Cre8magic.Users.MagicUser
   commentId: T:ToSic.Cre8magic.Users.MagicUser
   parent: ToSic.Cre8magic.Users
@@ -880,6 +898,36 @@ references:
   name: MagicUser
   nameWithType: MagicUser
   fullName: ToSic.Cre8magic.Users.MagicUser
+- uid: ToSic.Cre8magic.UserLogins
+  commentId: N:ToSic.Cre8magic.UserLogins
+  href: ToSic.html
+  name: ToSic.Cre8magic.UserLogins
+  nameWithType: ToSic.Cre8magic.UserLogins
+  fullName: ToSic.Cre8magic.UserLogins
+  spec.csharp:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.UserLogins
+    name: UserLogins
+    href: ToSic.Cre8magic.UserLogins.html
+  spec.vb:
+  - uid: ToSic
+    name: ToSic
+    href: ToSic.html
+  - name: .
+  - uid: ToSic.Cre8magic
+    name: Cre8magic
+    href: ToSic.Cre8magic.html
+  - name: .
+  - uid: ToSic.Cre8magic.UserLogins
+    name: UserLogins
+    href: ToSic.Cre8magic.UserLogins.html
 - uid: ToSic.Cre8magic.Users
   commentId: N:ToSic.Cre8magic.Users
   href: ToSic.html
@@ -1050,39 +1098,9 @@ references:
   name: IMagicUserLoginKit
   nameWithType: IMagicUserLoginKit
   fullName: ToSic.Cre8magic.UserLogins.IMagicUserLoginKit
-- uid: ToSic.Cre8magic.UserLogins
-  commentId: N:ToSic.Cre8magic.UserLogins
-  href: ToSic.html
-  name: ToSic.Cre8magic.UserLogins
-  nameWithType: ToSic.Cre8magic.UserLogins
-  fullName: ToSic.Cre8magic.UserLogins
-  spec.csharp:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.UserLogins
-    name: UserLogins
-    href: ToSic.Cre8magic.UserLogins.html
-  spec.vb:
-  - uid: ToSic
-    name: ToSic
-    href: ToSic.html
-  - name: .
-  - uid: ToSic.Cre8magic
-    name: Cre8magic
-    href: ToSic.Cre8magic.html
-  - name: .
-  - uid: ToSic.Cre8magic.UserLogins
-    name: UserLogins
-    href: ToSic.Cre8magic.UserLogins.html
 - uid: ToSic.Cre8magic.Act.IMagicAct.Link*
   commentId: Overload:ToSic.Cre8magic.Act.IMagicAct.Link
-  href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_Link_Oqtane_UI_PageState_ToSic_Cre8magic_Links_MagicLinkSettings_
+  href: ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_Link_ToSic_Cre8magic_Links_MagicLinkSettings_
   name: Link
   nameWithType: IMagicAct.Link
   fullName: ToSic.Cre8magic.Act.IMagicAct.Link
