@@ -44,7 +44,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToSic.Module.PageTemplates.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{B8DA868C-EB3F-4824-AE81-1C6705B2B292}"
 	ProjectSection(SolutionItems) = preProject
-		docs\docfx.json = docs\docfx.json
+		docs-src\docfx.json = docs-src\docfx.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Oqtane", "Oqtane", "{4DF7A8D7-C1B7-4D06-A454-A2F2DA2D046D}"
