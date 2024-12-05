@@ -10,16 +10,12 @@
           ]
         }
       ],
-      "dest": "api",
+      "dest": "api-generated",
       "filter": "filterConfig.yml",
       "disableGitFeatures": false,
       "force": true, // Re-build all the documentation
       "properties": {
         "TargetFramework": "net9.0",
-        // experiment to get rid of field-warnings, doesn't work; unsure how to do this
-        "LangVersion": "preview",
-        // "GenerateDocumentationFile": true,
-        // "ProduceReferenceAssembly": true
       },
       "namespaceLayout": "nested",
     }
@@ -40,24 +36,13 @@
           "**/readme.md",
         ]
       },
-      // {
-      //   "files": [
-      //     "**/*.{md,yml}"
-      //   ],
-      //   "exclude": [
-      //     "_site/**"
-      //   ]
-      // },
       {
+        // Start in "api-generated" so that the path won't count in the output
+        "src": "api-generated",
         "files": [
-          "api/**.yml"
+          "**.yml",
         ],
-      },
-      {
-        "files": [
-          "api/toc.yml",
-          "api/**/*.{md,yml}"
-        ]
+        "dest": "api",
       }
     ],
     "resource": [
@@ -74,11 +59,11 @@
       },
       {
         "files": [
-          "images/**",
           "assets/**"
         ]
       },
       {
+        // JSON schemas - also published through the same docs site
         "files": [
           "schemas/**"
         ]
