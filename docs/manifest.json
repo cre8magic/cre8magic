@@ -1045,10 +1045,30 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "assets/logos/vcurrent/cre8magic-logo.svg",
+      "source_relative_path": "assets/logos/vcurrent/cre8magic-logo-auto-color.svg",
       "output": {
         "resource": {
-          "relative_path": "assets/logos/vcurrent/cre8magic-logo.svg"
+          "relative_path": "assets/logos/vcurrent/cre8magic-logo-auto-color.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/logos/vcurrent/cre8magic-logo50-auto-color.svg",
+      "output": {
+        "resource": {
+          "relative_path": "assets/logos/vcurrent/cre8magic-logo50-auto-color.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/logos/vcurrent/cre8magic-logo50.svg",
+      "output": {
+        "resource": {
+          "relative_path": "assets/logos/vcurrent/cre8magic-logo50.svg"
         }
       },
       "version": ""
@@ -1069,26 +1089,6 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "pages/assets/cre8magic-logo.svg",
-      "output": {
-        "resource": {
-          "relative_path": "pages/assets/cre8magic-logo.svg"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "pages/assets/cre8magic-logo50.svg",
-      "output": {
-        "resource": {
-          "relative_path": "pages/assets/cre8magic-logo50.svg"
         }
       },
       "version": ""

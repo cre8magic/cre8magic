@@ -3,7 +3,11 @@
 
 # cre8magic for Oqtane – Professional Theme Design
 
-<img width="100%" src="./assets/cre8magic-logo.svg">
+<img class="svg" width="100%" src="/assets/logos/vcurrent/cre8magic-logo-auto-color.svg">
+
+---
+
+<img class="svg" width="25%" src="/assets/logos/vcurrent/cre8magic-logo-auto-color.svg">
 
 
 > &nbsp;
