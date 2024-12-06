@@ -1,38 +1,120 @@
 ---
-
+uid: Cre8magic.Library.MagicSettings.Index
 ---
 
-# cre8magic – Magic Settings
+# cre8magic - Magic Settings Overview
 
-**Magic Settings** allow you to move 95% of the theme code into some kind of configuration.
+**Magic Settings** are a core building block of cre8magic.
+Basically anything you do, will start of with some settings - or some invisible defaults.
+
+> [!TIP]
+> **Magic Settings** allow you to move 95% of the theme code into some kind of configuration.
+
+## Quick Introduction
+
+Magic Settings are a way to provide settings to the various parts of cre8magic.
+Let's say you want to create a footer-menu, which only shows **Home** and **Login**.
+
+```html
+<!-- This is what you would do -->
+`<MagicMenu Settings='new () { Nodes = "/, 5" }' />`
+
+<!-- Note that the previous is just a shorthand for -->
+`<MagicMenu Settings='new MagicMenuSettings() { Nodes = "/, 5" }' />`
+```
+
+Settings can also be provided in a central location, and just use the name of the settings:
+
+```html
+<!-- Get menu-settings called "footer" -->
+`<MagicMenu SettingsName="footer" />`
+
+<!-- Get all settings for the part "footer-menu" -->
+`<MagicMenu PartName="footer-menu" />`
+```
+
+Settings are also used to get **Kits** so you can write your own code to do things, like this:
+
+```csharp
+var menuKit = MagicAct.MenuKit(new () { Nodes = "/, 5" });
+```
+
+Settings are also used when you don't provide them, in which case some minimal defaults are used:
+
+```csharp
+var menuKit = MagicAct.MenuKit();
+```
+
+> [!NOTE]
+> Settings are used to specify what you want to do, and how you want to do it.
+> On the other hand, **Blueprints** are used to customize the output
+> using **Tailors**.
+> So you could think of **Blueprints** as _Design Settings_ but they are treated differently.
 
 ## Overview
 
-Everything in cre8magic will do something based on settings.
-These can come from various places
+These are the things you should probably know:
 
-1. Directly in the API call which retrieves a Kit like:  
-    `var kit = MagicAct.MenuKit(PageState, new MagicMenuSettings() { ... })`
+1. What settings can be used for each scenario
+1. How to provide settings in a central location
+1. How to provide settings by name or theme part name (TODO:)
+1. How to provide design settings (TODO:)
+1. How to provide PageState (TODO:)
+1. How settings work internally
 
-1. Directly in the Component tag which shows the thing like  
-    `<MagicMenu Settings="new MagicMenuSettings() { ... }" />`
+## Settings for each Scenario
 
-1. Provided elsewhere and named `default` so it's automatically used like  
-    `var kit = MagicAct.MenuKit(PageState)`  
-    `<MagicMenu />`
+Settings will differ depending on if you're creating a menu, a breadcrumb, a Magic Context, or something else.
+So for this you should look at the respective documentation.
 
-1. Provided elsewhere and retrieved by name like  
-    `var kit = MagicAct.MenuKit(PageState, settingsName: "my-menu")`  
-    `<MagicMenu SettingsName="my-menu" />`
+TODO: list all relevant parts
 
-1. Provided elsewhere and retrieved by Theme Part Name like
-    `var kit = MagicAct.MenuKit(PageState, partName: "my-menu")`  
-    `<MagicMenu PartName="my-menu" />`
+## Providing Settings
 
-What's also important is that there are settings related to how/what data to get,
-and settings related to how to display (`DesignSettings`) it,
-as well as an option how the DesignSettings will be applied (`MagicDesigner`).
-In future, there may even be more such settings.
+Settings can be used directly in the code, like:
+
+```csharp
+var breadcrumbKit = MagicAct.BreadcrumbKit(new MagicBreadcrumbSettings
+{
+  PageState = PageState,
+  WithActive = true,
+  WithHome = false,
+});
+```
+
+Or you can have settings prepared in a central location, and just use the name of the settings:
+
+```csharp
+var breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
+```
+
+The second way is especially useful when the _identical_ code and components should result in different outputs
+depending on the scenario, since it allows you to change the settings in one place.
+
+For example, you could define that certain menus don't appear or look different within certain parts of your site.
+
+For this, see
+
+* [Providing Settings](./provide-settings.md).
+* Providing Named Settings TODO:
+* Providing Settings by Theme Part Name TODO:
+
+## How Settings Work Internally
+
+TODO: explain how settings are used internally
+
+Settings have a 2-level hierarchy, shown by the example of a breadcrumb:
+
+`MagicBreadcrumbSettings` would be the main settings which are used in your code.
+These settings have all the possible options, but also some properties which
+can only be set by code.
+
+For example, you can set a `Designer` which is a special object that can create some HTML.
+
+The `MagicBreadcrumbSettingsData` is the underlying class behind the `MagicBreadcrumbSettings`.
+It contains all the properties which can be stored externally, like in a JSON file or database.
+
+
 
 ## Levels of Indirection WIP
 
@@ -59,7 +141,7 @@ This file is then used by your Theme and it's Controls to
 
 ## Example JSON
 
-See [settings-json](./theme-json.md) to see an example file.
+See [settings-json](xref:Cre8magic.Library.ThemeSettings.Index) to see an example file.
 
 ## The Configuration File
 
@@ -151,7 +233,7 @@ This will do a few things
 
 1. Make sure that the inner content is only shown if Settings are loaded - otherwise show a `loading settings...` text
 1. Broadcast the `MagicSettings` with the name `Settings` to all child controls using `CascadingValue`.
-1. It will also ensure that the [MagicContext](./magic-context.md) is set on the page
+1. It will also ensure that the [Magic Page Context](xref:Cre8magic.Library.MagicPageContext.Index) is set on the page
 
 TODO:
 
@@ -160,3 +242,4 @@ TODO:
 ## Continue...
 
 Then continue back to the 👉🏾 [Home](../index.md)
+

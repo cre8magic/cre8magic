@@ -1,5 +1,5 @@
 ---
-
+uid: Cre8magic.Library.HowItWorks.Index
 ---
 
 # cre8magic – How It Works
@@ -91,7 +91,7 @@ cre8magic will do a bunch of things in the background, such as:
     1. Use names to find the configuration for the theme
     1. Use further names to find the configuration for each part, such as Menus, Breadcrumbs etc.
     1. Flatten all to the current scenario
-1. Broadcast these flattened [Magic Settings](../system/magic-settings.md) from the Theme to all Controls
+1. Broadcast these flattened [Magic Settings](xref:Cre8magic.Library.MagicSettings.Index) from the Theme to all Controls
     1. Initialize the proper settings
     1. Broadcast these settings to all controls that are somewhere within the theme object tree
 1. Provide simple accessors

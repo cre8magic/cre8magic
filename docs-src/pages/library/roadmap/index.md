@@ -1,14 +1,11 @@
 ---
-title: Get Started
-permalink: /get-started
-icon: fa-play
-order: 3
+uid: Cre8magic.Roadmap.Index
 ---
 
-# Get Started with cre8magic
+# Roadmap
 
 
-## Install cre8magic
+## Working on v2 2024-11
 
 As of 2022-10 cre8magic is still beta, so you would need to get it from github and compile.
 

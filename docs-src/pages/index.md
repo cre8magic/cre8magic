@@ -1,5 +1,3 @@
----
----
 
 # cre8magic for Oqtane – Professional Theme Design
 
@@ -64,7 +62,7 @@ The resulting page will usually have something like this:
 <img src="./assets/cre8magic-page.png">
 
 >
-> 👉🏾 [Discover how it works](./get-started/how-it-works.md)
+> 👉🏾 [Discover how it works](xref:Cre8magic.Library.HowItWorks.Index)
 >
 
 ## See a Working Example and Get Started
@@ -75,24 +73,22 @@ Try the ToShine Theme Template, it will make things much easier to understand.
 
 👉🏼 See [2shine Theme Template](https://github.com/2sic/oqtane-theme-2shine-bs5)
 
-👉🏼 See [Get Started](./get-started/index.md)
+👉🏼 See [Get Started](xref:Cre8magic.Library.GetStarted.Index)
 
 ## What's in the Magic Box
 
 1. **Magic Settings**: A Settings / Configuration System
-    👉🏾 see [Magic Settings](./system/magic-settings.md)
-    👉🏾 see [Settings JSON file](./system/theme-json.md)
+    👉🏾 see [Magic Settings](xref:Cre8magic.Library.MagicSettings.Index)
+    👉🏾 see [Settings JSON file](xref:Cre8magic.Library.ThemeSettings.Index)
     👉🏾 see [JSON schema](../schemas/2022-10/theme.json)
 
-1. [Magic Context](./system/magic-context.md)
+1. [Magic Page Context](xref:Cre8magic.Library.MagicPageContext.Index)
 
-1. [Magic Values, Classes and more](./system/magic-values.md)
+1. [Magic Tailor with Values, Classes and more using Tokens](xref:Cre8magic.Library.MagicTailor.Index)
 
-1. [Magic Tokens](./system/magic-tokens.md)
+1. [Magic Languages](xref:Cre8magic.Library.MagicLanguages.Index)
 
-1. [Magic Languages](./system/magic-languages.md)
-
-1. [Magic Menu](xref:Library.MagicMenu.Index)
+1. [Magic Menu](xref:Cre8magic.Library.MagicMenu.Index)
 
 1. **Magic Razor Base Classes**
   _These are the important base classes which your Razor files will inherit.
@@ -118,7 +114,7 @@ Try the ToShine Theme Template, it will make things much easier to understand.
   _Anything we refer to as a `Control` inherits from the Oqtane `ThemeControlBase`, while things we refer to as a `Component` inherit from the .net `ComponentBase`._
     * Functional Controls / Components
         1. `MagicOqtaneControlPanel` a control which adds the main control panel for admins
-        1. `MagicContextAndSettings` a wrapper used in every theme to ensure [MagicContext](./system/magic-context.md) and [MagicSettings](./system/magic-settings.md) work
+        1. `MagicContextAndSettings` a wrapper used in every theme to ensure [Magic Page Context](xref:Cre8magic.Library.MagicPageContext.Index) and [MagicSettings](xref:Cre8magic.Library.MagicSettings.Index) work
     * Debug and Error Handling
         1. `MagicExceptions` a control showing important errors to admins
         1. `MagicMenuDebug` a debug helper to see what configuration a menu has and why

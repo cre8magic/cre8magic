@@ -1,5 +1,5 @@
 ---
-uid: Library.Shared.DoInheritFromComponentBase
+uid: Cre8magic.Library.Shared.DoInheritFromComponentBase
 ---
 
 > [!TIP]

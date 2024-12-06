@@ -1,14 +1,12 @@
 ---
+uid: Cre8magic.Library.ThemeSettings.Index
 title: JSON Settings File
-permalink: /json-settings-file
-icon: fa-file
-order: 21
 ---
 
 # cre8magic – Magic Settings – JSON Settings File
 
 cre8magic uses JSON to enable fast and flexible configuration of your theme.
-It is used by [Magic Settings](./magic-settings.md) to load all the initial information.
+It is used by [Magic Settings](xref:Cre8magic.Library.MagicSettings.Index) to load all the initial information.
 
 This document explains the json file and everything you must know, such as:
 

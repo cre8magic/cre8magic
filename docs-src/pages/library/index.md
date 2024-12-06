@@ -1,5 +1,5 @@
 ---
-uid: Library.Index
+uid: Cre8magic.Library.Index
 ---
 
 # cre8magic – Oqtane Theme System

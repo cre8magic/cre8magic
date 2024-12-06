@@ -1,11 +1,9 @@
 ---
+uid: Cre8magic.Library.MagicPageContext.Index
 title: Magic Context
-permalink: /magic-context
-icon: fa-magic
-order: 30
 ---
 
-# cre8magic – Magic Context
+# cre8magic – Magic Page Context
 
 The Magic Context adds a bunch of classes to the `<body>` or a wrapper `<div>` tag
 which contain information about the current state.
@@ -33,7 +31,7 @@ This tells you a bunch of things such as:
 
 ## How this Works
 
-Basically all this happens automatically, if your [json configuration](./theme-json.md) has `magicContext` of something like this:
+Basically all this happens automatically, if your [json configuration](xref:Cre8magic.Library.ThemeSettings.Index) has `magicContext` of something like this:
 
 ```jsonc
 {

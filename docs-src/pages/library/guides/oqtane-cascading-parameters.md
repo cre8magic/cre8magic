@@ -1,5 +1,5 @@
 ---
-uid: Library.Guides.OqtaneCascadingParameters
+uid: Cre8magic.Library.Guides.OqtaneCascadingParameters
 ---
 
 # Oqtane Cascading Parameter and How to Use it

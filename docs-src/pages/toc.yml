@@ -1,45 +1,13 @@
 
-- name: Getting Started
-  href: get-started/index.md
-- name: Roadmap
-  href: roadmap/index.md
-  items:
-    - name: History
-      href: roadmap/history.md
-- name: How it Works
-  href: get-started/how-it-works.md
-- name: Magic Box
-  items:
-  - name: Magic Settings
-    href: system/magic-settings.md
-  - name: Settings JSON File
-    href: system/theme-json.md
-  - name: Magic Context
-    href: system/magic-context.md
-  - name: Magic Values & Classes
-    href: system/magic-values.md
-  - name: Magic Tokens
-    href: system/magic-tokens.md
-  - name: Magic Languages
-    href: system/magic-languages.md
+- name: Oqtane Themes
+  uid: OqtaneThemes.Index
+
 # This mechanism ensures that we don't have dropdown-menus but instead a sidebar
 - name: Magic Library
   href: library/
-  # href: library/toc.yml
-  # topicUid: Library.MagicMenu.Index
 
-  # items:
-  # - name: Magic Menu
-  #   href: library/magic-menu.md
-  # - name: Magic Breadcrumb TODO
-    # href: controls/magic-breadcrumb.md
+- name: Magic Themes
+  uid: Cre8magic.MagicThemes.Index
+
 - name: API Reference
   href: ../api-generated/
-- name: Additional Resources
-  items:
-  - name: Contribute to code
-    href: contribute/code/index.md
-  - name: Documentation Development
-    href: contribute/gh-pages.md
-  - name: Change Log
-    href: contribute/changelog.md

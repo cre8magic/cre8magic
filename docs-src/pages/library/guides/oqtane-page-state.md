@@ -1,5 +1,5 @@
 ---
-uid: Library.Guides.OqtanePageState
+uid: Cre8magic.Library.Guides.OqtanePageState
 ---
 
 # Oqtane PageState and How to Use it
@@ -19,7 +19,7 @@ It contains various things such as:
 1. site information to access ID, URL, etc.
 1. request information such as url parameters
 
-This object is provided by Oqtane automatically as a [CascadingParameter](xref:Library.Guides.OqtaneCascadingParameters).
+This object is provided by Oqtane automatically as a [CascadingParameter](xref:Cre8magic.Library.Guides.OqtaneCascadingParameters).
 
 > [!TIP]
 > Most operations in cre8magic will require the `PageState` object.

@@ -1115,90 +1115,60 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "pages/contribute/changelog.md",
-      "output": {
-        ".html": {
-          "relative_path": "contribute/changelog.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/contribute/code/architecture.md",
-      "output": {
-        ".html": {
-          "relative_path": "contribute/code/architecture.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/contribute/code/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "contribute/code/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/contribute/code/tests-test-module.md",
-      "output": {
-        ".html": {
-          "relative_path": "contribute/code/tests-test-module.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/contribute/code/tests-unit-tests.md",
-      "output": {
-        ".html": {
-          "relative_path": "contribute/code/tests-unit-tests.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/contribute/gh-pages.md",
-      "output": {
-        ".html": {
-          "relative_path": "contribute/gh-pages.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/get-started/how-it-works.md",
-      "output": {
-        ".html": {
-          "relative_path": "get-started/how-it-works.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/get-started/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "get-started/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "pages/index.md",
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/contribute/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/contribute/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/contribute/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/contribute/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/contribute/tests-test-module.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/contribute/tests-test-module.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/contribute/tests-unit-tests.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/contribute/tests-unit-tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/get-started/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/get-started/index.html"
         }
       },
       "version": ""
@@ -1248,10 +1218,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "pages/library/how-it-works.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/how-it-works.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "pages/library/index.md",
       "output": {
         ".html": {
           "relative_path": "library/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/languages/magic-languages.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/languages/magic-languages.html"
         }
       },
       "version": ""
@@ -1278,10 +1268,100 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "pages/library/page-context/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/page-context/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/patterns.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/patterns.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/roadmap/history.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/roadmap/history.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/roadmap/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/roadmap/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/settings/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/settings/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/settings/provide-settings.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/settings/provide-settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "pages/library/shared/do-inherit-from-componentbase.md",
       "output": {
         ".html": {
           "relative_path": "library/shared/do-inherit-from-componentbase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/tailor/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/tailor/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/terminology.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/terminology.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/theme-settings/theme-json.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/theme-settings/theme-json.html"
         }
       },
       "version": ""
@@ -1295,6 +1375,16 @@
         },
         ".json": {
           "relative_path": "library/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/magic-themes/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "magic-themes/index.html"
         }
       },
       "version": ""
@@ -1335,126 +1425,6 @@
       "output": {
         ".html": {
           "relative_path": "oqtane-themes-guide/recommendations/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/roadmap/history.md",
-      "output": {
-        ".html": {
-          "relative_path": "roadmap/history.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/roadmap/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "roadmap/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/roadmap/patterns.md",
-      "output": {
-        ".html": {
-          "relative_path": "roadmap/patterns.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/roadmap/terminology.md",
-      "output": {
-        ".html": {
-          "relative_path": "roadmap/terminology.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/settings/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "settings/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/settings/provide-settings.md",
-      "output": {
-        ".html": {
-          "relative_path": "settings/provide-settings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/system/magic-context.md",
-      "output": {
-        ".html": {
-          "relative_path": "system/magic-context.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/system/magic-languages.md",
-      "output": {
-        ".html": {
-          "relative_path": "system/magic-languages.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/system/magic-settings.md",
-      "output": {
-        ".html": {
-          "relative_path": "system/magic-settings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/system/magic-tokens.md",
-      "output": {
-        ".html": {
-          "relative_path": "system/magic-tokens.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/system/magic-values.md",
-      "output": {
-        ".html": {
-          "relative_path": "system/magic-values.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/system/theme-json.md",
-      "output": {
-        ".html": {
-          "relative_path": "system/theme-json.html"
         }
       },
       "version": ""

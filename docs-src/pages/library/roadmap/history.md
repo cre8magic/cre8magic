@@ -1,10 +1,8 @@
 ---
-
+uid: Cre8magic.Roadmap.History
 ---
 
 # Roadmap
-
-
 
 
 ## Working on v0.02 2024-11
@@ -40,17 +38,34 @@ So the goal is kind of the following - based on an example of the menu system:
 * Unit tests?
 * Possibly make smaller DLLs?, like a Core, A pages, etc.
 
-## First Beta v0.01 2022-10
 
-This was the first version of the project.
 
+## Version 0
+
+### 2022-10-07 v0.0.2
+
+1. Made menu design settings support inherit
+1. Added json schema and published to https://2sic.github.io/cre8magic/schemas/2022-10/theme.json
+
+### First Beta v0.01 2022-10-05
+
+This was the first internal release of the project.
 It was made to test various concepts such as:
+
+1. Initial release for use on blazor-cms.org
+1. Named settings for layouts, breadcrumbs, menus
+1. Named settings for the design of layouts, breadcrumbs, menus
+1. A bunch of base classes for Razor
+1. A bunch of services to make it happen
+1. MagicContext, MagicSettings, MagicConfigurations etc.
+
+Basically...
 
 1. Simple Bootstrap 5 Themes which can be easily customized without recompiling.
 2. Settings-System which projects the configuration(s) to the various themes and components.
 3. Creating various "standard" components that just do everything right.
 
-This system had some improtant shortcomings, such as:
+This system had some important shortcomings, such as:
 
 1. Black box - things magically worked - or didn't
 2. We tried to compensate a lot of this with logging, but that only helped if you already knew a lot of the systems internals.

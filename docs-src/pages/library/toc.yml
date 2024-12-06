@@ -2,13 +2,58 @@
 - name: Magic Library Overview
   href: index.md
 
+- name: Get Started
+  uid: Cre8magic.Library.GetStarted.Index
+
 - name: Magic Menu
-  topicUid: Library.MagicMenu.Index
+  topicUid: Cre8magic.Library.MagicMenu.Index
 
 - name: Magic Breadcrumb TODO
   # href: controls/magic-breadcrumb.md
 
+- name: How it Works
+  uid: Cre8magic.Library.HowItWorks.Index
 
 - name: Guides
   href: ./guides/toc.yml
   # topicHref: ./guides/index.md
+
+- name: Magic Settings
+  uid: Cre8magic.Library.MagicSettings.Index
+
+- name: Theme Settings & JSON File
+  uid: Cre8magic.Library.ThemeSettings.Index
+- name: Magic Context
+  uid: Cre8magic.Library.MagicPageContext.Index
+- name: Magic Tailor
+  uid: Cre8magic.Library.MagicTailor.Index
+
+- name: Magic Languages
+  uid: Cre8magic.Library.MagicLanguages.Index
+
+- name: "Advanced"
+
+
+
+- name: " "
+
+- name: ---
+
+- name: MagicSetting ?
+  uid: Cre8magic.Library.MagicSettings.Index
+
+- name: Roadmap
+  uid: Cre8magic.Roadmap.Index
+  items:
+    - name: History
+      uid: Cre8magic.Roadmap.History
+
+- name: Contribute to code
+  href: contribute/index.md
+  items:
+  - name: Architecture
+    href: contribute/architecture.md
+  - name: Unit Tests
+    href: contribute/tests-unit-tests.md
+  - name: Test Module
+    href: contribute/tests-test-module.md

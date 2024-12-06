@@ -1,5 +1,5 @@
 ---
-uid: Library.MagicMenu.Index
+uid: Cre8magic.Library.MagicMenu.Index
 ---
 
 # cre8magic – Magic Menu System for Oqtane Themes
@@ -238,7 +238,7 @@ There are actually three distinct problems to solve:
 The MagicMenu gives each menu a name, such as `Main`, `Sidebar`, `Footer` etc.
 You can determine these names in the Razor files.
 
-Each of these menus can then be configured in the [JSON](../../system/theme-json.md).
+Each of these menus can then be configured in the [JSON](xref:Cre8magic.Library.ThemeSettings.Index).
 By default, each menu will find it's **configuration** and it's **design**
 based on the same name.
 So the `Main` menu would take the configuration and design called `Main`.
@@ -309,7 +309,7 @@ The depth must always be at least 1 and determines how many levels downwards the
 
 This is one of the most sophisticated bits of the JSON settings.
 You can configure this in the `menuBlueprints` section of the JSON.
-Note tAct this uses the [Magic Classes](../../system/magic-values.md) and [Magic Tokens](../../system/magic-tokens.md).
+Note tAct this uses the [Magic Classes with Tokens](xref:Cre8magic.Library.MagicTailor.Index).
 Example:
 
 ```jsonc
