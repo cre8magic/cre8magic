@@ -3,15 +3,17 @@ const fs = require('fs-extra'); // fs-extra is a module that extends the standar
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const packageJson = require('./package.json');
+const packageJson = require('../../package.json');
+const { config } = require('process');
 
 let project = packageJson.projectName; // project folder name
+const docsPublicPath = "../../../../docs/public/"; // path to docs/public folder
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
 
   return {
-    entry: `./templates/${project}/src/scripts/main.ts`,
+    entry: `./templates/${project}/src/main.ts`,
     experiments: {
       outputModule: true
     },
@@ -24,7 +26,7 @@ module.exports = (env, argv) => {
             {
               loader: 'ts-loader',
               options: {
-                transpileOnly: true,
+                transpileOnly: true
               },
             },
           ],
@@ -48,22 +50,30 @@ module.exports = (env, argv) => {
     },
     output: {
       filename: 'main.js',
-      path: path.resolve(__dirname, `templates/${project}/public`),
+      path: path.resolve(__dirname, `../${project}/public`),
       libraryTarget: 'module',
       // clean: true,
     },
     plugins: [
       new CleanWebpackPlugin({
-        cleanOnceBeforeBuildPatterns: ['main.js', 'main.js.map', '../../../../docs/public/main.js', '../../../../docs/public/main.js.map'],
+        cleanOnceBeforeBuildPatterns: [
+          'main.js', 
+          'main.js.map', 
+          'main.css', 
+          'main.css.map', 
+          docsPublicPath + 'main.js', 
+          docsPublicPath + 'main.js.map', 
+          docsPublicPath + 'main.css', 
+          docsPublicPath + 'main.css.map'],
         dangerouslyAllowCleanPatternsOutsideProject: true,
         dry: false
       }),
       new CopyWebpackPlugin({
         patterns: [
           { 
-            from: path.resolve(__dirname, `templates/${project}/public`), 
-            to: path.resolve(__dirname, '../docs/public'),
-            noErrorOnMissing: true // Add this option to prevent the build from failing if the source directory doesn't exist
+            from: path.resolve(__dirname, `../${project}/public`), 
+            to: docsPublicPath,
+            noErrorOnMissing: false // Add this option to prevent the build from failing if the source directory doesn't exist
           }
         ]
       }),

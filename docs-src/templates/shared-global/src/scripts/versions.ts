@@ -1,4 +1,4 @@
-import docsVersion from '../../../../../package.json'; 
+import docsVersion from '../../../../package.json'; 
 
 export function setVersionButtonLink() {
   const versionSelector = document.getElementsByClassName('version-button')[0] as HTMLAnchorElement;
