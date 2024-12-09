@@ -1,14 +1,12 @@
 {
   "name": "cre8magic-docs",
-  "version": "1.0.0",
+  "version": "0.3.1",
   "description": "",
-  "projectName": "cre8magic",
-  "docsVersion": "0.3.1",
+  "templateName": "cre8magic",
   "enableDebug": false,
   "scripts": {
-
-    "build": "webpack --mode production -c ./templates/shared-global/webpack.config.js",
-    "dev": "webpack --watch --mode development -c ./templates/shared-global/webpack.config.js"
+    "webpack-build": "webpack --mode production -c ./templates/shared-global/webpack.config.js",
+    "webpack-dev": "webpack --watch --mode development -c ./templates/shared-global/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
