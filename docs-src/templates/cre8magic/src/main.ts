@@ -3,9 +3,9 @@ import { Xref } from '../../shared-global/src/scripts/xref/xref';
 import { docReady } from '../../shared-global/src/scripts/utils/docready';
 import { configureLightboxes } from '../../shared-global/src/scripts/images';
 import { setVersionButtonLink } from '../../shared-global/src/scripts/versions';
-import packageJson from '../../../package.json';
 import { lightboxForContextIllustration } from '../../shared-global/src/scripts/context-illustrations';
 import "./main.scss";
+import { inlineSvgs } from '../../shared-global/src/scripts/svgs/svg-importer';
 
 // Log some version of this file so we see changes are being applied
 // console.log('2sxc main.ts ' + packageJson.version);
@@ -29,6 +29,8 @@ export default {
 docReady(function() {
   // configure lightboxes
   configureLightboxes();
+
+  inlineSvgs();
 
   // set version button link
   setVersionButtonLink();
