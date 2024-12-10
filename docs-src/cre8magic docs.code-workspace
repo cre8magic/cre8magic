@@ -19,6 +19,12 @@
       "wwwroot"
     ],
     "liveServer.settings.port": 5502,
+    "markdownlint.config": {
+      "no-inline-html": false,
+      "no-alt-text": false,
+      "no-multiple-blanks": false,
+      "no-hard-tabs": true,
+    },
   },
   "extensions": {
     "recommendations": [
