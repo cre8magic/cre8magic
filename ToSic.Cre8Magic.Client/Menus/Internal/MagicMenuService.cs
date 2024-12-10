@@ -27,7 +27,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         logRoot.Add("tree-build", journal.Messages);
 
         // Page Factory with possibly reduced set of possible pages it can return
-        var pageFactory = new MagicPageFactory(pageState, newSettings.Pages, logRoot: logRoot);
+        var pageFactory = new MagicPageFactory(pageState, newSettings.PagesSource, logRoot: logRoot);
 
         // Create the Menu Context which is used in various places
         var context = new MagicMenuWorkContext

@@ -32,7 +32,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
         // Code-Only Settings
         Tailor = priority?.Tailor ?? fallback?.Tailor;
         Blueprint = priority?.Blueprint ?? fallback?.Blueprint;
-        Pages = priority?.Pages ?? fallback?.Pages;
+        PagesSource = priority?.PagesSource ?? fallback?.PagesSource;
     }
 
     MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy) =>
@@ -74,7 +74,8 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     public const string StartPageCurrent = ".";
 
     /// <summary>
-    /// The template to use - horizontal/vertical
+    /// The menu variant to use, for example `horizontal` or `vertical`.
+    /// Will only have an effect if the control showing the menu supports it.
     /// </summary>
     public string? Variant { get; init; }
 
@@ -97,7 +98,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     /// TODO: NAMING
     /// </summary>
     [JsonIgnore]    // Not meant for JSON at all...
-    public IEnumerable<IMagicPage>? Pages { get; init; }
+    public IEnumerable<IMagicPage>? PagesSource { get; init; }
 
     #endregion
 

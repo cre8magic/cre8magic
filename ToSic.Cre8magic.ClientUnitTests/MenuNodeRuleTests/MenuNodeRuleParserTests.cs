@@ -155,6 +155,17 @@ public class MenuNodeRuleParserTests
     });
 
     [Fact]
+    public void RulePageIdForceChildren() => AssertRule(new()
+    {
+        Raw = "42!/",
+        Id = 42,
+        Force = true,
+        Level = 1,
+        ShowChildren = true,
+        ModeInfo = StartMode.PageId,
+    });
+
+    [Fact]
     public void RuleParent() => AssertRule(new()
     {
         Raw = "..",

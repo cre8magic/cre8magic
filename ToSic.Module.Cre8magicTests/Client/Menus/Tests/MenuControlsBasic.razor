@@ -38,7 +38,7 @@
     <hr/>
     <h2>Set MenuPages</h2>
     <h3>Custom menu pages (@string.Join(",", restrictPossiblePages.Select(p => p.Id))) </h3>
-    <BasicMenu MenuKit="MenuSvc.MenuKit(PageState, new() { Pages = restrictPossiblePages })"></BasicMenu>
+    <BasicMenu MenuKit="MenuSvc.MenuKit(PageState, new() { PagesSource = restrictPossiblePages })"></BasicMenu>
 
 
     <hr/>

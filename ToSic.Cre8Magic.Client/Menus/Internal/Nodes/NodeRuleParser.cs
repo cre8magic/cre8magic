@@ -65,14 +65,15 @@ internal partial class NodeRuleParser(LogRoot logRoot)
 
                 // Check for trailing "!" to force the page (only for PageId)
                 var force = processed.StartsWith(PageForced);
-                if (force)
-                    processed = processed.TrimEnd(PageForced);
+                var afterForce = force
+                    ? processed.TrimStart(PageForced)
+                    : processed;
 
                 // Check starting "/" or "//"
-                var fromRoot = !(fromCurrent || fromParent || id != 0) && processed.StartsWith(MagicMenuSettings.StartPageRootSlash);
+                var fromRoot = !(fromCurrent || fromParent || id != 0) && afterForce.StartsWith(MagicMenuSettings.StartPageRootSlash);
 
                 // The string processed now should start with a number, which we should extract using regex
-                var levelMatch = FindLevelNumber().Match(processed);
+                var levelMatch = FindLevelNumber().Match(afterForce);
                 var defLevel = fromParent ? -1 : fromCurrent ? 0 : 1;
                 var level = levelMatch.Success
                     ? int.TryParse(levelMatch.Groups["level"].Value, out var lvl) ? lvl : defLevel
@@ -80,25 +81,25 @@ internal partial class NodeRuleParser(LogRoot logRoot)
 
                 // Keep rest
                 // todo...- if it just started with a "/", then the rest still contains it, so clean up
-                if (levelMatch.Success)
-                    processed = levelMatch.Groups["processed"].Value;
+                var afterLevelMatch = levelMatch.Success
+                    ? levelMatch.Groups["rest"].Value
+                    : afterForce;
 
                 // If we still have "//" then it was without a level number, so default to 0
-                if (processed.StartsWith("" + MagicMenuSettings.StartPageRootSlash + MagicMenuSettings.StartPageRootSlash))
-                {
-                    level = 1;
-                    processed = processed.TrimStart(MagicMenuSettings.StartPageRootSlash);
-                }
-
+                var startsWithDoubleSlash = afterLevelMatch.StartsWith("" + MagicMenuSettings.StartPageRootSlash + MagicMenuSettings.StartPageRootSlash);
+                level = startsWithDoubleSlash ? 1 : level;
+                var afterDoubleSlash = startsWithDoubleSlash
+                    ? afterLevelMatch.TrimStart(MagicMenuSettings.StartPageRootSlash)
+                    : afterLevelMatch;
 
                 // If we now have "//" as the from - root, or as the left - over from current/ parent, it could have a trailing level number
-                var endWithSingleSlash = processed.StartsWith(MagicMenuSettings.StartPageRootSlash);
+                var endWithSingleSlash = afterDoubleSlash.StartsWith(MagicMenuSettings.StartPageRootSlash);
 
-                processed = processed.TrimStart(MagicMenuSettings.StartPageRootSlash);
+                var afterSlash = afterDoubleSlash.TrimStart(MagicMenuSettings.StartPageRootSlash);
 
                 // Count + characters to determine level
-                var depth = processed.TakeWhile(c => c == '+').Count() + 1;
-                processed = processed.TrimStart('+');
+                var depth = afterSlash.TakeWhile(c => c == '+').Count() + 1;
+                var afterDepth = afterSlash.TrimStart('+');
 
                 var modeInfo = id != default
                     ? StartMode.PageId
