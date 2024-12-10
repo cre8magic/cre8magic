@@ -17,6 +17,10 @@ public class MenuNodeRuleParserTests
     [InlineData("/")]
     [InlineData("//")]
     [InlineData("//1")]
+    [InlineData("//-1")]
+    [InlineData("//-2")]
+    [InlineData("0/")]
+    [InlineData("0//")]
     public void RuleRoot(string raw) => AssertRule(new()
     {
         Raw = raw,
@@ -31,7 +35,9 @@ public class MenuNodeRuleParserTests
 
     [Theory]
     [InlineData("/+", 2)]
+    [InlineData("//+", 2)]
     [InlineData("/++", 3)]
+    [InlineData("//++", 3)]
     public void RuleRootPlus1(string raw, int depth) => AssertRule(new()
     {
         Raw = raw,
@@ -43,13 +49,16 @@ public class MenuNodeRuleParserTests
         ModeInfo = StartMode.Root,
     });
 
-    [Fact]
-    public void RuleRootLevel2() => AssertRule(new()
+    [Theory]
+    [InlineData("//2", 2)]
+    [InlineData("//3", 3)]
+    [InlineData("//-1", 1)]
+    public void RuleRootLevel2(string raw, int level) => AssertRule(new()
     {
-        Raw = "//2",
+        Raw = raw,
         Id = 0,
         Force = false,
-        Level = 2,
+        Level = level,
         ShowChildren = false,
         ModeInfo = StartMode.Root,
     });

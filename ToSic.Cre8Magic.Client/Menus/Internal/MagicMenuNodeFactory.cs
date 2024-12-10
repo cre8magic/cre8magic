@@ -54,7 +54,7 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
         var l = log.Fn<List<IMagicPage>>("Root");
         l.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
 
-        var rootPages = new NodeRuleHelper(pageFactory, pageFactory.Current, settings, log).GetRootNodes();
+        var rootPages = new NodeRulePicker(pageFactory, pageFactory.Current, log).GetRootNodes(settings);
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages

@@ -115,7 +115,7 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                     Force = force,
                     Depth = depth,
                     ShowChildren = !fromRoot && endWithSingleSlash,
-                    Level = level,
+                    Level = !fromRoot ? level : level > 0 ? level : 1,
                     ModeInfo = modeInfo,
                     Raw = startCode
                 };
@@ -129,7 +129,7 @@ internal partial class NodeRuleParser(LogRoot logRoot)
     /// Check for leading "//" and likely level number
     /// </summary>
     /// <returns></returns>
-    [GeneratedRegex(@"^//(?<level>\d+)(?<rest>.*)")]
+    [GeneratedRegex(@"^//(?<level>-?\d+)(?<rest>.*)")]
     private static partial Regex FindLevelNumber();
 
     [GeneratedRegex(@"^(?<page>\d+)(?<rest>.*)")]
