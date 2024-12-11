@@ -3,6 +3,8 @@ using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Spells;
+using ToSic.Cre8magic.Spells.Internal;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 

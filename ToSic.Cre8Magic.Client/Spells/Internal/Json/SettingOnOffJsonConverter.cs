@@ -1,8 +1,9 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Spells.Settings;
 
-namespace ToSic.Cre8magic.Settings.Internal.Json;
+namespace ToSic.Cre8magic.Spells.Internal.Json;
 
 /// <summary>
 /// Custom converter for <see cref="MagicSettingOnOff"/> to handle different JSON formats.

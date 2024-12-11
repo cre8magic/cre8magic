@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal;
+﻿namespace ToSic.Cre8magic.Spells.Internal;
 
 public interface IWith<T>
 {

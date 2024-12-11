@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Settings.Internal.Journal;
 
-namespace ToSic.Cre8magic.Settings.Internal;
+namespace ToSic.Cre8magic.Spells.Internal;
 
 /// <summary>
 /// Test Spells-Book-Source to use by the settings reader

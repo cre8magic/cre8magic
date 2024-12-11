@@ -1,8 +1,8 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Docs;
+﻿using ToSic.Cre8magic.Spells.Internal.Docs;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
-namespace ToSic.Cre8magic.Settings.Internal;
+namespace ToSic.Cre8magic.Spells.Internal;
 
 internal record FindSettingsSpecs(
     CmThemeContext Context,

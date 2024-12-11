@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal.Providers;
+﻿namespace ToSic.Cre8magic.Spells.Internal.Providers;
 
 internal class MagicSpellsProviderSection<T>(IMagicSpellsProvider parent)
     : IMagicSpellsProviderSection<T>, ISourceInternal

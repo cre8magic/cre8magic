@@ -1,7 +1,7 @@
 ﻿using ToSic.Cre8magic.Settings.Internal.Journal;
-using ToSic.Cre8magic.Settings.Internal.Json;
+using ToSic.Cre8magic.Spells.Internal.Json;
 
-namespace ToSic.Cre8magic.Settings.Internal.Sources;
+namespace ToSic.Cre8magic.Spells.Internal.Sources;
 
 /// <summary>
 /// Helper to load all the magic settings which could be used by the <see cref="IMagicSpellsService"/>.

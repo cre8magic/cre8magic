@@ -5,12 +5,12 @@ using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Internal.Json;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
-using ToSic.Cre8magic.Settings.Internal.Debug;
-using ToSic.Cre8magic.Settings.Internal.Json;
+using ToSic.Cre8magic.Spells.Debug;
+using ToSic.Cre8magic.Spells.Internal.Debug;
 using ToSic.Cre8magic.Themes.Settings;
 using static System.StringComparer;
 
-namespace ToSic.Cre8magic.Settings;
+namespace ToSic.Cre8magic.Spells;
 
 /// <summary>
 /// This is a Spells Book; a catalog of all kinds of settings.

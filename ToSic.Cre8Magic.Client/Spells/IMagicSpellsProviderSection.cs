@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Settings;
+﻿namespace ToSic.Cre8magic.Spells;
 
 /// <summary>
 /// A provider for one type of settings.

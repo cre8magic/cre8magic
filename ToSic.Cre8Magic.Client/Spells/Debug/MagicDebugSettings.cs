@@ -1,7 +1,7 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Debug;
+﻿using ToSic.Cre8magic.Spells.Internal;
+using ToSic.Cre8magic.Spells.Internal.Debug;
 
-namespace ToSic.Cre8magic.Settings;
+namespace ToSic.Cre8magic.Spells.Debug;
 
 /// <summary>
 /// Debug settings to help during development.

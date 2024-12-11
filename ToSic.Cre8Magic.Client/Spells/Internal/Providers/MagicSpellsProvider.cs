@@ -3,9 +3,9 @@ using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Internal.Journal;
-using ToSic.Cre8magic.Settings.Internal.Sources;
+using ToSic.Cre8magic.Spells.Internal.Sources;
 
-namespace ToSic.Cre8magic.Settings.Internal.Providers;
+namespace ToSic.Cre8magic.Spells.Internal.Providers;
 
 internal class MagicSpellsProvider: IMagicSpellsProvider, IMagicSpellsBooksSource
 {

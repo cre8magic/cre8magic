@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal.Docs;
+﻿namespace ToSic.Cre8magic.Spells.Internal.Docs;
 
 /// <summary>
 /// Internal interface to specify settings which extend the ...Data settings.

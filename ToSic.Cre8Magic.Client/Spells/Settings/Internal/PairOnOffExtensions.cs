@@ -1,6 +1,6 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal;
+﻿namespace ToSic.Cre8magic.Spells.Settings.Internal;
 
-public static class PairOnOffExtensions
+internal static class PairOnOffExtensions
 {
     /// <summary>
     /// Null-safe pair access

@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Settings.Internal.Journal;
 
-namespace ToSic.Cre8magic.Settings.Internal.Sources;
+namespace ToSic.Cre8magic.Spells.Internal.Sources;
 
 public interface IMagicSpellsBooksSource
 {

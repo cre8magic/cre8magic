@@ -1,6 +1,7 @@
 ﻿using Oqtane.Models;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Spells.Settings.Internal;
 using ToSic.Cre8magic.Tailors;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Tokens;

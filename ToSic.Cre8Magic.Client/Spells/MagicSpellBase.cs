@@ -1,9 +1,10 @@
 ﻿using System.Text.Json.Serialization;
 using Oqtane.UI;
-using ToSic.Cre8magic.Settings.Internal.Debug;
-using ToSic.Cre8magic.Settings.Internal.Docs;
+using ToSic.Cre8magic.Spells.Debug;
+using ToSic.Cre8magic.Spells.Internal.Debug;
+using ToSic.Cre8magic.Spells.Internal.Docs;
 
-namespace ToSic.Cre8magic.Settings;
+namespace ToSic.Cre8magic.Spells;
 
 /// <summary>
 /// Internal base class containing all kinds of settings which

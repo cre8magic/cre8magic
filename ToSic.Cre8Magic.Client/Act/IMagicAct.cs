@@ -7,6 +7,7 @@ using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Spells;
 using ToSic.Cre8magic.UserLogins;
 using ToSic.Cre8magic.Users;
 

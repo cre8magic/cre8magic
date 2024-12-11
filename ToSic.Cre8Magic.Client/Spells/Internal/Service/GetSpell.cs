@@ -1,11 +1,11 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Settings.Internal.Debug;
-using ToSic.Cre8magic.Settings.Internal.Docs;
 using ToSic.Cre8magic.Settings.Internal.Journal;
+using ToSic.Cre8magic.Spells.Internal.Debug;
+using ToSic.Cre8magic.Spells.Internal.Docs;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
-namespace ToSic.Cre8magic.Settings.Internal;
+namespace ToSic.Cre8magic.Spells.Internal;
 
 internal static class GetSpell
 {

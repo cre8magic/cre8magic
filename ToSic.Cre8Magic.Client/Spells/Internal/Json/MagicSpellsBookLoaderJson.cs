@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Settings.Internal.Json;
+namespace ToSic.Cre8magic.Spells.Internal.Json;
 
 internal class MagicSpellsBookLoaderJson
 {

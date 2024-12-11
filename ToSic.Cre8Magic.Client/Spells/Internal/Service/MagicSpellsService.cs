@@ -4,18 +4,18 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Pages.Internal;
-using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Settings.Internal.Journal;
+using ToSic.Cre8magic.Spells.Debug;
+using ToSic.Cre8magic.Spells.Internal.Debug;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Users;
 using static ToSic.Cre8magic.MagicConstants;
 
-namespace ToSic.Cre8magic.Settings.Internal;
+namespace ToSic.Cre8magic.Spells.Internal;
 
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.

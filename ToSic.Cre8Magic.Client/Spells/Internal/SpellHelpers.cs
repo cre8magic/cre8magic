@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Settings.Internal;
+namespace ToSic.Cre8magic.Spells.Internal;
 
 internal class SpellHelpers
 {

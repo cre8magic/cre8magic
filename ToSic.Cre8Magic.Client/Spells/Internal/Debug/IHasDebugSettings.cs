@@ -1,4 +1,6 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal.Debug;
+﻿using ToSic.Cre8magic.Spells.Debug;
+
+namespace ToSic.Cre8magic.Spells.Internal.Debug;
 
 internal interface IHasDebugSettings
 {

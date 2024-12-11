@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ToSic.Cre8magic.Settings;
+namespace ToSic.Cre8magic.Spells;
 
 /// <summary>
 /// 
