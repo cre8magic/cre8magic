@@ -38,7 +38,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSpellsService spe
     }
 
     private Data3WithJournal<MagicAnalyticsSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicAnalyticsSpell? settings) =>
-        spellsSvc.GetBestSettings(
+        spellsSvc.GetBestSpell(
             pageState,
             settings,
             spellsSvc.Analytics,

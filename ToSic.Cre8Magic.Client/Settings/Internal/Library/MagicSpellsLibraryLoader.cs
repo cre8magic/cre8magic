@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// It requires that there are <see cref="MagicThemePackage"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-public class MagicSpellsLibraryLoader(IEnumerable<IMagicSettingsSource> sources)
+public class MagicSpellsLibraryLoader(IEnumerable<IMagicSpellsBooksSource> sources)
 {
     public List<DataWithJournal<MagicSpellsBook>> Books(MagicThemePackage themePackage, bool cache = true) => 
         cache ? _cache ??= Load(themePackage) : Load(themePackage);

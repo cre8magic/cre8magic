@@ -116,7 +116,7 @@ public record MagicBreadcrumbSpell : MagicSpellBase, IMagicPageSetSettings, ICan
 
 
     [field: AllowNull, MaybeNull]
-    public string MenuId => field ??= SettingsUtils.RandomLongId(Id);
+    public string MenuId => field ??= SpellHelpers.RandomLongId(Id);
 
     public string? Variant { get; init; } // TODO:
 

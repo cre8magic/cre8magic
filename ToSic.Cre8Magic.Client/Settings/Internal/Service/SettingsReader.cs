@@ -14,11 +14,11 @@ namespace ToSic.Cre8magic.Settings.Internal;
 ///    ...this is to get type safety and everything, like it will only look at the Analytics settings.
 /// </summary>
 /// <typeparam name="TSettingsData"></typeparam>
-/// <param name="hasSpellsBook"></param>
+/// <param name="hasSpellsLibrary"></param>
 /// <param name="defaults"></param>
 /// <param name="getSection"></param>
 internal class SettingsReader<TSettingsData>(
-    IHasSpellsBook hasSpellsBook,
+    IHasSpellsLibrary hasSpellsLibrary,
     Defaults<TSettingsData> defaults,
     Func<MagicSpellsBook, IDictionary<string, TSettingsData>> getSection
 )
@@ -28,7 +28,7 @@ internal class SettingsReader<TSettingsData>(
     /// Create a clone of the settings reader, which will specifically only use test books provided by the source.
     /// </summary>
     internal SettingsReader<TSettingsData> MaybeUseCustomSpellsBook(MagicSpellsBook? book)
-        => book == null ? this : new(new HasSpellsBook([new(book, new())]), defaults, getSection);
+        => book == null ? this : new(new HasSpellsLibrary([new(book, new())]), defaults, getSection);
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -111,7 +111,7 @@ internal class SettingsReader<TSettingsData>(
         if (names == null || names.Length == 0) names = [Default];
 
         // Get all spells-books (e.g. provided by code in theme, from JSON, etc.)
-        var books = hasSpellsBook.Books;
+        var books = hasSpellsLibrary.Library;
 
         // Create a list of all possible sources and names
         // Prioritize the names, and then go through all sources for each name

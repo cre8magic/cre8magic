@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.Settings.Internal.Sources;
 ///
 /// Fairly trivial, but the goal is that all sources implement the same interface.
 /// </summary>
-public class MagicSettingsSourcePackageDefaults : IMagicSettingsSource
+public class MagicSpellsBooksSourceThemeDefaults : IMagicSpellsBooksSource
 {
     public int Priority => -100;
 

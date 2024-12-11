@@ -2,7 +2,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Settings.Internal.Journal;
-using ToSic.Cre8magic.Settings.Internal.Logging;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Internal.Json;
@@ -39,7 +38,7 @@ internal class MagicSpellsBookLoaderJson
 
         void AddException(Exception ex)
         {
-            exceptions.Add(new SettingsException($"Error loading json settings file '{themeConfig.SettingsJsonFile}'. {ex.Message}"));
+            exceptions.Add(new Exception($"Error loading json settings file '{themeConfig.SettingsJsonFile}'. {ex.Message}"));
         }
     }
 

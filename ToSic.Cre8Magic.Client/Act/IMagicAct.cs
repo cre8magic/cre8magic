@@ -21,7 +21,7 @@ public interface IMagicAct
 
     IMagicAct UseSpellsBook(MagicSpellsBook book);
 
-    IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
+    IMagicAct UseSettingsProvider(Func<IMagicSpellsProvider, IMagicSpellsProvider> providerFunc);
     
     IMagicAct UseThemePackage(MagicThemePackage themePackage);
 

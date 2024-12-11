@@ -1,10 +1,12 @@
-﻿using ToSic.Cre8magic.Menus;
-using static System.StringComparer;
-using static ToSic.Cre8magic.MagicTokens;
+﻿using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 
-namespace ToSic.Cre8magic.Settings.Internal;
+namespace ToSic.Cre8magic.Menus;
 
-internal class DefaultSettings
+/// <summary>
+/// Menu Design Settings
+/// </summary>
+public partial record MagicMenuBlueprint
 {
     internal static Defaults<MagicMenuBlueprint> Defaults = new()
     {
@@ -12,7 +14,7 @@ internal class DefaultSettings
         // Normally this would be set in the json file or the theme settings, so this wouldn't be used. 
         Fallback = new()
         {
-            Parts = new(InvariantCultureIgnoreCase)
+            Parts = new(StringComparer.InvariantCultureIgnoreCase)
             {
                 {
                     "a", new()
@@ -21,7 +23,7 @@ internal class DefaultSettings
                         HasChildren = new("dropdown-toggle"),
                         ByLevel = new()
                         {
-                            { ByLevelOtherKey, "dropdown-item" },
+                            { MagicTokens.ByLevelOtherKey, "dropdown-item" },
                             { 1, "nav-link" },
 
                         }
@@ -30,7 +32,7 @@ internal class DefaultSettings
                 {
                     "li", new()
                     {
-                        Classes = $"nav-item nav-{PageId}",
+                        Classes = $"nav-item nav-{MagicTokens.PageId}",
                         HasChildren = new("has-child dropdown"),
                         IsActive = new("active"),
                         IsDisabled = new("disabled"),
@@ -42,7 +44,7 @@ internal class DefaultSettings
                     {
                         ByLevel = new()
                         {
-                            { ByLevelOtherKey, "dropdown-menu" },
+                            { MagicTokens.ByLevelOtherKey, "dropdown-menu" },
                             { 0, "navbar-nav" },
                         },
                     }

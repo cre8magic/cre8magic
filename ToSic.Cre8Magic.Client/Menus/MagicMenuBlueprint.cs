@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal;
+﻿using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Menus;
@@ -7,7 +6,7 @@ namespace ToSic.Cre8magic.Menus;
 /// <summary>
 /// Menu Design Settings
 /// </summary>
-public record MagicMenuBlueprint : MagicBlueprint, ICanClone<MagicMenuBlueprint>
+public partial record MagicMenuBlueprint : MagicBlueprint, ICanClone<MagicMenuBlueprint>
 {
     [PrivateApi]
     public MagicMenuBlueprint() { }
@@ -18,5 +17,4 @@ public record MagicMenuBlueprint : MagicBlueprint, ICanClone<MagicMenuBlueprint>
 
     MagicMenuBlueprint ICanClone<MagicMenuBlueprint>.CloneUnder(MagicMenuBlueprint? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
-
 }

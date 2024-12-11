@@ -4,6 +4,7 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Menus;
+using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings.Internal.Debug;
@@ -19,7 +20,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
 /// </summary>
-internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMagicSpellsService, IHasSpellsBook
+internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMagicSpellsService, IHasSpellsLibrary
 {
     /// <inheritdoc />>
     public IMagicSpellsService Setup(MagicThemePackage themePackage)
@@ -47,7 +48,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
 
     [field: AllowNull, MaybeNull]
     MagicDebugSettings IMagicSpellsService.Debug => field
-        ??= Books.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
+        ??= Library.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
 
     [field: AllowNull, MaybeNull]
     public MagicThemePackage ThemePackage { get => field ??= MagicThemePackage.Fallback; private set => field = value; }
@@ -114,7 +115,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
     /// <summary>
     /// actually internal
     /// </summary>
-    public List<DataWithJournal<MagicSpellsBook>> Books =>
+    public List<DataWithJournal<MagicSpellsBook>> Library =>
         libraryLoader.Books(ThemePackage, cache: false);
 
     #region Analytics
@@ -189,7 +190,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicMenuBlueprint> MenuBlueprints => field
-        ??= new(this, DefaultSettings.Defaults, book => book.MenuBlueprints);
+        ??= new(this, MagicMenuBlueprint.Defaults, book => book.MenuBlueprints);
 
     #endregion
 

@@ -1,16 +1,16 @@
-﻿using System.Text.Json.Serialization;
-using System.Text.Json;
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
 
-namespace ToSic.Cre8magic.Settings.Internal.Json;
+namespace ToSic.Cre8magic.Internal.Json;
 
 /// <summary>
 /// Inspired by https://stackoverflow.com/a/67308143/5044294
 /// </summary>
 /// <typeparam name="TValue"></typeparam>
-internal sealed class CaseInsensitiveDictionaryConverter<TValue>
-    : JsonConverter<Dictionary<string, TValue>>
+internal sealed class CaseInsensitiveInterfaceDictionaryConverter<TValue>
+    : JsonConverter<IDictionary<string, TValue>>
 {
-    public override Dictionary<string, TValue>? Read(
+    public override IDictionary<string, TValue>? Read(
         ref Utf8JsonReader reader,
         Type typeToConvert,
         JsonSerializerOptions options)
@@ -27,7 +27,7 @@ internal sealed class CaseInsensitiveDictionaryConverter<TValue>
 
     public override void Write(
         Utf8JsonWriter writer,
-        Dictionary<string, TValue> value,
+        IDictionary<string, TValue> value,
         JsonSerializerOptions options)
     {
         JsonSerializer.Serialize(writer, value, value.GetType(), options);

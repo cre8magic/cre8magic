@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Settings.Internal.Json;
+using ToSic.Cre8magic.Internal.Json;
 
 namespace ToSic.Cre8magic.ClientUnitTests.JsonConverterTests;
 

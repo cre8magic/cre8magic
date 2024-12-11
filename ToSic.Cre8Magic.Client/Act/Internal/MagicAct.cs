@@ -31,7 +31,7 @@ internal class MagicAct(
     MagicLazy<IMagicUserService> userSvc,
     MagicLazy<IUserLoginService> userKitSvc,
     MagicLazy<IMagicThemeService> themeSvc,
-    MagicLazy<IMagicSettingsProvider> settingsProviderSvc,
+    MagicLazy<IMagicSpellsProvider> settingsProviderSvc,
     MagicLazy<IMagicLinkService> linkSvc,
     MagicLazy<IMagicContainerService> containerSvc,
     MagicLazy<IMagicMenuService> menuSvc) : IMagicAct
@@ -50,9 +50,9 @@ internal class MagicAct(
         return this;
     }
 
-    public IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc)
+    public IMagicAct UseSettingsProvider(Func<IMagicSpellsProvider, IMagicSpellsProvider> providerFunc)
     {
-        var provider = new MagicSettingsProvider();
+        var provider = new MagicSpellsProvider();
         var result = providerFunc(provider);
         var cat = result?.Book;
         if (cat != null)

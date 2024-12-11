@@ -7,16 +7,16 @@ using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
-internal static class MagicSettingsGetSettings
+internal static class GetSpell
 {
-    internal static Data3WithJournal<TSettingsBase, CmThemeContext, MagicThemePartSettings?> GetBestSettings<TSettings, TSettingsBase>(
-    this IMagicSpellsService spellsSvc,
-    PageState? pageStateForCachingOnly,
-    TSettings? settings,
-    SettingsReader<TSettingsBase> settingsReader,
-    string settingsPrefix,
-    string defaultPartNameForShow
-)
+    internal static Data3WithJournal<TSettingsBase, CmThemeContext, MagicThemePartSettings?> GetBestSpell<TSettings, TSettingsBase>(
+        this IMagicSpellsService spellsSvc,
+        PageState? pageStateForCachingOnly,
+        TSettings? settings,
+        SettingsReader<TSettingsBase> settingsReader,
+        string settingsPrefix,
+        string defaultPartNameForShow
+    )
     where TSettings : TSettingsBase, ISettingsForCodeUse, new()
     where TSettingsBase : class, new()
     {
@@ -80,7 +80,7 @@ internal static class MagicSettingsGetSettings
         where TDesign : class, new() where TSettingsBase : class, new()
     {
 
-        var (mergedSettings, themeCtx, part, journal) = spellsSvc.GetBestSettings(pageState, settings, settingsReader, settingPrefix, defaultPartNameForShow);
+        var (mergedSettings, themeCtx, part, journal) = spellsSvc.GetBestSpell(pageState, settings, settingsReader, settingPrefix, defaultPartNameForShow);
 
         // Activate this for debugging
         //if (settings is IDebugSettings { DebugThis: true } tempForDebug)

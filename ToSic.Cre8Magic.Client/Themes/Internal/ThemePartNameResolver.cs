@@ -1,10 +1,10 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Docs;
+﻿using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Docs;
 using ToSic.Cre8magic.Settings.Internal.Journal;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Settings.Internal;
+namespace ToSic.Cre8magic.Themes.Internal;
 
 /// <summary>
 /// Helper to figure out what name we should use for the settings we retrieve.

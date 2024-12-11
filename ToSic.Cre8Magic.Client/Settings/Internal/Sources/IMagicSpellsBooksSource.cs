@@ -2,7 +2,7 @@
 
 namespace ToSic.Cre8magic.Settings.Internal.Sources;
 
-public interface IMagicSettingsSource
+public interface IMagicSpellsBooksSource
 {
     List<DataWithJournal<MagicSpellsBook>> SpellsBooks(MagicThemePackage themePackage);
 

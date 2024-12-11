@@ -78,17 +78,17 @@ public static class ServiceRegistration
     {
         // 2024-11-21 2dm test, was registered both scoped and transient, probably transient is ok
         services.TryAddTransient<MagicSpellsBookLoaderJson>();
-        services.AddScoped<IMagicSettingsSource, MagicSettingsSourceJson>();
-        services.AddTransient<IMagicSettingsSource, MagicSettingsSourcePackageDefaults>();
+        services.AddScoped<IMagicSpellsBooksSource, MagicSpellsBooksSourceJson>();
+        services.AddTransient<IMagicSpellsBooksSource, MagicSpellsBooksSourceThemeDefaults>();
 
         return services;
     }
     public static IServiceCollection AddCre8magicSettingsSourceProvider(this IServiceCollection services)
     {
         // Main Settings Provider, scoped, to be used on two following interfaces
-        services.TryAddScoped<MagicSettingsProvider>();
-        services.TryAddTransient<IMagicSettingsProvider>(s => s.GetRequiredService<MagicSettingsProvider>());
-        services.AddTransient<IMagicSettingsSource>(s => s.GetRequiredService<MagicSettingsProvider>());
+        services.TryAddScoped<MagicSpellsProvider>();
+        services.TryAddTransient<IMagicSpellsProvider>(s => s.GetRequiredService<MagicSpellsProvider>());
+        services.AddTransient<IMagicSpellsBooksSource>(s => s.GetRequiredService<MagicSpellsProvider>());
 
         return services;
     }

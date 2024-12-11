@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Settings.Internal.Sources;
 /// It requires that there are <see cref="MagicThemePackage"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-internal class MagicSettingsSourceJson(MagicSpellsBookLoaderJson bookLoaderJson) : IMagicSettingsSource
+internal class MagicSpellsBooksSourceJson(MagicSpellsBookLoaderJson bookLoaderJson) : IMagicSpellsBooksSource
 {
     public int Priority => 100;
 

@@ -83,7 +83,7 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
 
 
     [field: AllowNull, MaybeNull]
-    public string MenuId => field ??= SettingsUtils.RandomLongId(Id);
+    public string MenuId => field ??= SpellHelpers.RandomLongId(Id);
 
     #region Code-Only Settings
 

@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal.Journal;
+﻿namespace ToSic.Cre8magic.Internal.Journal;
 
 public record Journal(List<string> Messages, List<Exception> Exceptions)
 {

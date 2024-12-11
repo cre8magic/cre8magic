@@ -35,7 +35,7 @@ internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThem
     }
 
     private Data3WithJournal<MagicPageContextSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicPageContextSpell? settings) =>
-        spellsSvc.GetBestSettings(
+        spellsSvc.GetBestSpell(
             pageState,
             settings,
             spellsSvc.PageContexts,

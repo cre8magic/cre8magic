@@ -16,10 +16,10 @@ public class SettingsProviderTestWithAnalytics
     /// Prepare a settings service and add a default value. 
     /// </summary>
     /// <returns></returns>
-    private static (IMagicSpellsService settingsSvc, IMagicSettingsProvider SettingsProvider, MagicAnalyticsSpell DefaultSettings) PrepareSettings()
+    private static (IMagicSpellsService settingsSvc, IMagicSpellsProvider SettingsProvider, MagicAnalyticsSpell DefaultSettings) PrepareSettings()
     {
         var di = SetupServices.Start().AddCre8magic().AddLogging().Finish();
-        var settingsProvider = di.GetRequiredService<IMagicSettingsProvider>();
+        var settingsProvider = di.GetRequiredService<IMagicSpellsProvider>();
         var settingsSvc = di.GetRequiredService<IMagicSpellsService>();
         var original = new MagicAnalyticsSpell { GtmId = DataValueOfOriginal };
         settingsProvider.Analytics.SetDefault(original);
@@ -34,7 +34,7 @@ public class SettingsProviderTestWithAnalytics
     public void ValueOnlyNotNamed(string? name)
     {
         var (settingsSvc, settingsProvider, original) = PrepareSettings();
-        var retrieved2 = settingsSvc.GetBestSettings(
+        var retrieved2 = settingsSvc.GetBestSpell(
             null,
             new MagicAnalyticsSpell { SettingsName = name },
             settingsSvc.Analytics,
@@ -60,7 +60,7 @@ public class SettingsProviderTestWithAnalytics
         var namedSettings = new MagicAnalyticsSpell { GtmId = DataValueOfOriginal + "-named" };
         settingsProvider.Analytics.Provide(addName, namedSettings);
 
-        var retrieved = settingsSvc.GetBestSettings(
+        var retrieved = settingsSvc.GetBestSpell(
             null,
             new MagicAnalyticsSpell { SettingsName = searchName },
             settingsSvc.Analytics,
@@ -95,12 +95,12 @@ public class SettingsProviderTestWithAnalytics
     public void BothInterfacesOnServiceProviderGiveSameObject()
     {
         var serviceProvider = SetupServices.Start().AddCre8magic().AddStandardLogging().Finish();
-        var original = serviceProvider.GetRequiredService<MagicSettingsProvider>();
-        var settingsProvider = serviceProvider.GetRequiredService<IMagicSettingsProvider>();
+        var original = serviceProvider.GetRequiredService<MagicSpellsProvider>();
+        var settingsProvider = serviceProvider.GetRequiredService<IMagicSpellsProvider>();
 
         Assert.Equal(original, settingsProvider);
 
-        var allSettingsProviders = serviceProvider.GetRequiredService<IEnumerable<IMagicSettingsSource>>();
+        var allSettingsProviders = serviceProvider.GetRequiredService<IEnumerable<IMagicSpellsBooksSource>>();
         Assert.Contains(original, allSettingsProviders);
     }
 
