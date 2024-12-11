@@ -88,5 +88,5 @@ internal record MagicPage(Page RawPage, MagicPageFactory pageFactory, IMagicPage
     /// <inheritdoc />
     public virtual string? Value(string tagOrKey) => DesignHelper.Value(tagOrKey);
 
-    internal StartNodeRule? NodeRule { get; init; }
+    internal PagesPickRule? NodeRule { get; init; }
 }

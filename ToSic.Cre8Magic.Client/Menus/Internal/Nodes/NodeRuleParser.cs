@@ -21,7 +21,7 @@ internal partial class NodeRuleParser(LogRoot logRoot)
 
     internal Log Log { get; } = logRoot.GetLog("RuleParser");
 
-    public List<StartNodeRule> GetStartNodeRules(string? value)
+    public List<PagesPickRule> GetStartNodeRules(string? value)
     {
         if (_cache.TryGetValue(value ?? "", out var result))
             return result;
@@ -29,11 +29,11 @@ internal partial class NodeRuleParser(LogRoot logRoot)
         return result;
     }
 
-    private readonly Dictionary<string, List<StartNodeRule>> _cache = new();
+    private readonly Dictionary<string, List<PagesPickRule>> _cache = new();
 
-    public List<StartNodeRule> GenerateStartNodeRules(string? raw)
+    public List<PagesPickRule> GenerateStartNodeRules(string? raw)
     {
-        var l = Log.Fn<List<StartNodeRule>>($"{nameof(raw)}: '{raw}'");
+        var l = Log.Fn<List<PagesPickRule>>($"{nameof(raw)}: '{raw}'");
 
         if (!raw.HasText())
             return l.Return([], "no value, empty list");
@@ -60,8 +60,8 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                     : startCode;
 
                 // Start checking leading ".." or "." and remove them
-                var fromParent = afterId.StartsWith("..");
-                var fromCurrent = !fromParent && afterId.StartsWith('.');
+                var fromParent = afterId.StartsWith(MagicMenuSettings.StartPageParent);
+                var fromCurrent = !fromParent && afterId.StartsWith(MagicMenuSettings.StartPageCurrent);
                 var afterParentCurrent = fromParent || fromCurrent
                     ? afterId.TrimStart('.')
                     : afterId;
@@ -137,14 +137,14 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                         : (level, probablyShowChildren)
                     : (levelFromRootNeverNegative, probablyShowChildren);
 
-                return new StartNodeRule
+                return new PagesPickRule
                 {
                     Id = id,
                     Force = force,
                     Depth = depth,
                     ShowChildren =
-                        levelChildrenPair.ShowChildren, // useBreadcrumb || (!fromRoot && endWithSingleSlash),
-                    Level = levelChildrenPair.Level, // !fromRoot ? level : level > 0 ? level : 1,
+                        levelChildrenPair.ShowChildren,
+                    Level = levelChildrenPair.Level,
                     ModeInfo = modeInfo,
                     Raw = startCode
                 };

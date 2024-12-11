@@ -129,10 +129,10 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
             : result;
     }
 
-    internal static List<IMagicPage> CloneWithNodeRule(List<IMagicPage> result, StartNodeRule nodeRule) =>
+    internal static List<IMagicPage> CloneWithNodeRule(List<IMagicPage> result, PagesPickRule pickRule) =>
         result
             .Cast<MagicPage>()
-            .Select(mp => mp with { NodeRule = nodeRule })
+            .Select(mp => mp with { NodeRule = pickRule })
             .Cast<IMagicPage>()
             .ToList();
 

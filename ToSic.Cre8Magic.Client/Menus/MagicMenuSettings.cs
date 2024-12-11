@@ -72,7 +72,8 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     public string? Start { get; init; }
     public const char StartPageRootSlash = '/';
     public const string DoubleSlash = "//";
-    public const string StartPageCurrent = ".";
+    public const char StartPageCurrent = '.';
+    public const string StartPageParent = "..";
 
     /// <summary>
     /// The menu variant to use, for example `horizontal` or `vertical`.

@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.ClientUnitTests.MenuNodeRuleTests;
 
 public class MenuNodeRuleParserTests(ITestOutputHelper output)
 {
-    private void AssertRule(StartNodeRule expected)
+    private void AssertRule(PagesPickRule expected)
     {
         var logRoot = new LogRoot();
         NodeRuleParser parser = new(logRoot);

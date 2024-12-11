@@ -33,7 +33,7 @@ internal class NodeRulePicker(MagicPageFactory pageFactory, IMagicPage current, 
         return l.Return(startPages, startPages.LogPageList());
     }
 
-    internal List<IMagicPage> FindStartPageOfManyRules(List<StartNodeRule> startingPoints)
+    internal List<IMagicPage> FindStartPageOfManyRules(List<PagesPickRule> startingPoints)
     {
         var l = Log.Fn<List<IMagicPage>>(string.Join(',', startingPoints.Select(p => p.Id)));
         var result = startingPoints
@@ -42,67 +42,67 @@ internal class NodeRulePicker(MagicPageFactory pageFactory, IMagicPage current, 
         return l.Return(result, result.LogPageList());
     }
 
-    internal List<IMagicPage> FindStartPagesOfOneRule(StartNodeRule rule)
+    internal List<IMagicPage> FindStartPagesOfOneRule(PagesPickRule pickRule)
     {
-        var l = Log.Fn<List<IMagicPage>>($"Include hidden pages: {rule.Force}; Mode: {rule.ModeInfo}");
+        var l = Log.Fn<List<IMagicPage>>($"Include hidden pages: {pickRule.Force}; Mode: {pickRule.ModeInfo}");
 
         // Start by getting all the anchors - the pages to start from, before we know about children or not
         // Three cases: root, current, ...
-        var pages = FindInitialPagesRaw(rule);
+        var pages = FindInitialPagesRaw(pickRule);
 
         // Attach Node Rule to each Page, so further processing knows the depth etc.
-        var result = MagicPageFactory.CloneWithNodeRule(pages, rule);
+        var result = MagicPageFactory.CloneWithNodeRule(pages, pickRule);
 
         return l.Return(result, result.LogPageList());
     }
 
 
-    internal List<IMagicPage> FindInitialPagesRaw(StartNodeRule rule)
+    internal List<IMagicPage> FindInitialPagesRaw(PagesPickRule pickRule)
     {
-        var l = Log.Fn<List<IMagicPage>>($"Rule raw: '{rule.Raw}'; Mode: {rule.ModeInfo} Level: {rule.Level}; Children: {rule.ShowChildren}; Force: {rule.Force}");
-        var source = rule.Force
+        var l = Log.Fn<List<IMagicPage>>($"Rule raw: '{pickRule.Raw}'; Mode: {pickRule.ModeInfo} Level: {pickRule.Level}; Children: {pickRule.ShowChildren}; Force: {pickRule.Force}");
+        var source = pickRule.Force
             ? PageFactory.PagesAll().ToList()
             : PageFactory.PagesCurrent().ToList();
 
-        switch (rule.ModeInfo)
+        switch (pickRule.ModeInfo)
         {
             case StartMode.PageId:
-                var pagesOfId = source.Where(p => p.Id == rule.Id).ToList();
-                var pagesOrChildren = MaybeGetChildren(rule, pagesOfId);
-                return l.Return(pagesOrChildren, $"Mode PageId; id: {rule.Id}");
+                var pagesOfId = source.Where(p => p.Id == pickRule.Id).ToList();
+                var pagesOrChildren = MaybeGetChildren(pickRule, pagesOfId);
+                return l.Return(pagesOrChildren, $"Mode PageId; id: {pickRule.Id}");
 
             case StartMode.Root:
-                var pagesOfRoot = source.LevelPages(rule.Level);
+                var pagesOfRoot = source.LevelPages(pickRule.Level);
                 pagesOrChildren = pagesOfRoot;// MaybeGetChildren(rule, pagesOfRoot);
                 return l.Return(pagesOrChildren, "Mode Root");
 
             // Level 0 means current level / current page
-            case StartMode.Current when rule.Level == 0:
-                pagesOrChildren = MaybeGetChildren(rule, [Current]);
+            case StartMode.Current when pickRule.Level == 0:
+                pagesOrChildren = MaybeGetChildren(pickRule, [Current]);
                 return l.Return(pagesOrChildren, "Mode: Current page");
 
-            case StartMode.Current when rule is { Level: 1, ShowChildren: false }:
+            case StartMode.Current when pickRule is { Level: 1, ShowChildren: false }:
                 pagesOfRoot = source.LevelPages(1);
                 return l.Return(pagesOfRoot, "Current with level=1");
 
-            case StartMode.Current when rule.Level > 0:
+            case StartMode.Current when pickRule.Level > 0:
                 // If coming from the top, level 1 means top level,
                 // so skip one less, since we'll always take the children below.
                 // If show children is explicit, take one more.
-                var skipDown = rule.Level - 1 + (rule.ShowChildren ? 1 : 0);
+                var skipDown = pickRule.Level - 1 + (pickRule.ShowChildren ? 1 : 0);
                 var (breadcrumb, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
                 var fromTop = breadcrumb.Skip(skipDown).FirstOrDefault();
                 if (fromTop == null)
                     return l.Return([], $"from root to breadcrumb by {skipDown} = empty");
 
                 List<IMagicPage> fromTopResult = [..fromTop.Children];
-                pagesOrChildren = MaybeGetChildren(rule, fromTopResult);
+                pagesOrChildren = MaybeGetChildren(pickRule, fromTopResult);
                 return l.Return(pagesOrChildren, $"from root to breadcrumb by {skipDown}");
 
-            case StartMode.Current when rule.Level < 0:
+            case StartMode.Current when pickRule.Level < 0:
                 // If going up, must change skip to positive number
-                var skipUp = Math.Abs(rule.Level);
-                l.A($"Mode: Current; Level: {rule.Level}; ShowChildren: {rule.ShowChildren} / {rule.ShowChildren}; {nameof(skipUp)} {skipUp}");
+                var skipUp = Math.Abs(pickRule.Level);
+                l.A($"Mode: Current; Level: {pickRule.Level}; ShowChildren: {pickRule.ShowChildren} / {pickRule.ShowChildren}; {nameof(skipUp)} {skipUp}");
 
                 (breadcrumb, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
                 var fromCurrent = breadcrumb.Reverse().Skip(skipUp).FirstOrDefault();
@@ -112,11 +112,11 @@ internal class NodeRulePicker(MagicPageFactory pageFactory, IMagicPage current, 
                 // If we came up, and are on the home page,
                 // we _only_ all level1 pages if children are requested
                 if (fromCurrent.IsHome)
-                    return rule.ShowChildren
+                    return pickRule.ShowChildren
                         ? l.Return(source.LevelPages(1), "root, children")
                         : l.Return([], "root, no children");
 
-                pagesOrChildren = MaybeGetChildren(rule, [fromCurrent]);
+                pagesOrChildren = MaybeGetChildren(pickRule, [fromCurrent]);
                 return l.Return(pagesOrChildren, $"up the ancestors by {skipUp}");
 
             case StartMode.Undefined:
@@ -126,12 +126,12 @@ internal class NodeRulePicker(MagicPageFactory pageFactory, IMagicPage current, 
         }
     }
 
-    private List<IMagicPage> MaybeGetChildren(StartNodeRule rule, List<IMagicPage> anchorPages)
+    private List<IMagicPage> MaybeGetChildren(PagesPickRule pickRule, List<IMagicPage> anchorPages)
     {
-        var l = Log.Fn<List<IMagicPage>>($"{nameof(rule.ShowChildren)}: {rule.ShowChildren}");
+        var l = Log.Fn<List<IMagicPage>>($"{nameof(pickRule.ShowChildren)}: {pickRule.ShowChildren}");
 
         // only get children if we are not on root (because then we already have the children)
-        var result = rule.ShowChildren
+        var result = pickRule.ShowChildren
             ? anchorPages.SelectMany(GetPageChildren).ToList()
             : anchorPages;
 

@@ -1,6 +1,9 @@
 ﻿namespace ToSic.Cre8magic.Menus.Internal.Nodes;
 
-internal record StartNodeRule
+/// <summary>
+/// Rule / specs for picking / finding a page.
+/// </summary>
+internal record PagesPickRule
 {
     public int Id { get; init; } = 0;
 

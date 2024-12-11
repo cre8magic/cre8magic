@@ -14,7 +14,7 @@ public class NodeRulePickerTests(ITestOutputHelper output)
     private List<IMagicPage> GetPagesRaw(int id, string? rule) =>
         GetPagesRawWithRule(id, rule).List;
 
-    private (List<IMagicPage> List, StartNodeRule NodeRule) GetPagesRawWithRule(int id, string? rule)
+    private (List<IMagicPage> List, PagesPickRule NodeRule) GetPagesRawWithRule(int id, string? rule)
     {
         var pageFactory = PageTestData.PageFactoryForPage(id);
         var logRoot = new LogRoot();
