@@ -1,24 +1,31 @@
-﻿using ToSic.Cre8magic.ClientUnitTests.PagesData;
+﻿using System.Text.Json;
+using ToSic.Cre8magic.ClientUnitTests.PagesData;
+using ToSic.Cre8magic.ClientUnitTests.Utils;
 using ToSic.Cre8magic.Menus.Internal.Nodes;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils.Logging;
+using Xunit.Abstractions;
 
 namespace ToSic.Cre8magic.ClientUnitTests.MenuNodeRuleTests;
 
-public class NodeRulePickerTests
+public class NodeRulePickerTests(ITestOutputHelper output)
 {
     private static NodeRuleParser Parser => new(new());
-    private static List<IMagicPage> GetPagesRaw(int id, string? rule) =>
+    private List<IMagicPage> GetPagesRaw(int id, string? rule) =>
         GetPagesRawWithRule(id, rule).List;
 
-    private static (List<IMagicPage> List, StartNodeRule NodeRule) GetPagesRawWithRule(int id, string? rule)
+    private (List<IMagicPage> List, StartNodeRule NodeRule) GetPagesRawWithRule(int id, string? rule)
     {
         var pageFactory = PageTestData.PageFactoryForPage(id);
-        var picker = new NodeRulePicker(pageFactory, pageFactory.Current, new LogRoot().GetLog("dummy"));
+        var logRoot = new LogRoot();
+        var picker = new NodeRulePicker(pageFactory, pageFactory.Current, logRoot.GetLog("PageFactory"));
 
         rule ??= id.ToString();
-        var nodeRule = Parser.GetStartNodeRules(rule).Single();
+        NodeRuleParser parser = new(logRoot);
+        var nodeRule = parser.GetStartNodeRules(rule).Single();
         var list = picker.FindInitialPagesRawTac(nodeRule);
+        logRoot.Dump(output);
+        output.WriteLine("");
         return (list, nodeRule);
     }
 
@@ -81,9 +88,31 @@ public class NodeRulePickerTests
     [InlineData(PageTestData.ProductsId, ".//3", 0)]
     [InlineData(PageTestData.ProductsId, "../", PageTestData.ExpectedTopLevel)]
     //[InlineData(PageTestData.ProductsId, ".//-1", PageTestData.ExpectedTopLevel)]
-    public void ChildrenOfAncestor(int productId, string rule, int expectedCount)
+    public void ChildrenOfRootAncestor(int productId, string rule, int expectedCount)
     {
         var result = GetPagesRawWithRule(productId, rule);
         Assert.Equal(expectedCount, result.List.Count);
+    }
+
+    [Theory]
+    [InlineData(PageTestData.ProductsId, ".", 1, "products: self")]
+    [InlineData(PageTestData.ProductsId, "..", 0, "products: parent = root")]
+    [InlineData(PageTestData.ProductsId, "../", PageTestData.ExpectedTopLevel, "products: parent/children = top-level")]
+    [InlineData(PageTestData.ProductsId, ".//", PageTestData.ExpectedTopLevel, "products: top level, no -")]
+    [InlineData(PageTestData.ProductsId, ".//-1", PageTestData.ExpectedTopLevel, "products: -1 = children-of-parent")]
+    [InlineData(PageTestData.ProductsId, ".//-2", 0, "products: -2 = not found")]
+    [InlineData(PageTestData.ElectronicsId, "../", PageTestData.ExpectedProducts, "electronics: parent-children = siblings")]
+    [InlineData(PageTestData.ElectronicsId, ".//-1", PageTestData.ExpectedProducts, "electronics: parent")]
+    [InlineData(PageTestData.ElectronicsId, ".//-2", PageTestData.ExpectedTopLevel)]
+    [InlineData(PageTestData.PhonesId, "../", PageTestData.ExpectedElectronics)]
+    [InlineData(PageTestData.PhonesId, ".//-1", PageTestData.ExpectedElectronics)]
+    [InlineData(PageTestData.PhonesId, ".//-2", PageTestData.ExpectedProducts)]
+    [InlineData(PageTestData.PhonesId, ".//-3", PageTestData.ExpectedTopLevel)]
+    public void ChildrenOfAncestor(int productId, string rule, int expectedCount, string note = default)
+    {
+        var (list, nodeRule) = GetPagesRawWithRule(productId, rule);
+        output.WriteLine($"Rule: {nodeRule.Raw}; Mode: '{nodeRule.ModeInfo}' ({note})");
+        output.WriteLine(JsonSerializer.Serialize(nodeRule));
+        Assert.Equal(expectedCount, list.Count);
     }
 }

@@ -31,51 +31,59 @@ internal partial class NodeRuleParser(LogRoot logRoot)
 
     private readonly Dictionary<string, List<StartNodeRule>> _cache = new();
 
-    public List<StartNodeRule> GenerateStartNodeRules(string? value)
+    public List<StartNodeRule> GenerateStartNodeRules(string? raw)
     {
-        var l = Log.Fn<List<StartNodeRule>>($"{nameof(value)}: '{value}'");
+        var l = Log.Fn<List<StartNodeRule>>($"{nameof(raw)}: '{raw}'");
 
-        if (!value.HasText())
+        if (!raw.HasText())
             return l.Return([], "no value, empty list");
 
-        var parts = value.Split(',')
+        var parts = raw.Split(',')
             .Select(s => s.Trim())
             .Where(s => s.HasText())
             .ToList();
 
-        var result = parts
-            .Select(startCode =>
+        l.A($"Parts: {parts.Count}");
+
+        var result = parts.Select(startCode =>
             {
-                var processed = startCode;
+                l.A($"Parsing Rule: '{startCode}'");
 
                 // Check if starting with a Page ID
-                var idMatch = FindPageId().Match(processed);
+                var idMatch = FindPageId().Match(startCode);
                 var id = idMatch.Success
                     ? int.TryParse(idMatch.Groups["page"].Value, out var idTemp) ? idTemp : 0
                     : 0;
 
-                if (idMatch.Success)
-                    processed = idMatch.Groups["rest"].Value;
+                var afterId = idMatch.Success
+                    ? idMatch.Groups["rest"].Value
+                    : startCode;
 
                 // Start checking leading ".." or "." and remove them
-                var fromParent = processed.StartsWith("..");
-                var fromCurrent = !fromParent && processed.StartsWith('.');
-                if (fromParent || fromCurrent)
-                    processed = processed.TrimStart('.');
+                var fromParent = afterId.StartsWith("..");
+                var fromCurrent = !fromParent && afterId.StartsWith('.');
+                var afterParentCurrent = fromParent || fromCurrent
+                    ? afterId.TrimStart('.')
+                    : afterId;
 
                 // Check for trailing "!" to force the page (only for PageId)
-                var force = processed.StartsWith(PageForced);
+                var force = afterParentCurrent.StartsWith(PageForced);
                 var afterForce = force
-                    ? processed.TrimStart(PageForced)
-                    : processed;
+                    ? afterParentCurrent.TrimStart(PageForced)
+                    : afterParentCurrent;
 
-                // Check starting "/" or "//"
-                var fromRoot = !(fromCurrent || fromParent || id != 0) && afterForce.StartsWith(MagicMenuSettings.StartPageRootSlash);
+                // Check starting "/" or "//" if other from... did not match
+                var fromNotYetSet = !fromCurrent && !fromParent && id == 0;
+                var fromRoot = fromNotYetSet && afterId.StartsWith(MagicMenuSettings.StartPageRootSlash);
+                var useRootBreadcrumb = fromNotYetSet && afterId.StartsWith(MagicMenuSettings.DoubleSlash);
+
+                l.A($"Starts at {nameof(fromCurrent)}: {fromCurrent}; {nameof(fromParent)}: {fromParent}; {nameof(fromRoot)}: {fromRoot}; {nameof(force)}: {force}");
+                l.A($"Progress: '{startCode}' > '{afterId}' > '{afterParentCurrent}' > '{afterForce}'");
 
                 // The string processed now should start with a number, which we should extract using regex
-                var levelMatch = FindLevelNumber().Match(afterForce);
+                var levelMatch = FindLevelNumberAfterDoubleSlash().Match(afterForce);
                 var defLevel = fromParent ? -1 : fromCurrent ? 0 : 1;
-                var level = levelMatch.Success
+                var likelyLevel = levelMatch.Success
                     ? int.TryParse(levelMatch.Groups["level"].Value, out var lvl) ? lvl : defLevel
                     : defLevel;
 
@@ -86,9 +94,16 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                     : afterForce;
 
                 // If we still have "//" then it was without a level number, so default to 0
-                var startsWithDoubleSlash = afterLevelMatch.StartsWith("" + MagicMenuSettings.StartPageRootSlash + MagicMenuSettings.StartPageRootSlash);
-                level = startsWithDoubleSlash ? 1 : level;
-                var afterDoubleSlash = startsWithDoubleSlash
+                var useBreadcrumb = levelMatch.Success || useRootBreadcrumb || afterLevelMatch.StartsWith(MagicMenuSettings.DoubleSlash);
+                var level = (useRootBreadcrumb && likelyLevel < 0) || (useBreadcrumb && likelyLevel == 0)
+                    ? 1
+                    : likelyLevel;
+
+                l.A($"{nameof(likelyLevel)}: {likelyLevel}; {nameof(useBreadcrumb)}: {useBreadcrumb}; {nameof(level)}: {level}");
+                l.A($"Progress: '{afterForce}' > '{afterLevelMatch}'");
+                
+
+                var afterDoubleSlash = useBreadcrumb
                     ? afterLevelMatch.TrimStart(MagicMenuSettings.StartPageRootSlash)
                     : afterLevelMatch;
 
@@ -109,20 +124,34 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                             ? StartMode.Current
                             : StartMode.Unknown;
 
+                var levelFromRootNeverNegative = !fromRoot
+                    ? level
+                    : level > 0
+                        ? level
+                        : 1;
+
+                var probablyShowChildren = !fromRoot && endWithSingleSlash;
+                (int Level, bool ShowChildren) levelChildrenPair = useBreadcrumb
+                    ? level < 1
+                        ? (level, true)
+                        : (level, probablyShowChildren)
+                    : (levelFromRootNeverNegative, probablyShowChildren);
+
                 return new StartNodeRule
                 {
                     Id = id,
                     Force = force,
                     Depth = depth,
-                    ShowChildren = !fromRoot && endWithSingleSlash,
-                    Level = !fromRoot ? level : level > 0 ? level : 1,
+                    ShowChildren =
+                        levelChildrenPair.ShowChildren, // useBreadcrumb || (!fromRoot && endWithSingleSlash),
+                    Level = levelChildrenPair.Level, // !fromRoot ? level : level > 0 ? level : 1,
                     ModeInfo = modeInfo,
                     Raw = startCode
                 };
             })
             .ToList();
 
-        return l.ReturnAndKeepData(result, result.Count.ToString());
+        return l.ReturnAndKeepData(result, $"Rules: {result.Count}");
     }
 
     /// <summary>
@@ -130,7 +159,7 @@ internal partial class NodeRuleParser(LogRoot logRoot)
     /// </summary>
     /// <returns></returns>
     [GeneratedRegex(@"^//(?<level>-?\d+)(?<rest>.*)")]
-    private static partial Regex FindLevelNumber();
+    private static partial Regex FindLevelNumberAfterDoubleSlash();
 
     [GeneratedRegex(@"^(?<page>\d+)(?<rest>.*)")]
     private static partial Regex FindPageId();

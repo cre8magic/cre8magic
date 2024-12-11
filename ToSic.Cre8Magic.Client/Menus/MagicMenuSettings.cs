@@ -71,6 +71,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     /// </summary>
     public string? Start { get; init; }
     public const char StartPageRootSlash = '/';
+    public const string DoubleSlash = "//";
     public const string StartPageCurrent = ".";
 
     /// <summary>

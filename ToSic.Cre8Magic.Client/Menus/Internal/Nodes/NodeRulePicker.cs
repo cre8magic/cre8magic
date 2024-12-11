@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using System.Net.Security;
+using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Utils.Logging;
 
@@ -56,22 +57,9 @@ internal class NodeRulePicker(MagicPageFactory pageFactory, IMagicPage current, 
     }
 
 
-    private List<IMagicPage> MaybeGetChildren(StartNodeRule rule, List<IMagicPage> anchorPages)
-    {
-        var l = Log.Fn<List<IMagicPage>>($"{nameof(rule.ShowChildren)}: {rule.ShowChildren}");
-
-        // only get children if we are not on root (because then we already have the children)
-        var result = rule.ShowChildren
-            ? anchorPages.SelectMany(GetPageChildren).ToList()
-            : anchorPages;
-        
-        return l.Return(result, result.LogPageList());
-    }
-
-
     internal List<IMagicPage> FindInitialPagesRaw(StartNodeRule rule)
     {
-        var l = Log.Fn<List<IMagicPage>>();
+        var l = Log.Fn<List<IMagicPage>>($"Rule raw: '{rule.Raw}'; Mode: {rule.ModeInfo} Level: {rule.Level}; Children: {rule.ShowChildren}; Force: {rule.Force}");
         var source = rule.Force
             ? PageFactory.PagesAll().ToList()
             : PageFactory.PagesCurrent().ToList();
@@ -81,22 +69,21 @@ internal class NodeRulePicker(MagicPageFactory pageFactory, IMagicPage current, 
             case StartMode.PageId:
                 var pagesOfId = source.Where(p => p.Id == rule.Id).ToList();
                 var pagesOrChildren = MaybeGetChildren(rule, pagesOfId);
-                return l.Return(pagesOrChildren, $"Page with id {rule.Id}");
+                return l.Return(pagesOrChildren, $"Mode PageId; id: {rule.Id}");
 
             case StartMode.Root:
                 var pagesOfRoot = source.LevelPages(rule.Level);
-                pagesOrChildren = MaybeGetChildren(rule, pagesOfRoot);
-                return l.Return(pagesOrChildren, "Home/root");
+                pagesOrChildren = pagesOfRoot;// MaybeGetChildren(rule, pagesOfRoot);
+                return l.Return(pagesOrChildren, "Mode Root");
 
             // Level 0 means current level / current page
             case StartMode.Current when rule.Level == 0:
                 pagesOrChildren = MaybeGetChildren(rule, [Current]);
-                return l.Return(pagesOrChildren, "Current page");
+                return l.Return(pagesOrChildren, "Mode: Current page");
 
             case StartMode.Current when rule is { Level: 1, ShowChildren: false }:
                 pagesOfRoot = source.LevelPages(1);
-                pagesOrChildren = MaybeGetChildren(rule, pagesOfRoot);
-                return l.Return(pagesOrChildren, "Current with level=1");
+                return l.Return(pagesOfRoot, "Current with level=1");
 
             case StartMode.Current when rule.Level > 0:
                 // If coming from the top, level 1 means top level,
@@ -106,20 +93,30 @@ internal class NodeRulePicker(MagicPageFactory pageFactory, IMagicPage current, 
                 var (breadcrumb, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
                 var fromTop = breadcrumb.Skip(skipDown).FirstOrDefault();
                 if (fromTop == null)
-                    return l.Return([], $"from root to breadcrumb by {skipDown}");
+                    return l.Return([], $"from root to breadcrumb by {skipDown} = empty");
 
-                // Todo: this .Children looks a bit fishy, must check if numbers are correct
                 List<IMagicPage> fromTopResult = [..fromTop.Children];
                 pagesOrChildren = MaybeGetChildren(rule, fromTopResult);
                 return l.Return(pagesOrChildren, $"from root to breadcrumb by {skipDown}");
 
             case StartMode.Current when rule.Level < 0:
-                // If going up, must change skip to normal
+                // If going up, must change skip to positive number
                 var skipUp = Math.Abs(rule.Level);
+                l.A($"Mode: Current; Level: {rule.Level}; ShowChildren: {rule.ShowChildren} / {rule.ShowChildren}; {nameof(skipUp)} {skipUp}");
+
                 (breadcrumb, _) = PageFactory.Breadcrumb.Get(new() { Pages = source, Active = Current });
                 var fromCurrent = breadcrumb.Reverse().Skip(skipUp).FirstOrDefault();
-                List<IMagicPage> fromCurrentResult = fromCurrent == null ? [] : [fromCurrent];
-                pagesOrChildren = MaybeGetChildren(rule, fromCurrentResult);
+                if (fromCurrent == null)
+                    return l.Return([], "nothing found; return empty");
+
+                // If we came up, and are on the home page,
+                // we _only_ all level1 pages if children are requested
+                if (fromCurrent.IsHome)
+                    return rule.ShowChildren
+                        ? l.Return(source.LevelPages(1), "root, children")
+                        : l.Return([], "root, no children");
+
+                pagesOrChildren = MaybeGetChildren(rule, [fromCurrent]);
                 return l.Return(pagesOrChildren, $"up the ancestors by {skipUp}");
 
             case StartMode.Undefined:
@@ -129,21 +126,25 @@ internal class NodeRulePicker(MagicPageFactory pageFactory, IMagicPage current, 
         }
     }
 
+    private List<IMagicPage> MaybeGetChildren(StartNodeRule rule, List<IMagicPage> anchorPages)
+    {
+        var l = Log.Fn<List<IMagicPage>>($"{nameof(rule.ShowChildren)}: {rule.ShowChildren}");
+
+        // only get children if we are not on root (because then we already have the children)
+        var result = rule.ShowChildren
+            ? anchorPages.SelectMany(GetPageChildren).ToList()
+            : anchorPages;
+
+        return l.Return(result, result.LogPageList());
+    }
+
 
     private List<IMagicPage> GetPageChildren(IMagicPage referencePage)
     {
         var l = Log.Fn<List<IMagicPage>>($"{referencePage.Id}; level");
 
-        // Get children of current page
-        // Note that if the current page is home, and it actually has children, then this is what we want
         var ofPage = referencePage.Children.ToList();
-        if (ofPage.Count > 0 || !referencePage.IsHome)
-            return l.Return(ofPage, "children - " + ofPage.LogPageList());
-
-        // special case: if it's home, then we may just want to show all level1 pages
-        // since "Home" usually doesn't have direct child pages, but behaves as if it does
-        var ofHome = PageFactory.PagesCurrent().LevelPages(1);
-        return l.Return(ofHome, "children of home - " + ofHome.LogPageList());
+        return l.Return(ofPage, $"children: {ofPage.LogPageList()}");
     }
 
 }
