@@ -1,12 +1,13 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
 /// <summary>
 /// Language Design Settings
 /// </summary>
-public record MagicBreadcrumbBlueprint : MagicBlueprints, ICanClone<MagicBreadcrumbBlueprint>
+public record MagicBreadcrumbBlueprint : MagicBlueprint, ICanClone<MagicBreadcrumbBlueprint>
 {
     [PrivateApi]
     public MagicBreadcrumbBlueprint() { }

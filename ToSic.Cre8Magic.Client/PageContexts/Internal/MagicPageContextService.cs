@@ -7,38 +7,38 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.PageContexts.Internal;
 
-internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagicThemeJsService jsSvc) : IMagicPageContextService
+internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThemeJsService jsSvc) : IMagicPageContextService
 {
     private const string OptionalPrefix = "pageContext-";
     private const string DefaultPartName = "PageContext";
 
-    public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings) =>
+    public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSpell? settings) =>
         _pageContexts.Get(pageState, () => BuildKit(pageState, settings));
     private readonly GetKeepByPageId<IMagicPageContextKit> _pageContexts = new();
 
 
-    private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSettings? settings)
+    private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSpell? settings)
     {
         var (settingsData, _, _, _) = MergeSettings(pageState, settings);
 
-        var themeCtx = settingsSvc.GetThemeContextFull(pageState);
+        var themeCtx = spellsSvc.GetThemeContextFull(pageState);
 
         var contextClasses = new MagicPageContextTailor(settingsData, pageState).BodyClasses(themeCtx.PageTokens, settings?.Classes);
         return new MagicPageContextKit
         {
             Classes = contextClasses,
-            Settings = settingsData,
+            Spell = settingsData,
             // Internals
             PageState = pageState,
             Service = this
         };
     }
 
-    private Data3WithJournal<MagicPageContextSettings, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicPageContextSettings? settings) =>
-        settingsSvc.GetBestSettings(
+    private Data3WithJournal<MagicPageContextSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicPageContextSpell? settings) =>
+        spellsSvc.GetBestSettings(
             pageState,
             settings,
-            settingsSvc.PageContexts,
+            spellsSvc.PageContexts,
             OptionalPrefix,
             DefaultPartName
         );
@@ -46,7 +46,7 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
 
 
 
-    internal async Task UpdateBodyTag(PageState pageState, MagicPageContextSettings? settings)
+    internal async Task UpdateBodyTag(PageState pageState, MagicPageContextSpell? settings)
     {
         var state = PageContextKit(pageState, settings);
         if (!state.UseBodyTag)

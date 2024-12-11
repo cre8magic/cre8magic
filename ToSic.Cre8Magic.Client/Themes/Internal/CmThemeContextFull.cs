@@ -8,8 +8,8 @@ namespace ToSic.Cre8magic.Themes.Internal;
 public record CmThemeContextFull(
     string SettingsName,
     PageState PageState,
-    MagicThemeSettings ThemeSettings,
+    MagicThemeSpell ThemeSpell,
     MagicThemeBlueprint ThemeBlueprint,
     TokenEngine PageTokens,
     Journal Journal
-): CmThemeContext(SettingsName, ThemeSettings, Journal);
+): CmThemeContext(SettingsName, ThemeSpell, Journal);

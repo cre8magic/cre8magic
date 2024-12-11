@@ -6,19 +6,18 @@ using ToSic.Cre8magic.Settings.Internal.Docs;
 namespace ToSic.Cre8magic.Settings;
 
 /// <summary>
-/// Internal intermediate base class containing all kinds of settings which
-/// all settings share.
-/// 
+/// Internal base class containing all kinds of settings which
+/// all spells share.
 /// </summary>
-public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeUse, IHasDebugSettings, IDebugSettings
+public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, IHasDebugSettings, IDebugSettings
 {
     #region Constructor & Cloning
 
     [PrivateApi]
-    protected MagicSettingsBase() { }
+    protected MagicSpellBase() { }
 
     [PrivateApi]
-    protected MagicSettingsBase(MagicSettingsBase? priority, MagicSettingsBase? fallback = default)
+    protected MagicSpellBase(MagicSpellBase? priority, MagicSpellBase? fallback = default)
         : base(priority, fallback)
     {
         if (fallback == null)

@@ -66,7 +66,7 @@ public static class ServiceRegistration
     public static IServiceCollection AddCre8magicSettingsCore(this IServiceCollection services)
     {
         // All these Settings etc. should be scoped, so they don't have to reload for each click
-        services.TryAddScoped<IMagicSettingsService, MagicSettingsService>();
+        services.TryAddScoped<IMagicSpellsService, MagicSpellsService>();
 
         // Services used by SettingsService, which is scoped, so the dependencies can be normal transient
         services.TryAddTransient<MagicSpellsLibraryLoader>();

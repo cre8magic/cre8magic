@@ -2,7 +2,7 @@
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
-namespace ToSic.Cre8magic.Settings.Internal.Json;
+namespace ToSic.Cre8magic.Tailors.Internal;
 
 /// <summary>
 /// ...

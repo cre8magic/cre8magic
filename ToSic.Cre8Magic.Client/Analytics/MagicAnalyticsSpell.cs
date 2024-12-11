@@ -11,15 +11,15 @@ namespace ToSic.Cre8magic.Analytics;
 /// * Main caveat: Integration of the Google Tag Manager still has the GTM hardwired in the JS, must be finished.
 /// * Background is that the Module currently doesn't contain its own JS, so it's still part of the theme.
 /// </summary>
-public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyticsSettings>
+public record MagicAnalyticsSpell : MagicSpellBase, ICanClone<MagicAnalyticsSpell>
 {
     #region Constructor and Clone
 
     [PrivateApi]
-    public MagicAnalyticsSettings() { }
+    public MagicAnalyticsSpell() { }
 
     [PrivateApi]
-    internal MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
+    internal MagicAnalyticsSpell(MagicAnalyticsSpell? priority, MagicAnalyticsSpell? fallback = default)
         : base(priority, fallback)
     {
         GtmId = priority?.GtmId ?? fallback?.GtmId;
@@ -29,7 +29,7 @@ public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyti
         PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
     }
 
-    MagicAnalyticsSettings ICanClone<MagicAnalyticsSettings>.CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy) => 
+    MagicAnalyticsSpell ICanClone<MagicAnalyticsSpell>.CloneUnder(MagicAnalyticsSpell? priority, bool forceCopy) => 
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion
@@ -56,7 +56,7 @@ public record MagicAnalyticsSettings : MagicSettingsBase, ICanClone<MagicAnalyti
     public string? PageViewEvent { get; init; }
 
 
-    internal static Defaults<MagicAnalyticsSettings> Defaults = new(new()
+    internal static Defaults<MagicAnalyticsSpell> Defaults = new(new()
     {
         GtmId = null,
         PageViewTrack = false,

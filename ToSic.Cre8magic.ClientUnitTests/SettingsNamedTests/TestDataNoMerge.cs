@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.ClientUnitTests.SettingsNamedTests;
 internal record TestDataNoMerge: ICanClone<TestDataNoMerge>
 {
 
-    public string Name { get; init; }
+    public string? Name { get; init; }
 
     public int? Id { get; init; }
 
@@ -16,6 +16,6 @@ internal record TestDataNoMerge: ICanClone<TestDataNoMerge>
     /// </summary>
     public TestDataNoMerge CloneUnder(TestDataNoMerge? priority, bool forceCopy = false)
     {
-        return priority;
+        return priority!;
     }
 }

@@ -142,7 +142,7 @@ Class MagicTailorBase  <a class="header-action link-secondary" title="View sourc
 
   <a id="ToSic_Cre8magic_Tailors_MagicTailorBase__ctor_" data-uid="ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor*"></a>
 
-  <h3 id="ToSic_Cre8magic_Tailors_MagicTailorBase__ctor_ToSic_Cre8magic_Tokens_TokenEngine_System_Collections_Generic_Dictionary_System_String_ToSic_Cre8magic_Settings_MagicBlueprintPart__" data-uid="ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Settings.MagicBlueprintPart})">
+  <h3 id="ToSic_Cre8magic_Tailors_MagicTailorBase__ctor_ToSic_Cre8magic_Tokens_TokenEngine_System_Collections_Generic_Dictionary_System_String_ToSic_Cre8magic_Tailors_MagicBlueprintPart__" data-uid="ToSic.Cre8magic.Tailors.MagicTailorBase.#ctor(ToSic.Cre8magic.Tokens.TokenEngine,System.Collections.Generic.Dictionary{System.String,ToSic.Cre8magic.Tailors.MagicBlueprintPart})">
   MagicTailorBase(TokenEngine, Dictionary&lt;string, MagicBlueprintPart&gt;)
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Tailors/MagicTailorBase.cs/#L9"><i class="bi bi-code-slash"></i></a>
   </h3>
@@ -151,14 +151,14 @@ Class MagicTailorBase  <a class="header-action link-secondary" title="View sourc
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected MagicTailorBase(TokenEngine tokens, Dictionary&lt;string, MagicBlueprintPart&gt; designSettings)</code></pre>
+    <pre><code class="lang-csharp hljs">protected MagicTailorBase(TokenEngine tokens, Dictionary&lt;string, MagicBlueprintPart&gt; parts)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>tokens</code> <a class="xref" href="ToSic.Cre8magic.Tokens.TokenEngine.html">TokenEngine</a></dt>
     <dd></dd>
-    <dt><code>designSettings</code> <span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Settings.MagicBlueprintPart.html">MagicBlueprintPart</a>&gt;</dt>
+    <dt><code>parts</code> <span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Tailors.MagicBlueprintPart.html">MagicBlueprintPart</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -175,37 +175,6 @@ Class MagicTailorBase  <a class="header-action link-secondary" title="View sourc
 
   <h2 class="section" id="properties">Properties
 </h2>
-
-
-  <a id="ToSic_Cre8magic_Tailors_MagicTailorBase_DesignSettings_" data-uid="ToSic.Cre8magic.Tailors.MagicTailorBase.DesignSettings*"></a>
-
-  <h3 id="ToSic_Cre8magic_Tailors_MagicTailorBase_DesignSettings" data-uid="ToSic.Cre8magic.Tailors.MagicTailorBase.DesignSettings">
-  DesignSettings
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Tailors/MagicTailorBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected Dictionary&lt;string, MagicBlueprintPart&gt; DesignSettings { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Settings.MagicBlueprintPart.html">MagicBlueprintPart</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
 
 
   <a id="ToSic_Cre8magic_Tailors_MagicTailorBase_ParseTokens_" data-uid="ToSic.Cre8magic.Tailors.MagicTailorBase.ParseTokens*"></a>
@@ -229,6 +198,37 @@ Class MagicTailorBase  <a class="header-action link-secondary" title="View sourc
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><span class="xref">bool</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Tailors_MagicTailorBase_Parts_" data-uid="ToSic.Cre8magic.Tailors.MagicTailorBase.Parts*"></a>
+
+  <h3 id="ToSic_Cre8magic_Tailors_MagicTailorBase_Parts" data-uid="ToSic.Cre8magic.Tailors.MagicTailorBase.Parts">
+  Parts
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Tailors/MagicTailorBase.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Dictionary&lt;string, MagicBlueprintPart&gt; Parts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Tailors.MagicBlueprintPart.html">MagicBlueprintPart</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -301,7 +301,7 @@ Class MagicTailorBase  <a class="header-action link-secondary" title="View sourc
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicBlueprintPart.html">MagicBlueprintPart</a></dt>
+    <dt><a class="xref" href="ToSic.Cre8magic.Tailors.MagicBlueprintPart.html">MagicBlueprintPart</a></dt>
     <dd></dd>
   </dl>
 

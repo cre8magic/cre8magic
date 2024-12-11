@@ -11,6 +11,9 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public record MagicDebugSettings
 {
+    /// <summary>
+    /// For JSON deserialization
+    /// </summary>
     [PrivateApi]
     public MagicDebugSettings() { }
 

@@ -13,12 +13,12 @@ namespace ToSic.Cre8magic.Settings;
 /// </summary>
 public interface IMagicSettingsProvider
 {
-    IMagicSettingsProviderSection<MagicContainerSettings> Containers { get; }
+    IMagicSettingsProviderSection<MagicContainerSpell> Containers { get; }
 
-    IMagicSettingsProviderSection<MagicBreadcrumbSettings> Breadcrumbs { get; }
-    IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics { get; }
+    IMagicSettingsProviderSection<MagicBreadcrumbSpell> Breadcrumbs { get; }
+    IMagicSettingsProviderSection<MagicAnalyticsSpell> Analytics { get; }
     IMagicSettingsProviderSection<MagicMenuBlueprint> MenuBlueprints { get; }
-    IMagicSettingsProviderSection<MagicThemeSettings> Themes { get; }
+    IMagicSettingsProviderSection<MagicThemeSpell> Themes { get; }
     public void Reset();
     IMagicSettingsProvider Provide(MagicSpellsBook book);
 

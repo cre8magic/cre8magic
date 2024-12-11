@@ -1,9 +1,10 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Containers;
 
-public record MagicContainerBlueprint: MagicBlueprints, ICanClone<MagicContainerBlueprint>
+public record MagicContainerBlueprint: MagicBlueprint, ICanClone<MagicContainerBlueprint>
 {
     [PrivateApi]
     public MagicContainerBlueprint() { }

@@ -26,7 +26,7 @@ public static class MagicSettingsExtensions
     /// <param name="pageState">The PageState to back-fill</param>
     /// <returns></returns>
     public static TSettings Refill<TSettings>(this TSettings? settings, PageState pageState)
-        where TSettings : MagicSettingsBase, new()
+        where TSettings : MagicSpellBase, new()
     {
         settings ??= new();
         return settings.PageState != null ? settings : settings with { PageState = pageState };
@@ -43,7 +43,7 @@ public static class MagicSettingsExtensions
     /// <param name="pageState">The PageState</param>
     /// <returns></returns>
     public static TSettings With<TSettings>(this TSettings? settings, PageState pageState)
-        where TSettings : MagicSettingsBase, new() =>
+        where TSettings : MagicSpellBase, new() =>
         settings != null
             ? settings with { PageState = pageState }
             : new() { PageState = pageState };
@@ -51,7 +51,7 @@ public static class MagicSettingsExtensions
 
 
     public static TSettings Refill<TSettings, TWith>(this TSettings? settings, TWith? addition)
-        where TSettings : MagicSettingsBase, IWith<TWith?>, new()
+        where TSettings : MagicSpellBase, IWith<TWith?>, new()
         where TWith : class
     {
         settings ??= new();
@@ -59,27 +59,27 @@ public static class MagicSettingsExtensions
     }
 
     public static TSettings With<TSettings, TWith>(this TSettings? settings, TWith? addition)
-        where TSettings : MagicSettingsBase, IWith<TWith?>, new()
+        where TSettings : MagicSpellBase, IWith<TWith?>, new()
         where TWith : class =>
         settings != null
             ? settings with { WithData = addition }
             : new() { WithData = addition };
 
-    public static TSettings RefillLookup<TSettings>(this TSettings? settings, MagicSettingsLookup lookup)
-        where TSettings : MagicSettingsBase, new() =>
+    public static TSettings RefillLookup<TSettings>(this TSettings? settings, MagicSpellLookup lookup)
+        where TSettings : MagicSpellBase, new() =>
         (settings ??= new()) with
         {
             PartName = settings.PartName ?? lookup.PartName,
-            SettingsName = settings.SettingsName ?? lookup.SettingsName,
-            DesignName = settings.DesignName ?? lookup.DesignName,
+            SettingsName = settings.SettingsName ?? lookup.SpellName,
+            DesignName = settings.DesignName ?? lookup.BlueprintName,
         };
 
-    public static TSettings WithLookup<TSettings>(this TSettings? settings, MagicSettingsLookup lookup)
-        where TSettings : MagicSettingsBase, new() =>
+    public static TSettings WithLookup<TSettings>(this TSettings? settings, MagicSpellLookup lookup)
+        where TSettings : MagicSpellBase, new() =>
         (settings ??= new()) with
         {
             PartName = lookup.PartName ?? settings.PartName,
-            SettingsName = lookup.SettingsName ?? settings.SettingsName,
-            DesignName = lookup.DesignName ?? settings.DesignName,
+            SettingsName = lookup.SpellName ?? settings.SettingsName,
+            DesignName = lookup.BlueprintName ?? settings.DesignName,
         };
 }

@@ -8,17 +8,17 @@ using static ToSic.Cre8magic.Utils.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics.Internal;
 
-public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc) : IMagicAnalyticsService
+public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSpellsService spellsSvc) : IMagicAnalyticsService
 {
     private const string OptionalPrefix = "analytics-";
     private const string DefaultPartName = "Analytics";
 
     private const string GtmEvent = "event";
 
-    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null) =>
+    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSpell? settings = null) =>
         BuildKit(pageState, settings);
 
-    private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSettings? settings = null)
+    private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSpell? settings = null)
     {
         //var x = 7;
         //if ((settings as IDebugSettings)?.DebugThis == true)
@@ -29,7 +29,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
 
         var result = new MagicAnalyticsKit
         {
-            Settings = settingsData,
+            Spell = settingsData,
             PageState = pageState,
             Service = this
         };
@@ -37,11 +37,11 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
         return result;
     }
 
-    private Data3WithJournal<MagicAnalyticsSettings, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicAnalyticsSettings? settings) =>
-        settingsSvc.GetBestSettings(
+    private Data3WithJournal<MagicAnalyticsSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicAnalyticsSpell? settings) =>
+        spellsSvc.GetBestSettings(
             pageState,
             settings,
-            settingsSvc.Analytics,
+            spellsSvc.Analytics,
             OptionalPrefix,
             DefaultPartName
         );
@@ -54,7 +54,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
     /// <param name="settings"></param>
     /// <param name="isFirstRender"></param>
     /// <returns></returns>
-    internal async Task TrackPage(PageState pageState, MagicAnalyticsSettings? settings, bool isFirstRender)
+    internal async Task TrackPage(PageState pageState, MagicAnalyticsSpell? settings, bool isFirstRender)
     {
         if (settings == null) return;
         if (settings.PageViewTrack != true) return;

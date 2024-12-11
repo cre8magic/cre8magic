@@ -14,7 +14,7 @@ public interface IMagicBreadcrumbKit
     /// </summary>
     IMagicPage Root { get; }
 
-    internal MagicBreadcrumbSettings Settings { get; }
+    internal MagicBreadcrumbSpell Spell { get; }
 
     /// <summary>
     /// Information if this Breadcrumb should be shown according to configuration.

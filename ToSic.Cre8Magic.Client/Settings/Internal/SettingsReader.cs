@@ -75,7 +75,7 @@ internal class SettingsReader<TSettingsData>(
                 return defaults.Fallback;
 
             // Check if our part declares that it inherits something
-            case SettingsWithInherit couldInherit when couldInherit.Inherits.HasText():
+            case MagicInheritsBase couldInherit when couldInherit.Inherits.HasText():
                 // Remember inherits-from setting, and then remove from the part
                 var inheritFrom = couldInherit.Inherits;
                 priority = couldInherit with { Inherits = null } as TSettingsData ?? priority;

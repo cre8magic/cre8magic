@@ -13,10 +13,10 @@ TODO:
 *@
 @code {
     [CascadingParameter] public required PageState PageState { get; set; }
-    [Parameter] public MagicThemeSettings Settings { get; set; }
+    [Parameter] public MagicThemeSpell Spell { get; set; }
 }
 @{
-    var kit = MagicAct.ThemeKit(Settings.With(PageState));
+    var kit = MagicAct.ThemeKit(Spell.With(PageState));
 }
 <a class="@kit.Tailor.Classes("logo")" href="/" title="2shine Oqtane BS5 2sxc (change this in the ToShineLogo.razor)">
     <img alt="Logo" class="img-fluid" src="@kit.Logo">

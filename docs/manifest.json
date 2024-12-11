@@ -52,10 +52,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSpell.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html"
+          "relative_path": "api/ToSic.Cre8magic.Analytics.MagicAnalyticsSpell.html"
         }
       },
       "version": ""
@@ -92,10 +92,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSpell.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html"
+          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSpell.html"
         }
       },
       "version": ""
@@ -162,6 +162,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.MagicContainerSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.MagicContainerTailor.yml",
       "output": {
         ".html": {
@@ -216,6 +226,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.MagicLanguageSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageSpell.html"
         }
       },
       "version": ""
@@ -316,6 +336,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Menus.MagicMenuSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuSpell.html"
         }
       },
       "version": ""
@@ -442,6 +472,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContextSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextTailor.yml",
       "output": {
         ".html": {
@@ -552,30 +592,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicBlueprintPart.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicBlueprintPart.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicBlueprints.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicBlueprints.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicDebugSettings.yml",
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Settings.MagicDebugSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicInheritsBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicInheritsBase.html"
         }
       },
       "version": ""
@@ -592,40 +622,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSettingsBase.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSpellBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSettingsBase.html"
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSpellBase.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSettingsCatalog.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSpellLookup.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSettingsCatalog.html"
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSpellLookup.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSettingsLookup.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSpellsBook.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSettingsLookup.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.SettingsWithInherit.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.SettingsWithInherit.html"
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSpellsBook.html"
         }
       },
       "version": ""
@@ -646,6 +666,26 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Tailors.IMagicTailor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tailors.MagicBlueprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tailors.MagicBlueprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tailors.MagicBlueprintPart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tailors.MagicBlueprintPart.html"
         }
       },
       "version": ""
@@ -726,6 +766,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicThemeSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeSpell.html"
         }
       },
       "version": ""
@@ -832,6 +882,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.MagicUserLoginSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserLoginSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.MagicUserSettings.yml",
       "output": {
         ".html": {
@@ -866,6 +926,16 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Users.MagicUser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Users.MagicUserSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Users.MagicUserSpell.html"
         }
       },
       "version": ""

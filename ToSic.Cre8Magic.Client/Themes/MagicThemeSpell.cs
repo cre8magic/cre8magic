@@ -9,14 +9,14 @@ using static ToSic.Cre8magic.MagicConstants;
 
 namespace ToSic.Cre8magic.Themes;
 
-public record MagicThemeSettings: MagicSettingsBase, IHasDebugSettings, ICanClone<MagicThemeSettings>
+public record MagicThemeSpell: MagicSpellBase, IHasDebugSettings, ICanClone<MagicThemeSpell>
 {
     #region Constructor & Clone
     
     [PrivateApi]
-    public MagicThemeSettings() { }
+    public MagicThemeSpell() { }
 
-    private MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = default)
+    private MagicThemeSpell(MagicThemeSpell? priority, MagicThemeSpell? fallback = default)
         : base(priority, fallback)
     {
         Logo = priority?.Logo ?? fallback?.Logo ?? Defaults.Fallback.Logo;
@@ -27,7 +27,7 @@ public record MagicThemeSettings: MagicSettingsBase, IHasDebugSettings, ICanClon
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
-    MagicThemeSettings ICanClone<MagicThemeSettings>.CloneUnder(MagicThemeSettings? priority, bool forceCopy) =>
+    MagicThemeSpell ICanClone<MagicThemeSpell>.CloneUnder(MagicThemeSpell? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion
@@ -47,7 +47,7 @@ public record MagicThemeSettings: MagicSettingsBase, IHasDebugSettings, ICanClon
 
     //public MagicDebugSettings? Debug { get; init; }
 
-    internal static Defaults<MagicThemeSettings> Defaults = new(new()
+    internal static Defaults<MagicThemeSpell> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
         Design = InheritName,

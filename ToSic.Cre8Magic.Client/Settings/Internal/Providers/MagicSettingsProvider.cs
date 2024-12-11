@@ -72,18 +72,18 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
 
     private MagicSpellsBook? _book;
 
-    public IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
-    private MagicSettingsProviderSection<MagicAnalyticsSettings>? _analytics;
+    public IMagicSettingsProviderSection<MagicAnalyticsSpell> Analytics => _analytics ??= new(this);
+    private MagicSettingsProviderSection<MagicAnalyticsSpell>? _analytics;
 
-    public IMagicSettingsProviderSection<MagicBreadcrumbSettings> Breadcrumbs => _breadcrumbs ??= new(this);
-    private MagicSettingsProviderSection<MagicBreadcrumbSettings>? _breadcrumbs;
+    public IMagicSettingsProviderSection<MagicBreadcrumbSpell> Breadcrumbs => _breadcrumbs ??= new(this);
+    private MagicSettingsProviderSection<MagicBreadcrumbSpell>? _breadcrumbs;
 
-    public IMagicSettingsProviderSection<MagicContainerSettings> Containers => _containers ??= new(this);
-    private MagicSettingsProviderSection<MagicContainerSettings>? _containers;
+    public IMagicSettingsProviderSection<MagicContainerSpell> Containers => _containers ??= new(this);
+    private MagicSettingsProviderSection<MagicContainerSpell>? _containers;
 
     public IMagicSettingsProviderSection<MagicMenuBlueprint> MenuBlueprints => _menuDesigns ??= new(this);
     private MagicSettingsProviderSection<MagicMenuBlueprint>? _menuDesigns;
 
-    public IMagicSettingsProviderSection<MagicThemeSettings> Themes => _themes ??= new(this);
-    private MagicSettingsProviderSection<MagicThemeSettings>? _themes;
+    public IMagicSettingsProviderSection<MagicThemeSpell> Themes => _themes ??= new(this);
+    private MagicSettingsProviderSection<MagicThemeSpell>? _themes;
 }

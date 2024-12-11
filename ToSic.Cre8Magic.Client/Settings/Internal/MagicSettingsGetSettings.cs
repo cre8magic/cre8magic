@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 internal static class MagicSettingsGetSettings
 {
     internal static Data3WithJournal<TSettingsBase, CmThemeContext, MagicThemePartSettings?> GetBestSettings<TSettings, TSettingsBase>(
-    this IMagicSettingsService settingsSvc,
+    this IMagicSpellsService spellsSvc,
     PageState? pageStateForCachingOnly,
     TSettings? settings,
     SettingsReader<TSettingsBase> settingsReader,
@@ -21,7 +21,7 @@ internal static class MagicSettingsGetSettings
     where TSettingsBase : class, new()
     {
         // Get the Theme Context - important for checking part names
-        var themeCtx = settingsSvc.GetThemeContext(pageStateForCachingOnly);
+        var themeCtx = spellsSvc.GetThemeContext(pageStateForCachingOnly);
 
         // Activate this for debugging
         //if (settings is IDebugSettings { DebugThis: true } tempForDebug)
@@ -29,7 +29,7 @@ internal static class MagicSettingsGetSettings
 
         // Find Part which contains information for these settings,
         // e.g. what to show
-        var parts = themeCtx.ThemeSettings.Parts;
+        var parts = themeCtx.ThemeSpell.Parts;
         var part = parts.GetValueOrDefault(settings?.PartName ?? "dummy-prevent-error")
             ?? parts.GetValueOrDefault(defaultPartNameForShow);
 
@@ -55,7 +55,7 @@ internal static class MagicSettingsGetSettings
     /// <typeparam name="TSettings">Settings type - the one used in code, with more properties than just the settings data.</typeparam>
     /// <typeparam name="TSettingsBase">The base type of the settings, just containing the data</typeparam>
     /// <typeparam name="TDesign">The type of the design settings.</typeparam>
-    /// <param name="settingsSvc"></param>
+    /// <param name="spellsSvc"></param>
     /// <param name="pageState"></param>
     /// <param name="settings"></param>
     /// <param name="settingsReader"></param>
@@ -66,7 +66,7 @@ internal static class MagicSettingsGetSettings
     /// <param name="finalize"></param>
     /// <returns></returns>
     internal static Data3WithJournal<TSettings, CmThemeContext, MagicThemePartSettings?> GetBestSettingsAndDesignSettings<TSettings, TSettingsBase, TDesign>(
-        this IMagicSettingsService settingsSvc,
+        this IMagicSpellsService spellsSvc,
         PageState pageState,
         TSettings? settings,
         SettingsReader<TSettingsBase> settingsReader,
@@ -80,7 +80,7 @@ internal static class MagicSettingsGetSettings
         where TDesign : class, new() where TSettingsBase : class, new()
     {
 
-        var (mergedSettings, themeCtx, part, journal) = settingsSvc.GetBestSettings(pageState, settings, settingsReader, settingPrefix, defaultPartNameForShow);
+        var (mergedSettings, themeCtx, part, journal) = spellsSvc.GetBestSettings(pageState, settings, settingsReader, settingPrefix, defaultPartNameForShow);
 
         // Activate this for debugging
         //if (settings is IDebugSettings { DebugThis: true } tempForDebug)

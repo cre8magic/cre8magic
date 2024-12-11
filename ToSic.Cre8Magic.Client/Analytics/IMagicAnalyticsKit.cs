@@ -2,7 +2,7 @@
 
 public interface IMagicAnalyticsKit
 {
-    MagicAnalyticsSettings Settings { get; init; }
+    MagicAnalyticsSpell Spell { get; init; }
 
     /// <summary>
     /// Simplest way to track a page, assumes that the settings are injected from a Settings Source.

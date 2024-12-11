@@ -16,12 +16,12 @@ public class SettingsProviderTestWithAnalytics
     /// Prepare a settings service and add a default value. 
     /// </summary>
     /// <returns></returns>
-    private static (IMagicSettingsService settingsSvc, IMagicSettingsProvider SettingsProvider, MagicAnalyticsSettings DefaultSettings) PrepareSettings()
+    private static (IMagicSpellsService settingsSvc, IMagicSettingsProvider SettingsProvider, MagicAnalyticsSpell DefaultSettings) PrepareSettings()
     {
         var di = SetupServices.Start().AddCre8magic().AddLogging().Finish();
         var settingsProvider = di.GetRequiredService<IMagicSettingsProvider>();
-        var settingsSvc = di.GetRequiredService<IMagicSettingsService>();
-        var original = new MagicAnalyticsSettings { GtmId = DataValueOfOriginal };
+        var settingsSvc = di.GetRequiredService<IMagicSpellsService>();
+        var original = new MagicAnalyticsSpell { GtmId = DataValueOfOriginal };
         settingsProvider.Analytics.SetDefault(original);
         return (settingsSvc, settingsProvider, original);
     }
@@ -36,7 +36,7 @@ public class SettingsProviderTestWithAnalytics
         var (settingsSvc, settingsProvider, original) = PrepareSettings();
         var retrieved2 = settingsSvc.GetBestSettings(
             null,
-            new MagicAnalyticsSettings { SettingsName = name },
+            new MagicAnalyticsSpell { SettingsName = name },
             settingsSvc.Analytics,
             ContainerPrefix + "-",
             "Container"
@@ -57,12 +57,12 @@ public class SettingsProviderTestWithAnalytics
         var (settingsSvc, settingsProvider, defaultSettings) = PrepareSettings();
 
         // Add a named setting which can be identified when found
-        var namedSettings = new MagicAnalyticsSettings { GtmId = DataValueOfOriginal + "-named" };
+        var namedSettings = new MagicAnalyticsSpell { GtmId = DataValueOfOriginal + "-named" };
         settingsProvider.Analytics.Provide(addName, namedSettings);
 
         var retrieved = settingsSvc.GetBestSettings(
             null,
-            new MagicAnalyticsSettings { SettingsName = searchName },
+            new MagicAnalyticsSpell { SettingsName = searchName },
             settingsSvc.Analytics,
             ContainerPrefix + "-",
             "Container"

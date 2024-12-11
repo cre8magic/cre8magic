@@ -4,7 +4,7 @@ namespace ToSic.Cre8magic.Analytics.Internal;
 
 internal record MagicAnalyticsKit : IMagicAnalyticsKit
 {
-    public required MagicAnalyticsSettings Settings { get; init; }
+    public required MagicAnalyticsSpell Spell { get; init; }
 
     internal required PageState PageState { get; init; }
 
@@ -19,5 +19,5 @@ internal record MagicAnalyticsKit : IMagicAnalyticsKit
     /// </summary>
     /// <param name="isFirstRender"></param>
     /// <returns></returns>
-    public Task TrackPage(bool isFirstRender) => Service.TrackPage(PageState, Settings, isFirstRender);
+    public Task TrackPage(bool isFirstRender) => Service.TrackPage(PageState, Spell, isFirstRender);
 }

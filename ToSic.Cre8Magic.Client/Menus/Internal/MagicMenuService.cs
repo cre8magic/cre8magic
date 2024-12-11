@@ -9,14 +9,14 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// <summary>
 /// Will create a MenuTree based on the current pages information and settings.
 /// </summary>
-public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuService
+public class MagicMenuService(IMagicSpellsService spellsSvc): IMagicMenuService
 {
     private const string OptionalPrefix = "menu-";
     private const string DefaultPartName = "Menus";
 
     public bool NoInheritSettingsWip { get; set; } = false;
 
-    public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)
+    public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSpell? settings = null)
     {
         var (newSettings, journal) = NoInheritSettingsWip
             ? new(settings ?? new(), new())    // todo: magicMenuSettings.Default.Fallback
@@ -35,7 +35,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
             Tailor = newSettings.Tailor,
             LogRoot = logRoot,
             PageFactory = pageFactory,
-            TokenEngine = settingsSvc.PageTokenEngine(pageState),
+            TokenEngine = spellsSvc.PageTokenEngine(pageState),
             Settings = newSettings,
         };
 
@@ -48,19 +48,19 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         var kit = new MagicMenuKit
         {
             Root = root,
-            Settings = newSettings,
+            Spell = newSettings,
             WorkContext = context,
         };
         return kit;
     }
 
-    private DataWithJournal<MagicMenuSettings> MergeSettings(PageState pageState, MagicMenuSettings? settings) =>
-        settingsSvc.GetBestSettingsAndDesignSettings(
+    private DataWithJournal<MagicMenuSpell> MergeSettings(PageState pageState, MagicMenuSpell? settings) =>
+        spellsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,
-            settingsSvc.Menus,
+            spellsSvc.Menus,
             settings?.Blueprint,
-            settingsSvc.MenuBlueprints, 
+            spellsSvc.MenuBlueprints, 
             OptionalPrefix,
             DefaultPartName,
             finalize: (settingsData, designSettings) => settingsData with /* TODO: USE WITH<...> */ { Blueprint = designSettings });

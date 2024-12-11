@@ -2,7 +2,7 @@
 
 namespace ToSic.Cre8magic.Links;
 
-public record MagicLinkSettings: MagicSettingsBase
+public record MagicLinkSettings: MagicSpellBase
 {
     public string? Path { get; init; }
 

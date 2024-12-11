@@ -10,7 +10,7 @@ public record DebugInfo
 
     public Dictionary<string, string?>? Values { get; init; }
 
-    public required SettingsWithInherit Settings { get; init; }
+    public required MagicInheritsBase Settings { get; init; }
 
     internal static string ShowNotSet(string? value) =>
         string.IsNullOrWhiteSpace(value) ? "---" : value;

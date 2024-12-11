@@ -1,12 +1,13 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Menus;
 
 /// <summary>
 /// Menu Design Settings
 /// </summary>
-public record MagicMenuBlueprint : MagicBlueprints, ICanClone<MagicMenuBlueprint>
+public record MagicMenuBlueprint : MagicBlueprint, ICanClone<MagicMenuBlueprint>
 {
     [PrivateApi]
     public MagicMenuBlueprint() { }

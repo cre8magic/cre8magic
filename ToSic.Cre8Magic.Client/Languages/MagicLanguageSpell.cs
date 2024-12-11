@@ -5,26 +5,26 @@ using ToSic.Cre8magic.Settings.Internal.Json;
 
 namespace ToSic.Cre8magic.Languages;
 
-public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguageSettings>
+public record MagicLanguageSpell : MagicSpellBase, ICanClone<MagicLanguageSpell>
 {
     /// <summary>
     /// Dummy constructor so better find cases where it's created
     /// Note it must be without parameters for json deserialization
     /// </summary>
     [PrivateApi]
-    public MagicLanguageSettings() {}
+    public MagicLanguageSpell() {}
 
-    private MagicLanguageSettings(MagicLanguageSettings? priority, MagicLanguageSettings? fallback = default)
+    private MagicLanguageSpell(MagicLanguageSpell? priority, MagicLanguageSpell? fallback = default)
         : base(priority, fallback)
     {
         HideOthers = priority?.HideOthers ?? fallback?.HideOthers;
-        MinLanguagesToShow = PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
+        MinLanguagesToShow = SpellHelpers.PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
         Languages = priority?.Languages ?? fallback?.Languages;
 
         Blueprint = priority?.Blueprint ?? fallback?.Blueprint;
     }
 
-    MagicLanguageSettings ICanClone<MagicLanguageSettings>.CloneUnder(MagicLanguageSettings? priority, bool forceCopy) =>
+    MagicLanguageSpell ICanClone<MagicLanguageSpell>.CloneUnder(MagicLanguageSpell? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
@@ -59,7 +59,7 @@ public record MagicLanguageSettings : MagicSettingsBase, ICanClone<MagicLanguage
     public MagicLanguageBlueprint? Blueprint { get; init; }
 
 
-    internal static Defaults<MagicLanguageSettings> Defaults = new()
+    internal static Defaults<MagicLanguageSpell> Defaults = new()
     {
         Fallback = new()
         {

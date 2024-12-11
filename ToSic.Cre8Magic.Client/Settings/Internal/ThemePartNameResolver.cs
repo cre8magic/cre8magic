@@ -21,7 +21,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicThemePartSettings> themeSettingsParts)
 {
     internal ThemePartNameResolver(CmThemeContext themeCtx)
-        : this(themeCtx.SettingsName, themeCtx.ThemeSettings.Parts)
+        : this(themeCtx.SettingsName, themeCtx.ThemeSpell.Parts)
     { }
 
     /// <summary>

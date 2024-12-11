@@ -8,11 +8,11 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// Lightweight context, mainly used for retrieving settings parts.
 /// </summary>
 /// <param name="SettingsName"></param>
-/// <param name="ThemeSettings"></param>
+/// <param name="ThemeSpell"></param>
 /// <param name="Journal"></param>
 public record CmThemeContext(
     string SettingsName,
-    MagicThemeSettings ThemeSettings,
+    MagicThemeSpell ThemeSpell,
     Journal Journal
 )
 {

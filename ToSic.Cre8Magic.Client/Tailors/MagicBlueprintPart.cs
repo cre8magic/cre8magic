@@ -1,8 +1,10 @@
 ﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Json;
+using ToSic.Cre8magic.Tailors.Internal;
 
-namespace ToSic.Cre8magic.Settings;
+namespace ToSic.Cre8magic.Tailors;
 
 /// <summary>
 /// Anything that can define what classes it should have.

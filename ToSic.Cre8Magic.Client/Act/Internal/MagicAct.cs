@@ -25,7 +25,7 @@ namespace ToSic.Cre8magic.Act.Internal;
 internal class MagicAct(
     MagicLazy<IMagicAnalyticsService> analyticsSvc,
     MagicLazy<IMagicBreadcrumbService> breadcrumbSvc,
-    IMagicSettingsService settingsSvc,
+    IMagicSpellsService spellsSvc,
     MagicLazy<IMagicLanguageService> languageSvc,
     MagicLazy<IMagicPageContextService> pageContextSvc,
     MagicLazy<IMagicUserService> userSvc,
@@ -40,7 +40,7 @@ internal class MagicAct(
 
     public IMagicAct UseThemePackage(MagicThemePackage themePackage)
     {
-        settingsSvc.Setup(themePackage);
+        spellsSvc.Setup(themePackage);
         return this;
     }
 
@@ -62,13 +62,13 @@ internal class MagicAct(
 
     public IMagicAct UsePageState(PageState pageState)
     {
-        settingsSvc.UsePageState(pageState);
+        spellsSvc.UsePageState(pageState);
         return this;
     }
 
     private PageState GetPageStateOrThrow(PageState? pageStateFromSettings, [CallerMemberName] string? methodName = default)
     {
-        var pageState = pageStateFromSettings ?? settingsSvc.PageState;
+        var pageState = pageStateFromSettings ?? spellsSvc.PageState;
         if (pageState == null)
             throw new ArgumentException($"PageState is required for {methodName}(...). You must either supply it in the settings, or first initialize the {nameof(MagicAct)} using {nameof(UsePageState)}(...)");
         return pageState;
@@ -77,41 +77,41 @@ internal class MagicAct(
     #endregion
 
     /// <inheritdoc />
-    public IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSettings? settings = null) =>
+    public IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSpell? settings = null) =>
         analyticsSvc.Value.AnalyticsKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     /// <inheritdoc />
-    public IMagicBreadcrumbKit BreadcrumbKit(MagicBreadcrumbSettings? settings = null) =>
+    public IMagicBreadcrumbKit BreadcrumbKit(MagicBreadcrumbSpell? settings = null) =>
         breadcrumbSvc.Value.BreadcrumbKit(GetPageStateOrThrow(settings?.PageState), settings);
 
-    public IMagicContainerKit ContainerKit(MagicContainerSettings? settings = default) =>
+    public IMagicContainerKit ContainerKit(MagicContainerSpell? settings = default) =>
         containerSvc.Value.ContainerKit(
             GetPageStateOrThrow(settings?.PageState),
             settings?.ModuleState ?? throw new ArgumentException($"{nameof(settings.ModuleState)} is required for {nameof(ContainerKit)}(...)")
         );
 
     /// <inheritdoc />
-    public IMagicLanguageKit LanguageKit(MagicLanguageSettings? settings = null) =>
+    public IMagicLanguageKit LanguageKit(MagicLanguageSpell? settings = null) =>
         languageSvc.Value.LanguageKit(GetPageStateOrThrow(settings?.PageState), settings);
 
 
     /// <inheritdoc />
-    public IMagicMenuKit MenuKit(MagicMenuSettings? settings = default) =>
+    public IMagicMenuKit MenuKit(MagicMenuSpell? settings = default) =>
         menuSvc.Value.MenuKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     /// <inheritdoc />
-    public IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = null) =>
+    public IMagicPageContextKit PageContextKit(MagicPageContextSpell? settings = null) =>
         pageContextSvc.Value.PageContextKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     /// <inheritdoc />
-    public IMagicThemeKit ThemeKit(MagicThemeSettings? settings = default) =>
+    public IMagicThemeKit ThemeKit(MagicThemeSpell? settings = default) =>
         themeSvc.Value.ThemeKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     /// <inheritdoc />
-    public MagicUser User(MagicUserSettings? settings = default) =>
+    public MagicUser User(MagicUserSpell? settings = default) =>
         userSvc.Value.User(GetPageStateOrThrow(settings?.PageState));
 
-    public IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = default) =>
+    public IMagicUserLoginKit UserLoginKit(MagicUserLoginSpell? settings = default) =>
         userKitSvc.Value.UserLoginKit(GetPageStateOrThrow(settings?.PageState), settings);
 
     public string Link(MagicLinkSettings settings) =>

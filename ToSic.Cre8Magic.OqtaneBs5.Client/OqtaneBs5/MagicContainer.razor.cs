@@ -30,9 +30,9 @@ public partial class MagicContainer: ComponentBase /*Oqtane.Themes.ContainerBase
 
     #region ThemeControl implementation - ATM necessary see https://github.com/oqtane/oqtane.framework/issues/4886
 
-    string IThemeControl.Thumbnail { get; }
-    string IThemeControl.Panes { get; }
-    List<Resource> IThemeControl.Resources { get; }
+    string? IThemeControl.Thumbnail => null;
+    string? IThemeControl.Panes => null;
+    List<Resource>? IThemeControl.Resources => null;
 
     #endregion
 
@@ -45,7 +45,7 @@ public partial class MagicContainer: ComponentBase /*Oqtane.Themes.ContainerBase
     /// Defaults to null, in which case it asks the theme etc. for settings.
     /// Inheriting code could overwrite it, to specify settings directly.
     /// </summary>
-    public virtual MagicContainerSettings? Settings => null;
+    public virtual MagicContainerSpell? Settings => null;
 
     [Inject] public required IMagicAct MagicAct { get; set; }
 

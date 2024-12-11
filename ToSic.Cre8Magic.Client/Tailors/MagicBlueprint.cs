@@ -1,25 +1,26 @@
 ﻿using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Utils;
 
-namespace ToSic.Cre8magic.Settings;
+namespace ToSic.Cre8magic.Tailors;
 
 /// <summary>
 /// Menu Design Settings
 /// </summary>
-public record MagicBlueprints : SettingsWithInherit, ICanClone<MagicBlueprints>
+public record MagicBlueprint : MagicInheritsBase, ICanClone<MagicBlueprint>
 {
     [PrivateApi]
-    public MagicBlueprints() { }
+    public MagicBlueprint() { }
 
-    internal MagicBlueprints(MagicBlueprints? priority, MagicBlueprints? fallback = default)
+    internal MagicBlueprint(MagicBlueprint? priority, MagicBlueprint? fallback = default)
         : base(priority, fallback)
     {
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
     }
 
-    MagicBlueprints ICanClone<MagicBlueprints>.CloneUnder(MagicBlueprints? priority, bool forceCopy) =>
+    MagicBlueprint ICanClone<MagicBlueprint>.CloneUnder(MagicBlueprint? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>

@@ -136,8 +136,8 @@ it's in the Act namespace because it's usually used in the basic work which star
 
   <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup*"></a>
 
-  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)">
-  RefillLookup&lt;TSettings&gt;(TSettings?, MagicSettingsLookup)
+  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSpellLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSpellLookup)">
+  RefillLookup&lt;TSettings&gt;(TSettings?, MagicSpellLookup)
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -145,14 +145,14 @@ it's in the Act namespace because it's usually used in the basic work which star
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings RefillLookup&lt;TSettings&gt;(this TSettings? settings, MagicSettingsLookup lookup) where TSettings : MagicSettingsBase, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings RefillLookup&lt;TSettings&gt;(this TSettings? settings, MagicSpellLookup lookup) where TSettings : MagicSpellBase, new()</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>settings</code> <span class="xref">TSettings</span></dt>
     <dd></dd>
-    <dt><code>lookup</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsLookup.html">MagicSettingsLookup</a></dt>
+    <dt><code>lookup</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicSpellLookup.html">MagicSpellLookup</a></dt>
     <dd></dd>
   </dl>
 
@@ -191,7 +191,7 @@ Alternative is <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings Refill&lt;TSettings&gt;(this TSettings? settings, PageState pageState) where TSettings : MagicSettingsBase, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings Refill&lt;TSettings&gt;(this TSettings? settings, PageState pageState) where TSettings : MagicSpellBase, new()</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -237,7 +237,7 @@ Alternative is <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings Refill&lt;TSettings, TWith&gt;(this TSettings? settings, TWith? addition) where TSettings : MagicSettingsBase, IWith&lt;TWith?&gt;, new() where TWith : class</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings Refill&lt;TSettings, TWith&gt;(this TSettings? settings, TWith? addition) where TSettings : MagicSpellBase, IWith&lt;TWith?&gt;, new() where TWith : class</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -273,8 +273,8 @@ Alternative is <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions
 
   <a id="ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup*"></a>
 
-  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSettingsLookup)">
-  WithLookup&lt;TSettings&gt;(TSettings?, MagicSettingsLookup)
+  <h3 id="ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSpellLookup_" data-uid="ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSpellLookup)">
+  WithLookup&lt;TSettings&gt;(TSettings?, MagicSpellLookup)
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Act/MagicSettingsExtensions.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -282,14 +282,14 @@ Alternative is <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings WithLookup&lt;TSettings&gt;(this TSettings? settings, MagicSettingsLookup lookup) where TSettings : MagicSettingsBase, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings WithLookup&lt;TSettings&gt;(this TSettings? settings, MagicSpellLookup lookup) where TSettings : MagicSpellBase, new()</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>settings</code> <span class="xref">TSettings</span></dt>
     <dd></dd>
-    <dt><code>lookup</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsLookup.html">MagicSettingsLookup</a></dt>
+    <dt><code>lookup</code> <a class="xref" href="ToSic.Cre8magic.Settings.MagicSpellLookup.html">MagicSpellLookup</a></dt>
     <dd></dd>
   </dl>
 
@@ -328,7 +328,7 @@ Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Act.Ma
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings With&lt;TSettings&gt;(this TSettings? settings, PageState pageState) where TSettings : MagicSettingsBase, new()</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings With&lt;TSettings&gt;(this TSettings? settings, PageState pageState) where TSettings : MagicSpellBase, new()</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -374,7 +374,7 @@ Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Act.Ma
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TSettings With&lt;TSettings, TWith&gt;(this TSettings? settings, TWith? addition) where TSettings : MagicSettingsBase, IWith&lt;TWith?&gt;, new() where TWith : class</code></pre>
+    <pre><code class="lang-csharp hljs">public static TSettings With&lt;TSettings, TWith&gt;(this TSettings? settings, TWith? addition) where TSettings : MagicSpellBase, IWith&lt;TWith?&gt;, new() where TWith : class</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>

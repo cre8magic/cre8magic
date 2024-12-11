@@ -12,7 +12,7 @@ internal record MagicMenuKit : IMagicMenuKit
 {
     public required IMagicPage Root { get; init; }
 
-    public required MagicMenuSettings Settings { get; init; }
+    public required MagicMenuSpell Spell { get; init; }
 
     // TODO:
     //public object Designer => Pages.Settings.Designer;
@@ -20,7 +20,7 @@ internal record MagicMenuKit : IMagicMenuKit
     /// <summary>
     /// The variant - never null; defaults to ...
     /// </summary>
-    public string Variant => Settings.Variant ?? "";
+    public string Variant => Spell.Variant ?? "";
 
     public bool IsVariant(string variant) =>
         Variant.Equals(variant, StringComparison.OrdinalIgnoreCase);
@@ -32,17 +32,17 @@ internal record MagicMenuKit : IMagicMenuKit
         Title = "Settings (Menu)",
         More = new()
         {
-            { "Settings", Settings },
-            { "Design Settings", Settings.Blueprint },
+            { "Settings", Spell },
+            { "Design Settings", Spell.Blueprint },
             { "Log", this.GetLogEntries() },
         },
-        Settings = Settings,
+        Settings = Spell,
         Values = new()
         {
             //{ "Show", Show },
-            { "Part Name", DebugInfo.ShowNotSet(Settings.PartName) },
-            { "Settings Name", DebugInfo.ShowNotSet(Settings.SettingsName) },
-            { "Design Name", DebugInfo.ShowNotSet(Settings.DesignName) },
+            { "Part Name", DebugInfo.ShowNotSet(Spell.PartName) },
+            { "Settings Name", DebugInfo.ShowNotSet(Spell.SettingsName) },
+            { "Design Name", DebugInfo.ShowNotSet(Spell.DesignName) },
             { "Variant", DebugInfo.ShowNotSet(Variant) },
         }
     };

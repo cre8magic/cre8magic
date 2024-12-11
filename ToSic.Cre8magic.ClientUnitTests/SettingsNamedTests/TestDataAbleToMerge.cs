@@ -8,7 +8,7 @@ internal record TestDataAbleToMerge : TestDataNoMerge, ICanClone<TestDataAbleToM
 
     public TestDataAbleToMerge(TestDataAbleToMerge? priority, TestDataAbleToMerge? fallback = default)
     {
-        Name = priority?.Name ?? fallback?.Name;
+        Name = priority?.Name ?? fallback?.Name!;
         Id = priority?.Id ?? fallback?.Id;
         Description = priority?.Description ?? fallback?.Description;
     }

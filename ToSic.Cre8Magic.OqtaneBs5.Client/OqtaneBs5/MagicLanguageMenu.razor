@@ -16,7 +16,7 @@ Nice to know:
     [CascadingParameter] public required PageState PageState { get; set; }
 
     [Parameter]
-    public MagicLanguageSettings? Settings { get; set; }
+    public MagicLanguageSpell? Settings { get; set; }
 }
 @{
     var languageKit = MagicAct.LanguageKit(Settings.With(PageState));

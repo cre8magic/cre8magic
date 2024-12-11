@@ -7,12 +7,12 @@ using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
-internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagicBreadcrumbService
+internal class MagicBreadcrumbService(IMagicSpellsService spellsSvc) : IMagicBreadcrumbService
 {
     private const string OptionalPrefix = "breadcrumb-";
     private const string DefaultPartName = "Breadcrumb";
 
-    public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSettings? settings = null)
+    public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSpell? settings = null)
     {
         var (settingsFull, _, themePart, _) = MergeSettings(pageState, settings);
 
@@ -29,19 +29,19 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
         return new MagicBreadcrumbKit
         {
             Pages = pages,
-            Settings = settingsFull,
+            Spell = settingsFull,
             Show = show,
             Root = root,
         };
     }
 
-    private Data3WithJournal<MagicBreadcrumbSettings, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSettings? settings) =>
-        settingsSvc.GetBestSettingsAndDesignSettings(
+    private Data3WithJournal<MagicBreadcrumbSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSpell? settings) =>
+        spellsSvc.GetBestSettingsAndDesignSettings(
             pageState,
             settings,
-            settingsSvc.Breadcrumbs,
+            spellsSvc.Breadcrumbs,
             settings?.Blueprint,
-            settingsSvc.BreadcrumbBlueprints,
+            spellsSvc.BreadcrumbBlueprints,
             OptionalPrefix,
             DefaultPartName,
             finalize: (settingsData, designSettings) => settingsData with { Blueprint = designSettings });

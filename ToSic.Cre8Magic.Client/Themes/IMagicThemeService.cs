@@ -10,5 +10,5 @@ public interface IMagicThemeService
     /// <param name="pageState">The Page State</param>
     /// <param name="settings">The Settings; optional</param>
     /// <returns></returns>
-    IMagicThemeKit ThemeKit(PageState pageState, MagicThemeSettings? settings);
+    IMagicThemeKit ThemeKit(PageState pageState, MagicThemeSpell? settings);
 }

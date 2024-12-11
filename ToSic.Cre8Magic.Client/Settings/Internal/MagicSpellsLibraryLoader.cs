@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Settings.Internal.Sources;
 namespace ToSic.Cre8magic.Settings.Internal;
 
 /// <summary>
-/// Helper to load all the magic settings which could be used by the <see cref="IMagicSettingsService"/>.
+/// Helper to load all the magic settings which could be used by the <see cref="IMagicSpellsService"/>.
 ///
 /// It requires that there are <see cref="MagicThemePackage"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.

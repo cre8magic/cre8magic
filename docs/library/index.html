@@ -88,22 +88,45 @@
 <h1 id="cre8magic--oqtane-theme-system">cre8magic – Oqtane Theme System</h1>
 
 <p><em>services, components, and utilities for Oqtane Themes</em></p>
+<h2 id="introduction">Introduction</h2>
+<p>Creating awesome themes for any platform is a lot of work, and needs a lot of skill.
+There's Bootstrap to master, as well as HTML, CSS and JavaScript to conjure up.
+And then there's the platform-specific stuff to learn,
+such as Blazor and the intricacies of Oqtane itself.</p>
+<blockquote>
+<p>The cre8magic library is a collection of services, components, utilities
+and documentations that help you create themes for Oqtane with less effort and more fun.</p>
+</blockquote>
+<p><a href="https://www.2sic.com">2sic</a>, the inventors of cre8magic, have been creating themes
+for more than 1'000 websites since 1999.
+That's a lot of experience packed together.
+Our goal was to ensure that every theme we create is as good as it can be,
+and that we can create it as fast as possible.</p>
+<p>Let's take a simple example: <strong>System-Menus</strong>.
+They usually show a bunch of links, some within the normal structure of the site,
+and some taken out of the normal navigation structure just for the footer.
+Typically these pages are officially &quot;hidden&quot; in the navigation, since we don't want them in the main menu,
+but still need to be accessible.
+This is how we would do it in cre8magic using the <code>MagicMenu</code> <em>Oqtane Bootstrap5</em> component:</p>
+<pre><code class="lang-html">&lt;!-- This example assumes a separate configuration which is called &quot;System&quot; --&gt;
+&lt;MagicMenu PartName=&quot;System&quot; /&gt;
+
+&lt;!-- This example places all the settings directly inside the tag --&gt;
+&lt;!-- In this case, 5 is a hidden page in the navigation, and we want to show it's children --&gt;
+&lt;MagicMenu Settings='new() { Start = &quot;5!/&quot; }' /&gt;
+</code></pre>
 <p>explain</p>
 <h2 id="planned-structure">Planned structure</h2>
 <ol>
+<li><p>Introduction (maybe inside overview? or before)</p>
+</li>
 <li><p>Overview, explaining what's in the box - basically what things it can solve</p>
 </li>
 <li><p>Get Started - step-by-step guide to get started and simple use case</p>
 </li>
-<li><p><strong>Parts</strong></p>
+<li><p><strong>Acts</strong></p>
 </li>
 <li><p>Common Setup</p>
-</li>
-<li><p>Magic Act</p>
-</li>
-<li><p>Magic Menus</p>
-</li>
-<li><p>Magic &quot;Buttons&quot; - needs better name</p>
 </li>
 <li><p>Magic Breadcrumbs</p>
 </li>
@@ -113,11 +136,11 @@
 </li>
 <li><p>Magic Logos</p>
 </li>
+<li><p>Magic Menus</p>
+</li>
 <li><p>Magic Page Context</p>
 </li>
 <li><p>Magic Pages ?</p>
-</li>
-<li><p>Magic Themes</p>
 </li>
 <li><p>Magic To-Top</p>
 </li>
@@ -127,15 +150,25 @@
 </li>
 <li><p>Magic Sitemap</p>
 </li>
+<li><p><strong>Razor Components</strong></p>
+</li>
+<li><p>Magic Themes</p>
+</li>
+<li><p>Magic &quot;Buttons&quot; - needs better name</p>
+</li>
+<li><p>Magic OqtaneBs5 Razor Components</p>
+</li>
 <li><p><strong>Foundation</strong></p>
+</li>
+<li><p>Magic Act</p>
 </li>
 <li><p>Magic Blueprints</p>
 </li>
 <li><p>Magic Tailors</p>
 </li>
-<li><p>Magic &quot;Settings&quot; - needs better name</p>
+<li><p>Magic Spells Book</p>
 </li>
-<li><p>Magic OqtaneBs5 Razor Components</p>
+<li><p>Magic Meta-Settings - needs better name / Magic Spells</p>
 </li>
 </ol>
 <h2 id="history">History</h2>

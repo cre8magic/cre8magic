@@ -9,20 +9,20 @@ namespace ToSic.Cre8magic.Menus;
 /// <summary>
 /// The raw settings for a menu, in a way which can be stored elsewhere.
 ///
-/// This is later augmented with additional information which only code can provide, in the <see cref="MagicMenuSettings"/>
+/// This is later augmented with additional information which only code can provide, in the <see cref="MagicMenuSpell"/>
 /// </summary>
 /// <remarks>
 /// This is implemented as an immutable record.
 /// </remarks>
-public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICanClone<MagicMenuSettings>
+public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<MagicMenuSpell>
 {
     /// <summary>
     /// Default constructor, so this record can be created anywhere.
     /// </summary>
     [PrivateApi]
-    public MagicMenuSettings() { }
+    public MagicMenuSpell() { }
 
-    private MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default) : base(priority, fallback)
+    private MagicMenuSpell(MagicMenuSpell? priority, MagicMenuSpell? fallback = default) : base(priority, fallback)
     {
         Id = priority?.Id ?? fallback?.Id;
         Display = priority?.Display ?? fallback?.Display;
@@ -35,7 +35,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
         PagesSource = priority?.PagesSource ?? fallback?.PagesSource;
     }
 
-    MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy) =>
+    MagicMenuSpell ICanClone<MagicMenuSpell>.CloneUnder(MagicMenuSpell? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
@@ -105,7 +105,7 @@ public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings, ICan
     #endregion
 
 
-    internal static Defaults<MagicMenuSettings> Defaults = new()
+    internal static Defaults<MagicMenuSpell> Defaults = new()
     {
         Fallback = new()
         {

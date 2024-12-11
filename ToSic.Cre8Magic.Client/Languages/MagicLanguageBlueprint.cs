@@ -1,12 +1,13 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Languages;
 
 /// <summary>
 /// Language Design Settings
 /// </summary>
-public record MagicLanguageBlueprint : MagicBlueprints, ICanClone<MagicLanguageBlueprint>
+public record MagicLanguageBlueprint : MagicBlueprint, ICanClone<MagicLanguageBlueprint>
 {
     [PrivateApi]
     public MagicLanguageBlueprint() { }

@@ -33,44 +33,44 @@ public interface IMagicAct
     /// Get the Kit to work with a Breadcrumb.
     /// It will either use the provided settings, retrieve these from the global information or use a default settings.
     /// </summary>
-    IMagicBreadcrumbKit BreadcrumbKit(MagicBreadcrumbSettings? settings = default);
+    IMagicBreadcrumbKit BreadcrumbKit(MagicBreadcrumbSpell? settings = default);
 
     /// <summary>
     /// Get the kit to work with languages. Must be async, because it might need to load async data from Oqtane.
     /// </summary>
-    IMagicLanguageKit LanguageKit(MagicLanguageSettings? settings = default);
+    IMagicLanguageKit LanguageKit(MagicLanguageSpell? settings = default);
 
 
     /// <inheritdoc cref="IMagicUserService.User"/>
-    MagicUser User(MagicUserSettings? settings = default);
+    MagicUser User(MagicUserSpell? settings = default);
 
     /// <summary>
     /// Get a kit to work with containers.
     /// </summary>
     /// <param name="settings">**Required**; must provide the ModuleState as a property and usually the PageState (if not specified in the Theme)</param>
     /// <returns></returns>
-    IMagicContainerKit ContainerKit(MagicContainerSettings? settings = default);
+    IMagicContainerKit ContainerKit(MagicContainerSpell? settings = default);
 
     /// <summary>
     /// Get a kit to work with analytics.
     /// </summary>
     /// <param name="settings">Optional settings. If not provided, will try to automatically find the settings as configured in the Theme.</param>
     /// <returns></returns>
-    IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSettings? settings = default);
+    IMagicAnalyticsKit AnalyticsKit(MagicAnalyticsSpell? settings = default);
 
     /// <inheritdoc cref="IMagicThemeService.ThemeKit"/>
-    IMagicThemeKit ThemeKit(MagicThemeSettings? settings = default);
+    IMagicThemeKit ThemeKit(MagicThemeSpell? settings = default);
 
-    IMagicUserLoginKit UserLoginKit(MagicUserLoginSettings? settings = default);
+    IMagicUserLoginKit UserLoginKit(MagicUserLoginSpell? settings = default);
 
 
     /// <inheritdoc cref="IMagicLinkService.Link" />
     string Link(MagicLinkSettings settings);
 
 
-    IMagicPageContextKit PageContextKit(MagicPageContextSettings? settings = default);
+    IMagicPageContextKit PageContextKit(MagicPageContextSpell? settings = default);
 
     /// <inheritdoc cref="IMagicMenuService.MenuKit" />
-    IMagicMenuKit MenuKit(MagicMenuSettings? settings = default);
+    IMagicMenuKit MenuKit(MagicMenuSpell? settings = default);
 
 }

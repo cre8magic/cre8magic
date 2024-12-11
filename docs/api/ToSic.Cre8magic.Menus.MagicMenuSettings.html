@@ -103,7 +103,7 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public record MagicMenuSettings : MagicSettingsBase, IMagicPageSetSettings</code></pre>
+    <pre><code class="lang-csharp hljs">public record MagicMenuSettings : MagicSpellBase, IMagicPageSetSettings</code></pre>
   </div>
 
 
@@ -113,8 +113,8 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
     <dt>Inheritance</dt>
     <dd>
       <div><span class="xref">object</span></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html">SettingsWithInherit</a></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html">MagicSettingsBase</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.MagicInheritsBase.html">MagicInheritsBase</a></div>
+      <div><a class="xref" href="ToSic.Cre8magic.Settings.MagicSpellBase.html">MagicSpellBase</a></div>
       <div><span class="xref">MagicMenuSettings</span></div>
     </dd>
   </dl>
@@ -131,25 +131,22 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
     <dt>Inherited Members</dt>
     <dd>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PageState">MagicSettingsBase.PageState</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_PageState">MagicSpellBase.PageState</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_PartName">MagicSettingsBase.PartName</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_PartName">MagicSpellBase.PartName</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_SettingsName">MagicSettingsBase.SettingsName</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_SettingsName">MagicSpellBase.SettingsName</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_DesignName">MagicSettingsBase.DesignName</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_DesignName">MagicSpellBase.DesignName</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsBase.html#ToSic_Cre8magic_Settings_MagicSettingsBase_Debug">MagicSettingsBase.Debug</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_Debug">MagicSpellBase.Debug</a>
     </div>
     <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_Inherits">SettingsWithInherit.Inherits</a>
-    </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.SettingsWithInherit.html#ToSic_Cre8magic_Settings_SettingsWithInherit_PickFirstNonZeroInt_System_Nullable_System_Int32____">SettingsWithInherit.PickFirstNonZeroInt(int?[])</a>
+      <a class="xref" href="ToSic.Cre8magic.Settings.MagicInheritsBase.html#ToSic_Cre8magic_Settings_MagicInheritsBase_Inherits">MagicInheritsBase.Inherits</a>
     </div>
   </dd></dl>
 
@@ -157,7 +154,7 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
     <dt>Extension Methods</dt>
     <dd>
   <div>
-      <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_">MagicSettingsExtensions.RefillLookup&lt;TSettings&gt;(TSettings?, MagicSettingsLookup)</a>
+      <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSpellLookup_">MagicSettingsExtensions.RefillLookup&lt;TSettings&gt;(TSettings?, MagicSpellLookup)</a>
   </div>
   <div>
       <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_">MagicSettingsExtensions.Refill&lt;TSettings&gt;(TSettings?, PageState)</a>
@@ -166,7 +163,7 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
       <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_">MagicSettingsExtensions.Refill&lt;TSettings, TWith&gt;(TSettings?, TWith?)</a>
   </div>
   <div>
-      <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSettingsLookup_">MagicSettingsExtensions.WithLookup&lt;TSettings&gt;(TSettings?, MagicSettingsLookup)</a>
+      <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSpellLookup_">MagicSettingsExtensions.WithLookup&lt;TSettings&gt;(TSettings?, MagicSpellLookup)</a>
   </div>
   <div>
       <a class="xref" href="ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_">MagicSettingsExtensions.With&lt;TSettings&gt;(TSettings?, PageState)</a>
@@ -218,8 +215,8 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
 
 
 
-  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageCurrent" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent">
-  StartPageCurrent
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_DoubleSlash" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.DoubleSlash">
+  DoubleSlash
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -227,7 +224,67 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string StartPageCurrent = &quot;.&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">public const string DoubleSlash = &quot;//&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageCurrent" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent">
+  StartPageCurrent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const char StartPageCurrent = &#39;.&#39;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">char</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageParent" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageParent">
+  StartPageParent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string StartPageParent = &quot;..&quot;</code></pre>
   </div>
 
 
@@ -285,7 +342,7 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Blueprint" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint">
   Blueprint
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -383,7 +440,7 @@ Would be used for debugging but also to help in creating unique css-classes for 
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_MenuId" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId">
   MenuId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Menu ID for use in JavaScript etc.
@@ -412,11 +469,11 @@ Usually predefined OR a random number</p>
 
 
 
-  <a id="ToSic_Cre8magic_Menus_MagicMenuSettings_Pages_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Pages*"></a>
+  <a id="ToSic_Cre8magic_Menus_MagicMenuSettings_PagesSource_" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource*"></a>
 
-  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Pages" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Pages">
-  Pages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_PagesSource" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource">
+  PagesSource
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L102"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>List of pages to respect when creating the breadcrumb.
@@ -427,7 +484,7 @@ Default is <code>null</code> - so it will just take all the pages.</p>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonIgnore]
-public IEnumerable&lt;IMagicPage&gt;? Pages { get; init; }</code></pre>
+public IEnumerable&lt;IMagicPage&gt;? PagesSource { get; init; }</code></pre>
   </div>
 
 
@@ -491,7 +548,7 @@ Can be</p>
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Tailor" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor">
   Tailor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -523,10 +580,11 @@ public IMagicPageTailor? Tailor { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Variant" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Variant">
   Variant
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L82"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The template to use - horizontal/vertical</p>
+  <div class="markdown level1 summary"><p>The menu variant to use, for example <code>horizontal</code> or <code>vertical</code>.
+Will only have an effect if the control showing the menu supports it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

@@ -16,19 +16,19 @@ public abstract class MagicJsServiceBase
     /// </summary>
     /// <param name="jsRuntime">JS Runtime of the control, usually available later, like in the OnAfterRenderAsync</param>
     /// <param name="modulePath">Path to the javascript file, must be a JS6 Module</param>
-    protected MagicJsServiceBase(IJSRuntime jsRuntime, IMagicSettingsService settingSvc, string modulePath)
+    protected MagicJsServiceBase(IJSRuntime jsRuntime, IMagicSpellsService spellsSvc, string modulePath)
     {
-        _settingSvc = settingSvc;
+        _spellsSvc = spellsSvc;
         JsRuntime = jsRuntime;
         // ModulePath = modulePath;
         ModulePath = modulePath;
     }
-    private readonly IMagicSettingsService _settingSvc;
+    private readonly IMagicSpellsService _spellsSvc;
 
     protected IJSRuntime JsRuntime { get; }
 
     [field: AllowNull, MaybeNull]
-    protected string ModulePath => field?.Replace(ThemePathPlaceholder, _settingSvc.ThemePackage.ThemePath);
+    protected string ModulePath => field?.Replace(ThemePathPlaceholder, _spellsSvc.ThemePackage.ThemePath);
 
     public async Task Log(params object[] args) => await JsRuntime.InvokeVoidAsync("console.log", args);
 

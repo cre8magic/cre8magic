@@ -12,15 +12,15 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings : MagicSettingsBase, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IWith<IMagicPageTailor?>
+public record MagicBreadcrumbSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSpell>, IWith<IMagicPageTailor?>
 {
     [PrivateApi]
-    public MagicBreadcrumbSettings() { }
+    public MagicBreadcrumbSpell() { }
 
     /// <summary>
     /// Cloning constructor
     /// </summary>
-    private MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = default): base(priority, fallback)
+    private MagicBreadcrumbSpell(MagicBreadcrumbSpell? priority, MagicBreadcrumbSpell? fallback = default): base(priority, fallback)
     {
         WithActive = priority?.WithActive ?? fallback?.WithActive ?? Defaults.Fallback.WithActive;
         WithHome = priority?.WithHome ?? fallback?.WithHome ?? Defaults.Fallback.WithHome;
@@ -37,7 +37,7 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IMagicPageSetSettings
         Blueprint = priority?.Blueprint ?? fallback?.Blueprint;
     }
 
-    MagicBreadcrumbSettings ICanClone<MagicBreadcrumbSettings>.CloneUnder(MagicBreadcrumbSettings? priority, bool forceCopy) =>
+    MagicBreadcrumbSpell ICanClone<MagicBreadcrumbSpell>.CloneUnder(MagicBreadcrumbSpell? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
@@ -133,7 +133,7 @@ public record MagicBreadcrumbSettings : MagicSettingsBase, IMagicPageSetSettings
     /// <summary>
     /// Defaults - these don't do anything, but we want to use this pattern for consistency.
     /// </summary>
-    internal static Defaults<MagicBreadcrumbSettings> Defaults = new()
+    internal static Defaults<MagicBreadcrumbSpell> Defaults = new()
     {
         Fallback = new(),
         Foundation = new(),

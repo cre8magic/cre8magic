@@ -15,7 +15,7 @@ internal record MagicLanguageKit : IMagicLanguageKit
 
     public required MagicLanguageTailor Tailor { get; init; }
 
-    public /* actually internal */ required MagicLanguageSettings Settings { get; init; }
+    public /* actually internal */ required MagicLanguageSpell Spell { get; init; }
 
     //public /* actually internal */ required MagicThemeDesignSettings ThemeDesignSettings { get; init; }
 
@@ -30,17 +30,17 @@ internal record MagicLanguageKit : IMagicLanguageKit
             Title = "Language Settings (Debug)",
             More = new()
             {
-                { "Language Settings", Settings },
+                { "Language Settings", Spell },
                 { "Languages To Show", Languages },
-                { "Language Design", Settings.Blueprint },
+                { "Language Design", Spell.Blueprint },
             },
-            Settings = Settings,
+            Settings = Spell,
             Values = new()
             {
-                { "Part Name", DebugInfo.ShowNotSet(Settings.PartName) },
+                { "Part Name", DebugInfo.ShowNotSet(Spell.PartName) },
                 { "Show", Show + "" },
-                { "Settings Name", DebugInfo.ShowNotSet(Settings.SettingsName) },
-                { "Design Name", DebugInfo.ShowNotSet(Settings.DesignName) },
+                { "Settings Name", DebugInfo.ShowNotSet(Spell.SettingsName) },
+                { "Design Name", DebugInfo.ShowNotSet(Spell.DesignName) },
             }
         };
         return debugInfo;

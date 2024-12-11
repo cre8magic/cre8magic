@@ -1,5 +1,6 @@
 ﻿using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Themes.Settings;
 
@@ -8,7 +9,7 @@ namespace ToSic.Cre8magic.Themes.Settings;
 ///
 /// If you change these, you must also update the SCSS files. 
 /// </summary>
-public partial record MagicThemeBlueprint: MagicBlueprints, ICanClone<MagicThemeBlueprint>
+public partial record MagicThemeBlueprint: MagicBlueprint, ICanClone<MagicThemeBlueprint>
 {
     [PrivateApi]
     public MagicThemeBlueprint() { }

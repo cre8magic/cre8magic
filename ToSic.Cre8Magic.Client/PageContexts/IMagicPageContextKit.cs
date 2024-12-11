@@ -5,6 +5,6 @@ public interface IMagicPageContextKit
     bool UseBodyTag { get; }
     string? TagId { get; }
     string? Classes { get; }
-    MagicPageContextSettings Settings { get; }
+    MagicPageContextSpell Spell { get; }
     Task UpdateBodyTag();
 }

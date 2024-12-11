@@ -2,6 +2,7 @@
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
@@ -14,14 +15,14 @@ public class MagicMenuTailor : IMagicPageTailor
 {
     internal MagicMenuTailor(MagicMenuWorkContext workContext)
     {
-        Settings = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
+        Spell = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
 
-        DesignSettingsList = [Settings.Blueprint!];
+        DesignSettingsList = [Spell.Blueprint!];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
         Log = workContext.Settings.Debug?.Detailed == true ? workContext.LogRoot.GetLog(nameof(MagicMenuTailor)) : null;
     }
-    private MagicMenuSettings Settings { get; }
+    private MagicMenuSpell Spell { get; }
 
     // TODO: unclear why this is a list, it can only contain one...?
     internal List<MagicMenuBlueprint> DesignSettingsList { get; }

@@ -1,6 +1,5 @@
-﻿using ToSic.Cre8magic.Breadcrumbs;
-using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal;
+﻿using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsTests;
 
@@ -62,24 +61,24 @@ public class MagicBreadcrumbBlueprintCreateClone
 
     private static void VerifySameAsOriginal(MagicBlueprintPart y)
     {
-        Assert.Equal("on", y.HasChildren.On);
+        Assert.Equal("on", y.HasChildren!.On);
         Assert.Equal("off", y.HasChildren.Off);
-        Assert.Equal("on", y.IsDisabled.On);
+        Assert.Equal("on", y.IsDisabled!.On);
         Assert.Equal("off", y.IsDisabled.Off);
     }
 
     private static void VerifySameAsHalf(MagicBlueprintPart y)
     {
-        Assert.Equal("half-on", y.HasChildren.On);
+        Assert.Equal("half-on", y.HasChildren!.On);
         Assert.Equal("half-off", y.HasChildren.Off);
         Assert.Null(y.IsDisabled);
     }
 
     private static void VerifySameAsMix(MagicBlueprintPart y)
     {
-        Assert.Equal("half-on", y.HasChildren.On);
+        Assert.Equal("half-on", y.HasChildren!.On);
         Assert.Equal("half-off", y.HasChildren.Off);
-        Assert.Equal("on", y.IsDisabled.On);
+        Assert.Equal("on", y.IsDisabled!.On);
         Assert.Equal("off", y.IsDisabled.Off);
     }
 }

@@ -1,10 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System.Text.Json;
-using ToSic.Cre8magic.Settings.Internal.Json;
-using ToSic.Cre8magic.Settings;
-using System.Text.Json.Serialization.Metadata;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json;
 
 namespace ToSic.Cre8magic.ClientUnitTests.JsonConverterTests.PairOnOff;
 

@@ -23,7 +23,7 @@ public interface IMagicMenuKit: IHasDebugInfo
     /// <summary>
     /// The settings used to retrieve and build the pages.
     /// </summary>
-    MagicMenuSettings Settings { get; }
+    MagicMenuSpell Spell { get; }
 
     /// <summary>
     /// The menu variant to use.

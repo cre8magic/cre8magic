@@ -60,8 +60,8 @@ internal partial class PagesPickRuleParser(LogRoot logRoot)
                     : startCode;
 
                 // Start checking leading ".." or "." and remove them
-                var fromParent = afterId.StartsWith(MagicMenuSettings.StartPageParent);
-                var fromCurrent = !fromParent && afterId.StartsWith(MagicMenuSettings.StartPageCurrent);
+                var fromParent = afterId.StartsWith(MagicMenuSpell.StartPageParent);
+                var fromCurrent = !fromParent && afterId.StartsWith(MagicMenuSpell.StartPageCurrent);
                 var afterParentCurrent = fromParent || fromCurrent
                     ? afterId.TrimStart('.')
                     : afterId;
@@ -74,8 +74,8 @@ internal partial class PagesPickRuleParser(LogRoot logRoot)
 
                 // Check starting "/" or "//" if other from... did not match
                 var fromNotYetSet = !fromCurrent && !fromParent && id == 0;
-                var fromRoot = fromNotYetSet && afterId.StartsWith(MagicMenuSettings.StartPageRootSlash);
-                var useRootBreadcrumb = fromNotYetSet && afterId.StartsWith(MagicMenuSettings.DoubleSlash);
+                var fromRoot = fromNotYetSet && afterId.StartsWith(MagicMenuSpell.StartPageRootSlash);
+                var useRootBreadcrumb = fromNotYetSet && afterId.StartsWith(MagicMenuSpell.DoubleSlash);
 
                 l.A($"Starts at {nameof(fromCurrent)}: {fromCurrent}; {nameof(fromParent)}: {fromParent}; {nameof(fromRoot)}: {fromRoot}; {nameof(force)}: {force}");
                 l.A($"Progress: '{startCode}' > '{afterId}' > '{afterParentCurrent}' > '{afterForce}'");
@@ -94,7 +94,7 @@ internal partial class PagesPickRuleParser(LogRoot logRoot)
                     : afterForce;
 
                 // If we still have "//" then it was without a level number, so default to 0
-                var useBreadcrumb = levelMatch.Success || useRootBreadcrumb || afterLevelMatch.StartsWith(MagicMenuSettings.DoubleSlash);
+                var useBreadcrumb = levelMatch.Success || useRootBreadcrumb || afterLevelMatch.StartsWith(MagicMenuSpell.DoubleSlash);
                 var level = (useRootBreadcrumb && likelyLevel < 0) || (useBreadcrumb && likelyLevel == 0)
                     ? 1
                     : likelyLevel;
@@ -104,13 +104,13 @@ internal partial class PagesPickRuleParser(LogRoot logRoot)
                 
 
                 var afterDoubleSlash = useBreadcrumb
-                    ? afterLevelMatch.TrimStart(MagicMenuSettings.StartPageRootSlash)
+                    ? afterLevelMatch.TrimStart(MagicMenuSpell.StartPageRootSlash)
                     : afterLevelMatch;
 
                 // If we now have "//" as the from - root, or as the left - over from current/ parent, it could have a trailing level number
-                var endWithSingleSlash = afterDoubleSlash.StartsWith(MagicMenuSettings.StartPageRootSlash);
+                var endWithSingleSlash = afterDoubleSlash.StartsWith(MagicMenuSpell.StartPageRootSlash);
 
-                var afterSlash = afterDoubleSlash.TrimStart(MagicMenuSettings.StartPageRootSlash);
+                var afterSlash = afterDoubleSlash.TrimStart(MagicMenuSpell.StartPageRootSlash);
 
                 // Count + characters to determine level
                 var depth = afterSlash.TakeWhile(c => c == '+').Count() + 1;

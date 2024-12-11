@@ -14,11 +14,11 @@ public static class IDebugSettingsExtensions
         return settings;
     }
 
-    public static T UseLanguageSettings<T>(this T settings, MagicLanguageSettings languageSettings) where T : IDebugSettings
+    public static T UseLanguageSettings<T>(this T settings, MagicLanguageSpell languageSpell) where T : IDebugSettings
     {
         settings.Book = (settings.Book ?? new MagicSpellsBook()) with
         {
-            Languages = new() { { "default", languageSettings } }
+            Languages = new() { { "default", languageSpell } }
         };
         return settings;
     }

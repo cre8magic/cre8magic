@@ -109,7 +109,7 @@ public class PagePickerTests(ITestOutputHelper output)
     [InlineData(PageTestData.PhonesId, ".//-1", PageTestData.ExpectedElectronics)]
     [InlineData(PageTestData.PhonesId, ".//-2", PageTestData.ExpectedProducts)]
     [InlineData(PageTestData.PhonesId, ".//-3", PageTestData.ExpectedTopLevel)]
-    public void ChildrenOfAncestor(int productId, string rule, int expectedCount, string note = default)
+    public void ChildrenOfAncestor(int productId, string rule, int expectedCount, string? note = default)
     {
         var (list, nodeRule) = GetPagesRawWithRule(productId, rule);
         output.WriteLine($"Rule: {nodeRule.Raw}; Mode: '{nodeRule.PickMode}' ({note})");

@@ -13,15 +13,15 @@ internal class PagePicker(MagicPageFactory pageFactory, IMagicPage current, Log 
 
     private IMagicPage Current { get; } = current;
 
-    internal List<IMagicPage> GetRootNodes(MagicMenuSettings settings)
+    internal List<IMagicPage> GetRootNodes(MagicMenuSpell spell)
     {
         var l = Log.Fn<List<IMagicPage>>($"{Current.Id}");
         // Give empty list if we shouldn't display it
-        if (settings.Display == false)
+        if (spell.Display == false)
             return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries
-        var start = (settings.Start ?? MagicMenuSettings.Defaults.Fallback.Start)?.Trim();
+        var start = (spell.Start ?? MagicMenuSpell.Defaults.Fallback.Start)?.Trim();
 
         // Case 2: '.' - not yet tested
         var startingPoints = new PagesPickRuleParser(Log.LogRoot).GetStartNodeRules(start);

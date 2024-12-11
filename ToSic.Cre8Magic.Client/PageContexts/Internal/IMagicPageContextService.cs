@@ -4,5 +4,5 @@ namespace ToSic.Cre8magic.PageContexts.Internal;
 
 public interface IMagicPageContextService
 {
-    IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings = default);
+    IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSpell? settings = default);
 }
