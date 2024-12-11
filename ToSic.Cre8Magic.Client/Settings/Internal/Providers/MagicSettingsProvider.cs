@@ -16,32 +16,32 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
     /// </summary>
     /// <param name="themePackage"></param>
     /// <returns></returns>
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicThemePackage themePackage)
+    public List<DataWithJournal<MagicSpellsBook>> SpellsBooks(MagicThemePackage themePackage)
     {
         var partsNoData = AllSources.All(source => source?.HasValues != true);
         if (partsNoData)
-            return _catalog == null
+            return _book == null
                 ? []
-                : [new(_catalog, new())];
+                : [new(_book, new())];
 
-        var catalog = _catalog ?? new MagicSettingsCatalog();
+        var book = _book ?? new MagicSpellsBook();
 
         if (!partsNoData)
-            catalog = catalog with
+            book = book with
             {
-                Analytics = _analytics?.Values != null ? new(_analytics.Values) : catalog.Analytics,
-                Breadcrumbs = _breadcrumbs?.Values != null ? new(_breadcrumbs.Values) : catalog.Breadcrumbs,
-                Containers = _containers?.Values != null ? new(_containers.Values) : catalog.Containers,
+                Analytics = _analytics?.Values != null ? new(_analytics.Values) : book.Analytics,
+                Breadcrumbs = _breadcrumbs?.Values != null ? new(_breadcrumbs.Values) : book.Breadcrumbs,
+                Containers = _containers?.Values != null ? new(_containers.Values) : book.Containers,
                 MenuBlueprints = _menuDesigns?.Values != null
                     ? new(_menuDesigns.Values.ToDictionary(
                         dic => dic.Key,
                         dic => dic.Value
                     ))
-                    : catalog.MenuBlueprints,
-                Themes = _themes?.Values != null ? new(_themes.Values) : catalog.Themes,
+                    : book.MenuBlueprints,
+                Themes = _themes?.Values != null ? new(_themes.Values) : book.Themes,
             };
 
-        return [new(catalog, new())];
+        return [new(book, new())];
     }
 
     public void Reset()
@@ -62,15 +62,15 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSettingsSour
         _themes
     ];
 
-    public IMagicSettingsProvider Provide(MagicSettingsCatalog catalog)
+    public IMagicSettingsProvider Provide(MagicSpellsBook book)
     {
-        _catalog = catalog;
+        _book = book;
         return this;
     }
 
-    public MagicSettingsCatalog? Catalog => Catalogs(null!).FirstOrDefault()?.Data;
+    public MagicSpellsBook? Book => SpellsBooks(null!).FirstOrDefault()?.Data;
 
-    private MagicSettingsCatalog? _catalog;
+    private MagicSpellsBook? _book;
 
     public IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
     private MagicSettingsProviderSection<MagicAnalyticsSettings>? _analytics;

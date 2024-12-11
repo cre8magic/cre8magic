@@ -8,15 +8,15 @@ public static class IDebugSettingsExtensions
         return settings;
     }
 
-    public static T UseCatalog<T>(this T settings, MagicSettingsCatalog catalog) where T : IDebugSettings
+    public static T UseSpellsBook<T>(this T settings, MagicSpellsBook book) where T : IDebugSettings
     {
-        settings.Catalog = catalog;
+        settings.Book = book;
         return settings;
     }
 
     public static T UseLanguageSettings<T>(this T settings, MagicLanguageSettings languageSettings) where T : IDebugSettings
     {
-        settings.Catalog = (settings.Catalog ?? new MagicSettingsCatalog()) with
+        settings.Book = (settings.Book ?? new MagicSpellsBook()) with
         {
             Languages = new() { { "default", languageSettings } }
         };

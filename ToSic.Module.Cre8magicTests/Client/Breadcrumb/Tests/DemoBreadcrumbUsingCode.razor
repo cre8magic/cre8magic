@@ -28,7 +28,7 @@
     }
 </ol>
 
-<h2>Settings from Catalog</h2>
+<h2>Settings from Spells Book</h2>
 
 @* Setup Code to ensure it uses the settings we want to provide for the demo *@
 
@@ -40,7 +40,7 @@
     }));
 }
 
-@* Breadcrumb using the settings from the catalog *@
+@* Breadcrumb using the settings from the spells book *@
 @{
     // Note: equivalent to ... = MagicAct.BreadcrumbKit(PageState, new() { SettingsName = "default" });
     breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState });
@@ -57,7 +57,7 @@
 <h2>With Non-Default names</h2>
                     
 @{
-    var settingsCatalog = new MagicSettingsCatalog
+    var spellsBook = new MagicSpellsBook
     {
         Breadcrumbs = new()
         {
@@ -70,10 +70,10 @@
             }
         }
     };
-    MagicAct.UseSettingsCatalog(settingsCatalog);
+    MagicAct.UseSpellsBook(spellsBook);
 }
 
-@* Breadcrumb using the settings from the catalog *@
+@* Breadcrumb using the settings from the spells book *@
 @{
     breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState, SettingsName = "productsBreadcrumb" });
 }

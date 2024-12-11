@@ -19,7 +19,7 @@ public interface IMagicAct
 {
     #region Setup Methods
 
-    IMagicAct UseSettingsCatalog(MagicSettingsCatalog catalog);
+    IMagicAct UseSpellsBook(MagicSpellsBook book);
 
     IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
     

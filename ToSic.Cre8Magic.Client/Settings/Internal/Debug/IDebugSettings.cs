@@ -2,7 +2,7 @@
 
 public interface IDebugSettings
 {
-    internal MagicSettingsCatalog? Catalog { get; set; }
+    internal MagicSpellsBook? Book { get; set; }
 
     internal bool? DebugThis { get; set; }
 }

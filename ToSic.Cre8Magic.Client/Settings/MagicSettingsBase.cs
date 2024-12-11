@@ -34,7 +34,7 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
         PageState = priority?.PageState ?? fallback.PageState;
 
         // Debug settings
-        ((IDebugSettings)this).Catalog = ((IDebugSettings?)priority)?.Catalog ?? ((IDebugSettings?)fallback)?.Catalog;
+        ((IDebugSettings)this).Book = ((IDebugSettings?)priority)?.Book ?? ((IDebugSettings?)fallback)?.Book;
         ((IDebugSettings)this).DebugThis = ((IDebugSettings?)priority)?.DebugThis ?? ((IDebugSettings?)fallback)?.DebugThis;
     }
 
@@ -77,7 +77,7 @@ public abstract record MagicSettingsBase: SettingsWithInherit, ISettingsForCodeU
     #region Runtime Debug Settings
 
     [JsonIgnore]
-    MagicSettingsCatalog? IDebugSettings.Catalog { get; set; }
+    MagicSpellsBook? IDebugSettings.Book { get; set; }
 
     [JsonIgnore]
     bool? IDebugSettings.DebugThis { get; set; }

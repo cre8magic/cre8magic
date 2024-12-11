@@ -31,7 +31,7 @@ internal class TestDatabase
 
         // Language Controls
         new("language-basic", "Language - Basic (various configs)", typeof(TestLanguagesBasic)),
-        new("language-custom-catalog", "Language - Custom Catalog", typeof(TestLanguagesWithCustomCatalog)),
+        new("language-custom-catalog", "Language - Custom Spells Book", typeof(TestLanguagesWithCustomCatalog)),
 
         // Page Service
         new("page-service-pages", "Page Service Pages", typeof(PageServicePages)),

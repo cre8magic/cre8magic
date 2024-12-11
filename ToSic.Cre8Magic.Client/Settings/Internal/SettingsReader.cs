@@ -9,26 +9,26 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// <summary>
 /// Special helper to do a few things with settings.
 ///
-/// 1. It receives a list of Catalogs which it will scan
-/// 2. It also receives a function to get only the part of the catalog it's interested in
+/// 1. It receives a list of SpellsBooks which it will scan
+/// 2. It also receives a function to get only the part of the spells book it's interested in
 ///    ...this is to get type safety and everything, like it will only look at the Analytics settings.
 /// </summary>
 /// <typeparam name="TSettingsData"></typeparam>
-/// <param name="hasCatalogs"></param>
+/// <param name="hasSpellsBook"></param>
 /// <param name="defaults"></param>
 /// <param name="getSection"></param>
 internal class SettingsReader<TSettingsData>(
-    IHasCatalogs hasCatalogs,
+    IHasSpellsBook hasSpellsBook,
     Defaults<TSettingsData> defaults,
-    Func<MagicSettingsCatalog, IDictionary<string, TSettingsData>> getSection
+    Func<MagicSpellsBook, IDictionary<string, TSettingsData>> getSection
 )
     where TSettingsData : class, new()
 {
     /// <summary>
-    /// Create a clone of the settings reader, which will specifically only use test catalogs provided by the source.
+    /// Create a clone of the settings reader, which will specifically only use test books provided by the source.
     /// </summary>
-    internal SettingsReader<TSettingsData> MaybeUseCustomCatalog(MagicSettingsCatalog? catalog)
-        => catalog == null ? this : new(new HasCatalogs([new(catalog, new())]), defaults, getSection);
+    internal SettingsReader<TSettingsData> MaybeUseCustomSpellsBook(MagicSpellsBook? book)
+        => book == null ? this : new(new HasSpellsBook([new(book, new())]), defaults, getSection);
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -110,19 +110,19 @@ internal class SettingsReader<TSettingsData>(
         // Make sure we have at least one name
         if (names == null || names.Length == 0) names = [Default];
 
-        // Get all catalogs / sources (e.g. provided by code in theme, from JSON, etc.)
-        var catalogs = hasCatalogs.Catalogs;
+        // Get all spells-books (e.g. provided by code in theme, from JSON, etc.)
+        var books = hasSpellsBook.Books;
 
         // Create a list of all possible sources and names
         // Prioritize the names, and then go through all sources for each name
         var allSourcesAndNames = names
             .Distinct()
-            .SelectMany(name => catalogs.Select(catalog => (catalog: catalog.Data, name)))
+            .SelectMany(name => books.Select(book => (Book: book.Data, name)))
             .ToList();
 
         foreach (var set in allSourcesAndNames)
         {
-            var section = getSection(set.catalog);
+            var section = getSection(set.Book);
             if (section.TryGetValue(set.name, out var settings))
                 return settings;
         }

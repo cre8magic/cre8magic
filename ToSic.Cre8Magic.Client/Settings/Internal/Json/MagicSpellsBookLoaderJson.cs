@@ -7,9 +7,9 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Internal.Json;
 
-internal class MagicSettingsCatalogLoaderJson
+internal class MagicSpellsBookLoaderJson
 {
-    public DataWithJournal<MagicSettingsCatalog> LoadJson(MagicThemePackage themeConfig)
+    public DataWithJournal<MagicSpellsBook> LoadJson(MagicThemePackage themeConfig)
     {
         List<Exception> exceptions = [];
 
@@ -20,13 +20,13 @@ internal class MagicSettingsCatalogLoaderJson
 
             var deserializeOptions = GetNewOptionsForPreMerge;
 
-            var result = JsonSerializer.Deserialize<MagicSettingsCatalog>(jsonString, deserializeOptions)!;
+            var result = JsonSerializer.Deserialize<MagicSpellsBook>(jsonString, deserializeOptions)!;
 
             // Ensure we have version set, ATM exactly 0.01
             if (Math.Abs(result.Version - 0.01) > 0.001)
                 AddException(new ArgumentException($"Json {nameof(result.Version)} must be set to 0.01", nameof(result.Version)));
 
-            if (!result.Source.HasValue() || result.Source == MagicSettingsCatalog.SourceDefault)
+            if (!result.Source.HasValue() || result.Source == MagicSpellsBook.SourceDefault)
                 return new(result with { Source = "JSON" }, new([], exceptions));
 
             return new(result, new([], exceptions));

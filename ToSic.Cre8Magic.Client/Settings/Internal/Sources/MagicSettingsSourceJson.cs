@@ -9,11 +9,11 @@ namespace ToSic.Cre8magic.Settings.Internal.Sources;
 /// It requires that there are <see cref="MagicThemePackage"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-internal class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoaderJson) : IMagicSettingsSource
+internal class MagicSettingsSourceJson(MagicSpellsBookLoaderJson bookLoaderJson) : IMagicSettingsSource
 {
     public int Priority => 100;
 
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicThemePackage themePackage)
+    public List<DataWithJournal<MagicSpellsBook>> SpellsBooks(MagicThemePackage themePackage)
     {
         if (themePackage == null)
             throw new ArgumentNullException(nameof(themePackage));
@@ -24,9 +24,9 @@ internal class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoa
         if (string.IsNullOrWhiteSpace(themePackage.SettingsJsonFile))
             return [];
 
-        var catalogFromJson = catalogLoaderJson.LoadJson(themePackage);
+        var spellsBook = bookLoaderJson.LoadJson(themePackage);
 
-        var bundle = new List<DataWithJournal<MagicSettingsCatalog>> { catalogFromJson };
+        var bundle = new List<DataWithJournal<MagicSpellsBook>> { spellsBook };
         _cache[themePackage] = bundle;
         return bundle;
     }
@@ -34,5 +34,5 @@ internal class MagicSettingsSourceJson(MagicSettingsCatalogLoaderJson catalogLoa
     /// <summary>
     /// Note: don't make static, otherwise we can't see json-file changes
     /// </summary>
-    private readonly Dictionary<MagicThemePackage, List<DataWithJournal<MagicSettingsCatalog>>> _cache = new();
+    private readonly Dictionary<MagicThemePackage, List<DataWithJournal<MagicSpellsBook>>> _cache = new();
 }

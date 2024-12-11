@@ -15,7 +15,7 @@ public static class DebugExtensions
         menuKit?.WorkContext?.LogRoot.Entries;
 
     public static List<Exception> GetExceptions(this IMagicSettingsService settingsSvc) =>
-        settingsSvc.Catalogs.SelectMany(c => c.Journal.Exceptions).ToList();
+        settingsSvc.Books.SelectMany(c => c.Journal.Exceptions).ToList();
 
     public static CmThemeContext GetThemeContext(this IMagicSettingsService settingsSvc, PageState pageState) =>
         settingsSvc.GetThemeContext(pageState);

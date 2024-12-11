@@ -36,8 +36,8 @@ internal static class MagicSettingsGetSettings
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type
         var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, settingsPrefix);
-        if (settings is IDebugSettings { Catalog: not null } withCatalog)
-            settingsReader = settingsReader.MaybeUseCustomCatalog(withCatalog.Catalog);
+        if (settings is IDebugSettings { Book: not null } withBook)
+            settingsReader = settingsReader.MaybeUseCustomSpellsBook(withBook.Book);
         var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
 
         return new(mergedSettings, themeCtx, part, journal);
@@ -88,8 +88,8 @@ internal static class MagicSettingsGetSettings
 
         // Get Design Settings from specified reader using the provided design settings as priority to merge
         var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Design, settingPrefix);
-        if (dSettings is IDebugSettings { Catalog: not null } withDesignCatalog)
-            designReader = designReader.MaybeUseCustomCatalog(withDesignCatalog.Catalog);
+        if (dSettings is IDebugSettings { Book: not null } withBlueprintsBook)
+            designReader = designReader.MaybeUseCustomSpellsBook(withBlueprintsBook.Book);
         var (designSettings, designJournal) = designReader.FindAndMerge(findSettings, dSettings);
 
         // Reconstruct the expected settings type to merge in the design use the provided finalize function

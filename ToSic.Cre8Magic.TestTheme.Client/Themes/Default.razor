@@ -38,7 +38,7 @@ Nice to know:
     {
         { "default", "default (json)" }, // leave test as is, using base settings
         { "none", "no settings" }, // use no settings at all - as if nothing were configured.
-        { "catalog", "use custom catalog" }, // use full custom catalog
+        { "custom-book", "use custom spells book" }, // use full custom catalog
     };
     
     protected override void OnParametersSet()
@@ -49,13 +49,13 @@ Nice to know:
         {
             case "default":
                 // MagicAct.UseSettings(ThemePackageSettings, Layout);
-                // MagicAct.UseSettingsCatalog(null);
+                // MagicAct.UseSpellsBook(null);
                 break;
             case "none":
                 // MagicAct.UseSettings(null, Layout);
                 break;
-            case "catalog":
-                MagicAct.UseSettingsCatalog(ThemeSettingsForTests.Catalog1);
+            case "custom-book":
+                MagicAct.UseSpellsBook(ThemeSettingsForTests.Book1);
                 break;
         }
     }

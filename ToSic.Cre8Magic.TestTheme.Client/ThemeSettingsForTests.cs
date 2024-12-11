@@ -4,9 +4,9 @@ namespace ToSic.Cre8magic.TestTheme.Client;
 
 internal class ThemeSettingsForTests
 {
-    public static MagicSettingsCatalog Catalog1 => new()
+    public static MagicSpellsBook Book1 => new()
     {
-        Source = nameof(Catalog1),
+        Source = nameof(Book1),
         Themes = new()
         {
             {
@@ -23,8 +23,8 @@ internal class ThemeSettingsForTests
                 {
                     Languages = new()
                     {
-                        { "en", new() { Label = $"En {nameof(Catalog1)}", Description = "English from Code" } },
-                        { "de", new() { Label = $"DE {nameof(Catalog1)}", Description = "DE from Code" } },
+                        { "en", new() { Label = $"En {nameof(Book1)}", Description = "English from Code" } },
+                        { "de", new() { Label = $"DE {nameof(Book1)}", Description = "DE from Code" } },
                     },
                 }
             },

@@ -12,15 +12,15 @@ using static System.StringComparer;
 namespace ToSic.Cre8magic.Settings;
 
 /// <summary>
-/// This is a catalog of all kinds of settings.
+/// This is a Spells Book; a catalog of all kinds of settings.
 /// It serves as a kind of database to manage all settings, which will usually be retrieved using a name. 
 /// </summary>
-public record MagicSettingsCatalog: IHasDebugSettings
+public record MagicSpellsBook: IHasDebugSettings
 {
     /// <summary>
     /// Empty Constructor so it can be created in code and Json-Deserialized
     /// </summary>
-    public MagicSettingsCatalog() { }
+    public MagicSpellsBook() { }
 
 
     public const string SourceDefault = "Unknown";
@@ -99,7 +99,7 @@ public record MagicSettingsCatalog: IHasDebugSettings
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuBlueprint>))]
     public Dictionary<string, MagicMenuBlueprint> MenuBlueprints { get; init; } = new(InvariantCultureIgnoreCase);
 
-    internal static MagicSettingsCatalog Fallback = new()
+    internal static MagicSpellsBook Fallback = new()
     {
         Version = -1.0f,
         Source = "Fallback",

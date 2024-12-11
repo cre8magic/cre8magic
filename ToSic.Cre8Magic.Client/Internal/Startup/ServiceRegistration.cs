@@ -69,7 +69,7 @@ public static class ServiceRegistration
         services.TryAddScoped<IMagicSettingsService, MagicSettingsService>();
 
         // Services used by SettingsService, which is scoped, so the dependencies can be normal transient
-        services.TryAddTransient<MagicSettingsCatalogsLoader>();
+        services.TryAddTransient<MagicSpellsLibraryLoader>();
 
         return services;
     }
@@ -77,8 +77,7 @@ public static class ServiceRegistration
     public static IServiceCollection AddCre8magicSettingsSourcesPackage(this IServiceCollection services)
     {
         // 2024-11-21 2dm test, was registered both scoped and transient, probably transient is ok
-        //services.TryAddScoped<MagicSettingsCatalogLoaderJson>();
-        services.TryAddTransient<MagicSettingsCatalogLoaderJson>();
+        services.TryAddTransient<MagicSpellsBookLoaderJson>();
         services.AddScoped<IMagicSettingsSource, MagicSettingsSourceJson>();
         services.AddTransient<IMagicSettingsSource, MagicSettingsSourcePackageDefaults>();
 

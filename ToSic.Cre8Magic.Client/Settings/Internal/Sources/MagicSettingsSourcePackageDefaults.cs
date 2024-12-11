@@ -11,7 +11,7 @@ public class MagicSettingsSourcePackageDefaults : IMagicSettingsSource
 {
     public int Priority => -100;
 
-    public List<DataWithJournal<MagicSettingsCatalog>> Catalogs(MagicThemePackage themePackage) =>
+    public List<DataWithJournal<MagicSpellsBook>> SpellsBooks(MagicThemePackage themePackage) =>
         themePackage == null
             ? throw new ArgumentNullException(nameof(themePackage))
             : themePackage.Defaults == null

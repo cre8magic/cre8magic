@@ -3,14 +3,14 @@
 @using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Internal.Debug
 @inject IMagicAct MagicAct
-<h3>TestLanguagesWithCustomCatalog</h3>
+<h3>Tes tLanguages With Custom Spells Book</h3>
 @code
 {
     /// <inheritdoc cref="Oqtane.UI.PageState"/>
     [CascadingParameter] public required PageState PageState { get; set; }
 }
 @{
-    var catalog = new MagicSettingsCatalog
+    var book = new MagicSpellsBook
     {
         Breadcrumbs = new()
         {
@@ -24,9 +24,9 @@
         }
     };
 
-    var bcKit = MagicAct.BreadcrumbKit(((new MagicBreadcrumbSettings() with { PageState = PageState }).UseCatalog(catalog)));
+    var bcKit = MagicAct.BreadcrumbKit(((new MagicBreadcrumbSettings() with { PageState = PageState }).UseSpellsBook(book)));
 }
 
 <div class="alert alert-info">
-    BCKit.Settings....: bcKit.Settings.UseCatalog - can't work yet, Breadcrumbs not using full settings retrieval yet
+    BCKit.Settings....: bcKit.Settings.UseSpellsBook - can't work yet, Breadcrumbs not using full settings retrieval yet
 </div>

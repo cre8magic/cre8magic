@@ -44,9 +44,9 @@ internal class MagicAct(
         return this;
     }
 
-    public IMagicAct UseSettingsCatalog(MagicSettingsCatalog catalog)
+    public IMagicAct UseSpellsBook(MagicSpellsBook book)
     {
-        settingsProviderSvc.Value.Provide(catalog);
+        settingsProviderSvc.Value.Provide(book);
         return this;
     }
 
@@ -54,7 +54,7 @@ internal class MagicAct(
     {
         var provider = new MagicSettingsProvider();
         var result = providerFunc(provider);
-        var cat = result?.Catalog;
+        var cat = result?.Book;
         if (cat != null)
             settingsProviderSvc.Value.Provide(cat);
         return this;
