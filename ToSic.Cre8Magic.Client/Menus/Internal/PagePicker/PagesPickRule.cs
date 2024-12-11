@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Menus.Internal.Nodes;
+﻿namespace ToSic.Cre8magic.Menus.Internal.PagePicker;
 
 /// <summary>
 /// Rule / specs for picking / finding a page.
@@ -15,7 +15,7 @@ internal record PagesPickRule
 
     public bool ShowChildren { get; init; } = false;
 
-    public StartMode ModeInfo { get; init; }
+    public PickMode PickMode { get; init; }
 
     public required string Raw { get; init; }
 }

@@ -72,6 +72,7 @@ explain
 1. Magic Act
 1. Magic Blueprints
 1. Magic Tailors
+1. Magic Spells Book
 1. Magic Meta-Settings - needs better name / Magic Spells
 
 

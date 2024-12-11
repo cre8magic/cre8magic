@@ -2,7 +2,7 @@
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;
 
-namespace ToSic.Cre8magic.Menus.Internal.Nodes;
+namespace ToSic.Cre8magic.Menus.Internal.PagePicker;
 
 /// <summary>
 /// Helper to find various pages based on rules such as
@@ -15,7 +15,7 @@ namespace ToSic.Cre8magic.Menus.Internal.Nodes;
 /// * "27/" - the children of page 27
 /// * "../" - the children of the parent of the current page
 /// </summary>
-internal partial class NodeRuleParser(LogRoot logRoot)
+internal partial class PagesPickRuleParser(LogRoot logRoot)
 {
     public const char PageForced = '!';
 
@@ -117,12 +117,12 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                 var afterDepth = afterSlash.TrimStart('+');
 
                 var modeInfo = id != default
-                    ? StartMode.PageId
+                    ? PickMode.PageId
                     : fromRoot
-                        ? StartMode.Root
+                        ? PickMode.Root
                         : fromCurrent || fromParent
-                            ? StartMode.Current
-                            : StartMode.Unknown;
+                            ? PickMode.Current
+                            : PickMode.Unknown;
 
                 var levelFromRootNeverNegative = !fromRoot
                     ? level
@@ -145,7 +145,7 @@ internal partial class NodeRuleParser(LogRoot logRoot)
                     ShowChildren =
                         levelChildrenPair.ShowChildren,
                     Level = levelChildrenPair.Level,
-                    ModeInfo = modeInfo,
+                    PickMode = modeInfo,
                     Raw = startCode
                 };
             })

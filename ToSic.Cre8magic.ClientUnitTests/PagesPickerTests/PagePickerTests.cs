@@ -1,16 +1,17 @@
 ﻿using System.Text.Json;
 using ToSic.Cre8magic.ClientUnitTests.PagesData;
 using ToSic.Cre8magic.ClientUnitTests.Utils;
-using ToSic.Cre8magic.Menus.Internal.Nodes;
+using ToSic.Cre8magic.Menus.Internal.PagePicker;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils.Logging;
 using Xunit.Abstractions;
+using PagesPickRuleParser = ToSic.Cre8magic.Menus.Internal.PagePicker.PagesPickRuleParser;
 
-namespace ToSic.Cre8magic.ClientUnitTests.MenuNodeRuleTests;
+namespace ToSic.Cre8magic.ClientUnitTests.PagesPickerTests;
 
-public class NodeRulePickerTests(ITestOutputHelper output)
+public class PagePickerTests(ITestOutputHelper output)
 {
-    private static NodeRuleParser Parser => new(new());
+    private static PagesPickRuleParser Parser => new(new());
     private List<IMagicPage> GetPagesRaw(int id, string? rule) =>
         GetPagesRawWithRule(id, rule).List;
 
@@ -18,10 +19,10 @@ public class NodeRulePickerTests(ITestOutputHelper output)
     {
         var pageFactory = PageTestData.PageFactoryForPage(id);
         var logRoot = new LogRoot();
-        var picker = new NodeRulePicker(pageFactory, pageFactory.Current, logRoot.GetLog("PageFactory"));
+        var picker = new PagePicker(pageFactory, pageFactory.Current, logRoot.GetLog("PageFactory"));
 
         rule ??= id.ToString();
-        NodeRuleParser parser = new(logRoot);
+        PagesPickRuleParser parser = new(logRoot);
         var nodeRule = parser.GetStartNodeRules(rule).Single();
         var list = picker.FindInitialPagesRawTac(nodeRule);
         logRoot.Dump(output);
@@ -111,7 +112,7 @@ public class NodeRulePickerTests(ITestOutputHelper output)
     public void ChildrenOfAncestor(int productId, string rule, int expectedCount, string note = default)
     {
         var (list, nodeRule) = GetPagesRawWithRule(productId, rule);
-        output.WriteLine($"Rule: {nodeRule.Raw}; Mode: '{nodeRule.ModeInfo}' ({note})");
+        output.WriteLine($"Rule: {nodeRule.Raw}; Mode: '{nodeRule.PickMode}' ({note})");
         output.WriteLine(JsonSerializer.Serialize(nodeRule));
         Assert.Equal(expectedCount, list.Count);
     }

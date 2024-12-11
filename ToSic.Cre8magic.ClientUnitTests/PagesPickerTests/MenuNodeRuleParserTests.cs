@@ -1,16 +1,17 @@
 ﻿using ToSic.Cre8magic.ClientUnitTests.Utils;
-using ToSic.Cre8magic.Menus.Internal.Nodes;
+using ToSic.Cre8magic.Menus.Internal.PagePicker;
 using ToSic.Cre8magic.Utils.Logging;
 using Xunit.Abstractions;
+using PagesPickRuleParser = ToSic.Cre8magic.Menus.Internal.PagePicker.PagesPickRuleParser;
 
-namespace ToSic.Cre8magic.ClientUnitTests.MenuNodeRuleTests;
+namespace ToSic.Cre8magic.ClientUnitTests.PagesPickerTests;
 
 public class MenuNodeRuleParserTests(ITestOutputHelper output)
 {
     private void AssertRule(PagesPickRule expected)
     {
         var logRoot = new LogRoot();
-        NodeRuleParser parser = new(logRoot);
+        PagesPickRuleParser parser = new(logRoot);
         var rules = parser.GetStartNodeRules(expected.Raw);
         logRoot.Dump(output);
         Assert.Single(rules);
@@ -33,7 +34,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = 1,
         ShowChildren = false,
-        ModeInfo = StartMode.Root,
+        PickMode = PickMode.Root,
     });
 
 
@@ -50,7 +51,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = 1,
         ShowChildren = false,
-        ModeInfo = StartMode.Root,
+        PickMode = PickMode.Root,
     });
 
     [Theory]
@@ -64,7 +65,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = level,
         ShowChildren = false,
-        ModeInfo = StartMode.Root,
+        PickMode = PickMode.Root,
     });
 
     [Theory]
@@ -76,7 +77,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = 0,
         ShowChildren = false,
-        ModeInfo = StartMode.Current,
+        PickMode = PickMode.Current,
     });
 
     [Theory]
@@ -89,7 +90,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = 0,
         ShowChildren = false,
-        ModeInfo = StartMode.Current,
+        PickMode = PickMode.Current,
     });
 
     [Theory]
@@ -101,7 +102,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = 0,
         ShowChildren = true,
-        ModeInfo = StartMode.Current,
+        PickMode = PickMode.Current,
     });
 
     [Theory]
@@ -113,7 +114,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = 1,
         ShowChildren = false,
-        ModeInfo = StartMode.Current,
+        PickMode = PickMode.Current,
     });
 
     [Theory]
@@ -127,7 +128,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = level,
         ShowChildren = false,
-        ModeInfo = StartMode.Current,
+        PickMode = PickMode.Current,
     });
 
     [Theory]
@@ -139,7 +140,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = 1,
         ShowChildren = false,
-        ModeInfo = StartMode.PageId,
+        PickMode = PickMode.PageId,
     });
 
     [Theory]
@@ -151,7 +152,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = true,
         Level = 1,
         ShowChildren = false,
-        ModeInfo = StartMode.PageId,
+        PickMode = PickMode.PageId,
     });
 
 
@@ -164,7 +165,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = 1,
         ShowChildren = true,
-        ModeInfo = StartMode.PageId,
+        PickMode = PickMode.PageId,
     });
 
     [Theory]
@@ -176,7 +177,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = true,
         Level = 1,
         ShowChildren = true,
-        ModeInfo = StartMode.PageId,
+        PickMode = PickMode.PageId,
     });
 
     [Theory]
@@ -188,7 +189,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = -1,
         ShowChildren = false,
-        ModeInfo = StartMode.Current,
+        PickMode = PickMode.Current,
     });
 
     [Theory]
@@ -203,7 +204,7 @@ public class MenuNodeRuleParserTests(ITestOutputHelper output)
         Force = false,
         Level = level,
         ShowChildren = true,
-        ModeInfo = StartMode.Current,
+        PickMode = PickMode.Current,
     });
 
 }

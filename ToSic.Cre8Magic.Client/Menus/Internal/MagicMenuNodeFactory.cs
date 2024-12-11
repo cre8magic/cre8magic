@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Menus.Internal.Nodes;
-using ToSic.Cre8magic.Pages;
+﻿using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Utils.Logging;
 
@@ -54,7 +53,7 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
         var l = log.Fn<List<IMagicPage>>("Root");
         l.A($"Start with PageState for Page:{pageFactory.Current.Id}; Level:1");
 
-        var rootPages = new NodeRulePicker(pageFactory, pageFactory.Current, log).GetRootNodes(settings);
+        var rootPages = new PagePicker.PagePicker(pageFactory, pageFactory.Current, log).GetRootNodes(settings);
         l.A($"Root pages ({rootPages.Count}): {rootPages.LogPageList()}");
 
         var children = rootPages
