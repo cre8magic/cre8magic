@@ -21,7 +21,7 @@ internal class PagePicker(MagicPageFactory pageFactory, IMagicPage current, Log 
             return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries
-        var start = (spell.Start ?? MagicMenuSpell.Defaults.Fallback.Start)?.Trim();
+        var start = (spell.Pick ?? MagicMenuSpell.Defaults.Fallback.Pick)?.Trim();
 
         // Case 2: '.' - not yet tested
         var startingPoints = new PagesPickRuleParser(Log.LogRoot).GetStartNodeRules(start);

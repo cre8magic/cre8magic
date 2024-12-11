@@ -26,7 +26,7 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
     {
         Id = priority?.Id ?? fallback?.Id;
         Display = priority?.Display ?? fallback?.Display;
-        Start = priority?.Start ?? fallback?.Start;
+        Pick = priority?.Pick ?? fallback?.Pick;
         Variant = priority?.Variant ?? fallback?.Variant;
 
         // Code-Only Settings
@@ -69,7 +69,7 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
     /// - `.` to indicate current page
     /// - blank / null, to use another start ???
     /// </summary>
-    public string? Start { get; init; }
+    public string? Pick { get; init; }
     public const char StartPageRootSlash = '/';
     public const string DoubleSlash = "//";
     public const char StartPageCurrent = '.';
@@ -110,12 +110,12 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
         Fallback = new()
         {
             Variant = "Horizontal",
-            Start = StartPageRootSlash.ToString(),
+            Pick = StartPageRootSlash.ToString(),
         },
         Foundation = new()
         {
             Variant = "Horizontal",
-            Start = StartPageRootSlash.ToString(),
+            Pick = StartPageRootSlash.ToString(),
         },
     };
 }

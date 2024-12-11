@@ -93,7 +93,7 @@
 
   "pageContexts": {
     "default": {
-      "useBodyTag": false, // bool
+      "useBodyTag": true, // bool
       "classList": [
         "page-[Page.Id]",
         "page-root-[Page.RootId]",
@@ -245,17 +245,17 @@
   "menus": {
     // The default configuration is taken if no other configuration is used
     "default": {
-      "start": "/",
+      "pick": "/",
       "depth": 1
     },
     // This is used as the main-menu in the navigation with sidebar submenu
     "topLevelOnly": {
-      "start": "/",
+      "pick": "/",
       "depth": 1
     },
     // Main is usually used for the default, top-level menu
     "main": {
-      "start": "/+",
+      "pick": "/+",
       "depth": 2,
       // Example to enable debug just on this specific menu
       "debug": {
@@ -266,27 +266,27 @@
     // Mobile is usually used for the default, top-level menu which only appears when the screen is too small
     "mobile": {
       "variant": "vertical",
-      "start": "/",
+      "pick": "/",
       "depth": 1
     },
     // Sidebar is used in menus usually to the left of content
     "sidebar": {
       "variant": "vertical",
-      "start": ".//2",
+      "pick": ".//2",
       "depth": 2,
       "design": "Sidebar"
     },
     // Footer menu, would usually show Imprint, Terms, Privacy etc.
     // For the default values we're using Home "1" and Login (forced, even though it's set to not show in menus) "5!" as these are a few of the pages which always exist
     "footer": {
-      "start": "1, 5!"
+      "pick": "1, 5!"
     },
     "menu-test-part-unchanged": {
-      "start": ".",
+      "pick": ".",
       "depth": 1
     },
     "menu-new-name": {
-      "start": ".",
+      "pick": ".",
       "depth": 2
     }
   },
@@ -313,7 +313,7 @@
           // Test with page-id in the menu
           "classes": "nav-item nav-[Page.Id] nav-layout-[Layout.Variation] debug-menulevel-[Menu.Level]",
           "hasChildren": "has-child dropdown",
-          "isActive": "active",
+          "isActive": [ "active", "not-active" ],
           "isDisabled": "disabled"
         },
         "a": {

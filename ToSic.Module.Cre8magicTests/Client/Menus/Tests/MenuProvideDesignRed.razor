@@ -41,24 +41,24 @@
     <p>
         Goal is that this code will configure a menu design, and the menu will pick it up automatically.
     </p>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = redMenuName, Start = "." })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = redMenuName, Pick = "." })'></BasicMenu>
     
     <hr />
     <p>
         This is the default
     </p>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Start = "." })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Pick = "." })'></BasicMenu>
     
     <hr/>
     <p>
         This is an unknown name
     </p>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = unknownMenuName, Start = "." })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = unknownMenuName, Pick = "." })'></BasicMenu>
 
     <hr />
     <p>
         This uses a part name
     </p>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = redPartName, Start = "." })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = redPartName, Pick = "." })'></BasicMenu>
 
 </div>
