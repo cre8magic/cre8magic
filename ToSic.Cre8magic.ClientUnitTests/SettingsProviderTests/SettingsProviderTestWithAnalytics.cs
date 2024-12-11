@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Internal.Startup;
-using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Spells;
 using ToSic.Cre8magic.Spells.Internal;
 using ToSic.Cre8magic.Spells.Internal.Providers;

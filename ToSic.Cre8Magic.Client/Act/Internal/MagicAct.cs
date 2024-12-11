@@ -13,8 +13,6 @@ using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.PageContexts.Internal;
-using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Spells;
 using ToSic.Cre8magic.Spells.Internal;
 using ToSic.Cre8magic.Spells.Internal.Providers;

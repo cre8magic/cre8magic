@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Spells.Settings;
 
 namespace ToSic.Cre8magic.ClientUnitTests.JsonConverterTests.PairOnOff;

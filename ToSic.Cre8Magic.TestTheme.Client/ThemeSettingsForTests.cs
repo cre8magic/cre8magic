@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Spells;
+﻿using ToSic.Cre8magic.Spells;
 
 namespace ToSic.Cre8magic.TestTheme.Client;
 

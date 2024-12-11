@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Spells.Internal;
-using ToSic.Cre8magic.Tailors;
+﻿using ToSic.Cre8magic.Spells.Internal;
 
 namespace ToSic.Cre8magic.Menus;
 

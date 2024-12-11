@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Spells.Internal;
 using ToSic.Cre8magic.Themes.Internal.Json;
 

@@ -11,8 +11,6 @@ using ToSic.Cre8magic.Menus.Internal;
 using ToSic.Cre8magic.PageContexts.Internal;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Settings;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.UserLogins.Internal;
 using ToSic.Cre8magic.Users;

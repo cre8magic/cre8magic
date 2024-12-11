@@ -1,5 +1,4 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Spells.Settings.Internal;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;

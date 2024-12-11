@@ -6,7 +6,6 @@ using Oqtane.UI;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Menus.Internal.PagePicker;
 using ToSic.Cre8magic.Pages.Internal.PageDesign;
-using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Spells.Internal;
 using ToSic.Cre8magic.Utils.Logging;
 using Log = ToSic.Cre8magic.Utils.Logging.Log;

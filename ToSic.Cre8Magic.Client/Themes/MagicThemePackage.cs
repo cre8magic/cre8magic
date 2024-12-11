@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Oqtane.Themes;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Spells;
 
 namespace ToSic.Cre8magic.Themes;

@@ -1,8 +1,8 @@
 ﻿using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
+using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Spells.Internal.Sources;
 
 namespace ToSic.Cre8magic.Spells.Internal.Providers;

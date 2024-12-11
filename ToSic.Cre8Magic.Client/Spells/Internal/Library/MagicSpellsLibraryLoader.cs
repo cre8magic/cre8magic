@@ -1,4 +1,4 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Journal;
+﻿using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Spells.Internal.Sources;
 
 namespace ToSic.Cre8magic.Spells.Internal;

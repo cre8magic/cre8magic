@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Settings.Internal.Journal;
+using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Spells.Internal.Json;

@@ -2,9 +2,9 @@
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
+using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
-using ToSic.Cre8magic.Settings.Internal.Journal;
 using ToSic.Cre8magic.Spells.Debug;
 using ToSic.Cre8magic.Spells.Internal.Debug;
 using ToSic.Cre8magic.Themes.Internal;
