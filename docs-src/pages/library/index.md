@@ -29,16 +29,38 @@ Typically these pages are officially "hidden" in the navigation, since we don't 
 but still need to be accessible.
 This is how we would do it in cre8magic using the `MagicMenu` _Oqtane Bootstrap5_ component:
 
-```html
-<!-- This example assumes a separate configuration which is called "System" -->
-<MagicMenu PartName="System" />
-
-<!-- This example places all the settings directly inside the tag -->
-<!-- In this case, 5 is a hidden page in the navigation, and we want to show it's children -->
-<MagicMenu Settings='new() { Start = "5!/" }' />
+```razor
+@using ToSic.Cre8magic.OqtaneBs5
+<!--
+In this case:
+ - 1 is home
+ - 5 is a hidden page in the navigation (hence the !), of which want to show the children
+-->
+<MagicMenu Spell='new() { Pick = "1, 5!/" }' />
 ```
 
+Now let's assume you need to _Tailor_ the menu a bit more using a _Blueprint_.
+We need to add 'sys-nav' to the class of the `<ul>`:
 
+```razor
+<MagicMenu Spell='new() { Pick = "1, 5!/" }' Blueprint='new() { Parts = new() { { "ul", new() { Classes = "sys-nav" }}}}' />
+```
+
+Then again, let's place all these settings in a central location called the **Spell Book**
+and just name this menu part "System-Menu":
+
+```html
+<MagicMenu Name="System-Menu" />
+```
+
+TODO: PartName - maybe something better to keep BluePrint / Spell-Book separate?
+
+- By just having a name, and no parts...
+- Maybe rename the theme parts a `PartMap` or `NameMap` or `Rename` for the special cases
+- in this case we could always use name - for anything
+- and if there is a part-map, it would redirect, but normally you wouldn't do this.
+- would also simplify API to `Name` and possibly `BlueprintName` - but TBH that could be done with the `Rename` section...
+  - which could then just have `spell` and `blueprint` as properties
 
 explain
 
@@ -72,6 +94,7 @@ explain
 1. Magic Act
 1. Magic Blueprints
 1. Magic Tailors
+1. Magic Spells
 1. Magic Spells Book
 1. Magic Meta-Settings - needs better name / Magic Spells
 

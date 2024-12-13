@@ -108,12 +108,17 @@ and some taken out of the normal navigation structure just for the footer.
 Typically these pages are officially &quot;hidden&quot; in the navigation, since we don't want them in the main menu,
 but still need to be accessible.
 This is how we would do it in cre8magic using the <code>MagicMenu</code> <em>Oqtane Bootstrap5</em> component:</p>
+<pre><code class="lang-razor">@using ToSic.Cre8magic.OqtaneBs5
+&lt;!-- This example places all the settings directly inside the tag --&gt;
+&lt;!-- In this case, 1 is home and 5 is a hidden page in the navigation, and we want to show it's children --&gt;
+&lt;MagicMenu Spell='new() { Pick = &quot;1, 5!/&quot; }' /&gt;
+</code></pre>
 <pre><code class="lang-html">&lt;!-- This example assumes a separate configuration which is called &quot;System&quot; --&gt;
 &lt;MagicMenu PartName=&quot;System&quot; /&gt;
 
 &lt;!-- This example places all the settings directly inside the tag --&gt;
 &lt;!-- In this case, 5 is a hidden page in the navigation, and we want to show it's children --&gt;
-&lt;MagicMenu Settings='new() { Start = &quot;5!/&quot; }' /&gt;
+&lt;MagicMenu Spell='new() { Pick = &quot;5!/&quot; }' /&gt;
 </code></pre>
 <p>explain</p>
 <h2 id="planned-structure">Planned structure</h2>
@@ -165,6 +170,8 @@ This is how we would do it in cre8magic using the <code>MagicMenu</code> <em>Oqt
 <li><p>Magic Blueprints</p>
 </li>
 <li><p>Magic Tailors</p>
+</li>
+<li><p>Magic Spells</p>
 </li>
 <li><p>Magic Spells Book</p>
 </li>

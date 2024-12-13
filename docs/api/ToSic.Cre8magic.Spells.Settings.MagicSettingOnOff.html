@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class MagicContainerTailor | cre8magic </title>
+      <title>Class MagicSettingOnOff | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class MagicContainerTailor | cre8magic ">
+      <meta name="title" content="Class MagicSettingOnOff | cre8magic ">
       
-      
+      <meta name="description" content="Special Setting containing a value to be used when a state is on or off. Typically used to specify strings to place in classes when something:  is active is home etc.">
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/new/feature/v5/apiSpec/new?filename=ToSic_Cre8magic_Containers_MagicContainerTailor.md&amp;value=---%0Auid%3A%20ToSic.Cre8magic.Containers.MagicContainerTailor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/new/feature/v5/apiSpec/new?filename=ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff.md&amp;value=---%0Auid%3A%20ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,24 +84,32 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ToSic.Cre8magic.Containers.MagicContainerTailor">
+        <article data-uid="ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff">
 
 
 
-  <h1 id="ToSic_Cre8magic_Containers_MagicContainerTailor" data-uid="ToSic.Cre8magic.Containers.MagicContainerTailor" class="text-break">
-Class MagicContainerTailor  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Containers/MagicContainerTailor.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  <h1 id="ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff" data-uid="ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff" class="text-break">
+Class MagicSettingOnOff  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Spells/Settings/MagicSettingOnOff.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Containers.html">Containers</a></dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Spells.html">Spells</a>.<a class="xref" href="ToSic.Cre8magic.Spells.Settings.html">Settings</a></dd></dl>
   <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Special Setting containing a value to be used when a state is on or off.
+Typically used to specify strings to place in classes when something:</p>
+<ul>
+<li>is active</li>
+<li>is home</li>
+<li>etc.</li>
+</ul>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class MagicContainerTailor : MagicTailorBase, IMagicTailor</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(SettingOnOffJsonConverter))]
+public record MagicSettingOnOff</code></pre>
   </div>
 
 
@@ -111,72 +119,111 @@ Class MagicContainerTailor  <a class="header-action link-secondary" title="View 
     <dt>Inheritance</dt>
     <dd>
       <div><span class="xref">object</span></div>
-      <div><a class="xref" href="ToSic.Cre8magic.Tailors.MagicTailorBase.html">MagicTailorBase</a></div>
-      <div><span class="xref">MagicContainerTailor</span></div>
-    </dd>
-  </dl>
-
-  <dl class="typelist implements">
-    <dt>Implements</dt>
-    <dd>
-      <div><a class="xref" href="ToSic.Cre8magic.Tailors.IMagicTailor.html">IMagicTailor</a></div>
+      <div><span class="xref">MagicSettingOnOff</span></div>
     </dd>
   </dl>
 
 
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase_Parts">MagicTailorBase.Parts</a>
-    </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase_GetSettings_System_String_">MagicTailorBase.GetSettings(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase_ParseTokens">MagicTailorBase.ParseTokens</a>
-    </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase_ProcessTokens_System_String_">MagicTailorBase.ProcessTokens(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase_Value_System_String_">MagicTailorBase.Value(string)</a>
-    </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Tailors.MagicTailorBase.html#ToSic_Cre8magic_Tailors_MagicTailorBase_Id_System_String_">MagicTailorBase.Id(string)</a>
-    </div>
-  </dd></dl>
 
 
 
 
 
 
-  <h2 class="section" id="methods">Methods
+
+  <h2 class="section" id="constructors">Constructors
 </h2>
 
 
-  <a id="ToSic_Cre8magic_Containers_MagicContainerTailor_Classes_" data-uid="ToSic.Cre8magic.Containers.MagicContainerTailor.Classes*"></a>
+  <a id="ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff__ctor_" data-uid="ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.#ctor*"></a>
 
-  <h3 id="ToSic_Cre8magic_Containers_MagicContainerTailor_Classes_System_String_" data-uid="ToSic.Cre8magic.Containers.MagicContainerTailor.Classes(System.String)">
-  Classes(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Containers/MagicContainerTailor.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff__ctor_System_String_System_String_" data-uid="ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.#ctor(System.String,System.String)">
+  MagicSettingOnOff(string?, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Spells/Settings/MagicSettingOnOff.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string? Classes(string tag)</code></pre>
+    <pre><code class="lang-csharp hljs">public MagicSettingOnOff(string? on, string? off = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>tag</code> <span class="xref">string</span></dt>
+    <dt><code>on</code> <span class="xref">string</span></dt>
+    <dd></dd>
+    <dt><code>off</code> <span class="xref">string</span></dt>
     <dd></dd>
   </dl>
 
-  <h4 class="section">Returns</h4>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff_Off_" data-uid="ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.Off*"></a>
+
+  <h3 id="ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff_Off" data-uid="ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.Off">
+  Off
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Spells/Settings/MagicSettingOnOff.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Value / Class to add if the setting is off</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Off { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff_On_" data-uid="ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On*"></a>
+
+  <h3 id="ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff_On" data-uid="ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On">
+  On
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Spells/Settings/MagicSettingOnOff.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Value / Class to add if the setting is on</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? On { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><span class="xref">string</span></dt>
     <dd></dd>
@@ -190,13 +237,10 @@ Class MagicContainerTailor  <a class="header-action link-secondary" title="View 
 
 
 
-
-
-
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Containers/MagicContainerTailor.cs/#L10" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Spells/Settings/MagicSettingOnOff.cs/#L14" class="edit-link">Edit this page</a>
         </div>
 
 

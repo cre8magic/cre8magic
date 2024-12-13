@@ -214,15 +214,15 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Act.IMagicAct.UsePageState
   nameWithType: IMagicAct.UsePageState
-- uid: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func{ToSic.Cre8magic.Settings.IMagicSettingsProvider,ToSic.Cre8magic.Settings.IMagicSettingsProvider})
-  name: UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider>)
-  href: api/ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UseSettingsProvider_System_Func_ToSic_Cre8magic_Settings_IMagicSettingsProvider_ToSic_Cre8magic_Settings_IMagicSettingsProvider__
-  commentId: M:ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func{ToSic.Cre8magic.Settings.IMagicSettingsProvider,ToSic.Cre8magic.Settings.IMagicSettingsProvider})
-  name.vb: UseSettingsProvider(Func(Of IMagicSettingsProvider, IMagicSettingsProvider))
-  fullName: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func<ToSic.Cre8magic.Settings.IMagicSettingsProvider, ToSic.Cre8magic.Settings.IMagicSettingsProvider>)
-  fullName.vb: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func(Of ToSic.Cre8magic.Settings.IMagicSettingsProvider, ToSic.Cre8magic.Settings.IMagicSettingsProvider))
-  nameWithType: IMagicAct.UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider>)
-  nameWithType.vb: IMagicAct.UseSettingsProvider(Func(Of IMagicSettingsProvider, IMagicSettingsProvider))
+- uid: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func{ToSic.Cre8magic.Spells.IMagicSpellsProvider,ToSic.Cre8magic.Spells.IMagicSpellsProvider})
+  name: UseSettingsProvider(Func<IMagicSpellsProvider, IMagicSpellsProvider>)
+  href: api/ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UseSettingsProvider_System_Func_ToSic_Cre8magic_Spells_IMagicSpellsProvider_ToSic_Cre8magic_Spells_IMagicSpellsProvider__
+  commentId: M:ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func{ToSic.Cre8magic.Spells.IMagicSpellsProvider,ToSic.Cre8magic.Spells.IMagicSpellsProvider})
+  name.vb: UseSettingsProvider(Func(Of IMagicSpellsProvider, IMagicSpellsProvider))
+  fullName: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func<ToSic.Cre8magic.Spells.IMagicSpellsProvider, ToSic.Cre8magic.Spells.IMagicSpellsProvider>)
+  fullName.vb: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider(System.Func(Of ToSic.Cre8magic.Spells.IMagicSpellsProvider, ToSic.Cre8magic.Spells.IMagicSpellsProvider))
+  nameWithType: IMagicAct.UseSettingsProvider(Func<IMagicSpellsProvider, IMagicSpellsProvider>)
+  nameWithType.vb: IMagicAct.UseSettingsProvider(Func(Of IMagicSpellsProvider, IMagicSpellsProvider))
 - uid: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider*
   name: UseSettingsProvider
   href: api/ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UseSettingsProvider_
@@ -230,11 +230,11 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Act.IMagicAct.UseSettingsProvider
   nameWithType: IMagicAct.UseSettingsProvider
-- uid: ToSic.Cre8magic.Act.IMagicAct.UseSpellsBook(ToSic.Cre8magic.Settings.MagicSpellsBook)
+- uid: ToSic.Cre8magic.Act.IMagicAct.UseSpellsBook(ToSic.Cre8magic.Spells.MagicSpellsBook)
   name: UseSpellsBook(MagicSpellsBook)
-  href: api/ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UseSpellsBook_ToSic_Cre8magic_Settings_MagicSpellsBook_
-  commentId: M:ToSic.Cre8magic.Act.IMagicAct.UseSpellsBook(ToSic.Cre8magic.Settings.MagicSpellsBook)
-  fullName: ToSic.Cre8magic.Act.IMagicAct.UseSpellsBook(ToSic.Cre8magic.Settings.MagicSpellsBook)
+  href: api/ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_UseSpellsBook_ToSic_Cre8magic_Spells_MagicSpellsBook_
+  commentId: M:ToSic.Cre8magic.Act.IMagicAct.UseSpellsBook(ToSic.Cre8magic.Spells.MagicSpellsBook)
+  fullName: ToSic.Cre8magic.Act.IMagicAct.UseSpellsBook(ToSic.Cre8magic.Spells.MagicSpellsBook)
   nameWithType: IMagicAct.UseSpellsBook(MagicSpellsBook)
 - uid: ToSic.Cre8magic.Act.IMagicAct.UseSpellsBook*
   name: UseSpellsBook
@@ -288,94 +288,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Act.IMagicAct.UserLoginKit
   nameWithType: IMagicAct.UserLoginKit
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions
-  name: MagicSettingsExtensions
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html
-  commentId: T:ToSic.Cre8magic.Act.MagicSettingsExtensions
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions
-  nameWithType: MagicSettingsExtensions
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill*
-  name: Refill
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill_
-  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill
-  nameWithType: MagicSettingsExtensions.Refill
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup*
-  name: RefillLookup
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup_
-  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup
-  nameWithType: MagicSettingsExtensions.RefillLookup
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSpellLookup)
-  name: RefillLookup<TSettings>(TSettings?, MagicSpellLookup)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_RefillLookup__1___0_ToSic_Cre8magic_Settings_MagicSpellLookup_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Settings.MagicSpellLookup)
-  name.vb: RefillLookup(Of TSettings)(TSettings, MagicSpellLookup)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup<TSettings>(TSettings?, ToSic.Cre8magic.Settings.MagicSpellLookup)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.RefillLookup(Of TSettings)(TSettings, ToSic.Cre8magic.Settings.MagicSpellLookup)
-  nameWithType: MagicSettingsExtensions.RefillLookup<TSettings>(TSettings?, MagicSpellLookup)
-  nameWithType.vb: MagicSettingsExtensions.RefillLookup(Of TSettings)(TSettings, MagicSpellLookup)
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
-  name: Refill<TSettings>(TSettings?, PageState)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)
-  name.vb: Refill(Of TSettings)(TSettings, PageState)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill<TSettings>(TSettings?, Oqtane.UI.PageState)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill(Of TSettings)(TSettings, Oqtane.UI.PageState)
-  nameWithType: MagicSettingsExtensions.Refill<TSettings>(TSettings?, PageState)
-  nameWithType.vb: MagicSettingsExtensions.Refill(Of TSettings)(TSettings, PageState)
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
-  name: Refill<TSettings, TWith>(TSettings?, TWith?)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_Refill__2___0___1_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill``2(``0,``1)
-  name.vb: Refill(Of TSettings, TWith)(TSettings, TWith)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill<TSettings, TWith>(TSettings?, TWith?)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.Refill(Of TSettings, TWith)(TSettings, TWith)
-  nameWithType: MagicSettingsExtensions.Refill<TSettings, TWith>(TSettings?, TWith?)
-  nameWithType.vb: MagicSettingsExtensions.Refill(Of TSettings, TWith)(TSettings, TWith)
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With*
-  name: With
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With_
-  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.With
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With
-  nameWithType: MagicSettingsExtensions.With
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup*
-  name: WithLookup
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup_
-  commentId: Overload:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup
-  nameWithType: MagicSettingsExtensions.WithLookup
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSpellLookup)
-  name: WithLookup<TSettings>(TSettings?, MagicSpellLookup)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_WithLookup__1___0_ToSic_Cre8magic_Settings_MagicSpellLookup_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup``1(``0,ToSic.Cre8magic.Settings.MagicSpellLookup)
-  name.vb: WithLookup(Of TSettings)(TSettings, MagicSpellLookup)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup<TSettings>(TSettings?, ToSic.Cre8magic.Settings.MagicSpellLookup)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.WithLookup(Of TSettings)(TSettings, ToSic.Cre8magic.Settings.MagicSpellLookup)
-  nameWithType: MagicSettingsExtensions.WithLookup<TSettings>(TSettings?, MagicSpellLookup)
-  nameWithType.vb: MagicSettingsExtensions.WithLookup(Of TSettings)(TSettings, MagicSpellLookup)
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
-  name: With<TSettings>(TSettings?, PageState)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState)
-  name.vb: With(Of TSettings)(TSettings, PageState)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings>(TSettings?, Oqtane.UI.PageState)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings)(TSettings, Oqtane.UI.PageState)
-  nameWithType: MagicSettingsExtensions.With<TSettings>(TSettings?, PageState)
-  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings)(TSettings, PageState)
-- uid: ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
-  name: With<TSettings, TWith>(TSettings?, TWith?)
-  href: api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html#ToSic_Cre8magic_Act_MagicSettingsExtensions_With__2___0___1_
-  commentId: M:ToSic.Cre8magic.Act.MagicSettingsExtensions.With``2(``0,``1)
-  name.vb: With(Of TSettings, TWith)(TSettings, TWith)
-  fullName: ToSic.Cre8magic.Act.MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?)
-  fullName.vb: ToSic.Cre8magic.Act.MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith)
-  nameWithType: MagicSettingsExtensions.With<TSettings, TWith>(TSettings?, TWith?)
-  nameWithType.vb: MagicSettingsExtensions.With(Of TSettings, TWith)(TSettings, TWith)
 - uid: ToSic.Cre8magic.Analytics
   name: ToSic.Cre8magic.Analytics
   href: api/ToSic.Cre8magic.Analytics.html
@@ -840,38 +752,6 @@ references:
   commentId: T:ToSic.Cre8magic.Containers.MagicContainerBlueprint
   fullName: ToSic.Cre8magic.Containers.MagicContainerBlueprint
   nameWithType: MagicContainerBlueprint
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings
-  name: MagicContainerSettings
-  href: api/ToSic.Cre8magic.Containers.MagicContainerSettings.html
-  commentId: T:ToSic.Cre8magic.Containers.MagicContainerSettings
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings
-  nameWithType: MagicContainerSettings
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
-  name: Blueprint
-  href: api/ToSic.Cre8magic.Containers.MagicContainerSettings.html#ToSic_Cre8magic_Containers_MagicContainerSettings_Blueprint
-  commentId: P:ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
-  nameWithType: MagicContainerSettings.Blueprint
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint*
-  name: Blueprint
-  href: api/ToSic.Cre8magic.Containers.MagicContainerSettings.html#ToSic_Cre8magic_Containers_MagicContainerSettings_Blueprint_
-  commentId: Overload:ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings.Blueprint
-  nameWithType: MagicContainerSettings.Blueprint
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState
-  name: ModuleState
-  href: api/ToSic.Cre8magic.Containers.MagicContainerSettings.html#ToSic_Cre8magic_Containers_MagicContainerSettings_ModuleState
-  commentId: P:ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState
-  nameWithType: MagicContainerSettings.ModuleState
-- uid: ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState*
-  name: ModuleState
-  href: api/ToSic.Cre8magic.Containers.MagicContainerSettings.html#ToSic_Cre8magic_Containers_MagicContainerSettings_ModuleState_
-  commentId: Overload:ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Containers.MagicContainerSettings.ModuleState
-  nameWithType: MagicContainerSettings.ModuleState
 - uid: ToSic.Cre8magic.Containers.MagicContainerSpell
   name: MagicContainerSpell
   href: api/ToSic.Cre8magic.Containers.MagicContainerSpell.html
@@ -1070,64 +950,6 @@ references:
   commentId: T:ToSic.Cre8magic.Languages.MagicLanguageBlueprint
   fullName: ToSic.Cre8magic.Languages.MagicLanguageBlueprint
   nameWithType: MagicLanguageBlueprint
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings
-  name: MagicLanguageSettings
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html
-  commentId: T:ToSic.Cre8magic.Languages.MagicLanguageSettings
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings
-  nameWithType: MagicLanguageSettings
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
-  name: Blueprint
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_Blueprint
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
-  nameWithType: MagicLanguageSettings.Blueprint
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint*
-  name: Blueprint
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_Blueprint_
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.Blueprint
-  nameWithType: MagicLanguageSettings.Blueprint
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
-  name: HideOthers
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_HideOthers
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
-  nameWithType: MagicLanguageSettings.HideOthers
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers*
-  name: HideOthers
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_HideOthers_
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.HideOthers
-  nameWithType: MagicLanguageSettings.HideOthers
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
-  name: Languages
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_Languages
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
-  nameWithType: MagicLanguageSettings.Languages
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages*
-  name: Languages
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_Languages_
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.Languages
-  nameWithType: MagicLanguageSettings.Languages
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
-  name: MinLanguagesToShow
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_MinLanguagesToShow
-  commentId: P:ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
-  nameWithType: MagicLanguageSettings.MinLanguagesToShow
-- uid: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow*
-  name: MinLanguagesToShow
-  href: api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html#ToSic_Cre8magic_Languages_MagicLanguageSettings_MinLanguagesToShow_
-  commentId: Overload:ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Languages.MagicLanguageSettings.MinLanguagesToShow
-  nameWithType: MagicLanguageSettings.MinLanguagesToShow
 - uid: ToSic.Cre8magic.Languages.MagicLanguageSpell
   name: MagicLanguageSpell
   href: api/ToSic.Cre8magic.Languages.MagicLanguageSpell.html
@@ -1389,146 +1211,6 @@ references:
   commentId: T:ToSic.Cre8magic.Menus.MagicMenuBlueprint
   fullName: ToSic.Cre8magic.Menus.MagicMenuBlueprint
   nameWithType: MagicMenuBlueprint
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings
-  name: MagicMenuSettings
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html
-  commentId: T:ToSic.Cre8magic.Menus.MagicMenuSettings
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings
-  nameWithType: MagicMenuSettings
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
-  name: Blueprint
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Blueprint
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
-  nameWithType: MagicMenuSettings.Blueprint
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint*
-  name: Blueprint
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Blueprint_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint
-  nameWithType: MagicMenuSettings.Blueprint
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Display
-  name: Display
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Display
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Display
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Display
-  nameWithType: MagicMenuSettings.Display
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Display*
-  name: Display
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Display_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Display
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Display
-  nameWithType: MagicMenuSettings.Display
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.DisplayDefault
-  name: DisplayDefault
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_DisplayDefault
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.DisplayDefault
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.DisplayDefault
-  nameWithType: MagicMenuSettings.DisplayDefault
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.DoubleSlash
-  name: DoubleSlash
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_DoubleSlash
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.DoubleSlash
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.DoubleSlash
-  nameWithType: MagicMenuSettings.DoubleSlash
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Id
-  name: Id
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Id
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Id
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Id
-  nameWithType: MagicMenuSettings.Id
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Id*
-  name: Id
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Id_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Id
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Id
-  nameWithType: MagicMenuSettings.Id
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  name: MenuId
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_MenuId
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  nameWithType: MagicMenuSettings.MenuId
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId*
-  name: MenuId
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_MenuId_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
-  nameWithType: MagicMenuSettings.MenuId
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  name: PagesSource
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_PagesSource
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  nameWithType: MagicMenuSettings.PagesSource
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource*
-  name: PagesSource
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_PagesSource_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  nameWithType: MagicMenuSettings.PagesSource
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Start
-  name: Start
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Start
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Start
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Start
-  nameWithType: MagicMenuSettings.Start
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Start*
-  name: Start
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Start_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Start
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Start
-  nameWithType: MagicMenuSettings.Start
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
-  name: StartPageCurrent
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageCurrent
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageCurrent
-  nameWithType: MagicMenuSettings.StartPageCurrent
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageParent
-  name: StartPageParent
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageParent
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageParent
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageParent
-  nameWithType: MagicMenuSettings.StartPageParent
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
-  name: StartPageRootSlash
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_StartPageRootSlash
-  commentId: F:ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.StartPageRootSlash
-  nameWithType: MagicMenuSettings.StartPageRootSlash
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
-  name: Tailor
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Tailor
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
-  nameWithType: MagicMenuSettings.Tailor
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor*
-  name: Tailor
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Tailor_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor
-  nameWithType: MagicMenuSettings.Tailor
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
-  name: Variant
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Variant
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
-  nameWithType: MagicMenuSettings.Variant
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant*
-  name: Variant
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Variant_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.Variant
-  nameWithType: MagicMenuSettings.Variant
 - uid: ToSic.Cre8magic.Menus.MagicMenuSpell
   name: MagicMenuSpell
   href: api/ToSic.Cre8magic.Menus.MagicMenuSpell.html
@@ -1612,19 +1294,19 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Menus.MagicMenuSpell.PagesSource
   nameWithType: MagicMenuSpell.PagesSource
-- uid: ToSic.Cre8magic.Menus.MagicMenuSpell.Start
-  name: Start
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSpell.html#ToSic_Cre8magic_Menus_MagicMenuSpell_Start
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSpell.Start
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSpell.Start
-  nameWithType: MagicMenuSpell.Start
-- uid: ToSic.Cre8magic.Menus.MagicMenuSpell.Start*
-  name: Start
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSpell.html#ToSic_Cre8magic_Menus_MagicMenuSpell_Start_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSpell.Start
+- uid: ToSic.Cre8magic.Menus.MagicMenuSpell.Pick
+  name: Pick
+  href: api/ToSic.Cre8magic.Menus.MagicMenuSpell.html#ToSic_Cre8magic_Menus_MagicMenuSpell_Pick
+  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSpell.Pick
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSpell.Pick
+  nameWithType: MagicMenuSpell.Pick
+- uid: ToSic.Cre8magic.Menus.MagicMenuSpell.Pick*
+  name: Pick
+  href: api/ToSic.Cre8magic.Menus.MagicMenuSpell.html#ToSic_Cre8magic_Menus_MagicMenuSpell_Pick_
+  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSpell.Pick
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSpell.Start
-  nameWithType: MagicMenuSpell.Start
+  fullName: ToSic.Cre8magic.Menus.MagicMenuSpell.Pick
+  nameWithType: MagicMenuSpell.Pick
 - uid: ToSic.Cre8magic.Menus.MagicMenuSpell.StartPageCurrent
   name: StartPageCurrent
   href: api/ToSic.Cre8magic.Menus.MagicMenuSpell.html#ToSic_Cre8magic_Menus_MagicMenuSpell_StartPageCurrent
@@ -2089,77 +1771,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.PageContexts.MagicPageContext.Settings
   nameWithType: MagicPageContext.Settings
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
-  name: MagicPageContextSettings
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html
-  commentId: T:ToSic.Cre8magic.PageContexts.MagicPageContextSettings
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings
-  nameWithType: MagicPageContextSettings
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.ClassList
-  name: ClassList
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_ClassList
-  commentId: P:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.ClassList
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.ClassList
-  nameWithType: MagicPageContextSettings.ClassList
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.ClassList*
-  name: ClassList
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_ClassList_
-  commentId: Overload:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.ClassList
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.ClassList
-  nameWithType: MagicPageContextSettings.ClassList
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.Classes
-  name: Classes
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_Classes
-  commentId: P:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.Classes
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.Classes
-  nameWithType: MagicPageContextSettings.Classes
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.Classes*
-  name: Classes
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_Classes_
-  commentId: Overload:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.Classes
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.Classes
-  nameWithType: MagicPageContextSettings.Classes
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.PageIsHome
-  name: PageIsHome
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_PageIsHome
-  commentId: P:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.PageIsHome
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.PageIsHome
-  nameWithType: MagicPageContextSettings.PageIsHome
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.PageIsHome*
-  name: PageIsHome
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_PageIsHome_
-  commentId: Overload:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.PageIsHome
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.PageIsHome
-  nameWithType: MagicPageContextSettings.PageIsHome
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.TagId
-  name: TagId
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_TagId
-  commentId: P:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.TagId
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.TagId
-  nameWithType: MagicPageContextSettings.TagId
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.TagId*
-  name: TagId
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_TagId_
-  commentId: Overload:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.TagId
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.TagId
-  nameWithType: MagicPageContextSettings.TagId
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.UseBodyTag
-  name: UseBodyTag
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_UseBodyTag
-  commentId: P:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.UseBodyTag
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.UseBodyTag
-  nameWithType: MagicPageContextSettings.UseBodyTag
-- uid: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.UseBodyTag*
-  name: UseBodyTag
-  href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html#ToSic_Cre8magic_PageContexts_MagicPageContextSettings_UseBodyTag_
-  commentId: Overload:ToSic.Cre8magic.PageContexts.MagicPageContextSettings.UseBodyTag
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.PageContexts.MagicPageContextSettings.UseBodyTag
-  nameWithType: MagicPageContextSettings.UseBodyTag
 - uid: ToSic.Cre8magic.PageContexts.MagicPageContextSpell
   name: MagicPageContextSpell
   href: api/ToSic.Cre8magic.PageContexts.MagicPageContextSpell.html
@@ -2776,651 +2387,751 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Pages.MagicPageTailorBasic.Value
   nameWithType: MagicPageTailorBasic.Value
-- uid: ToSic.Cre8magic.Settings
-  name: ToSic.Cre8magic.Settings
-  href: api/ToSic.Cre8magic.Settings.html
-  commentId: N:ToSic.Cre8magic.Settings
-  fullName: ToSic.Cre8magic.Settings
-  nameWithType: ToSic.Cre8magic.Settings
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider
-  name: IMagicSettingsProvider
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html
-  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProvider
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider
-  nameWithType: IMagicSettingsProvider
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
-  name: Analytics
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Analytics
-  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
-  nameWithType: IMagicSettingsProvider.Analytics
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics*
-  name: Analytics
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Analytics_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Analytics
-  nameWithType: IMagicSettingsProvider.Analytics
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
-  name: Breadcrumbs
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Breadcrumbs
-  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
-  nameWithType: IMagicSettingsProvider.Breadcrumbs
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs*
-  name: Breadcrumbs
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Breadcrumbs_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Breadcrumbs
-  nameWithType: IMagicSettingsProvider.Breadcrumbs
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
-  name: Containers
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Containers
-  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
-  nameWithType: IMagicSettingsProvider.Containers
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers*
-  name: Containers
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Containers_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Containers
-  nameWithType: IMagicSettingsProvider.Containers
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
-  name: MenuBlueprints
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_MenuBlueprints
-  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
-  nameWithType: IMagicSettingsProvider.MenuBlueprints
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints*
-  name: MenuBlueprints
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_MenuBlueprints_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.MenuBlueprints
-  nameWithType: IMagicSettingsProvider.MenuBlueprints
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide(ToSic.Cre8magic.Settings.MagicSpellsBook)
-  name: Provide(MagicSpellsBook)
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Provide_ToSic_Cre8magic_Settings_MagicSpellsBook_
-  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide(ToSic.Cre8magic.Settings.MagicSpellsBook)
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide(ToSic.Cre8magic.Settings.MagicSpellsBook)
-  nameWithType: IMagicSettingsProvider.Provide(MagicSpellsBook)
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide*
-  name: Provide
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Provide_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Provide
-  nameWithType: IMagicSettingsProvider.Provide
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
-  name: Reset()
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Reset
-  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset()
-  nameWithType: IMagicSettingsProvider.Reset()
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset*
-  name: Reset
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Reset_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Reset
-  nameWithType: IMagicSettingsProvider.Reset
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
-  name: Themes
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Themes
-  commentId: P:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
-  nameWithType: IMagicSettingsProvider.Themes
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes*
-  name: Themes
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html#ToSic_Cre8magic_Settings_IMagicSettingsProvider_Themes_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProvider.Themes
-  nameWithType: IMagicSettingsProvider.Themes
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
-  name: IMagicSettingsProviderSection<TSettings>
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html
-  commentId: T:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1
-  name.vb: IMagicSettingsProviderSection(Of TSettings)
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<TSettings>
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of TSettings)
-  nameWithType: IMagicSettingsProviderSection<TSettings>
-  nameWithType.vb: IMagicSettingsProviderSection(Of TSettings)
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.Provide(System.Collections.Generic.IDictionary{System.String,`0})
-  name: Provide(IDictionary<string, TSettings>)
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html#ToSic_Cre8magic_Settings_IMagicSettingsProviderSection_1_Provide_System_Collections_Generic_IDictionary_System_String__0__
-  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.Provide(System.Collections.Generic.IDictionary{System.String,`0})
-  name.vb: Provide(IDictionary(Of String, TSettings))
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<TSettings>.Provide(System.Collections.Generic.IDictionary<string, TSettings>)
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of TSettings).Provide(System.Collections.Generic.IDictionary(Of String, TSettings))
-  nameWithType: IMagicSettingsProviderSection<TSettings>.Provide(IDictionary<string, TSettings>)
-  nameWithType.vb: IMagicSettingsProviderSection(Of TSettings).Provide(IDictionary(Of String, TSettings))
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.Provide(System.String,`0)
-  name: Provide(string, TSettings)
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html#ToSic_Cre8magic_Settings_IMagicSettingsProviderSection_1_Provide_System_String__0_
-  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.Provide(System.String,`0)
-  name.vb: Provide(String, TSettings)
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<TSettings>.Provide(string, TSettings)
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of TSettings).Provide(String, TSettings)
-  nameWithType: IMagicSettingsProviderSection<TSettings>.Provide(string, TSettings)
-  nameWithType.vb: IMagicSettingsProviderSection(Of TSettings).Provide(String, TSettings)
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.Provide*
-  name: Provide
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html#ToSic_Cre8magic_Settings_IMagicSettingsProviderSection_1_Provide_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.Provide
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<TSettings>.Provide
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of TSettings).Provide
-  nameWithType: IMagicSettingsProviderSection<TSettings>.Provide
-  nameWithType.vb: IMagicSettingsProviderSection(Of TSettings).Provide
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.SetDefault(`0)
-  name: SetDefault(TSettings)
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html#ToSic_Cre8magic_Settings_IMagicSettingsProviderSection_1_SetDefault__0_
-  commentId: M:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.SetDefault(`0)
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<TSettings>.SetDefault(TSettings)
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of TSettings).SetDefault(TSettings)
-  nameWithType: IMagicSettingsProviderSection<TSettings>.SetDefault(TSettings)
-  nameWithType.vb: IMagicSettingsProviderSection(Of TSettings).SetDefault(TSettings)
-- uid: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.SetDefault*
-  name: SetDefault
-  href: api/ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html#ToSic_Cre8magic_Settings_IMagicSettingsProviderSection_1_SetDefault_
-  commentId: Overload:ToSic.Cre8magic.Settings.IMagicSettingsProviderSection`1.SetDefault
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection<TSettings>.SetDefault
-  fullName.vb: ToSic.Cre8magic.Settings.IMagicSettingsProviderSection(Of TSettings).SetDefault
-  nameWithType: IMagicSettingsProviderSection<TSettings>.SetDefault
-  nameWithType.vb: IMagicSettingsProviderSection(Of TSettings).SetDefault
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings
+- uid: ToSic.Cre8magic.Spells
+  name: ToSic.Cre8magic.Spells
+  href: api/ToSic.Cre8magic.Spells.html
+  commentId: N:ToSic.Cre8magic.Spells
+  fullName: ToSic.Cre8magic.Spells
+  nameWithType: ToSic.Cre8magic.Spells
+- uid: ToSic.Cre8magic.Spells.Debug
+  name: ToSic.Cre8magic.Spells.Debug
+  href: api/ToSic.Cre8magic.Spells.Debug.html
+  commentId: N:ToSic.Cre8magic.Spells.Debug
+  fullName: ToSic.Cre8magic.Spells.Debug
+  nameWithType: ToSic.Cre8magic.Spells.Debug
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings
   name: MagicDebugSettings
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html
-  commentId: T:ToSic.Cre8magic.Settings.MagicDebugSettings
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html
+  commentId: T:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings
   nameWithType: MagicDebugSettings
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.#ctor(System.Boolean)
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.#ctor(System.Boolean)
   name: MagicDebugSettings(bool)
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings__ctor_System_Boolean_
-  commentId: M:ToSic.Cre8magic.Settings.MagicDebugSettings.#ctor(System.Boolean)
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings__ctor_System_Boolean_
+  commentId: M:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.#ctor(System.Boolean)
   name.vb: New(Boolean)
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.MagicDebugSettings(bool)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicDebugSettings.New(Boolean)
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.MagicDebugSettings(bool)
+  fullName.vb: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.New(Boolean)
   nameWithType: MagicDebugSettings.MagicDebugSettings(bool)
   nameWithType.vb: MagicDebugSettings.New(Boolean)
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.#ctor*
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.#ctor*
   name: MagicDebugSettings
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings__ctor_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicDebugSettings.#ctor
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings__ctor_
+  commentId: Overload:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.#ctor
   isSpec: "True"
   name.vb: New
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.MagicDebugSettings
-  fullName.vb: ToSic.Cre8magic.Settings.MagicDebugSettings.New
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.MagicDebugSettings
+  fullName.vb: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.New
   nameWithType: MagicDebugSettings.MagicDebugSettings
   nameWithType.vb: MagicDebugSettings.New
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Admin
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Admin
   name: Admin
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Admin
-  commentId: P:ToSic.Cre8magic.Settings.MagicDebugSettings.Admin
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Admin
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings_Admin
+  commentId: P:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Admin
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Admin
   nameWithType: MagicDebugSettings.Admin
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Admin*
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Admin*
   name: Admin
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Admin_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicDebugSettings.Admin
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings_Admin_
+  commentId: Overload:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Admin
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Admin
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Admin
   nameWithType: MagicDebugSettings.Admin
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Allowed
   name: Allowed
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Allowed
-  commentId: P:ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings_Allowed
+  commentId: P:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Allowed
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Allowed
   nameWithType: MagicDebugSettings.Allowed
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed*
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Allowed*
   name: Allowed
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Allowed_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings_Allowed_
+  commentId: Overload:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Allowed
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Allowed
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Allowed
   nameWithType: MagicDebugSettings.Allowed
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Anonymous
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Anonymous
   name: Anonymous
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Anonymous
-  commentId: P:ToSic.Cre8magic.Settings.MagicDebugSettings.Anonymous
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Anonymous
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings_Anonymous
+  commentId: P:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Anonymous
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Anonymous
   nameWithType: MagicDebugSettings.Anonymous
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Anonymous*
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Anonymous*
   name: Anonymous
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Anonymous_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicDebugSettings.Anonymous
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings_Anonymous_
+  commentId: Overload:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Anonymous
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Anonymous
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Anonymous
   nameWithType: MagicDebugSettings.Anonymous
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Detailed
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Detailed
   name: Detailed
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Detailed
-  commentId: P:ToSic.Cre8magic.Settings.MagicDebugSettings.Detailed
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Detailed
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings_Detailed
+  commentId: P:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Detailed
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Detailed
   nameWithType: MagicDebugSettings.Detailed
-- uid: ToSic.Cre8magic.Settings.MagicDebugSettings.Detailed*
+- uid: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Detailed*
   name: Detailed
-  href: api/ToSic.Cre8magic.Settings.MagicDebugSettings.html#ToSic_Cre8magic_Settings_MagicDebugSettings_Detailed_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicDebugSettings.Detailed
+  href: api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Spells_Debug_MagicDebugSettings_Detailed_
+  commentId: Overload:ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Detailed
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicDebugSettings.Detailed
+  fullName: ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.Detailed
   nameWithType: MagicDebugSettings.Detailed
-- uid: ToSic.Cre8magic.Settings.MagicInheritsBase
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider
+  name: IMagicSpellsProvider
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html
+  commentId: T:ToSic.Cre8magic.Spells.IMagicSpellsProvider
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider
+  nameWithType: IMagicSpellsProvider
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Analytics
+  name: Analytics
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Analytics
+  commentId: P:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Analytics
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Analytics
+  nameWithType: IMagicSpellsProvider.Analytics
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Analytics*
+  name: Analytics
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Analytics_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Analytics
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Analytics
+  nameWithType: IMagicSpellsProvider.Analytics
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Breadcrumbs
+  name: Breadcrumbs
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Breadcrumbs
+  commentId: P:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Breadcrumbs
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Breadcrumbs
+  nameWithType: IMagicSpellsProvider.Breadcrumbs
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Breadcrumbs*
+  name: Breadcrumbs
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Breadcrumbs_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Breadcrumbs
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Breadcrumbs
+  nameWithType: IMagicSpellsProvider.Breadcrumbs
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Containers
+  name: Containers
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Containers
+  commentId: P:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Containers
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Containers
+  nameWithType: IMagicSpellsProvider.Containers
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Containers*
+  name: Containers
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Containers_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Containers
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Containers
+  nameWithType: IMagicSpellsProvider.Containers
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.MenuBlueprints
+  name: MenuBlueprints
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_MenuBlueprints
+  commentId: P:ToSic.Cre8magic.Spells.IMagicSpellsProvider.MenuBlueprints
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.MenuBlueprints
+  nameWithType: IMagicSpellsProvider.MenuBlueprints
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.MenuBlueprints*
+  name: MenuBlueprints
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_MenuBlueprints_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProvider.MenuBlueprints
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.MenuBlueprints
+  nameWithType: IMagicSpellsProvider.MenuBlueprints
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Provide(ToSic.Cre8magic.Spells.MagicSpellsBook)
+  name: Provide(MagicSpellsBook)
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Provide_ToSic_Cre8magic_Spells_MagicSpellsBook_
+  commentId: M:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Provide(ToSic.Cre8magic.Spells.MagicSpellsBook)
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Provide(ToSic.Cre8magic.Spells.MagicSpellsBook)
+  nameWithType: IMagicSpellsProvider.Provide(MagicSpellsBook)
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Provide*
+  name: Provide
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Provide_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Provide
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Provide
+  nameWithType: IMagicSpellsProvider.Provide
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Reset
+  name: Reset()
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Reset
+  commentId: M:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Reset
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Reset()
+  nameWithType: IMagicSpellsProvider.Reset()
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Reset*
+  name: Reset
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Reset_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Reset
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Reset
+  nameWithType: IMagicSpellsProvider.Reset
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Themes
+  name: Themes
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Themes
+  commentId: P:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Themes
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Themes
+  nameWithType: IMagicSpellsProvider.Themes
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Themes*
+  name: Themes
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html#ToSic_Cre8magic_Spells_IMagicSpellsProvider_Themes_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProvider.Themes
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProvider.Themes
+  nameWithType: IMagicSpellsProvider.Themes
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1
+  name: IMagicSpellsProviderSection<TSettings>
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.html
+  commentId: T:ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1
+  name.vb: IMagicSpellsProviderSection(Of TSettings)
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection<TSettings>
+  fullName.vb: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection(Of TSettings)
+  nameWithType: IMagicSpellsProviderSection<TSettings>
+  nameWithType.vb: IMagicSpellsProviderSection(Of TSettings)
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.Provide(System.Collections.Generic.IDictionary{System.String,`0})
+  name: Provide(IDictionary<string, TSettings>)
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.html#ToSic_Cre8magic_Spells_IMagicSpellsProviderSection_1_Provide_System_Collections_Generic_IDictionary_System_String__0__
+  commentId: M:ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.Provide(System.Collections.Generic.IDictionary{System.String,`0})
+  name.vb: Provide(IDictionary(Of String, TSettings))
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection<TSettings>.Provide(System.Collections.Generic.IDictionary<string, TSettings>)
+  fullName.vb: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection(Of TSettings).Provide(System.Collections.Generic.IDictionary(Of String, TSettings))
+  nameWithType: IMagicSpellsProviderSection<TSettings>.Provide(IDictionary<string, TSettings>)
+  nameWithType.vb: IMagicSpellsProviderSection(Of TSettings).Provide(IDictionary(Of String, TSettings))
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.Provide(System.String,`0)
+  name: Provide(string, TSettings)
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.html#ToSic_Cre8magic_Spells_IMagicSpellsProviderSection_1_Provide_System_String__0_
+  commentId: M:ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.Provide(System.String,`0)
+  name.vb: Provide(String, TSettings)
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection<TSettings>.Provide(string, TSettings)
+  fullName.vb: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection(Of TSettings).Provide(String, TSettings)
+  nameWithType: IMagicSpellsProviderSection<TSettings>.Provide(string, TSettings)
+  nameWithType.vb: IMagicSpellsProviderSection(Of TSettings).Provide(String, TSettings)
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.Provide*
+  name: Provide
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.html#ToSic_Cre8magic_Spells_IMagicSpellsProviderSection_1_Provide_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.Provide
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection<TSettings>.Provide
+  fullName.vb: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection(Of TSettings).Provide
+  nameWithType: IMagicSpellsProviderSection<TSettings>.Provide
+  nameWithType.vb: IMagicSpellsProviderSection(Of TSettings).Provide
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.SetDefault(`0)
+  name: SetDefault(TSettings)
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.html#ToSic_Cre8magic_Spells_IMagicSpellsProviderSection_1_SetDefault__0_
+  commentId: M:ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.SetDefault(`0)
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection<TSettings>.SetDefault(TSettings)
+  fullName.vb: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection(Of TSettings).SetDefault(TSettings)
+  nameWithType: IMagicSpellsProviderSection<TSettings>.SetDefault(TSettings)
+  nameWithType.vb: IMagicSpellsProviderSection(Of TSettings).SetDefault(TSettings)
+- uid: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.SetDefault*
+  name: SetDefault
+  href: api/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.html#ToSic_Cre8magic_Spells_IMagicSpellsProviderSection_1_SetDefault_
+  commentId: Overload:ToSic.Cre8magic.Spells.IMagicSpellsProviderSection`1.SetDefault
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection<TSettings>.SetDefault
+  fullName.vb: ToSic.Cre8magic.Spells.IMagicSpellsProviderSection(Of TSettings).SetDefault
+  nameWithType: IMagicSpellsProviderSection<TSettings>.SetDefault
+  nameWithType.vb: IMagicSpellsProviderSection(Of TSettings).SetDefault
+- uid: ToSic.Cre8magic.Spells.MagicInheritsBase
   name: MagicInheritsBase
-  href: api/ToSic.Cre8magic.Settings.MagicInheritsBase.html
-  commentId: T:ToSic.Cre8magic.Settings.MagicInheritsBase
-  fullName: ToSic.Cre8magic.Settings.MagicInheritsBase
+  href: api/ToSic.Cre8magic.Spells.MagicInheritsBase.html
+  commentId: T:ToSic.Cre8magic.Spells.MagicInheritsBase
+  fullName: ToSic.Cre8magic.Spells.MagicInheritsBase
   nameWithType: MagicInheritsBase
-- uid: ToSic.Cre8magic.Settings.MagicInheritsBase.Inherits
+- uid: ToSic.Cre8magic.Spells.MagicInheritsBase.Inherits
   name: Inherits
-  href: api/ToSic.Cre8magic.Settings.MagicInheritsBase.html#ToSic_Cre8magic_Settings_MagicInheritsBase_Inherits
-  commentId: P:ToSic.Cre8magic.Settings.MagicInheritsBase.Inherits
-  fullName: ToSic.Cre8magic.Settings.MagicInheritsBase.Inherits
+  href: api/ToSic.Cre8magic.Spells.MagicInheritsBase.html#ToSic_Cre8magic_Spells_MagicInheritsBase_Inherits
+  commentId: P:ToSic.Cre8magic.Spells.MagicInheritsBase.Inherits
+  fullName: ToSic.Cre8magic.Spells.MagicInheritsBase.Inherits
   nameWithType: MagicInheritsBase.Inherits
-- uid: ToSic.Cre8magic.Settings.MagicInheritsBase.Inherits*
+- uid: ToSic.Cre8magic.Spells.MagicInheritsBase.Inherits*
   name: Inherits
-  href: api/ToSic.Cre8magic.Settings.MagicInheritsBase.html#ToSic_Cre8magic_Settings_MagicInheritsBase_Inherits_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicInheritsBase.Inherits
+  href: api/ToSic.Cre8magic.Spells.MagicInheritsBase.html#ToSic_Cre8magic_Spells_MagicInheritsBase_Inherits_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicInheritsBase.Inherits
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicInheritsBase.Inherits
+  fullName: ToSic.Cre8magic.Spells.MagicInheritsBase.Inherits
   nameWithType: MagicInheritsBase.Inherits
-- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff
-  name: MagicSettingOnOff
-  href: api/ToSic.Cre8magic.Settings.MagicSettingOnOff.html
-  commentId: T:ToSic.Cre8magic.Settings.MagicSettingOnOff
-  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff
-  nameWithType: MagicSettingOnOff
-- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.#ctor(System.String,System.String)
-  name: MagicSettingOnOff(string?, string?)
-  href: api/ToSic.Cre8magic.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Settings_MagicSettingOnOff__ctor_System_String_System_String_
-  commentId: M:ToSic.Cre8magic.Settings.MagicSettingOnOff.#ctor(System.String,System.String)
-  name.vb: New(String, String)
-  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff.MagicSettingOnOff(string?, string?)
-  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingOnOff.New(String, String)
-  nameWithType: MagicSettingOnOff.MagicSettingOnOff(string?, string?)
-  nameWithType.vb: MagicSettingOnOff.New(String, String)
-- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.#ctor*
-  name: MagicSettingOnOff
-  href: api/ToSic.Cre8magic.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Settings_MagicSettingOnOff__ctor_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingOnOff.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff.MagicSettingOnOff
-  fullName.vb: ToSic.Cre8magic.Settings.MagicSettingOnOff.New
-  nameWithType: MagicSettingOnOff.MagicSettingOnOff
-  nameWithType.vb: MagicSettingOnOff.New
-- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.Off
-  name: Off
-  href: api/ToSic.Cre8magic.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Settings_MagicSettingOnOff_Off
-  commentId: P:ToSic.Cre8magic.Settings.MagicSettingOnOff.Off
-  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff.Off
-  nameWithType: MagicSettingOnOff.Off
-- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.Off*
-  name: Off
-  href: api/ToSic.Cre8magic.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Settings_MagicSettingOnOff_Off_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingOnOff.Off
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff.Off
-  nameWithType: MagicSettingOnOff.Off
-- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.On
-  name: On
-  href: api/ToSic.Cre8magic.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Settings_MagicSettingOnOff_On
-  commentId: P:ToSic.Cre8magic.Settings.MagicSettingOnOff.On
-  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff.On
-  nameWithType: MagicSettingOnOff.On
-- uid: ToSic.Cre8magic.Settings.MagicSettingOnOff.On*
-  name: On
-  href: api/ToSic.Cre8magic.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Settings_MagicSettingOnOff_On_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSettingOnOff.On
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSettingOnOff.On
-  nameWithType: MagicSettingOnOff.On
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase
   name: MagicSpellBase
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html
-  commentId: T:ToSic.Cre8magic.Settings.MagicSpellBase
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html
+  commentId: T:ToSic.Cre8magic.Spells.MagicSpellBase
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase
   nameWithType: MagicSpellBase
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.Debug
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.Debug
   name: Debug
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_Debug
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellBase.Debug
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.Debug
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_Debug
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellBase.Debug
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.Debug
   nameWithType: MagicSpellBase.Debug
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.Debug*
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.Debug*
   name: Debug
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_Debug_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellBase.Debug
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_Debug_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellBase.Debug
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.Debug
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.Debug
   nameWithType: MagicSpellBase.Debug
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.DesignName
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.DesignName
   name: DesignName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_DesignName
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellBase.DesignName
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.DesignName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_DesignName
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellBase.DesignName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.DesignName
   nameWithType: MagicSpellBase.DesignName
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.DesignName*
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.DesignName*
   name: DesignName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_DesignName_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellBase.DesignName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_DesignName_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellBase.DesignName
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.DesignName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.DesignName
   nameWithType: MagicSpellBase.DesignName
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.PageState
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.PageState
   name: PageState
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_PageState
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellBase.PageState
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.PageState
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_PageState
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellBase.PageState
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.PageState
   nameWithType: MagicSpellBase.PageState
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.PageState*
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.PageState*
   name: PageState
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_PageState_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellBase.PageState
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_PageState_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellBase.PageState
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.PageState
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.PageState
   nameWithType: MagicSpellBase.PageState
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.PartName
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.PartName
   name: PartName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_PartName
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellBase.PartName
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.PartName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_PartName
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellBase.PartName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.PartName
   nameWithType: MagicSpellBase.PartName
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.PartName*
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.PartName*
   name: PartName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_PartName_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellBase.PartName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_PartName_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellBase.PartName
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.PartName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.PartName
   nameWithType: MagicSpellBase.PartName
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.SettingsName
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.SettingsName
   name: SettingsName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_SettingsName
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellBase.SettingsName
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.SettingsName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_SettingsName
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellBase.SettingsName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.SettingsName
   nameWithType: MagicSpellBase.SettingsName
-- uid: ToSic.Cre8magic.Settings.MagicSpellBase.SettingsName*
+- uid: ToSic.Cre8magic.Spells.MagicSpellBase.SettingsName*
   name: SettingsName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellBase.html#ToSic_Cre8magic_Settings_MagicSpellBase_SettingsName_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellBase.SettingsName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellBase.html#ToSic_Cre8magic_Spells_MagicSpellBase_SettingsName_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellBase.SettingsName
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellBase.SettingsName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellBase.SettingsName
   nameWithType: MagicSpellBase.SettingsName
-- uid: ToSic.Cre8magic.Settings.MagicSpellLookup
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions
+  name: MagicSpellExtensions
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html
+  commentId: T:ToSic.Cre8magic.Spells.MagicSpellExtensions
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions
+  nameWithType: MagicSpellExtensions
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill*
+  name: Refill
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_Refill_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill
+  nameWithType: MagicSpellExtensions.Refill
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.RefillLookup*
+  name: RefillLookup
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_RefillLookup_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellExtensions.RefillLookup
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.RefillLookup
+  nameWithType: MagicSpellExtensions.RefillLookup
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Spells.MagicSpellLookup)
+  name: RefillLookup<TSpell>(TSpell?, MagicSpellLookup)
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_RefillLookup__1___0_ToSic_Cre8magic_Spells_MagicSpellLookup_
+  commentId: M:ToSic.Cre8magic.Spells.MagicSpellExtensions.RefillLookup``1(``0,ToSic.Cre8magic.Spells.MagicSpellLookup)
+  name.vb: RefillLookup(Of TSpell)(TSpell, MagicSpellLookup)
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.RefillLookup<TSpell>(TSpell?, ToSic.Cre8magic.Spells.MagicSpellLookup)
+  fullName.vb: ToSic.Cre8magic.Spells.MagicSpellExtensions.RefillLookup(Of TSpell)(TSpell, ToSic.Cre8magic.Spells.MagicSpellLookup)
+  nameWithType: MagicSpellExtensions.RefillLookup<TSpell>(TSpell?, MagicSpellLookup)
+  nameWithType.vb: MagicSpellExtensions.RefillLookup(Of TSpell)(TSpell, MagicSpellLookup)
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill``1(``0,Oqtane.UI.PageState)
+  name: Refill<TSpell>(TSpell?, PageState)
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_Refill__1___0_Oqtane_UI_PageState_
+  commentId: M:ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill``1(``0,Oqtane.UI.PageState)
+  name.vb: Refill(Of TSpell)(TSpell, PageState)
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill<TSpell>(TSpell?, Oqtane.UI.PageState)
+  fullName.vb: ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill(Of TSpell)(TSpell, Oqtane.UI.PageState)
+  nameWithType: MagicSpellExtensions.Refill<TSpell>(TSpell?, PageState)
+  nameWithType.vb: MagicSpellExtensions.Refill(Of TSpell)(TSpell, PageState)
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill``2(``0,``1)
+  name: Refill<TSpell, TWith>(TSpell?, TWith?)
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_Refill__2___0___1_
+  commentId: M:ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill``2(``0,``1)
+  name.vb: Refill(Of TSpell, TWith)(TSpell, TWith)
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill<TSpell, TWith>(TSpell?, TWith?)
+  fullName.vb: ToSic.Cre8magic.Spells.MagicSpellExtensions.Refill(Of TSpell, TWith)(TSpell, TWith)
+  nameWithType: MagicSpellExtensions.Refill<TSpell, TWith>(TSpell?, TWith?)
+  nameWithType.vb: MagicSpellExtensions.Refill(Of TSpell, TWith)(TSpell, TWith)
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.With*
+  name: With
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_With_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellExtensions.With
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.With
+  nameWithType: MagicSpellExtensions.With
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.WithLookup*
+  name: WithLookup
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_WithLookup_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellExtensions.WithLookup
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.WithLookup
+  nameWithType: MagicSpellExtensions.WithLookup
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.WithLookup``1(``0,ToSic.Cre8magic.Spells.MagicSpellLookup)
+  name: WithLookup<TSpell>(TSpell?, MagicSpellLookup)
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_WithLookup__1___0_ToSic_Cre8magic_Spells_MagicSpellLookup_
+  commentId: M:ToSic.Cre8magic.Spells.MagicSpellExtensions.WithLookup``1(``0,ToSic.Cre8magic.Spells.MagicSpellLookup)
+  name.vb: WithLookup(Of TSpell)(TSpell, MagicSpellLookup)
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.WithLookup<TSpell>(TSpell?, ToSic.Cre8magic.Spells.MagicSpellLookup)
+  fullName.vb: ToSic.Cre8magic.Spells.MagicSpellExtensions.WithLookup(Of TSpell)(TSpell, ToSic.Cre8magic.Spells.MagicSpellLookup)
+  nameWithType: MagicSpellExtensions.WithLookup<TSpell>(TSpell?, MagicSpellLookup)
+  nameWithType.vb: MagicSpellExtensions.WithLookup(Of TSpell)(TSpell, MagicSpellLookup)
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.With``1(``0,Oqtane.UI.PageState)
+  name: With<TSpell>(TSpell?, PageState)
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_With__1___0_Oqtane_UI_PageState_
+  commentId: M:ToSic.Cre8magic.Spells.MagicSpellExtensions.With``1(``0,Oqtane.UI.PageState)
+  name.vb: With(Of TSpell)(TSpell, PageState)
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.With<TSpell>(TSpell?, Oqtane.UI.PageState)
+  fullName.vb: ToSic.Cre8magic.Spells.MagicSpellExtensions.With(Of TSpell)(TSpell, Oqtane.UI.PageState)
+  nameWithType: MagicSpellExtensions.With<TSpell>(TSpell?, PageState)
+  nameWithType.vb: MagicSpellExtensions.With(Of TSpell)(TSpell, PageState)
+- uid: ToSic.Cre8magic.Spells.MagicSpellExtensions.With``2(``0,``1)
+  name: With<TSpell, TWith>(TSpell?, TWith?)
+  href: api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html#ToSic_Cre8magic_Spells_MagicSpellExtensions_With__2___0___1_
+  commentId: M:ToSic.Cre8magic.Spells.MagicSpellExtensions.With``2(``0,``1)
+  name.vb: With(Of TSpell, TWith)(TSpell, TWith)
+  fullName: ToSic.Cre8magic.Spells.MagicSpellExtensions.With<TSpell, TWith>(TSpell?, TWith?)
+  fullName.vb: ToSic.Cre8magic.Spells.MagicSpellExtensions.With(Of TSpell, TWith)(TSpell, TWith)
+  nameWithType: MagicSpellExtensions.With<TSpell, TWith>(TSpell?, TWith?)
+  nameWithType.vb: MagicSpellExtensions.With(Of TSpell, TWith)(TSpell, TWith)
+- uid: ToSic.Cre8magic.Spells.MagicSpellLookup
   name: MagicSpellLookup
-  href: api/ToSic.Cre8magic.Settings.MagicSpellLookup.html
-  commentId: T:ToSic.Cre8magic.Settings.MagicSpellLookup
-  fullName: ToSic.Cre8magic.Settings.MagicSpellLookup
+  href: api/ToSic.Cre8magic.Spells.MagicSpellLookup.html
+  commentId: T:ToSic.Cre8magic.Spells.MagicSpellLookup
+  fullName: ToSic.Cre8magic.Spells.MagicSpellLookup
   nameWithType: MagicSpellLookup
-- uid: ToSic.Cre8magic.Settings.MagicSpellLookup.BlueprintName
+- uid: ToSic.Cre8magic.Spells.MagicSpellLookup.BlueprintName
   name: BlueprintName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellLookup.html#ToSic_Cre8magic_Settings_MagicSpellLookup_BlueprintName
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellLookup.BlueprintName
-  fullName: ToSic.Cre8magic.Settings.MagicSpellLookup.BlueprintName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellLookup.html#ToSic_Cre8magic_Spells_MagicSpellLookup_BlueprintName
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellLookup.BlueprintName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellLookup.BlueprintName
   nameWithType: MagicSpellLookup.BlueprintName
-- uid: ToSic.Cre8magic.Settings.MagicSpellLookup.BlueprintName*
+- uid: ToSic.Cre8magic.Spells.MagicSpellLookup.BlueprintName*
   name: BlueprintName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellLookup.html#ToSic_Cre8magic_Settings_MagicSpellLookup_BlueprintName_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellLookup.BlueprintName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellLookup.html#ToSic_Cre8magic_Spells_MagicSpellLookup_BlueprintName_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellLookup.BlueprintName
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellLookup.BlueprintName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellLookup.BlueprintName
   nameWithType: MagicSpellLookup.BlueprintName
-- uid: ToSic.Cre8magic.Settings.MagicSpellLookup.PartName
+- uid: ToSic.Cre8magic.Spells.MagicSpellLookup.PartName
   name: PartName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellLookup.html#ToSic_Cre8magic_Settings_MagicSpellLookup_PartName
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellLookup.PartName
-  fullName: ToSic.Cre8magic.Settings.MagicSpellLookup.PartName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellLookup.html#ToSic_Cre8magic_Spells_MagicSpellLookup_PartName
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellLookup.PartName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellLookup.PartName
   nameWithType: MagicSpellLookup.PartName
-- uid: ToSic.Cre8magic.Settings.MagicSpellLookup.PartName*
+- uid: ToSic.Cre8magic.Spells.MagicSpellLookup.PartName*
   name: PartName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellLookup.html#ToSic_Cre8magic_Settings_MagicSpellLookup_PartName_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellLookup.PartName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellLookup.html#ToSic_Cre8magic_Spells_MagicSpellLookup_PartName_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellLookup.PartName
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellLookup.PartName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellLookup.PartName
   nameWithType: MagicSpellLookup.PartName
-- uid: ToSic.Cre8magic.Settings.MagicSpellLookup.SpellName
+- uid: ToSic.Cre8magic.Spells.MagicSpellLookup.SpellName
   name: SpellName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellLookup.html#ToSic_Cre8magic_Settings_MagicSpellLookup_SpellName
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellLookup.SpellName
-  fullName: ToSic.Cre8magic.Settings.MagicSpellLookup.SpellName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellLookup.html#ToSic_Cre8magic_Spells_MagicSpellLookup_SpellName
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellLookup.SpellName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellLookup.SpellName
   nameWithType: MagicSpellLookup.SpellName
-- uid: ToSic.Cre8magic.Settings.MagicSpellLookup.SpellName*
+- uid: ToSic.Cre8magic.Spells.MagicSpellLookup.SpellName*
   name: SpellName
-  href: api/ToSic.Cre8magic.Settings.MagicSpellLookup.html#ToSic_Cre8magic_Settings_MagicSpellLookup_SpellName_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellLookup.SpellName
+  href: api/ToSic.Cre8magic.Spells.MagicSpellLookup.html#ToSic_Cre8magic_Spells_MagicSpellLookup_SpellName_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellLookup.SpellName
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellLookup.SpellName
+  fullName: ToSic.Cre8magic.Spells.MagicSpellLookup.SpellName
   nameWithType: MagicSpellLookup.SpellName
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook
   name: MagicSpellsBook
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html
-  commentId: T:ToSic.Cre8magic.Settings.MagicSpellsBook
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html
+  commentId: T:ToSic.Cre8magic.Spells.MagicSpellsBook
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook
   nameWithType: MagicSpellsBook
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.#ctor
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.#ctor
   name: MagicSpellsBook()
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook__ctor
-  commentId: M:ToSic.Cre8magic.Settings.MagicSpellsBook.#ctor
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook__ctor
+  commentId: M:ToSic.Cre8magic.Spells.MagicSpellsBook.#ctor
   name.vb: New()
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.MagicSpellsBook()
-  fullName.vb: ToSic.Cre8magic.Settings.MagicSpellsBook.New()
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.MagicSpellsBook()
+  fullName.vb: ToSic.Cre8magic.Spells.MagicSpellsBook.New()
   nameWithType: MagicSpellsBook.MagicSpellsBook()
   nameWithType.vb: MagicSpellsBook.New()
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.#ctor*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.#ctor*
   name: MagicSpellsBook
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook__ctor_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.#ctor
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook__ctor_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.#ctor
   isSpec: "True"
   name.vb: New
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.MagicSpellsBook
-  fullName.vb: ToSic.Cre8magic.Settings.MagicSpellsBook.New
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.MagicSpellsBook
+  fullName.vb: ToSic.Cre8magic.Spells.MagicSpellsBook.New
   nameWithType: MagicSpellsBook.MagicSpellsBook
   nameWithType.vb: MagicSpellsBook.New
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Analytics
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Analytics
   name: Analytics
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Analytics
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Analytics
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Analytics
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Analytics
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Analytics
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Analytics
   nameWithType: MagicSpellsBook.Analytics
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Analytics*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Analytics*
   name: Analytics
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Analytics_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Analytics
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Analytics_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Analytics
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Analytics
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Analytics
   nameWithType: MagicSpellsBook.Analytics
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.BreadcrumbBlueprints
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.BreadcrumbBlueprints
   name: BreadcrumbBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_BreadcrumbBlueprints
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.BreadcrumbBlueprints
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.BreadcrumbBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_BreadcrumbBlueprints
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.BreadcrumbBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.BreadcrumbBlueprints
   nameWithType: MagicSpellsBook.BreadcrumbBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.BreadcrumbBlueprints*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.BreadcrumbBlueprints*
   name: BreadcrumbBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_BreadcrumbBlueprints_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.BreadcrumbBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_BreadcrumbBlueprints_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.BreadcrumbBlueprints
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.BreadcrumbBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.BreadcrumbBlueprints
   nameWithType: MagicSpellsBook.BreadcrumbBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Breadcrumbs
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Breadcrumbs
   name: Breadcrumbs
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Breadcrumbs
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Breadcrumbs
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Breadcrumbs
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Breadcrumbs
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Breadcrumbs
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Breadcrumbs
   nameWithType: MagicSpellsBook.Breadcrumbs
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Breadcrumbs*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Breadcrumbs*
   name: Breadcrumbs
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Breadcrumbs_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Breadcrumbs
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Breadcrumbs_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Breadcrumbs
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Breadcrumbs
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Breadcrumbs
   nameWithType: MagicSpellsBook.Breadcrumbs
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.ContainerBlueprints
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.ContainerBlueprints
   name: ContainerBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_ContainerBlueprints
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.ContainerBlueprints
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.ContainerBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_ContainerBlueprints
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.ContainerBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.ContainerBlueprints
   nameWithType: MagicSpellsBook.ContainerBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.ContainerBlueprints*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.ContainerBlueprints*
   name: ContainerBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_ContainerBlueprints_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.ContainerBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_ContainerBlueprints_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.ContainerBlueprints
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.ContainerBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.ContainerBlueprints
   nameWithType: MagicSpellsBook.ContainerBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Containers
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Containers
   name: Containers
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Containers
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Containers
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Containers
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Containers
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Containers
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Containers
   nameWithType: MagicSpellsBook.Containers
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Containers*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Containers*
   name: Containers
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Containers_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Containers
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Containers_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Containers
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Containers
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Containers
   nameWithType: MagicSpellsBook.Containers
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Debug
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Debug
   name: Debug
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Debug
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Debug
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Debug
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Debug
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Debug
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Debug
   nameWithType: MagicSpellsBook.Debug
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Debug*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Debug*
   name: Debug
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Debug_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Debug
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Debug_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Debug
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Debug
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Debug
   nameWithType: MagicSpellsBook.Debug
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.LanguageBlueprints
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.LanguageBlueprints
   name: LanguageBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_LanguageBlueprints
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.LanguageBlueprints
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.LanguageBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_LanguageBlueprints
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.LanguageBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.LanguageBlueprints
   nameWithType: MagicSpellsBook.LanguageBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.LanguageBlueprints*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.LanguageBlueprints*
   name: LanguageBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_LanguageBlueprints_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.LanguageBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_LanguageBlueprints_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.LanguageBlueprints
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.LanguageBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.LanguageBlueprints
   nameWithType: MagicSpellsBook.LanguageBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Languages
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Languages
   name: Languages
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Languages
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Languages
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Languages
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Languages
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Languages
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Languages
   nameWithType: MagicSpellsBook.Languages
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Languages*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Languages*
   name: Languages
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Languages_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Languages
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Languages_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Languages
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Languages
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Languages
   nameWithType: MagicSpellsBook.Languages
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.MenuBlueprints
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.MenuBlueprints
   name: MenuBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_MenuBlueprints
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.MenuBlueprints
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.MenuBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_MenuBlueprints
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.MenuBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.MenuBlueprints
   nameWithType: MagicSpellsBook.MenuBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.MenuBlueprints*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.MenuBlueprints*
   name: MenuBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_MenuBlueprints_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.MenuBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_MenuBlueprints_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.MenuBlueprints
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.MenuBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.MenuBlueprints
   nameWithType: MagicSpellsBook.MenuBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Menus
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Menus
   name: Menus
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Menus
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Menus
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Menus
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Menus
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Menus
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Menus
   nameWithType: MagicSpellsBook.Menus
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Menus*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Menus*
   name: Menus
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Menus_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Menus
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Menus_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Menus
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Menus
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Menus
   nameWithType: MagicSpellsBook.Menus
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.PageContexts
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.PageContexts
   name: PageContexts
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_PageContexts
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.PageContexts
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.PageContexts
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_PageContexts
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.PageContexts
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.PageContexts
   nameWithType: MagicSpellsBook.PageContexts
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.PageContexts*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.PageContexts*
   name: PageContexts
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_PageContexts_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.PageContexts
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_PageContexts_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.PageContexts
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.PageContexts
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.PageContexts
   nameWithType: MagicSpellsBook.PageContexts
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Source
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Source
   name: Source
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Source
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Source
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Source
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Source
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Source
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Source
   nameWithType: MagicSpellsBook.Source
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Source*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Source*
   name: Source
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Source_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Source
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Source_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Source
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Source
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Source
   nameWithType: MagicSpellsBook.Source
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.SourceDefault
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.SourceDefault
   name: SourceDefault
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_SourceDefault
-  commentId: F:ToSic.Cre8magic.Settings.MagicSpellsBook.SourceDefault
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.SourceDefault
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_SourceDefault
+  commentId: F:ToSic.Cre8magic.Spells.MagicSpellsBook.SourceDefault
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.SourceDefault
   nameWithType: MagicSpellsBook.SourceDefault
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.ThemeBlueprints
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.ThemeBlueprints
   name: ThemeBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_ThemeBlueprints
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.ThemeBlueprints
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.ThemeBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_ThemeBlueprints
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.ThemeBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.ThemeBlueprints
   nameWithType: MagicSpellsBook.ThemeBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.ThemeBlueprints*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.ThemeBlueprints*
   name: ThemeBlueprints
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_ThemeBlueprints_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.ThemeBlueprints
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_ThemeBlueprints_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.ThemeBlueprints
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.ThemeBlueprints
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.ThemeBlueprints
   nameWithType: MagicSpellsBook.ThemeBlueprints
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Themes
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Themes
   name: Themes
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Themes
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Themes
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Themes
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Themes
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Themes
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Themes
   nameWithType: MagicSpellsBook.Themes
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Themes*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Themes*
   name: Themes
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Themes_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Themes
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Themes_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Themes
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Themes
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Themes
   nameWithType: MagicSpellsBook.Themes
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Version
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Version
   name: Version
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Version
-  commentId: P:ToSic.Cre8magic.Settings.MagicSpellsBook.Version
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Version
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Version
+  commentId: P:ToSic.Cre8magic.Spells.MagicSpellsBook.Version
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Version
   nameWithType: MagicSpellsBook.Version
-- uid: ToSic.Cre8magic.Settings.MagicSpellsBook.Version*
+- uid: ToSic.Cre8magic.Spells.MagicSpellsBook.Version*
   name: Version
-  href: api/ToSic.Cre8magic.Settings.MagicSpellsBook.html#ToSic_Cre8magic_Settings_MagicSpellsBook_Version_
-  commentId: Overload:ToSic.Cre8magic.Settings.MagicSpellsBook.Version
+  href: api/ToSic.Cre8magic.Spells.MagicSpellsBook.html#ToSic_Cre8magic_Spells_MagicSpellsBook_Version_
+  commentId: Overload:ToSic.Cre8magic.Spells.MagicSpellsBook.Version
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Settings.MagicSpellsBook.Version
+  fullName: ToSic.Cre8magic.Spells.MagicSpellsBook.Version
   nameWithType: MagicSpellsBook.Version
+- uid: ToSic.Cre8magic.Spells.Settings
+  name: ToSic.Cre8magic.Spells.Settings
+  href: api/ToSic.Cre8magic.Spells.Settings.html
+  commentId: N:ToSic.Cre8magic.Spells.Settings
+  fullName: ToSic.Cre8magic.Spells.Settings
+  nameWithType: ToSic.Cre8magic.Spells.Settings
+- uid: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff
+  name: MagicSettingOnOff
+  href: api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html
+  commentId: T:ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff
+  fullName: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff
+  nameWithType: MagicSettingOnOff
+- uid: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.#ctor(System.String,System.String)
+  name: MagicSettingOnOff(string?, string?)
+  href: api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff__ctor_System_String_System_String_
+  commentId: M:ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.MagicSettingOnOff(string?, string?)
+  fullName.vb: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.New(String, String)
+  nameWithType: MagicSettingOnOff.MagicSettingOnOff(string?, string?)
+  nameWithType.vb: MagicSettingOnOff.New(String, String)
+- uid: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.#ctor*
+  name: MagicSettingOnOff
+  href: api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff__ctor_
+  commentId: Overload:ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.MagicSettingOnOff
+  fullName.vb: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.New
+  nameWithType: MagicSettingOnOff.MagicSettingOnOff
+  nameWithType.vb: MagicSettingOnOff.New
+- uid: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.Off
+  name: Off
+  href: api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff_Off
+  commentId: P:ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.Off
+  fullName: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.Off
+  nameWithType: MagicSettingOnOff.Off
+- uid: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.Off*
+  name: Off
+  href: api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff_Off_
+  commentId: Overload:ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.Off
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.Off
+  nameWithType: MagicSettingOnOff.Off
+- uid: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On
+  name: On
+  href: api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff_On
+  commentId: P:ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On
+  fullName: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On
+  nameWithType: MagicSettingOnOff.On
+- uid: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On*
+  name: On
+  href: api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Settings_MagicSettingOnOff_On_
+  commentId: Overload:ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On
+  nameWithType: MagicSettingOnOff.On
 - uid: ToSic.Cre8magic.Tailors
   name: ToSic.Cre8magic.Tailors
   href: api/ToSic.Cre8magic.Tailors.html
@@ -4119,51 +3830,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Themes.MagicThemePackage.WwwRoot
   nameWithType: MagicThemePackage.WwwRoot
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings
-  name: MagicThemeSettings
-  href: api/ToSic.Cre8magic.Themes.MagicThemeSettings.html
-  commentId: T:ToSic.Cre8magic.Themes.MagicThemeSettings
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings
-  nameWithType: MagicThemeSettings
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Design
-  name: Design
-  href: api/ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Design
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeSettings.Design
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Design
-  nameWithType: MagicThemeSettings.Design
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Design*
-  name: Design
-  href: api/ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Design_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.Design
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Design
-  nameWithType: MagicThemeSettings.Design
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
-  name: Logo
-  href: api/ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Logo
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
-  nameWithType: MagicThemeSettings.Logo
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Logo*
-  name: Logo
-  href: api/ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Logo_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Logo
-  nameWithType: MagicThemeSettings.Logo
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Parts
-  name: Parts
-  href: api/ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Parts
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemeSettings.Parts
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Parts
-  nameWithType: MagicThemeSettings.Parts
-- uid: ToSic.Cre8magic.Themes.MagicThemeSettings.Parts*
-  name: Parts
-  href: api/ToSic.Cre8magic.Themes.MagicThemeSettings.html#ToSic_Cre8magic_Themes_MagicThemeSettings_Parts_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeSettings.Parts
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemeSettings.Parts
-  nameWithType: MagicThemeSettings.Parts
 - uid: ToSic.Cre8magic.Themes.MagicThemeSpell
   name: MagicThemeSpell
   href: api/ToSic.Cre8magic.Themes.MagicThemeSpell.html
@@ -4565,24 +4231,12 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.UserLogins.MagicUserLoginResources.Title
   nameWithType: MagicUserLoginResources.Title
-- uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
-  name: MagicUserLoginSettings
-  href: api/ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html
-  commentId: T:ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
-  fullName: ToSic.Cre8magic.UserLogins.MagicUserLoginSettings
-  nameWithType: MagicUserLoginSettings
 - uid: ToSic.Cre8magic.UserLogins.MagicUserLoginSpell
   name: MagicUserLoginSpell
   href: api/ToSic.Cre8magic.UserLogins.MagicUserLoginSpell.html
   commentId: T:ToSic.Cre8magic.UserLogins.MagicUserLoginSpell
   fullName: ToSic.Cre8magic.UserLogins.MagicUserLoginSpell
   nameWithType: MagicUserLoginSpell
-- uid: ToSic.Cre8magic.UserLogins.MagicUserSettings
-  name: MagicUserSettings
-  href: api/ToSic.Cre8magic.UserLogins.MagicUserSettings.html
-  commentId: T:ToSic.Cre8magic.UserLogins.MagicUserSettings
-  fullName: ToSic.Cre8magic.UserLogins.MagicUserSettings
-  nameWithType: MagicUserSettings
 - uid: ToSic.Cre8magic.Users
   name: ToSic.Cre8magic.Users
   href: api/ToSic.Cre8magic.Users.html

@@ -22,16 +22,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Act.MagicSettingsExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Act.MagicSettingsExtensions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.Act.yml",
       "output": {
         ".html": {
@@ -152,16 +142,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.MagicContainerSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerSettings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.MagicContainerSpell.yml",
       "output": {
         ".html": {
@@ -216,16 +196,6 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.MagicLanguageSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html"
         }
       },
       "version": ""
@@ -326,16 +296,6 @@
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuBlueprint.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Menus.MagicMenuSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuSettings.html"
         }
       },
       "version": ""
@@ -462,16 +422,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextSpell.yml",
       "output": {
         ".html": {
@@ -572,90 +522,120 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.IMagicSettingsProvider.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.IMagicSettingsProvider.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Debug.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.IMagicSettingsProviderSection-1.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.Debug.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicDebugSettings.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.IMagicSpellsProvider.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicDebugSettings.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicInheritsBase.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicInheritsBase.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSettingOnOff.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicInheritsBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSettingOnOff.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicInheritsBase.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSpellBase.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicSpellBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSpellBase.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicSpellBase.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSpellLookup.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicSpellExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSpellLookup.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSpellsBook.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicSpellLookup.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSpellsBook.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicSpellLookup.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.yml",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicSpellsBook.yml",
       "output": {
         ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Settings.html"
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicSpellsBook.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.Settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.html"
         }
       },
       "version": ""
@@ -762,16 +742,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicThemeSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeSettings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicThemeSpell.yml",
       "output": {
         ".html": {
@@ -872,30 +842,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.MagicUserLoginSpell.yml",
       "output": {
         ".html": {
           "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserLoginSpell.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.MagicUserSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserSettings.html"
         }
       },
       "version": ""
