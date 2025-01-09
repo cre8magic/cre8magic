@@ -69,7 +69,6 @@ public static class MagicSpellExtensions
         (settings ??= new()) with
         {
             Name = settings.Name ?? lookup.Name,
-            SettingsName = settings.SettingsName ?? lookup.SpellName,
             BlueprintName = settings.BlueprintName ?? lookup.BlueprintName,
         };
 
@@ -78,7 +77,6 @@ public static class MagicSpellExtensions
         (settings ??= new()) with
         {
             Name = lookup.Name ?? settings.Name,
-            SettingsName = lookup.SpellName ?? settings.SettingsName,
             BlueprintName = lookup.BlueprintName ?? settings.BlueprintName,
         };
 }

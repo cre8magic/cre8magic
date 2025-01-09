@@ -13,13 +13,6 @@ internal interface ISettingsForCodeUse
     public string? Name { get; init; }
 
     /// <summary>
-    /// Name to identify which settings to load.
-    /// This is used before looking in the Theme Part.
-    /// If not specified, will check the theme part for a name it provides, or use the theme-part name to find the settings.
-    /// </summary>
-    public string? SettingsName { get; init; }
-
-    /// <summary>
     /// Name to identify which design settings to load.
     /// </summary>
     public string? BlueprintName { get; init; }

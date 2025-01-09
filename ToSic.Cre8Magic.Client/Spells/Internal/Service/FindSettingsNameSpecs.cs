@@ -15,7 +15,7 @@ internal record FindSettingsNameSpecs(
     public FindSettingsNameSpecs(CmThemeContext context, ISettingsForCodeUse? settings, ThemePartSectionEnum section)
         : this(
         context,
-        section == ThemePartSectionEnum.Design ? settings?.BlueprintName : settings?.SettingsName,
+        section == ThemePartSectionEnum.Design ? settings?.BlueprintName : settings?.Name,
         settings?.Name,
         context.Name,
         section

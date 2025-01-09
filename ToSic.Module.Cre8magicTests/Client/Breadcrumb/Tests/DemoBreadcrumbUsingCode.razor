@@ -75,7 +75,7 @@
 
 @* Breadcrumb using the settings from the spells book *@
 @{
-    breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState, SettingsName = "productsBreadcrumb" });
+    breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState, Name = "productsBreadcrumb" });
 }
 <ol class="breadcrumb">
     @foreach (var item in breadcrumbKit.Pages)

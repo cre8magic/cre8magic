@@ -25,7 +25,6 @@ public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, I
             return;
 
         Name = priority?.Name ?? fallback.Name;
-        SettingsName = priority?.SettingsName ?? fallback.SettingsName;
         BlueprintName = priority?.BlueprintName ?? fallback.BlueprintName;
 
         Debug = priority?.Debug ?? fallback.Debug;
@@ -55,10 +54,6 @@ public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, I
     /// <inheritdoc/>
     [JsonIgnore]
     public string? Name { get; init; }
-
-    /// <inheritdoc/>
-    [JsonIgnore]
-    public string? SettingsName { get; init; }
 
     /// <inheritdoc/>
     [JsonIgnore]

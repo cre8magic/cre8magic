@@ -4,11 +4,11 @@
 @inherits ComponentBase
 @inject IMagicAct MagicAct
 @{
-    var analyticsKit = MagicAct.AnalyticsKit(new() { SettingsName = "default" });
+    var analyticsKit = MagicAct.AnalyticsKit(new() { Name = "default" });
 
     // Run some performance tests
     var stopWatch = new Stopwatch();
-    var testSettings = new MagicAnalyticsSpell { SettingsName = "analytics-test" };
+    var testSettings = new MagicAnalyticsSpell { Name = "analytics-test" };
     stopWatch.Start();
     var analyticsTestKit = MagicAct.AnalyticsKit(testSettings);
 

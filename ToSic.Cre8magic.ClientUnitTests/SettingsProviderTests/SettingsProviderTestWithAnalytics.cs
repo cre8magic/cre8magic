@@ -44,7 +44,7 @@ public class SettingsProviderTestWithAnalytics
     {
         var (settingsSvc, _, original) = PrepareSettings();
         // Settings, without GtmId, so that it would receive it from original when merging
-        var analytics = new MagicAnalyticsSpell { SettingsName = currentName };
+        var analytics = new MagicAnalyticsSpell { Name = currentName };
         var retrieved2 = settingsSvc.GetBestSpell(
             null,
             analytics,
@@ -75,7 +75,7 @@ public class SettingsProviderTestWithAnalytics
 
         var retrieved = settingsSvc.GetBestSpell(
             null,
-            new MagicAnalyticsSpell { SettingsName = searchName },
+            new MagicAnalyticsSpell { Name = searchName },
             settingsSvc.Analytics
         );
 
