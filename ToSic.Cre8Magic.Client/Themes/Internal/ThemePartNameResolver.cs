@@ -40,11 +40,6 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
         if (betterName == MagicConstants.InheritName)
             return new(mainName, journal.With($"switched to inherit '{mainName}'"));
 
-        if (betterName == null && !string.IsNullOrEmpty(specs.Prefix) && !initialName.StartsWith(specs.Prefix))
-            betterName = themeSettingsParts.TryGetValue($"{specs.Prefix}{initialName}", out part)
-                ? part.GetSettingName(specs.Section)
-                : null;
-
         if (!betterName.HasValue())
             return new(initialName, journal);
 

@@ -10,7 +10,6 @@ namespace ToSic.Cre8magic.Analytics.Internal;
 
 public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSpellsService spellsSvc) : IMagicAnalyticsService
 {
-    private const string OptionalPrefix = "analytics-";
     private const string DefaultPartName = "Analytics";
 
     private const string GtmEvent = "event";
@@ -42,7 +41,6 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSpellsService spe
             pageState,
             settings,
             spellsSvc.Analytics,
-            OptionalPrefix,
             DefaultPartName
         );
 

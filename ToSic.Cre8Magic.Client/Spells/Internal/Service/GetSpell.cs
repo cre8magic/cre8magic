@@ -14,7 +14,7 @@ internal static class GetSpell
         PageState? pageStateForCachingOnly,
         TSettings? settings,
         SettingsReader<TSettingsBase> settingsReader,
-        string settingsPrefix,
+        //string settingsPrefix,
         string defaultPartNameForShow
     )
     where TSettings : TSettingsBase, ISettingsForCodeUse, new()
@@ -35,7 +35,7 @@ internal static class GetSpell
 
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type
-        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings, settingsPrefix);
+        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Settings);
         if (settings is IDebugSettings { Book: not null } withBook)
             settingsReader = settingsReader.MaybeUseCustomSpellsBook(withBook.Book);
         var (mergedSettings, journal) = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
@@ -61,7 +61,6 @@ internal static class GetSpell
     /// <param name="settingsReader"></param>
     /// <param name="dSettings"></param>
     /// <param name="designReader"></param>
-    /// <param name="settingPrefix"></param>
     /// <param name="defaultPartNameForShow"></param>
     /// <param name="finalize"></param>
     /// <returns></returns>
@@ -72,7 +71,7 @@ internal static class GetSpell
         SettingsReader<TSettingsBase> settingsReader,
         TDesign? dSettings,
         SettingsReader<TDesign> designReader,
-        string settingPrefix,
+        //string settingPrefix,
         string defaultPartNameForShow,
         Func<TSettingsBase, TDesign, TSettings> finalize
     )
@@ -80,14 +79,14 @@ internal static class GetSpell
         where TDesign : class, new() where TSettingsBase : class, new()
     {
 
-        var (mergedSettings, themeCtx, part, journal) = spellsSvc.GetBestSpell(pageState, settings, settingsReader, settingPrefix, defaultPartNameForShow);
+        var (mergedSettings, themeCtx, part, journal) = spellsSvc.GetBestSpell(pageState, settings, settingsReader, /*settingPrefix,*/ defaultPartNameForShow);
 
         // Activate this for debugging
         //if (settings is IDebugSettings { DebugThis: true } tempForDebug)
         //    tempForDebug = tempForDebug;
 
         // Get Design Settings from specified reader using the provided design settings as priority to merge
-        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Design, settingPrefix);
+        var findSettings = new FindSettingsSpecs(themeCtx, settings, ThemePartSectionEnum.Design);
         if (dSettings is IDebugSettings { Book: not null } withBlueprintsBook)
             designReader = designReader.MaybeUseCustomSpellsBook(withBlueprintsBook.Book);
         var (designSettings, designJournal) = designReader.FindAndMerge(findSettings, dSettings);

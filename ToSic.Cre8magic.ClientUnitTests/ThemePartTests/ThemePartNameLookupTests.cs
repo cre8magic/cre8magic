@@ -39,7 +39,7 @@ public class ThemePartNameLookupTests
 
         var nameResolver = new ThemePartNameResolver(ThemeName, themeParts);
 
-        var findSpecs = new FindSettingsSpecs(null, null, partName, null, ThemePartSectionEnum.Settings, null);
+        var findSpecs = new FindSettingsSpecs(null, null, partName, null, ThemePartSectionEnum.Settings);
         var result = nameResolver.FindBestNameAccordingToParts(findSpecs);
 
         Assert.Equal(expected, result.Data);

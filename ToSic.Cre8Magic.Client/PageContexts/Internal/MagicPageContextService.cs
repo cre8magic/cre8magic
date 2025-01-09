@@ -9,7 +9,6 @@ namespace ToSic.Cre8magic.PageContexts.Internal;
 
 internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThemeJsService jsSvc) : IMagicPageContextService
 {
-    private const string OptionalPrefix = "pageContext-";
     private const string DefaultPartName = "PageContext";
 
     public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSpell? settings) =>
@@ -39,7 +38,6 @@ internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThem
             pageState,
             settings,
             spellsSvc.PageContexts,
-            OptionalPrefix,
             DefaultPartName
         );
 

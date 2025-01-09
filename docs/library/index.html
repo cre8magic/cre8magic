@@ -109,17 +109,33 @@ Typically these pages are officially &quot;hidden&quot; in the navigation, since
 but still need to be accessible.
 This is how we would do it in cre8magic using the <code>MagicMenu</code> <em>Oqtane Bootstrap5</em> component:</p>
 <pre><code class="lang-razor">@using ToSic.Cre8magic.OqtaneBs5
-&lt;!-- This example places all the settings directly inside the tag --&gt;
-&lt;!-- In this case, 1 is home and 5 is a hidden page in the navigation, and we want to show it's children --&gt;
+&lt;!--
+In this case:
+ - 1 is home
+ - 5 is a hidden page in the navigation (hence the !), of which want to show the children
+--&gt;
 &lt;MagicMenu Spell='new() { Pick = &quot;1, 5!/&quot; }' /&gt;
 </code></pre>
-<pre><code class="lang-html">&lt;!-- This example assumes a separate configuration which is called &quot;System&quot; --&gt;
-&lt;MagicMenu PartName=&quot;System&quot; /&gt;
-
-&lt;!-- This example places all the settings directly inside the tag --&gt;
-&lt;!-- In this case, 5 is a hidden page in the navigation, and we want to show it's children --&gt;
-&lt;MagicMenu Spell='new() { Pick = &quot;5!/&quot; }' /&gt;
+<p>Now let's assume you need to <em>Tailor</em> the menu a bit more using a <em>Blueprint</em>.
+We need to add 'sys-nav' to the class of the <code>&lt;ul&gt;</code>:</p>
+<pre><code class="lang-razor">&lt;MagicMenu Spell='new() { Pick = &quot;1, 5!/&quot; }' Blueprint='new() { Parts = new() { { &quot;ul&quot;, new() { Classes = &quot;sys-nav&quot; }}}}' /&gt;
 </code></pre>
+<p>Then again, let's place all these settings in a central location called the <strong>Spell Book</strong>
+and just name this menu part &quot;System-Menu&quot;:</p>
+<pre><code class="lang-html">&lt;MagicMenu Name=&quot;System-Menu&quot; /&gt;
+</code></pre>
+<p>TODO: PartName - maybe something better to keep BluePrint / Spell-Book separate?</p>
+<ul>
+<li>By just having a name, and no parts...</li>
+<li>Maybe rename the theme parts a <code>PartMap</code> or <code>NameMap</code> or <code>Rename</code> for the special cases</li>
+<li>in this case we could always use name - for anything</li>
+<li>and if there is a part-map, it would redirect, but normally you wouldn't do this.</li>
+<li>would also simplify API to <code>Name</code> and possibly <code>BlueprintName</code> - but TBH that could be done with the <code>Rename</code> section...
+<ul>
+<li>which could then just have <code>spell</code> and <code>blueprint</code> as properties</li>
+</ul>
+</li>
+</ul>
 <p>explain</p>
 <h2 id="planned-structure">Planned structure</h2>
 <ol>

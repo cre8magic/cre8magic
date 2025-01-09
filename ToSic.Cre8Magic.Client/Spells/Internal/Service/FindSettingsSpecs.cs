@@ -9,16 +9,16 @@ internal record FindSettingsSpecs(
     string? SettingsName,
     string? PartName,
     string? ThemeName,
-    ThemePartSectionEnum Section,
-    string? Prefix)
+    ThemePartSectionEnum Section
+    )
 {
-    public FindSettingsSpecs(CmThemeContext context, ISettingsForCodeUse? settings, ThemePartSectionEnum section, string? prefix)
+    public FindSettingsSpecs(CmThemeContext context, ISettingsForCodeUse? settings, ThemePartSectionEnum section)
         : this(
         context,
-        section == ThemePartSectionEnum.Design ? settings?.DesignName : settings?.SettingsName, // settings?.SettingsName,
+        section == ThemePartSectionEnum.Design ? settings?.DesignName : settings?.SettingsName,
         settings?.PartName,
         context.SettingsName,
-        section,
-        prefix)
+        section
+        )
     { }
 }

@@ -38,13 +38,10 @@ public class SettingsProviderTestWithAnalytics
             null,
             new MagicAnalyticsSpell { SettingsName = name },
             settingsSvc.Analytics,
-            ContainerPrefix + "-",
             "Container"
         );
         Assert.Equal(original.GtmId, retrieved2.Data.GtmId);
     }
-
-    private const string ContainerPrefix = "container";
 
     [Fact]
     public void FromDictionaryNoPrefixInData() =>
@@ -64,7 +61,6 @@ public class SettingsProviderTestWithAnalytics
             null,
             new MagicAnalyticsSpell { SettingsName = searchName },
             settingsSvc.Analytics,
-            ContainerPrefix + "-",
             "Container"
         );
 
