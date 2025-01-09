@@ -15,20 +15,16 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// 2. If no name was provided, or it is blank, will use "default"
 /// 3. Then check the parts list for further renames
 /// </summary>
-/// <param name="mainName"></param>
+/// <param name="themeName"></param>
 /// <param name="themeSettingsParts"></param>
-internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicThemePartSettings> themeSettingsParts)
+internal class ThemePartNameResolver(string themeName, Dictionary<string, MagicThemePartSettings> themeSettingsParts)
 {
-    internal ThemePartNameResolver(CmThemeContext themeCtx)
-        : this(themeCtx.Name, themeCtx.ThemeSpell.Parts)
-    { }
-
     /// <summary>
     /// Generic method to check for names, since it could be run on the Settings property or on the DesignSettings property
     /// </summary>
     internal DataWithJournal<string> FindBestNameAccordingToParts(FindSettingsNameSpecs nameSpecs)
     {
-        var (initialName, journal) = PickBestSettingsName(nameSpecs.PartName, mainName);
+        var (initialName, journal) = PickBestSettingsName(nameSpecs.PartName, themeName);
 
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
@@ -38,13 +34,11 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
 
         // If the better name wants to use the main config name ("=") then use that and exit
         if (betterName == MagicConstants.InheritName)
-            return new(mainName, journal.With($"switched to inherit '{mainName}'"));
+            return new(themeName, journal.With($"switched to inherit '{themeName}'"));
 
-        if (!betterName.HasValue())
-            return new(initialName, journal);
-
-        return new(betterName, journal.With($"updated config to '{initialName}'"));
-
+        return betterName.HasValue()
+            ? new(betterName, journal.With($"updated config to '{initialName}'"))
+            : new(initialName, journal);
     }
 
     /// <summary>
@@ -52,9 +46,9 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
     /// It will first try the preferred option, then the fallback, and if that doesn't exist, it will use the default name.
     /// </summary>
     /// <param name="preferred"></param>
-    /// <param name="mainName"></param>
+    /// <param name="inheritName"></param>
     /// <returns></returns>
-    internal static DataWithJournal<string> PickBestSettingsName(string? preferred, string mainName)
+    private static DataWithJournal<string> PickBestSettingsName(string? preferred, string inheritName)
     {
         var journal = new List<string> { $"Initial Settings Name: '{preferred}'" };
 
@@ -63,8 +57,8 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
         // Check if it's just a "=" symbol, which means "inherit"
         if (preferred == MagicConstants.InheritName)
         {
-            preferred = mainName;
-            journal.Add($"switched to inherit '{mainName}'");
+            preferred = inheritName;
+            journal.Add($"switched to inherit '{inheritName}'");
         }
 
         // If we have a value, use that

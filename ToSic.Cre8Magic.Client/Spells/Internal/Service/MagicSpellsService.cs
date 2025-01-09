@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using Oqtane.UI;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
@@ -75,20 +76,25 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
     /// <inheritdoc />
     public CmThemeContext GetThemeContext(PageState? pageStateForCachingOnly)
     {
-        var originalNameForCache = (Variant ?? "prevent-error") + (pageStateForCachingOnly?.Page.PageId ?? -1);
-        if (pageStateForCachingOnly != null && _themeCtxCache.TryGetValue(key: originalNameForCache, value: out var cached2))
+        var nameForCache = (Variant ?? "prevent-error") + (pageStateForCachingOnly?.Page.PageId ?? -1);
+        if (pageStateForCachingOnly != null && _themeCtxCache.TryGetValue(key: nameForCache, value: out var cached2))
             return cached2;
 
         // Figure out real config-name, and get the initial layout
-        var (settingsName, nameJournal) = ThemePartNameResolver.PickBestSettingsName(preferred: Variant, mainName: Default);
+        var (settingsName, nameJournal) = string.IsNullOrEmpty(Variant)
+            ? (Default, new Journal(["no name, use default"], []))
+            : (Variant, new Journal([$"Name: '{Variant}'"], []));
+
         var themeSettings = Themes.FindAndNeutralize(settingsName);
 
         var ctx = new CmThemeContext
         {
-            Name = settingsName, ThemeSpell = themeSettings, Journal = nameJournal
+            Name = settingsName,
+            ThemeSpell = themeSettings,
+            Journal = nameJournal
         };
         if (pageStateForCachingOnly != null)
-            _themeCtxCache[originalNameForCache] = ctx;
+            _themeCtxCache[nameForCache] = ctx;
         return ctx;
     }
     private readonly Dictionary<string, CmThemeContext> _themeCtxCache = new(StringComparer.InvariantCultureIgnoreCase);

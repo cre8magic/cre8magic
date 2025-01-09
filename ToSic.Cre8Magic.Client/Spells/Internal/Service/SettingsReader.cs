@@ -42,7 +42,7 @@ internal class SettingsReader<TSettingsData>(
             journal = new();
 
         var found = FindAndNeutralize(name!);
-        var part = MergeHelper.TryToMergeOrKeepPriority(priority, found)!;
+        var part = MergeHelper.TryToMergeOrKeepPriority(priority, found);
 
         return new(part, journal);
     }
