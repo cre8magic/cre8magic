@@ -22,6 +22,7 @@ internal static class GetSpell
         var themeCtx = spellsSvc.GetThemeContext(pageStateForCachingOnly);
 
         var section = ThemePartSectionEnum.Settings;
+        var name = settings?.Name;
 
         // Activate this for debugging
         //if (settings is IDebugSettings { DebugThis: true } tempForDebug)
@@ -32,7 +33,7 @@ internal static class GetSpell
 
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type
-        var findSettings = new FindSettingsNameSpecs(themeCtx, settings, section);
+        var findSettings = new FindSettingsNameSpecs(themeCtx, settings?.Name, section);
         var dataWithJournal = settingsReader.FindAndMerge(findSettings, settings);
 
 
@@ -89,7 +90,7 @@ internal static class GetSpell
             designReader = designReader.MaybeUseCustomSpellsBook(withBook.Book);
 
         // Get Design Settings from specified reader using the provided design settings as priority to merge
-        var findSettings = new FindSettingsNameSpecs(themeCtx, settings, section);
+        var findSettings = new FindSettingsNameSpecs(themeCtx, settings?.Name, section);
         var dataWithJournal = designReader.FindAndMerge(findSettings, dSettings);
 
         // Reconstruct the expected settings type to merge in the design use the provided finalize function

@@ -24,7 +24,7 @@ internal class ThemePartNameResolver(string themeName, Dictionary<string, MagicT
     /// </summary>
     internal DataWithJournal<string> FindBestNameAccordingToParts(FindSettingsNameSpecs nameSpecs)
     {
-        var (initialName, journal) = PickBestSettingsName(nameSpecs.PartName, themeName);
+        var (initialName, journal) = PickBestSettingsName(nameSpecs.Name, themeName);
 
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix

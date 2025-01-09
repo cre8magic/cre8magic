@@ -34,10 +34,10 @@ internal class SettingsReader<TSettingsData>(
     /// </summary>
     internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsNameSpecs nameSpecs, TSettingsData? priority = null)
     {
-        var name = nameSpecs.SettingsName;
+        var name = nameSpecs.Name;
         Journal journal;
         if (name.IsNullOrEmpty())
-            (name, journal) = nameSpecs.Context.NameResolver.FindBestNameAccordingToParts(nameSpecs);
+            (name, journal) = nameSpecs.ThemeContext.NameResolver.FindBestNameAccordingToParts(nameSpecs);
         else
             journal = new();
 

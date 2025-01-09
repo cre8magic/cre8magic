@@ -40,12 +40,21 @@ public static class MagicSpellExtensions
     /// <typeparam name="TSpell">The settings-type we're updating.</typeparam>
     /// <param name="settings">The initial settings object - can be null (in which case a fresh one is created)</param>
     /// <param name="pageState">The PageState</param>
+    /// <param name="name">The name of default settings to load</param>
     /// <returns></returns>
-    public static TSpell With<TSpell>(this TSpell? settings, PageState pageState)
+    public static TSpell With<TSpell>(this TSpell? settings, PageState pageState, string? name = default)
         where TSpell : MagicSpellBase, new() =>
         settings != null
-            ? settings with { PageState = pageState }
-            : new() { PageState = pageState };
+            ? settings with
+            {
+                PageState = pageState,
+                Name = name ?? settings.Name,
+            }
+            : new()
+            {
+                PageState = pageState,
+                Name = name,
+            };
 
 
 
@@ -64,17 +73,4 @@ public static class MagicSpellExtensions
             ? settings with { WithData = addition }
             : new() { WithData = addition };
 
-    public static TSpell RefillLookup<TSpell>(this TSpell? settings, MagicSpellLookup lookup)
-        where TSpell : MagicSpellBase, new() =>
-        (settings ??= new()) with
-        {
-            Name = settings.Name ?? lookup.Name,
-        };
-
-    public static TSpell WithLookup<TSpell>(this TSpell? settings, MagicSpellLookup lookup)
-        where TSpell : MagicSpellBase, new() =>
-        (settings ??= new()) with
-        {
-            Name = lookup.Name ?? settings.Name,
-        };
 }
