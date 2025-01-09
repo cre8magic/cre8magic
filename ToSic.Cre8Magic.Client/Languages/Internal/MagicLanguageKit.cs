@@ -37,7 +37,7 @@ internal record MagicLanguageKit : IMagicLanguageKit
             Settings = Spell,
             Values = new()
             {
-                { "Part Name", DebugInfo.ShowNotSet(Spell.PartName) },
+                { "Part Name", DebugInfo.ShowNotSet(Spell.Name) },
                 { "Show", Show + "" },
                 { "Settings Name", DebugInfo.ShowNotSet(Spell.SettingsName) },
                 { "Design Name", DebugInfo.ShowNotSet(Spell.DesignName) },

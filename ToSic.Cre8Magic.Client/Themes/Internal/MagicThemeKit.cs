@@ -36,9 +36,6 @@ internal record MagicThemeKit : IMagicThemeKit
             Settings = Spell,
             Values = new()
             {
-                //{ "Part Name", DebugInfo.ShowNotSet(Settings.PartName) },
-                //{ "Settings Name", DebugInfo.ShowNotSet(Settings.SettingsName) },
-                //{ "Design Name", DebugInfo.ShowNotSet(Settings.DesignName) },
                 { "Logo", DebugInfo.ShowNotSet(Logo) },
             }
         };

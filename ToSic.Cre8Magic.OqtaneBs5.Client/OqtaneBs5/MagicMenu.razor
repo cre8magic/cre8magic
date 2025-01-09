@@ -33,7 +33,7 @@ Nice to know:
 }
 @{
     // Get the latest menu kit on each render, using the latest PageState
-    var menuKit = MagicAct.MenuKit(Settings.With(PageState).WithLookup(new() { PartName = PartName, SpellName = SettingsName}));
+    var menuKit = MagicAct.MenuKit(Settings.With(PageState).WithLookup(new() { Name = PartName, SpellName = SettingsName}));
 }
 @* Special Debugging *@
 @if (false)

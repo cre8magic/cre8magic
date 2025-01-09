@@ -39,7 +39,7 @@ internal static class GetSpell
         // Find Part which contains information for these settings,
         // e.g. what to show
         var parts = themeCtx.ThemeSpell.Parts;
-        var part = parts.GetValueOrDefault(settings?.PartName ?? "dummy-prevent-error");
+        var part = parts.GetValueOrDefault(settings?.Name ?? "dummy-prevent-error");
 
         return new(dataWithJournal.Data, themeCtx, part, dataWithJournal.Journal);
     }

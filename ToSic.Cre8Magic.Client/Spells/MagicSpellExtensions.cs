@@ -68,7 +68,7 @@ public static class MagicSpellExtensions
         where TSpell : MagicSpellBase, new() =>
         (settings ??= new()) with
         {
-            PartName = settings.PartName ?? lookup.PartName,
+            Name = settings.Name ?? lookup.Name,
             SettingsName = settings.SettingsName ?? lookup.SpellName,
             DesignName = settings.DesignName ?? lookup.BlueprintName,
         };
@@ -77,7 +77,7 @@ public static class MagicSpellExtensions
         where TSpell : MagicSpellBase, new() =>
         (settings ??= new()) with
         {
-            PartName = lookup.PartName ?? settings.PartName,
+            Name = lookup.Name ?? settings.Name,
             SettingsName = lookup.SpellName ?? settings.SettingsName,
             DesignName = lookup.BlueprintName ?? settings.DesignName,
         };

@@ -2,7 +2,7 @@
 
 public record MagicSpellLookup
 {
-    public string? PartName { get; init; }
+    public string? Name { get; init; }
 
     public string? SpellName { get; init; }
 

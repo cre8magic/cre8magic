@@ -24,7 +24,7 @@ public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, I
         if (fallback == null)
             return;
 
-        PartName = priority?.PartName ?? fallback.PartName;
+        Name = priority?.Name ?? fallback.Name;
         SettingsName = priority?.SettingsName ?? fallback.SettingsName;
         DesignName = priority?.DesignName ?? fallback.DesignName;
 
@@ -54,7 +54,7 @@ public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, I
 
     /// <inheritdoc/>
     [JsonIgnore]
-    public string? PartName { get; init; }
+    public string? Name { get; init; }
 
     /// <inheritdoc/>
     [JsonIgnore]

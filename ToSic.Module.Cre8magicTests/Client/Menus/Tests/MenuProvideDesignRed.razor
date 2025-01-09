@@ -14,7 +14,7 @@
 @{
     var redMenuName = "red-menu";
     var unknownMenuName = "unknown-menu";
-    var redPartName = "red-part";
+    var redName = "red-part";
 
     var redDesign = new MagicMenuBlueprint
     {
@@ -31,7 +31,7 @@
     {
         Parts = new()
         {
-            { redPartName, new() { Design = redMenuName } }
+            { redName, new() { Design = redMenuName } }
         }
     };
     SpellsProviders.Themes.Provide("default", themeSettings);
@@ -41,7 +41,7 @@
     <p>
         Goal is that this code will configure a menu design, and the menu will pick it up automatically.
     </p>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = redMenuName, Pick = "." })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Name = redMenuName, Pick = "." })'></BasicMenu>
     
     <hr />
     <p>
@@ -53,12 +53,12 @@
     <p>
         This is an unknown name
     </p>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = unknownMenuName, Pick = "." })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Name = unknownMenuName, Pick = "." })'></BasicMenu>
 
     <hr />
     <p>
         This uses a part name
     </p>
-    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { PartName = redPartName, Pick = "." })'></BasicMenu>
+    <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Name = redName, Pick = "." })'></BasicMenu>
 
 </div>

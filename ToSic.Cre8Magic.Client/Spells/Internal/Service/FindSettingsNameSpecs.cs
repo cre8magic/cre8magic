@@ -16,7 +16,7 @@ internal record FindSettingsNameSpecs(
         : this(
         context,
         section == ThemePartSectionEnum.Design ? settings?.DesignName : settings?.SettingsName,
-        settings?.PartName,
+        settings?.Name,
         context.Name,
         section
         )

@@ -2,7 +2,7 @@
 
 /// <summary>
 /// Internal interface to specify settings which extend the ...Data settings.
-/// They will usually have things such as `PartName`.
+/// They will usually have things such as `Name`.
 /// </summary>
 internal interface ISettingsForCodeUse
 {
@@ -10,7 +10,7 @@ internal interface ISettingsForCodeUse
     /// Name to identify this part.
     /// This information is used to load settings (menu settings and design settings)
     /// </summary>
-    public string? PartName { get; init; }
+    public string? Name { get; init; }
 
     /// <summary>
     /// Name to identify which settings to load.
