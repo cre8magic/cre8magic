@@ -44,7 +44,7 @@ The goal is that your menus are:
 
 You can work with pre-built components such as **MagicMenu 🧩** or leverage the **MagicMenuKit 🧰** to build your own components.
 
-A very simple menu can be added just like this: 
+A very simple Bootstrap5 menu can be added just like this:
 
 ```html
 @using ToSic.Cre8magic.OqtaneBs5
@@ -73,48 +73,59 @@ The Magic Menu uses the cre8magic conventions.
 > 4. ...produce the desired **HTML 🌐**.
 
 Each of these steps can be very simple or very complex, depending on your needs.
+What you'll discover is:
 
-### How it Works - Very Basic Setup
+1. **Settings ⚙️**: how you can add them directly to the tab, in a central location or even in a JSON file and more.
+1. **Preparation Act 🎭**: how all kinds of settings will affect what you see,
+    especially once you get into **Tailoring 🧵** and **Blueprints 📘**.
+1. **Blazor Code 🔥**: how you can use the pre-built components or build your own,
+    especially with the help of the  **MagicMenuKit 🧰**.
+
+## Examples to Discover Functionality
+
+### [Basic Example](#tab/basic1)
 
 Let's start with the most basic setup of all:
 
 1. use the **MagicMenu 🧩 Component** `<MagicMenu>`
 1. place all the settings directly into the tag
-1. only specify (pick) that we want the top level pages
-1. don't specify any design or behavior, so it will take _Bootstrap5 defaults_
+1. only specify (pick) that we want the top level pages with `/`
+1. don't specify any design or behavior, so it will use empty defaults (hence the `OqtaneBasic`)
 
 ```html
-@using ToSic.Cre8magic.OqtaneBs5
+@using ToSic.Cre8magic.OqtaneBasic
 <MagicMenu Settings='new() { Pick = "/" }'/>
 ```
 
-The output will be approximately like this: TODO: check/update with reality
+The output will be approximately like this:
 
 ```html
-<ul class="navbar-nav">
-    <li class="nav-item">
-        <a class="nav-link" href="/">Home</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/contact">Contact</a>
-    </li>
+<ul>
+  <li>
+    <a href="/">Home</a>
+  </li>
+  <li>
+    <a href="/about">About</a>
+  </li>
+  <li>
+    <a href="/contact">Contact</a>
+  </li>
 </ul>
 ```
+
+### [What Happens](#tab/basic2)
 
 Here's what actually happens under the hood:
 
 **The Visible Code**
 
-1. `@using ToSic.Cre8magic.OqtaneBs5` tells Blazor that we want to use these controls.
+1. `@using ToSic.Cre8magic.OqtaneBasic` tells Blazor that we want to use these controls.
 1. `<MagicMenu .../>` is a Blazor component provided by **cre8magic ♾️**
 1. The `Settings="..."` attribute is a parameter which is passed to the component.
     1. It expects a [](xref:ToSic.Cre8magic.Menus.MagicMenuSpell) object.
     1. Since Blazor knows the expected type, you can shorten it as `new() { ... }`.
     1. The `Pick` determines what pages to show in this menu.
-    In this case, it's only the top-level pages, specified by `/`.
+    In this case, it's only the top-level pages, specified by `/` (`/+` would get level 1 & 2).
 
 **The Invisible Code**
 
@@ -123,13 +134,188 @@ Here's what actually happens under the hood:
     1. and the Oqtane 🩸 `PageState`
 1. them pass them to the **MagicAct 🎭**, which will initialize an internal _MagicMenuService_ to:
     1. mix in default settings which were not specified, such as `Show=True`
-    1. retrieve the [MagicPages](xref:ToSic.Cre8magic.Pages.IMagicPage) as specified by the `Pick` parameter
+    1. retrieve the [MagicPages](xref:ToSic.Cre8magic.Pages.IMagicPage) as specified by the `Pick` parameter - in this case all 1st-level pages
     1. build a **MagicMenuKit 🧰** which contains the pages and some tools to easily create the menu
 1. Then the **MagicMenu Component 🧩** will use the **MagicMenuKit 🧰** to create the desired **HTML 🌐**.
     1. It will detect that we want a `Horizontal` menu (default)
     1. And run various loops etc. combining the pages and the blueprint to create the HTML.
 
 ---
+
+### [Basic 2-Level Menu Example](#tab/basic-2-level-menu1)
+
+Let's add a bit more complexity by showing level 1 and 2
+
+```html
+@using ToSic.Cre8magic.OqtaneBasic
+<MagicMenu Settings='new() { Pick = "/+" }'/>
+```
+
+Now the output will be more like this:
+
+```html
+<ul>
+  <li>
+    <a href="/">Home</a>
+  </li>
+  <li>
+    <a href="/about">About</a>
+    <ul>
+      <li>
+        <a href="/about/team">Team</a>
+      </li>
+      <li>
+        <a href="/about/history">History</a>
+      </li>
+  </li>
+  <li>
+    <a href="/contact">Contact</a>
+  </li>
+</ul>
+```
+
+### [What Happens](#tab/basic-2-level-menu2)
+
+The `Pick` instructions are a concise way to specify almost all common scenarios.
+
+The `Pick = "/+"` means that we want to start at the root and show all pages on the first and next level.
+
+For further samples, read on...
+
+---
+
+### [Menu Level 2 Above My Page](#tab/menu-level-2-above1)
+
+The following Oqtane component will create
+
+1. a sidebar menu showing the second and third levels
+1. ...of the page above the current page
+1. with collapsing arrows and highlighting the current page
+
+```html
+@using ToSic.Cre8magic.OqtaneBs5
+<MagicMenu Settings='new() { Pick = ".//2+", Variant = "Vertical" }'/>
+```
+
+_for brevity we're excluding the output here, but you can imagine it..._
+
+---
+
+### [Basic Tailoring Example](#tab/basic-tailor1)
+
+Let's just step it up a bit because we want to add some common classes to the various tags.
+Specifically we want `navbar-nav` on the `<ul>`, `nav-item` on the `<li>` and `nav-link` on the `<a>`,
+and `active` on the current node.
+
+```razor
+@using ToSic.Cre8magic.OqtaneBasic
+<MagicMenu Settings='new() { Pick = "/", Blueprint = SimpleBlueprint() }'/>
+@code
+{
+  MagicMenuBlueprint SimpleBlueprint() => new()
+  {
+    Parts = new()
+    {
+      { "ul", new() { Classes = "navbar-nav" } },
+      { "li", new() { Classes = "nav-item", IsActive = new("active") } },
+      { "a", new() { Classes = "nav-link" } },
+    }
+  };
+}
+```
+
+Now the output is getting more realistic (also note the `active` on the first item).
+
+```html
+<ul class="navbar-nav">
+  <li class="nav-item active">
+    <a class="nav-link" href="/">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/about">About</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/contact">Contact</a>
+  </li>
+</ul>
+```
+
+> [!TIP]
+> Normally the `Blueprint` would be defined in a central location, so you can reuse it in multiple places.
+
+### [What Happens](#tab/basic-tailor2)
+
+Most of this is very similar to the previous example, this is new:
+
+1. The function `SimpleBlueprint()` is used to create a **MagicMenuBlueprint 📘**
+    1. It specifies that the `<ul>` should get the class `navbar-nav`
+    1. The `<li>` should get the class `nav-item` and `active` if it's the current page
+    1. The `<a>` should get the class `nav-link`
+1. The **MagicMenu Component 🧩** will use this blueprint to customize the output.
+
+...but how does that work, you may ask? 🤔
+
+Internally there is a **MagicTailor 🧵** which will take the **MagicMenuBlueprint 📘** and apply it to the output.
+This is a very powerful concept which allows you to customize the output without changing the code.
+
+You'll learn more about the **MagicTailor 🧵** and **MagicMenuBlueprint 📘** later on,
+but suffice to know that it's very flexible, but also that your Razor code actually decides what to do with it.
+
+---
+
+### [Coded Menu Example](#tab/coded-menu1)
+
+This example assumes you want full control over the output, and still want to use the cre8magic engine to reliably get the right pages, permissions and a simpler SOLID API which is more robust than the built in Oqtane API:
+
+```razor
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Pages
+@inject IMagicAct MagicAct
+
+@code{
+  [CascadingParameter] public required PageState PageState { get; set; }
+}
+
+@RenderMenu(MagicAct.MenuKit(new() { Pick = "/+", PageState = PageState }).Root)
+
+@code
+{
+  /// <summary>
+  /// Render a Menu - and recursively render sub-menus
+  /// </summary>
+  /// <returns></returns>
+  RenderFragment RenderMenu(IMagicPage current) =>
+    @<ul class='my-ul-class'>
+      @foreach (var menuPage in current.Children)
+      {
+        <li class='my-li-class'>
+          <a class='my-a-class' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>
+          @if (menuPage.HasChildren)
+          {
+            <span class='span-stuff'></span>
+            @* **RECURSION** *@
+            @RenderMenu(menuPage)
+          }
+        </li>
+      }
+    </ul>;
+}
+```
+---
+
+### [Menu with Bootstrap5 Defaults](#tab/bs5-menu1)
+
+todo
+
+---
+
+
+### [Menu with Configuration in JSON](#tab/json-menu1)
+
+
+---
+
+
 
 will take the settings and prepare a **Kit** for you using some internal wizardry.
 1. The **MagicMenuSettings ⚙️** determine what pages should be shown - like "top-level only"
@@ -202,31 +388,6 @@ flowchart LR
 
 ## Intro Examples
 
-### 1. Simple Top-Level Menu
-
-This bit of blazor code will create **Simple Top-Level Bootstrap5 Menu** with the default settings,
-respecting user permissions and highlighting the current page:
-
-```html
-@using ToSic.Cre8magic.OqtaneBs5
-...
-<MagicMenu Settings='new() { Pick = "/" }'/>
-...
-```
-
-TODO: PIC of output
-
-### 2. Simple Sidebar Menu
-
-The following Oqtane component will create a sidebar menu showing the second and third levels
-with collapsing arrows and highlighting the current page:
-
-```html
-@using ToSic.Cre8magic.OqtaneBs5
-<MagicMenu Settings='new() { Pick = ".//2+", Variant = "Vertical" }'/>
-```
-
-TODO: PIC of output
 
 ### 3. Coded Menu
 

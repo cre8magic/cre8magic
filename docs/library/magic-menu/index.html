@@ -119,7 +119,7 @@ Each of these menus can have different requirements, such as:</p>
 <li>easy to customize &amp; flexible</li>
 </ol>
 <p>You can work with pre-built components such as <strong>MagicMenu 🧩</strong> or leverage the <strong>MagicMenuKit 🧰</strong> to build your own components.</p>
-<p>A very simple menu can be added just like this:</p>
+<p>A very simple Bootstrap5 menu can be added just like this:</p>
 <pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
 &lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
 </code></pre>
@@ -141,42 +141,64 @@ Each of these menus can have different requirements, such as:</p>
 <li>...produce the desired <strong>HTML 🌐</strong>.</li>
 </ol>
 </div>
-<p>Each of these steps can be very simple or very complex, depending on your needs.</p>
-<h3 id="how-it-works---very-basic-setup">How it Works - Very Basic Setup</h3>
+<p>Each of these steps can be very simple or very complex, depending on your needs.
+What you'll discover is:</p>
+<ol>
+<li><strong>Settings ⚙️</strong>: how you can add them directly to the tab, in a central location or even in a JSON file and more.</li>
+<li><strong>Preparation Act 🎭</strong>: how all kinds of settings will affect what you see,
+especially once you get into <strong>Tailoring 🧵</strong> and <strong>Blueprints 📘</strong>.</li>
+<li><strong>Blazor Code 🔥</strong>: how you can use the pre-built components or build your own,
+especially with the help of the  <strong>MagicMenuKit 🧰</strong>.</li>
+</ol>
+<h2 id="examples-to-discover-functionality">Examples to Discover Functionality</h2>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_basic1" role="tab" aria-controls="tabpanel_1_basic1" data-tab="basic1" tabindex="0" aria-selected="true">Basic Example</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_basic2" role="tab" aria-controls="tabpanel_1_basic2" data-tab="basic2" tabindex="-1">What Happens</a>
+</li>
+</ul>
+<section id="tabpanel_1_basic1" role="tabpanel" data-tab="basic1">
+
 <p>Let's start with the most basic setup of all:</p>
 <ol>
 <li>use the <strong>MagicMenu 🧩 Component</strong> <code>&lt;MagicMenu&gt;</code></li>
 <li>place all the settings directly into the tag</li>
-<li>only specify (pick) that we want the top level pages</li>
-<li>don't specify any design or behavior, so it will take <em>Bootstrap5 defaults</em></li>
+<li>only specify (pick) that we want the top level pages with <code>/</code></li>
+<li>don't specify any design or behavior, so it will use empty defaults (hence the <code>OqtaneBasic</code>)</li>
 </ol>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBasic
 &lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
 </code></pre>
-<p>The output will be approximately like this: TODO: check/update with reality</p>
-<pre><code class="lang-html">&lt;ul class=&quot;navbar-nav&quot;&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;
-        &lt;a class=&quot;nav-link&quot; href=&quot;/&quot;&gt;Home&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;
-        &lt;a class=&quot;nav-link&quot; href=&quot;/about&quot;&gt;About&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li class=&quot;nav-item&quot;&gt;
-        &lt;a class=&quot;nav-link&quot; href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;
-    &lt;/li&gt;
+<p>The output will be approximately like this:</p>
+<pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
+</section>
+<section id="tabpanel_1_basic2" role="tabpanel" data-tab="basic2" aria-hidden="true" hidden="hidden">
+
 <p>Here's what actually happens under the hood:</p>
 <p><strong>The Visible Code</strong></p>
 <ol>
-<li><code>@using ToSic.Cre8magic.OqtaneBs5</code> tells Blazor that we want to use these controls.</li>
+<li><code>@using ToSic.Cre8magic.OqtaneBasic</code> tells Blazor that we want to use these controls.</li>
 <li><code>&lt;MagicMenu .../&gt;</code> is a Blazor component provided by <strong>cre8magic ♾️</strong></li>
 <li>The <code>Settings=&quot;...&quot;</code> attribute is a parameter which is passed to the component.
 <ol>
 <li>It expects a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSpell.html">MagicMenuSpell</a> object.</li>
 <li>Since Blazor knows the expected type, you can shorten it as <code>new() { ... }</code>.</li>
 <li>The <code>Pick</code> determines what pages to show in this menu.
-In this case, it's only the top-level pages, specified by <code>/</code>.</li>
+In this case, it's only the top-level pages, specified by <code>/</code> (<code>/+</code> would get level 1 &amp; 2).</li>
 </ol>
 </li>
 </ol>
@@ -191,7 +213,7 @@ In this case, it's only the top-level pages, specified by <code>/</code>.</li>
 <li>them pass them to the <strong>MagicAct 🎭</strong>, which will initialize an internal <em>MagicMenuService</em> to:
 <ol>
 <li>mix in default settings which were not specified, such as <code>Show=True</code></li>
-<li>retrieve the <a class="xref" href="../../api/ToSic.Cre8magic.Pages.IMagicPage.html">MagicPages</a> as specified by the <code>Pick</code> parameter</li>
+<li>retrieve the <a class="xref" href="../../api/ToSic.Cre8magic.Pages.IMagicPage.html">MagicPages</a> as specified by the <code>Pick</code> parameter - in this case all 1st-level pages</li>
 <li>build a <strong>MagicMenuKit 🧰</strong> which contains the pages and some tools to easily create the menu</li>
 </ol>
 </li>
@@ -202,6 +224,157 @@ In this case, it's only the top-level pages, specified by <code>/</code>.</li>
 </ol>
 </li>
 </ol>
+</section>
+</div>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_basic-2-level-menu1" role="tab" aria-controls="tabpanel_2_basic-2-level-menu1" data-tab="basic-2-level-menu1" tabindex="0" aria-selected="true">Basic 2-Level Menu Example</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_basic-2-level-menu2" role="tab" aria-controls="tabpanel_2_basic-2-level-menu2" data-tab="basic-2-level-menu2" tabindex="-1">What Happens</a>
+</li>
+</ul>
+<section id="tabpanel_2_basic-2-level-menu1" role="tabpanel" data-tab="basic-2-level-menu1">
+
+<p>Let's add a bit more complexity by showing level 1 and 2</p>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBasic
+&lt;MagicMenu Settings='new() { Pick = &quot;/+&quot; }'/&gt;
+</code></pre>
+<p>Now the output will be more like this:</p>
+<pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;/about/team&quot;&gt;Team&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;/about/history&quot;&gt;History&lt;/a&gt;
+      &lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</section>
+<section id="tabpanel_2_basic-2-level-menu2" role="tabpanel" data-tab="basic-2-level-menu2" aria-hidden="true" hidden="hidden">
+
+<p>The <code>Pick</code> instructions are a concise way to specify almost all common scenarios.</p>
+<p>The <code>Pick = &quot;/+&quot;</code> means that we want to start at the root and show all pages on the first and next level.</p>
+<p>For further samples, read on...</p>
+</section>
+</div>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_menu-level-2-above1" role="tab" aria-controls="tabpanel_3_menu-level-2-above1" data-tab="menu-level-2-above1" tabindex="0" aria-selected="true">Menu Level 2 Above My Page</a>
+</li>
+</ul>
+<section id="tabpanel_3_menu-level-2-above1" role="tabpanel" data-tab="menu-level-2-above1">
+
+<p>The following Oqtane component will create</p>
+<ol>
+<li>a sidebar menu showing the second and third levels</li>
+<li>...of the page above the current page</li>
+<li>with collapsing arrows and highlighting the current page</li>
+</ol>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+&lt;MagicMenu Settings='new() { Pick = &quot;.//2+&quot;, Variant = &quot;Vertical&quot; }'/&gt;
+</code></pre>
+<p><em>for brevity we're excluding the output here, but you can imagine it...</em></p>
+</section>
+</div>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_basic-tailor1" role="tab" aria-controls="tabpanel_4_basic-tailor1" data-tab="basic-tailor1" tabindex="0" aria-selected="true">Basic Tailoring Example</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_basic-tailor2" role="tab" aria-controls="tabpanel_4_basic-tailor2" data-tab="basic-tailor2" tabindex="-1">What Happens</a>
+</li>
+</ul>
+<section id="tabpanel_4_basic-tailor1" role="tabpanel" data-tab="basic-tailor1">
+
+<p>Let's just step it up a bit because we want to add some common classes to the various tags.
+Specifically we want <code>navbar-nav</code> on the <code>&lt;ul&gt;</code>, <code>nav-item</code> on the <code>&lt;li&gt;</code> and <code>nav-link</code> on the <code>&lt;a&gt;</code>,
+and <code>active</code> on the current node.</p>
+<pre><code class="lang-razor">@using ToSic.Cre8magic.OqtaneBasic
+&lt;MagicMenu Settings='new() { Pick = &quot;/&quot;, Blueprint = SimpleBlueprint() }'/&gt;
+@code
+{
+  MagicMenuBlueprint SimpleBlueprint() =&gt; new()
+  {
+    Parts = new()
+    {
+      { &quot;ul&quot;, new() { Classes = &quot;navbar-nav&quot; } },
+      { &quot;li&quot;, new() { Classes = &quot;nav-item&quot;, IsActive = new(&quot;active&quot;) } },
+      { &quot;a&quot;, new() { Classes = &quot;nav-link&quot; } },
+    }
+  };
+}
+</code></pre>
+<p>Now the output is getting more realistic (also note the <code>active</code> on the first item).</p>
+<pre><code class="lang-html">&lt;ul class=&quot;navbar-nav&quot;&gt;
+  &lt;li class=&quot;nav-item active&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; href=&quot;/&quot;&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; href=&quot;/about&quot;&gt;About&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Normally the <code>Blueprint</code> would be defined in a central location, so you can reuse it in multiple places.</p>
+</div>
+</section>
+<section id="tabpanel_4_basic-tailor2" role="tabpanel" data-tab="basic-tailor2" aria-hidden="true" hidden="hidden">
+
+<p>Most of this is very similar to the previous example, this is new:</p>
+<ol>
+<li>The function <code>SimpleBlueprint()</code> is used to create a <strong>MagicMenuBlueprint 📘</strong>
+<ol>
+<li>It specifies that the <code>&lt;ul&gt;</code> should get the class <code>navbar-nav</code></li>
+<li>The <code>&lt;li&gt;</code> should get the class <code>nav-item</code> and <code>active</code> if it's the current page</li>
+<li>The <code>&lt;a&gt;</code> should get the class <code>nav-link</code></li>
+</ol>
+</li>
+<li>The <strong>MagicMenu Component 🧩</strong> will use this blueprint to customize the output.</li>
+</ol>
+<p>...but how does that work, you may ask? 🤔</p>
+<p>Internally there is a <strong>MagicTailor 🧵</strong> which will take the <strong>MagicMenuBlueprint 📘</strong> and apply it to the output.
+This is a very powerful concept which allows you to customize the output without changing the code.</p>
+<p>You'll learn more about the <strong>MagicTailor 🧵</strong> and <strong>MagicMenuBlueprint 📘</strong> later on,
+but suffice to know that it's very flexible, but also that your Razor code actually decides what to do with it.</p>
+</section>
+</div>
+<div class="tabGroup" id="tabgroup_5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_5_coded-menu1" role="tab" aria-controls="tabpanel_5_coded-menu1" data-tab="coded-menu1" tabindex="0" aria-selected="true">Coded Menu Example</a>
+</li>
+</ul>
+<section id="tabpanel_5_coded-menu1" role="tabpanel" data-tab="coded-menu1">
+</section>
+</div>
+<div class="tabGroup" id="tabgroup_6">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_6_json-menu1" role="tab" aria-controls="tabpanel_6_json-menu1" data-tab="json-menu1" tabindex="0" aria-selected="true">Menu with Configuration in JSON</a>
+</li>
+</ul>
+<section id="tabpanel_6_json-menu1" role="tabpanel" data-tab="json-menu1">
+</section>
+</div>
+
 <p>will take the settings and prepare a <strong>Kit</strong> for you using some internal wizardry.</p>
 <ol>
 <li>The <strong>MagicMenuSettings ⚙️</strong> determine what pages should be shown - like &quot;top-level only&quot;</li>
@@ -274,22 +447,6 @@ This can be either in code or in a <code>theme.json</code> file.</p>
 </li>
 </ol>
 <h2 id="intro-examples">Intro Examples</h2>
-<h3 id="1-simple-top-level-menu">1. Simple Top-Level Menu</h3>
-<p>This bit of blazor code will create <strong>Simple Top-Level Bootstrap5 Menu</strong> with the default settings,
-respecting user permissions and highlighting the current page:</p>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
-...
-&lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
-...
-</code></pre>
-<p>TODO: PIC of output</p>
-<h3 id="2-simple-sidebar-menu">2. Simple Sidebar Menu</h3>
-<p>The following Oqtane component will create a sidebar menu showing the second and third levels
-with collapsing arrows and highlighting the current page:</p>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
-&lt;MagicMenu Settings='new() { Pick = &quot;.//2+&quot;, Variant = &quot;Vertical&quot; }'/&gt;
-</code></pre>
-<p>TODO: PIC of output</p>
 <h3 id="3-coded-menu">3. Coded Menu</h3>
 <p>This example assumes you want full control over the output, and still want to use the cre8magic
 engine to reliably get the right pages, permissions and a simpler SOLID API which is more robust than the

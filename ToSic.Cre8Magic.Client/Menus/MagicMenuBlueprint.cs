@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Menus;
 /// <summary>
 /// Menu Design Blueprint
 /// </summary>
-public partial record MagicMenuBlueprint : MagicBlueprint, ICanClone<MagicMenuBlueprint>
+public record MagicMenuBlueprint : MagicBlueprint, ICanClone<MagicMenuBlueprint>
 {
     [PrivateApi]
     public MagicMenuBlueprint() { }
@@ -17,4 +17,10 @@ public partial record MagicMenuBlueprint : MagicBlueprint, ICanClone<MagicMenuBl
 
     MagicMenuBlueprint ICanClone<MagicMenuBlueprint>.CloneUnder(MagicMenuBlueprint? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
+    internal static Defaults<MagicMenuBlueprint> Defaults = new()
+    {
+        Fallback = new(),
+    };
+
 }

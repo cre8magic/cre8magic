@@ -1,0 +1,27 @@
+@using ToSic.Cre8magic.Act
+@using ToSic.Module.Cre8MagicTests.Client.Menus.Tutorials
+@inherits ThemeControlBase
+@inject IMagicAct MagicAct
+@* @inject IMagicPageService PageSvc *@
+
+@{
+    // Get the current environment - separate step, as we may change the mechanics later
+    // var currentEnv = TestParameters.EnvCurrent;
+
+    // MenuSvc.NoInheritSettingsWip = true;
+
+    // MagicAct.UsePageState(PageState);
+}
+
+
+<h1>Tests for Code Samples in the Tutorial</h1>
+
+<div class="alert alert-info">
+    To properly test this, make sure you F5 the page when you get here.
+    Otherwise, there is still stuff left in the MagicAct from other themes, which will result in some defaults you don't want to test.
+</div>
+
+
+<h2>Tutorial CodedBasic</h2>
+<h3>Basic Menu without Setting, name none</h3>
+<CodedBasic />

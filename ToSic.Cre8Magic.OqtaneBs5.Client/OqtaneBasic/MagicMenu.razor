@@ -1,0 +1,46 @@
+@using Oqtane.UI
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.Pages
+@using ToSic.Cre8magic.Spells
+@inherits ComponentBase
+@inject IMagicAct MagicAct
+
+@code{
+    /// <inheritdoc cref="ToSic.Cre8magic.OqtaneBs5.Internal.ComponentDocs.PageState"/>
+    [CascadingParameter] public required PageState PageState { get; set; }
+
+    /// <summary>
+    /// All the menu settings.
+    /// If not provided, it will use the default settings from any other configuration.
+    /// If provided, it may still merge these with other settings (like in PartName was specified).
+    /// </summary>
+    [Parameter] public MagicMenuSpell? Settings { get; set; }
+
+    [Parameter] public string? Name { get; set; }
+}
+
+@RenderMenu(MagicAct.MenuKit(Settings.With(PageState, Name)).Root)
+
+@code
+{
+    /// <summary>
+    /// Render a Menu - and recursively render sub-menus
+    /// </summary>
+    /// <returns></returns>
+    RenderFragment RenderMenu(IMagicPage current) =>
+        @<ul class='@current.Classes("ul")'>
+            @foreach (var menuPage in current.Children)
+            {
+                <li class='@menuPage.Classes("li")'>
+                    <a class='@menuPage.Classes("a")' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>
+                    @if (menuPage.HasChildren)
+                    {
+                        <span class='@menuPage.Classes("span")'></span>
+                        @* **RECURSION** *@
+                        @RenderMenu(menuPage)
+                    }
+                </li>
+            }
+        </ul>;
+}

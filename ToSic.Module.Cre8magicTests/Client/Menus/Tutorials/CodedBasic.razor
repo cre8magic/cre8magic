@@ -1,0 +1,32 @@
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Pages
+@inject IMagicAct MagicAct
+
+@code{
+    [CascadingParameter] public required PageState PageState { get; set; }
+}
+
+@RenderMenu(MagicAct.MenuKit(new() { Pick = "/+", PageState = PageState }).Root)
+
+@code
+{
+    /// <summary>
+    /// Render a Menu - and recursively render sub-menus
+    /// </summary>
+    /// <returns></returns>
+    RenderFragment RenderMenu(IMagicPage current) =>
+        @<ul class='my-ul-class'>
+            @foreach (var menuPage in current.Children)
+            {
+                <li class='my-li-class'>
+                    <a class='my-a-class' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>
+                    @if (menuPage.HasChildren)
+                    {
+                        <span class='span-stuff'></span>
+                        @* **RECURSION** *@
+                        @RenderMenu(menuPage)
+                    }
+                </li>
+            }
+        </ul>;
+}

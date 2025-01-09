@@ -60,11 +60,9 @@ public class MagicMenuTailor : IMagicPageTailor
         var classes = new List<string?>();
 
         AddIfAny(configs.Select(c => c.Classes));
-        AddIfAny(configs.Select(c => c.Classes));
         AddIfAny(configs.Select(c => c.IsActive.Get(page.IsActive)));
         AddIfAny(configs.Select(c => c.HasChildren.Get(page.HasChildren)));
         AddIfAny(configs.Select(c => c.IsDisabled.Get(!page.IsClickable)));
-        // TODO: this needs a cast to MagicMenuPage, should be improved; probably InBreadcrumb could become an official property?
         AddIfAny(configs.Select(c => c.InBreadcrumb.Get(page.IsInBreadcrumb)));
 
         // See if there are any css for this level or for not-specified levels

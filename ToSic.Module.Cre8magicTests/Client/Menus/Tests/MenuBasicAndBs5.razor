@@ -4,6 +4,7 @@
 @using ToSic.Cre8magic.Pages.Internal
 @using ToSic.Cre8magic.OqtaneBs5.Debug
 @using ToSic.Cre8magic.Spells
+@using ToSic.Cre8magic.OqtaneBs5
 @inherits ThemeControlBase
 @inject IMagicMenuService MenuSvc
 @inject IMagicAct MagicAct
@@ -24,9 +25,9 @@
     MenuSvc.NoInheritSettingsWip = true;
 
     // Default menu designer to be used in most tests here
-    var basicTailor = new BasicMenuTailor();
+    // var basicTailor = new BasicMenuTailor();
 
-    var pageStateDebug = PageState.ToProxy(true);
+    // var pageStateDebug = PageState.ToProxy(true);
 
     MagicAct.UsePageState(PageState);
 }
@@ -65,6 +66,40 @@
     <BasicMenu MenuKit="@MenuSvc.MenuKit(PageState)" />
     <MagicDebug Target="@MenuSvc.MenuKit(PageState)"></MagicDebug>
     <hr />
+    
+    <h2>No Settings using MagicMenu</h2>
+    <MagicMenu></MagicMenu>
+    <hr />
+    
+    <h2>OqtaneBasic.MagicMenu empty</h2>
+    @* <ToSic.Cre8magic.OqtaneBasic.MagicMenu/> *@
+    @* 
+    <h2>OqtaneBasic.MagicMenu <code>/</code></h2>
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/" }'/>
+
+
+    <h2>OqtaneBasic.MagicMenu <code>/+</code></h2>
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/+" }'/>
+
+    <h2>OqtaneBasic.MagicMenu <code>/+ BS5</code></h2>
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/+", Blueprint = new MagicMenuBlueprintBs5() }'/>
+
+    <h2>OqtaneBasic.MagicMenu <code>/+ </code> + <em>Inline Blueprint!</em></h2>
+
+     *@
+    @* <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/", Blueprint = SimpleBlueprint()}'/> *@
+    @code
+    {
+        MagicMenuBlueprint SimpleBlueprint() => new()
+        {
+            Parts = new()
+            {
+                { "ul", new() { Classes = "navbar-nav" } },
+                { "li", new() { Classes = "nav-item", IsActive = new("active") } },
+                { "a", new() { Classes = "nav-link" } },
+            }
+        };
+    }
 
     todo
     - use MagicAct, not MenuSvc
