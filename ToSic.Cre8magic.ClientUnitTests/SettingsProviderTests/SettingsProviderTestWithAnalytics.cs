@@ -45,11 +45,8 @@ public class SettingsProviderTestWithAnalytics
         var (settingsSvc, _, original) = PrepareSettings();
         // Settings, without GtmId, so that it would receive it from original when merging
         var analytics = new MagicAnalyticsSpell { Name = currentName };
-        var retrieved2 = settingsSvc.GetBestSpell(
-            null,
-            analytics,
-            settingsSvc.Analytics
-        );
+        var retrieved2 = new GetSpell(settingsSvc, null, analytics.Name)
+            .GetBestSpell(analytics, settingsSvc.Analytics);
         Assert.Equal(expectNoMerge ? analytics.GtmId : original.GtmId, retrieved2.Data.GtmId);
     }
 
@@ -73,11 +70,8 @@ public class SettingsProviderTestWithAnalytics
             GtmId = GtmOfAdded,
         });
 
-        var retrieved = settingsSvc.GetBestSpell(
-            null,
-            new MagicAnalyticsSpell { Name = searchName },
-            settingsSvc.Analytics
-        );
+        var retrieved = new GetSpell(settingsSvc, null, searchName)
+            .GetBestSpell(new MagicAnalyticsSpell { Name = searchName }, settingsSvc.Analytics);
 
         Assert.Equal(expected, retrieved.Data.GtmId);
     }

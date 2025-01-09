@@ -1,100 +1,51 @@
 ﻿using Oqtane.UI;
+using System.Diagnostics.CodeAnalysis;
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Spells.Internal.Debug;
-using ToSic.Cre8magic.Spells.Internal.Docs;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Spells.Internal;
 
-internal static class GetSpell
+internal class GetSpell(IMagicSpellsService spellsSvc, PageState? pageStateForCachingOnly, string? name)
 {
-    internal static Data3WithJournal<TSettingsBase, CmThemeContext, MagicThemePartSettings?>
-        GetBestSpell<TSettings, TSettingsBase>(
-            this IMagicSpellsService spellsSvc,
-            PageState? pageStateForCachingOnly,
-            TSettings? settings,
-            SettingsReader<TSettingsBase> settingsReader)
-    where TSettings : TSettingsBase, ISettingsForCodeUse, new()
-    where TSettingsBase : class, new()
-    {
-        // Get the Theme Context - important for checking part names
-        var themeCtx = spellsSvc.GetThemeContext(pageStateForCachingOnly);
-
-        var dataWithJournal = MapNameAndBookAndGetSpell(themeCtx, settingsReader, settings, settings?.Name, ThemePartSectionEnum.Settings);
-
-        // Find Part which contains information for these settings,
-        // e.g. what to show
-        var parts = themeCtx.ThemeSpell.Parts;
-        var part = parts.GetValueOrDefault(settings?.Name ?? "dummy-prevent-error");
-
-        return new(dataWithJournal.Data, themeCtx, part, dataWithJournal.Journal);
-    }
-
+    /// <summary>
+    /// Get the Theme Context - important for checking part names
+    /// </summary>
+    [field: AllowNull, MaybeNull]
+    private CmThemeContext ThemeCtx => field ??= spellsSvc.GetThemeContext(pageStateForCachingOnly);
 
     /// <summary>
-    /// Special helper to get a very common pair of settings and design settings.
+    /// Find Part which contains information for these settings,
+    /// e.g. what to show
+    /// </summary>
+    internal MagicThemePartSettings? Part => field ??= ThemeCtx.ThemeSpell.Parts.GetValueOrDefault(name ?? "dummy-prevent-error");
+
+    /// <summary>
+    /// Special helper to get settings and design settings.
     /// 
     /// Call it by providing the settings from code (can be null), and the list of settings to get from.
-    /// Same for DesignSettings from code (can be null) and the list of settings to get from.
-    /// 
-    /// Because the return type is the main type, and the stored settings are always the pure data-type,
-    /// it needs a factory to create the final object / recombine the new design settings in to the final settings.
     /// </summary>
     /// <typeparam name="TSettings">Settings type - the one used in code, with more properties than just the settings data.</typeparam>
-    /// <typeparam name="TSettingsBase">The base type of the settings, just containing the data</typeparam>
-    /// <typeparam name="TDesign">The type of the design settings.</typeparam>
-    /// <param name="spellsSvc"></param>
-    /// <param name="pageState"></param>
     /// <param name="settings"></param>
-    /// <param name="settingsReader"></param>
-    /// <param name="dSettings"></param>
-    /// <param name="designReader"></param>
-    /// <param name="finalize"></param>
+    /// <param name="reader"></param>
+    /// <param name="section">what kind of settings we're retrieving - for the name-lookup in the parts definition</param>
     /// <returns></returns>
-    internal static Data3WithJournal<TSettings, CmThemeContext, MagicThemePartSettings?>
-        GetBestSpellAndBlueprints<TSettings, TSettingsBase, TDesign>(
-            this IMagicSpellsService spellsSvc,
-            PageState pageState,
-            TSettings? settings,
-            SettingsReader<TSettingsBase> settingsReader,
-            TDesign? dSettings,
-            SettingsReader<TDesign> designReader,
-            Func<TSettingsBase, TDesign, TSettings> finalize)
-        where TSettings : MagicSpellBase, TSettingsBase, ISettingsForCodeUse, new()
-        where TDesign : class, new() where TSettingsBase : class, new()
-    {
-        var (mergedSettings, themeCtx, part, journal) =
-            GetBestSpell(spellsSvc, pageState, settings, settingsReader);
-
-        var dataWithJournal = MapNameAndBookAndGetSpell(themeCtx, designReader, dSettings, settings?.Name, ThemePartSectionEnum.Design);
-
-        // Reconstruct the expected settings type to merge in the design use the provided finalize function
-        var fullSettings = finalize(mergedSettings, dataWithJournal.Data);
-
-        return new(fullSettings, themeCtx, part, journal.With(dataWithJournal.Journal));
-    }
-
-
-    private static DataWithJournal<TSettingsBase>
-        MapNameAndBookAndGetSpell<TSettings, TSettingsBase>(
-            CmThemeContext themeCtx,
-            SettingsReader<TSettingsBase> settingsReader, TSettings? settings,
-            string? name, ThemePartSectionEnum section)
-        where TSettings : TSettingsBase, new() where TSettingsBase : class, new()
+    internal DataWithJournal<TSettings>
+        GetBestSpell<TSettings>(TSettings? settings, SettingsReader<TSettings> reader, ThemePartSectionEnum section = ThemePartSectionEnum.Settings)
+        where TSettings : class, new()
     {
         // Activate this for debugging
         //if (settings is IDebugSettings { DebugThis: true } tempForDebug)
         //    tempForDebug = tempForDebug;
 
         if (settings is IDebugSettings { Book: not null } withBook)
-            settingsReader = settingsReader.MaybeUseCustomSpellsBook(withBook.Book);
+            reader = reader.MaybeUseCustomSpellsBook(withBook.Book);
 
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type
-        var findSettings = new FindSettingsNameSpecs(themeCtx, name, section);
-        var dataWithJournal = settingsReader.FindAndMerge(findSettings, settings);
+        var findSettings = new FindSettingsNameSpecs(ThemeCtx, name, section);
+        var dataWithJournal = reader.FindAndMerge(findSettings, settings);
         return dataWithJournal;
     }
-
 }

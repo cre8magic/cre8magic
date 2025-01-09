@@ -27,7 +27,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     
     private IMagicLanguageKit CreateState(PageState pageState, MagicLanguageSpell? settings)
     {
-        var (settingsFull, _, themePart, journal) = MergeSettings(pageState, settings);
+        var (settingsFull, themePart, journal) = MergeSettings(pageState, settings);
 
         var languages = LanguagesToShow(pageState, settingsFull);
         var show = themePart?.Show != false && settingsFull.MinLanguagesToShow <= languages.Count;
@@ -42,14 +42,14 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         };
     }
 
-    private Data3WithJournal<MagicLanguageSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicLanguageSpell? settings) =>
-        spellsSvc.GetBestSpellAndBlueprints(
-            pageState,
-            settings,
-            spellsSvc.Languages,
-            settings?.Blueprint,
-            spellsSvc.LanguageBlueprints,
-            finalize: (settingsData, designSettings) => settingsData with { Blueprint = designSettings });
+    private Data2WithJournal<MagicLanguageSpell, MagicThemePartSettings?> MergeSettings(
+        PageState pageState, MagicLanguageSpell? settings)
+    {
+        var getSpell = new GetSpell(spellsSvc, pageState, settings?.Name);
+        var spell = getSpell.GetBestSpell(settings, spellsSvc.Languages);
+        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, spellsSvc.LanguageBlueprints, ThemePartSectionEnum.Design);
+        return new(spell.Data with { Blueprint = bluePrint.Data }, getSpell.Part, spell.Journal.With(bluePrint.Journal));
+    }
 
 
     private List<MagicLanguage> LanguagesToShow(PageState pageState, MagicLanguageSpell spell)

@@ -1,8 +1,5 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Spells.Internal;
-using ToSic.Cre8magic.Themes.Internal;
-using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.PageContexts.Internal;
@@ -16,7 +13,8 @@ internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThem
 
     private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSpell? settings)
     {
-        var (settingsData, _, _, _) = MergeSettings(pageState, settings);
+        var (settingsData, _) = new GetSpell(spellsSvc, pageState, settings?.Name)
+            .GetBestSpell(settings, spellsSvc.PageContexts);
 
         var themeCtx = spellsSvc.GetThemeContextFull(pageState);
 
@@ -30,16 +28,6 @@ internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThem
             Service = this
         };
     }
-
-    private Data3WithJournal<MagicPageContextSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicPageContextSpell? settings) =>
-        spellsSvc.GetBestSpell(
-            pageState,
-            settings,
-            spellsSvc.PageContexts
-        );
-
-
-
 
     internal async Task UpdateBodyTag(PageState pageState, MagicPageContextSpell? settings)
     {

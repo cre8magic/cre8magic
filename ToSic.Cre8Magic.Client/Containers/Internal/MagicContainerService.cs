@@ -2,7 +2,6 @@
 using Oqtane.UI;
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Spells.Internal;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Containers.Internal;
@@ -11,7 +10,7 @@ internal class MagicContainerService(IMagicSpellsService spellsSvc) : IMagicCont
 {
     public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSpell? settings = default)
     {
-        var (settingsFull, _, _, journal) = MergeSettings(pageState, settings);
+        var (settingsFull, journal) = MergeSettings(pageState, settings);
 
         var designer = ContainerTailor(pageState, module, settingsFull.Blueprint!);
         return new MagicContainerKit
@@ -23,16 +22,15 @@ internal class MagicContainerService(IMagicSpellsService spellsSvc) : IMagicCont
         };
     }
 
-    private Data3WithJournal<MagicContainerSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicContainerSpell? settings) =>
-        spellsSvc.GetBestSpellAndBlueprints(
-            pageState,
-            settings,
-            spellsSvc.Containers,
-            settings?.Blueprint,
-            spellsSvc.ContainerBlueprints,
-            finalize: (settingsData, designSettings) => settingsData with { Blueprint = designSettings });
+    private DataWithJournal<MagicContainerSpell> MergeSettings(
+        PageState pageState, MagicContainerSpell? settings)
+    {
 
-
+        var getSpell = new GetSpell(spellsSvc, pageState, settings?.Name);
+        var spell = getSpell.GetBestSpell(settings, spellsSvc.Containers);
+        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, spellsSvc.ContainerBlueprints, ThemePartSectionEnum.Design);
+        return new(spell.Data with { Blueprint = bluePrint.Data }, spell.Journal.With(bluePrint.Journal));
+    }
 
 
     private MagicContainerTailor ContainerTailor(PageState pageState, Module module, MagicContainerBlueprint blueprint)

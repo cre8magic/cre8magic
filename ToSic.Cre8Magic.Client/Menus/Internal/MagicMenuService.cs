@@ -2,6 +2,7 @@
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Spells.Internal;
+using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal;
@@ -51,15 +52,11 @@ public class MagicMenuService(IMagicSpellsService spellsSvc): IMagicMenuService
         return kit;
     }
 
-    private DataWithJournal<MagicMenuSpell> MergeSettings(PageState pageState, MagicMenuSpell? settings) =>
-        spellsSvc.GetBestSpellAndBlueprints(
-            pageState,
-            settings,
-            spellsSvc.Menus,
-            settings?.Blueprint,
-            spellsSvc.MenuBlueprints,
-            finalize: (settingsData, designSettings) => settingsData with /* TODO: USE WITH<...> */ { Blueprint = designSettings });
-
-
-
+    private DataWithJournal<MagicMenuSpell> MergeSettings(PageState pageState, MagicMenuSpell? settings)
+    {
+        var getSpell = new GetSpell(spellsSvc, pageState, settings?.Name);
+        var spell = getSpell.GetBestSpell(settings, spellsSvc.Menus);
+        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, spellsSvc.MenuBlueprints, ThemePartSectionEnum.Design);
+        return new(spell.Data with { Blueprint = bluePrint.Data }, spell.Journal.With(bluePrint.Journal));
+    }
 }

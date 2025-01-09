@@ -2,7 +2,6 @@
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Spells.Internal;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Breadcrumbs.Internal;
@@ -11,7 +10,7 @@ internal class MagicBreadcrumbService(IMagicSpellsService spellsSvc) : IMagicBre
 {
     public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSpell? settings = null)
     {
-        var (settingsFull, _, themePart, _) = MergeSettings(pageState, settings);
+        var (settingsFull, themePart, _) = MergeSettings(pageState, settings);
 
         var pageFactory = new MagicPageFactory(pageState);
         var show = themePart?.Show != false;
@@ -32,13 +31,12 @@ internal class MagicBreadcrumbService(IMagicSpellsService spellsSvc) : IMagicBre
         };
     }
 
-    private Data3WithJournal<MagicBreadcrumbSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSpell? settings) =>
-        spellsSvc.GetBestSpellAndBlueprints(
-            pageState,
-            settings,
-            spellsSvc.Breadcrumbs,
-            settings?.Blueprint,
-            spellsSvc.BreadcrumbBlueprints,
-            finalize: (settingsData, designSettings) => settingsData with { Blueprint = designSettings });
-
+    private Data2WithJournal<MagicBreadcrumbSpell, MagicThemePartSettings?> MergeSettings(
+        PageState pageState, MagicBreadcrumbSpell? settings)
+    {
+        var getSpell = new GetSpell(spellsSvc, pageState, settings?.Name);
+        var spell = getSpell.GetBestSpell(settings, spellsSvc.Breadcrumbs);
+        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, spellsSvc.BreadcrumbBlueprints, ThemePartSectionEnum.Design);
+        return new(spell.Data with { Blueprint = bluePrint.Data }, getSpell.Part, spell.Journal.With(bluePrint.Journal));
+    }
 }

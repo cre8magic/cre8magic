@@ -17,12 +17,8 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSpellsService spe
 
     private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSpell? settings = null)
     {
-        //var x = 7;
-        //if ((settings as IDebugSettings)?.DebugThis == true)
-        //    x = 8;
-
-        var (settingsData, _, _, _) = MergeSettings(pageState, settings);
-        //var settingsFull = new MagicAnalyticsSettings(settingsData, settings);
+        var (settingsData, _) = new GetSpell(spellsSvc, pageState, settings?.Name)
+            .GetBestSpell(settings, spellsSvc.Analytics);
 
         var result = new MagicAnalyticsKit
         {
@@ -33,13 +29,6 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSpellsService spe
 
         return result;
     }
-
-    private Data3WithJournal<MagicAnalyticsSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicAnalyticsSpell? settings) =>
-        spellsSvc.GetBestSpell(
-            pageState,
-            settings,
-            spellsSvc.Analytics
-        );
 
 
     /// <summary>
