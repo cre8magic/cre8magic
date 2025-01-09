@@ -35,7 +35,7 @@ internal static class GetSpell
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type
         var findSettings = new FindSettingsNameSpecs(themeCtx, settings, section);
-        var dataWithJournal = settingsReader.FindAndMerge(findSettings, settings, skipCache: true);
+        var dataWithJournal = settingsReader.FindAndMerge(findSettings, settings);
 
 
         // Find Part which contains information for these settings,

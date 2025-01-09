@@ -5,7 +5,6 @@ using ToSic.Cre8magic.Spells.Internal;
 using ToSic.Cre8magic.Spells.Internal.Debug;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
-using static ToSic.Cre8magic.MagicConstants;
 
 namespace ToSic.Cre8magic.Themes;
 
@@ -23,7 +22,6 @@ public record MagicThemeSpell: MagicSpellBase, IHasDebugSettings, ICanClone<Magi
 
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
 
-        //Design = priority?.Design ?? fallback?.Design;
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
@@ -43,13 +41,8 @@ public record MagicThemeSpell: MagicSpellBase, IHasDebugSettings, ICanClone<Magi
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemePartSettings>))]
     public Dictionary<string, MagicThemePartSettings> Parts { get; init; } = new();
 
-    //public string? Design { get; init; }
-
-    //public MagicDebugSettings? Debug { get; init; }
-
     internal static Defaults<MagicThemeSpell> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
-        //Design = InheritName,
     });
 }

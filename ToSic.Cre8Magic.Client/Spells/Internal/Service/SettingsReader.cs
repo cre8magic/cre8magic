@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Internal.Journal;
+﻿using System.Collections;
+using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.MagicConstants;
 
@@ -31,12 +32,16 @@ internal class SettingsReader<TSettingsData>(
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
     /// </summary>
-    internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsNameSpecs nameSpecs, TSettingsData? priority = null, bool skipCache = true)
+    internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsNameSpecs nameSpecs, TSettingsData? priority = null)
     {
-        var (bestPartName, journal) = nameSpecs.Context.NameResolver.FindBestNameAccordingToParts(nameSpecs);
+        var name = nameSpecs.SettingsName;
+        Journal journal;
+        if (name.IsNullOrEmpty())
+            (name, journal) = nameSpecs.Context.NameResolver.FindBestNameAccordingToParts(nameSpecs);
+        else
+            journal = new();
 
-        // var settingsName
-        var found = FindAndNeutralize([nameSpecs.SettingsName, bestPartName, nameSpecs.ThemeName], skipCache: skipCache);
+        var found = FindAndNeutralize(name!);
         var part = MergeHelper.TryToMergeOrKeepPriority(priority, found)!;
 
         return new(part, journal);
@@ -46,26 +51,14 @@ internal class SettingsReader<TSettingsData>(
     /// Find a part by name, and merge it with the foundation if applicable.
     /// This is to ensure necessary basics are always present, even if the part doesn't specify them.
     /// </summary>
-    /// <param name="names"></param>
-    /// <param name="skipCache"></param>
     /// <returns></returns>
-    internal TSettingsData FindAndNeutralize(string?[] names, bool skipCache = true)
+    internal TSettingsData FindAndNeutralize(string name)
     {
         // Create array of names to look up, the first one is the main name (specify type so clearly non-null)
-        var cleanNames = ((string[])[ ..names!, Default ])
-            .Where(s => s.HasText())
-            .Select(s => s!.Trim())
-            .Distinct()
-            .ToArray();
-
-        var mainName = cleanNames[0];
-
-        // Check cache if applicable
-        if (!skipCache && _cache.TryGetValue(mainName, out var cached2))
-            return cached2;
+        var mainName = name.IsNullOrEmpty() ? Default : name;
 
         // Get best matching part; returns null if nothing found
-        var priority = FindInSourcesOrNull(cleanNames);
+        var priority = FindInSourcesOrNull(mainName);
         switch (priority)
         {
             // Nothing found, return fallback
@@ -87,42 +80,35 @@ internal class SettingsReader<TSettingsData>(
 
         var mergedNew = MergeHelper.TryToMergeOrKeepPriority(priority, defaults.Foundation)!;
 
-        if (!skipCache)
-            _cache[mainName] = mergedNew;
         return mergedNew;
 
         // Inner function to find settings and merge them
         TSettingsData FindSettingsAndTryMerge(TSettingsData priorityData, string nameToFind)
         {
-            var addition = FindInSourcesOrNull([nameToFind]);
+            var addition = FindInSourcesOrNull(nameToFind);
             return addition == null
                 ? priorityData
                 : MergeHelper.TryToMergeOrKeepPriority(priorityData, addition)!;
         }
     }
 
-    private readonly Dictionary<string, TSettingsData> _cache = new(StringComparer.InvariantCultureIgnoreCase);
-
 
     /// <summary>
     /// Find the settings in all possible sources.
     /// </summary>
-    /// <param name="names"></param>
     /// <returns></returns>
-    private TSettingsData? FindInSourcesOrNull(string[]? names)
+    private TSettingsData? FindInSourcesOrNull(string name)
     {
         // Make sure we have at least one name
-        if (names == null || names.Length == 0)
-            names = [Default];
+        name = name.IsNullOrEmpty() ? Default : name;
 
         // Get all spells-books (e.g. provided by code in theme, from JSON, etc.)
         var books = hasSpellsLibrary.Library;
 
         // Create a list of all possible sources and names
         // Prioritize the names, and then go through all sources for each name
-        var allSourcesAndNames = names
-            .Distinct()
-            .SelectMany(name => books.Select(book => (Book: book.Data, name)))
+        var allSourcesAndNames = books
+            .Select(book => (Book: book.Data, name))
             .ToList();
 
         foreach (var set in allSourcesAndNames)

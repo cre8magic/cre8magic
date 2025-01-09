@@ -81,7 +81,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
 
         // Figure out real config-name, and get the initial layout
         var (settingsName, nameJournal) = ThemePartNameResolver.PickBestSettingsName(preferred: Variant, mainName: Default);
-        var themeSettings = Themes.FindAndNeutralize([settingsName]);
+        var themeSettings = Themes.FindAndNeutralize(settingsName);
 
         var ctx = new CmThemeContext
         {
@@ -104,7 +104,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
         // Tokens engine for this specific PageState
         var pageTokens = PageTokenEngine(pageState);
 
-        var blueprint = ThemeBlueprints.FindAndNeutralize([/*ctxLight.ThemeSpell.Design,*/ ctxLight.Name]);
+        var blueprint = ThemeBlueprints.FindAndNeutralize(ctxLight.Name);
         var ctx = new CmThemeContextFull
         {
             Name = ctxLight.Name,
