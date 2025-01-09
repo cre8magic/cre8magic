@@ -69,7 +69,6 @@ public static class MagicSpellExtensions
         (settings ??= new()) with
         {
             Name = settings.Name ?? lookup.Name,
-            BlueprintName = settings.BlueprintName ?? lookup.BlueprintName,
         };
 
     public static TSpell WithLookup<TSpell>(this TSpell? settings, MagicSpellLookup lookup)
@@ -77,6 +76,5 @@ public static class MagicSpellExtensions
         (settings ??= new()) with
         {
             Name = lookup.Name ?? settings.Name,
-            BlueprintName = lookup.BlueprintName ?? settings.BlueprintName,
         };
 }

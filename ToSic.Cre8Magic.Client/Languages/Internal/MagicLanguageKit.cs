@@ -39,7 +39,6 @@ internal record MagicLanguageKit : IMagicLanguageKit
             {
                 { "Name", DebugInfo.ShowNotSet(Spell.Name) },
                 { "Show", Show + "" },
-                { "Blueprint Name", DebugInfo.ShowNotSet(Spell.BlueprintName) },
             }
         };
         return debugInfo;
