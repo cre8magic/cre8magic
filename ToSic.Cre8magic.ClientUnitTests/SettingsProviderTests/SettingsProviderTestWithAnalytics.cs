@@ -48,8 +48,7 @@ public class SettingsProviderTestWithAnalytics
         var retrieved2 = settingsSvc.GetBestSpell(
             null,
             analytics,
-            settingsSvc.Analytics,
-            "Container"
+            settingsSvc.Analytics
         );
         Assert.Equal(expectNoMerge ? analytics.GtmId : original.GtmId, retrieved2.Data.GtmId);
     }
@@ -77,8 +76,7 @@ public class SettingsProviderTestWithAnalytics
         var retrieved = settingsSvc.GetBestSpell(
             null,
             new MagicAnalyticsSpell { SettingsName = searchName },
-            settingsSvc.Analytics,
-            "Container"
+            settingsSvc.Analytics
         );
 
         Assert.Equal(expected, retrieved.Data.GtmId);

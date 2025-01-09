@@ -20,8 +20,6 @@ namespace ToSic.Cre8magic.Languages.Internal;
 
 internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, IMagicSpellsService spellsSvc) : IMagicLanguageService
 {
-    private const string DefaultPartName = "Language";
-
     /// <inheritdoc/>
     public IMagicLanguageKit LanguageKit(PageState pageState, MagicLanguageSpell? settings = default) =>
         _languageStates.Get(pageState, () => CreateState(pageState, settings));
@@ -51,7 +49,6 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             spellsSvc.Languages,
             settings?.Blueprint,
             spellsSvc.LanguageBlueprints,
-            DefaultPartName,
             finalize: (settingsData, designSettings) => settingsData with { Blueprint = designSettings });
 
 

@@ -9,14 +9,12 @@ namespace ToSic.Cre8magic.Spells.Internal;
 
 internal static class GetSpell
 {
-    internal static Data3WithJournal<TSettingsBase, CmThemeContext, MagicThemePartSettings?>
+    internal static Data3WithJournal<TSettingsBase, CmThemeContext, MagicThemePartSettings?> 
         GetBestSpell<TSettings, TSettingsBase>(
             this IMagicSpellsService spellsSvc,
             PageState? pageStateForCachingOnly,
             TSettings? settings,
-            SettingsReader<TSettingsBase> settingsReader,
-            string defaultPartNameForShow
-        )
+            SettingsReader<TSettingsBase> settingsReader)
     where TSettings : TSettingsBase, ISettingsForCodeUse, new()
     where TSettingsBase : class, new()
     {
@@ -41,8 +39,7 @@ internal static class GetSpell
         // Find Part which contains information for these settings,
         // e.g. what to show
         var parts = themeCtx.ThemeSpell.Parts;
-        var part = parts.GetValueOrDefault(settings?.PartName ?? "dummy-prevent-error")
-            ?? parts.GetValueOrDefault(defaultPartNameForShow);
+        var part = parts.GetValueOrDefault(settings?.PartName ?? "dummy-prevent-error");
 
         return new(dataWithJournal.Data, themeCtx, part, dataWithJournal.Journal);
     }
@@ -65,7 +62,6 @@ internal static class GetSpell
     /// <param name="settingsReader"></param>
     /// <param name="dSettings"></param>
     /// <param name="designReader"></param>
-    /// <param name="defaultPartNameForShow"></param>
     /// <param name="finalize"></param>
     /// <returns></returns>
     internal static Data3WithJournal<TSettings, CmThemeContext, MagicThemePartSettings?>
@@ -76,16 +72,14 @@ internal static class GetSpell
             SettingsReader<TSettingsBase> settingsReader,
             TDesign? dSettings,
             SettingsReader<TDesign> designReader,
-            string defaultPartNameForShow,
-            Func<TSettingsBase, TDesign, TSettings> finalize
-        )
+            Func<TSettingsBase, TDesign, TSettings> finalize)
         where TSettings : TSettingsBase, ISettingsForCodeUse, new()
         where TDesign : class, new() where TSettingsBase : class, new()
     {
         var section = ThemePartSectionEnum.Design;
 
         var (mergedSettings, themeCtx, part, journal) =
-            GetBestSpell(spellsSvc, pageState, settings, settingsReader, defaultPartNameForShow);
+            GetBestSpell(spellsSvc, pageState, settings, settingsReader);
 
         // Activate this for debugging
         //if (settings is IDebugSettings { DebugThis: true } tempForDebug)

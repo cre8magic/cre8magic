@@ -9,8 +9,6 @@ namespace ToSic.Cre8magic.PageContexts.Internal;
 
 internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThemeJsService jsSvc) : IMagicPageContextService
 {
-    private const string DefaultPartName = "PageContext";
-
     public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSpell? settings) =>
         _pageContexts.Get(pageState, () => BuildKit(pageState, settings));
     private readonly GetKeepByPageId<IMagicPageContextKit> _pageContexts = new();
@@ -37,8 +35,7 @@ internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThem
         spellsSvc.GetBestSpell(
             pageState,
             settings,
-            spellsSvc.PageContexts,
-            DefaultPartName
+            spellsSvc.PageContexts
         );
 
 

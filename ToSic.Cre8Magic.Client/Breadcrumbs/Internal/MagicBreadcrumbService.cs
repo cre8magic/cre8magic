@@ -9,8 +9,6 @@ namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
 internal class MagicBreadcrumbService(IMagicSpellsService spellsSvc) : IMagicBreadcrumbService
 {
-    private const string DefaultPartName = "Breadcrumb";
-
     public IMagicBreadcrumbKit BreadcrumbKit(PageState pageState, MagicBreadcrumbSpell? settings = null)
     {
         var (settingsFull, _, themePart, _) = MergeSettings(pageState, settings);
@@ -41,7 +39,6 @@ internal class MagicBreadcrumbService(IMagicSpellsService spellsSvc) : IMagicBre
             spellsSvc.Breadcrumbs,
             settings?.Blueprint,
             spellsSvc.BreadcrumbBlueprints,
-            DefaultPartName,
             finalize: (settingsData, designSettings) => settingsData with { Blueprint = designSettings });
 
 }

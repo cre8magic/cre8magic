@@ -9,8 +9,6 @@ namespace ToSic.Cre8magic.Containers.Internal;
 
 internal class MagicContainerService(IMagicSpellsService spellsSvc) : IMagicContainerService
 {
-    private const string DefaultPartName = "Container";
-
     public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSpell? settings = default)
     {
         var (settingsFull, _, _, journal) = MergeSettings(pageState, settings);
@@ -32,7 +30,6 @@ internal class MagicContainerService(IMagicSpellsService spellsSvc) : IMagicCont
             spellsSvc.Containers,
             settings?.Blueprint,
             spellsSvc.ContainerBlueprints,
-            DefaultPartName,
             finalize: (settingsData, designSettings) => settingsData with { Blueprint = designSettings });
 
 
