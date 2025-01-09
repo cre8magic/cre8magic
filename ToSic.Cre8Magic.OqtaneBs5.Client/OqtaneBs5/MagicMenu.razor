@@ -28,12 +28,12 @@ Nice to know:
     /// </summary>
     [Parameter] public MagicMenuSpell? Settings { get; set; }
 
-    [Parameter] public string? PartName { get; set; }
+    [Parameter] public string? Name { get; set; }
     [Parameter] public string? SettingsName { get; set; }
 }
 @{
     // Get the latest menu kit on each render, using the latest PageState
-    var menuKit = MagicAct.MenuKit(Settings.With(PageState).WithLookup(new() { Name = PartName, SpellName = SettingsName}));
+    var menuKit = MagicAct.MenuKit(Settings.With(PageState).WithLookup(new() { Name = Name, SpellName = SettingsName}));
 }
 @* Special Debugging *@
 @if (false)

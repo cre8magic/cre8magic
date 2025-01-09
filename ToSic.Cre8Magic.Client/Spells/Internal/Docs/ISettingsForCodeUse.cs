@@ -22,5 +22,5 @@ internal interface ISettingsForCodeUse
     /// <summary>
     /// Name to identify which design settings to load.
     /// </summary>
-    public string? DesignName { get; init; }
+    public string? BlueprintName { get; init; }
 }

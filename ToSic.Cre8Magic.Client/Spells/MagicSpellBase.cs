@@ -26,7 +26,7 @@ public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, I
 
         Name = priority?.Name ?? fallback.Name;
         SettingsName = priority?.SettingsName ?? fallback.SettingsName;
-        DesignName = priority?.DesignName ?? fallback.DesignName;
+        BlueprintName = priority?.BlueprintName ?? fallback.BlueprintName;
 
         Debug = priority?.Debug ?? fallback.Debug;
 
@@ -62,7 +62,7 @@ public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, I
 
     /// <inheritdoc/>
     [JsonIgnore]
-    public string? DesignName { get; init; }
+    public string? BlueprintName { get; init; }
 
     #endregion
 

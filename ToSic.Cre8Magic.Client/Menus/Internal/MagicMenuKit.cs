@@ -42,7 +42,7 @@ internal record MagicMenuKit : IMagicMenuKit
             //{ "Show", Show },
             { "Part Name", DebugInfo.ShowNotSet(Spell.Name) },
             { "Settings Name", DebugInfo.ShowNotSet(Spell.SettingsName) },
-            { "Design Name", DebugInfo.ShowNotSet(Spell.DesignName) },
+            { "Design Name", DebugInfo.ShowNotSet(Spell.BlueprintName) },
             { "Variant", DebugInfo.ShowNotSet(Variant) },
         }
     };
