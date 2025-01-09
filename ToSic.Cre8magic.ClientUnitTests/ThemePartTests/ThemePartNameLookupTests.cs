@@ -12,7 +12,6 @@ public class ThemePartNameLookupTests
     private const string Default = "default";
     private const string MenuNoRedirect = "menu-no-redirects";
     private const string MenuRedirect = "menu-redirect";
-    private const string FallbackToMainName = "fallback-to-main";
     private const string NonExisting = "non-existing";
 
     [Theory]
@@ -20,8 +19,6 @@ public class ThemePartNameLookupTests
     [InlineData(OtherSettingsName, MenuRedirect, "should find other")]
     [InlineData(Default, Default, "defaults, nothing special")]
     [InlineData(NonExisting, NonExisting, "non existing should preserve name")]
-    [InlineData(ThemeName, MagicConstants.InheritName, "inherit should just use main name")]
-    [InlineData(ThemeName, FallbackToMainName, "= in value should do fallback")]
     [InlineData(Default, "", "empty should use default")]
     [InlineData(Default, null, "null should use default")]
     public void CheckNameRedirects(string expected, string? partName, string? testDescription = default)
@@ -33,7 +30,6 @@ public class ThemePartNameLookupTests
             { Default, new() },
             { MenuNoRedirect, new() },
             { MenuRedirect, new() { Settings = OtherSettingsName } },
-            { FallbackToMainName, new() { Settings = MagicConstants.InheritName } },
         };
 
         var nameResolver = new ThemePartNameResolver(ThemeName, themeParts);

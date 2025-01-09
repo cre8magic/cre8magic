@@ -10,7 +10,8 @@ namespace ToSic.Cre8magic.ClientUnitTests.SettingsProviderTests;
 
 public class SettingsProviderTestWithAnalytics
 {
-    private const string DataValueOfOriginal = "test-inherits";
+    private const string GtmOfOriginal = "test-inherits";
+    private const string GtmOfAdded = "test-added";
 
     /// <summary>
     /// Prepare a settings service and add a default value. 
@@ -21,41 +22,57 @@ public class SettingsProviderTestWithAnalytics
         var di = SetupServices.Start().AddCre8magic().AddLogging().Finish();
         var settingsProvider = di.GetRequiredService<IMagicSpellsProvider>();
         var settingsSvc = di.GetRequiredService<IMagicSpellsService>();
-        var original = new MagicAnalyticsSpell { GtmId = DataValueOfOriginal };
+        var original = new MagicAnalyticsSpell
+        {
+            GtmId = GtmOfOriginal
+        };
         settingsProvider.Analytics.SetDefault(original);
         return (settingsSvc, settingsProvider, original);
     }
 
+    /// <summary>
+    /// Use settings which have a name, and if the name is empty, null or "default" it should merge
+    /// the default settings (as they don't have a name either).
+    /// </summary>
     [Theory]
     [InlineData(null)]
     [InlineData("")]
-    [InlineData(" ")]
-    [InlineData("name-not-found")]
-    public void ValueOnlyNotNamed(string? name)
+    [InlineData("default")]
+    [InlineData(" ", true)]
+    [InlineData("name-not-found", true)]
+    public void ValueOnlyNotNamed(string? currentName, bool expectNoMerge = false)
     {
-        var (settingsSvc, settingsProvider, original) = PrepareSettings();
+        var (settingsSvc, _, original) = PrepareSettings();
+        // Settings, without GtmId, so that it would receive it from original when merging
+        var analytics = new MagicAnalyticsSpell { SettingsName = currentName };
         var retrieved2 = settingsSvc.GetBestSpell(
             null,
-            new MagicAnalyticsSpell { SettingsName = name },
+            analytics,
             settingsSvc.Analytics,
             "Container"
         );
-        Assert.Equal(original.GtmId, retrieved2.Data.GtmId);
+        Assert.Equal(expectNoMerge ? analytics.GtmId : original.GtmId, retrieved2.Data.GtmId);
     }
 
-    [Fact]
-    public void FromDictionaryNoPrefixInData() =>
-        FromDictionaryTests(null, true);
-
-    private void FromDictionaryTests(string? prefixInData, bool shouldBeEqual, string addDicName = "admin", string searchName = "admin")
+    /// <summary>
+    /// Add a named setting to the source and try to find it with the same or another name.
+    /// Basically as soon as the name differs, it won't find the setting anymore.
+    /// </summary>
+    [Theory]
+    [InlineData(GtmOfAdded, "admin", "admin")]
+    [InlineData(null, "default", "admin")]
+    [InlineData(null, "default", "whatever")]
+    [InlineData(null, "admin", "whatever")]
+    [InlineData(GtmOfOriginal, "admin", "default")]
+    public void FromDictionaryFallbackDefault(string? expected, string provideName, string searchName)
     {
-        var addName = prefixInData + (string.IsNullOrEmpty(prefixInData) ? "" : "-") + addDicName;
-
-        var (settingsSvc, settingsProvider, defaultSettings) = PrepareSettings();
+        var (settingsSvc, settingsProvider, _) = PrepareSettings();
 
         // Add a named setting which can be identified when found
-        var namedSettings = new MagicAnalyticsSpell { GtmId = DataValueOfOriginal + "-named" };
-        settingsProvider.Analytics.Provide(addName, namedSettings);
+        settingsProvider.Analytics.Provide(provideName, new()
+        {
+            GtmId = GtmOfAdded,
+        });
 
         var retrieved = settingsSvc.GetBestSpell(
             null,
@@ -64,28 +81,8 @@ public class SettingsProviderTestWithAnalytics
             "Container"
         );
 
-        Assert.Equal(shouldBeEqual, namedSettings.GtmId == retrieved.Data.GtmId);
-        Assert.Equal(!shouldBeEqual, defaultSettings.GtmId == retrieved.Data.GtmId);
+        Assert.Equal(expected, retrieved.Data.GtmId);
     }
-
-    [Theory]
-    [InlineData(null)]
-    [InlineData("")]
-    [InlineData(" ", false)]
-    //[InlineData(ContainerPrefix)] // this shouldn't work, as the prefix is really only used in parts-lookup, not settings-name
-    [InlineData("some-other-prefix", false)]
-    public void FromDictionaryWithPrefixInData(string? prefix, bool shouldBeEqual = true) =>
-        FromDictionaryTests(prefix, shouldBeEqual);
-
-
-    [Theory]
-    [InlineData("admin", "admin")]
-    [InlineData("default", "admin")]
-    [InlineData("default", "whatever")]
-    [InlineData("admin", "whatever", false)]
-    [InlineData("admin", "default", false)]
-    public void FromDictionaryFallbackDefault(string dicName, string searchName, bool shouldBeEqual = true) =>
-        FromDictionaryTests(null, shouldBeEqual, dicName, searchName);
 
     [Fact]
     public void BothInterfacesOnServiceProviderGiveSameObject()

@@ -32,10 +32,6 @@ internal class ThemePartNameResolver(string themeName, Dictionary<string, MagicT
             ? part.GetSettingName(nameSpecs.Section)
             : null;
 
-        // If the better name wants to use the main config name ("=") then use that and exit
-        if (betterName == MagicConstants.InheritName)
-            return new(themeName, journal.With($"switched to inherit '{themeName}'"));
-
         return betterName.HasValue()
             ? new(betterName, journal.With($"updated config to '{initialName}'"))
             : new(initialName, journal);
@@ -53,13 +49,6 @@ internal class ThemePartNameResolver(string themeName, Dictionary<string, MagicT
         var journal = new List<string> { $"Initial Settings Name: '{preferred}'" };
 
         preferred = preferred?.Trim();
-
-        // Check if it's just a "=" symbol, which means "inherit"
-        if (preferred == MagicConstants.InheritName)
-        {
-            preferred = inheritName;
-            journal.Add($"switched to inherit '{inheritName}'");
-        }
 
         // If we have a value, use that
         if (preferred.HasText())
