@@ -8,10 +8,17 @@ namespace ToSic.Cre8magic.Pages.Internal;
 /// <summary>
 /// Wrapper for the Oqtane Page.
 /// </summary>
-internal record MagicPage(Page RawPage, MagicPageFactory pageFactory, IMagicPageChildrenFactory childrenFactory)
-    : MagicPageBase(RawPage),
+internal record MagicPage : MagicPageBase,
         IMagicPage
 {
+    public MagicPage(Page RawPage, MagicPageFactory pageFactory, IMagicPageChildrenFactory childrenFactory) : base(RawPage)
+    {
+        _pageFactory = pageFactory;
+        _childrenFactory = childrenFactory;
+    }
+    private readonly MagicPageFactory _pageFactory;
+    private readonly IMagicPageChildrenFactory _childrenFactory;
+
     /// <inheritdoc />
     public int MenuLevel
     {
@@ -24,29 +31,36 @@ internal record MagicPage(Page RawPage, MagicPageFactory pageFactory, IMagicPage
     internal bool IsVirtualRoot { get; init; }
 
     /// <inheritdoc />
-    public bool IsActive => RawPage.PageId == pageFactory.PageState.Page.PageId;
+    public bool IsActive
+        => RawPage.PageId == _pageFactory.PageState.Page.PageId;
 
     /// <inheritdoc />
-    public bool IsHome => RawPage.Path == "";
-
-    /// <inheritdoc />
-    [field: AllowNull, MaybeNull]
-    public string Link => field ??= pageFactory.PageProperties.GetLink(this);
-
-    /// <inheritdoc />
-    public string? Target => field ??= pageFactory.PageProperties.GetTarget(this);
+    public bool IsHome
+        => RawPage.Path == "";
 
     /// <inheritdoc />
     [field: AllowNull, MaybeNull]
-    public IEnumerable<IMagicPage> Breadcrumb => field ??= pageFactory.Breadcrumb.Get(new() { Active = this }).Pages;
+    public string Link
+        => field ??= _pageFactory.PageProperties.GetLink(this);
+
+    /// <inheritdoc />
+    public string? Target
+        => field ??= _pageFactory.PageProperties.GetTarget(this);
+
+    /// <inheritdoc />
+    [field: AllowNull, MaybeNull]
+    public IEnumerable<IMagicPage> Breadcrumb
+        => field ??= _pageFactory.Breadcrumb.Get(new() { Active = this }).Pages;
 
 
     /// <inheritdoc />
-    public bool IsInBreadcrumb => _isInBreadcrumb ??= pageFactory.Current.Breadcrumb.Contains(this);
+    public bool IsInBreadcrumb
+        => _isInBreadcrumb ??= _pageFactory.Current.Breadcrumb.Contains(this);
     private bool? _isInBreadcrumb;
 
 
-    public override string ToString() => $"{Name} ({Id})";
+    public override string ToString()
+        => $"{Name} ({Id})";
 
     #region Relationships
 
@@ -55,20 +69,19 @@ internal record MagicPage(Page RawPage, MagicPageFactory pageFactory, IMagicPage
     {
         get
         {
-            if (_parentAlreadyTried) return _parent;
+            if (_parentAlreadyTried) return field;
             _parentAlreadyTried = true;
-            return _parent ??= ParentId == null ? null : pageFactory.GetOrNull(ParentId);
+            return field ??= ParentId == null ? null : _pageFactory.GetOrNull(ParentId);
         }
     }
 
-    private IMagicPage? _parent;
     private bool _parentAlreadyTried;
 
     /// <summary>
     /// Get children of the current menu page.
     /// </summary>
     [field: AllowNull, MaybeNull]
-    public IEnumerable<IMagicPage> Children => field ??= childrenFactory.ChildrenOf(this);
+    public IEnumerable<IMagicPage> Children => field ??= _childrenFactory.ChildrenOf(this);
 
     /// <summary>
     /// Determines if there are sub-pages. True if this page has sub-pages.
@@ -80,13 +93,17 @@ internal record MagicPage(Page RawPage, MagicPageFactory pageFactory, IMagicPage
     #endregion
 
     [field: AllowNull, MaybeNull]
-    private IPageDesignHelperWip DesignHelper => field ??= childrenFactory.PageDesignHelper(this);
+    private IPageDesignHelperWip DesignHelper
+        => field ??= _childrenFactory.PageDesignHelper(this);
 
     /// <inheritdoc />
-    public virtual string? Classes(string tagOrKey) => DesignHelper.Classes(tagOrKey);
+    public virtual string? Classes(string tagOrKey)
+        => DesignHelper.Classes(tagOrKey);
 
     /// <inheritdoc />
-    public virtual string? Value(string tagOrKey) => DesignHelper.Value(tagOrKey);
+    public virtual string? Value(string tagOrKey)
+        => DesignHelper.Value(tagOrKey);
 
     internal PagesPickRule? NodeRule { get; init; }
+
 }
