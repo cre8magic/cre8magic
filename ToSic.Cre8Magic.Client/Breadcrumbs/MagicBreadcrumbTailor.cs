@@ -56,12 +56,6 @@ public class MagicBreadcrumbTailor : IMagicPageTailor
     {
         var classes = new List<string?>();
 
-        void AddIfAny(IEnumerable<string?> maybeAdd)
-        {
-            var additions = maybeAdd.Where(v => v != null).ToList();
-            if (additions.Any()) classes.AddRange(additions);
-        }
-
         AddIfAny(configs.Select(c => c.Classes));
         AddIfAny(configs.Select(c => c.Classes));
         AddIfAny(configs.Select(c => c.IsActive.Get(page.IsActive)));
@@ -81,6 +75,13 @@ public class MagicBreadcrumbTailor : IMagicPageTailor
         //AddIfAny(levelCss);
 
         return classes;
+
+        void AddIfAny(IEnumerable<string?> maybeAdd)
+        {
+            var additions = maybeAdd.Where(v => v != null).ToList();
+            if (additions.Any())
+                classes.AddRange(additions);
+        }
     }
 
     private string ListToClasses(IEnumerable<string?> original)

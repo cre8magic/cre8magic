@@ -29,7 +29,7 @@ public record MagicBreadcrumbSpell : MagicSpellBase, IMagicPageSetSettings, ICan
         Pages = priority?.Pages ?? fallback?.Pages;
         Active = priority?.Active ?? fallback?.Active;
         Id = priority?.Id ?? fallback?.Id;
-        Display = priority?.Display ?? fallback?.Display ?? Defaults.Fallback.Display;
+        Show = priority?.Show ?? fallback?.Show ?? Defaults.Fallback.Show;
         ActiveId = priority?.ActiveId ?? fallback?.ActiveId;
         Variant = priority?.Variant ?? fallback?.Variant;
 
@@ -103,8 +103,8 @@ public record MagicBreadcrumbSpell : MagicSpellBase, IMagicPageSetSettings, ICan
     /// Determines if this breadcrumb should be shown.
     /// </summary>
     // TODO: REVIEW NAME - Show would probably be better!
-    public bool? Display { get; init; }
-    public bool DisplaySafe => Display ?? true;
+    public bool? Show { get; init; }
+    internal bool ShowSafe => Show ?? true;
 
     /// <summary>
     /// Start page of this breadcrumb - like home or another specific page.

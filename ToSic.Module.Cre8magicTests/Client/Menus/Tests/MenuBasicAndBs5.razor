@@ -1,0 +1,75 @@
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.Menus.Internal
+@using ToSic.Cre8magic.Pages.Internal
+@using ToSic.Cre8magic.OqtaneBs5.Debug
+@using ToSic.Cre8magic.Spells
+@inherits ThemeControlBase
+@inject IMagicMenuService MenuSvc
+@inject IMagicAct MagicAct
+@* @inject IMagicPageService PageSvc *@
+
+@{
+    // Get the current environment - separate step, as we may change the mechanics later
+    var currentEnv = TestParameters.EnvCurrent;
+
+    // var topLevelWithSubpagesId = TestParameters.TopLevelWithSubpagesIdDic[currentEnv];
+
+    // var topLevelThreePages = string.Join(", ", MenuTestData.DicTopLevelThreePage[currentEnv]);
+
+    // var restrictPossiblePages = PageSvc
+    //     .GetPages(PageState, MenuTestData.DicRestrictPages[currentEnv])
+    //     .ToList();
+
+    MenuSvc.NoInheritSettingsWip = true;
+
+    // Default menu designer to be used in most tests here
+    var basicTailor = new BasicMenuTailor();
+
+    var pageStateDebug = PageState.ToProxy(true);
+
+    MagicAct.UsePageState(PageState);
+}
+
+
+<h1>Menu Tests for @currentEnv xx</h1>
+
+<div class="alert alert-info">
+    To properly test this, make sure you F5 the page when you get here.
+    Otherwise, there is still stuff left in the MagicAct from other themes, which will result in some defaults you don't want to test.
+</div>
+
+<div class="navbar-expand-lg">
+
+    <h2>Start No Settings - using Act</h2>
+    <h3>Basic Menu without Setting, name none</h3>
+    <BasicMenu MenuKit="@MagicAct.MenuKit()" />
+    <MagicDebug Target="@MagicAct.MenuKit()"></MagicDebug>
+    <hr />
+
+    <h2>Start No Settings - using Act and Refill Blueprint Bs5</h2>
+    <h3>...</h3>
+    @{
+        var withRefill = new MagicMenuSpell().Refill(new MagicMenuBlueprintBs5() as MagicMenuBlueprint);
+
+        // more code to enable debugging
+        var x = withRefill;
+        var y = withRefill.Blueprint.Parts;
+    }
+    <BasicMenu MenuKit="@MagicAct.MenuKit(withRefill)" />
+    <MagicDebug Target="@MagicAct.MenuKit(withRefill)"></MagicDebug>
+    <hr />
+
+    <h2>No Settings - using MenuSvc</h2>
+    <h3>Basic Menu without Setting, name none</h3>
+    <BasicMenu MenuKit="@MenuSvc.MenuKit(PageState)" />
+    <MagicDebug Target="@MenuSvc.MenuKit(PageState)"></MagicDebug>
+    <hr />
+
+    todo
+    - use MagicAct, not MenuSvc
+    - with root only
+    - with root and children
+    
+    - then with magicMenu
+</div>

@@ -17,7 +17,7 @@ internal class PagePicker(MagicPageFactory pageFactory, IMagicPage current, Log 
     {
         var l = Log.Fn<List<IMagicPage>>($"{Current.Id}");
         // Give empty list if we shouldn't display it
-        if (spell.Display == false)
+        if (spell.ShowSafe == false)
             return l.Return([], "Display == false, don't show");
 
         // Case 1: StartPage *, so all top-level entries

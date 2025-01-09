@@ -16,7 +16,7 @@ public class MagicMenuTailor : IMagicPageTailor
     {
         Spell = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
 
-        DesignSettingsList = [Spell.Blueprint!];
+        DesignSettingsList = [Spell.BlueprintSafe];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
         Log = workContext.Settings.Debug?.Detailed == true ? workContext.LogRoot.GetLog(nameof(MagicMenuTailor)) : null;

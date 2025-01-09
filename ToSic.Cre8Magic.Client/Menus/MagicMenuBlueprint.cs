@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Tailors;
 namespace ToSic.Cre8magic.Menus;
 
 /// <summary>
-/// Menu Design Settings
+/// Menu Design Blueprint
 /// </summary>
 public partial record MagicMenuBlueprint : MagicBlueprint, ICanClone<MagicMenuBlueprint>
 {

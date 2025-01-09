@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ToSic.Theme.Cre8magicTests.Client;
+namespace ToSic.Module.Cre8MagicTests.Client;
 
 /// <summary>
 /// Class containing switches, values etc. for the tests to run.

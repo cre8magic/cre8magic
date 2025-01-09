@@ -25,7 +25,7 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
     private MagicMenuSpell(MagicMenuSpell? priority, MagicMenuSpell? fallback = default) : base(priority, fallback)
     {
         Id = priority?.Id ?? fallback?.Id;
-        Display = priority?.Display ?? fallback?.Display;
+        Show = priority?.Show ?? fallback?.Show;
         Pick = priority?.Pick ?? fallback?.Pick;
         Variant = priority?.Variant ?? fallback?.Variant;
 
@@ -49,9 +49,8 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
     /// Determines if this navigation should be shown.
     /// Mainly used for standard menus which could be disabled through settings. 
     /// </summary>
-    // TODO: REVIEW NAME - Show would probably be better!
-    public bool? Display { get; init; } = DisplayDefault;
-    public const bool DisplayDefault = true;
+    public bool? Show { get; init; }
+    internal bool ShowSafe => Show ?? true;
 
     //// TODO: NOT YET IMPLEMENTED
     ///// <summary>
@@ -70,10 +69,11 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
     /// - blank / null, to use another start ???
     /// </summary>
     public string? Pick { get; init; }
-    public const char StartPageRootSlash = '/';
-    public const string DoubleSlash = "//";
-    public const char StartPageCurrent = '.';
-    public const string StartPageParent = "..";
+
+    internal const char StartPageRootSlash = '/';
+    internal const string DoubleSlash = "//";
+    internal const char StartPageCurrent = '.';
+    internal const string StartPageParent = "..";
 
     /// <summary>
     /// The menu variant to use, for example `horizontal` or `vertical`.
@@ -91,7 +91,10 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
     public IMagicPageTailor? Tailor { get; init; }
 
     [JsonIgnore]
-    public MagicMenuBlueprint? Blueprint { get; init; } = new();
+    public MagicMenuBlueprint? Blueprint { get; init; }
+
+    [field: AllowNull, MaybeNull]
+    internal MagicMenuBlueprint BlueprintSafe => field ??= Blueprint ?? MagicMenuBlueprint.Defaults.Fallback;
 
     MagicMenuBlueprint? IWith<MagicMenuBlueprint>.WithData { get => Blueprint; init => Blueprint = value; }
 

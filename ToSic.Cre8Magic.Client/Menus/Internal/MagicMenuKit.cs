@@ -33,7 +33,7 @@ internal record MagicMenuKit : IMagicMenuKit
         More = new()
         {
             { "Settings", Spell },
-            { "Design Settings", Spell.Blueprint },
+            { "Blueprint", Spell.Blueprint },
             { "Log", this.GetLogEntries() },
         },
         Settings = Spell,

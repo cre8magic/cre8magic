@@ -39,6 +39,7 @@ internal class TestDatabase
 
         // Menu Service
         new("menu-basic", "Menus Basic", typeof(MenuControlsBasic)),
+        new("menu-basic-vs-bs5", "Menus - Basic vs. Bs5", typeof(MenuBasicAndBs5)),
         new("menu-functions", "Menus Functions", typeof(MenuControlsFunctions)),
         new("menu-provide-design-red", "Menus Provide Design Red", typeof(MenuProvideDesignRed)),
         new("menu-many", "Menu - Test Many", typeof(MenuTestMany)),

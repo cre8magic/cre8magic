@@ -23,10 +23,10 @@ This name is used to look up the settings for the part.
 
 ## Simple Use Case
 
-Let's look at a menu which has the name `MainMenu`.
+Let's look at a theme which has the name `MainMenu`.
 
 ```html
-`<MagicMenu Name="MainMenu" />`
+<MagicMenu Name="MainMenu" />
 ```
 
 The system will then use the **MagicSpellsBook** in the **MagicThemePackage** and look for:
@@ -44,12 +44,10 @@ In this case it could be that the `MainMenu` is different for each variant - and
 In most of these cases, the Razor will actually stay the same:
 
 ```html
-`<MagicMenu Name="MainMenu" />`
-...
-`<MagicMenu Name="SideMenu" />`
+<MagicMenu Name="MainMenu" />
 ```
 
-...but the Settings-Lookup will have an additional step:
+...but the Settings-Lookup _can_ have an additional step:
 
 1. Check the **ThemeSpell** in the **SpellBook** and look at the Parts-Map
 1. If the `MainMenu` is found in the Map, then check if there are renames. Let's assume that

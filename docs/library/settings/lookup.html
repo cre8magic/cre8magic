@@ -91,9 +91,18 @@
 <h2 id="named-parts">Named Parts</h2>
 <p>Every part <em>can</em> have a name.
 This name is used to look up the settings for the part.</p>
+<h2 id="goals">Goals</h2>
+<ol>
+<li>Every part is named / identified</li>
+<li>...and if not, a default name/identifier is used...</li>
+<li>The name is used to look up the spell</li>
+<li>The name is used to look up the blueprints</li>
+<li>Theme Variants can &quot;redirect&quot; the name(s)</li>
+<li>The settings can be reused and expanded by another name (<code>@inherits</code>) - maybe change to <code>@import</code> to also allow partial imports?</li>
+</ol>
 <h2 id="simple-use-case">Simple Use Case</h2>
-<p>Let's look at a menu which has the name <code>MainMenu</code>.</p>
-<pre><code class="lang-html">`&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;`
+<p>Let's look at a theme which has the name <code>MainMenu</code>.</p>
+<pre><code class="lang-html">&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;
 </code></pre>
 <p>The system will then use the <strong>MagicSpellsBook</strong> in the <strong>MagicThemePackage</strong> and look for:</p>
 <ul>
@@ -105,11 +114,9 @@ This name is used to look up the settings for the part.</p>
 <p>Let's say you have a theme with multiple variants, such as <code>FixedWidth</code> and <code>FullScreen</code>.
 In this case it could be that the <code>MainMenu</code> is different for each variant - and some things such as the <code>SideMenu</code> may not even appear.</p>
 <p>In most of these cases, the Razor will actually stay the same:</p>
-<pre><code class="lang-html">`&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;`
-...
-`&lt;MagicMenu Name=&quot;SideMenu&quot; /&gt;`
+<pre><code class="lang-html">&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;
 </code></pre>
-<p>...but the Settings-Lookup will have an additional step:</p>
+<p>...but the Settings-Lookup <em>can</em> have an additional step:</p>
 <ol>
 <li>Check the <strong>ThemeSpell</strong> in the <strong>SpellBook</strong> and look at the Parts-Map</li>
 <li>If the <code>MainMenu</code> is found in the Map, then check if there are renames. Let's assume that
@@ -120,6 +127,38 @@ In this case it could be that the <code>MainMenu</code> is different for each va
 </li>
 <li>The new names are then used to find the Spells and Blueprints</li>
 </ol>
+<h2 id="notes--wip">Notes / WIP</h2>
+<h3 id="scenario-no-lookup---probably-no-name-should-be-provided">Scenario: No Lookup - probably no name should be provided?</h3>
+<p>Code contains all settings</p>
+<ol>
+<li>No lookup is desired!</li>
+<li>Fallback values should be applied if anything is missing</li>
+</ol>
+<h3 id="scenario-lookup-main-name-and-maybe-merge---probably-name-should-be-provided">Scenario: Lookup Main Name and maybe Merge - probably name should be provided</h3>
+<ol>
+<li>Lookup is desired, by main name</li>
+<li>If not found, just use empty</li>
+<li>Fallback values should be applied if anything is missing</li>
+</ol>
+<h3 id="scenario-lookup-every-section-with-exact-names-and-maybe-merge---probably-all-names-should-be-provided">Scenario: Lookup every section with Exact Names and maybe Merge - probably all names should be provided</h3>
+<ol>
+<li>Lookup is desired, by exact names - Spell &amp; Blueprint</li>
+<li>If section name not provided, use main-name...</li>
+<li>If not found, just use empty</li>
+<li>Fallback values should be applied if anything is missing</li>
+</ol>
+<h2 id="how-to">How To</h2>
+<h3 id="theme-variations">Theme Variations</h3>
+<h4 id="one-variation-only">One variation only</h4>
+<p>todo</p>
+<h4 id="multiple-variations-with-same-settings">Multiple Variations with Same Settings</h4>
+<p>todo</p>
+<h4 id="multiple-variations-with-only-a-different-blueprint">Multiple Variations with only a different Blueprint</h4>
+<ol>
+<li>Create the default configuration</li>
+<li>For each name, make sure you create a theme with <code>@inherits</code> and the default configuration</li>
+</ol>
+<p>This will ensure that the &quot;new&quot; name is preserved.</p>
 
 </article>
 
