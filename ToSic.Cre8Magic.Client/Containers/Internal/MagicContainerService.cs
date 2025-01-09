@@ -26,7 +26,7 @@ internal class MagicContainerService(IMagicSpellsService spellsSvc) : IMagicCont
     }
 
     private Data3WithJournal<MagicContainerSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicContainerSpell? settings) =>
-        spellsSvc.GetBestSettingsAndDesignSettings(
+        spellsSvc.GetBestSpellAndBlueprints(
             pageState,
             settings,
             spellsSvc.Containers,

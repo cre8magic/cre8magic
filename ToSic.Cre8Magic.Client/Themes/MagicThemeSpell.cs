@@ -23,7 +23,7 @@ public record MagicThemeSpell: MagicSpellBase, IHasDebugSettings, ICanClone<Magi
 
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
 
-        Design = priority?.Design ?? fallback?.Design;
+        //Design = priority?.Design ?? fallback?.Design;
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
@@ -43,13 +43,13 @@ public record MagicThemeSpell: MagicSpellBase, IHasDebugSettings, ICanClone<Magi
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemePartSettings>))]
     public Dictionary<string, MagicThemePartSettings> Parts { get; init; } = new();
 
-    public string? Design { get; init; }
+    //public string? Design { get; init; }
 
     //public MagicDebugSettings? Debug { get; init; }
 
     internal static Defaults<MagicThemeSpell> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
-        Design = InheritName,
+        //Design = InheritName,
     });
 }

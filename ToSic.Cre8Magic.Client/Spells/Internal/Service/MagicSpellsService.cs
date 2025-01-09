@@ -30,7 +30,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
         return this;
     }
 
-    private string? Variant => ThemePackage?.Layout;
+    private string? Variant => ThemePackage?.Name;
 
     public IMagicSpellsService UsePageState(PageState pageState)
     {
@@ -83,7 +83,10 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
         var (settingsName, nameJournal) = ThemePartNameResolver.PickBestSettingsName(preferred: Variant, mainName: Default);
         var themeSettings = Themes.FindAndNeutralize([settingsName]);
 
-        var ctx = new CmThemeContext(SettingsName: settingsName, ThemeSpell: themeSettings, Journal: nameJournal);
+        var ctx = new CmThemeContext
+        {
+            Name = settingsName, ThemeSpell = themeSettings, Journal = nameJournal
+        };
         if (pageStateForCachingOnly != null)
             _themeCtxCache[originalNameForCache] = ctx;
         return ctx;
@@ -101,8 +104,17 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
         // Tokens engine for this specific PageState
         var pageTokens = PageTokenEngine(pageState);
 
-        var designSettings = ThemeBlueprints.FindAndNeutralize([ctxLight.ThemeSpell.Design, ctxLight.SettingsName]);
-        var ctx = new CmThemeContextFull(ctxLight.SettingsName, pageState, ctxLight.ThemeSpell, designSettings, pageTokens, ctxLight.Journal);
+        var blueprint = ThemeBlueprints.FindAndNeutralize([/*ctxLight.ThemeSpell.Design,*/ ctxLight.Name]);
+        var ctx = new CmThemeContextFull
+        {
+            Name = ctxLight.Name,
+            ThemeSpell = ctxLight.ThemeSpell,
+            Journal = ctxLight.Journal,
+
+            PageState = pageState,
+            PageTokens = pageTokens,
+            ThemeBlueprint = blueprint,
+        };
         _themeCtxFullCache[originalNameForCache] = ctx;
         return ctx;
     }

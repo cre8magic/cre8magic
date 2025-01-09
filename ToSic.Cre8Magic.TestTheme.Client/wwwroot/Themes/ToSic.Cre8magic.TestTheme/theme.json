@@ -36,7 +36,7 @@
     "default": {
       // Optional: Design Names with "=" mean they inherit / use the name already existing - in this case "default"
       //"design": "=",
-      "design": "funky",
+      //"design": "funky",
       "logo": "[Theme.Url]/assets/logo.svg",
 
       // Configure various parts of this theme
@@ -69,13 +69,16 @@
         "Admin": true
       }
     },
+    "funky": {
+      "@inherits": "default"
+    },
     "test-to-inherit-from": {
       "logo": "test.jpg",
       "design": "="
     },
     // The example below shows how the "Sidebar" configuration switches to a different menu
     // Layout showing the submenu in the sidebar, so we don't need to show more items in the main menu
-    "sidebar": {
+    "centered-sidebar": {
       // Re-use all previous settings
       "@inherits": "default",
       "parts": {
@@ -152,6 +155,16 @@
     "funky": {
       "@inherits": "default",
       "paneIsEmpty": "pane-is-empty settings-funky" // On/Off
+    },
+    "centered-sidebar": {
+      "@inherits": "default",
+      "paneIsEmpty": "pane-is-empty settings-centered-sidebar", // On/Off
+      "parts": {
+        // Sections - ATM "Main" only
+        "sectionMain": {
+          "id": "theme-page-main centered-sidebar"
+        }
+      }
     }
   },
 

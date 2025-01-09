@@ -31,12 +31,12 @@ internal class SettingsReader<TSettingsData>(
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
     /// </summary>
-    internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsSpecs specs, TSettingsData? priority = null, bool skipCache = true)
+    internal DataWithJournal<TSettingsData> FindAndMerge(FindSettingsNameSpecs nameSpecs, TSettingsData? priority = null, bool skipCache = true)
     {
-        var (bestPartName, journal) = specs.Context.NameResolver.FindBestNameAccordingToParts(specs);
+        var (bestPartName, journal) = nameSpecs.Context.NameResolver.FindBestNameAccordingToParts(nameSpecs);
 
         // var settingsName
-        var found = FindAndNeutralize([specs.SettingsName, bestPartName, specs.ThemeName], skipCache: skipCache);
+        var found = FindAndNeutralize([nameSpecs.SettingsName, bestPartName, nameSpecs.ThemeName], skipCache: skipCache);
         var part = MergeHelper.TryToMergeOrKeepPriority(priority, found)!;
 
         return new(part, journal);
@@ -52,11 +52,11 @@ internal class SettingsReader<TSettingsData>(
     internal TSettingsData FindAndNeutralize(string?[] names, bool skipCache = true)
     {
         // Create array of names to look up, the first one is the main name (specify type so clearly non-null)
-        var cleanNames = ((string[])[ ..names, Default ])
+        var cleanNames = ((string[])[ ..names!, Default ])
             .Where(s => s.HasText())
             .Select(s => s!.Trim())
             .Distinct()
-            .ToArray()!;
+            .ToArray();
 
         var mainName = cleanNames[0];
 
@@ -65,7 +65,7 @@ internal class SettingsReader<TSettingsData>(
             return cached2;
 
         // Get best matching part; returns null if nothing found
-        var priority = FindSettingsData(cleanNames);
+        var priority = FindInSourcesOrNull(cleanNames);
         switch (priority)
         {
             // Nothing found, return fallback
@@ -94,7 +94,7 @@ internal class SettingsReader<TSettingsData>(
         // Inner function to find settings and merge them
         TSettingsData FindSettingsAndTryMerge(TSettingsData priorityData, string nameToFind)
         {
-            var addition = FindSettingsData([nameToFind]);
+            var addition = FindInSourcesOrNull([nameToFind]);
             return addition == null
                 ? priorityData
                 : MergeHelper.TryToMergeOrKeepPriority(priorityData, addition)!;
@@ -103,10 +103,17 @@ internal class SettingsReader<TSettingsData>(
 
     private readonly Dictionary<string, TSettingsData> _cache = new(StringComparer.InvariantCultureIgnoreCase);
 
-    private TSettingsData? FindSettingsData(string[]? names)
+
+    /// <summary>
+    /// Find the settings in all possible sources.
+    /// </summary>
+    /// <param name="names"></param>
+    /// <returns></returns>
+    private TSettingsData? FindInSourcesOrNull(string[]? names)
     {
         // Make sure we have at least one name
-        if (names == null || names.Length == 0) names = [Default];
+        if (names == null || names.Length == 0)
+            names = [Default];
 
         // Get all spells-books (e.g. provided by code in theme, from JSON, etc.)
         var books = hasSpellsLibrary.Library;
@@ -120,7 +127,10 @@ internal class SettingsReader<TSettingsData>(
 
         foreach (var set in allSourcesAndNames)
         {
+            // Get the section using the helper which was given to this object
             var section = getSection(set.Book);
+
+            // Check if we can find a setting in this section and return
             if (section.TryGetValue(set.name, out var settings))
                 return settings;
         }

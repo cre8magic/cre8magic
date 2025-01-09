@@ -33,12 +33,12 @@ public abstract class MyThemeBase : MagicThemeBase
     /// The layout name which is used to lookup settings.
     /// The inheriting file is required to specify it. 
     /// </summary>
-    public abstract string Layout { get; }
+    public abstract string MagicName { get; }
 
     /// <summary>
     /// The ThemePackageSettings must be set in this class, so the Settings initializer can pick it up.
     /// </summary>
-    public override MagicThemePackage ThemePackage => field ??= new(new ThemeInfo(), Layout);
+    public override MagicThemePackage ThemePackage => field ??= new(new ThemeInfo(), MagicName);
 
     // Panes of the layout
     public const string PaneNameHeader = "Header";

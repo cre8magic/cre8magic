@@ -20,20 +20,20 @@ namespace ToSic.Cre8magic.Themes.Internal;
 internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicThemePartSettings> themeSettingsParts)
 {
     internal ThemePartNameResolver(CmThemeContext themeCtx)
-        : this(themeCtx.SettingsName, themeCtx.ThemeSpell.Parts)
+        : this(themeCtx.Name, themeCtx.ThemeSpell.Parts)
     { }
 
     /// <summary>
     /// Generic method to check for names, since it could be run on the Settings property or on the DesignSettings property
     /// </summary>
-    internal DataWithJournal<string> FindBestNameAccordingToParts(FindSettingsSpecs specs)
+    internal DataWithJournal<string> FindBestNameAccordingToParts(FindSettingsNameSpecs nameSpecs)
     {
-        var (initialName, journal) = PickBestSettingsName(specs.PartName, mainName);
+        var (initialName, journal) = PickBestSettingsName(nameSpecs.PartName, mainName);
 
         // Check if we have a name-remap to consider
         // If the first test fails, we try again with the prefix
         var betterName = themeSettingsParts.TryGetValue(initialName, out var part)
-            ? part.GetSettingName(specs.Section)
+            ? part.GetSettingName(nameSpecs.Section)
             : null;
 
         // If the better name wants to use the main config name ("=") then use that and exit
@@ -71,7 +71,7 @@ internal class ThemePartNameResolver(string mainName, Dictionary<string, MagicTh
         if (preferred.HasText())
             return new(preferred, new(journal, []));
 
-        // If we don't have a preferred name, then don't use the main name (could be "Sidebar" or something) but instead use Default
+        // We don't have a name yet. Use "Default"
         journal.Add($"Settings Name changed to '{MagicConstants.Default}'");
         return new(MagicConstants.Default, new(journal, []));
     }

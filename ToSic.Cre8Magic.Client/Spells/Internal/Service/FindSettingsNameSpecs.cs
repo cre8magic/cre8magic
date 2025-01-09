@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Spells.Internal;
 
-internal record FindSettingsSpecs(
+internal record FindSettingsNameSpecs(
     CmThemeContext Context,
     string? SettingsName,
     string? PartName,
@@ -12,12 +12,12 @@ internal record FindSettingsSpecs(
     ThemePartSectionEnum Section
     )
 {
-    public FindSettingsSpecs(CmThemeContext context, ISettingsForCodeUse? settings, ThemePartSectionEnum section)
+    public FindSettingsNameSpecs(CmThemeContext context, ISettingsForCodeUse? settings, ThemePartSectionEnum section)
         : this(
         context,
         section == ThemePartSectionEnum.Design ? settings?.DesignName : settings?.SettingsName,
         settings?.PartName,
-        context.SettingsName,
+        context.Name,
         section
         )
     { }

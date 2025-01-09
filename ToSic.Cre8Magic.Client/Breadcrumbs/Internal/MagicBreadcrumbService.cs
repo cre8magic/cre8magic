@@ -35,7 +35,7 @@ internal class MagicBreadcrumbService(IMagicSpellsService spellsSvc) : IMagicBre
     }
 
     private Data3WithJournal<MagicBreadcrumbSpell, CmThemeContext, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSpell? settings) =>
-        spellsSvc.GetBestSettingsAndDesignSettings(
+        spellsSvc.GetBestSpellAndBlueprints(
             pageState,
             settings,
             spellsSvc.Breadcrumbs,
