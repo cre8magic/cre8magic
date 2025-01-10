@@ -1,11 +1,12 @@
 ﻿using System.Collections;
+using ToSic.Cre8magic.Internal;
+using ToSic.Cre8magic.Internal.Logging;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Values.Internal;
 using ToSic.Cre8magic.Tailors;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Internal;
-using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 

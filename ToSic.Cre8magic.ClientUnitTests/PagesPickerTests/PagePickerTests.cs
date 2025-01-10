@@ -1,9 +1,9 @@
 ﻿using System.Text.Json;
 using ToSic.Cre8magic.ClientUnitTests.PagesData;
 using ToSic.Cre8magic.ClientUnitTests.Utils;
+using ToSic.Cre8magic.Internal.Logging;
 using ToSic.Cre8magic.Menus.Internal.PagePicker;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Utils.Logging;
 using Xunit.Abstractions;
 using PagesPickRuleParser = ToSic.Cre8magic.Menus.Internal.PagePicker.PagesPickRuleParser;
 

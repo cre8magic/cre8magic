@@ -1,4 +1,4 @@
-﻿using ToSic.Cre8magic.Utils.Logging;
+﻿using ToSic.Cre8magic.Internal.Logging;
 using Xunit.Abstractions;
 
 namespace ToSic.Cre8magic.ClientUnitTests.Utils;

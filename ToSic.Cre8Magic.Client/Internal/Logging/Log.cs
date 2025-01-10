@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Utils.Logging;
+﻿namespace ToSic.Cre8magic.Internal.Logging;
 
 /// <summary>
 /// Very trivial Logger - which is actually just a settings how to log.

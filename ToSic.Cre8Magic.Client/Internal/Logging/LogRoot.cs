@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ToSic.Cre8magic.Utils.Logging;
+namespace ToSic.Cre8magic.Internal.Logging;
 
 public class LogRoot
 {

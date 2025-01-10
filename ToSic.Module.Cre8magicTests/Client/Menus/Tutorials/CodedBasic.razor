@@ -1,15 +1,11 @@
+@inherits ComponentBase
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Pages
 @inject IMagicAct MagicAct
 
 @code{
     [CascadingParameter] public required PageState PageState { get; set; }
-}
 
-@RenderMenu(MagicAct.MenuKit(new() { Pick = "/+", PageState = PageState }).Root)
-
-@code
-{
     /// <summary>
     /// Render a Menu - and recursively render sub-menus
     /// </summary>
@@ -30,3 +26,5 @@
             }
         </ul>;
 }
+
+@RenderMenu(MagicAct.MenuKit(new() { Pick = "/+", PageState = PageState }).Root)

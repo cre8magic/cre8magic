@@ -10,7 +10,7 @@ TODO:
 *@
 @code
 {
-    const string FooterPrefix = ClassPrefix + "-footer";
+    const string FooterPrefix = ThemeConstants.ClassPrefix + "-footer";
 }
 <footer id="@FooterPrefix">
     @* TODO: @2tl - do we need this div? or can we put the class on the footer ? *@
@@ -34,7 +34,7 @@ TODO:
         </ul>
         <div class="@FooterPrefix-imprint">
             <ButtonLoginTextInvisible></ButtonLoginTextInvisible>
-            <MagicMenu Settings="new() { Name = ThemeInfo.MenuFooter }"></MagicMenu>
+            <MagicMenu Settings="new() { Name = ThemeConstants.MenuFooter }"></MagicMenu>
         </div>
     </div>
 </footer>

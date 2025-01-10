@@ -1,6 +1,7 @@
-﻿using static System.StringComparer;
+﻿using ToSic.Cre8magic.Utils.Internal;
+using static System.StringComparer;
 
-namespace ToSic.Cre8magic.Utils.Internal;
+namespace ToSic.Cre8magic.Internal;
 
 internal static class DictionaryExtensions
 {

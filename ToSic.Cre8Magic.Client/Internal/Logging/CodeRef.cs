@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace ToSic.Cre8magic.Utils.Logging;
+namespace ToSic.Cre8magic.Internal.Logging;
 
 /// <summary>
 /// Reference to code - containing the path to the file, the method name and the line in the code. 

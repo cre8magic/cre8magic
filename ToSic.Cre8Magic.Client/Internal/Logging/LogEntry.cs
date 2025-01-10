@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Utils.Internal;
 
-namespace ToSic.Cre8magic.Utils.Logging;
+namespace ToSic.Cre8magic.Internal.Logging;
 
 internal class LogEntry(ILog? log, string? message, int depth, CodeRef codeRef)
 {

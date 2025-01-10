@@ -22,7 +22,7 @@ Nice to know:       Most of the parts are again other controls (icon, navigation
     // var sitePages = SiteState.Pages;
 }
 @* The header containing Logo, Navigation etc. in Desktop and Mobile*@
-<nav id="@ClassPrefix-page-navigation" class="navbar navbar-expand-lg bg-white">
+<nav id="@ThemeConstants.ClassPrefix-page-navigation" class="navbar navbar-expand-lg bg-white">
     <div class="container d-flex justify-content-between align-items-center py-3">
         <HeaderLogo></HeaderLogo>
         
@@ -40,10 +40,10 @@ Nice to know:       Most of the parts are again other controls (icon, navigation
             <div class="offcanvas-body">
                 <div class="d-flex flex-column justify-content-end align-items-end flex-grow-1">
                     <div class="d-none d-lg-block">
-                        <MagicMenu Settings="new() { Name = ThemeInfo.MenuMain }"></MagicMenu>
+                        <MagicMenu Settings="new() { Name = ThemeConstants.MenuMain }"></MagicMenu>
                     </div>
                     <div class="d-block d-lg-none w-100">
-                        <MagicMenu Settings="new() { Name = ThemeInfo.MenuMobile }"></MagicMenu>
+                        <MagicMenu Settings="new() { Name = ThemeConstants.MenuMobile }"></MagicMenu>
                     </div>
                     <div class="d-flex order-lg-first">
                         <MagicLanguageMenu></MagicLanguageMenu>

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace ToSic.Cre8magic.Utils.Logging;
+namespace ToSic.Cre8magic.Internal.Logging;
 
 internal static class LogCallBaseExtensions
 {
