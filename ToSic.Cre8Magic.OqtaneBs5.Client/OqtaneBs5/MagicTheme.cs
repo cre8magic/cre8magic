@@ -13,9 +13,6 @@ namespace ToSic.Cre8magic.OqtaneBs5;
 /// <inheritdoc cref="OqtaneBasic.MagicTheme" />
 public abstract class MagicTheme: Oqtane.Themes.ThemeBase
 {
-    /// <inheritdoc cref="OqtaneBasic.MagicTheme.Name" />
-    public abstract override string Name { get; }
-
     /// <inheritdoc cref="OqtaneBasic.MagicTheme.ThemePackage" />
     public abstract MagicThemePackage ThemePackage { get; }
 

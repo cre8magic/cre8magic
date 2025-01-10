@@ -19,12 +19,6 @@ namespace ToSic.Cre8magic.OqtaneBasic;
 public abstract class MagicTheme : Oqtane.Themes.ThemeBase
 {
     /// <summary>
-    /// Name to show in the Theme-picker.
-    /// Must be set by each inheriting theme, which is why it's marked abstract to enforce this.
-    /// </summary>
-    public abstract override string Name { get; }
-
-    /// <summary>
     /// This contains the default settings which must be used in this theme.
     /// Any inheriting class must specify what it will be. 
     /// </summary>
