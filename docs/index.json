@@ -184,6 +184,11 @@
     "title": "Class Defaults | cre8magic",
     "keywords": "Class Defaults Namespace ToSic.Cre8magic.OqtaneBs5 Assembly ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll Default settings for Oqtane Bootstrap5 controls. public class Defaults Inheritance object Defaults Properties MagicMenuBlueprint public static MagicMenuBlueprint MagicMenuBlueprint { get; } Property Value MagicMenuBlueprint"
   },
+  "api/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.html": {
+    "href": "api/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.html",
+    "title": "Class DefaultsBs5 | cre8magic",
+    "keywords": "Class DefaultsBs5 Namespace ToSic.Cre8magic.OqtaneBs5 Assembly ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll Default settings for Oqtane Bootstrap5 controls. public class DefaultsBs5 Inheritance object DefaultsBs5 Properties MagicMenuBlueprint public MagicMenuBlueprint MagicMenuBlueprint { get; } Property Value MagicMenuBlueprint"
+  },
   "api/ToSic.Cre8magic.OqtaneBs5.MagicContainer.html": {
     "href": "api/ToSic.Cre8magic.OqtaneBs5.MagicContainer.html",
     "title": "Class MagicContainer | cre8magic",
@@ -212,7 +217,7 @@
   "api/ToSic.Cre8magic.OqtaneBs5.html": {
     "href": "api/ToSic.Cre8magic.OqtaneBs5.html",
     "title": "Namespace ToSic.Cre8magic.OqtaneBs5 | cre8magic",
-    "keywords": "Namespace ToSic.Cre8magic.OqtaneBs5 Namespaces ToSic.Cre8magic.OqtaneBs5.Debug Classes Defaults Default settings for Oqtane Bootstrap5 controls. MagicContainer The recommended base container for all themes which use cre8magic. It will simply remain invisible for the normal user, and except for a DIV containing some classes, it will not render anything. Admin-users will see a bit more, since the title etc. is necessary for the editing tools. MagicExceptions MagicLanguageMenu MagicMenu MagicOqtaneControlPanel"
+    "keywords": "Namespace ToSic.Cre8magic.OqtaneBs5 Namespaces ToSic.Cre8magic.OqtaneBs5.Debug Classes DefaultsBs5 Default settings for Oqtane Bootstrap5 controls. MagicContainer The recommended base container for all themes which use cre8magic. It will simply remain invisible for the normal user, and except for a DIV containing some classes, it will not render anything. Admin-users will see a bit more, since the title etc. is necessary for the editing tools. MagicExceptions MagicLanguageMenu MagicMenu MagicOqtaneControlPanel"
   },
   "api/ToSic.Cre8magic.PageContexts.IMagicPageContextKit.html": {
     "href": "api/ToSic.Cre8magic.PageContexts.IMagicPageContextKit.html",
@@ -329,10 +334,20 @@
     "title": "Namespace ToSic.Cre8magic.Spells.Settings | cre8magic",
     "keywords": "Namespace ToSic.Cre8magic.Spells.Settings Classes MagicSettingOnOff Special Setting containing a value to be used when a state is on or off. Typically used to specify strings to place in classes when something: is active is home etc."
   },
+  "api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html": {
+    "href": "api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html",
+    "title": "Class MagicSettingOnOff | cre8magic",
+    "keywords": "Class MagicSettingOnOff Namespace ToSic.Cre8magic.Spells.Values Assembly ToSic.Cre8magic.Client.Oqtane.dll Special Setting containing a value to be used when a state is on or off. Typically used to specify strings to place in classes when something: is active is home etc. [JsonConverter(typeof(SettingOnOffJsonConverter))] public record MagicSettingOnOff Inheritance object MagicSettingOnOff Constructors MagicSettingOnOff(string?, string?) public MagicSettingOnOff(string? on, string? off = null) Parameters on string off string Properties Off Value / Class to add if the setting is off public string? Off { get; init; } Property Value string On Value / Class to add if the setting is on public string? On { get; init; } Property Value string"
+  },
+  "api/ToSic.Cre8magic.Spells.Values.html": {
+    "href": "api/ToSic.Cre8magic.Spells.Values.html",
+    "title": "Namespace ToSic.Cre8magic.Spells.Values | cre8magic",
+    "keywords": "Namespace ToSic.Cre8magic.Spells.Values Classes MagicSettingOnOff Special Setting containing a value to be used when a state is on or off. Typically used to specify strings to place in classes when something: is active is home etc."
+  },
   "api/ToSic.Cre8magic.Spells.html": {
     "href": "api/ToSic.Cre8magic.Spells.html",
     "title": "Namespace ToSic.Cre8magic.Spells | cre8magic",
-    "keywords": "Namespace ToSic.Cre8magic.Spells Namespaces ToSic.Cre8magic.Spells.Debug ToSic.Cre8magic.Spells.Settings Classes MagicInheritsBase MagicSpellBase Internal base class containing all kinds of settings which all spells share. MagicSpellExtensions Extensions for working with MagicSettings, to make the API more fluent and easier to use. MagicSpellsBook This is a Spells Book; a catalog of all kinds of settings. It serves as a kind of database to manage all settings, which will usually be retrieved using a name. Interfaces IMagicSpellsProvider Provider to give settings. It is scoped, so anything added to it - typically in the Theme, will be available in all other components. IMagicSpellsProviderSection<TSettings> A provider for one type of settings."
+    "keywords": "Namespace ToSic.Cre8magic.Spells Namespaces ToSic.Cre8magic.Spells.Debug ToSic.Cre8magic.Spells.Values Classes MagicInheritsBase MagicSpellBase Internal base class containing all kinds of settings which all spells share. MagicSpellExtensions Extensions for working with MagicSettings, to make the API more fluent and easier to use. MagicSpellsBook This is a Spells Book; a catalog of all kinds of settings. It serves as a kind of database to manage all settings, which will usually be retrieved using a name. Interfaces IMagicSpellsProvider Provider to give settings. It is scoped, so anything added to it - typically in the Theme, will be available in all other components. IMagicSpellsProviderSection<TSettings> A provider for one type of settings."
   },
   "api/ToSic.Cre8magic.Tailors.IMagicTailor.html": {
     "href": "api/ToSic.Cre8magic.Tailors.IMagicTailor.html",

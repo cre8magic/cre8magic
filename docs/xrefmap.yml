@@ -1456,6 +1456,25 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.OqtaneBs5.Defaults.MagicMenuBlueprint
   nameWithType: Defaults.MagicMenuBlueprint
+- uid: ToSic.Cre8magic.OqtaneBs5.DefaultsBs5
+  name: DefaultsBs5
+  href: api/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.html
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.DefaultsBs5
+  fullName: ToSic.Cre8magic.OqtaneBs5.DefaultsBs5
+  nameWithType: DefaultsBs5
+- uid: ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.MagicMenuBlueprint
+  name: MagicMenuBlueprint
+  href: api/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.html#ToSic_Cre8magic_OqtaneBs5_DefaultsBs5_MagicMenuBlueprint
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.MagicMenuBlueprint
+  fullName: ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.MagicMenuBlueprint
+  nameWithType: DefaultsBs5.MagicMenuBlueprint
+- uid: ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.MagicMenuBlueprint*
+  name: MagicMenuBlueprint
+  href: api/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.html#ToSic_Cre8magic_OqtaneBs5_DefaultsBs5_MagicMenuBlueprint_
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.MagicMenuBlueprint
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.MagicMenuBlueprint
+  nameWithType: DefaultsBs5.MagicMenuBlueprint
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer
   name: MagicContainer
   href: api/ToSic.Cre8magic.OqtaneBs5.MagicContainer.html
@@ -3121,6 +3140,63 @@ references:
   commentId: Overload:ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On
   isSpec: "True"
   fullName: ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.On
+  nameWithType: MagicSettingOnOff.On
+- uid: ToSic.Cre8magic.Spells.Values
+  name: ToSic.Cre8magic.Spells.Values
+  href: api/ToSic.Cre8magic.Spells.Values.html
+  commentId: N:ToSic.Cre8magic.Spells.Values
+  fullName: ToSic.Cre8magic.Spells.Values
+  nameWithType: ToSic.Cre8magic.Spells.Values
+- uid: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff
+  name: MagicSettingOnOff
+  href: api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html
+  commentId: T:ToSic.Cre8magic.Spells.Values.MagicSettingOnOff
+  fullName: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff
+  nameWithType: MagicSettingOnOff
+- uid: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.#ctor(System.String,System.String)
+  name: MagicSettingOnOff(string?, string?)
+  href: api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Values_MagicSettingOnOff__ctor_System_String_System_String_
+  commentId: M:ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.MagicSettingOnOff(string?, string?)
+  fullName.vb: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.New(String, String)
+  nameWithType: MagicSettingOnOff.MagicSettingOnOff(string?, string?)
+  nameWithType.vb: MagicSettingOnOff.New(String, String)
+- uid: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.#ctor*
+  name: MagicSettingOnOff
+  href: api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Values_MagicSettingOnOff__ctor_
+  commentId: Overload:ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.MagicSettingOnOff
+  fullName.vb: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.New
+  nameWithType: MagicSettingOnOff.MagicSettingOnOff
+  nameWithType.vb: MagicSettingOnOff.New
+- uid: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.Off
+  name: Off
+  href: api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Values_MagicSettingOnOff_Off
+  commentId: P:ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.Off
+  fullName: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.Off
+  nameWithType: MagicSettingOnOff.Off
+- uid: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.Off*
+  name: Off
+  href: api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Values_MagicSettingOnOff_Off_
+  commentId: Overload:ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.Off
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.Off
+  nameWithType: MagicSettingOnOff.Off
+- uid: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.On
+  name: On
+  href: api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Values_MagicSettingOnOff_On
+  commentId: P:ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.On
+  fullName: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.On
+  nameWithType: MagicSettingOnOff.On
+- uid: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.On*
+  name: On
+  href: api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html#ToSic_Cre8magic_Spells_Values_MagicSettingOnOff_On_
+  commentId: Overload:ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.On
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.On
   nameWithType: MagicSettingOnOff.On
 - uid: ToSic.Cre8magic.Tailors
   name: ToSic.Cre8magic.Tailors
