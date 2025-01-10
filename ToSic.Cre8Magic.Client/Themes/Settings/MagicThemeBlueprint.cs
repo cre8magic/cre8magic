@@ -1,5 +1,5 @@
-﻿using ToSic.Cre8magic.Spells.Internal;
-using ToSic.Cre8magic.Spells.Values;
+﻿using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Values;
 using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Themes.Settings;

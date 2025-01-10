@@ -1,5 +1,5 @@
 ﻿using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Spells.Internal;
+using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Menus.Internal;
 

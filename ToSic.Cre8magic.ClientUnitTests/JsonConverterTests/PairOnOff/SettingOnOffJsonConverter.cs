@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using ToSic.Cre8magic.Spells.Values;
+using ToSic.Cre8magic.Settings.Values;
 using static ToSic.Cre8magic.ClientUnitTests.JsonConverterTests.PairOnOff.OnOffConverterHelpers;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 

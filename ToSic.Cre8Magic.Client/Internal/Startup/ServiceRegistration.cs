@@ -18,11 +18,11 @@ using ToSic.Cre8magic.Users.Internal;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Containers.Internal;
 using ToSic.Cre8magic.Links.Internal;
-using ToSic.Cre8magic.Spells;
-using ToSic.Cre8magic.Spells.Internal;
-using ToSic.Cre8magic.Spells.Internal.Json;
-using ToSic.Cre8magic.Spells.Internal.Providers;
-using ToSic.Cre8magic.Spells.Internal.Sources;
+using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Settings.Internal.Json;
+using ToSic.Cre8magic.Settings.Internal.Providers;
+using ToSic.Cre8magic.Settings.Internal.Sources;
 
 // ReSharper disable InconsistentNaming
 

@@ -5,7 +5,7 @@ using Oqtane.Themes;
 using Oqtane.UI;
 using ToSic.Cre8magic.Act;
 using ToSic.Cre8magic.Containers;
-using ToSic.Cre8magic.Spells;
+using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.OqtaneBs5;
 

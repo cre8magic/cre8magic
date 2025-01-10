@@ -1,4 +1,4 @@
-﻿using ToSic.Cre8magic.Spells.Values;
+﻿using ToSic.Cre8magic.Settings.Values;
 
 namespace ToSic.Cre8magic.ClientUnitTests.JsonConverterTests.PairOnOff;
 

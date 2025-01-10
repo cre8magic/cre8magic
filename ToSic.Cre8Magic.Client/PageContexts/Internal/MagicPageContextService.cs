@@ -1,5 +1,5 @@
 ﻿using Oqtane.UI;
-using ToSic.Cre8magic.Spells.Internal;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.PageContexts.Internal;

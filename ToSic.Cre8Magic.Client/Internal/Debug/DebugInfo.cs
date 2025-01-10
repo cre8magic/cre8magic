@@ -1,4 +1,4 @@
-﻿using ToSic.Cre8magic.Spells;
+﻿using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Internal.Debug;
 

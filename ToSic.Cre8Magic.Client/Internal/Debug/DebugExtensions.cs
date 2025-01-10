@@ -1,6 +1,6 @@
 ﻿using Oqtane.UI;
 using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.Spells.Internal;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 
 namespace ToSic.Cre8magic.Internal;
