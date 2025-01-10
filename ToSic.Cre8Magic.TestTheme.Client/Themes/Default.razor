@@ -79,10 +79,11 @@ Nice to know:
             return string.IsNullOrWhiteSpace(cookie) || cookie == "default"
                 ? base.ThemePackage
                 : cookie == "custom-set"
-                    ? base.ThemePackage with { Defaults = ThemeSettingsForTests.Book, SettingsJsonFile = "" }
+                    ? field ??= base.ThemePackage with { Defaults = ThemeSettingsForTests.Book, SettingsJsonFile = "" }
                     : null;
         }
     }
+
     #endregion
 
     #region DynamicComponents for Testing

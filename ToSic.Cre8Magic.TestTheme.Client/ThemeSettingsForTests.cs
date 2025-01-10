@@ -7,39 +7,27 @@ internal class ThemeSettingsForTests
     public static MagicBook Book => new()
     {
         Source = nameof(Book),
-        Themes = new()
+        Chapter = new()
         {
+            Theme = new()
             {
-                "default", new()
-                {
-                    Logo = $"{MagicTokens.ThemeUrl}/assets/LOGO.svg",
-                }
+                Logo = $"{MagicTokens.ThemeUrl}/assets/LOGO.svg",
             },
-        },
-        ThemeBlueprints = new()
-        {
+            ThemeBlueprint = new()
             {
-                "default", new()
+                Parts = new()
                 {
-                    Parts = new()
-                    {
-                        { "logo", new() { Classes = "logo logo-manual" } }
-                    },
-                }
+                    { "logo", new() { Classes = "logo logo-manual" } }
+                },
             },
-        },
-        Languages = new()
-        {
+            Language = new()
             {
-                "default", new()
+                Languages = new()
                 {
-                    Languages = new()
-                    {
-                        { "en", new() { Label = $"En {nameof(Book)}", Description = "English from Code" } },
-                        { "de", new() { Label = $"DE {nameof(Book)}", Description = "DE from Code" } },
-                    },
-                }
-            },
+                    { "en", new() { Label = $"En {nameof(Book)}", Description = "English from Code" } },
+                    { "de", new() { Label = $"DE {nameof(Book)}", Description = "DE from Code" } },
+                },
+            }
         }
     };
 }

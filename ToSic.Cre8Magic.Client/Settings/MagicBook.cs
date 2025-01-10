@@ -23,8 +23,35 @@ public record MagicBook: IHasDebugSettings
     /// </summary>
     public MagicBook() { }
 
+    public MagicBook(MagicChapter chapter)
+    {
+        LoadChapter(chapter);
+    }
 
-    public const string SourceDefault = "Unknown";
+    public MagicChapter Chapter { init => LoadChapter(value); }
+
+    public IEnumerable<MagicChapter> Chapters { init => value?.ToList().ForEach(LoadChapter); }
+
+    private void LoadChapter(MagicChapter? chapter)
+    {
+        if (chapter == null) return;
+
+        var name = string.IsNullOrWhiteSpace(chapter.Name) ? "default" : chapter.Name;
+        if (chapter.Theme != null) Themes[name] = chapter.Theme;
+        if (chapter.ThemeBlueprint != null) ThemeBlueprints[name] = chapter.ThemeBlueprint;
+        if (chapter.Analytics != null) Analytics[name] = chapter.Analytics;
+        if (chapter.Breadcrumb != null) Breadcrumbs[name] = chapter.Breadcrumb;
+        if (chapter.BreadcrumbBlueprint != null) BreadcrumbBlueprints[name] = chapter.BreadcrumbBlueprint;
+        if (chapter.Container != null) Containers[name] = chapter.Container;
+        if (chapter.ContainerBlueprint != null) ContainerBlueprints[name] = chapter.ContainerBlueprint;
+        if (chapter.Language != null) Languages[name] = chapter.Language;
+        if (chapter.LanguageBlueprint != null) LanguageBlueprints[name] = chapter.LanguageBlueprint;
+        if (chapter.Menu != null) Menus[name] = chapter.Menu;
+        if (chapter.MenuBlueprint != null) MenuBlueprints[name] = chapter.MenuBlueprint;
+        if (chapter.PageContext != null) PageContexts[name] = chapter.PageContext;
+    }
+
+    internal const string SourceDefault = "Unknown";
     /// <summary>
     /// Version number when loading from JSON to verify it's what we expect
     /// </summary>
@@ -89,16 +116,16 @@ public record MagicBook: IHasDebugSettings
     public Dictionary<string, MagicMenuSettings> Menus { get; init; } = new(InvariantCultureIgnoreCase);
 
     /// <summary>
-    /// The menu definitions
-    /// </summary>
-    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicPageContextSettings>))]
-    public Dictionary<string, MagicPageContextSettings> PageContexts { get; init; } = new(InvariantCultureIgnoreCase);
-
-    /// <summary>
     /// Design definitions of the menu
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicMenuBlueprint>))]
     public Dictionary<string, MagicMenuBlueprint> MenuBlueprints { get; init; } = new(InvariantCultureIgnoreCase);
+
+    /// <summary>
+    /// The menu definitions
+    /// </summary>
+    [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicPageContextSettings>))]
+    public Dictionary<string, MagicPageContextSettings> PageContexts { get; init; } = new(InvariantCultureIgnoreCase);
 
     internal static MagicBook Fallback = new()
     {
