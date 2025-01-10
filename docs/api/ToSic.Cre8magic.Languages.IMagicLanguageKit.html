@@ -98,7 +98,7 @@ Interface IMagicLanguageKit  <a class="header-action link-secondary" title="View
   </div>
 
   <div class="markdown summary"><p>The Kit to Show language menus in the UI.</p>
-<p>You can get it by <code>@inject</code> / <code>[Inject]</code>-ing the <a class="xref" href="ToSic.Cre8magic.Act.IMagicAct.html">IMagicAct</a> and calling the <a class="xref" href="ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSpell_">LanguageKit(MagicLanguageSpell?)</a>.</p>
+<p>You can get it by <code>@inject</code> / <code>[Inject]</code>-ing the <a class="xref" href="ToSic.Cre8magic.Act.IMagicAct.html">IMagicAct</a> and calling the <a class="xref" href="ToSic.Cre8magic.Act.IMagicAct.html#ToSic_Cre8magic_Act_IMagicAct_LanguageKit_ToSic_Cre8magic_Languages_MagicLanguageSettings_">LanguageKit(MagicLanguageSettings?)</a>.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -154,6 +154,37 @@ Interface IMagicLanguageKit  <a class="header-action link-secondary" title="View
 
 
 
+  <a id="ToSic_Cre8magic_Languages_IMagicLanguageKit_Settings_" data-uid="ToSic.Cre8magic.Languages.IMagicLanguageKit.Settings*"></a>
+
+  <h3 id="ToSic_Cre8magic_Languages_IMagicLanguageKit_Settings" data-uid="ToSic.Cre8magic.Languages.IMagicLanguageKit.Settings">
+  Settings
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">MagicLanguageSettings Settings { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettings.html">MagicLanguageSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="ToSic_Cre8magic_Languages_IMagicLanguageKit_Show_" data-uid="ToSic.Cre8magic.Languages.IMagicLanguageKit.Show*"></a>
 
   <h3 id="ToSic_Cre8magic_Languages_IMagicLanguageKit_Show" data-uid="ToSic.Cre8magic.Languages.IMagicLanguageKit.Show">
@@ -176,37 +207,6 @@ Interface IMagicLanguageKit  <a class="header-action link-secondary" title="View
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><span class="xref">bool</span></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="ToSic_Cre8magic_Languages_IMagicLanguageKit_Spell_" data-uid="ToSic.Cre8magic.Languages.IMagicLanguageKit.Spell*"></a>
-
-  <h3 id="ToSic_Cre8magic_Languages_IMagicLanguageKit_Spell" data-uid="ToSic.Cre8magic.Languages.IMagicLanguageKit.Spell">
-  Spell
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Languages/IMagicLanguageKit.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">MagicLanguageSpell Spell { get; init; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSpell.html">MagicLanguageSpell</a></dt>
     <dd></dd>
   </dl>
 

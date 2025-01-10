@@ -104,9 +104,9 @@ This name is used to look up the settings for the part.</p>
 <p>Let's look at a theme which has the name <code>MainMenu</code>.</p>
 <pre><code class="lang-html">&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;
 </code></pre>
-<p>The system will then use the <strong>MagicSpellsBook</strong> in the <strong>MagicThemePackage</strong> and look for:</p>
+<p>The system will then use the <strong>MagicBook</strong> in the <strong>MagicThemePackage</strong> and look for:</p>
 <ul>
-<li>Menus (Spells) with the name <code>MainMenu</code></li>
+<li>Menus (Settings) with the name <code>MainMenu</code></li>
 <li>MenuBlueprints with the name <code>MainMenu</code></li>
 </ul>
 <p>These will then be used to create the menu.</p>
@@ -118,14 +118,14 @@ In this case it could be that the <code>MainMenu</code> is different for each va
 </code></pre>
 <p>...but the Settings-Lookup <em>can</em> have an additional step:</p>
 <ol>
-<li>Check the <strong>ThemeSpell</strong> in the <strong>SpellBook</strong> and look at the Parts-Map</li>
+<li>Check the <strong>ThemeSettings</strong> in the <strong>Book</strong> and look at the Parts-Map</li>
 <li>If the <code>MainMenu</code> is found in the Map, then check if there are renames. Let's assume that
 <ol>
-<li>The <code>FixedWidth</code> theme maps the design to <code>MainMenuFixedWidth</code> and leaves the Spell-Settings as is</li>
+<li>The <code>FixedWidth</code> theme maps the design to <code>MainMenuFixedWidth</code> and leaves the Settings as is</li>
 <li>The <code>FullScreen</code> leaves everything as is</li>
 </ol>
 </li>
-<li>The new names are then used to find the Spells and Blueprints</li>
+<li>The new names are then used to find the Settings and Blueprints</li>
 </ol>
 <h2 id="notes--wip">Notes / WIP</h2>
 <h3 id="scenario-no-lookup---probably-no-name-should-be-provided">Scenario: No Lookup - probably no name should be provided?</h3>
@@ -142,7 +142,7 @@ In this case it could be that the <code>MainMenu</code> is different for each va
 </ol>
 <h3 id="scenario-lookup-every-section-with-exact-names-and-maybe-merge---probably-all-names-should-be-provided">Scenario: Lookup every section with Exact Names and maybe Merge - probably all names should be provided</h3>
 <ol>
-<li>Lookup is desired, by exact names - Spell &amp; Blueprint</li>
+<li>Lookup is desired, by exact names - Settings &amp; Blueprint</li>
 <li>If section name not provided, use main-name...</li>
 <li>If not found, just use empty</li>
 <li>Fallback values should be applied if anything is missing</li>

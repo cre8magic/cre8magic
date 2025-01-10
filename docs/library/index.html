@@ -114,17 +114,16 @@ In this case:
  - 1 is home
  - 5 is a hidden page in the navigation (hence the !), of which want to show the children
 --&gt;
-&lt;MagicMenu Spell='new() { Pick = &quot;1, 5!/&quot; }' /&gt;
+&lt;MagicMenu Settings='new() { Pick = &quot;1, 5!/&quot; }' /&gt;
 </code></pre>
 <p>Now let's assume you need to <em>Tailor</em> the menu a bit more using a <em>Blueprint</em>.
 We need to add 'sys-nav' to the class of the <code>&lt;ul&gt;</code>:</p>
-<pre><code class="lang-razor">&lt;MagicMenu Spell='new() { Pick = &quot;1, 5!/&quot; }' Blueprint='new() { Parts = new() { { &quot;ul&quot;, new() { Classes = &quot;sys-nav&quot; }}}}' /&gt;
+<pre><code class="lang-razor">&lt;MagicMenu Settings='new() { Pick = &quot;1, 5!/&quot; }' Blueprint='new() { Parts = new() { { &quot;ul&quot;, new() { Classes = &quot;sys-nav&quot; }}}}' /&gt;
 </code></pre>
-<p>Then again, let's place all these settings in a central location called the <strong>Spell Book</strong>
+<p>Then again, let's place all these settings in a central location called the <strong>Settings Book</strong>
 and just name this menu part &quot;System-Menu&quot;:</p>
 <pre><code class="lang-html">&lt;MagicMenu Name=&quot;System-Menu&quot; /&gt;
 </code></pre>
-<p>TODO: Name - maybe something better to keep BluePrint / Spell-Book separate?</p>
 <ul>
 <li>By just having a name, and no parts...</li>
 <li>Maybe rename the theme parts a <code>PartMap</code> or <code>NameMap</code> or <code>Rename</code> for the special cases</li>
@@ -187,11 +186,9 @@ and just name this menu part &quot;System-Menu&quot;:</p>
 </li>
 <li><p>Magic Tailors</p>
 </li>
-<li><p>Magic Spells</p>
+<li><p>Magic Settings</p>
 </li>
-<li><p>Magic Spells Book</p>
-</li>
-<li><p>Magic Meta-Settings - needs better name / Magic Spells</p>
+<li><p>Magic Book</p>
 </li>
 </ol>
 <h2 id="history">History</h2>

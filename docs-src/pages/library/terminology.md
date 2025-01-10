@@ -4,7 +4,7 @@
 * MagicAct
 * Kit
 
-* Settings / Spell ?
+* Settings
 * Name
 * ThemePackage
 * Blueprint

@@ -128,7 +128,7 @@ This code explained:
 1. `...OqtaneBasic` is the namespace for controls without special presets.
 1. `<MagicMenu .../>` is a Blazor component provided by **cre8magic ♾️**
 1. The `Settings="..."` attribute is a parameter which is passed to the component.
-    1. It expects a [](xref:ToSic.Cre8magic.Menus.MagicMenuSpell) object.
+    1. It expects a [](xref:ToSic.Cre8magic.Menus.MagicMenuSettings) object.
     1. Since Blazor knows the expected type, you can shorten it as `new() { ... }`.
     1. The `Pick` determines what pages to show in this menu.
     In this case, it's only the top-level pages, specified by `/` (`/+` would get level 1 & 2).
@@ -503,14 +503,14 @@ So these are the real-life challenges we wanted to solve:
 These are the main settings.
 
 1. Settings for loading the configuration elsewhere
-    1. `Name` - name of the settings to load from the SpellBook under `Menus` (or `menus` in JSON)
+    1. `Name` - name of the settings to load from the Book under `Menus` (or `menus` in JSON)
 1. Settings to specify what to show
     1. `Pick` - where to start, eg. `*` for root, `.` for current page, `42` for page 42
     1. ~~`Tree`~~ (_future_): ability to provide an exact structure of pages in the code for processing
 1. Settings to specify how to show
     1. Variant - it is up to the code do determine what do do with this.
         The `MagicMenu` 🧩 currently supports `Vertical` for a sidebar, `Horizontal` for a top menu and will create different outputs like collapsing features.
-    1. `Blueprint` - settings for the tailor in the SpellBook configuration under `MenuBlueprints` (or `menuBlueprints` in JSON)
+    1. `Blueprint` - settings for the tailor in the Book configuration under `MenuBlueprints` (or `menuBlueprints` in JSON)
 1. Settings to specify Context
     1. PageState - required IF it is not already broadcast by the theme
 

@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace ToSic.Cre8magic.Menus | cre8magic </title>
+      <title>Namespace ToSic.Cre8magic.Settings.Providers | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace ToSic.Cre8magic.Menus | cre8magic ">
+      <meta name="title" content="Namespace ToSic.Cre8magic.Settings.Providers | cre8magic ">
       
       
       <link rel="icon" href="../assets/favicon.ico">
@@ -84,33 +84,27 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ToSic.Cre8magic.Menus">
+        <article data-uid="ToSic.Cre8magic.Settings.Providers">
 
-  <h1 id="ToSic_Cre8magic_Menus" data-uid="ToSic.Cre8magic.Menus" class="text-break">Namespace ToSic.Cre8magic.Menus</h1>
+  <h1 id="ToSic_Cre8magic_Settings_Providers" data-uid="ToSic.Cre8magic.Settings.Providers" class="text-break">Namespace ToSic.Cre8magic.Settings.Providers</h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
 
-    <h3 id="classes">
-Classes
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuBlueprint.html">MagicMenuBlueprint</a></dt>
-      <dd><p>Menu Design Blueprint</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></dt>
-      <dd><p>The raw settings for a menu, in a way which can be stored elsewhere.</p>
-<p>This is later augmented with additional information which only code can provide, in the <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a></p>
-</dd>
-    </dl>
     <h3 id="interfaces">
 Interfaces
 </h3>
     <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.Menus.IMagicMenuKit.html">IMagicMenuKit</a></dt>
-      <dd></dd>
+      <dt><a class="xref" href="ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider.html">IMagicSettingsProvider</a></dt>
+      <dd><p>Provider to give settings.</p>
+<p>It is scoped, so anything added to it - typically in the Theme,
+will be available in all other components.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="ToSic.Cre8magic.Settings.Providers.IMagicSettingsProviderSection-1.html">IMagicSettingsProviderSection&lt;TSettings&gt;</a></dt>
+      <dd><p>A provider for one type of settings.</p>
+</dd>
     </dl>
 
 

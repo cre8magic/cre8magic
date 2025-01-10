@@ -136,19 +136,19 @@ which usually needs the <code>PageState</code> to figure out the context.</p>
 <h3 id="pass-the-pagestate-to-the-magicact-in-the-call">Pass the PageState to the MagicAct in the Call</h3>
 <p>Since there will be various scenarios where you need to pass the <code>PageState</code> to the <code>MagicAct</code>,
 we have created a few ways to do this.</p>
-<p>The most simple one creates a new <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSpell.html">MagicMenuSpell</a> and sets the <code>PageState</code> property:</p>
+<p>The most simple one creates a new <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> and sets the <code>PageState</code> property:</p>
 <pre><code class="lang-csharp">@{
   var menuKit = MagicAct.MenuKit(new() { PageState = PageState });
 }
 </code></pre>
-<p>In other scenarios you may already have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSpell.html">MagicMenuSpell</a> object,
+<p>In other scenarios you may already have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object,
 but want to extend it with the <code>PageState</code>:</p>
 <pre><code class="lang-csharp">@code {
   // The PageState provided by Oqtane
   [CascadingParameter] PageState PageState { get; set; }
 
   // The Settings handed into this component as a required parameter (so it's never null)
-  [Parameter, EditorRequired] MagicMenuSpell Settings { get; set; }
+  [Parameter, EditorRequired] MagicMenuSettings Settings { get; set; }
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax
@@ -160,7 +160,7 @@ but want to extend it with the <code>PageState</code>:</p>
 <p>The snippet above uses the <code>with</code> statement to create a new object with the <code>PageState</code> property set.
 This is a core feature of the newer C# languages, and records are used extensively in cre8magic.</p>
 </div>
-<p>But the most common scenario is that you <em>might</em> have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSpell.html">MagicMenuSpell</a> object.
+<p>But the most common scenario is that you <em>might</em> have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object.
 Since it could also be null, the <code>with</code> statement above would fail.
 To make things easier, we created an extension method to allow this syntax:</p>
 <pre><code class="lang-csharp">@code {
@@ -168,7 +168,7 @@ To make things easier, we created an extension method to allow this syntax:</p>
   [CascadingParameter] PageState PageState { get; set; }
 
   // The Settings handed into this component; NOT required, so it could be null
-  [Parameter] MagicMenuSpell? Settings { get; set; }
+  [Parameter] MagicMenuSettings? Settings { get; set; }
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax
@@ -223,7 +223,7 @@ You can now write this:</p>
   [CascadingParameter] PageState PageState { get; set; }
 
   // The Settings handed into this component; NOT required, so it could be null
-  [Parameter] MagicMenuSpell? Settings { get; set; }
+  [Parameter] MagicMenuSettings? Settings { get; set; }
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax

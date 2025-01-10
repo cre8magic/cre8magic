@@ -202,7 +202,7 @@ especially with the help of the  <strong>MagicMenuKit 🧰</strong>.</li>
 <li><code>&lt;MagicMenu .../&gt;</code> is a Blazor component provided by <strong>cre8magic ♾️</strong></li>
 <li>The <code>Settings=&quot;...&quot;</code> attribute is a parameter which is passed to the component.
 <ol>
-<li>It expects a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSpell.html">MagicMenuSpell</a> object.</li>
+<li>It expects a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object.</li>
 <li>Since Blazor knows the expected type, you can shorten it as <code>new() { ... }</code>.</li>
 <li>The <code>Pick</code> determines what pages to show in this menu.
 In this case, it's only the top-level pages, specified by <code>/</code> (<code>/+</code> would get level 1 &amp; 2).</li>
@@ -604,7 +604,7 @@ So these are the real-life challenges we wanted to solve:</p>
 <ol>
 <li>Settings for loading the configuration elsewhere
 <ol>
-<li><code>Name</code> - name of the settings to load from the SpellBook under <code>Menus</code> (or <code>menus</code> in JSON)</li>
+<li><code>Name</code> - name of the settings to load from the Book under <code>Menus</code> (or <code>menus</code> in JSON)</li>
 </ol>
 </li>
 <li>Settings to specify what to show
@@ -617,7 +617,7 @@ So these are the real-life challenges we wanted to solve:</p>
 <ol>
 <li>Variant - it is up to the code do determine what do do with this.
 The <code>MagicMenu</code> 🧩 currently supports <code>Vertical</code> for a sidebar, <code>Horizontal</code> for a top menu and will create different outputs like collapsing features.</li>
-<li><code>Blueprint</code> - settings for the tailor in the SpellBook configuration under <code>MenuBlueprints</code> (or <code>menuBlueprints</code> in JSON)</li>
+<li><code>Blueprint</code> - settings for the tailor in the Book configuration under <code>MenuBlueprints</code> (or <code>menuBlueprints</code> in JSON)</li>
 </ol>
 </li>
 <li>Settings to specify Context

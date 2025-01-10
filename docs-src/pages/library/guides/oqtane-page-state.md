@@ -58,7 +58,7 @@ There are two ways that the `MagicAct` can get the `PageState`:
 Since there will be various scenarios where you need to pass the `PageState` to the `MagicAct`,
 we have created a few ways to do this.
 
-The most simple one creates a new [](xref:ToSic.Cre8magic.Menus.MagicMenuSpell) and sets the `PageState` property:
+The most simple one creates a new [](xref:ToSic.Cre8magic.Menus.MagicMenuSettings) and sets the `PageState` property:
 
 ```csharp
 @{
@@ -66,7 +66,7 @@ The most simple one creates a new [](xref:ToSic.Cre8magic.Menus.MagicMenuSpell) 
 }
 ```
 
-In other scenarios you may already have a [](xref:ToSic.Cre8magic.Menus.MagicMenuSpell) object,
+In other scenarios you may already have a [](xref:ToSic.Cre8magic.Menus.MagicMenuSettings) object,
 but want to extend it with the `PageState`:
 
 ```csharp
@@ -75,7 +75,7 @@ but want to extend it with the `PageState`:
   [CascadingParameter] PageState PageState { get; set; }
 
   // The Settings handed into this component as a required parameter (so it's never null)
-  [Parameter, EditorRequired] MagicMenuSpell Settings { get; set; }
+  [Parameter, EditorRequired] MagicMenuSettings Settings { get; set; }
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax
@@ -87,7 +87,7 @@ but want to extend it with the `PageState`:
 > The snippet above uses the `with` statement to create a new object with the `PageState` property set.
 > This is a core feature of the newer C# languages, and records are used extensively in cre8magic.
 
-But the most common scenario is that you _might_ have a [](xref:ToSic.Cre8magic.Menus.MagicMenuSpell) object.
+But the most common scenario is that you _might_ have a [](xref:ToSic.Cre8magic.Menus.MagicMenuSettings) object.
 Since it could also be null, the `with` statement above would fail.
 To make things easier, we created an extension method to allow this syntax:
 
@@ -97,7 +97,7 @@ To make things easier, we created an extension method to allow this syntax:
   [CascadingParameter] PageState PageState { get; set; }
 
   // The Settings handed into this component; NOT required, so it could be null
-  [Parameter] MagicMenuSpell? Settings { get; set; }
+  [Parameter] MagicMenuSettings? Settings { get; set; }
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax
@@ -164,7 +164,7 @@ You can now write this:
   [CascadingParameter] PageState PageState { get; set; }
 
   // The Settings handed into this component; NOT required, so it could be null
-  [Parameter] MagicMenuSpell? Settings { get; set; }
+  [Parameter] MagicMenuSettings? Settings { get; set; }
 }
 @{
   // Extend the existing settings with the PageState using the records-with syntax

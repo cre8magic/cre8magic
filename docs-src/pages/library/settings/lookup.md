@@ -29,9 +29,9 @@ Let's look at a theme which has the name `MainMenu`.
 <MagicMenu Name="MainMenu" />
 ```
 
-The system will then use the **MagicSpellsBook** in the **MagicThemePackage** and look for:
+The system will then use the **MagicBook** in the **MagicThemePackage** and look for:
 
-* Menus (Spells) with the name `MainMenu`
+* Menus (Settings) with the name `MainMenu`
 * MenuBlueprints with the name `MainMenu`
 
 These will then be used to create the menu.
@@ -49,11 +49,11 @@ In most of these cases, the Razor will actually stay the same:
 
 ...but the Settings-Lookup _can_ have an additional step:
 
-1. Check the **ThemeSpell** in the **SpellBook** and look at the Parts-Map
+1. Check the **ThemeSettings** in the **Book** and look at the Parts-Map
 1. If the `MainMenu` is found in the Map, then check if there are renames. Let's assume that
-    1. The `FixedWidth` theme maps the design to `MainMenuFixedWidth` and leaves the Spell-Settings as is
+    1. The `FixedWidth` theme maps the design to `MainMenuFixedWidth` and leaves the Settings as is
     1. The `FullScreen` leaves everything as is
-1. The new names are then used to find the Spells and Blueprints
+1. The new names are then used to find the Settings and Blueprints
 
 
 
@@ -74,7 +74,7 @@ Code contains all settings
 
 ### Scenario: Lookup every section with Exact Names and maybe Merge - probably all names should be provided
 
-1. Lookup is desired, by exact names - Spell & Blueprint
+1. Lookup is desired, by exact names - Settings & Blueprint
 1. If section name not provided, use main-name...
 1. If not found, just use empty
 1. Fallback values should be applied if anything is missing
