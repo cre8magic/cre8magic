@@ -1,7 +1,6 @@
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.Menus.Internal
-@using ToSic.Cre8magic.Pages.Internal
 @using ToSic.Cre8magic.OqtaneBs5.Debug
 @using ToSic.Cre8magic.OqtaneBs5
 @using ToSic.Cre8magic.Settings
@@ -14,20 +13,7 @@
     // Get the current environment - separate step, as we may change the mechanics later
     var currentEnv = TestParameters.EnvCurrent;
 
-    // var topLevelWithSubpagesId = TestParameters.TopLevelWithSubpagesIdDic[currentEnv];
-
-    // var topLevelThreePages = string.Join(", ", MenuTestData.DicTopLevelThreePage[currentEnv]);
-
-    // var restrictPossiblePages = PageSvc
-    //     .GetPages(PageState, MenuTestData.DicRestrictPages[currentEnv])
-    //     .ToList();
-
     MenuSvc.NoInheritSettingsWip = true;
-
-    // Default menu designer to be used in most tests here
-    // var basicTailor = new BasicMenuTailor();
-
-    // var pageStateDebug = PageState.ToProxy(true);
 
     MagicAct.UsePageState(PageState);
 }
@@ -72,8 +58,8 @@
     <hr />
     
     <h2>OqtaneBasic.MagicMenu empty</h2>
-    @* <ToSic.Cre8magic.OqtaneBasic.MagicMenu/> *@
-    @* 
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu></ToSic.Cre8magic.OqtaneBasic.MagicMenu>
+    
     <h2>OqtaneBasic.MagicMenu <code>/</code></h2>
     <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/" }'/>
 
@@ -82,12 +68,12 @@
     <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/+" }'/>
 
     <h2>OqtaneBasic.MagicMenu <code>/+ BS5</code></h2>
-    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/+", Blueprint = new MagicMenuBlueprintBs5() }'/>
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/+", Blueprint = new DefaultsBs5().MagicMenuBlueprint }'/>
 
     <h2>OqtaneBasic.MagicMenu <code>/+ </code> + <em>Inline Blueprint!</em></h2>
 
-     *@
-    @* <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/", Blueprint = SimpleBlueprint()}'/> *@
+    
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/", Blueprint = SimpleBlueprint()}'/>
     @code
     {
         MagicMenuBlueprint SimpleBlueprint() => new()

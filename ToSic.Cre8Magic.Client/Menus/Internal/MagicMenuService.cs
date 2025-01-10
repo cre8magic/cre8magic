@@ -17,7 +17,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
     public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)
     {
         var (newSettings, journal) = NoInheritSettingsWip
-            ? new(settings ?? new() /*{ Blueprint = MagicMenuBlueprint.Defaults.Fallback }*/, new())
+            ? new(settings ?? new(), new())
             : MergeSettings(pageState, settings);
 
         // Transfer Logs from Tree creation to the current log
