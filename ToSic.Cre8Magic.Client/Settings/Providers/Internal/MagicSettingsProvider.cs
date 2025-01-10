@@ -1,4 +1,6 @@
-﻿using ToSic.Cre8magic.Analytics;
+﻿using System.Dynamic;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Breadcrumbs;
 using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Internal.Journal;
@@ -20,9 +22,11 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicBooksSource
     {
         var partsNoData = AllSources.All(source => source?.HasValues != true);
         if (partsNoData)
-            return _book == null
-                ? []
-                : [new(_book, new())];
+            return BookFromChapters != null
+                ? [new(BookFromChapters, new())]
+                : _book == null
+                    ? []
+                    : [new(_book, new())];
 
         var book = _book ?? new MagicBook();
 
@@ -41,6 +45,9 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicBooksSource
                 Themes = _themes?.Values != null ? new(_themes.Values) : book.Themes,
             };
 
+        if (BookFromChapters != null)
+            book = Merge([book, BookFromChapters]);
+
         return [new(book, new())];
     }
 
@@ -48,6 +55,8 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicBooksSource
     {
         foreach (var source in AllSources) 
             source?.Reset();
+        BookFromChapters = null;
+        Chapters.Clear();
     }
 
     /// <summary>
@@ -86,4 +95,64 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicBooksSource
 
     public IMagicSettingsProviderSection<MagicThemeSettings> Themes => _themes ??= new(this);
     private MagicSettingsProviderSection<MagicThemeSettings>? _themes;
+
+    #region WIP try to switch to chapters for simplicity
+
+    private List<MagicChapter> Chapters { get; }= [];
+
+    private MagicBook? BookFromChapters
+    {
+        get => field ??= Chapters.Any() ? new MagicBook { Chapters = Chapters } : null;
+        set => field = value;
+    }
+
+    public void Add(MagicChapter chapter)
+    {
+        Chapters.Add(chapter);
+        BookFromChapters = null;
+    }
+
+    private MagicBook Merge(IEnumerable<MagicBook> books)
+    {
+        var list = books.ToList();
+        var themes = Merge(list.Select(l => l.Themes));
+        var themeBlueprints = Merge(list.Select(l => l.ThemeBlueprints));
+        var analytics = Merge(list.Select(l => l.Analytics));
+        var breadcrumbs = Merge(list.Select(l => l.Breadcrumbs));
+        var breadcrumbBlueprints = Merge(list.Select(l => l.BreadcrumbBlueprints));
+        var containers = Merge(list.Select(l => l.Containers));
+        var containerBlueprints = Merge(list.Select(l => l.ContainerBlueprints));
+        var languages = Merge(list.Select(l => l.Languages));
+        var languageBlueprints = Merge(list.Select(l => l.LanguageBlueprints));
+        var menus = Merge(list.Select(l => l.Menus));
+        var menuBlueprints = Merge(list.Select(l => l.MenuBlueprints));
+        var pageContexts = Merge(list.Select(l => l.PageContexts));
+
+        return new MagicBook
+        {
+            Themes = themes,
+            ThemeBlueprints = themeBlueprints,
+            Analytics = analytics,
+            Breadcrumbs = breadcrumbs,
+            BreadcrumbBlueprints = breadcrumbBlueprints,
+            Containers = containers,
+            ContainerBlueprints = containerBlueprints,
+            Languages = languages,
+            LanguageBlueprints = languageBlueprints,
+            Menus = menus,
+            MenuBlueprints = menuBlueprints,
+            PageContexts = pageContexts,
+        };
+    }
+
+    private Dictionary<string, TValue> Merge<TValue>(IEnumerable<IDictionary<string, TValue>> dictionaries)
+    {
+        var result = dictionaries
+            .SelectMany(dict => dict)
+            .ToLookup(pair => pair.Key.ToLowerInvariant(), pair => pair.Value)
+            .ToDictionary(group => group.Key, group => group.Last(), StringComparer.InvariantCultureIgnoreCase);
+        return result;
+    }
+
+    #endregion
 }

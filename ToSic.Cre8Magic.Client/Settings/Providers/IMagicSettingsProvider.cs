@@ -23,4 +23,5 @@ public interface IMagicSettingsProvider
     IMagicSettingsProvider Provide(MagicBook book);
 
     internal MagicBook? Book { get; }
+    void Add(MagicChapter chapter);
 }

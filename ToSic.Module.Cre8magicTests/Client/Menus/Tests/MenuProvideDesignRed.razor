@@ -20,12 +20,15 @@
     {
         Parts = new()
         {
-            { "ul", new() { Classes = "alert alert-warning" } },
+            { "ul", new() { Classes = "alert alert-danger" } },
         }
     };
 
     SettingsProvider.Reset();
-    SettingsProvider.MenuBlueprints.Provide(redMenuName, redDesign);
+    SettingsProvider.Add(new(redMenuName)
+    {
+        MenuBlueprint = redDesign,
+    });
 
     var themeSettings = new MagicThemeSettings
     {
@@ -34,7 +37,11 @@
             { redName, new() { Design = redMenuName } }
         }
     };
-    SettingsProvider.Themes.Provide("default", themeSettings);
+    SettingsProvider.Add(new()
+    {
+        Theme = themeSettings,
+    });
+
 }
 <div class="alert alert-info">
     <h4>Menu Provide Design Red</h4>
@@ -57,7 +64,7 @@
 
     <hr />
     <p>
-        This uses a name
+        This uses a name which should rewrite because of the parts-map...
     </p>
     <BasicMenu MenuKit='MenuSvc.MenuKit(PageState, new() { Name = redName, Pick = "." })'></BasicMenu>
 

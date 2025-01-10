@@ -27,7 +27,16 @@ public class SettingsProviderTestWithAnalytics
         {
             GtmId = GtmOfOriginal
         };
-        settingsProvider.Analytics.SetDefault(original);
+        //settingsProvider.Analytics.SetDefault(original);
+
+        var settingsProvider2 = di.GetRequiredService<IMagicSettingsProvider>();
+        settingsProvider2.Add(new()
+        {
+            Analytics = original,
+        });
+        var book1 = settingsProvider.Book;
+        var book2 = settingsProvider2.Book;
+
         return (settingsSvc, settingsProvider, original);
     }
 
@@ -66,9 +75,13 @@ public class SettingsProviderTestWithAnalytics
         var (settingsSvc, settingsProvider, _) = PrepareSettings();
 
         // Add a named setting which can be identified when found
-        settingsProvider.Analytics.Provide(provideName, new()
+        //settingsProvider.Analytics.Provide(provideName, new()
+        //{
+        //    GtmId = GtmOfAdded,
+        //});
+        settingsProvider.Add(new(provideName)
         {
-            GtmId = GtmOfAdded,
+            Analytics = new() { GtmId = GtmOfAdded }
         });
 
         var retrieved = new GetSettings(settingsSvc, null, searchName)

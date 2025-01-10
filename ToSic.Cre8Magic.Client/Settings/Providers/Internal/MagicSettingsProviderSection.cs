@@ -14,23 +14,23 @@ internal class MagicSettingsProviderSection<T>(IMagicSettingsProvider parent)
         HasValues = false;
     }
 
-    // TODO: use constant for "Default"
-    public IMagicSettingsProvider SetDefault(T value) =>
-        Provide("default", value);
+    //// TODO: use constant for "Default"
+    //public IMagicSettingsProvider SetDefault(T value) =>
+    //    Provide("default", value);
 
-    public IMagicSettingsProvider Provide(string key, T value)
-    {
-        Values ??= new Dictionary<string, T>(StringComparer.InvariantCultureIgnoreCase);
-        Values[key] = value;
-        HasValues = true;
-        return parent;
-    }
+    //public IMagicSettingsProvider Provide(string key, T value)
+    //{
+    //    Values ??= new Dictionary<string, T>(StringComparer.InvariantCultureIgnoreCase);
+    //    Values[key] = value;
+    //    HasValues = true;
+    //    return parent;
+    //}
 
-    public IMagicSettingsProvider Provide(IDictionary<string, T> dictionary)
-    {
-        Values = new Dictionary<string, T>(dictionary, StringComparer.InvariantCultureIgnoreCase);
-        HasValues = true;
-        return parent;
-    }
+    //public IMagicSettingsProvider Provide(IDictionary<string, T> dictionary)
+    //{
+    //    Values = new Dictionary<string, T>(dictionary, StringComparer.InvariantCultureIgnoreCase);
+    //    HasValues = true;
+    //    return parent;
+    //}
 
 }
