@@ -3,11 +3,11 @@
 @using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Internal.Debug
 
-<h2>Languages with Custom Spells Book Tests</h2>
+<h2>Languages with Custom Book Tests</h2>
 
 <h3>Language Menu with some standard config</h3>
 @{
-    var book = new MagicSpellsBook
+    var book = new MagicBook
     {
         Languages = new()
         {
@@ -24,7 +24,7 @@
         }
     };
 
-    var settings = new MagicLanguageSettings().UseSpellsBook(book);
+    var settings = new MagicLanguageSettings().UseBook(book);
 }
 <MagicLanguageMenu Settings="settings"></MagicLanguageMenu>
 

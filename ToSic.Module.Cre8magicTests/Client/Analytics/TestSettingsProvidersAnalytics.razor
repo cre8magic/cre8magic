@@ -1,12 +1,11 @@
 ﻿@using ToSic.Cre8magic.Act
-@using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Providers
 @inherits ComponentBase
-@inject IMagicSettingsProvider SpellsProviders
+@inject IMagicSettingsProvider SettingsProvider
 @inject IMagicAct MagicAct
 @{
-    SpellsProviders.Reset();
-    SpellsProviders.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
+    SettingsProvider.Reset();
+    SettingsProvider.Analytics.Provide("analytics-test", new() { GtmId = "This-Is-A-Test-GTM-ID" });
 
     var analyticsKit = MagicAct.AnalyticsKit(new() { Name = "default" });
     var analyticsTestKit = MagicAct.AnalyticsKit(new() { Name = "analytics-test" });

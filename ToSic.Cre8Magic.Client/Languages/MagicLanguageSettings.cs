@@ -18,7 +18,7 @@ public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSett
         : base(priority, fallback)
     {
         HideOthers = priority?.HideOthers ?? fallback?.HideOthers;
-        MinLanguagesToShow = SpellHelpers.PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
+        MinLanguagesToShow = SettingHelpers.PickFirstNonZeroInt([priority?.MinLanguagesToShow, fallback?.MinLanguagesToShow]);
         Languages = priority?.Languages ?? fallback?.Languages;
 
         Blueprint = priority?.Blueprint ?? fallback?.Blueprint;

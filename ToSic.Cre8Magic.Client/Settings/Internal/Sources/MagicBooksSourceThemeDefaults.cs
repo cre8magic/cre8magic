@@ -7,11 +7,11 @@ namespace ToSic.Cre8magic.Settings.Internal.Sources;
 ///
 /// Fairly trivial, but the goal is that all sources implement the same interface.
 /// </summary>
-public class MagicSpellsBooksSourceThemeDefaults : IMagicSpellsBooksSource
+public class MagicBooksSourceThemeDefaults : IMagicBooksSource
 {
     public int Priority => -100;
 
-    public List<DataWithJournal<MagicSpellsBook>> SpellsBooks(MagicThemePackage themePackage) =>
+    public List<DataWithJournal<MagicBook>> Books(MagicThemePackage themePackage) =>
         themePackage == null
             ? throw new ArgumentNullException(nameof(themePackage))
             : themePackage.Defaults == null

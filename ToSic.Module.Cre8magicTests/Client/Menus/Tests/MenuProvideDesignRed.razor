@@ -1,11 +1,10 @@
 ﻿@using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.Menus
 @using ToSic.Cre8magic.Menus.Internal
-@using ToSic.Cre8magic.Settings
 @using ToSic.Cre8magic.Settings.Providers
 @using ToSic.Cre8magic.Themes
 @inherits ComponentBase
-@inject IMagicSettingsProvider SpellsProviders
+@inject IMagicSettingsProvider SettingsProvider
 @inject IMagicMenuService MenuSvc
 @code {
     /// <inheritdoc cref="ComponentDocs.PageState"/>
@@ -25,8 +24,8 @@
         }
     };
 
-    SpellsProviders.Reset();
-    SpellsProviders.MenuBlueprints.Provide(redMenuName, redDesign);
+    SettingsProvider.Reset();
+    SettingsProvider.MenuBlueprints.Provide(redMenuName, redDesign);
 
     var themeSettings = new MagicThemeSettings
     {
@@ -35,7 +34,7 @@
             { redName, new() { Design = redMenuName } }
         }
     };
-    SpellsProviders.Themes.Provide("default", themeSettings);
+    SettingsProvider.Themes.Provide("default", themeSettings);
 }
 <div class="alert alert-info">
     <h4>Menu Provide Design Red</h4>

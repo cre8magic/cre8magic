@@ -20,7 +20,7 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
 /// </summary>
-internal class MagicSettingsService(MagicSpellsLibraryLoader libraryLoader) : IMagicSettingsService, IHasSpellsLibrary
+internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSettingsService, IHasMagicLibrary
 {
     /// <inheritdoc />>
     public IMagicSettingsService Setup(MagicThemePackage themePackage)
@@ -132,7 +132,7 @@ internal class MagicSettingsService(MagicSpellsLibraryLoader libraryLoader) : IM
     /// <summary>
     /// actually internal
     /// </summary>
-    public List<DataWithJournal<MagicSpellsBook>> Library =>
+    public List<DataWithJournal<MagicBook>> Library =>
         libraryLoader.Books(ThemePackage, cache: false);
 
     #region Analytics

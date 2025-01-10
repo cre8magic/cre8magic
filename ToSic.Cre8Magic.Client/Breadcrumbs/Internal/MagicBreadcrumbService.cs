@@ -34,9 +34,9 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
     private Data2WithJournal<MagicBreadcrumbSettings, MagicThemePartSettings?> MergeSettings(
         PageState pageState, MagicBreadcrumbSettings? settings)
     {
-        var getSpell = new GetSpell(settingsSvc, pageState, settings?.Name);
-        var spell = getSpell.GetBestSpell(settings, settingsSvc.Breadcrumbs);
-        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, settingsSvc.BreadcrumbBlueprints, ThemePartSectionEnum.Design);
-        return new(spell.Data with { Blueprint = bluePrint.Data }, getSpell.Part, spell.Journal.With(bluePrint.Journal));
+        var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
+        var spell = getSettings.GetBest(settings, settingsSvc.Breadcrumbs);
+        var bluePrint = getSettings.GetBest(settings?.Blueprint, settingsSvc.BreadcrumbBlueprints, ThemePartSectionEnum.Design);
+        return new(spell.Data with { Blueprint = bluePrint.Data }, getSettings.Part, spell.Journal.With(bluePrint.Journal));
     }
 }

@@ -7,7 +7,7 @@ using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
-internal class GetSpell(IMagicSettingsService settingsSvc, PageState? pageStateForCachingOnly, string? name)
+internal class GetSettings(IMagicSettingsService settingsSvc, PageState? pageStateForCachingOnly, string? name)
 {
     /// <summary>
     /// Get the Theme Context - important for checking part names
@@ -32,7 +32,7 @@ internal class GetSpell(IMagicSettingsService settingsSvc, PageState? pageStateF
     /// <param name="section">what kind of settings we're retrieving - for the name-lookup in the parts definition</param>
     /// <returns></returns>
     internal DataWithJournal<TSettings>
-        GetBestSpell<TSettings>(TSettings? settings, SettingsReader<TSettings> reader, ThemePartSectionEnum section = ThemePartSectionEnum.Settings)
+        GetBest<TSettings>(TSettings? settings, SettingsReader<TSettings> reader, ThemePartSectionEnum section = ThemePartSectionEnum.Settings)
         where TSettings : class, new()
     {
         // Activate this for debugging
@@ -40,7 +40,7 @@ internal class GetSpell(IMagicSettingsService settingsSvc, PageState? pageStateF
         //    tempForDebug = tempForDebug;
 
         if (settings is IDebugSettings { Book: not null } withBook)
-            reader = reader.MaybeUseCustomSpellsBook(withBook.Book);
+            reader = reader.MaybeUseCustomBook(withBook.Book);
 
         // Get Settings from specified reader using the provided settings as priority to merge
         // Note that the returned data will be of the base type, not the main settings type

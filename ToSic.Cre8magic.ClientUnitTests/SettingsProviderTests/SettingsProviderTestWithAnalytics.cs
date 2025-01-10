@@ -46,8 +46,8 @@ public class SettingsProviderTestWithAnalytics
         var (settingsSvc, _, original) = PrepareSettings();
         // Settings, without GtmId, so that it would receive it from original when merging
         var analytics = new MagicAnalyticsSettings { Name = currentName };
-        var retrieved2 = new GetSpell(settingsSvc, null, analytics.Name)
-            .GetBestSpell(analytics, settingsSvc.Analytics);
+        var retrieved2 = new GetSettings(settingsSvc, null, analytics.Name)
+            .GetBest(analytics, settingsSvc.Analytics);
         Assert.Equal(expectNoMerge ? analytics.GtmId : original.GtmId, retrieved2.Data.GtmId);
     }
 
@@ -71,8 +71,8 @@ public class SettingsProviderTestWithAnalytics
             GtmId = GtmOfAdded,
         });
 
-        var retrieved = new GetSpell(settingsSvc, null, searchName)
-            .GetBestSpell(new MagicAnalyticsSettings { Name = searchName }, settingsSvc.Analytics);
+        var retrieved = new GetSettings(settingsSvc, null, searchName)
+            .GetBest(new MagicAnalyticsSettings { Name = searchName }, settingsSvc.Analytics);
 
         Assert.Equal(expected, retrieved.Data.GtmId);
     }
@@ -86,7 +86,7 @@ public class SettingsProviderTestWithAnalytics
 
         Assert.Equal(original, settingsProvider);
 
-        var allSettingsProviders = serviceProvider.GetRequiredService<IEnumerable<IMagicSpellsBooksSource>>();
+        var allSettingsProviders = serviceProvider.GetRequiredService<IEnumerable<IMagicBooksSource>>();
         Assert.Contains(original, allSettingsProviders);
     }
 

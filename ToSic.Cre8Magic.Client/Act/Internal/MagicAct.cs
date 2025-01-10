@@ -45,7 +45,7 @@ internal class MagicAct(
         return this;
     }
 
-    public IMagicAct UseSpellsBook(MagicSpellsBook book)
+    public IMagicAct UseBook(MagicBook book)
     {
         settingsProviderSvc.Value.Provide(book);
         return this;

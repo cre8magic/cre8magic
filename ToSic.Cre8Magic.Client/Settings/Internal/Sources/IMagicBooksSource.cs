@@ -2,9 +2,9 @@
 
 namespace ToSic.Cre8magic.Settings.Internal.Sources;
 
-public interface IMagicSpellsBooksSource
+public interface IMagicBooksSource
 {
-    List<DataWithJournal<MagicSpellsBook>> SpellsBooks(MagicThemePackage themePackage);
+    List<DataWithJournal<MagicBook>> Books(MagicThemePackage themePackage);
 
     /// <summary>
     /// Priority, high number means higher priority

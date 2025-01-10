@@ -4,7 +4,7 @@ namespace ToSic.Cre8magic.TestTheme.Client;
 
 internal class ThemeSettingsForTests
 {
-    public static MagicSpellsBook Book1 => new()
+    public static MagicBook Book1 => new()
     {
         Source = nameof(Book1),
         Themes = new()

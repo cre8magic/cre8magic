@@ -8,7 +8,7 @@ public static class IDebugSettingsExtensions
         return settings;
     }
 
-    public static T UseSpellsBook<T>(this T settings, MagicSpellsBook book) where T : IDebugSettings
+    public static T UseBook<T>(this T settings, MagicBook book) where T : IDebugSettings
     {
         settings.Book = book;
         return settings;
@@ -18,7 +18,7 @@ public static class IDebugSettingsExtensions
     // should probably be removed again
     public static T UseLanguageSettings<T>(this T settings, MagicLanguageSettings languageSettings) where T : IDebugSettings
     {
-        settings.Book = (settings.Book ?? new MagicSpellsBook()) with
+        settings.Book = (settings.Book ?? new MagicBook()) with
         {
             Languages = new() { { "default", languageSettings } }
         };

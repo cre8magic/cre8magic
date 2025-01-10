@@ -8,26 +8,26 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// <summary>
 /// Special helper to do a few things with settings.
 ///
-/// 1. It receives a list of SpellsBooks which it will scan
+/// 1. It receives a list of Books which it will scan
 /// 2. It also receives a function to get only the part of the spells book it's interested in
 ///    ...this is to get type safety and everything, like it will only look at the Analytics settings.
 /// </summary>
 /// <typeparam name="TSettingsData"></typeparam>
-/// <param name="hasSpellsLibrary"></param>
+/// <param name="hasLibrary"></param>
 /// <param name="defaults"></param>
 /// <param name="getSection"></param>
 internal class SettingsReader<TSettingsData>(
-    IHasSpellsLibrary hasSpellsLibrary,
+    IHasMagicLibrary hasLibrary,
     Defaults<TSettingsData> defaults,
-    Func<MagicSpellsBook, IDictionary<string, TSettingsData>> getSection
+    Func<MagicBook, IDictionary<string, TSettingsData>> getSection
 )
     where TSettingsData : class, new()
 {
     /// <summary>
     /// Create a clone of the settings reader, which will specifically only use test books provided by the source.
     /// </summary>
-    internal SettingsReader<TSettingsData> MaybeUseCustomSpellsBook(MagicSpellsBook? book)
-        => book == null ? this : new(new HasSpellsLibrary([new(book, new())]), defaults, getSection);
+    internal SettingsReader<TSettingsData> MaybeUseCustomBook(MagicBook? book)
+        => book == null ? this : new(new HasMagicLibrary([new(book, new())]), defaults, getSection);
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -103,7 +103,7 @@ internal class SettingsReader<TSettingsData>(
         name = name.IsNullOrEmpty() ? Default : name;
 
         // Get all spells-books (e.g. provided by code in theme, from JSON, etc.)
-        var books = hasSpellsLibrary.Library;
+        var books = hasLibrary.Library;
 
         // Create a list of all possible sources and names
         // Prioritize the names, and then go through all sources for each name

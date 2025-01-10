@@ -7,16 +7,16 @@ using ToSic.Cre8magic.Settings.Internal.Sources;
 
 namespace ToSic.Cre8magic.Settings.Providers.Internal;
 
-internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSpellsBooksSource
+internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicBooksSource
 {
-    int IMagicSpellsBooksSource.Priority => 200;
+    int IMagicBooksSource.Priority => 200;
 
     /// <summary>
     /// Implement interface to get this stuff
     /// </summary>
     /// <param name="themePackage"></param>
     /// <returns></returns>
-    public List<DataWithJournal<MagicSpellsBook>> SpellsBooks(MagicThemePackage themePackage)
+    public List<DataWithJournal<MagicBook>> Books(MagicThemePackage themePackage)
     {
         var partsNoData = AllSources.All(source => source?.HasValues != true);
         if (partsNoData)
@@ -24,7 +24,7 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSpellsBooksS
                 ? []
                 : [new(_book, new())];
 
-        var book = _book ?? new MagicSpellsBook();
+        var book = _book ?? new MagicBook();
 
         if (!partsNoData)
             book = book with
@@ -62,15 +62,15 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSpellsBooksS
         _themes
     ];
 
-    public IMagicSettingsProvider Provide(MagicSpellsBook book)
+    public IMagicSettingsProvider Provide(MagicBook book)
     {
         _book = book;
         return this;
     }
 
-    public MagicSpellsBook? Book => SpellsBooks(null!).FirstOrDefault()?.Data;
+    public MagicBook? Book => Books(null!).FirstOrDefault()?.Data;
 
-    private MagicSpellsBook? _book;
+    private MagicBook? _book;
 
     public IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
     private MagicSettingsProviderSection<MagicAnalyticsSettings>? _analytics;

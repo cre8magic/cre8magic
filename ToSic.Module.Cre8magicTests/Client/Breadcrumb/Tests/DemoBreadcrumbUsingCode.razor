@@ -28,7 +28,7 @@
     }
 </ol>
 
-<h2>Settings from Spells Book</h2>
+<h2>Settings from the Book</h2>
 
 @* Setup Code to ensure it uses the settings we want to provide for the demo *@
 
@@ -57,7 +57,7 @@
 <h2>With Non-Default names</h2>
                     
 @{
-    var spellsBook = new MagicSpellsBook
+    var spellsBook = new MagicBook
     {
         Breadcrumbs = new()
         {
@@ -70,7 +70,7 @@
             }
         }
     };
-    MagicAct.UseSpellsBook(spellsBook);
+    MagicAct.UseBook(spellsBook);
 }
 
 @* Breadcrumb using the settings from the spells book *@

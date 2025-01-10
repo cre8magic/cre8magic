@@ -26,9 +26,9 @@ internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagic
         PageState pageState, MagicContainerSettings? settings)
     {
 
-        var getSpell = new GetSpell(settingsSvc, pageState, settings?.Name);
-        var spell = getSpell.GetBestSpell(settings, settingsSvc.Containers);
-        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, settingsSvc.ContainerBlueprints, ThemePartSectionEnum.Design);
+        var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
+        var spell = getSettings.GetBest(settings, settingsSvc.Containers);
+        var bluePrint = getSettings.GetBest(settings?.Blueprint, settingsSvc.ContainerBlueprints, ThemePartSectionEnum.Design);
         return new(spell.Data with { Blueprint = bluePrint.Data }, spell.Journal.With(bluePrint.Journal));
     }
 

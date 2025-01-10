@@ -45,10 +45,10 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     private Data2WithJournal<MagicLanguageSettings, MagicThemePartSettings?> MergeSettings(
         PageState pageState, MagicLanguageSettings? settings)
     {
-        var getSpell = new GetSpell(settingsSvc, pageState, settings?.Name);
-        var spell = getSpell.GetBestSpell(settings, settingsSvc.Languages);
-        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, settingsSvc.LanguageBlueprints, ThemePartSectionEnum.Design);
-        return new(spell.Data with { Blueprint = bluePrint.Data }, getSpell.Part, spell.Journal.With(bluePrint.Journal));
+        var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
+        var spell = getSettings.GetBest(settings, settingsSvc.Languages);
+        var bluePrint = getSettings.GetBest(settings?.Blueprint, settingsSvc.LanguageBlueprints, ThemePartSectionEnum.Design);
+        return new(spell.Data with { Blueprint = bluePrint.Data }, getSettings.Part, spell.Journal.With(bluePrint.Journal));
     }
 
 

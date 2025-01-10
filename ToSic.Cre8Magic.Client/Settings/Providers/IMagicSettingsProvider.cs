@@ -20,7 +20,7 @@ public interface IMagicSettingsProvider
     IMagicSettingsProviderSection<MagicMenuBlueprint> MenuBlueprints { get; }
     IMagicSettingsProviderSection<MagicThemeSettings> Themes { get; }
     public void Reset();
-    IMagicSettingsProvider Provide(MagicSpellsBook book);
+    IMagicSettingsProvider Provide(MagicBook book);
 
-    internal MagicSpellsBook? Book { get; }
+    internal MagicBook? Book { get; }
 }

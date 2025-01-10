@@ -66,7 +66,7 @@ public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IH
     #region Runtime Debug Settings
 
     [JsonIgnore]
-    MagicSpellsBook? IDebugSettings.Book { get; set; }
+    MagicBook? IDebugSettings.Book { get; set; }
 
     [JsonIgnore]
     bool? IDebugSettings.DebugThis { get; set; }

@@ -9,11 +9,11 @@ namespace ToSic.Cre8magic.Settings.Internal.Sources;
 /// It requires that there are <see cref="MagicThemePackage"/> which were usually configured in the theme,
 /// and then passed to the SettingsService on Setup.
 /// </summary>
-internal class MagicSpellsBooksSourceJson(MagicSpellsBookLoaderJson bookLoaderJson) : IMagicSpellsBooksSource
+internal class MagicBooksSourceJson(MagicBookLoaderJson bookLoaderJson) : IMagicBooksSource
 {
     public int Priority => 100;
 
-    public List<DataWithJournal<MagicSpellsBook>> SpellsBooks(MagicThemePackage themePackage)
+    public List<DataWithJournal<MagicBook>> Books(MagicThemePackage themePackage)
     {
         if (themePackage == null)
             throw new ArgumentNullException(nameof(themePackage));
@@ -26,7 +26,7 @@ internal class MagicSpellsBooksSourceJson(MagicSpellsBookLoaderJson bookLoaderJs
 
         var spellsBook = bookLoaderJson.LoadJson(themePackage);
 
-        var bundle = new List<DataWithJournal<MagicSpellsBook>> { spellsBook };
+        var bundle = new List<DataWithJournal<MagicBook>> { spellsBook };
         _cache[themePackage] = bundle;
         return bundle;
     }
@@ -34,5 +34,5 @@ internal class MagicSpellsBooksSourceJson(MagicSpellsBookLoaderJson bookLoaderJs
     /// <summary>
     /// Note: don't make static, otherwise we can't see json-file changes
     /// </summary>
-    private readonly Dictionary<MagicThemePackage, List<DataWithJournal<MagicSpellsBook>>> _cache = new();
+    private readonly Dictionary<MagicThemePackage, List<DataWithJournal<MagicBook>>> _cache = new();
 }

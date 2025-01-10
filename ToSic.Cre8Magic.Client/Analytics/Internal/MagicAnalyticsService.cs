@@ -17,8 +17,8 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
 
     private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSettings? settings = null)
     {
-        var (settingsData, _) = new GetSpell(settingsSvc, pageState, settings?.Name)
-            .GetBestSpell(settings, settingsSvc.Analytics);
+        var (settingsData, _) = new GetSettings(settingsSvc, pageState, settings?.Name)
+            .GetBest(settings, settingsSvc.Analytics);
 
         var result = new MagicAnalyticsKit
         {

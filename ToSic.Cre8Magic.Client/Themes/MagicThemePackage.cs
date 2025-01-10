@@ -38,7 +38,7 @@ public record MagicThemePackage
     /// All kinds of settings for the layout, how it should be etc.
     /// Should usually only serve as backup in case the JSON fails.
     /// </summary>
-    public MagicSpellsBook? Defaults { get; init; }
+    public MagicBook? Defaults { get; init; }
 
     public string? Name { get; init; }
 
@@ -70,7 +70,7 @@ public record MagicThemePackage
 
     internal static MagicThemePackage Fallback = new()
     {
-        Defaults = MagicSpellsBook.Fallback,
+        Defaults = MagicBook.Fallback,
         WwwRoot = "wwwroot",
         SettingsJsonFile = "",
         PackageName = "Fallback-Not-Configured",

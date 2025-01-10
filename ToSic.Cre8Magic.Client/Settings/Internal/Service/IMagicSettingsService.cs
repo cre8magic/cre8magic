@@ -36,7 +36,7 @@ public interface IMagicSettingsService
     // TODO: MAKE INTERNAL again - temporarily public soi
     public MagicDebugSettings Debug { get; }
 
-    internal List<DataWithJournal<MagicSpellsBook>> Library { get; }
+    internal List<DataWithJournal<MagicBook>> Library { get; }
 
 
     internal SettingsReader<MagicAnalyticsSettings> Analytics { get; }

@@ -20,7 +20,7 @@ public interface IMagicAct
 {
     #region Setup Methods
 
-    IMagicAct UseSpellsBook(MagicSpellsBook book);
+    IMagicAct UseBook(MagicBook book);
 
     IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
     

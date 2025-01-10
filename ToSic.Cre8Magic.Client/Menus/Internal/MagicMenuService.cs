@@ -54,9 +54,9 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
 
     private DataWithJournal<MagicMenuSettings> MergeSettings(PageState pageState, MagicMenuSettings? settings)
     {
-        var getSpell = new GetSpell(settingsSvc, pageState, settings?.Name);
-        var spell = getSpell.GetBestSpell(settings, settingsSvc.Menus);
-        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, settingsSvc.MenuBlueprints, ThemePartSectionEnum.Design);
+        var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
+        var spell = getSettings.GetBest(settings, settingsSvc.Menus);
+        var bluePrint = getSettings.GetBest(settings?.Blueprint, settingsSvc.MenuBlueprints, ThemePartSectionEnum.Design);
         return new(spell.Data with { Blueprint = bluePrint.Data }, spell.Journal.With(bluePrint.Journal));
     }
 }
