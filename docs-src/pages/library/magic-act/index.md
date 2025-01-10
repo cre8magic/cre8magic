@@ -142,9 +142,11 @@ You can use the **Magic Act 🎭** in your theme to get a **ThemeKit** and wor
 ```
 
 > [!NOTE]
-> Doing this is possible, but that probably doesn't make much sense.
-> Usually you want to broadcast settings to the components.
-> For this, it's best to inherit the `MagicTheme` and take it from there.
+> Doing this is by itself doesn't make much sense.
+> Usually you want to load and broadcast settings from the them.
+> For this, it's best to inherit the `MagicTheme` (see next section).
+>
+> If you in inherit from `MagicTheme`, it already has the `ThemeKit` property.
 
 ---
 
