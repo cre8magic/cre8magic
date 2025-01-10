@@ -55,22 +55,7 @@ A very simple Bootstrap5 menu can be added just like this:
 
 The Magic Menu uses the cre8magic conventions.
 
-> [!TIP]
-> This is what always happens in a nutshell:
->
-> <!-- use https://www.mermaidchart.com/play to edit -->
->
-> ```mermaid
-> flowchart LR
->     S(["Settings ⚙️"]) --> PC["Prepare Data & Kit 🧰"]
->     PC --> MC["Blazor Code 🔥"]
->     MC --> HTML["HTML 🌐"]
-> ```
->
-> 1. **Settings ⚙️** tell **cre8magic ♾️** what to do.
-> 2. **cre8magic ♾️** prepares data in a **Kit 🧰**, which also has more tools.
-> 3. **Blazor Code 🔥** (your code 👨🏻‍💻 or a Magic Component 🧩) will...
-> 4. ...produce the desired **HTML 🌐**.
+[!include [](../shared/_magic-process-in-a-nutshell.md)]
 
 Each of these steps can be very simple or very complex, depending on your needs.
 What you'll discover is:
@@ -126,7 +111,7 @@ This code explained:
 
 1. `@using ToSic.Cre8magic.OqtaneBasic` tells Blazor that we want to use these controls.
 1. `...OqtaneBasic` is the namespace for controls without special presets.
-1. `<MagicMenu .../>` is a Blazor component provided by **cre8magic ♾️**
+1. `<MagicMenu .../>` is a Blazor component provided by **cre8magic ♾️**
 1. The `Settings="..."` attribute is a parameter which is passed to the component.
     1. It expects a [](xref:ToSic.Cre8magic.Menus.MagicMenuSettings) object.
     1. Since Blazor knows the expected type, you can shorten it as `new() { ... }`.
@@ -327,6 +312,7 @@ But if you do, it should be easy and powerful.
 This example assumes you want full control over the output, and still want to use the cre8magic engine to reliably get the right pages, permissions and a simpler SOLID API which is more robust than the built in Oqtane API:
 
 ```razor
+@inherits ComponentBase
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Pages
 @inject IMagicAct MagicAct

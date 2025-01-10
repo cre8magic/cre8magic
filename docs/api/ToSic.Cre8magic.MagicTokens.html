@@ -130,7 +130,7 @@ Class MagicTokens  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="ToSic_Cre8magic_MagicTokens_ByLevelOtherKey" data-uid="ToSic.Cre8magic.MagicTokens.ByLevelOtherKey">
   ByLevelOtherKey
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Special key to mark rules &quot;ByLevel&quot; which apply to all level which had not been defined</p>
@@ -159,12 +159,78 @@ Class MagicTokens  <a class="header-action link-secondary" title="View source" h
 
 
 
-  <h3 id="ToSic_Cre8magic_MagicTokens_PageId" data-uid="ToSic.Cre8magic.MagicTokens.PageId">
-  PageId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  <h3 id="ToSic_Cre8magic_MagicTokens_MenuLevel" data-uid="ToSic.Cre8magic.MagicTokens.MenuLevel">
+  MenuLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Menu-Level placeholder, typically for CSS-classes applied to <code>li</code> or <code>a</code> elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string MenuLevel = &quot;[Menu.Level]&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="ToSic_Cre8magic_MagicTokens_MenuLevel_examples">Examples</h4>
+  <p>The class for the <code>li</code> could be <code>level-[Menu.Level]</code></p>
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_MagicTokens_ModuleId" data-uid="ToSic.Cre8magic.MagicTokens.ModuleId">
+  ModuleId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Placeholder for the current Module ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ModuleId = &quot;[Module.Id]&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_MagicTokens_PageId" data-uid="ToSic.Cre8magic.MagicTokens.PageId">
+  PageId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Placeholder for the current page ID.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -182,6 +248,115 @@ Class MagicTokens  <a class="header-action link-secondary" title="View source" h
 
 
 
+
+  <h4 class="section" id="ToSic_Cre8magic_MagicTokens_PageId_examples">Examples</h4>
+  <p>In this: Products (7) - Kitchenware (73) - Pans (739) - Frying Pan (7391)</p>
+<p>The ID of the <code>Pans</code> page is 739</p>
+
+
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_MagicTokens_PageParentId" data-uid="ToSic.Cre8magic.MagicTokens.PageParentId">
+  PageParentId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Placeholder for the current pages parent-page ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PageParentId = &quot;[Page.ParentId]&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="ToSic_Cre8magic_MagicTokens_PageParentId_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>In this: Products (7) - Kitchenware (73) - Pans (739) - Frying Pan (7391)</p>
+<p>The Parent ID of the <code>Pans</code> page is 73</p>
+</div>
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_MagicTokens_PageRootId" data-uid="ToSic.Cre8magic.MagicTokens.PageRootId">
+  PageRootId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Placeholder for the current pages root-page ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PageRootId = &quot;[Page.RootId]&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="ToSic_Cre8magic_MagicTokens_PageRootId_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Placeholder for the current pages parent-page ID.
+In this: Products (7) - Kitchenware (73) - Pans (739) - Frying Pan (7391)</p>
+<p>The Root ID of the <code>Pans</code> page is 7</p>
+</div>
+
+
+
+
+
+  <h3 id="ToSic_Cre8magic_MagicTokens_ThemeUrl" data-uid="ToSic.Cre8magic.MagicTokens.ThemeUrl">
+  ThemeUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicTokens.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Url to the theme folder, like for linking to an image files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string ThemeUrl = &quot;[Theme.Url]&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="ToSic_Cre8magic_MagicTokens_ThemeUrl_examples">Examples</h4>
+  <p>Link to a logo: <code>[Theme.Url]/assets/logo.png</code></p>
 
 
 

@@ -135,12 +135,13 @@ Each of these menus can have different requirements, such as:</p>
     MC --&gt; HTML[&quot;HTML 🌐&quot;]
 </code></pre>
 <ol>
-<li><strong>Settings ⚙️</strong> tell <strong>cre8magic ♾️</strong> what to do.</li>
-<li><strong>cre8magic ♾️</strong> prepares data in a <strong>Kit 🧰</strong>, which also has more tools.</li>
+<li><strong>Settings ⚙️</strong> tell <strong>cre8magic ♾️</strong> what to do.</li>
+<li><strong>cre8magic ♾️</strong> prepares data in a <strong>Kit 🧰</strong>, which also has more tools.</li>
 <li><strong>Blazor Code 🔥</strong> (your code 👨🏻‍💻 or a Magic Component 🧩) will...</li>
 <li>...produce the desired <strong>HTML 🌐</strong>.</li>
 </ol>
 </div>
+
 <p>Each of these steps can be very simple or very complex, depending on your needs.
 What you'll discover is:</p>
 <ol>
@@ -199,7 +200,7 @@ especially with the help of the  <strong>MagicMenuKit 🧰</strong>.</li>
 <ol>
 <li><code>@using ToSic.Cre8magic.OqtaneBasic</code> tells Blazor that we want to use these controls.</li>
 <li><code>...OqtaneBasic</code> is the namespace for controls without special presets.</li>
-<li><code>&lt;MagicMenu .../&gt;</code> is a Blazor component provided by <strong>cre8magic ♾️</strong></li>
+<li><code>&lt;MagicMenu .../&gt;</code> is a Blazor component provided by <strong>cre8magic ♾️</strong></li>
 <li>The <code>Settings=&quot;...&quot;</code> attribute is a parameter which is passed to the component.
 <ol>
 <li>It expects a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object.</li>
@@ -426,7 +427,8 @@ But if you do, it should be easy and powerful.</p>
 <section id="tabpanel_6_coded-menu1" role="tabpanel" data-tab="coded-menu1">
 
 <p>This example assumes you want full control over the output, and still want to use the cre8magic engine to reliably get the right pages, permissions and a simpler SOLID API which is more robust than the built in Oqtane API:</p>
-<pre><code class="lang-razor">@using ToSic.Cre8magic.Act
+<pre><code class="lang-razor">@inherits ComponentBase
+@using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Pages
 @inject IMagicAct MagicAct
 
