@@ -1,5 +1,4 @@
 @using ToSic.Cre8magic.Act
-@using ToSic.Cre8magic.Breadcrumbs
 @using ToSic.Cre8magic.Settings
 @inject IMagicAct MagicAct
 
@@ -12,7 +11,7 @@
 <h2>Settings directly in Code</h2>
 
 @{
-    var breadcrumbKit = MagicAct.BreadcrumbKit(new MagicBreadcrumbSettings
+    var breadcrumbKit = MagicAct.BreadcrumbKit(new()
     {
         PageState = PageState,
         WithActive = true,
@@ -29,20 +28,28 @@
 </ol>
 
 <h2>Settings from the Book</h2>
-
+<p>
+    2dm 2025-01-10
+</p>
 @* Setup Code to ensure it uses the settings we want to provide for the demo *@
 
 @{
-    MagicAct.UseSettingsProvider(p => p.Breadcrumbs.SetDefault(new()
+    MagicAct.UseBook(new()
     {
-        WithHome = false,
-        WithActive = true
-    }));
+        Chapter = new()
+        {
+            Breadcrumb = new()
+            {
+                WithActive = true,
+                WithHome = true,
+            }
+        }
+    });
 }
 
 @* Breadcrumb using the settings from the spells book *@
 @{
-    // Note: equivalent to ... = MagicAct.BreadcrumbKit(PageState, new() { SettingsName = "default" });
+    // Note: equivalent to ... = MagicAct.BreadcrumbKit(PageState, new() { Name = "default" });
     breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState });
 }
 <ol class="breadcrumb">

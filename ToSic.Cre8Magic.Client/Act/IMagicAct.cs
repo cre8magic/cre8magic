@@ -31,9 +31,6 @@ public interface IMagicAct
     /// <param name="book"></param>
     /// <returns></returns>
     IMagicAct UseBook(MagicBook book);
-
-    [PrivateApi("special and probably only for testing")]
-    IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
     
     IMagicAct UseThemePackage(MagicThemePackage themePackage);
 

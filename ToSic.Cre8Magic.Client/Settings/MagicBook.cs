@@ -19,14 +19,9 @@ namespace ToSic.Cre8magic.Settings;
 public record MagicBook: IHasDebugSettings
 {
     /// <summary>
-    /// Empty Constructor so it can be created in code and Json-Deserialized
+    /// Empty Constructor so it can be created in code or Json-Deserialized
     /// </summary>
     public MagicBook() { }
-
-    public MagicBook(MagicChapter chapter)
-    {
-        LoadChapter(chapter);
-    }
 
     public MagicChapter Chapter { init => LoadChapter(value); }
 

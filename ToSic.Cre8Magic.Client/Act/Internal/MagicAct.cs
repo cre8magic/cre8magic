@@ -51,17 +51,6 @@ internal class MagicAct(
         return this;
     }
 
-    [PrivateApi("test scenarios only, internal")]
-    public IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc)
-    {
-        var provider = new MagicSettingsProvider();
-        var result = providerFunc(provider);
-        var cat = result?.Book;
-        if (cat != null)
-            settingsProviderSvc.Value.Provide(cat);
-        return this;
-    }
-
     public IMagicAct UsePageState(PageState pageState)
     {
         settingsSvc.UsePageState(pageState);
