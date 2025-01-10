@@ -29,7 +29,7 @@ public record MagicThemePackage
         PackageName = themeInfo.Theme.PackageName;
 
         // The json file in the theme folder containing all kinds of settings etc.
-        SettingsJsonFile = "theme.json";
+        SettingsFile = "theme.json";
     }
 
     /// <summary>
@@ -52,7 +52,7 @@ public record MagicThemePackage
     /// Name of the settings file in the theme folder.
     /// Usually `theme.json` (default)
     /// </summary>
-    public string SettingsJsonFile { get; init; } = "";// "theme.json";
+    public string SettingsFile { get; init; } = "";// "theme.json";
 
     /// <summary>
     /// The PackageName which is used for paths etc.
@@ -79,7 +79,7 @@ public record MagicThemePackage
     {
         Defaults = MagicBook.Fallback,
         WwwRoot = "wwwroot",
-        SettingsJsonFile = "",
+        SettingsFile = "",
         PackageName = "Fallback-Not-Configured",
     };
 }

@@ -2,7 +2,7 @@
 
 namespace ToSic.Cre8magic.TestTheme.Client;
 
-internal class ThemeSettingsForTests
+internal class MyThemeSettings
 {
     public static MagicBook Book => new()
     {
@@ -17,15 +17,15 @@ internal class ThemeSettingsForTests
             {
                 Parts = new()
                 {
-                    { "logo", new() { Classes = "logo logo-manual" } }
+                    { "logo", new() { Classes = "logo logo-interactive" } }
                 },
             },
             Language = new()
             {
                 Languages = new()
                 {
-                    { "en", new() { Label = $"En {nameof(Book)}", Description = "English from Code" } },
-                    { "de", new() { Label = $"DE {nameof(Book)}", Description = "DE from Code" } },
+                    { "en", new() { Label = "En Language", Description = "English from Code" } },
+                    { "de", new() { Label = "DE Language", Description = "DE from Code" } },
                 },
             }
         }

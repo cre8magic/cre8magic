@@ -13,7 +13,7 @@ internal class MagicBookLoaderJson
     {
         List<Exception> exceptions = [];
 
-        var jsonFileName = $"{themeConfig.WwwRoot}/{themeConfig.Url}/{themeConfig.SettingsJsonFile}";
+        var jsonFileName = $"{themeConfig.WwwRoot}/{themeConfig.Url}/{themeConfig.SettingsFile}";
         try
         {
             var jsonString = File.ReadAllText(jsonFileName);
@@ -39,7 +39,7 @@ internal class MagicBookLoaderJson
 
         void AddException(Exception ex)
         {
-            exceptions.Add(new Exception($"Error loading json settings file '{themeConfig.SettingsJsonFile}'. {ex.Message}"));
+            exceptions.Add(new Exception($"Error loading json settings file '{themeConfig.SettingsFile}'. {ex.Message}"));
         }
     }
 

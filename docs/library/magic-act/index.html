@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Magic Act for Oqtane Themes | cre8magic </title>
+      <title>Magic Act &#127917; for Oqtane Themes | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Magic Act for Oqtane Themes | cre8magic ">
+      <meta name="title" content="Magic Act &#127917; for Oqtane Themes | cre8magic ">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -85,9 +85,9 @@
         </div>
 
         <article data-uid="Cre8magic.Library.MagicAct.Index">
-<h1 id="magic-act-for-oqtane-themes">Magic Act for Oqtane Themes</h1>
+<h1 id="magic-act--for-oqtane-themes">Magic Act 🎭 for Oqtane Themes</h1>
 
-<p><em>The cre8magic Act is the central coordinator for everything in Oqtane Themes.</em></p>
+<p><em>The cre8magic Magic Act is the central coordinator for everything in Oqtane Themes.</em></p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>If you're just getting started with <strong>cre8magic ♾️</strong>
@@ -133,17 +133,58 @@ By default, there are no additional settings, so the <strong>Magic Act 🎭</s
 <p>The second thing the <strong>Magic Act 🎭</strong> does is to broadcast settings.
 So once you have settings to broadcast (either from the Theme Code or from a JSON File),
 you can use the <strong>Magic Act 🎭</strong> to set everything up.</p>
-<h2 id="use-in-components">Use in Components</h2>
+<h2 id="get-the-magic-act-">Get the Magic Act 🎭</h2>
+<p>This is the basic code you need to get the <strong>Magic Act 🎭</strong>:</p>
 <div class="tabGroup" id="tabgroup_1">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_1_pre-built-components" role="tab" aria-controls="tabpanel_1_pre-built-components" data-tab="pre-built-components" tabindex="0" aria-selected="true">Pre-Built Components</a>
+<a href="#tabpanel_1_blazor" role="tab" aria-controls="tabpanel_1_blazor" data-tab="blazor" tabindex="0" aria-selected="true">Blazor (*.razor)</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_1_custom-components" role="tab" aria-controls="tabpanel_1_custom-components" data-tab="custom-components" tabindex="-1">Custom Components</a>
+<a href="#tabpanel_1_blazor-csharp" role="tab" aria-controls="tabpanel_1_blazor-csharp" data-tab="blazor-csharp" tabindex="-1">Blazor C# (base class)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_csharp-service" role="tab" aria-controls="tabpanel_1_csharp-service" data-tab="csharp-service" tabindex="-1">C# Service</a>
 </li>
 </ul>
-<section id="tabpanel_1_pre-built-components" role="tabpanel" data-tab="pre-built-components">
+<section id="tabpanel_1_blazor" role="tabpanel" data-tab="blazor">
+
+<pre><code class="lang-razor">@using ToSic.Cre8magic.Act
+@inject IMagicAct MagicAct
+</code></pre>
+</section>
+<section id="tabpanel_1_blazor-csharp" role="tabpanel" data-tab="blazor-csharp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">using ToSic.Cre8magic.Act;
+
+public class MyComponent : ComponentBase
+{
+  [Inject] public required IMagicAct MagicAct { get; set; }
+}
+</code></pre>
+</section>
+<section id="tabpanel_1_csharp-service" role="tabpanel" data-tab="csharp-service" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">using ToSic.Cre8magic.Act;
+
+public class MyService(IMagicAct magicAct): IMyService
+{
+  // Use the magicAct here
+}
+</code></pre>
+</section>
+</div>
+<h2 id="use-in-components">Use in Components</h2>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_pre-built-components" role="tab" aria-controls="tabpanel_2_pre-built-components" data-tab="pre-built-components" tabindex="0" aria-selected="true">Pre-Built Components</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_custom-components" role="tab" aria-controls="tabpanel_2_custom-components" data-tab="custom-components" tabindex="-1">Custom Components</a>
+</li>
+</ul>
+<section id="tabpanel_2_pre-built-components" role="tabpanel" data-tab="pre-built-components">
 
 <p>When using the pre-built components, you don't need to worry about the <strong>Magic Act 🎭</strong>.
 Code like this will just do everything for you:</p>
@@ -153,7 +194,7 @@ Code like this will just do everything for you:</p>
 <p>Internally these components will use the <strong>Magic Act 🎭</strong> to get the settings and prepare the <strong>Kit 🧰</strong>,
 but you don't need to know about this.</p>
 </section>
-<section id="tabpanel_1_custom-components" role="tabpanel" data-tab="custom-components" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_2_custom-components" role="tabpanel" data-tab="custom-components" aria-hidden="true" hidden="hidden">
 
 <p>When you're creating your own components,
 you will need to use the <strong>Magic Act 🎭</strong> to get the <strong>Kits 🧰</strong>
@@ -186,13 +227,13 @@ Here's an example:</p>
 </div>
 <h2 id="use-in-themes">Use in Themes</h2>
 <p>You can use the <strong>Magic Act 🎭</strong> in your theme to get a <strong>ThemeKit</strong> and work with it.</p>
-<div class="tabGroup" id="tabgroup_2">
+<div class="tabGroup" id="tabgroup_3">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_basic-example" role="tab" aria-controls="tabpanel_2_basic-example" data-tab="basic-example" tabindex="0" aria-selected="true">Basic Example</a>
+<a href="#tabpanel_3_basic-example" role="tab" aria-controls="tabpanel_3_basic-example" data-tab="basic-example" tabindex="0" aria-selected="true">Basic Example</a>
 </li>
 </ul>
-<section id="tabpanel_2_basic-example" role="tabpanel" data-tab="basic-example">
+<section id="tabpanel_3_basic-example" role="tabpanel" data-tab="basic-example">
 
 <pre><code class="lang-razor">@using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Themes;
@@ -214,21 +255,34 @@ For this, it's best to inherit the <code>MagicTheme</code> and take it from ther
 <p>When creating a theme, you will typically</p>
 <ol>
 <li>inherit from <code>MagicTheme</code></li>
-<li>initialize the <code>ThemePackage</code></li>
+<li>initialize the <code>ThemePackage</code>...
+<ol>
+<li>...with the settings you want to broadcast</li>
+<li><em>or</em> the JSON file name.</li>
+</ol>
+</li>
 </ol>
 <p>This will allow the <strong>Magic Act 🎭</strong> to pick up all relevant settings such as the path etc.
 From now on, every component within this theme will have these settings.</p>
-<div class="tabGroup" id="tabgroup_3">
+<div class="tabGroup" id="tabgroup_4">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_3_theme-single-package" role="tab" aria-controls="tabpanel_3_theme-single-package" data-tab="theme-single-package" tabindex="0" aria-selected="true">Basic Example</a>
+<a href="#tabpanel_4_theme-json" role="tab" aria-controls="tabpanel_4_theme-json" data-tab="theme-json" tabindex="0" aria-selected="true">Example JSON Settings</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_3_theme-with-variations" role="tab" aria-controls="tabpanel_3_theme-with-variations" data-tab="theme-with-variations" tabindex="-1">Theme with Variations</a>
+<a href="#tabpanel_4_theme-single-package" role="tab" aria-controls="tabpanel_4_theme-single-package" data-tab="theme-single-package" tabindex="-1">Example Code Settings</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_theme-with-variations" role="tab" aria-controls="tabpanel_4_theme-with-variations" data-tab="theme-with-variations" tabindex="-1">Theme with Variations</a>
 </li>
 </ul>
-<section id="tabpanel_3_theme-single-package" role="tabpanel" data-tab="theme-single-package">
+<section id="tabpanel_4_theme-json" role="tabpanel" data-tab="theme-json">
 
+<p>In this case we have the settings in a JSON file.</p>
+<h5 id="mythemecs">MyTheme.cs</h5>
+<p>The default is that we have a json file called <code>theme.json</code> in the
+theme folder, which contains all the settings.
+So if only a ThemePackage is defined, this is the default.</p>
 <pre><code class="lang-c#">public class MyTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
 {
   /// &lt;summary&gt;
@@ -240,8 +294,107 @@ From now on, every component within this theme will have these settings.</p>
   // ...
 }
 </code></pre>
+<h5 id="themejson">theme.json</h5>
+<pre><code class="lang-jsonc">{
+  &quot;version&quot;: 0.05,
+  // Theme Configurations
+  &quot;themes&quot;: {
+    // Default Theme
+    &quot;default&quot;: {
+      &quot;logo&quot;: &quot;[Theme.Url]/assets/logo.svg&quot;,
+
+      // Configure various parts of this theme
+      &quot;parts&quot;: {
+        &quot;breadcrumbs&quot;: true,
+        &quot;languages&quot;: true,
+        &quot;menuSidebar&quot;: false,
+        //... rest not show for brevity
+      },
+    },
+    // Sidebar Theme
+    &quot;centered-sidebar&quot;: {
+      // Re-use all previous settings
+      &quot;@inherits&quot;: &quot;default&quot;,
+      &quot;parts&quot;: {
+        &quot;menuSidebar&quot;: true,
+        &quot;languages&quot;: &quot;englishOnly&quot;,
+        &quot;menuMain&quot;: &quot;topLevelOnly&quot;
+      }
+    }
+  },
+
+  // ********** Page Contexts **********
+
+  &quot;pageContexts&quot;: {
+    &quot;default&quot;: {
+      &quot;useBodyTag&quot;: true, // bool
+      &quot;classList&quot;: [
+        &quot;page-[Page.Id]&quot;,
+        &quot;page-root-[Page.RootId]&quot;,
+        &quot;page-parent-[Page.ParentId]&quot;,
+        &quot;site-[Site.Id]&quot;,
+        &quot;nav-level-[Menu.Level]&quot;,
+        &quot;theme-mainnav-variation-right&quot;,
+        &quot;theme-variation-[Layout.Variation]&quot;
+      ],
+      &quot;pageIsHome&quot;: &quot;page-is-home&quot;, // On/Off
+      &quot;tagId&quot;: &quot;cre8magic-root&quot; // string
+    }
+  },
+
+  // ... rest not show for brevity
+}
+</code></pre>
 </section>
-<section id="tabpanel_3_theme-with-variations" role="tabpanel" data-tab="theme-with-variations" aria-hidden="true" hidden="hidden">
+<section id="tabpanel_4_theme-single-package" role="tabpanel" data-tab="theme-single-package" aria-hidden="true" hidden="hidden">
+
+<p>In this case we have the code for the theme and the settings - typically in a separate file.</p>
+<h5 id="mythemecs-1">MyTheme.cs</h5>
+<pre><code class="lang-c#">public class MyTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
+{
+  /// &lt;summary&gt;
+  /// Set the ThemePackage, so the system has all it needs.
+  /// &lt;/summary&gt;
+  public override MagicThemePackage ThemePackage =&gt;
+    field ??= new(new ThemeInfo() with {
+      Book = MyThemeSettings.Book
+    });
+
+  // ...
+}
+</code></pre>
+<h5 id="mythemesettingscs">MyThemeSettings.cs</h5>
+<pre><code class="lang-c#">internal class MyThemeSettings
+{
+  public static MagicBook Book =&gt; new()
+  {
+    Chapter = new()
+    {
+      Theme = new()
+      {
+        Logo = $&quot;{MagicTokens.ThemeUrl}/assets/logo.svg&quot;,
+      },
+      ThemeBlueprint = new()
+      {
+        Parts = new()
+        {
+          { &quot;logo&quot;, new() { Classes = &quot;logo logo-interactive&quot; } }
+        },
+      },
+      Language = new()
+      {
+        Languages = new()
+        {
+          { &quot;en&quot;, new() { Label = &quot;En&quot;, Description = &quot;English&quot; } },
+          { &quot;de&quot;, new() { Label = &quot;De&quot;, Description = &quot;Deutsch&quot; } },
+        },
+      }
+    }
+  };
+}
+</code></pre>
+</section>
+<section id="tabpanel_4_theme-with-variations" role="tabpanel" data-tab="theme-with-variations" aria-hidden="true" hidden="hidden">
 
 <p>If your theme has multiple configurations, you may also want to specify
 a name so that the system will retrieve the correct settings.</p>

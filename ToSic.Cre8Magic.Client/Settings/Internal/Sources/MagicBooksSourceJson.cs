@@ -21,7 +21,7 @@ internal class MagicBooksSourceJson(MagicBookLoaderJson bookLoaderJson) : IMagic
         if (_cache.TryGetValue(themePackage, out var cached))
             return cached;
 
-        if (string.IsNullOrWhiteSpace(themePackage.SettingsJsonFile))
+        if (string.IsNullOrWhiteSpace(themePackage.SettingsFile))
             return [];
 
         var spellsBook = bookLoaderJson.LoadJson(themePackage);

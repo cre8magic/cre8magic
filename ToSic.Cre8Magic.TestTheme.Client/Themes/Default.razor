@@ -52,7 +52,7 @@ Nice to know:
             case "none":
                 break;
             case "custom-book":
-                MagicAct.UseBook(ThemeSettingsForTests.Book);
+                MagicAct.UseBook(MyThemeSettings.Book);
                 break;
         }
     }
@@ -79,7 +79,7 @@ Nice to know:
             return string.IsNullOrWhiteSpace(cookie) || cookie == "default"
                 ? base.ThemePackage
                 : cookie == "custom-set"
-                    ? field ??= base.ThemePackage with { Defaults = ThemeSettingsForTests.Book, SettingsJsonFile = "" }
+                    ? field ??= base.ThemePackage with { Defaults = MyThemeSettings.Book, SettingsFile = "" }
                     : null;
         }
     }
