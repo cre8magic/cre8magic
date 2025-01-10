@@ -7,7 +7,7 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// </summary>
 public interface IMagicMenuService
 {
-    public bool NoInheritSettingsWip { get; set; }
+    //public bool NoInheritSettingsWip { get; set; }
 
     /// <summary>
     /// Get the menu kit containing all items for the current page and specified settings.

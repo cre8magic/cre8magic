@@ -105,6 +105,7 @@ public record MagicMenuSettings : MagicSettings, IMagicPageSetSettings, ICanClon
     /// TODO: NAMING
     /// </summary>
     [JsonIgnore]    // Not meant for JSON at all...
+    [PrivateApi("Not done yet, do not user")]
     public IEnumerable<IMagicPage>? PagesSource { get; init; }
 
     #endregion

@@ -12,13 +12,13 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// </summary>
 public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuService
 {
-    public bool NoInheritSettingsWip { get; set; } = false;
+    //public bool NoInheritSettingsWip { get; set; } = false;
 
     public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)
     {
-        var (newSettings, journal) = NoInheritSettingsWip
-            ? new(settings ?? new(), new())
-            : MergeSettings(pageState, settings);
+        var (newSettings, journal) = // NoInheritSettingsWip
+            //? new(settings ?? new(), new())
+            /*:*/ MergeSettings(pageState, settings);
 
         // Transfer Logs from Tree creation to the current log
         var logRoot = new LogRoot();
