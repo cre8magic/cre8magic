@@ -28,7 +28,7 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase
     /// The Theme Kit which is help the theme become awesome.
     /// </summary>
     public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicAct.ThemeKit(new() { PageState = PageState }));
-    private readonly GetKeepByPageId<IMagicThemeKit> _themeKit = new();
+    private readonly CacheByPage<IMagicThemeKit> _themeKit = new();
 
     /// <summary>
     /// The <see cref="MagicAct"/> which coordinates everything.

@@ -2,7 +2,14 @@
 
 namespace ToSic.Cre8magic.Utils;
 
-public class GetKeepByPageId<T> where T : class
+/// <summary>
+/// Helper to cache data by page.
+/// </summary>
+/// <remarks>
+/// Use it for heavier work which can be preserved as long as the user remains on the same page.
+/// </remarks>
+/// <typeparam name="T"></typeparam>
+public class CacheByPage<T> where T : class
 {
     public T Get(PageState pageState, Func<T> create)
     {
@@ -20,6 +27,7 @@ public class GetKeepByPageId<T> where T : class
 
     // Create the same method as above, but Async
 
+    [PrivateApi("Not publicly used ATM, so don't prioritize")]
     public async Task<T> GetAsync(PageState pageState, Func<Task<T>> create)
     {
         if (pageState == null)

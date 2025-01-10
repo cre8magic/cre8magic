@@ -24,7 +24,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     /// <inheritdoc/>
     public IMagicLanguageKit LanguageKit(PageState pageState, MagicLanguageSettings? settings = default) =>
         _languageStates.Get(pageState, () => CreateState(pageState, settings));
-    private readonly GetKeepByPageId<IMagicLanguageKit> _languageStates = new();
+    private readonly CacheByPage<IMagicLanguageKit> _languageStates = new();
     
     private IMagicLanguageKit CreateState(PageState pageState, MagicLanguageSettings? settings)
     {

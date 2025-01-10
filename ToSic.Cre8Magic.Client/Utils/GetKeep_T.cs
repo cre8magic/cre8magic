@@ -1,6 +1,7 @@
 ﻿
 namespace ToSic.Cre8magic.Utils;
 
+[PrivateApi]
 internal class GetKeep<TResult> where TResult : class
 {
     public TResult Get(Func<TResult> getter, Func<TResult?, bool> keep)

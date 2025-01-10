@@ -38,7 +38,8 @@ Nice to know:
     {
         { "default", "default (json)" }, // leave test as is, using base settings
         { "none", "no settings" }, // use no settings at all - as if nothing were configured.
-        { "custom-book", "use custom spells book" }, // use full custom catalog
+        { "custom-book", "use custom book" }, // use full custom catalog
+        { "custom-set", "use custom Package & book" }, // use full custom catalog
     };
     
     protected override void OnParametersSet()
@@ -48,11 +49,7 @@ Nice to know:
         switch (cookie)
         {
             case "default":
-                // MagicAct.UseSettings(ThemePackageSettings, Layout);
-                // MagicAct.UseBook(null);
-                break;
             case "none":
-                // MagicAct.UseSettings(null, Layout);
                 break;
             case "custom-book":
                 MagicAct.UseBook(ThemeSettingsForTests.Book);
@@ -81,7 +78,9 @@ Nice to know:
             var cookie = HttpContextAccessor.HttpContext.Request.Cookies["TestSettings"];
             return string.IsNullOrWhiteSpace(cookie) || cookie == "default"
                 ? base.ThemePackage
-                : null;
+                : cookie == "custom-set"
+                    ? base.ThemePackage with { Defaults = ThemeSettingsForTests.Book, SettingsJsonFile = "" }
+                    : null;
         }
     }
     #endregion

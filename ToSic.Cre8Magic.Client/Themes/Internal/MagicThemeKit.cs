@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Oqtane.UI;
 using ToSic.Cre8magic.Internal.Debug;
 using ToSic.Cre8magic.Themes.Settings;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Themes.Internal;
 
-internal record MagicThemeKit : IMagicThemeKit
+internal record MagicThemeKit : IMagicThemeKit, IHasPageState
 {
     internal required CmThemeContextFull Context { get; init; }
 
@@ -42,4 +44,6 @@ internal record MagicThemeKit : IMagicThemeKit
         return debugInfo;
 
     }
+
+    PageState IHasPageState.PageState => Settings.PageState!;
 }

@@ -12,7 +12,19 @@ internal class ThemeSettingsForTests
             {
                 "default", new()
                 {
-                    Logo = "[Theme.Url]/assets/LOGO.svg",
+                    Logo = $"{MagicTokens.ThemeUrl}/assets/LOGO.svg",
+                }
+            },
+        },
+        ThemeBlueprints = new()
+        {
+            {
+                "default", new()
+                {
+                    Parts = new()
+                    {
+                        { "logo", new() { Classes = "logo logo-manual" } }
+                    },
                 }
             },
         },

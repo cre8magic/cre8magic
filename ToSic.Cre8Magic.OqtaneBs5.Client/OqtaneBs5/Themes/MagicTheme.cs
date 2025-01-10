@@ -18,8 +18,9 @@ public abstract class MagicTheme: Oqtane.Themes.ThemeBase
 
 
     /// <inheritdoc cref="OqtaneBasic.MagicTheme.ThemeKit" />
-    public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicAct.ThemeKit(new() { PageState = PageState }));
-    private readonly GetKeepByPageId<IMagicThemeKit> _themeKit = new();
+    public IMagicThemeKit ThemeKit => _themeKitCache.Get(PageState,
+        () => MagicAct.ThemeKit(new() { PageState = PageState }));
+    private readonly CacheByPage<IMagicThemeKit> _themeKitCache = new();
 
     /// <inheritdoc cref="OqtaneBasic.MagicTheme.MagicAct" />
     [Inject]

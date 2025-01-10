@@ -8,6 +8,7 @@ namespace ToSic.Cre8magic.Utils;
 /// </summary>
 /// <typeparam name="TResult"></typeparam>
 /// <typeparam name="TCompare"></typeparam>
+[PrivateApi]
 public class GetKeep<TResult, TCompare> where TResult : class
 {
     private TResult? _value;

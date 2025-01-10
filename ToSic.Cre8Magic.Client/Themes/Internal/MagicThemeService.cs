@@ -8,7 +8,7 @@ internal class MagicThemeService(IMagicSettingsService settingsSvc, ScopedDictio
 {
     public IMagicThemeKit ThemeKit(PageState pageState, MagicThemeSettings? settings) =>
         _state.Get(pageState, () => BuildState(pageState, settings));
-    private readonly GetKeepByPageId<IMagicThemeKit> _state = new();
+    private readonly CacheByPage<IMagicThemeKit> _state = new();
 
     private IMagicThemeKit BuildState(PageState pageState, MagicThemeSettings? settings)
     {

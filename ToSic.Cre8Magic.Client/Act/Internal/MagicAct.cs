@@ -51,6 +51,7 @@ internal class MagicAct(
         return this;
     }
 
+    [PrivateApi("test scenarios only, internal")]
     public IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc)
     {
         var provider = new MagicSettingsProvider();

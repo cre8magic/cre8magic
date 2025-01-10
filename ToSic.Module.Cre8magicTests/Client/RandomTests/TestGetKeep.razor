@@ -13,7 +13,7 @@
     private readonly GetKeep<object, int?> _breadcrumbs = new();
 
     private object Simpler => _simpler.Get(PageState, () => new Random().Next(10, 99));
-    private readonly GetKeepByPageId<object> _simpler = new();
+    private readonly CacheByPage<object> _simpler = new();
 }
 <div>
     Random Number: @RandomNumberPerPage / @Simpler

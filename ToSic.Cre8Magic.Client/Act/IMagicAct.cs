@@ -20,12 +20,32 @@ public interface IMagicAct
 {
     #region Setup Methods
 
+    /// <summary>
+    /// From now on, use the specified book for looking up settings.
+    /// </summary>
+    /// <remarks>
+    /// This is Blazor-Scoped.
+    /// It will affect everything that happens afterward until the page is completely reloaded.
+    /// You should only call this from the Theme and never from another component, as it will affect everything (unexpected).
+    /// </remarks>
+    /// <param name="book"></param>
+    /// <returns></returns>
     IMagicAct UseBook(MagicBook book);
 
+    [PrivateApi("special and probably only for testing")]
     IMagicAct UseSettingsProvider(Func<IMagicSettingsProvider, IMagicSettingsProvider> providerFunc);
     
     IMagicAct UseThemePackage(MagicThemePackage themePackage);
 
+    /// <summary>
+    /// Give the MagicAct the current PageState to work with.
+    /// </summary>
+    /// <remarks>
+    /// This is Blazor-Scoped. It will affect everything that happens afterward until the page is completely reloaded.
+    /// You should only call this from the Theme and never from another component, as it will affect everything (unexpected).
+    /// </remarks>
+    /// <param name="pageState"></param>
+    /// <returns></returns>
     IMagicAct UsePageState(PageState pageState);
 
     #endregion

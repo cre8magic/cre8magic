@@ -8,7 +8,7 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
 {
     public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings) =>
         _pageContexts.Get(pageState, () => BuildKit(pageState, settings));
-    private readonly GetKeepByPageId<IMagicPageContextKit> _pageContexts = new();
+    private readonly CacheByPage<IMagicPageContextKit> _pageContexts = new();
 
 
     private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSettings? settings)

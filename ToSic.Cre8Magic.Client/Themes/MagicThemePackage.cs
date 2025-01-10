@@ -17,18 +17,16 @@ public record MagicThemePackage
     /// <summary>
     /// Default / empty constructor; set properties manually.
     /// </summary>
-    public MagicThemePackage() { }
+    internal MagicThemePackage() { }
 
     /// <summary>
     /// Constructor to create a new theme package definition from an existing theme.
     /// </summary>
     /// <param name="themeInfo"></param>
-    /// <param name="name"></param>
-    public MagicThemePackage(ITheme themeInfo, string? name = default)
+    public MagicThemePackage(ITheme themeInfo)
     {
         // The package name is important, as it's used to find assets etc.
         PackageName = themeInfo.Theme.PackageName;
-        Name = name;
 
         // The json file in the theme folder containing all kinds of settings etc.
         SettingsJsonFile = "theme.json";
@@ -40,6 +38,9 @@ public record MagicThemePackage
     /// </summary>
     public MagicBook? Defaults { get; init; }
 
+    /// <summary>
+    /// Name of the theme as is found in the json file.
+    /// </summary>
     public string? Name { get; init; }
 
     /// <summary>
@@ -51,7 +52,7 @@ public record MagicThemePackage
     /// Name of the settings file in the theme folder.
     /// Usually `theme.json` (default)
     /// </summary>
-    public string SettingsJsonFile { get; init; } = "theme.json";
+    public string SettingsJsonFile { get; init; } = "";// "theme.json";
 
     /// <summary>
     /// The PackageName which is used for paths etc.
@@ -61,6 +62,12 @@ public record MagicThemePackage
     [field: AllowNull, MaybeNull]
     public string ThemePath => field ??= "Themes/" + PackageName;
 
+    /// <summary>
+    /// Url to reference files in the theme package.
+    /// </summary>
+    /// <remarks>
+    /// This property is only valid if the theme package was created the normal way with a `ITheme` object.
+    /// </remarks>
     [field: AllowNull, MaybeNull]
     public string Url
     {
