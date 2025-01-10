@@ -87,7 +87,7 @@ In this case, you should know that these two things are equivalent:
 ```csharp
 @{
     breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
-    breadcrumbKit = = MagicAct.BreadcrumbKit(PageState, new() { SettingsName = "default" });
+    breadcrumbKit = = MagicAct.BreadcrumbKit(PageState, new() { Name = "default" });
 }
 ```
 
@@ -95,7 +95,7 @@ Or when using a MagicBreadcrumb component:
 
 ```csharp
 <MagicBreadcrumb />
-<MagicBreadcrumb SettingsName="default" />
+<MagicBreadcrumb Name="default" />
 ```
 
 ## Preparing / Providing Default Settings

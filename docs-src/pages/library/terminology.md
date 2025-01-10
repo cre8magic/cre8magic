@@ -4,17 +4,10 @@
 * MagicAct
 * Kit
 
-* Settings
-* SettingsName
+* Settings / Spell ?
+* Name
 * ThemePackage
 * Blueprint
 * Blueprints
 * BlueprintName
 
-
-
-* Settings
-* SettingsName
-* ThemePackage
-* Plan
-* PlanName

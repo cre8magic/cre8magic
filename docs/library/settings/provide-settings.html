@@ -151,12 +151,12 @@ This may not be common for breadcrumbs, but typical for menus where you would ha
 <p>In this case, you should know that these two things are equivalent:</p>
 <pre><code class="lang-csharp">@{
     breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
-    breadcrumbKit = = MagicAct.BreadcrumbKit(PageState, new() { SettingsName = &quot;default&quot; });
+    breadcrumbKit = = MagicAct.BreadcrumbKit(PageState, new() { Name = &quot;default&quot; });
 }
 </code></pre>
 <p>Or when using a MagicBreadcrumb component:</p>
 <pre><code class="lang-csharp">&lt;MagicBreadcrumb /&gt;
-&lt;MagicBreadcrumb SettingsName=&quot;default&quot; /&gt;
+&lt;MagicBreadcrumb Name=&quot;default&quot; /&gt;
 </code></pre>
 <h2 id="preparing--providing-default-settings">Preparing / Providing Default Settings</h2>
 <p>The settings are prepared and provided in a central location.</p>

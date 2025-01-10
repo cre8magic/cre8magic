@@ -27,10 +27,10 @@ Settings can also be provided in a central location, and just use the name of th
 
 ```html
 <!-- Get menu-settings called "footer" -->
-`<MagicMenu SettingsName="footer" />`
+`<MagicMenu Name="footer" />`
 
 <!-- Get all settings for the part "footer-menu" -->
-`<MagicMenu PartName="footer-menu" />`
+`<MagicMenu Name="footer-menu" />`
 ```
 
 Settings are also used to get **Kits** so you can write your own code to do things, like this:

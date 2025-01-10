@@ -53,7 +53,7 @@ and just name this menu part "System-Menu":
 <MagicMenu Name="System-Menu" />
 ```
 
-TODO: PartName - maybe something better to keep BluePrint / Spell-Book separate?
+TODO: Name - maybe something better to keep BluePrint / Spell-Book separate?
 
 - By just having a name, and no parts...
 - Maybe rename the theme parts a `PartMap` or `NameMap` or `Rename` for the special cases

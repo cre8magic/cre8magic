@@ -23,7 +23,7 @@ references:
   name: Magic Languages
   href: library/languages/magic-languages.html
 - uid: Cre8magic.Library.MagicMenu.Index
-  name: cre8magic – Magic Menu System for Oqtane Themes
+  name: Magic Menu System for Oqtane Themes
   href: library/magic-menu/index.html
 - uid: Cre8magic.Library.MagicPageContext.Index
   name: Magic Context
@@ -1122,6 +1122,18 @@ references:
   commentId: T:ToSic.Cre8magic.MagicTokens
   fullName: ToSic.Cre8magic.MagicTokens
   nameWithType: MagicTokens
+- uid: ToSic.Cre8magic.MagicTokens.ByLevelOtherKey
+  name: ByLevelOtherKey
+  href: api/ToSic.Cre8magic.MagicTokens.html#ToSic_Cre8magic_MagicTokens_ByLevelOtherKey
+  commentId: F:ToSic.Cre8magic.MagicTokens.ByLevelOtherKey
+  fullName: ToSic.Cre8magic.MagicTokens.ByLevelOtherKey
+  nameWithType: MagicTokens.ByLevelOtherKey
+- uid: ToSic.Cre8magic.MagicTokens.PageId
+  name: PageId
+  href: api/ToSic.Cre8magic.MagicTokens.html#ToSic_Cre8magic_MagicTokens_PageId
+  commentId: F:ToSic.Cre8magic.MagicTokens.PageId
+  fullName: ToSic.Cre8magic.MagicTokens.PageId
+  nameWithType: MagicTokens.PageId
 - uid: ToSic.Cre8magic.Menus
   name: ToSic.Cre8magic.Menus
   href: api/ToSic.Cre8magic.Menus.html
@@ -1425,6 +1437,25 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.Target
   nameWithType: MagicDebug.Target
+- uid: ToSic.Cre8magic.OqtaneBs5.Defaults
+  name: Defaults
+  href: api/ToSic.Cre8magic.OqtaneBs5.Defaults.html
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.Defaults
+  fullName: ToSic.Cre8magic.OqtaneBs5.Defaults
+  nameWithType: Defaults
+- uid: ToSic.Cre8magic.OqtaneBs5.Defaults.MagicMenuBlueprint
+  name: MagicMenuBlueprint
+  href: api/ToSic.Cre8magic.OqtaneBs5.Defaults.html#ToSic_Cre8magic_OqtaneBs5_Defaults_MagicMenuBlueprint
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.Defaults.MagicMenuBlueprint
+  fullName: ToSic.Cre8magic.OqtaneBs5.Defaults.MagicMenuBlueprint
+  nameWithType: Defaults.MagicMenuBlueprint
+- uid: ToSic.Cre8magic.OqtaneBs5.Defaults.MagicMenuBlueprint*
+  name: MagicMenuBlueprint
+  href: api/ToSic.Cre8magic.OqtaneBs5.Defaults.html#ToSic_Cre8magic_OqtaneBs5_Defaults_MagicMenuBlueprint_
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.Defaults.MagicMenuBlueprint
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.OqtaneBs5.Defaults.MagicMenuBlueprint
+  nameWithType: Defaults.MagicMenuBlueprint
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer
   name: MagicContainer
   href: api/ToSic.Cre8magic.OqtaneBs5.MagicContainer.html

@@ -104,10 +104,10 @@ Let's say you want to create a footer-menu, which only shows <strong>Home</stron
 </code></pre>
 <p>Settings can also be provided in a central location, and just use the name of the settings:</p>
 <pre><code class="lang-html">&lt;!-- Get menu-settings called &quot;footer&quot; --&gt;
-`&lt;MagicMenu SettingsName=&quot;footer&quot; /&gt;`
+`&lt;MagicMenu Name=&quot;footer&quot; /&gt;`
 
 &lt;!-- Get all settings for the part &quot;footer-menu&quot; --&gt;
-`&lt;MagicMenu PartName=&quot;footer-menu&quot; /&gt;`
+`&lt;MagicMenu Name=&quot;footer-menu&quot; /&gt;`
 </code></pre>
 <p>Settings are also used to get <strong>Kits</strong> so you can write your own code to do things, like this:</p>
 <pre><code class="lang-csharp">var menuKit = MagicAct.MenuKit(new () { Nodes = &quot;/, 5&quot; });
