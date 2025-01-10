@@ -9,13 +9,13 @@ namespace ToSic.Cre8magic.Themes.Internal;
 public record CmThemeContext
 {
     [field: AllowNull, MaybeNull]
-    internal ThemePartNameResolver NameResolver => field ??= new(this.Name, this.ThemeSpell.Parts);
+    internal ThemePartNameResolver NameResolver => field ??= new(this.Name, this.ThemeSettings.Parts);
 
     /// <summary></summary>
     public required string Name { get; init; }
 
     /// <summary></summary>
-    public required MagicThemeSpell ThemeSpell { get; init; }
+    public required MagicThemeSettings ThemeSettings { get; init; }
 
     /// <summary></summary>
     public required Journal Journal { get; init; }

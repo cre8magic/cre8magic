@@ -18,14 +18,14 @@ namespace ToSic.Cre8magic.Languages.Internal;
  * - ...and only show these; possibly show more to admin?
  */
 
-internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, IMagicSpellsService spellsSvc) : IMagicLanguageService
+internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsRuntime, IMagicSettingsService settingsSvc) : IMagicLanguageService
 {
     /// <inheritdoc/>
-    public IMagicLanguageKit LanguageKit(PageState pageState, MagicLanguageSpell? settings = default) =>
+    public IMagicLanguageKit LanguageKit(PageState pageState, MagicLanguageSettings? settings = default) =>
         _languageStates.Get(pageState, () => CreateState(pageState, settings));
     private readonly GetKeepByPageId<IMagicLanguageKit> _languageStates = new();
     
-    private IMagicLanguageKit CreateState(PageState pageState, MagicLanguageSpell? settings)
+    private IMagicLanguageKit CreateState(PageState pageState, MagicLanguageSettings? settings)
     {
         var (settingsFull, themePart, journal) = MergeSettings(pageState, settings);
 
@@ -37,22 +37,22 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             Show = show,
             Languages = languages,
             Tailor = designer,
-            Spell = settingsFull,
+            Settings = settingsFull,
             Service = this,
         };
     }
 
-    private Data2WithJournal<MagicLanguageSpell, MagicThemePartSettings?> MergeSettings(
-        PageState pageState, MagicLanguageSpell? settings)
+    private Data2WithJournal<MagicLanguageSettings, MagicThemePartSettings?> MergeSettings(
+        PageState pageState, MagicLanguageSettings? settings)
     {
-        var getSpell = new GetSpell(spellsSvc, pageState, settings?.Name);
-        var spell = getSpell.GetBestSpell(settings, spellsSvc.Languages);
-        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, spellsSvc.LanguageBlueprints, ThemePartSectionEnum.Design);
+        var getSpell = new GetSpell(settingsSvc, pageState, settings?.Name);
+        var spell = getSpell.GetBestSpell(settings, settingsSvc.Languages);
+        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, settingsSvc.LanguageBlueprints, ThemePartSectionEnum.Design);
         return new(spell.Data with { Blueprint = bluePrint.Data }, getSpell.Part, spell.Journal.With(bluePrint.Journal));
     }
 
 
-    private List<MagicLanguage> LanguagesToShow(PageState pageState, MagicLanguageSpell spell)
+    private List<MagicLanguage> LanguagesToShow(PageState pageState, MagicLanguageSettings settings)
     {
         var siteId = pageState.Site.SiteId;
         if (_languages.TryGetValue(siteId, out var cached))
@@ -62,13 +62,13 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         var siteLanguageCodes = siteLanguages.Select(l => l.Code).ToList();
 
         // Primary order of languages. If specified, use that, otherwise use site list
-        var customList = spell.Languages?.Values;
+        var customList = settings.Languages?.Values;
         var primaryOrder = (customList is { Count: > 0 }
                 ? customList.Select(l => l.Culture)
                 : siteLanguageCodes)
             .ToList();
 
-        if (!spell.HideOthersSafe && primaryOrder.Count < siteLanguages.Count)
+        if (!settings.HideOthersSafe && primaryOrder.Count < siteLanguages.Count)
         {
             var missingLanguages = siteLanguageCodes
                 .Where(slc => !primaryOrder.Any(slc.EqInvariant)).ToList();
@@ -98,10 +98,10 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     private readonly Dictionary<int, List<MagicLanguage>> _languages = new();
 
 
-    public MagicLanguageTailor Tailor(PageState pageState, MagicLanguageSpell spellFull)
+    public MagicLanguageTailor Tailor(PageState pageState, MagicLanguageSettings settings)
     {
-        var themeContext = spellsSvc.GetThemeContextFull(pageState);
-        var languages = new MagicLanguageTailor(themeContext, spellFull);
+        var themeContext = settingsSvc.GetThemeContextFull(pageState);
+        var languages = new MagicLanguageTailor(themeContext, settings);
         return languages;
     }
 

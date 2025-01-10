@@ -9,10 +9,10 @@ Nice to know:       Will use Bootstrap toggle functionality to show the hidden c
 *@
 @code {
     [CascadingParameter] public required PageState PageState { get; set; }
-    [Parameter] public MagicThemeSpell Spell { get; set; }
+    [Parameter] public MagicThemeSettings Settings { get; set; }
 }
 @{
-    var kit = MagicAct.ThemeKit(Spell.With(PageState));
+    var kit = MagicAct.ThemeKit(Settings.With(PageState));
     var user = MagicAct.User(new() { PageState = PageState });
 }
 @if (user.MayAdminCurrentPage)

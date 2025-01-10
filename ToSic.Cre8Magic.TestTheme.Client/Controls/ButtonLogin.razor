@@ -13,10 +13,10 @@ See also:           ButtonLoginTextInvisible.razor has the same feature but with
 {
     [CascadingParameter] public required PageState PageState { get; set; }
 
-    [Parameter] public MagicUserLoginSpell Spell { get; set; }
+    [Parameter] public MagicUserLoginSettings Settings { get; set; }
 }
 @{
-    var loginKit = MagicAct.UserLoginKit(Spell.With(PageState));
+    var loginKit = MagicAct.UserLoginKit(Settings.With(PageState));
 }
 <a title="@loginKit.Resources.Title" class='@loginKit.Tailor.Classes("iconLogin")' @onclick="loginKit.ToggleLogin">
     @if (loginKit.User.IsAuthenticated)

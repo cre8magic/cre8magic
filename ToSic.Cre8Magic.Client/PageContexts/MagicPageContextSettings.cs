@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.PageContexts;
 ///
 /// This configures how the page context is rendered, and what classes are added to the body tag.
 /// </summary>
-public partial record MagicPageContextSpell: MagicSpellBase, ICanClone<MagicPageContextSpell>
+public partial record MagicPageContextSettings: MagicSettings, ICanClone<MagicPageContextSettings>
 {
     #region Constructors and Cloning
 
@@ -17,12 +17,12 @@ public partial record MagicPageContextSpell: MagicSpellBase, ICanClone<MagicPage
     /// Empty constructor for serialization and creating new records.
     /// </summary>
     [PrivateApi]
-    public MagicPageContextSpell() { }
+    public MagicPageContextSettings() { }
 
     /// <summary>
     /// Clone constructor.
     /// </summary>
-    private MagicPageContextSpell(MagicPageContextSpell? priority, MagicPageContextSpell? fallback = default)
+    private MagicPageContextSettings(MagicPageContextSettings? priority, MagicPageContextSettings? fallback = default)
         : base(priority, fallback)
     {
         UseBodyTag = priority?.UseBodyTag ?? fallback?.UseBodyTag;
@@ -34,7 +34,7 @@ public partial record MagicPageContextSpell: MagicSpellBase, ICanClone<MagicPage
     }
 
     /// <inheritdoc />
-    MagicPageContextSpell ICanClone<MagicPageContextSpell>.CloneUnder(MagicPageContextSpell? priority, bool forceCopy) =>
+    MagicPageContextSettings ICanClone<MagicPageContextSettings>.CloneUnder(MagicPageContextSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion

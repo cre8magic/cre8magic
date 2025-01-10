@@ -4,7 +4,7 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
-internal class MagicBreadcrumbNodeFactory(WorkContext<MagicBreadcrumbSpell, IMagicPageTailor> workContext)
+internal class MagicBreadcrumbNodeFactory(WorkContext<MagicBreadcrumbSettings, IMagicPageTailor> workContext)
     : MagicPagesFactoryBase(workContext)
 {
     protected override IMagicPageTailor PageTailor() =>

@@ -3,22 +3,22 @@ using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.UserLogins;
 
-public record MagicUserLoginSpell : MagicSpellBase, ICanClone<MagicUserLoginSpell>
+public record MagicUserLoginSettings : MagicSettings, ICanClone<MagicUserLoginSettings>
 {
     /// <summary>
     /// Dummy constructor so better find cases where it's created
     /// Note it must be without parameters for json deserialization
     /// </summary>
     [PrivateApi]
-    public MagicUserLoginSpell() {}
+    public MagicUserLoginSettings() {}
 
-    private MagicUserLoginSpell(MagicUserLoginSpell? priority, MagicUserLoginSpell? fallback = default)
+    private MagicUserLoginSettings(MagicUserLoginSettings? priority, MagicUserLoginSettings? fallback = default)
         : base(priority, fallback)
     {
         //DesignSettings = priority?.DesignSettings ?? fallback?.DesignSettings;
     }
 
-    MagicUserLoginSpell ICanClone<MagicUserLoginSpell>.CloneUnder(MagicUserLoginSpell? priority, bool forceCopy) =>
+    MagicUserLoginSettings ICanClone<MagicUserLoginSettings>.CloneUnder(MagicUserLoginSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 

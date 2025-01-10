@@ -6,9 +6,9 @@ using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Containers.Internal;
 
-internal class MagicContainerService(IMagicSpellsService spellsSvc) : IMagicContainerService
+internal class MagicContainerService(IMagicSettingsService settingsSvc) : IMagicContainerService
 {
-    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSpell? settings = default)
+    public IMagicContainerKit ContainerKit(PageState pageState, Module module, MagicContainerSettings? settings = default)
     {
         var (settingsFull, journal) = MergeSettings(pageState, settings);
 
@@ -18,24 +18,24 @@ internal class MagicContainerService(IMagicSpellsService spellsSvc) : IMagicCont
             Tailor = designer,
             Module = module,
 
-            Spell = settingsFull,
+            Settings = settingsFull,
         };
     }
 
-    private DataWithJournal<MagicContainerSpell> MergeSettings(
-        PageState pageState, MagicContainerSpell? settings)
+    private DataWithJournal<MagicContainerSettings> MergeSettings(
+        PageState pageState, MagicContainerSettings? settings)
     {
 
-        var getSpell = new GetSpell(spellsSvc, pageState, settings?.Name);
-        var spell = getSpell.GetBestSpell(settings, spellsSvc.Containers);
-        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, spellsSvc.ContainerBlueprints, ThemePartSectionEnum.Design);
+        var getSpell = new GetSpell(settingsSvc, pageState, settings?.Name);
+        var spell = getSpell.GetBestSpell(settings, settingsSvc.Containers);
+        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, settingsSvc.ContainerBlueprints, ThemePartSectionEnum.Design);
         return new(spell.Data with { Blueprint = bluePrint.Data }, spell.Journal.With(bluePrint.Journal));
     }
 
 
     private MagicContainerTailor ContainerTailor(PageState pageState, Module module, MagicContainerBlueprint blueprint)
     {
-        var designContext = spellsSvc.GetThemeContextFull(pageState);
+        var designContext = settingsSvc.GetThemeContextFull(pageState);
         var container = new MagicContainerTailor(designContext, module, blueprint);
         return container;
     }

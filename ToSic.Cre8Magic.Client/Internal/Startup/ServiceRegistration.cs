@@ -21,8 +21,9 @@ using ToSic.Cre8magic.Links.Internal;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Json;
-using ToSic.Cre8magic.Settings.Internal.Providers;
 using ToSic.Cre8magic.Settings.Internal.Sources;
+using ToSic.Cre8magic.Settings.Providers;
+using ToSic.Cre8magic.Settings.Providers.Internal;
 
 // ReSharper disable InconsistentNaming
 
@@ -66,7 +67,7 @@ public static class ServiceRegistration
     public static IServiceCollection AddCre8magicSettingsCore(this IServiceCollection services)
     {
         // All these Settings etc. should be scoped, so they don't have to reload for each click
-        services.TryAddScoped<IMagicSpellsService, MagicSpellsService>();
+        services.TryAddScoped<IMagicSettingsService, MagicSettingsService>();
 
         // Services used by SettingsService, which is scoped, so the dependencies can be normal transient
         services.TryAddTransient<MagicSpellsLibraryLoader>();
@@ -86,9 +87,9 @@ public static class ServiceRegistration
     public static IServiceCollection AddCre8magicSettingsSourceProvider(this IServiceCollection services)
     {
         // Main Settings Provider, scoped, to be used on two following interfaces
-        services.TryAddScoped<MagicSpellsProvider>();
-        services.TryAddTransient<IMagicSpellsProvider>(s => s.GetRequiredService<MagicSpellsProvider>());
-        services.AddTransient<IMagicSpellsBooksSource>(s => s.GetRequiredService<MagicSpellsProvider>());
+        services.TryAddScoped<MagicSettingsProvider>();
+        services.TryAddTransient<IMagicSettingsProvider>(s => s.GetRequiredService<MagicSettingsProvider>());
+        services.AddTransient<IMagicSpellsBooksSource>(s => s.GetRequiredService<MagicSettingsProvider>());
 
         return services;
     }

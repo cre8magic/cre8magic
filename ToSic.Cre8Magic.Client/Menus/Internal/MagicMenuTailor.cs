@@ -14,14 +14,14 @@ public class MagicMenuTailor : IMagicPageTailor
 {
     internal MagicMenuTailor(MagicMenuWorkContext workContext)
     {
-        Spell = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
+        Settings = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
 
-        DesignSettingsList = [Spell.BlueprintSafe];
+        DesignSettingsList = [Settings.BlueprintSafe];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
         Log = workContext.Settings.Debug?.Detailed == true ? workContext.LogRoot.GetLog(nameof(MagicMenuTailor)) : null;
     }
-    private MagicMenuSpell Spell { get; }
+    private MagicMenuSettings Settings { get; }
 
     // TODO: unclear why this is a list, it can only contain one...?
     internal List<MagicMenuBlueprint> DesignSettingsList { get; }

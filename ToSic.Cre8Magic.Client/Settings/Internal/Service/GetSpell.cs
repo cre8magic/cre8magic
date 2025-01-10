@@ -7,19 +7,19 @@ using ToSic.Cre8magic.Themes.Settings;
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
-internal class GetSpell(IMagicSpellsService spellsSvc, PageState? pageStateForCachingOnly, string? name)
+internal class GetSpell(IMagicSettingsService settingsSvc, PageState? pageStateForCachingOnly, string? name)
 {
     /// <summary>
     /// Get the Theme Context - important for checking part names
     /// </summary>
     [field: AllowNull, MaybeNull]
-    private CmThemeContext ThemeCtx => field ??= spellsSvc.GetThemeContext(pageStateForCachingOnly);
+    private CmThemeContext ThemeCtx => field ??= settingsSvc.GetThemeContext(pageStateForCachingOnly);
 
     /// <summary>
     /// Find Part which contains information for these settings,
     /// e.g. what to show
     /// </summary>
-    internal MagicThemePartSettings? Part => field ??= ThemeCtx.ThemeSpell.Parts.GetValueOrDefault(name ?? "dummy-prevent-error");
+    internal MagicThemePartSettings? Part => field ??= ThemeCtx.ThemeSettings.Parts.GetValueOrDefault(name ?? "dummy-prevent-error");
 
     /// <summary>
     /// Special helper to get settings and design settings.

@@ -23,7 +23,7 @@ public interface IMagicLanguageKit: IHasDebugInfo
 
     MagicLanguageTailor Tailor { get; init; }
 
-    MagicLanguageSpell Spell { get; init; }
+    MagicLanguageSettings Settings { get; init; }
 
     //internal MagicThemeDesignSettings ThemeDesignSettings { get; init; }
 

@@ -4,32 +4,32 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.PageContexts.Internal;
 
-internal class MagicPageContextService(IMagicSpellsService spellsSvc, IMagicThemeJsService jsSvc) : IMagicPageContextService
+internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagicThemeJsService jsSvc) : IMagicPageContextService
 {
-    public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSpell? settings) =>
+    public IMagicPageContextKit PageContextKit(PageState pageState, MagicPageContextSettings? settings) =>
         _pageContexts.Get(pageState, () => BuildKit(pageState, settings));
     private readonly GetKeepByPageId<IMagicPageContextKit> _pageContexts = new();
 
 
-    private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSpell? settings)
+    private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSettings? settings)
     {
-        var (settingsData, _) = new GetSpell(spellsSvc, pageState, settings?.Name)
-            .GetBestSpell(settings, spellsSvc.PageContexts);
+        var (settingsData, _) = new GetSpell(settingsSvc, pageState, settings?.Name)
+            .GetBestSpell(settings, settingsSvc.PageContexts);
 
-        var themeCtx = spellsSvc.GetThemeContextFull(pageState);
+        var themeCtx = settingsSvc.GetThemeContextFull(pageState);
 
         var contextClasses = new MagicPageContextTailor(settingsData, pageState).BodyClasses(themeCtx.PageTokens, settings?.Classes);
         return new MagicPageContextKit
         {
             Classes = contextClasses,
-            Spell = settingsData,
+            Settings = settingsData,
             // Internals
             PageState = pageState,
             Service = this
         };
     }
 
-    internal async Task UpdateBodyTag(PageState pageState, MagicPageContextSpell? settings)
+    internal async Task UpdateBodyTag(PageState pageState, MagicPageContextSettings? settings)
     {
         var state = PageContextKit(pageState, settings);
         if (!state.UseBodyTag)

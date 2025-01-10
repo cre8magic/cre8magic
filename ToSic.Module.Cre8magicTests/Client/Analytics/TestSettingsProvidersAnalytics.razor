@@ -1,7 +1,8 @@
 ﻿@using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.Settings.Providers
 @inherits ComponentBase
-@inject IMagicSpellsProvider SpellsProviders
+@inject IMagicSettingsProvider SpellsProviders
 @inject IMagicAct MagicAct
 @{
     SpellsProviders.Reset();
@@ -15,6 +16,6 @@
     <p>
         This will set and read the test-analytics.
     </p>
-    <p>Default Analytics: @analyticsKit.Spell.GtmId</p>
-    <p>Test Analytics: @analyticsTestKit.Spell.GtmId</p>
+    <p>Default Analytics: @analyticsKit.Settings.GtmId</p>
+    <p>Test Analytics: @analyticsTestKit.Settings.GtmId</p>
 </div>

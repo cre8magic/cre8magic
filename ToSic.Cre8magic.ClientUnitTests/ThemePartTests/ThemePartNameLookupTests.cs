@@ -37,7 +37,7 @@ public class ThemePartNameLookupTests
         var themeCtx = new CmThemeContext
         {
             Name = "dummy",
-            ThemeSpell = new()
+            ThemeSettings = new()
             {
                 Parts = themeParts
             },

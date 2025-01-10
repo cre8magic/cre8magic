@@ -7,7 +7,7 @@
 @using ToSic.Cre8magic.Internal.Debug
 @using ToSic.Cre8magic.Settings.Internal
 @using ToSic.Cre8magic.Users
-@inject IMagicSpellsService SpellsService
+@inject IMagicSettingsService SettingsService
 @inject IMagicAct MagicAct
 @code {
     [CascadingParameter] public required PageState PageState { get; set; }
@@ -16,7 +16,7 @@
 @{
     var debugInfo = Target.GetDebugInfo();
     var settings = debugInfo.Settings;
-    var debug = SpellsService.Debug.GetState(settings, PageState.UserMayEditCurrentPage());
+    var debug = SettingsService.Debug.GetState(settings, PageState.UserMayEditCurrentPage());
 
     // Exit early if debug is not allowed
     if (!debug.Show)

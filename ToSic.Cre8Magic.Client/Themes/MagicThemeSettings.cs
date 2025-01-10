@@ -8,14 +8,14 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Themes;
 
-public record MagicThemeSpell: MagicSpellBase, IHasDebugSettings, ICanClone<MagicThemeSpell>
+public record MagicThemeSettings: MagicSettings, IHasDebugSettings, ICanClone<MagicThemeSettings>
 {
     #region Constructor & Clone
     
     [PrivateApi]
-    public MagicThemeSpell() { }
+    public MagicThemeSettings() { }
 
-    private MagicThemeSpell(MagicThemeSpell? priority, MagicThemeSpell? fallback = default)
+    private MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = default)
         : base(priority, fallback)
     {
         Logo = priority?.Logo ?? fallback?.Logo ?? Defaults.Fallback.Logo;
@@ -25,7 +25,7 @@ public record MagicThemeSpell: MagicSpellBase, IHasDebugSettings, ICanClone<Magi
         Debug = priority?.Debug ?? fallback?.Debug;
     }
 
-    MagicThemeSpell ICanClone<MagicThemeSpell>.CloneUnder(MagicThemeSpell? priority, bool forceCopy) =>
+    MagicThemeSettings ICanClone<MagicThemeSettings>.CloneUnder(MagicThemeSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion
@@ -41,7 +41,7 @@ public record MagicThemeSpell: MagicSpellBase, IHasDebugSettings, ICanClone<Magi
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemePartSettings>))]
     public Dictionary<string, MagicThemePartSettings> Parts { get; init; } = new();
 
-    internal static Defaults<MagicThemeSpell> Defaults = new(new()
+    internal static Defaults<MagicThemeSettings> Defaults = new(new()
     {
         Logo = "unknown-logo.png",
     });

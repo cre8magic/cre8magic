@@ -1,7 +1,7 @@
-﻿namespace ToSic.Cre8magic.Settings.Internal.Providers;
+﻿namespace ToSic.Cre8magic.Settings.Providers.Internal;
 
-internal class MagicSpellsProviderSection<T>(IMagicSpellsProvider parent)
-    : IMagicSpellsProviderSection<T>, ISourceInternal
+internal class MagicSettingsProviderSection<T>(IMagicSettingsProvider parent)
+    : IMagicSettingsProviderSection<T>, ISourceInternal
     where T : class
 {
     public bool HasValues { get; private set; }
@@ -15,10 +15,10 @@ internal class MagicSpellsProviderSection<T>(IMagicSpellsProvider parent)
     }
 
     // TODO: use constant for "Default"
-    public IMagicSpellsProvider SetDefault(T value) =>
+    public IMagicSettingsProvider SetDefault(T value) =>
         Provide("default", value);
 
-    public IMagicSpellsProvider Provide(string key, T value)
+    public IMagicSettingsProvider Provide(string key, T value)
     {
         Values ??= new Dictionary<string, T>(StringComparer.InvariantCultureIgnoreCase);
         Values[key] = value;
@@ -26,7 +26,7 @@ internal class MagicSpellsProviderSection<T>(IMagicSpellsProvider parent)
         return parent;
     }
 
-    public IMagicSpellsProvider Provide(IDictionary<string, T> dictionary)
+    public IMagicSettingsProvider Provide(IDictionary<string, T> dictionary)
     {
         Values = new Dictionary<string, T>(dictionary, StringComparer.InvariantCultureIgnoreCase);
         HasValues = true;

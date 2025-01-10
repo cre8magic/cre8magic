@@ -11,10 +11,10 @@ TODO:
 *@
 @code {
     [CascadingParameter] public required PageState PageState { get; set; }
-    [Parameter] public MagicThemeSpell Spell { get; set; }
+    [Parameter] public MagicThemeSettings Settings { get; set; }
 }
 @{
-    var kit = MagicAct.ThemeKit(Spell.With(PageState));
+    var kit = MagicAct.ThemeKit(Settings.With(PageState));
 }
 <a id="@kit.Tailor.Id("linkToTop")" title="Up" rel="nofollow">
     <svg xmlns="http://www.w3.org/2000/svg" width="19.032" height="20.034" viewBox="0 0 19.032 20.034">

@@ -8,20 +8,20 @@ internal record MagicThemeKit : IMagicThemeKit
 {
     internal required CmThemeContextFull Context { get; init; }
 
-    public MagicThemeSpell Spell => Context.ThemeSpell;
+    public MagicThemeSettings Settings => Context.ThemeSettings;
 
     public MagicThemeBlueprint Blueprint => Context.ThemeBlueprint;
 
     public required MagicThemeTailor Tailor { get; init; }
 
     [field: AllowNull, MaybeNull]
-    public string Logo => field ??= Context.PageTokens.Parse(Spell.Logo) ?? "";
+    public string Logo => field ??= Context.PageTokens.Parse(Settings.Logo) ?? "";
 
     /// <summary>
     /// Determine if we should show a specific part
     /// </summary>
     public bool ShowPart(string name) =>
-        Spell.Parts.TryGetValue(name, out var partSettings) && partSettings.Show == true;
+        Settings.Parts.TryGetValue(name, out var partSettings) && partSettings.Show == true;
 
     public DebugInfo GetDebugInfo()
     {
@@ -30,10 +30,10 @@ internal record MagicThemeKit : IMagicThemeKit
             Title = "Theme Settings (Debug)",
             More = new()
             {
-                { "Theme Parts", Spell },
+                { "Theme Parts", Settings },
                 { "Theme Design", Blueprint },
             },
-            Settings = Spell,
+            Settings = Settings,
             Values = new()
             {
                 { "Logo", DebugInfo.ShowNotSet(Logo) },

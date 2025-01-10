@@ -7,5 +7,5 @@ namespace ToSic.Cre8magic.Analytics.Internal;
 /// </summary>
 public interface IMagicAnalyticsService
 {
-    IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSpell? settings = default);
+    IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = default);
 }

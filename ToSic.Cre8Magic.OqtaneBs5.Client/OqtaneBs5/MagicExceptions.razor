@@ -4,7 +4,7 @@
 @using ToSic.Cre8magic.Internal
 @using ToSic.Cre8magic.Settings.Internal
 @using ToSic.Cre8magic.Users
-@inject IMagicSpellsService SpellsService
+@inject IMagicSettingsService SettingsService
 @inject IMagicAct MagicAct
 @code {
     /// <inheritdoc cref="ComponentDocs.PageState"/>
@@ -13,11 +13,11 @@
 }
 @* Check if we have any exceptions to report *@
 @{
-    var exceptions = SpellsService.GetExceptions();
+    var exceptions = SettingsService.GetExceptions();
 }
 @if (exceptions.Any())
 {
-    var debug = SpellsService.DebugState(PageState);
+    var debug = SettingsService.DebugState(PageState);
 
     <div class="alert alert-danger" role="alert">
             @if (debug?.Show == true || PageState.UserMayEditCurrentPage())

@@ -10,15 +10,15 @@ namespace ToSic.Cre8magic.Settings;
 /// Internal base class containing all kinds of settings which
 /// all spells share.
 /// </summary>
-public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, IHasDebugSettings, IDebugSettings
+public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IHasDebugSettings, IDebugSettings
 {
     #region Constructor & Cloning
 
     [PrivateApi]
-    protected MagicSpellBase() { }
+    protected MagicSettings() { }
 
     [PrivateApi]
-    protected MagicSpellBase(MagicSpellBase? priority, MagicSpellBase? fallback = default)
+    protected MagicSettings(MagicSettings? priority, MagicSettings? fallback = default)
         : base(priority, fallback)
     {
         if (fallback == null)
@@ -39,7 +39,11 @@ public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, I
     #endregion
 
 
-    #region Settings for Code
+    #region Settings for Code: Name and PageState
+
+    /// <inheritdoc/>
+    [JsonIgnore]
+    public string? Name { get; init; }
 
     /// <summary>
     /// The PageState which is needed for doing everything.
@@ -48,11 +52,6 @@ public abstract record MagicSpellBase: MagicInheritsBase, ISettingsForCodeUse, I
     /// </summary>
     [JsonIgnore]
     public PageState? PageState { get; init; }
-
-
-    /// <inheritdoc/>
-    [JsonIgnore]
-    public string? Name { get; init; }
 
     #endregion
 

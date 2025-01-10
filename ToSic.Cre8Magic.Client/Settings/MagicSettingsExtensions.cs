@@ -13,7 +13,7 @@ namespace ToSic.Cre8magic.Settings;
 ///
 /// This makes it easier for most components to just use this namespace and little else.
 /// </remarks>
-public static class MagicSpellExtensions
+public static class MagicSettingsExtensions
 {
     /// <summary>
     /// Fill in the PageState if not yet set.
@@ -25,7 +25,7 @@ public static class MagicSpellExtensions
     /// <param name="pageState">The PageState to back-fill</param>
     /// <returns></returns>
     public static TSpell Refill<TSpell>(this TSpell? settings, PageState pageState)
-        where TSpell : MagicSpellBase, new()
+        where TSpell : MagicSettings, new()
     {
         settings ??= new();
         return settings.PageState != null ? settings : settings with { PageState = pageState };
@@ -43,7 +43,7 @@ public static class MagicSpellExtensions
     /// <param name="name">The name of default settings to load</param>
     /// <returns></returns>
     public static TSpell With<TSpell>(this TSpell? settings, PageState pageState, string? name = default)
-        where TSpell : MagicSpellBase, new() =>
+        where TSpell : MagicSettings, new() =>
         settings != null
             ? settings with
             {
@@ -59,7 +59,7 @@ public static class MagicSpellExtensions
 
 
     public static TSpell Refill<TSpell, TWith>(this TSpell? settings, TWith? addition)
-        where TSpell : MagicSpellBase, IWith<TWith?>, new()
+        where TSpell : MagicSettings, IWith<TWith?>, new()
         where TWith : class
     {
         settings ??= new();
@@ -69,7 +69,7 @@ public static class MagicSpellExtensions
     }
 
     public static TSpell With<TSpell, TWith>(this TSpell? settings, TWith? addition)
-        where TSpell : MagicSpellBase, IWith<TWith?>, new()
+        where TSpell : MagicSettings, IWith<TWith?>, new()
         where TWith : class =>
         settings != null
             ? settings with { WithData = addition }

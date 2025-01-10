@@ -8,7 +8,7 @@
 
     // Run some performance tests
     var stopWatch = new Stopwatch();
-    var testSettings = new MagicAnalyticsSpell { Name = "analytics-test" };
+    var testSettings = new MagicAnalyticsSettings { Name = "analytics-test" };
     stopWatch.Start();
     var analyticsTestKit = MagicAct.AnalyticsKit(testSettings);
 
@@ -24,8 +24,8 @@
         This will ONLY read the test-analytics.
         So if you refresh this page, it will be the same as default, if you go to the other page first, it should have that value.
     </p>
-    <p>Default Analytics: @analyticsKit.Spell.GtmId</p>
-    <p>Test Analytics: @analyticsTestKit.Spell.GtmId</p>
+    <p>Default Analytics: @analyticsKit.Settings.GtmId</p>
+    <p>Test Analytics: @analyticsTestKit.Settings.GtmId</p>
     <p>
         Time for @cycles cycles: @stopWatch.ElapsedMilliseconds ms / @stopWatch.Elapsed.Seconds seconds
     </p>

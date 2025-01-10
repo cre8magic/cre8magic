@@ -8,7 +8,7 @@ namespace ToSic.Cre8magic.PageContexts;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicPageContextTailor(MagicPageContextSpell spell, PageState pageState)
+public class MagicPageContextTailor(MagicPageContextSettings settings, PageState pageState)
 {
     internal string? BodyClasses(ITokenReplace tokens, string? additionalClasses)
     {
@@ -17,8 +17,8 @@ public class MagicPageContextTailor(MagicPageContextSpell spell, PageState pageS
         //if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
 
         // Make a copy...
-        List<string?> classes = (spell.ClassList?.ToList() ?? [])!;
-        classes.Add(spell.PageIsHome?.Get(pageState.Page.Path == ""));
+        List<string?> classes = (settings.ClassList?.ToList() ?? [])!;
+        classes.Add(settings.PageIsHome?.Get(pageState.Page.Path == ""));
         if (additionalClasses.HasText())
             classes.Add(additionalClasses);
 

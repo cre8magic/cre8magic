@@ -2,4 +2,4 @@
 
 namespace ToSic.Cre8magic.Users;
 
-public record MagicUserSpell: MagicSpellBase;
+public record MagicUserSettings: MagicSettings;

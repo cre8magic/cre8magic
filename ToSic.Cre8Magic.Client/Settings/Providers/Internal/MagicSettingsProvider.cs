@@ -5,9 +5,9 @@ using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Internal.Sources;
 
-namespace ToSic.Cre8magic.Settings.Internal.Providers;
+namespace ToSic.Cre8magic.Settings.Providers.Internal;
 
-internal class MagicSpellsProvider: IMagicSpellsProvider, IMagicSpellsBooksSource
+internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicSpellsBooksSource
 {
     int IMagicSpellsBooksSource.Priority => 200;
 
@@ -62,7 +62,7 @@ internal class MagicSpellsProvider: IMagicSpellsProvider, IMagicSpellsBooksSourc
         _themes
     ];
 
-    public IMagicSpellsProvider Provide(MagicSpellsBook book)
+    public IMagicSettingsProvider Provide(MagicSpellsBook book)
     {
         _book = book;
         return this;
@@ -72,18 +72,18 @@ internal class MagicSpellsProvider: IMagicSpellsProvider, IMagicSpellsBooksSourc
 
     private MagicSpellsBook? _book;
 
-    public IMagicSpellsProviderSection<MagicAnalyticsSpell> Analytics => _analytics ??= new(this);
-    private MagicSpellsProviderSection<MagicAnalyticsSpell>? _analytics;
+    public IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
+    private MagicSettingsProviderSection<MagicAnalyticsSettings>? _analytics;
 
-    public IMagicSpellsProviderSection<MagicBreadcrumbSpell> Breadcrumbs => _breadcrumbs ??= new(this);
-    private MagicSpellsProviderSection<MagicBreadcrumbSpell>? _breadcrumbs;
+    public IMagicSettingsProviderSection<MagicBreadcrumbSettings> Breadcrumbs => _breadcrumbs ??= new(this);
+    private MagicSettingsProviderSection<MagicBreadcrumbSettings>? _breadcrumbs;
 
-    public IMagicSpellsProviderSection<MagicContainerSpell> Containers => _containers ??= new(this);
-    private MagicSpellsProviderSection<MagicContainerSpell>? _containers;
+    public IMagicSettingsProviderSection<MagicContainerSettings> Containers => _containers ??= new(this);
+    private MagicSettingsProviderSection<MagicContainerSettings>? _containers;
 
-    public IMagicSpellsProviderSection<MagicMenuBlueprint> MenuBlueprints => _menuDesigns ??= new(this);
-    private MagicSpellsProviderSection<MagicMenuBlueprint>? _menuDesigns;
+    public IMagicSettingsProviderSection<MagicMenuBlueprint> MenuBlueprints => _menuDesigns ??= new(this);
+    private MagicSettingsProviderSection<MagicMenuBlueprint>? _menuDesigns;
 
-    public IMagicSpellsProviderSection<MagicThemeSpell> Themes => _themes ??= new(this);
-    private MagicSpellsProviderSection<MagicThemeSpell>? _themes;
+    public IMagicSettingsProviderSection<MagicThemeSettings> Themes => _themes ??= new(this);
+    private MagicSettingsProviderSection<MagicThemeSettings>? _themes;
 }

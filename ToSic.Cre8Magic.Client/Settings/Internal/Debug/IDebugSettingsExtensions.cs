@@ -14,11 +14,13 @@ public static class IDebugSettingsExtensions
         return settings;
     }
 
-    public static T UseLanguageSettings<T>(this T settings, MagicLanguageSpell languageSpell) where T : IDebugSettings
+    // TODO: this was probably an old experiment to inject alternate defaults
+    // should probably be removed again
+    public static T UseLanguageSettings<T>(this T settings, MagicLanguageSettings languageSettings) where T : IDebugSettings
     {
         settings.Book = (settings.Book ?? new MagicSpellsBook()) with
         {
-            Languages = new() { { "default", languageSpell } }
+            Languages = new() { { "default", languageSettings } }
         };
         return settings;
     }

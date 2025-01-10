@@ -3,8 +3,9 @@ using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Internal.Startup;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Providers;
 using ToSic.Cre8magic.Settings.Internal.Sources;
+using ToSic.Cre8magic.Settings.Providers;
+using ToSic.Cre8magic.Settings.Providers.Internal;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsProviderTests;
 
@@ -17,12 +18,12 @@ public class SettingsProviderTestWithAnalytics
     /// Prepare a settings service and add a default value. 
     /// </summary>
     /// <returns></returns>
-    private static (IMagicSpellsService settingsSvc, IMagicSpellsProvider SettingsProvider, MagicAnalyticsSpell DefaultSettings) PrepareSettings()
+    private static (IMagicSettingsService settingsSvc, IMagicSettingsProvider SettingsProvider, MagicAnalyticsSettings DefaultSettings) PrepareSettings()
     {
         var di = SetupServices.Start().AddCre8magic().AddLogging().Finish();
-        var settingsProvider = di.GetRequiredService<IMagicSpellsProvider>();
-        var settingsSvc = di.GetRequiredService<IMagicSpellsService>();
-        var original = new MagicAnalyticsSpell
+        var settingsProvider = di.GetRequiredService<IMagicSettingsProvider>();
+        var settingsSvc = di.GetRequiredService<IMagicSettingsService>();
+        var original = new MagicAnalyticsSettings
         {
             GtmId = GtmOfOriginal
         };
@@ -44,7 +45,7 @@ public class SettingsProviderTestWithAnalytics
     {
         var (settingsSvc, _, original) = PrepareSettings();
         // Settings, without GtmId, so that it would receive it from original when merging
-        var analytics = new MagicAnalyticsSpell { Name = currentName };
+        var analytics = new MagicAnalyticsSettings { Name = currentName };
         var retrieved2 = new GetSpell(settingsSvc, null, analytics.Name)
             .GetBestSpell(analytics, settingsSvc.Analytics);
         Assert.Equal(expectNoMerge ? analytics.GtmId : original.GtmId, retrieved2.Data.GtmId);
@@ -71,7 +72,7 @@ public class SettingsProviderTestWithAnalytics
         });
 
         var retrieved = new GetSpell(settingsSvc, null, searchName)
-            .GetBestSpell(new MagicAnalyticsSpell { Name = searchName }, settingsSvc.Analytics);
+            .GetBestSpell(new MagicAnalyticsSettings { Name = searchName }, settingsSvc.Analytics);
 
         Assert.Equal(expected, retrieved.Data.GtmId);
     }
@@ -80,8 +81,8 @@ public class SettingsProviderTestWithAnalytics
     public void BothInterfacesOnServiceProviderGiveSameObject()
     {
         var serviceProvider = SetupServices.Start().AddCre8magic().AddStandardLogging().Finish();
-        var original = serviceProvider.GetRequiredService<MagicSpellsProvider>();
-        var settingsProvider = serviceProvider.GetRequiredService<IMagicSpellsProvider>();
+        var original = serviceProvider.GetRequiredService<MagicSettingsProvider>();
+        var settingsProvider = serviceProvider.GetRequiredService<IMagicSettingsProvider>();
 
         Assert.Equal(original, settingsProvider);
 

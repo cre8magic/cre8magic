@@ -24,7 +24,7 @@
         }
     };
 
-    var settings = new MagicLanguageSpell().UseSpellsBook(book);
+    var settings = new MagicLanguageSettings().UseSpellsBook(book);
 }
 <MagicLanguageMenu Settings="settings"></MagicLanguageMenu>
 
@@ -32,7 +32,7 @@
 
 <h3>Language Menu Config from UseLanguageSettings</h3>
 @{
-    var settings2 = new MagicLanguageSpell().UseLanguageSettings(new()
+    var settings2 = new MagicLanguageSettings().UseLanguageSettings(new()
     {
         Languages = new()
         {

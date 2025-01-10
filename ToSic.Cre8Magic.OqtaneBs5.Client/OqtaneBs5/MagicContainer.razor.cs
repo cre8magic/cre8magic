@@ -46,7 +46,7 @@ public partial class MagicContainer: ComponentBase /*Oqtane.Themes.ContainerBase
     /// Defaults to null, in which case it asks the theme etc. for settings.
     /// Inheriting code could overwrite it, to specify settings directly.
     /// </summary>
-    public virtual MagicContainerSpell? Settings => null;
+    public virtual MagicContainerSettings? Settings => null;
 
     [Inject] public required IMagicAct MagicAct { get; set; }
 

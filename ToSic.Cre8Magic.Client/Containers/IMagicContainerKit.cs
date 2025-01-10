@@ -9,4 +9,6 @@ public interface IMagicContainerKit
     /// </summary>
     /// <returns></returns>
     bool IsForAdminModule { get; }
+
+    MagicContainerSettings Settings { get; init; }
 }

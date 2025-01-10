@@ -14,10 +14,10 @@ public static class DebugExtensions
     public static IEnumerable<object?>? GetLogEntries(this IMagicMenuKit menuKit) =>
         menuKit?.WorkContext?.LogRoot.Entries;
 
-    public static List<Exception> GetExceptions(this IMagicSpellsService spellsSvc) =>
-        spellsSvc.Library.SelectMany(c => c.Journal.Exceptions).ToList();
+    public static List<Exception> GetExceptions(this IMagicSettingsService settingsSvc) =>
+        settingsSvc.Library.SelectMany(c => c.Journal.Exceptions).ToList();
 
-    public static CmThemeContext GetThemeContext(this IMagicSpellsService spellsSvc, PageState pageState) =>
-        spellsSvc.GetThemeContext(pageState);
+    public static CmThemeContext GetThemeContext(this IMagicSettingsService settingsSvc, PageState pageState) =>
+        settingsSvc.GetThemeContext(pageState);
 
 }

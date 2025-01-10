@@ -9,20 +9,20 @@ namespace ToSic.Cre8magic.Menus;
 /// <summary>
 /// The raw settings for a menu, in a way which can be stored elsewhere.
 ///
-/// This is later augmented with additional information which only code can provide, in the <see cref="MagicMenuSpell"/>
+/// This is later augmented with additional information which only code can provide, in the <see cref="MagicMenuSettings"/>
 /// </summary>
 /// <remarks>
 /// This is implemented as an immutable record.
 /// </remarks>
-public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<MagicMenuSpell>, IWith<MagicMenuBlueprint?>
+public record MagicMenuSettings : MagicSettings, IMagicPageSetSettings, ICanClone<MagicMenuSettings>, IWith<MagicMenuBlueprint?>
 {
     /// <summary>
     /// Default constructor, so this record can be created anywhere.
     /// </summary>
     [PrivateApi]
-    public MagicMenuSpell() { }
+    public MagicMenuSettings() { }
 
-    private MagicMenuSpell(MagicMenuSpell? priority, MagicMenuSpell? fallback = default) : base(priority, fallback)
+    private MagicMenuSettings(MagicMenuSettings? priority, MagicMenuSettings? fallback = default) : base(priority, fallback)
     {
         Id = priority?.Id ?? fallback?.Id;
         Show = priority?.Show ?? fallback?.Show;
@@ -35,7 +35,7 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
         PagesSource = priority?.PagesSource ?? fallback?.PagesSource;
     }
 
-    MagicMenuSpell ICanClone<MagicMenuSpell>.CloneUnder(MagicMenuSpell? priority, bool forceCopy) =>
+    MagicMenuSettings ICanClone<MagicMenuSettings>.CloneUnder(MagicMenuSettings? priority, bool forceCopy) =>
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     /// <summary>
@@ -110,7 +110,7 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
     #endregion
 
 
-    internal static Defaults<MagicMenuSpell> Defaults = new()
+    internal static Defaults<MagicMenuSettings> Defaults = new()
     {
         Fallback = new()
         {

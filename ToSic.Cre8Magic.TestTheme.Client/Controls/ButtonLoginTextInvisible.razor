@@ -12,9 +12,9 @@ See also:           LoginIcon.razor has the same feature but with icons
 @code
 {
     [CascadingParameter] public required PageState PageState { get; set; }
-    [Parameter] public MagicUserLoginSpell Spell { get; set; }
+    [Parameter] public MagicUserLoginSettings Settings { get; set; }
 }
 @{
-    var loginKit = MagicAct.UserLoginKit(Spell.With(PageState));
+    var loginKit = MagicAct.UserLoginKit(Settings.With(PageState));
 }
 <a title="@loginKit.Resources.Title" class="@loginKit.Tailor.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@loginKit.Resources.Title</a>

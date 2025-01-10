@@ -10,11 +10,11 @@ namespace ToSic.Cre8magic.Menus.Internal;
 /// <summary>
 /// Will create a MenuTree based on the current pages information and settings.
 /// </summary>
-public class MagicMenuService(IMagicSpellsService spellsSvc): IMagicMenuService
+public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuService
 {
     public bool NoInheritSettingsWip { get; set; } = false;
 
-    public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSpell? settings = null)
+    public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)
     {
         var (newSettings, journal) = NoInheritSettingsWip
             ? new(settings ?? new() /*{ Blueprint = MagicMenuBlueprint.Defaults.Fallback }*/, new())
@@ -33,7 +33,7 @@ public class MagicMenuService(IMagicSpellsService spellsSvc): IMagicMenuService
             Tailor = newSettings.Tailor,
             LogRoot = logRoot,
             PageFactory = pageFactory,
-            TokenEngine = spellsSvc.PageTokenEngine(pageState),
+            TokenEngine = settingsSvc.PageTokenEngine(pageState),
             Settings = newSettings,
         };
 
@@ -46,17 +46,17 @@ public class MagicMenuService(IMagicSpellsService spellsSvc): IMagicMenuService
         var kit = new MagicMenuKit
         {
             Root = root,
-            Spell = newSettings,
+            Settings = newSettings,
             WorkContext = context,
         };
         return kit;
     }
 
-    private DataWithJournal<MagicMenuSpell> MergeSettings(PageState pageState, MagicMenuSpell? settings)
+    private DataWithJournal<MagicMenuSettings> MergeSettings(PageState pageState, MagicMenuSettings? settings)
     {
-        var getSpell = new GetSpell(spellsSvc, pageState, settings?.Name);
-        var spell = getSpell.GetBestSpell(settings, spellsSvc.Menus);
-        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, spellsSvc.MenuBlueprints, ThemePartSectionEnum.Design);
+        var getSpell = new GetSpell(settingsSvc, pageState, settings?.Name);
+        var spell = getSpell.GetBestSpell(settings, settingsSvc.Menus);
+        var bluePrint = getSpell.GetBestSpell(settings?.Blueprint, settingsSvc.MenuBlueprints, ThemePartSectionEnum.Design);
         return new(spell.Data with { Blueprint = bluePrint.Data }, spell.Journal.With(bluePrint.Journal));
     }
 }

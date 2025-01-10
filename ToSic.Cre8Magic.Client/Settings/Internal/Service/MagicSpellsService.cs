@@ -20,10 +20,10 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// <summary>
 /// Service which consolidates settings made in the UI, in the JSON and falls back to coded defaults.
 /// </summary>
-internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMagicSpellsService, IHasSpellsLibrary
+internal class MagicSettingsService(MagicSpellsLibraryLoader libraryLoader) : IMagicSettingsService, IHasSpellsLibrary
 {
     /// <inheritdoc />>
-    public IMagicSpellsService Setup(MagicThemePackage themePackage)
+    public IMagicSettingsService Setup(MagicThemePackage themePackage)
     {
         ThemePackage = themePackage;
         ThemeTokens = null!;
@@ -32,7 +32,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
 
     private string? Variant => ThemePackage?.Name;
 
-    public IMagicSpellsService UsePageState(PageState pageState)
+    public IMagicSettingsService UsePageState(PageState pageState)
     {
         PageState = pageState;
         return this;
@@ -44,10 +44,10 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
     public PageState? PageState { get; private set; }
 
     public MagicDebugState DebugState(PageState pageState) =>
-        ((IMagicSpellsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
+        ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
 
     [field: AllowNull, MaybeNull]
-    MagicDebugSettings IMagicSpellsService.Debug => field
+    MagicDebugSettings IMagicSettingsService.Debug => field
         ??= Library.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
 
     [field: AllowNull, MaybeNull]
@@ -89,7 +89,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
         var ctx = new CmThemeContext
         {
             Name = settingsName,
-            ThemeSpell = themeSettings,
+            ThemeSettings = themeSettings,
             Journal = nameJournal
         };
         if (pageStateForCachingOnly != null)
@@ -113,7 +113,7 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
         var ctx = new CmThemeContextFull
         {
             Name = ctxLight.Name,
-            ThemeSpell = ctxLight.ThemeSpell,
+            ThemeSettings = ctxLight.ThemeSettings,
             Journal = ctxLight.Journal,
 
             PageState = pageState,
@@ -138,16 +138,16 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
     #region Analytics
 
     [field: AllowNull, MaybeNull]
-    SettingsReader<MagicAnalyticsSpell> IMagicSpellsService.Analytics => field
-        ??= new(this, MagicAnalyticsSpell.Defaults, cat => cat.Analytics);
+    SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics => field
+        ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
 
     #endregion
 
     #region Breadcrumbs
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicBreadcrumbSpell> Breadcrumbs => field ??=
-        new(this, MagicBreadcrumbSpell.Defaults, cat => cat.Breadcrumbs);
+    public SettingsReader<MagicBreadcrumbSettings> Breadcrumbs => field ??=
+        new(this, MagicBreadcrumbSettings.Defaults, cat => cat.Breadcrumbs);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicBreadcrumbBlueprint> BreadcrumbBlueprints => field
@@ -158,16 +158,16 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
     #region PageContexts
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicPageContextSpell> PageContexts => field
-        ??= new(this, MagicPageContextSpell.Defaults, book => book.PageContexts);
+    public SettingsReader<MagicPageContextSettings> PageContexts => field
+        ??= new(this, MagicPageContextSettings.Defaults, book => book.PageContexts);
 
     #endregion
 
     #region Themes
 
     [field: AllowNull, MaybeNull]
-    private SettingsReader<MagicThemeSpell> Themes => field
-        ??= new(this, MagicThemeSpell.Defaults, book => book.Themes);
+    private SettingsReader<MagicThemeSettings> Themes => field
+        ??= new(this, MagicThemeSettings.Defaults, book => book.Themes);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicThemeBlueprint> ThemeBlueprints => field
@@ -178,8 +178,8 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
     #region Languages
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicLanguageSpell> Languages => field
-        ??= new(this, MagicLanguageSpell.Defaults, book => book.Languages);
+    public SettingsReader<MagicLanguageSettings> Languages => field
+        ??= new(this, MagicLanguageSettings.Defaults, book => book.Languages);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicLanguageBlueprint> LanguageBlueprints => field
@@ -190,8 +190,8 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
     #region Containers
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicContainerSpell> Containers => field
-        ??= new(this, MagicContainerSpell.Defaults, cat => cat.Containers);
+    public SettingsReader<MagicContainerSettings> Containers => field
+        ??= new(this, MagicContainerSettings.Defaults, cat => cat.Containers);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicContainerBlueprint> ContainerBlueprints => field
@@ -202,8 +202,8 @@ internal class MagicSpellsService(MagicSpellsLibraryLoader libraryLoader) : IMag
     #region Menus
 
     [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicMenuSpell> Menus => field
-        ??= new(this, MagicMenuSpell.Defaults, book => book.Menus);
+    public SettingsReader<MagicMenuSettings> Menus => field
+        ??= new(this, MagicMenuSettings.Defaults, book => book.Menus);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicMenuBlueprint> MenuBlueprints => field

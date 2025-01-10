@@ -5,7 +5,7 @@ namespace ToSic.Cre8magic.Containers.Internal;
 
 internal record MagicContainerKit : IMagicContainerKit
 {
-    public required MagicContainerSpell Spell { get; init; }
+    public required MagicContainerSettings Settings { get; init; }
 
     public required MagicContainerTailor Tailor { get; init; }
 

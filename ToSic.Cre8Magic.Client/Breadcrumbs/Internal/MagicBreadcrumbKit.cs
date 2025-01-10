@@ -6,7 +6,7 @@ internal record MagicBreadcrumbKit : IMagicBreadcrumbKit
 {
     public required IEnumerable<IMagicPage> Pages { get; init; }
 
-    public required MagicBreadcrumbSpell Spell { get; init; }
+    public required MagicBreadcrumbSettings Settings { get; init; }
 
     public required bool Show { get; init; }
 

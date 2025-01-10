@@ -8,21 +8,21 @@ using static ToSic.Cre8magic.Utils.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics.Internal;
 
-public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSpellsService spellsSvc) : IMagicAnalyticsService
+public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc) : IMagicAnalyticsService
 {
     private const string GtmEvent = "event";
 
-    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSpell? settings = null) =>
+    public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null) =>
         BuildKit(pageState, settings);
 
-    private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSpell? settings = null)
+    private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSettings? settings = null)
     {
-        var (settingsData, _) = new GetSpell(spellsSvc, pageState, settings?.Name)
-            .GetBestSpell(settings, spellsSvc.Analytics);
+        var (settingsData, _) = new GetSpell(settingsSvc, pageState, settings?.Name)
+            .GetBestSpell(settings, settingsSvc.Analytics);
 
         var result = new MagicAnalyticsKit
         {
-            Spell = settingsData,
+            Settings = settingsData,
             PageState = pageState,
             Service = this
         };
@@ -38,7 +38,7 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSpellsService spe
     /// <param name="settings"></param>
     /// <param name="isFirstRender"></param>
     /// <returns></returns>
-    internal async Task TrackPage(PageState pageState, MagicAnalyticsSpell? settings, bool isFirstRender)
+    internal async Task TrackPage(PageState pageState, MagicAnalyticsSettings? settings, bool isFirstRender)
     {
         if (settings == null) return;
         if (settings.PageViewTrack != true) return;
