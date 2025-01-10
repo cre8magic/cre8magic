@@ -1,10 +1,4 @@
-﻿using System.Dynamic;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Breadcrumbs;
-using ToSic.Cre8magic.Containers;
-using ToSic.Cre8magic.Internal.Journal;
-using ToSic.Cre8magic.Menus;
+﻿using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal.Sources;
 
 namespace ToSic.Cre8magic.Settings.Providers.Internal;
@@ -20,56 +14,24 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicBooksSource
     /// <returns></returns>
     public List<DataWithJournal<MagicBook>> Books(MagicThemePackage themePackage)
     {
-        var partsNoData = AllSources.All(source => source?.HasValues != true);
-        if (partsNoData)
-            return BookFromChapters != null
-                ? [new(BookFromChapters, new())]
-                : _book == null
-                    ? []
-                    : [new(_book, new())];
+        if (_book != null && BookFromChapters != null)
+        {
+            var book = Merge([_book, BookFromChapters]);
+            return [new(book, new())];
 
-        var book = _book ?? new MagicBook();
-
-        if (!partsNoData)
-            book = book with
-            {
-                Analytics = _analytics?.Values != null ? new(_analytics.Values) : book.Analytics,
-                Breadcrumbs = _breadcrumbs?.Values != null ? new(_breadcrumbs.Values) : book.Breadcrumbs,
-                Containers = _containers?.Values != null ? new(_containers.Values) : book.Containers,
-                MenuBlueprints = _menuDesigns?.Values != null
-                    ? new(_menuDesigns.Values.ToDictionary(
-                        dic => dic.Key,
-                        dic => dic.Value
-                    ))
-                    : book.MenuBlueprints,
-                Themes = _themes?.Values != null ? new(_themes.Values) : book.Themes,
-            };
-
-        if (BookFromChapters != null)
-            book = Merge([book, BookFromChapters]);
-
-        return [new(book, new())];
+        }
+        return BookFromChapters != null
+            ? [new(BookFromChapters, new())]
+            : _book != null
+                ? [new(_book, new())]
+                : [];
     }
 
     public void Reset()
     {
-        foreach (var source in AllSources) 
-            source?.Reset();
         BookFromChapters = null;
         Chapters.Clear();
     }
-
-    /// <summary>
-    /// Remember to add any new sources to this list!
-    /// </summary>
-    private List<ISourceInternal?> AllSources =>
-    [
-        _analytics,
-        _containers,
-        _breadcrumbs,
-        _menuDesigns,
-        _themes
-    ];
 
     public IMagicSettingsProvider Provide(MagicBook book)
     {
@@ -77,24 +39,7 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicBooksSource
         return this;
     }
 
-    public MagicBook? Book => Books(null!).FirstOrDefault()?.Data;
-
     private MagicBook? _book;
-
-    public IMagicSettingsProviderSection<MagicAnalyticsSettings> Analytics => _analytics ??= new(this);
-    private MagicSettingsProviderSection<MagicAnalyticsSettings>? _analytics;
-
-    public IMagicSettingsProviderSection<MagicBreadcrumbSettings> Breadcrumbs => _breadcrumbs ??= new(this);
-    private MagicSettingsProviderSection<MagicBreadcrumbSettings>? _breadcrumbs;
-
-    public IMagicSettingsProviderSection<MagicContainerSettings> Containers => _containers ??= new(this);
-    private MagicSettingsProviderSection<MagicContainerSettings>? _containers;
-
-    public IMagicSettingsProviderSection<MagicMenuBlueprint> MenuBlueprints => _menuDesigns ??= new(this);
-    private MagicSettingsProviderSection<MagicMenuBlueprint>? _menuDesigns;
-
-    public IMagicSettingsProviderSection<MagicThemeSettings> Themes => _themes ??= new(this);
-    private MagicSettingsProviderSection<MagicThemeSettings>? _themes;
 
     #region WIP try to switch to chapters for simplicity
 
@@ -128,8 +73,9 @@ internal class MagicSettingsProvider: IMagicSettingsProvider, IMagicBooksSource
         var menuBlueprints = Merge(list.Select(l => l.MenuBlueprints));
         var pageContexts = Merge(list.Select(l => l.PageContexts));
 
-        return new MagicBook
+        return new()
         {
+            Source = "Provided",
             Themes = themes,
             ThemeBlueprints = themeBlueprints,
             Analytics = analytics,

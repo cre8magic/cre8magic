@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Internal.Startup;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Sources;
 using ToSic.Cre8magic.Settings.Providers;
@@ -22,21 +21,16 @@ public class SettingsProviderTestWithAnalytics
     {
         var di = SetupServices.Start().AddCre8magic().AddLogging().Finish();
         var settingsProvider = di.GetRequiredService<IMagicSettingsProvider>();
-        var settingsSvc = di.GetRequiredService<IMagicSettingsService>();
         var original = new MagicAnalyticsSettings
         {
             GtmId = GtmOfOriginal
         };
-        //settingsProvider.Analytics.SetDefault(original);
-
-        var settingsProvider2 = di.GetRequiredService<IMagicSettingsProvider>();
-        settingsProvider2.Add(new()
+        settingsProvider.Add(new()
         {
             Analytics = original,
         });
-        var book1 = settingsProvider.Book;
-        var book2 = settingsProvider2.Book;
 
+        var settingsSvc = di.GetRequiredService<IMagicSettingsService>();
         return (settingsSvc, settingsProvider, original);
     }
 
