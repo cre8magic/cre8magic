@@ -63,7 +63,9 @@ public static class MagicSpellExtensions
         where TWith : class
     {
         settings ??= new();
-        return settings.WithData != null ? settings : settings with { WithData = addition };
+        return settings.WithData != null
+            ? settings
+            : settings with { WithData = addition };
     }
 
     public static TSpell With<TSpell, TWith>(this TSpell? settings, TWith? addition)

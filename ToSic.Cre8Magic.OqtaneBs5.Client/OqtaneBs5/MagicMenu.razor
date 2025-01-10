@@ -1,4 +1,5 @@
-﻿@using Oqtane.UI
+﻿@inherits ComponentBase
+@using Oqtane.UI
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.OqtaneBs5.Debug
 @using ToSic.Cre8magic.Menus
@@ -32,7 +33,7 @@ Nice to know:
 }
 @{
     // Get the latest menu kit on each render, using the latest PageState
-    var menuKit = MagicAct.MenuKit(Settings.With(PageState, Name));
+    var menuKit = MagicAct.MenuKit(Settings.With(PageState, Name).Refill(new DefaultsBs5().MagicMenuBlueprint));
 }
 @* Special Debugging *@
 @if (false)

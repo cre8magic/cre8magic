@@ -5,7 +5,7 @@ using ToSic.Cre8magic.Spells.Internal;
 
 namespace ToSic.Cre8magic.Containers;
 
-public record MagicContainerSpell: MagicSpellBase, ICanClone<MagicContainerSpell>, IWith<Module>
+public record MagicContainerSpell: MagicSpellBase, ICanClone<MagicContainerSpell>, IWith<Module?>
 {
     [PrivateApi]
     public MagicContainerSpell() { }
@@ -27,5 +27,5 @@ public record MagicContainerSpell: MagicSpellBase, ICanClone<MagicContainerSpell
 
     internal static Defaults<MagicContainerSpell> Defaults = new(new());
 
-    Module? IWith<Module>.WithData { get => ModuleState; init => ModuleState = value; }
+    Module? IWith<Module?>.WithData { get => ModuleState; init => ModuleState = value; }
 }

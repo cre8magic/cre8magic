@@ -12,7 +12,7 @@ public class MagicTokens
 
     internal const string SiteId = "[Site.Id]";
 
-    internal const string PageId = "[Page.Id]";
+    public const string PageId = "[Page.Id]";
     internal const string PageParentId = "[Page.ParentId]";
     internal const string PageRootId = "[Page.RootId]";
 
@@ -31,5 +31,5 @@ public class MagicTokens
     /// <summary>
     /// Special key to mark rules "ByLevel" which apply to all level which had not been defined
     /// </summary>
-    internal const int ByLevelOtherKey = -1;
+    public const int ByLevelOtherKey = -1;
 }

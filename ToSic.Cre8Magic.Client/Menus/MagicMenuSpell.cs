@@ -14,7 +14,7 @@ namespace ToSic.Cre8magic.Menus;
 /// <remarks>
 /// This is implemented as an immutable record.
 /// </remarks>
-public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<MagicMenuSpell>, IWith<MagicMenuBlueprint>
+public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<MagicMenuSpell>, IWith<MagicMenuBlueprint?>
 {
     /// <summary>
     /// Default constructor, so this record can be created anywhere.
@@ -96,7 +96,7 @@ public record MagicMenuSpell : MagicSpellBase, IMagicPageSetSettings, ICanClone<
     [field: AllowNull, MaybeNull]
     internal MagicMenuBlueprint BlueprintSafe => field ??= Blueprint ?? MagicMenuBlueprint.Defaults.Fallback;
 
-    MagicMenuBlueprint? IWith<MagicMenuBlueprint>.WithData { get => Blueprint; init => Blueprint = value; }
+    MagicMenuBlueprint? IWith<MagicMenuBlueprint?>.WithData { get => Blueprint; init => Blueprint = value; }
 
     /// <summary>
     /// List of pages to respect when creating the breadcrumb.
