@@ -2,7 +2,7 @@
 using ToSic.Cre8magic.Spells.Internal;
 using ToSic.Cre8magic.Spells.Internal.Json;
 
-namespace ToSic.Cre8magic.Spells.Settings;
+namespace ToSic.Cre8magic.Spells.Values;
 
 /// <summary>
 /// Special Setting containing a value to be used when a state is on or off.

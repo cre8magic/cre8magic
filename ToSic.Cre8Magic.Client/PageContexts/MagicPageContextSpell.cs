@@ -1,6 +1,6 @@
 ﻿using ToSic.Cre8magic.Spells;
 using ToSic.Cre8magic.Spells.Internal;
-using ToSic.Cre8magic.Spells.Settings;
+using ToSic.Cre8magic.Spells.Values;
 
 namespace ToSic.Cre8magic.PageContexts;
 

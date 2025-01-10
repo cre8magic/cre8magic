@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Spells.Settings.Internal;
+using ToSic.Cre8magic.Spells.Values.Internal;
 using ToSic.Cre8magic.Tailors;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Utils.Logging;

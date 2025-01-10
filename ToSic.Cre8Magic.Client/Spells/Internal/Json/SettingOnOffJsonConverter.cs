@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Spells.Settings;
+using ToSic.Cre8magic.Spells.Values;
 
 namespace ToSic.Cre8magic.Spells.Internal.Json;
 

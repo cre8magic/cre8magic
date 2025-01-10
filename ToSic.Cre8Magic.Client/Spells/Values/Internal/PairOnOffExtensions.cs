@@ -1,4 +1,4 @@
-﻿namespace ToSic.Cre8magic.Spells.Settings.Internal;
+﻿namespace ToSic.Cre8magic.Spells.Values.Internal;
 
 internal static class PairOnOffExtensions
 {
