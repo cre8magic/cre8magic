@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using ToSic.Cre8magic.Tokens;
 using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Utils.Internal;
 
 namespace ToSic.Cre8magic.Pages.Internal.PageDesign;
 

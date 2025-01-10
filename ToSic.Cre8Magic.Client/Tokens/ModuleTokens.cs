@@ -1,5 +1,6 @@
 ﻿using Oqtane.Models;
 using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Utils.Internal;
 using static ToSic.Cre8magic.MagicTokens;
 
 namespace ToSic.Cre8magic.Tokens;

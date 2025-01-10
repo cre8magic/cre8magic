@@ -2,9 +2,9 @@
 using Oqtane.Security;
 using Oqtane.Shared;
 
-namespace ToSic.Cre8magic.Utils;
+namespace ToSic.Cre8magic.Utils.Internal;
 
-public static class PageStateSecurityExtensions
+internal static class PageStateSecurityExtensions
 {
     /// <summary>
     /// Modules are treated as admin modules (and must use the admin container) if they are marked as such, or come from the Oqtane ....Admin... type

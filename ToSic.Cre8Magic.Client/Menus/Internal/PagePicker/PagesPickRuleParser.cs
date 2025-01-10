@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Utils.Internal;
 using ToSic.Cre8magic.Utils.Logging;
 
 namespace ToSic.Cre8magic.Menus.Internal.PagePicker;

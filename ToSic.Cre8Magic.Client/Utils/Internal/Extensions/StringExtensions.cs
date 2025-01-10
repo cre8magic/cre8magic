@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using static System.StringComparison;
 
-namespace ToSic.Cre8magic.Utils;
+namespace ToSic.Cre8magic.Utils.Internal;
 
-public static class StringExtensions
+internal static class StringExtensions
 {
     internal static bool EqInvariant(this string? a, string? b)
         => a == null && b == null

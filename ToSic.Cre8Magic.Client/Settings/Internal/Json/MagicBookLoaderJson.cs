@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Utils;
+using ToSic.Cre8magic.Utils.Internal;
 
 namespace ToSic.Cre8magic.Settings.Internal.Json;
 
