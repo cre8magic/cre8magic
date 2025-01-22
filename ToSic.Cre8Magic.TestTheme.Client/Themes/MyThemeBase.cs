@@ -25,11 +25,11 @@ public abstract class MyThemeBase : ToSic.Cre8magic.OqtaneBs5.MagicTheme
         ? null
         :
         [
-            new() { ResourceType = Stylesheet, Url = $"{ThemePackage.Url}/theme.min.css" }, // Bootstrap generated with Sass/Webpack
-            new() { ResourceType = Script, Url = $"{ThemePackage.Url}/bootstrap.bundle.min.js" }, // Bootstrap JS
+            new() { ResourceType = ResourceType.Stylesheet, Url = $"{ThemePackage.Url}/theme.min.css" }, // Bootstrap generated with Sass/Webpack
+            new() { ResourceType = ResourceType.Script, Url = $"{ThemePackage.Url}/bootstrap.bundle.min.js" }, // Bootstrap JS
 
             // TODO: cre8magic JS/RESOURCES should be supplied by composition
-            new() { ResourceType = Script, Url = $"{ThemePackage.Url}/ambient.js", } // Ambient JS for page Up-button etc.
+            new() { ResourceType = ResourceType.Script, Url = $"{ThemePackage.Url}/ambient.js", } // Ambient JS for page Up-button etc.
         ];
 
     /// <summary>

@@ -69,19 +69,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
-    <PackageReference Include="Oqtane.Client" Version="6.0.0" />
-    <PackageReference Include="Oqtane.Shared" Version="6.0.0" />
+    <PackageReference Include="Oqtane.Client" Version="6.0.1" />
+    <PackageReference Include="Oqtane.Shared" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" PrivateAssets="all" />
   </ItemGroup>
 
 
   <ItemGroup>
     <Folder Include="Blazor\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- Temporary because Oqtane.Shared 6.0 in NuGet is broken. As soon as Oqtane 6.0.1 is out, we should remove this -->
-    <ProjectReference Include="..\..\oqtane.framework\Oqtane.Shared\Oqtane.Shared.csproj" />
   </ItemGroup>
 
 </Project>
