@@ -78,4 +78,8 @@
     <Folder Include="Blazor\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ToSic.Cre8magic.StaticWebAssets\ToSic.Cre8magic.StaticWebAssets.esproj" />
+  </ItemGroup>
+
 </Project>
