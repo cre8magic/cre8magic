@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>0.0.9</Version>
+    <Version>0.0.10</Version>
     <Authors>2sic internet solutions GmbH, Switzerland</Authors>
     <Company>2sic internet solutions GmbH, Switzerland</Company>
     <Description>Theme Library for professional Oqtane Themes</Description>
@@ -22,6 +22,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RootNamespace>$(MSBuildProjectName.Replace(".Client", "").Replace(" ", "_"))</RootNamespace>
     <LangVersion>preview</LangVersion>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
   </PropertyGroup>
 
   <!-- Suppress 'field' not allowed in Docs-compiling CS0657 -->
@@ -79,7 +80,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Include wwwroot content in the NuGet package and ensure it copies to consumer's wwwroot -->
+    <Content Include="wwwroot\**\*.*">
+      <Pack>True</Pack>
+      <PackagePath>contentFiles\any\any\wwwroot\</PackagePath>
+      <BuildAction>Content</BuildAction>
+      <CopyToOutput>Always</CopyToOutput>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ToSic.Cre8magic.StaticWebAssets\ToSic.Cre8magic.StaticWebAssets.esproj" />
   </ItemGroup>
+
+  <Target Name="CopyStaticWebAssets" AfterTargets="Build">
+    <ItemGroup>
+      <StaticAssets Include="../ToSic.Cre8magic.StaticWebAssets/dist/**/*.*" />
+    </ItemGroup>
+    <MakeDir Directories="wwwroot/_content/ToSic.Cre8magic.Oqtane" />
+    <Copy
+      SourceFiles="@(StaticAssets)"
+      DestinationFiles="@(StaticAssets->'wwwroot/_content/ToSic.Cre8magic.Oqtane/%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
 
 </Project>

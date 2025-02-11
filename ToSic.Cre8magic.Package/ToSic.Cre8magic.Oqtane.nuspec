@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>ToSic.Cre8magic.Oqtane</id>
-    <version>0.0.9</version>
+    <version>0.0.10</version>
     <authors>2sic internet solutions GmbH, Switzerland</authors>
     <owners>2sic internet solutions GmbH, Switzerland</owners>
     <title>Cre8magic</title>
@@ -28,7 +28,7 @@
     <file src="bin\Release\$targetframework$\ToSic.Module.Cre8magicTests.Client.Oqtane.pdb" target="lib\$targetframework$" />
     <file src="bin\Release\$targetframework$\ToSic.Module.Cre8magicTests.Shared.Oqtane.dll" target="lib\$targetframework$" />
     <file src="bin\Release\$targetframework$\ToSic.Module.Cre8magicTests.Shared.Oqtane.pdb" target="lib\$targetframework$" />
-    <file src="..\ToSic.Cre8magic.Client\wwwroot\**\*.*" target="staticwebassets" />
+    <file src="..\ToSic.Cre8magic.Client\wwwroot\**\*.*" target="wwwroot\_content\ToSic.Cre8magic.Oqtane" />
     <file src="icon.png" target="" />
   </files>
 </package>

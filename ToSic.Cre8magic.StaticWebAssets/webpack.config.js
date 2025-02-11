@@ -13,8 +13,9 @@ const { merge } = require("webpack-merge");
 
 // DEV ENV - for local development
 const oqtaneRoot = "../../oqtane.framework/Oqtane.Server"; // Oqtane.Server folder relative to this file
-const staticWebAssets = `../ToSic.cre8magic.client/wwwroot`;
-const staticWebAssetsInOqtane = `${oqtaneRoot}/wwwroot/_content/ToSic.Cre8magic.Oqtane`;
+const staticWebAssets = `wwwroot/_content/ToSic.Cre8magic.Oqtane`;
+const staticWebAssetsInCre8magic = `../ToSic.Cre8magic.Client/${staticWebAssets}`;
+const staticWebAssetsInOqtane = `${oqtaneRoot}/${staticWebAssets}`;
 const distFolder = `dist`;
 
 const commonConfig = {
@@ -66,18 +67,18 @@ const commonConfig = {
         });
       },
     },
-    new FileManagerPlugin({
-        events: {
-            onEnd: {
-                copy: [
-                    {
-                        source: distFolder,
-                        destination: path.resolve(__dirname, staticWebAssets),
-                    },
-                ],
-            },
-        },
-    }),
+    //new FileManagerPlugin({
+    //    events: {
+    //        onEnd: {
+    //            copy: [
+    //                {
+    //                    source: distFolder,
+    //                    destination: path.resolve(__dirname, staticWebAssetsInCre8magic),
+    //                },
+    //            ],
+    //        },
+    //    },
+    //}),
     new FileManagerPlugin({
         events: {
             onEnd: {
