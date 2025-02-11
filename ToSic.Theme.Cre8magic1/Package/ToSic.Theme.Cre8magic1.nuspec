@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>$projectname$</id>
-        <version>1.0.0</version>
+        <version>0.0.9</version>
         <authors>ToSic</authors>
         <owners>ToSic</owners>
         <title>Cre8magic1</title>
@@ -22,7 +22,16 @@
     <files>
         <file src="..\Client\bin\Release\$targetframework$\$projectname$.Client.Oqtane.dll" target="lib\$targetframework$" />
         <file src="..\Client\bin\Release\$targetframework$\$projectname$.Client.Oqtane.pdb" target="lib\$targetframework$" />
+        <file src="..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.dll" target="lib\$targetframework$" />
+        <file src="..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.pdb" target="lib\$targetframework$" />
+        <file src="..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll" target="lib\$targetframework$" />
+        <file src="..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.pdb" target="lib\$targetframework$" />
+        <file src="..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.TestTheme.Client.Oqtane.dll" target="lib\$targetframework$" />
+        <file src="..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.TestTheme.Client.Oqtane.pdb" target="lib\$targetframework$" />
+        <file src="..\Client\bin\Release\$targetframework$\ToSic.Module.Cre8magicTests.Shared.Oqtane.dll" target="lib\$targetframework$" />
+        <file src="..\Client\bin\Release\$targetframework$\ToSic.Module.Cre8magicTests.Shared.Oqtane.pdb" target="lib\$targetframework$" />
         <file src="..\Client\wwwroot\**\*.*" target="wwwroot" />
+        <file src="..\..\..\Oqtane.Framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane\**\*.*" target="wwwroot\_content\ToSic.Cre8magic.Oqtane" />
         <file src="icon.png" target="" />
     </files>
 </package>
