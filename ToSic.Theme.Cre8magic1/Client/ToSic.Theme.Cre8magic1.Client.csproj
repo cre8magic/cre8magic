@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <Version>0.0.9</Version>
+    <Version>0.0.11</Version>
     <Authors>ToSic</Authors>
     <Company>ToSic</Company>
     <Description>[Description]</Description>
@@ -10,6 +10,7 @@
     <Copyright>ToSic</Copyright>
     <AssemblyName>ToSic.Theme.Cre8magic1.Client.Oqtane</AssemblyName>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,8 +27,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
     <ProjectReference Include="..\..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8Magic.OqtaneBs5.Client.csproj" />
-    <ProjectReference Include="..\..\ToSic.Cre8magic.TestTheme.Client\ToSic.Cre8magic.TestTheme.Client.csproj" />
-    <ProjectReference Include="..\..\ToSic.Module.Cre8magicTests\Client\ToSic.Module.Cre8MagicTests.Client.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

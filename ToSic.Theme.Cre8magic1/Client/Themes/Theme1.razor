@@ -2,10 +2,9 @@
 @using ToSic.Cre8magic.Components.Internal
 @using ToSic.Cre8magic.PageContexts
 @using ToSic.Cre8magic.OqtaneBs5
-@using ToSic.Cre8magic.TestTheme.Client
 @using ToSic.Cre8magic.Breadcrumbs
-@using ToSic.Module.Cre8MagicTests.Client.Breadcrumb
-@inherits MyThemeBase
+@using ToSic.Cre8magic.Themes
+@inherits MagicTheme
 @inject ISettingService SettingService
 
 <main role="main">
@@ -50,4 +49,6 @@
             // error loading theme settings
         }
     }
+
+    public override MagicThemePackage ThemePackage => field ??= new(new ThemeInfo()) { Name = Name };
 }
