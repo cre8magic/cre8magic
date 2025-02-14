@@ -2,11 +2,28 @@
 
   <PropertyGroup>
     <ShouldRunNpmInstall>true</ShouldRunNpmInstall>
-    <ShouldRunBuildScript>true</ShouldRunBuildScript>
+    <!-- Disable automatic build invocation so we only build when needed -->
+    <ShouldRunBuildScript>false</ShouldRunBuildScript>
+
+    <!-- explicit defaults -->
     <CleanCommand>npm run clean</CleanCommand>
     <BuildCommand>npm run build</BuildCommand>
     <StartupCommand>npm run serve</StartupCommand>
     <PublishCommand>npm run publish</PublishCommand>
+    
   </PropertyGroup>
+
+  <!--<ItemGroup>
+    <SourceFiles Include="src\interop\*.ts" />
+  </ItemGroup>
+
+  <Target Name="BuildIfModified" BeforeTargets="Build"
+          Inputs="@(SourceFiles)"
+          Outputs="$(ProjectDir)\dist\interop.js">
+    --><!-- Run your npm build command --><!--
+    <Exec Command="npm run build" />
+    --><!-- Update the output file’s timestamp --><!--
+    <Touch Files="$(ProjectDir)\dist\interop.js" />
+  </Target>-->
 
 </Project>
