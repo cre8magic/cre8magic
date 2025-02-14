@@ -7,17 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ToSic.Cre8magic.Client\ToSic.Cre8magic.Client.csproj" />
     <ProjectReference Include="..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8Magic.OqtaneBs5.Client.csproj" />
-    <ProjectReference Include="..\ToSic.Cre8magic.TestTheme.Client\ToSic.Cre8magic.TestTheme.Client.csproj" />
-    <ProjectReference Include="..\ToSic.Module.Cre8magicTests\Client\ToSic.Module.Cre8MagicTests.Client.csproj" />
+    <ProjectReference Include="..\ToSic.Cre8magic.StaticWebAssets\ToSic.Cre8magic.StaticWebAssets.esproj" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

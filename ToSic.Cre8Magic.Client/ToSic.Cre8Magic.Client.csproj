@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>0.0.10</Version>
+    <Version>0.0.11</Version>
     <Authors>2sic internet solutions GmbH, Switzerland</Authors>
     <Company>2sic internet solutions GmbH, Switzerland</Company>
     <Description>Theme Library for professional Oqtane Themes</Description>
@@ -55,20 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Package\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 
@@ -86,26 +72,7 @@
 
   <ItemGroup>
     <!-- Include wwwroot content in the NuGet package and ensure it copies to consumer's wwwroot -->
-    <Content Include="wwwroot\**\*.*">
-      <Pack>True</Pack>
-      <PackagePath>contentFiles\any\any\wwwroot\</PackagePath>
-      <BuildAction>Content</BuildAction>
-      <CopyToOutput>Always</CopyToOutput>
-    </Content>
+    <Content Include="wwwroot\**\*.*" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ToSic.Cre8magic.StaticWebAssets\ToSic.Cre8magic.StaticWebAssets.esproj" />
-  </ItemGroup>
-
-  <Target Name="CopyStaticWebAssets" AfterTargets="Build">
-    <ItemGroup>
-      <StaticAssets Include="../ToSic.Cre8magic.StaticWebAssets/dist/**/*.*" />
-    </ItemGroup>
-    <MakeDir Directories="wwwroot/_content/ToSic.Cre8magic.Oqtane" />
-    <Copy
-      SourceFiles="@(StaticAssets)"
-      DestinationFiles="@(StaticAssets->'wwwroot/_content/ToSic.Cre8magic.Oqtane/%(RecursiveDir)%(Filename)%(Extension)')" />
-  </Target>
 
 </Project>
