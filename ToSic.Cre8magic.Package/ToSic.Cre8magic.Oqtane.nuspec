@@ -22,7 +22,7 @@
     <file src="bin\Release\$targetframework$\$projectname$.Client.Oqtane.pdb" target="lib\$targetframework$" />
     <file src="bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll" target="lib\$targetframework$" />
     <file src="bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.pdb" target="lib\$targetframework$" />
-    <file src="..\ToSic.Cre8magic.StaticWebAssets\dist\**\*.*" target="wwwroot" />
+    <file src="..\ToSic.Cre8magic.StaticWebAssets\dist\**\*.*" target="staticwebassets" />
     <file src="icon.png" target="" />
   </files>
 </package>

@@ -12,5 +12,5 @@
     },
     "$schema": "https://json.schemastore.org/tsconfig",
     "display": "Recommended",
-    "include": [ "./src/scripts/ambient/**/*.ts", "./src/scripts/shared/**/*.ts" ]
+    "include": [ "./src/scripts/ambient/**/*.ts", "./src/scripts/interop/**/*.ts", "./src/scripts/shared/**/*.ts" ]
 }

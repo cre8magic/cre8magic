@@ -1,16 +1,13 @@
-/**
- * Function to clear the <body> tag of all classes
- */
-export function clearBodyClasses() {
-    var body = document.querySelector("body");
-    body === null || body === void 0 ? void 0 : body.removeAttribute("class");
+function s() {
+  var e = document.querySelector("body");
+  e == null || e.removeAttribute("class");
 }
-/**
- * Function to set the body class
- * @param bodyClass Classes to add to the body
- */
-export function setBodyClass(bodyClass) {
-    var body = document.body;
-    body.className = bodyClass;
+function t(e) {
+  var o = document.body;
+  o.className = e;
 }
+export {
+  s as clearBodyClasses,
+  t as setBodyClass
+};
 //# sourceMappingURL=interop.js.map

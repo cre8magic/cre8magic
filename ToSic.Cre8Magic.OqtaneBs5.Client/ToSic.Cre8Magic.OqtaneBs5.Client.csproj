@@ -12,14 +12,20 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>$(MSBuildProjectName).Oqtane</AssemblyName>
-    <PackageId>ToSic.Cre8magic.OqtaneBs5</PackageId>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Title>cre8magic for Oqtane – Professional Theme Design</Title>
+
+    <!-- Packaging properties are commented out below, because we use separate ToSic.Cre8magic.Package project with nuspec -->
+    <!--
+    <PackageId>ToSic.Cre8magic.OqtaneBs5</PackageId>
     <PackageProjectUrl>https://2sic.github.io/cre8magic/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/2sic/cre8magic.git</RepositoryUrl>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    -->
+
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RootNamespace>ToSic.Cre8magic</RootNamespace>
   </PropertyGroup>
 
