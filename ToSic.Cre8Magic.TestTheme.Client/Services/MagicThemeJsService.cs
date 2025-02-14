@@ -11,7 +11,7 @@ namespace ToSic.Cre8magic.TestTheme.Client.Services;
 // TODO: SOME DAY move to Cre8magic, as soon as we know how to reliably include the js-assets in the final distribution
 // todo: find out if we can use ThemePath() somehow, inject?
 public class MagicThemeJsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc)
-    : MagicJsServiceBase(jsRuntime, settingsSvc, $"./{ThemePathPlaceholder}/interop/page-control.js"), IMagicThemeJsService
+    : MagicJsServiceBase(jsRuntime, settingsSvc, $"./{ThemePathPlaceholder}/interop.js"), IMagicThemeJsService
 {
     /// <inheritdoc />
     public async Task SetBodyClasses(string classes)
