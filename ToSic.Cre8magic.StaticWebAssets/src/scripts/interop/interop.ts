@@ -3,7 +3,7 @@
  */
 export function clearBodyClasses() {
   var body = document.querySelector("body");
-  body.removeAttribute("class");
+  body?.removeAttribute("class");
 }
 
 /**

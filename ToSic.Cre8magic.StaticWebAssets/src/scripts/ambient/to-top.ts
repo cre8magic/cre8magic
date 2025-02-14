@@ -13,9 +13,6 @@ function toTopShowHideOnScroll() {
   document.addEventListener("scroll", toTopButtonVisibility);
 }
 
-
-
-
 function toTopButtonVisibility() {
   var toTopButton = document.getElementById(toTopElementId);
   if (!toTopButton) return;
