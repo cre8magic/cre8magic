@@ -16,7 +16,6 @@
     <icon>icon.png</icon>
     <readme>readme.md</readme>
     <releaseNotes>https://github.com/2sic/cre8magic/releases</releaseNotes>
-    <!-- Added dependency group for net9.0 -->
     <dependencies>
       <group targetFramework="net9.0">
         <!-- Add dependencies here if needed -->
@@ -25,11 +24,11 @@
   </metadata>
   <files>
     <file src="..\readme.md" target=""/>
+    <file src="icon.png" target="" />
     <file src="bin\Release\$targetframework$\$projectname$.Client.Oqtane.dll" target="lib\$targetframework$" />
     <file src="bin\Release\$targetframework$\$projectname$.Client.Oqtane.pdb" target="lib\$targetframework$" />
     <file src="bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll" target="lib\$targetframework$" />
     <file src="bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.pdb" target="lib\$targetframework$" />
     <file src="..\ToSic.Cre8magic.StaticWebAssets\dist\**\*.*" target="staticwebassets" />
-    <file src="icon.png" target="" />
   </files>
 </package>
