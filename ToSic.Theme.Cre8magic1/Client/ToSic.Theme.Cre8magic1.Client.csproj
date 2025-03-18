@@ -9,7 +9,6 @@
     <Product>ToSic.Theme.Cre8magic1</Product>
     <Copyright>ToSic</Copyright>
     <AssemblyName>ToSic.Theme.Cre8magic1.Client.Oqtane</AssemblyName>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
@@ -17,22 +16,33 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Oqtane.Client" Version="6.0.1" />
     <PackageReference Include="Oqtane.Shared" Version="6.0.1" />
+    <PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.11" GeneratePathProperty="true" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="$(PkgToSic_Cre8magic_Oqtane)\lib\net9.0\*.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
-  <ItemGroup>
+  <!--<Target Name="CopyPackagePDBs" AfterTargets="Build">
+    <ItemGroup>
+      <PdbFilesToCopy Include="$(NuGetPackageRoot)\tosic.cre8magic.oqtane\0.0.11\lib\net9.0\*.pdb" />
+    </ItemGroup>
+    <Copy SourceFiles="@(PdbFilesToCopy)" DestinationFolder="$(OutDir)" />
+  </Target>-->
+  
+  <!--<ItemGroup>
     <ProjectReference Include="..\..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
     <ProjectReference Include="..\..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8Magic.OqtaneBs5.Client.csproj" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <PropertyGroup>
-    <!-- there may be other elements here -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
-
+  
 </Project>
