@@ -16,16 +16,16 @@
     <releaseNotes></releaseNotes>
     <summary></summary>
     <dependencies>
-      <dependency id="Oqtane.Framework" version="5.1.0" />
+      <dependency id="Oqtane.Framework" version="6.0.1" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\Client\bin\Release\net8.0\ToSic.Module.PageTemplates.Client.Oqtane.dll" target="lib\net8.0" /> 
-    <file src="..\Client\bin\Release\net8.0\ToSic.Module.PageTemplates.Client.Oqtane.pdb" target="lib\net8.0" /> 
-    <file src="..\Server\bin\Release\net8.0\ToSic.Module.PageTemplates.Server.Oqtane.dll" target="lib\net8.0" /> 
-    <file src="..\Server\bin\Release\net8.0\ToSic.Module.PageTemplates.Server.Oqtane.pdb" target="lib\net8.0" /> 
-    <file src="..\Shared\bin\Release\net8.0\ToSic.Module.PageTemplates.Shared.Oqtane.dll" target="lib\net8.0" /> 
-    <file src="..\Shared\bin\Release\net8.0\ToSic.Module.PageTemplates.Shared.Oqtane.pdb" target="lib\net8.0" /> 
+    <file src="..\Client\bin\Release\net9.0\ToSic.Module.PageTemplates.Client.Oqtane.dll" target="lib\net9.0" /> 
+    <file src="..\Client\bin\Release\net9.0\ToSic.Module.PageTemplates.Client.Oqtane.pdb" target="lib\net9.0" /> 
+    <file src="..\Server\bin\Release\net9.0\ToSic.Module.PageTemplates.Server.Oqtane.dll" target="lib\net9.0" /> 
+    <file src="..\Server\bin\Release\net9.0\ToSic.Module.PageTemplates.Server.Oqtane.pdb" target="lib\net9.0" /> 
+    <file src="..\Shared\bin\Release\net9.0\ToSic.Module.PageTemplates.Shared.Oqtane.dll" target="lib\net9.0" /> 
+    <file src="..\Shared\bin\Release\net9.0\ToSic.Module.PageTemplates.Shared.Oqtane.pdb" target="lib\net9.0" /> 
     <file src="..\Server\wwwroot\**\*.*" target="wwwroot" /> 
     <file src="icon.png" target="" />
   </files>

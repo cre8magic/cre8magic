@@ -1,6 +1,8 @@
 using Oqtane.Modules;
 using Oqtane.Services;
 using Oqtane.Shared;
+using System;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using ToSic.Module.PageTemplates.Shared;
@@ -12,9 +14,9 @@ namespace ToSic.Module.PageTemplates.Services
     {
         private string Apiurl => CreateApiUrl("PageTemplates");
 
-        public Task CreateTestAsync()
+        public Task CreateTestAsync(string currentPage)
         {
-            return GetAsync($"{Apiurl}/");
+            return GetAsync($"{Apiurl}?currentPage={Uri.EscapeDataString(currentPage)}");
         }
     }
 }

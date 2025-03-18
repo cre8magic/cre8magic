@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AccelerateBuildsInVisualStudio>false</AccelerateBuildsInVisualStudio>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToSic.Cre8magic.Client\ToSic.Cre8magic.Client.csproj" />
+    <ProjectReference Include="..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8Magic.OqtaneBs5.Client.csproj" />
+    <ProjectReference Include="..\ToSic.Cre8magic.StaticWebAssets\ToSic.Cre8magic.StaticWebAssets.esproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\readme.md" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Condition="'$(OS)' == 'Windows_NT' And '$(Configuration)' == 'Debug'" Command="debug.cmd $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))" />
+    <Exec Condition="'$(OS)' != 'Windows_NT' And '$(Configuration)' == 'Debug'" Command="bash $(ProjectDir)debug.sh $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))" />
+    <Exec Condition="'$(OS)' == 'Windows_NT' And '$(Configuration)' == 'Release'" Command="release.cmd $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))" />
+    <Exec Condition="'$(OS)' != 'Windows_NT' And '$(Configuration)' == 'Release'" Command="bash $(ProjectDir)release.sh $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))" />
+  </Target>
+
+</Project>

@@ -20,6 +20,6 @@ namespace ToSic.Module.PageTemplates.Controllers
         // GET: api/<controller>
         [HttpGet]
         [Authorize(Policy = PolicyNames.ViewModule)]
-        public Task GetPageTemplates() => serverPageTemplatesService.CreateTestAsync();
+        public Task GetPageTemplates([FromQuery] string currentPage) => serverPageTemplatesService.CreateTestAsync(currentPage);
     }
 }

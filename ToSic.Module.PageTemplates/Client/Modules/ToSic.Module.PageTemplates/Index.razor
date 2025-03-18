@@ -26,7 +26,7 @@ else
 
     private async Task CreateTest()
     {
-        await PageTemplatesService.CreateTestAsync();
+        await PageTemplatesService.CreateTestAsync(PageState.Page.Name);
         _created = true;
 
     }

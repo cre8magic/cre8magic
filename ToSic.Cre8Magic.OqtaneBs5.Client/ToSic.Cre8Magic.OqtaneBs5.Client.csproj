@@ -3,23 +3,29 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>0.2.1</Version>
+    <Version>0.0.11</Version>
     <Authors>2sic internet solutions GmbH, Switzerland</Authors>
     <Company>2sic internet solutions GmbH, Switzerland</Company>
     <Description>Theme Library for professional Oqtane Themes</Description>
     <Product>ToSic.Cre8magic.OqtaneBs5</Product>
-    <Copyright>Copyright MIT © 2sic 2024</Copyright>
+    <Copyright>Copyright MIT © 2sic 2025</Copyright>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>$(MSBuildProjectName).Oqtane</AssemblyName>
-    <PackageId>ToSic.Cre8magic.OqtaneBs5</PackageId>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Title>cre8magic for Oqtane – Professional Theme Design</Title>
+
+    <!-- Packaging properties are commented out below, because we use separate ToSic.Cre8magic.Package project with nuspec -->
+    <!--
+    <PackageId>ToSic.Cre8magic.OqtaneBs5</PackageId>
     <PackageProjectUrl>https://2sic.github.io/cre8magic/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/2sic/cre8magic.git</RepositoryUrl>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    -->
+
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RootNamespace>ToSic.Cre8magic</RootNamespace>
   </PropertyGroup>
 
@@ -48,20 +54,6 @@
     <None Remove="Pages\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Package\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
@@ -69,14 +61,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
-    <PackageReference Include="Oqtane.Client" Version="6.0.0" />
-    <PackageReference Include="Oqtane.Shared" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" PrivateAssets="all" />
+    <PackageReference Include="Oqtane.Client" Version="6.0.1" />
+    <PackageReference Include="Oqtane.Shared" Version="6.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <!-- Temporary because Oqtane.Shared 6.0 in NuGet is broken. As soon as Oqtane 6.0.1 is out, we should remove this -->
-    <ProjectReference Include="..\..\oqtane.framework\Oqtane.Shared\Oqtane.Shared.csproj" />
     <ProjectReference Include="..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
   </ItemGroup>
 

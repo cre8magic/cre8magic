@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>0.3.1</Version>
+    <Version>0.0.10</Version>
     <Authors>2sic</Authors>
     <Company>2sic</Company>
     <Description>Template Theme for professional Bootstrap 5 Designs</Description>
@@ -26,8 +26,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" PrivateAssets="all" />
     <PackageReference Include="System.Net.Http.Json" Version="9.0.0" PrivateAssets="all" />
-    <PackageReference Include="Oqtane.Client" Version="6.0.0" PrivateAssets="all" />
-    <PackageReference Include="Oqtane.Shared" Version="6.0.0" PrivateAssets="all" />
+    <PackageReference Include="Oqtane.Client" Version="6.0.1" PrivateAssets="all" />
+    <PackageReference Include="Oqtane.Shared" Version="6.0.1" PrivateAssets="all" />
     <PackageReference Include="System.Runtime" Version="4.3.1" PrivateAssets="all" />
   </ItemGroup>
 
