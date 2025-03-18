@@ -1,11 +1,25 @@
-# JavaScript Project System (JSPS), or .esproj project 
+# ToSic.Cre8magic.StaticWebAssets
 
-- use the npm package to add TypeScript support
-- do not use TypeScript nuget package
+This project contains the source (and compiled dist) of the JS used by cre8magic.
+It is a TypeScript project, which is compiled to JavaScript.
 
+For the built it uses vite, which also handles typescript compilation.
 
+- use the npm package to add TypeScript support!
+- do not use TypeScript nuget package!
 
-Building project will build scripts in `/dist/` folder.
+## Good to know
+
+1. `npm install` happens automatically when the project is opened in Visual Studio (setting in the .esproj file)
+1. Building project will build scripts in `/dist/` folder.
+1. after build it will copy it to the development Oqtane (specified in the .esproj file - by default it's `../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane`)
+1. for distribution in nuget, see project `ToSic.Cre8magic.Package` which will pick it up from the dist folder
+1. vite is configured to not tree-shake using the syntax `const modules = import...`
+
+## Contents
+
+1. `/src/scripts/ambient` contains JS for the ambient environment - so scripts that are "always loaded / always there" such as breadcrumb helper JS
+1. `/src/scripts/interop` contains JS for Oqtane interop to call
 
 ## INFO:
 

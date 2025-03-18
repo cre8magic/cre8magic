@@ -26,17 +26,4 @@
       DestinationFiles="@(StaticAssets->'$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')" />
   </Target>
 
-  <!--<ItemGroup>
-    <SourceFiles Include="src\interop\*.ts" />
-  </ItemGroup>
-
-  <Target Name="BuildIfModified" BeforeTargets="Build"
-          Inputs="@(SourceFiles)"
-          Outputs="$(ProjectDir)\dist\interop.js">
-    --><!-- Run your npm build command --><!--
-    <Exec Command="npm run build" />
-    --><!-- Update the output file’s timestamp --><!--
-    <Touch Files="$(ProjectDir)\dist\interop.js" />
-  </Target>-->
-
 </Project>

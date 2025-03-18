@@ -18,26 +18,31 @@
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" />
     <PackageReference Include="Oqtane.Client" Version="6.0.1" />
     <PackageReference Include="Oqtane.Shared" Version="6.0.1" />
-    <PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.11" GeneratePathProperty="true" />
+    <!-- Use local NuGet Package -->
+    <!-- When using nuget it will automatically extract the JS files and place them into the wwwroot of this project -->
+    <!--<PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.11" GeneratePathProperty="true" />-->
   </ItemGroup>
   
-  <ItemGroup>
+  <!-- Redistribute Nuget package PDB files for better debug information - maybe not necessary in production -->
+  <!--<ItemGroup>
     <None Include="$(PkgToSic_Cre8magic_Oqtane)\lib\net9.0\*.pdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
+  </ItemGroup>-->
 
+  <!-- Alternative method to redistribute NuGet package files (ATM not recommended) -->
   <!--<Target Name="CopyPackagePDBs" AfterTargets="Build">
     <ItemGroup>
       <PdbFilesToCopy Include="$(NuGetPackageRoot)\tosic.cre8magic.oqtane\0.0.11\lib\net9.0\*.pdb" />
     </ItemGroup>
     <Copy SourceFiles="@(PdbFilesToCopy)" DestinationFolder="$(OutDir)" />
   </Target>-->
-  
-  <!--<ItemGroup>
+
+  <!-- Local Projects during development -->
+  <ItemGroup>
     <ProjectReference Include="..\..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
     <ProjectReference Include="..\..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8Magic.OqtaneBs5.Client.csproj" />
-  </ItemGroup>-->
+  </ItemGroup>
 
   <PropertyGroup>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
