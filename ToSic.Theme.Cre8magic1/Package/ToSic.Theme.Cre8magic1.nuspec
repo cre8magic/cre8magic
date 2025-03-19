@@ -15,6 +15,7 @@
         <tags>oqtane theme</tags>
         <releaseNotes></releaseNotes>
         <summary></summary>
+        <readme>docs\README.md</readme>
         <dependencies>
             <dependency id="Oqtane.Framework" version="6.0.1" />
         </dependencies>
@@ -27,7 +28,9 @@
         <file src="..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll" target="lib\$targetframework$" />
         <file src="..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.pdb" target="lib\$targetframework$" />
         <file src="..\Client\wwwroot\**\*.*" target="wwwroot" />
-        <file src="..\..\ToSic.Cre8magic.StaticWebAssets\dist\**\*.*" target="wwwroot\_content\ToSic.Cre8magic.Oqtane" />
+        <!--<file src="..\..\ToSic.Cre8magic.StaticWebAssets\dist\**\*.*" target="wwwroot\_content\ToSic.Cre8magic.Oqtane" />-->
+        <file src="..\..\..\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane\**\*.*" target="wwwroot\_content\ToSic.Cre8magic.Oqtane" />
         <file src="icon.png" target="" />
+        <file src="..\Client\README.md" target="docs\" />
     </files>
 </package>
