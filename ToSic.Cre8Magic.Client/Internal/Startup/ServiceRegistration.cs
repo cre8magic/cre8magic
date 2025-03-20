@@ -61,6 +61,9 @@ public static class ServiceRegistration
         // Infrastructure: Page to MagicPage conversion
         services.TryAddTransient<IMagicPageService, MagicPageService>();
 
+        // Interop
+        services.AddTransient<IMagicThemeJsService, MagicThemeJsService>();
+
         return services;
     }
 
