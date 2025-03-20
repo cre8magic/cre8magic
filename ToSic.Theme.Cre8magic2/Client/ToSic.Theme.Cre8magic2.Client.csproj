@@ -21,11 +21,11 @@
     <PackageReference Include="Oqtane.Client" Version="6.1.1" />
     <PackageReference Include="Oqtane.Shared" Version="6.1.1" />
     <!-- Use local NuGet Package -->
-    <PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.11" GeneratePathProperty="true" />
+    <!--<PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.16" GeneratePathProperty="true" />-->
   </ItemGroup>
 
   <!-- Manually copy static web assets (JS files) and place them into the Oqtane.Server StaticWebAssets folder -->
-  <Target Name="CopyStaticWebAssets" AfterTargets="Build">
+  <!--<Target Name="CopyStaticWebAssets" AfterTargets="Build">
     <ItemGroup>
       <StaticAssets Include="$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*" />
     </ItemGroup>
@@ -33,13 +33,18 @@
     <Copy SourceFiles="@(StaticAssets)"
           DestinationFiles="@(StaticAssets->'../$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')"
           SkipUnchangedFiles="true" />
-  </Target>
+  </Target>-->
 
   <!-- Redistribute Nuget package PDB files for better debug information - maybe not necessary in production -->
-  <ItemGroup>
+  <!--<ItemGroup>
     <None Include="$(PkgToSic_Cre8magic_Oqtane)\lib\net9.0\*.pdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>-->
+
+  <!-- Local Projects during development -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8Magic.OqtaneBs5.Client.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

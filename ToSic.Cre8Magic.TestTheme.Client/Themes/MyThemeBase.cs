@@ -1,6 +1,6 @@
 ﻿using Oqtane.Models;
 using Oqtane.Shared;
-using static Oqtane.Shared.ResourceType;
+using ToSic.Cre8magic.Internal;
 
 // ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.TestTheme.Client;
@@ -23,15 +23,10 @@ public abstract class MyThemeBase : ToSic.Cre8magic.OqtaneBs5.MagicTheme
     /// </summary>
     public override List<Resource> Resources => ThemePackage == null
         ? null
-        :
-        [
+        : MagicResourceManager.GetResources([
             new() { ResourceType = ResourceType.Stylesheet, Url = $"{ThemePackage.Url}/theme.min.css" }, // Bootstrap generated with Sass/Webpack
-            new() { ResourceType = ResourceType.Script, Url = $"{ThemePackage.Url}/bootstrap.bundle.min.js" }, // Bootstrap JS
-
-            // TODO: @STV cre8magic JS/RESOURCES should be supplied by composition
-            // ..ThemePackage.Resources,
-            new() { ResourceType = ResourceType.Script, Url = $"{ThemePackage.Url}/ambient.js", } // Ambient JS for page Up-button etc.
-        ];
+            new() { ResourceType = ResourceType.Script, Url = $"{ThemePackage.Url}/bootstrap.bundle.min.js" } // Bootstrap JS
+        ]);
 
     /// <summary>
     /// The layout name which is used to select the named settings for this theme.

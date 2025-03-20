@@ -1,5 +1,8 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using Oqtane.Models;
+using Oqtane.Shared;
 using Oqtane.Themes;
+using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Internal;
 using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Themes;
@@ -30,6 +33,9 @@ public record MagicThemePackage
 
         // The json file in the theme folder containing all kinds of settings etc.
         SettingsFile = "theme.json";
+
+        // The resources are usually defined in the ThemeInfo
+        Resources = MagicResourceManager.GetResources(themeInfo.Theme.Resources);
     }
 
     /// <summary>
@@ -75,11 +81,25 @@ public record MagicThemePackage
         init => field = value;
     }
 
+    /// <summary>
+    /// Resources that are part of this theme package.
+    /// </summary>
+    public List<Resource> Resources { get; init; }
+
     internal static MagicThemePackage Fallback = new()
     {
         Defaults = MagicBook.Fallback,
         WwwRoot = "wwwroot",
         SettingsFile = "",
         PackageName = "Fallback-Not-Configured",
+    };
+
+    /// <summary>
+    /// Gets the common resources that should be included in all Cre8magic themes.
+    /// </summary>
+    /// <returns>A list of common resources</returns>
+    public static readonly List<Resource> CommonResources = new List<Resource>() { 
+        new Resource { ResourceType = ResourceType.Script, Url = $"_content/{MagicConstants.PackageId}/interop.js", LoadBehavior = ResourceLoadBehavior.Once, Type="module" },
+        new Resource { ResourceType = ResourceType.Script, Url = $"_content/{MagicConstants.PackageId}/ambient.js", LoadBehavior = ResourceLoadBehavior.Once }
     };
 }
