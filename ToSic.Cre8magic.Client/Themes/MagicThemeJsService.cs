@@ -12,8 +12,18 @@ public class MagicThemeJsService(IJSRuntime jsRuntime, IMagicSettingsService set
     : MagicJsServiceBase(jsRuntime, settingsSvc, $"_content/{MagicConstants.PackageId}/interop.js"), IMagicThemeJsService
 {
     /// <inheritdoc />
+    public async Task ClearBodyClasses()
+        => await InvokeVoidAsync("clearBodyClasses");
+
+    /// <inheritdoc />
     public async Task SetBodyClasses(string classes)
-    {
-        await InvokeAsync<string>("setBodyClass", classes);
-    }
+        => await InvokeVoidAsync("setBodyClass", classes);
+
+    ///// <inheritdoc />
+    //public async Task GtmActivate(string gtmId)
+    //    => await InvokeVoidAsync("gtmActivate", gtmId);
+
+    ///// <inheritdoc />
+    //public async Task GtmPageView()
+    //    => await InvokeVoidAsync("gtmPageView");
 }

@@ -20,7 +20,7 @@ function f() {
     });
   }
 }
-function v() {
+function p() {
   console.log("init breadcrumbs"), s(), window.addEventListener("resize", s), document.addEventListener("scroll", s);
   var e = document.querySelector(`.${r}-trigger`);
   e != null && e.addEventListener("click", () => {
@@ -40,13 +40,13 @@ function s() {
     o <= t && scrollY != 0 ? n.classList.add("bg-light", "shadow") : n.classList.remove("bg-light", "shadow");
   }
 }
-function w() {
+function v() {
   document.querySelectorAll("a").forEach((e, t) => {
     var n;
     e.hasAttribute("href") && ((n = e.getAttribute("href")) != null && n.endsWith(".pdf")) && e.setAttribute("target", "_blank");
   });
 }
-const p = `${d}-to-top`, b = "visible";
+const w = `${d}-to-top`, b = "visible";
 function h() {
   console.log("init to top"), y();
 }
@@ -54,16 +54,16 @@ function y() {
   console.log("toTopShowHideOnScroll"), document.addEventListener("scroll", E);
 }
 function E() {
-  var e = document.getElementById(p);
+  var e = document.getElementById(w);
   if (!e) return;
-  e.addEventListener("click", T);
+  e.addEventListener("click", L);
   const t = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200;
   e.classList.toggle(b, t);
 }
-function T() {
+function L() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
-function L(e) {
+function T(e) {
   console.log("2dm test activate GTM"), function(t, n, o, i, a) {
     t[i] = t[i] || [], t[i].push({ "gtm.start": (/* @__PURE__ */ new Date()).getTime(), event: "gtm.js" });
     var l = n.getElementsByTagName(o)[0], c = n.createElement(o), u = "";
@@ -72,7 +72,7 @@ function L(e) {
 }
 class A {
   constructor() {
-    this.activate = L;
+    this.activate = T;
   }
   pageView() {
     console.log("gtm-interop - track page view"), g("event", "blazor_page_view");
@@ -86,10 +86,9 @@ function B() {
   window.cre8magic = window.cre8magic || {}, window.cre8magic.gtm = window.cre8magic.gtm || new A(), window.gtag = window.gtag || g;
 }
 h();
-w();
-m();
 v();
+m();
+p();
 f();
 B();
-window.cre8magic.gtm.activate("GTM-T8W5TBL");
 //# sourceMappingURL=ambient.js.map

@@ -14,3 +14,18 @@ export function setBodyClass(bodyClass: string) {
   var body = document.body;
   body.className = bodyClass;
 }
+
+/**
+ * Activate Google Tag Manager
+ * @param gtmId GTM container ID, like 'GTM-XXXXXXX'
+ */
+//export function gtmActivate(gtmId: string) {
+//  window.cre8magic.gtm.activate(gtmId);
+//}
+
+/**
+ * Track a page view in Google Tag Manager
+ */
+//export function gtmPageView() {
+//  window.cre8magic.gtm.pageView();
+//}

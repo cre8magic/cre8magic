@@ -32,6 +32,18 @@ public abstract class MagicTheme: Oqtane.Themes.ThemeBase
     }
     private IMagicAct _magicAct;
 
+    ///// <summary>
+    ///// Method invoked when the component is ready to start, having received its
+    ///// initial parameters from its parent in the render tree.
+    ///// </summary>
+    //protected virtual void OnInitialized()
+    //{
+    //    base.OnInitialized();
+    //    // Provide the latest PageState on every change
+    //    MagicAct.UsePageState(PageState);
+    //}
+
+
     /// <inheritdoc cref="OqtaneBasic.MagicTheme.OnParametersSet" />
     protected override void OnParametersSet()
     {
@@ -44,6 +56,9 @@ public abstract class MagicTheme: Oqtane.Themes.ThemeBase
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         await base.OnAfterRenderAsync(firstRender);
+        // Provide the latest PageState on every change
+        // but OnAfterRenderAsync could be executed without OnParametersSet
+        MagicAct.UsePageState(PageState);
         await MagicAct.AnalyticsKit().TrackPage(firstRender);
     }
 }

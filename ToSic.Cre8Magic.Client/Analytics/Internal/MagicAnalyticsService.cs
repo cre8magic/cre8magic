@@ -1,14 +1,12 @@
 ﻿using Microsoft.JSInterop;
 using Oqtane.UI;
-using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Themes.Internal;
-using ToSic.Cre8magic.Themes.Settings;
+using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Utils.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics.Internal;
 
-public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc) : IMagicAnalyticsService
+internal class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc, ScopedDictionaryCache<bool> cacheSvc) : IMagicAnalyticsService
 {
     private const string GtmEvent = "event";
 
@@ -30,7 +28,6 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
         return result;
     }
 
-
     /// <summary>
     /// Call to do tracking, which will be accessed by the kit.
     /// </summary>
@@ -42,13 +39,26 @@ public class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService s
     {
         if (settings == null) return;
         if (settings.PageViewTrack != true) return;
-
         if (isFirstRender && settings.PageViewTrackFirst != true) return;
-        var js = settings.PageViewJs!;
-        var eventName = settings.PageViewEvent;
+
+        // Activate GTM ounce per user browser session (until reload)
+        await GtmActivateOunce(settings.GtmId);
 
         // Run the JS Command but don't wait for it
         // https://stackoverflow.com/questions/17805887/using-async-without-await
-        await DoNotWait(() => IgnoreError(() => jsRuntime.InvokeVoidAsync(js, GtmEvent, eventName)));
+        await DoNotWait(() => IgnoreError(() => jsRuntime.InvokeVoidAsync(settings.PageViewJs!, GtmEvent, settings.PageViewEvent)));
+    }
+
+    /// <summary>
+    /// Activate GTM ounce per user browser session (until reload)
+    /// </summary>
+    /// <param name="gtmId"></param>
+    /// <returns></returns>
+    private async Task GtmActivateOunce(string? gtmId)
+    {
+        if (string.IsNullOrWhiteSpace(gtmId) || cacheSvc.TryGetValue(gtmId, out var _)) return;
+
+        cacheSvc[gtmId] = true;
+        await jsRuntime.InvokeVoidAsync("window.cre8magic.gtm.activate", gtmId);
     }
 }

@@ -46,4 +46,10 @@ public abstract class MagicJsServiceBase
 
     protected async Task<TValue> InvokeAsync<TValue>(string identifier, params object[] args)
         => await (await Module()).InvokeAsync<TValue>(identifier, args);
+
+    protected async Task InvokeVoidAsync(string identifier)
+        => await (await Module()).InvokeVoidAsync(identifier);
+
+    protected async Task InvokeVoidAsync(string identifier, params object[] args)
+        => await (await Module()).InvokeVoidAsync(identifier, args);
 }
