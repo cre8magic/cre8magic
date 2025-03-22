@@ -1,0 +1,43 @@
+@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+@inherits ThemeBase
+@using ToSic.Cre8magic.OqtaneBs5
+
+@code {
+    public override string Name => PageTitle;
+
+    private const string PageTitle = "Oqtane Base Theme - MagicBreadcrumb";
+
+    private const string PageDescription = "This is a standard Oqtane ThemeBase with a MagicBreadcrumb.";
+
+    public override string Panes => PaneNames.Default;
+}
+
+<main role="main">
+    <nav class="navbar navbar-dark bg-primary fixed-top">
+        <Logo />
+        <Menu Orientation="Horizontal"></Menu>
+        <div class="controls ms-auto">
+            <div class="controls-group">
+                <UserProfile />
+                <Login />
+                <ControlPanel ButtonClass="btn-outline-light"/>
+            </div>
+        </div>
+    </nav>
+
+    <!-- our Test -->
+    <ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb></ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb>
+
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@PageTitle</h1>
+                    <p>@PageDescription</p>
+                    <Pane Name="@PaneNames.Default"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

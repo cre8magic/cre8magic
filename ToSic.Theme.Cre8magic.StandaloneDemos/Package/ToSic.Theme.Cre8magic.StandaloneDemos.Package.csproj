@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ToSic.Cre8magic.Package\ToSic.Cre8magic.Package.csproj" />
     <ProjectReference Include="..\Client\ToSic.Theme.Cre8magic.StandaloneDemos.Client.csproj" />
   </ItemGroup>
 
