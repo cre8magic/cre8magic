@@ -87,6 +87,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cre8Magic Test Themes (Purp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cre8magic Template Themes (WIP)", "Cre8magic Template Themes (WIP)", "{A0B37254-41AF-4095-A4A1-7E26E5860DF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToSic.Theme.Cre8magic.StandaloneDemos.Package", "ToSic.Theme.Cre8magic.StandaloneDemos\Package\ToSic.Theme.Cre8magic.StandaloneDemos.Package.csproj", "{254208DC-4122-08E4-B5D8-88D1B20F11BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToSic.Theme.Cre8magic.StandaloneDemos.Client", "ToSic.Theme.Cre8magic.StandaloneDemos\Client\ToSic.Theme.Cre8magic.StandaloneDemos.Client.csproj", "{0CD54EAF-11B9-C340-04B3-8A8B059C65D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -211,6 +215,14 @@ Global
 		{033560D3-63CF-4ADA-B56E-083DB808E40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{033560D3-63CF-4ADA-B56E-083DB808E40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{033560D3-63CF-4ADA-B56E-083DB808E40C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{254208DC-4122-08E4-B5D8-88D1B20F11BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254208DC-4122-08E4-B5D8-88D1B20F11BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{254208DC-4122-08E4-B5D8-88D1B20F11BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{254208DC-4122-08E4-B5D8-88D1B20F11BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD54EAF-11B9-C340-04B3-8A8B059C65D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD54EAF-11B9-C340-04B3-8A8B059C65D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD54EAF-11B9-C340-04B3-8A8B059C65D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD54EAF-11B9-C340-04B3-8A8B059C65D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -245,6 +257,8 @@ Global
 		{574BF6D9-4A20-4056-BC4A-FEB84DE016B9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{A9ED4B70-350B-48E1-BE13-8254E6DDE3AF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{033560D3-63CF-4ADA-B56E-083DB808E40C} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{254208DC-4122-08E4-B5D8-88D1B20F11BC} = {DB142F1B-C148-4D53-8EFF-BD0C3247E109}
+		{0CD54EAF-11B9-C340-04B3-8A8B059C65D6} = {DB142F1B-C148-4D53-8EFF-BD0C3247E109}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D016F15-46FE-4726-8DFD-2E4FD4DC7668}
