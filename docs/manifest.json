@@ -1505,6 +1505,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "pages/library/contribute/javascript/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/contribute/javascript/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/contribute/local-nuget/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/contribute/local-nuget/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "pages/library/contribute/tests-test-module.md",
       "output": {
         ".html": {
@@ -1519,6 +1539,29 @@
       "output": {
         ".html": {
           "relative_path": "library/contribute/tests-unit-tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/library/contribute/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "library/contribute/toc.html"
+        },
+        ".json": {
+          "relative_path": "library/contribute/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/deploy/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/deploy/index.html"
         }
       },
       "version": ""

@@ -16,7 +16,8 @@ public static class MagicResourceManager
     {
         List<Resource> result = [ ..MagicThemePackage.CommonResources ];
 
-        if (themeResources == null || !themeResources.Any()) return result;
+        if (themeResources == null || !themeResources.Any())
+            return result;
 
         // Add theme resources, but skip any that have the same URL to avoid duplicates
         foreach (var resource in themeResources.Where(resource => !result.Any(r => r.Url.Equals(resource.Url, StringComparison.OrdinalIgnoreCase))))

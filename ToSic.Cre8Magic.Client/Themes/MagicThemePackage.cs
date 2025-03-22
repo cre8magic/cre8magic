@@ -98,8 +98,20 @@ public record MagicThemePackage
     /// Gets the common resources that should be included in all Cre8magic themes.
     /// </summary>
     /// <returns>A list of common resources</returns>
-    public static readonly List<Resource> CommonResources = new List<Resource>() { 
-        new Resource { ResourceType = ResourceType.Script, Url = $"_content/{MagicConstants.PackageId}/interop.js", LoadBehavior = ResourceLoadBehavior.Once, Type="module" },
-        new Resource { ResourceType = ResourceType.Script, Url = $"_content/{MagicConstants.PackageId}/ambient.js", LoadBehavior = ResourceLoadBehavior.Once }
-    };
+    public static readonly List<Resource> CommonResources =
+    [
+        new()
+        {
+            ResourceType = ResourceType.Script,
+            Url = $"_content/{MagicConstants.PackageId}/interop.js",
+            LoadBehavior = ResourceLoadBehavior.Once,
+            Type = "module"
+        },
+        new()
+        {
+            ResourceType = ResourceType.Script,
+            Url = $"_content/{MagicConstants.PackageId}/ambient.js",
+            LoadBehavior = ResourceLoadBehavior.Once
+        }
+    ];
 }

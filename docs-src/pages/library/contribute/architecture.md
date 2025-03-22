@@ -1,6 +1,6 @@
 # cre8magic Internal Architecture
 
-This document should explain the internal structures of cr8magic, so that developers can understand how it works and how to extend it.
+This document should explain the internal structures of cre8magic, so that developers can understand how it works and how to extend it.
 
 ## Overview
 

@@ -39,8 +39,11 @@
 - name: Magic Languages
   uid: Cre8magic.Library.MagicLanguages.Index
 
+# Title "Advanced"
 - name: "Advanced"
 
+- name: Deployment
+  uid: Cre8magic.Library.Deploy.Index
 
 
 - name: " "
@@ -53,12 +56,6 @@
     - name: History
       uid: Cre8magic.Roadmap.History
 
-- name: Contribute to code
-  href: contribute/index.md
-  items:
-  - name: Architecture
-    href: contribute/architecture.md
-  - name: Unit Tests
-    href: contribute/tests-unit-tests.md
-  - name: Test Module
-    href: contribute/tests-test-module.md
+- name: Contribute to Code
+  href: contribute/toc.yml
+  topicHref: contribute/index.md

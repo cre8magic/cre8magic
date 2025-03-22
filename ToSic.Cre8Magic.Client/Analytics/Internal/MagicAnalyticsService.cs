@@ -56,7 +56,8 @@ internal class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService
     /// <returns></returns>
     private async Task GtmActivateOunce(string? gtmId)
     {
-        if (string.IsNullOrWhiteSpace(gtmId) || cacheSvc.TryGetValue(gtmId, out var _)) return;
+        if (string.IsNullOrWhiteSpace(gtmId) || cacheSvc.ContainsKey(gtmId))
+            return;
 
         cacheSvc[gtmId] = true;
         await jsRuntime.InvokeVoidAsync("window.cre8magic.gtm.activate", gtmId);

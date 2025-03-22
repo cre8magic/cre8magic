@@ -4,7 +4,6 @@ using ToSic.Cre8magic.Act;
 using ToSic.Cre8magic.Act.Internal;
 using ToSic.Cre8magic.Analytics.Internal;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
-using ToSic.Cre8magic.Internal.JsInterops.Internal;
 using ToSic.Cre8magic.Languages.Internal;
 using ToSic.Cre8magic.Links;
 using ToSic.Cre8magic.Menus.Internal;
@@ -18,7 +17,6 @@ using ToSic.Cre8magic.Users.Internal;
 using ToSic.Cre8magic.Utils;
 using ToSic.Cre8magic.Containers.Internal;
 using ToSic.Cre8magic.Links.Internal;
-using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Internal.Json;
 using ToSic.Cre8magic.Settings.Internal.Sources;
@@ -60,9 +58,6 @@ public static class ServiceRegistration
 
         // Infrastructure: Page to MagicPage conversion
         services.TryAddTransient<IMagicPageService, MagicPageService>();
-
-        // Interop
-        services.AddTransient<IMagicThemeJsService, MagicThemeJsService>();
 
         return services;
     }
@@ -122,7 +117,8 @@ public static class ServiceRegistration
 
     public static IServiceCollection AddCre8magicJsLayer(this IServiceCollection services)
     {
-        services.TryAddTransient<MagicThemeJsServiceTest>();
+        // Interop
+        services.AddTransient<IMagicThemeJsService, MagicThemeJsService>();
 
         return services;
     }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>cre8magic – Package and Deploy Your Theme | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="cre8magic – Package and Deploy Your Theme | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/deploy/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Cre8magic.Library.Deploy.Index">
+<h1 id="cre8magic--package-and-deploy-your-theme">cre8magic – Package and Deploy Your Theme</h1>
+
+<div class="TIP">
+<h5>Tip</h5>
+<p>This explains how to package your theme with all the necessary assets and libraries from cre8magic ♾️.</p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>A theme inside Oqtane consists a combination of</p>
+<ol>
+<li>DLL files</li>
+<li>JavaScript files</li>
+<li>CSS files</li>
+<li>Images</li>
+</ol>
+<p>The way these are placed in your Oqtane is different during development and during deployment.
+This should help you understand what is happening under the hood, to ensure your theme works as expected.</p>
+<h2 id="development-setup">Development Setup</h2>
+<p>During development of your theme, you will usually have a setup which does things such as:</p>
+<ol>
+<li>Compile your theme code and deploy to your development Oqtane</li>
+<li>Deploy any additional theme assets in a <code>wwwroot/[your-theme-name]/</code> folder</li>
+<li>Include all necessary DLLs, including dependent cre8magic libraries</li>
+<li>Include all necessary JavaScript files from cre8magic</li>
+</ol>
+<p>All this is usually handled by your <strong>Packaging</strong> project, called <code>[YourCompany].[YourTheme].Package</code>.</p>
+<p>Basic deployment of your theme and its assets happens through the <code>debug.cmd</code> in that project,
+which was probably generated by Oqtane when the theme-project was created.</p>
+<p>TODO: @STV pls explain how the cre8magic DLLs and cre8magic JS are included during dev.</p>
+<h2 id="deployment-setup">Deployment Setup</h2>
+<p>When you are ready to deploy your theme to a production server,
+you will need to create a NuGet package containing all these resources.
+It will contain things like:</p>
+<ol>
+<li>Your theme DLLs</li>
+<li>Your theme JavaScript files</li>
+<li>Your theme CSS files</li>
+<li>Your theme images</li>
+<li>All necessary DLLs, including dependent cre8magic libraries</li>
+<li>All necessary JavaScript files from cre8magic in the <code>/wwwroot/_content/ToSic.Cre8magic.Oqtane/</code> folder</li>
+</ol>
+<p>This is also handled by your <strong>Packaging</strong> project, called <code>[YourCompany].[YourTheme].Package</code>.</p>
+<p>The part that makes it happen is the <code>release.cmd</code> in that project,
+which was probably generated by Oqtane when the theme-project was created.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The default <code>release.cmd</code> is not smart enough to handle additional libraries and resources,
+so you might need to adjust it to include the cre8magic resources.</p>
+</div>
+<p>TODO: @STV pls explain how the cre8magic DLLs and cre8magic JS are included during deployment.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/deploy/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

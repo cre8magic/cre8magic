@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Diagnostics.CodeAnalysis;
+using Oqtane.Models;
 using ToSic.Cre8magic.Act;
 using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Utils;
@@ -18,8 +19,7 @@ public abstract class MagicTheme: Oqtane.Themes.ThemeBase
 
 
     /// <inheritdoc cref="OqtaneBasic.MagicTheme.ThemeKit" />
-    public IMagicThemeKit ThemeKit => _themeKitCache.Get(PageState,
-        () => MagicAct.ThemeKit(new() { PageState = PageState }));
+    public IMagicThemeKit ThemeKit => _themeKitCache.Get(PageState, () => MagicAct.ThemeKit(new() { PageState = PageState }));
     private readonly CacheByPage<IMagicThemeKit> _themeKitCache = new();
 
     /// <inheritdoc cref="OqtaneBasic.MagicTheme.MagicAct" />
@@ -32,18 +32,6 @@ public abstract class MagicTheme: Oqtane.Themes.ThemeBase
     }
     private IMagicAct _magicAct;
 
-    ///// <summary>
-    ///// Method invoked when the component is ready to start, having received its
-    ///// initial parameters from its parent in the render tree.
-    ///// </summary>
-    //protected virtual void OnInitialized()
-    //{
-    //    base.OnInitialized();
-    //    // Provide the latest PageState on every change
-    //    MagicAct.UsePageState(PageState);
-    //}
-
-
     /// <inheritdoc cref="OqtaneBasic.MagicTheme.OnParametersSet" />
     protected override void OnParametersSet()
     {
@@ -53,12 +41,12 @@ public abstract class MagicTheme: Oqtane.Themes.ThemeBase
     }
 
     /// <inheritdoc cref="OqtaneBasic.MagicTheme.OnAfterRenderAsync" />
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override async Task OnAfterRenderAsync(bool isFirstRender)
     {
-        await base.OnAfterRenderAsync(firstRender);
+        await base.OnAfterRenderAsync(isFirstRender);
         // Provide the latest PageState on every change
         // but OnAfterRenderAsync could be executed without OnParametersSet
         MagicAct.UsePageState(PageState);
-        await MagicAct.AnalyticsKit().TrackPage(firstRender);
+        await MagicAct.AnalyticsKit(new() { PageState = PageState }).TrackPage(isFirstRender);
     }
 }
