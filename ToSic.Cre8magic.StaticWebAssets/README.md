@@ -21,6 +21,12 @@ For the built it uses vite, which also handles typescript compilation.
 1. `/src/scripts/ambient` contains JS for the ambient environment - so scripts that are "always loaded / always there" such as breadcrumb helper JS
 1. `/src/scripts/interop` contains JS for Oqtane interop to call
 
+## Develop JS while Oqtane is Running in Visual Studio
+
+When Visual Studio is running Oqtane, you cannot run the watcher at the same time.
+But for developing the JS, you will want to do this.
+The solution is to open this folder in a separate VS Code, and run the `serve` command and edit the code from there.
+
 ## INFO:
 
 - [JavaScript and TypeScript in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/javascript/javascript-in-visual-studio?view=vs-2022)
