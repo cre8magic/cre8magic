@@ -2,10 +2,15 @@
 
 public interface IMagicThemeJsService
 {
+    /// <summary>
+    /// Log to the console using `console.log(...)`
+    /// </summary>
+    /// <param name="args"></param>
+    /// <returns></returns>
     Task Log(params object[] args);
 
     /// <summary>
-    /// Clear the <body> tag of all classes
+    /// Clear the `&lt;body&gt;` tag of all classes
     /// </summary>
     /// <returns></returns>
     Task ClearBodyClasses();
