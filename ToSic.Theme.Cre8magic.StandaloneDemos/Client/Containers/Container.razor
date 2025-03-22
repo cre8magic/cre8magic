@@ -1,46 +1,14 @@
 @namespace ToSic.Theme.Cre8magic.StandaloneDemos
-@inherits ContainerBase
-@inject ISettingService SettingService
+@inherits ToSic.Cre8magic.OqtaneBs5.MagicContainer
+@code
+{
+    // Optionally provide another name
+    // public override string Name => "Default (for Default and Admin modules)";
 
-<div class="@_classes">
-    @if (_title && ModuleState.Title != "-")
-    {
-    <div class="row px-4">
-        <div class="d-flex flex-nowrap">
-            <ModuleActions /><h2><ModuleTitle /></h2>
-        </div>
-        <hr class="app-rule" />
-    </div>
-    }
-    else
-    {
-    <ModuleActions />
-    }
-    <div class="row px-4">
-        <div class="container-fluid">
-            <ModuleInstance />
-        </div>
-    </div>
-</div>
-
-@code {
-    public override string Name => "ToSic Cre8magic.StandaloneDemos - Container1";
-
-    private bool _title = true;
-    private string _classes = "container-fluid";
-
-    protected override void OnParametersSet()
-    {
-        try
-        {
-
-            _title = bool.Parse(SettingService.GetSetting(ModuleState.Settings, GetType().Namespace + ":Title", "true"));
-
-        }
-        catch
-        {
-            // error loading container settings
-        }
-    }
-
+    // Optionally provide other Settings
+    // public override MagicContainerSettings Settings => null;
+}
+@{
+    // Razor internal method to build with the HTML of the base Default.razor
+    base.BuildRenderTree(__builder);
 }
