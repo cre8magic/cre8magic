@@ -23,10 +23,16 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="..\bin\Release\$targetframework$\$projectname$.Oqtane.dll" target="lib\$targetframework$" />
+    <file src="..\bin\Release\$targetframework$\$projectname$.Oqtane.pdb" target="lib\$targetframework$" />
+    <file src="..\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.dll" target="lib\$targetframework$" />
+    <file src="..\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.pdb" target="lib\$targetframework$" />
+    <file src="..\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll" target="lib\$targetframework$" />
+    <file src="..\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.pdb" target="lib\$targetframework$" />
+    <file src="..\wwwroot\**\*.*" target="wwwroot" />
+    <!--<file src="..\..\ToSic.Cre8magic.StaticWebAssets\dist\**\*.*" target="wwwroot\_content\ToSic.Cre8magic.Oqtane" />-->
+    <file src="..\..\..\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane\**\*.*" target="wwwroot\_content\ToSic.Cre8magic.Oqtane" />
     <file src="icon.png" target="" />
     <file src="../../readme.md" target="" />
-    <file src="..\bin\Release\net9.0\*.dll" target="lib/net9.0" />
-    <file src="..\bin\Release\net9.0\*.pdb" target="lib/net9.0" />
-    <file src="..\wwwroot\Themes\**\*.*" target="wwwroot/Themes" />
   </files>
 </package>
