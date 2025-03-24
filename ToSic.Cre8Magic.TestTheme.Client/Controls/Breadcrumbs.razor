@@ -14,15 +14,18 @@ TODO:
 *@
 @code
 {
-    [CascadingParameter] public required PageState PageState { get; set; }
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
 
     /// <summary>
     /// Settings for retrieving the breadcrumbs; optional.
     /// If not set, the current page will be used as the active page.
     /// </summary>
-    [Parameter] public MagicBreadcrumbSettings? Settings { get; set; }
+    [Parameter]
+    public MagicBreadcrumbSettings? Settings { get; set; }
 
-    [Parameter] public IMagicPageTailor? Tailor { get; set; }
+    [Parameter]
+    public IMagicPageTailor? Tailor { get; set; }
 
     // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
 }

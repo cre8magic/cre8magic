@@ -13,8 +13,11 @@ TODO:
 - I18N in resources @2md
 *@
 @code {
-    [CascadingParameter] public required PageState PageState { get; set; }
-    [Parameter] public MagicThemeSettings Settings { get; set; }
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicThemeSettings Settings { get; set; }
 }
 @{
     var kit = MagicAct.ThemeKit(Settings.With(PageState));

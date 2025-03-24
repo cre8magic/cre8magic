@@ -7,13 +7,16 @@
 @using ToSic.Cre8magic.Settings
 @inject IMagicAct MagicAct
 @code {
-    [CascadingParameter] public required PageState PageState { get; set; }
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
 
-    [Parameter] public MagicBreadcrumbSettings? Settings { get; set; }
+    [Parameter]
+    public MagicBreadcrumbSettings? Settings { get; set; }
 
     // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
 
-    [Parameter] public IMagicPageTailor Tailor { get; set; } = new MagicBreadcrumbTailorBs5();
+    [Parameter]
+    public IMagicPageTailor Tailor { get; set; } = new MagicBreadcrumbTailorBs5();
 }
 @{
     var breadcrumbKit = MagicAct.BreadcrumbKit(Settings.With(PageState).Refill(Tailor));

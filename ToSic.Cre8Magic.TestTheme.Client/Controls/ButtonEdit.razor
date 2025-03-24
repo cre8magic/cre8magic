@@ -12,8 +12,11 @@ Recommendations:    We recommend to use inline SVGs for performance reasons.
 Nice to know:       -
 *@
 @code {
-    [CascadingParameter] public required PageState PageState { get; set; }
-    [Parameter] public MagicThemeSettings Settings { get; set; }
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicThemeSettings Settings { get; set; }
 }
 @{
     var kit = MagicAct.ThemeKit(Settings.With(PageState));

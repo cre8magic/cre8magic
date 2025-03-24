@@ -15,9 +15,11 @@
     /// If not provided, it will use the default settings from any other configuration.
     /// If provided, it may still merge these with other settings (like in PartName was specified).
     /// </summary>
-    [Parameter] public MagicMenuSettings? Settings { get; set; }
+    [Parameter]
+    public MagicMenuSettings? Settings { get; set; }
 
-    [Parameter] public string? Name { get; set; }
+    [Parameter]
+    public string? Name { get; set; }
 }
 
 @RenderMenu(MagicAct.MenuKit(Settings.With(PageState, Name)).Root)

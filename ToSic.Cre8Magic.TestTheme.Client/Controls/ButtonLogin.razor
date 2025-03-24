@@ -11,9 +11,11 @@ See also:           ButtonLoginTextInvisible.razor has the same feature but with
 *@
 @code
 {
-    [CascadingParameter] public required PageState PageState { get; set; }
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
 
-    [Parameter] public MagicUserLoginSettings Settings { get; set; }
+    [Parameter]
+    public MagicUserLoginSettings Settings { get; set; }
 }
 @{
     var loginKit = MagicAct.UserLoginKit(Settings.With(PageState));

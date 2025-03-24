@@ -21,7 +21,8 @@ Nice to know:
     public required IMagicPage Current { get; init; }
 
     // Additional debug stuff which is only visible when activated
-    [Parameter] public RenderFragment? Debug { get; set; }
+    [Parameter]
+    public RenderFragment? Debug { get; set; }
 }
 @if (Current.Children.Any())
 {

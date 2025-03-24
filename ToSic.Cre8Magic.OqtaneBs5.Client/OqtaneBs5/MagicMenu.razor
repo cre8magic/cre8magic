@@ -20,16 +20,19 @@ Nice to know:
 @code
 {
     /// <inheritdoc cref="ToSic.Cre8magic.OqtaneBs5.Internal.ComponentDocs.PageState"/>
-    [CascadingParameter] public required PageState PageState { get; set; }
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
 
     /// <summary>
     /// All the menu settings.
     /// If not provided, it will use the default settings from any other configuration.
     /// If provided, it may still merge these with other settings (like in PartName was specified).
     /// </summary>
-    [Parameter] public MagicMenuSettings? Settings { get; set; }
+    [Parameter]
+    public MagicMenuSettings? Settings { get; set; }
 
-    [Parameter] public string? Name { get; set; }
+    [Parameter]
+    public string? Name { get; set; }
 }
 @{
     // Get the latest menu kit on each render, using the latest PageState

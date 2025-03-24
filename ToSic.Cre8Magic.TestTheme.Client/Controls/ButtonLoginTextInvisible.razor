@@ -11,8 +11,11 @@ See also:           LoginIcon.razor has the same feature but with icons
 *@
 @code
 {
-    [CascadingParameter] public required PageState PageState { get; set; }
-    [Parameter] public MagicUserLoginSettings Settings { get; set; }
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicUserLoginSettings Settings { get; set; }
 }
 @{
     var loginKit = MagicAct.UserLoginKit(Settings.With(PageState));
