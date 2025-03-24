@@ -14,6 +14,9 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// </remarks>
 public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IWith<IMagicPageTailor?>
 {
+    /// <summary>
+    /// Note: needs standalone; non-primary constructor, so that the private clone constructor can call the base constructor.
+    /// </summary>
     [PrivateApi]
     public MagicBreadcrumbSettings() { }
 
