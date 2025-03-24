@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Diagnostics.CodeAnalysis;
-using Oqtane.Models;
 using ToSic.Cre8magic.Act;
+using ToSic.Cre8magic.OqtaneBasic;
 using ToSic.Cre8magic.Themes;
 using ToSic.Cre8magic.Utils;
 
@@ -14,25 +14,24 @@ namespace ToSic.Cre8magic.OqtaneBs5;
 /// <inheritdoc cref="OqtaneBasic.MagicTheme" />
 public abstract class MagicTheme: Oqtane.Themes.ThemeBase
 {
-    /// <inheritdoc cref="OqtaneBasic.MagicTheme.ThemePackage" />
+    /// <inheritdoc cref="IMagicThemeDocs.ThemePackage" />
     public abstract MagicThemePackage ThemePackage { get; }
 
 
-    /// <inheritdoc cref="OqtaneBasic.MagicTheme.ThemeKit" />
+    /// <inheritdoc cref="IMagicThemeDocs.ThemeKit" />
     public IMagicThemeKit ThemeKit => _themeKitCache.Get(PageState, () => MagicAct.ThemeKit(new() { PageState = PageState }));
     private readonly CacheByPage<IMagicThemeKit> _themeKitCache = new();
 
-    /// <inheritdoc cref="OqtaneBasic.MagicTheme.MagicAct" />
+    /// <inheritdoc cref="IMagicThemeDocs.MagicAct" />
     [Inject]
+    [field: AllowNull, MaybeNull]
     public required IMagicAct MagicAct
     {
-        get => _magicAct;
-        [MemberNotNull(nameof(_magicAct))]
-        set => _magicAct = value.UseThemePackage(ThemePackage);
+        get => field ?? throw new ArgumentException($"{nameof(MagicAct)} must be provided by DI.");
+        set => field = value.UseThemePackage(ThemePackage);
     }
-    private IMagicAct _magicAct;
 
-    /// <inheritdoc cref="OqtaneBasic.MagicTheme.OnParametersSet" />
+    /// <inheritdoc cref="IMagicThemeDocs.OnParametersSet" />
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
@@ -40,7 +39,7 @@ public abstract class MagicTheme: Oqtane.Themes.ThemeBase
         MagicAct.UsePageState(PageState);
     }
 
-    /// <inheritdoc cref="OqtaneBasic.MagicTheme.OnAfterRenderAsync" />
+    /// <inheritdoc cref="IMagicThemeDocs.OnAfterRenderAsync" />
     protected override async Task OnAfterRenderAsync(bool isFirstRender)
     {
         await base.OnAfterRenderAsync(isFirstRender);

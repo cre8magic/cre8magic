@@ -18,40 +18,23 @@ namespace ToSic.Cre8magic.OqtaneBasic;
 /// </remarks>
 public abstract class MagicTheme : Oqtane.Themes.ThemeBase
 {
-    /// <summary>
-    /// This contains the default settings which must be used in this theme.
-    /// Any inheriting class must specify what it will be. 
-    /// </summary>
+    /// <inheritdoc cref="IMagicThemeDocs.ThemePackage" />
     public abstract MagicThemePackage ThemePackage { get; }
 
-    /// <summary>
-    /// The Theme Kit which is help the theme become awesome.
-    /// </summary>
+    /// <inheritdoc cref="IMagicThemeDocs.ThemeKit" />
     public IMagicThemeKit ThemeKit => _themeKit.Get(PageState, () => MagicAct.ThemeKit(new() { PageState = PageState }));
     private readonly CacheByPage<IMagicThemeKit> _themeKit = new();
 
-    /// <summary>
-    /// The <see cref="MagicAct"/> which coordinates everything.
-    /// </summary>
-    /// <remarks>
-    /// It's provided by Dependency Injection, required.
-    /// </remarks>
+    /// <inheritdoc cref="IMagicThemeDocs.MagicAct" />
     [Inject]
+    [field: AllowNull, MaybeNull]
     public required IMagicAct MagicAct
     {
-        get => _magicAct;
-        [MemberNotNull(nameof(_magicAct))]
-        set => _magicAct = value.UseThemePackage(ThemePackage);
+        get => field ?? throw new ArgumentException($"{nameof(MagicAct)} must be provided by DI.");
+        set => field = value.UseThemePackage(ThemePackage);
     }
-    private IMagicAct _magicAct;
 
-    /// <summary>
-    /// Handle OnParametersSet to provide the latest PageState to the MagicAct.
-    /// </summary>
-    /// <remarks>
-    /// OnParametersSet runs whenever any parameter changes - such as PageState.
-    /// It also runs before OnParametersSetAsync.
-    /// </remarks>
+    /// <inheritdoc cref="IMagicThemeDocs.OnParametersSet" />
     protected override void OnParametersSet()
     {
         base.OnParametersSet();
@@ -60,9 +43,7 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase
     }
 
 
-    /// <summary>
-    /// Handle OnAfterRenderAsync to track page views
-    /// </summary>
+    /// <inheritdoc cref="IMagicThemeDocs.OnAfterRenderAsync" />
     protected override async Task OnAfterRenderAsync(bool isFirstRender)
     {
         await base.OnAfterRenderAsync(isFirstRender);
