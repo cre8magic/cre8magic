@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Tailors.Internal;
 internal class BlueprintPartJsonConverter : JsonConverter<MagicBlueprintPart>
 {
     public override void Write(Utf8JsonWriter writer, MagicBlueprintPart? part, JsonSerializerOptions options) =>
-        JsonSerializer.Serialize(writer, new MagicBlueprintPart.NoJsonConverter(part), options);
+        JsonSerializer.Serialize(writer, part == null ? null : new MagicBlueprintPart.NoJsonConverter(part), options);
 
 
     public override MagicBlueprintPart? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

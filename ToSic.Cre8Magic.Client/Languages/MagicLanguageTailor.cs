@@ -18,8 +18,12 @@ public class MagicLanguageTailor(CmThemeContextFull context, MagicLanguageSettin
     /// <returns></returns>
     public string Classes(string tag, MagicLanguage? lang)
     {
-        if (!tag.HasValue()) return "";
-        if (GetSettings(tag) is not { } styles) return "";
-        return styles.Classes + " " + styles.IsActive.Get(lang?.IsActive);
+        if (!tag.HasValue())
+            return "";
+
+        if (GetSettings(tag) is not { } styles)
+            return "";
+
+        return $"{styles.Classes} {styles.IsActive.Get(lang?.IsActive)}";
     }
 }

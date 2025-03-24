@@ -3,7 +3,7 @@ using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Internal;
 
-namespace ToSic.Cre8magic.Internal;
+namespace ToSic.Cre8magic.Internal.Debug;
 
 /// <summary>
 /// WIP class to provide certain debug information which is internal

@@ -17,8 +17,6 @@ internal record MagicLanguageKit : IMagicLanguageKit
 
     public /* actually internal */ required MagicLanguageSettings Settings { get; init; }
 
-    //public /* actually internal */ required MagicThemeDesignSettings ThemeDesignSettings { get; init; }
-
     public required IMagicLanguageService Service { get; init; }
 
     public Task SetCultureAsync(string culture) => Service.SetCultureAsync(culture);

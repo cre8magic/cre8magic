@@ -44,13 +44,12 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         };
     }
 
-    private Data2WithJournal<MagicLanguageSettings, MagicThemePartSettings?> MergeSettings(
-        PageState pageState, MagicLanguageSettings? settings)
+    private Data2WithJournal<MagicLanguageSettings, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicLanguageSettings? settings)
     {
         var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
-        var spell = getSettings.GetBest(settings, settingsSvc.Languages);
-        var bluePrint = getSettings.GetBest(settings?.Blueprint, settingsSvc.LanguageBlueprints, ThemePartSectionEnum.Design);
-        return new(spell.Data with { Blueprint = bluePrint.Data }, getSettings.Part, spell.Journal.With(bluePrint.Journal));
+        var newSettings = getSettings.GetBest(settings, settingsSvc.Languages);
+        var blueprint = getSettings.GetBest(settings?.Blueprint, settingsSvc.LanguageBlueprints, ThemePartSectionEnum.Design);
+        return new(newSettings.Data with { Blueprint = blueprint.Data }, getSettings.Part, newSettings.Journal.With(blueprint.Journal));
     }
 
 
@@ -60,7 +59,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         if (_languages.TryGetValue(siteId, out var cached))
             return cached;
 
-        var siteLanguages = pageState.Languages; // await oqtLangSvc.GetLanguagesAsync(siteId);
+        var siteLanguages = pageState.Languages;
         var siteLanguageCodes = siteLanguages.Select(l => l.Code).ToList();
 
         // Primary order of languages. If specified, use that, otherwise use site list
@@ -110,7 +109,8 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
 
     public async Task SetCultureAsync(string culture)
     {
-        if (culture == CultureInfo.CurrentUICulture.Name) return;
+        if (culture == CultureInfo.CurrentUICulture.Name)
+            return;
 
         var interop = new Interop(jsRuntime);
         var localizationCookieValue = CookieRequestCultureProvider.MakeCookieValue(new(culture));

@@ -10,7 +10,7 @@ namespace ToSic.Cre8magic.Languages.Internal;
 public interface IMagicLanguageService
 {
     /// <summary>
-    /// Get the language kit. Must be async, because it might need to load data from Oqtane.
+    /// Get the language kit.
     /// </summary>
     /// <param name="pageState">The Oqtane PageState</param>
     /// <param name="settings">Settings to use - or if null, just use all the defaults</param>

@@ -18,12 +18,15 @@ public class LogRoot
 
     internal Log GetLog(string? prefix) => new(this, Depth + 1, prefix);
 
-    internal void Add(string name, IEnumerable<string> journal)
+    internal void Add(string? name, IEnumerable<string>? journal)
     {
-        if (name == null || journal == null) return;
-        if (!journal.Any()) return;
+        if (name == null || journal == null)
+            return;
+        if (!journal.Any())
+            return;
         var messageLog = GetLog(name);
-        foreach (var m in journal) messageLog.A(m);
+        foreach (var m in journal)
+            messageLog.A(m);
 
     }
 }

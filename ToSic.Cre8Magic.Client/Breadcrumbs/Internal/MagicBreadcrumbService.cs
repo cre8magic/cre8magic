@@ -31,12 +31,11 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
         };
     }
 
-    private Data2WithJournal<MagicBreadcrumbSettings, MagicThemePartSettings?> MergeSettings(
-        PageState pageState, MagicBreadcrumbSettings? settings)
+    private Data2WithJournal<MagicBreadcrumbSettings, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicBreadcrumbSettings? settings)
     {
         var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
-        var spell = getSettings.GetBest(settings, settingsSvc.Breadcrumbs);
-        var bluePrint = getSettings.GetBest(settings?.Blueprint, settingsSvc.BreadcrumbBlueprints, ThemePartSectionEnum.Design);
-        return new(spell.Data with { Blueprint = bluePrint.Data }, getSettings.Part, spell.Journal.With(bluePrint.Journal));
+        var newSettings = getSettings.GetBest(settings, settingsSvc.Breadcrumbs);
+        var blueprint = getSettings.GetBest(settings?.Blueprint, settingsSvc.BreadcrumbBlueprints, ThemePartSectionEnum.Design);
+        return new(newSettings.Data with { Blueprint = blueprint.Data }, getSettings.Part, newSettings.Journal.With(blueprint.Journal));
     }
 }

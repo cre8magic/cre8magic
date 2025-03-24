@@ -12,7 +12,8 @@ public class MagicContainerTailor(CmThemeContextFull context, Module module, Mag
 {
     public override string? Classes(string tag)
     {
-        if (GetSettings(tag) is not { } styles) return null;
+        if (GetSettings(tag) is not { } styles)
+            return null;
         var value = CombineWithModuleClasses(styles);
         return ProcessTokens(value);
     }

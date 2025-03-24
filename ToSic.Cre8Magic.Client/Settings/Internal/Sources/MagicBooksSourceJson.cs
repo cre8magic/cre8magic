@@ -24,9 +24,9 @@ internal class MagicBooksSourceJson(MagicBookLoaderJson bookLoaderJson) : IMagic
         if (string.IsNullOrWhiteSpace(themePackage.SettingsFile))
             return [];
 
-        var spellsBook = bookLoaderJson.LoadJson(themePackage);
+        var book = bookLoaderJson.LoadJson(themePackage);
 
-        var bundle = new List<DataWithJournal<MagicBook>> { spellsBook };
+        var bundle = new List<DataWithJournal<MagicBook>> { book };
         _cache[themePackage] = bundle;
         return bundle;
     }

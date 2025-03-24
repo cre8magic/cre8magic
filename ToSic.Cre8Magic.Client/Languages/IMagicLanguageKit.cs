@@ -25,8 +25,6 @@ public interface IMagicLanguageKit: IHasDebugInfo
 
     MagicLanguageSettings Settings { get; init; }
 
-    //internal MagicThemeDesignSettings ThemeDesignSettings { get; init; }
-
     /// <summary>
     /// Command to set the culture.
     /// This will trigger a page reload.

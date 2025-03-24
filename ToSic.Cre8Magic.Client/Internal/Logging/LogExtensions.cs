@@ -22,7 +22,8 @@ internal static class LogExtensions
     {
         // Null-check
         // if (!(log is Log realLog)) return;
-        if (log == null) return;
+        if (log == null)
+            return;
         var e = new LogEntry(log, message, log.Depth, code);
         log.AddInternal(e);
     }
