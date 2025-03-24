@@ -70,18 +70,6 @@ explain
 
 1. **Acts**
 1. Common Setup
-1. Magic Breadcrumbs
-1. Magic Languages
-1. Magic Links ?
-1. Magic Logos
-1. Magic Menus
-1. Magic Page Context
-1. Magic Pages ?
-1. Magic To-Top
-
-1. **SEO & Analytics**
-1. Magic Analytics
-1. Magic Sitemap
 
 1. **Razor Components**
 1. Magic Themes

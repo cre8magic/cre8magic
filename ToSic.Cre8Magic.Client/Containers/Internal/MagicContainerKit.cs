@@ -1,6 +1,5 @@
 ﻿using Oqtane.Models;
-using ToSic.Cre8magic.Utils;
-using ToSic.Cre8magic.Utils.Internal;
+using ToSic.Cre8magic.Internal;
 
 namespace ToSic.Cre8magic.Containers.Internal;
 

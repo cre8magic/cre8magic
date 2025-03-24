@@ -1,4 +1,4 @@
-﻿@using ToSic.Cre8magic.Act
+﻿@* @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Breadcrumbs
 @using ToSic.Cre8magic.Pages
 @using ToSic.Cre8magic.Settings
@@ -20,9 +20,9 @@
     <ol class='@breadcrumbKit.Root.Classes("ol")'>
         @foreach (var item in breadcrumbKit.Pages)
         {
-            <li class='@item.Classes("li")'>
+            <li class='@item.Classes("li")'> *@
                 @* TODO: IMPROVE HasLink / UseLink, etc. *@
-                @if (item.IsActive)
+@*                 @if (item.IsActive)
                 {
                     <span class='@item.Classes("span")' aria-current="page">@item.Name</span>
                 }
@@ -34,3 +34,4 @@
         }
     </ol>
 </nav>
+  *@

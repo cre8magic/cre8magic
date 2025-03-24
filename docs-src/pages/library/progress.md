@@ -7,15 +7,26 @@ uid: Cre8magic.Library.Progress
 This section should show how far we are on each component.
 Please keep updated.
 
+## Core Theme parts
+
+| Topic        | Container | Theme       | Exceptions | Page Context |
+|--------------|-----------|-------------|------------|--------------|
+| OqtBasic Ctl | ❓        | ✅          |            |              |
+| Oqt BS5 Ctl  | ✅/⌛    | ✅          |            |              |
+| Demo Oqt Th. |           |             |            |              |
+| Name for load|           |             |            |              |
+| (tmpl-row)   |           |             |            |              |
+
+
 ## Components
 
-| Topic        | Analytics | Breadcrumbs | Buttons | Dashboard | Languages | Links | Logos | Menus | Page Context | Pages | Theme | To-Top |
-|--------------|-----------|-------------|---------|-----------|-----------|-------|-------|-------|--------------|-------|--------|-------|
-| OqtBasic     |           |             |         |           |           |       |       |       |              |       | ✅     |       |
-| Oqt BS5      |           |             |         |           |           |       |       |       |              |       |        |       |
-| In Oqt Th.   |           |             |         |           |           |       |       |       |              |       |        |       |
-| Name for load|           |             |         |           |           |       |       | ✅    |              |       |        |       |
-
+| Topic        | Analytics | Breadcrumbs | Buttons | Ctrl Panel | Exceptions | Languages | Links | Logos | Menus | Page Context | Pages | To-Top |
+|--------------|-----------|-------------|---------|------------|------------|-----------|-------|-------|-------|--------------|-------|-------|
+| OqtBasic Ctl | -         |             |         |            |            |           |       |       |       |              |       |       |
+| Oqt BS5 Ctl  | -         |             |         |            |            |           |       |       |       |              |       |       |
+| Demo Oqt Th. |           | ✅          |         |            |            |           |       |       |       |              |       |       |
+| Name for load|           |             |         |            |            |           |       |       | ✅    |              |       |       |
+| (tmpl-row)   |           |             |         |            |            |           |       |       |       |              |       |       |
 
 ## Other
 

@@ -1,7 +1,8 @@
 ﻿using System.Collections.ObjectModel;
+using ToSic.Cre8magic.Internal;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Utils;
-using ToSic.Cre8magic.Utils.Internal;
+
 
 namespace ToSic.Cre8magic.Tokens;
 

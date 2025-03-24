@@ -5,7 +5,7 @@ using ToSic.Cre8magic.Themes;
 namespace ToSic.Cre8magic.OqtaneBasic;
 
 [PrivateApi]
-public interface IMagicThemeDocs
+internal interface IMagicThemeDocs
 {
     /// <summary>
     /// This contains the default settings which must be used in this theme.

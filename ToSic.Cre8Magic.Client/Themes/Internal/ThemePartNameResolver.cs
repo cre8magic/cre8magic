@@ -1,8 +1,9 @@
-﻿using ToSic.Cre8magic.Internal.Journal;
+﻿using ToSic.Cre8magic.Internal;
+using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
-using ToSic.Cre8magic.Utils.Internal;
+
 
 namespace ToSic.Cre8magic.Themes.Internal;
 

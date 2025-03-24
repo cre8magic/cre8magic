@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using ToSic.Cre8magic.Internal;
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Utils;
-using ToSic.Cre8magic.Utils.Internal;
+
 using static ToSic.Cre8magic.MagicConstants;
 
 namespace ToSic.Cre8magic.Settings.Internal;

@@ -1,5 +1,4 @@
-﻿using ToSic.Cre8magic.Utils.Internal;
-using static System.StringComparer;
+﻿using static System.StringComparer;
 
 namespace ToSic.Cre8magic.Internal;
 

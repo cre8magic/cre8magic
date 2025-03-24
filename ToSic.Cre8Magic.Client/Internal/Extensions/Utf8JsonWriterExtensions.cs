@@ -1,13 +1,13 @@
-﻿using System.Text.Json;
+﻿//using System.Text.Json;
 
-namespace ToSic.Cre8magic.Utils.Internal;
+//namespace ToSic.Cre8magic.Utils.Internal;
 
-internal static class Utf8JsonWriterExtensions
-{
-    public static void WritePair(this Utf8JsonWriter writer, string name, string? value, bool skipIfNull = false)
-    {
-        if (skipIfNull && value == null) return;
-        writer.WritePropertyName(name);
-        writer.WriteStringValue(value);
-    }
-}
+//internal static class Utf8JsonWriterExtensions
+//{
+//    public static void WritePair(this Utf8JsonWriter writer, string name, string? value, bool skipIfNull = false)
+//    {
+//        if (skipIfNull && value == null) return;
+//        writer.WritePropertyName(name);
+//        writer.WriteStringValue(value);
+//    }
+//}

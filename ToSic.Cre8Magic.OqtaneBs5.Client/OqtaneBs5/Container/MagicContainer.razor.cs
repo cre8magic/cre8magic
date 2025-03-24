@@ -38,8 +38,10 @@ public partial class MagicContainer: ComponentBase /*Oqtane.Themes.ContainerBase
     #endregion
 
 
-    [CascadingParameter] public required PageState PageState { get; set; }
-    [CascadingParameter] public required Module ModuleState { get; set; }
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+    [CascadingParameter]
+    public required Module ModuleState { get; set; }
 
     /// <summary>
     /// Settings for this container.
@@ -48,7 +50,8 @@ public partial class MagicContainer: ComponentBase /*Oqtane.Themes.ContainerBase
     /// </summary>
     public virtual MagicContainerSettings? Settings => null;
 
-    [Inject] public required IMagicAct MagicAct { get; set; }
+    [Inject]
+    public required IMagicAct MagicAct { get; set; }
 
     #region Navigation / Close
 
