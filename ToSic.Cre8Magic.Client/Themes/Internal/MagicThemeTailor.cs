@@ -24,4 +24,21 @@ public class MagicThemeTailor(CmThemeContextFull context) : MagicTailorBase(cont
     /// </summary>
     public string? PaneClasses(string paneName) =>
         context?.ThemeBlueprint.PaneIsEmpty.Get(PaneIsEmpty(paneName));
+
+    // note: currently does special things for the ToTop, may need a standalone Tailor for this...
+    public override string? Id(string name)
+    {
+        var result = base.Id(name);
+        return result == null && name == MagicToTopConstants.LinkToTopNameId
+            ? MagicToTopConstants.LinkToTopHtmlId
+            : result;
+    }
+
+    public override string? Value(string target)
+    {
+        var result = base.Value(target);
+        return result == null && target == MagicToTopConstants.LinkToTopImage
+            ? MagicToTopConstants.LinkToTopDefaultSvg
+            : result;
+    }
 }

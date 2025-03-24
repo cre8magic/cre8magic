@@ -22,8 +22,8 @@ Please keep updated.
 
 | Topic        | Analytics | Breadcrumbs | Buttons | Ctrl Panel | Exceptions | Languages | Links | Logos | Menus | Page Context | Pages | To-Top |
 |--------------|-----------|-------------|---------|------------|------------|-----------|-------|-------|-------|--------------|-------|-------|
-| OqtBasic Ctl | -         |             |         |            |            |           |       |       |       |              |       |       |
-| Oqt BS5 Ctl  | -         |             |         |            |            |           |       |       |       |              |       |       |
+| OqtBasic Ctl | -         |             |         |            |            |           |       |       |       |              |       | ✅    |
+| Oqt BS5 Ctl  | -         |             |         |            |            |           |       |       |       |              |       | ✅    |
 | Demo Oqt Th. |           | ✅          |         |            |            |           |       |       |       |              |       |       |
 | Name for load|           |             |         |            |            |           |       |       | ✅    |              |       |       |
 | (tmpl-row)   |           |             |         |            |            |           |       |       |       |              |       |       |

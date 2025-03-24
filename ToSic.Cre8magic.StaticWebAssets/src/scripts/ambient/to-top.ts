@@ -14,18 +14,21 @@ function toTopShowHideOnScroll() {
 }
 
 function toTopButtonVisibility() {
+  if (debug) console.log('toTopButtonVisibility');
   var toTopButton = document.getElementById(toTopElementId);
-  if (!toTopButton) return;
+  if (!toTopButton)
+    return;
 
   // Ensure it has the event listener
   toTopButton.addEventListener("click", scrollTop);
 
   // Todo: unsure why it does body + documentElement...
   const show = document.body.scrollTop > 200 || document.documentElement.scrollTop > 200;
-  if (debugDetailed) console.log('to-top' + show ? "show" : "hide");
+  if (debugDetailed) console.log('to-top: ' + show ? "show" : "hide");
   toTopButton.classList.toggle(visibleClass, show);
 }
 
 function scrollTop() {
+  if (debug) console.log('scrollTop');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -28,8 +28,8 @@ public abstract class MagicTailorBase: IMagicTailor
 
     public virtual string? Classes(string target) => ProcessTokens(GetSettings(target)?.Classes);
 
-    public string? Value(string target) => ProcessTokens(GetSettings(target)?.Value);
+    public virtual string? Value(string target) => ProcessTokens(GetSettings(target)?.Value);
 
-    public string? Id(string name) => ProcessTokens(GetSettings(name)?.Id);
+    public virtual string? Id(string name) => ProcessTokens(GetSettings(name)?.Id);
 
 }
