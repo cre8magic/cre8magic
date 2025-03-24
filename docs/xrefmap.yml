@@ -43,6 +43,9 @@ references:
 - uid: Cre8magic.Library.MagicTailor.Index
   name: cre8magic – Magic Tailor
   href: library/tailor/index.html
+- uid: Cre8magic.Library.Progress
+  name: cre8magic – Development Progress
+  href: library/progress.html
 - uid: Cre8magic.Library.Shared.DoInheritFromComponentBase
   name: Cre8magic.Library.Shared.DoInheritFromComponentBase
   href: library/shared/do-inherit-from-componentbase.html
@@ -1646,19 +1649,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId
   nameWithType: MagicMenuSettings.MenuId
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  name: PagesSource
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_PagesSource
-  commentId: P:ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  nameWithType: MagicMenuSettings.PagesSource
-- uid: ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource*
-  name: PagesSource
-  href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_PagesSource_
-  commentId: Overload:ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Menus.MagicMenuSettings.PagesSource
-  nameWithType: MagicMenuSettings.PagesSource
 - uid: ToSic.Cre8magic.Menus.MagicMenuSettings.Pick
   name: Pick
   href: api/ToSic.Cre8magic.Menus.MagicMenuSettings.html#ToSic_Cre8magic_Menus_MagicMenuSettings_Pick
@@ -5086,6 +5076,19 @@ references:
   commentId: T:ToSic.Cre8magic.Themes.IMagicThemeJsService
   fullName: ToSic.Cre8magic.Themes.IMagicThemeJsService
   nameWithType: IMagicThemeJsService
+- uid: ToSic.Cre8magic.Themes.IMagicThemeJsService.ClearBodyClasses
+  name: ClearBodyClasses()
+  href: api/ToSic.Cre8magic.Themes.IMagicThemeJsService.html#ToSic_Cre8magic_Themes_IMagicThemeJsService_ClearBodyClasses
+  commentId: M:ToSic.Cre8magic.Themes.IMagicThemeJsService.ClearBodyClasses
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeJsService.ClearBodyClasses()
+  nameWithType: IMagicThemeJsService.ClearBodyClasses()
+- uid: ToSic.Cre8magic.Themes.IMagicThemeJsService.ClearBodyClasses*
+  name: ClearBodyClasses
+  href: api/ToSic.Cre8magic.Themes.IMagicThemeJsService.html#ToSic_Cre8magic_Themes_IMagicThemeJsService_ClearBodyClasses_
+  commentId: Overload:ToSic.Cre8magic.Themes.IMagicThemeJsService.ClearBodyClasses
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Themes.IMagicThemeJsService.ClearBodyClasses
+  nameWithType: IMagicThemeJsService.ClearBodyClasses
 - uid: ToSic.Cre8magic.Themes.IMagicThemeJsService.Log(System.Object[])
   name: Log(params object[])
   href: api/ToSic.Cre8magic.Themes.IMagicThemeJsService.html#ToSic_Cre8magic_Themes_IMagicThemeJsService_Log_System_Object___
@@ -5301,6 +5304,41 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Themes.MagicThemeBase.ThemePackage
   nameWithType: MagicThemeBase.ThemePackage
+- uid: ToSic.Cre8magic.Themes.MagicThemeJsService
+  name: MagicThemeJsService
+  href: api/ToSic.Cre8magic.Themes.MagicThemeJsService.html
+  commentId: T:ToSic.Cre8magic.Themes.MagicThemeJsService
+  fullName: ToSic.Cre8magic.Themes.MagicThemeJsService
+  nameWithType: MagicThemeJsService
+- uid: ToSic.Cre8magic.Themes.MagicThemeJsService.ClearBodyClasses
+  name: ClearBodyClasses()
+  href: api/ToSic.Cre8magic.Themes.MagicThemeJsService.html#ToSic_Cre8magic_Themes_MagicThemeJsService_ClearBodyClasses
+  commentId: M:ToSic.Cre8magic.Themes.MagicThemeJsService.ClearBodyClasses
+  fullName: ToSic.Cre8magic.Themes.MagicThemeJsService.ClearBodyClasses()
+  nameWithType: MagicThemeJsService.ClearBodyClasses()
+- uid: ToSic.Cre8magic.Themes.MagicThemeJsService.ClearBodyClasses*
+  name: ClearBodyClasses
+  href: api/ToSic.Cre8magic.Themes.MagicThemeJsService.html#ToSic_Cre8magic_Themes_MagicThemeJsService_ClearBodyClasses_
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeJsService.ClearBodyClasses
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Themes.MagicThemeJsService.ClearBodyClasses
+  nameWithType: MagicThemeJsService.ClearBodyClasses
+- uid: ToSic.Cre8magic.Themes.MagicThemeJsService.SetBodyClasses(System.String)
+  name: SetBodyClasses(string)
+  href: api/ToSic.Cre8magic.Themes.MagicThemeJsService.html#ToSic_Cre8magic_Themes_MagicThemeJsService_SetBodyClasses_System_String_
+  commentId: M:ToSic.Cre8magic.Themes.MagicThemeJsService.SetBodyClasses(System.String)
+  name.vb: SetBodyClasses(String)
+  fullName: ToSic.Cre8magic.Themes.MagicThemeJsService.SetBodyClasses(string)
+  fullName.vb: ToSic.Cre8magic.Themes.MagicThemeJsService.SetBodyClasses(String)
+  nameWithType: MagicThemeJsService.SetBodyClasses(string)
+  nameWithType.vb: MagicThemeJsService.SetBodyClasses(String)
+- uid: ToSic.Cre8magic.Themes.MagicThemeJsService.SetBodyClasses*
+  name: SetBodyClasses
+  href: api/ToSic.Cre8magic.Themes.MagicThemeJsService.html#ToSic_Cre8magic_Themes_MagicThemeJsService_SetBodyClasses_
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemeJsService.SetBodyClasses
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Themes.MagicThemeJsService.SetBodyClasses
+  nameWithType: MagicThemeJsService.SetBodyClasses
 - uid: ToSic.Cre8magic.Themes.MagicThemePackage
   name: MagicThemePackage
   href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html
@@ -5326,6 +5364,12 @@ references:
   fullName.vb: ToSic.Cre8magic.Themes.MagicThemePackage.New
   nameWithType: MagicThemePackage.MagicThemePackage
   nameWithType.vb: MagicThemePackage.New
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.CommonResources
+  name: CommonResources
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_CommonResources
+  commentId: F:ToSic.Cre8magic.Themes.MagicThemePackage.CommonResources
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.CommonResources
+  nameWithType: MagicThemePackage.CommonResources
 - uid: ToSic.Cre8magic.Themes.MagicThemePackage.Defaults
   name: Defaults
   href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Defaults
@@ -5365,19 +5409,32 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Themes.MagicThemePackage.PackageName
   nameWithType: MagicThemePackage.PackageName
-- uid: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
-  name: SettingsJsonFile
-  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_SettingsJsonFile
-  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
-  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
-  nameWithType: MagicThemePackage.SettingsJsonFile
-- uid: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile*
-  name: SettingsJsonFile
-  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_SettingsJsonFile_
-  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.Resources
+  name: Resources
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Resources
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.Resources
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Resources
+  nameWithType: MagicThemePackage.Resources
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.Resources*
+  name: Resources
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_Resources_
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.Resources
   isSpec: "True"
-  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsJsonFile
-  nameWithType: MagicThemePackage.SettingsJsonFile
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.Resources
+  nameWithType: MagicThemePackage.Resources
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsFile
+  name: SettingsFile
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_SettingsFile
+  commentId: P:ToSic.Cre8magic.Themes.MagicThemePackage.SettingsFile
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsFile
+  nameWithType: MagicThemePackage.SettingsFile
+- uid: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsFile*
+  name: SettingsFile
+  href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_SettingsFile_
+  commentId: Overload:ToSic.Cre8magic.Themes.MagicThemePackage.SettingsFile
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Themes.MagicThemePackage.SettingsFile
+  nameWithType: MagicThemePackage.SettingsFile
 - uid: ToSic.Cre8magic.Themes.MagicThemePackage.ThemePath
   name: ThemePath
   href: api/ToSic.Cre8magic.Themes.MagicThemePackage.html#ToSic_Cre8magic_Themes_MagicThemePackage_ThemePath

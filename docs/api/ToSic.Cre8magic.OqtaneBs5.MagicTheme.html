@@ -89,7 +89,7 @@
 
 
   <h1 id="ToSic_Cre8magic_OqtaneBs5_MagicTheme" data-uid="ToSic.Cre8magic.OqtaneBs5.MagicTheme" class="text-break">
-Class MagicTheme  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class MagicTheme  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -147,7 +147,7 @@ Class MagicTheme  <a class="header-action link-secondary" title="View source" hr
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>The <a class="xref" href="ToSic.Cre8magic.OqtaneBasic.MagicTheme.html#ToSic_Cre8magic_OqtaneBasic_MagicTheme_MagicAct">MagicAct</a> which coordinates everything.</p>
+  <div class="markdown level1 summary"><p>The <span class="xref">ToSic.Cre8magic.OqtaneBasic.IMagicTheme.MagicAct</span> which coordinates everything.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -180,7 +180,7 @@ public required IMagicAct MagicAct { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_OqtaneBs5_MagicTheme_ThemeKit" data-uid="ToSic.Cre8magic.OqtaneBs5.MagicTheme.ThemeKit">
   ThemeKit
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L22"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The Theme Kit which is help the theme become awesome.</p>
@@ -212,7 +212,7 @@ public required IMagicAct MagicAct { get; set; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_OqtaneBs5_MagicTheme_ThemePackage" data-uid="ToSic.Cre8magic.OqtaneBs5.MagicTheme.ThemePackage">
   ThemePackage
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>This contains the default settings which must be used in this theme.
@@ -249,7 +249,7 @@ Any inheriting class must specify what it will be.</p>
 
   <h3 id="ToSic_Cre8magic_OqtaneBs5_MagicTheme_OnAfterRenderAsync_System_Boolean_" data-uid="ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnAfterRenderAsync(System.Boolean)">
   OnAfterRenderAsync(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L43"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Handle OnAfterRenderAsync to track page views</p>
@@ -257,12 +257,12 @@ Any inheriting class must specify what it will be.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override Task OnAfterRenderAsync(bool firstRender)</code></pre>
+    <pre><code class="lang-csharp hljs">protected override Task OnAfterRenderAsync(bool isFirstRender)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>firstRender</code> <span class="xref">bool</span></dt>
+    <dt><code>isFirstRender</code> <span class="xref">bool</span></dt>
     <dd></dd>
   </dl>
 
@@ -286,7 +286,7 @@ Any inheriting class must specify what it will be.</p>
 
   <h3 id="ToSic_Cre8magic_OqtaneBs5_MagicTheme_OnParametersSet" data-uid="ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnParametersSet">
   OnParametersSet()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Handle OnParametersSet to provide the latest PageState to the MagicAct.</p>
@@ -317,7 +317,7 @@ It also runs before OnParametersSetAsync.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L14" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.OqtaneBs5.Client/OqtaneBs5/Themes/MagicTheme.cs/#L15" class="edit-link">Edit this page</a>
         </div>
 
 
