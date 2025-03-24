@@ -1,0 +1,43 @@
+@* Note: Should be in the same namespace as all the themes, to keep things simple *@
+@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+
+@*
+    This is for Themes which will contain content in just about every location - above the content, before the pane and after the pane.
+*@
+
+@code {
+    [Parameter]
+    public required string Name { get; set; } = "TODO Name";
+
+    [Parameter]
+    public required string Title { get; set; } = "TODO Title";
+
+    [Parameter]
+    public required string Description { get; set; } = "TODO Description";
+
+    [Parameter]
+    public RenderFragment BeforeContent { get; set; }
+
+    [Parameter]
+    public required RenderFragment BeforePane { get; set; }
+
+    [Parameter]
+    public required RenderFragment ChildContent { get; set; }
+}
+
+<main role="main">
+    <!-- Header with logo and menu -->
+    <NavHeaderDefault></NavHeaderDefault>
+    
+    @BeforeContent
+
+    <!-- Content with title, description and pane "Default" -->
+    <ContentDefault Name="@Name" Title="@Title" Description="@Description">
+        <BeforePane>
+            @BeforePane
+        </BeforePane>
+        <ChildContent>
+            @ChildContent
+        </ChildContent>
+    </ContentDefault>
+</main>

@@ -11,29 +11,8 @@
     public override string Panes => PaneNames.Default;
 }
 
-
-<main role="main">
-    <nav class="navbar navbar-dark bg-primary fixed-top">
-        <Logo />
-        <Menu Orientation="Horizontal"></Menu>
-        <div class="controls ms-auto">
-            <div class="controls-group">
-                <UserProfile />
-                <Login />
-                <ControlPanel ButtonClass="btn-outline-light"/>
-            </div>
-        </div>
-    </nav>
-
-    <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>@PageTitle</h1>
-                    <p>@PageDescription</p>
-                    <Pane Name="@PaneNames.Default"/>
-                </div>
-            </div>
-        </div>
+<MainDefault Name="@Name" Title="@PageTitle" Description="@PageDescription">
+    <div>
+        This is just a basic setup, without any Cre8magic features.
     </div>
-</main>
+</MainDefault>

@@ -1,0 +1,34 @@
+@* Note: Should be in the same namespace as all the themes, to keep things simple *@
+@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+
+@code {
+    [Parameter]
+    public required string Name { get; set; } = "TODO Name";
+
+    [Parameter]
+    public required string Title { get; set; } = "TODO Title";
+
+    [Parameter]
+    public required string Description { get; set; } = "TODO Description";
+
+    [Parameter]
+    public required RenderFragment BeforePane { get; set; }
+
+    [Parameter]
+    public required RenderFragment ChildContent { get; set; }
+}
+
+@((MarkupString)"<!-- ThemeControls/ContentDefault.razor -->")
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>@Title</h1>
+                <p>@Description</p>
+                @BeforePane
+                <Pane Name="@PaneNames.Default"/>
+                @ChildContent
+            </div>
+        </div>
+    </div>
+</div>
