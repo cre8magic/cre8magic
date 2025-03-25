@@ -19,8 +19,8 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith('.css')) return 'styles-b5.min.css';
-          if (assetInfo.name?.endsWith('.css.map')) return 'styles-b5.min.css.map';
+          if (assetInfo.name?.endsWith('.css')) return 'styles-bs5.css';
+          if (assetInfo.name?.endsWith('.css.map')) return 'styles-bs5.css.map';
           return '[name][extname]';
         },
       },
