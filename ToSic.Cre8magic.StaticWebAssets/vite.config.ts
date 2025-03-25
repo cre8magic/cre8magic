@@ -12,15 +12,15 @@ export default defineConfig({
       entry: {
         interop: resolve(__dirname, 'src/scripts/interop/interop.ts'),
         ambient: resolve(__dirname, 'src/scripts/ambient/index.ts'),
-        style: resolve(__dirname, 'src/styles/style.scss')
+        style: resolve(__dirname, 'src/styles/bs5/styles-bs5.scss')
       },
       formats: ['es']
     },
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith('.css')) return 'style.min.css';
-          if (assetInfo.name?.endsWith('.css.map')) return 'style.min.css.map';
+          if (assetInfo.name?.endsWith('.css')) return 'styles-b5.min.css';
+          if (assetInfo.name?.endsWith('.css.map')) return 'styles-b5.min.css.map';
           return '[name][extname]';
         },
       },
