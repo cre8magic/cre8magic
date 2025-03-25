@@ -6,7 +6,7 @@ using static ToSic.Cre8magic.Utils.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics.Internal;
 
-internal class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService settingsSvc, ScopedDictionaryCache<bool> cacheSvc) : IMagicAnalyticsService
+internal class MagicAnalyticsService(IMagicThemeJsService magicThemeJsService, IJSRuntime jsRuntime, IMagicSettingsService settingsSvc, ScopedDictionaryCache<bool> cacheSvc) : IMagicAnalyticsService
 {
     private const string GtmEvent = "event";
 
@@ -46,7 +46,7 @@ internal class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService
 
         // Run the JS Command but don't wait for it
         // https://stackoverflow.com/questions/17805887/using-async-without-await
-        await DoNotWait(() => IgnoreError(() => jsRuntime.InvokeVoidAsync(settings.PageViewJs!, GtmEvent, settings.PageViewEvent)));
+        await DoNotWait(() => IgnoreError(() => magicThemeJsService.Gtag(GtmEvent, settings?.PageViewEvent ?? "blazor_page_view")));
     }
 
     /// <summary>
@@ -60,6 +60,6 @@ internal class MagicAnalyticsService(IJSRuntime jsRuntime, IMagicSettingsService
             return;
 
         cacheSvc[gtmId] = true;
-        await jsRuntime.InvokeVoidAsync("window.cre8magic.gtm.activate", gtmId);
+        await magicThemeJsService.GtmActivate(gtmId);
     }
 }

@@ -33,7 +33,7 @@ public class MagicResourcesDb
     /// <returns>A list of common resources</returns>
     public static readonly List<Resource> CommonResources =
     [
-        ResourceInteropJs,
+        //ResourceInteropJs,
         ResourceAmbientJs,
         ResourceAmbientCssBs5,
     ];
