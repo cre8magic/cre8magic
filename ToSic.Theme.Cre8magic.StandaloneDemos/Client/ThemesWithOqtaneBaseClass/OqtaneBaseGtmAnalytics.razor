@@ -10,6 +10,13 @@
     private const string PageDescription = "This is a standard Oqtane ThemeBase with the Gtm Analytics Control.";
 
     public override string Panes => PaneNames.Default;
+
+    #region Test1
+
+    // test
+    // test
+
+    #endregion
 }
 
 @* Default box containing menu, intro text etc. - contents is between the tags *@
@@ -20,6 +27,19 @@
         <p>
             Look at the JS console to monitor that the GTM is being triggered.
         </p>
+        
         <MagicAnalytics Settings='new() { GtmId = "GTM-T8W5TBL", PageViewTrack = true }'></MagicAnalytics>
+
+        <!-- #region Html -->
+        <div>
+            test
+        </div>
+
+        <!-- #endregion -->
+
+        <!--<CodeSnippetForDocs>-->
+            <MagicAnalytics Settings='new() { GtmId = "GTM-T8W5TBL", PageViewTrack = true }'></MagicAnalytics>
+        <!--</CodeSnippetForDocs>-->
+
     </ChildContent>
 </MainDefault>

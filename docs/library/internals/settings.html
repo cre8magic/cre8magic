@@ -210,21 +210,21 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone&lt;MagicAnalytic
     /// so that the code using the values doesn't need to check for nulls.
     /// &lt;/summary&gt;
     [PrivateApi]
-    public new record Stabilized(MagicAnalyticsSettings aSettings): MagicSettings.Stabilized(aSettings)
+    public new record Stabilized(MagicAnalyticsSettings analyticsSettings): MagicSettings.Stabilized(analyticsSettings)
     {
-        public string GtmId =&gt; aSettings.GtmId ?? DefaultGtmId;
+        public string GtmId =&gt; analyticsSettings.GtmId ?? DefaultGtmId;
         public const string DefaultGtmId = &quot;gtm-id-undefined&quot;;
 
-        public bool PageViewTrack =&gt; aSettings.PageViewTrack ?? DefaultPageViewTrack;
+        public bool PageViewTrack =&gt; analyticsSettings.PageViewTrack ?? DefaultPageViewTrack;
         public const bool DefaultPageViewTrack = false;
 
-        public bool PageViewTrackFirst =&gt; aSettings.PageViewTrackFirst ?? DefaultPageViewTrackFirst;
+        public bool PageViewTrackFirst =&gt; analyticsSettings.PageViewTrackFirst ?? DefaultPageViewTrackFirst;
         public const bool DefaultPageViewTrackFirst = false;
 
-        public string PageViewJs =&gt; aSettings.PageViewJs ?? DefaultPageViewJs;
+        public string PageViewJs =&gt; analyticsSettings.PageViewJs ?? DefaultPageViewJs;
         public const string DefaultPageViewJs = &quot;gtag&quot;;
 
-        public string PageViewEvent =&gt; aSettings.PageViewEvent ?? DefaultPageViewEvent;
+        public string PageViewEvent =&gt; analyticsSettings.PageViewEvent ?? DefaultPageViewEvent;
         public const string DefaultPageViewEvent = &quot;blazor_page_view&quot;;
     }
 

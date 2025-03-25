@@ -87,8 +87,19 @@
         <article data-uid="Cre8magic.Library.MagicAnalytics.Index">
 <h1 id="cre8magic--magic-analytics-and-google-tag-manager">cre8magic – Magic Analytics and Google Tag Manager</h1>
 
-<p>WIP</p>
-<hr>
+<p><em>The cre8magic Analytics helps you integrate Google Analytics using Google Tag Manager and Track Page Views.</em></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>A simple top-level menu can be added just like this:</p>
+<pre><code class="lang-xml">&lt;MagicAnalytics Settings='new() { GtmId = &quot;GTM-T8W5TBL&quot;, PageViewTrack = true }'&gt;&lt;/MagicAnalytics&gt;
+</code></pre>
+<p>...or if you have a <code>theme.json</code> file, all you need is:</p>
+<pre><code class="lang-html">&lt;MagicMenu Name=&quot;MainMenu&quot;/&gt;
+</code></pre>
+</div>
+<h2 id="test">Test</h2>
+<pre><code class="lang-xml">&lt;MagicAnalytics Settings='new() { GtmId = &quot;GTM-T8W5TBL&quot;, PageViewTrack = true }'&gt;&lt;/MagicAnalytics&gt;
+</code></pre><hr>
 <h2 id="pending-tasks">Pending Tasks</h2>
 <ol>
 <li>Ensure that the verb for tracking page views can be customized</li>

@@ -5,8 +5,23 @@ title: Magic Languages
 
 # cre8magic – Magic Analytics and Google Tag Manager
 
-WIP
+_The cre8magic Analytics helps you integrate Google Analytics using Google Tag Manager and Track Page Views._
 
+> [!TIP]
+> A simple top-level menu can be added just like this:
+>
+> [!code-xml[](../../../../ToSic.Theme.Cre8magic.StandaloneDemos/Client/ThemesWithOqtaneBaseClass/OqtaneBaseGtmAnalytics.razor#CodeSnippetForDocs)]
+>
+>
+> ...or if you have a `theme.json` file, all you need is:
+>
+> ```html
+> <MagicMenu Name="MainMenu"/>
+> ```
+
+## Test
+
+[!code-xml[](../../../../ToSic.Theme.Cre8magic.StandaloneDemos/Client/ThemesWithOqtaneBaseClass/OqtaneBaseGtmAnalytics.razor#CodeSnippetForDocs)]
 
 ---
 
