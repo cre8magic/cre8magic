@@ -72,4 +72,27 @@ public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IH
     bool? IDebugSettings.DebugThis { get; set; }
 
     #endregion
+
+    #region Stabilized
+
+    [PrivateApi]
+    public new record Stabilized(MagicSettings Settings): MagicInheritsBase.Stabilized(Settings)
+    {
+        /// <summary>
+        /// Will still be null?
+        /// </summary>
+        public string? Name => Settings.Name;
+
+        /// <summary>
+        /// Will still be null.
+        /// </summary>
+        public PageState? PageState => Settings.PageState;
+
+        /// <summary>
+        /// Will still be null.
+        /// </summary>
+        public MagicDebugSettings? Debug => Settings.Debug;
+    }
+
+    #endregion
 }

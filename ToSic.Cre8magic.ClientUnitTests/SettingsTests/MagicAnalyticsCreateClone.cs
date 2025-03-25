@@ -1,5 +1,6 @@
 ﻿using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.ClientUnitTests.AnalyticsTests;
+using static Xunit.Assert;
 
 namespace ToSic.Cre8magic.ClientUnitTests.SettingsTests;
 
@@ -8,16 +9,28 @@ public class MagicAnalyticsCreateClone
     [Fact]
     public void Empty() => VerifyIsEmpty(new());
 
+    [Fact]
+    public void EmptyFinalized()
+    {
+        var s = new MagicAnalyticsSettings().Stable;
+        Equal(MagicAnalyticsSettings.Stabilized.DefaultGtmId, s.GtmId);
+        Equal(MagicAnalyticsSettings.Stabilized.DefaultPageViewEvent, s.PageViewEvent);
+        Equal(MagicAnalyticsSettings.Stabilized.DefaultPageViewJs, s.PageViewJs);
+        Equal(MagicAnalyticsSettings.Stabilized.DefaultPageViewTrack, s.PageViewTrack);
+        Equal(MagicAnalyticsSettings.Stabilized.DefaultPageViewTrackFirst, s.PageViewTrackFirst);
+    }
 
     [Fact]
     public void Create() => VerifySameAsOriginal(Original());
 
+    [Fact]
+    public void CreateFinalMatchesOriginal() => VerifyFinalSimilarToOriginal(Original().Stable);
 
     [Fact]
-    public void ConstructorClone() => VerifySameAsOriginal(new(Original()));
+    public void ConstructorClone() => VerifySameAsOriginal(new MagicAnalyticsSettings().CloneUnderTac(Original()));
 
-    [Fact]
-    public void ConstructorClone2() => VerifySameAsOriginal(new(null, Original()));
+    //[Fact]
+    //public void ConstructorClone2() => VerifySameAsOriginal(new(null, Original()));
 
     [Fact]
     public void CloneWithNull() => VerifySameAsOriginal(Original().CloneUnderTac(null));
@@ -30,16 +43,16 @@ public class MagicAnalyticsCreateClone
     {
         var x = Original().CloneUnderTac(Replacement());
         VerifySameAsReplacement(x, skipGtm: true);
-        Assert.Equal(Original().GtmId, x.GtmId);
+        Equal(Original().GtmId, x.GtmId);
     }
 
     private static void VerifyIsEmpty(MagicAnalyticsSettings x)
     {
-        Assert.Null(x.GtmId);
-        Assert.Null(x.PageViewTrack);
-        Assert.Null(x.PageViewTrackFirst);
-        Assert.Null(x.PageViewJs);
-        Assert.Null(x.PageViewEvent);
+        Null(x.GtmId);
+        Null(x.PageViewTrack);
+        Null(x.PageViewTrackFirst);
+        Null(x.PageViewJs);
+        Null(x.PageViewEvent);
     }
 
     private static MagicAnalyticsSettings Original() =>
@@ -54,11 +67,20 @@ public class MagicAnalyticsCreateClone
 
     private void VerifySameAsOriginal(MagicAnalyticsSettings y)
     {
-        Assert.Equal("123", y.GtmId);
-        Assert.True(y.PageViewTrack);
-        Assert.False(y.PageViewTrackFirst);
-        Assert.Equal("", y.PageViewJs);
-        Assert.Null(y.PageViewEvent);
+        Equal("123", y.GtmId);
+        True(y.PageViewTrack);
+        False(y.PageViewTrackFirst);
+        Equal("", y.PageViewJs);
+        Null(y.PageViewEvent);
+    }
+    private void VerifyFinalSimilarToOriginal(MagicAnalyticsSettings.Stabilized y)
+    {
+        Equal("123", y.GtmId);
+        True(y.PageViewTrack);
+        False(y.PageViewTrackFirst);
+        Equal("", y.PageViewJs);
+        //Null(y.PageViewEvent);
+        Equal(MagicAnalyticsSettings.Stabilized.DefaultPageViewEvent, y.PageViewEvent);
     }
 
     private static MagicAnalyticsSettings Replacement() =>
@@ -74,10 +96,10 @@ public class MagicAnalyticsCreateClone
     private static void VerifySameAsReplacement(MagicAnalyticsSettings y, bool skipGtm = false)
     {
         if (!skipGtm)
-            Assert.Null(y.GtmId);
-        Assert.True(y.PageViewTrack);
-        Assert.True(y.PageViewTrackFirst);
-        Assert.Equal("some-js", y.PageViewJs);
-        Assert.Equal("some text", y.PageViewEvent);
+            Null(y.GtmId);
+        True(y.PageViewTrack);
+        True(y.PageViewTrackFirst);
+        Equal("some-js", y.PageViewJs);
+        Equal("some text", y.PageViewEvent);
     }
 }

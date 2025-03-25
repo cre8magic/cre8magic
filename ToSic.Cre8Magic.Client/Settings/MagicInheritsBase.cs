@@ -30,4 +30,18 @@ public abstract record MagicInheritsBase
     /// </summary>
     [JsonPropertyName("@inherits")]
     public string? Inherits { get; init; }
+
+    #region Stabilized
+
+    [PrivateApi]
+    public record Stabilized(MagicInheritsBase Base)
+    {
+        /// <summary>
+        /// Default will always be null.
+        /// </summary>
+        public string? Inherits => Base.Inherits;
+    }
+
+    #endregion
+
 }

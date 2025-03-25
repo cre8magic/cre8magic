@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
 namespace ToSic.Cre8magic.Analytics;
@@ -19,7 +20,7 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone<MagicAnalyticsSe
     public MagicAnalyticsSettings() { }
 
     [PrivateApi]
-    internal MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
+    private protected MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
         : base(priority, fallback)
     {
         GtmId = priority?.GtmId ?? fallback?.GtmId;
@@ -65,5 +66,36 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone<MagicAnalyticsSe
         PageViewEvent = "blazor_page_view"
     });
 
+    #region Internal Reader
+
+    [PrivateApi]
+    [field: AllowNull, MaybeNull]
+    public Stabilized Stable => field ??= new(this);
+
+    /// <summary>
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
+    /// </summary>
+    [PrivateApi]
+    public new record Stabilized(MagicAnalyticsSettings aSettings): MagicSettings.Stabilized(aSettings)
+    {
+        public string GtmId => aSettings.GtmId ?? DefaultGtmId;
+        public const string DefaultGtmId = "gtm-id-undefined";
+
+        public bool PageViewTrack => aSettings.PageViewTrack ?? DefaultPageViewTrack;
+        public const bool DefaultPageViewTrack = false;
+
+        public bool PageViewTrackFirst => aSettings.PageViewTrackFirst ?? DefaultPageViewTrackFirst;
+        public const bool DefaultPageViewTrackFirst = false;
+
+        public string PageViewJs => aSettings.PageViewJs ?? DefaultPageViewJs;
+        public const string DefaultPageViewJs = "gtag";
+
+        public string PageViewEvent => aSettings.PageViewEvent ?? DefaultPageViewEvent;
+        public const string DefaultPageViewEvent = "blazor_page_view";
+    }
+
+    #endregion
 
 }

@@ -19,5 +19,9 @@ internal class DoStuff
     /// https://stackoverflow.com/questions/17805887/using-async-without-await
     /// </summary>
     /// <returns></returns>
-    public static async Task DoNotWait(Action action) => await Task.Run(() => action?.Invoke());
+    public static async Task DoNotWait(Action action) =>
+        await Task.Run(() => action?.Invoke());
+
+    public static async Task DoNotWaitAndIgnoreErrors(Action action) =>
+        await Task.Run(() => IgnoreError(() => action?.Invoke()));
 }

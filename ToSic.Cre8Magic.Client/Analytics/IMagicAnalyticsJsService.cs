@@ -13,7 +13,7 @@ public interface IMagicAnalyticsJsService
     /// Track a page view in Google Tag Manager
     /// </summary>
     /// <returns></returns>
-    Task GtmPageView();
+    Task GtmPageView(string verb);
 
     /// <summary>
     /// Track a Google Analytics event

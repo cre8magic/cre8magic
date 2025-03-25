@@ -14,8 +14,8 @@ public class MagicAnalyticsJsService(IJSRuntime jsRuntime)
         => await InvokeVoidAsync("gtm.addToPage", gtmId);
 
     /// <inheritdoc />
-    public async Task GtmPageView()
-        => await InvokeVoidAsync("gtm.pageView");
+    public async Task GtmPageView(string verb)
+        => await InvokeVoidAsync("gtm.pageView", verb);
 
     /// <inheritdoc />
     public async Task Gtag(string target, string more)

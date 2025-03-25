@@ -7,8 +7,6 @@ namespace ToSic.Cre8magic.Analytics.Internal;
 
 internal class MagicAnalyticsService(IMagicAnalyticsJsService analyticsJsService, IMagicSettingsService settingsSvc, ScopedDictionaryCache<bool> cacheSvc) : IMagicAnalyticsService
 {
-    private const string GtmEvent = "event";
-
     public IMagicAnalyticsKit AnalyticsKit(PageState pageState, MagicAnalyticsSettings? settings = null) =>
         BuildKit(pageState, settings);
 
@@ -37,17 +35,21 @@ internal class MagicAnalyticsService(IMagicAnalyticsJsService analyticsJsService
     internal async Task TrackPage(PageState pageState, MagicAnalyticsSettings? settings, bool isFirstRender)
     {
         // Check settings null on page view tracking disabled
-        if (settings is not { PageViewTrack: true })
+        if (settings is null)
             return;
-        if (isFirstRender && settings.PageViewTrackFirst != true) return;
+        var stable = settings.Stable;
+        if (!stable.PageViewTrack)
+            return;
+        if (isFirstRender && !stable.PageViewTrackFirst)
+            return;
 
-        // Activate GTM ounce per user browser session (until reload)
-        await GtmActivateOunce(settings.GtmId);
+        // Activate GTM once per user browser session (until reload)
+        // Note that it is timing-resistant, so it doesn't matter if this is executed
+        // after the page tracking, since it will pick up the queue.
+        await DoNotWaitAndIgnoreErrors(() => _ = GtmActivateOunce(settings.Stable.GtmId));
 
         // Run the JS Command but don't wait for it
-        // https://stackoverflow.com/questions/17805887/using-async-without-await
-        //await DoNotWait(() => IgnoreError(() => magicThemeJsService.Gtag(GtmEvent, settings?.PageViewEvent ?? "blazor_page_view")));
-        await DoNotWait(() => IgnoreError(() => analyticsJsService.GtmPageView()));
+        await DoNotWaitAndIgnoreErrors(() => analyticsJsService.GtmPageView(stable.PageViewEvent));
     }
 
     /// <summary>
