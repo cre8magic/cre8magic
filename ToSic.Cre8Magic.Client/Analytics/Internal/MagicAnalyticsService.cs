@@ -1,12 +1,11 @@
-﻿using Microsoft.JSInterop;
-using Oqtane.UI;
+﻿using Oqtane.UI;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
 using static ToSic.Cre8magic.Utils.DoStuff;
 
 namespace ToSic.Cre8magic.Analytics.Internal;
 
-internal class MagicAnalyticsService(IMagicThemeJsService magicThemeJsService, IJSRuntime jsRuntime, IMagicSettingsService settingsSvc, ScopedDictionaryCache<bool> cacheSvc) : IMagicAnalyticsService
+internal class MagicAnalyticsService(IMagicAnalyticsJsService analyticsJsService, IMagicSettingsService settingsSvc, ScopedDictionaryCache<bool> cacheSvc) : IMagicAnalyticsService
 {
     private const string GtmEvent = "event";
 
@@ -37,8 +36,9 @@ internal class MagicAnalyticsService(IMagicThemeJsService magicThemeJsService, I
     /// <returns></returns>
     internal async Task TrackPage(PageState pageState, MagicAnalyticsSettings? settings, bool isFirstRender)
     {
-        if (settings == null) return;
-        if (settings.PageViewTrack != true) return;
+        // Check settings null on page view tracking disabled
+        if (settings is not { PageViewTrack: true })
+            return;
         if (isFirstRender && settings.PageViewTrackFirst != true) return;
 
         // Activate GTM ounce per user browser session (until reload)
@@ -46,7 +46,8 @@ internal class MagicAnalyticsService(IMagicThemeJsService magicThemeJsService, I
 
         // Run the JS Command but don't wait for it
         // https://stackoverflow.com/questions/17805887/using-async-without-await
-        await DoNotWait(() => IgnoreError(() => magicThemeJsService.Gtag(GtmEvent, settings?.PageViewEvent ?? "blazor_page_view")));
+        //await DoNotWait(() => IgnoreError(() => magicThemeJsService.Gtag(GtmEvent, settings?.PageViewEvent ?? "blazor_page_view")));
+        await DoNotWait(() => IgnoreError(() => analyticsJsService.GtmPageView()));
     }
 
     /// <summary>
@@ -60,6 +61,6 @@ internal class MagicAnalyticsService(IMagicThemeJsService magicThemeJsService, I
             return;
 
         cacheSvc[gtmId] = true;
-        await magicThemeJsService.GtmActivate(gtmId);
+        await analyticsJsService.GtmAddToPage(gtmId);
     }
 }

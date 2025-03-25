@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using ToSic.Cre8magic.Act;
 using ToSic.Cre8magic.Act.Internal;
+using ToSic.Cre8magic.Analytics;
 using ToSic.Cre8magic.Analytics.Internal;
 using ToSic.Cre8magic.Breadcrumbs.Internal;
 using ToSic.Cre8magic.Languages.Internal;
@@ -119,6 +120,7 @@ public static class ServiceRegistration
     {
         // Interop
         services.AddTransient<IMagicThemeJsService, MagicThemeJsService>();
+        services.AddTransient<IMagicAnalyticsJsService, MagicAnalyticsJsService>();
 
         return services;
     }

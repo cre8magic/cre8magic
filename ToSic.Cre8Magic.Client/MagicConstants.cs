@@ -9,4 +9,7 @@ public class MagicConstants
     public const string MenuVertical = "Vertical";
 
     public const string PackageId = "ToSic.Cre8magic.Oqtane";
+
+    // TODO: @STV why "./" - shouldn't it be "/..."
+    internal const string InteropJsPath = $"./_content/{PackageId}/interop.js";
 }
