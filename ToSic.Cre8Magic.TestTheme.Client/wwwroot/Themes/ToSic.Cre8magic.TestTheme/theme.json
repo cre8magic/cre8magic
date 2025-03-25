@@ -172,8 +172,7 @@
     // As of now, only "default" is supported
     "default": {
       "gtmId": "GTM-T8W5TBL",
-      // TODO: temporarily disabled because ATM it's causing JS errors - wait till fixed by STV
-      "pageViewTrack": false,
+      "pageViewTrack": true,
       "pageViewTrackFirst": true,
       // "PageViewJs": "window.cre8magic.gtm.pageView",
       // "PageViewJs": "gtag",

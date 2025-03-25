@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
@@ -57,18 +58,12 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone<MagicAnalyticsSe
     public string? PageViewEvent { get; init; }
 
 
-    internal static Defaults<MagicAnalyticsSettings> Defaults = new(new()
-    {
-        GtmId = null,
-        PageViewTrack = false,
-        PageViewTrackFirst = false,
-        PageViewJs = "gtag",
-        PageViewEvent = "blazor_page_view"
-    });
+    internal static Defaults<MagicAnalyticsSettings> Defaults = new();
 
     #region Internal Reader
 
     [PrivateApi]
+    [JsonIgnore]
     [field: AllowNull, MaybeNull]
     public Stabilized Stable => field ??= new(this);
 
@@ -78,21 +73,21 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone<MagicAnalyticsSe
     /// so that the code using the values doesn't need to check for nulls.
     /// </summary>
     [PrivateApi]
-    public new record Stabilized(MagicAnalyticsSettings analyticsSettings): MagicSettings.Stabilized(analyticsSettings)
+    public new record Stabilized(MagicAnalyticsSettings AnalyticsSettings): MagicSettings.Stabilized(AnalyticsSettings)
     {
-        public string GtmId => analyticsSettings.GtmId ?? DefaultGtmId;
+        public string GtmId => AnalyticsSettings.GtmId ?? DefaultGtmId;
         public const string DefaultGtmId = "gtm-id-undefined";
 
-        public bool PageViewTrack => analyticsSettings.PageViewTrack ?? DefaultPageViewTrack;
+        public bool PageViewTrack => AnalyticsSettings.PageViewTrack ?? DefaultPageViewTrack;
         public const bool DefaultPageViewTrack = false;
 
-        public bool PageViewTrackFirst => analyticsSettings.PageViewTrackFirst ?? DefaultPageViewTrackFirst;
+        public bool PageViewTrackFirst => AnalyticsSettings.PageViewTrackFirst ?? DefaultPageViewTrackFirst;
         public const bool DefaultPageViewTrackFirst = false;
 
-        public string PageViewJs => analyticsSettings.PageViewJs ?? DefaultPageViewJs;
+        public string PageViewJs => AnalyticsSettings.PageViewJs ?? DefaultPageViewJs;
         public const string DefaultPageViewJs = "gtag";
 
-        public string PageViewEvent => analyticsSettings.PageViewEvent ?? DefaultPageViewEvent;
+        public string PageViewEvent => AnalyticsSettings.PageViewEvent ?? DefaultPageViewEvent;
         public const string DefaultPageViewEvent = "blazor_page_view";
     }
 

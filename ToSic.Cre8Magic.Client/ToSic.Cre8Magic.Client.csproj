@@ -67,10 +67,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Blazor\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <!-- Include wwwroot content in the NuGet package and ensure it copies to consumer's wwwroot -->
     <Content Include="wwwroot\**\*.*" />
   </ItemGroup>
