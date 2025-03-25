@@ -1495,73 +1495,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "pages/library/contribute/architecture.md",
-      "output": {
-        ".html": {
-          "relative_path": "library/contribute/architecture.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "pages/library/contribute/index.md",
       "output": {
         ".html": {
           "relative_path": "library/contribute/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/library/contribute/javascript/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "library/contribute/javascript/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/library/contribute/local-nuget/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "library/contribute/local-nuget/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/library/contribute/tests-test-module.md",
-      "output": {
-        ".html": {
-          "relative_path": "library/contribute/tests-test-module.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/library/contribute/tests-unit-tests.md",
-      "output": {
-        ".html": {
-          "relative_path": "library/contribute/tests-unit-tests.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "pages/library/contribute/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "library/contribute/toc.html"
-        },
-        ".json": {
-          "relative_path": "library/contribute/toc.json"
         }
       },
       "version": ""
@@ -1651,10 +1588,83 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "pages/library/languages/magic-languages.md",
+      "source_relative_path": "pages/library/internals/architecture.md",
       "output": {
         ".html": {
-          "relative_path": "library/languages/magic-languages.html"
+          "relative_path": "library/internals/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/javascript/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/javascript/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/local-nuget/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/local-nuget/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/settings.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/tests-test-module.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/tests-test-module.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/tests-unit-tests.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/tests-unit-tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/library/internals/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/toc.html"
+        },
+        ".json": {
+          "relative_path": "library/internals/toc.json"
         }
       },
       "version": ""
@@ -1665,6 +1675,26 @@
       "output": {
         ".html": {
           "relative_path": "library/magic-act/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-analytics/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-analytics/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-languages/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-languages/index.html"
         }
       },
       "version": ""

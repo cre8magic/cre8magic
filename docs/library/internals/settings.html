@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Magic Languages | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Magic Languages | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/internals/settings.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Cre8magic.Library.Internals.Settings">
+<h1 id="cre8magic--internals-of-settings">cre8magic – Internals of Settings</h1>
+
+<p>These documents should explain the internal workings / architecture of <strong>cre8magic</strong>.</p>
+<p>The purpose is to ensure that we have clear conventions and that everybody who works on this does it the same way.</p>
+<h2 id="overview">Overview</h2>
+<p>Settings have a few important challenges, such as:</p>
+<ol>
+<li>They should be optional in their entirety - so no settings should still result in a error free system.</li>
+<li>Every setting should be optional - so if a setting is not there, the system should still work.</li>
+<li>Settings should allow merging with other settings, so that they can be combined / enhanced step by step.</li>
+<li>When a service needs a setting, it should be able to just access it, and not worry about the setting not being there.</li>
+</ol>
+<h2 id="basic-architecture">Basic Architecture</h2>
+<ul>
+<li>Settings are all <strong>record</strong> objects</li>
+<li>Settings are all <strong>read-only</strong> objects</li>
+<li>All properties are init-only</li>
+<li>All properties should be nullable, to clearly indicate that they have not been specified (WIP)</li>
+<li>settings should be constructable through JSON (so they must have an empty public constructor)</li>
+</ul>
+<h2 id="reading-stabilized-settings">Reading Stabilized Settings</h2>
+<ul>
+<li>Reading the settings for final use should happen through a <code>Stabilized</code> class, which provides defaults where necessary</li>
+<li>Every settings record must have a <code>Stable</code> property that returns a <code>Stabilized</code> object</li>
+</ul>
+<h2 id="merging-settings">Merging Settings</h2>
+<p>Settings should be able to be merged with other settings.
+In general, this means that there are these concepts:</p>
+<ol>
+<li>There is a <strong>primary</strong> settings object, whose properties have precedence</li>
+<li>There is a <strong>secondary</strong> settings object, whose properties are used if the primary does not have them</li>
+<li>If neither of the settings has a specific property, the resulting setting should be <code>null</code></li>
+</ol>
+<p>The way this is implemented is like this:</p>
+<ol>
+<li>Every settings object has an internal constructor that takes two settings objects and will merge their properties</li>
+<li>This <code>private protected</code> constructor will do the property merging</li>
+<li>Since most settings inherit from <code>MagicSettings</code> and from <code>MagicInheritsBase</code>, they will call their base constructors to handle all their properties</li>
+<li>For triggering a merge, every merge happens from an instance of the settings object and will call <code>CloneUnder(other)</code> to return a new merged object</li>
+<li>To ensure that all settings have such a CloneUnder, they must all implement <code>ICanClone&lt;[OwnType]&gt;</code></li>
+<li>The <code>ICanClone&lt;T&gt;</code> is done as an explicit implementation, so that it does not appear in the docs and is &quot;harder&quot; to access</li>
+</ol>
+<h2 id="sample-implementation">Sample Implementation</h2>
+<p>As of now, the latest implementation of this best-practices is the <code>MagicAnalyticsSettings</code> - use this as a reference.</p>
+<h3 id="magicanalyticssettings">MagicAnalyticsSettings</h3>
+<pre><code class="lang-csharp">using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Settings;
+using ToSic.Cre8magic.Settings.Internal;
+
+namespace ToSic.Cre8magic.Analytics;
+
+/// &lt;summary&gt;
+/// Settings to set up and use Google Tag Manager to track page views.
+///
+/// BETA: Doesn't completely work yet.
+/// 
+/// * Main caveat: Integration of the Google Tag Manager still has the GTM hardwired in the JS, must be finished.
+/// * Background is that the Module currently doesn't contain its own JS, so it's still part of the theme.
+/// &lt;/summary&gt;
+public record MagicAnalyticsSettings : MagicSettings, ICanClone&lt;MagicAnalyticsSettings&gt;
+{
+    #region Constructor and Clone
+
+    [PrivateApi]
+    public MagicAnalyticsSettings() { }
+
+    [PrivateApi]
+    private protected MagicAnalyticsSettings(MagicAnalyticsSettings? priority, MagicAnalyticsSettings? fallback = default)
+        : base(priority, fallback)
+    {
+        GtmId = priority?.GtmId ?? fallback?.GtmId;
+        PageViewTrack = priority?.PageViewTrack ?? fallback?.PageViewTrack;
+        PageViewTrackFirst = priority?.PageViewTrackFirst ?? fallback?.PageViewTrackFirst;
+        PageViewJs = priority?.PageViewJs ?? fallback?.PageViewJs;
+        PageViewEvent = priority?.PageViewEvent ?? fallback?.PageViewEvent;
+    }
+
+    MagicAnalyticsSettings ICanClone&lt;MagicAnalyticsSettings&gt;.CloneUnder(MagicAnalyticsSettings? priority, bool forceCopy) =&gt; 
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
+
+    #endregion
+
+    /// &lt;summary&gt;
+    /// ID of Google Tag Manager.
+    /// &lt;/summary&gt;
+    public string? GtmId { get; init; }
+
+    public bool? PageViewTrack { get; init; }
+
+    public bool? PageViewTrackFirst { get; init; }
+
+    /// &lt;summary&gt;
+    /// JavaScript function to call for tracking page views.
+    /// Defaults to &quot;gtag&quot;.
+    /// &lt;/summary&gt;
+    public string? PageViewJs { get; init; }
+
+    /// &lt;summary&gt;
+    /// Name of the event to give to GTM which should be logged.
+    /// Defaults to &quot;blazor_page_view&quot;.
+    /// &lt;/summary&gt;
+    public string? PageViewEvent { get; init; }
+
+
+    internal static Defaults&lt;MagicAnalyticsSettings&gt; Defaults = new(new()
+    {
+        GtmId = null,
+        PageViewTrack = false,
+        PageViewTrackFirst = false,
+        PageViewJs = &quot;gtag&quot;,
+        PageViewEvent = &quot;blazor_page_view&quot;
+    });
+
+    #region Internal Reader
+
+    [PrivateApi]
+    [field: AllowNull, MaybeNull]
+    public Stabilized Stable =&gt; field ??= new(this);
+
+    /// &lt;summary&gt;
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
+    /// &lt;/summary&gt;
+    [PrivateApi]
+    public new record Stabilized(MagicAnalyticsSettings aSettings): MagicSettings.Stabilized(aSettings)
+    {
+        public string GtmId =&gt; aSettings.GtmId ?? DefaultGtmId;
+        public const string DefaultGtmId = &quot;gtm-id-undefined&quot;;
+
+        public bool PageViewTrack =&gt; aSettings.PageViewTrack ?? DefaultPageViewTrack;
+        public const bool DefaultPageViewTrack = false;
+
+        public bool PageViewTrackFirst =&gt; aSettings.PageViewTrackFirst ?? DefaultPageViewTrackFirst;
+        public const bool DefaultPageViewTrackFirst = false;
+
+        public string PageViewJs =&gt; aSettings.PageViewJs ?? DefaultPageViewJs;
+        public const string DefaultPageViewJs = &quot;gtag&quot;;
+
+        public string PageViewEvent =&gt; aSettings.PageViewEvent ?? DefaultPageViewEvent;
+        public const string DefaultPageViewEvent = &quot;blazor_page_view&quot;;
+    }
+
+    #endregion
+
+}
+</code></pre><h3 id="base-class-magicsettings">Base Class MagicSettings</h3>
+<pre><code class="lang-csharp">using System.Text.Json.Serialization;
+using Oqtane.UI;
+using ToSic.Cre8magic.Settings.Debug;
+using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Internal.Docs;
+
+namespace ToSic.Cre8magic.Settings;
+
+/// &lt;summary&gt;
+/// Internal base class containing all kinds of settings which
+/// all spells share.
+/// &lt;/summary&gt;
+public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IHasDebugSettings, IDebugSettings
+{
+    #region Constructor &amp; Cloning
+
+    [PrivateApi]
+    protected MagicSettings() { }
+
+    [PrivateApi]
+    protected MagicSettings(MagicSettings? priority, MagicSettings? fallback = default)
+        : base(priority, fallback)
+    {
+        if (fallback == null)
+            return;
+
+        Name = priority?.Name ?? fallback.Name;
+
+        Debug = priority?.Debug ?? fallback.Debug;
+
+        // Page State
+        PageState = priority?.PageState ?? fallback.PageState;
+
+        // Debug settings
+        ((IDebugSettings)this).Book = ((IDebugSettings?)priority)?.Book ?? ((IDebugSettings?)fallback)?.Book;
+        ((IDebugSettings)this).DebugThis = ((IDebugSettings?)priority)?.DebugThis ?? ((IDebugSettings?)fallback)?.DebugThis;
+    }
+
+    #endregion
+
+
+    #region Settings for Code: Name and PageState
+
+    /// &lt;inheritdoc/&gt;
+    [JsonIgnore]
+    public string? Name { get; init; }
+
+    /// &lt;summary&gt;
+    /// The PageState which is needed for doing everything.
+    ///
+    /// It can be provided in the settings, or it must be provided in the theme using &lt;see cref=&quot;ToSic.Cre8magic.Act.IMagicAct.UsePageState&quot;/&gt;.
+    /// &lt;/summary&gt;
+    [JsonIgnore]
+    public PageState? PageState { get; init; }
+
+    #endregion
+
+    #region Debug Settings (from store)
+
+    /// &lt;inheritdoc /&gt;
+    public MagicDebugSettings? Debug { get; init; }
+
+
+    #endregion
+
+    #region Runtime Debug Settings
+
+    [JsonIgnore]
+    MagicBook? IDebugSettings.Book { get; set; }
+
+    [JsonIgnore]
+    bool? IDebugSettings.DebugThis { get; set; }
+
+    #endregion
+
+    #region Stabilized
+
+    [PrivateApi]
+    public new record Stabilized(MagicSettings Settings): MagicInheritsBase.Stabilized(Settings)
+    {
+        /// &lt;summary&gt;
+        /// Will still be null?
+        /// &lt;/summary&gt;
+        public string? Name =&gt; Settings.Name;
+
+        /// &lt;summary&gt;
+        /// Will still be null.
+        /// &lt;/summary&gt;
+        public PageState? PageState =&gt; Settings.PageState;
+
+        /// &lt;summary&gt;
+        /// Will still be null.
+        /// &lt;/summary&gt;
+        public MagicDebugSettings? Debug =&gt; Settings.Debug;
+    }
+
+    #endregion
+}
+</code></pre><h3 id="root-base-class-magicinheritsbase">Root Base Class MagicInheritsBase</h3>
+<pre><code class="lang-csharp">using System.Text.Json.Serialization;
+
+namespace ToSic.Cre8magic.Settings;
+
+/// &lt;summary&gt;
+/// 
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;
+/// Created as a base record, not as an interface, because for processing we need to ensure it's always a record
+/// &lt;/remarks&gt;
+public abstract record MagicInheritsBase
+{
+    /// &lt;summary&gt;
+    /// Empty Constructor necessary for deserialization of inheriting classes
+    /// &lt;/summary&gt;
+    [PrivateApi]
+    protected MagicInheritsBase() { }
+
+    /// &lt;summary&gt;
+    /// Clone support.
+    /// &lt;/summary&gt;
+    [PrivateApi]
+    protected MagicInheritsBase(MagicInheritsBase? priority, MagicInheritsBase? fallback = default)
+    {
+        Inherits = priority?.Inherits ?? fallback?.Inherits;
+    }
+
+    /// &lt;summary&gt;
+    /// Name of configuration it inherits.
+    /// &lt;/summary&gt;
+    [JsonPropertyName(&quot;@inherits&quot;)]
+    public string? Inherits { get; init; }
+
+    #region Stabilized
+
+    [PrivateApi]
+    public record Stabilized(MagicInheritsBase Base)
+    {
+        /// &lt;summary&gt;
+        /// Default will always be null.
+        /// &lt;/summary&gt;
+        public string? Inherits =&gt; Base.Inherits;
+    }
+
+    #endregion
+
+}
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/internals/settings.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
