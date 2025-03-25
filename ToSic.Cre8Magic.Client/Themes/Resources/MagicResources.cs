@@ -9,12 +9,26 @@ public class MagicResources
 
     public static List<Resource> GetResources(MagicResourcesFilter? filter = null)
     {
-        var list = MagicResourcesDb.CommonResources;
-        list = filter?.ResourceType == null
+        if (filter == null)
+            return MagicResourcesDb.CommonResources;
+
+        // If we have flags, then make sure we only choose these resources
+        var list = filter.ForControls.HasFlag(MagicControls.All)
+            ? MagicResourcesDb.CommonResources
+            : MagicResourcesDb.ByControl
+                .Where(pair => filter.ForControls.HasFlag(pair.Key))
+                .SelectMany(pair => pair.Value)
+                .Distinct()
+                .ToList();
+
+        // Filter by resource type
+        list = filter.ResourceType == null
             ? list
             : list
                 .Where(r => r.ResourceType == filter?.ResourceType)
                 .ToList();
+
+
         return list;
     }
 

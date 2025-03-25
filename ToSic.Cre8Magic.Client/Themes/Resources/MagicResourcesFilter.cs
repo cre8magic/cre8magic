@@ -6,4 +6,5 @@ public record MagicResourcesFilter
 {
     public ResourceType? ResourceType { get; init; } = null;
 
+    public MagicControls ForControls { get; init; } = MagicControls.All;
 }

@@ -1,6 +1,6 @@
 ﻿@namespace ToSic.Theme.Cre8magic.StandaloneDemos
 @inherits ThemeBase
-@using ToSic.Cre8magic.Internal
+@using ToSic.Cre8magic
 @using ToSic.Cre8magic.OqtaneBs5
 @using ToSic.Cre8magic.Themes
 
@@ -16,7 +16,8 @@
     /// <summary>
     /// This test needs the resources for the JS to be loaded
     /// </summary>
-    public override List<Resource> Resources => [.. MagicResources.GetResources()];
+    public override List<Resource> Resources => [.. MagicResources.GetResources(new() { ForControls = MagicControls.ToTop })];
+
 }
 
 @* Default box containing menu, intro text etc. - contents is between the tags *@

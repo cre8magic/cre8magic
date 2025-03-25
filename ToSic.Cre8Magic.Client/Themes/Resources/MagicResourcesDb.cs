@@ -38,4 +38,15 @@ public class MagicResourcesDb
         ResourceAmbientCssBs5,
     ];
 
+    public static readonly Dictionary<MagicControls, List<Resource>> ByControl = new()
+    {
+        { MagicControls.All, CommonResources },
+        {
+            MagicControls.ToTop, [
+                ResourceAmbientJs,
+                ResourceAmbientCssBs5,
+            ]
+        },
+    };
+
 }
