@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "vite build",
-    "serve": "concurrently \"vite build --watch\" \"tsc --watch --project tsconfig.interop.json\"",
+    "serve": "vite build --watch",
     "pack": "npm run build"
   },
   "author": "2sic internet solutions",
