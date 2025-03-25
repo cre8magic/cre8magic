@@ -1,0 +1,40 @@
+﻿@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+@inherits ThemeBase
+@using System.Diagnostics.CodeAnalysis
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.OqtaneBs5
+
+@code {
+    public override string Name => PageTitle;
+
+    private const string PageTitle = "Oqtane Base Theme - Gtm Analytics";
+
+    private const string PageDescription = "This is a standard Oqtane ThemeBase with Gtm Analytics.";
+
+    public override string Panes => PaneNames.Default;
+
+    // The specific test
+    [Inject]
+    [field: AllowNull, MaybeNull]
+    public required IMagicAct MagicAct { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool isFirstRender)
+    {
+        await base.OnAfterRenderAsync(isFirstRender);
+        // Provide the latest PageState on every change,
+        // but OnAfterRenderAsync could be executed without OnParametersSet
+        await MagicAct.AnalyticsKit(new() { PageState = PageState, GtmId = "GTM-T8W5TBL", PageViewTrack = true })
+            .TrackPage(isFirstRender);
+    }
+}
+
+@* Default box containing menu, intro text etc. - contents is between the tags *@
+<MainDefault Name="@Name" Title="@PageTitle" Description="@PageDescription">
+    @* Add more variations *@
+    <ChildContent>
+        <h3>Default - nothing to show</h3>
+        <p>
+            Look at the JS console to monitor that the GTM is being triggered.
+        </p>
+    </ChildContent>
+</MainDefault>
