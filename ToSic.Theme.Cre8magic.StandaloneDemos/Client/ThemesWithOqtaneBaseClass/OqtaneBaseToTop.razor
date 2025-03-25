@@ -16,7 +16,7 @@
     /// <summary>
     /// This test needs the resources for the JS to be loaded
     /// </summary>
-    public override List<Resource> Resources => [.. MagicThemePackage.CommonResources];
+    public override List<Resource> Resources => [.. MagicResources.GetResources()];
 }
 
 @* Default box containing menu, intro text etc. - contents is between the tags *@

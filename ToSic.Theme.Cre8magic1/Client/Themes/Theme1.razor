@@ -51,6 +51,4 @@
     }
 
     public override MagicThemePackage ThemePackage => field ??= new(new ThemeInfo()) { Name = Name };
-
-    public override List<Resource> Resources => ThemePackage.Resources;
 }

@@ -23,11 +23,20 @@ public abstract class MyThemeBase : ToSic.Cre8magic.OqtaneBs5.MagicTheme
     /// </summary>
     public override List<Resource> Resources => ThemePackage == null
         ? null
-        : MagicResourceManager.GetResources([
-            new() { ResourceType = ResourceType.Stylesheet, Url = $"{ThemePackage.Url}/theme.min.css" }, // Bootstrap generated with Sass/Webpack
-            new() { ResourceType = ResourceType.Script, Url = $"{ThemePackage.Url}/bootstrap.bundle.min.js" }, // Bootstrap JS
-            ..MagicThemePackage.CommonResources,
-        ]);
+        :
+        [
+            new()
+            {
+                ResourceType = ResourceType.Stylesheet,
+                Url = $"{ThemePackage.Url}/theme.min.css"
+            }, // Bootstrap generated with Sass/Webpack
+            new()
+            {
+                ResourceType = ResourceType.Script,
+                Url = $"{ThemePackage.Url}/bootstrap.bundle.min.js"
+            }, // Bootstrap JS
+            ..MagicResources.GetAll(),
+        ];
 
     /// <summary>
     /// The layout name which is used to select the named settings for this theme.

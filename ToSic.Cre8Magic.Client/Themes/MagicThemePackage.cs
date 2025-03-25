@@ -1,5 +1,4 @@
 ﻿using Oqtane.Models;
-using Oqtane.Shared;
 using Oqtane.Themes;
 using System.Diagnostics.CodeAnalysis;
 using ToSic.Cre8magic.Internal;
@@ -33,9 +32,6 @@ public record MagicThemePackage
 
         // The json file in the theme folder containing all kinds of settings etc.
         SettingsFile = "theme.json";
-
-        // The resources are usually defined in the ThemeInfo
-        Resources = MagicResourceManager.GetResources(themeInfo.Theme.Resources);
     }
 
     /// <summary>
@@ -81,11 +77,6 @@ public record MagicThemePackage
         init => field = value;
     }
 
-    /// <summary>
-    /// Resources that are part of this theme package.
-    /// </summary>
-    public List<Resource> Resources { get; init; }
-
     internal static MagicThemePackage Fallback = new()
     {
         Defaults = MagicBook.Fallback,
@@ -94,24 +85,4 @@ public record MagicThemePackage
         PackageName = "Fallback-Not-Configured",
     };
 
-    /// <summary>
-    /// Gets the common resources that should be included in all Cre8magic themes.
-    /// </summary>
-    /// <returns>A list of common resources</returns>
-    public static readonly List<Resource> CommonResources =
-    [
-        new()
-        {
-            ResourceType = ResourceType.Script,
-            Url = $"_content/{MagicConstants.PackageId}/interop.js",
-            LoadBehavior = ResourceLoadBehavior.Once,
-            Type = "module"
-        },
-        new()
-        {
-            ResourceType = ResourceType.Script,
-            Url = $"_content/{MagicConstants.PackageId}/ambient.js",
-            LoadBehavior = ResourceLoadBehavior.Once
-        }
-    ];
 }
