@@ -29,7 +29,9 @@ Settings have a few important challenges, such as:
 ## Reading Stabilized Settings
 
 * Reading the settings for final use should happen through a `Stabilized` class, which provides defaults where necessary
-* Every settings record must have a `Stable` property that returns a `Stabilized` object
+* Every settings record must have a `GetStable()` method that returns a `Stabilized` object
+  * it must be a method, not a property, to ensure that it's not used as a record property, incl. `GetHashCode()` / `Equality(...)` access and that it won't be serialized.
+  * because of this, it may also _not_ have a backing `_stable` field, but must create a new instance every time
 
 ## Merging Settings
 

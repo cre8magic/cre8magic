@@ -6,7 +6,6 @@ using Oqtane.UI;
 using ToSic.Cre8magic.Internal;
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 
@@ -32,7 +31,8 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
         var (settingsFull, themePart, journal) = MergeSettings(pageState, settings);
 
         var languages = LanguagesToShow(pageState, settingsFull);
-        var show = themePart?.Show != false && settingsFull.MinLanguagesToShow <= languages.Count;
+        var show = themePart?.Show != false
+                   && settingsFull.GetStable().MinLanguagesToShow <= languages.Count;
         var designer = Tailor(pageState, settingsFull);
         return new MagicLanguageKit
         {
@@ -60,16 +60,19 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             return cached;
 
         var siteLanguages = pageState.Languages;
-        var siteLanguageCodes = siteLanguages.Select(l => l.Code).ToList();
-
-        // Primary order of languages. If specified, use that, otherwise use site list
-        var customList = settings.Languages?.Values;
-        var primaryOrder = (customList is { Count: > 0 }
-                ? customList.Select(l => l.Culture)
-                : siteLanguageCodes)
+        var siteLanguageCodes = siteLanguages
+            .Select(l => l.Code)
             .ToList();
 
-        if (!settings.HideOthersSafe && primaryOrder.Count < siteLanguages.Count)
+        var stable = settings.GetStable();
+
+        // Primary order of languages. If specified, use that, otherwise use site list
+        var customList = stable.Languages?.Values;
+        var primaryOrder = customList is { Count: > 0 }
+                ? customList.Select(l => l.Culture).ToList()
+                : siteLanguageCodes;
+
+        if (!stable.HideOthers && primaryOrder.Count < siteLanguages.Count)
         {
             var missingLanguages = siteLanguageCodes
                 .Where(slc => !primaryOrder.Any(slc.EqInvariant)).ToList();

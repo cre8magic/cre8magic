@@ -37,7 +37,7 @@ internal class MagicAnalyticsService(IMagicAnalyticsJsService analyticsJsService
         // Check settings null on page view tracking disabled
         if (settings is null)
             return;
-        var stable = settings.Stable;
+        var stable = settings.GetStable();
         if (!stable.PageViewTrack)
             return;
         if (isFirstRender && !stable.PageViewTrackFirst)
@@ -46,7 +46,7 @@ internal class MagicAnalyticsService(IMagicAnalyticsJsService analyticsJsService
         // Activate GTM once per user browser session (until reload)
         // Note that it is timing-resistant, so it doesn't matter if this is executed
         // after the page tracking, since it will pick up the queue.
-        await DoNotWaitAndIgnoreErrors(() => _ = GtmActivateOunce(settings.Stable.GtmId));
+        await DoNotWaitAndIgnoreErrors(() => _ = GtmActivateOunce(stable.GtmId));
 
         // Run the JS Command but don't wait for it
         await DoNotWaitAndIgnoreErrors(() => analyticsJsService.GtmPageView(stable.PageViewEvent));

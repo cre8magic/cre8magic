@@ -139,7 +139,7 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics => field
-        ??= new(this, MagicAnalyticsSettings.Defaults, cat => cat.Analytics);
+        ??= new(this, new(), cat => cat.Analytics);
 
     #endregion
 
@@ -179,7 +179,7 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicLanguageSettings> Languages => field
-        ??= new(this, MagicLanguageSettings.Defaults, book => book.Languages);
+        ??= new(this, new(), book => book.Languages);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicLanguageBlueprint> LanguageBlueprints => field

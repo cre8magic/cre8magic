@@ -12,7 +12,7 @@ public class MagicAnalyticsCreateClone
     [Fact]
     public void EmptyFinalized()
     {
-        var s = new MagicAnalyticsSettings().Stable;
+        var s = new MagicAnalyticsSettings().GetStable();
         Equal(MagicAnalyticsSettings.Stabilized.DefaultGtmId, s.GtmId);
         Equal(MagicAnalyticsSettings.Stabilized.DefaultPageViewEvent, s.PageViewEvent);
         Equal(MagicAnalyticsSettings.Stabilized.DefaultPageViewJs, s.PageViewJs);
@@ -24,7 +24,7 @@ public class MagicAnalyticsCreateClone
     public void Create() => VerifySameAsOriginal(Original());
 
     [Fact]
-    public void CreateFinalMatchesOriginal() => VerifyFinalSimilarToOriginal(Original().Stable);
+    public void CreateFinalMatchesOriginal() => VerifyFinalSimilarToOriginal(Original().GetStable());
 
     [Fact]
     public void ConstructorClone() => VerifySameAsOriginal(new MagicAnalyticsSettings().CloneUnderTac(Original()));

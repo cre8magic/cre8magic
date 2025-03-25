@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Internal.Json;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
@@ -32,9 +33,11 @@ public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSett
     /// If false, will first show the configured languages, then the rest. 
     /// </summary>
     public bool? HideOthers { get; init; }
-    internal bool HideOthersSafe => HideOthers == true;
 
-    public int MinLanguagesToShow { get; init; }
+    /// <summary>
+    /// Minimum Languages to auto-show this - typically / default is 2.
+    /// </summary>
+    public int? MinLanguagesToShow { get; init; }
 
     /// <summary>
     /// List of languages
@@ -58,22 +61,31 @@ public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSett
     [JsonIgnore]
     public MagicLanguageBlueprint? Blueprint { get; init; }
 
+    #region Stabilized
 
-    internal static Defaults<MagicLanguageSettings> Defaults = new()
+    [PrivateApi]
+    public Stabilized GetStable() => new(this);
+
+    /// <summary>
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
+    /// </summary>
+    [PrivateApi]
+    public new record Stabilized(MagicLanguageSettings LanguageSettings) : MagicSettings.Stabilized(LanguageSettings)
     {
-        Fallback = new()
-        {
-            HideOthers = false,
-            MinLanguagesToShow = 2,
-            Languages = new()
-            {
-                { "en", new() { Culture = "en", Description = "English" } }
-            },
-        },
-        Foundation = new()
-        {
-            HideOthers = false,
-            Languages = new(),
-        }
-    };
+        public bool HideOthers => LanguageSettings.HideOthers ?? DefaultHideOthers;
+        public const bool DefaultHideOthers = false;
+
+        public int MinLanguagesToShow => LanguageSettings.MinLanguagesToShow ?? DefaultMinLanguagesToShow;
+        public const int DefaultMinLanguagesToShow = 2;
+
+        [field: AllowNull, MaybeNull]
+        public Dictionary<string, MagicLanguage> Languages => field ??= LanguageSettings.Languages ?? new();
+
+        public MagicLanguageBlueprint? Blueprint => LanguageSettings.Blueprint;
+    }
+
+
+    #endregion
 }

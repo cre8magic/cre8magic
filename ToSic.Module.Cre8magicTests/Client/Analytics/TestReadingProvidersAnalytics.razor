@@ -27,8 +27,8 @@
         This will ONLY read the test-analytics.
         So if you refresh this page, it will be the same as default, if you go to the other page first, it should have that value.
     </p>
-    <p>Default Analytics: @dbgSettings.GtmId / @dbgSettings.Stable.GtmId</p>
-    <p>Test Analytics: @dbgTestSettings.GtmId / @dbgTestSettings.Stable.GtmId</p>
+    <p>Default Analytics: @dbgSettings.GtmId / @dbgSettings.GetStable().GtmId</p>
+    <p>Test Analytics: @dbgTestSettings.GtmId / @dbgTestSettings.GetStable().GtmId</p>
     <p>
         Time for @cycles cycles: @stopWatch.ElapsedMilliseconds ms / @stopWatch.Elapsed.Seconds seconds
     </p>

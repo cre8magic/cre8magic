@@ -58,14 +58,10 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone<MagicAnalyticsSe
     public string? PageViewEvent { get; init; }
 
 
-    internal static Defaults<MagicAnalyticsSettings> Defaults = new();
-
     #region Internal Reader
 
     [PrivateApi]
-    [JsonIgnore]
-    [field: AllowNull, MaybeNull]
-    public Stabilized Stable => field ??= new(this);
+    public Stabilized GetStable() => new(this);
 
     /// <summary>
     /// Experimental 2025-03-25 2dm

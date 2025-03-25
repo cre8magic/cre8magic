@@ -14,7 +14,7 @@ Please keep updated.
 | OqtBasic Ctl | ❓        | ✅          |            |              |
 | Oqt BS5 Ctl  | ✅/⌛     | ✅          |            |              |
 | Demo Oqt Th. |           |             |            |              |
-| Name for load|           |             |            |              |
+| Settings Name|           |             |            |              |
 | (tmpl-row)   |           |             |            |              |
 
 
@@ -25,8 +25,11 @@ Please keep updated.
 | OqtBasic Ctl | ✅        |             |         |            |            |           |       |       |       |              |       | ✅    |
 | Oqt BS5 Ctl  | ✅        |             |         |            |            |           |       |       |       |              |       | ✅    |
 | Demo Oqt Th. | ✅        | ✅          |         |            |            | ✅        |       |       |       |              |       |       |
-| Name for load|           |             |         |            |            |           |       |       | ✅    |              |       |       |
+| Settings Name|           |             |         |            |            |           |       |       | ✅    |              |       |       |
+| No Defaults  | ✅        | 🧑🏽‍💻          |         |            |            | ✅        |       |       |       |              |       |       |
+| Stabilize    | ✅        | 🧑🏽‍💻          |         |            |            | ✅        |       |       |       |              |       |       |
 | (tmpl-row)   |           |             |         |            |            |           |       |       |       |              |       |       |
+
 
 ## Other
 
