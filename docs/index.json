@@ -757,7 +757,7 @@
   "library/magic-analytics/index.html": {
     "href": "library/magic-analytics/index.html",
     "title": "Magic Languages | cre8magic",
-    "keywords": "cre8magic – Magic Analytics and Google Tag Manager The cre8magic Analytics helps you integrate Google Analytics using Google Tag Manager and Track Page Views. Tip A simple top-level menu can be added just like this: <MagicAnalytics Settings='new() { GtmId = \"GTM-T8W5TBL\", PageViewTrack = true }'></MagicAnalytics> ...or if you have a theme.json file, all you need is: <MagicMenu Name=\"MainMenu\"/> Test <MagicAnalytics Settings='new() { GtmId = \"GTM-T8W5TBL\", PageViewTrack = true }'></MagicAnalytics> Pending Tasks Ensure that the verb for tracking page views can be customized Determine properties such as PageViewTrack - should probably be TrackPageView or something - ? must determine Naming Conventions. History All created in v0.0.1 2022-10"
+    "keywords": "cre8magic – Magic Analytics and Google Tag Manager The cre8magic Analytics helps you integrate Google Analytics using Google Tag Manager and Track Page Views. Tip A simple top-level menu can be added just like this: <MagicAnalytics Settings='new() { GtmId = \"GTM-T8W5TBL\", PageViewTrack = true }'></MagicAnalytics> ...or if you have central settings such as theme.json file, all you need is: <MagicAnalytics></MagicAnalytics> Pending Tasks Ensure that the verb for tracking page views can be customized Determine properties such as PageViewTrack - should probably be TrackPageView or something - ? must determine Naming Conventions. History All created in v0.0.1 2022-10"
   },
   "library/magic-languages/index.html": {
     "href": "library/magic-languages/index.html",

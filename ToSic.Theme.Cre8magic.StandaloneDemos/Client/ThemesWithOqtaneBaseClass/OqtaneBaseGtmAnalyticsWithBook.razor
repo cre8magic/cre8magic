@@ -1,15 +1,32 @@
 ﻿@namespace ToSic.Theme.Cre8magic.StandaloneDemos
 @inherits ThemeBase
+@using ToSic.Cre8magic
+@using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.OqtaneBs5
-
+@using ToSic.Cre8magic.Settings
+@inject IMagicAct MagicAct
 @code {
     public override string Name => PageTitle;
 
-    private const string PageTitle = "Oqtane Base Theme - Gtm Analytics";
+    private const string PageTitle = "Oqtane Base Theme - Gtm Analytics with Book";
 
-    private const string PageDescription = "This is a standard Oqtane ThemeBase with the Gtm Analytics Control.";
+    private const string PageDescription = "This is a standard Oqtane ThemeBase with the Gtm Analytics Control and Book.";
 
     public override string Panes => PaneNames.Default;
+}
+@code {
+
+    public static MagicBook Book => new()
+    {
+        Source = nameof(Book),
+        Chapter = new()
+        {
+            Analytics = new() { GtmId = "GTM-T8W5TBL", PageViewTrack = true, },
+        }
+    };
+}
+@{
+    MagicAct.UseBook(Book);
 }
 
 @* Default box containing menu, intro text etc. - contents is between the tags *@
@@ -22,7 +39,7 @@
         </p>
 
         <!--<CodeSnippetForDocs>-->
-            <MagicAnalytics Settings='new() { GtmId = "GTM-T8W5TBL", PageViewTrack = true }'></MagicAnalytics>
+            <MagicAnalytics></MagicAnalytics>
         <!--</CodeSnippetForDocs>-->
 
     </ChildContent>
