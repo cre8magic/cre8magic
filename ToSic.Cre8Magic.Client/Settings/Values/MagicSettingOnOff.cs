@@ -14,6 +14,8 @@ namespace ToSic.Cre8magic.Settings.Values;
 [JsonConverter(typeof(SettingOnOffJsonConverter))]
 public record MagicSettingOnOff: ICanClone<MagicSettingOnOff>
 {
+    #region Constructor and Cloning
+
     /// <summary>
     /// Empty constructor for JSON serialization
     /// </summary>
@@ -26,6 +28,15 @@ public record MagicSettingOnOff: ICanClone<MagicSettingOnOff>
         Off = off;
     }
 
+    MagicSettingOnOff ICanClone<MagicSettingOnOff>.CloneUnder(MagicSettingOnOff? priority, bool forceCopy) =>
+        new()
+        {
+            On = priority?.On ?? On,
+            Off = priority?.Off ?? Off
+        };
+    
+    #endregion
+
     /// <summary>
     /// Value / Class to add if the setting is on
     /// </summary>
@@ -35,13 +46,6 @@ public record MagicSettingOnOff: ICanClone<MagicSettingOnOff>
     /// Value / Class to add if the setting is off
     /// </summary>
     public string? Off { get; init; }
-
-    MagicSettingOnOff ICanClone<MagicSettingOnOff>.CloneUnder(MagicSettingOnOff? priority, bool forceCopy) =>
-        new()
-        {
-            On = priority?.On ?? On,
-            Off = priority?.Off ?? Off
-        };
 
     /// <summary>
     /// Special Class just for json serialization, which will have the values but not the converter

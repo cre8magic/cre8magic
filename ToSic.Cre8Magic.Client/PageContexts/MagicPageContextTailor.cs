@@ -19,10 +19,14 @@ public class MagicPageContextTailor(MagicPageContextSettings settings, PageState
         //if (themeDesign == null) throw new ArgumentException("Can't continue without CSS specs", nameof(themeDesign));
 
         // Make a copy...
-        List<string?> classes = (settings.ClassList?.ToList() ?? [])!;
-        classes.Add(settings.PageIsHome?.Get(pageState.Page.Path == ""));
-        if (additionalClasses.HasText())
-            classes.Add(additionalClasses);
+        var stable = settings.GetStable();
+        List<string?> classes = [
+            ..stable.ClassList,
+            stable.PageIsHome.Get(pageState.Page.Path == ""),
+            additionalClasses,
+        ]!;
+        //if (additionalClasses.HasText())
+        //    classes.Add(additionalClasses);
 
         // Do these once multi-language is better
         //1.5 Set the page-root-neutral-### class
@@ -36,7 +40,7 @@ public class MagicPageContextTailor(MagicPageContextSettings settings, PageState
         //4.3 Set the lang-neutral- class
         // do once lang is clear
 
-        var bodyClasses = string.Join(" ", classes.Where(c => c.HasValue())).Replace("  ", " ");
+        var bodyClasses = string.Join(" ", classes.Where(c => c.HasText())).Replace("  ", " ");
 
         return tokens.Parse(bodyClasses);
     }

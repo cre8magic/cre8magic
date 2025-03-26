@@ -1,4 +1,5 @@
-﻿using ToSic.Cre8magic.Settings;
+﻿using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Settings.Values;
 
@@ -9,7 +10,7 @@ namespace ToSic.Cre8magic.PageContexts;
 ///
 /// This configures how the page context is rendered, and what classes are added to the body tag.
 /// </summary>
-public partial record MagicPageContextSettings: MagicSettings, ICanClone<MagicPageContextSettings>
+public record MagicPageContextSettings: MagicSettings, ICanClone<MagicPageContextSettings>
 {
     #region Constructors and Cloning
 
@@ -31,6 +32,7 @@ public partial record MagicPageContextSettings: MagicSettings, ICanClone<MagicPa
         PageIsHome = priority?.PageIsHome ?? fallback?.PageIsHome;
         TagId = priority?.TagId ?? fallback?.TagId;
         Classes = priority?.Classes ?? fallback?.Classes;
+        AddDefaults = priority?.AddDefaults ?? fallback?.AddDefaults;
     }
 
     /// <inheritdoc />
@@ -39,13 +41,12 @@ public partial record MagicPageContextSettings: MagicSettings, ICanClone<MagicPa
 
     #endregion
 
-
     /// <summary>
     /// If true, the body tag will be used to add classes and other attributes.
+    /// This is done using JavaScript interop.
     /// If false, it will use a div around the content.
     /// </summary>
     public bool? UseBodyTag { get; init; }
-    internal bool UseBodyTagSafe => UseBodyTag ?? false;
 
     /// <summary>
     /// List of classes to add for the context.
@@ -58,9 +59,58 @@ public partial record MagicPageContextSettings: MagicSettings, ICanClone<MagicPa
     /// </summary>
     public MagicSettingOnOff? PageIsHome { get; init; }
 
+    /// <summary>
+    /// The ID to use for the tag when <see cref="UseBodyTag"/> is false.
+    /// </summary>
     public string? TagId { get; init; }
+
+    /// <summary>
+    /// If true, will automatically add a series of common classes with information about the page, site, language etc.
+    /// This adheres to a common naming convention and is recommended.
+    /// </summary>
+    /// <remarks>
+    /// If not specified, will default to `true` if the class-list is empty.
+    /// </remarks>
+    public bool? AddDefaults { get; init; }
 
 
     public string? Classes { get; init; }
 
+
+    #region Internal Reader
+
+    [PrivateApi]
+    public Stabilized GetStable() => new(this);
+
+    /// <summary>
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
+    /// </summary>
+    [PrivateApi]
+    public new record Stabilized(MagicPageContextSettings PageContextSettings) : MagicSettings.Stabilized(PageContextSettings)
+    {
+        public bool UseBodyTag => PageContextSettings.UseBodyTag ?? DefaultUseBodyTag;
+        internal const bool DefaultUseBodyTag = true;
+
+        [field: AllowNull, MaybeNull]
+        public string[] ClassList => field ??=
+        [
+            ..PageContextSettings.ClassList ?? [],
+            ..UseDefaults ? MagicPageContextConstants.RecommendedClassList : []
+        ];
+
+        public MagicSettingOnOff PageIsHome => PageContextSettings.PageIsHome
+                                               ?? new(UseDefaults ? MagicPageContextConstants.RecommendedPageIsHome : null);
+
+        public string TagId => PageContextSettings.TagId ?? DefaultTagId;
+        internal const string DefaultTagId = "cre8magic-root";
+
+        public string Classes => PageContextSettings.Classes ?? string.Empty;
+
+        public bool UseDefaults => PageContextSettings.AddDefaults ?? DefaultUseDefaults;
+        internal const bool DefaultUseDefaults = true;
+    }
+
+    #endregion
 }

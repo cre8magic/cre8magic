@@ -159,7 +159,7 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicPageContextSettings> PageContexts => field
-        ??= new(this, MagicPageContextSettings.Defaults, book => book.PageContexts);
+        ??= new(this, new(), book => book.PageContexts);
 
     #endregion
 
