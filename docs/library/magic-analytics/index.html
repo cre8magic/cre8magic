@@ -90,7 +90,7 @@
 <p><em>The cre8magic Analytics helps you integrate Google Analytics using Google Tag Manager and Track Page Views.</em></p>
 <div class="TIP">
 <h5>Tip</h5>
-<p>A simple top-level menu can be added just like this:</p>
+<p>Add page view tracking with Analytics with a tag in your theme like this:</p>
 <pre><code class="lang-xml">&lt;MagicAnalytics Settings='new() { GtmId = &quot;GTM-T8W5TBL&quot;, PageViewTrack = true }'&gt;&lt;/MagicAnalytics&gt;
 </code></pre>
 <p>...or if you have central settings such as <code>theme.json</code> file, all you need is:</p>
@@ -101,11 +101,12 @@
 <ol>
 <li>Ensure that the verb for tracking page views can be customized</li>
 <li>Determine properties such as <code>PageViewTrack</code> - should probably be <code>TrackPageView</code> or something - ? must determine Naming Conventions.</li>
+<li>Add &quot;name&quot; property</li>
 </ol>
 <hr>
 <h2 id="history">History</h2>
 <ol>
-<li>All created in v0.0.1 2022-10</li>
+<li>created in v0.0.1 2022-10</li>
 </ol>
 
 </article>

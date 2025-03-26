@@ -108,7 +108,12 @@
 <h2 id="reading-stabilized-settings">Reading Stabilized Settings</h2>
 <ul>
 <li>Reading the settings for final use should happen through a <code>Stabilized</code> class, which provides defaults where necessary</li>
-<li>Every settings record must have a <code>Stable</code> property that returns a <code>Stabilized</code> object</li>
+<li>Every settings record must have a <code>GetStable()</code> method that returns a <code>Stabilized</code> object
+<ul>
+<li>it must be a method, not a property, to ensure that it's not used as a record property, incl. <code>GetHashCode()</code> / <code>Equality(...)</code> access and that it won't be serialized.</li>
+<li>because of this, it may also <em>not</em> have a backing <code>_stable</code> field, but must create a new instance every time</li>
+</ul>
+</li>
 </ul>
 <h2 id="merging-settings">Merging Settings</h2>
 <p>Settings should be able to be merged with other settings.
@@ -131,6 +136,7 @@ In general, this means that there are these concepts:</p>
 <p>As of now, the latest implementation of this best-practices is the <code>MagicAnalyticsSettings</code> - use this as a reference.</p>
 <h3 id="magicanalyticssettings">MagicAnalyticsSettings</h3>
 <pre><code class="lang-csharp">using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 
@@ -189,20 +195,10 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone&lt;MagicAnalytic
     public string? PageViewEvent { get; init; }
 
 
-    internal static Defaults&lt;MagicAnalyticsSettings&gt; Defaults = new(new()
-    {
-        GtmId = null,
-        PageViewTrack = false,
-        PageViewTrackFirst = false,
-        PageViewJs = &quot;gtag&quot;,
-        PageViewEvent = &quot;blazor_page_view&quot;
-    });
-
     #region Internal Reader
 
     [PrivateApi]
-    [field: AllowNull, MaybeNull]
-    public Stabilized Stable =&gt; field ??= new(this);
+    public Stabilized GetStable() =&gt; new(this);
 
     /// &lt;summary&gt;
     /// Experimental 2025-03-25 2dm
@@ -210,21 +206,21 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone&lt;MagicAnalytic
     /// so that the code using the values doesn't need to check for nulls.
     /// &lt;/summary&gt;
     [PrivateApi]
-    public new record Stabilized(MagicAnalyticsSettings analyticsSettings): MagicSettings.Stabilized(analyticsSettings)
+    public new record Stabilized(MagicAnalyticsSettings AnalyticsSettings): MagicSettings.Stabilized(AnalyticsSettings)
     {
-        public string GtmId =&gt; analyticsSettings.GtmId ?? DefaultGtmId;
+        public string GtmId =&gt; AnalyticsSettings.GtmId ?? DefaultGtmId;
         public const string DefaultGtmId = &quot;gtm-id-undefined&quot;;
 
-        public bool PageViewTrack =&gt; analyticsSettings.PageViewTrack ?? DefaultPageViewTrack;
+        public bool PageViewTrack =&gt; AnalyticsSettings.PageViewTrack ?? DefaultPageViewTrack;
         public const bool DefaultPageViewTrack = false;
 
-        public bool PageViewTrackFirst =&gt; analyticsSettings.PageViewTrackFirst ?? DefaultPageViewTrackFirst;
+        public bool PageViewTrackFirst =&gt; AnalyticsSettings.PageViewTrackFirst ?? DefaultPageViewTrackFirst;
         public const bool DefaultPageViewTrackFirst = false;
 
-        public string PageViewJs =&gt; analyticsSettings.PageViewJs ?? DefaultPageViewJs;
+        public string PageViewJs =&gt; AnalyticsSettings.PageViewJs ?? DefaultPageViewJs;
         public const string DefaultPageViewJs = &quot;gtag&quot;;
 
-        public string PageViewEvent =&gt; analyticsSettings.PageViewEvent ?? DefaultPageViewEvent;
+        public string PageViewEvent =&gt; AnalyticsSettings.PageViewEvent ?? DefaultPageViewEvent;
         public const string DefaultPageViewEvent = &quot;blazor_page_view&quot;;
     }
 

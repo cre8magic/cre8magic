@@ -7,6 +7,9 @@
           "files": [
             "ToSic.Cre8magic.Client/*.csproj",
             "ToSic.Cre8magic.OqtaneBs5.Client/*.csproj"
+          ],
+          "exclude": [
+            "**/*.esproj",
           ]
         }
       ],

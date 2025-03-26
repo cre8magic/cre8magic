@@ -29,6 +29,24 @@ This tells you a bunch of things such as:
 1. We are currently on the nav-level `3` - this could affect your breadcrumb or something
 1. We are in a specific layout type and navigation type
 
+## Sample - TESTING
+
+### Body
+
+[!code-xml[](../../../../ToSic.Theme.Cre8magic.StandaloneDemos/Client/ThemesWithOqtaneBaseClass/OqtaneBasePageContextBody.razor#CodeSnippetForDocs)]
+
+### Div
+
+[!code-xml[](../../../../ToSic.Theme.Cre8magic.StandaloneDemos/Client/ThemesWithOqtaneBaseClass/OqtaneBasePageContextDiv.razor#CodeSnippetForDocs1)]
+
+```c#
+  <div>
+    ...
+  </div>
+```
+
+[!code-xml[](../../../../ToSic.Theme.Cre8magic.StandaloneDemos/Client/ThemesWithOqtaneBaseClass/OqtaneBasePageContextDiv.razor#CodeSnippetForDocs2)]
+
 ## How this Works
 
 Basically all this happens automatically, if your [json configuration](xref:Cre8magic.Library.ThemeSettings.Index) has `magicContext` of something like this:

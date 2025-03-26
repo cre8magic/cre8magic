@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Namespace ToSic.Cre8magic.OqtaneBasic | cre8magic </title>
+      <title>Enum MagicControls | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Namespace ToSic.Cre8magic.OqtaneBasic | cre8magic ">
+      <meta name="title" content="Enum MagicControls | cre8magic ">
       
-      
+      <meta name="description" content="List of all built in Magic Controls. It is used for certain APIs which will request resources for specific controls.">
       <link rel="icon" href="../assets/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/new/feature/v5/apiSpec/new?filename=ToSic_Cre8magic_MagicControls.md&amp;value=---%0Auid%3A%20ToSic.Cre8magic.MagicControls%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,38 +84,58 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="ToSic.Cre8magic.OqtaneBasic">
+        <article data-uid="ToSic.Cre8magic.MagicControls">
 
-  <h1 id="ToSic_Cre8magic_OqtaneBasic" data-uid="ToSic.Cre8magic.OqtaneBasic" class="text-break">Namespace ToSic.Cre8magic.OqtaneBasic</h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
 
-    <h3 id="classes">
-Classes
-</h3>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.OqtaneBasic.MagicContainer.html">MagicContainer</a></dt>
-      <dd><p>The recommended base container for all themes which use cre8magic.</p>
-<p>It will simply remain invisible for the normal user,
-and except for a DIV containing some classes, it will not render anything.</p>
-<p>Admin-users will see a bit more, since the title etc. is necessary for the editing tools.</p>
+
+
+  <h1 id="ToSic_Cre8magic_MagicControls" data-uid="ToSic.Cre8magic.MagicControls" class="text-break">
+Enum MagicControls  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicControls.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>List of all built in Magic Controls.
+It is used for certain APIs which will request resources for specific controls.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Flags]
+public enum MagicControls</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h2 id="fields">Fields
+</h2>
+  <dl class="parameters">
+    <dt id="ToSic_Cre8magic_MagicControls_All"><code>All = 1</code></dt>
+    <dd><p>All controls.</p>
 </dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="ToSic.Cre8magic.OqtaneBasic.MagicTheme.html">MagicTheme</a></dt>
-      <dd><p>Base class for our themes. It's responsible for</p>
-<ol>
-<li>Some basic properties such as Name, BodyClasses etc. which each theme can configure</li>
-<li>Adding special classes to the body tag so that the CSS can best optimize for each scenario</li>
-</ol>
+    <dt id="ToSic_Cre8magic_MagicControls_ToTop"><code>ToTop = 2</code></dt>
+    <dd><p>The &quot;To Top&quot; control.</p>
 </dd>
-    </dl>
+    <dt id="ToSic_Cre8magic_MagicControls_Unknown"><code>Unknown = 0</code></dt>
+    <dd><p>Fallback / default if not set.</p>
+</dd>
+  </dl>
+
 
 
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/MagicControls.cs/#L7" class="edit-link">Edit this page</a>
         </div>
 
 

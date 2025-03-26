@@ -105,7 +105,18 @@ which contain information about the current state.</p>
 <li>We are currently on the nav-level <code>3</code> - this could affect your breadcrumb or something</li>
 <li>We are in a specific layout type and navigation type</li>
 </ol>
-<h2 id="how-this-works">How this Works</h2>
+<h2 id="sample---testing">Sample - TESTING</h2>
+<h3 id="body">Body</h3>
+<pre><code class="lang-xml">&lt;MagicPageContext&gt;&lt;/MagicPageContext&gt;
+</code></pre><h3 id="div">Div</h3>
+<pre><code class="lang-xml">&lt;MagicPageContext Settings=&quot;new() { UseBodyTag = false }&quot;&gt;
+</code></pre>
+<pre><code class="lang-c#">  &lt;div&gt;
+    ...
+  &lt;/div&gt;
+</code></pre>
+<pre><code class="lang-xml">&lt;/MagicPageContext&gt;
+</code></pre><h2 id="how-this-works">How this Works</h2>
 <p>Basically all this happens automatically, if your <a class="xref" href="../theme-settings/theme-json.html">json configuration</a> has <code>magicContext</code> of something like this:</p>
 <pre><code class="lang-jsonc">{
   &quot;magicContext&quot;: [
