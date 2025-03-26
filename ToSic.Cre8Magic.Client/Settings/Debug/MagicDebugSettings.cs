@@ -1,5 +1,5 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Settings.Internal.Debug;
+﻿using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Debug;
 
@@ -35,45 +35,83 @@ public record MagicDebugSettings
     {
         // Allowed is special, as it should only come from the master / fallback
         Allowed = fallbackOriginal?.Allowed ?? priority?.Allowed ?? false;
-        Anonymous = Merge(priority?.Anonymous, fallbackOriginal?.Anonymous);
-        Admin = Merge(priority?.Admin, fallbackOriginal?.Admin);
+        Anonymous = priority?.Anonymous ?? fallbackOriginal?.Anonymous;
+        Admin = priority?.Admin ?? fallbackOriginal?.Admin;
     }
 
     // TODO: make internal or something
     [PrivateApi]
     public MagicDebugState GetState(object? target, bool isAdmin)
         => (target is not IHasDebugSettings debugTarget ? this : new(debugTarget.Debug, this))
-            .Parsed(isAdmin);
+            .GetState(isAdmin);
 
     #endregion
 
 
     public bool? Allowed { get; init; }
-    internal bool AllowedSafe => Allowed ?? false;
 
     public bool? Anonymous { get; init; }
-    internal bool AnonymousSafe => Anonymous ?? false;
 
     public bool? Admin { get; init; }
-    internal bool AdminSafe => Admin ?? true;
 
     public bool? Detailed { get; init; }
 
-
-    private bool Merge(bool? priority, bool? fallback) => priority == true || priority == null && fallback == true;
-
-    internal MagicDebugState Parsed(bool isAdmin) =>
-        AllowedSafe
+    internal MagicDebugState GetState(bool isAdmin)
+    {
+        var stable = GetStable();
+        return stable.Allowed
             ? new()
             {
-                Show = isAdmin ? AdminSafe : AnonymousSafe
+                Show = isAdmin
+                    ? stable.Admin      // Use configuration for Admin, by default admins see the debug
+                    : stable.Anonymous  // Use configuration for Anonymous, by default anonymous users don't see the debug
             }
             : new();
+    }
 
-    internal static Defaults<MagicDebugSettings> Defaults = new(new()
+    #region Stabilized
+
+    [PrivateApi]
+    public Stabilized GetStable() => (_stabilized ??= new(new(this))).Value;
+    private IgnoreEquals<Stabilized>? _stabilized;
+
+    /// <summary>
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
+    /// </summary>
+    [PrivateApi]
+    public record Stabilized(MagicDebugSettings? DebugSettings)
     {
-        Allowed = false,
-        Anonymous = false,
-        Admin = false,
-    });
+        public bool Allowed
+        {
+            get => _allowed ??= DebugSettings?.Allowed ?? false;
+            init => _allowed = value;
+        }
+        private bool? _allowed;
+
+        public bool Anonymous
+        {
+            get => _anonymous ??= DebugSettings?.Anonymous ?? false;
+            init => _anonymous = value;
+        }
+
+        private bool? _anonymous;
+
+        public bool Admin
+        {
+            get => _admin ??= DebugSettings?.Admin ?? true;
+            init => _admin = value;
+        }
+        private bool? _admin;
+
+        public bool Detailed
+        {
+            get => _detailed ??= DebugSettings?.Detailed ?? false;
+            init => _detailed = value;
+        }
+        private bool? _detailed;
+    }
+
+    #endregion
 }

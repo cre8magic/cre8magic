@@ -48,7 +48,7 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     MagicDebugSettings IMagicSettingsService.Debug => field
-        ??= Library.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? MagicDebugSettings.Defaults.Fallback;
+        ??= Library.FirstOrDefault(c => c.Data.Debug != null)?.Data?.Debug ?? new();
 
     [field: AllowNull, MaybeNull]
     public MagicThemePackage ThemePackage { get => field ??= MagicThemePackage.Fallback; private set => field = value; }

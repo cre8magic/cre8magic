@@ -41,7 +41,7 @@ Nice to know:
 @* Special Debugging *@
 @if (false)
 {
-    var debug = menuKit.Settings.Debug;
+    var debug = menuKit.Settings.GetStable().Debug;
     <div class="alert alert-info">
         @* ConfigName: @(Menu?.Settings.ConfigName) <br/> *@
         @* HasChildren: @(menuKit.Root.Children.Any()) - @menuKit.Root.Children.Count() <br /> *@

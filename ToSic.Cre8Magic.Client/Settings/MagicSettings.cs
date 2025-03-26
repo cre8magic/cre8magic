@@ -91,7 +91,7 @@ public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IH
         /// <summary>
         /// Will still be null.
         /// </summary>
-        public MagicDebugSettings? Debug => Settings.Debug;
+        public MagicDebugSettings Debug => Settings.Debug ?? new();
     }
 
     #endregion

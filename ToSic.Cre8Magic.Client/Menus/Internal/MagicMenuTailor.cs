@@ -4,8 +4,6 @@ using ToSic.Cre8magic.Internal.Logging;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings.Values.Internal;
 using ToSic.Cre8magic.Tailors;
-using ToSic.Cre8magic.Utils;
-
 
 namespace ToSic.Cre8magic.Menus.Internal;
 
@@ -18,10 +16,13 @@ public class MagicMenuTailor : IMagicPageTailor
     {
         Settings = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
 
-        DesignSettingsList = [Settings.GetStable().Blueprint];
+        var stable = Settings.GetStable();
+        DesignSettingsList = [stable.Blueprint];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
-        Log = workContext.Settings.Debug?.Detailed == true ? workContext.LogRoot.GetLog(nameof(MagicMenuTailor)) : null;
+        Log = stable.Debug.GetStable().Detailed
+            ? workContext.LogRoot.GetLog(nameof(MagicMenuTailor))
+            : null;
     }
     private MagicMenuSettings Settings { get; }
 
