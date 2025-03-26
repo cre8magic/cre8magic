@@ -1,6 +1,6 @@
-body.#{$prefix}-variation-default,
+body.#{$prefix}-variant-default,
 // when using wrapper instead of body
-div#cre8magic-root.#{$prefix}-variation-default {
+div#cre8magic-root.#{$prefix}-variant-default {
   ##{$prefix}-page-header-pane {
     margin-top:0px;
     @include media-breakpoint-up(xxl) {

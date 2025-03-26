@@ -1,7 +1,7 @@
 /* Logo left */ /* Logo right */
-body.#{$prefix}-mainnav-variation-left,
+body.#{$prefix}-mainnav-variant-left,
 // when using wrapper instead of body
-div#cre8magic-root.#{$prefix}-mainnav-variation-left {
+div#cre8magic-root.#{$prefix}-mainnav-variant-left {
   nav##{$prefix}-page-navigation {
     .container {
       @include media-breakpoint-up(lg) {
@@ -11,9 +11,9 @@ div#cre8magic-root.#{$prefix}-mainnav-variation-left {
   } 
 }
 /* header centered */
-body.#{$prefix}-mainnav-variation-center,
+body.#{$prefix}-mainnav-variant-center,
 // when using wrapper instead of body
-div#cre8magic-root.#{$prefix}-mainnav-variation-center {
+div#cre8magic-root.#{$prefix}-mainnav-variant-center {
   nav##{$prefix}-page-navigation {
     > .container {
       @include media-breakpoint-up(lg) {
