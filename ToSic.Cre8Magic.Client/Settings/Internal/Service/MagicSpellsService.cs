@@ -139,7 +139,7 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics => field
-        ??= new(this, new(), cat => cat.Analytics);
+        ??= new(this, book => book.Analytics);
 
     #endregion
 
@@ -147,11 +147,11 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicBreadcrumbSettings> Breadcrumbs => field ??=
-        new(this, new(), cat => cat.Breadcrumbs);
+        new(this, book => book.Breadcrumbs);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicBreadcrumbBlueprint> BreadcrumbBlueprints => field
-        ??= new(this, new(), book => book.BreadcrumbBlueprints);
+        ??= new(this, book => book.BreadcrumbBlueprints);
 
     #endregion
 
@@ -159,7 +159,7 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicPageContextSettings> PageContexts => field
-        ??= new(this, new(), book => book.PageContexts);
+        ??= new(this, book => book.PageContexts);
 
     #endregion
 
@@ -167,11 +167,11 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     private SettingsReader<MagicThemeSettings> Themes => field
-        ??= new(this, new(), book => book.Themes);
+        ??= new(this, book => book.Themes);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicThemeBlueprint> ThemeBlueprints => field
-        ??= new(this, new(), book => book.ThemeBlueprints);
+        ??= new(this, book => book.ThemeBlueprints);
 
     #endregion
 
@@ -179,11 +179,11 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicLanguageSettings> Languages => field
-        ??= new(this, new(), book => book.Languages);
+        ??= new(this, book => book.Languages);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicLanguageBlueprint> LanguageBlueprints => field
-        ??= new(this, new(), book => book.LanguageBlueprints);
+        ??= new(this, book => book.LanguageBlueprints);
 
     #endregion
 
@@ -191,11 +191,11 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicContainerSettings> Containers => field
-        ??= new(this, new(), cat => cat.Containers);
+        ??= new(this, book => book.Containers);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicContainerBlueprint> ContainerBlueprints => field
-        ??= new(this, new(), cat => cat.ContainerBlueprints);
+        ??= new(this, book => book.ContainerBlueprints);
 
     #endregion
 
@@ -203,11 +203,11 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicMenuSettings> Menus => field
-        ??= new(this, new(), book => book.Menus);
+        ??= new(this, book => book.Menus);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicMenuBlueprint> MenuBlueprints => field
-        ??= new(this, new(), book => book.MenuBlueprints);
+        ??= new(this, book => book.MenuBlueprints);
 
     #endregion
 

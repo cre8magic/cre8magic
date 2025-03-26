@@ -16,12 +16,8 @@ namespace ToSic.Cre8magic.Settings.Internal;
 /// </summary>
 /// <typeparam name="TSettingsData"></typeparam>
 /// <param name="hasLibrary"></param>
-/// <param name="defaults"></param>
 /// <param name="getSection"></param>
-internal class SettingsReader<TSettingsData>(
-    IHasMagicLibrary hasLibrary,
-    Defaults<TSettingsData> defaults,
-    Func<MagicBook, IDictionary<string, TSettingsData>> getSection
+internal class SettingsReader<TSettingsData>(IHasMagicLibrary hasLibrary, Func<MagicBook, IDictionary<string, TSettingsData>> getSection
 )
     where TSettingsData : class, new()
 {
@@ -29,7 +25,7 @@ internal class SettingsReader<TSettingsData>(
     /// Create a clone of the settings reader, which will specifically only use test books provided by the source.
     /// </summary>
     internal SettingsReader<TSettingsData> MaybeUseCustomBook(MagicBook? book)
-        => book == null ? this : new(new HasMagicLibrary([new(book, new())]), defaults, getSection);
+        => book == null ? this : new(new HasMagicLibrary([new(book, new())]), getSection);
 
     /// <summary>
     /// Find the settings according to the names, and (if not null) merge with priority.
@@ -65,7 +61,7 @@ internal class SettingsReader<TSettingsData>(
         {
             // Nothing found, return fallback
             case null:
-                return defaults.Fallback;
+                return new();
 
             // Check if our part declares that it inherits something
             case MagicInheritsBase couldInherit when couldInherit.Inherits.HasText():
@@ -76,13 +72,14 @@ internal class SettingsReader<TSettingsData>(
                 break;
         }
 
+        // 2025-03-26 2dm - disabled concept with foundation; keep code commented for a few days
         // If we don't have a foundation to mix in, we're done
-        if (defaults.Foundation == null)
+        //if (defaults.Foundation == null)
             return priority;
 
-        var mergedNew = MergeHelper.TryToMergeOrKeepPriority(priority, defaults.Foundation)!;
+        //var mergedNew = MergeHelper.TryToMergeOrKeepPriority(priority, defaults.Foundation)!;
 
-        return mergedNew;
+        //return mergedNew;
 
         // Inner function to find settings and merge them
         TSettingsData FindSettingsAndTryMerge(TSettingsData priorityData, string nameToFind)
