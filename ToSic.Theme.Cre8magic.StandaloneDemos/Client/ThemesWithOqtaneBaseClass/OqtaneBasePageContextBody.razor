@@ -1,0 +1,27 @@
+﻿@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+@inherits ThemeBase
+@using ToSic.Cre8magic.OqtaneBs5
+
+@code {
+    public override string Name => PageTitle;
+
+    private const string PageTitle = "Oqtane Base Theme - Page Context Body";
+
+    private const string PageDescription = "This is a standard Oqtane ThemeBase with the PageContext in the Body";
+
+    public override string Panes => PaneNames.Default;
+}
+
+
+
+@* Default box containing menu, intro text etc. - contents is between the tags *@
+<MainDefault Name="@Name" Title="@PageTitle" Description="@PageDescription">
+    @* Add more variations *@
+    <ChildContent>
+        <div>Default - no settings - should auto-apply to the body</div>
+        
+        <!--<CodeSnippetForDocs>-->
+            <MagicPageContext></MagicPageContext>
+        <!--</CodeSnippetForDocs>-->
+    </ChildContent>
+</MainDefault>
