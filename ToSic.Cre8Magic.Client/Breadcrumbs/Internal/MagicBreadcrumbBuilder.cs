@@ -10,7 +10,7 @@ internal class MagicBreadcrumbBuilder(WorkContext workContext)
 
     internal (IEnumerable<IMagicPage> Pages, IMagicPageChildrenFactory ChildrenFactory) Get(MagicBreadcrumbSettings? settings = default)
     {
-        settings ??= MagicBreadcrumbSettings.Defaults.Fallback;
+        settings ??= new();
         var context = new WorkContext<MagicBreadcrumbSettings, IMagicPageTailor>
         {
             Tailor = settings.Tailor,
@@ -63,8 +63,10 @@ internal class MagicBreadcrumbBuilder(WorkContext workContext)
         //// Find first parent page
         var parentPage = endPage.Parent;
 
+        var stable = settings.GetStable();
+
         // Loop through all parent pages until we reach the home page
-        while (parentPage != null && homeId != parentPage.Id && list.Count <= settings.MaxDepth)
+        while (parentPage != null && homeId != parentPage.Id && list.Count <= stable.MaxDepth)
         {
             // Check if not in the list of restrictions
             if (restrictions != null && !restrictions.Contains(parentPage.Id))
@@ -77,12 +79,12 @@ internal class MagicBreadcrumbBuilder(WorkContext workContext)
         }
 
         // Technically home is not in the breadcrumb, it's usually just the first page in the list
-        if (settings.WithHomeSafe)
+        if (stable.WithHome)
             list.Add(generator(_pageFactory.Home));
 
         // Reverse is a setting where the developer will think the breadcrumb is reversed
         // but since we're creating the list in reverse, we must do the opposite check
-        if (!settings.ReverseSafe)
+        if (!stable.Reverse)
             list.Reverse();
 
         return list;

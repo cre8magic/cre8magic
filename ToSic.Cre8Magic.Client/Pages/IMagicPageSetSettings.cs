@@ -18,7 +18,7 @@ public interface IMagicPageSetSettings
     /// Menu ID for use in JavaScript etc.
     /// Usually predefined OR a random number
     /// </summary>
-    string MenuId { get; }
+    string? MenuId { get; }
 
     string? Variant { get; }
 }

@@ -8,7 +8,7 @@ using ToSic.Cre8magic.Tokens;
 namespace ToSic.Cre8magic.Containers;
 
 public class MagicContainerTailor(CmThemeContextFull context, Module module, MagicContainerBlueprint blueprint)
-    : MagicTailorBase(context.PageTokens.Expanded(new ModuleTokens(module)), parts: blueprint.Parts ?? new())
+    : MagicTailorBase(context.PageTokens.Expanded(new ModuleTokens(module)), parts: blueprint.GetStable().Parts)
 {
     public override string? Classes(string tag)
     {

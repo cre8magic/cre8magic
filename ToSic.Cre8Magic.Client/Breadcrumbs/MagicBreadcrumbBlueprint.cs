@@ -1,5 +1,7 @@
-﻿using ToSic.Cre8magic.Settings.Internal;
+﻿using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Tailors;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
@@ -19,15 +21,27 @@ public record MagicBreadcrumbBlueprint : MagicBlueprint, ICanClone<MagicBreadcru
         priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
 
-    internal static Defaults<MagicBreadcrumbBlueprint> DesignDefaults = new()
+    #region Stabilized
+
+    [PrivateApi]
+    public new Stabilized GetStable() => (_stabilized ??= new(new(this))).Value;
+    private IgnoreEquals<Stabilized>? _stabilized;
+
+    /// <summary>
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
+    /// </summary>
+    [PrivateApi]
+    public new record Stabilized(MagicBreadcrumbBlueprint LanguageBlueprint) : MagicBlueprint.Stabilized(LanguageBlueprint)
     {
-        Fallback = new()
-        {
-            Parts = new()
+        [field: AllowNull, MaybeNull]
+        public new Dictionary<string, MagicBlueprintPart> Parts => field
+            ??= LanguageBlueprint.Parts ?? new(StringComparer.OrdinalIgnoreCase)
             {
                 { "li", new() { IsActive = new() { On = "active" } } }
-            },
-        },
-        Foundation = new()
-    };
+            };
+    }
+
+    #endregion
 }

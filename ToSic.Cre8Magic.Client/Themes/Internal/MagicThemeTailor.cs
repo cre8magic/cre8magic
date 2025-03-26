@@ -6,7 +6,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 /// <summary>
 /// Special helper to figure out what classes should be applied to the page. 
 /// </summary>
-public class MagicThemeTailor(CmThemeContextFull context) : MagicTailorBase(context.PageTokens, context.ThemeBlueprint.Parts)
+public class MagicThemeTailor(CmThemeContextFull context) : MagicTailorBase(context.PageTokens, context.ThemeBlueprint.GetStable().Parts)
 {
     private bool PaneIsEmpty(string paneName)
     {
@@ -23,7 +23,7 @@ public class MagicThemeTailor(CmThemeContextFull context) : MagicTailorBase(cont
     /// Special classes for divs surrounding panes pane, especially to indicate when it's empty
     /// </summary>
     public string? PaneClasses(string paneName) =>
-        context?.ThemeBlueprint.PaneIsEmpty.Get(PaneIsEmpty(paneName));
+        context.ThemeBlueprint.GetStable().PaneIsEmpty.Get(PaneIsEmpty(paneName));
 
     // note: currently does special things for the ToTop, may need a standalone Tailor for this...
     public override string? Id(string name)

@@ -48,7 +48,7 @@ public class MagicBreadcrumbTailor : IMagicPageTailor
 
     private List<MagicBlueprintPart> ConfigsForTag(string tag) =>
         DesignSettingsList
-            .Select(c => c?.Parts?.FindInvariant(tag))
+            .Select(c => c?.GetStable().Parts.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 

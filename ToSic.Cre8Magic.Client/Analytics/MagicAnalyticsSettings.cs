@@ -2,6 +2,7 @@
 using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Analytics;
 
@@ -61,7 +62,8 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone<MagicAnalyticsSe
     #region Internal Reader
 
     [PrivateApi]
-    public Stabilized GetStable() => new(this);
+    public Stabilized GetStable() => (_stabilized ??= new(new(this))).Value;
+    private IgnoreEquals<Stabilized>? _stabilized;
 
     /// <summary>
     /// Experimental 2025-03-25 2dm

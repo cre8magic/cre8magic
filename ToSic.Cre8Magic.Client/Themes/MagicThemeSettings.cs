@@ -42,7 +42,8 @@ public record MagicThemeSettings: MagicSettings, IHasDebugSettings, ICanClone<Ma
     #region Stabilized
 
     [PrivateApi]
-    public Stabilized GetStable() => new(this);
+    public Stabilized GetStable() => (_stabilized ??= new(new(this))).Value;
+    private IgnoreEquals<Stabilized>? _stabilized;
 
     /// <summary>
     /// Experimental 2025-03-25 2dm

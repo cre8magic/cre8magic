@@ -35,7 +35,7 @@
         var withRefill = new MagicMenuSettings().Refill(new DefaultsBs5().MagicMenuBlueprint);
 
         // more code to enable debugging
-        var y = withRefill.Blueprint.Parts;
+        var y = withRefill.GetStable().Blueprint.GetStable().Parts;
     }
     <BasicMenu MenuKit="@MagicAct.MenuKit(withRefill)" />
     <MagicDebug Target="@MagicAct.MenuKit(withRefill)"></MagicDebug>

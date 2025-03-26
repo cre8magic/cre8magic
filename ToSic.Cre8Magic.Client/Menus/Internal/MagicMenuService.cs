@@ -30,7 +30,7 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         // Create the Menu Context which is used in various places
         var context = new MagicMenuWorkContext
         {
-            Tailor = newSettings.Tailor,
+            Tailor = newSettings.GetStable().Tailor, // TODO: still nullable... - SHOULD CHANGE
             LogRoot = logRoot,
             PageFactory = pageFactory,
             TokenEngine = settingsSvc.PageTokenEngine(pageState),

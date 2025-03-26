@@ -17,6 +17,7 @@ Please keep updated.
 | Settings Name|           |             |            |              |
 | No Defaults  | ✅        |             |            |              |
 | Stabilize    | ✅        |             |            |              |
+| MergeSettings| ✅        |             |            |              |
 | (tmpl-row)   |           |             |            |              |
 
 
@@ -30,7 +31,18 @@ Please keep updated.
 | Settings Name|           |             |         |            |            |           |       |       | ✅    |              |       |       |
 | No Defaults  | ✅        | 🧑🏽‍💻          |         |            |            | ✅        |       |       |       | ✅          |       |       |
 | Stabilize    | ✅        | 🧑🏽‍💻          |         |            |            | ✅        |       |       |       | ✅          |       |       |
+| MergeSettings|           |             |         |            |            |           |       |       |       |              |       |       |
 | (tmpl-row)   |           |             |         |            |            |           |       |       |       |              |       |       |
+
+
+## Blueprints
+
+| Topic        | Base      | Container |
+|--------------|-----------|-----------|
+| No Defaults  |           |           |
+| Stabilize    |           |           |
+| (tmpl-row)   |           |           |
+| Blueprints   |           |           |
 
 
 ## Other

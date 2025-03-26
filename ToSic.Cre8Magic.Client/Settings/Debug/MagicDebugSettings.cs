@@ -11,6 +11,8 @@ namespace ToSic.Cre8magic.Settings.Debug;
 /// </summary>
 public record MagicDebugSettings
 {
+    #region Constructors and Cloning
+
     /// <summary>
     /// For JSON deserialization
     /// </summary>
@@ -43,6 +45,9 @@ public record MagicDebugSettings
         => (target is not IHasDebugSettings debugTarget ? this : new(debugTarget.Debug, this))
             .Parsed(isAdmin);
 
+    #endregion
+
+
     public bool? Allowed { get; init; }
     internal bool AllowedSafe => Allowed ?? false;
 
@@ -53,7 +58,6 @@ public record MagicDebugSettings
     internal bool AdminSafe => Admin ?? true;
 
     public bool? Detailed { get; init; }
-
 
 
     private bool Merge(bool? priority, bool? fallback) => priority == true || priority == null && fallback == true;

@@ -1,8 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Menus;
 
@@ -28,6 +30,7 @@ public record MagicMenuSettings : MagicSettings, IMagicPageSetSettings, ICanClon
         Show = priority?.Show ?? fallback?.Show;
         Pick = priority?.Pick ?? fallback?.Pick;
         Variant = priority?.Variant ?? fallback?.Variant;
+        MenuId = priority?.MenuId ?? fallback?.MenuId;
 
         // Code-Only Settings
         Tailor = priority?.Tailor ?? fallback?.Tailor;
@@ -41,6 +44,8 @@ public record MagicMenuSettings : MagicSettings, IMagicPageSetSettings, ICanClon
     /// <summary>
     /// A unique ID to identify the menu.
     /// Would be used for debugging but also to help in creating unique css-classes for collapsible menus
+    ///
+    /// Note: possibly not really used, except for the fallback menu ID
     /// </summary>
     public string? Id { get; init; }
     
@@ -50,7 +55,6 @@ public record MagicMenuSettings : MagicSettings, IMagicPageSetSettings, ICanClon
     /// Mainly used for standard menus which could be disabled through settings. 
     /// </summary>
     public bool? Show { get; init; }
-    internal bool ShowSafe => Show ?? true;
 
     //// TODO: NOT YET IMPLEMENTED
     ///// <summary>
@@ -81,20 +85,18 @@ public record MagicMenuSettings : MagicSettings, IMagicPageSetSettings, ICanClon
     /// </summary>
     public string? Variant { get; init; }
 
-
-    [field: AllowNull, MaybeNull]
-    public string MenuId => field ??= SettingHelpers.RandomLongId(Id);
+    /// <summary>
+    /// TODO: unclear, doesn't seem to be used? 
+    /// </summary>
+    public string? MenuId { get; }
 
     #region Code-Only Settings
 
-    [JsonIgnore]    // Not meant for JSON at all...
+    [JsonIgnore]
     public IMagicPageTailor? Tailor { get; init; }
 
     [JsonIgnore]
     public MagicMenuBlueprint? Blueprint { get; init; }
-
-    [field: AllowNull, MaybeNull]
-    internal MagicMenuBlueprint BlueprintSafe => field ??= Blueprint ?? MagicMenuBlueprint.Defaults.Fallback;
 
     MagicMenuBlueprint? IWith<MagicMenuBlueprint?>.WithData { get => Blueprint; init => Blueprint = value; }
 
@@ -104,25 +106,48 @@ public record MagicMenuSettings : MagicSettings, IMagicPageSetSettings, ICanClon
     ///
     /// TODO: NAMING
     /// </summary>
-    [JsonIgnore]    // Not meant for JSON at all...
+    [JsonIgnore]
     [PrivateApi("Not done yet, do not user")]
     public IEnumerable<IMagicPage>? PagesSource { get; init; }
 
     #endregion
 
 
-    internal static Defaults<MagicMenuSettings> Defaults = new()
+    #region Stabilized
+
+    [PrivateApi]
+    public Stabilized GetStable() => (_stabilized ??= new(new(this))).Value;
+    private IgnoreEquals<Stabilized>? _stabilized;
+
+    /// <summary>
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
+    /// </summary>
+    [PrivateApi]
+    public new record Stabilized(MagicMenuSettings MenuSettings) : MagicSettings.Stabilized(MenuSettings)
     {
-        Fallback = new()
-        {
-            Variant = "Horizontal",
-            Pick = StartPageRootSlash.ToString(),
-        },
-        Foundation = new()
-        {
-            Variant = "Horizontal",
-            Pick = StartPageRootSlash.ToString(),
-        },
-    };
+        public string Id => MenuSettings.Id ?? "TODO";
+
+        public bool Show => MenuSettings.Show ?? DefaultShow;
+        public const bool DefaultShow = true;
+
+        public string Pick => MenuSettings.Pick ?? StartPageRootSlash.ToString();
+        public string Variant => MenuSettings.Variant ?? "Horizontal";
+
+        [field: AllowNull, MaybeNull]
+        public string MenuId => field ??= MenuSettings.MenuId ?? SettingHelpers.RandomLongId(MenuSettings.Id);
+
+        // TODO: still nullable... - SHOULD CHANGE
+        public IMagicPageTailor? Tailor => MenuSettings.Tailor;
+
+        [field: AllowNull, MaybeNull]
+        public MagicMenuBlueprint Blueprint => field ??= MenuSettings.Blueprint ?? new();
+
+    }
+
+
+    #endregion
+
 
 }

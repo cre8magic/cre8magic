@@ -18,7 +18,7 @@ public class MagicMenuTailor : IMagicPageTailor
     {
         Settings = workContext.Settings ?? throw new ArgumentNullException(nameof(workContext), $"{nameof(workContext.Settings)} null");
 
-        DesignSettingsList = [Settings.BlueprintSafe];
+        DesignSettingsList = [Settings.GetStable().Blueprint];
 
         // TODO: REACTIVATE, PROBABLY ON ALL MENU DESIGNERS?
         Log = workContext.Settings.Debug?.Detailed == true ? workContext.LogRoot.GetLog(nameof(MagicMenuTailor)) : null;
@@ -53,7 +53,7 @@ public class MagicMenuTailor : IMagicPageTailor
 
     private List<MagicBlueprintPart> ConfigsForTag(string tag) =>
         DesignSettingsList
-            .Select(c => c.Parts.FindInvariant(tag))
+            .Select(c => c.GetStable().Parts.FindInvariant(tag))
             .Where(c => c is not null)
             .ToList()!;
 

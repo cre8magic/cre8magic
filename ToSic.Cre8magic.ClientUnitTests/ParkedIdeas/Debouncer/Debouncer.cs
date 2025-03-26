@@ -2,7 +2,7 @@
 
 public class Debouncer<T> where T : class
 {
-    private T _value;
+    private T? _value;
     private bool generated;
 
     public Debouncer(T value)
@@ -43,7 +43,7 @@ public class Debouncer<T> where T : class
     private Func<T> Generate { get; }
     private Func<bool> KeepFunc { get; }
 
-    public T Get()
+    public T? Get()
     {
         if (generated && KeepFunc())
             return _value;

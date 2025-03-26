@@ -20,7 +20,7 @@ internal record MagicMenuKit : IMagicMenuKit
     /// <summary>
     /// The variant - never null; defaults to ...
     /// </summary>
-    public string Variant => Settings.Variant ?? "";
+    public string Variant => Settings.GetStable().Variant ?? "";
 
     public bool IsVariant(string variant) =>
         Variant.Equals(variant, StringComparison.OrdinalIgnoreCase);

@@ -73,7 +73,8 @@ Nice to know:
         {
             // Workaround for startup - only for this test setup...
             var hasContext = HttpContextAccessor?.HttpContext != null;
-            if (!hasContext) return base.ThemePackage;
+            if (!hasContext)
+                return base.ThemePackage;
 
             var cookie = HttpContextAccessor.HttpContext.Request.Cookies["TestSettings"];
             return string.IsNullOrWhiteSpace(cookie) || cookie == "default"

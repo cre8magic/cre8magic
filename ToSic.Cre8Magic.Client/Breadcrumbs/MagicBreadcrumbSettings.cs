@@ -1,8 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
+using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Pages;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
@@ -25,14 +27,15 @@ public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, IC
     /// </summary>
     private MagicBreadcrumbSettings(MagicBreadcrumbSettings? priority, MagicBreadcrumbSettings? fallback = default): base(priority, fallback)
     {
-        WithActive = priority?.WithActive ?? fallback?.WithActive ?? Defaults.Fallback.WithActive;
-        WithHome = priority?.WithHome ?? fallback?.WithHome ?? Defaults.Fallback.WithHome;
-        MaxDepth = priority?.MaxDepth ?? fallback?.MaxDepth ?? Defaults.Fallback.MaxDepth;
-        Reverse = priority?.Reverse ?? fallback?.Reverse ?? Defaults.Fallback.Reverse;
+        WithActive = priority?.WithActive ?? fallback?.WithActive;
+        WithHome = priority?.WithHome ?? fallback?.WithHome;
+        MaxDepth = priority?.MaxDepth ?? fallback?.MaxDepth;
+        Reverse = priority?.Reverse ?? fallback?.Reverse;
         Pages = priority?.Pages ?? fallback?.Pages;
         Active = priority?.Active ?? fallback?.Active;
         Id = priority?.Id ?? fallback?.Id;
-        Show = priority?.Show ?? fallback?.Show ?? Defaults.Fallback.Show;
+        MenuId = priority?.MenuId ?? fallback?.MenuId;
+        Show = priority?.Show ?? fallback?.Show;
         ActiveId = priority?.ActiveId ?? fallback?.ActiveId;
         Variant = priority?.Variant ?? fallback?.Variant;
 
@@ -65,21 +68,19 @@ public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, IC
     /// </summary>
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
     public bool? WithHome { get; init; }
-    internal bool WithHomeSafe => WithHome ?? true;
 
     /// <summary>
     /// Maximum depth of the breadcrumb, defaults to 10.
     /// This is to ensure that we don't run into infinite loops.
     /// </summary>
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
-    public int MaxDepth { get; init; } = 10;
+    public int? MaxDepth { get; init; }
 
     /// <summary>
     /// If the order of the Breadcrumb should be reversed.
     /// </summary>
     [JsonIgnore] // Marked as JsonIgnore to ensure we know that ATM there is no JSON support expected of this property
     public bool? Reverse { get; init; }
-    internal bool ReverseSafe => Reverse ?? false;
 
     /// <summary>
     /// List of pages to respect when creating the breadcrumb.
@@ -104,10 +105,10 @@ public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, IC
 
     /// <summary>
     /// Determines if this breadcrumb should be shown.
+    ///
+    /// TODO: PROBABLY NOT IMPLEMENTED YET
     /// </summary>
-    // TODO: REVIEW NAME - Show would probably be better!
     public bool? Show { get; init; }
-    internal bool ShowSafe => Show ?? true;
 
     /// <summary>
     /// Start page of this breadcrumb - like home or another specific page.
@@ -118,8 +119,7 @@ public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, IC
     public int? ActiveId { get; init; }
 
 
-    [field: AllowNull, MaybeNull]
-    public string MenuId => field ??= SettingHelpers.RandomLongId(Id);
+    public string? MenuId { get; init; }
 
     public string? Variant { get; init; } // TODO:
 
@@ -132,14 +132,36 @@ public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, IC
     [JsonIgnore]
     public MagicBreadcrumbBlueprint? Blueprint { get; init; }
 
+    #region Stabilized
+
+    [PrivateApi]
+    public Stabilized GetStable() => (_stabilized ??= new(new(this))).Value;
+    private IgnoreEquals<Stabilized>? _stabilized;
 
     /// <summary>
-    /// Defaults - these don't do anything, but we want to use this pattern for consistency.
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
     /// </summary>
-    internal static Defaults<MagicBreadcrumbSettings> Defaults = new()
+    [PrivateApi]
+    public new record Stabilized(MagicBreadcrumbSettings BreadcrumbSettings) : MagicSettings.Stabilized(BreadcrumbSettings)
     {
-        Fallback = new(),
-        Foundation = new(),
-    };
+        public bool Reverse => BreadcrumbSettings.Reverse ?? DefaultReverse;
+        public const bool DefaultReverse = false;
 
+        public bool WithHome => BreadcrumbSettings.WithHome ?? DefaultWithHome;
+        public const bool DefaultWithHome = true;
+
+        public bool WithActive => BreadcrumbSettings.WithActive ?? DefaultWithActive;
+        public const bool DefaultWithActive = true;
+
+        public int MaxDepth => BreadcrumbSettings.MaxDepth ?? DefaultMaxDepth;
+        public const int DefaultMaxDepth = 10;
+
+        [field: AllowNull, MaybeNull]
+        public string MenuId => field ??= BreadcrumbSettings.MenuId ?? SettingHelpers.RandomLongId(BreadcrumbSettings.Id);
+
+    }
+
+    #endregion
 }

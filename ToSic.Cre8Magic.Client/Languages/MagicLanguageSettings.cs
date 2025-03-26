@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 using ToSic.Cre8magic.Internal.Json;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
@@ -64,7 +65,8 @@ public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSett
     #region Stabilized
 
     [PrivateApi]
-    public Stabilized GetStable() => new(this);
+    public Stabilized GetStable() => (_stabilized ??= new(new(this))).Value;
+    private IgnoreEquals<Stabilized>? _stabilized;
 
     /// <summary>
     /// Experimental 2025-03-25 2dm
@@ -83,7 +85,8 @@ public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSett
         [field: AllowNull, MaybeNull]
         public Dictionary<string, MagicLanguage> Languages => field ??= LanguageSettings.Languages ?? new();
 
-        public MagicLanguageBlueprint? Blueprint => LanguageSettings.Blueprint;
+        [field: AllowNull, MaybeNull]
+        public MagicLanguageBlueprint Blueprint => field ??= LanguageSettings.Blueprint ?? new();
     }
 
 
