@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 using Oqtane.Models;
 using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;

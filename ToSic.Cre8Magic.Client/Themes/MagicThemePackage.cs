@@ -1,7 +1,5 @@
-﻿using Oqtane.Models;
-using Oqtane.Themes;
+﻿using Oqtane.Themes;
 using System.Diagnostics.CodeAnalysis;
-using ToSic.Cre8magic.Internal;
 using ToSic.Cre8magic.Settings;
 
 namespace ToSic.Cre8magic.Themes;
@@ -61,6 +59,7 @@ public record MagicThemePackage
     /// </summary>
     public string PackageName { get; init; } = "todo: set theme package name in your constructor";
 
+    // TODO: THIS SHOULD help get access to the proper theme path, but ATM it's not in use so it's not final/standardized
     [field: AllowNull, MaybeNull]
     public string ThemePath => field ??= "Themes/" + PackageName;
 
