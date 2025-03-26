@@ -39,7 +39,7 @@
     <NoWarn>1701;1702;CS0657</NoWarn>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <Compile Remove="Models\**" />
     <Compile Remove="Pages\Internal\Breadcrumb\**" />
     <Compile Remove="Pages\Internal\Menu\**" />
@@ -52,7 +52,7 @@
     <None Remove="Models\**" />
     <None Remove="Pages\Internal\Breadcrumb\**" />
     <None Remove="Pages\Internal\Menu\**" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
