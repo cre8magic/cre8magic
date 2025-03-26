@@ -1,4 +1,5 @@
 using Oqtane.Models;
+using Oqtane.Shared;
 using Oqtane.Themes;
 using ToSic.Cre8magic.OqtaneBasic;
 
@@ -18,7 +19,26 @@ public class ThemeInfo : ITheme
 
         // Package Name - used for NuGet and also for paths
         PackageName = "ToSic.Cre8magic.TestTheme",
-        Dependencies = typeof(MagicTheme).AssemblyQualifiedName
+        Dependencies = typeof(MagicTheme).AssemblyQualifiedName,
+        Resources =
+        [
+            new()
+            {
+                ResourceType = ResourceType.Stylesheet,
+                Url = "~/theme.min.css"
+            }, // Bootstrap generated with Sass/Webpack
+            new()
+            {
+                ResourceType = ResourceType.Script,
+                Url = "~/bootstrap.bundle.min.js"
+            }, // Bootstrap JS
+            new()
+            {
+                ResourceType = ResourceType.Script,
+                Url = "~/test.js"
+            }, // Bootstrap JS
+            ..MagicResources.GetAll(),
+        ],
     };
 
 }

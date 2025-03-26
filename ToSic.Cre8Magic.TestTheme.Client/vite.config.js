@@ -4,7 +4,8 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 import autoprefixer from 'autoprefixer';
 import fs from 'fs';
 
-const themeName = 'ToSic.Cre8magic.TestTheme';
+// This is ugly, but ATM how it's done in Oqtane
+const themeName = 'ToSic.Cre8magic.TestTheme.Client';
 const distFolder = `wwwroot/Themes/${themeName}`;
 // const oqtaneTarget = resolve(__dirname, `../../oqtane.framework/Oqtane.Server/wwwroot/Themes`);
 

@@ -63,10 +63,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\DO-NOT-WORK-IN-THIS-FOLDER.md" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Containers\SystemContainer.razor.old" />
   </ItemGroup>
 
@@ -89,10 +85,10 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <!-- <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+   <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Condition="'$(Configuration)' == 'Debug'" Command="npm run dev" />
     <Exec Condition="'$(Configuration)' == 'Release'" Command="npm run build" />
-  </Target> -->
+  </Target>--> 
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Condition="'$(OS)' == 'Windows_NT' And '$(Configuration)' == 'Debug'" Command="./Package\debug.cmd $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))"  />

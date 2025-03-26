@@ -1,6 +1,4 @@
-﻿using Oqtane.Models;
-using Oqtane.Shared;
-using ToSic.Cre8magic.Internal;
+﻿using Oqtane.Shared;
 
 // ReSharper disable once CheckNamespace
 namespace ToSic.Cre8magic.TestTheme.Client;
@@ -18,26 +16,6 @@ namespace ToSic.Cre8magic.TestTheme.Client;
 /// </remarks>
 public abstract class MyThemeBase : ToSic.Cre8magic.OqtaneBs5.MagicTheme
 {
-    /// <summary>
-    /// Standard Oqtane Resources
-    /// </summary>
-    public override List<Resource> Resources => ThemePackage == null
-        ? null
-        :
-        [
-            new()
-            {
-                ResourceType = ResourceType.Stylesheet,
-                Url = $"{ThemePackage.Url}/theme.min.css"
-            }, // Bootstrap generated with Sass/Webpack
-            new()
-            {
-                ResourceType = ResourceType.Script,
-                Url = $"{ThemePackage.Url}/bootstrap.bundle.min.js"
-            }, // Bootstrap JS
-            ..MagicResources.GetAll(),
-        ];
-
     /// <summary>
     /// The layout name which is used to select the named settings for this theme.
     /// </summary>
