@@ -15,6 +15,8 @@ Please keep updated.
 | Oqt BS5 Ctl  | ✅/⌛     | ✅          |            |              |
 | Demo Oqt Th. |           |             |            |              |
 | Settings Name|           |             |            |              |
+| No Defaults  | ✅        |             |            |              |
+| Stabilize    | ✅        |             |            |              |
 | (tmpl-row)   |           |             |            |              |
 
 

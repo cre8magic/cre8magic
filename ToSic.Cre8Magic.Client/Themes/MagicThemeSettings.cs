@@ -18,11 +18,9 @@ public record MagicThemeSettings: MagicSettings, IHasDebugSettings, ICanClone<Ma
     private MagicThemeSettings(MagicThemeSettings? priority, MagicThemeSettings? fallback = default)
         : base(priority, fallback)
     {
-        Logo = priority?.Logo ?? fallback?.Logo ?? Defaults.Fallback.Logo;
+        Logo = priority?.Logo ?? fallback?.Logo;
 
         Parts = MergeHelper.CloneMergeDictionaries(priority?.Parts, fallback?.Parts);
-
-        Debug = priority?.Debug ?? fallback?.Debug;
     }
 
     MagicThemeSettings ICanClone<MagicThemeSettings>.CloneUnder(MagicThemeSettings? priority, bool forceCopy) =>
@@ -39,10 +37,28 @@ public record MagicThemeSettings: MagicSettings, IHasDebugSettings, ICanClone<Ma
     /// The parts of this theme, like breadcrumb and various menu configs
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicThemePartSettings>))]
-    public Dictionary<string, MagicThemePartSettings> Parts { get; init; } = new();
+    public Dictionary<string, MagicThemePartSettings>? Parts { get; init; }
 
-    internal static Defaults<MagicThemeSettings> Defaults = new(new()
+    #region Stabilized
+
+    [PrivateApi]
+    public Stabilized GetStable() => new(this);
+
+    /// <summary>
+    /// Experimental 2025-03-25 2dm
+    /// Purpose is to allow all settings to be nullable, but have a robust reader that will always return a value,
+    /// so that the code using the values doesn't need to check for nulls.
+    /// </summary>
+    [PrivateApi]
+    public new record Stabilized(MagicThemeSettings ThemeSettings) : MagicSettings.Stabilized(ThemeSettings)
     {
-        Logo = "unknown-logo.png",
-    });
+        public string Logo => ThemeSettings.Logo ?? DefaultLogo;
+        public const string DefaultLogo = "unknown-logo.png";
+
+        public Dictionary<string, MagicThemePartSettings> Parts => ThemeSettings.Parts ?? new();
+
+    }
+
+
+    #endregion
 }

@@ -17,13 +17,13 @@ internal record MagicThemeKit : IMagicThemeKit, IHasPageState
     public required MagicThemeTailor Tailor { get; init; }
 
     [field: AllowNull, MaybeNull]
-    public string Logo => field ??= Context.PageTokens.Parse(Settings.Logo) ?? "";
+    public string Logo => field ??= Context.PageTokens.Parse(Settings.GetStable().Logo);
 
     /// <summary>
     /// Determine if we should show a specific part
     /// </summary>
     public bool ShowPart(string name) =>
-        Settings.Parts.TryGetValue(name, out var partSettings) && partSettings.Show == true;
+        Settings.GetStable().Parts.TryGetValue(name, out var partSettings) && partSettings.Show == true;
 
     public DebugInfo GetDebugInfo()
     {

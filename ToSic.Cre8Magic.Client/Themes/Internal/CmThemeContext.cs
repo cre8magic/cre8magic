@@ -9,7 +9,7 @@ namespace ToSic.Cre8magic.Themes.Internal;
 public record CmThemeContext
 {
     [field: AllowNull, MaybeNull]
-    internal ThemePartNameResolver NameResolver => field ??= new(this.Name, this.ThemeSettings.Parts);
+    internal ThemePartNameResolver NameResolver => field ??= new(Name, ThemeSettings.GetStable().Parts);
 
     /// <summary></summary>
     public required string Name { get; init; }

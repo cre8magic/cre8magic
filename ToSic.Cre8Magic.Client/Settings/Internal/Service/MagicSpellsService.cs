@@ -167,7 +167,7 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     [field: AllowNull, MaybeNull]
     private SettingsReader<MagicThemeSettings> Themes => field
-        ??= new(this, MagicThemeSettings.Defaults, book => book.Themes);
+        ??= new(this, new(), book => book.Themes);
 
     [field: AllowNull, MaybeNull]
     public SettingsReader<MagicThemeBlueprint> ThemeBlueprints => field

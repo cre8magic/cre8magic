@@ -19,7 +19,7 @@ internal class GetSettings(IMagicSettingsService settingsSvc, PageState? pageSta
     /// Find Part which contains information for these settings,
     /// e.g. what to show
     /// </summary>
-    internal MagicThemePartSettings? Part => field ??= ThemeCtx.ThemeSettings.Parts.GetValueOrDefault(name ?? "dummy-prevent-error");
+    internal MagicThemePartSettings? Part => field ??= ThemeCtx.ThemeSettings.GetStable().Parts.GetValueOrDefault(name ?? "dummy-prevent-error");
 
     /// <summary>
     /// Special helper to get settings and design settings.

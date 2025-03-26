@@ -1,8 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using ToSic.Cre8magic.Internal;
 using ToSic.Cre8magic.Pages;
-using ToSic.Cre8magic.Utils;
-
 
 namespace ToSic.Cre8magic.Tokens;
 
@@ -50,6 +49,7 @@ public class TokenEngine: ITokenReplace
     }
 
 
+    [return: NotNullIfNotNull("value")]
     public string? Parse(string? value)
     {
         if (!value.HasValue() || !value.Contains(MagicTokens.PlaceholderMarker))

@@ -79,6 +79,11 @@ You can of course add your own rules with other placeholders to make this happen
 As of 2022-10 there are no magic context classes for languages yet, as Oqtane doesn't fully support Multi-Language.
 We'll add it as soon as possible.
 
+## Pending Tasks
+
+1. Final naming not quite clear, if `PageContext` is really good for describing this
+1. There is a built-in variant-for-menu which doesn't feel quite right in the defaults
+
 ---
 
 ## History
