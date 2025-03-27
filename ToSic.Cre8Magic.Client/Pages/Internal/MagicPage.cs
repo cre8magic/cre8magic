@@ -2,6 +2,7 @@
 using Oqtane.Models;
 using ToSic.Cre8magic.Menus.Internal.PagePicker;
 using ToSic.Cre8magic.Pages.Internal.PageDesign;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
@@ -93,16 +94,16 @@ internal record MagicPage : MagicPageBase,
     #endregion
 
     [field: AllowNull, MaybeNull]
-    private IPageDesignHelperWip DesignHelper
+    internal IMagicTailor Tailor
         => field ??= _childrenFactory.PageDesignHelper(this);
 
     /// <inheritdoc />
     public virtual string? Classes(string tagOrKey)
-        => DesignHelper.Classes(tagOrKey);
+        => Tailor.Classes(tagOrKey);
 
     /// <inheritdoc />
     public virtual string? Value(string tagOrKey)
-        => DesignHelper.Value(tagOrKey);
+        => Tailor.Value(tagOrKey);
 
     internal PagesPickRule? NodeRule { get; init; }
 

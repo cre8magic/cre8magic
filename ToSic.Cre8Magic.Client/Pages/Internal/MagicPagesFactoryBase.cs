@@ -2,6 +2,7 @@
 using ToSic.Cre8magic.Internal.Logging;
 using ToSic.Cre8magic.Pages.Internal.PageDesign;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 using ToSic.Cre8magic.Tokens;
 
 namespace ToSic.Cre8magic.Pages.Internal;
@@ -19,7 +20,7 @@ internal abstract class MagicPagesFactoryBase(WorkContext workContext) : IMagicP
 
     protected abstract IMagicPageTailor PageTailor();
 
-    public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page, PageTailor());
+    public IMagicTailor PageDesignHelper(IMagicPage page) => new PageDesignHelperWip(this, page, PageTailor());
 
 
     #region Children

@@ -1,12 +1,10 @@
-﻿namespace ToSic.Cre8magic.Pages.Internal.PageDesign;
+﻿using ToSic.Cre8magic.Tailors;
 
-internal class PageDesignHelperBlank: IPageDesignHelperWip
+namespace ToSic.Cre8magic.Pages.Internal.PageDesign;
+
+internal class PageDesignHelperBlank: IMagicTailor
 {
-
-    ///// <inheritdoc cref="IMagicPageList.Classes" />
     public string? Classes(string tag) => null;
-
-    ///// <inheritdoc cref="IMagicPageList.Value" />
     public string? Value(string key) => null;
-
+    public string? Id(string target) => null;
 }

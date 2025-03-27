@@ -1,31 +1,12 @@
-﻿@using Oqtane.UI
-@using ToSic.Cre8magic.Act
-@using ToSic.Cre8magic.Breadcrumbs
-@using ToSic.Cre8magic.Pages
-@using ToSic.Cre8magic.Settings
-
-@namespace ToSic.Cre8magic.OqtaneBs5
+﻿@namespace ToSic.Cre8magic.OqtaneBs5
 @inherits ComponentBase
 
-@inject IMagicAct MagicAct
-@code {
-    [CascadingParameter]
-    public required PageState PageState { get; set; }
-
-    [Parameter]
-    public MagicBreadcrumbSettings? Settings { get; set; }
-
-    // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
-
-    [Parameter]
-    public IMagicPageTailor Tailor { get; set; } = new MagicBreadcrumbTailorBs5();
-}
 @{
-    var breadcrumbKit = MagicAct.BreadcrumbKit(Settings.With(PageState).Refill(Tailor));
+    var kit = GetBreadcrumbKit();
 }
-<nav aria-label="breadcrumb">
-    <ol class='@breadcrumbKit.Root.Classes("ol")'>
-        @foreach (var item in breadcrumbKit.Pages)
+<nav aria-label="breadcrumb" class="@kit.Tailor.Classes("nav")">
+    <ol class='@kit.Tailor.Classes("ol")'>
+        @foreach (var item in kit.Pages)
         {
             <li class='@item.Classes("li")'>
                 @* TODO: IMPROVE HasLink / UseLink, etc. *@

@@ -1,4 +1,5 @@
 ﻿using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Breadcrumbs;
 
@@ -21,4 +22,6 @@ public interface IMagicBreadcrumbKit
     /// The code must decide if it respects this or not.
     /// </summary>
     bool Show { get; }
+
+    IMagicTailor Tailor { get; }
 }

@@ -8,6 +8,7 @@ using ToSic.Cre8magic.Internal.Logging;
 using ToSic.Cre8magic.Menus.Internal.PagePicker;
 using ToSic.Cre8magic.Pages.Internal.PageDesign;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Tailors;
 using Log = ToSic.Cre8magic.Internal.Logging.Log;
 
 namespace ToSic.Cre8magic.Pages.Internal;
@@ -16,7 +17,8 @@ namespace ToSic.Cre8magic.Pages.Internal;
 /// Factory to create Magic Pages.
 /// This is necessary, because the pages need certain properties which require other services to be available.
 /// </summary>
-public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false, LogRoot? logRoot = default): IMagicPageChildrenFactory
+public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? restrictPages = default, bool ignorePermissions = false, LogRoot? logRoot = default)
+    : IMagicPageChildrenFactory
 {
     internal PageState PageState => pageState ?? throw new ArgumentNullException(nameof(pageState));
 
@@ -28,7 +30,6 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
         TokenEngine = new()
     };
 
-    // TODO: MAKE use context ? 
     [field: AllowNull, MaybeNull]
     internal Log Log => field ??= WorkContext.LogRoot.GetLog("pageFact");
 
@@ -140,7 +141,7 @@ public class MagicPageFactory(PageState pageState, IEnumerable<IMagicPage>? rest
             .Cast<IMagicPage>()
             .ToList();
 
-    public IPageDesignHelperWip PageDesignHelper(IMagicPage page) => new PageDesignHelperBlank();
+    public IMagicTailor PageDesignHelper(IMagicPage page) => new PageDesignHelperBlank();
 
     #endregion
 

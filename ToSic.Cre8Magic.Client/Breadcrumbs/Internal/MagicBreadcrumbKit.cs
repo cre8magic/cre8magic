@@ -1,4 +1,7 @@
-﻿using ToSic.Cre8magic.Pages;
+﻿using System.Diagnostics.CodeAnalysis;
+using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Breadcrumbs.Internal;
 
@@ -11,4 +14,7 @@ internal record MagicBreadcrumbKit : IMagicBreadcrumbKit
     public required bool Show { get; init; }
 
     public required IMagicPage Root { get; init; }
+
+    [field: AllowNull, MaybeNull]
+    public IMagicTailor Tailor => field ??= ((MagicPage)Root).Tailor;
 }

@@ -1,4 +1,4 @@
-﻿using ToSic.Cre8magic.Pages.Internal.PageDesign;
+﻿using ToSic.Cre8magic.Tailors;
 
 namespace ToSic.Cre8magic.Pages.Internal;
 
@@ -13,5 +13,5 @@ internal interface IMagicPageChildrenFactory
     /// <returns></returns>
     List<IMagicPage> ChildrenOf(IMagicPage page);
 
-    IPageDesignHelperWip PageDesignHelper(IMagicPage page);
+    IMagicTailor PageDesignHelper(IMagicPage page);
 }
