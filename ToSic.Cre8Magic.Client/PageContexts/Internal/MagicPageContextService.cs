@@ -13,8 +13,8 @@ internal class MagicPageContextService(IMagicSettingsService settingsSvc, IMagic
 
     private IMagicPageContextKit BuildKit(PageState pageState, MagicPageContextSettings? settings)
     {
-        var (settingsData, _) = new GetSettings(settingsSvc, pageState, settings?.Name)
-            .GetBest(settings, settingsSvc.PageContexts);
+        var gs = new GetSettings(settingsSvc, pageState, settings?.Name);
+        var (settingsData, _) = gs.GetBest(settings);
 
         var themeCtx = settingsSvc.GetThemeContextFull(pageState);
 

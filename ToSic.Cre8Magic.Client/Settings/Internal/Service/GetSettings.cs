@@ -2,6 +2,7 @@
 using Oqtane.UI;
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Settings.Debug.Internal;
+using ToSic.Cre8magic.Tailors;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
@@ -50,35 +51,30 @@ internal class GetSettings(IMagicSettingsService settingsSvc, PageState? pageSta
         return dataWithJournal;
     }
 
-    public DataWithJournal<TSettings> GetBest<TSettings>(TSettings? settings)
-        where TSettings : MagicSettings, new()
+    public DataWithJournal<TSettings> GetBest<TSettings>(TSettings? settings, ThemePartSectionEnum section = ThemePartSectionEnum.Settings)
+        where TSettings : MagicInheritsBase, new()
     {
-        // Get best settings
+        // Ask the settings
         var settingsReader = settingsSvc.GetReader<TSettings>();
-        var newSettings = GetBest(settings, settingsReader);
+        var newSettings = GetBest(settings, settingsReader, section);
 
         return newSettings;
     }
 
-    public Data2WithJournal<TSettings, MagicThemePartSettings?> GetBestPair<TSettings, TBlueprint>(TSettings? settings)
+    public DataWithJournal<TSettings> GetBestPair<TSettings, TBlueprint>(TSettings? settings)
         where TSettings : MagicSettings, IWith<TBlueprint?>, new()
-        where TBlueprint : class, new()
+        where TBlueprint : MagicBlueprint, new()
     {
         // Get best settings
-        var settingsReader = settingsSvc.GetReader<TSettings>();
-        var newSettings = GetBest(settings, settingsReader);
+        var newSettings = GetBest(settings);
 
-        var blueprintReader = settingsSvc.GetReader<TBlueprint>();
-        var blueprint = GetBest(
-            // The Blueprint accessed through the IWith interface
-            (settings as IWith<TBlueprint>)?.WithData,
-            blueprintReader,
-            ThemePartSectionEnum.Design
-        );
+        // The Blueprint accessed through the IWith interface
+        var previousBlueprint = (settings as IWith<TBlueprint>)?.WithData;
+        var blueprint = GetBest(previousBlueprint, ThemePartSectionEnum.Design);
 
         var mergedWithBlueprint = newSettings.Data.With(blueprint.Data);
 
-        return new(mergedWithBlueprint, Part, newSettings.Journal.With(blueprint.Journal));
+        return new(mergedWithBlueprint, newSettings.Journal.With(blueprint.Journal));
     }
 
 }

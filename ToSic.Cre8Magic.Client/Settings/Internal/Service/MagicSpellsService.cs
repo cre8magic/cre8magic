@@ -1,17 +1,13 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Oqtane.UI;
-using ToSic.Cre8magic.Analytics;
-using ToSic.Cre8magic.Breadcrumbs;
-using ToSic.Cre8magic.Containers;
 using ToSic.Cre8magic.Internal.Journal;
-using ToSic.Cre8magic.Menus;
-using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
 using static ToSic.Cre8magic.MagicConstants;
+// ReSharper disable RedundantAccessorBody
 
 namespace ToSic.Cre8magic.Settings.Internal;
 
@@ -65,7 +61,6 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
     }
 
     [field: AllowNull, MaybeNull]
-    // ReSharper disable once RedundantAccessorBody
     private ThemeTokens ThemeTokens { get => field ??= new(ThemePackage); set => field = value; }
 
     #region Theme Context
@@ -133,14 +128,6 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
     public List<DataWithJournal<MagicBook>> Library =>
         libraryLoader.Books(ThemePackage, cache: false);
 
-    #region Analytics
-
-    [field: AllowNull, MaybeNull]
-    SettingsReader<MagicAnalyticsSettings> IMagicSettingsService.Analytics => field
-        ??= new(this, book => book.Analytics);
-
-    #endregion
-
     #region Generic Readers
 
     /// <summary>
@@ -151,27 +138,6 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
     public SettingsReader<TSettings> GetReader<TSettings>()
         where TSettings : class, new() =>
         new(this, book => book.GetSection<TSettings>());
-
-    #endregion
-
-
-    #region Breadcrumbs
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicBreadcrumbSettings> Breadcrumbs => field ??=
-        new(this, book => book.Breadcrumbs);
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicBreadcrumbBlueprint> BreadcrumbBlueprints => field
-        ??= new(this, book => book.BreadcrumbBlueprints);
-
-    #endregion
-
-    #region PageContexts
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicPageContextSettings> PageContexts => field
-        ??= new(this, book => book.PageContexts);
 
     #endregion
 
@@ -187,40 +153,5 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     #endregion
 
-    #region Languages
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicLanguageSettings> Languages => field
-        ??= new(this, book => book.Languages);
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicLanguageBlueprint> LanguageBlueprints => field
-        ??= new(this, book => book.LanguageBlueprints);
-
-    #endregion
-
-    #region Containers
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicContainerSettings> Containers => field
-        ??= new(this, book => book.Containers);
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicContainerBlueprint> ContainerBlueprints => field
-        ??= new(this, book => book.ContainerBlueprints);
-
-    #endregion
-
-    #region Menus
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicMenuSettings> Menus => field
-        ??= new(this, book => book.Menus);
-
-    [field: AllowNull, MaybeNull]
-    public SettingsReader<MagicMenuBlueprint> MenuBlueprints => field
-        ??= new(this, book => book.MenuBlueprints);
-
-    #endregion
 
 }

@@ -4,9 +4,7 @@ using Microsoft.JSInterop;
 using Oqtane.Shared;
 using Oqtane.UI;
 using ToSic.Cre8magic.Internal;
-using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Settings.Internal;
-using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Utils;
 
 
@@ -28,7 +26,10 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
     
     private IMagicLanguageKit CreateState(PageState pageState, MagicLanguageSettings? settings)
     {
-        var (settingsFull, themePart, journal) = MergeSettings(pageState, settings);
+        var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
+        var (settingsFull, _) = getSettings
+            .GetBestPair<MagicLanguageSettings, MagicLanguageBlueprint>(settings);
+        var themePart = getSettings.Part;
 
         var languages = LanguagesToShow(pageState, settingsFull);
         var show = themePart?.Show != false
@@ -43,15 +44,7 @@ internal class MagicLanguageService(NavigationManager navigation, IJSRuntime jsR
             Service = this,
         };
     }
-
-    private Data2WithJournal<MagicLanguageSettings, MagicThemePartSettings?> MergeSettings(PageState pageState, MagicLanguageSettings? settings)
-    {
-        var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
-        var newSettings = getSettings.GetBest(settings, settingsSvc.Languages);
-        var blueprint = getSettings.GetBest(settings?.Blueprint, settingsSvc.LanguageBlueprints, ThemePartSectionEnum.Design);
-        return new(newSettings.Data with { Blueprint = blueprint.Data }, getSettings.Part, newSettings.Journal.With(blueprint.Journal));
-    }
-
+    
 
     private List<MagicLanguage> LanguagesToShow(PageState pageState, MagicLanguageSettings settings)
     {

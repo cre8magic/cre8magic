@@ -7,7 +7,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Languages;
 
-public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSettings>
+public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSettings>, IWith<MagicLanguageBlueprint?>
 {
     /// <summary>
     /// Dummy constructor so better find cases where it's created
@@ -62,6 +62,9 @@ public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSett
     [JsonIgnore]
     public MagicLanguageBlueprint? Blueprint { get; init; }
 
+    MagicLanguageBlueprint? IWith<MagicLanguageBlueprint?>.WithData { get => Blueprint; init => Blueprint = value; }
+
+
     #region Stabilized
 
     [PrivateApi]
@@ -91,4 +94,5 @@ public record MagicLanguageSettings : MagicSettings, ICanClone<MagicLanguageSett
 
 
     #endregion
+
 }

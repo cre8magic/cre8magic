@@ -6,7 +6,7 @@ using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Containers;
 
-public record MagicContainerSettings: MagicSettings, ICanClone<MagicContainerSettings>, IWith<Module?>
+public record MagicContainerSettings: MagicSettings, ICanClone<MagicContainerSettings>, IWith<Module?>, IWith<MagicContainerBlueprint?>
 {
     [PrivateApi]
     public MagicContainerSettings() { }
@@ -23,6 +23,8 @@ public record MagicContainerSettings: MagicSettings, ICanClone<MagicContainerSet
 
     [JsonIgnore]
     public MagicContainerBlueprint? Blueprint { get; init; }
+
+    MagicContainerBlueprint? IWith<MagicContainerBlueprint?>.WithData { get => Blueprint; init => Blueprint = value; }
 
     public Module? ModuleState { get; init; }
 

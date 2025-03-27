@@ -16,9 +16,12 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
 
     public IMagicMenuKit MenuKit(PageState pageState, MagicMenuSettings? settings = null)
     {
-        var (newSettings, journal) = // NoInheritSettingsWip
-            //? new(settings ?? new(), new())
-            /*:*/ MergeSettings(pageState, settings);
+        var gs = new GetSettings(settingsSvc, pageState, settings?.Name);
+        var (newSettings, journal) = gs.GetBestPair<MagicMenuSettings, MagicMenuBlueprint>(settings);
+
+        //var (newSettings, journal) = // NoInheritSettingsWip
+        //    //? new(settings ?? new(), new())
+        //    /*:*/ MergeSettings(pageState, settings);
 
         // Transfer Logs from Tree creation to the current log
         var logRoot = new LogRoot();
@@ -52,11 +55,4 @@ public class MagicMenuService(IMagicSettingsService settingsSvc): IMagicMenuServ
         return kit;
     }
 
-    private DataWithJournal<MagicMenuSettings> MergeSettings(PageState pageState, MagicMenuSettings? settings)
-    {
-        var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
-        var newSettings = getSettings.GetBest(settings, settingsSvc.Menus);
-        var blueprint = getSettings.GetBest(settings?.Blueprint, settingsSvc.MenuBlueprints, ThemePartSectionEnum.Design);
-        return new(newSettings.Data with { Blueprint = blueprint.Data }, newSettings.Journal.With(blueprint.Journal));
-    }
 }

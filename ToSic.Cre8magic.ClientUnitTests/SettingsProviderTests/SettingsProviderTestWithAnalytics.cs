@@ -50,7 +50,7 @@ public class SettingsProviderTestWithAnalytics
         // Settings, without GtmId, so that it would receive it from original when merging
         var analytics = new MagicAnalyticsSettings { Name = currentName };
         var retrieved2 = new GetSettings(settingsSvc, null, analytics.Name)
-            .GetBest(analytics, settingsSvc.Analytics);
+            .GetBest(analytics);
         Assert.Equal(expectNoMerge ? analytics.GtmId : original.GtmId, retrieved2.Data.GtmId);
     }
 
@@ -79,7 +79,7 @@ public class SettingsProviderTestWithAnalytics
         });
 
         var retrieved = new GetSettings(settingsSvc, null, searchName)
-            .GetBest(new MagicAnalyticsSettings { Name = searchName }, settingsSvc.Analytics);
+            .GetBest(new MagicAnalyticsSettings { Name = searchName }/*, settingsSvc.Analytics*/);
 
         Assert.Equal(expected, retrieved.Data.GtmId);
     }
