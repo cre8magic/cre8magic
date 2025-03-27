@@ -89,12 +89,12 @@
 
 
   <h1 id="ToSic_Cre8magic_Settings_MagicSettingsExtensions" data-uid="ToSic.Cre8magic.Settings.MagicSettingsExtensions" class="text-break">
-Class MagicSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L16"><i class="bi bi-code-slash"></i></a>
+Class MagicSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L12"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Settings.html">Settings</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>Extensions for working with MagicSettings,
@@ -123,11 +123,6 @@ to make the API more fluent and easier to use.</p>
 
 
 
-  <h2 id="ToSic_Cre8magic_Settings_MagicSettingsExtensions_remarks">Remarks</h2>
-  <div class="markdown level0 remarks"><p>Despite it being related to Settings (which would normally be in <a class="xref" href="ToSic.Cre8magic.Settings.html">ToSic.Cre8magic.Settings</a>),
-it's in the Act namespace because it's usually used in the basic work which starts in this namespace.</p>
-<p>This makes it easier for most components to just use this namespace and little else.</p>
-</div>
 
 
   <h2 class="section" id="methods">Methods
@@ -138,12 +133,10 @@ it's in the Act namespace because it's usually used in the basic work which star
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsExtensions.Refill``1(``0,Oqtane.UI.PageState)">
   Refill&lt;TSettings&gt;(TSettings?, PageState)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Fill in the PageState if not yet set.
-This is to set the value if it's missing, but preserve any existing one.
-Alternative is <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_String_">With&lt;TSettings&gt;(TSettings?, PageState, string?)</a></p>
+  <div class="markdown level1 summary"><p>Fill in the PageState if not yet set.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -179,6 +172,10 @@ Alternative is <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExten
 
 
 
+  <h4 class="section" id="ToSic_Cre8magic_Settings_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is to set the value if it's missing, but preserve any existing one.
+Alternative is <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_String_">With&lt;TSettings&gt;(TSettings?, PageState, string?)</a></p>
+</div>
 
 
 
@@ -187,10 +184,11 @@ Alternative is <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExten
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsExtensions_Refill__2___0___1_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsExtensions.Refill``2(``0,``1)">
   Refill&lt;TSettings, TWith&gt;(TSettings?, TWith?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L48"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Fill in missing data of a specific type if the underlying value is not set.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -224,6 +222,13 @@ Alternative is <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExten
 
 
 
+  <h4 class="section" id="ToSic_Cre8magic_Settings_MagicSettingsExtensions_Refill__2___0___1__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is to set the value if it's missing, but preserve any existing one.
+Alternative is <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_String_">With&lt;TSettings&gt;(TSettings?, PageState, string?)</a></p>
+<p>This is used for various kinds of data which expects refilling.
+The target Settings must expect this kind of refill for the API to work.
+Otherwise, you would get a compile-time error.</p>
+</div>
 
 
 
@@ -232,12 +237,10 @@ Alternative is <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExten
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_String_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``1(``0,Oqtane.UI.PageState,System.String)">
   With&lt;TSettings&gt;(TSettings?, PageState, string?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Add a PageState to a settings object.
-This uses normal record <code>with</code> manipulations, so it creates a new object but preserves all other settings.
-Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_">Refill&lt;TSettings&gt;(TSettings?, PageState)</a></p>
+  <div class="markdown level1 summary"><p>Add a PageState to a settings object.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -267,7 +270,7 @@ Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Settin
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TSettings</code></dt>
-    <dd><p>The settings-type we're updating.</p>
+    <dd><p>The settings we're updating.</p>
 </dd>
   </dl>
 
@@ -276,6 +279,10 @@ Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Settin
 
 
 
+  <h4 class="section" id="ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__1___0_Oqtane_UI_PageState_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This uses normal record <code>with</code> manipulations, so it creates a new object but preserves all other settings.
+Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettingsExtensions.html#ToSic_Cre8magic_Settings_MagicSettingsExtensions_Refill__1___0_Oqtane_UI_PageState_">Refill&lt;TSettings&gt;(TSettings?, PageState)</a></p>
+</div>
 
 
 
@@ -284,7 +291,7 @@ Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Settin
 
   <h3 id="ToSic_Cre8magic_Settings_MagicSettingsExtensions_With__2___0___1_" data-uid="ToSic.Cre8magic.Settings.MagicSettingsExtensions.With``2(``0,``1)">
   With&lt;TSettings, TWith&gt;(TSettings?, TWith?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -329,7 +336,7 @@ Alternative when only filling empty <a class="xref" href="ToSic.Cre8magic.Settin
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L16" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicSettingsExtensions.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 

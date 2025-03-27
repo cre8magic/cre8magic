@@ -89,12 +89,12 @@
 
 
   <h1 id="ToSic_Cre8magic_Menus_MagicMenuSettings" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings" class="text-break">
-Class MagicMenuSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L17"><i class="bi bi-code-slash"></i></a>
+Class MagicMenuSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L18"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Menus.html">Menus</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>The raw settings for a menu, in a way which can be stored elsewhere.</p>
@@ -139,9 +139,6 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
     <div>
       <a class="xref" href="ToSic.Cre8magic.Settings.MagicSettings.html#ToSic_Cre8magic_Settings_MagicSettings_Debug">MagicSettings.Debug</a>
     </div>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.MagicInheritsBase.html#ToSic_Cre8magic_Settings_MagicInheritsBase_Inherits">MagicInheritsBase.Inherits</a>
-    </div>
   </dd></dl>
 
   <dl class="typelist extensionMethods">
@@ -176,7 +173,7 @@ Class MagicMenuSettings  <a class="header-action link-secondary" title="View sou
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Blueprint" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Blueprint">
   Blueprint
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L97"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -208,11 +205,12 @@ public MagicMenuBlueprint? Blueprint { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Id" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Id">
   Id
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>A unique ID to identify the menu.
 Would be used for debugging but also to help in creating unique css-classes for collapsible menus</p>
+<p>Note: possibly not really used, except for the fallback menu ID</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -241,16 +239,15 @@ Would be used for debugging but also to help in creating unique css-classes for 
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_MenuId" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.MenuId">
   MenuId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Menu ID for use in JavaScript etc.
-Usually predefined OR a random number</p>
+  <div class="markdown level1 summary"><p>TODO: unclear, doesn't seem to be used?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string MenuId { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string? MenuId { get; }</code></pre>
   </div>
 
 
@@ -274,7 +271,7 @@ Usually predefined OR a random number</p>
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Pick" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Pick">
   Pick
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L74"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Start page of this navigation - like home or another specific page.
@@ -314,7 +311,7 @@ Can be</p>
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Show" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Show">
   Show
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines if this navigation should be shown.
@@ -347,7 +344,7 @@ Mainly used for standard menus which could be disabled through settings.</p>
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Tailor" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Tailor">
   Tailor
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -379,7 +376,7 @@ public IMagicPageTailor? Tailor { get; init; }</code></pre>
 
   <h3 id="ToSic_Cre8magic_Menus_MagicMenuSettings_Variant" data-uid="ToSic.Cre8magic.Menus.MagicMenuSettings.Variant">
   Variant
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>The menu variant to use, for example <code>horizontal</code> or <code>vertical</code>.
@@ -412,7 +409,7 @@ Will only have an effect if the control showing the menu supports it.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L17" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Menus/MagicMenuSettings.cs/#L18" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -94,7 +94,7 @@ Class MagicContainerTailor  <a class="header-action link-secondary" title="View 
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Containers.html">Containers</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"></div>
@@ -163,7 +163,8 @@ Class MagicContainerTailor  <a class="header-action link-secondary" title="View 
   <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Containers/MagicContainerTailor.cs/#L13"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Will retrieve the classes for specified target.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -179,7 +180,8 @@ Class MagicContainerTailor  <a class="header-action link-secondary" title="View 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">string</span></dt>
-    <dd></dd>
+    <dd><p>the classes for that target or <code>null</code> (if null, the <code>class</code> attribute would not be generated in the html)</p>
+</dd>
   </dl>
 
 
@@ -188,6 +190,10 @@ Class MagicContainerTailor  <a class="header-action link-secondary" title="View 
 
 
 
+  <h4 class="section" id="ToSic_Cre8magic_Containers_MagicContainerTailor_Classes_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Typical use is</p>
+<pre><code class="lang-razor">&lt;div class="@SomeKit.Tailor.Classes("div")"&gt;</code></pre>
+</div>
 
 
 

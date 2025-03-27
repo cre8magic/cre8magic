@@ -135,10 +135,9 @@ In general, this means that there are these concepts:</p>
 <h2 id="sample-implementation">Sample Implementation</h2>
 <p>As of now, the latest implementation of this best-practices is the <code>MagicAnalyticsSettings</code> - use this as a reference.</p>
 <h3 id="magicanalyticssettings">MagicAnalyticsSettings</h3>
-<pre><code class="lang-csharp">using System.Diagnostics.CodeAnalysis;
-using System.Text.Json.Serialization;
-using ToSic.Cre8magic.Settings;
+<pre><code class="lang-csharp">using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Analytics;
 
@@ -198,7 +197,8 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone&lt;MagicAnalytic
     #region Internal Reader
 
     [PrivateApi]
-    public Stabilized GetStable() =&gt; new(this);
+    public Stabilized GetStable() =&gt; (_stabilized ??= new(new(this))).Value;
+    private IgnoreEquals&lt;Stabilized&gt;? _stabilized;
 
     /// &lt;summary&gt;
     /// Experimental 2025-03-25 2dm
@@ -231,7 +231,7 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone&lt;MagicAnalytic
 <pre><code class="lang-csharp">using System.Text.Json.Serialization;
 using Oqtane.UI;
 using ToSic.Cre8magic.Settings.Debug;
-using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Debug.Internal;
 using ToSic.Cre8magic.Settings.Internal.Docs;
 
 namespace ToSic.Cre8magic.Settings;
@@ -251,15 +251,12 @@ public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IH
     protected MagicSettings(MagicSettings? priority, MagicSettings? fallback = default)
         : base(priority, fallback)
     {
-        if (fallback == null)
-            return;
+        Name = priority?.Name ?? fallback?.Name;
 
-        Name = priority?.Name ?? fallback.Name;
-
-        Debug = priority?.Debug ?? fallback.Debug;
+        Debug = priority?.Debug ?? fallback?.Debug;
 
         // Page State
-        PageState = priority?.PageState ?? fallback.PageState;
+        PageState = priority?.PageState ?? fallback?.PageState;
 
         // Debug settings
         ((IDebugSettings)this).Book = ((IDebugSettings?)priority)?.Book ?? ((IDebugSettings?)fallback)?.Book;
@@ -321,7 +318,7 @@ public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IH
         /// &lt;summary&gt;
         /// Will still be null.
         /// &lt;/summary&gt;
-        public MagicDebugSettings? Debug =&gt; Settings.Debug;
+        public MagicDebugSettings Debug =&gt; Settings.Debug ?? new();
     }
 
     #endregion
@@ -337,6 +334,7 @@ namespace ToSic.Cre8magic.Settings;
 /// &lt;remarks&gt;
 /// Created as a base record, not as an interface, because for processing we need to ensure it's always a record
 /// &lt;/remarks&gt;
+[PrivateApi(&quot;Naming not final, and not useful for public viewing&quot;)]
 public abstract record MagicInheritsBase
 {
     /// &lt;summary&gt;

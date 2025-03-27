@@ -26,9 +26,9 @@ Please keep updated.
 | Topic        | Analytics | Breadcrumbs | Buttons | Ctrl Panel | Exceptions | Languages | Links | Logos | Menus | Page Context | Pages | To-Top |
 |--------------|-----------|-------------|---------|------------|------------|-----------|-------|-------|-------|--------------|-------|-------|
 | OqtBasic Ctl | ✅        |             |         |            |            |           |       |       |       | ✅           |       | ✅    |
-| Oqt BS5 Ctl  | ✅        |             |         |            |            |           |       |       |       | ✅           |       | ✅    |
+| Oqt BS5 Ctl  | ✅        | ✅          |         |            |            |           |       |       |       | ✅           |       | ✅    |
 | Demo Oqt Th. | ✅        | ✅          |         |            |            | ✅        |       |       |       | ✅          |       | ✅    |
-| Settings Name|           |             |         |            |            |           |       |       | ✅    |              |       |       |
+| Settings Name|           | ✅          |         |            |            |           |       |       | ✅    |              |       |       |
 | No Defaults  | ✅        | ✅          |         |            |            | ✅        |       |       | ✅   | ✅           |       |       |
 | Stabilize    | ✅        | ✅          |         |            |            | ✅        |       |       | ✅   | ✅           |       |       |
 | MergeSettings|           |             |         |            |            |           |       |       |       |              |       |       |

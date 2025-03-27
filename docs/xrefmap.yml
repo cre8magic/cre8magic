@@ -555,19 +555,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Pages
   nameWithType: IMagicBreadcrumbKit.Pages
-- uid: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Root
-  name: Root
-  href: api/ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.html#ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Root
-  commentId: P:ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Root
-  fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Root
-  nameWithType: IMagicBreadcrumbKit.Root
-- uid: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Root*
-  name: Root
-  href: api/ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.html#ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Root_
-  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Root
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Root
-  nameWithType: IMagicBreadcrumbKit.Root
 - uid: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Show
   name: Show
   href: api/ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.html#ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Show
@@ -581,6 +568,19 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Show
   nameWithType: IMagicBreadcrumbKit.Show
+- uid: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Tailor
+  name: Tailor
+  href: api/ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.html#ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Tailor
+  commentId: P:ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Tailor
+  fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Tailor
+  nameWithType: IMagicBreadcrumbKit.Tailor
+- uid: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Tailor*
+  name: Tailor
+  href: api/ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.html#ToSic_Cre8magic_Breadcrumbs_IMagicBreadcrumbKit_Tailor_
+  commentId: Overload:ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Tailor
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.Tailor
+  nameWithType: IMagicBreadcrumbKit.Tailor
 - uid: ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint
   name: MagicBreadcrumbBlueprint
   href: api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html
@@ -2078,22 +2078,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.OqtaneBasic.MagicTheme.MagicAct
   nameWithType: MagicTheme.MagicAct
-- uid: ToSic.Cre8magic.OqtaneBasic.MagicTheme.OnAfterRenderAsync(System.Boolean)
-  name: OnAfterRenderAsync(bool)
-  href: api/ToSic.Cre8magic.OqtaneBasic.MagicTheme.html#ToSic_Cre8magic_OqtaneBasic_MagicTheme_OnAfterRenderAsync_System_Boolean_
-  commentId: M:ToSic.Cre8magic.OqtaneBasic.MagicTheme.OnAfterRenderAsync(System.Boolean)
-  name.vb: OnAfterRenderAsync(Boolean)
-  fullName: ToSic.Cre8magic.OqtaneBasic.MagicTheme.OnAfterRenderAsync(bool)
-  fullName.vb: ToSic.Cre8magic.OqtaneBasic.MagicTheme.OnAfterRenderAsync(Boolean)
-  nameWithType: MagicTheme.OnAfterRenderAsync(bool)
-  nameWithType.vb: MagicTheme.OnAfterRenderAsync(Boolean)
-- uid: ToSic.Cre8magic.OqtaneBasic.MagicTheme.OnAfterRenderAsync*
-  name: OnAfterRenderAsync
-  href: api/ToSic.Cre8magic.OqtaneBasic.MagicTheme.html#ToSic_Cre8magic_OqtaneBasic_MagicTheme_OnAfterRenderAsync_
-  commentId: Overload:ToSic.Cre8magic.OqtaneBasic.MagicTheme.OnAfterRenderAsync
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.OqtaneBasic.MagicTheme.OnAfterRenderAsync
-  nameWithType: MagicTheme.OnAfterRenderAsync
 - uid: ToSic.Cre8magic.OqtaneBasic.MagicTheme.OnParametersSet
   name: OnParametersSet()
   href: api/ToSic.Cre8magic.OqtaneBasic.MagicTheme.html#ToSic_Cre8magic_OqtaneBasic_MagicTheme_OnParametersSet
@@ -2215,6 +2199,38 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.MagicMenuBlueprint
   nameWithType: DefaultsBs5.MagicMenuBlueprint
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb
+  name: MagicBreadcrumb
+  href: api/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.html
+  commentId: T:ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb
+  nameWithType: MagicBreadcrumb
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Name
+  name: Name
+  href: api/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.html#ToSic_Cre8magic_OqtaneBs5_MagicBreadcrumb_Name
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Name
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Name
+  nameWithType: MagicBreadcrumb.Name
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Name*
+  name: Name
+  href: api/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.html#ToSic_Cre8magic_OqtaneBs5_MagicBreadcrumb_Name_
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Name
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Name
+  nameWithType: MagicBreadcrumb.Name
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Settings
+  name: Settings
+  href: api/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.html#ToSic_Cre8magic_OqtaneBs5_MagicBreadcrumb_Settings
+  commentId: P:ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Settings
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Settings
+  nameWithType: MagicBreadcrumb.Settings
+- uid: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Settings*
+  name: Settings
+  href: api/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.html#ToSic_Cre8magic_OqtaneBs5_MagicBreadcrumb_Settings_
+  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Settings
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.Settings
+  nameWithType: MagicBreadcrumb.Settings
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicContainer
   name: MagicContainer
   href: api/ToSic.Cre8magic.OqtaneBs5.MagicContainer.html
@@ -2459,22 +2475,6 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.OqtaneBs5.MagicTheme.MagicAct
   nameWithType: MagicTheme.MagicAct
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnAfterRenderAsync(System.Boolean)
-  name: OnAfterRenderAsync(bool)
-  href: api/ToSic.Cre8magic.OqtaneBs5.MagicTheme.html#ToSic_Cre8magic_OqtaneBs5_MagicTheme_OnAfterRenderAsync_System_Boolean_
-  commentId: M:ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnAfterRenderAsync(System.Boolean)
-  name.vb: OnAfterRenderAsync(Boolean)
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnAfterRenderAsync(bool)
-  fullName.vb: ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnAfterRenderAsync(Boolean)
-  nameWithType: MagicTheme.OnAfterRenderAsync(bool)
-  nameWithType.vb: MagicTheme.OnAfterRenderAsync(Boolean)
-- uid: ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnAfterRenderAsync*
-  name: OnAfterRenderAsync
-  href: api/ToSic.Cre8magic.OqtaneBs5.MagicTheme.html#ToSic_Cre8magic_OqtaneBs5_MagicTheme_OnAfterRenderAsync_
-  commentId: Overload:ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnAfterRenderAsync
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnAfterRenderAsync
-  nameWithType: MagicTheme.OnAfterRenderAsync
 - uid: ToSic.Cre8magic.OqtaneBs5.MagicTheme.OnParametersSet
   name: OnParametersSet()
   href: api/ToSic.Cre8magic.OqtaneBs5.MagicTheme.html#ToSic_Cre8magic_OqtaneBs5_MagicTheme_OnParametersSet
@@ -3441,6 +3441,19 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.Detailed
   nameWithType: MagicDebugSettings.Detailed
+- uid: ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.Editor
+  name: Editor
+  href: api/ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Settings_Debug_MagicDebugSettings_Editor
+  commentId: P:ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.Editor
+  fullName: ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.Editor
+  nameWithType: MagicDebugSettings.Editor
+- uid: ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.Editor*
+  name: Editor
+  href: api/ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.html#ToSic_Cre8magic_Settings_Debug_MagicDebugSettings_Editor_
+  commentId: Overload:ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.Editor
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.Editor
+  nameWithType: MagicDebugSettings.Editor
 - uid: ToSic.Cre8magic.Settings.MagicBook
   name: MagicBook
   href: api/ToSic.Cre8magic.Settings.MagicBook.html
@@ -3570,6 +3583,22 @@ references:
   isSpec: "True"
   fullName: ToSic.Cre8magic.Settings.MagicBook.Debug
   nameWithType: MagicBook.Debug
+- uid: ToSic.Cre8magic.Settings.MagicBook.GetSection*
+  name: GetSection
+  href: api/ToSic.Cre8magic.Settings.MagicBook.html#ToSic_Cre8magic_Settings_MagicBook_GetSection_
+  commentId: Overload:ToSic.Cre8magic.Settings.MagicBook.GetSection
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Settings.MagicBook.GetSection
+  nameWithType: MagicBook.GetSection
+- uid: ToSic.Cre8magic.Settings.MagicBook.GetSection``1
+  name: GetSection<TSettings>()
+  href: api/ToSic.Cre8magic.Settings.MagicBook.html#ToSic_Cre8magic_Settings_MagicBook_GetSection__1
+  commentId: M:ToSic.Cre8magic.Settings.MagicBook.GetSection``1
+  name.vb: GetSection(Of TSettings)()
+  fullName: ToSic.Cre8magic.Settings.MagicBook.GetSection<TSettings>()
+  fullName.vb: ToSic.Cre8magic.Settings.MagicBook.GetSection(Of TSettings)()
+  nameWithType: MagicBook.GetSection<TSettings>()
+  nameWithType.vb: MagicBook.GetSection(Of TSettings)()
 - uid: ToSic.Cre8magic.Settings.MagicBook.LanguageBlueprints
   name: LanguageBlueprints
   href: api/ToSic.Cre8magic.Settings.MagicBook.html#ToSic_Cre8magic_Settings_MagicBook_LanguageBlueprints
@@ -6588,6 +6617,103 @@ references:
   fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).IsValueCreated
   nameWithType: GetKeep<TResult, TCompare>.IsValueCreated
   nameWithType.vb: GetKeep(Of TResult, TCompare).IsValueCreated
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1
+  name: IgnoreEquals<TValue>
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html
+  commentId: T:ToSic.Cre8magic.Utils.IgnoreEquals`1
+  name.vb: IgnoreEquals(Of TValue)
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue)
+  nameWithType: IgnoreEquals<TValue>
+  nameWithType.vb: IgnoreEquals(Of TValue)
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.#ctor(`0)
+  name: IgnoreEquals(TValue)
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1__ctor__0_
+  commentId: M:ToSic.Cre8magic.Utils.IgnoreEquals`1.#ctor(`0)
+  name.vb: New(TValue)
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.IgnoreEquals(TValue)
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).New(TValue)
+  nameWithType: IgnoreEquals<TValue>.IgnoreEquals(TValue)
+  nameWithType.vb: IgnoreEquals(Of TValue).New(TValue)
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.#ctor*
+  name: IgnoreEquals
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1__ctor_
+  commentId: Overload:ToSic.Cre8magic.Utils.IgnoreEquals`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.IgnoreEquals
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).New
+  nameWithType: IgnoreEquals<TValue>.IgnoreEquals
+  nameWithType.vb: IgnoreEquals(Of TValue).New
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.Equals(System.Object)
+  name: Equals(object?)
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1_Equals_System_Object_
+  commentId: M:ToSic.Cre8magic.Utils.IgnoreEquals`1.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.Equals(object?)
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).Equals(Object)
+  nameWithType: IgnoreEquals<TValue>.Equals(object?)
+  nameWithType.vb: IgnoreEquals(Of TValue).Equals(Object)
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.Equals*
+  name: Equals
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1_Equals_
+  commentId: Overload:ToSic.Cre8magic.Utils.IgnoreEquals`1.Equals
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.Equals
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).Equals
+  nameWithType: IgnoreEquals<TValue>.Equals
+  nameWithType.vb: IgnoreEquals(Of TValue).Equals
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.GetHashCode
+  name: GetHashCode()
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1_GetHashCode
+  commentId: M:ToSic.Cre8magic.Utils.IgnoreEquals`1.GetHashCode
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.GetHashCode()
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).GetHashCode()
+  nameWithType: IgnoreEquals<TValue>.GetHashCode()
+  nameWithType.vb: IgnoreEquals(Of TValue).GetHashCode()
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.GetHashCode*
+  name: GetHashCode
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1_GetHashCode_
+  commentId: Overload:ToSic.Cre8magic.Utils.IgnoreEquals`1.GetHashCode
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.GetHashCode
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).GetHashCode
+  nameWithType: IgnoreEquals<TValue>.GetHashCode
+  nameWithType.vb: IgnoreEquals(Of TValue).GetHashCode
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.ToString
+  name: ToString()
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1_ToString
+  commentId: M:ToSic.Cre8magic.Utils.IgnoreEquals`1.ToString
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.ToString()
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).ToString()
+  nameWithType: IgnoreEquals<TValue>.ToString()
+  nameWithType.vb: IgnoreEquals(Of TValue).ToString()
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.ToString*
+  name: ToString
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1_ToString_
+  commentId: Overload:ToSic.Cre8magic.Utils.IgnoreEquals`1.ToString
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.ToString
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).ToString
+  nameWithType: IgnoreEquals<TValue>.ToString
+  nameWithType.vb: IgnoreEquals(Of TValue).ToString
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.Value
+  name: Value
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1_Value
+  commentId: P:ToSic.Cre8magic.Utils.IgnoreEquals`1.Value
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.Value
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).Value
+  nameWithType: IgnoreEquals<TValue>.Value
+  nameWithType.vb: IgnoreEquals(Of TValue).Value
+- uid: ToSic.Cre8magic.Utils.IgnoreEquals`1.Value*
+  name: Value
+  href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html#ToSic_Cre8magic_Utils_IgnoreEquals_1_Value_
+  commentId: Overload:ToSic.Cre8magic.Utils.IgnoreEquals`1.Value
+  isSpec: "True"
+  fullName: ToSic.Cre8magic.Utils.IgnoreEquals<TValue>.Value
+  fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).Value
+  nameWithType: IgnoreEquals<TValue>.Value
+  nameWithType.vb: IgnoreEquals(Of TValue).Value
 - uid: ToSic.Cre8magic.Utils.Logging
   name: ToSic.Cre8magic.Utils.Logging
   href: api/ToSic.Cre8magic.Utils.Logging.html

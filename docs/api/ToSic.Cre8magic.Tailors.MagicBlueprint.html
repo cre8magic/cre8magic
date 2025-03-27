@@ -94,7 +94,7 @@ Class MagicBlueprint  <a class="header-action link-secondary" title="View source
 
   <div class="facts text-secondary">
     <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Tailors.html">Tailors</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
   </div>
 
   <div class="markdown summary"><p>Menu Design Settings</p>
@@ -129,13 +129,6 @@ Class MagicBlueprint  <a class="header-action link-secondary" title="View source
     </dd>
   </dl>
 
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="ToSic.Cre8magic.Settings.MagicInheritsBase.html#ToSic_Cre8magic_Settings_MagicInheritsBase_Inherits">MagicInheritsBase.Inherits</a>
-    </div>
-  </dd></dl>
 
 
 
@@ -150,7 +143,7 @@ Class MagicBlueprint  <a class="header-action link-secondary" title="View source
 
   <h3 id="ToSic_Cre8magic_Tailors_MagicBlueprint_Parts" data-uid="ToSic.Cre8magic.Tailors.MagicBlueprint.Parts">
   Parts
-  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Tailors/MagicBlueprint.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Tailors/MagicBlueprint.cs/#L34"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Custom, named settings for classes, values etc. as you need them in your code.
@@ -160,7 +153,7 @@ For things such as <code>ul</code> or <code>li</code> or <code>a</code> tags.</p
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicBlueprintPart&gt;))]
-public Dictionary&lt;string, MagicBlueprintPart&gt; Parts { get; init; }</code></pre>
+public Dictionary&lt;string, MagicBlueprintPart&gt;? Parts { get; init; }</code></pre>
   </div>
 
 
