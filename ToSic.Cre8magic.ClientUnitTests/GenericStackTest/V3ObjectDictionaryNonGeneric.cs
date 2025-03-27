@@ -14,9 +14,9 @@ public class V3ObjectDictionaryNonGeneric
 
     public T Get<T>(string key) => (T)Stack[key];
 
-    public T Get<T>(T defaultValue, string key) => (T)Stack.GetValueOrDefault(key, defaultValue);
+    public T Get<T>(T defaultValue, string key) => (T)Stack.GetValueOrDefault(key, defaultValue!);
 
-    public T GetThis<T>(T defaultValue = default!, [CallerMemberName] string key = default!) => (T)Stack.GetValueOrDefault(key, defaultValue);
+    public T GetThis<T>(T defaultValue = default!, [CallerMemberName] string key = default!) => (T)Stack.GetValueOrDefault(key, defaultValue!);
 
     //public Dictionary<string, object> CloneUnder(Dictionary<string, object>? priority)
     //{
