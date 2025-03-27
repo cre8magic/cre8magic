@@ -1,12 +1,11 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using ToSic.Cre8magic.Menus;
+﻿using ToSic.Cre8magic.Menus;
 
 namespace ToSic.Cre8magic.OqtaneBs5;
 
 public partial class DefaultsBs5
 {
-    [field: AllowNull, MaybeNull]
     public MagicMenuBlueprint MagicMenuBlueprint => _magicMenuBlueprint;
+
     private static readonly MagicMenuBlueprint _magicMenuBlueprint = new()
     {
         Parts = new(StringComparer.InvariantCultureIgnoreCase)

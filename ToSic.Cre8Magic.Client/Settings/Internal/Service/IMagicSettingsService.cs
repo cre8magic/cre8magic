@@ -6,7 +6,6 @@ using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings.Debug;
-using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
@@ -70,15 +69,6 @@ public interface IMagicSettingsService
 
     internal TokenEngine PageTokenEngine(PageState pageState);
 
-    ///// <summary>
-    ///// Figure out which settings-name can be used.
-    ///// It will first try the preferred option, then the fallback, and if that doesn't exist, it will use the default name.
-    ///// </summary>
-    ///// <param name="preferred"></param>
-    ///// <param name="fallback"></param>
-    ///// <returns></returns>
-    //internal (string BestName, List<string> Journal) GetBestSettingsName(string? preferred, string fallback);
-    MagicDebugState DebugState(PageState pageState);
-
     IMagicSettingsService UsePageState(PageState pageState);
+    MagicDebugSettings.Stabilized GetDebug(PageState pageState);
 }

@@ -1,12 +1,13 @@
 ﻿@using Oqtane.UI
-@using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.OqtaneBs5.Internal
-@using ToSic.Cre8magic.Internal
 @using ToSic.Cre8magic.Internal.Debug
 @using ToSic.Cre8magic.Settings.Internal
 @using ToSic.Cre8magic.Users
+
+@namespace ToSic.Cre8magic.OqtaneBs5
+@inherits ComponentBase
+
 @inject IMagicSettingsService SettingsService
-@inject IMagicAct MagicAct
 @code {
     /// <inheritdoc cref="ComponentDocs.PageState"/>
     [CascadingParameter]
@@ -18,10 +19,11 @@
 }
 @if (exceptions.Any())
 {
-    var debug = SettingsService.DebugState(PageState);
+    var debug = SettingsService.GetDebug(PageState);
+    // var stable 
 
     <div class="alert alert-danger" role="alert">
-            @if (debug?.Show == true || PageState.UserMayEditCurrentPage())
+        @if (debug.Show(PageState) || PageState.UserMayEditCurrentPage())
         {
             <strong>The Cre8magic Design System reports some problems (visible to Admins only)</strong>
             <ul>

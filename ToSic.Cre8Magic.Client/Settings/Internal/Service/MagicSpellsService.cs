@@ -8,11 +8,9 @@ using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings.Debug;
-using ToSic.Cre8magic.Settings.Internal.Debug;
 using ToSic.Cre8magic.Themes.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using ToSic.Cre8magic.Tokens;
-using ToSic.Cre8magic.Users;
 using static ToSic.Cre8magic.MagicConstants;
 
 namespace ToSic.Cre8magic.Settings.Internal;
@@ -30,7 +28,7 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
         return this;
     }
 
-    private string? Variant => ThemePackage?.Name;
+    private string? Variant => ThemePackage.Name;
 
     public IMagicSettingsService UsePageState(PageState pageState)
     {
@@ -43,8 +41,8 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
     /// </summary>
     public PageState? PageState { get; private set; }
 
-    public MagicDebugState DebugState(PageState pageState) =>
-        ((IMagicSettingsService)this).Debug.GetState(GetThemeContext(pageState), pageState.UserIsAdmin());
+    public MagicDebugSettings.Stabilized GetDebug(PageState pageState) =>
+        new MagicDebugSettings(((IMagicSettingsService)this).Debug, GetThemeContext(pageState).ThemeSettings.Debug).GetStable();
 
     [field: AllowNull, MaybeNull]
     MagicDebugSettings IMagicSettingsService.Debug => field

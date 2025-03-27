@@ -1,12 +1,14 @@
-﻿@inherits ComponentBase
-@using System.Text.Json
+﻿@using System.Text.Json
 @using System.Text.Json.Serialization
 @using System.Text.Encodings.Web
 @using Oqtane.UI
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Internal.Debug
 @using ToSic.Cre8magic.Settings.Internal
-@using ToSic.Cre8magic.Users
+
+@namespace ToSic.Cre8magic.OqtaneBs5
+@inherits ComponentBase
+
 @inject IMagicSettingsService SettingsService
 @inject IMagicAct MagicAct
 @code {
@@ -16,10 +18,10 @@
 @{
     var debugInfo = Target.GetDebugInfo();
     var settings = debugInfo.Settings;
-    var debug = SettingsService.Debug.GetState(settings, PageState.UserMayEditCurrentPage());
+    var shouldSHow = SettingsService.Debug.GetStable().Show(PageState);
 
     // Exit early if debug is not allowed
-    if (!debug.Show)
+    if (!shouldSHow)
         return;
 }
 @{

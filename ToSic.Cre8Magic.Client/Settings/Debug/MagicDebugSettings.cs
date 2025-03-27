@@ -1,4 +1,6 @@
-﻿using ToSic.Cre8magic.Settings.Internal.Debug;
+﻿using Oqtane.UI;
+using ToSic.Cre8magic.Settings.Internal;
+using ToSic.Cre8magic.Users;
 using ToSic.Cre8magic.Utils;
 
 namespace ToSic.Cre8magic.Settings.Debug;
@@ -9,7 +11,7 @@ namespace ToSic.Cre8magic.Settings.Debug;
 /// These settings can also be loaded from the configuration.
 /// This allows you to do things like enable temporarily for admins, without restarting/recompiling anything.
 /// </summary>
-public record MagicDebugSettings
+public record MagicDebugSettings : ICanClone<MagicDebugSettings>
 {
     #region Constructors and Cloning
 
@@ -29,45 +31,51 @@ public record MagicDebugSettings
         Allowed = enable;
         Anonymous = enable;
         Admin = enable;
+        Editor = enable;
     }
 
-    private MagicDebugSettings(MagicDebugSettings? priority, MagicDebugSettings? fallbackOriginal = default)
+    /// <summary>
+    /// Clone/Merge constructor - internal use only.
+    /// </summary>
+    internal MagicDebugSettings(MagicDebugSettings? priority, MagicDebugSettings? fallback = default)
     {
-        // Allowed is special, as it should only come from the master / fallback
-        Allowed = fallbackOriginal?.Allowed ?? priority?.Allowed ?? false;
-        Anonymous = priority?.Anonymous ?? fallbackOriginal?.Anonymous;
-        Admin = priority?.Admin ?? fallbackOriginal?.Admin;
+        Allowed = priority?.Allowed ?? fallback?.Allowed;
+        Anonymous = priority?.Anonymous ?? fallback?.Anonymous;
+        Admin = priority?.Admin ?? fallback?.Admin;
+        Editor = priority?.Editor ?? fallback?.Editor;
     }
 
-    // TODO: make internal or something
-    [PrivateApi]
-    public MagicDebugState GetState(object? target, bool isAdmin)
-        => (target is not IHasDebugSettings debugTarget ? this : new(debugTarget.Debug, this))
-            .GetState(isAdmin);
+    MagicDebugSettings ICanClone<MagicDebugSettings>.CloneUnder(MagicDebugSettings? priority, bool forceCopy) =>
+        priority == null ? (forceCopy ? this with { } : this) : new(priority, this);
 
     #endregion
 
-
+    /// <summary>
+    /// Specify if debug is allowed at all.
+    /// </summary>
     public bool? Allowed { get; init; }
 
+    /// <summary>
+    /// Specify if debug should be activated for anonymous.
+    /// Mainly for development to see differences between logged in and out.
+    /// </summary>
     public bool? Anonymous { get; init; }
 
+    /// <summary>
+    /// Specify if debug should be activated for admins.
+    /// </summary>
     public bool? Admin { get; init; }
 
+    /// <summary>
+    /// Specify if debug should be activated for admins.
+    /// </summary>
+    public bool? Editor { get; init; }
+
+    /// <summary>
+    /// Determine if detailed debug information should be shown.
+    /// </summary>
     public bool? Detailed { get; init; }
 
-    internal MagicDebugState GetState(bool isAdmin)
-    {
-        var stable = GetStable();
-        return stable.Allowed
-            ? new()
-            {
-                Show = isAdmin
-                    ? stable.Admin      // Use configuration for Admin, by default admins see the debug
-                    : stable.Anonymous  // Use configuration for Anonymous, by default anonymous users don't see the debug
-            }
-            : new();
-    }
 
     #region Stabilized
 
@@ -81,36 +89,33 @@ public record MagicDebugSettings
     /// so that the code using the values doesn't need to check for nulls.
     /// </summary>
     [PrivateApi]
-    public record Stabilized(MagicDebugSettings? DebugSettings)
+    public record Stabilized(MagicDebugSettings DebugSettings)
     {
-        public bool Allowed
-        {
-            get => _allowed ??= DebugSettings?.Allowed ?? false;
-            init => _allowed = value;
-        }
-        private bool? _allowed;
+        public bool Allowed => DebugSettings.Allowed ?? false;
 
-        public bool Anonymous
-        {
-            get => _anonymous ??= DebugSettings?.Anonymous ?? false;
-            init => _anonymous = value;
-        }
+        public bool Anonymous => DebugSettings.Anonymous ?? false;
 
-        private bool? _anonymous;
+        public bool Admin => DebugSettings.Admin ?? true;
 
-        public bool Admin
-        {
-            get => _admin ??= DebugSettings?.Admin ?? true;
-            init => _admin = value;
-        }
-        private bool? _admin;
+        public bool Editor => DebugSettings.Editor ?? false;
 
-        public bool Detailed
-        {
-            get => _detailed ??= DebugSettings?.Detailed ?? false;
-            init => _detailed = value;
-        }
-        private bool? _detailed;
+        public bool Detailed => DebugSettings.Detailed ?? false;
+
+        #region Derived / calculated properties
+
+        /// <summary>
+        /// Determine if debug should be shown.
+        /// The result will vary depending on if the user is an admin or not.
+        /// </summary>
+        /// <returns></returns>
+        public bool Show(PageState pageState) => Allowed
+                                                 && (pageState.UserIsAdmin()
+                                                     ? Admin
+                                                     : pageState.UserMayEditCurrentPage()
+                                                         ? Editor
+                                                         : Anonymous);
+
+        #endregion
     }
 
     #endregion
