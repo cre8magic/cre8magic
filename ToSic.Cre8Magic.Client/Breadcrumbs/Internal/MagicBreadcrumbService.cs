@@ -1,4 +1,4 @@
-﻿using Oqtane.UI;
+using Oqtane.UI;
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Pages.Internal;
 using ToSic.Cre8magic.Settings.Internal;
@@ -28,6 +28,7 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
             Settings = settingsFull,
             Show = show,
             Root = root,
+            Tailor =root.Tailor,
         };
     }
 

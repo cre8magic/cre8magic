@@ -13,8 +13,11 @@ internal record MagicBreadcrumbKit : IMagicBreadcrumbKit
 
     public required bool Show { get; init; }
 
-    public required IMagicPage Root { get; init; }
+    /// <summary>
+    /// Virtual "root" page of the breadcrumb, mainly for styling things around the real breadcrumb.
+    /// </summary>
+    internal required IMagicPage Root { get; init; }
 
     [field: AllowNull, MaybeNull]
-    public IMagicTailor Tailor => field ??= ((MagicPage)Root).Tailor;
+    public required IMagicTailor Tailor { get; init; }
 }

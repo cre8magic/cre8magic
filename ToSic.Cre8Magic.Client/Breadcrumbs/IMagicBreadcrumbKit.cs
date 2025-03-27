@@ -10,11 +10,6 @@ public interface IMagicBreadcrumbKit
     /// </summary>
     IEnumerable<IMagicPage> Pages { get; }
 
-    /// <summary>
-    /// Virtual "root" page of the breadcrumb, mainly for styling things around the real breadcrumb.
-    /// </summary>
-    IMagicPage Root { get; }
-
     internal MagicBreadcrumbSettings Settings { get; }
 
     /// <summary>
