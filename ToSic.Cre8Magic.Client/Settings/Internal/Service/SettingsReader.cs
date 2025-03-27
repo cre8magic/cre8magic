@@ -87,7 +87,7 @@ internal class SettingsReader<TSettingsData>(IHasMagicLibrary hasLibrary, Func<M
             var addition = FindInSourcesOrNull(nameToFind);
             return addition == null
                 ? priorityData
-                : MergeHelper.TryToMergeOrKeepPriority(priorityData, addition)!;
+                : MergeHelper.TryToMergeOrKeepPriority(priorityData, addition);
         }
     }
 

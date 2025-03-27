@@ -41,15 +41,4 @@ public abstract class MagicTheme : Oqtane.Themes.ThemeBase
         // Provide the latest PageState on every change
         MagicAct.UsePageState(PageState);
     }
-
-
-    /// <inheritdoc cref="IMagicThemeDocs.OnAfterRenderAsync" />
-    protected override async Task OnAfterRenderAsync(bool isFirstRender)
-    {
-        await base.OnAfterRenderAsync(isFirstRender);
-        // Provide the latest PageState on every change,
-        // but OnAfterRenderAsync could be executed without OnParametersSet
-        MagicAct.UsePageState(PageState);
-        await MagicAct.AnalyticsKit().TrackPage(isFirstRender);
-    }
 }
