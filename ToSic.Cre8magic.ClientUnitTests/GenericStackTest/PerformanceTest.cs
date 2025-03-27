@@ -24,7 +24,7 @@ public class PerformanceTest(ITestOutputHelper output)
     /// </summary>
     public int Iterations = 10_000;
 
-    private void RunWithStopwatch(Action action, [CallerMemberName] string testName = default)
+    private void RunWithStopwatch(Action action, [CallerMemberName] string testName = default!)
     {
         var time = Stopwatch.StartNew();
         action();

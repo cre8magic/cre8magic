@@ -1,6 +1,4 @@
-﻿using ToSic.Cre8magic.Settings.Debug;
-
-namespace ToSic.Cre8magic.Settings.Internal.Debug;
+﻿namespace ToSic.Cre8magic.Settings.Debug.Internal;
 
 internal interface IHasDebugSettings
 {

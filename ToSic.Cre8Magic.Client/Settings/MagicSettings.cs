@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using Oqtane.UI;
 using ToSic.Cre8magic.Settings.Debug;
-using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Debug.Internal;
 using ToSic.Cre8magic.Settings.Internal.Docs;
 
 namespace ToSic.Cre8magic.Settings;
@@ -21,15 +21,12 @@ public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IH
     protected MagicSettings(MagicSettings? priority, MagicSettings? fallback = default)
         : base(priority, fallback)
     {
-        if (fallback == null)
-            return;
+        Name = priority?.Name ?? fallback?.Name;
 
-        Name = priority?.Name ?? fallback.Name;
-
-        Debug = priority?.Debug ?? fallback.Debug;
+        Debug = priority?.Debug ?? fallback?.Debug;
 
         // Page State
-        PageState = priority?.PageState ?? fallback.PageState;
+        PageState = priority?.PageState ?? fallback?.PageState;
 
         // Debug settings
         ((IDebugSettings)this).Book = ((IDebugSettings?)priority)?.Book ?? ((IDebugSettings?)fallback)?.Book;

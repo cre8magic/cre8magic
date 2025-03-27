@@ -8,6 +8,7 @@ namespace ToSic.Cre8magic.Settings;
 /// <remarks>
 /// Created as a base record, not as an interface, because for processing we need to ensure it's always a record
 /// </remarks>
+[PrivateApi("Naming not final, and not useful for public viewing")]
 public abstract record MagicInheritsBase
 {
     /// <summary>

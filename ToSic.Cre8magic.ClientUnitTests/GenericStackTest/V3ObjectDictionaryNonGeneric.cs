@@ -10,13 +10,13 @@ public class V3ObjectDictionaryNonGeneric
 
     public void Add(string key, object item) => Stack[key] = item;
 
-    public void AddThis(object item, [CallerMemberName] string key = default) => Stack[key] = item;
+    public void AddThis(object item, [CallerMemberName] string key = default!) => Stack[key] = item;
 
     public T Get<T>(string key) => (T)Stack[key];
 
     public T Get<T>(T defaultValue, string key) => (T)Stack.GetValueOrDefault(key, defaultValue);
 
-    public T GetThis<T>(T defaultValue = default, [CallerMemberName] string key = default) => (T)Stack.GetValueOrDefault(key, defaultValue);
+    public T GetThis<T>(T defaultValue = default!, [CallerMemberName] string key = default!) => (T)Stack.GetValueOrDefault(key, defaultValue);
 
     //public Dictionary<string, object> CloneUnder(Dictionary<string, object>? priority)
     //{

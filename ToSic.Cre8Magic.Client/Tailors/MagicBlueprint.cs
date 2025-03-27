@@ -32,8 +32,7 @@ public record MagicBlueprint : MagicInheritsBase, ICanClone<MagicBlueprint>
     /// For things such as `ul` or `li` or `a` tags.
     /// </summary>
     [JsonConverter(typeof(CaseInsensitiveDictionaryConverter<MagicBlueprintPart>))]
-    public Dictionary<string, MagicBlueprintPart>? Parts { get; init; } // = new(StringComparer.OrdinalIgnoreCase);
-    // TODO: make nullable!
+    public Dictionary<string, MagicBlueprintPart>? Parts { get; init; }
 
     #region Stabilized
 

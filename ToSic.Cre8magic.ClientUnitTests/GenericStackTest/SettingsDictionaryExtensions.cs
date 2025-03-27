@@ -15,12 +15,12 @@ namespace ToSic.Cre8magic.ClientUnitTests.GenericStackTest;
 /// </summary>
 public static class SettingsDictionaryExtensions
 {
-    public static T GetThis<T>(this Dictionary<string, object> dic, T defaultValue = default, [CallerMemberName] string key = default) =>
+    public static T GetThis<T>(this Dictionary<string, object> dic, T defaultValue = default!, [CallerMemberName] string key = default!) =>
         dic.TryGetValue(key, out var tResult)
             ? tResult is T typedResult ? typedResult : defaultValue
             : defaultValue;
 
-    public static void AddThis(this Dictionary<string, object> dic, object? item, [CallerMemberName] string key = default)
+    public static void AddThis(this Dictionary<string, object> dic, object? item, [CallerMemberName] string key = default!)
     {
         if (item == null)
             dic.Remove(key);

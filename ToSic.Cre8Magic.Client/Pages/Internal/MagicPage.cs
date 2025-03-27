@@ -9,8 +9,7 @@ namespace ToSic.Cre8magic.Pages.Internal;
 /// <summary>
 /// Wrapper for the Oqtane Page.
 /// </summary>
-internal record MagicPage : MagicPageBase,
-        IMagicPage
+internal record MagicPage : MagicPageBase, IMagicPage
 {
     public MagicPage(Page RawPage, MagicPageFactory pageFactory, IMagicPageChildrenFactory childrenFactory) : base(RawPage)
     {

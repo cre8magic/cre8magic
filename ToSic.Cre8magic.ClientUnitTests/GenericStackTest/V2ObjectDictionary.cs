@@ -1,4 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
+#pragma warning disable CS8601 // Possible null reference assignment.
+#pragma warning disable CS8625 // Cannot convert null literal to non-nullable reference type.
+#pragma warning disable CS8604 // Possible null reference argument.
 
 namespace ToSic.Cre8magic.ClientUnitTests.GenericStackTest;
 

@@ -6,7 +6,7 @@ using ToSic.Cre8magic.Internal.Json;
 using ToSic.Cre8magic.Menus;
 using ToSic.Cre8magic.PageContexts;
 using ToSic.Cre8magic.Settings.Debug;
-using ToSic.Cre8magic.Settings.Internal.Debug;
+using ToSic.Cre8magic.Settings.Debug.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 using static System.StringComparer;
 
