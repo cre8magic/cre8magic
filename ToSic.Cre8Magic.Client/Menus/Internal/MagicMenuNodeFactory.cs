@@ -24,11 +24,14 @@ internal class MagicMenuNodeFactory(MagicMenuWorkContext workContext)
         var l = Log.Fn<List<IMagicPage>>($"{nameof(page.MenuLevel)}: {page.MenuLevel}");
 
         // On the first level, we should construct the base list
-        if ((page as MagicPage)?.IsVirtualRoot == true)
+        var magicPage = page as MagicPage
+                        ?? throw new NotSupportedException($"The {nameof(page)} is not a {nameof(MagicPage)}");
+        
+        if (magicPage.IsVirtualRoot)
             return l.Return(GetRootPages(workContext, this), "Root");
 
 
-        var levelsRemaining = ((MagicPage)page).NodeRule.Depth - (page.MenuLevel /*- 1*/ /* Level is 1 based, so -1 */);
+        var levelsRemaining = (magicPage.NodeRule?.Depth ?? 0) - (page.MenuLevel /*- 1*/ /* Level is 1 based, so -1 */);
         if (levelsRemaining <= 0)
             return l.Return([], "remaining levels 0 - return empty");
 
