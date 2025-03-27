@@ -141,6 +141,20 @@ internal class MagicSettingsService(MagicLibraryLoader libraryLoader) : IMagicSe
 
     #endregion
 
+    #region Generic Readers
+
+    /// <summary>
+    /// Get a reader from a section of the book.
+    /// </summary>
+    /// <typeparam name="TSettings"></typeparam>
+    /// <returns></returns>
+    public SettingsReader<TSettings> GetReader<TSettings>()
+        where TSettings : class, new() =>
+        new(this, book => book.GetSection<TSettings>());
+
+    #endregion
+
+
     #region Breadcrumbs
 
     [field: AllowNull, MaybeNull]

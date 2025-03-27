@@ -13,7 +13,7 @@ internal class MagicAnalyticsService(IMagicAnalyticsJsService analyticsJsService
     private MagicAnalyticsKit BuildKit(PageState pageState, MagicAnalyticsSettings? settings = null)
     {
         var (settingsData, _) = new GetSettings(settingsSvc, pageState, settings?.Name)
-            .GetBest(settings, settingsSvc.Analytics);
+            .GetBest(settings);
 
         var result = new MagicAnalyticsKit
         {

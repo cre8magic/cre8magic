@@ -71,4 +71,12 @@ public interface IMagicSettingsService
 
     IMagicSettingsService UsePageState(PageState pageState);
     MagicDebugSettings.Stabilized GetDebug(PageState pageState);
+
+    /// <summary>
+    /// Get a reader from a section of the book.
+    /// </summary>
+    /// <typeparam name="TSettings"></typeparam>
+    /// <returns></returns>
+    internal SettingsReader<TSettings> GetReader<TSettings>()
+        where TSettings : class, new();
 }

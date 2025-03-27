@@ -13,7 +13,7 @@ namespace ToSic.Cre8magic.Breadcrumbs;
 /// <remarks>
 /// NOTE that as of v0.2 the JSON variant is not in use.
 /// </remarks>
-public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IWith<IMagicPageTailor?>
+public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, ICanClone<MagicBreadcrumbSettings>, IWith<IMagicPageTailor?>, IWith<MagicBreadcrumbBlueprint?>
 {
     /// <summary>
     /// Note: needs standalone; non-primary constructor, so that the private clone constructor can call the base constructor.
@@ -131,6 +131,8 @@ public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, IC
     [JsonIgnore]
     public MagicBreadcrumbBlueprint? Blueprint { get; init; }
 
+    MagicBreadcrumbBlueprint? IWith<MagicBreadcrumbBlueprint?>.WithData { get => Blueprint; init => Blueprint = value; }
+
     #region Stabilized
 
     [PrivateApi]
@@ -163,4 +165,5 @@ public record MagicBreadcrumbSettings : MagicSettings, IMagicPageSetSettings, IC
     }
 
     #endregion
+
 }

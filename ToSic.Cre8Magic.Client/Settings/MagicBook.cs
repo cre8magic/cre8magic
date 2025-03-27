@@ -62,6 +62,30 @@ public record MagicBook: IHasDebugSettings
     /// </summary>
     public string Source { get; set; } = SourceDefault;
 
+
+    #region Generic Settings
+
+    public Dictionary<string, TSettings> GetSection<TSettings>() =>
+        typeof(TSettings) switch
+        {
+            Type t when t == typeof(MagicThemeSettings) => Themes as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicThemeBlueprint) => ThemeBlueprints as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicAnalyticsSettings) => Analytics as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicBreadcrumbSettings) => Breadcrumbs as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicBreadcrumbBlueprint) => BreadcrumbBlueprints as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicContainerSettings) => Containers as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicContainerBlueprint) => ContainerBlueprints as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicLanguageSettings) => Languages as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicLanguageBlueprint) => LanguageBlueprints as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicMenuSettings) => Menus as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicMenuBlueprint) => MenuBlueprints as Dictionary<string, TSettings>,
+            Type t when t == typeof(MagicPageContextSettings) => PageContexts as Dictionary<string, TSettings>,
+            _ => null
+        }
+        ?? throw new InvalidOperationException($"Unsupported type: {typeof(TSettings).Name}");
+
+    #endregion
+
     /// <summary>
     /// List of Themes and mainly what parts they want to explicitly configure (e.g. determine Show, and there these parts find their settings)
     /// </summary>

@@ -1,6 +1,7 @@
-using Oqtane.UI;
+﻿using Oqtane.UI;
 using ToSic.Cre8magic.Internal.Journal;
 using ToSic.Cre8magic.Pages.Internal;
+using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Themes.Settings;
 
@@ -38,5 +39,29 @@ internal class MagicBreadcrumbService(IMagicSettingsService settingsSvc) : IMagi
         var newSettings = getSettings.GetBest(settings, settingsSvc.Breadcrumbs);
         var blueprint = getSettings.GetBest(settings?.Blueprint, settingsSvc.BreadcrumbBlueprints, ThemePartSectionEnum.Design);
         return new(newSettings.Data with { Blueprint = blueprint.Data }, getSettings.Part, newSettings.Journal.With(blueprint.Journal));
+    }
+
+    public Data2WithJournal<TSettings, MagicThemePartSettings?> GetBestPair<TSettings, TBlueprint>(PageState pageState, TSettings? settings)
+        where TSettings : MagicSettings, IWith<TBlueprint?>, new()
+        where TBlueprint: class, new()
+    {
+        // Get / Merge Settings Helper
+        var getSettings = new GetSettings(settingsSvc, pageState, settings?.Name);
+
+        // Get best settings
+        var settingsReader = settingsSvc.GetReader<TSettings>();
+        var newSettings = getSettings.GetBest(settings, settingsReader);
+
+        var blueprintReader = settingsSvc.GetReader<TBlueprint>();
+        var blueprint = getSettings.GetBest(
+            // The Blueprint accessed through the IWith interface
+            (settings as IWith<TBlueprint>)?.WithData,
+            blueprintReader,
+            ThemePartSectionEnum.Design
+        );
+
+        var mergedWithBlueprint = newSettings.Data.With(blueprint.Data);
+
+        return new(mergedWithBlueprint, getSettings.Part, newSettings.Journal.With(blueprint.Journal));
     }
 }

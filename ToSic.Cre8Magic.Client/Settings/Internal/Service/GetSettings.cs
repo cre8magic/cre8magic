@@ -39,6 +39,7 @@ internal class GetSettings(IMagicSettingsService settingsSvc, PageState? pageSta
         //if (settings is IDebugSettings { DebugThis: true } tempForDebug)
         //    tempForDebug = tempForDebug;
 
+        // If we are doing tests with custom books, use the book from the settings
         if (settings is IDebugSettings { Book: not null } withBook)
             reader = reader.MaybeUseCustomBook(withBook.Book);
 
@@ -48,4 +49,36 @@ internal class GetSettings(IMagicSettingsService settingsSvc, PageState? pageSta
         var dataWithJournal = reader.FindAndMerge(findSettings, settings);
         return dataWithJournal;
     }
+
+    public DataWithJournal<TSettings> GetBest<TSettings>(TSettings? settings)
+        where TSettings : MagicSettings, new()
+    {
+        // Get best settings
+        var settingsReader = settingsSvc.GetReader<TSettings>();
+        var newSettings = GetBest(settings, settingsReader);
+
+        return newSettings;
+    }
+
+    public Data2WithJournal<TSettings, MagicThemePartSettings?> GetBestPair<TSettings, TBlueprint>(TSettings? settings)
+        where TSettings : MagicSettings, IWith<TBlueprint?>, new()
+        where TBlueprint : class, new()
+    {
+        // Get best settings
+        var settingsReader = settingsSvc.GetReader<TSettings>();
+        var newSettings = GetBest(settings, settingsReader);
+
+        var blueprintReader = settingsSvc.GetReader<TBlueprint>();
+        var blueprint = GetBest(
+            // The Blueprint accessed through the IWith interface
+            (settings as IWith<TBlueprint>)?.WithData,
+            blueprintReader,
+            ThemePartSectionEnum.Design
+        );
+
+        var mergedWithBlueprint = newSettings.Data.With(blueprint.Data);
+
+        return new(mergedWithBlueprint, Part, newSettings.Journal.With(blueprint.Journal));
+    }
+
 }
