@@ -1,6 +1,6 @@
 ---
 uid: Cre8magic.Library.MagicAnalytics.Index
-title: Magic Languages
+title: Magic Analytics for Oqtane
 ---
 
 # cre8magic – Magic Analytics and Google Tag Manager

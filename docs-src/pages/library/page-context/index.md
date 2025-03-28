@@ -1,6 +1,6 @@
 ---
 uid: Cre8magic.Library.MagicPageContext.Index
-title: Magic Context
+title: Magic Page Context for Oqtane
 ---
 
 # cre8magic – Magic Page Context

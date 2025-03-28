@@ -1,5 +1,6 @@
 ---
 uid: Cre8magic.Library.MagicMenu.Index
+title: Magic Menu for Oqtane
 ---
 
 # Magic Menu System for Oqtane Themes

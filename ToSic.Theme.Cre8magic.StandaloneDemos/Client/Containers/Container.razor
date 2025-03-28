@@ -1,6 +1,10 @@
+@* Make sure the namespace is identical with the namespace of your theme *@
 @namespace ToSic.Theme.Cre8magic.StandaloneDemos
+
+@* Inherit the Bootstrap5 version of the Magic Container *@
 @inherits ToSic.Cre8magic.OqtaneBs5.MagicContainer
+
+@* The BuildRenderTree tells Blazor to inherit the HTML of the underlying control *@
 @{
-    // Razor internal method to build with the HTML of the base Default.razor
     base.BuildRenderTree(__builder);
 }
