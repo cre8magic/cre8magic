@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Magic Page Context for Oqtane | cre8magic </title>
+      <title>Magic Containers for Oqtane | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Magic Page Context for Oqtane | cre8magic ">
+      <meta name="title" content="Magic Containers for Oqtane | cre8magic ">
       
       
       <link rel="icon" href="../../assets/favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/page-context/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/magic-containers/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,81 +84,54 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Cre8magic.Library.MagicPageContext.Index">
-<h1 id="cre8magic--magic-page-context">cre8magic – Magic Page Context</h1>
+        <article data-uid="Cre8magic.Library.MagicContainers.Index">
+<h1 id="cre8magic--magic-containers">cre8magic – Magic Containers</h1>
 
-<p>The Magic Context adds a bunch of classes to the <code>&lt;body&gt;</code> or a wrapper <code>&lt;div&gt;</code> tag
-which contain information about the current state.</p>
-<p>This allows you to then write CSS rules, which change the look / feel of the page based on certain aspects.</p>
-<h2 id="example">Example</h2>
-<p>The wrapper <code>&lt;div&gt;</code> could look like this:</p>
-<pre><code class="lang-html">&lt;div id=&quot;cre8magic-root&quot; class=&quot;page-35 page-root-29 page-parent-33 site-1 nav-level-3 theme-mainnav-variation-right theme-variation-centered&quot;&gt;
-  &lt;!-- the contents of the page--&gt;
-&lt;/div&gt;
-</code></pre>
-<p>This tells you a bunch of things such as:</p>
-<ol>
-<li>This is page <code>#35</code> - allows you to do things like special colors for exactly this page</li>
-<li>The page is in the tree of the root <code>#29</code> - so you could use special colors for all the pages in this branch</li>
-<li>The pages parent is <code>#33</code> - again letting you write custom CSS</li>
-<li>We are on site <code>#1</code> - in case you have different styles based on the site number</li>
-<li>We are currently on the nav-level <code>3</code> - this could affect your breadcrumb or something</li>
-<li>We are in a specific layout type and navigation type</li>
-</ol>
-<h2 id="sample---testing">Sample - TESTING</h2>
-<h3 id="body">Body</h3>
-<pre><code class="lang-xml">&lt;MagicPageContext&gt;&lt;/MagicPageContext&gt;
-</code></pre><h3 id="div">Div</h3>
-<pre><code class="lang-xml">&lt;MagicPageContext Settings=&quot;new() { UseBodyTag = false }&quot;&gt;
-</code></pre>
-<pre><code class="lang-c#">  &lt;div&gt;
-    ...
-  &lt;/div&gt;
-</code></pre>
-<pre><code class="lang-xml">&lt;/MagicPageContext&gt;
-</code></pre><h2 id="how-this-works">How this Works</h2>
-<p>Basically all this happens automatically, if your <a class="xref" href="../theme-settings/theme-json.html">json configuration</a> has <code>magicContext</code> of something like this:</p>
-<pre><code class="lang-jsonc">{
-  &quot;magicContext&quot;: [
-    &quot;page-[Page.Id]&quot;,
-    &quot;page-root-[Page.RootId]&quot;,
-    &quot;page-parent-[Page.ParentId]&quot;,
-    &quot;site-[Site.Id]&quot;,
-    &quot;nav-level-[Menu.Level]&quot;,
-    &quot;theme-mainnav-variation-right&quot;,
-    &quot;theme-variation-[Layout.Variation]&quot;
-  ]
+<p><em>The cre8magic Containers help you create best-practice, customizable Oqtane containers in themes.</em></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Add best practice containers in your theme like this:</p>
+<pre><code class="lang-csharp">@* Make sure the namespace is identical with the namespace of your theme *@
+@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+
+@* Inherit the Bootstrap5 version of the Magic Container *@
+@inherits ToSic.Cre8magic.OqtaneBs5.MagicContainer
+
+@* The BuildRenderTree tells Blazor to inherit the HTML of the underlying control *@
+@{
+    base.BuildRenderTree(__builder);
 }
 </code></pre>
-<p>You can of course add your own rules with other placeholders to make this happen.</p>
-<h2 id="configuration">Configuration</h2>
+<p>This will make sure that Oqtane can find <em>your</em> container
+(as it must be in the same namespace as the theme) and use it as a container.</p>
+</div>
+<p>In most cases, this is all you'll need to do.
+But if you want to customize the container, you can do so by inheriting from the <code>Container</code> class and overriding the methods you want to change.</p>
+<p>TODO: more variants</p>
+<hr>
+<h2 id="pending-tasks-2025-03-28">Pending Tasks 2025-03-28</h2>
 <ol>
-<li>You can determine if this will be added to a <code>&lt;div&gt;</code> or the <code>&lt;body&gt;</code> using the setting <code>magicContextInBody</code>
-<ul>
-<li>If it's on the body, it will be put there using JavaScript, so there may be a minimal flash-of-unexpected-styling</li>
-<li>if you put it in the div, it will always be there</li>
-</ul>
-</li>
-<li>You can also change the <code>id</code> of the <code>&lt;div&gt;</code> tag if you want to change how your CSS behaves. The <code>id</code> can be set on the <code>magicContextTagId</code></li>
+<li>Ability to show the title after all - but default to false</li>
+<li>Correct default css classes for containers</li>
+<li>Ability to create custom containers inheriting, but replacing the tailor / settings only</li>
+<li>Ability to detect what pane we are on, to use as alternate configurations - eg. <code>pane-default</code> or <code>pane-admin</code> etc.</li>
+<li>Ability to detect what module we are on, to use as alternate configurations - eg. <code>module-ToSic.Sxc.Oqtane</code></li>
+<li>Documentation
+<ol>
+<li>Sample to just inherit as is - recommended for most scenarios</li>
 </ol>
-<h2 id="missing-features">Missing Features</h2>
-<p>As of 2022-10 there are no magic context classes for languages yet, as Oqtane doesn't fully support Multi-Language.
-We'll add it as soon as possible.</p>
-<h2 id="pending-tasks">Pending Tasks</h2>
-<ol>
-<li>Final naming not quite clear, if <code>PageContext</code> is really good for describing this</li>
-<li>There is a built-in variant-for-menu which doesn't feel quite right in the defaults</li>
+</li>
 </ol>
 <hr>
 <h2 id="history">History</h2>
 <ol>
-<li>Added in v0.0.1 2022-10</li>
+<li>created in v0.0.1 2022-10</li>
 </ol>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/page-context/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/magic-containers/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
