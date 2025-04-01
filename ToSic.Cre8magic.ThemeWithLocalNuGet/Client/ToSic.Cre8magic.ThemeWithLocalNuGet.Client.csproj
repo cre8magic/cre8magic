@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Version>1.0.0</Version>
+    <Authors>ToSic</Authors>
+    <Company>ToSic</Company>
+    <Description>[Description]</Description>
+    <Product>ToSic.Cre8magic.ThemeWithLocalNuGet</Product>
+    <Copyright>ToSic</Copyright>
+    <AssemblyName>$(MSBuildProjectName).Oqtane</AssemblyName>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <OqtaneStaticAssetsPath>../../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane</OqtaneStaticAssetsPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" />
+    <PackageReference Include="ToSic.Cre8magic.Oqtane" GeneratePathProperty="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oqtane.Client" Version="6.1.1" PrivateAssets="all" />
+    <PackageReference Include="Oqtane.Shared" Version="6.1.1" PrivateAssets="all" />
+  </ItemGroup>
+  
+  <Target Name="CopyStaticWebAssets" AfterTargets="Build">
+    <ItemGroup>
+      <StaticAssets Include="$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*" />
+    </ItemGroup>
+    <MakeDir Directories="$(OqtaneStaticAssetsPath)" />
+    <Copy SourceFiles="@(StaticAssets)"
+          DestinationFiles="@(StaticAssets->'$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+  </Target>
+
+  <PropertyGroup>
+    <!-- there may be other elements here -->
+    <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
