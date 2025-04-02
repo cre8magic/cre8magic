@@ -1,3 +1,7 @@
+---
+uid: Cre8magic.Library.Internals.LocalNuget.Index
+---
+
 # cre8magic - Local NuGet Package for Development
 
 When developing a new version of cre8magic, you may need to test the result on a theme _without_ deploying it to NuGet first.
