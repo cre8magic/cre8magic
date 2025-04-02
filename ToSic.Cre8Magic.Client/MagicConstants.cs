@@ -10,6 +10,6 @@ public class MagicConstants
 
     public const string PackageId = "ToSic.Cre8magic.Oqtane";
 
-    // TODO: @STV why "./" - shouldn't it be "/..."
-    internal const string InteropJsPath = $"./_content/{PackageId}/interop.js";
+    // the "/" prefix ensures that the path is resolved relative to root directory
+    internal const string InteropJsPath = $"/_content/{PackageId}/interop.js";
 }
