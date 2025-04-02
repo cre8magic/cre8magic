@@ -21,7 +21,7 @@
     <PackageReference Include="Oqtane.Client" Version="6.1.1" />
     <PackageReference Include="Oqtane.Shared" Version="6.1.1" />
     <!-- Use local NuGet Package -->
-    <!--<PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.16" GeneratePathProperty="true" />-->
+    <!--<PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.17" GeneratePathProperty="true" />-->
   </ItemGroup>
 
   <!-- Manually copy static web assets (JS files) and place them into the Oqtane.Server StaticWebAssets folder -->

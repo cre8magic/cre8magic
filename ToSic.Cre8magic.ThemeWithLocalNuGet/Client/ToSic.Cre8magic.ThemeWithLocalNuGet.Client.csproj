@@ -17,28 +17,27 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.3" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" />
-    <PackageReference Include="ToSic.Cre8magic.Oqtane" GeneratePathProperty="true" />
+    <PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.17" GeneratePathProperty="true" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Oqtane.Client" Version="6.1.1" PrivateAssets="all" />
     <PackageReference Include="Oqtane.Shared" Version="6.1.1" PrivateAssets="all" />
   </ItemGroup>
-  
+
   <Target Name="CopyStaticWebAssets" AfterTargets="Build">
     <ItemGroup>
       <StaticAssets Include="$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*" />
     </ItemGroup>
     <MakeDir Directories="$(OqtaneStaticAssetsPath)" />
-    <Copy SourceFiles="@(StaticAssets)"
-          DestinationFiles="@(StaticAssets->'$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')"
-          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(StaticAssets)" DestinationFiles="@(StaticAssets->'$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
   </Target>
 
   <PropertyGroup>
     <!-- there may be other elements here -->
     <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
 </Project>
