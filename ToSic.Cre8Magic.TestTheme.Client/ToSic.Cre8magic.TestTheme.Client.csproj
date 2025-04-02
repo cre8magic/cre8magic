@@ -85,7 +85,11 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
-   <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+  <Target Name="RunNpmInstallOrCi" BeforeTargets="Build" Condition="!Exists('node_modules')">
+    <Exec Command="if exist package-lock.json (npm ci) else (npm install)" />
+  </Target>
+
+  <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Condition="'$(Configuration)' == 'Debug'" Command="npm run dev" />
     <Exec Condition="'$(Configuration)' == 'Release'" Command="npm run build" />
   </Target>--> 
