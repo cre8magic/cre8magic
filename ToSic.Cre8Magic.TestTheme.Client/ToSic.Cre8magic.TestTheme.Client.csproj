@@ -89,8 +89,12 @@
     <Exec Command="if exist package-lock.json (npm ci) else (npm install)" />
   </Target>
 
-  <Target Name="BuildFrontend" BeforeTargets="Build" DependsOnTargets="RunNpmInstallOrCi">
+  <Target Name="BuildFrontend" BeforeTargets="Build" DependsOnTargets="RunNpmInstallOrCi" Condition="'$(Configuration)' == 'Release'">
     <Exec Command="npm run build" />
+  </Target>
+
+  <Target Name="BuildFrontendDebug" BeforeTargets="Build" DependsOnTargets="RunNpmInstallOrCi" Condition="'$(Configuration)' == 'Debug'">
+    <Exec Command="npm run dev" />
   </Target>
 
   <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
