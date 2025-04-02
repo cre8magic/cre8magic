@@ -4,9 +4,10 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 import autoprefixer from 'autoprefixer';
 import fs from 'fs';
 
-// This is ugly, but ATM how it's done in Oqtane
-const themeName = 'ToSic.Cre8magic.TestTheme.Client';
-const distFolder = `wwwroot/Themes/${themeName}`;
+// The value below must match the `Theme.PackageName` property in ThemeInfo.cs
+// This determines the output folder structure in wwwroot/Themes/ where static assets are stored
+const packageName = 'ToSic.Cre8magic.TestTheme';
+const distFolder = `wwwroot/Themes/${packageName}`;
 // const oqtaneTarget = resolve(__dirname, `../../oqtane.framework/Oqtane.Server/wwwroot/Themes`);
 
 // // Plugin to clean Oqtane destination before copying
