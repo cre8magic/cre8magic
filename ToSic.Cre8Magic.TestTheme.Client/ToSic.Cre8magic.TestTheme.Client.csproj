@@ -85,6 +85,16 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <Target Name="CleanWwwroot" BeforeTargets="Clean">
+    <RemoveDir Directories="wwwroot" />
+    <MakeDir Directories="wwwroot" />
+  </Target>
+
+  <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Condition="'$(Configuration)' == 'Debug'" Command="npm run dev" />
+    <Exec Condition="'$(Configuration)' == 'Release'" Command="npm run build" />
+  </Target>-->
+
   <Target Name="RunNpmInstallOrCi" BeforeTargets="Build" Condition="!Exists('node_modules')">
     <Exec Command="if exist package-lock.json (npm ci) else (npm install)" />
   </Target>
@@ -96,11 +106,6 @@
   <Target Name="BuildFrontendDebug" BeforeTargets="Build" DependsOnTargets="RunNpmInstallOrCi" Condition="'$(Configuration)' == 'Debug'">
     <Exec Command="npm run dev" />
   </Target>
-
-  <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Condition="'$(Configuration)' == 'Debug'" Command="npm run dev" />
-    <Exec Condition="'$(Configuration)' == 'Release'" Command="npm run build" />
-  </Target>--> 
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Condition="'$(OS)' == 'Windows_NT' And '$(Configuration)' == 'Debug'" Command="./Package\debug.cmd $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))" />
