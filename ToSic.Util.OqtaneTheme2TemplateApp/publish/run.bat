@@ -1,0 +1,1 @@
+OqtaneTheme2Template.exe a:\2shine-oqtane\cre8magic\ToSic.Theme.Cre8magic2

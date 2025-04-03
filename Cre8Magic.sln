@@ -95,6 +95,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToSic.Cre8magic.ThemeWithLo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToSic.Cre8magic.ThemeWithLocalNuGet.Package", "ToSic.Cre8magic.ThemeWithLocalNuGet\Package\ToSic.Cre8magic.ThemeWithLocalNuGet.Package.csproj", "{41AF25F2-B464-F34C-2521-1C53F2479BF6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{EC5826EF-B000-46E3-BB17-8102E6BF89E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToSic.Util.OqtaneTheme2TemplateApp", "ToSic.Util.OqtaneTheme2TemplateApp\ToSic.Util.OqtaneTheme2TemplateApp.csproj", "{175E6870-380A-978E-938B-8E021D024777}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -235,6 +239,10 @@ Global
 		{41AF25F2-B464-F34C-2521-1C53F2479BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41AF25F2-B464-F34C-2521-1C53F2479BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41AF25F2-B464-F34C-2521-1C53F2479BF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175E6870-380A-978E-938B-8E021D024777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175E6870-380A-978E-938B-8E021D024777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175E6870-380A-978E-938B-8E021D024777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175E6870-380A-978E-938B-8E021D024777}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -273,6 +281,7 @@ Global
 		{0CD54EAF-11B9-C340-04B3-8A8B059C65D6} = {DB142F1B-C148-4D53-8EFF-BD0C3247E109}
 		{21C96923-D1B0-1967-DE97-F69E86EADD2E} = {DB142F1B-C148-4D53-8EFF-BD0C3247E109}
 		{41AF25F2-B464-F34C-2521-1C53F2479BF6} = {DB142F1B-C148-4D53-8EFF-BD0C3247E109}
+		{175E6870-380A-978E-938B-8E021D024777} = {EC5826EF-B000-46E3-BB17-8102E6BF89E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D016F15-46FE-4726-8DFD-2E4FD4DC7668}
