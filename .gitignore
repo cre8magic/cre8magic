@@ -4,5 +4,7 @@
 
 bin/
 obj/
-InstallPackages/*.nupkg
+*.nupkg
 **/.vs/
+node_modules
+*.binlog

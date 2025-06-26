@@ -1,0 +1,21 @@
+﻿@using ToSic.Cre8magic.OqtaneBs5
+
+<h1>Language Menu - Basic</h1>
+<p>
+    This will do some basic language menu tests,
+    with different combinations of settings.
+</p>
+<h2>Language Menu without any config - should use <code>default</code> from json</h2>
+<MagicLanguageMenu />
+
+<hr />
+<h2>Language Menu with just <code>HideOthers</code> = <code>true</code></h2>
+<MagicLanguageMenu Settings="new() { HideOthers = true }"></MagicLanguageMenu>
+
+<hr />
+<h2>Language Menu with just <code>Name</code> = <code>englishOnly</code> </h2>
+<MagicLanguageMenu Settings='new() { Name = "englishOnly"}'></MagicLanguageMenu>
+
+<hr />
+<h2>Language Menu with just <code>Name</code> = <code>english-with-no-design</code> </h2>
+<MagicLanguageMenu Settings='new() { Name = "english-with-no-design"}'></MagicLanguageMenu>

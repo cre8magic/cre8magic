@@ -1,0 +1,80 @@
+@using ToSic.Module.Cre8magicTests.Services
+@using ToSic.Module.Cre8magicTests.Models
+
+@namespace ToSic.Module.Cre8magicTests.OriginalForReference
+@inherits ModuleBase
+@inject ICre8magicTestsService Cre8magicTestsService
+@inject NavigationManager NavigationManager
+@inject IStringLocalizer<Index> Localizer
+
+@if (_Cre8magicTestss == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <ActionLink Action="Add" Security="SecurityAccessLevel.Edit" Text="Add Cre8magicTests" ResourceKey="Add" />
+    <br />
+    <br />
+    @if (@_Cre8magicTestss.Count != 0)
+    {
+        <Pager Items="@_Cre8magicTestss">
+            <Header>
+                <th style="width: 1px;">&nbsp;</th>
+                <th style="width: 1px;">&nbsp;</th>
+                <th>@Localizer["Name"]</th>
+            </Header>
+            <Row>
+                <td><ActionLink Action="Edit" Parameters="@($"id=" + context.Cre8magicTestsId.ToString())" ResourceKey="Edit"  /></td>
+                <td><ActionDialog Header="Delete Cre8magicTests" Message="Are You Sure You Wish To Delete This Cre8magicTests?" Action="Delete" Security="SecurityAccessLevel.Edit" Class="btn btn-danger" OnClick="@(async () => await Delete(context))" ResourceKey="Delete"  Id="@context.Cre8magicTestsId.ToString()" /></td>
+                <td>@context.Name</td>
+            </Row>
+        </Pager>
+    }
+    else
+    {
+        <p>@Localizer["Message.DisplayNone"]</p>
+    }
+}
+
+@code {
+    public override string RenderMode => RenderModes.Static;
+
+    public override List<Resource> Resources => new List<Resource>()
+    {
+        new Resource { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
+        new Resource { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
+    };
+
+    List<Cre8magicTests> _Cre8magicTestss;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _Cre8magicTestss = await Cre8magicTestsService.GetCre8magicTestssAsync(ModuleState.ModuleId);
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Loading Cre8magicTests {Error}", ex.Message);
+            AddModuleMessage(Localizer["Message.LoadError"], MessageType.Error);
+        }
+    }
+
+    private async Task Delete(Cre8magicTests Cre8magicTests)
+    {
+        try
+        {
+            await Cre8magicTestsService.DeleteCre8magicTestsAsync(Cre8magicTests.Cre8magicTestsId, ModuleState.ModuleId);
+            await logger.LogInformation("Cre8magicTests Deleted {Cre8magicTests}", Cre8magicTests);
+            _Cre8magicTestss = await Cre8magicTestsService.GetCre8magicTestssAsync(ModuleState.ModuleId);
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            await logger.LogError(ex, "Error Deleting Cre8magicTests {Cre8magicTests} {Error}", Cre8magicTests, ex.Message);
+            AddModuleMessage(Localizer["Message.DeleteError"], MessageType.Error);
+        }
+    }
+}

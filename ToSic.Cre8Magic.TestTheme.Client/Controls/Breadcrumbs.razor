@@ -1,22 +1,57 @@
-﻿@inherits MagicBreadcrumbs
+﻿@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Cre8magic.Pages
+@using ToSic.Cre8magic.Settings
+@inherits ComponentBase
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Show the Breadcrumb
 Recommendations:    -
 Nice to know:       Uses extension methods like GetHomePage() and GetBreadcrumb()
+TODO:
+- make divs and classes configurable
+- fix breadcrumb-trigger, ATM not working, possibly configurable
 *@
+@code
+{
+    #nullable enable
+
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    /// <summary>
+    /// Settings for retrieving the breadcrumbs; optional.
+    /// If not set, the current page will be used as the active page.
+    /// </summary>
+    [Parameter]
+    public MagicBreadcrumbSettings? Settings { get; set; }
+
+    [Parameter]
+    public IMagicPageTailor? Tailor { get; set; }
+
+    // TODO: note also that we're using BreadcrumbKit.Pages.Classes(...) somewhere, so we should add the designer to the kit
+}
+@{
+    var breadcrumbKit = MagicAct.BreadcrumbKit(Settings.With(PageState).With(Tailor));
+}
 <div class="container theme-breadcrumbs d-flex py-2" aria-label="breadcrumb">
-    <div class="theme-breadcrumbs-item">
-        <a aria-current="page" href="@NavigateUrl(HomePage.Path)">@HomePage.Name</a>
-    </div>
-
-    @* Show a ... ellipsis in mobile mode to toggle showing the rest of the breadcrumb *@
-    <div class="theme-breadcrumbs-trigger"></div>
-
     @* Show an > arrow and the page name with link to it for each page in the breadcrumb *@
-    @foreach (var p in Breadcrumbs) {
+    @foreach (var p in breadcrumbKit.Pages)
+    {
         <div class="theme-breadcrumbs-item">
-            <span class="theme-breadcrumbs-separator"></span>
-            <a href="@NavigateUrl(p.Path)">@p.Name</a>
+            @* Show a separator like ">" *@
+            @if (p.Level > 1)
+            {
+                <span class="theme-breadcrumbs-separator"></span>
+            }
+            <a aria-current='@(p.IsActive ? "page" : null)' href="@p.Link">@p.Name</a>
         </div>
+
+        @* Show a ... ellipsis in mobile mode to toggle showing the rest of the breadcrumb *@
+        @if (p.Level == 2)
+        {
+            <div class="theme-breadcrumbs-trigger"></div>
+        }
+
     }
 </div>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>cre8magic Internal Architecture | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="cre8magic Internal Architecture | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/contribute/architecture.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="cre8magic-internal-architecture">cre8magic Internal Architecture</h1>
+
+<p>This document should explain the internal structures of cre8magic, so that developers can understand how it works and how to extend it.</p>
+<h2 id="overview">Overview</h2>
+<p>For the architecture there are a few things to consider:</p>
+<ol>
+<li>Stable external APIs</li>
+<li>Consistent internal APIs to make this fairly complex thing easy to understand</li>
+</ol>
+<h2 id="main-paradigms-for-the-internal-architecture">Main Paradigms For the Internal Architecture</h2>
+<ol>
+<li><p><strong>Composition over Inheritance</strong></p>
+<ul>
+<li>We try to avoid inheritance as much as possible, and instead use composition.</li>
+<li>This makes it easier to understand and extend the system.</li>
+</ul>
+</li>
+<li><p><strong>Plain Vanilla Blazor Components</strong></p>
+<ul>
+<li>We use <code>ComponentBase</code> instead of <code>ThemeBase</code> etc.</li>
+<li>This is a consequence of Composition over Inheritance.</li>
+</ul>
+</li>
+<li><p><strong>Read-Only Record Objects</strong></p>
+<ul>
+<li>We use read-only <code>record</code> objects for state management.</li>
+<li>For example, a <code>MagicSettings</code> object is a read-only record object.</li>
+<li>This has many benefits, especially that it will be immutable and not cause side-effects.</li>
+</ul>
+</li>
+<li><p><strong>Interfaces instead of Objects</strong></p>
+<ul>
+<li>We prefer to use interfaces instead of objects.</li>
+<li>This makes it easier to understand and extend the system.</li>
+</ul>
+</li>
+<li><p><strong>Structure by Topic, not by Type</strong></p>
+<ul>
+<li>We structure the code by topic, not by type.</li>
+<li>This makes it easier to understand and extend the system.</li>
+</ul>
+</li>
+<li><p><strong>Autocaching in the Service</strong></p>
+<ul>
+<li>We use autocaching in the service to make it faster and more efficient.</li>
+</ul>
+</li>
+</ol>
+<h2 id="things-to-consider">Things to Consider</h2>
+<p>We want developers to be able to use the services without having to use the Components.</p>
+<p>In addition, the settings mechanisms should be seamless, magical but still very easy to understand.</p>
+<h2 id="sample-best-practice-setup-by-example-of-the-menu">Sample Best Practice Setup by Example of the Menu</h2>
+<ol>
+<li><strong>IMagicMenuKit</strong> will be the object that contains everything to do with the menu.</li>
+<li><strong>Internal.IMagicMenuService</strong> will be the service that contains the logic to get the Kit.</li>
+<li><strong>IMagicAct</strong> is the main entry point which is usually used to call the service.</li>
+<li><strong>MagicMenuSettingsData</strong> (<code>record</code>) is the data object that is used for settings which can be stored.
+This object is usually not used the outside, as the outside will use the <strong>MagicMenuSettings</strong> (without the <code>Data</code>).</li>
+<li><strong>MagicMenuSettings</strong> (<code>record</code>) will be the settings object that is used to configure what the service should provide.
+<ol>
+<li>It extends the <code>MagicMenuSettingsData</code> and adds some additional properties, like the <code>PartName</code> which would be used to retrieve named settings.</li>
+<li>This object will usually be provided to the <code>MagicAct</code> to get everything set up.</li>
+<li>After the setup it will also be found on the <code>.Settings</code> property of the <code>MagicMenuKit</code>.</li>
+<li>After the setup it will have more values filled (from the <code>MagicMenuSettingsData</code>).</li>
+</ol>
+</li>
+<li>Design
+<ol>
+<li><strong>MagicMenuBlueprints</strong> ...</li>
+<li><strong>MagicMenuBlueprintPart</strong> ... TODO: NAMING NOT FINAL</li>
+<li><strong>MagicMenuTailor</strong> ...</li>
+</ol>
+</li>
+<li>The <strong>/Menus/Components/MagicMenu</strong> is a primary or sample component for using the menu.
+<ol>
+<li>It will expect a <code>Settings</code> parameter which is the <code>MagicMenuSettings</code>.</li>
+<li>It will usually use the <code>MagicAct</code> to prepare the <code>MagicMenuKit</code></li>
+<li>It will then use the <code>MagicMenuKit</code> to iterate the data, and render the menu.</li>
+</ol>
+</li>
+</ol>
+<h2 id="settings-structures">Settings Structures</h2>
+<ol>
+<li><strong>IMagicSettingsService</strong> is the internal object which manages/provides the settings.</li>
+<li><strong>IMagicSettingsSource</strong> (of which there are many) is the object that <em>can</em> provide settings.
+<ol>
+<li>The <strong>MagicSettingsSourceJson</strong> is an example of this.</li>
+<li>Sources contain a <code>Catalog(...)</code> method to retrieve the <strong>MagicSettingsCatalog</strong></li>
+</ol>
+</li>
+<li><strong>MagicSettingsCatalogsLoader</strong> will collect all the <em>Sources</em> and provide them to the <strong>IMagicSettingsService</strong>.</li>
+<li>...</li>
+</ol>
+<h2 id="settings-catalog-and-structure">Settings Catalog and Structure</h2>
+<p>A Catalog contain all the settings which can be requested by any part of the system.</p>
+<p>It follows two important conventions:</p>
+<ol>
+<li>Flat Structure with Topic first (e.g. <code>Themes</code>, <code>ThemeDesigns</code> <code>Menus</code>, <code>MenuBlueprints</code>, <code>Breadcrumbs</code>, ...)</li>
+<li>Each of these Settings Groups will have a dictionary of settings, so each section can contain multiple named settings.</li>
+<li>Everything is a <code>record</code> object, so it's immutable and can't cause side-effects.</li>
+<li>Everything inside the catalog should support the <code>ICanClone&lt;T&gt;</code> interface, so these records can be duplicated &amp; modified easily.</li>
+</ol>
+<p>The catalog always follows the following conventions</p>
+<ol>
+<li>A <code>ThemeSettings</code> (of which there can be many) is used
+<ol>
+<li>to configure a theme</li>
+<li>and (for example) determine which parts should be shown and where they can find their settings.</li>
+</ol>
+</li>
+<li><code>Menus</code> contains menu settings</li>
+<li><code>MenuBlueprints</code> contains menu design settings</li>
+</ol>
+<h2 id="settings-json">Settings Json</h2>
+<p>...usually <code>theme.json</code></p>
+<p>Specials like</p>
+<ul>
+<li><code>=</code></li>
+<li><code>inherits</code></li>
+</ul>
+<p>Internally</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/contribute/architecture.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

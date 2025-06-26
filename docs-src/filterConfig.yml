@@ -1,0 +1,40 @@
+
+
+apiRules:
+# Exclude System.Object or System.Reflection to avoid having .Equals and stuff in the docs
+- exclude:
+    uidRegex: ^System\.
+
+# hides things like Microsoft.Extensions.DependencyInjection etc.
+- exclude:
+    uidRegex: ^Microsoft\.
+
+# Exclude any "Internal" namespaces
+- exclude:
+    uidRegex: \.Internal\.
+
+
+- exclude:
+    uidRegex: \._Imports$
+
+# Hide BuildRenderTree method on blazor components as it would confuse the reader
+- exclude:
+    type: Method
+    uidRegex: BuildRenderTree
+
+# Exclude anything marked as EditorBrowsableState.Never
+- exclude:
+    hasAttribute:
+      uid: System.ComponentModel.EditorBrowsableAttribute
+      ctorArguments:
+      - System.ComponentModel.EditorBrowsableState.Never
+
+# Exclude any Oqtane specific inherited stuff?
+- exclude:
+    uidRegex: ^Oqtane\.
+    
+# Exclude anything marked as PrivateApi
+# In future, we may change this to only show things which are PublicApi (recommendation of iJungleboy)
+- exclude:
+    hasAttribute:
+      uid: Oqtane.Documentation.PrivateApi

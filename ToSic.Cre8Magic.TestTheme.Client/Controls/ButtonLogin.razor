@@ -1,12 +1,27 @@
-﻿@inherits MagicLogin
+﻿@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.UserLogins
+@inherits ComponentBase
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Show the Login buttons / state using lock icons
 Recommendations:    If you want other icons, do use inline SVGs
 Nice to know:       Inherits the LoginBase, which contains ChangeLogin and i18n for the label
 See also:           ButtonLoginTextInvisible.razor has the same feature but with text labels
 *@
-<a Title="@LocalizedLabel" class='@Classes("iconLogin")' @onclick="ChangeLogin">
-    @if (IsLoggedIn)
+@code
+{
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicUserLoginSettings Settings { get; set; }
+}
+@{
+    var loginKit = MagicAct.UserLoginKit(Settings.With(PageState));
+}
+<a title="@loginKit.Resources.Title" class='@loginKit.Tailor.Classes("iconLogin")' @onclick="loginKit.ToggleLogin">
+    @if (loginKit.User.IsAuthenticated)
     {
         <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
             viewBox="0 0 12.2 14.5" style="enable-background:new 0 0 12.2 14.5;" xml:space="preserve">

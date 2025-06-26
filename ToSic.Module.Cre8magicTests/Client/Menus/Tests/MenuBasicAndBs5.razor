@@ -1,0 +1,83 @@
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.OqtaneBs5
+@using ToSic.Cre8magic.Settings
+@inherits ThemeControlBase
+@inject IMagicAct MagicAct
+
+@{
+    // Get the current environment - separate step, as we may change the mechanics later
+    var currentEnv = TestParameters.EnvCurrent;
+
+    MagicAct.UsePageState(PageState);
+}
+
+
+<h1>Menu Tests for @currentEnv xx</h1>
+
+<div class="alert alert-warning">
+    To properly test this, put it in a theme without cre8magic and make sure you F5 the page when you get here.
+    Otherwise, there is still stuff left in the MagicAct from other themes, which will result in some defaults you don't want to test.
+</div>
+
+<div class="navbar-expand-lg">
+
+    <h2>Start No Settings - using Act</h2>
+    <h3>Basic Menu without Setting, name none</h3>
+    <BasicMenu MenuKit="@MagicAct.MenuKit()" />
+    <MagicDebug Target="@MagicAct.MenuKit()"></MagicDebug>
+    <hr />
+
+    <h2>Start No Settings - using Act and Refill Blueprint Bs5</h2>
+    <h3>...</h3>
+    @{
+        var withRefill = new MagicMenuSettings().Refill(new DefaultsBs5().MagicMenuBlueprint);
+
+        // more code to enable debugging
+        var y = withRefill.GetStable().Blueprint.GetStable().Parts;
+    }
+    <BasicMenu MenuKit="@MagicAct.MenuKit(withRefill)" />
+    <MagicDebug Target="@MagicAct.MenuKit(withRefill)"></MagicDebug>
+    <hr />
+    
+    <h2>No Settings using MagicMenu</h2>
+    <MagicMenu></MagicMenu>
+    <hr />
+    
+    <h2>OqtaneBasic.MagicMenu empty</h2>
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu></ToSic.Cre8magic.OqtaneBasic.MagicMenu>
+    
+    <h2>OqtaneBasic.MagicMenu <code>/</code></h2>
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/" }'/>
+
+
+    <h2>OqtaneBasic.MagicMenu <code>/+</code></h2>
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/+" }'/>
+
+    <h2>OqtaneBasic.MagicMenu <code>/+ BS5</code></h2>
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/+", Blueprint = new DefaultsBs5().MagicMenuBlueprint }'/>
+
+    <h2>OqtaneBasic.MagicMenu <code>/+ </code> + <em>Inline Blueprint!</em></h2>
+
+    
+    <ToSic.Cre8magic.OqtaneBasic.MagicMenu Settings='new() { Pick = "/", Blueprint = SimpleBlueprint()}'/>
+    @code
+    {
+        MagicMenuBlueprint SimpleBlueprint() => new()
+        {
+            Parts = new()
+            {
+                { "ul", new() { Classes = "navbar-nav" } },
+                { "li", new() { Classes = "nav-item", IsActive = new("active") } },
+                { "a", new() { Classes = "nav-link" } },
+            }
+        };
+    }
+
+    todo
+    - use MagicAct, not MenuSvc
+    - with root only
+    - with root and children
+    
+    - then with magicMenu
+</div>

@@ -1,4 +1,6 @@
-﻿@*
+﻿@using ToSic.Cre8magic.OqtaneBs5
+@inherits ComponentBase
+@*
 File Purpose:       Show the Footer in the Layout with address etc.
 Recommendations:    If you need icons like for 'tel', make sure you use inline SVGs
 Nice to know:       It's implemented as microdata which is why it has 'itemtype' or 'itemprop'
@@ -8,7 +10,7 @@ TODO:
 *@
 @code
 {
-    const string FooterPrefix = ClassPrefix + "-footer";
+    const string FooterPrefix = ThemeConstants.ClassPrefix + "-footer";
 }
 <footer id="@FooterPrefix">
     @* TODO: @2tl - do we need this div? or can we put the class on the footer ? *@
@@ -32,7 +34,7 @@ TODO:
         </ul>
         <div class="@FooterPrefix-imprint">
             <ButtonLoginTextInvisible></ButtonLoginTextInvisible>
-            <Menu ConfigName="@ThemeInfo.MenuFooter"></Menu>
+            <MagicMenu Settings="new() { Name = ThemeConstants.MenuFooter }"></MagicMenu>
         </div>
     </div>
 </footer>

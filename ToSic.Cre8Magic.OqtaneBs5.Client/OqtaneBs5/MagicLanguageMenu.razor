@@ -1,0 +1,40 @@
+@using Oqtane.UI
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Languages
+@using ToSic.Cre8magic.Settings
+
+@namespace ToSic.Cre8magic.OqtaneBs5
+@inherits ComponentBase
+
+@inject IMagicAct MagicAct
+@*
+File Purpose:       Show the Language Navigation / Selector
+Recommendations:    -
+Nice to know:       
+    - The languages available are handed in from the Header file
+      ...if the list is empty, it will use the site definition
+      ...otherwise it will use the values specified for order/label of languages
+*@
+@code
+{
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicLanguageSettings? Settings { get; set; }
+}
+@{
+    var languageKit = MagicAct.LanguageKit(Settings.With(PageState));
+}
+@if (languageKit is { Show: true })
+{
+    <ul class='@(languageKit.Tailor.Classes("ul") ?? "theme-languages")'>
+        @foreach (var lang in languageKit.Languages)
+        {
+            <li class='@languageKit.Tailor.Classes("li", lang)'>
+                <a href="#" @onclick="@(async _ => await languageKit.SetCultureAsync(lang.Culture))" title="@lang.Description">@lang.Label</a>
+            </li>
+        }
+    </ul>
+    <MagicDebug Target="@languageKit"></MagicDebug>
+}

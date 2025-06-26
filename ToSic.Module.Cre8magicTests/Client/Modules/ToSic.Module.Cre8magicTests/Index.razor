@@ -1,0 +1,75 @@
+@namespace ToSic.Module.Cre8magicTests
+@using ToSic.Module.Cre8MagicTests.Client
+@inherits ModuleBase
+@inject IStringLocalizer<Index> Localizer
+@inject ISettingService SettingService
+
+@code {
+    public string SelectedTest { get; set; } = "";
+    public string SelectedInDb = "wait-for-loading";
+    internal TestDescription SelectedType => TestDatabase.Tests.FirstOrDefault(t => t.Id == SelectedTest);
+}
+
+
+<sub>Cre8magic Tests - Select from the list</sub>
+<select class="form-control" @bind="@SelectedTest">
+    <option value="">(select from the list)</option>
+    @foreach(var test in TestDatabase.Tests)
+    {
+        <option value = "@test.Id"> @test.Name </option>
+    }
+</select>
+@* Show save button for logged-in users if the value had changed *@
+@if (SelectedType != null && SelectedType.Id != SelectedInDb && PageState.User?.IsAuthenticated == true)
+{
+    <button type="button" class="btn btn-success" @onclick="@(async () => await UpdateSettings(SelectedType.Id))">@Localizer["SaveSettings"]</button>
+}
+<br/>
+
+@if (SelectedType != null)
+{
+    <DynamicComponent Type="@SelectedType.Type"></DynamicComponent>
+}
+
+@code {
+    public override string RenderMode => RenderModes.Static;
+
+    public override List<Resource> Resources =>
+    [
+        new() { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
+        new() { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
+    ];
+
+    protected override async Task OnInitializedAsync() => await LoadSettings();
+
+    protected override Task OnParametersSetAsync() => LoadSettings();
+
+    private async Task LoadSettings()
+    {
+        try
+        {
+            var settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
+            SelectedTest = SelectedInDb = SettingService.GetSetting(settings, "ControlToShow", "");
+        }
+        catch (Exception ex)
+        {
+            AddModuleMessage(ex.Message, MessageType.Error);
+        }
+    }
+
+    public async Task UpdateSettings(string value)
+    {
+        try
+        {
+            var settings = await SettingService.GetModuleSettingsAsync(ModuleState.ModuleId);
+            SettingService.SetSetting(settings, "ControlToShow", value);
+            await SettingService.UpdateModuleSettingsAsync(settings, ModuleState.ModuleId);
+            SelectedInDb = value;
+        }
+        catch (Exception ex)
+        {
+            AddModuleMessage(ex.Message, MessageType.Error);
+        }
+    }
+
+}

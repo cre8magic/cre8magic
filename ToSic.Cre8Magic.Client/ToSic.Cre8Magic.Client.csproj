@@ -1,52 +1,78 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>0.1.0</Version>
+    <Version>0.0.17</Version>
     <Authors>2sic internet solutions GmbH, Switzerland</Authors>
     <Company>2sic internet solutions GmbH, Switzerland</Company>
     <Description>Theme Library for professional Oqtane Themes</Description>
     <Product>ToSic.Cre8magic.Oqtane</Product>
-    <Copyright>Copyright MIT © 2sic 2024</Copyright>
+    <Copyright>Copyright MIT © 2sic 2025</Copyright>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>$(MSBuildProjectName).Oqtane</AssemblyName>
-    <PackageId>ToSic.Cre8magic.Oqtane</PackageId>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>cre8magic for Oqtane – Professional Theme Design</Title>
+
+    <!-- Packaging properties are commented out below, because we use separate ToSic.Cre8magic.Package project with nuspec -->
+    <!--
+    <PackageId>ToSic.Cre8magic.Oqtane</PackageId>
     <PackageProjectUrl>https://2sic.github.io/cre8magic/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/2sic/cre8magic.git</RepositoryUrl>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    -->
+    
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild><!-- Disable package generation on build -->
+    <RootNamespace>$(MSBuildProjectName.Replace(".Client", "").Replace(" ", "_"))</RootNamespace>
+    <LangVersion>preview</LangVersion>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+  <!-- Suppress 'field' not allowed in Docs-compiling CS0657 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS0657</NoWarn>
+  </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS0657</NoWarn>
+  </PropertyGroup>
+
+  <!--<ItemGroup>
+    <Compile Remove="Models\**" />
+    <Compile Remove="Pages\Internal\Breadcrumb\**" />
+    <Compile Remove="Pages\Internal\Menu\**" />
+    <Content Remove="Models\**" />
+    <Content Remove="Pages\Internal\Breadcrumb\**" />
+    <Content Remove="Pages\Internal\Menu\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Pages\Internal\Breadcrumb\**" />
+    <EmbeddedResource Remove="Pages\Internal\Menu\**" />
+    <None Remove="Models\**" />
+    <None Remove="Pages\Internal\Breadcrumb\**" />
+    <None Remove="Pages\Internal\Menu\**" />
+  </ItemGroup>-->
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.6" />
-    <PackageReference Include="Oqtane.Client" Version="5.1.2" />
-    <PackageReference Include="Oqtane.Shared" Version="5.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.6" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" PrivateAssets="all" />
+    <PackageReference Include="Oqtane.Client" Version="6.1.1" />
+    <PackageReference Include="Oqtane.Shared" Version="6.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Package\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <!-- Include wwwroot content in the NuGet package and ensure it copies to consumer's wwwroot -->
+    <Content Include="wwwroot\**\*.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToSic.Cre8magic.StaticWebAssets\ToSic.Cre8magic.StaticWebAssets.esproj" />
   </ItemGroup>
 
 </Project>

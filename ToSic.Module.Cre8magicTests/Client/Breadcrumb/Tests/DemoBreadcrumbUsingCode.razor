@@ -1,0 +1,91 @@
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Settings
+@inject IMagicAct MagicAct
+
+@code {
+    [CascadingParameter] public required PageState PageState { get; set; }
+}
+
+<h1>MagicBreadcrumb with Code to Loop Items</h1>
+
+<h2>Settings directly in Code</h2>
+
+@{
+    var breadcrumbKit = MagicAct.BreadcrumbKit(new()
+    {
+        PageState = PageState,
+        WithActive = true,
+        WithHome = false,
+    });
+}
+<ol class="breadcrumb">
+    @foreach (var item in breadcrumbKit.Pages)
+    {
+        <li class='breadcrumb-item'>
+            <a href="@item.Link">@item.Name</a>
+        </li>
+    }
+</ol>
+
+<h2>Settings from the Book</h2>
+@* Setup Code to ensure it uses the settings we want to provide for the demo *@
+
+@{
+    MagicAct.UseBook(new()
+    {
+        Chapter = new()
+        {
+            Breadcrumb = new()
+            {
+                WithActive = true,
+                WithHome = true,
+            }
+        }
+    });
+}
+
+@* Breadcrumb using the settings from the spells book *@
+@{
+    // Note: equivalent to ... = MagicAct.BreadcrumbKit(PageState, new() { Name = "default" });
+    breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState });
+}
+<ol class="breadcrumb">
+    @foreach (var item in breadcrumbKit.Pages)
+    {
+        <li class='breadcrumb-item'>
+            <a href="@item.Link">@item.Name</a>
+        </li>
+    }
+</ol>
+
+<h2>With Non-Default names</h2>
+                    
+@{
+    var spellsBook = new MagicBook
+    {
+        Breadcrumbs = new()
+        {
+            {
+                "productsBreadcrumb", new()
+                {
+                    WithHome = false,
+                    WithActive = true
+                }
+            }
+        }
+    };
+    MagicAct.UseBook(spellsBook);
+}
+
+@* Breadcrumb using the settings from the spells book *@
+@{
+    breadcrumbKit = MagicAct.BreadcrumbKit(new() { PageState = PageState, Name = "productsBreadcrumb" });
+}
+<ol class="breadcrumb">
+    @foreach (var item in breadcrumbKit.Pages)
+    {
+        <li class='breadcrumb-item'>
+            <a href="@item.Link">@item.Name</a>
+        </li>
+    }
+</ol>

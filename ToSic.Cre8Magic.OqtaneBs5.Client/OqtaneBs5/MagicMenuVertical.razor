@@ -1,0 +1,41 @@
+﻿@using System.Diagnostics.CodeAnalysis
+@using ToSic.Cre8magic.Pages
+@inherits ComponentBase
+@attribute [PrivateApi]
+@*
+File Purpose:       Show a vertical menu, usually used for mobile or sidebar
+Recommendations:    See `MenuDefault.razor`
+Nice to know:       See `MenuDefault.razor`
+*@
+@code
+{
+    [Parameter, EditorRequired]
+    [field: AllowNull]
+    public required IMagicPage Current { get; init; }
+
+    // Additional debug stuff which is only visible when activated
+    [Parameter]
+    public RenderFragment? Debug { get; set; }
+}    
+@if (Current.Children.Any())
+{
+    <ul class='@Current.Classes("ul")'>
+        @foreach(var menuPage in Current.Children)
+        {
+            <li class='@menuPage.Classes("li")'>
+                <a class='@menuPage.Classes("a")' href='@menuPage.Link' target='@menuPage.Target'
+                   >@menuPage.Name</a>
+
+                @if (menuPage.HasChildren)
+                {
+                    <span class='@menuPage.Classes("span")'
+                          data-bs-toggle='collapse'
+                          data-bs-target='@menuPage.Value("data-bs-target")'
+                          aria-expanded='@menuPage.IsInBreadcrumb'></span>
+                    <MagicMenuVertical Current="@menuPage"></MagicMenuVertical>
+                }
+            </li>
+        }
+        @Debug
+    </ul>
+}

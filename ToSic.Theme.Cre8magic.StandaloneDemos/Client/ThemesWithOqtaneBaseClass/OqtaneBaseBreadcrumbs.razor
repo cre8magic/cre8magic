@@ -1,0 +1,40 @@
+﻿@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+@inherits ThemeBase
+@using ToSic.Cre8magic.OqtaneBs5
+
+@code {
+    public override string Name => PageTitle;
+
+    private const string PageTitle = "Oqtane Base Theme - MagicBreadcrumb BS5";
+
+    private const string PageDescription = "This is a standard Oqtane ThemeBase with a MagicBreadcrumb.";
+
+    public override string Panes => PaneNames.Default;
+}
+
+@* Default box containing menu, intro text etc. - contents is between the tags *@
+<MainDefault Name="@Name" Title="@PageTitle" Description="@PageDescription">
+    <BeforeContent>
+        <!-- Breadcrumb Test on top-->
+        <MagicBreadcrumb></MagicBreadcrumb>
+    </BeforeContent>
+    <!-- just a demo, you can omit these -->
+    <BeforePane>
+        <!-- nothing to show here -->
+    </BeforePane>
+    
+    @* Add more variations *@
+    <ChildContent>
+        <div>Default</div>
+        <MagicBreadcrumb></MagicBreadcrumb>
+
+        <div>Without Home</div>
+        <MagicBreadcrumb Settings="new() { WithHome = false }"></MagicBreadcrumb>
+
+        <div>Without Active / current</div>
+        <MagicBreadcrumb Settings="new() { WithActive = false }"></MagicBreadcrumb>
+
+        <div>Reversed</div>
+        <MagicBreadcrumb Settings="new() { Reverse = true }"></MagicBreadcrumb>
+    </ChildContent>
+</MainDefault>

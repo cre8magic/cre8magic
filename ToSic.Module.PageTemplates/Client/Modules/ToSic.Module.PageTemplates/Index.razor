@@ -1,0 +1,37 @@
+@using ToSic.Module.PageTemplates.Shared
+@namespace ToSic.Module.PageTemplates
+@inherits ModuleBase
+@inject IPageTemplatesService PageTemplatesService
+
+<button type="button" class="btn btn-success" @onclick="CreateTest">Click me</button>
+
+@if (!_created)
+{
+    <p><em>Not created...</em></p>
+}
+else
+{
+    <p><em>Created!!!</em></p>
+}
+
+@code {
+
+    public override string RenderMode => RenderModes.Interactive;
+
+    public override List<Resource> Resources =>
+    [
+        new() { ResourceType = ResourceType.Stylesheet, Url = ModulePath() + "Module.css" },
+        new() { ResourceType = ResourceType.Script, Url = ModulePath() + "Module.js" }
+    ];
+
+    private async Task CreateTest()
+    {
+        await PageTemplatesService.CreateTestAsync(PageState.Page.Name);
+        _created = true;
+
+    }
+    bool _created = false;
+
+
+
+}

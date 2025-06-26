@@ -1,0 +1,71 @@
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.Settings
+
+@namespace ToSic.Cre8magic.OqtaneBs5
+@inherits ComponentBase
+
+@inject IMagicAct MagicAct
+@*
+File Purpose:       Add a menu based on the parameter 'ConfigName'
+Recommendations:    -
+Nice to know:
+    - Inherits from a base class that prepares everything
+    - The <ThemePackageSettings> in the @inherits tells the system what will provide the settings
+    - Prepares the menu structure and then renders using one of various menu controls
+    - Can be configured directly on the tag, or can load a config from JSON
+      The exact properties are defined in the base class
+    - If necessary, you can create another type of menu and just add it to the list below
+    - WIP: Later it will also be able to load a config from the page/theme settings
+*@
+@code
+{
+    /// <inheritdoc cref="ToSic.Cre8magic.OqtaneBs5.Internal.ComponentDocs.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    /// <summary>
+    /// All the menu settings.
+    /// If not provided, it will use the default settings from any other configuration.
+    /// If provided, it may still merge these with other settings (like in PartName was specified).
+    /// </summary>
+    [Parameter]
+    public MagicMenuSettings? Settings { get; set; }
+
+    [Parameter]
+    public string? Name { get; set; }
+}
+@{
+    // Get the latest menu kit on each render, using the latest PageState
+    var menuKit = MagicAct.MenuKit(Settings.With(PageState, Name).Refill(new DefaultsBs5().MagicMenuBlueprint));
+}
+@* Special Debugging *@
+@if (false)
+{
+    var debug = menuKit.Settings.GetStable().Debug;
+    <div class="alert alert-info">
+        @* ConfigName: @(Menu?.Settings.ConfigName) <br/> *@
+        @* HasChildren: @(menuKit.Root.Children.Any()) - @menuKit.Root.Children.Count() <br /> *@
+        @* Debug: @debug?.Allowed / @debug?.Anonymous / @debug?.Admin <br/> *@
+        @* This: @Menu?.Name (@Menu?.Link) <br/> *@
+        @* Variant: @menuKit.Variant <br/> *@
+        @* Ul-Classes: @menuKit.Root.Classes("ul") <br /> *@
+        @* Li-Classes: @menuKit.Root.Classes("li") <br /> *@
+        @* A-Classes: @menuKit.Root.Classes("a") <br /> *@
+    </div>
+}
+
+@* Show the desired menu - in this setup we have 2 options. *@
+@if (menuKit.IsVariant("vertical"))
+{
+    <MagicMenuVertical Current="@menuKit.Root">
+        <Debug><li><MagicDebug Target="@menuKit"></MagicDebug></li></Debug>
+    </MagicMenuVertical>
+}
+else
+{
+    <MagicMenuHorizontal Current="@menuKit.Root">
+        <Debug><li><MagicDebug Target="@menuKit"></MagicDebug></li></Debug>
+    </MagicMenuHorizontal>
+}

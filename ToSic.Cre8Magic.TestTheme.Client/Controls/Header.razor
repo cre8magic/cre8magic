@@ -1,11 +1,27 @@
-﻿@inherits MagicControl
+﻿@using ToSic.Cre8magic.Components.Internal
+@using ToSic.Cre8magic.OqtaneBs5
+@inherits ComponentBase
 @*
 File Purpose:       Show the Header with logo, navigation etc.
 Recommendations:    -
 Nice to know:       Most of the parts are again other controls (icon, navigation, etc.)
 *@
+@code {
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter, EditorRequired]
+    public required IMagicThemeKit ThemeKit { get; set; }
+
+    [Inject]
+    public SiteState SiteState { get; set; }
+}
+@{
+    // var sitePages = SiteState.Pages;
+}
 @* The header containing Logo, Navigation etc. in Desktop and Mobile*@
-<nav id="@ClassPrefix-page-navigation" class="navbar navbar-expand-lg bg-white">
+<nav id="@ThemeConstants.ClassPrefix-page-navigation" class="navbar navbar-expand-lg bg-white">
     <div class="container d-flex justify-content-between align-items-center py-3">
         <HeaderLogo></HeaderLogo>
         
@@ -23,17 +39,18 @@ Nice to know:       Most of the parts are again other controls (icon, navigation
             <div class="offcanvas-body">
                 <div class="d-flex flex-column justify-content-end align-items-end flex-grow-1">
                     <div class="d-none d-lg-block">
-                        <Menu ConfigName="@ThemeInfo.MenuMain"></Menu>
+                        <MagicMenu Settings="new() { Name = ThemeConstants.MenuMain }"></MagicMenu>
                     </div>
                     <div class="d-block d-lg-none w-100">
-                        <Menu ConfigName="@ThemeInfo.MenuMobile"></Menu>
+                        <MagicMenu Settings="new() { Name = ThemeConstants.MenuMobile }"></MagicMenu>
                     </div>
                     <div class="d-flex order-lg-first">
-                        <LanguageNav></LanguageNav>
+                        <MagicLanguageMenu></MagicLanguageMenu>
+                        <MagicMenu Settings='new() { Pick = "56!/" }'></MagicMenu>
                         <ButtonLogin></ButtonLogin>
                         <ButtonEdit></ButtonEdit>
                         <ButtonControlPanel></ButtonControlPanel>
-                        <MagicThemeDebug></MagicThemeDebug>
+                        <MagicDebug Target="@ThemeKit"></MagicDebug>
                     </div>
                 </div>
             </div>

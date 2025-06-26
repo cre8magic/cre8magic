@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2348200">
+
+  <PropertyGroup>
+    <ShouldRunNpmInstall>true</ShouldRunNpmInstall>
+    <ShouldRunBuildScript>true</ShouldRunBuildScript>
+
+    <!-- explicit defaults -->
+    <CleanCommand>npm run clean</CleanCommand>
+    <BuildCommand>npm run build</BuildCommand>
+    <StartupCommand>npm run serve</StartupCommand>
+    <PublishCommand>npm run publish</PublishCommand>
+
+
+    <!-- StaticWebAssets copy for development -->
+    <OqtaneStaticAssetsPath>../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane</OqtaneStaticAssetsPath>
+  </PropertyGroup>
+
+  <!-- Updated target to copy static web assets from the 'dist' folder into '.../wwwroot/_content/ToSic.Cre8magic.Oqtane' -->
+  <Target Name="CopyStaticWebAssets" AfterTargets="Build">
+    <ItemGroup>
+      <StaticAssets Include="dist/**/*.*" />
+    </ItemGroup>
+    <MakeDir Directories="$(OqtaneStaticAssetsPath)" />
+    <Copy
+      SourceFiles="@(StaticAssets)"
+      DestinationFiles="@(StaticAssets->'$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+</Project>

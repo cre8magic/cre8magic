@@ -1,0 +1,34 @@
+@using ToSic.Cre8magic.Menus.Internal
+@using ToSic.Cre8magic.Pages.Internal
+@inherits ThemeControlBase
+@inject IMagicMenuService MenuSvc
+@inject IMagicPageService PageSvc
+
+@{
+    // Get the current environment - separate step, as we may change the mechanics later
+    var currentEnv = TestParameters.EnvCurrent;
+    
+    var restrictPossiblePages = PageSvc
+        .GetPages(PageState, MenuTestData.DicRestrictPages[currentEnv])
+        .ToList();
+}
+
+
+<h1>Menu Tests for @currentEnv</h1>
+<p>
+    This demonstrates a menu-control which uses a function instead of recursively calling the same control again.
+</p>
+
+<div class="navbar-expand-lg">
+    
+    <h2>No Settings</h2>
+    <h3>Basic Menu without Setting, name none</h3>
+    <MenuWithFunction MenuKit="MenuSvc.MenuKit(PageState)" />
+    <hr />
+
+    <hr/>
+    <h2>Set MenuPages</h2>
+    <h3>Custom menu pages (@string.Join(",", restrictPossiblePages.Select(p => p.Id))) </h3>
+    <MenuWithFunction MenuKit="MenuSvc.MenuKit(PageState, new() { PagesSource = restrictPossiblePages })"></MenuWithFunction>
+
+</div>

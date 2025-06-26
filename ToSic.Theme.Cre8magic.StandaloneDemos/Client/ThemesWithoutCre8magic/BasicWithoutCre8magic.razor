@@ -1,0 +1,18 @@
+@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+@inherits ThemeBase
+
+@code {
+    public override string Name => "BasicWithoutCre8magic";
+
+    private const string PageTitle = "Standalone Demos - BasicWithoutCre8magic";
+
+    private const string PageDescription = "This is just a dummy setup to verify that the theme will work for creating copies with various kinds of demos/tests.";
+
+    public override string Panes => PaneNames.Default;
+}
+
+<MainDefault Name="@Name" Title="@PageTitle" Description="@PageDescription">
+    <div>
+        This is just a basic setup, without any Cre8magic features.
+    </div>
+</MainDefault>

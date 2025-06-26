@@ -1,14 +1,12 @@
 ﻿using Oqtane.Models;
-using static ToSic.Cre8magic.Client.MagicTokens;
+using ToSic.Cre8magic.Internal;
+using static ToSic.Cre8magic.MagicTokens;
 
-namespace ToSic.Cre8magic.Client.Tokens;
+namespace ToSic.Cre8magic.Tokens;
 
-internal class ModuleTokens: ITokenReplace
+internal class ModuleTokens(Module module) : ITokenReplace
 {
     private const string NameIdConstant = nameof(ModuleTokens);
-
-    public ModuleTokens(Module module) => _module = module;
-    private readonly Module _module;
 
     public string NameId => NameIdConstant;
 
@@ -21,12 +19,12 @@ internal class ModuleTokens: ITokenReplace
     {
         if (!value.HasValue()) return value;
         var mod = value!
-                .Replace(ModuleId, $"{_module.ModuleId}")
+                .Replace(ModuleId, $"{module.ModuleId}")
                 .Replace(ModuleControlName, () => NamespaceParts[^1])
                 .Replace(ModuleNamespace, () => string.Join('.', NamespaceParts[..^1]))
             ;
         return mod;
     }
 
-    private string[] NamespaceParts => _module.ModuleType.Split(',')[0].Split('.');
+    private string[] NamespaceParts => module.ModuleType.Split(',')[0].Split('.');
 }

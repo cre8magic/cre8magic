@@ -9,8 +9,8 @@ Nice to know:       Basically a copy of the Default.razor, but with a lot of TES
 @code
 {
     public override string Name => "Dev Test Navigation";
-    public override string Layout => "default";
-    protected override string MagicClasses => "centered";
+    public override string MagicName => "default";
+    protected override string MagicContextClasses => "centered";
 
     // Add some test-navigation modules to the page
     protected override void OnInitialized()

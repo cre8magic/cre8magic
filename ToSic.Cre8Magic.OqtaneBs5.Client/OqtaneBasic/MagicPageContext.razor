@@ -1,0 +1,53 @@
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.PageContexts
+@using ToSic.Cre8magic.Settings
+
+@namespace ToSic.Cre8magic.OqtaneBasic
+@inherits ComponentBase
+
+@inject IMagicAct MagicAct
+@*
+    Purpose:    Ensures that there is a wrapper - div or body
+                which has a bunch of css-classes to tell the stylesheets
+                which page it's on, what navigation / language is active etc.
+*@
+@code
+{
+    /// <summary>
+    /// Get the PageState from the CascadingParameter
+    /// </summary>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicPageContextSettings? Settings { get; set; }
+
+    /// <summary>
+    /// The HTML contents which is wrapped by this component.
+    /// If the settings specify that it uses the Body tag, then no div is added.
+    /// Otherwise, everything will be wrapped in a div with the magic CSS classes.
+    /// </summary>
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        await MagicAct.PageContextKit(Settings.With(PageState)).UpdateBodyTag();
+    }
+}
+@{
+    var state = MagicAct.PageContextKit(Settings.With(PageState));
+}
+@* If PutInBody a JS will place the classes in the Body tag, so no need to add it here *@
+@if (state.UseBodyTag)
+{
+    @ChildContent
+}
+else
+{
+    <div id="@state.TagId" class="@state.Classes">
+        @ChildContent
+    </div>
+}

@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+  ],
+  "settings": {
+    "liveServer.settings.mount": [
+      [
+        "/",
+        "../docs"
+      ]
+    ],
+    "files.associations": {
+      "docfx.json": "jsonc"
+    },
+    "cSpell.words": [
+      "Blazor",
+      "subfolders",
+      "wwwroot"
+    ],
+    "liveServer.settings.port": 5502,
+    "markdownlint.config": {
+      "no-inline-html": false,
+      "no-alt-text": false,
+      "no-multiple-blanks": false,
+      "no-hard-tabs": true,
+    },
+  },
+  "extensions": {
+    "recommendations": [
+      "DavidAnson.vscode-markdownlint",
+      "shd101wyy.markdown-preview-enhanced",
+      "ritwickdey.LiveServer"
+    ]
+  },
+
+}

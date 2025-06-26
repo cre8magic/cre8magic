@@ -1,0 +1,48 @@
+@namespace ToSic.Theme.Cre8magicTests
+@inherits ThemeBase
+@inject ISettingService SettingService
+
+@code {
+    public override string Name => "Theme1";
+    public override string Panes => PaneNames.Default;
+
+    private bool _login = true;
+    private bool _register = true;
+
+    protected override void OnParametersSet()
+    {
+        try
+        {
+            var settings = SettingService.MergeSettings(PageState.Site.Settings, PageState.Page.Settings);
+            _login = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Login", "true"));
+            _register = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Register", "true"));
+        }
+        catch
+        {
+            // error loading theme settings
+        }
+    }
+}
+
+<main role="main">
+    <nav class="navbar navbar-dark bg-primary">
+        <Logo />
+
+        <div class="controls ms-auto">
+            <div class="controls-group"><UserProfile ShowRegister="@_register" /> <Login ShowLogin="@_login"  /> <ControlPanel ButtonClass="btn-outline-light" /></div>
+        </div>
+    </nav>
+    
+    @* <TestMenus /> *@
+    
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <Pane Name="@PaneNames.Default" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

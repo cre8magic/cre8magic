@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>cre8magic - JavaScript and CSS Resources Explained | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="cre8magic - JavaScript and CSS Resources Explained | cre8magic ">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/internals/javascript/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="cre8magic---javascript-and-css-resources-explained">cre8magic - JavaScript and CSS Resources Explained</h1>
+
+<div class="TIP">
+<h5>Tip</h5>
+<p>This explains how JavaScript and CSS are Bundled and Distributed for use in NuGet,
+and how they are used in Themes or in the internal cre8magic ♾️ APIs.</p>
+<p>This document is meant for the people developing cre8magic.
+It is not meant for theme developers.</p>
+</div>
+<p>Themes which use cre8magic must also include the necessary javascript and css resources.
+This is quite difficult to achieve, since the JS and CSS are in the NuGet package of the library.
+Making sure that they are included when your theme is distributed requires quite a bit of work.</p>
+<h2 id="final-result-at-runtime">Final Result at Runtime</h2>
+<p>At runtime, all the files must be located in <code>/wwwroot/_content/ToSic.Cre8magic.Oqtane/</code>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <code>_content</code> folder is a special convention in ASP.NET Core for static web assets.
+It's a standard feature for all nuget libraries to include static assets in this folder.</p>
+<p>This is different than how Oqtane handles Theme assets, but it's the most appropriate location for libraries.</p>
+</div>
+<p>As of now, there are three files:</p>
+<ul>
+<li><code>interop.js</code> - this will be called by the theme for various operations such as adjusting classes on the body</li>
+<li><code>ambient.js</code> - this will be run by the browser to be available all the time (ambient)</li>
+<li><code>styles-bs5.css</code> - contains essential Bootstrap 5 styling used by cre8magic components and features</li>
+</ul>
+<p>Commands on these files are called from Oqtane using the <a class="xref" href="../../../api/ToSic.Cre8magic.Themes.IMagicThemeJsService.html">IMagicThemeJsService</a>.</p>
+<h2 id="ensuring-that-the-final-scenario-works">Ensuring that the Final Scenario Works</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the end, a theme developer should be able to just use cre8magic,
+and the necessary JS and CSS should be included in the theme.</p>
+<p>In addition, the makers of cre8magic should be able to work on the JS and CSS  files in an easy, efficient manner.</p>
+</div>
+<p>So we have three goals:</p>
+<ol>
+<li>the final theme must include the necessary JS and CSS files in the <code>wwwroot</code> folder of the theme, specifically in the folder <code>wwwroot/_content/ToSic.Cre8magic.Oqtane/</code></li>
+<li>during development of cre8magic, the JS and CSS files must be deployed to the same folder as the development Oqtane</li>
+<li>while working on the JS and CSS files, every change should be auto-updated to the dev Oqtane without a restart of Oqtane itself</li>
+</ol>
+<h2 id="how-this-works">How this Works</h2>
+<p>The cre8magic JavaScript and CSS resources follow a structured development, build, and distribution workflow:</p>
+<h3 id="javascript-source">JavaScript Source</h3>
+<p>This is all in the <code>ToSic.Cre8magic.StaticWebAssets</code> project.</p>
+<ul>
+<li>Source JavaScript files live in the <code>src/scripts</code> directory of the cre8magic project</li>
+<li>Source files are organized by feature/functionality (interop, ambient, shared)</li>
+<li>TypeScript is used for type safety during development</li>
+<li>Use ES modules (ESM) format
+<ul>
+<li><code>src/scripts/ambient/index.ts</code> - file automatically imports all TypeScript modules in the ambient directory to bundle them together for <code>ambient.js</code> library, intentionally avoiding tree-shaking.</li>
+<li><code>src/scripts/interop/interops.ts</code> - re-exports all interop functions from their respective modules</li>
+<li><code>src/shared/...</code> - folder contains code that's reused across different parts of the cre8magic JavaScript implementation.</li>
+</ul>
+</li>
+<li>We use a modern JS build system <a href="https://vite.dev/">Vite</a> to bundle and optimize cre8magic JavaScript for development or production</li>
+</ul>
+<h3 id="css-source">CSS Source</h3>
+<p>This is also in the <code>ToSic.Cre8magic.StaticWebAssets</code> project.</p>
+<ul>
+<li>Source SCSS files live in the <code>src/styles</code> directory of the cre8magic project</li>
+<li>We use SCSS for better organization, variables, and nesting capabilities</li>
+<li>The main entry point is <code>src/styles/bs5/styles-bs5.scss</code> which:
+<ul>
+<li>Imports necessary Bootstrap 5 components and utilities</li>
+<li>Includes cre8magic-specific overrides and extensions</li>
+<li>Gets compiled and optimized into the final <code>styles-bs5.css</code> bundle</li>
+</ul>
+</li>
+<li>The build system processes all SCSS files, optimizes them, and outputs the final CSS bundles to the <code>dist</code> folder</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Currently source maps for CSS files don't work as expected in the deployed environment.
+This means debugging in the browser can be more challenging as you won't see the original source files in browser dev tools.
+This is a known limitation we're working to address in future updates.</p>
+</div>
+<h3 id="development-workflow">Development Workflow</h3>
+<ul>
+<li><p><code>ToSic.Cre8magic.StaticWebAssets.csproj</code> - project is configured to automatically install Node.js dependencies during the build process.
+This ensures that all required dependencies are installed, reducing the risk of build failures due to missing packages.</p>
+</li>
+<li><p>The <code>package.json</code> file defines npm scripts to manage the JavaScript build and development workflow for cre8magic:</p>
+<ul>
+<li><code>clean</code>: Deletes the <code>dist</code> directory, ensuring a clean build environment.</li>
+<li><code>build</code>: Builds assets (bundled JS, CSS files) in the <code>dist</code> folder for production (also copies them to the Oqtane <code>wwwroot/_content</code> folder).</li>
+<li><code>serve</code>: Runs <code>vite build --watch</code> to continuously rebuild the JavaScript and CSS files when changes are detected, enabling a live development workflow.</li>
+<li><code>pack</code>: Executes the build script to prepare the JavaScript files and other assets for packaging into the NuGet package.</li>
+</ul>
+</li>
+<li><p>To streamline the build and deployment process, <strong>Visual Studio</strong> project commands: <strong>Clean</strong>, <strong>Build</strong>, <strong>Startup</strong>, and <strong>Publish</strong> run appropriate npm scripts as defined within <code>ToSic.Cre8magic.StaticWebAssets.csproj</code>.</p>
+</li>
+<li><p>During development, we use a file watcher (<code>npm run serve</code>) that:</p>
+<ul>
+<li>Detects changes to source JavaScript files</li>
+<li>Automatically rebuilds bundles in the <code>dist</code> folder</li>
+<li>Copies the updated files to the development Oqtane instance's appropriate folder under <code>wwwroot/_content</code></li>
+</ul>
+</li>
+<li><p>Another option is to <strong>Build</strong> the <code>ToSic.Cre8magic.Package.csproj</code> project in <code>Debug</code> configuration, as this will build and deploy the entire cre8magic library to the Oqtane development environment.</p>
+</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Once Visual Studio is running Oqtane, you cannot build this project (or you would have to stop Oqtane first).</p>
+<p>So we recommend that you open this project folder in a separate VS Code window and run the <code>npm run serve</code> command there
+while you are working on the JS/CSS.</p>
+</div>
+<h3 id="nuget-package">NuGet Package</h3>
+<p>The purpose of the <code>ToSic.Cre8magic.Oqtane</code> NuGet package is to redistribute the cre8magic library so it can be reused in custom Oqtane themes.</p>
+<ul>
+<li><p><strong>Build</strong> the <code>ToSic.Cre8magic.Package.csproj</code> project in <code>Release</code> configuration to build and package the cre8magic library into the <code>ToSic.Cre8magic.Oqtane</code> NuGet package. Static web assets are included as part of it.</p>
+</li>
+<li><p>The build process runs a production JS build (<code>npm run build</code>) to generate optimized JS bundles in the <code>dist</code> directory.</p>
+</li>
+<li><p>Then <code>release.cmd</code> is executed to handle generating the new NuGet package.</p>
+</li>
+<li><p>JS bundles and other assets from the <code>dist</code> folder are included in the NuGet package in the special <code>staticwebassets</code> folder, as defined in the <code>ToSic.Cre8magic.Oqtane.nuspec</code> configuration file. This is the folder which will later be used for automatic <code>_content</code> deployment.</p>
+</li>
+<li><p>The new <code>ToSic.Cre8magic.Oqtane</code> NuGet package file is generated in the <code>ToSic.Cre8magic.Package</code> folder, ready to be published to nuget.org (or copied to a <a class="xref" href="../local-nuget/index.html">local NuGet feed</a>).</p>
+</li>
+</ul>
+<h3 id="the-_content-folder">The <code>_content</code> Folder</h3>
+<p>The <code>_content</code> folder is a special convention in ASP.NET Core for static web assets.</p>
+<ul>
+<li><p>When a NuGet package is referenced, its static assets are automatically made available at <code>wwwroot/_content/{PackageId}/</code>.</p>
+</li>
+<li><p>This is part of ASP.NET Core's static web assets feature, so at runtime, ASP.NET Core middleware serves these files from the correct location. This ensures developers don't need to manually copy JS files, as they're automatically available when referencing the cre8magic NuGet package. See more:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/components/class-libraries?view=aspnetcore-9.0&amp;tabs=visual-studio#create-an-rcl-with-static-assets-in-the-wwwroot-folder">Create an RCL with static assets in the wwwroot folder</a></li>
+<li><a href="https://learn.microsoft.com/en-us/aspnet/core/razor-pages/ui-class?view=aspnetcore-9.0&amp;tabs=visual-studio#consume-content-from-a-referenced-rcl">Consume content from a referenced RCL</a></li>
+</ul>
+</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>While ASP.NET Core has built-in support for static web assets from NuGet packages, Oqtane's package handling system works differently. Oqtane uses a custom module/theme installation process that doesn't automatically handle the standard static web assets mechanism.</p>
+<p>For cre8magic-based themes to properly include the necessary JavaScript and CSS files, we need to add custom MSBuild tasks to the theme project file to copy static assets during build.</p>
+<ul>
+<li><code>ToSic.Cre8magic.StaticWebAssets.csproj</code> - Contains the original MSBuild tasks for development</li>
+<li><code>ToSic.Cre8magic.ThemeWithLocalNuGet.Client.csproj</code> - Provides the reference implementation that all cre8magic-based themes should follow (<a class="xref" href="../../deploy/index.html#changes-to-ensure-cre8magic-assets-and-dlls-are-included">Deployment Guide: Including cre8magic DLLs and JS</a>.)</li>
+</ul>
+<p>This approach ensures that when a theme is packaged as a NuGet package and installed in an Oqtane instance, all required cre8magic JavaScript and CSS resources are properly included and loaded.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/internals/javascript/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

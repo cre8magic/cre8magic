@@ -1,65 +1,67 @@
-﻿using Oqtane.Models;
-using Oqtane.UI;
-using static ToSic.Cre8magic.Client.MagicTokens;
+﻿using ToSic.Cre8magic.Internal;
+using ToSic.Cre8magic.Pages;
+using ToSic.Cre8magic.Utils;
+
 using static System.StringComparison;
 
-namespace ToSic.Cre8magic.Client.Tokens;
 
-internal class PageTokens: ITokenReplace
+namespace ToSic.Cre8magic.Tokens;
+
+internal class PageTokens(IMagicPage page, string? layoutVariant = null, string? menuId = null) : ITokenReplace
 {
+    /// <summary>
+    /// Name of this Token Source
+    /// </summary>
     public const string NameIdConstant = nameof(PageTokens);
-    public PageState PageState { get; }
-    public Page? Page { get; }
-    private readonly string? _bodyClasses;
-    private readonly string? _menuId;
+
+    public IMagicPage Page { get; } = page;
     public string NameId => NameIdConstant;
 
-    public PageTokens(PageState pageState, Page? page = null, string? bodyClasses = null, string? menuId = null)
-    {
-        PageState = pageState;
-        Page = page;
-        _bodyClasses = bodyClasses;
-        _menuId = menuId;
-    }
+    public PageTokens Clone(IMagicPage page, string? newMenuId = null) => new(page, layoutVariant, newMenuId ?? menuId);
 
-    public PageTokens Modified(Page page, string? menuId = null) => new(PageState, page, _bodyClasses, menuId ?? _menuId);
-
-    public string Parse(string classes)
+    public string? Parse(string? classes)
     {
-        if (!classes.HasValue()) return classes;
-        var page = Page ?? PageState.Page;
+        // If there are no classes, exit
+        if (!classes.HasValue())
+            return classes;
+
         var result = classes
-            .Replace(PageId, $"{page.PageId}", InvariantCultureIgnoreCase);
+            .Replace(MagicTokens.PageId, $"{Page.Id}", InvariantCultureIgnoreCase);
 
         // If there are no placeholders left, exit
-        if (!result.Contains(PlaceholderMarker)) return result;
+        if (!result.Contains(MagicTokens.PlaceholderMarker))
+            return result;
 
         result = result
-            .Replace(PageParentId, page.ParentId != null ? $"{page.ParentId}" : None)
-            .Replace(SiteId, $"{page.SiteId}", InvariantCultureIgnoreCase)
-            .Replace(LayoutVariation, _bodyClasses ?? None)
-            .Replace(MenuLevel, $"{page.Level + 1}")
-            .Replace(MenuId, _menuId ?? None);
+            .Replace(MagicTokens.PageParentId, Page.ParentId != null ? $"{Page.ParentId}" : MagicTokens.None)
+            .Replace(MagicTokens.SiteId, $"{Page.RawPage.SiteId}", InvariantCultureIgnoreCase)
+            .Replace(MagicTokens.LayoutVariation, layoutVariant ?? MagicTokens.None)
+            .Replace(MagicTokens.MenuLevel, $"{Page.MenuLevel}")
+            .Replace(MagicTokens.MenuId, menuId ?? MagicTokens.None);
 
         // Checking the breadcrumb is a bit more expensive, so be sure we need it
-        if (result.Contains(PageRootId))
+        if (result.Contains(MagicTokens.PageRootId))
             result = result
-                .Replace(PageRootId, CurrentPageRootId != null ? $"{CurrentPageRootId}" : None);
+                .Replace(MagicTokens.PageRootId, CurrentPageRootId != null ? $"{CurrentPageRootId}" : MagicTokens.None);
 
         return result;
     }
 
-    private int? CurrentPageRootId
-    {
-        get
-        {
-            if (_pageRootAlreadyTried) return _pageRootId;
-            _pageRootAlreadyTried = true;
-            _pageRootId = PageState.Breadcrumbs().FirstOrDefault()?.PageId;
-            return _pageRootId;
-        }
-    }
+    private int? CurrentPageRootId => _currentPageRootId.Get(() => Page.Breadcrumb.FirstOrDefault()?.Id);
 
-    private int? _pageRootId;
-    private bool _pageRootAlreadyTried;
+    //private int? CurrentPageRootId
+    //{
+    //    get
+    //    {
+    //        if (_pageRootAlreadyTried) return _pageRootId;
+    //        _pageRootAlreadyTried = true;
+    //        _pageRootId = Page.Breadcrumb.FirstOrDefault()?.Id;
+    //        return _pageRootId;
+    //    }
+    //}
+
+    //private int? _pageRootId;
+    //private bool _pageRootAlreadyTried;
+
+    private readonly GetOnce<int?> _currentPageRootId = new();
 }

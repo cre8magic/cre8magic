@@ -1,0 +1,44 @@
+﻿@using ToSic.Cre8magic.OqtaneBs5
+@using ToSic.Cre8magic.Languages
+@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.Settings.Debug.Internal
+
+<h2>Languages with Custom Book Tests</h2>
+
+<h3>Language Menu with some standard config</h3>
+@{
+    var book = new MagicBook
+    {
+        Languages = new()
+        {
+            {
+                "default", new()
+                {
+                    Languages = new()
+                    {
+                        { "en", new() { Description = "English from  Code" } },
+                        { "de", new() { Description = "DE from Code" } },
+                    }
+                }
+            }
+        }
+    };
+
+    var settings = new MagicLanguageSettings().UseBook(book);
+}
+<MagicLanguageMenu Settings="settings"></MagicLanguageMenu>
+
+<hr />
+
+<h3>Language Menu Config from UseLanguageSettings</h3>
+@{
+    var settings2 = new MagicLanguageSettings
+    {
+        Languages = new()
+        {
+            { "en", new() { Label = "En Code", Description = "English from  Code" } },
+            { "de", new() { Label = "DE CoDE", Description = "DE from Code" } },
+        }
+    };
+}
+<MagicLanguageMenu Settings="settings2"></MagicLanguageMenu>

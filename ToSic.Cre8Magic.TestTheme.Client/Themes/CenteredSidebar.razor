@@ -12,8 +12,8 @@ Nice to know:
 @code
 {
     public override string Name => "Centered with Sidebar";
-    public override string Layout => "sidebar"; // special
-    protected override string MagicClasses => "centered";
+    public override string MagicName => "centered-sidebar"; // special, with additional config to verify design etc. works
+    protected override string MagicContextClasses => "centered";
 }
 @{
     // Razor internal method to build with the HTML of the base Default.razor

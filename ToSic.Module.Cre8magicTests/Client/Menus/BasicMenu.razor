@@ -1,0 +1,28 @@
+@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.Pages
+@inherits ThemeControlBase;
+
+@code{
+    // Main entry point if this control is called the first time, providing the menu kit
+    [Parameter, EditorRequired]
+    public required IMagicMenuKit MenuKit { get; set; }
+
+    // Current Page to show submenu of - initially will use the Root from the Kit
+    [Parameter]
+    public IMagicPage Current { get => field ??= MenuKit.Root; init; }
+}
+<ul class='@Current.Classes("ul")'>
+    @foreach (var menuPage in Current.Children)
+    {
+        <li class='@menuPage.Classes("li")'>
+            <a class='@menuPage.Classes("a")' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>
+            @if (menuPage.HasChildren)
+            {
+                <span class='@menuPage.Classes("span")'></span>
+                <BasicMenu MenuKit="@MenuKit" Current="@menuPage" />
+            }
+        </li>
+    }
+</ul>
+
+

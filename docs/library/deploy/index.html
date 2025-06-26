@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>cre8magic – Package and Deploy Your Theme | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="cre8magic – Package and Deploy Your Theme | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/deploy/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Cre8magic.Library.Deploy.Index">
+<h1 id="cre8magic--package-and-deploy-your-theme">cre8magic – Package and Deploy Your Theme</h1>
+
+<div class="TIP">
+<h5>Tip</h5>
+<p>This explains how to package your theme with all the necessary assets and libraries from cre8magic ♾️.</p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>A theme inside Oqtane consists a combination of</p>
+<ol>
+<li>DLL files</li>
+<li>JavaScript files</li>
+<li>CSS files</li>
+<li>Images</li>
+</ol>
+<p>The way these are placed in your Oqtane is different during development and during deployment.
+This should help you understand what is happening under the hood, to ensure your theme works as expected.</p>
+<h2 id="development-setup">Development Setup</h2>
+<p>During development of your theme, you will usually have a setup which does things such as:</p>
+<ol>
+<li>Compile your theme code and deploy to your development Oqtane</li>
+<li>Deploy any additional theme assets in a <code>wwwroot/[your-theme-name]/</code> folder</li>
+<li>Include all necessary DLLs, including dependent cre8magic libraries</li>
+<li>Include all necessary JavaScript files from cre8magic</li>
+</ol>
+<p>All this is usually handled by your <strong>Packaging</strong> project, called <code>[YourCompany].Theme.[YourTheme].Package</code>.</p>
+<p>Basic deployment of your theme and its assets happens through the <code>debug.cmd</code> in that project,
+which was probably generated by Oqtane when the theme-project was created.</p>
+<h2 id="include-cre8magic-dlls-and-js-during-development">Include cre8magic DLLs and JS During Development</h2>
+<p>When developing your theme within the cre8magic solution, you need to configure your project to properly reference and deploy the cre8magic components:</p>
+<ol>
+<li><p>Add a direct project reference to the <code>ToSic.Cre8Magic.OqtaneBs5.Client</code>:</p>
+<ul>
+<li>Open your theme's Client project file (<code>[YourCompany].Theme.[YourTheme]/Client/[YourCompany].Theme.[YourTheme].Client.csproj</code>)</li>
+<li>Add the project reference with the correct relative path:</li>
+</ul>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+    &lt;ProjectReference Include=&quot;..\..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8magic.OqtaneBs5.Client.csproj&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+</li>
+<li><p>Configure the debug deployment script to include cre8magic DLLs:</p>
+<ul>
+<li>Edit your theme's debug script (<code>[YourCompany].Theme.[YourTheme]/Package/debug.cmd</code>)</li>
+<li>Add these commands to copy the required cre8magic libraries to your Oqtane server:</li>
+</ul>
+<pre><code class="lang-cmd">XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8magic.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
+XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
+</code></pre>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These commands ensure that when you build your theme in debug mode, both the core cre8magic and the Bootstrap 5 implementation dlls are deployed to your Oqtane development environment also including cre8mgaic static web assets, enabling your theme to use all cre8magic features.</p>
+</div>
+<h3 id="build-and-verify-that-it-works-in-your-oqtane-development-environment">Build and Verify that it Works in your Oqtane development environment</h3>
+<p>When you select <strong>Debug</strong> configuration and you build the <em>Package</em> project, it automatically deploys your Oqtane theme to your Oqtane Server development environment:</p>
+<ol>
+<li>Select <strong>Debug</strong> configuration in Visual Studio.</li>
+<li>Build the <em>Package</em> project (<code>[YourCompany].Theme.[YourTheme]/Package/[YourCompany].Theme.[YourTheme].Package.csproj</code>)</li>
+<li>The build process runs the <code>debug.cmd</code> script, which copies relevant files to your Oqtane development environment</li>
+<li>Theme-related DLL files will be placed in the <code>oqtane\oqtane.framework\Oqtane.Server\bin\Debug\net9.0</code> folder</li>
+<li>Theme static assets will be copied to the <code>oqtane\oqtane.framework\Oqtane.Server\wwwroot\Themes\[YourCompany].Theme.[YourTheme]</code> folder and <code>oqtane\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane</code> folder</li>
+</ol>
+<p>To verify it works:</p>
+<ol>
+<li>Run the Oqtane development environment (<code>Oqtane.Server</code> project).</li>
+<li>Oqtane will automatically detect and install your theme during startup.</li>
+<li>Log in to your Oqtane admin account</li>
+<li>Navigate to any page and access its <code>Page Management</code> settings.</li>
+<li>Go to the &quot;Appearance&quot; section .</li>
+<li>Your theme should be available in the dropdown list of themes and containers.</li>
+<li>Select your theme and verify it renders correctly</li>
+</ol>
+<p>If the theme doesn't appear in the list or doesn't render correctly, check the theme's <em>Package</em> project <strong>Build</strong> log in Visual Studio's <strong>Output</strong> window.</p>
+<h3 id="test-an-updated-version-in-your-oqtane-development-environment">Test an Updated Version in your Oqtane development environment</h3>
+<p>After making changes to your theme you can quickly test the updates:</p>
+<ol>
+<li>Select <strong>Debug</strong> configuration in Visual Studio if is not selected.</li>
+<li><strong>Rebuild</strong> the <em>Package</em> project (<code>[YourCompany].Theme.[YourTheme].Package.csproj</code>).</li>
+<li>The updated files will automatically deploy to your Oqtane Server development environment.</li>
+<li>Run the Oqtane development environment (<code>Oqtane.Server</code> project).</li>
+<li>Navigate to a page using your theme and verify the changes are visible</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your changes don't appear:</p>
+<ul>
+<li>Make sure your browser isn't caching the page (try a hard refresh with Ctrl+F5)</li>
+<li>Examine the theme's <em>Package</em> project <strong>Build</strong> log in Visual Studio's <strong>Output</strong> window for any errors</li>
+</ul>
+</div>
+<h2 id="include-cre8magic-dlls-and-js-in-package-deployment">Include cre8magic DLLs and JS in Package (Deployment)</h2>
+<p>When you are ready to deploy your theme to a production server,
+you will need to create a NuGet package containing all these resources.
+It will contain things like:</p>
+<ol>
+<li>Your theme DLLs</li>
+<li>Your theme JavaScript files</li>
+<li>Your theme CSS files</li>
+<li>Your theme images</li>
+<li>All necessary DLLs, including dependent cre8magic libraries</li>
+<li>All necessary JavaScript files from cre8magic in the <code>/wwwroot/_content/ToSic.Cre8magic.Oqtane/</code> folder</li>
+</ol>
+<p>This is also handled by your <strong>Packaging</strong> project, called <code>[YourCompany].Theme.[YourTheme].Package</code>.</p>
+<p>The part that makes it happen is the <code>release.cmd</code> in that project,
+which was probably generated by Oqtane when the theme-project was created.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The default <code>release.cmd</code> is not smart enough to handle additional libraries and resources,
+so you might need to adjust it to include the cre8magic resources.</p>
+</div>
+<h2 id="changes-to-ensure-cre8magic-assets-and-dlls-are-included">Changes to Ensure cre8magic Assets and DLLs are Included</h2>
+<p>To properly package your theme with cre8magic dependencies for production deployment, follow these steps:</p>
+<ol>
+<li><p><strong>Switch from project references to NuGet package references</strong>:</p>
+<ul>
+<li>Open your theme's client project file: <code>[YourCompany].Theme.[YourTheme]/Client/[YourCompany].Theme.[YourTheme].Client.csproj</code></li>
+<li>Remove the previous <code>ProjectReference</code> to cre8magic projects (used during development) so we can add a <code>PackageReference</code> to the cre8magic NuGet package instead later.</li>
+</ul>
+</li>
+<li><p><strong>Configure the static assets path</strong>:</p>
+<ul>
+<li>Add this property to the first <code>&lt;PropertyGroup&gt;</code> section:</li>
+</ul>
+<pre><code class="lang-xml">&lt;OqtaneStaticAssetsPath&gt;../../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane&lt;/OqtaneStaticAssetsPath&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This property defines where cre8magic assets will be copied during build. The path follows ASP.NET Core conventions for static assets from Razor Class Libraries.</p>
+</div>
+</li>
+<li><p><strong>Add the cre8magic package reference with path generation</strong>:</p>
+<ul>
+<li>Add this to your package references section (replace N.N.N with the actual version):</li>
+</ul>
+<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;N.N.N&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <code>GeneratePathProperty=&quot;true&quot;</code> attribute creates an MSBuild property (<code>$(PkgToSic_Cre8magic_Oqtane)</code>) that points to the installed package location, allowing access to its assets during the build process.</p>
+</div>
+</li>
+<li><p><strong>Add a build task to copy the static assets</strong>:</p>
+<ul>
+<li>Add this target to your project file:</li>
+</ul>
+<pre><code class="lang-xml">&lt;Target Name=&quot;CopyStaticWebAssets&quot; AfterTargets=&quot;Build&quot;&gt;
+  &lt;ItemGroup&gt;
+    &lt;StaticAssets Include=&quot;$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;MakeDir Directories=&quot;$(OqtaneStaticAssetsPath)&quot; /&gt;
+  &lt;Copy SourceFiles=&quot;@(StaticAssets)&quot;
+        DestinationFiles=&quot;@(StaticAssets-&gt;'$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')&quot;
+        SkipUnchangedFiles=&quot;true&quot; /&gt;
+&lt;/Target&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For Oqtane themes, this build task ensures that cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code>ToSic.Cre8magic.Oqtane</code> package are copied during the build process, which is essential for proper theme rendering.</p>
+</div>
+</li>
+<li><p>Open the <code>[YourCompany].Theme.[YourTheme]/Package/[YourCompany].Theme.[YourTheme].nuspec</code> file and add the following lines to include cre8magic DLLs and static web assets in the package:</p>
+<pre><code class="lang-xml">&lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
+&lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
+&lt;file src=&quot;..\..\..\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane\**\*.*&quot; target=&quot;wwwroot\_content\ToSic.Cre8magic.Oqtane&quot; /&gt;
+</code></pre>
+</li>
+</ol>
+<h3 id="build-and-test-in-a-standalone-oqtane-installation">Build and Test in a Standalone Oqtane Installation</h3>
+<p>To create a deployable package for production-like environment:</p>
+<ol>
+<li>Select <strong>Release</strong> configuration in Visual Studio</li>
+<li>Ensure you've incremented the version in <code>[YourCompany].Theme.[YourTheme].nuspec</code> (in <code>[YourCompany].Theme.[YourTheme]/Package</code> folder) if making changes</li>
+<li>Build the <em>Package</em> project (e.g., <code>[YourCompany].Theme.[YourTheme].Package.csproj</code>)</li>
+<li>The build process runs <code>release.cmd</code>, which creates a NuGet package</li>
+<li>The resulting theme package (e.g., <code>[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code>) will be in the <code>Package</code> folder</li>
+</ol>
+<p>To install and test your theme in a standalone Oqtane installation:</p>
+<ol>
+<li>Copy the <code>[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code> file to your Oqtane server's <code>Packages</code> folder, or use the <strong>Admin Dashboard &gt; Theme Management &gt; Install Theme</strong> option</li>
+<li>In Oqtane, go to <strong>Admin Dashboard &gt; System Info</strong> and click <strong>Restart Application</strong></li>
+<li>After restart, verify the theme was installed in <strong>Admin Dashboard &gt; Theme Management</strong></li>
+<li>Navigate to any page and open its <strong>Page Management</strong> settings</li>
+<li>In the <strong>Appearance</strong> section, your theme should be available in the dropdown list</li>
+<li>Select your theme and verify it renders correctly</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If your theme doesn't appear or doesn't render properly:</p>
+<ul>
+<li>Check Oqtane logs in the <code>Packages</code> and <code>wwwroot/Logs</code> folder</li>
+<li>Verify the package was properly created by examining it with a tool like NuGet Package Explorer</li>
+<li>Ensure all required dependencies are available in the target environment</li>
+</ul>
+</div>
+<h3 id="testing-theme-updates-in-production">Testing Theme Updates in Production</h3>
+<p>When updating an existing theme installation:</p>
+<ol>
+<li>Select <strong>Release</strong> configuration in Visual Studio</li>
+<li><strong>Important</strong>: Increment the version in the <code>[YourCompany].Theme.[YourTheme].nuspec</code> file to ensure Oqtane recognizes it as an update</li>
+<li>Rebuild the <em>Package</em> project to generate the updated package</li>
+<li>Copy the new <code>[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code> file to the Oqtane server's <code>Packages</code> folder</li>
+<li>In Oqtane, go to <strong>Admin Dashboard &gt; System Info</strong> and click <strong>Restart Application</strong></li>
+<li>The updated theme will be automatically detected and installed</li>
+<li>Navigate to a page using your theme and verify your changes are visible</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Oqtane caches themes aggressively. If you don't see your changes after restarting, you may need to:</p>
+<ul>
+<li>Clear browser cache (Ctrl+F5)</li>
+</ul>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/deploy/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

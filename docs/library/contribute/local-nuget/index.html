@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>cre8magic - Local NuGet Package for Development | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="cre8magic - Local NuGet Package for Development | cre8magic ">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/contribute/local-nuget/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="cre8magic---local-nuget-package-for-development">cre8magic - Local NuGet Package for Development</h1>
+
+<p>When developing a new version of cre8magic, you may need to test the result on a theme without deploying it to NuGet first.</p>
+<h3 id="step-1-create-a-local-nuget-feed">Step 1: Create a Local NuGet Feed</h3>
+<p>If you don't already have a local NuGet feed, in your <code>cre8magic</code> folder, follow these steps:</p>
+<ol>
+<li>Create a folder named <code>InstallPackages</code> to store NuGet packages for the local feed.</li>
+<li>Create a <code>nuget.config</code> file with the following configuration:</li>
+</ol>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;configuration xmlns=&quot;http://schemas.microsoft.com/nuget/config/Settings&quot;&gt;
+  &lt;packageSources&gt;
+    &lt;!-- Define the local package source with a relative path --&gt;
+    &lt;add key=&quot;LocalNuGetFeed&quot; value=&quot;InstallPackages&quot; /&gt;
+    &lt;!-- Include other sources as needed --&gt;
+    &lt;add key=&quot;nuget.org&quot; value=&quot;https://api.nuget.org/v3/index.json&quot; /&gt;
+  &lt;/packageSources&gt;
+  &lt;packageSourceMapping&gt;
+    &lt;packageSource key=&quot;LocalNuGetFeed&quot;&gt;
+      &lt;package pattern=&quot;ToSic.Cre8magic.*&quot; /&gt;
+    &lt;/packageSource&gt;
+    &lt;packageSource key=&quot;nuget.org&quot;&gt;
+      &lt;package pattern=&quot;*&quot; /&gt;
+    &lt;/packageSource&gt;
+  &lt;/packageSourceMapping&gt;
+  &lt;packageRestore&gt;
+    &lt;add key=&quot;enabled&quot; value=&quot;True&quot; /&gt;
+    &lt;add key=&quot;automatic&quot; value=&quot;True&quot; /&gt;
+  &lt;/packageRestore&gt;
+  &lt;config&gt;
+    &lt;add key=&quot;IncludeSymbols&quot; value=&quot;true&quot; /&gt;
+  &lt;/config&gt;
+&lt;/configuration&gt;
+</code></pre>
+<p>This configuration allows you to install local NuGet packages from the <code>InstallPackages</code> folder using the <code>LocalNuGetFeed</code> source in Visual Studio.</p>
+<h3 id="step-2-build-the-nuget-package">Step 2: Build the NuGet Package</h3>
+<ol>
+<li>Build the <code>ToSic.Cre8magic.Package.csproj</code> project in <code>Release</code> configuration.</li>
+<li>This generates a new <code>ToSic.Cre8magic.Oqtane</code> NuGet package in the <code>ToSic.Cre8magic.Package</code> folder.</li>
+<li>The version of the <code>.nupkg</code> file is defined in the <code>ToSic.Cre8magic.Oqtane.nuspec</code> file. Ensure you increment the version number for each new package to avoid issues with NuGet package caching.</li>
+<li>Copy the new package (e.g., <code>ToSic.Cre8magic.Oqtane.1.0.0.nupkg</code>) to the <code>InstallPackages</code> folder to make it available as a dependency for your custom Oqtane theme project.</li>
+</ol>
+<h3 id="step-3-modify-a-test-theme-to-use-the-local-nuget-package">Step 3: Modify a Test Theme to Use the Local NuGet Package</h3>
+<p>To test the local NuGet package, you need a custom Oqtane theme. For example, let's say you have generated a new custom theme named <code>ToSic.Theme.Test1</code>. This results in a folder structure with <code>Client</code> and <code>Package</code> subfolders containing <code>ToSic.Theme.Test1.Client.csproj</code> and <code>ToSic.Theme.Test1.Package.csproj</code> projects, respectively.</p>
+<ol>
+<li><p><strong>Update the Client Project</strong></p>
+<ul>
+<li>Open the <code>ToSic.Theme.Test1.Client.csproj</code> file.</li>
+<li>Add the following line to the end of the first <code>&lt;PropertyGroup&gt;</code>:
+<pre><code class="lang-xml">&lt;OqtaneStaticAssetsPath&gt;../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane&lt;/OqtaneStaticAssetsPath&gt;
+</code></pre>
+</li>
+<li>Add the following <code>&lt;PackageReference&gt;</code> to the <code>&lt;ItemGroup&gt;</code> containing other packages:
+<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;1.0.0&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+</code></pre>
+</li>
+<li>Add a build task to copy static web assets:
+<pre><code class="lang-xml">&lt;Target Name=&quot;CopyStaticWebAssets&quot; AfterTargets=&quot;Build&quot;&gt;
+  &lt;ItemGroup&gt;
+    &lt;StaticAssets Include=&quot;$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;MakeDir Directories=&quot;../$(OqtaneStaticAssetsPath)&quot; /&gt;
+  &lt;Copy SourceFiles=&quot;@(StaticAssets)&quot;
+        DestinationFiles=&quot;@(StaticAssets-&gt;'../$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')&quot;
+        SkipUnchangedFiles=&quot;true&quot; /&gt;
+&lt;/Target&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Update the Debug Script</strong></p>
+<ul>
+<li>Open the <code>Package/debug.cmd</code> file.</li>
+<li>Add the following lines to copy the DLLs to the Oqtane development environment:
+<pre><code class="lang-cmd">XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8magic.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
+XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>Update the NuSpec File</strong></p>
+<ul>
+<li>Open the <code>Package/ToSic.Theme.Test1.nuspec</code> file.</li>
+<li>Add the following lines to include the static web assets in the package:
+<pre><code class="lang-xml">&lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
+&lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
+&lt;file src=&quot;..\..\..\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane\**\*.*&quot; target=&quot;wwwroot\_content\ToSic.Cre8magic.Oqtane&quot; /&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<p>With these changes, your custom theme will use the local NuGet package and include the necessary static web assets for testing.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/contribute/local-nuget/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

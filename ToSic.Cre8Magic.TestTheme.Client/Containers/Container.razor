@@ -1,29 +1,29 @@
 @namespace ToSic.Cre8magic.TestTheme.Client
-@inherits MagicContainer
+@inherits ToSic.Cre8magic.OqtaneBs5.MagicContainer
 @*
 File Purpose:       Container for normal modules.
 Recommendations:    -
-Nice to know:
-    1. Will not show a title or anything, so the output is really clean
+Nice to know: Normal Container
+TODO: REFERENCE DOCS, explain what this does, and what you could do
+    1. Will not show a title or anything, so the output is spotless
     2. Adds a special class to show that the module is not yet published
     3. Has a background-container with another div which is the container which allows for cool full-width background CSS
     4. When showing admin-modules, will automatically use the admin container
+
+Nice to Know: System Container
+    1. Always shows a title + the X-close button
+    2. Should _not_ be called "AdminContainer" because it conflicts with Oqtane names
+    3. Calls `CloseModal` of the base class
 *@
 @code
 {
-    public override string Name => "Default (for Default and Admin modules)";
-}
+    // Optionally provide another name
+    // public override string Name => "Default (for Default and Admin modules)";
 
-@if (UseAdminContainer)
-{
-    <SystemContainer></SystemContainer>
+    // Optionally provide other Settings
+    // public override MagicContainerSettings Settings => null;
 }
-else
-{
-    <div id="@Id("container")" class='@Classes("container")'>
-        <div class="container">
-            <Oqtane.Themes.Controls.ModuleActions/>
-            <ModuleInstance/>
-        </div>
-    </div>
+@{
+    // Razor internal method to build with the HTML of the base Default.razor
+    base.BuildRenderTree(__builder);
 }

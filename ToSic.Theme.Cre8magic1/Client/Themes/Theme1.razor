@@ -1,0 +1,54 @@
+@namespace ToSic.Theme.Cre8magic1
+@using ToSic.Cre8magic.Components.Internal
+@using ToSic.Cre8magic.PageContexts
+@using ToSic.Cre8magic.OqtaneBs5
+@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Cre8magic.Themes
+@inherits MagicTheme
+@inject ISettingService SettingService
+
+<main role="main">
+    <nav class="navbar navbar-dark bg-primary fixed-top">
+        <Logo /><Menu Orientation="Horizontal" />
+        <div class="controls ms-auto">
+            <div class="controls-group"><UserProfile ShowRegister="@_register" /> <Login ShowLogin="@_login"  /> <ControlPanel ButtonClass="btn-outline-light" /></div>
+        </div>
+    </nav>
+    <div class="content">
+        <MagicBreadcrumb></MagicBreadcrumb>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <Pane Name="@PaneNames.Admin" />
+                </div>
+            </div>
+        </div>
+        <Pane Name="Top Full Width" />
+
+    </div>
+</main>
+
+@code {
+    public override string Name => "Theme1";
+
+    public override string Panes => PaneNames.Admin + ",Top Full Width";
+
+    private bool _login = true;
+    private bool _register = true;
+
+    protected override void OnParametersSet()
+    {
+        try
+        {
+            var settings = SettingService.MergeSettings(PageState.Site.Settings, PageState.Page.Settings);
+            _login = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Login", "true"));
+            _register = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Register", "true"));
+        }
+        catch
+        {
+            // error loading theme settings
+        }
+    }
+
+    public override MagicThemePackage ThemePackage => field ??= new(new ThemeInfo()) { Name = Name };
+}

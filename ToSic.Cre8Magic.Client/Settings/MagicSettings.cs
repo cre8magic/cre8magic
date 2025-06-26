@@ -1,79 +1,95 @@
 ﻿using System.Text.Json.Serialization;
 using Oqtane.UI;
-using ToSic.Cre8magic.Client.Analytics;
-using static System.StringComparer;
+using ToSic.Cre8magic.Settings.Debug;
+using ToSic.Cre8magic.Settings.Debug.Internal;
+using ToSic.Cre8magic.Settings.Internal.Docs;
 
-namespace ToSic.Cre8magic.Client.Settings;
+namespace ToSic.Cre8magic.Settings;
 
 /// <summary>
-/// The current settings of a page.
+/// Internal base class containing all kinds of settings which
+/// all spells share.
 /// </summary>
-public class MagicSettings: IHasSettingsExceptions, IHasDebugSettings
+public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IHasDebugSettings, IDebugSettings
 {
-    internal MagicSettings(string name, MagicSettingsService service, MagicThemeSettings theme, TokenEngine tokens, PageState pageState)
+    #region Constructor & Cloning
+
+    [PrivateApi]
+    protected MagicSettings() { }
+
+    [PrivateApi]
+    protected MagicSettings(MagicSettings? priority, MagicSettings? fallback = default)
+        : base(priority, fallback)
     {
-        Name = name;
-        Service = service;
-        Theme = theme;
-        Tokens = tokens;
-        PageState = pageState;
+        Name = priority?.Name ?? fallback?.Name;
+
+        Debug = priority?.Debug ?? fallback?.Debug;
+
+        // Page State
+        PageState = priority?.PageState ?? fallback?.PageState;
+
+        // Debug settings
+        ((IDebugSettings)this).Book = ((IDebugSettings?)priority)?.Book ?? ((IDebugSettings?)fallback)?.Book;
+        ((IDebugSettings)this).DebugThis = ((IDebugSettings?)priority)?.DebugThis ?? ((IDebugSettings?)fallback)?.DebugThis;
     }
 
-    public MagicDebugState Debug => _debug ??= DebugState(Theme);
-    private MagicDebugState? _debug;
+    #endregion
+
+
+    #region Settings for Code: Name and PageState
+
+    /// <inheritdoc/>
+    [JsonIgnore]
+    public string? Name { get; init; }
 
     /// <summary>
-    /// This is only used to detect if debugging should be active, and the setting should come from the theme itself
+    /// The PageState which is needed for doing everything.
+    ///
+    /// It can be provided in the settings, or it must be provided in the theme using <see cref="ToSic.Cre8magic.Act.IMagicAct.UsePageState"/>.
     /// </summary>
-    MagicDebugSettings? IHasDebugSettings.Debug => Theme.Debug;
+    [JsonIgnore]
+    public PageState? PageState { get; init; }
+
+    #endregion
+
+    #region Debug Settings (from store)
+
+    /// <inheritdoc />
+    public MagicDebugSettings? Debug { get; init; }
 
 
-    public MagicDebugState DebugState(object? target) => Service.Debug.GetState(target, PageState.UserIsAdmin());
+    #endregion
 
-    internal PageState PageState { get; }
+    #region Runtime Debug Settings
 
-    internal TokenEngine Tokens { get; }
+    [JsonIgnore]
+    MagicBook? IDebugSettings.Book { get; set; }
 
-    public string MagicContext { get; set; } = "";
+    [JsonIgnore]
+    bool? IDebugSettings.DebugThis { get; set; }
 
-    public string Name { get; }
+    #endregion
 
-    [JsonIgnore] public MagicSettingsService Service { get; }
-    [JsonIgnore] internal ThemeDesigner ThemeDesigner => _themeDesigner ??= new(this);
-    private ThemeDesigner? _themeDesigner;
+    #region Stabilized
 
-    public MagicThemeSettings Theme { get; }
+    [PrivateApi]
+    public new record Stabilized(MagicSettings Settings): MagicInheritsBase.Stabilized(Settings)
+    {
+        /// <summary>
+        /// Will still be null?
+        /// </summary>
+        public string? Name => Settings.Name;
 
-    /// <summary>
-    /// Determine if we should show a specific part
-    /// </summary>
-    public bool Show(string name) => Theme.Parts.TryGetValue(name, out var value) && value.Show == true;
+        /// <summary>
+        /// Will still be null.
+        /// </summary>
+        public PageState? PageState => Settings.PageState;
 
-    /// <summary>
-    /// Determine the name of the design configuration of a specific part
-    /// </summary>
-    internal string? DesignName(string name) => Theme.Parts.TryGetValue(name, out var value) ? value.Design : null;
+        /// <summary>
+        /// Will still be null.
+        /// </summary>
+        public MagicDebugSettings Debug => Settings.Debug ?? new();
+    }
 
-    /// <summary>
-    /// Determine the configuration name of a specific part.
-    /// </summary>
-    /// <param name="name"></param>
-    /// <returns></returns>
-    internal string? ConfigurationName(string name) => Theme.Parts.TryGetValue(name, out var value) ? value.Configuration : null;
-
-    internal string ConfigurationNameOrDefault(string name) => ConfigurationName(name) ?? Name;
-
-    public MagicAnalyticsSettings Analytics => _a ??= Service.Analytics.Find(ConfigurationNameOrDefault(nameof(Analytics)), Name);
-    private MagicAnalyticsSettings? _a;
-
-    public MagicThemeDesignSettings ThemeDesign => _td ??= Service.ThemeDesign.Find(Theme.Design ?? ConfigurationNameOrDefault(nameof(Theme.Design)), Name);
-    private MagicThemeDesignSettings? _td;
-
-    public MagicLanguagesSettings Languages => _l ??= Service.Languages.Find(ConfigurationNameOrDefault(nameof(Languages)), Name);
-    private MagicLanguagesSettings? _l;
-
-    public Dictionary<string, string> DebugSources { get; } = new(InvariantCultureIgnoreCase);
-
-    public List<Exception> Exceptions => Service.Exceptions;
-
+    #endregion
 }

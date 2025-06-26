@@ -1,5 +1,11 @@
 @namespace ToSic.Cre8magic.TestTheme.Client
+@using Microsoft.AspNetCore.Http
+@using ToSic.Cre8magic.Components.Internal
+@using ToSic.Cre8magic.PageContexts
+@using ToSic.Cre8magic.OqtaneBs5
 @inherits MyThemeBase
+@inject IJSRuntime JsRuntime
+@inject IHttpContextAccessor HttpContextAccessor
 @*
 File Purpose:       Core theme file and Default variation
 Recommendations:    -
@@ -10,49 +16,155 @@ Nice to know:
 @code
 {
     public override string Name => "Default";
-    public override string Layout => "default";
-    protected override string MagicClasses => "floatwideheader";
+    public override string MagicName => "default";
+
+    /// <summary>
+    /// Sets additional body classes - usually to activate CSS variations for this theme
+    /// 
+    /// Note that ATM they are not set on the body, but on a div wrapping the entire contents.
+    /// This is because of some shortcomings in Oqtane, which doesn't allow to reliably set classes on the body.
+    /// Just remember that when you write your CSS ;).
+    /// </summary>
+    protected virtual string MagicContextClasses => "floatwideheader";
+
+
+
+    #region Test Stuff
+
+    [Parameter, SupplyParameterFromQuery]
+    public string TestSettings { get; set; }
+    
+    public Dictionary<string, string> TestSettingsDic = new()
+    {
+        { "default", "default (json)" }, // leave test as is, using base settings
+        { "none", "no settings" }, // use no settings at all - as if nothing were configured.
+        { "custom-book", "use custom book" }, // use full custom catalog
+        { "custom-set", "use custom Package & book" }, // use full custom catalog
+    };
+    
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        var cookie = HttpContextAccessor.HttpContext.Request.Cookies["TestSettings"];
+        switch (cookie)
+        {
+            case "default":
+            case "none":
+                break;
+            case "custom-book":
+                MagicAct.UseBook(MyThemeSettings.Book);
+                break;
+        }
+    }
+
+    protected Task SetSettingsCookie(string name)
+    {
+        var interop = new Interop(JsRuntime);
+        return interop.SetCookie("TestSettings", name, 1);
+    }
+    /// <summary>
+    /// The ThemePackageSettings must be set in this class, so the Settings initializer can pick it up.
+    ///
+    /// For testing we have a special setup where we provide null to ensure nothing is configured if certain test cookies are set.
+    /// </summary>
+    public override MagicThemePackage ThemePackage
+    {
+        get
+        {
+            // Workaround for startup - only for this test setup...
+            var hasContext = HttpContextAccessor?.HttpContext != null;
+            if (!hasContext)
+                return base.ThemePackage;
+
+            var cookie = HttpContextAccessor.HttpContext.Request.Cookies["TestSettings"];
+            return string.IsNullOrWhiteSpace(cookie) || cookie == "default"
+                ? base.ThemePackage
+                : cookie == "custom-set"
+                    ? field ??= base.ThemePackage with { Defaults = MyThemeSettings.Book, SettingsFile = "" }
+                    : null;
+        }
+    }
+
+    #endregion
+
+    #region DynamicComponents for Testing
+
+    /// <summary>
+    /// Option to inject dynamic components - mainly for testing
+    /// inspired by http://www.binaryintellect.net/articles/a92dea29-3218-4d1c-a132-9671b518d1f4.aspx
+    /// </summary>
+    protected List<MagicDynamicComponent> MagicComponents { get; } = [];
+
+    #endregion
+
 }
 @*
-    The MagicContextAndSettings wrapper does 2 things
+    The MagicPageContext wrapper does this:
     1. It ensures that certain classes are added to the body or wrapper-div so that styles can be optimized by page, language, branch etc.
        Note that the specifics are configured in the configuration
-    2. It will ensure that the object Settings are available on all child controls using <CascadingValue>
 *@
-<MagicContextAndSettings Settings="Settings">
+<MagicAnalytics></MagicAnalytics>
+<MagicPageContext Settings="new() { Classes = MagicContextClasses }">
 
     @* Show any errors to the admin if something went wrong like when loading settings *@
     <MagicExceptions></MagicExceptions>
 
     @* Header with logo and navigation etc. *@
-    <Header></Header>
-    
+    <Header ThemeKit="ThemeKit"></Header>
+
+    @* Switch Test Data *@
+    <ul class="navbar-nav" style="flex-direction: row;">
+        @foreach (var pair in TestSettingsDic)
+        {
+            var isActive = TestSettings == pair.Key;
+            
+            <li class="nav-item">
+                <button class='navbar-link @(isActive ? "active" : "")' @onclick="() => SetSettingsCookie(pair.Key)" title="@pair.Value">@pair.Key</button>
+                &nbsp;
+            </li>
+        }
+    </ul>
+
+
     @* Header Pane *@
-    <div id="@Id("sectionHeader")" class="@Classes("sectionHeader") @PaneClasses(PaneNameHeader)">
-        <Pane Name="@PaneNameHeader"/>
+    <div id="@ThemeKit.Tailor.Id("sectionHeader")" class='@ThemeKit.Tailor.Classes("sectionHeader") @ThemeKit.Tailor.PaneClasses("Header")'>
+        <Pane Name="Header"/>
     </div>
-    
+
     @* Main Section *@
-    <main id="@Id("sectionMain")" class="@Classes("sectionMain")">
+    <main id="@ThemeKit.Tailor.Id("sectionMain")" class="@ThemeKit.Tailor.Classes("sectionMain")">
 
         @* Show Breadcrumb if desired *@
-        @if (Settings.Show("breadcrumbs"))
+        @if (ThemeKit.ShowPart("breadcrumbs"))
         {
             <Breadcrumbs></Breadcrumbs>
         }
 
         @* If we show the Sidebar, then it must be side-by-side with the Content *@
-        @if (Settings.Show("menuSidebar"))
+        @if (ThemeKit.ShowPart("menuSidebar"))
         {
             <div class="container">
                 <div class="row">
-                    <div class='@Classes("sidebarBody")'>
+                    <div class='@ThemeKit.Tailor.Classes("sidebarBody")'>
                         <Pane Name="@PaneNames.Default"/>
-                        <MagicDynamicComponents Components="@MagicComponents"></MagicDynamicComponents>
+                        <MagicShowComponents Components="@MagicComponents"></MagicShowComponents>
                     </div>
-                    <div class='@Classes("sidebarMenu")'>
-                        <div id="@Id("sidebarMenu-inner")" class="@Classes("sidebarMenu-inner")">
-                            <Menu ConfigName="@ThemeInfo.MenuSidebar"></Menu>
+                    <div class='@ThemeKit.Tailor.Classes("sidebarMenu")'>
+                        <div id="@ThemeKit.Tailor.Id("sidebarMenu-inner")" class="@ThemeKit.Tailor.Classes("sidebarMenu-inner")">
+                            <pre>Test sidebar normal</pre>
+                            <MagicMenu Settings="new() { Name = ThemeConstants.MenuSidebar }"></MagicMenu>
+                            <hr/>
+                            <pre>Sidebar-current-only</pre>
+                            <MagicMenu Settings='new() { Name = ThemeConstants.MenuSidebar, Pick = "." }'></MagicMenu>
+                            <hr/>
+                            <pre>Sidebar-current-children</pre>
+                            <MagicMenu Settings='new() { Name = ThemeConstants.MenuSidebar, Pick = "./" }'></MagicMenu>
+                            <hr/>
+                            <pre>Sidebar-parents</pre>
+                            <MagicMenu Settings='new() { Name = ThemeConstants.MenuSidebar, Pick = ".." }'></MagicMenu>
+                            <hr/>
+                            <pre>Sidebar-parents-children</pre>
+                            <MagicMenu Settings='new() { Name = ThemeConstants.MenuSidebar, Pick = "../" }'></MagicMenu>
                         </div>
                     </div>
                 </div>
@@ -61,10 +173,10 @@ Nice to know:
         else
         {
             <Pane Name="@PaneNames.Default"/>
-            <MagicDynamicComponents Components="MagicComponents"></MagicDynamicComponents>
+            <MagicShowComponents Components="@MagicComponents"></MagicShowComponents>
         }
 
-        <ToTop></ToTop>
+        <MagicToTop></MagicToTop>
     </main>
     <Footer></Footer>
-</MagicContextAndSettings>
+</MagicPageContext>

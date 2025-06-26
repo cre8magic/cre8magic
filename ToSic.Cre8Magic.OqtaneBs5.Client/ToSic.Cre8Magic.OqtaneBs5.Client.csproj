@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <Version>0.0.17</Version>
+    <Authors>2sic internet solutions GmbH, Switzerland</Authors>
+    <Company>2sic internet solutions GmbH, Switzerland</Company>
+    <Description>Theme Library for professional Oqtane Themes</Description>
+    <Product>ToSic.Cre8magic.OqtaneBs5</Product>
+    <Copyright>Copyright MIT © 2sic 2025</Copyright>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>$(MSBuildProjectName).Oqtane</AssemblyName>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Title>cre8magic for Oqtane – Professional Theme Design</Title>
+
+    <!-- Packaging properties are commented out below, because we use separate ToSic.Cre8magic.Package project with nuspec -->
+    <!--
+    <PackageId>ToSic.Cre8magic.OqtaneBs5</PackageId>
+    <PackageProjectUrl>https://2sic.github.io/cre8magic/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/2sic/cre8magic.git</RepositoryUrl>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    -->
+
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <RootNamespace>ToSic.Cre8magic</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Support C# latest including fields -->
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <!-- Suppress 'field' not allowed in Docs-compiling CS0657 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS0657</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS0657</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Compile Remove="Pages\**" />
+    <Content Remove="Models\**" />
+    <Content Remove="Pages\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <None Remove="Models\**" />
+    <None Remove="Pages\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" PrivateAssets="all" />
+    <PackageReference Include="Oqtane.Client" Version="6.1.1" />
+    <PackageReference Include="Oqtane.Shared" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
+  </ItemGroup>
+
+</Project>

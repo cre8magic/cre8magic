@@ -1,0 +1,32 @@
+﻿@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.Settings.Debug.Internal
+@inject IMagicAct MagicAct
+<h3>Tes tLanguages With Custom Book</h3>
+@code
+{
+    /// <inheritdoc cref="Oqtane.UI.PageState"/>
+    [CascadingParameter] public required PageState PageState { get; set; }
+}
+@{
+    var book = new MagicBook
+    {
+        Breadcrumbs = new()
+        {
+            {
+                "myTest", new()
+                {
+                    WithHome = false,
+                    WithActive = true
+                }
+            }
+        }
+    };
+
+    var bcKit = MagicAct.BreadcrumbKit((new MagicBreadcrumbSettings { PageState = PageState }.UseBook(book)));
+}
+
+<div class="alert alert-info">
+    BCKit.Settings....: bcKit.Settings.UseBook - can't work yet, Breadcrumbs not using full settings retrieval yet
+</div>

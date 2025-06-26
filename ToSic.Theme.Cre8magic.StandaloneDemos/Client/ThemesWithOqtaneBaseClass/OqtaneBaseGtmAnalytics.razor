@@ -1,0 +1,29 @@
+﻿@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+@inherits ThemeBase
+@using ToSic.Cre8magic.OqtaneBs5
+
+@code {
+    public override string Name => PageTitle;
+
+    private const string PageTitle = "Oqtane Base Theme - Gtm Analytics";
+
+    private const string PageDescription = "This is a standard Oqtane ThemeBase with the Gtm Analytics Control.";
+
+    public override string Panes => PaneNames.Default;
+}
+
+@* Default box containing menu, intro text etc. - contents is between the tags *@
+<MainDefault Name="@Name" Title="@PageTitle" Description="@PageDescription">
+    @* Add more variations *@
+    <ChildContent>
+        <h3>Default - nothing to show</h3>
+        <p>
+            Look at the JS console to monitor that the GTM is being triggered.
+        </p>
+
+        <!--<CodeSnippetForDocs>-->
+            <MagicAnalytics Settings='new() { GtmId = "GTM-T8W5TBL", PageViewTrack = true }'></MagicAnalytics>
+        <!--</CodeSnippetForDocs>-->
+
+    </ChildContent>
+</MainDefault>

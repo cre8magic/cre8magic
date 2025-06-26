@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Version>0.0.11</Version>
+    <Authors>ToSic</Authors>
+    <Company>ToSic</Company>
+    <Description>[Description]</Description>
+    <Product>ToSic.Theme.Cre8magic1</Product>
+    <Copyright>ToSic</Copyright>
+    <AssemblyName>ToSic.Theme.Cre8magic1.Client.Oqtane</AssemblyName>
+    <LangVersion>preview</LangVersion>
+    <!-- Oqtane.Server StaticWebAssets folder path -->
+    <!--<OqtaneStaticAssetsPath>../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane</OqtaneStaticAssetsPath>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" />
+    <PackageReference Include="Oqtane.Client" Version="6.1.1" />
+    <PackageReference Include="Oqtane.Shared" Version="6.1.1" />
+    <!-- Use local NuGet Package -->
+    <!--<PackageReference Include="ToSic.Cre8magic.Oqtane" Version="0.0.17" GeneratePathProperty="true" />-->
+  </ItemGroup>
+
+  <!-- Copy static web assets to StaticWebAssetBasePath -->
+  <!-- Manually copy static web assets (JS files) and place them into the wwwroot of this project-->
+  <!--<Target Name="CopyStaticWebAssets" AfterTargets="Build">
+    <ItemGroup>
+      <StaticAssets Include="$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*" />
+    </ItemGroup>
+    <MakeDir Directories="../$(OqtaneStaticAssetsPath)" />
+    <Copy SourceFiles="@(StaticAssets)"
+          DestinationFiles="@(StaticAssets->'../$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+  </Target>-->
+
+  <!-- Redistribute Nuget package PDB files for better debug information - maybe not necessary in production -->
+  <!--<ItemGroup>
+    <None Include="$(PkgToSic_Cre8magic_Oqtane)\lib\net9.0\*.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>-->
+
+  <!-- Local Projects during development -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8magic.OqtaneBs5.Client.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
+</Project>

@@ -1,0 +1,20 @@
+@using ToSic.Cre8magic.Pages
+@using ToSic.Cre8magic.Utils
+@inherits ThemeControlBase;
+
+@code{
+    [Parameter, EditorRequired]
+    public IEnumerable<IMagicPage> Menu { get; set; }
+
+    protected object RandomNumberPerPage => _breadcrumbs.Get(
+        () => (new Random().Next(1000, 9999), PageState.Page.PageId),
+        (_, i) => i == PageState.Page.PageId
+    );
+    private readonly GetKeep<object, int?> _breadcrumbs = new();
+
+    private object Simpler => _simpler.Get(PageState, () => new Random().Next(10, 99));
+    private readonly CacheByPage<object> _simpler = new();
+}
+<div>
+    Random Number: @RandomNumberPerPage / @Simpler
+</div>

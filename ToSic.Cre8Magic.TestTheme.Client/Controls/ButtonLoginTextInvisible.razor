@@ -1,8 +1,23 @@
-﻿@inherits MagicLogin
+﻿@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.UserLogins
+@inherits ComponentBase
+@inject IMagicAct MagicAct
 @*
 File Purpose:       Show the Login/Logout text buttons
 Recommendations:    -
 Nice to know:       Inherits the LoginBase, which contains ChangeLogin and i18n for the label
 See also:           LoginIcon.razor has the same feature but with icons
 *@
-<a class="@Classes("linkLogin-invisible")" @onclick="ChangeLogin">@LocalizedLabel</a>
+@code
+{
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicUserLoginSettings Settings { get; set; }
+}
+@{
+    var loginKit = MagicAct.UserLoginKit(Settings.With(PageState));
+}
+<a title="@loginKit.Resources.Title" class="@loginKit.Tailor.Classes("linkLogin-invisible")" @onclick="loginKit.ToggleLogin">@loginKit.Resources.Title</a>

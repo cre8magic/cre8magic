@@ -1,7 +1,7 @@
 /*layout floatwideheader*/
-body.#{$prefix}-variation-floatwideheader,
+body.#{$prefix}-variant-floatwideheader,
 // when using wrapper instead of body
-div#cre8magic-root.#{$prefix}-variation-floatwideheader {
+div#cre8magic-root.#{$prefix}-variant-floatwideheader {
   &.page-2650 {
     main##{$prefix}-page-main {
       @include media-breakpoint-up(xl) {

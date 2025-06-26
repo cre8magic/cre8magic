@@ -1,0 +1,35 @@
+﻿@using System.Diagnostics
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Analytics
+@inherits ComponentBase
+@inject IMagicAct MagicAct
+@{
+    var analyticsKit = MagicAct.AnalyticsKit(new() { Name = "default" });
+
+    // Run some performance tests
+    var stopWatch = new Stopwatch();
+    var testSettings = new MagicAnalyticsSettings { Name = "analytics-test" };
+    stopWatch.Start();
+    var analyticsTestKit = MagicAct.AnalyticsKit(testSettings);
+
+    var cycles = 10000;
+    for(var i=  0; i < 1000; i++)
+        analyticsTestKit = MagicAct.AnalyticsKit(testSettings);
+
+    stopWatch.Stop();
+
+    var dbgSettings = analyticsKit.Settings;
+    var dbgTestSettings = analyticsTestKit.Settings;
+}
+<div class="alert alert-info">
+    <h4>Debug analytics</h4>
+    <p>
+        This will ONLY read the test-analytics.
+        So if you refresh this page, it will be the same as default, if you go to the other page first, it should have that value.
+    </p>
+    <p>Default Analytics: @dbgSettings.GtmId / @dbgSettings.GetStable().GtmId</p>
+    <p>Test Analytics: @dbgTestSettings.GtmId / @dbgTestSettings.GetStable().GtmId</p>
+    <p>
+        Time for @cycles cycles: @stopWatch.ElapsedMilliseconds ms / @stopWatch.Elapsed.Seconds seconds
+    </p>
+</div>

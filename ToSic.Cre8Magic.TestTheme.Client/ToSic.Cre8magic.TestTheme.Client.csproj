@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <Version>0.3.1</Version>
+    <Version>0.0.10</Version>
     <Authors>2sic</Authors>
     <Company>2sic</Company>
     <Description>Template Theme for professional Bootstrap 5 Designs</Description>
@@ -13,17 +13,21 @@
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Remove="src\**\*" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.6" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.3" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.6" PrivateAssets="all" />
-    <PackageReference Include="System.Net.Http.Json" Version="8.0.0" PrivateAssets="all" />
-    <PackageReference Include="Oqtane.Client" Version="5.1.2" PrivateAssets="all" />
-    <PackageReference Include="Oqtane.Shared" Version="5.1.2" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" PrivateAssets="all" />
+    <PackageReference Include="System.Net.Http.Json" Version="9.0.3" PrivateAssets="all" />
+    <PackageReference Include="Oqtane.Client" Version="6.1.1" PrivateAssets="all" />
+    <PackageReference Include="Oqtane.Shared" Version="6.1.1" PrivateAssets="all" />
     <PackageReference Include="System.Runtime" Version="4.3.1" PrivateAssets="all" />
   </ItemGroup>
 
@@ -59,11 +63,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\DO-NOT-WORK-IN-THIS-FOLDER.md" />
+    <None Remove="Containers\SystemContainer.razor.old" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Containers\SystemContainer.razor.old" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ToSic.Cre8magic.Client\ToSic.Cre8magic.Client.csproj" />
+    <ProjectReference Include="..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8magic.OqtaneBs5.Client.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Settings\" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -72,13 +85,33 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Release node src/build-scripts/clean.js &amp;&amp; npx webpack --env build" />
+  <Target Name="CleanWwwroot" BeforeTargets="Clean">
+    <RemoveDir Directories="wwwroot" />
+    <MakeDir Directories="wwwroot" />
+  </Target>
+
+  <!--<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Condition="'$(Configuration)' == 'Debug'" Command="npm run dev" />
+    <Exec Condition="'$(Configuration)' == 'Release'" Command="npm run build" />
+  </Target>-->
+
+  <Target Name="RunNpmInstallOrCi" BeforeTargets="Build" Condition="!Exists('node_modules')">
+    <Exec Command="if exist package-lock.json (npm ci) else (npm install)" />
+  </Target>
+
+  <Target Name="BuildFrontend" BeforeTargets="Build" DependsOnTargets="RunNpmInstallOrCi" Condition="'$(Configuration)' == 'Release'">
+    <Exec Command="npm run build" />
+  </Target>
+
+  <Target Name="BuildFrontendDebug" BeforeTargets="Build" DependsOnTargets="RunNpmInstallOrCi" Condition="'$(Configuration)' == 'Debug'">
+    <Exec Command="npm run dev" />
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Debug node src/build-scripts/publish-watch.js" />
-    <Exec Command="if $(ConfigurationName) == Release node src/build-scripts/dotnet-pack.js" />
+    <Exec Condition="'$(OS)' == 'Windows_NT' And '$(Configuration)' == 'Debug'" Command="./Package\debug.cmd $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Client',''))" />
+    <Exec Condition="'$(OS)' != 'Windows_NT' And '$(Configuration)' == 'Debug'" Command="./Package/bash $(ProjectDir)debug.sh $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Client',''))" />
+    <Exec Condition="'$(OS)' == 'Windows_NT' And '$(Configuration)' == 'Release'" Command="./Package\release.cmd $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Client',''))" />
+    <Exec Condition="'$(OS)' != 'Windows_NT' And '$(Configuration)' == 'Release'" Command="./Package/bash $(ProjectDir)release.sh $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Client',''))" />
   </Target>
 
 </Project>

@@ -1,0 +1,30 @@
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Settings
+@using ToSic.Cre8magic.Themes
+
+@namespace ToSic.Cre8magic.OqtaneBasic
+@inherits ComponentBase
+
+@inject IMagicAct MagicAct
+@*
+File Purpose:       Contains the floating "UP" button it the corner. 
+Recommendations:    We recommend to use an SVG for the logo.
+Nice to know:       -
+TODO:
+    - Title should be i18n @2md
+    - Should have variations using icon name instead of SVG
+*@
+@code {
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicThemeSettings? Settings { get; set; }
+}
+@{
+    var kit = MagicAct.ThemeKit(Settings.With(PageState));
+}
+<a id="@kit.Tailor.Id(MagicToTopConstants.LinkToTopNameId)" title="Up" rel="nofollow" class="@kit.Tailor.Classes(MagicToTopConstants.LinkToTopNameId)">
+    @((MarkupString)(kit.Tailor.Value(MagicToTopConstants.LinkToTopImage) ?? ""))
+</a>

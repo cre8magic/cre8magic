@@ -1,0 +1,2104 @@
+{
+  "source_base_path": "C:/Projects/2shine-oqtane/cre8magic/docs-src",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Act.IMagicAct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Act.IMagicAct.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Act.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Act.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Analytics.IMagicAnalyticsJsService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Analytics.IMagicAnalyticsJsService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Analytics.MagicAnalyticsSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Analytics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Analytics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailorBs5.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Breadcrumbs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.IMagicContainerKit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Containers.IMagicContainerKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.MagicContainerBlueprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerBlueprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.MagicContainerSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.MagicContainerSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.MagicContainerTailor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerTailor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Containers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Containers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.IMagicLanguageKit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Languages.IMagicLanguageKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.MagicLanguage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.MagicLanguageBlueprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.MagicLanguageSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.MagicLanguageSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.MagicLanguageTailor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageTailor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Languages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Languages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Links.IMagicLinkService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Links.IMagicLinkService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Links.MagicLinkSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Links.MagicLinkSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Links.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Links.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.MagicConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.MagicConstants.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.MagicControls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.MagicControls.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.MagicTokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.MagicTokens.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Menus.IMagicMenuKit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Menus.IMagicMenuKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Menus.MagicMenuBlueprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuBlueprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Menus.MagicMenuBlueprintBs5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuBlueprintBs5.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Menus.MagicMenuSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Menus.MagicMenuSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Menus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Menus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBasic.MagicContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBasic.MagicContainer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBasic.MagicMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBasic.MagicMenu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBasic.MagicTheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBasic.MagicTheme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBasic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBasic.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.Debug.MagicDebug.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.Debug.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.Debug.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.Defaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.Defaults.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.MagicContainer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicContainer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.MagicExceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicExceptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicLanguageMenu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.MagicMenu.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicMenu.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.MagicOqtaneControlPanel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicOqtaneControlPanel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.MagicTheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicTheme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.OqtaneBs5.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.IMagicPageContextKit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.PageContexts.IMagicPageContextKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.MagicPageContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContextSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextTailor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContextTailor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.PageContexts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.PageContexts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Pages.IMagicPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Pages.IMagicPageSetSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Pages.IMagicPageSetSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Pages.IMagicPageTailor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Pages.IMagicPageTailor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Pages.MagicPageEditService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Pages.MagicPageEditService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Pages.MagicPageTailorBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Pages.MagicPageTailorBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Pages.MagicPageTailorBasic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Pages.MagicPageTailorBasic.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Pages.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Pages.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.Debug.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.Debug.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicBook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicBook.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicChapter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicChapter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicInheritsBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicInheritsBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.MagicSettingsExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.MagicSettingsExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.Providers.IMagicSettingsProviderSection-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.Providers.IMagicSettingsProviderSection-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.Providers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.Providers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.Values.MagicSettingOnOff.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.Values.MagicSettingOnOff.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.Values.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.Values.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.Debug.MagicDebugSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Debug.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.Debug.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.IMagicSpellsProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.IMagicSpellsProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.IMagicSpellsProviderSection-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicInheritsBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicInheritsBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicSpellBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicSpellBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicSpellExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicSpellExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicSpellLookup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicSpellLookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.MagicSpellsBook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.MagicSpellsBook.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.Settings.MagicSettingOnOff.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.Settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.Values.MagicSettingOnOff.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.Values.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.Values.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Spells.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Spells.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tailors.IMagicTailor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tailors.IMagicTailor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tailors.MagicBlueprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tailors.MagicBlueprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tailors.MagicBlueprintPart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tailors.MagicBlueprintPart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tailors.MagicTailorBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tailors.MagicTailorBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tailors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tailors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.IMagicThemeJsService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.IMagicThemeJsService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.IMagicThemeKit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.IMagicThemeKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.IMagicThemeService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.IMagicThemeService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicResources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicResources.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicResourcesDb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicResourcesDb.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicResourcesFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicResourcesFilter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicThemeBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicThemeJsService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeJsService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicThemePackage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemePackage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicThemeSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicThemeSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.MagicToTopConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.MagicToTopConstants.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.Settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Themes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Themes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tokens.ITokenReplace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tokens.ITokenReplace.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tokens.TokenEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tokens.TokenEngine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Tokens.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Tokens.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.IMagicUserLoginKit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.UserLogins.IMagicUserLoginKit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.MagicUserLoginResources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserLoginResources.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.MagicUserLoginSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserLoginSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.UserLogins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.UserLogins.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Users.IMagicUserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Users.IMagicUserService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Users.MagicUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Users.MagicUser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Users.MagicUserSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Users.MagicUserSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Users.MagicUserSpell.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Users.MagicUserSpell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Users.UserExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Users.UserExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Users.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Users.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.CacheByPage-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.CacheByPage-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.DictionaryExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.DictionaryExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.GetKeep-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.GetKeep-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.GetKeepByPageId-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.GetKeepByPageId-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.Logging.CodeRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.Logging.CodeRef.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.Logging.LogRoot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.Logging.LogRoot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.Logging.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.PageStateSecurityExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.PageStateSecurityExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.StringExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.StringExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-generated/ToSic.Cre8magic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ToSic.Cre8magic.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api-generated/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "assets/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "assets/icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/icon50.png",
+      "output": {
+        "resource": {
+          "relative_path": "assets/icon50.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/logos/vcurrent/cre8magic-gray-30h.png",
+      "output": {
+        "resource": {
+          "relative_path": "assets/logos/vcurrent/cre8magic-gray-30h.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/logos/vcurrent/cre8magic-logo-auto-color.svg",
+      "output": {
+        "resource": {
+          "relative_path": "assets/logos/vcurrent/cre8magic-logo-auto-color.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/logos/vcurrent/cre8magic-logo50-auto-color.svg",
+      "output": {
+        "resource": {
+          "relative_path": "assets/logos/vcurrent/cre8magic-logo50-auto-color.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/logos/vcurrent/cre8magic-logo50.svg",
+      "output": {
+        "resource": {
+          "relative_path": "assets/logos/vcurrent/cre8magic-logo50.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "assets/logos/vcurrent/cre8magic_gray.png",
+      "output": {
+        "resource": {
+          "relative_path": "assets/logos/vcurrent/cre8magic_gray.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "node_modules/@gerrit0/mini-shiki/static/mini-shiki-dependency-tree.svg",
+      "output": {
+        "resource": {
+          "relative_path": "node_modules/@gerrit0/mini-shiki/static/mini-shiki-dependency-tree.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "node_modules/@gerrit0/mini-shiki/static/shiki-dependency-tree.svg",
+      "output": {
+        "resource": {
+          "relative_path": "node_modules/@gerrit0/mini-shiki/static/shiki-dependency-tree.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/assets/cre8magic-page.png",
+      "output": {
+        "resource": {
+          "relative_path": "pages/assets/cre8magic-page.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/assets/cre8magic-stack.png",
+      "output": {
+        "resource": {
+          "relative_path": "pages/assets/cre8magic-stack.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/contribute/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/contribute/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/deploy/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/deploy/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/get-started/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/get-started/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/guides/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/guides/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/guides/oqtane-cascading-parameters.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/guides/oqtane-cascading-parameters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/guides/oqtane-page-state.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/guides/oqtane-page-state.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/library/guides/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "library/guides/toc.html"
+        },
+        ".json": {
+          "relative_path": "library/guides/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/how-it-works.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/how-it-works.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/javascript/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/javascript/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/local-nuget/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/local-nuget/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/settings.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/tests-test-module.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/tests-test-module.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/internals/tests-unit-tests.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/tests-unit-tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/library/internals/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "library/internals/toc.html"
+        },
+        ".json": {
+          "relative_path": "library/internals/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-act/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-act/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-analytics/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-analytics/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-containers/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-containers/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-languages/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-languages/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-menu/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-menu/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/magic-meta-structure.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/magic-meta-structure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/page-context/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/page-context/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/patterns.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/patterns.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/progress.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/progress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/roadmap/history.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/roadmap/history.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/roadmap/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/roadmap/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/settings/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/settings/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/settings/lookup.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/settings/lookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/settings/provide-settings.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/settings/provide-settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/shared/do-inherit-from-componentbase.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/shared/do-inherit-from-componentbase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/tailor/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/tailor/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/terminology.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/terminology.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/library/theme-settings/theme-json.md",
+      "output": {
+        ".html": {
+          "relative_path": "library/theme-settings/theme-json.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/library/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "library/toc.html"
+        },
+        ".json": {
+          "relative_path": "library/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/magic-themes/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "magic-themes/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-themes-guide/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-themes-guide/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-themes-guide/parameters/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-themes-guide/parameters/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-themes-guide/recommendations/blazor-debounce-strategies.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-themes-guide/recommendations/blazor-debounce-strategies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-themes-guide/recommendations/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-themes-guide/recommendations/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "schemas/2022-10/debug.json",
+      "output": {
+        "resource": {
+          "relative_path": "schemas/2022-10/debug.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "schemas/2022-10/design-settings.json",
+      "output": {
+        "resource": {
+          "relative_path": "schemas/2022-10/design-settings.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "schemas/2022-10/inherits.json",
+      "output": {
+        "resource": {
+          "relative_path": "schemas/2022-10/inherits.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "schemas/2022-10/languages.json",
+      "output": {
+        "resource": {
+          "relative_path": "schemas/2022-10/languages.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "schemas/2022-10/menu.json",
+      "output": {
+        "resource": {
+          "relative_path": "schemas/2022-10/menu.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "schemas/2022-10/theme-design.json",
+      "output": {
+        "resource": {
+          "relative_path": "schemas/2022-10/theme-design.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "schemas/2022-10/theme-settings.json",
+      "output": {
+        "resource": {
+          "relative_path": "schemas/2022-10/theme-settings.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "schemas/2022-10/theme.json",
+      "output": {
+        "resource": {
+          "relative_path": "schemas/2022-10/theme.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

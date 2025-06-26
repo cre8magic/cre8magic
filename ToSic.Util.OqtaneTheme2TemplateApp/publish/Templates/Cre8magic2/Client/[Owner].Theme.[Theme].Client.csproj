@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Version>1.0.0</Version>
+    <Authors>[Owner]</Authors>
+    <Company>[Owner]</Company>
+    <Description>[Description]</Description>
+    <Product>[Owner].Theme.[Theme]</Product>
+    <Copyright>[Owner]</Copyright>
+    <AssemblyName>[Owner].Theme.[Theme].Client.Oqtane</AssemblyName>
+    <LangVersion>preview</LangVersion>
+    <!-- Oqtane.Server StaticWebAssets folder path -->
+    <OqtaneStaticAssetsPath>../../oqtane.framework/Oqtane.Server/wwwroot/_content/[Owner].Cre8magic.Oqtane</OqtaneStaticAssetsPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" />
+    [ClientReference]
+    [SharedReference]
+    <!-- Use local NuGet Package -->
+    <!--<PackageReference Include="[Owner].Cre8magic.Oqtane" Version="0.0.17" GeneratePathProperty="true" />-->
+  </ItemGroup>
+
+  <!-- Manually copy static web assets (JS files) and place them into the Oqtane.Server StaticWebAssets folder -->
+  <!--<Target Name="CopyStaticWebAssets" AfterTargets="Build">
+    <ItemGroup>
+      <StaticAssets Include="$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*" />
+    </ItemGroup>
+    <MakeDir Directories="../$(OqtaneStaticAssetsPath)" />
+    <Copy SourceFiles="@(StaticAssets)"
+          DestinationFiles="@(StaticAssets->'../$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+  </Target>-->
+
+  <!-- Redistribute Nuget package PDB files for better debug information - maybe not necessary in production -->
+  <!--<ItemGroup>
+    <None Include="$(PkgToSic_Cre8magic_Oqtane)\lib\net9.0\*.pdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>-->
+
+  <!-- Local Projects during development -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\[Owner].Cre8Magic.OqtaneBs5.Client\[Owner].Cre8magic.OqtaneBs5.Client.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>

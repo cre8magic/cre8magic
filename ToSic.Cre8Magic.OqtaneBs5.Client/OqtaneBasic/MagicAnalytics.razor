@@ -1,0 +1,26 @@
+﻿@using Oqtane.UI
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Analytics
+@using ToSic.Cre8magic.Settings
+
+@namespace ToSic.Cre8magic.OqtaneBasic
+@inherits ComponentBase
+
+@inject IMagicAct MagicAct
+@*
+    File Purpose:       Trigger Analytics on ever page load
+*@
+@code {
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+
+    [Parameter]
+    public MagicAnalyticsSettings? Settings { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool isFirstRender)
+    {
+        await base.OnAfterRenderAsync(isFirstRender);
+        await MagicAct.AnalyticsKit(Settings.With(PageState))
+            .TrackPage(isFirstRender);
+    }
+}

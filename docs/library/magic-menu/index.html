@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Magic Menu for Oqtane | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Magic Menu for Oqtane | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/magic-menu/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Cre8magic.Library.MagicMenu.Index">
+<h1 id="magic-menu-system-for-oqtane-themes">Magic Menu System for Oqtane Themes</h1>
+
+<p><em>The cre8magic Menu System helps you create best-practice menus in Oqtane.</em></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>A simple top-level menu can be added just like this:</p>
+<pre><code class="lang-html">&lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
+</code></pre>
+<p>...or if you have a <code>theme.json</code> file, all you need is:</p>
+<pre><code class="lang-html">&lt;MagicMenu Name=&quot;MainMenu&quot;/&gt;
+</code></pre>
+</div>
+<p>Menus are used in Oqtane solutions as the main way to navigate the user through the website.
+A typical website will have a 1️⃣ main menu, 2️⃣ mobile menu, a 3️⃣ footer menu and possibly more.
+Each of these menus can have different requirements, such as:</p>
+<ol>
+<li><strong>Data Selection</strong>: showing specific pages the top-level pages (main menu), exact IDs (footer) or showing all pages below the current page (sidebar)</li>
+<li><strong>Drill-Down</strong>: show a different depth of pages, such as only the first level, or all levels below the current page...</li>
+<li><strong>Interactive Behavior</strong>: behaving in a certain way, such as collapsing sub-menus</li>
+<li><strong>Look and Feel</strong>: look a certain way, such as highlighting the current page</li>
+</ol>
+<p>Doing this all in your own code can be challenging and error-prone, which is why we created the <strong>Magic Menus</strong>.</p>
+<h2 id="magic-menus-tldr">Magic Menus TL;DR</h2>
+<p>The goal is that your menus are:</p>
+<ol>
+<li>configuration-based - through code or JSON</li>
+<li>mobile-friendly &amp; reactive</li>
+<li>ARIA-Accessible</li>
+<li>use HTML5 and Bootstrap5 conventions</li>
+<li>respect user permissions</li>
+<li>highlight the current page</li>
+<li>easy to customize &amp; flexible</li>
+</ol>
+<p>You can work with pre-built components such as <strong>MagicMenu 🧩</strong> or leverage the <strong>MagicMenuKit 🧰</strong> to build your own components.</p>
+<p>A very simple Bootstrap5 menu can be added just like this:</p>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+&lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
+</code></pre>
+<h2 id="how-it-works">How it Works</h2>
+<p>The Magic Menu uses the cre8magic conventions.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>This is what always happens in a nutshell:</p>
+<!-- use https://www.mermaidchart.com/play to edit -->
+<pre><code class="lang-mermaid">flowchart LR
+    S([&quot;Settings ⚙️&quot;]) --&gt; PC[&quot;Prepare Data &amp; Kit 🧰&quot;]
+    PC --&gt; MC[&quot;Blazor Code 🔥&quot;]
+    MC --&gt; HTML[&quot;HTML 🌐&quot;]
+</code></pre>
+<ol>
+<li><strong>Settings ⚙️</strong> tell <strong>cre8magic ♾️</strong> what to do.</li>
+<li><strong>cre8magic ♾️</strong> prepares data in a <strong>Kit 🧰</strong>, which also has more tools.</li>
+<li><strong>Blazor Code 🔥</strong> (your code 👨🏻‍💻 or a Magic Component 🧩) will...</li>
+<li>...produce the desired <strong>HTML 🌐</strong>.</li>
+</ol>
+</div>
+
+<p>Each of these steps can be very simple or very complex, depending on your needs.
+What you'll discover is:</p>
+<ol>
+<li><strong>Settings ⚙️</strong>: how you can add them directly to the tab, in a central location or even in a JSON file and more.</li>
+<li><strong>Preparation Act 🎭</strong>: how all kinds of settings will affect what you see,
+especially once you get into <strong>Tailoring 🧵</strong> and <strong>Blueprints 📘</strong>.</li>
+<li><strong>Blazor Code 🔥</strong>: how you can use the pre-built components or build your own,
+especially with the help of the  <strong>MagicMenuKit 🧰</strong>.</li>
+</ol>
+<h2 id="basic-examples">Basic Examples</h2>
+<h3 id="basic-top-level-menu">Basic Top-Level Menu</h3>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_basic1" role="tab" aria-controls="tabpanel_1_basic1" data-tab="basic1" tabindex="0" aria-selected="true">Example &amp; Output</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_basic2" role="tab" aria-controls="tabpanel_1_basic2" data-tab="basic2" tabindex="-1">Code Explained</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_basic3" role="tab" aria-controls="tabpanel_1_basic3" data-tab="basic3" tabindex="-1">What Happens</a>
+</li>
+</ul>
+<section id="tabpanel_1_basic1" role="tabpanel" data-tab="basic1">
+
+<p>Let's start with the most basic setup of all:</p>
+<ol>
+<li>use the <strong>MagicMenu 🧩 Component</strong> <code>&lt;MagicMenu&gt;</code></li>
+<li>place all the settings directly into the tag</li>
+<li>only specify (pick) that we want the top level pages with <code>/</code></li>
+<li>don't specify any design or behavior, so it will use empty defaults (hence the <code>OqtaneBasic</code>)</li>
+</ol>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBasic
+&lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
+</code></pre>
+<p>The output:</p>
+<pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</section>
+<section id="tabpanel_1_basic2" role="tabpanel" data-tab="basic2" aria-hidden="true" hidden="hidden">
+
+<p>This code explained:</p>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBasic
+&lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
+</code></pre>
+<ol>
+<li><code>@using ToSic.Cre8magic.OqtaneBasic</code> tells Blazor that we want to use these controls.</li>
+<li><code>...OqtaneBasic</code> is the namespace for controls without special presets.</li>
+<li><code>&lt;MagicMenu .../&gt;</code> is a Blazor component provided by <strong>cre8magic ♾️</strong></li>
+<li>The <code>Settings=&quot;...&quot;</code> attribute is a parameter which is passed to the component.
+<ol>
+<li>It expects a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object.</li>
+<li>Since Blazor knows the expected type, you can shorten it as <code>new() { ... }</code>.</li>
+<li>The <code>Pick</code> determines what pages to show in this menu.
+In this case, it's only the top-level pages, specified by <code>/</code> (<code>/+</code> would get level 1 &amp; 2).</li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_basic3" role="tabpanel" data-tab="basic3" aria-hidden="true" hidden="hidden">
+
+<p>Here's what actually happens under the hood:</p>
+<ol>
+<li>The <strong>MagicMenu Component 🧩</strong> will take
+<ol>
+<li>the parameters</li>
+<li>and the Oqtane 🩸 <code>PageState</code></li>
+</ol>
+</li>
+<li>them pass them to the <strong>MagicAct 🎭</strong>, which will get an internal <em>MagicMenuService</em> to:
+<ol>
+<li>mix in default settings which were not specified, such as <code>Show=True</code></li>
+<li>retrieve the <a class="xref" href="../../api/ToSic.Cre8magic.Pages.IMagicPage.html">MagicPages</a> as specified by the <code>Pick</code> parameter - in this case all 1st-level pages</li>
+<li>build a <strong>MagicMenuKit 🧰</strong> which contains the pages and some tools to easily create the menu</li>
+</ol>
+</li>
+<li>Then the <strong>MagicMenu Component 🧩</strong> will use the <strong>MagicMenuKit 🧰</strong> to create the desired <strong>HTML 🌐</strong>.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <strong>MagicMenuComponent 🧩</strong> will run various loops etc.
+combining the pages and the blueprint to create the HTML.
+This could also be your custom code.</p>
+</div>
+</section>
+</div>
+<h3 id="basic-1st-and-2nd-level-menu">Basic 1st and 2nd Level Menu</h3>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_basic-2-level-menu1" role="tab" aria-controls="tabpanel_2_basic-2-level-menu1" data-tab="basic-2-level-menu1" tabindex="0" aria-selected="true">Example &amp; Output</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_basic-2-level-menu2" role="tab" aria-controls="tabpanel_2_basic-2-level-menu2" data-tab="basic-2-level-menu2" tabindex="-1">What Happens</a>
+</li>
+</ul>
+<section id="tabpanel_2_basic-2-level-menu1" role="tabpanel" data-tab="basic-2-level-menu1">
+
+<p>Let's add a bit more complexity by showing level 1 and 2</p>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBasic
+&lt;MagicMenu Settings='new() { Pick = &quot;/+&quot; }'/&gt;
+</code></pre>
+<p>The output:</p>
+<pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;/about/team&quot;&gt;Team&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;/about/history&quot;&gt;History&lt;/a&gt;
+      &lt;/li&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</section>
+<section id="tabpanel_2_basic-2-level-menu2" role="tabpanel" data-tab="basic-2-level-menu2" aria-hidden="true" hidden="hidden">
+
+<p>The <code>Pick</code> instructions are a concise way to specify almost all common scenarios.</p>
+<p>The <code>Pick = &quot;/+&quot;</code> means that we want to start at the root and show all pages on the first and next level.</p>
+<p>For further samples, read on...</p>
+</section>
+</div>
+<h3 id="basic-tailoring-example">Basic Tailoring Example</h3>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_basic-tailor1" role="tab" aria-controls="tabpanel_3_basic-tailor1" data-tab="basic-tailor1" tabindex="0" aria-selected="true">Example</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_basic-tailor2" role="tab" aria-controls="tabpanel_3_basic-tailor2" data-tab="basic-tailor2" tabindex="-1">Output</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_basic-tailor3" role="tab" aria-controls="tabpanel_3_basic-tailor3" data-tab="basic-tailor3" tabindex="-1">What Happens</a>
+</li>
+</ul>
+<section id="tabpanel_3_basic-tailor1" role="tabpanel" data-tab="basic-tailor1">
+
+<p>Let's just step it up a bit because we want to add some common classes to the various tags.
+Specifically we want <code>navbar-nav</code> on the <code>&lt;ul&gt;</code>, <code>nav-item</code> on the <code>&lt;li&gt;</code> and <code>nav-link</code> on the <code>&lt;a&gt;</code>,
+and <code>active</code> on the current node.</p>
+<pre><code class="lang-razor">@using ToSic.Cre8magic.OqtaneBasic
+&lt;MagicMenu Settings='new() { Pick = &quot;/&quot;, Blueprint = SimpleBlueprint() }'/&gt;
+@code
+{
+  MagicMenuBlueprint SimpleBlueprint() =&gt; new()
+  {
+    Parts = new()
+    {
+      { &quot;ul&quot;, new() { Classes = &quot;navbar-nav&quot; } },
+      { &quot;li&quot;, new() { Classes = &quot;nav-item&quot;, IsActive = new(&quot;active&quot;) } },
+      { &quot;a&quot;, new() { Classes = &quot;nav-link&quot; } },
+    }
+  };
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Normally the <code>Blueprint</code> would be defined in a central location, so you can reuse it in multiple places.</p>
+</div>
+</section>
+<section id="tabpanel_3_basic-tailor2" role="tabpanel" data-tab="basic-tailor2" aria-hidden="true" hidden="hidden">
+
+<p>Now the output is getting more realistic (also note the <code>active</code> on the first item).</p>
+<pre><code class="lang-html">&lt;ul class=&quot;navbar-nav&quot;&gt;
+  &lt;li class=&quot;nav-item active&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; href=&quot;/&quot;&gt;Home&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; href=&quot;/about&quot;&gt;About&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;nav-item&quot;&gt;
+    &lt;a class=&quot;nav-link&quot; href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</section>
+<section id="tabpanel_3_basic-tailor3" role="tabpanel" data-tab="basic-tailor3" aria-hidden="true" hidden="hidden">
+
+<p>Most of this is very similar to the previous example, this is new:</p>
+<ol>
+<li>The function <code>SimpleBlueprint()</code> is used to create a <strong>MagicMenuBlueprint 📘</strong>
+<ol>
+<li>It specifies that the <code>&lt;ul&gt;</code> should get the class <code>navbar-nav</code></li>
+<li>The <code>&lt;li&gt;</code> should get the class <code>nav-item</code> and <code>active</code> if it's the current page</li>
+<li>The <code>&lt;a&gt;</code> should get the class <code>nav-link</code></li>
+</ol>
+</li>
+<li>The <strong>MagicMenu Component 🧩</strong> will use this blueprint to customize the output.</li>
+</ol>
+<p>...but how does that work, you may ask? 🤔</p>
+<p>Internally there is a <strong>MagicTailor 🧵</strong> which will take the <strong>MagicMenuBlueprint 📘</strong> and apply it to the output.
+This is a very powerful concept which allows you to customize the output without changing the code.</p>
+<p>You'll learn more about the <strong>MagicTailor 🧵</strong> and <strong>MagicMenuBlueprint 📘</strong> later on,
+but suffice to know that it's very flexible, but also that your Razor code actually decides what to do with it.</p>
+</section>
+</div>
+<h2 id="bootstrap5-examples">Bootstrap5 Examples</h2>
+<h3 id="menu-with-bootstrap5-defaults">Menu with Bootstrap5 Defaults</h3>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_bs5-menu1" role="tab" aria-controls="tabpanel_4_bs5-menu1" data-tab="bs5-menu1" tabindex="0" aria-selected="true">Menu with Bootstrap5 Defaults</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_bs5-menu2" role="tab" aria-controls="tabpanel_4_bs5-menu2" data-tab="bs5-menu2" tabindex="-1">...Explained</a>
+</li>
+</ul>
+<section id="tabpanel_4_bs5-menu1" role="tabpanel" data-tab="bs5-menu1">
+
+<p>todo</p>
+</section>
+<section id="tabpanel_4_bs5-menu2" role="tabpanel" data-tab="bs5-menu2" aria-hidden="true" hidden="hidden">
+
+<ol>
+<li>It will detect that we want a <code>Horizontal</code> menu (default)</li>
+</ol>
+</section>
+</div>
+<h3 id="sidebar-menu-level-2--3-above-current-page">Sidebar: Menu Level 2 &amp; 3 Above Current Page</h3>
+<div class="tabGroup" id="tabgroup_5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_5_menu-level-2-above1" role="tab" aria-controls="tabpanel_5_menu-level-2-above1" data-tab="menu-level-2-above1" tabindex="0" aria-selected="true">Example &amp; Output</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_5_menu-level-2-above2" role="tab" aria-controls="tabpanel_5_menu-level-2-above2" data-tab="menu-level-2-above2" tabindex="-1">Explained</a>
+</li>
+</ul>
+<section id="tabpanel_5_menu-level-2-above1" role="tabpanel" data-tab="menu-level-2-above1">
+
+<p>The following Oqtane component will create</p>
+<ol>
+<li>a sidebar menu showing the second and third levels</li>
+<li>...of the page above the current page</li>
+<li>with collapsing arrows and highlighting the current page</li>
+</ol>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+&lt;MagicMenu Settings='new() { Pick = &quot;.//2+&quot;, Variant = &quot;Vertical&quot; }'/&gt;
+</code></pre>
+<p><em>for brevity we're excluding the output here, but you can imagine it...</em></p>
+</section>
+<section id="tabpanel_5_menu-level-2-above2" role="tabpanel" data-tab="menu-level-2-above2" aria-hidden="true" hidden="hidden">
+
+<p>Note that this example uses the <code>OqtaneBs5</code> namespace.
+This will default to common Bootstrap5 classes and behavior.</p>
+<p>Because we're using the <code>Vertical</code> variant, the output will be built that way.</p>
+<p>The <code>Pick = &quot;.//2+&quot;</code> is a concise way to specify:</p>
+<ul>
+<li>Start relative to the page above the current page (<code>.</code>)</li>
+<li>Show the second level (<code>//2</code>)</li>
+<li>...and all levels below (<code>+</code>)</li>
+</ul>
+</section>
+</div>
+<h2 id="custom-code-examples">Custom Code Examples</h2>
+<p>Our goal is to make the controls so flexible, that you will not have to create your own code.
+But if you do, it should be easy and powerful.</p>
+<h3 id="coded-menu-example">Coded Menu Example</h3>
+<div class="tabGroup" id="tabgroup_6">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_6_coded-menu1" role="tab" aria-controls="tabpanel_6_coded-menu1" data-tab="coded-menu1" tabindex="0" aria-selected="true">Coded Menu Example</a>
+</li>
+</ul>
+<section id="tabpanel_6_coded-menu1" role="tabpanel" data-tab="coded-menu1">
+
+<p>This example assumes you want full control over the output, and still want to use the cre8magic engine to reliably get the right pages, permissions and a simpler SOLID API which is more robust than the built in Oqtane API:</p>
+<pre><code class="lang-razor">@inherits ComponentBase
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Pages
+@inject IMagicAct MagicAct
+
+@code{
+  [CascadingParameter] public required PageState PageState { get; set; }
+}
+
+@RenderMenu(MagicAct.MenuKit(new() { Pick = &quot;/+&quot;, PageState = PageState }).Root)
+
+@code
+{
+  /// &lt;summary&gt;
+  /// Render a Menu - and recursively render sub-menus
+  /// &lt;/summary&gt;
+  /// &lt;returns&gt;&lt;/returns&gt;
+  RenderFragment RenderMenu(IMagicPage current) =&gt;
+    @&lt;ul class='my-ul-class'&gt;
+      @foreach (var menuPage in current.Children)
+      {
+        &lt;li class='my-li-class'&gt;
+          &lt;a class='my-a-class' href=&quot;@menuPage.Link&quot; target=&quot;@menuPage.Target&quot;&gt;@menuPage.Name&lt;/a&gt;
+          @if (menuPage.HasChildren)
+          {
+            &lt;span class='span-stuff'&gt;&lt;/span&gt;
+            @* **RECURSION** *@
+            @RenderMenu(menuPage)
+          }
+        &lt;/li&gt;
+      }
+    &lt;/ul&gt;;
+}
+</code></pre>
+</section>
+</div>
+<div class="tabGroup" id="tabgroup_7">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_7_json-menu1" role="tab" aria-controls="tabpanel_7_json-menu1" data-tab="json-menu1" tabindex="0" aria-selected="true">Menu with Configuration in JSON</a>
+</li>
+</ul>
+<section id="tabpanel_7_json-menu1" role="tabpanel" data-tab="json-menu1">
+
+<p>This example shows how you can configure the menu in a <code>theme.json</code> file:</p>
+<pre><code class="lang-json">{
+  &quot;menus&quot;: {
+    &quot;sidebar&quot;: {
+      &quot;start&quot;: &quot;.&quot;,
+      &quot;level&quot;: 2,
+      &quot;depth&quot;: 2
+    }
+  }
+}
+</code></pre>
+<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+&lt;MagicMenu Name=&quot;sidebar&quot;/&gt;
+</code></pre>
+<p><em>Note that this example skips the part in the theme were the json is loaded and applied.</em></p>
+</section>
+</div>
+
+<p>will take the settings and prepare a <strong>Kit</strong> for you using some internal wizardry.</p>
+<ol>
+<li>The <strong>MagicMenuSettings ⚙️</strong> determine what pages should be shown - like &quot;top-level only&quot;</li>
+</ol>
+<pre><code class="lang-mermaid">flowchart LR
+    S([&quot;Settings ⚙️ or ...Name &lt;br&gt; (_all optional_)&quot;]) --&gt; PC{&quot;Use &lt;br&gt; Comp. &lt;br&gt; ?&quot;}
+    PC -- yes --&gt; MC[&quot;MagicMenu 🧩 Component &lt;br&gt; uses 🎭 &amp; 🧰&quot;]
+    MC -- get --&gt; MT[&quot;Magic Tailor 🧵&quot;]
+    MT -- magic 🪄 --&gt; HTML[&quot;Blazor HTML 🔥&quot;]
+    PC -- no --&gt; MH(&quot;Magic Act 🎭 &lt;br&gt; (get MenuKit 🧰)&quot;)
+    MH --&gt; YC[&quot;Your Code 🧑🏽‍💻&quot;]
+    YC -- magic 🪄 --&gt; HTML
+</code></pre>
+<ol>
+<li><p><strong>MagicMenuSettings ⚙️</strong> determine what pages should be shown - like &quot;second level only with sub-pages&quot;</p>
+</li>
+<li><p>The <strong>MagicAct 🎭</strong> will take these settings and prepare a <strong>Kit</strong> for you using some internal wizardry.</p>
+</li>
+<li><p>This <strong>MagicMenuKit 🧰</strong> contains the <strong>MagicPages</strong> and various tools to easily create any menu.</p>
+</li>
+<li><p>Some code will then use this kit to create the desired <strong>HTML 🔥</strong></p>
+<ol>
+<li><p>Either use the pre-built <strong>MagicMenu 🧩</strong> component in <strong>OqtaneBs5</strong> to quickly create a best-practice Bootstrap5 menu</p>
+</li>
+<li><p>Or create your own Blazor component according to your needs</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="how-it-works---advanced-setup-with-tailor">How it Works - Advanced Setup with Tailor</h3>
+<p>If you are using the <strong>MagicMenu 🧩</strong> component,
+it can <em>optionally</em> use the <strong>MagicMenuTailor 🧵</strong> to tweak the output in various scenarios without changing your code.
+You can also create custom components which use the <strong>MagicTailor 🧵</strong>.
+The tailor also needs settings, so this looks a bit like this:</p>
+<pre><code class="lang-mermaid">flowchart LR
+ subgraph s1[&quot;Magic Act 🎭&quot;]
+            ls[&quot;Load Settings ⚙️&quot;]
+        n1[&quot;Load Blueprints 📘&lt;br&gt;&amp;amp; Magic Tailor 🧵&quot;]
+        gk[&quot;Provide Kit 🧰
+        with Tailor 🧵&quot;]
+  end
+    YC[&quot;&lt;b&gt;Component / Code &amp;lt; / &amp;gt;&lt;/b&gt;&lt;br&gt;Using 🧰 / 🧵&quot;] -- magic 🪄 --&gt; HTML[&quot;Blazor HTML 🔥&quot;]
+    ls --&gt; n1
+    n1 --&gt; gk
+    s1 --&gt; YC
+    S([&quot;Settings ⚙️ or ...Name &lt;br&gt; (_all optional_)&quot;]) --&gt; s1
+
+</code></pre>
+<ol>
+<li><p>The <em>optional</em> <strong>MagicMenuTailor 🧵</strong> is a helper to tweak the output in various scenarios without changing your code.</p>
+<ol>
+<li><p>It is used by the <strong>MagicMenu 🧩</strong> component to allow for easy customization.</p>
+</li>
+<li><p>You can also create your own <strong>Tailors 🧵</strong> to further customize the output.</p>
+</li>
+</ol>
+</li>
+<li><p>The <em>optional</em> <strong>MagicMenuBlueprints 📘</strong> are used to configure the <strong>MagicMenuTailor 🧵</strong> to your needs.</p>
+<ol>
+<li><p>For example, you can specify HTML <code>class</code> for any tag such as <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;span&gt;</code></p>
+</li>
+<li><p>...or specify <code>data-</code>, <code>title</code> or any attributes for special cases</p>
+</li>
+<li><p>You can also specify conditional classes to add if a node is <code>active</code> or <em>not</em> active, is in breadcrumb, etc.</p>
+</li>
+</ol>
+</li>
+<li><p>The <em>optional</em> <strong>MagicPackageSettings</strong> allows you to configure <em>everything</em> in a central location.
+This can be either in code or in a <code>theme.json</code> file.</p>
+</li>
+</ol>
+<h2 id="background-the-goals">Background: The Goals</h2>
+<p>A core challenge with any website is creating great menus.
+There are actually three distinct problems to solve:</p>
+<ol>
+<li><p>Managing multiple menus on the same page</p>
+<ul>
+<li>the main menu</li>
+<li>possibly a side-menu with sub-pages</li>
+<li>a footer menu for disclaimer and privacy</li>
+<li>multiple menus in the footer for mega-footers with many links</li>
+</ul>
+</li>
+<li><p><strong>Configuration</strong> for selecting the pages which should appear in the menu</p>
+<ul>
+<li>where to start (like a menu which start at level 2)</li>
+<li>what pages to show (like all the pages on level 2 - or only their children)</li>
+<li>how deep to go (do we show submenus?)</li>
+</ul>
+</li>
+<li><p><strong>Design</strong> for styling of each node based on the context</p>
+<ul>
+<li>is the current node selected? add <code>active</code>...</li>
+<li>is the current node a parent of the selected node? add <code>is-parent</code>...</li>
+<li>is the current node a dropdown for pages beneath it...</li>
+</ul>
+</li>
+</ol>
+<p>When we designed cre8magic Menus, we wanted to be sure that we're ticking all the right boxes.
+So these are the real-life challenges we wanted to solve:</p>
+<ol>
+<li><p><strong>High-Quality Output</strong> following the latest Bootstrap5, accessibility, mobile-friendly and best-practice standards.</p>
+</li>
+<li><p>Make a simple, best-practice API which can be used in code, but can scale up to components and centralized settings.</p>
+</li>
+<li><p>Ensure that the menus are always respecting user permissions and the current page.</p>
+</li>
+<li><p>Allow for easy customization of the output without changing the code.</p>
+</li>
+<li><p>Follow SOLID principles and Composition-over-Inheritance to ensure that the code is maintainable and extendable.</p>
+</li>
+</ol>
+<h2 id="magic-menu-settings">Magic Menu Settings</h2>
+<p>These are the main settings.</p>
+<ol>
+<li>Settings for loading the configuration elsewhere
+<ol>
+<li><code>Name</code> - name of the settings to load from the Book under <code>Menus</code> (or <code>menus</code> in JSON)</li>
+</ol>
+</li>
+<li>Settings to specify what to show
+<ol>
+<li><code>Pick</code> - where to start, eg. <code>*</code> for root, <code>.</code> for current page, <code>42</code> for page 42</li>
+<li><del><code>Tree</code></del> (<em>future</em>): ability to provide an exact structure of pages in the code for processing</li>
+</ol>
+</li>
+<li>Settings to specify how to show
+<ol>
+<li>Variant - it is up to the code do determine what do do with this.
+The <code>MagicMenu</code> 🧩 currently supports <code>Vertical</code> for a sidebar, <code>Horizontal</code> for a top menu and will create different outputs like collapsing features.</li>
+<li><code>Blueprint</code> - settings for the tailor in the Book configuration under <code>MenuBlueprints</code> (or <code>menuBlueprints</code> in JSON)</li>
+</ol>
+</li>
+<li>Settings to specify Context
+<ol>
+<li>PageState - required IF it is not already broadcast by the theme</li>
+</ol>
+</li>
+</ol>
+<h3 id="pick-values">Pick Values</h3>
+<p>Pick determines what pages to retrieve.
+It's a concise way to specify what to show.
+What you're always doing is:</p>
+<ol>
+<li><strong>Start</strong> at a certain page (like <code>/</code> for all level-1 or <code>./</code> for sub pages of the current page, <code>42</code> for page 42)</li>
+<li>Optionally <strong>Go</strong> to another level, like <code>//2</code> for the second level or <code>.//</code> for the root above the current page</li>
+<li>Optionally <strong>drill deeper</strong> into the tree, like <code>./+</code> for all children of the current page</li>
+<li>Optionally <strong>further rules</strong> (CSV), such as <code>./, 5!</code> to show the children of the current page and page 5 even if it's not in the real structure</li>
+</ol>
+<p>These are accepted values of <code>Pick</code> (or <code>pick</code> in the JSON):</p>
+<ul>
+<li><p><code>/</code> root (actually all top-level pages)</p>
+</li>
+<li><p><code>//</code> same (not recommended, just for API consistency)</p>
+</li>
+<li><p><code>//1</code> same (not recommended, just for API consistency)</p>
+</li>
+<li><p><code>//2</code> all second level pages (not typical/recommended, just for API consistency)</p>
+</li>
+<li><p><code>//3</code> all third level pages (not typical/recommended, just for API consistency)</p>
+</li>
+<li><p><code>.</code> current page</p>
+</li>
+<li><p><code>./</code> children of the current page</p>
+</li>
+<li><p><code>.//</code> all root nodes above the current page (not useful, like <code>/</code>)</p>
+</li>
+<li><p><code>..</code> parent of the current page (just that page)</p>
+</li>
+<li><p><code>../</code> children of the parent of the current page (this page and siblings)</p>
+</li>
+<li><p><code>.//2</code> ancestor of the current page on the second-level</p>
+</li>
+<li><p><code>.//2/</code> children of the ancestor of the current page on the second-level</p>
+</li>
+<li><p><code>..-1</code> identical to <code>..</code></p>
+</li>
+<li><p><code>..-2</code> up two levels</p>
+</li>
+<li><p><code>42</code> the page 42</p>
+</li>
+<li><p><code>42/</code> children of the page 42</p>
+</li>
+<li><p><code>5!</code> the page 5 even if it's normally not visible in a menu</p>
+</li>
+<li><p><code>42, 5!</code> combinations thereof</p>
+</li>
+</ul>
+<h2 id="magic-menu-blueprints">Magic Menu Blueprints</h2>
+<p>This is one of the most sophisticated bits of the JSON settings.
+You can configure this in the <code>menuBlueprints</code> section of the JSON.
+Note that this uses the <a class="xref" href="../tailor/index.html">Magic Classes with Tokens</a>.
+Example:</p>
+<pre><code class="lang-jsonc">&quot;menuBlueprints&quot;: {
+  &quot;Mobile&quot;: {
+    &quot;ul&quot;: {
+      &quot;byLevel&quot;: {
+        &quot;1&quot;: &quot;navbar-nav&quot;,
+        &quot;-1&quot;: &quot;collapse theme-submenu-[Menu.Id]-[Page.Id]&quot;
+      },
+      &quot;inBreadcrumb&quot;: &quot;show&quot;
+    },
+    &quot;li&quot;: {
+      &quot;classes&quot;: &quot;nav-item nav-[Page.Id] position-relative&quot;,
+      &quot;hasChildren&quot;: &quot;has-child&quot;,
+      &quot;isActive&quot;: &quot;active&quot;,
+      &quot;isDisabled&quot;: &quot;disabled&quot;
+    },
+    &quot;a&quot;: {
+      &quot;classes&quot;: &quot;nav-link mobile-navigation-link&quot;,
+      &quot;isActive&quot;: &quot;active&quot;
+    },
+    &quot;span&quot;: {
+      &quot;classes&quot;: &quot;nav-item-sub-opener&quot;,
+      &quot;inBreadcrumb&quot;: [ null, &quot;collapsed&quot; ]
+    },
+    // Special target information (not really styling) usually on the span-tag
+    &quot;data-bs-target&quot;: &quot;.theme-submenu-[Menu.Id]-[Page.Id]&quot;
+  },
+}
+</code></pre>
+<p>This means a lot of things, but let's highlight some aspects:</p>
+<ol>
+<li>the surrounding <code>&lt;ul&gt;</code> tag will get the <code>navbar-nav</code> class at the first level; all others will get <code>collapse</code> and others</li>
+<li>the <code>&lt;ul&gt;</code> will also get a menu and page specific class because of the <code>theme-submenu-[Menu.Id]-[Page.Id]</code> which is useful for the collapse identification in bootstrap</li>
+<li>the <code>&lt;li&gt;</code> of each node will get some classes including an <code>active</code> if it's the current page, and <code>has-child</code> if it has children so that the bootstrap menu will do it's magic</li>
+<li>the <code>&lt;a&gt;</code> link itself will also have different classes based on active</li>
+<li>the <code>&lt;span&gt;</code> is used to show a <code>+</code>/<code>-</code> indicator using the <code>nav-item-sub-opener</code></li>
+<li>...and it will also get's <code>collapsed</code> if it's not in the breadcrumb (so it's only opened if a sub-page is the current page)</li>
+<li>and a special attribute used by bootstrap <code>data-bs-target</code> will have the same contents as the identifying class of the surrounding <code>&lt;ul&gt;</code> to ensure bootstrap will work</li>
+</ol>
+<hr>
+<hr>
+<hr>
+<p>===</p>
+<h2 id="manage-multiple-menus">Manage Multiple Menus</h2>
+<p>The MagicMenu gives each menu a name, such as <code>Main</code>, <code>Sidebar</code>, <code>Footer</code> etc.
+You can determine these names in the Razor files.</p>
+<p>Each of these menus can then be configured in the <a class="xref" href="../theme-settings/theme-json.html">JSON</a>.
+By default, each menu will find it's <strong>configuration</strong> and it's <strong>design</strong>
+based on the same name.
+So the <code>Main</code> menu would take the configuration and design called <code>Main</code>.</p>
+<p>But you can also reconfigure this.
+For example, you could say that the Theme <code>Sidebar</code> will use
+the configuration <code>TopLevelOnly</code> for the <code>Main</code> menu.
+This is configured in the <code>parts</code> of the <code>themes</code> section of the JSON file.</p>
+<hr>
+<h2 id="missing-features">Missing Features</h2>
+<ol>
+<li>As of now you cannot filter out (exclude) specific pages.
+For this you would still need to write your own code or construct your nav-tree for special cases.</li>
+<li>You cannot link to page in another language, as Oqtane doesn't really have this concept yet.</li>
+</ol>
+<h2 id="history">History</h2>
+<ol>
+<li>Added in v0.0.1 2022-10 with 80% coverage of what DDR Menu had in DNN</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/library/magic-menu/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

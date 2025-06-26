@@ -1,0 +1,34 @@
+@using ToSic.Cre8magic.Menus
+@using ToSic.Cre8magic.Pages
+@inherits ThemeControlBase;
+
+@code{
+    [Parameter, EditorRequired]
+    public IMagicMenuKit MenuKit { get; set; }
+}
+
+@RenderMenu(MenuKit.Root)
+
+@* Function creating a menu *@
+@code
+{
+    /// <summary>
+    /// Render a Menu - and recursively render sub-menus
+    /// </summary>
+    /// <returns></returns>
+    RenderFragment RenderMenu(IMagicPage current) =>
+        @<ul class='@current.Classes("li")'>
+            @foreach (var menuPage in current.Children)
+            {
+                <li class='@menuPage.Classes("li")'>
+                    <a class='@menuPage.Classes("a")' href="@menuPage.Link" target="@menuPage.Target">@menuPage.Name</a>
+                    @if (menuPage.HasChildren)
+                    {
+                        <span class='@menuPage.Classes("span")'></span>
+                        @* **RECURSION** *@
+                        @RenderMenu(menuPage)
+                    }
+                </li>
+            }
+        </ul>;
+}

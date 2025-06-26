@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Version>0.0.10</Version>
+    <Authors>ToSic</Authors>
+    <Company>ToSic</Company>
+    <Description>Various test to place on pages to verify cre8magic functionality</Description>
+    <Product>ToSic.Module.Cre8magicTests</Product>
+    <Copyright>ToSic</Copyright>
+    <AssemblyName>ToSic.Module.Cre8magicTests.Client.Oqtane</AssemblyName>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <!-- Suppress 'field' not allowed in Docs-compiling CS0657 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS0657</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS0657</NoWarn>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" />
+    <PackageReference Include="System.Net.Http.Json" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
+    <ProjectReference Include="..\..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8magic.OqtaneBs5.Client.csproj" />
+    <ProjectReference Include="..\Shared\ToSic.Module.Cre8magicTests.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oqtane.Client" Version="6.1.1" />
+    <PackageReference Include="Oqtane.Shared" Version="6.1.1" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- there may be other elements here -->
+    <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>

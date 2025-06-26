@@ -12,8 +12,8 @@ Nice to know:
 @code
 {
     public override string Name => "Centered";
-    public override string Layout => "default";
-    protected override string MagicClasses => "centered";
+    public override string MagicName => "centered"; // note: this name doesn't exist, so it should default to "default"
+    protected override string MagicContextClasses => "centered";
 }
 @{
     // Razor internal method to build with the HTML of the base Default.razor

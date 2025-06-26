@@ -1,0 +1,66 @@
+@using ToSic.Cre8magic.Breadcrumbs
+@using ToSic.Module.Cre8MagicTests.Client.Breadcrumb
+@using ToSic.Cre8magic.OqtaneBs5
+@inherits ThemeControlBase
+
+@code {
+    // Theme Specs
+    public override string Name => "Breadcrumb using Controls";
+    public override string Panes => PaneNames.Default;
+}
+@{
+    // Get the current environment - separate step, as we may change the mechanics later
+    var currentEnv = TestParameters.EnvCurrent;
+
+    var pageWithDeepBreadcrumb = TestParameters.PageWithDeepBreadcrumbIdDic[currentEnv];
+}
+
+
+<h1>MagicBreadcrumb in Control for @currentEnv</h1>
+
+<h2>Oqtane standard Breadcrumbs (with s)</h2>
+<Breadcrumbs></Breadcrumbs>
+
+<h2>BasicBreadcrumb, no parameters</h2>
+<MagicBreadcrumb></MagicBreadcrumb>
+
+<h2>BasicBreadcrumb with data, without Settings</h2>
+<MagicBreadcrumb></MagicBreadcrumb>
+
+<hr/>
+
+<h2>Tailors</h2>
+<p>No Tailor (defaults to BasicTailor)</p>
+<MagicBreadcrumb></MagicBreadcrumb>
+<p>BasicBreadcrumb with @nameof(BreadcrumbTailorDark)</p>
+<MagicBreadcrumb Settings="new() { Tailor = new BreadcrumbTailorDark() }"></MagicBreadcrumb>
+
+<hr />
+
+<h2>Settings</h2>
+<p>Reverse</p>
+<MagicBreadcrumb Settings="new() { Reverse = true }"></MagicBreadcrumb>
+
+<p>Without Home</p>
+<MagicBreadcrumb></MagicBreadcrumb>
+<MagicBreadcrumb Settings="new() { WithHome = true }"></MagicBreadcrumb>
+<MagicBreadcrumb Settings="new() { WithHome = false }"></MagicBreadcrumb>
+
+<p>Without current</p>
+<MagicBreadcrumb></MagicBreadcrumb>
+<MagicBreadcrumb Settings="new() { WithActive = false }"></MagicBreadcrumb>
+<MagicBreadcrumb Settings="new() { WithActive = true }"></MagicBreadcrumb>
+
+<h3>BasicBreadcrumb with Settings { @nameof(MagicBreadcrumbSettings.ActiveId) = @pageWithDeepBreadcrumb }</h3>
+<p>No designer</p>
+<MagicBreadcrumb Settings="new() { ActiveId = pageWithDeepBreadcrumb }"></MagicBreadcrumb>
+<p>BasicBreadcrumb with @nameof(MagicBreadcrumbTailorBs5)</p>
+<MagicBreadcrumb Settings="new() { ActiveId = pageWithDeepBreadcrumb, Tailor = new MagicBreadcrumbTailorBs5() }"></MagicBreadcrumb>
+<p>BasicBreadcrumb with @nameof(BreadcrumbTailorDark)</p>
+<MagicBreadcrumb Settings="new() { ActiveId = pageWithDeepBreadcrumb, Tailor = new BreadcrumbTailorDark() }"></MagicBreadcrumb>
+
+<hr />
+<h3>BasicBreadcrumb Non-Existing { @nameof(MagicBreadcrumbSettings.ActiveId) = -1 }</h3>
+<p>This should not show anything</p>
+<MagicBreadcrumb Settings="new() { ActiveId = -1 }"></MagicBreadcrumb>
+<p>End - there should be nothing to be seen</p>

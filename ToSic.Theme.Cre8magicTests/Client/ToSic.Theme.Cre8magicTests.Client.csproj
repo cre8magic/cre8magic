@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Version>1.0.0</Version>
+    <Authors>ToSic</Authors>
+    <Company>ToSic</Company>
+    <Description>[Description]</Description>
+    <Product>ToSic.Theme.Cre8magicTests</Product>
+    <Copyright>ToSic</Copyright>
+    <AssemblyName>ToSic.Theme.Cre8magicTests.Client.Oqtane</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Oqtane.Client" Version="6.1.1" />
+    <PackageReference Include="Oqtane.Shared" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ToSic.Cre8Magic.Client\ToSic.Cre8magic.Client.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <!-- there may be other elements here -->
+    <BlazorWebAssemblyEnableLinking>false</BlazorWebAssemblyEnableLinking>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>

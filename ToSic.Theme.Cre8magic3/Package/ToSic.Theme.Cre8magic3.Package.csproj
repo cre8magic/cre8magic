@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AccelerateBuildsInVisualStudio>false</AccelerateBuildsInVisualStudio>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\ToSic.Theme.Cre8magic3.Client.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Condition="'$(OS)' == 'Windows_NT' And '$(Configuration)' == 'Debug'" Command="debug.cmd $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))"  />
+    <Exec Condition="'$(OS)' != 'Windows_NT' And '$(Configuration)' == 'Debug'" Command="bash $(ProjectDir)debug.sh $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))" />
+    <Exec Condition="'$(OS)' == 'Windows_NT' And '$(Configuration)' == 'Release'" Command="release.cmd $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))" />
+    <Exec Condition="'$(OS)' != 'Windows_NT' And '$(Configuration)' == 'Release'" Command="bash $(ProjectDir)release.sh $(TargetFramework) $([System.String]::Copy('$(MSBuildProjectName)').Replace('.Package',''))" />
+  </Target>
+
+</Project>

@@ -1,0 +1,34 @@
+﻿@namespace ToSic.Theme.Cre8magic.StandaloneDemos
+@inherits ThemeBase
+@using ToSic.Cre8magic
+@using ToSic.Cre8magic.OqtaneBs5
+@using ToSic.Cre8magic.Themes
+
+@code {
+    public override string Name => PageTitle;
+
+    private const string PageTitle = "Oqtane Base Theme - ToTop BS5";
+
+    private const string PageDescription = $"This is a standard Oqtane ThemeBase with a {nameof(MagicToTop)}.";
+
+    public override string Panes => PaneNames.Default;
+
+    /// <summary>
+    /// This test needs the resources for the JS to be loaded
+    /// </summary>
+    public override List<Resource> Resources => [.. MagicResources.GetResources(new() { ForControls = MagicControls.ToTop })];
+
+}
+
+@* Default box containing menu, intro text etc. - contents is between the tags *@
+<MainDefault Name="@Name" Title="@PageTitle" Description="@PageDescription">
+    <ChildContent>
+        <div>The to-top - can basically be placed anywhere on the page</div>
+        <MagicToTop></MagicToTop>
+        <div>Lots of empty lines, so that the page is long for the to-top to appear</div>
+        @for (var i = 0; i < 100; i++)
+        {
+            <div>Line @i</div>
+        }
+    </ChildContent>
+</MainDefault>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Contributing Code | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Contributing Code | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/contribute/code/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="contributing-code">Contributing Code</h1>
+
+<div class="TIP">
+<h5>Tip</h5>
+<p>This is still a work in progress.</p>
+</div>
+<h2 id="setup">Setup</h2>
+<p>The Solution is a Visual Studio 2022 solution.</p>
+<p>It has a few special things to know:</p>
+<ol>
+<li>The core project is <code>ToSic.Cre8magic.Client</code></li>
+<li>Most UI tests are found in the Module <code>ToSic.Module.Cre8magicTests</code>.</li>
+</ol>
+<h2 id="testing-in-the-browser">Testing in the Browser</h2>
+<p>Place the module on a page and select various tests.</p>
+<p>If you are logged in, you can also save the configuration so the same test will be shown when you revisit the page.</p>
+<p>The reason we're doing this is because various tests will behave differently,
+depending on the theme around it.</p>
+<p>So this allows us to place the module on pages with different themes and see how it behaves.</p>
+<h2 id="important-conventions">Important Conventions</h2>
+<h3 id="group-by-topic">Group by Topic</h3>
+<ol>
+<li>Each topic should have its own folder. eg. <code>Menus</code>, <code>Breadcrumbs</code> etc.</li>
+</ol>
+<h3 id="internal-as-much-as-possible">Internal as Much as Possible</h3>
+<p>Anything that is really not needed for the public use should be as internal as possible.</p>
+<ol>
+<li><p>Anything internal that can be internal should be marked as <code>internal</code><br>
+...to really protect the public API surface.</p>
+</li>
+<li><p>Anything internal should be in a folder <code>Internal</code> in the root or any topic based folder.<br>
+...this will be filtered out by the docs. (TODO)</p>
+</li>
+<li><p>Really internal objects should not be named <code>Magic...</code></p>
+<ul>
+<li>it's shorter</li>
+<li>and we can spot internal stuff + spot leaks in the docs.</li>
+<li>Note that this doesn't apply to internal implementations of interfaces, which should be named after the interface.</li>
+</ul>
+</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/docs-src/pages/contribute/code/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://2sic.github.io/cre8magic/schemas/2022-10/debug.json",
+  "title": "Debug Settings for parts of the theme",
+  "description": "These settings only apply to this specific part.",
+
+  "type": "object",
+
+  "properties": {
+    "admin": {
+      "type": "boolean",
+      "description": "Enable/disable debug buttons for admins.",
+      "default": false
+    },
+    "anonymous": {
+      "type": "boolean",
+      "description": "Enable/disable debug buttons for anonymous users so you can see debug in the anonymous-user state.",
+      "default": false
+    },
+    "detailed": {
+      "type": "boolean",
+      "description": "Enable/disable detailed debugging. ATM on menus only.",
+      "default": false
+    },
+    "additionalProperties": false
+  }
+}

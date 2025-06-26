@@ -1,0 +1,11 @@
+// Import nav-to-top styles
+@use "nav-to-top";
+
+// Simple variable for light green color
+$bg-color: lightgreen;
+
+// Apply background color to body
+body {
+  background-color: $bg-color;
+}
+

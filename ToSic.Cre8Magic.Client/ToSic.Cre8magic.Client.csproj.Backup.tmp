@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <Version>0.2.1</Version>
+    <Authors>2sic internet solutions GmbH, Switzerland</Authors>
+    <Company>2sic internet solutions GmbH, Switzerland</Company>
+    <Description>Theme Library for professional Oqtane Themes</Description>
+    <Product>ToSic.Cre8magic.OqtaneBs5.Oqtane</Product>
+    <Copyright>Copyright MIT © 2sic 2024</Copyright>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>$(MSBuildProjectName).Oqtane</AssemblyName>
+    <PackageId>ToSic.Cre8magic.OqtaneBs5.Oqtane</PackageId>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>cre8magic for Oqtane – Professional Theme Design</Title>
+    <PackageProjectUrl>https://2sic.github.io/cre8magic/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/2sic/cre8magic.git</RepositoryUrl>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RootNamespace>$(MSBuildProjectName.Replace(".Client", "").Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
+    <PackageReference Include="Oqtane.Client" Version="6.0.0" />
+    <PackageReference Include="Oqtane.Shared" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Package\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Internal\Breadcrumb\" />
+    <Folder Include="Pages\Internal\Menu\" />
+    <Folder Include="Settings\Internal\Docs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\oqtane.framework\Oqtane.Shared\Oqtane.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

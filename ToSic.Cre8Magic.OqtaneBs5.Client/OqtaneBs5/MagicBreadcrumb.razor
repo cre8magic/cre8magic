@@ -1,0 +1,24 @@
+﻿@namespace ToSic.Cre8magic.OqtaneBs5
+@inherits ComponentBase
+
+@{
+    var kit = GetBreadcrumbKit();
+}
+<nav aria-label="breadcrumb" class="@kit.Tailor.Classes("nav")">
+    <ol class='@kit.Tailor.Classes("ol")'>
+        @foreach (var item in kit.Pages)
+        {
+            <li class='@item.Classes("li")'>
+                @* TODO: IMPROVE HasLink / UseLink, etc. *@
+                @if (item.IsActive)
+                {
+                    <span class='@item.Classes("span")' aria-current="page">@item.Name</span>
+                }
+                else
+                {
+                    <a href="@item.Link" class='@item.Classes("a")'>@item.Name</a>
+                }
+            </li>
+        }
+    </ol>
+</nav>

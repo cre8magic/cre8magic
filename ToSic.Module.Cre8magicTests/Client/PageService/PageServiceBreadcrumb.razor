@@ -1,0 +1,42 @@
+@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Components.Internal
+@using ToSic.Cre8magic.Pages.Internal
+@inherits ComponentBase
+@inject IMagicPageService PageService
+@inject IMagicAct MagicAct
+@code {
+    /// <inheritdoc cref="ComponentDocs.PageState"/>
+    [CascadingParameter]
+    public required PageState PageState { get; set; }
+}
+<h1>Breadcrumbs Test 2024-11-14</h1>
+<p>
+    Demonstrate various ways to use the breadcrumb service
+</p>
+<h2>Breadcrumb just list</h2>
+<ol>
+    @foreach (var bc in MagicAct.BreadcrumbKit(new() { PageState = PageState }).Pages)
+    {
+        <li>@bc</li>
+    }
+</ol>
+
+<h2>Breadcrumb links</h2>
+<ol>
+    @foreach (var bc in MagicAct.BreadcrumbKit(new() { PageState = PageState, }).Pages)
+    {
+        <li>
+            <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
+        </li>
+    }
+</ol>
+
+<h2>Breadcrumb to Home</h2>
+<ol>
+    @foreach (var bc in MagicAct.BreadcrumbKit(new() { PageState = PageState, Active = PageService.GetHome(PageState) }).Pages)
+    {
+        <li>
+            <a href="@bc.Link" Target="@bc.Target">@bc.Name</a>
+        </li>
+    }
+</ol>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MagicBook | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MagicBook | cre8magic ">
+      
+      <meta name="description" content="This is a Book; a catalog of all kinds of settings. It serves as a kind of database to manage all settings, which will usually be retrieved using a name.">
+      <link rel="icon" href="../assets/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/new/feature/v5/apiSpec/new?filename=ToSic_Cre8magic_Settings_MagicBook.md&amp;value=---%0Auid%3A%20ToSic.Cre8magic.Settings.MagicBook%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="ToSic.Cre8magic.Settings.MagicBook">
+
+
+
+  <h1 id="ToSic_Cre8magic_Settings_MagicBook" data-uid="ToSic.Cre8magic.Settings.MagicBook" class="text-break">
+Class MagicBook  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="ToSic.html">ToSic</a>.<a class="xref" href="ToSic.Cre8magic.html">Cre8magic</a>.<a class="xref" href="ToSic.Cre8magic.Settings.html">Settings</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ToSic.Cre8magic.Client.Oqtane.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>This is a Book; a catalog of all kinds of settings.
+It serves as a kind of database to manage all settings, which will usually be retrieved using a name.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public record MagicBook</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">MagicBook</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook__ctor_" data-uid="ToSic.Cre8magic.Settings.MagicBook.#ctor*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook__ctor" data-uid="ToSic.Cre8magic.Settings.MagicBook.#ctor">
+  MagicBook()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Empty Constructor so it can be created in code or Json-Deserialized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicBook()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Analytics_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Analytics*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Analytics" data-uid="ToSic.Cre8magic.Settings.MagicBook.Analytics">
+  Analytics
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicAnalyticsSettings&gt;))]
+public Dictionary&lt;string, MagicAnalyticsSettings&gt; Analytics { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html">MagicAnalyticsSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_BreadcrumbBlueprints_" data-uid="ToSic.Cre8magic.Settings.MagicBook.BreadcrumbBlueprints*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_BreadcrumbBlueprints" data-uid="ToSic.Cre8magic.Settings.MagicBook.BreadcrumbBlueprints">
+  BreadcrumbBlueprints
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicBreadcrumbBlueprint&gt;))]
+public Dictionary&lt;string, MagicBreadcrumbBlueprint&gt; BreadcrumbBlueprints { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html">MagicBreadcrumbBlueprint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Breadcrumbs_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Breadcrumbs*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Breadcrumbs" data-uid="ToSic.Cre8magic.Settings.MagicBook.Breadcrumbs">
+  Breadcrumbs
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicBreadcrumbSettings&gt;))]
+public Dictionary&lt;string, MagicBreadcrumbSettings&gt; Breadcrumbs { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html">MagicBreadcrumbSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Chapter_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Chapter*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Chapter" data-uid="ToSic.Cre8magic.Settings.MagicBook.Chapter">
+  Chapter
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicChapter Chapter { init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Settings.MagicChapter.html">MagicChapter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Chapters_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Chapters*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Chapters" data-uid="ToSic.Cre8magic.Settings.MagicBook.Chapters">
+  Chapters
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;MagicChapter&gt; Chapters { init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">IEnumerable</span>&lt;<a class="xref" href="ToSic.Cre8magic.Settings.MagicChapter.html">MagicChapter</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_ContainerBlueprints_" data-uid="ToSic.Cre8magic.Settings.MagicBook.ContainerBlueprints*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_ContainerBlueprints" data-uid="ToSic.Cre8magic.Settings.MagicBook.ContainerBlueprints">
+  ContainerBlueprints
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicContainerBlueprint&gt;))]
+public Dictionary&lt;string, MagicContainerBlueprint&gt; ContainerBlueprints { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Containers.MagicContainerBlueprint.html">MagicContainerBlueprint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Containers_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Containers*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Containers" data-uid="ToSic.Cre8magic.Settings.MagicBook.Containers">
+  Containers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicContainerSettings&gt;))]
+public Dictionary&lt;string, MagicContainerSettings&gt; Containers { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Containers.MagicContainerSettings.html">MagicContainerSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Debug_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Debug*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Debug" data-uid="ToSic.Cre8magic.Settings.MagicBook.Debug">
+  Debug
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Master debug settings - would override other debugs</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MagicDebugSettings? Debug { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.html">MagicDebugSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_LanguageBlueprints_" data-uid="ToSic.Cre8magic.Settings.MagicBook.LanguageBlueprints*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_LanguageBlueprints" data-uid="ToSic.Cre8magic.Settings.MagicBook.LanguageBlueprints">
+  LanguageBlueprints
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Design definitions of languages</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicLanguageBlueprint&gt;))]
+public Dictionary&lt;string, MagicLanguageBlueprint&gt; LanguageBlueprints { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html">MagicLanguageBlueprint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Languages_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Languages*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Languages" data-uid="ToSic.Cre8magic.Settings.MagicBook.Languages">
+  Languages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Language Settings</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicLanguageSettings&gt;))]
+public Dictionary&lt;string, MagicLanguageSettings&gt; Languages { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Languages.MagicLanguageSettings.html">MagicLanguageSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_MenuBlueprints_" data-uid="ToSic.Cre8magic.Settings.MagicBook.MenuBlueprints*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_MenuBlueprints" data-uid="ToSic.Cre8magic.Settings.MagicBook.MenuBlueprints">
+  MenuBlueprints
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Design definitions of the menu</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicMenuBlueprint&gt;))]
+public Dictionary&lt;string, MagicMenuBlueprint&gt; MenuBlueprints { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuBlueprint.html">MagicMenuBlueprint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Menus_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Menus*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Menus" data-uid="ToSic.Cre8magic.Settings.MagicBook.Menus">
+  Menus
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The menu definitions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicMenuSettings&gt;))]
+public Dictionary&lt;string, MagicMenuSettings&gt; Menus { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_PageContexts_" data-uid="ToSic.Cre8magic.Settings.MagicBook.PageContexts*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_PageContexts" data-uid="ToSic.Cre8magic.Settings.MagicBook.PageContexts">
+  PageContexts
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The menu definitions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicPageContextSettings&gt;))]
+public Dictionary&lt;string, MagicPageContextSettings&gt; PageContexts { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html">MagicPageContextSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Source_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Source*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Source" data-uid="ToSic.Cre8magic.Settings.MagicBook.Source">
+  Source
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Source of these settings / where they came from, to ensure that we can see in debug where a value was picked up from</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Source { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_ThemeBlueprints_" data-uid="ToSic.Cre8magic.Settings.MagicBook.ThemeBlueprints*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_ThemeBlueprints" data-uid="ToSic.Cre8magic.Settings.MagicBook.ThemeBlueprints">
+  ThemeBlueprints
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicThemeBlueprint&gt;))]
+public Dictionary&lt;string, MagicThemeBlueprint&gt; ThemeBlueprints { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html">MagicThemeBlueprint</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Themes_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Themes*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Themes" data-uid="ToSic.Cre8magic.Settings.MagicBook.Themes">
+  Themes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List of Themes and mainly what parts they want to explicitly configure (e.g. determine Show, and there these parts find their settings)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(CaseInsensitiveDictionaryConverter&lt;MagicThemeSettings&gt;))]
+public Dictionary&lt;string, MagicThemeSettings&gt; Themes { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, <a class="xref" href="ToSic.Cre8magic.Themes.MagicThemeSettings.html">MagicThemeSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_Version_" data-uid="ToSic.Cre8magic.Settings.MagicBook.Version*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_Version" data-uid="ToSic.Cre8magic.Settings.MagicBook.Version">
+  Version
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Version number when loading from JSON to verify it's what we expect</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Version { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">float</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="ToSic_Cre8magic_Settings_MagicBook_GetSection_" data-uid="ToSic.Cre8magic.Settings.MagicBook.GetSection*"></a>
+
+  <h3 id="ToSic_Cre8magic_Settings_MagicBook_GetSection__1" data-uid="ToSic.Cre8magic.Settings.MagicBook.GetSection``1">
+  GetSection&lt;TSettings&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, TSettings&gt; GetSection&lt;TSettings&gt;()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Dictionary</span>&lt;<span class="xref">string</span>, TSettings&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TSettings</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/feature/v5/ToSic.Cre8Magic.Client/Settings/MagicBook.cs/#L19" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

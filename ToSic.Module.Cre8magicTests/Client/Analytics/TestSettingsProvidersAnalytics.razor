@@ -1,0 +1,25 @@
+﻿@using ToSic.Cre8magic.Act
+@using ToSic.Cre8magic.Settings.Providers
+@inherits ComponentBase
+@inject IMagicSettingsProvider SettingsProvider
+@inject IMagicAct MagicAct
+@{
+    SettingsProvider.Reset();
+    SettingsProvider.Add(new("analytics-test")
+    {
+        Analytics = new() { GtmId = "This-Is-A-Test-GTM-ID" },
+    });
+
+    var analyticsKit = MagicAct.AnalyticsKit(new() { Name = "default" });
+    var analyticsTestKit = MagicAct.AnalyticsKit(new() { Name = "analytics-test" });
+}
+<div class="alert alert-info">
+    <h4>Debug analytics</h4>
+    <p>
+        2dm 2025-01-10 -
+
+        This will set and read the test-analytics.
+    </p>
+    <p>Default Analytics: @analyticsKit.Settings.GtmId</p>
+    <p>Test Analytics: @analyticsTestKit.Settings.GtmId</p>
+</div>
