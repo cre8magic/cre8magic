@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
       
       <meta name="docfx:rel" content="../">
       
@@ -63,9 +63,23 @@
     </header>
 
     <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
           <nav id="breadcrumb"></nav>
         </div>
@@ -73,7 +87,23 @@
         <article data-uid="Cre8magic.MagicThemes.Index">
 <h1 id="magic-themes">Magic Themes</h1>
 
-<p>TODO:</p>
+<p>Magic Themes is a collection of themes for Oqtane, designed to enhance the look and feel of your Oqtane applications.
+Each theme is built with a focus on responsiveness, usability, and customization.</p>
+<h2 id="available-themes">Available Themes</h2>
+<p>As of 2025, we have only one theme available, because the other themes will be using the new Magic Library system, which isn't ready yet.</p>
+<ul>
+<li><a href="oqtane-basic/index.html">cre8magic Oqtane Basic</a> - An enhanced version of the default Oqtane theme with Bootstrap 5 CSS Variables for customization.</li>
+</ul>
+<h2 id="planned-themes">Planned Themes</h2>
+<ul>
+<li><p><strong>cre8magic Oqtane Instant</strong> - A lightweight theme for quick deployment and minimal customization, ideal for quick results and small web sites.</p>
+</li>
+<li><p><strong>cre8magic Oqtane Landing Page</strong> - A theme designed specifically for landing pages, with a focus on conversion and user engagement.</p>
+</li>
+<li><p><strong>cre8magic Oqtane Pro</strong> - A professional theme with advanced features and customization options using the cre8magic library.</p>
+</li>
+</ul>
+<p>...stay tuned 🪄</p>
 
 </article>
 

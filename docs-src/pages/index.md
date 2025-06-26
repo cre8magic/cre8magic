@@ -3,115 +3,38 @@
 
 <img class="svg" width="50%" src="/assets/logos/vcurrent/cre8magic-logo-auto-color.svg">
 
-> &nbsp;
->
 > 🪄🪄🪄 Create Magic / Stunning / Amazing Designs on Oqtane 🪄🪄🪄
->
-> &nbsp;
 
 [Oqtane](https://www.oqtane.org/) is a Blazor based platform to create awesome solutions.
 It is heavily inspired by the Site/Page/Module model used in DNN.
 So it's almost ready to create awesome websites and CMS solutions.
 
-But there are two missing pieces (☮️) to create amazing websites:
+But there are four missing pieces to create amazing websites:
 
-1. Real Content-Management features - which can be done with the extension [2sxc](https://2sxc.org)
-1. Tools to make designing themes fast and professional - enter: **cre8magic**
+1. 🖼️ Real Content-Management features - provided by the extension [2sxc](https://2sxc.org)
+1. ✂️ Best practice templates to just use or to leverage as a starting point for your own designs
+1. 🧩 Components to make common tasks easy, such as menus, languages, breadcrumbs, etc.
+1. 🧰 System to make theme designing fast and professional
 
+For everything which is not covered by 2sxc, we are building **cre8magic ♾️**.
 
-## cre8magic makes Oqtane Designer-Friendly
+## Project Status (updated 2025-06)
 
-As a designer, you need certain tools and workflows to be efficient, such as:
+We're not there yet.
 
-1. the ability to make a small change and then reload the page to see the result
-1. the need to focus on the **what** (like the design), without wasting time
-    on the **how** (like C# code to create the menu)
-1. the ability to create variations of your work, such as other layouts which
-    are similar
-1. every tool you add (such as cre8magic) should help, but never restrict
+V1 was created in 2022, and it was a good start.  
+But as Oqtane and Blazor evolved, we realized that we need to change the way we do things.
 
-These aspects are important for the productivity of every designer.
-Now if you've worked with Oqtane (or Blazor for that matter) you will quickly
-  see that this is not possible.
-This means you can whatever you want, but there is a **lot of code** involved,
-  and a **lot of time-consuming restarts**.
+So we are now working on a new version, which will be called **cre8magic ♾️ v2**.  
+This is not yet done, but should make it by 2025-Q3.
 
-> cre8magic takes care of all these problems 🚀
->
-> cre8magic combines very simple Razor and lets you do everything through settings.
-
-Most layouts have very similar HTML, but do vary a bit.
-For example, it could have different CSS classes to give it the look you need
-or a different logo file.
-
-> imagine tweaking this at runtime (without compiling) 😏
-
-## Overview
-
-This is how cre8magic enhances Oqtane so that your Theme can focus on the design:
-
-<img src="./assets/cre8magic-stack.png">
-
-The resulting page will usually have something like this:
-
-<img src="./assets/cre8magic-page.png">
-
->
-> 👉🏾 [Discover how it works](xref:Cre8magic.Library.HowItWorks.Index)
->
+For now, you can already use the [cre8magic Oqtane Basic](xref:Cre8magic.MagicThemes.OqtaneBasic.Index) theme.  
+It's a great starting point for your own designs and learn about Bootstrap 5 CSS Variables.
 
 ## See a Working Example and Get Started
 
-Since this is a library, just reading the docs won't cut it.
-It's best to see this in action on a real-life example.
-Try the ToShine Theme Template, it will make things much easier to understand.
+Here's a great looking web site which uses **cre8magic ♾️** v1: [Blazor CMS](https://blazor-cms.org).
 
-👉🏼 See [2shine Theme Template](https://github.com/2sic/oqtane-theme-2shine-bs5)
+---
 
-👉🏼 See [Get Started](xref:Cre8magic.Library.GetStarted.Index)
-
-## What's in the Magic Box
-
-1. **Magic Settings**: A Settings / Configuration System
-    👉🏾 see [Magic Settings](xref:Cre8magic.Library.MagicSettings.Index)
-    👉🏾 see [Settings JSON file](xref:Cre8magic.Library.ThemeSettings.Index)
-    👉🏾 see [JSON schema](../schemas/2022-10/theme.json)
-
-1. [Magic Page Context](xref:Cre8magic.Library.MagicPageContext.Index)
-
-1. [Magic Tailor with Values, Classes and more using Tokens](xref:Cre8magic.Library.MagicTailor.Index)
-
-1. [Magic Languages](xref:Cre8magic.Library.MagicLanguages.Index)
-
-1. [Magic Menu](xref:Cre8magic.Library.MagicMenu.Index)
-
-1. **Magic Razor Base Classes**
-  _These are the important base classes which your Razor files will inherit.
-  All have in common, that they know about the theme-wide `Settings` and
-  provide helper methods to get things done easily and quickly,
-   with as little code as possible._
-    * Theme / Container Level Base Classes
-        1. `MagicTheme` - the foundation for Themes
-        1. `MagicContainer` - the foundation for Containers
-    * Important Base Controls / Components
-        1. `MagicLanguages` is the base for the languages menu
-        1. `MagicBreadcrumbs` is the base for the breadcrumbs
-        1. `MagicMenuRoot` is the base for menu entry point, loading the configuration, nodes etc.
-        1. `MagicMenuBase` is the base for each menu type, like _Horizontal_, _Vertical_, _Mobile_, ...
-        1. `MagicLogin` is the base for login/logout icons and texts
-    * Generic Base Controls / Base Components
-      _These are meant for any other custom controls that you have._
-        1. `MagicControl` is for razor controls that has the Octane API (it inherits from `ThemeControlBase`)
-        1. `MagicComponent` is for razor controls with just the basic Razor API (inherits from `ComponentBase`)
-
-1. **Magic Razor Controls / Components**
-  _These are standalone controls for you to use, which you will normally just use but not inherit, as they already have their HTML output or something._
-  _Anything we refer to as a `Control` inherits from the Oqtane `ThemeControlBase`, while things we refer to as a `Component` inherit from the .net `ComponentBase`._
-    * Functional Controls / Components
-        1. `MagicOqtaneControlPanel` a control which adds the main control panel for admins
-        1. `MagicContextAndSettings` a wrapper used in every theme to ensure [Magic Page Context](xref:Cre8magic.Library.MagicPageContext.Index) and [MagicSettings](xref:Cre8magic.Library.MagicSettings.Index) work
-    * Debug and Error Handling
-        1. `MagicExceptions` a control showing important errors to admins
-        1. `MagicMenuDebug` a debug helper to see what configuration a menu has and why
-        1. `MagicLanguagesDebug` a debug helper to see what configuration the languages have
-        1. `MagicThemeDebug` debug helper to see all the current settings on this theme
+Last update: 2025-06-26

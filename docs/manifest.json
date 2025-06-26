@@ -1205,6 +1205,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "pages/index copy.md",
+      "output": {
+        ".html": {
+          "relative_path": "index copy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "pages/index.md",
       "output": {
         ".html": {
@@ -1588,6 +1598,29 @@
       "output": {
         ".html": {
           "relative_path": "magic-themes/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/magic-themes/oqtane-basic/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "magic-themes/oqtane-basic/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/magic-themes/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "magic-themes/toc.html"
+        },
+        ".json": {
+          "relative_path": "magic-themes/toc.json"
         }
       },
       "version": ""

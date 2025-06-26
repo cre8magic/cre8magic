@@ -6,6 +6,8 @@ uid: Cre8magic.Library.Index
 
 _services, components, and utilities for Oqtane Themes_
 
+[!include[](./_not-ready.md)]
+
 ## Introduction
 
 Creating awesome themes for any platform is a lot of work, and needs a lot of skill.
