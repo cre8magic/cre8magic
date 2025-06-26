@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Projects/2shine-oqtane/cre8magic/docs-src",
+  "source_base_path": "C:/Projects/cre8magic/cre8magic/docs-src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1657,6 +1657,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-themes-guide/recommendations/as-few-panes-as-possible.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-themes-guide/recommendations/as-few-panes-as-possible.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "pages/oqtane-themes-guide/recommendations/blazor-debounce-strategies.md",
       "output": {
         ".html": {
@@ -1671,6 +1681,16 @@
       "output": {
         ".html": {
           "relative_path": "oqtane-themes-guide/recommendations/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-themes-guide/theme-templates/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-themes-guide/theme-templates/index.html"
         }
       },
       "version": ""

@@ -14,7 +14,9 @@ It is an enhanced version of the default Oqtane theme, with some necessary enhan
 - Has 3 layouts: `Default`, `Centered`, and `Fullscreen` (enhanced)
 - Optimized for 2 panes `Default` and `Header` (enhanced)
 - Uses Bootstrap 5 CSS Variables to customize look and feel (enhanced)
+- Option to customize css variables per site or page (enhanced)
 - Container will not show line or title (enhanced)
+- Improved settings handling compared to default template (enhanced)
 
 ## Installation
 
