@@ -84,7 +84,7 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="">
+        <article data-uid="Cre8magic.Library.Internals.LocalNuget.Index">
 <h1 id="cre8magic---local-nuget-package-for-development">cre8magic - Local NuGet Package for Development</h1>
 
 <p>When developing a new version of cre8magic, you may need to test the result on a theme <em>without</em> deploying it to NuGet first.
@@ -97,10 +97,8 @@ To implement this, we need these steps:</p>
 <h2 id="step-1-create-local-nuget-feed">Step 1: Create Local NuGet Feed</h2>
 <p>If you don't already have a local NuGet feed, in your <code>cre8magic</code> folder, follow these steps:</p>
 <ol>
-<li>Create a folder named <code>InstallPackages</code> to store NuGet packages for the local feed.<br>
-TODO: @STV where?, maybe <code>c:\projects\cre8magic\InstallPackages</code> ???</li>
-<li>Create a <code>nuget.config</code> file with the following configuration:<br>
-TODO: @STV where?</li>
+<li>In your solution root (e.g., <code>c:\projects\cre8magic\</code>), create a folder named <code>InstallPackages</code> to store NuGet packages for the local feed.</li>
+<li>Also, in your solution root, create a <code>nuget.config</code> file with the following configuration:</li>
 </ol>
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;configuration xmlns=&quot;http://schemas.microsoft.com/nuget/config/Settings&quot;&gt;
@@ -127,17 +125,22 @@ TODO: @STV where?</li>
   &lt;/config&gt;
 &lt;/configuration&gt;
 </code></pre>
-<p>This configuration allows you to install local NuGet packages from the specified <code>InstallPackages</code> folder.
-Visual Studio will find them using the <code>LocalNuGetFeed</code> source.</p>
-<p>TODO: @STV - IS IT NOT NECESSARY TO CHANGE Visual Studio to know about this new feed?</p>
+<p>This configuration allows you to install local NuGet packages from the specified <code>InstallPackages</code> folder. Visual Studio will find them using the <code>LocalNuGetFeed</code> source.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you want to confirm/override a feed, you can still go into <strong>Visual Studio</strong>: <code>Tools &gt; Options &gt; NuGet Package Manager &gt; Package Sources</code> and check if your local feed is listed, but by default, Visual Studio will automatically discover and honor the feeds defined in a nuget.config located in solution root.</p>
+</div>
 <h2 id="step-2-build-the-cre8magic-nuget-package">Step 2: Build the cre8magic NuGet Package</h2>
 <ol>
-<li>Build the <code>ToSic.Cre8magic.Package.csproj</code> project in <code>Release</code> configuration.</li>
+<li>Ensure you increment the version number for each new package to avoid issues with NuGet package caching. The version of the <code>.nupkg</code> file is defined in the <code>ToSic.Cre8magic.Package/ToSic.Cre8magic.Oqtane.nuspec</code> file.</li>
+<li>Build the <code>ToSic.Cre8magic.Package/ToSic.Cre8magic.Package.csproj</code> project in <code>Release</code> configuration.</li>
 <li>This generates a new <code>ToSic.Cre8magic.Oqtane</code> NuGet package in the <code>ToSic.Cre8magic.Package</code> folder.</li>
-<li>The version of the <code>.nupkg</code> file is defined in the <code>ToSic.Cre8magic.Oqtane.nuspec</code> file.<br>
-Ensure you increment the version number for each new package to avoid issues with NuGet package caching.</li>
-<li>Copy the new package (e.g., <code>ToSic.Cre8magic.Oqtane.1.0.0.nupkg</code>) to the <code>InstallPackages</code> folder to make it available as a dependency for your custom Oqtane theme project.</li>
+<li>Copy the new package (e.g., <code>ToSic.Cre8magic.Oqtane.N.N.N.nupkg</code>) to the <code>InstallPackages</code> folder to make it available as a dependency for your custom Oqtane theme project.</li>
 </ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Always increment the package version number in the <code>.nuspec</code> file when making changes to your package. NuGet uses a complex caching mechanism, and if you rebuild a package with the same version number, Visual Studio might continue using the previously cached version rather than your new build.</p>
+</div>
 <h2 id="step-3-modify-test-theme-to-use-the-local-nuget-package">Step 3: Modify Test Theme to Use the Local NuGet Package</h2>
 <p>To test the local NuGet package, you need a custom Oqtane theme which uses it.</p>
 <div class="TIP">
@@ -145,36 +148,54 @@ Ensure you increment the version number for each new package to avoid issues wit
 <p>The standard cre8magic solution has such a theme named <code>ToSic.Cre8magic.ThemeWithLocalNuGet</code>.</p>
 <p>So if you are just working in the cre8magic project, you can use that project to test everything.</p>
 </div>
-<p>TODO: @STV please make sure we have this test-setup in the cre8magic solution.</p>
 <p>Say you have generated a new custom theme named <code>ToSic.Theme.Test1</code>.
 This results in a folder structure with the folders <code>Client</code> and <code>Package</code>, containing the <code>ToSic.Theme.Test1.Client.csproj</code> and <code>ToSic.Theme.Test1.Package.csproj</code> projects.</p>
 <h3 id="31-update-the-client-project">3.1. Update the Client Project</h3>
 <p>Open the <code>ToSic.Theme.Test1.Client.csproj</code> file to make some changes.</p>
 <ol>
-<li>Add the following line to the end of the first <code>&lt;PropertyGroup&gt;</code> (TODO: @STV why, what does this do?):</li>
-</ol>
-<pre><code class="lang-xml">&lt;OqtaneStaticAssetsPath&gt;../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane&lt;/OqtaneStaticAssetsPath&gt;
+<li><p>Add the following line to the end of the first <code>&lt;PropertyGroup&gt;</code>:</p>
+<pre><code class="lang-xml">&lt;OqtaneStaticAssetsPath&gt;../../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane&lt;/OqtaneStaticAssetsPath&gt;
 </code></pre>
-<ol>
-<li>Add the following <code>&lt;PackageReference&gt;</code> to the <code>&lt;ItemGroup&gt;</code> containing other packages:</li>
-</ol>
-<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;1.0.0&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>OqtaneStaticAssetsPath</code> property specifies a relative folder path where cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code>ToSic.Cre8magic.Oqtane</code> package will be copied during the build process.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In ASP.NET Core, the <code>wwwroot/_content/[packageid]</code> folder structure is a convention used to serve static assets from Razor Class Libraries. The <code>_content</code> folder is a special directory allowing components from different libraries to coexist without file path conflicts.</p>
+</div>
+</li>
+<li><p>Add the following <code>&lt;PackageReference&gt;</code> to the <code>&lt;ItemGroup&gt;</code> containing other packages, and replace <code>Version=&quot;N.N.N&quot;</code> with latest version, eg. <code>Version=&quot;1.0.0&quot;</code>:</p>
+<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;N.N.N&quot; GeneratePathProperty=&quot;true&quot; /&gt;
 </code></pre>
-<ol>
-<li>Add a build task to copy static web assets:</li>
-</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Attribute <code>Version=&quot;N.N.N&quot;</code> with the expected version of the <code>ToSic.Cre8magic.Oqtane</code> package (located in your local <code>InstallPackages</code> folder) is optional. If multiple versions of the same package exist in your local NuGet folder and you don't specify a version, NuGet will use the highest version by default.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <code>GeneratePathProperty=&quot;true&quot;</code> attribute in the <code>PackageReference</code> element is a special MSBuild property that instructs the build system to create an MSBuild property containing the installation path of the referenced NuGet package, so it can be used later when necessary.</p>
+</div>
+</li>
+<li><p>Add a build task to copy static web assets:</p>
 <pre><code class="lang-xml">&lt;Target Name=&quot;CopyStaticWebAssets&quot; AfterTargets=&quot;Build&quot;&gt;
   &lt;ItemGroup&gt;
     &lt;StaticAssets Include=&quot;$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*&quot; /&gt;
   &lt;/ItemGroup&gt;
-  &lt;MakeDir Directories=&quot;../$(OqtaneStaticAssetsPath)&quot; /&gt;
+  &lt;MakeDir Directories=&quot;$(OqtaneStaticAssetsPath)&quot; /&gt;
   &lt;Copy SourceFiles=&quot;@(StaticAssets)&quot;
-        DestinationFiles=&quot;@(StaticAssets-&gt;'../$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')&quot;
+        DestinationFiles=&quot;@(StaticAssets-&gt;'$(OqtaneStaticAssetsPath)/%(RecursiveDir)%(Filename)%(Extension)')&quot;
         SkipUnchangedFiles=&quot;true&quot; /&gt;
 &lt;/Target&gt;
 </code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For Oqtane themes, this build task ensures that cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code>ToSic.Cre8magic.Oqtane</code> package are copied during the build process, which is essential for proper theme rendering.</p>
+</div>
+</li>
+</ol>
 <h3 id="32-update-the-debug-script">3.2. Update the Debug Script</h3>
-<p>Open the <code>Package/debug.cmd</code> file and dd the following lines to copy the DLLs to the Oqtane development environment:</p>
+<p>Open the <code>Package/debug.cmd</code> file and add the following lines to copy the DLLs to the Oqtane development environment:</p>
 <pre><code class="lang-cmd">XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8magic.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
 XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
 </code></pre>
@@ -184,11 +205,89 @@ XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8Magic.OqtaneBs5.Clie
 &lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
 &lt;file src=&quot;..\..\..\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane\**\*.*&quot; target=&quot;wwwroot\_content\ToSic.Cre8magic.Oqtane&quot; /&gt;
 </code></pre>
+<div class="NOTE">
+<h5>Note</h5>
 <p>With these changes, your custom theme will use the local NuGet package and include the necessary static web assets for testing.</p>
-<h3 id="34-build-and-verify-that-it-works">3.4. Build and Verify that it Works</h3>
-<p>TODO: @STV how can you tell that it worked?</p>
-<h3 id="35-test-an-updated-version">3.5. Test an Updated Version</h3>
-<p>TODO: @STV what must we do when we want to rebuild and make sure it uses the newer version? I assume we need to bump the version and change the dependency in the client project?</p>
+</div>
+<h3 id="34-build-and-verify-that-it-works-in-your-oqtane-development-environment">3.4. Build and Verify that it Works in your Oqtane development environment</h3>
+<p>When you select <strong>Debug</strong> configuration and you build the <em>Package</em> project, it automatically deploys your Oqtane theme to your Oqtane Server development environment:</p>
+<ol>
+<li>Select <strong>Debug</strong> configuration in Visual Studio.</li>
+<li>Build the <em>Package</em> project (e.g., <code>ToSic.Theme.Test1.Package.csproj</code>).</li>
+<li>The build process runs the <code>debug.cmd</code> script, which copies relevant files to your Oqtane development environment.</li>
+<li>Theme-related DLL files, <code>ToSic.Cre8magic.Client.Oqtane.dll</code> and <code>ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll</code> will be placed in the <code>oqtane\oqtane.framework\Oqtane.Server\bin\Debug\net9.0</code> folder.</li>
+<li>Theme static assets will be copied to the <code>oqtane\oqtane.framework\Oqtane.Server\wwwroot\Themes\ToSic.Theme.Test1</code> folder and <code>oqtane\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane</code> folder.</li>
+</ol>
+<p>To verify it works:</p>
+<ol>
+<li>Run the Oqtane development environment (<code>Oqtane.Server</code> project) in <strong>Debug</strong> configuration in Visual Studio.</li>
+<li>Oqtane will automatically detect and install your theme during startup.</li>
+<li>Log in to your Oqtane admin account.</li>
+<li>Navigate to any page and access its <code>Page Management</code> settings.</li>
+<li>Go to the <code>Appearance</code> section.</li>
+<li>Your theme should be available in the dropdown list of themes and containers.</li>
+<li>Select your theme and verify it renders correctly.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the theme doesn't appear in the list or doesn't render correctly, check the theme's <em>Package</em> project <strong>Build</strong> log in Visual Studio's <strong>Output</strong> window.</p>
+</div>
+<h3 id="35-test-an-updated-version-in-your-oqtane-development-environment">3.5. Test an Updated Version in your Oqtane development environment</h3>
+<p>After creating a new version of <code>ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package you need to update your theme to use it:</p>
+<ol>
+<li>Ensure you have the new version of <code>ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package in <code>InstallPackages</code>.</li>
+<li>Open the <code>ToSic.Theme.Test1.Client.csproj</code> file and update the version to the new one:
+<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;M.M.M&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+</code></pre>
+</li>
+<li>Select <strong>Debug</strong> configuration in Visual Studio if it is not already selected.</li>
+<li><strong>Rebuild</strong> the <em>Package</em> project (e.g., <code>ToSic.Theme.Test1.Package.csproj</code>).</li>
+<li>The updated files will automatically deploy to your Oqtane Server development environment.</li>
+<li>Run the Oqtane development environment (<code>Oqtane.Server</code> project).</li>
+<li>Navigate to a page using your theme and verify the changes are visible.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your changes don't appear:</p>
+<ul>
+<li>Make sure your browser isn't caching the page (try a hard refresh with Ctrl+F5)</li>
+<li>Verify that you increased the version of <code>ToSic.Cre8magic.Oqtane.nupkg</code> and that the correct one is in the <code>InstallPackages</code> folder</li>
+<li>Examine the theme's <em>Package</em> project <strong>Build</strong> log in Visual Studio's <strong>Output</strong> window for any errors</li>
+</ul>
+</div>
+<h3 id="36-build-and-test-in-a-standalone-oqtane-installation">3.6. Build and Test in a Standalone Oqtane Installation</h3>
+<p>To create a deployable package for testing in a production-like environment:</p>
+<ol>
+<li>Ensure you have new version of <code>ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package in <code>InstallPackages</code>.</li>
+<li>Open the <code>ToSic.Theme.Test1.Client.csproj</code> file and update version to new one:
+<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;M.M.M&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+</code></pre>
+</li>
+<li>Select <strong>Release</strong> configuration in Visual Studio</li>
+<li>Ensure you've incremented the version in <code>ToSic.Theme.Test1.nuspec</code> (in <code>Package</code> folder) if making changes</li>
+<li>Build the <em>Package</em> project (e.g., <code>ToSic.Theme.Test1.Package.csproj</code>)</li>
+<li>The build process runs <code>release.cmd</code>, which creates a NuGet package</li>
+<li>The resulting theme package (e.g., <code>ToSic.Theme.Test1.N.N.N.nupkg</code>) will be in the <code>Package</code> folder</li>
+</ol>
+<p>To install and test your theme in a standalone Oqtane installation:</p>
+<ol>
+<li>Copy the <code>ToSic.Theme.Test1.N.N.N.nupkg</code> file to your Oqtane server's <code>Packages</code> folder, or use the <strong>Admin Dashboard &gt; Theme Management &gt; Install Theme</strong> option</li>
+<li>In Oqtane, go to <strong>Admin Dashboard &gt; System Info</strong> and click <strong>Restart Application</strong></li>
+<li>After restart, verify the theme was installed in <strong>Admin Dashboard &gt; Theme Management</strong></li>
+<li>Navigate to any page and open its <strong>Page Management</strong> settings</li>
+<li>In the <strong>Appearance</strong> section, your theme should be available in the dropdown list</li>
+<li>Select your theme and verify it renders correctly</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your theme doesn't appear or doesn't render properly:</p>
+<ul>
+<li>Clear browser cache (Ctrl+F5)</li>
+<li>Check Oqtane logs in the <code>Packages</code> and <code>wwwroot/Logs</code> folders</li>
+<li>Verify the package was properly created by examining it with a tool like NuGet Package Explorer</li>
+<li>Ensure all required dependencies are available in the target environment</li>
+</ul>
+</div>
 
 </article>
 
