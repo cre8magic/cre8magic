@@ -1636,6 +1636,49 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "pages/magic-tools/template-generator/assets/logo-400.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/magic-tools/template-generator/assets/logo-400.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/magic-tools/template-generator/config.md",
+      "output": {
+        ".html": {
+          "relative_path": "magic-tools/template-generator/config.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/magic-tools/template-generator/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "magic-tools/template-generator/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "pages/magic-tools/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "magic-tools/toc.html"
+        },
+        ".json": {
+          "relative_path": "magic-tools/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "pages/oqtane-themes-guide/index.md",
       "output": {

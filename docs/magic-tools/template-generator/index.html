@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>cre8magic ♾️ Template Generator | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="cre8magic ♾️ Template Generator | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Cre8magic.MagicTools.TemplateGenerator.Index">
+
+<img src="../../pages/magic-tools/template-generator/assets/logo-400.webp" class="float-right">
+<h1 id="cre8magic--template-generator">cre8magic ♾️ Template Generator</h1>
+<p>The cre8magic Template Generator will help you convert an existing themes into Oqtane templates.
+These can then be placed inside Oqtane so that users can develop their own themes based on your template.</p>
+<h2 id="what-is-an-oqtane-template">What is an Oqtane Template?</h2>
+<p>An Oqtane template is basically a set of source files containing a lot of placeholders.
+For example, a <code>ThemeInfo.cs</code> might look like this:</p>
+<pre><code class="lang-csharp">using Oqtane.Models;
+using Oqtane.Themes;
+
+namespace [Owner].Theme.[Theme]; // &lt;-- This cannot compile
+
+public class ThemeInfo : ITheme
+{
+  public Oqtane.Models.Theme Theme =&gt; new()
+  {
+      Name = &quot;[Owner] [Theme]&quot;,
+      Version = &quot;1.0.0&quot;,
+      PackageName = &quot;[Owner].Theme.[Theme]&quot;,
+      Resources =
+      [
+          new Stylesheet(&quot;~/Theme.css&quot;),
+          new Script(&quot;~/bootstrap.bundle.min.js&quot;),
+      ]
+  };
+}
+</code></pre>
+<p>This is difficult to develop, since it cannot be tested with the placeholders.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <strong>cre8magic ♾️ Template Generator</strong> will help you convert your existing themes into templates.</p>
+</div>
+<p>So what it does is it takes a) an existing theme and b) a <code>.json</code> configuration file,
+and generates all the files you need to create a theme template.</p>
+<p>The converter is being used extensively by the <strong>cre8magic ♾️</strong> team to create new themes.</p>
+<p>We expect to release the first version of the converter in 2025-Q3.</p>
+<h2 id="what-the-template-generator-does">What the Template Generator Does</h2>
+<p>The template generator will run 3 distinct tasks:</p>
+<ol>
+<li>Select files based on specific patterns in the configuration file.
+<ul>
+<li>For example, it will select all assets in the <code>wwwroot</code> folder and all <code>.cs</code> files in the <code>Client</code> folder.</li>
+</ul>
+</li>
+<li>Rename files and folders based on the configuration file.
+<ul>
+<li>For example, it will rename <code>ToSic.Cre8magic.Theme.Basic.sln</code> to <code>[Owner].Theme.[Theme].sln</code>.</li>
+</ul>
+</li>
+<li>Replace placeholders in the selected files with the actual values from the configuration file.
+<ul>
+<li>For example, it would replace <code>namespace ToSic.Cre8magic.Theme.Basic;</code> with <code>namespace [Owner].Theme.[Theme];</code> in the <code>ThemeInfo.cs</code> file.</li>
+</ul>
+</li>
+</ol>
+<h2 id="how-to-use-the-generator">How to Use the Generator</h2>
+<ol>
+<li>Create a theme any way you want, test it, develop it, etc.</li>
+<li>Add a special  <code>...config.json</code> file to the theme folder.</li>
+<li>Run the converter, which will generate a new folder with the template files.
+<ol>
+<li>During testing, you will deploy it to ... ???</li>
+<li>To release it as a nuget package, you will ...</li>
+</ol>
+</li>
+<li>Use the generated files to create an installable NuGet package.</li>
+<li>Deploy directly or through the Oqtane Marketplace.</li>
+</ol>
+<h2 id="how-to-install-the-generator">How to Install the Generator</h2>
+<p>The generator is a command line tool that you can run from the terminal or command prompt.</p>
+<p>Download the latest version from the <a href="https://github.com/cre8magic/oqtane-template-generator/releases">releases page</a>
+and place it anywhere you want - it's a standalone executable.</p>
+<h2 id="how-to-use-the-generator-todo-">How to Use the Generator TODO: @stv</h2>
+<p>...</p>
+<p>...</p>
+<p>➡️ See the <a class="xref" href="config.html">Configuration File</a> for details on how to configure the generator.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

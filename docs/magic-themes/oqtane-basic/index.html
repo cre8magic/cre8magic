@@ -90,16 +90,35 @@
 <p>This is the Oqtane Basic theme for Magic Themes.
 It is an enhanced version of the default Oqtane theme, with some necessary enhancements.</p>
 <h2 id="features">Features</h2>
+<h3 id="standard-features-already-included-in-oqtane-default-theme">Standard Features already included in Oqtane Default Theme</h3>
 <ul>
 <li>Fully responsive design (standard)</li>
 <li>Uses Bootstrap 5 (standard)</li>
+</ul>
+<h3 id="general-enhancements">General Enhancements</h3>
+<ul>
 <li>Has 3 layouts: <code>Default</code>, <code>Centered</code>, and <code>Fullscreen</code> (enhanced)</li>
 <li>Optimized for 2 panes <code>Default</code> and <code>Header</code> (enhanced)</li>
 <li>Uses Bootstrap 5 CSS Variables to customize look and feel (enhanced)</li>
 <li>Option to customize css variables per site or page (enhanced)</li>
-<li>Container will not show line or title (enhanced)</li>
-<li>Improved settings handling compared to default template (enhanced)</li>
+<li>Container will not show line or title by default (enhanced)</li>
 </ul>
+<h3 id="code-quality-enhancements-compared-to-oqtane-default-theme">Code Quality Enhancements (compared to Oqtane Default Theme)</h3>
+<ol>
+<li>Code deduplication (like namespace for resources are in central location)</li>
+<li>Data binding on <code>ThemeSettings</code> highly optimized to shorten code / more readable</li>
+<li>Settings show the official fallback value so you can better see what happens if you don't set a value</li>
+<li>Razor optimized so <code>@code</code> section comes first, which matches the order of execution</li>
+<li>Project optimized to be <code>#nullable</code> for better code quality</li>
+<li>Project optimized to use c# <code>preview</code> to leverage <code>field</code> and other new features</li>
+</ol>
+<h3 id="enhancements-to-settings-handling">Enhancements to Settings Handling</h3>
+<p>This theme has improved settings handling compared to default template.</p>
+<ol>
+<li>Complete API to reduce the settings code in the Razor files</li>
+<li>Special API to improve loading / editing / saving settings</li>
+<li>Proper clean-up of settings in the DB when they are reset, so they don't block settings inheritance</li>
+</ol>
 <h2 id="installation">Installation</h2>
 <p>There are two ways to install the Oqtane Basic theme.</p>
 <h3 id="via-nuget-package">Via NuGet Package</h3>

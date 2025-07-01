@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
       <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
       
       <meta name="docfx:rel" content="../">
       
@@ -63,9 +63,23 @@
     </header>
 
     <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
           <nav id="breadcrumb"></nav>
         </div>
@@ -74,26 +88,8 @@
 <h1 id="magic-tools">Magic Tools</h1>
 
 <p>Magic Tools will be a set of tools to better create themes for Oqtane.</p>
-<h2 id="cre8magic--theme-to-template-converter">cre8magic ♾️ Theme To Template Converter</h2>
-<p>To create theme templates, you need a set of files containing a lot of placeholders.
-This is difficult to develop, since it will not compile with the placeholders.</p>
-<div class="TIP">
-<h5>Tip</h5>
-<p>The cre8magic Theme To Template Converter will help you convert your existing themes into templates.</p>
-</div>
-<p>So what it does is it takes an existing theme, a <code>.json</code> configuration file,
-and generates all the files you need to create a theme template.</p>
-<p>The converter is being used extensively by the cre8magic team to create new themes.</p>
-<p>We expect to release the first version of the converter in 2025-Q3.</p>
-<h2 id="how-to-use-the-converter">How to Use the Converter</h2>
-<ol>
-<li>Create a theme any way you want, test it, develop it, etc.</li>
-<li>Add a special  <code>template.json</code> file to the theme folder.</li>
-<li>Run the converter, which will generate a new folder with the template files.</li>
-<li>Use the generated files to create an installable NuGet package.</li>
-<li>Deploy directly or through the Oqtane Marketplace.</li>
-</ol>
-<h2 id="section"></h2>
+<h2 id="cre8magic--theme-to-template-generator">cre8magic ♾️ Theme To Template Generator</h2>
+<p>➡️ See <a class="xref" href="template-generator/index.html">cre8magic ♾️ Template Generator</a></p>
 
 </article>
 
