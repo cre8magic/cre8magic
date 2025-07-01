@@ -1,5 +1,5 @@
 ---
-uid: OqtaneThemes.Parameters.Index
+uid: OqtaneThemes.Blazor.Parameters.Index
 ---
 
 # Oqtane Blazor Theme Creation - Component Parameters Guide

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Oqtane Blazor Theme Creation - Dependency Injection Guide | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Oqtane Blazor Theme Creation - Dependency Injection Guide | cre8magic ">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/blazor/dependency-injection/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="OqtaneThemes.Blazor.DependencyInjection.Index">
+<h1 id="oqtane-blazor-theme-creation---dependency-injection-guide">Oqtane Blazor Theme Creation - Dependency Injection Guide</h1>
+
+<p>Modern best practices in Blazor development encourage the use of Dependency Injection (DI) to manage dependencies and pass parameters between components.
+This guide will help you understand how to effectively use DI in your Oqtane themes.</p>
+<h2 id="what-is-dependency-injection">What is Dependency Injection?</h2>
+<p>Dependency Injection is a design pattern that allows you to inject dependencies into a class rather than hard-coding them within the class.
+This promotes loose coupling and makes your code more testable and maintainable.
+In Blazor, you can use DI to pass services and parameters to your components, making them more flexible and reusable.</p>
+<h2 id="how-to-use-dependency-injection-in-oqtane-themes">How to Use Dependency Injection in Oqtane Themes</h2>
+<h3 id="step-1-create-a-service">Step 1: Create a Service</h3>
+<p>First you need to create a service that you want to inject into your components. This service can be anything from a simple data provider to a more complex business logic handler.</p>
+<pre><code class="lang-csharp">public class MyService
+{
+    public string GetData()
+    {
+        return &quot;Hello from MyService!&quot;;
+    }
+}
+</code></pre>
+<h3 id="step-2-register-services">Step 2: Register Services</h3>
+<p>In Oqtane, you can register services in the <code>ThemeStartup.cs</code> file of your theme project.</p>
+<pre><code class="lang-csharp">using Microsoft.Extensions.DependencyInjection;
+
+namespace ToSic.Cre8magic.Theme.Basic;
+
+public class ThemeStartup : Oqtane.Services.IClientStartup
+{
+    /// &lt;summary&gt;
+    /// Register Services which this theme needs.
+    /// &lt;/summary&gt;
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // Register the MySettings helper
+        services.AddTransient&lt;MyService&gt;();
+    }
+}
+</code></pre>
+<h3 id="step-3-inject-services-into-components">Step 3: Inject Services into Components</h3>
+<p>You can inject the service into your Blazor components using the <code>[Inject]</code> attribute or the <code>@inject</code> directive.</p>
+<pre><code class="lang-razor">@inject MyService MyService
+
+&lt;h3&gt;Data from MyService:&lt;/h3&gt;
+&lt;p&gt;@MyService.GetData()&lt;/p&gt;
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/blazor/dependency-injection/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

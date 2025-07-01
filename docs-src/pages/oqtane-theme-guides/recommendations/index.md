@@ -1,3 +1,6 @@
+---
+uid: OqtaneThemes.Recommendations.Index
+---
 
 # Oqtane Theme Recommendations and Best Practices
 

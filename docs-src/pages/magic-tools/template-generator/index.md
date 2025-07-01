@@ -64,7 +64,7 @@ The template generator will run 3 distinct tasks:
 ## How to Use the Generator
 
 1. Create a theme any way you want, test it, develop it, etc.
-1. Add a `template.json` file TODO: - this will be used by Oqtane to describe the Template to the user.
+1. Add a [`template.json` file](xref:OqtaneThemes.Templates.Index) TODO: @STV PLS EXPLAIN IT ON THAT PAGE - this will be used by Oqtane to describe the Template to the user.
 1. Add a `template-generator.config.json` [configuration](xref:Cre8magic.MagicTools.TemplateGenerator.Configuration) file to the theme folder.
 1. Run the converter, which will generate a new folder with the template files.
     1. During testing, you will deploy it to ... ???

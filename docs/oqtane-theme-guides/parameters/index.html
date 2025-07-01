@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Oqtane Blazor Theme Creation - Component Parameters Guide | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Oqtane Blazor Theme Creation - Component Parameters Guide | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/parameters/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="OqtaneThemes.Parameters.Index">
+<h1 id="oqtane-blazor-theme-creation---component-parameters-guide">Oqtane Blazor Theme Creation - Component Parameters Guide</h1>
+
+<p>Blazor has a few secret tricks up its sleeve that can make your life easier when creating themes.
+A core challenge is passing parameters and settings around between components.</p>
+<h2 id="basics-3-ways-to-pass-parameters">Basics: 3 Ways to Pass Parameters</h2>
+<p>There are 3 ways to pass parameters between components in Blazor:</p>
+<ol>
+<li><a href="#pass-parameters-on-a-component-attribute">On a Component Attribute</a> - the simplest way which you'll use a lot</li>
+<li><a href="#cascade-parameters-from-theme-to-any-control">Cascade Parameters from Theme to any Control</a> - Oqtane uses this a lot</li>
+<li>Using a Service</li>
+</ol>
+<h2 id="pass-parameters-on-a-component-attribute">Pass Parameters on a Component Attribute</h2>
+<p>The simplest way to pass a parameter.
+Just add it to the attribute of the component.</p>
+<pre><code class="lang-html">@* Example with a direct value *@
+&lt;MyComponent MyParameter=&quot;Hello World&quot; FavoriteNumber=&quot;42&quot; /&gt;
+
+@* Example with a variable *@
+@{
+  string myHello = &quot;Hello World&quot;;
+  int myFavoriteNumber = 42;
+}
+&lt;MyComponent MyParameter=&quot;@myHello&quot; FavoriteNumber=&quot;myFavoriteNumber&quot; /&gt;
+</code></pre>
+<p>Your component would then need to look a bit like this:</p>
+<pre><code class="lang-razor">@code
+{
+  [Parameter]
+  public string MyParameter { get; set; }
+
+  [Parameter]
+  public int FavoriteNumber { get; set; }
+}
+</code></pre>
+<p>You can also tell the UI that this parameter is required,
+so that Visual Studio and the compiler will tell the developer that they need to provide it.</p>
+<pre><code class="lang-razor">@code
+{
+  [Parameter, EditorRequired]
+  public required string MyParameter { get; set; }
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>It's not always clear (especially on strings)
+if the parameter should be the word <code>myVariable</code> or the contents of the variable <code>myVariable</code>.
+In most cases this is automatically deduced, but in cases of strings it can go wrong.
+When in doubt, use the <code>@</code> symbol to tell Blazor to use the contents of the variable.</p>
+</div>
+<p>You can also pass in larger objects, like a class or a list:</p>
+<pre><code class="lang-razor">@{
+  var myObject = new MyObject { Name = &quot;John&quot;, Age = 42 };
+  var myListOfObjects = new List&lt;MyObject&gt; { myObject, myObject };
+}
+&lt;MyComponent MyObject=&quot;myObject&quot; MyListOfObjects=&quot;myListOfObjects&quot; /&gt;
+</code></pre>
+<p>The component would then look like this:</p>
+<pre><code class="lang-razor">@code
+{
+  [Parameter]
+  public MyObject MyObject { get; set; }
+
+  [Parameter]
+  public List&lt;MyObject&gt; MyListOfObjects { get; set; }
+}
+</code></pre>
+<h3 id="how-component-parameters-are-used-in-oqtane">How Component Parameters are Used in Oqtane</h3>
+<p>The Oqtane Framework won't give your components any data directly,
+so it won't pass in any parameters to your components like this.</p>
+<p>So this mechanism is mostly used for passing parameters between your components in your theme.</p>
+<h3 id="timing-issues-with-component-parameters">Timing Issues with Component Parameters</h3>
+<p>When you pass in a parameter to a component, it's not always available right away.</p>
+<p>This is because the component is initialized before the parameter is set,
+and sometimes the parent component is not yet ready to pass in the parameter.</p>
+<p>Some tips:</p>
+<ol>
+<li>always assume that the parameters could contain an empty / default value at first</li>
+<li>use the <code>OnParametersSet</code> or <code>OnParametersSetAsync</code> lifecycle methods to initialize other objects</li>
+<li>... and to react to parameter changes</li>
+<li>when something else is initialized with this parameter, also assume that it could be empty at first</li>
+</ol>
+<h2 id="cascade-parameters-from-theme-to-any-control">Cascade Parameters from Theme to any Control</h2>
+<p>Cascading parameters are a way to pass parameters down the component tree.
+This is useful when you have a lot of nested components and you don't want to pass the parameter through all of them.</p>
+<p>Imagine the following component tree:</p>
+<ul>
+<li>Theme
+<ul>
+<li>Menu Component
+<ul>
+<li>Menu Item Component
+<ul>
+<li>Menu Icon Component</li>
+</ul>
+</li>
+<li>Menu Item</li>
+<li>Menu Item</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This is what the Theme would look like:</p>
+<pre><code class="lang-html">@{
+  var myObject = new IconSettings { Library = &quot;FontAwesome&quot; };
+}
+&lt;CascadingValue Value=&quot;myObject&quot;&gt;
+  &lt;MyMenu /&gt;
+&lt;/CascadingValue&gt;
+</code></pre>
+<p>And the MenuIcon Component would then look like this:</p>
+<pre><code class="lang-razor">@code
+{
+  [CascadingParameter]
+  public IconSettings MyIconSettings { get; set; }
+}
+</code></pre>
+<p>This way you can pass the <code>IconSettings</code> object from the Theme to the MenuIcon Component without having to pass it through all the other components.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Cascading parameters are mapped using the <code>Type</code> of the object.
+This is why in the previous example we used a <code>IconSettings</code> object,
+even though we're just passing in as <code>string</code> value.</p>
+</div>
+<h3 id="how-cascading-parameters-are-used-in-oqtane">How Cascading Parameters are Used in Oqtane</h3>
+<p>Oqtane uses cascading parameters a lot.
+You will typically get the following parameters from the Theme:</p>
+<pre><code class="lang-razor">@code
+{
+  /// &lt;summary&gt;
+  /// Get the PageState from the CascadingParameter
+  /// &lt;/summary&gt;
+  [CascadingParameter]
+  public required PageState PageState { get; set; }
+}
+</code></pre>
+<p>If your control is inside a module (eg. part of a Container)
+you can also get the ModuleState like this:</p>
+<pre><code class="lang-razor">@code
+{
+  /// &lt;summary&gt;
+  /// Get the ModuleState from the CascadingParameter
+  /// &lt;/summary&gt;
+  [CascadingParameter]
+  public required Module ModuleState { get; set; }
+}
+</code></pre>
+<h3 id="timing-issues-with-cascading-parameters">Timing Issues with Cascading Parameters</h3>
+<p>Cascading parameters are set before the component is initialized,
+so you can be sure that they are available when the component is created.
+This is why you can use them to pass parameters to components that are not directly related to each other.</p>
+<h3 id="empty-values-in-cascading-parameters">Empty Values in Cascading Parameters</h3>
+<p>Note that cascading parameters can be empty, because the parent component did not set them,
+or they were set to <code>null</code> or <code>default</code> by the parent component.</p>
+<p>So if you create your own cascading parameters,
+either mark them as <code>required</code> to get compiler errors, or do null/default checks in your component.</p>
+<h2 id="using-a-service">Using a Service</h2>
+<p>The last way to pass parameters is to use a service.
+This is a bit more advanced and not used as often as the other two ways.</p>
+<p>Services allow you to:</p>
+<ol>
+<li>pass parameters &quot;downwards&quot; in the component tree (like cascading parameters)</li>
+<li>pass parameters &quot;upwards&quot; in the component tree</li>
+<li>pass parameters &quot;sideways&quot; between components that are not directly related</li>
+</ol>
+<p>For this to work, a service needs to be scoped correctly,
+meaning that it should provide the same service instance for every component that needs it.</p>
+<p>This is done by registering the service as a scoped service in the <code>Startup.cs</code> file:</p>
+<pre><code class="lang-csharp">namespace ToSic.Cre8magic;
+
+public class Startup : Oqtane.Services.IClientStartup
+{
+  /// &lt;summary&gt;
+  /// Register Services
+  /// &lt;/summary&gt;
+  /// &lt;param name=&quot;services&quot;&gt;&lt;/param&gt;
+  public void ConfigureServices(IServiceCollection services)
+  {
+    // All these Settings etc. should be scoped, so they don't have to reload for each click
+    services.TryAddScoped&lt;IMagicSettingsService, MagicSettingsService&gt;();
+  }
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p><strong>Scoped</strong> services have different behaviors depending on the RenderMode.
+For now, just understand that they will always give the same instance
+for everything that is rendered in the same page.</p>
+</div>
+<h3 id="simple-example-oqtane-5">Simple Example (Oqtane 5+)</h3>
+<p>In Oqtane 5+ you can use the <code>[Inject]</code> attribute or <code>@inject</code> to inject services into your components.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>This is the classic way of doing things, but has a few issues related to timing.
+Read on...</p>
+</div>
+<p>Then you can use the service in your components like this:</p>
+<pre><code class="lang-razor">@code
+{
+  [Inject]
+  public IMagicSettingsService MagicSettingsService { get; set; }
+}
+</code></pre>
+<p>or like this:</p>
+<pre><code class="lang-razor">@code
+@inject IMagicSettingsService MagicSettingsService
+</code></pre>
+<p>In .net 9 you can also use constructor injection (new in Oqtane 6)
+which has some benefits:</p>
+<pre><code class="lang-razor">@code
+{
+  private readonly IMagicSettingsService _magicSettingsService;
+
+  public MyComponent(IMagicSettingsService magicSettingsService)
+  {
+    _magicSettingsService = magicSettingsService;
+  }
+}
+</code></pre>
+<h3 id="timing-issues-with-inject-and-inject-services">Timing Issues with <code>@inject</code> and <code>[Inject]</code> Services</h3>
+<p>Services injected with <code>@inject</code> or <code>[Inject]</code> are handled the same way,
+and they are <em>not</em> available when the component is constructed.
+Instead, they are available in the <code>OnInitialized</code> and <code>OnInitializedAsync</code> lifecycle method.</p>
+<p>This is important, because it's counterintuitive and different from the normal
+constructor injection that you might know from normal C# services.</p>
+<p>Either make sure your code expects this - or use constructor injection if you're on Oqtane 6.</p>
+<h3 id="constructor-injection-oqtane-6">Constructor Injection (Oqtane 6+)</h3>
+<p>In Oqtane 6+ you can use constructor injection to inject services into your components.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Using Constructor Injection is a great way to avoid timing issues with services.
+It's also nicer but it has some downsides:</p>
+<ol>
+<li>You must separate your razor file into 2 files <code>.razor</code> and <code>.razor.cs</code> (with code behind) which is possibly not desired</li>
+<li>You can't easily inherit the component anymore (<code>error CS7036: There is no argument given that corresponds to the required parameter...</code>)</li>
+</ol>
+</div>
+<p>So you can still inherit the component, but any descendant component must also use
+2 razor files with code-behind, which is kind of viral...</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Because of this tradeoff, we currently recommend against using constructor injection in Oqtane Components.</p>
+</div>
+<h3 id="how-service-injections-are-used-for-parameters-in-oqtane">How Service Injections are Used for Parameters in Oqtane</h3>
+<p><em>This is about parameters in Oqtane, not about general Service Injection.</em></p>
+<p>In Oqtane, certain environment parameters are provided as a service instead of Cascading Parameters.</p>
+<p>Specifically, the SiteState is provided as a service:</p>
+<pre><code class="lang-razor">  [Inject]
+  protected SiteState SiteState { get; set; }
+</code></pre>
+<p>This is because the SiteState will not change through the lifecycle of the page.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/parameters/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
