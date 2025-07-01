@@ -9,7 +9,7 @@ It is an enhanced version of the default Oqtane theme, with some essential enhan
 
 ## First Impressions
 
-<div gallery="gallery4">
+<div gallery="gallery01">
   <img src="./assets/sample-01.webp">
   <img src="./assets/sample-02.webp">
   <img src="./assets/sample-03.webp">
