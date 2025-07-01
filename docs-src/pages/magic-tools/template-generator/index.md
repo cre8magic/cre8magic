@@ -15,9 +15,6 @@ An Oqtane template is basically a set of source files containing a lot of placeh
 For example, a `ThemeInfo.cs` might look like this:
 
 ```csharp
-using Oqtane.Models;
-using Oqtane.Themes;
-
 namespace [Owner].Theme.[Theme]; // <-- This cannot compile
 
 public class ThemeInfo : ITheme
@@ -39,9 +36,13 @@ public class ThemeInfo : ITheme
 This is difficult to develop, since it cannot be tested with the placeholders.
 
 > [!TIP]
+> What we need is a way to work on a Theme without having to deal with the placeholders.
+> Then we need a magic converter to take the latest version of the theme and convert it into a template.
+>
 > The **cre8magic ♾️ Template Generator** will help you convert your existing themes into templates.
+> You can use it again and again, as your theme evolves.
 
-So what it does is it takes a) an existing theme and b) a `.json` configuration file,
+The **cre8magic ♾️ Template Generator** takes a) an existing theme and b) a [configuration file](xref:Cre8magic.MagicTools.TemplateGenerator.Configuration),
 and generates all the files you need to create a theme template.
 
 The converter is being used extensively by the **cre8magic ♾️** team to create new themes.
@@ -63,7 +64,8 @@ The template generator will run 3 distinct tasks:
 ## How to Use the Generator
 
 1. Create a theme any way you want, test it, develop it, etc.
-1. Add a special  `...config.json` file to the theme folder.
+1. Add a `template.json` file TODO: - this will be used by Oqtane to describe the Template to the user.
+1. Add a `template-generator.config.json` [configuration](xref:Cre8magic.MagicTools.TemplateGenerator.Configuration) file to the theme folder.
 1. Run the converter, which will generate a new folder with the template files.
     1. During testing, you will deploy it to ... ???
     1. To release it as a nuget package, you will ...

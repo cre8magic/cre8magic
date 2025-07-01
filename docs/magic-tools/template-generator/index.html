@@ -93,10 +93,7 @@ These can then be placed inside Oqtane so that users can develop their own theme
 <h2 id="what-is-an-oqtane-template">What is an Oqtane Template?</h2>
 <p>An Oqtane template is basically a set of source files containing a lot of placeholders.
 For example, a <code>ThemeInfo.cs</code> might look like this:</p>
-<pre><code class="lang-csharp">using Oqtane.Models;
-using Oqtane.Themes;
-
-namespace [Owner].Theme.[Theme]; // &lt;-- This cannot compile
+<pre><code class="lang-csharp">namespace [Owner].Theme.[Theme]; // &lt;-- This cannot compile
 
 public class ThemeInfo : ITheme
 {
@@ -116,9 +113,12 @@ public class ThemeInfo : ITheme
 <p>This is difficult to develop, since it cannot be tested with the placeholders.</p>
 <div class="TIP">
 <h5>Tip</h5>
-<p>The <strong>cre8magic ♾️ Template Generator</strong> will help you convert your existing themes into templates.</p>
+<p>What we need is a way to work on a Theme without having to deal with the placeholders.
+Then we need a magic converter to take the latest version of the theme and convert it into a template.</p>
+<p>The <strong>cre8magic ♾️ Template Generator</strong> will help you convert your existing themes into templates.
+You can use it again and again, as your theme evolves.</p>
 </div>
-<p>So what it does is it takes a) an existing theme and b) a <code>.json</code> configuration file,
+<p>The <strong>cre8magic ♾️ Template Generator</strong> takes a) an existing theme and b) a <a class="xref" href="config.html">configuration file</a>,
 and generates all the files you need to create a theme template.</p>
 <p>The converter is being used extensively by the <strong>cre8magic ♾️</strong> team to create new themes.</p>
 <p>We expect to release the first version of the converter in 2025-Q3.</p>
@@ -144,7 +144,8 @@ and generates all the files you need to create a theme template.</p>
 <h2 id="how-to-use-the-generator">How to Use the Generator</h2>
 <ol>
 <li>Create a theme any way you want, test it, develop it, etc.</li>
-<li>Add a special  <code>...config.json</code> file to the theme folder.</li>
+<li>Add a <code>template.json</code> file TODO: - this will be used by Oqtane to describe the Template to the user.</li>
+<li>Add a <code>template-generator.config.json</code> <a class="xref" href="config.html">configuration</a> file to the theme folder.</li>
 <li>Run the converter, which will generate a new folder with the template files.
 <ol>
 <li>During testing, you will deploy it to ... ???</li>
