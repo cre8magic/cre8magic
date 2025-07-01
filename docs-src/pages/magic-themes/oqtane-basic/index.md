@@ -5,7 +5,19 @@ uid: Cre8magic.MagicThemes.OqtaneBasic.Index
 # Magic Theme: Oqtane Basic
 
 This is the Oqtane Basic theme for Magic Themes.
-It is an enhanced version of the default Oqtane theme, with some necessary enhancements.
+It is an enhanced version of the default Oqtane theme, with some essential enhancements.
+
+## First Impressions
+
+<div gallery="gallery4">
+  <img src="./assets/sample-01.webp">
+  <img src="./assets/sample-02.webp">
+  <img src="./assets/sample-03.webp">
+  <img src="./assets/sample-04.webp">
+  <img src="./assets/sample-05.webp">
+</div>
+
+---
 
 ## Features
 
