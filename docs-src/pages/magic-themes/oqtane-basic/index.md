@@ -9,14 +9,35 @@ It is an enhanced version of the default Oqtane theme, with some necessary enhan
 
 ## Features
 
+### Standard Features already included in Oqtane Default Theme
+
 - Fully responsive design (standard)
 - Uses Bootstrap 5 (standard)
+
+### General Enhancements
+
 - Has 3 layouts: `Default`, `Centered`, and `Fullscreen` (enhanced)
 - Optimized for 2 panes `Default` and `Header` (enhanced)
 - Uses Bootstrap 5 CSS Variables to customize look and feel (enhanced)
 - Option to customize css variables per site or page (enhanced)
-- Container will not show line or title (enhanced)
-- Improved settings handling compared to default template (enhanced)
+- Container will not show line or title by default (enhanced)
+
+### Code Quality Enhancements (compared to Oqtane Default Theme)
+
+1. Code deduplication (like namespace for resources are in central location)
+1. Data binding on `ThemeSettings` highly optimized to shorten code / more readable
+1. Settings show the official fallback value so you can better see what happens if you don't set a value
+1. Razor optimized so `@code` section comes first, which matches the order of execution
+1. Project optimized to be `#nullable` for better code quality
+1. Project optimized to use c# `preview` to leverage `field` and other new features
+
+### Enhancements to Settings Handling
+
+This theme has improved settings handling compared to default template.
+
+1. Complete API to reduce the settings code in the Razor files
+1. Special API to improve loading / editing / saving settings
+1. Proper clean-up of settings in the DB when they are reset, so they don't block settings inheritance
 
 ## Installation
 
