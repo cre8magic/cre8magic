@@ -65,13 +65,13 @@ Just use the built-in marketplace in the theme manager to install the theme.
 1. Walkthrough in the Oqtane documentation: [Install a Theme](https://docs.oqtane.org/manuals/system/theme-management.html#installing-themes)
 1. Or you can manually download it from the Marketplace TODO:
 
-### Via Template Generator
+### Via Theme Generator in Oqtane
 
-The template generator will create a new Visual Studio project with the Oqtane Basic theme.
+The theme generator will create a new Visual Studio project with the Oqtane Basic theme.
 It will generate code which then uses your company namespace and gives you source code to customize the theme.
 
 1. First you must install the cre8magic Templates TODO: so Oqtane has all the source code
-1. Then you can use the template generator to create a new project with the Oqtane Basic theme
+1. Then you can use the theme generator to create a new project with the Oqtane Basic theme
 1. Walkthrough in the Oqtane documentation: [Create a New Theme](https://docs.oqtane.org/manuals/system/theme-management.html#creating-themes)
 
 ## Customize the Logo

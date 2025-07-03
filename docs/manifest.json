@@ -18,7 +18,11 @@
           "relative_path": "api/ToSic.Cre8magic.Act.IMagicAct.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Act.IMagicAct",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Act.IMagicAct.yml\" sourcestartlinenumber=\"1\">This is the magic hat from which you can pull just about anything you can think of.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -28,7 +32,11 @@
           "relative_path": "api/ToSic.Cre8magic.Act.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Act",
+      "Summary": "<p sourcefile=\"api-docs/ToSic.Cre8magic.Act/index.md\" sourcestartlinenumber=\"1\">The starting point for your code. Contains the MagicAct and more.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -38,7 +46,11 @@
           "relative_path": "api/ToSic.Cre8magic.Analytics.IMagicAnalyticsJsService.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Analytics.IMagicAnalyticsJsService",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -48,7 +60,11 @@
           "relative_path": "api/ToSic.Cre8magic.Analytics.IMagicAnalyticsKit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Analytics.IMagicAnalyticsKit",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -58,7 +74,11 @@
           "relative_path": "api/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Analytics.MagicAnalyticsSettings",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.yml\" sourcestartlinenumber=\"1\">Settings to set up and use Google Tag Manager to track page views.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.yml\" sourcestartlinenumber=\"3\">BETA: Doesn't completely work yet.</p>\n<ul sourcefile=\"api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.yml\" sourcestartlinenumber=\"5\">\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.yml\" sourcestartlinenumber=\"5\">Main caveat: Integration of the Google Tag Manager still has the GTM hardwired in the JS, must be finished.</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Analytics.MagicAnalyticsSettings.yml\" sourcestartlinenumber=\"6\">Background is that the Module currently doesn't contain its own JS, so it's still part of the theme.</li>\n</ul>\n"
     },
     {
       "type": "ManagedReference",
@@ -68,7 +88,11 @@
           "relative_path": "api/ToSic.Cre8magic.Analytics.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Analytics",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -78,7 +102,11 @@
           "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Breadcrumbs.IMagicBreadcrumbKit",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -88,7 +116,11 @@
           "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbBlueprint.yml\" sourcestartlinenumber=\"1\">Language Design Settings</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -98,7 +130,11 @@
           "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbSettings.yml\" sourcestartlinenumber=\"1\">Breadcrumb settings - either provided in code, or generated from JSON.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -108,7 +144,11 @@
           "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Breadcrumbs.MagicBreadcrumbTailor.yml\" sourcestartlinenumber=\"1\">Special helper to provide Css classes to menus</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -118,7 +158,11 @@
           "relative_path": "api/ToSic.Cre8magic.Breadcrumbs.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Breadcrumbs",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -128,7 +172,11 @@
           "relative_path": "api/ToSic.Cre8magic.Containers.IMagicContainerKit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Containers.IMagicContainerKit",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -138,7 +186,11 @@
           "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerBlueprint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Containers.MagicContainerBlueprint",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -148,7 +200,11 @@
           "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Containers.MagicContainerSettings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -158,7 +214,11 @@
           "relative_path": "api/ToSic.Cre8magic.Containers.MagicContainerTailor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Containers.MagicContainerTailor",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -168,7 +228,11 @@
           "relative_path": "api/ToSic.Cre8magic.Containers.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Containers",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -178,7 +242,11 @@
           "relative_path": "api/ToSic.Cre8magic.Languages.IMagicLanguageKit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Languages.IMagicLanguageKit",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Languages.IMagicLanguageKit.yml\" sourcestartlinenumber=\"1\">The Kit to Show language menus in the UI.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Languages.IMagicLanguageKit.yml\" sourcestartlinenumber=\"3\">You can get it by <code sourcefile=\"api-generated/ToSic.Cre8magic.Languages.IMagicLanguageKit.yml\" sourcestartlinenumber=\"3\">@inject</code> / <code sourcefile=\"api-generated/ToSic.Cre8magic.Languages.IMagicLanguageKit.yml\" sourcestartlinenumber=\"3\">[Inject]</code>-ing the <xref href=\"ToSic.Cre8magic.Act.IMagicAct\" data-throw-if-not-resolved=\"false\"></xref> and calling the <xref href=\"ToSic.Cre8magic.Act.IMagicAct.LanguageKit(ToSic.Cre8magic.Languages.MagicLanguageSettings)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -188,7 +256,11 @@
           "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguage.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Languages.MagicLanguage",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Languages.MagicLanguage.yml\" sourcestartlinenumber=\"1\">Describes a language inside Oqtane.\nWith Name, Label, Culture and Active-State.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -198,7 +270,11 @@
           "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageBlueprint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Languages.MagicLanguageBlueprint",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Languages.MagicLanguageBlueprint.yml\" sourcestartlinenumber=\"1\">Language Design Settings</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -208,7 +284,11 @@
           "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Languages.MagicLanguageSettings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -218,7 +298,11 @@
           "relative_path": "api/ToSic.Cre8magic.Languages.MagicLanguageTailor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Languages.MagicLanguageTailor",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -228,7 +312,11 @@
           "relative_path": "api/ToSic.Cre8magic.Languages.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Languages",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -238,7 +326,11 @@
           "relative_path": "api/ToSic.Cre8magic.Links.IMagicLinkService.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Links.IMagicLinkService",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -248,7 +340,11 @@
           "relative_path": "api/ToSic.Cre8magic.Links.MagicLinkSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Links.MagicLinkSettings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -258,7 +354,11 @@
           "relative_path": "api/ToSic.Cre8magic.Links.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Links",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -268,7 +368,11 @@
           "relative_path": "api/ToSic.Cre8magic.MagicConstants.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.MagicConstants",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -278,7 +382,11 @@
           "relative_path": "api/ToSic.Cre8magic.MagicControls.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.MagicControls",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.MagicControls.yml\" sourcestartlinenumber=\"1\">List of all built in Magic Controls.\nIt is used for certain APIs which will request resources for specific controls.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -288,7 +396,11 @@
           "relative_path": "api/ToSic.Cre8magic.MagicTokens.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.MagicTokens",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -298,7 +410,11 @@
           "relative_path": "api/ToSic.Cre8magic.Menus.IMagicMenuKit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Menus.IMagicMenuKit",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -308,7 +424,11 @@
           "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuBlueprint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Menus.MagicMenuBlueprint",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Menus.MagicMenuBlueprint.yml\" sourcestartlinenumber=\"1\">Menu Design Blueprint</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -318,7 +438,11 @@
           "relative_path": "api/ToSic.Cre8magic.Menus.MagicMenuSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Menus.MagicMenuSettings",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Menus.MagicMenuSettings.yml\" sourcestartlinenumber=\"1\">The raw settings for a menu, in a way which can be stored elsewhere.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Menus.MagicMenuSettings.yml\" sourcestartlinenumber=\"3\">This is later augmented with additional information which only code can provide, in the <xref href=\"ToSic.Cre8magic.Menus.MagicMenuSettings\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -328,7 +452,11 @@
           "relative_path": "api/ToSic.Cre8magic.Menus.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Menus",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -338,7 +466,11 @@
           "relative_path": "api/ToSic.Cre8magic.OqtaneBasic.MagicContainer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.OqtaneBasic.MagicContainer",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBasic.MagicContainer.yml\" sourcestartlinenumber=\"1\">The recommended base container for all themes which use cre8magic.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBasic.MagicContainer.yml\" sourcestartlinenumber=\"3\">It will simply remain invisible for the normal user,\nand except for a DIV containing some classes, it will not render anything.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBasic.MagicContainer.yml\" sourcestartlinenumber=\"6\">Admin-users will see a bit more, since the title etc. is necessary for the editing tools.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -348,7 +480,11 @@
           "relative_path": "api/ToSic.Cre8magic.OqtaneBasic.MagicTheme.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.OqtaneBasic.MagicTheme",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBasic.MagicTheme.yml\" sourcestartlinenumber=\"1\">Base class for our themes. It's responsible for</p>\n<ol sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBasic.MagicTheme.yml\" sourcestartlinenumber=\"3\">\n<li sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBasic.MagicTheme.yml\" sourcestartlinenumber=\"3\">Some basic properties such as Name, BodyClasses etc. which each theme can configure</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBasic.MagicTheme.yml\" sourcestartlinenumber=\"4\">Adding special classes to the body tag so that the CSS can best optimize for each scenario</li>\n</ol>\n"
     },
     {
       "type": "ManagedReference",
@@ -358,7 +494,11 @@
           "relative_path": "api/ToSic.Cre8magic.OqtaneBasic.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.OqtaneBasic",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -368,7 +508,11 @@
           "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.OqtaneBs5.DefaultsBs5",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.DefaultsBs5.yml\" sourcestartlinenumber=\"1\">Default settings for Oqtane Bootstrap5 controls.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -378,7 +522,11 @@
           "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.MagicBreadcrumb.yml\" sourcestartlinenumber=\"1\">A breadcrumb component for Oqtane using Bootstrap 5, which can be used to show the current page's position in the site hierarchy.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -388,7 +536,11 @@
           "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicContainer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.OqtaneBs5.MagicContainer",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.MagicContainer.yml\" sourcestartlinenumber=\"1\">The recommended base container for all themes which use cre8magic.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.MagicContainer.yml\" sourcestartlinenumber=\"3\">It will simply remain invisible for the normal user,\nand except for a DIV containing some classes, it will not render anything.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.MagicContainer.yml\" sourcestartlinenumber=\"6\">Admin-users will see a bit more, since the title etc. is necessary for the editing tools.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -398,7 +550,11 @@
           "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.MagicTheme.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.OqtaneBs5.MagicTheme",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.MagicTheme.yml\" sourcestartlinenumber=\"1\">Base class for our themes. It's responsible for</p>\n<ol sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.MagicTheme.yml\" sourcestartlinenumber=\"3\">\n<li sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.MagicTheme.yml\" sourcestartlinenumber=\"3\">Some basic properties such as Name, BodyClasses etc. which each theme can configure</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.OqtaneBs5.MagicTheme.yml\" sourcestartlinenumber=\"4\">Adding special classes to the body tag so that the CSS can best optimize for each scenario</li>\n</ol>\n"
     },
     {
       "type": "ManagedReference",
@@ -408,7 +564,11 @@
           "relative_path": "api/ToSic.Cre8magic.OqtaneBs5.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.OqtaneBs5",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -418,7 +578,11 @@
           "relative_path": "api/ToSic.Cre8magic.PageContexts.IMagicPageContextKit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.PageContexts.IMagicPageContextKit",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -428,7 +592,11 @@
           "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.PageContexts.MagicPageContextSettings",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.yml\" sourcestartlinenumber=\"1\">Magic Page Context Settings - Data.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextSettings.yml\" sourcestartlinenumber=\"3\">This configures how the page context is rendered, and what classes are added to the body tag.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -438,7 +606,11 @@
           "relative_path": "api/ToSic.Cre8magic.PageContexts.MagicPageContextTailor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.PageContexts.MagicPageContextTailor",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.PageContexts.MagicPageContextTailor.yml\" sourcestartlinenumber=\"1\">Special helper to figure out what classes should be applied to the page.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -448,7 +620,11 @@
           "relative_path": "api/ToSic.Cre8magic.PageContexts.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.PageContexts",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -458,7 +634,11 @@
           "relative_path": "api/ToSic.Cre8magic.Pages.IMagicPage.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Pages.IMagicPage",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"1\">Magic Pages are smart wrappers around Oqtane Pages.\nThey offer many benefits such as:</p>\n<ol sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"4\">\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"4\">Read-only properties (no accidental writing properties with unexpected side effects)</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"5\">Improved naming, e.g. <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"5\">.Id</code> instead of <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"5\">.PageId</code></li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"6\">Calculated properties such as <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"6\">Target</code> (which becomes <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"6\">&quot;_blank&quot;</code> for external links or <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"6\">null</code> for normal links)</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"7\">Corrected values - e.g. the <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"7\">Link</code> property will be <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"7\">javascript:void(0)</code> if the page is not clickable</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"8\">Navigation properties such as <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"8\">Parent</code> and <code sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml\" sourcestartlinenumber=\"8\">Breadcrumb</code></li>\n</ol>\n"
     },
     {
       "type": "ManagedReference",
@@ -468,7 +648,11 @@
           "relative_path": "api/ToSic.Cre8magic.Pages.IMagicPageSetSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Pages.IMagicPageSetSettings",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPageSetSettings.yml\" sourcestartlinenumber=\"1\">WIP\nTODO: naming not final</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -478,7 +662,11 @@
           "relative_path": "api/ToSic.Cre8magic.Pages.IMagicPageTailor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Pages.IMagicPageTailor",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPageTailor.yml\" sourcestartlinenumber=\"1\">Interface for a designer of a magic page.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Pages.IMagicPageTailor.yml\" sourcestartlinenumber=\"3\">Anything implementing this interface can be used as a designer for a magic page,\nproviding custom classes and values when generating the HTML for the page.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -488,7 +676,11 @@
           "relative_path": "api/ToSic.Cre8magic.Pages.MagicPageEditService.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Pages.MagicPageEditService",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Pages.MagicPageEditService.yml\" sourcestartlinenumber=\"1\">Helper to remove the logic/code from the razor file.\nIt's just meant to support the AdminButtons,\nwithout placing the logic code inside that.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -498,7 +690,11 @@
           "relative_path": "api/ToSic.Cre8magic.Pages.MagicPageTailorBase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Pages.MagicPageTailorBase",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Pages.MagicPageTailorBase.yml\" sourcestartlinenumber=\"1\">Base class for page designers.\nCan be used as a foundation for creating your custom designers.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Pages.MagicPageTailorBase.yml\" sourcestartlinenumber=\"4\">This is a bit safer than just implementing the interface, as future enhancements\nwould appear on this class so your implementation would work even on an upgrade.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -508,7 +704,11 @@
           "relative_path": "api/ToSic.Cre8magic.Pages.MagicPageTailorBasic.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Pages.MagicPageTailorBasic",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Pages.MagicPageTailorBasic.yml\" sourcestartlinenumber=\"1\">Simple page designer for breadcrumbs or menus.\nIf no lookups are specified, the Classes(...) and Data(...) methods will return empty strings.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -518,7 +718,11 @@
           "relative_path": "api/ToSic.Cre8magic.Pages.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Pages",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -528,7 +732,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.Debug.MagicDebugSettings",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.yml\" sourcestartlinenumber=\"1\">Debug settings to help during development.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Debug.MagicDebugSettings.yml\" sourcestartlinenumber=\"3\">These settings can also be loaded from the configuration.\nThis allows you to do things like enable temporarily for admins, without restarting/recompiling anything.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -538,7 +746,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.Debug.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.Debug",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -548,7 +760,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.MagicBook.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.MagicBook",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Settings.MagicBook.yml\" sourcestartlinenumber=\"1\">This is a Book; a catalog of all kinds of settings.\nIt serves as a kind of database to manage all settings, which will usually be retrieved using a name.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -558,7 +774,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.MagicChapter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.MagicChapter",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -568,7 +788,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.MagicSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.MagicSettings",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Settings.MagicSettings.yml\" sourcestartlinenumber=\"1\">Internal base class containing all kinds of settings which\nall spells share.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -578,7 +802,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.MagicSettingsExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.MagicSettingsExtensions",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Settings.MagicSettingsExtensions.yml\" sourcestartlinenumber=\"1\">Extensions for working with MagicSettings,\nto make the API more fluent and easier to use.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -588,7 +816,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider.yml\" sourcestartlinenumber=\"1\">Provider to give settings.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Providers.IMagicSettingsProvider.yml\" sourcestartlinenumber=\"3\">It is scoped, so anything added to it - typically in the Theme,\nwill be available in all other components.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -598,7 +830,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.Providers.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.Providers",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -608,7 +844,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.Values.MagicSettingOnOff.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.Values.MagicSettingOnOff",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Values.MagicSettingOnOff.yml\" sourcestartlinenumber=\"1\">Special Setting containing a value to be used when a state is on or off.\nTypically used to specify strings to place in classes when something:</p>\n<ul sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Values.MagicSettingOnOff.yml\" sourcestartlinenumber=\"3\">\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Values.MagicSettingOnOff.yml\" sourcestartlinenumber=\"3\">is active</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Values.MagicSettingOnOff.yml\" sourcestartlinenumber=\"4\">is home</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Settings.Values.MagicSettingOnOff.yml\" sourcestartlinenumber=\"5\">etc.</li>\n</ul>\n"
     },
     {
       "type": "ManagedReference",
@@ -618,7 +858,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.Values.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings.Values",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -628,7 +872,11 @@
           "relative_path": "api/ToSic.Cre8magic.Settings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Settings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -638,7 +886,11 @@
           "relative_path": "api/ToSic.Cre8magic.Tailors.IMagicTailor.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Tailors.IMagicTailor",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -648,7 +900,11 @@
           "relative_path": "api/ToSic.Cre8magic.Tailors.MagicBlueprint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Tailors.MagicBlueprint",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Tailors.MagicBlueprint.yml\" sourcestartlinenumber=\"1\">Menu Design Settings</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -658,7 +914,11 @@
           "relative_path": "api/ToSic.Cre8magic.Tailors.MagicBlueprintPart.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Tailors.MagicBlueprintPart",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Tailors.MagicBlueprintPart.yml\" sourcestartlinenumber=\"1\">Anything that can define what classes it should have.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Tailors.MagicBlueprintPart.yml\" sourcestartlinenumber=\"3\">This is usually the base class for something that can also have more information.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -668,7 +928,11 @@
           "relative_path": "api/ToSic.Cre8magic.Tailors.MagicTailorBase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Tailors.MagicTailorBase",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -678,7 +942,11 @@
           "relative_path": "api/ToSic.Cre8magic.Tailors.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Tailors",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -688,7 +956,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.IMagicThemeJsService.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.IMagicThemeJsService",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -698,7 +970,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.IMagicThemeKit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.IMagicThemeKit",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -708,7 +984,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.IMagicThemeService.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.IMagicThemeService",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -718,7 +998,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.MagicResources.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.MagicResources",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -728,7 +1012,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.MagicResourcesDb.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.MagicResourcesDb",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -738,7 +1026,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.MagicResourcesFilter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.MagicResourcesFilter",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -748,7 +1040,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeJsService.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.MagicThemeJsService",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Themes.MagicThemeJsService.yml\" sourcestartlinenumber=\"1\">Constants and helpers related to JS calls from the Theme to its own JS libraries</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -758,7 +1054,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemePackage.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.MagicThemePackage",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Themes.MagicThemePackage.yml\" sourcestartlinenumber=\"1\">Settings for a Theme Package.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Themes.MagicThemePackage.yml\" sourcestartlinenumber=\"3\">It contains things like</p>\n<ol sourcefile=\"api-generated/ToSic.Cre8magic.Themes.MagicThemePackage.yml\" sourcestartlinenumber=\"5\">\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Themes.MagicThemePackage.yml\" sourcestartlinenumber=\"5\">location of assets</li>\n<li sourcefile=\"api-generated/ToSic.Cre8magic.Themes.MagicThemePackage.yml\" sourcestartlinenumber=\"6\">settings for various parts like CSS</li>\n</ol>\n"
     },
     {
       "type": "ManagedReference",
@@ -768,7 +1068,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.MagicThemeSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.MagicThemeSettings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -778,7 +1082,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.MagicToTopConstants.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.MagicToTopConstants",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Themes.MagicToTopConstants.yml\" sourcestartlinenumber=\"1\">Constants for the ToTop component - a floating button that scrolls the page to the top.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -788,7 +1096,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.yml\" sourcestartlinenumber=\"1\">Constants and helpers related to creating Css and Css Classes.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Themes.Settings.MagicThemeBlueprint.yml\" sourcestartlinenumber=\"3\">If you change these, you must also update the SCSS files.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -798,7 +1110,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.Settings.MagicThemePartSettings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -808,7 +1124,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.Settings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes.Settings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -818,7 +1138,11 @@
           "relative_path": "api/ToSic.Cre8magic.Themes.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Themes",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -828,7 +1152,11 @@
           "relative_path": "api/ToSic.Cre8magic.Tokens.ITokenReplace.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Tokens.ITokenReplace",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -838,7 +1166,11 @@
           "relative_path": "api/ToSic.Cre8magic.Tokens.TokenEngine.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Tokens.TokenEngine",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Tokens.TokenEngine.yml\" sourcestartlinenumber=\"1\">Basic token engine which takes a list of token replacers and runs them.\nIn the future, should be a bit more modern using a token parser and token providers\nsimilar to 2sxc.\nBut ATM there are only ca. 10 tokens so the current model is probably sufficient</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -848,7 +1180,11 @@
           "relative_path": "api/ToSic.Cre8magic.Tokens.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Tokens",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -858,7 +1194,11 @@
           "relative_path": "api/ToSic.Cre8magic.UserLogins.IMagicUserLoginKit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.UserLogins.IMagicUserLoginKit",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -868,7 +1208,11 @@
           "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserLoginResources.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.UserLogins.MagicUserLoginResources",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -878,7 +1222,11 @@
           "relative_path": "api/ToSic.Cre8magic.UserLogins.MagicUserLoginSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.UserLogins.MagicUserLoginSettings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -888,7 +1236,11 @@
           "relative_path": "api/ToSic.Cre8magic.UserLogins.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.UserLogins",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -898,7 +1250,11 @@
           "relative_path": "api/ToSic.Cre8magic.Users.IMagicUserService.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Users.IMagicUserService",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -908,7 +1264,11 @@
           "relative_path": "api/ToSic.Cre8magic.Users.MagicUser.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Users.MagicUser",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -918,7 +1278,11 @@
           "relative_path": "api/ToSic.Cre8magic.Users.MagicUserSettings.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Users.MagicUserSettings",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -928,7 +1292,11 @@
           "relative_path": "api/ToSic.Cre8magic.Users.UserExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Users.UserExtensions",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -938,7 +1306,11 @@
           "relative_path": "api/ToSic.Cre8magic.Users.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Users",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -948,7 +1320,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.CacheByPage-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.CacheByPage<T>",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.CacheByPage-1.yml\" sourcestartlinenumber=\"1\">Helper to cache data by page.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -958,7 +1334,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.DictionaryExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.DictionaryExtensions",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -968,7 +1348,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.GetKeep-2.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.GetKeep-2.yml\" sourcestartlinenumber=\"1\">Get-or-Keep helper.\nWill expect a second return value when generating the value, which it will ask for comparison\nevery time it's accessed again.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -978,7 +1362,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.GetKeepByPageId-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.GetKeepByPageId<T>",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -988,7 +1376,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.IgnoreEquals<TValue>",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml\" sourcestartlinenumber=\"1\">Special helper to store a value on a record but not include it in the Equality contract.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml\" sourcestartlinenumber=\"3\">Typical use case is calculated properties which contain the record itself, which would result in infinite loops.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml\" sourcestartlinenumber=\"5\"><a href=\"https://github.com/dotnet/csharplang/discussions/4257#discussioncomment-11263857\" sourcefile=\"api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml\" sourcestartlinenumber=\"5\">https://github.com/dotnet/csharplang/discussions/4257#discussioncomment-11263857</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -998,7 +1390,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.Logging.CodeRef.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.Logging.CodeRef",
+      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.Logging.CodeRef.yml\" sourcestartlinenumber=\"1\">Reference to code - containing the path to the file, the method name and the line in the code.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1008,7 +1404,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.Logging.LogRoot.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.Logging.LogRoot",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1018,7 +1418,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.Logging.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.Logging",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1028,7 +1432,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.PageStateSecurityExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.PageStateSecurityExtensions",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1038,7 +1446,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.StringExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils.StringExtensions",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1048,7 +1460,11 @@
           "relative_path": "api/ToSic.Cre8magic.Utils.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic.Utils",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1058,7 +1474,11 @@
           "relative_path": "api/ToSic.Cre8magic.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ToSic.Cre8magic",
+      "Summary": null
     },
     {
       "type": "Toc",
@@ -1676,41 +2096,41 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "pages/magic-tools/cre8magic-transformer/assets/logo-400.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/magic-tools/cre8magic-transformer/assets/logo-400.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/magic-tools/cre8magic-transformer/config.md",
+      "output": {
+        ".html": {
+          "relative_path": "magic-tools/cre8magic-transformer/config.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/magic-tools/cre8magic-transformer/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "magic-tools/cre8magic-transformer/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "pages/magic-tools/index.md",
       "output": {
         ".html": {
           "relative_path": "magic-tools/index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "pages/magic-tools/template-generator/assets/logo-400.webp",
-      "output": {
-        "resource": {
-          "relative_path": "pages/magic-tools/template-generator/assets/logo-400.webp"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/magic-tools/template-generator/config.md",
-      "output": {
-        ".html": {
-          "relative_path": "magic-tools/template-generator/config.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "pages/magic-tools/template-generator/index.md",
-      "output": {
-        ".html": {
-          "relative_path": "magic-tools/template-generator/index.html"
         }
       },
       "version": ""

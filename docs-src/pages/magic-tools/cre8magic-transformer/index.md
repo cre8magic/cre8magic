@@ -1,13 +1,14 @@
 ---
-uid: Cre8magic.MagicTools.TemplateGenerator.Index
+uid: Cre8magic.MagicTools.Transformer.Index
 ---
 
 <img src="./assets/logo-400.webp" class="float-right" />
 
-# cre8magic ♾️ Template Generator
+# cre8magic ♾️ Transformer (Template Generator)
 
-The cre8magic Template Generator will help you convert an existing themes into Oqtane templates.
-These can then be placed inside Oqtane so that users can develop their own themes based on your template.
+The cre8magic Transformer will help you convert an existing themes into Oqtane templates.
+And vice versa, it will also help you convert Oqtane templates into themes.
+Templates can then be placed inside Oqtane so that users can develop their own themes based on your template.
 
 ## What is an Oqtane Template?
 
@@ -39,19 +40,19 @@ This is difficult to develop, since it cannot be tested with the placeholders.
 > What we need is a way to work on a Theme without having to deal with the placeholders.
 > Then we need a magic converter to take the latest version of the theme and convert it into a template.
 >
-> The **cre8magic ♾️ Template Generator** will help you convert your existing themes into templates.
+> The **cre8magic ♾️ Transformer** will help you convert your existing themes into templates.
 > You can use it again and again, as your theme evolves.
 
-The **cre8magic ♾️ Template Generator** takes a) an existing theme and b) a [configuration file](xref:Cre8magic.MagicTools.TemplateGenerator.Configuration),
+The **cre8magic ♾️ Transformer** takes a) an existing theme and b) a [configuration file](xref:Cre8magic.MagicTools.Transformer.Configuration),
 and generates all the files you need to create a theme template.
 
 The converter is being used extensively by the **cre8magic ♾️** team to create new themes.
 
 We expect to release the first version of the converter in 2025-Q3.
 
-## What the Template Generator Does
+## What the cre8magic ♾️ Transformer Does
 
-The template generator will run 3 distinct tasks:
+The transformer will run 3 distinct tasks:
 
 1. Select files based on specific patterns in the configuration file.
    - For example, it will select all assets in the `wwwroot` folder and all `.cs` files in the `Client` folder.
@@ -61,28 +62,28 @@ The template generator will run 3 distinct tasks:
    - For example, it would replace `namespace ToSic.Cre8magic.Theme.Basic;` with `namespace [Owner].Theme.[Theme];` in the `ThemeInfo.cs` file.
 
 
-## How to Use the Generator
+## How to Use the cre8magic ♾️ Transformer
 
 1. Create a theme any way you want, test it, develop it, etc.
 1. Add a [`template.json` file](xref:OqtaneThemes.Templates.Index) TODO: @STV PLS EXPLAIN IT ON THAT PAGE - this will be used by Oqtane to describe the Template to the user.
-1. Add a `template-generator.config.json` [configuration](xref:Cre8magic.MagicTools.TemplateGenerator.Configuration) file to the theme folder.
+1. Add a `cre8magic-transformer.config.json` [configuration](xref:Cre8magic.MagicTools.Transformer.Configuration) file to the theme folder.
 1. Run the converter, which will generate a new folder with the template files.
     1. During testing, you will deploy it to ... ???
     1. To release it as a nuget package, you will ...
 1. Use the generated files to create an installable NuGet package.
 1. Deploy directly or through the Oqtane Marketplace.
 
-## How to Install the Generator
+## How to Install the Transformer
 
-The generator is a command line tool that you can run from the terminal or command prompt.
+The transformer is a command line tool that you can run from the terminal or command prompt.
 
-Download the latest version from the [releases page](https://github.com/cre8magic/oqtane-template-generator/releases)
+Download the latest version from the [releases page](https://github.com/cre8magic/cre8magic-transformer/releases)
 and place it anywhere you want - it's a standalone executable.
 
-## How to Use the Generator TODO: @stv
+## How to Use the Transformer TODO: @stv
 
 ...
 
 ...
 
-➡️ See the [Configuration File](xref:Cre8magic.MagicTools.TemplateGenerator.Configuration) for details on how to configure the generator.
+➡️ See the [Configuration File](xref:Cre8magic.MagicTools.Transformer.Configuration) for details on how to configure the transformer.

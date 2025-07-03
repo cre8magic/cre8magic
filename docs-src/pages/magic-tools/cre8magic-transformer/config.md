@@ -1,19 +1,19 @@
 ---
-uid: Cre8magic.MagicTools.TemplateGenerator.Configuration
+uid: Cre8magic.MagicTools.Transformer.Configuration
 ---
 
 <img src="./assets/logo-400.webp" class="float-right" />
 
-# cre8magic ♾️ Template Generator - Configuration File
+# cre8magic ♾️ Transformer - Configuration File
 
-This explains the configuration file for the **cre8magic ♾️ Template Generator**.
+This explains the configuration file for the **cre8magic ♾️ Transformer**.
 
-The file itself is a JSON file named `template-generator.config.json`
-It contains various sections to define how the template generator should behave.
+The file itself is a JSON file named `cre8magic-transformer.config.json`
+It contains various sections to define how the transformer should behave.
 
-## The Template Generator Configuration File
+## The Transformer Configuration File
 
-The file is called: `template-generator.config.json`
+The file is called: `cre8magic-transformer.config.json`
 
 It should be located in the root of the theme **solution** folder (not the theme folder).
 This is a typical repository structure:
@@ -28,7 +28,7 @@ This is a typical repository structure:
   * `Package`
   * `LICENSE.md`
   * `README.md`
-  * `template-generator.config.json` (this is the file)
+  * `cre8magic-transformer.config.json` (this is the file)
   * `ToSic.Cre8magic.Theme.Basic.sln` (solution file)
 
 ## Example Configuration File
@@ -53,7 +53,7 @@ This is a typical repository structure:
         "Package/",
         ".gitignore",
         "**/*.DotSettings",
-        "template-generator.config.json"
+        "cre8magic-transformer.config.json"
       ]
     },
     {

@@ -20,10 +20,10 @@ TODO: @2dg walkthrough with images, short description
 
 You can create a new theme template in two ways:
 
-1. **Using the Oqtane Template Generator**: This is a tool that helps you convert an existing theme into a template.
+1. **Using the cre8magic Transformer**: This is a tool that helps you convert an existing theme into a template.
     It allows you to specify which files to include, how to rename them, and how to replace placeholders with actual values.  
     _This is the recommended way, since it's easier, faster, more reliable and repeatable._  
-    ➡️ See [](xref:Cre8magic.MagicTools.TemplateGenerator.Index)
+    ➡️ See [](xref:Cre8magic.MagicTools.Transformer.Index)
 
 2. **Manually**: You can create a new theme template by copying an existing one and modifying it.
     This involves creating a new folder in the `wwwroot/templates/themes` directory, copying the files from an existing template, and then modifying the files to suit your needs.
