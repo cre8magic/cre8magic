@@ -87,3 +87,7 @@ and place it anywhere you want - it's a standalone executable.
 ...
 
 ➡️ See the [Configuration File](xref:Cre8magic.MagicTools.Transformer.Configuration) for details on how to configure the transformer.
+
+---
+
+Short link: <https://go.cre8magic.org/tf>
