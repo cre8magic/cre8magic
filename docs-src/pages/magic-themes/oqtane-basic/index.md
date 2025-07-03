@@ -159,3 +159,5 @@ From there, you can customize the theme in any way you want.
 - Created: 2024-11-15
 - Enhanced with UI for footer and CSS Variables: 2025-06-25
 - Released 2025-06-26 for the [TrailBlazor 2025](https://trailblazor.net/) conference.
+
+Permanent link: <https://go.cre8magic.org/theme-basic>

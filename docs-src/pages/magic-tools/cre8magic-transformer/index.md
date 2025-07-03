@@ -90,4 +90,4 @@ and place it anywhere you want - it's a standalone executable.
 
 ---
 
-Short link: <https://go.cre8magic.org/tf>
+Permanent link: <https://go.cre8magic.org/tf>
