@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/magic-menu/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/magic-menu/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,100 +85,100 @@
         </div>
 
         <article data-uid="Cre8magic.Library.MagicMenu.Index">
-<h1 id="magic-menu-system-for-oqtane-themes">Magic Menu System for Oqtane Themes</h1>
+<h1 id="magic-menu-system-for-oqtane-themes" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="6">Magic Menu System for Oqtane Themes</h1>
 
-<p><em>The cre8magic Menu System helps you create best-practice menus in Oqtane.</em></p>
-<div class="TIP">
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="8"><em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="8">The cre8magic Menu System helps you create best-practice menus in Oqtane.</em></p>
+<div class="TIP" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="10">
 <h5>Tip</h5>
-<p>A simple top-level menu can be added just like this:</p>
-<pre><code class="lang-html">&lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="11">A simple top-level menu can be added just like this:</p>
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="13">&lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
 </code></pre>
-<p>...or if you have a <code>theme.json</code> file, all you need is:</p>
-<pre><code class="lang-html">&lt;MagicMenu Name=&quot;MainMenu&quot;/&gt;
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="17">...or if you have a <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="17">theme.json</code> file, all you need is:</p>
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="19">&lt;MagicMenu Name=&quot;MainMenu&quot;/&gt;
 </code></pre>
 </div>
-<p>Menus are used in Oqtane solutions as the main way to navigate the user through the website.
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="23">Menus are used in Oqtane solutions as the main way to navigate the user through the website.
 A typical website will have a 1️⃣ main menu, 2️⃣ mobile menu, a 3️⃣ footer menu and possibly more.
 Each of these menus can have different requirements, such as:</p>
-<ol>
-<li><strong>Data Selection</strong>: showing specific pages the top-level pages (main menu), exact IDs (footer) or showing all pages below the current page (sidebar)</li>
-<li><strong>Drill-Down</strong>: show a different depth of pages, such as only the first level, or all levels below the current page...</li>
-<li><strong>Interactive Behavior</strong>: behaving in a certain way, such as collapsing sub-menus</li>
-<li><strong>Look and Feel</strong>: look a certain way, such as highlighting the current page</li>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="27">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="27"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="27">Data Selection</strong>: showing specific pages the top-level pages (main menu), exact IDs (footer) or showing all pages below the current page (sidebar)</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="28"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="28">Drill-Down</strong>: show a different depth of pages, such as only the first level, or all levels below the current page...</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="29"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="29">Interactive Behavior</strong>: behaving in a certain way, such as collapsing sub-menus</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="30"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="30">Look and Feel</strong>: look a certain way, such as highlighting the current page</li>
 </ol>
-<p>Doing this all in your own code can be challenging and error-prone, which is why we created the <strong>Magic Menus</strong>.</p>
-<h2 id="magic-menus-tldr">Magic Menus TL;DR</h2>
-<p>The goal is that your menus are:</p>
-<ol>
-<li>configuration-based - through code or JSON</li>
-<li>mobile-friendly &amp; reactive</li>
-<li>ARIA-Accessible</li>
-<li>use HTML5 and Bootstrap5 conventions</li>
-<li>respect user permissions</li>
-<li>highlight the current page</li>
-<li>easy to customize &amp; flexible</li>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="32">Doing this all in your own code can be challenging and error-prone, which is why we created the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="32">Magic Menus</strong>.</p>
+<h2 id="magic-menus-tldr" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="34">Magic Menus TL;DR</h2>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="36">The goal is that your menus are:</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="38">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="38">configuration-based - through code or JSON</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="39">mobile-friendly &amp; reactive</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="40">ARIA-Accessible</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="41">use HTML5 and Bootstrap5 conventions</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="42">respect user permissions</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="43">highlight the current page</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="44">easy to customize &amp; flexible</li>
 </ol>
-<p>You can work with pre-built components such as <strong>MagicMenu 🧩</strong> or leverage the <strong>MagicMenuKit 🧰</strong> to build your own components.</p>
-<p>A very simple Bootstrap5 menu can be added just like this:</p>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="46">You can work with pre-built components such as <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="46">MagicMenu 🧩</strong> or leverage the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="46">MagicMenuKit 🧰</strong> to build your own components.</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="48">A very simple Bootstrap5 menu can be added just like this:</p>
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="50">@using ToSic.Cre8magic.OqtaneBs5
 &lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
 </code></pre>
-<h2 id="how-it-works">How it Works</h2>
-<p>The Magic Menu uses the cre8magic conventions.</p>
-<div class="TIP">
+<h2 id="how-it-works" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="55">How it Works</h2>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="57">The Magic Menu uses the cre8magic conventions.</p>
+<div class="TIP" sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="2">
 <h5>Tip</h5>
-<p>This is what always happens in a nutshell:</p>
+<p sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="3">This is what always happens in a nutshell:</p>
 <!-- use https://www.mermaidchart.com/play to edit -->
-<pre><code class="lang-mermaid">flowchart LR
+<pre><code class="lang-mermaid" sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="7">flowchart LR
     S([&quot;Settings ⚙️&quot;]) --&gt; PC[&quot;Prepare Data &amp; Kit 🧰&quot;]
     PC --&gt; MC[&quot;Blazor Code 🔥&quot;]
     MC --&gt; HTML[&quot;HTML 🌐&quot;]
 </code></pre>
-<ol>
-<li><strong>Settings ⚙️</strong> tell <strong>cre8magic ♾️</strong> what to do.</li>
-<li><strong>cre8magic ♾️</strong> prepares data in a <strong>Kit 🧰</strong>, which also has more tools.</li>
-<li><strong>Blazor Code 🔥</strong> (your code 👨🏻‍💻 or a Magic Component 🧩) will...</li>
-<li>...produce the desired <strong>HTML 🌐</strong>.</li>
+<ol sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="14">
+<li sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="14"><strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="14">Settings ⚙️</strong> tell <strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="14">cre8magic ♾️</strong> what to do.</li>
+<li sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="15"><strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="15">cre8magic ♾️</strong> prepares data in a <strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="15">Kit 🧰</strong>, which also has more tools.</li>
+<li sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="16"><strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="16">Blazor Code 🔥</strong> (your code 👨🏻‍💻 or a Magic Component 🧩) will...</li>
+<li sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="17">...produce the desired <strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="17">HTML 🌐</strong>.</li>
 </ol>
 </div>
 
-<p>Each of these steps can be very simple or very complex, depending on your needs.
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="61">Each of these steps can be very simple or very complex, depending on your needs.
 What you'll discover is:</p>
-<ol>
-<li><strong>Settings ⚙️</strong>: how you can add them directly to the tab, in a central location or even in a JSON file and more.</li>
-<li><strong>Preparation Act 🎭</strong>: how all kinds of settings will affect what you see,
-especially once you get into <strong>Tailoring 🧵</strong> and <strong>Blueprints 📘</strong>.</li>
-<li><strong>Blazor Code 🔥</strong>: how you can use the pre-built components or build your own,
-especially with the help of the  <strong>MagicMenuKit 🧰</strong>.</li>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="64">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="64"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="64">Settings ⚙️</strong>: how you can add them directly to the tab, in a central location or even in a JSON file and more.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="65"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="65">Preparation Act 🎭</strong>: how all kinds of settings will affect what you see,
+especially once you get into <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="66">Tailoring 🧵</strong> and <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="66">Blueprints 📘</strong>.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="67"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="67">Blazor Code 🔥</strong>: how you can use the pre-built components or build your own,
+especially with the help of the  <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="68">MagicMenuKit 🧰</strong>.</li>
 </ol>
-<h2 id="basic-examples">Basic Examples</h2>
-<h3 id="basic-top-level-menu">Basic Top-Level Menu</h3>
-<div class="tabGroup" id="tabgroup_1">
+<h2 id="basic-examples" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="70">Basic Examples</h2>
+<h3 id="basic-top-level-menu" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="72">Basic Top-Level Menu</h3>
+<div class="tabGroup" id="tabgroup_1" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="74">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_1_basic1" role="tab" aria-controls="tabpanel_1_basic1" data-tab="basic1" tabindex="0" aria-selected="true">Example &amp; Output</a>
+<a href="#tabpanel_1_basic1" role="tab" aria-controls="tabpanel_1_basic1" data-tab="basic1" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="74">Example &amp; Output</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_1_basic2" role="tab" aria-controls="tabpanel_1_basic2" data-tab="basic2" tabindex="-1">Code Explained</a>
+<a href="#tabpanel_1_basic2" role="tab" aria-controls="tabpanel_1_basic2" data-tab="basic2" tabindex="-1" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="104">Code Explained</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_1_basic3" role="tab" aria-controls="tabpanel_1_basic3" data-tab="basic3" tabindex="-1">What Happens</a>
+<a href="#tabpanel_1_basic3" role="tab" aria-controls="tabpanel_1_basic3" data-tab="basic3" tabindex="-1" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="122">What Happens</a>
 </li>
 </ul>
 <section id="tabpanel_1_basic1" role="tabpanel" data-tab="basic1">
 
-<p>Let's start with the most basic setup of all:</p>
-<ol>
-<li>use the <strong>MagicMenu 🧩 Component</strong> <code>&lt;MagicMenu&gt;</code></li>
-<li>place all the settings directly into the tag</li>
-<li>only specify (pick) that we want the top level pages with <code>/</code></li>
-<li>don't specify any design or behavior, so it will use empty defaults (hence the <code>OqtaneBasic</code>)</li>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="76">Let's start with the most basic setup of all:</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="78">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="78">use the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="78">MagicMenu 🧩 Component</strong> <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="78">&lt;MagicMenu&gt;</code></li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="79">place all the settings directly into the tag</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="80">only specify (pick) that we want the top level pages with <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="80">/</code></li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="81">don't specify any design or behavior, so it will use empty defaults (hence the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="81">OqtaneBasic</code>)</li>
 </ol>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBasic
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="83">@using ToSic.Cre8magic.OqtaneBasic
 &lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
 </code></pre>
-<p>The output:</p>
-<pre><code class="lang-html">&lt;ul&gt;
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="88">The output:</p>
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="90">&lt;ul&gt;
   &lt;li&gt;
     &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
   &lt;/li&gt;
@@ -193,69 +193,69 @@ especially with the help of the  <strong>MagicMenuKit 🧰</strong>.</li>
 </section>
 <section id="tabpanel_1_basic2" role="tabpanel" data-tab="basic2" aria-hidden="true" hidden="hidden">
 
-<p>This code explained:</p>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBasic
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="106">This code explained:</p>
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="108">@using ToSic.Cre8magic.OqtaneBasic
 &lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
 </code></pre>
-<ol>
-<li><code>@using ToSic.Cre8magic.OqtaneBasic</code> tells Blazor that we want to use these controls.</li>
-<li><code>...OqtaneBasic</code> is the namespace for controls without special presets.</li>
-<li><code>&lt;MagicMenu .../&gt;</code> is a Blazor component provided by <strong>cre8magic ♾️</strong></li>
-<li>The <code>Settings=&quot;...&quot;</code> attribute is a parameter which is passed to the component.
-<ol>
-<li>It expects a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object.</li>
-<li>Since Blazor knows the expected type, you can shorten it as <code>new() { ... }</code>.</li>
-<li>The <code>Pick</code> determines what pages to show in this menu.
-In this case, it's only the top-level pages, specified by <code>/</code> (<code>/+</code> would get level 1 &amp; 2).</li>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="113">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="113"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="113">@using ToSic.Cre8magic.OqtaneBasic</code> tells Blazor that we want to use these controls.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="114"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="114">...OqtaneBasic</code> is the namespace for controls without special presets.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="115"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="115">&lt;MagicMenu .../&gt;</code> is a Blazor component provided by <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="115">cre8magic ♾️</strong></li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="116">The <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="116">Settings=&quot;...&quot;</code> attribute is a parameter which is passed to the component.
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="117">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="117">It expects a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber=117>MagicMenuSettings</a> object.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="118">Since Blazor knows the expected type, you can shorten it as <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="118">new() { ... }</code>.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="119">The <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="119">Pick</code> determines what pages to show in this menu.
+In this case, it's only the top-level pages, specified by <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="120">/</code> (<code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="120">/+</code> would get level 1 &amp; 2).</li>
 </ol>
 </li>
 </ol>
 </section>
 <section id="tabpanel_1_basic3" role="tabpanel" data-tab="basic3" aria-hidden="true" hidden="hidden">
 
-<p>Here's what actually happens under the hood:</p>
-<ol>
-<li>The <strong>MagicMenu Component 🧩</strong> will take
-<ol>
-<li>the parameters</li>
-<li>and the Oqtane 🩸 <code>PageState</code></li>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="124">Here's what actually happens under the hood:</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="126">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="126">The <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="126">MagicMenu Component 🧩</strong> will take
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="127">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="127">the parameters</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="128">and the Oqtane 🩸 <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="128">PageState</code></li>
 </ol>
 </li>
-<li>them pass them to the <strong>MagicAct 🎭</strong>, which will get an internal <em>MagicMenuService</em> to:
-<ol>
-<li>mix in default settings which were not specified, such as <code>Show=True</code></li>
-<li>retrieve the <a class="xref" href="../../api/ToSic.Cre8magic.Pages.IMagicPage.html">MagicPages</a> as specified by the <code>Pick</code> parameter - in this case all 1st-level pages</li>
-<li>build a <strong>MagicMenuKit 🧰</strong> which contains the pages and some tools to easily create the menu</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="129">them pass them to the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="129">MagicAct 🎭</strong>, which will get an internal <em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="129">MagicMenuService</em> to:
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="130">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="130">mix in default settings which were not specified, such as <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="130">Show=True</code></li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="131">retrieve the <a class="xref" href="../../api/ToSic.Cre8magic.Pages.IMagicPage.html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber=131>MagicPages</a> as specified by the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="131">Pick</code> parameter - in this case all 1st-level pages</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="132">build a <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="132">MagicMenuKit 🧰</strong> which contains the pages and some tools to easily create the menu</li>
 </ol>
 </li>
-<li>Then the <strong>MagicMenu Component 🧩</strong> will use the <strong>MagicMenuKit 🧰</strong> to create the desired <strong>HTML 🌐</strong>.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="133">Then the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="133">MagicMenu Component 🧩</strong> will use the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="133">MagicMenuKit 🧰</strong> to create the desired <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="133">HTML 🌐</strong>.</li>
 </ol>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="135">
 <h5>Tip</h5>
-<p>The <strong>MagicMenuComponent 🧩</strong> will run various loops etc.
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="136">The <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="136">MagicMenuComponent 🧩</strong> will run various loops etc.
 combining the pages and the blueprint to create the HTML.
 This could also be your custom code.</p>
 </div>
 </section>
 </div>
-<h3 id="basic-1st-and-2nd-level-menu">Basic 1st and 2nd Level Menu</h3>
-<div class="tabGroup" id="tabgroup_2">
+<h3 id="basic-1st-and-2nd-level-menu" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="143">Basic 1st and 2nd Level Menu</h3>
+<div class="tabGroup" id="tabgroup_2" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="145">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_basic-2-level-menu1" role="tab" aria-controls="tabpanel_2_basic-2-level-menu1" data-tab="basic-2-level-menu1" tabindex="0" aria-selected="true">Example &amp; Output</a>
+<a href="#tabpanel_2_basic-2-level-menu1" role="tab" aria-controls="tabpanel_2_basic-2-level-menu1" data-tab="basic-2-level-menu1" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="145">Example &amp; Output</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_basic-2-level-menu2" role="tab" aria-controls="tabpanel_2_basic-2-level-menu2" data-tab="basic-2-level-menu2" tabindex="-1">What Happens</a>
+<a href="#tabpanel_2_basic-2-level-menu2" role="tab" aria-controls="tabpanel_2_basic-2-level-menu2" data-tab="basic-2-level-menu2" tabindex="-1" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="177">What Happens</a>
 </li>
 </ul>
 <section id="tabpanel_2_basic-2-level-menu1" role="tabpanel" data-tab="basic-2-level-menu1">
 
-<p>Let's add a bit more complexity by showing level 1 and 2</p>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBasic
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="147">Let's add a bit more complexity by showing level 1 and 2</p>
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="149">@using ToSic.Cre8magic.OqtaneBasic
 &lt;MagicMenu Settings='new() { Pick = &quot;/+&quot; }'/&gt;
 </code></pre>
-<p>The output:</p>
-<pre><code class="lang-html">&lt;ul&gt;
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="154">The output:</p>
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="156">&lt;ul&gt;
   &lt;li&gt;
     &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
   &lt;/li&gt;
@@ -277,30 +277,30 @@ This could also be your custom code.</p>
 </section>
 <section id="tabpanel_2_basic-2-level-menu2" role="tabpanel" data-tab="basic-2-level-menu2" aria-hidden="true" hidden="hidden">
 
-<p>The <code>Pick</code> instructions are a concise way to specify almost all common scenarios.</p>
-<p>The <code>Pick = &quot;/+&quot;</code> means that we want to start at the root and show all pages on the first and next level.</p>
-<p>For further samples, read on...</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="179">The <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="179">Pick</code> instructions are a concise way to specify almost all common scenarios.</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="181">The <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="181">Pick = &quot;/+&quot;</code> means that we want to start at the root and show all pages on the first and next level.</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="183">For further samples, read on...</p>
 </section>
 </div>
-<h3 id="basic-tailoring-example">Basic Tailoring Example</h3>
-<div class="tabGroup" id="tabgroup_3">
+<h3 id="basic-tailoring-example" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="188">Basic Tailoring Example</h3>
+<div class="tabGroup" id="tabgroup_3" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="190">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_3_basic-tailor1" role="tab" aria-controls="tabpanel_3_basic-tailor1" data-tab="basic-tailor1" tabindex="0" aria-selected="true">Example</a>
+<a href="#tabpanel_3_basic-tailor1" role="tab" aria-controls="tabpanel_3_basic-tailor1" data-tab="basic-tailor1" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="190">Example</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_3_basic-tailor2" role="tab" aria-controls="tabpanel_3_basic-tailor2" data-tab="basic-tailor2" tabindex="-1">Output</a>
+<a href="#tabpanel_3_basic-tailor2" role="tab" aria-controls="tabpanel_3_basic-tailor2" data-tab="basic-tailor2" tabindex="-1" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="216">Output</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_3_basic-tailor3" role="tab" aria-controls="tabpanel_3_basic-tailor3" data-tab="basic-tailor3" tabindex="-1">What Happens</a>
+<a href="#tabpanel_3_basic-tailor3" role="tab" aria-controls="tabpanel_3_basic-tailor3" data-tab="basic-tailor3" tabindex="-1" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="234">What Happens</a>
 </li>
 </ul>
 <section id="tabpanel_3_basic-tailor1" role="tabpanel" data-tab="basic-tailor1">
 
-<p>Let's just step it up a bit because we want to add some common classes to the various tags.
-Specifically we want <code>navbar-nav</code> on the <code>&lt;ul&gt;</code>, <code>nav-item</code> on the <code>&lt;li&gt;</code> and <code>nav-link</code> on the <code>&lt;a&gt;</code>,
-and <code>active</code> on the current node.</p>
-<pre><code class="lang-razor">@using ToSic.Cre8magic.OqtaneBasic
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="192">Let's just step it up a bit because we want to add some common classes to the various tags.
+Specifically we want <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="193">navbar-nav</code> on the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="193">&lt;ul&gt;</code>, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="193">nav-item</code> on the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="193">&lt;li&gt;</code> and <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="193">nav-link</code> on the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="193">&lt;a&gt;</code>,
+and <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="194">active</code> on the current node.</p>
+<pre><code class="lang-razor" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="196">@using ToSic.Cre8magic.OqtaneBasic
 &lt;MagicMenu Settings='new() { Pick = &quot;/&quot;, Blueprint = SimpleBlueprint() }'/&gt;
 @code
 {
@@ -315,15 +315,15 @@ and <code>active</code> on the current node.</p>
   };
 }
 </code></pre>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="213">
 <h5>Tip</h5>
-<p>Normally the <code>Blueprint</code> would be defined in a central location, so you can reuse it in multiple places.</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="214">Normally the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="214">Blueprint</code> would be defined in a central location, so you can reuse it in multiple places.</p>
 </div>
 </section>
 <section id="tabpanel_3_basic-tailor2" role="tabpanel" data-tab="basic-tailor2" aria-hidden="true" hidden="hidden">
 
-<p>Now the output is getting more realistic (also note the <code>active</code> on the first item).</p>
-<pre><code class="lang-html">&lt;ul class=&quot;navbar-nav&quot;&gt;
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="218">Now the output is getting more realistic (also note the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="218">active</code> on the first item).</p>
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="220">&lt;ul class=&quot;navbar-nav&quot;&gt;
   &lt;li class=&quot;nav-item active&quot;&gt;
     &lt;a class=&quot;nav-link&quot; href=&quot;/&quot;&gt;Home&lt;/a&gt;
   &lt;/li&gt;
@@ -338,96 +338,96 @@ and <code>active</code> on the current node.</p>
 </section>
 <section id="tabpanel_3_basic-tailor3" role="tabpanel" data-tab="basic-tailor3" aria-hidden="true" hidden="hidden">
 
-<p>Most of this is very similar to the previous example, this is new:</p>
-<ol>
-<li>The function <code>SimpleBlueprint()</code> is used to create a <strong>MagicMenuBlueprint 📘</strong>
-<ol>
-<li>It specifies that the <code>&lt;ul&gt;</code> should get the class <code>navbar-nav</code></li>
-<li>The <code>&lt;li&gt;</code> should get the class <code>nav-item</code> and <code>active</code> if it's the current page</li>
-<li>The <code>&lt;a&gt;</code> should get the class <code>nav-link</code></li>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="236">Most of this is very similar to the previous example, this is new:</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="238">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="238">The function <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="238">SimpleBlueprint()</code> is used to create a <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="238">MagicMenuBlueprint 📘</strong>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="239">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="239">It specifies that the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="239">&lt;ul&gt;</code> should get the class <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="239">navbar-nav</code></li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="240">The <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="240">&lt;li&gt;</code> should get the class <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="240">nav-item</code> and <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="240">active</code> if it's the current page</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="241">The <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="241">&lt;a&gt;</code> should get the class <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="241">nav-link</code></li>
 </ol>
 </li>
-<li>The <strong>MagicMenu Component 🧩</strong> will use this blueprint to customize the output.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="242">The <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="242">MagicMenu Component 🧩</strong> will use this blueprint to customize the output.</li>
 </ol>
-<p>...but how does that work, you may ask? 🤔</p>
-<p>Internally there is a <strong>MagicTailor 🧵</strong> which will take the <strong>MagicMenuBlueprint 📘</strong> and apply it to the output.
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="244">...but how does that work, you may ask? 🤔</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="246">Internally there is a <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="246">MagicTailor 🧵</strong> which will take the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="246">MagicMenuBlueprint 📘</strong> and apply it to the output.
 This is a very powerful concept which allows you to customize the output without changing the code.</p>
-<p>You'll learn more about the <strong>MagicTailor 🧵</strong> and <strong>MagicMenuBlueprint 📘</strong> later on,
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="249">You'll learn more about the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="249">MagicTailor 🧵</strong> and <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="249">MagicMenuBlueprint 📘</strong> later on,
 but suffice to know that it's very flexible, but also that your Razor code actually decides what to do with it.</p>
 </section>
 </div>
-<h2 id="bootstrap5-examples">Bootstrap5 Examples</h2>
-<h3 id="menu-with-bootstrap5-defaults">Menu with Bootstrap5 Defaults</h3>
-<div class="tabGroup" id="tabgroup_4">
+<h2 id="bootstrap5-examples" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="254">Bootstrap5 Examples</h2>
+<h3 id="menu-with-bootstrap5-defaults" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="257">Menu with Bootstrap5 Defaults</h3>
+<div class="tabGroup" id="tabgroup_4" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="259">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_4_bs5-menu1" role="tab" aria-controls="tabpanel_4_bs5-menu1" data-tab="bs5-menu1" tabindex="0" aria-selected="true">Menu with Bootstrap5 Defaults</a>
+<a href="#tabpanel_4_bs5-menu1" role="tab" aria-controls="tabpanel_4_bs5-menu1" data-tab="bs5-menu1" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="259">Menu with Bootstrap5 Defaults</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_4_bs5-menu2" role="tab" aria-controls="tabpanel_4_bs5-menu2" data-tab="bs5-menu2" tabindex="-1">...Explained</a>
+<a href="#tabpanel_4_bs5-menu2" role="tab" aria-controls="tabpanel_4_bs5-menu2" data-tab="bs5-menu2" tabindex="-1" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="264">...Explained</a>
 </li>
 </ul>
 <section id="tabpanel_4_bs5-menu1" role="tabpanel" data-tab="bs5-menu1">
 
-<p>todo</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="261">todo</p>
 </section>
 <section id="tabpanel_4_bs5-menu2" role="tabpanel" data-tab="bs5-menu2" aria-hidden="true" hidden="hidden">
 
-<ol>
-<li>It will detect that we want a <code>Horizontal</code> menu (default)</li>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="266">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="266">It will detect that we want a <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="266">Horizontal</code> menu (default)</li>
 </ol>
 </section>
 </div>
-<h3 id="sidebar-menu-level-2--3-above-current-page">Sidebar: Menu Level 2 &amp; 3 Above Current Page</h3>
-<div class="tabGroup" id="tabgroup_5">
+<h3 id="sidebar-menu-level-2--3-above-current-page" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="271">Sidebar: Menu Level 2 &amp; 3 Above Current Page</h3>
+<div class="tabGroup" id="tabgroup_5" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="273">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_5_menu-level-2-above1" role="tab" aria-controls="tabpanel_5_menu-level-2-above1" data-tab="menu-level-2-above1" tabindex="0" aria-selected="true">Example &amp; Output</a>
+<a href="#tabpanel_5_menu-level-2-above1" role="tab" aria-controls="tabpanel_5_menu-level-2-above1" data-tab="menu-level-2-above1" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="273">Example &amp; Output</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_5_menu-level-2-above2" role="tab" aria-controls="tabpanel_5_menu-level-2-above2" data-tab="menu-level-2-above2" tabindex="-1">Explained</a>
+<a href="#tabpanel_5_menu-level-2-above2" role="tab" aria-controls="tabpanel_5_menu-level-2-above2" data-tab="menu-level-2-above2" tabindex="-1" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="288">Explained</a>
 </li>
 </ul>
 <section id="tabpanel_5_menu-level-2-above1" role="tabpanel" data-tab="menu-level-2-above1">
 
-<p>The following Oqtane component will create</p>
-<ol>
-<li>a sidebar menu showing the second and third levels</li>
-<li>...of the page above the current page</li>
-<li>with collapsing arrows and highlighting the current page</li>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="275">The following Oqtane component will create</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="277">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="277">a sidebar menu showing the second and third levels</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="278">...of the page above the current page</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="279">with collapsing arrows and highlighting the current page</li>
 </ol>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="281">@using ToSic.Cre8magic.OqtaneBs5
 &lt;MagicMenu Settings='new() { Pick = &quot;.//2+&quot;, Variant = &quot;Vertical&quot; }'/&gt;
 </code></pre>
-<p><em>for brevity we're excluding the output here, but you can imagine it...</em></p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="286"><em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="286">for brevity we're excluding the output here, but you can imagine it...</em></p>
 </section>
 <section id="tabpanel_5_menu-level-2-above2" role="tabpanel" data-tab="menu-level-2-above2" aria-hidden="true" hidden="hidden">
 
-<p>Note that this example uses the <code>OqtaneBs5</code> namespace.
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="290">Note that this example uses the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="290">OqtaneBs5</code> namespace.
 This will default to common Bootstrap5 classes and behavior.</p>
-<p>Because we're using the <code>Vertical</code> variant, the output will be built that way.</p>
-<p>The <code>Pick = &quot;.//2+&quot;</code> is a concise way to specify:</p>
-<ul>
-<li>Start relative to the page above the current page (<code>.</code>)</li>
-<li>Show the second level (<code>//2</code>)</li>
-<li>...and all levels below (<code>+</code>)</li>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="293">Because we're using the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="293">Vertical</code> variant, the output will be built that way.</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="295">The <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="295">Pick = &quot;.//2+&quot;</code> is a concise way to specify:</p>
+<ul sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="297">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="297">Start relative to the page above the current page (<code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="297">.</code>)</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="298">Show the second level (<code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="298">//2</code>)</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="299">...and all levels below (<code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="299">+</code>)</li>
 </ul>
 </section>
 </div>
-<h2 id="custom-code-examples">Custom Code Examples</h2>
-<p>Our goal is to make the controls so flexible, that you will not have to create your own code.
+<h2 id="custom-code-examples" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="304">Custom Code Examples</h2>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="306">Our goal is to make the controls so flexible, that you will not have to create your own code.
 But if you do, it should be easy and powerful.</p>
-<h3 id="coded-menu-example">Coded Menu Example</h3>
-<div class="tabGroup" id="tabgroup_6">
+<h3 id="coded-menu-example" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="309">Coded Menu Example</h3>
+<div class="tabGroup" id="tabgroup_6" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="311">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_6_coded-menu1" role="tab" aria-controls="tabpanel_6_coded-menu1" data-tab="coded-menu1" tabindex="0" aria-selected="true">Coded Menu Example</a>
+<a href="#tabpanel_6_coded-menu1" role="tab" aria-controls="tabpanel_6_coded-menu1" data-tab="coded-menu1" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="311">Coded Menu Example</a>
 </li>
 </ul>
 <section id="tabpanel_6_coded-menu1" role="tabpanel" data-tab="coded-menu1">
 
-<p>This example assumes you want full control over the output, and still want to use the cre8magic engine to reliably get the right pages, permissions and a simpler SOLID API which is more robust than the built in Oqtane API:</p>
-<pre><code class="lang-razor">@inherits ComponentBase
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="313">This example assumes you want full control over the output, and still want to use the cre8magic engine to reliably get the right pages, permissions and a simpler SOLID API which is more robust than the built in Oqtane API:</p>
+<pre><code class="lang-razor" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="315">@inherits ComponentBase
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Pages
 @inject IMagicAct MagicAct
@@ -463,16 +463,16 @@ But if you do, it should be easy and powerful.</p>
 </code></pre>
 </section>
 </div>
-<div class="tabGroup" id="tabgroup_7">
+<div class="tabGroup" id="tabgroup_7" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="355">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_7_json-menu1" role="tab" aria-controls="tabpanel_7_json-menu1" data-tab="json-menu1" tabindex="0" aria-selected="true">Menu with Configuration in JSON</a>
+<a href="#tabpanel_7_json-menu1" role="tab" aria-controls="tabpanel_7_json-menu1" data-tab="json-menu1" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="355">Menu with Configuration in JSON</a>
 </li>
 </ul>
 <section id="tabpanel_7_json-menu1" role="tabpanel" data-tab="json-menu1">
 
-<p>This example shows how you can configure the menu in a <code>theme.json</code> file:</p>
-<pre><code class="lang-json">{
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="357">This example shows how you can configure the menu in a <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="357">theme.json</code> file:</p>
+<pre><code class="lang-json" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="359">{
   &quot;menus&quot;: {
     &quot;sidebar&quot;: {
       &quot;start&quot;: &quot;.&quot;,
@@ -482,18 +482,18 @@ But if you do, it should be easy and powerful.</p>
   }
 }
 </code></pre>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+<pre><code class="lang-html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="371">@using ToSic.Cre8magic.OqtaneBs5
 &lt;MagicMenu Name=&quot;sidebar&quot;/&gt;
 </code></pre>
-<p><em>Note that this example skips the part in the theme were the json is loaded and applied.</em></p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="376"><em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="376">Note that this example skips the part in the theme were the json is loaded and applied.</em></p>
 </section>
 </div>
 
-<p>will take the settings and prepare a <strong>Kit</strong> for you using some internal wizardry.</p>
-<ol>
-<li>The <strong>MagicMenuSettings ⚙️</strong> determine what pages should be shown - like &quot;top-level only&quot;</li>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="382">will take the settings and prepare a <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="382">Kit</strong> for you using some internal wizardry.</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="383">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="383">The <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="383">MagicMenuSettings ⚙️</strong> determine what pages should be shown - like &quot;top-level only&quot;</li>
 </ol>
-<pre><code class="lang-mermaid">flowchart LR
+<pre><code class="lang-mermaid" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="386">flowchart LR
     S([&quot;Settings ⚙️ or ...Name &lt;br&gt; (_all optional_)&quot;]) --&gt; PC{&quot;Use &lt;br&gt; Comp. &lt;br&gt; ?&quot;}
     PC -- yes --&gt; MC[&quot;MagicMenu 🧩 Component &lt;br&gt; uses 🎭 &amp; 🧰&quot;]
     MC -- get --&gt; MT[&quot;Magic Tailor 🧵&quot;]
@@ -502,28 +502,28 @@ But if you do, it should be easy and powerful.</p>
     MH --&gt; YC[&quot;Your Code 🧑🏽‍💻&quot;]
     YC -- magic 🪄 --&gt; HTML
 </code></pre>
-<ol>
-<li><p><strong>MagicMenuSettings ⚙️</strong> determine what pages should be shown - like &quot;second level only with sub-pages&quot;</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="397">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="397"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="397"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="397">MagicMenuSettings ⚙️</strong> determine what pages should be shown - like &quot;second level only with sub-pages&quot;</p>
 </li>
-<li><p>The <strong>MagicAct 🎭</strong> will take these settings and prepare a <strong>Kit</strong> for you using some internal wizardry.</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="399"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="399">The <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="399">MagicAct 🎭</strong> will take these settings and prepare a <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="399">Kit</strong> for you using some internal wizardry.</p>
 </li>
-<li><p>This <strong>MagicMenuKit 🧰</strong> contains the <strong>MagicPages</strong> and various tools to easily create any menu.</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="401"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="401">This <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="401">MagicMenuKit 🧰</strong> contains the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="401">MagicPages</strong> and various tools to easily create any menu.</p>
 </li>
-<li><p>Some code will then use this kit to create the desired <strong>HTML 🔥</strong></p>
-<ol>
-<li><p>Either use the pre-built <strong>MagicMenu 🧩</strong> component in <strong>OqtaneBs5</strong> to quickly create a best-practice Bootstrap5 menu</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="403"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="403">Some code will then use this kit to create the desired <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="403">HTML 🔥</strong></p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="405">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="405"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="405">Either use the pre-built <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="405">MagicMenu 🧩</strong> component in <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="405">OqtaneBs5</strong> to quickly create a best-practice Bootstrap5 menu</p>
 </li>
-<li><p>Or create your own Blazor component according to your needs</p>
-</li>
-</ol>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="407"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="407">Or create your own Blazor component according to your needs</p>
 </li>
 </ol>
-<h3 id="how-it-works---advanced-setup-with-tailor">How it Works - Advanced Setup with Tailor</h3>
-<p>If you are using the <strong>MagicMenu 🧩</strong> component,
-it can <em>optionally</em> use the <strong>MagicMenuTailor 🧵</strong> to tweak the output in various scenarios without changing your code.
-You can also create custom components which use the <strong>MagicTailor 🧵</strong>.
+</li>
+</ol>
+<h3 id="how-it-works---advanced-setup-with-tailor" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="409">How it Works - Advanced Setup with Tailor</h3>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="411">If you are using the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="411">MagicMenu 🧩</strong> component,
+it can <em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="412">optionally</em> use the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="412">MagicMenuTailor 🧵</strong> to tweak the output in various scenarios without changing your code.
+You can also create custom components which use the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="413">MagicTailor 🧵</strong>.
 The tailor also needs settings, so this looks a bit like this:</p>
-<pre><code class="lang-mermaid">flowchart LR
+<pre><code class="lang-mermaid" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="416">flowchart LR
  subgraph s1[&quot;Magic Act 🎭&quot;]
             ls[&quot;Load Settings ⚙️&quot;]
         n1[&quot;Load Blueprints 📘&lt;br&gt;&amp;amp; Magic Tailor 🧵&quot;]
@@ -537,152 +537,152 @@ The tailor also needs settings, so this looks a bit like this:</p>
     S([&quot;Settings ⚙️ or ...Name &lt;br&gt; (_all optional_)&quot;]) --&gt; s1
 
 </code></pre>
-<ol>
-<li><p>The <em>optional</em> <strong>MagicMenuTailor 🧵</strong> is a helper to tweak the output in various scenarios without changing your code.</p>
-<ol>
-<li><p>It is used by the <strong>MagicMenu 🧩</strong> component to allow for easy customization.</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="432">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="432"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="432">The <em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="432">optional</em> <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="432">MagicMenuTailor 🧵</strong> is a helper to tweak the output in various scenarios without changing your code.</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="434">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="434"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="434">It is used by the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="434">MagicMenu 🧩</strong> component to allow for easy customization.</p>
 </li>
-<li><p>You can also create your own <strong>Tailors 🧵</strong> to further customize the output.</p>
-</li>
-</ol>
-</li>
-<li><p>The <em>optional</em> <strong>MagicMenuBlueprints 📘</strong> are used to configure the <strong>MagicMenuTailor 🧵</strong> to your needs.</p>
-<ol>
-<li><p>For example, you can specify HTML <code>class</code> for any tag such as <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;span&gt;</code></p>
-</li>
-<li><p>...or specify <code>data-</code>, <code>title</code> or any attributes for special cases</p>
-</li>
-<li><p>You can also specify conditional classes to add if a node is <code>active</code> or <em>not</em> active, is in breadcrumb, etc.</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="436"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="436">You can also create your own <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="436">Tailors 🧵</strong> to further customize the output.</p>
 </li>
 </ol>
 </li>
-<li><p>The <em>optional</em> <strong>MagicPackageSettings</strong> allows you to configure <em>everything</em> in a central location.
-This can be either in code or in a <code>theme.json</code> file.</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="438"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="438">The <em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="438">optional</em> <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="438">MagicMenuBlueprints 📘</strong> are used to configure the <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="438">MagicMenuTailor 🧵</strong> to your needs.</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="440">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="440"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="440">For example, you can specify HTML <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="440">class</code> for any tag such as <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="440">&lt;ul&gt;</code>, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="440">&lt;li&gt;</code>, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="440">&lt;a&gt;</code>, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="440">&lt;span&gt;</code></p>
+</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="442"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="442">...or specify <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="442">data-</code>, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="442">title</code> or any attributes for special cases</p>
+</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="444"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="444">You can also specify conditional classes to add if a node is <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="444">active</code> or <em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="444">not</em> active, is in breadcrumb, etc.</p>
 </li>
 </ol>
-<h2 id="background-the-goals">Background: The Goals</h2>
-<p>A core challenge with any website is creating great menus.
+</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="446"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="446">The <em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="446">optional</em> <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="446">MagicPackageSettings</strong> allows you to configure <em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="446">everything</em> in a central location.
+This can be either in code or in a <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="447">theme.json</code> file.</p>
+</li>
+</ol>
+<h2 id="background-the-goals" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="453">Background: The Goals</h2>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="455">A core challenge with any website is creating great menus.
 There are actually three distinct problems to solve:</p>
-<ol>
-<li><p>Managing multiple menus on the same page</p>
-<ul>
-<li>the main menu</li>
-<li>possibly a side-menu with sub-pages</li>
-<li>a footer menu for disclaimer and privacy</li>
-<li>multiple menus in the footer for mega-footers with many links</li>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="458">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="458"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="458">Managing multiple menus on the same page</p>
+<ul sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="459">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="459">the main menu</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="460">possibly a side-menu with sub-pages</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="461">a footer menu for disclaimer and privacy</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="462">multiple menus in the footer for mega-footers with many links</li>
 </ul>
 </li>
-<li><p><strong>Configuration</strong> for selecting the pages which should appear in the menu</p>
-<ul>
-<li>where to start (like a menu which start at level 2)</li>
-<li>what pages to show (like all the pages on level 2 - or only their children)</li>
-<li>how deep to go (do we show submenus?)</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="464"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="464"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="464">Configuration</strong> for selecting the pages which should appear in the menu</p>
+<ul sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="465">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="465">where to start (like a menu which start at level 2)</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="466">what pages to show (like all the pages on level 2 - or only their children)</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="467">how deep to go (do we show submenus?)</li>
 </ul>
 </li>
-<li><p><strong>Design</strong> for styling of each node based on the context</p>
-<ul>
-<li>is the current node selected? add <code>active</code>...</li>
-<li>is the current node a parent of the selected node? add <code>is-parent</code>...</li>
-<li>is the current node a dropdown for pages beneath it...</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="469"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="469"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="469">Design</strong> for styling of each node based on the context</p>
+<ul sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="470">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="470">is the current node selected? add <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="470">active</code>...</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="471">is the current node a parent of the selected node? add <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="471">is-parent</code>...</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="472">is the current node a dropdown for pages beneath it...</li>
 </ul>
 </li>
 </ol>
-<p>When we designed cre8magic Menus, we wanted to be sure that we're ticking all the right boxes.
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="474">When we designed cre8magic Menus, we wanted to be sure that we're ticking all the right boxes.
 So these are the real-life challenges we wanted to solve:</p>
-<ol>
-<li><p><strong>High-Quality Output</strong> following the latest Bootstrap5, accessibility, mobile-friendly and best-practice standards.</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="477">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="477"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="477"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="477">High-Quality Output</strong> following the latest Bootstrap5, accessibility, mobile-friendly and best-practice standards.</p>
 </li>
-<li><p>Make a simple, best-practice API which can be used in code, but can scale up to components and centralized settings.</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="479"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="479">Make a simple, best-practice API which can be used in code, but can scale up to components and centralized settings.</p>
 </li>
-<li><p>Ensure that the menus are always respecting user permissions and the current page.</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="481"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="481">Ensure that the menus are always respecting user permissions and the current page.</p>
 </li>
-<li><p>Allow for easy customization of the output without changing the code.</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="483"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="483">Allow for easy customization of the output without changing the code.</p>
 </li>
-<li><p>Follow SOLID principles and Composition-over-Inheritance to ensure that the code is maintainable and extendable.</p>
-</li>
-</ol>
-<h2 id="magic-menu-settings">Magic Menu Settings</h2>
-<p>These are the main settings.</p>
-<ol>
-<li>Settings for loading the configuration elsewhere
-<ol>
-<li><code>Name</code> - name of the settings to load from the Book under <code>Menus</code> (or <code>menus</code> in JSON)</li>
-</ol>
-</li>
-<li>Settings to specify what to show
-<ol>
-<li><code>Pick</code> - where to start, eg. <code>*</code> for root, <code>.</code> for current page, <code>42</code> for page 42</li>
-<li><del><code>Tree</code></del> (<em>future</em>): ability to provide an exact structure of pages in the code for processing</li>
-</ol>
-</li>
-<li>Settings to specify how to show
-<ol>
-<li>Variant - it is up to the code do determine what do do with this.
-The <code>MagicMenu</code> 🧩 currently supports <code>Vertical</code> for a sidebar, <code>Horizontal</code> for a top menu and will create different outputs like collapsing features.</li>
-<li><code>Blueprint</code> - settings for the tailor in the Book configuration under <code>MenuBlueprints</code> (or <code>menuBlueprints</code> in JSON)</li>
-</ol>
-</li>
-<li>Settings to specify Context
-<ol>
-<li>PageState - required IF it is not already broadcast by the theme</li>
-</ol>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="485"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="485">Follow SOLID principles and Composition-over-Inheritance to ensure that the code is maintainable and extendable.</p>
 </li>
 </ol>
-<h3 id="pick-values">Pick Values</h3>
-<p>Pick determines what pages to retrieve.
+<h2 id="magic-menu-settings" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="488">Magic Menu Settings</h2>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="490">These are the main settings.</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="492">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="492">Settings for loading the configuration elsewhere
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="493">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="493"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="493">Name</code> - name of the settings to load from the Book under <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="493">Menus</code> (or <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="493">menus</code> in JSON)</li>
+</ol>
+</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="494">Settings to specify what to show
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="495">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="495"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="495">Pick</code> - where to start, eg. <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="495">*</code> for root, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="495">.</code> for current page, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="495">42</code> for page 42</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="496"><del sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="496"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="496">Tree</code></del> (<em sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="496">future</em>): ability to provide an exact structure of pages in the code for processing</li>
+</ol>
+</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="497">Settings to specify how to show
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="498">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="498">Variant - it is up to the code do determine what do do with this.
+The <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="499">MagicMenu</code> 🧩 currently supports <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="499">Vertical</code> for a sidebar, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="499">Horizontal</code> for a top menu and will create different outputs like collapsing features.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="500"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="500">Blueprint</code> - settings for the tailor in the Book configuration under <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="500">MenuBlueprints</code> (or <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="500">menuBlueprints</code> in JSON)</li>
+</ol>
+</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="501">Settings to specify Context
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="502">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="502">PageState - required IF it is not already broadcast by the theme</li>
+</ol>
+</li>
+</ol>
+<h3 id="pick-values" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="505">Pick Values</h3>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="507">Pick determines what pages to retrieve.
 It's a concise way to specify what to show.
 What you're always doing is:</p>
-<ol>
-<li><strong>Start</strong> at a certain page (like <code>/</code> for all level-1 or <code>./</code> for sub pages of the current page, <code>42</code> for page 42)</li>
-<li>Optionally <strong>Go</strong> to another level, like <code>//2</code> for the second level or <code>.//</code> for the root above the current page</li>
-<li>Optionally <strong>drill deeper</strong> into the tree, like <code>./+</code> for all children of the current page</li>
-<li>Optionally <strong>further rules</strong> (CSV), such as <code>./, 5!</code> to show the children of the current page and page 5 even if it's not in the real structure</li>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="511">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="511"><strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="511">Start</strong> at a certain page (like <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="511">/</code> for all level-1 or <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="511">./</code> for sub pages of the current page, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="511">42</code> for page 42)</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="512">Optionally <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="512">Go</strong> to another level, like <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="512">//2</code> for the second level or <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="512">.//</code> for the root above the current page</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="513">Optionally <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="513">drill deeper</strong> into the tree, like <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="513">./+</code> for all children of the current page</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="514">Optionally <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="514">further rules</strong> (CSV), such as <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="514">./, 5!</code> to show the children of the current page and page 5 even if it's not in the real structure</li>
 </ol>
-<p>These are accepted values of <code>Pick</code> (or <code>pick</code> in the JSON):</p>
-<ul>
-<li><p><code>/</code> root (actually all top-level pages)</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="516">These are accepted values of <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="516">Pick</code> (or <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="516">pick</code> in the JSON):</p>
+<ul sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="518">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="518"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="518"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="518">/</code> root (actually all top-level pages)</p>
 </li>
-<li><p><code>//</code> same (not recommended, just for API consistency)</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="519"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="519"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="519">//</code> same (not recommended, just for API consistency)</p>
 </li>
-<li><p><code>//1</code> same (not recommended, just for API consistency)</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="520"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="520"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="520">//1</code> same (not recommended, just for API consistency)</p>
 </li>
-<li><p><code>//2</code> all second level pages (not typical/recommended, just for API consistency)</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="521"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="521"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="521">//2</code> all second level pages (not typical/recommended, just for API consistency)</p>
 </li>
-<li><p><code>//3</code> all third level pages (not typical/recommended, just for API consistency)</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="522"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="522"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="522">//3</code> all third level pages (not typical/recommended, just for API consistency)</p>
 </li>
-<li><p><code>.</code> current page</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="524"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="524"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="524">.</code> current page</p>
 </li>
-<li><p><code>./</code> children of the current page</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="525"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="525"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="525">./</code> children of the current page</p>
 </li>
-<li><p><code>.//</code> all root nodes above the current page (not useful, like <code>/</code>)</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="526"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="526"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="526">.//</code> all root nodes above the current page (not useful, like <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="526">/</code>)</p>
 </li>
-<li><p><code>..</code> parent of the current page (just that page)</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="528"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="528"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="528">..</code> parent of the current page (just that page)</p>
 </li>
-<li><p><code>../</code> children of the parent of the current page (this page and siblings)</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="529"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="529"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="529">../</code> children of the parent of the current page (this page and siblings)</p>
 </li>
-<li><p><code>.//2</code> ancestor of the current page on the second-level</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="531"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="531"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="531">.//2</code> ancestor of the current page on the second-level</p>
 </li>
-<li><p><code>.//2/</code> children of the ancestor of the current page on the second-level</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="532"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="532"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="532">.//2/</code> children of the ancestor of the current page on the second-level</p>
 </li>
-<li><p><code>..-1</code> identical to <code>..</code></p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="534"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="534"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="534">..-1</code> identical to <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="534">..</code></p>
 </li>
-<li><p><code>..-2</code> up two levels</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="535"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="535"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="535">..-2</code> up two levels</p>
 </li>
-<li><p><code>42</code> the page 42</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="537"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="537"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="537">42</code> the page 42</p>
 </li>
-<li><p><code>42/</code> children of the page 42</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="538"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="538"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="538">42/</code> children of the page 42</p>
 </li>
-<li><p><code>5!</code> the page 5 even if it's normally not visible in a menu</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="539"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="539"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="539">5!</code> the page 5 even if it's normally not visible in a menu</p>
 </li>
-<li><p><code>42, 5!</code> combinations thereof</p>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="540"><p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="540"><code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="540">42, 5!</code> combinations thereof</p>
 </li>
 </ul>
-<h2 id="magic-menu-blueprints">Magic Menu Blueprints</h2>
-<p>This is one of the most sophisticated bits of the JSON settings.
-You can configure this in the <code>menuBlueprints</code> section of the JSON.
-Note that this uses the <a class="xref" href="../tailor/index.html">Magic Classes with Tokens</a>.
+<h2 id="magic-menu-blueprints" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="543">Magic Menu Blueprints</h2>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="545">This is one of the most sophisticated bits of the JSON settings.
+You can configure this in the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="546">menuBlueprints</code> section of the JSON.
+Note that this uses the <a class="xref" href="../tailor/index.html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber=547>Magic Classes with Tokens</a>.
 Example:</p>
-<pre><code class="lang-jsonc">&quot;menuBlueprints&quot;: {
+<pre><code class="lang-jsonc" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="550">&quot;menuBlueprints&quot;: {
   &quot;Mobile&quot;: {
     &quot;ul&quot;: {
       &quot;byLevel&quot;: {
@@ -710,47 +710,47 @@ Example:</p>
   },
 }
 </code></pre>
-<p>This means a lot of things, but let's highlight some aspects:</p>
-<ol>
-<li>the surrounding <code>&lt;ul&gt;</code> tag will get the <code>navbar-nav</code> class at the first level; all others will get <code>collapse</code> and others</li>
-<li>the <code>&lt;ul&gt;</code> will also get a menu and page specific class because of the <code>theme-submenu-[Menu.Id]-[Page.Id]</code> which is useful for the collapse identification in bootstrap</li>
-<li>the <code>&lt;li&gt;</code> of each node will get some classes including an <code>active</code> if it's the current page, and <code>has-child</code> if it has children so that the bootstrap menu will do it's magic</li>
-<li>the <code>&lt;a&gt;</code> link itself will also have different classes based on active</li>
-<li>the <code>&lt;span&gt;</code> is used to show a <code>+</code>/<code>-</code> indicator using the <code>nav-item-sub-opener</code></li>
-<li>...and it will also get's <code>collapsed</code> if it's not in the breadcrumb (so it's only opened if a sub-page is the current page)</li>
-<li>and a special attribute used by bootstrap <code>data-bs-target</code> will have the same contents as the identifying class of the surrounding <code>&lt;ul&gt;</code> to ensure bootstrap will work</li>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="580">This means a lot of things, but let's highlight some aspects:</p>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="582">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="582">the surrounding <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="582">&lt;ul&gt;</code> tag will get the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="582">navbar-nav</code> class at the first level; all others will get <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="582">collapse</code> and others</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="583">the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="583">&lt;ul&gt;</code> will also get a menu and page specific class because of the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="583">theme-submenu-[Menu.Id]-[Page.Id]</code> which is useful for the collapse identification in bootstrap</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="584">the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="584">&lt;li&gt;</code> of each node will get some classes including an <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="584">active</code> if it's the current page, and <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="584">has-child</code> if it has children so that the bootstrap menu will do it's magic</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="585">the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="585">&lt;a&gt;</code> link itself will also have different classes based on active</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="586">the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="586">&lt;span&gt;</code> is used to show a <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="586">+</code>/<code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="586">-</code> indicator using the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="586">nav-item-sub-opener</code></li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="587">...and it will also get's <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="587">collapsed</code> if it's not in the breadcrumb (so it's only opened if a sub-page is the current page)</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="588">and a special attribute used by bootstrap <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="588">data-bs-target</code> will have the same contents as the identifying class of the surrounding <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="588">&lt;ul&gt;</code> to ensure bootstrap will work</li>
 </ol>
-<hr>
-<hr>
-<hr>
-<p>===</p>
-<h2 id="manage-multiple-menus">Manage Multiple Menus</h2>
-<p>The MagicMenu gives each menu a name, such as <code>Main</code>, <code>Sidebar</code>, <code>Footer</code> etc.
+<hr sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="592">
+<hr sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="593">
+<hr sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="594">
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="596">===</p>
+<h2 id="manage-multiple-menus" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="599">Manage Multiple Menus</h2>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="601">The MagicMenu gives each menu a name, such as <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="601">Main</code>, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="601">Sidebar</code>, <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="601">Footer</code> etc.
 You can determine these names in the Razor files.</p>
-<p>Each of these menus can then be configured in the <a class="xref" href="../theme-settings/theme-json.html">JSON</a>.
-By default, each menu will find it's <strong>configuration</strong> and it's <strong>design</strong>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="604">Each of these menus can then be configured in the <a class="xref" href="../theme-settings/theme-json.html" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber=604>JSON</a>.
+By default, each menu will find it's <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="605">configuration</strong> and it's <strong sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="605">design</strong>
 based on the same name.
-So the <code>Main</code> menu would take the configuration and design called <code>Main</code>.</p>
-<p>But you can also reconfigure this.
-For example, you could say that the Theme <code>Sidebar</code> will use
-the configuration <code>TopLevelOnly</code> for the <code>Main</code> menu.
-This is configured in the <code>parts</code> of the <code>themes</code> section of the JSON file.</p>
-<hr>
-<h2 id="missing-features">Missing Features</h2>
-<ol>
-<li>As of now you cannot filter out (exclude) specific pages.
+So the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="607">Main</code> menu would take the configuration and design called <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="607">Main</code>.</p>
+<p sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="609">But you can also reconfigure this.
+For example, you could say that the Theme <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="610">Sidebar</code> will use
+the configuration <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="611">TopLevelOnly</code> for the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="611">Main</code> menu.
+This is configured in the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="612">parts</code> of the <code sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="612">themes</code> section of the JSON file.</p>
+<hr sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="614">
+<h2 id="missing-features" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="616">Missing Features</h2>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="618">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="618">As of now you cannot filter out (exclude) specific pages.
 For this you would still need to write your own code or construct your nav-tree for special cases.</li>
-<li>You cannot link to page in another language, as Oqtane doesn't really have this concept yet.</li>
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="620">You cannot link to page in another language, as Oqtane doesn't really have this concept yet.</li>
 </ol>
-<h2 id="history">History</h2>
-<ol>
-<li>Added in v0.0.1 2022-10 with 80% coverage of what DDR Menu had in DNN</li>
+<h2 id="history" sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="622">History</h2>
+<ol sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="624">
+<li sourcefile="pages/library/magic-menu/index.md" sourcestartlinenumber="624">Added in v0.0.1 2022-10 with 80% coverage of what DDR Menu had in DNN</li>
 </ol>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/magic-menu/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/magic-menu/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

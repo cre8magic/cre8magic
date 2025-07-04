@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Install Theme Guide | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Install Theme Guide | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/installation/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="OqtaneThemes.Installation.Index">
+<h1 id="install-theme-guide" sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="5">Install Theme Guide</h1>
+
+<p sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="7">This guide will walk you through the two different methods of installing a custom theme in Oqtane: via the official Marketplace or by uploading a NuGet package manually. Both options are suitable depending on whether the theme is published online or developed locally.</p>
+<div class="TIP" sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="9">
+<h5>Tip</h5>
+<p sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="10">Make sure your theme is built and packaged correctly before installation. You will need a .nupkg file to upload it manually or a published release to use the marketplace..</p>
+</div>
+<hr sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="12">
+<h2 id="install-from-marketplace" sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="14">Install from Marketplace</h2>
+<div gallery="gallery01">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/shared-install-theme_1.webp" data-caption="Step 1:<br />Open the Admin Dashboard <br /> Go to Theme Management">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/shared-install-theme_2.webp" data-caption="Step 2:<br />Click Install Theme">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_1.webp" data-caption="Step 3:<br />Select the Marketplace tab">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_2.webp" data-caption="Step 4:<br />Download and Accept the theme">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_3.webp" data-caption="Step 5:<br />Download Successfully, Restart the Application to activate the theme">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/shared-install-theme_3.webp" data-caption="Step 6:<br />Restart the Applicatctio">
+</div>
+<p sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="25">To install a theme from the <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="25">Oqtane Marketplace</strong>:</p>
+<ol sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="27">
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="27">Open your <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="27">Admin Dashboard</strong> and Go to <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="27">Theme Management</strong></li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="28">Click <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="28">Install Theme</strong></li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="29">Switch to the <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="29">Marketplace</strong> tab</li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="30">Click <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="30">Download</strong> next to the desired theme and <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="30">Accept</strong></li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="31">Finally, click <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="31">Restart Application</strong> to activate it</li>
+</ol>
+<p sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="33"><strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="33">Note:</strong></p>
+<ul sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="35">
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="35">On a <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="35">local environment</strong>, you can restart directly from <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="35">Visual Studio</strong>.</li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="36">On a <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="36">server</strong>, go to <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="36">System Info &gt; Restart Application</strong>.</li>
+</ul>
+<hr sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="38">
+<p sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="40">Don’t have a <code sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="40">.nupkg</code> file yet?
+Learn how to build one in <a class="xref" href="../publish-theme/index.html" sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber=41>How to Build a NuGet Theme</a></p>
+<h2 id="install-from-nuget-package" sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="43">Install from NuGet Package</h2>
+<div gallery="gallery02">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/nuget-install-theme_1.webp" data-caption="Step 1:<br />Open Theme Management">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/nuget-install-theme_2.webp" data-caption="Step 2:<br />Upload your .nupkg file">
+  <img src="../../pages/oqtane-theme-guides/installation/assets/shared-install-theme_3.webp" data-caption="Step 3:<br />Restart the application">
+</div>
+<p sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="51">To manually install a theme using a <code sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="51">.nupkg</code> file:</p>
+<p sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="53">Don’t have a <code sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="53">.nupkg</code> file yet?
+Learn how to build one in <a class="xref" href="../publish-theme/index.html" sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber=54>How to Build a NuGet Theme</a></p>
+<ol sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="56">
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="56">Go to <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="56">Admin Dashboard</strong> → <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="56">Theme Management</strong></li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="57">Click <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="57">Install Theme</strong> and switch to the <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="57">Upload</strong> tab</li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="58">Select your <code sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="58">.nupkg</code> file and upload it</li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="59">After upload, click <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="59">Restart Application</strong></li>
+</ol>
+<p sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="61"><strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="61">Note:</strong></p>
+<ul sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="63">
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="63">On a <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="63">local environment</strong>, you can restart directly from <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="63">Visual Studio</strong>.</li>
+<li sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="64">On a <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="64">server</strong>, go to <strong sourcefile="pages/oqtane-theme-guides/installation/index.md" sourcestartlinenumber="64">System Info &gt; Restart Application</strong>.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/installation/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

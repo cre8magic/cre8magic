@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/recommendations/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/recommendations/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,28 +85,28 @@
         </div>
 
         <article data-uid="OqtaneThemes.Recommendations.Index">
-<h1 id="oqtane-theme-recommendations-and-best-practices">Oqtane Theme Recommendations and Best Practices</h1>
+<h1 id="oqtane-theme-recommendations-and-best-practices" sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="5">Oqtane Theme Recommendations and Best Practices</h1>
 
-<p>These are recommendations base on the cre8magic team's experience with Oqtane themes.</p>
-<p>We see these things as best practices, but they are not required,
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="7">These are recommendations base on the cre8magic team's experience with Oqtane themes.</p>
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="9">We see these things as best practices, but they are not required,
 or may also be different from the official Oqtane Best Practices.</p>
-<h2 id="components-should-inherit-from-componentbase-not-themecontrolbase">Components should Inherit from ComponentBase, Not ThemeControlBase</h2>
-<p>This applies to the many components you create in your theme, eg. for showing an icon, a menu, a breadcrumb, etc.</p>
-<p>It does not apply to the Theme itself, which should inherit from <code>ThemeBase</code>,
-or to Modules, which should inherit from <code>ModuleBase</code>.</p>
-<h3 id="do-inherit-from-the-standard-componentbase">Do: Inherit from the standard ComponentBase</h3>
-<p>This is in the <code>Microsoft.AspNetCore.Components</code> namespace.</p>
-<p>Your Component will usually require the Page-State, so you should add:</p>
-<pre><code class="lang-razor">@code
+<h2 id="components-should-inherit-from-componentbase-not-themecontrolbase" sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="16">Components should Inherit from ComponentBase, Not ThemeControlBase</h2>
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="18">This applies to the many components you create in your theme, eg. for showing an icon, a menu, a breadcrumb, etc.</p>
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="20">It does not apply to the Theme itself, which should inherit from <code sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="20">ThemeBase</code>,
+or to Modules, which should inherit from <code sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="21">ModuleBase</code>.</p>
+<h3 id="do-inherit-from-the-standard-componentbase" sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="23">Do: Inherit from the standard ComponentBase</h3>
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="25">This is in the <code sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="25">Microsoft.AspNetCore.Components</code> namespace.</p>
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="27">Your Component will usually require the Page-State, so you should add:</p>
+<pre><code class="lang-razor" sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="29">@code
 {
   [CascadingParameter]
   public required PageState PageState { get; set; }
 }
 
 </code></pre>
-<p>In some cases you may also need the Site-State or the Module-State.
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="38">In some cases you may also need the Site-State or the Module-State.
 If you do need them, do this:</p>
-<pre><code class="lang-razor">@code
+<pre><code class="lang-razor" sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="41">@code
 {
   [Inject]
   public required SiteState SiteState { get; set; }
@@ -115,24 +115,24 @@ If you do need them, do this:</p>
   public required Module ModuleState { get; set; }
 }
 </code></pre>
-<h3 id="dont-inherit-from-themecontrolbase">Don't: Inherit from ThemeControlBase</h3>
-<p>The official way to create Components in Oqtane
-is to call them <code>Controls</code> and inherit from <code>ThemeControlBase</code>.</p>
-<h3 id="our-reasoning">Our Reasoning</h3>
-<p>The <code>ThemeControlBase</code> is a custom class that is part of the Oqtane framework.
-This in turn inherits from <code>ThemeBase</code> which (IMHO) has various issues such as:</p>
-<ul>
-<li>It uses an Inheritance strategy instead of Composition, which we think is wrong.</li>
-<li>It mixes a lot of responsibilities</li>
-<li>It's huge and has a lot of APIs which we believe should not be used.</li>
+<h3 id="dont-inherit-from-themecontrolbase" sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="53">Don't: Inherit from ThemeControlBase</h3>
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="55">The official way to create Components in Oqtane
+is to call them <code sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="56">Controls</code> and inherit from <code sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="56">ThemeControlBase</code>.</p>
+<h3 id="our-reasoning" sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="58">Our Reasoning</h3>
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="60">The <code sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="60">ThemeControlBase</code> is a custom class that is part of the Oqtane framework.
+This in turn inherits from <code sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="61">ThemeBase</code> which (IMHO) has various issues such as:</p>
+<ul sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="63">
+<li sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="63">It uses an Inheritance strategy instead of Composition, which we think is wrong.</li>
+<li sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="64">It mixes a lot of responsibilities</li>
+<li sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="65">It's huge and has a lot of APIs which we believe should not be used.</li>
 </ul>
-<p>In 99% of all cases all you need is the <code>PageState</code>, which you can get without this additional baggage.
+<p sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="67">In 99% of all cases all you need is the <code sourcefile="pages/oqtane-theme-guides/recommendations/index.md" sourcestartlinenumber="67">PageState</code>, which you can get without this additional baggage.
 Doing this will also keep your code clean and more maintainable.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/recommendations/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/recommendations/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

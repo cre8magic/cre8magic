@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/internals/local-nuget/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/internals/local-nuget/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,22 +85,22 @@
         </div>
 
         <article data-uid="Cre8magic.Library.Internals.LocalNuget.Index">
-<h1 id="cre8magic---local-nuget-package-for-development">cre8magic - Local NuGet Package for Development</h1>
+<h1 id="cre8magic---local-nuget-package-for-development" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="5">cre8magic - Local NuGet Package for Development</h1>
 
-<p>When developing a new version of cre8magic, you may need to test the result on a theme <em>without</em> deploying it to NuGet first.
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="7">When developing a new version of cre8magic, you may need to test the result on a theme <em sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="7">without</em> deploying it to NuGet first.
 To implement this, we need these steps:</p>
-<ol>
-<li>Create a local NuGet &quot;feed&quot; which Visual Studio will use</li>
-<li>Build the NuGet package to test</li>
-<li>Modify your test theme to use the local NuGet package</li>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="10">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="10">Create a local NuGet &quot;feed&quot; which Visual Studio will use</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="11">Build the NuGet package to test</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="12">Modify your test theme to use the local NuGet package</li>
 </ol>
-<h2 id="step-1-create-local-nuget-feed">Step 1: Create Local NuGet Feed</h2>
-<p>If you don't already have a local NuGet feed, in your <code>cre8magic</code> folder, follow these steps:</p>
-<ol>
-<li>In your solution root (e.g., <code>c:\projects\cre8magic\</code>), create a folder named <code>InstallPackages</code> to store NuGet packages for the local feed.</li>
-<li>Also, in your solution root, create a <code>nuget.config</code> file with the following configuration:</li>
+<h2 id="step-1-create-local-nuget-feed" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="14">Step 1: Create Local NuGet Feed</h2>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="16">If you don't already have a local NuGet feed, in your <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="16">cre8magic</code> folder, follow these steps:</p>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="18">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="18">In your solution root (e.g., <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="18">c:\projects\cre8magic\</code>), create a folder named <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="18">InstallPackages</code> to store NuGet packages for the local feed.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="19">Also, in your solution root, create a <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="19">nuget.config</code> file with the following configuration:</li>
 </ol>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<pre><code class="lang-xml" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="21">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;configuration xmlns=&quot;http://schemas.microsoft.com/nuget/config/Settings&quot;&gt;
   &lt;packageSources&gt;
     &lt;!-- Define the local package source with a relative path --&gt;
@@ -125,60 +125,60 @@ To implement this, we need these steps:</p>
   &lt;/config&gt;
 &lt;/configuration&gt;
 </code></pre>
-<p>This configuration allows you to install local NuGet packages from the specified <code>InstallPackages</code> folder. Visual Studio will find them using the <code>LocalNuGetFeed</code> source.</p>
-<div class="TIP">
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="48">This configuration allows you to install local NuGet packages from the specified <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="48">InstallPackages</code> folder. Visual Studio will find them using the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="48">LocalNuGetFeed</code> source.</p>
+<div class="TIP" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="50">
 <h5>Tip</h5>
-<p>If you want to confirm/override a feed, you can still go into <strong>Visual Studio</strong>: <code>Tools &gt; Options &gt; NuGet Package Manager &gt; Package Sources</code> and check if your local feed is listed, but by default, Visual Studio will automatically discover and honor the feeds defined in a nuget.config located in solution root.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="51">If you want to confirm/override a feed, you can still go into <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="51">Visual Studio</strong>: <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="51">Tools &gt; Options &gt; NuGet Package Manager &gt; Package Sources</code> and check if your local feed is listed, but by default, Visual Studio will automatically discover and honor the feeds defined in a nuget.config located in solution root.</p>
 </div>
-<h2 id="step-2-build-the-cre8magic-nuget-package">Step 2: Build the cre8magic NuGet Package</h2>
-<ol>
-<li>Ensure you increment the version number for each new package to avoid issues with NuGet package caching. The version of the <code>.nupkg</code> file is defined in the <code>ToSic.Cre8magic.Package/ToSic.Cre8magic.Oqtane.nuspec</code> file.</li>
-<li>Build the <code>ToSic.Cre8magic.Package/ToSic.Cre8magic.Package.csproj</code> project in <code>Release</code> configuration.</li>
-<li>This generates a new <code>ToSic.Cre8magic.Oqtane</code> NuGet package in the <code>ToSic.Cre8magic.Package</code> folder.</li>
-<li>Copy the new package (e.g., <code>ToSic.Cre8magic.Oqtane.N.N.N.nupkg</code>) to the <code>InstallPackages</code> folder to make it available as a dependency for your custom Oqtane theme project.</li>
+<h2 id="step-2-build-the-cre8magic-nuget-package" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="53">Step 2: Build the cre8magic NuGet Package</h2>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="55">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="55">Ensure you increment the version number for each new package to avoid issues with NuGet package caching. The version of the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="55">.nupkg</code> file is defined in the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="55">ToSic.Cre8magic.Package/ToSic.Cre8magic.Oqtane.nuspec</code> file.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="56">Build the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="56">ToSic.Cre8magic.Package/ToSic.Cre8magic.Package.csproj</code> project in <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="56">Release</code> configuration.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="57">This generates a new <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="57">ToSic.Cre8magic.Oqtane</code> NuGet package in the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="57">ToSic.Cre8magic.Package</code> folder.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="58">Copy the new package (e.g., <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="58">ToSic.Cre8magic.Oqtane.N.N.N.nupkg</code>) to the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="58">InstallPackages</code> folder to make it available as a dependency for your custom Oqtane theme project.</li>
 </ol>
-<div class="IMPORTANT">
+<div class="IMPORTANT" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="60">
 <h5>Important</h5>
-<p>Always increment the package version number in the <code>.nuspec</code> file when making changes to your package. NuGet uses a complex caching mechanism, and if you rebuild a package with the same version number, Visual Studio might continue using the previously cached version rather than your new build.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="61">Always increment the package version number in the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="61">.nuspec</code> file when making changes to your package. NuGet uses a complex caching mechanism, and if you rebuild a package with the same version number, Visual Studio might continue using the previously cached version rather than your new build.</p>
 </div>
-<h2 id="step-3-modify-test-theme-to-use-the-local-nuget-package">Step 3: Modify Test Theme to Use the Local NuGet Package</h2>
-<p>To test the local NuGet package, you need a custom Oqtane theme which uses it.</p>
-<div class="TIP">
+<h2 id="step-3-modify-test-theme-to-use-the-local-nuget-package" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="63">Step 3: Modify Test Theme to Use the Local NuGet Package</h2>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="65">To test the local NuGet package, you need a custom Oqtane theme which uses it.</p>
+<div class="TIP" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="67">
 <h5>Tip</h5>
-<p>The standard cre8magic solution has such a theme named <code>ToSic.Cre8magic.ThemeWithLocalNuGet</code>.</p>
-<p>So if you are just working in the cre8magic project, you can use that project to test everything.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="68">The standard cre8magic solution has such a theme named <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="68">ToSic.Cre8magic.ThemeWithLocalNuGet</code>.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="70">So if you are just working in the cre8magic project, you can use that project to test everything.</p>
 </div>
-<p>Say you have generated a new custom theme named <code>ToSic.Theme.Test1</code>.
-This results in a folder structure with the folders <code>Client</code> and <code>Package</code>, containing the <code>ToSic.Theme.Test1.Client.csproj</code> and <code>ToSic.Theme.Test1.Package.csproj</code> projects.</p>
-<h3 id="31-update-the-client-project">3.1. Update the Client Project</h3>
-<p>Open the <code>ToSic.Theme.Test1.Client.csproj</code> file to make some changes.</p>
-<ol>
-<li><p>Add the following line to the end of the first <code>&lt;PropertyGroup&gt;</code>:</p>
-<pre><code class="lang-xml">&lt;OqtaneStaticAssetsPath&gt;../../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane&lt;/OqtaneStaticAssetsPath&gt;
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="72">Say you have generated a new custom theme named <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="72">ToSic.Theme.Test1</code>.
+This results in a folder structure with the folders <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="73">Client</code> and <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="73">Package</code>, containing the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="73">ToSic.Theme.Test1.Client.csproj</code> and <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="73">ToSic.Theme.Test1.Package.csproj</code> projects.</p>
+<h3 id="31-update-the-client-project" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="75">3.1. Update the Client Project</h3>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="77">Open the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="77">ToSic.Theme.Test1.Client.csproj</code> file to make some changes.</p>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="79">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="79"><p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="79">Add the following line to the end of the first <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="79">&lt;PropertyGroup&gt;</code>:</p>
+<pre><code class="lang-xml" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="81">&lt;OqtaneStaticAssetsPath&gt;../../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane&lt;/OqtaneStaticAssetsPath&gt;
 </code></pre>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="85">
 <h5>Note</h5>
-<p><code>OqtaneStaticAssetsPath</code> property specifies a relative folder path where cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code>ToSic.Cre8magic.Oqtane</code> package will be copied during the build process.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="86"><code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="86">OqtaneStaticAssetsPath</code> property specifies a relative folder path where cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="86">ToSic.Cre8magic.Oqtane</code> package will be copied during the build process.</p>
 </div>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="88">
 <h5>Tip</h5>
-<p>In ASP.NET Core, the <code>wwwroot/_content/[packageid]</code> folder structure is a convention used to serve static assets from Razor Class Libraries. The <code>_content</code> folder is a special directory allowing components from different libraries to coexist without file path conflicts.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="89">In ASP.NET Core, the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="89">wwwroot/_content/[packageid]</code> folder structure is a convention used to serve static assets from Razor Class Libraries. The <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="89">_content</code> folder is a special directory allowing components from different libraries to coexist without file path conflicts.</p>
 </div>
 </li>
-<li><p>Add the following <code>&lt;PackageReference&gt;</code> to the <code>&lt;ItemGroup&gt;</code> containing other packages, and replace <code>Version=&quot;N.N.N&quot;</code> with latest version, eg. <code>Version=&quot;1.0.0&quot;</code>:</p>
-<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;N.N.N&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="91"><p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="91">Add the following <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="91">&lt;PackageReference&gt;</code> to the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="91">&lt;ItemGroup&gt;</code> containing other packages, and replace <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="91">Version=&quot;N.N.N&quot;</code> with latest version, eg. <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="91">Version=&quot;1.0.0&quot;</code>:</p>
+<pre><code class="lang-xml" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="93">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;N.N.N&quot; GeneratePathProperty=&quot;true&quot; /&gt;
 </code></pre>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="97">
 <h5>Tip</h5>
-<p>Attribute <code>Version=&quot;N.N.N&quot;</code> with the expected version of the <code>ToSic.Cre8magic.Oqtane</code> package (located in your local <code>InstallPackages</code> folder) is optional. If multiple versions of the same package exist in your local NuGet folder and you don't specify a version, NuGet will use the highest version by default.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="98">Attribute <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="98">Version=&quot;N.N.N&quot;</code> with the expected version of the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="98">ToSic.Cre8magic.Oqtane</code> package (located in your local <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="98">InstallPackages</code> folder) is optional. If multiple versions of the same package exist in your local NuGet folder and you don't specify a version, NuGet will use the highest version by default.</p>
 </div>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="100">
 <h5>Tip</h5>
-<p>The <code>GeneratePathProperty=&quot;true&quot;</code> attribute in the <code>PackageReference</code> element is a special MSBuild property that instructs the build system to create an MSBuild property containing the installation path of the referenced NuGet package, so it can be used later when necessary.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="101">The <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="101">GeneratePathProperty=&quot;true&quot;</code> attribute in the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="101">PackageReference</code> element is a special MSBuild property that instructs the build system to create an MSBuild property containing the installation path of the referenced NuGet package, so it can be used later when necessary.</p>
 </div>
 </li>
-<li><p>Add a build task to copy static web assets:</p>
-<pre><code class="lang-xml">&lt;Target Name=&quot;CopyStaticWebAssets&quot; AfterTargets=&quot;Build&quot;&gt;
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="103"><p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="103">Add a build task to copy static web assets:</p>
+<pre><code class="lang-xml" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="105">&lt;Target Name=&quot;CopyStaticWebAssets&quot; AfterTargets=&quot;Build&quot;&gt;
   &lt;ItemGroup&gt;
     &lt;StaticAssets Include=&quot;$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*&quot; /&gt;
   &lt;/ItemGroup&gt;
@@ -188,111 +188,111 @@ This results in a folder structure with the folders <code>Client</code> and <cod
         SkipUnchangedFiles=&quot;true&quot; /&gt;
 &lt;/Target&gt;
 </code></pre>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="117">
 <h5>Note</h5>
-<p>For Oqtane themes, this build task ensures that cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code>ToSic.Cre8magic.Oqtane</code> package are copied during the build process, which is essential for proper theme rendering.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="118">For Oqtane themes, this build task ensures that cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="118">ToSic.Cre8magic.Oqtane</code> package are copied during the build process, which is essential for proper theme rendering.</p>
 </div>
 </li>
 </ol>
-<h3 id="32-update-the-debug-script">3.2. Update the Debug Script</h3>
-<p>Open the <code>Package/debug.cmd</code> file and add the following lines to copy the DLLs to the Oqtane development environment:</p>
-<pre><code class="lang-cmd">XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8magic.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
+<h3 id="32-update-the-debug-script" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="120">3.2. Update the Debug Script</h3>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="122">Open the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="122">Package/debug.cmd</code> file and add the following lines to copy the DLLs to the Oqtane development environment:</p>
+<pre><code class="lang-cmd" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="124">XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8magic.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
 XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
 </code></pre>
-<h3 id="33-update-the-nuspec-file">3.3. Update the NuSpec File</h3>
-<p>Open the <code>Package/ToSic.Theme.Test1.nuspec</code> file and add the following lines to include the static web assets in the package:</p>
-<pre><code class="lang-xml">&lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
+<h3 id="33-update-the-nuspec-file" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="129">3.3. Update the NuSpec File</h3>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="131">Open the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="131">Package/ToSic.Theme.Test1.nuspec</code> file and add the following lines to include the static web assets in the package:</p>
+<pre><code class="lang-xml" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="133">&lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
 &lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
 &lt;file src=&quot;..\..\..\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane\**\*.*&quot; target=&quot;wwwroot\_content\ToSic.Cre8magic.Oqtane&quot; /&gt;
 </code></pre>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="139">
 <h5>Note</h5>
-<p>With these changes, your custom theme will use the local NuGet package and include the necessary static web assets for testing.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="140">With these changes, your custom theme will use the local NuGet package and include the necessary static web assets for testing.</p>
 </div>
-<h3 id="34-build-and-verify-that-it-works-in-your-oqtane-development-environment">3.4. Build and Verify that it Works in your Oqtane development environment</h3>
-<p>When you select <strong>Debug</strong> configuration and you build the <em>Package</em> project, it automatically deploys your Oqtane theme to your Oqtane Server development environment:</p>
-<ol>
-<li>Select <strong>Debug</strong> configuration in Visual Studio.</li>
-<li>Build the <em>Package</em> project (e.g., <code>ToSic.Theme.Test1.Package.csproj</code>).</li>
-<li>The build process runs the <code>debug.cmd</code> script, which copies relevant files to your Oqtane development environment.</li>
-<li>Theme-related DLL files, <code>ToSic.Cre8magic.Client.Oqtane.dll</code> and <code>ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll</code> will be placed in the <code>oqtane\oqtane.framework\Oqtane.Server\bin\Debug\net9.0</code> folder.</li>
-<li>Theme static assets will be copied to the <code>oqtane\oqtane.framework\Oqtane.Server\wwwroot\Themes\ToSic.Theme.Test1</code> folder and <code>oqtane\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane</code> folder.</li>
+<h3 id="34-build-and-verify-that-it-works-in-your-oqtane-development-environment" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="142">3.4. Build and Verify that it Works in your Oqtane development environment</h3>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="144">When you select <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="144">Debug</strong> configuration and you build the <em sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="144">Package</em> project, it automatically deploys your Oqtane theme to your Oqtane Server development environment:</p>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="145">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="145">Select <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="145">Debug</strong> configuration in Visual Studio.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="146">Build the <em sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="146">Package</em> project (e.g., <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="146">ToSic.Theme.Test1.Package.csproj</code>).</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="147">The build process runs the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="147">debug.cmd</code> script, which copies relevant files to your Oqtane development environment.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="148">Theme-related DLL files, <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="148">ToSic.Cre8magic.Client.Oqtane.dll</code> and <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="148">ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll</code> will be placed in the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="148">oqtane\oqtane.framework\Oqtane.Server\bin\Debug\net9.0</code> folder.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="149">Theme static assets will be copied to the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="149">oqtane\oqtane.framework\Oqtane.Server\wwwroot\Themes\ToSic.Theme.Test1</code> folder and <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="149">oqtane\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane</code> folder.</li>
 </ol>
-<p>To verify it works:</p>
-<ol>
-<li>Run the Oqtane development environment (<code>Oqtane.Server</code> project) in <strong>Debug</strong> configuration in Visual Studio.</li>
-<li>Oqtane will automatically detect and install your theme during startup.</li>
-<li>Log in to your Oqtane admin account.</li>
-<li>Navigate to any page and access its <code>Page Management</code> settings.</li>
-<li>Go to the <code>Appearance</code> section.</li>
-<li>Your theme should be available in the dropdown list of themes and containers.</li>
-<li>Select your theme and verify it renders correctly.</li>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="151">To verify it works:</p>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="152">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="152">Run the Oqtane development environment (<code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="152">Oqtane.Server</code> project) in <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="152">Debug</strong> configuration in Visual Studio.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="153">Oqtane will automatically detect and install your theme during startup.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="154">Log in to your Oqtane admin account.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="155">Navigate to any page and access its <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="155">Page Management</code> settings.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="156">Go to the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="156">Appearance</code> section.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="157">Your theme should be available in the dropdown list of themes and containers.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="158">Select your theme and verify it renders correctly.</li>
 </ol>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="160">
 <h5>Note</h5>
-<p>If the theme doesn't appear in the list or doesn't render correctly, check the theme's <em>Package</em> project <strong>Build</strong> log in Visual Studio's <strong>Output</strong> window.</p>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="161">If the theme doesn't appear in the list or doesn't render correctly, check the theme's <em sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="161">Package</em> project <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="161">Build</strong> log in Visual Studio's <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="161">Output</strong> window.</p>
 </div>
-<h3 id="35-test-an-updated-version-in-your-oqtane-development-environment">3.5. Test an Updated Version in your Oqtane development environment</h3>
-<p>After creating a new version of <code>ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package you need to update your theme to use it:</p>
-<ol>
-<li>Ensure you have the new version of <code>ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package in <code>InstallPackages</code>.</li>
-<li>Open the <code>ToSic.Theme.Test1.Client.csproj</code> file and update the version to the new one:
-<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;M.M.M&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+<h3 id="35-test-an-updated-version-in-your-oqtane-development-environment" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="163">3.5. Test an Updated Version in your Oqtane development environment</h3>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="165">After creating a new version of <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="165">ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package you need to update your theme to use it:</p>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="167">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="167">Ensure you have the new version of <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="167">ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package in <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="167">InstallPackages</code>.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="168">Open the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="168">ToSic.Theme.Test1.Client.csproj</code> file and update the version to the new one:
+<pre><code class="lang-xml" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="169">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;M.M.M&quot; GeneratePathProperty=&quot;true&quot; /&gt;
 </code></pre>
 </li>
-<li>Select <strong>Debug</strong> configuration in Visual Studio if it is not already selected.</li>
-<li><strong>Rebuild</strong> the <em>Package</em> project (e.g., <code>ToSic.Theme.Test1.Package.csproj</code>).</li>
-<li>The updated files will automatically deploy to your Oqtane Server development environment.</li>
-<li>Run the Oqtane development environment (<code>Oqtane.Server</code> project).</li>
-<li>Navigate to a page using your theme and verify the changes are visible.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="172">Select <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="172">Debug</strong> configuration in Visual Studio if it is not already selected.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="173"><strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="173">Rebuild</strong> the <em sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="173">Package</em> project (e.g., <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="173">ToSic.Theme.Test1.Package.csproj</code>).</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="174">The updated files will automatically deploy to your Oqtane Server development environment.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="175">Run the Oqtane development environment (<code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="175">Oqtane.Server</code> project).</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="176">Navigate to a page using your theme and verify the changes are visible.</li>
 </ol>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="178">
 <h5>Note</h5>
-<p>If your changes don't appear:</p>
-<ul>
-<li>Make sure your browser isn't caching the page (try a hard refresh with Ctrl+F5)</li>
-<li>Verify that you increased the version of <code>ToSic.Cre8magic.Oqtane.nupkg</code> and that the correct one is in the <code>InstallPackages</code> folder</li>
-<li>Examine the theme's <em>Package</em> project <strong>Build</strong> log in Visual Studio's <strong>Output</strong> window for any errors</li>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="179">If your changes don't appear:</p>
+<ul sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="180">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="180">Make sure your browser isn't caching the page (try a hard refresh with Ctrl+F5)</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="181">Verify that you increased the version of <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="181">ToSic.Cre8magic.Oqtane.nupkg</code> and that the correct one is in the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="181">InstallPackages</code> folder</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="182">Examine the theme's <em sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="182">Package</em> project <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="182">Build</strong> log in Visual Studio's <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="182">Output</strong> window for any errors</li>
 </ul>
 </div>
-<h3 id="36-build-and-test-in-a-standalone-oqtane-installation">3.6. Build and Test in a Standalone Oqtane Installation</h3>
-<p>To create a deployable package for testing in a production-like environment:</p>
-<ol>
-<li>Ensure you have new version of <code>ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package in <code>InstallPackages</code>.</li>
-<li>Open the <code>ToSic.Theme.Test1.Client.csproj</code> file and update version to new one:
-<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;M.M.M&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+<h3 id="36-build-and-test-in-a-standalone-oqtane-installation" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="184">3.6. Build and Test in a Standalone Oqtane Installation</h3>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="186">To create a deployable package for testing in a production-like environment:</p>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="188">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="188">Ensure you have new version of <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="188">ToSic.Cre8magic.Oqtane.M.M.M.nupkg</code> package in <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="188">InstallPackages</code>.</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="189">Open the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="189">ToSic.Theme.Test1.Client.csproj</code> file and update version to new one:
+<pre><code class="lang-xml" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="190">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;M.M.M&quot; GeneratePathProperty=&quot;true&quot; /&gt;
 </code></pre>
 </li>
-<li>Select <strong>Release</strong> configuration in Visual Studio</li>
-<li>Ensure you've incremented the version in <code>ToSic.Theme.Test1.nuspec</code> (in <code>Package</code> folder) if making changes</li>
-<li>Build the <em>Package</em> project (e.g., <code>ToSic.Theme.Test1.Package.csproj</code>)</li>
-<li>The build process runs <code>release.cmd</code>, which creates a NuGet package</li>
-<li>The resulting theme package (e.g., <code>ToSic.Theme.Test1.N.N.N.nupkg</code>) will be in the <code>Package</code> folder</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="193">Select <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="193">Release</strong> configuration in Visual Studio</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="194">Ensure you've incremented the version in <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="194">ToSic.Theme.Test1.nuspec</code> (in <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="194">Package</code> folder) if making changes</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="195">Build the <em sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="195">Package</em> project (e.g., <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="195">ToSic.Theme.Test1.Package.csproj</code>)</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="196">The build process runs <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="196">release.cmd</code>, which creates a NuGet package</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="197">The resulting theme package (e.g., <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="197">ToSic.Theme.Test1.N.N.N.nupkg</code>) will be in the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="197">Package</code> folder</li>
 </ol>
-<p>To install and test your theme in a standalone Oqtane installation:</p>
-<ol>
-<li>Copy the <code>ToSic.Theme.Test1.N.N.N.nupkg</code> file to your Oqtane server's <code>Packages</code> folder, or use the <strong>Admin Dashboard &gt; Theme Management &gt; Install Theme</strong> option</li>
-<li>In Oqtane, go to <strong>Admin Dashboard &gt; System Info</strong> and click <strong>Restart Application</strong></li>
-<li>After restart, verify the theme was installed in <strong>Admin Dashboard &gt; Theme Management</strong></li>
-<li>Navigate to any page and open its <strong>Page Management</strong> settings</li>
-<li>In the <strong>Appearance</strong> section, your theme should be available in the dropdown list</li>
-<li>Select your theme and verify it renders correctly</li>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="199">To install and test your theme in a standalone Oqtane installation:</p>
+<ol sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="201">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="201">Copy the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="201">ToSic.Theme.Test1.N.N.N.nupkg</code> file to your Oqtane server's <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="201">Packages</code> folder, or use the <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="201">Admin Dashboard &gt; Theme Management &gt; Install Theme</strong> option</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="202">In Oqtane, go to <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="202">Admin Dashboard &gt; System Info</strong> and click <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="202">Restart Application</strong></li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="203">After restart, verify the theme was installed in <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="203">Admin Dashboard &gt; Theme Management</strong></li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="204">Navigate to any page and open its <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="204">Page Management</strong> settings</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="205">In the <strong sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="205">Appearance</strong> section, your theme should be available in the dropdown list</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="206">Select your theme and verify it renders correctly</li>
 </ol>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="208">
 <h5>Note</h5>
-<p>If your theme doesn't appear or doesn't render properly:</p>
-<ul>
-<li>Clear browser cache (Ctrl+F5)</li>
-<li>Check Oqtane logs in the <code>Packages</code> and <code>wwwroot/Logs</code> folders</li>
-<li>Verify the package was properly created by examining it with a tool like NuGet Package Explorer</li>
-<li>Ensure all required dependencies are available in the target environment</li>
+<p sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="209">If your theme doesn't appear or doesn't render properly:</p>
+<ul sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="210">
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="210">Clear browser cache (Ctrl+F5)</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="211">Check Oqtane logs in the <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="211">Packages</code> and <code sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="211">wwwroot/Logs</code> folders</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="212">Verify the package was properly created by examining it with a tool like NuGet Package Explorer</li>
+<li sourcefile="pages/library/internals/local-nuget/index.md" sourcestartlinenumber="213">Ensure all required dependencies are available in the target environment</li>
 </ul>
 </div>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/internals/local-nuget/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/internals/local-nuget/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

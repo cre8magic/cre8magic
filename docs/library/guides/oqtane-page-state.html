@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/guides/oqtane-page-state.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/guides/oqtane-page-state.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,65 +85,65 @@
         </div>
 
         <article data-uid="Cre8magic.Library.Guides.OqtanePageState">
-<h1 id="oqtane-pagestate-and-how-to-use-it">Oqtane PageState and How to Use it</h1>
+<h1 id="oqtane-pagestate-and-how-to-use-it" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="5">Oqtane PageState and How to Use it</h1>
 
-<p>The Oqtane <strong>PageState</strong> is an object which the platform Oqtane updates continuously
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="7">The Oqtane <strong sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="7">PageState</strong> is an object which the platform Oqtane updates continuously
 and passes on to all components on the page.</p>
-<p>Here you'll learn what the PageState is, and how to use it in different scenarios.</p>
-<h2 id="what-is-the-oqtane-pagestate">What is the Oqtane PageState</h2>
-<p>Internally Oqtane creates the <code>PageState</code> object and updates it whenever the page changes.
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="10">Here you'll learn what the PageState is, and how to use it in different scenarios.</p>
+<h2 id="what-is-the-oqtane-pagestate" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="12">What is the Oqtane PageState</h2>
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="14">Internally Oqtane creates the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="14">PageState</code> object and updates it whenever the page changes.
 It contains various things such as:</p>
-<ol>
-<li>current-page information such as the current page, list of modules on it etc.</li>
-<li>list of all pages etc.</li>
-<li>site information to access ID, URL, etc.</li>
-<li>request information such as url parameters</li>
+<ol sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="17">
+<li sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="17">current-page information such as the current page, list of modules on it etc.</li>
+<li sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="18">list of all pages etc.</li>
+<li sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="19">site information to access ID, URL, etc.</li>
+<li sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="20">request information such as url parameters</li>
 </ol>
-<p>This object is provided by Oqtane automatically as a <a class="xref" href="oqtane-cascading-parameters.html">CascadingParameter</a>.</p>
-<div class="TIP">
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="22">This object is provided by Oqtane automatically as a <a class="xref" href="oqtane-cascading-parameters.html" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber=22>CascadingParameter</a>.</p>
+<div class="TIP" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="24">
 <h5>Tip</h5>
-<p>Most operations in cre8magic will require the <code>PageState</code> object.
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="25">Most operations in cre8magic will require the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="25">PageState</code> object.
 There are a few ways to access it, explained below.</p>
 </div>
-<h2 id="get-the-pagestate">Get the PageState</h2>
-<p>If you inherit from any standard Oqtane component (<em>not recommended</em>), you can access the <code>PageState</code> object directly.
-This is because these components are already set up to receive the <code>PageState</code> object.</p>
-<div class="TIP">
+<h2 id="get-the-pagestate" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="28">Get the PageState</h2>
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="30">If you inherit from any standard Oqtane component (<em sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="30">not recommended</em>), you can access the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="30">PageState</code> object directly.
+This is because these components are already set up to receive the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="31">PageState</code> object.</p>
+<div class="TIP" sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="5">
 <h5>Tip</h5>
-<p>cre8magic ♾️ strongly believes in
-<a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">Composition over Inheritance</a>
+<p sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="6">cre8magic ♾️ strongly believes in
+<a href="https://en.wikipedia.org/wiki/Composition_over_inheritance" sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="7">Composition over Inheritance</a>
 as the pattern of choice.
-This means that you should <em>not inherit</em> from an Oqtane base class
-but instead inherit from <code>ComponentBase</code>.</p>
+This means that you should <em sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="9">not inherit</em> from an Oqtane base class
+but instead inherit from <code sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="10">ComponentBase</code>.</p>
 </div>
 
-<p>To access the <code>PageState</code> from any normal component, just add this section to your file which
-inherits from <code>ComponentBase</code>:</p>
-<pre><code class="lang-csharp">@inherits ComponentBase
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="35">To access the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="35">PageState</code> from any normal component, just add this section to your file which
+inherits from <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="36">ComponentBase</code>:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="38">@inherits ComponentBase
 @code {
     [CascadingParameter] PageState PageState { get; set; }
 }
 </code></pre>
-<h2 id="use-the-pagestate-to-get-a-kit-from-the-magicact">Use the PageState to get a Kit from the MagicAct</h2>
-<p>Almost all operations in cre8magic require a <code>Kit</code> object.
-This is created for you by the <code>IMagicAct</code> service,
-which usually needs the <code>PageState</code> to figure out the context.</p>
-<p>There are two ways that the <code>MagicAct</code> can get the <code>PageState</code>:</p>
-<ol>
-<li>Directly in the request - there are a few ways to do this</li>
-<li>Provide it in the theme, so that all components can magically have it (less code)</li>
+<h2 id="use-the-pagestate-to-get-a-kit-from-the-magicact" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="45">Use the PageState to get a Kit from the MagicAct</h2>
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="47">Almost all operations in cre8magic require a <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="47">Kit</code> object.
+This is created for you by the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="48">IMagicAct</code> service,
+which usually needs the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="49">PageState</code> to figure out the context.</p>
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="51">There are two ways that the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="51">MagicAct</code> can get the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="51">PageState</code>:</p>
+<ol sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="53">
+<li sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="53">Directly in the request - there are a few ways to do this</li>
+<li sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="54">Provide it in the theme, so that all components can magically have it (less code)</li>
 </ol>
-<h3 id="pass-the-pagestate-to-the-magicact-in-the-call">Pass the PageState to the MagicAct in the Call</h3>
-<p>Since there will be various scenarios where you need to pass the <code>PageState</code> to the <code>MagicAct</code>,
+<h3 id="pass-the-pagestate-to-the-magicact-in-the-call" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="56">Pass the PageState to the MagicAct in the Call</h3>
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="58">Since there will be various scenarios where you need to pass the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="58">PageState</code> to the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="58">MagicAct</code>,
 we have created a few ways to do this.</p>
-<p>The most simple one creates a new <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> and sets the <code>PageState</code> property:</p>
-<pre><code class="lang-csharp">@{
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="61">The most simple one creates a new <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber=61>MagicMenuSettings</a> and sets the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="61">PageState</code> property:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="63">@{
   var menuKit = MagicAct.MenuKit(new() { PageState = PageState });
 }
 </code></pre>
-<p>In other scenarios you may already have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object,
-but want to extend it with the <code>PageState</code>:</p>
-<pre><code class="lang-csharp">@code {
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="69">In other scenarios you may already have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber=69>MagicMenuSettings</a> object,
+but want to extend it with the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="70">PageState</code>:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="72">@code {
   // The PageState provided by Oqtane
   [CascadingParameter] PageState PageState { get; set; }
 
@@ -155,15 +155,15 @@ but want to extend it with the <code>PageState</code>:</p>
   var menuKit = MagicAct.MenuKit(Settings with { PageState = PageState });
 }
 </code></pre>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="86">
 <h5>Tip</h5>
-<p>The snippet above uses the <code>with</code> statement to create a new object with the <code>PageState</code> property set.
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="87">The snippet above uses the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="87">with</code> statement to create a new object with the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="87">PageState</code> property set.
 This is a core feature of the newer C# languages, and records are used extensively in cre8magic.</p>
 </div>
-<p>But the most common scenario is that you <em>might</em> have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html">MagicMenuSettings</a> object.
-Since it could also be null, the <code>with</code> statement above would fail.
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="90">But the most common scenario is that you <em sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="90">might</em> have a <a class="xref" href="../../api/ToSic.Cre8magic.Menus.MagicMenuSettings.html" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber=90>MagicMenuSettings</a> object.
+Since it could also be null, the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="91">with</code> statement above would fail.
 To make things easier, we created an extension method to allow this syntax:</p>
-<pre><code class="lang-csharp">@code {
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="94">@code {
   // The PageState provided by Oqtane
   [CascadingParameter] PageState PageState { get; set; }
 
@@ -175,13 +175,13 @@ To make things easier, we created an extension method to allow this syntax:</p>
   var menuKit = MagicAct.MenuKit(Settings.With(PageState));
 }
 </code></pre>
-<p>Internally this does the same as the original <code>with</code> statement, but also creates a new object if it's null.</p>
-<h2 id="provide-the-pagestate-in-the-theme-less-code">Provide the PageState in the Theme (less code)</h2>
-<p>The above examples are the fool-proof way of doing things,
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="108">Internally this does the same as the original <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="108">with</code> statement, but also creates a new object if it's null.</p>
+<h2 id="provide-the-pagestate-in-the-theme-less-code" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="110">Provide the PageState in the Theme (less code)</h2>
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="112">The above examples are the fool-proof way of doing things,
 but it does add some plumbing which isn't exactly magical.</p>
-<p>Since advanced setups will usually have a cre8magic-aware Theme,
-which has some initialization code running, you can also provide the <code>PageState</code> there.</p>
-<pre><code class="lang-csharp">// In your Theme.razor file
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="115">Since advanced setups will usually have a cre8magic-aware Theme,
+which has some initialization code running, you can also provide the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="116">PageState</code> there.</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="118">// In your Theme.razor file
 @code {
     /// &lt;summary&gt;
     /// Get the Magic Act from the DI
@@ -211,14 +211,14 @@ which has some initialization code running, you can also provide the <code>PageS
     }
 }
 </code></pre>
-<p>The <strong>MagicAct 🎩</strong> will remember the <code>PageState</code> for you, so your components can now be simpler.
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="150">The <strong sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="150">MagicAct 🎩</strong> will remember the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="150">PageState</code> for you, so your components can now be simpler.
 You can now write this:</p>
-<pre><code class="lang-csharp">@{
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="153">@{
   var menuKit = MagicAct.MenuKit(Settings);
 }
 </code></pre>
-<p>...instead of the fairly lengthy:</p>
-<pre><code class="lang-csharp">@code {
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="159">...instead of the fairly lengthy:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="161">@code {
   // The PageState provided by Oqtane
   [CascadingParameter] PageState PageState { get; set; }
 
@@ -230,23 +230,23 @@ You can now write this:</p>
   var menuKit = MagicAct.MenuKit(Settings.With(PageState));
 }
 </code></pre>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="175">
 <h5>Tip</h5>
-<p>When creating a theme which fully uses cre8magic, we recommend this approach.</p>
-<p>But when creating reusable components for others, you cannot be sure that
-they have configured the theme to proved the <code>PageState</code>,
-so your standalone-components should always be able to handle the <code>PageState</code> themselves.</p>
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="176">When creating a theme which fully uses cre8magic, we recommend this approach.</p>
+<p sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="178">But when creating reusable components for others, you cannot be sure that
+they have configured the theme to proved the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="179">PageState</code>,
+so your standalone-components should always be able to handle the <code sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="180">PageState</code> themselves.</p>
 </div>
-<hr>
-<h2 id="history">History</h2>
-<ol>
-<li>...</li>
+<hr sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="183">
+<h2 id="history" sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="185">History</h2>
+<ol sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="187">
+<li sourcefile="pages/library/guides/oqtane-page-state.md" sourcestartlinenumber="187">...</li>
 </ol>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/guides/oqtane-page-state.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/guides/oqtane-page-state.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

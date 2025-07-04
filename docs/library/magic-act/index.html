@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/magic-act/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/magic-act/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,77 +85,77 @@
         </div>
 
         <article data-uid="Cre8magic.Library.MagicAct.Index">
-<h1 id="magic-act--for-oqtane-themes">Magic Act 🎭 for Oqtane Themes</h1>
+<h1 id="magic-act--for-oqtane-themes" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="5">Magic Act 🎭 for Oqtane Themes</h1>
 
-<p><em>The cre8magic Magic Act is the central coordinator for everything in Oqtane Themes.</em></p>
-<div class="NOTE">
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="7"><em sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="7">The cre8magic Magic Act is the central coordinator for everything in Oqtane Themes.</em></p>
+<div class="NOTE" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="9">
 <h5>Note</h5>
-<p>If you're just getting started with <strong>cre8magic ♾️</strong>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="10">If you're just getting started with <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="10">cre8magic ♾️</strong>
 you don't need this information yet.</p>
-<p>Come back here once you've played around and want to any of the following:</p>
-<ol>
-<li>Understand how it works under the hood</li>
-<li>Create your own components</li>
-<li>Broadcast centralized settings from the theme or from a JSON file.</li>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="13">Come back here once you've played around and want to any of the following:</p>
+<ol sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="15">
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="15">Understand how it works under the hood</li>
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="16">Create your own components</li>
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="17">Broadcast centralized settings from the theme or from a JSON file.</li>
 </ol>
 </div>
-<h2 id="magic-act-tldr">Magic Act TL;DR</h2>
-<p>Having a great theme is like having a great <strong>Magic Act 🎭</strong>.</p>
-<p>So the <strong>Magic Act 🎭</strong> is mainly used for 2 things</p>
-<ol>
-<li>It is used by <strong>Components</strong> to get everything they need</li>
-<li>It is used by <strong>Theme</strong> to &quot;broadcast&quot; settings to the components</li>
+<h2 id="magic-act-tldr" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="19">Magic Act TL;DR</h2>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="21">Having a great theme is like having a great <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="21">Magic Act 🎭</strong>.</p>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="23">So the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="23">Magic Act 🎭</strong> is mainly used for 2 things</p>
+<ol sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="25">
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="25">It is used by <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="25">Components</strong> to get everything they need</li>
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="26">It is used by <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="26">Theme</strong> to &quot;broadcast&quot; settings to the components</li>
 </ol>
-<p>This is the typical process of creating output in Oqtane with <strong>cre8magic ♾️</strong>:</p>
-<div class="TIP">
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="28">This is the typical process of creating output in Oqtane with <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="28">cre8magic ♾️</strong>:</p>
+<div class="TIP" sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="2">
 <h5>Tip</h5>
-<p>This is what always happens in a nutshell:</p>
+<p sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="3">This is what always happens in a nutshell:</p>
 <!-- use https://www.mermaidchart.com/play to edit -->
-<pre><code class="lang-mermaid">flowchart LR
+<pre><code class="lang-mermaid" sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="7">flowchart LR
     S([&quot;Settings ⚙️&quot;]) --&gt; PC[&quot;Prepare Data &amp; Kit 🧰&quot;]
     PC --&gt; MC[&quot;Blazor Code 🔥&quot;]
     MC --&gt; HTML[&quot;HTML 🌐&quot;]
 </code></pre>
-<ol>
-<li><strong>Settings ⚙️</strong> tell <strong>cre8magic ♾️</strong> what to do.</li>
-<li><strong>cre8magic ♾️</strong> prepares data in a <strong>Kit 🧰</strong>, which also has more tools.</li>
-<li><strong>Blazor Code 🔥</strong> (your code 👨🏻‍💻 or a Magic Component 🧩) will...</li>
-<li>...produce the desired <strong>HTML 🌐</strong>.</li>
+<ol sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="14">
+<li sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="14"><strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="14">Settings ⚙️</strong> tell <strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="14">cre8magic ♾️</strong> what to do.</li>
+<li sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="15"><strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="15">cre8magic ♾️</strong> prepares data in a <strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="15">Kit 🧰</strong>, which also has more tools.</li>
+<li sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="16"><strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="16">Blazor Code 🔥</strong> (your code 👨🏻‍💻 or a Magic Component 🧩) will...</li>
+<li sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="17">...produce the desired <strong sourcefile="pages/library/shared/_magic-process-in-a-nutshell.md" sourcestartlinenumber="17">HTML 🌐</strong>.</li>
 </ol>
 </div>
 
-<p><strong>cre8magic ♾️</strong> allows you to use the components or create your own, and things will just work.
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="32"><strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="32">cre8magic ♾️</strong> allows you to use the components or create your own, and things will just work.
 But once you really start using it, you will want to centralize settings and make things more flexible.
-This is where the <strong>Magic Act 🎭</strong> comes in.</p>
-<p>The first thing the <strong>Magic Act 🎭</strong> does is to take any settings and prepare a <strong>Kit 🧰</strong>
+This is where the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="34">Magic Act 🎭</strong> comes in.</p>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="36">The first thing the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="36">Magic Act 🎭</strong> does is to take any settings and prepare a <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="36">Kit 🧰</strong>
 so that the components can easily create the desired output.
-By default, there are no additional settings, so the <strong>Magic Act 🎭</strong> will just use the defaults.</p>
-<p>The second thing the <strong>Magic Act 🎭</strong> does is to broadcast settings.
+By default, there are no additional settings, so the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="38">Magic Act 🎭</strong> will just use the defaults.</p>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="40">The second thing the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="40">Magic Act 🎭</strong> does is to broadcast settings.
 So once you have settings to broadcast (either from the Theme Code or from a JSON File),
-you can use the <strong>Magic Act 🎭</strong> to set everything up.</p>
-<h2 id="get-the-magic-act-">Get the Magic Act 🎭</h2>
-<p>This is the basic code you need to get the <strong>Magic Act 🎭</strong>:</p>
-<div class="tabGroup" id="tabgroup_1">
+you can use the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="42">Magic Act 🎭</strong> to set everything up.</p>
+<h2 id="get-the-magic-act-" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="44">Get the Magic Act 🎭</h2>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="46">This is the basic code you need to get the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="46">Magic Act 🎭</strong>:</p>
+<div class="tabGroup" id="tabgroup_1" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="48">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_1_blazor" role="tab" aria-controls="tabpanel_1_blazor" data-tab="blazor" tabindex="0" aria-selected="true">Blazor (*.razor)</a>
+<a href="#tabpanel_1_blazor" role="tab" aria-controls="tabpanel_1_blazor" data-tab="blazor" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="48">Blazor (*.razor)</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_1_blazor-csharp" role="tab" aria-controls="tabpanel_1_blazor-csharp" data-tab="blazor-csharp" tabindex="-1">Blazor C# (base class)</a>
+<a href="#tabpanel_1_blazor-csharp" role="tab" aria-controls="tabpanel_1_blazor-csharp" data-tab="blazor-csharp" tabindex="-1" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="55">Blazor C# (base class)</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_1_csharp-service" role="tab" aria-controls="tabpanel_1_csharp-service" data-tab="csharp-service" tabindex="-1">C# Service</a>
+<a href="#tabpanel_1_csharp-service" role="tab" aria-controls="tabpanel_1_csharp-service" data-tab="csharp-service" tabindex="-1" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="66">C# Service</a>
 </li>
 </ul>
 <section id="tabpanel_1_blazor" role="tabpanel" data-tab="blazor">
 
-<pre><code class="lang-razor">@using ToSic.Cre8magic.Act
+<pre><code class="lang-razor" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="50">@using ToSic.Cre8magic.Act
 @inject IMagicAct MagicAct
 </code></pre>
 </section>
 <section id="tabpanel_1_blazor-csharp" role="tabpanel" data-tab="blazor-csharp" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-csharp">using ToSic.Cre8magic.Act;
+<pre><code class="lang-csharp" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="57">using ToSic.Cre8magic.Act;
 
 public class MyComponent : ComponentBase
 {
@@ -165,7 +165,7 @@ public class MyComponent : ComponentBase
 </section>
 <section id="tabpanel_1_csharp-service" role="tabpanel" data-tab="csharp-service" aria-hidden="true" hidden="hidden">
 
-<pre><code class="lang-csharp">using ToSic.Cre8magic.Act;
+<pre><code class="lang-csharp" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="68">using ToSic.Cre8magic.Act;
 
 public class MyService(IMagicAct magicAct): IMyService
 {
@@ -174,33 +174,33 @@ public class MyService(IMagicAct magicAct): IMyService
 </code></pre>
 </section>
 </div>
-<h2 id="use-in-components">Use in Components</h2>
-<div class="tabGroup" id="tabgroup_2">
+<h2 id="use-in-components" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="79">Use in Components</h2>
+<div class="tabGroup" id="tabgroup_2" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="81">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_2_pre-built-components" role="tab" aria-controls="tabpanel_2_pre-built-components" data-tab="pre-built-components" tabindex="0" aria-selected="true">Pre-Built Components</a>
+<a href="#tabpanel_2_pre-built-components" role="tab" aria-controls="tabpanel_2_pre-built-components" data-tab="pre-built-components" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="81">Pre-Built Components</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_2_custom-components" role="tab" aria-controls="tabpanel_2_custom-components" data-tab="custom-components" tabindex="-1">Custom Components</a>
+<a href="#tabpanel_2_custom-components" role="tab" aria-controls="tabpanel_2_custom-components" data-tab="custom-components" tabindex="-1" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="94">Custom Components</a>
 </li>
 </ul>
 <section id="tabpanel_2_pre-built-components" role="tabpanel" data-tab="pre-built-components">
 
-<p>When using the pre-built components, you don't need to worry about the <strong>Magic Act 🎭</strong>.
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="83">When using the pre-built components, you don't need to worry about the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="83">Magic Act 🎭</strong>.
 Code like this will just do everything for you:</p>
-<pre><code class="lang-html">@using ToSic.Cre8magic.OqtaneBs5
+<pre><code class="lang-html" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="86">@using ToSic.Cre8magic.OqtaneBs5
 &lt;MagicMenu Settings='new() { Pick = &quot;/&quot; }'/&gt;
 </code></pre>
-<p>Internally these components will use the <strong>Magic Act 🎭</strong> to get the settings and prepare the <strong>Kit 🧰</strong>,
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="91">Internally these components will use the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="91">Magic Act 🎭</strong> to get the settings and prepare the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="91">Kit 🧰</strong>,
 but you don't need to know about this.</p>
 </section>
 <section id="tabpanel_2_custom-components" role="tabpanel" data-tab="custom-components" aria-hidden="true" hidden="hidden">
 
-<p>When you're creating your own components,
-you will need to use the <strong>Magic Act 🎭</strong> to get the <strong>Kits 🧰</strong>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="96">When you're creating your own components,
+you will need to use the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="97">Magic Act 🎭</strong> to get the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="97">Kits 🧰</strong>
 and start creating your output.
 Here's an example:</p>
-<pre><code class="lang-razor">@inherits ComponentBase
+<pre><code class="lang-razor" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="101">@inherits ComponentBase
 @using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Pages
 @* Inject the IMagicAct service *@
@@ -225,17 +225,17 @@ Here's an example:</p>
 </code></pre>
 </section>
 </div>
-<h2 id="use-in-themes">Use in Themes</h2>
-<p>You can use the <strong>Magic Act 🎭</strong> in your theme to get a <strong>ThemeKit</strong> and work with it.</p>
-<div class="tabGroup" id="tabgroup_3">
+<h2 id="use-in-themes" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="128">Use in Themes</h2>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="130">You can use the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="130">Magic Act 🎭</strong> in your theme to get a <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="130">ThemeKit</strong> and work with it.</p>
+<div class="tabGroup" id="tabgroup_3" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="132">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_3_basic-example" role="tab" aria-controls="tabpanel_3_basic-example" data-tab="basic-example" tabindex="0" aria-selected="true">Basic Example</a>
+<a href="#tabpanel_3_basic-example" role="tab" aria-controls="tabpanel_3_basic-example" data-tab="basic-example" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="132">Basic Example</a>
 </li>
 </ul>
 <section id="tabpanel_3_basic-example" role="tabpanel" data-tab="basic-example">
 
-<pre><code class="lang-razor">@using ToSic.Cre8magic.Act
+<pre><code class="lang-razor" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="134">@using ToSic.Cre8magic.Act
 @using ToSic.Cre8magic.Themes;
 @inject IMagicAct MagicAct
 @code {
@@ -243,48 +243,48 @@ Here's an example:</p>
     field ??= MagicAct.ThemeKit(new() { PageState = PageState });
 }
 </code></pre>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="144">
 <h5>Note</h5>
-<p>Doing this is by itself doesn't make much sense.
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="145">Doing this is by itself doesn't make much sense.
 Usually you want to load and broadcast settings from the them.
-For this, it's best to inherit the <code>MagicTheme</code> (see next section).</p>
-<p>If you in inherit from <code>MagicTheme</code>, it already has the <code>ThemeKit</code> property.</p>
+For this, it's best to inherit the <code sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="147">MagicTheme</code> (see next section).</p>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="149">If you in inherit from <code sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="149">MagicTheme</code>, it already has the <code sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="149">ThemeKit</code> property.</p>
 </div>
 </section>
 </div>
-<h3 id="inherit-magictheme--broadcast-settings">Inherit MagicTheme &amp; Broadcast Settings</h3>
-<p>When creating a theme, you will typically</p>
-<ol>
-<li>inherit from <code>MagicTheme</code></li>
-<li>initialize the <code>ThemePackage</code>...
-<ol>
-<li>...with the settings you want to broadcast</li>
-<li><em>or</em> the JSON file name.</li>
+<h3 id="inherit-magictheme--broadcast-settings" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="153">Inherit MagicTheme &amp; Broadcast Settings</h3>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="155">When creating a theme, you will typically</p>
+<ol sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="157">
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="157">inherit from <code sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="157">MagicTheme</code></li>
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="158">initialize the <code sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="158">ThemePackage</code>...
+<ol sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="159">
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="159">...with the settings you want to broadcast</li>
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="160"><em sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="160">or</em> the JSON file name.</li>
 </ol>
 </li>
 </ol>
-<p>This will allow the <strong>Magic Act 🎭</strong> to pick up all relevant settings such as the path etc.
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="162">This will allow the <strong sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="162">Magic Act 🎭</strong> to pick up all relevant settings such as the path etc.
 From now on, every component within this theme will have these settings.</p>
-<div class="tabGroup" id="tabgroup_4">
+<div class="tabGroup" id="tabgroup_4" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="165">
 <ul role="tablist">
 <li role="presentation">
-<a href="#tabpanel_4_theme-json" role="tab" aria-controls="tabpanel_4_theme-json" data-tab="theme-json" tabindex="0" aria-selected="true">Example JSON Settings</a>
+<a href="#tabpanel_4_theme-json" role="tab" aria-controls="tabpanel_4_theme-json" data-tab="theme-json" tabindex="0" aria-selected="true" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="165">Example JSON Settings</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_4_theme-single-package" role="tab" aria-controls="tabpanel_4_theme-single-package" data-tab="theme-single-package" tabindex="-1">Example Code Settings</a>
+<a href="#tabpanel_4_theme-single-package" role="tab" aria-controls="tabpanel_4_theme-single-package" data-tab="theme-single-package" tabindex="-1" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="243">Example Code Settings</a>
 </li>
 <li role="presentation">
-<a href="#tabpanel_4_theme-with-variations" role="tab" aria-controls="tabpanel_4_theme-with-variations" data-tab="theme-with-variations" tabindex="-1">Theme with Variations</a>
+<a href="#tabpanel_4_theme-with-variations" role="tab" aria-controls="tabpanel_4_theme-with-variations" data-tab="theme-with-variations" tabindex="-1" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="297">Theme with Variations</a>
 </li>
 </ul>
 <section id="tabpanel_4_theme-json" role="tabpanel" data-tab="theme-json">
 
-<p>In this case we have the settings in a JSON file.</p>
-<h5 id="mythemecs">MyTheme.cs</h5>
-<p>The default is that we have a json file called <code>theme.json</code> in the
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="167">In this case we have the settings in a JSON file.</p>
+<h5 id="mythemecs" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="169">MyTheme.cs</h5>
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="171">The default is that we have a json file called <code sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="171">theme.json</code> in the
 theme folder, which contains all the settings.
 So if only a ThemePackage is defined, this is the default.</p>
-<pre><code class="lang-c#">public class MyTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
+<pre><code class="lang-c#" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="175">public class MyTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
 {
   /// &lt;summary&gt;
   /// Set the ThemePackage, so the system has all it needs.
@@ -295,8 +295,8 @@ So if only a ThemePackage is defined, this is the default.</p>
   // ...
 }
 </code></pre>
-<h5 id="themejson">theme.json</h5>
-<pre><code class="lang-jsonc">{
+<h5 id="themejson" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="188">theme.json</h5>
+<pre><code class="lang-jsonc" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="190">{
   &quot;version&quot;: 0.05,
   // Theme Configurations
   &quot;themes&quot;: {
@@ -349,9 +349,9 @@ So if only a ThemePackage is defined, this is the default.</p>
 </section>
 <section id="tabpanel_4_theme-single-package" role="tabpanel" data-tab="theme-single-package" aria-hidden="true" hidden="hidden">
 
-<p>In this case we have the code for the theme and the settings - typically in a separate file.</p>
-<h5 id="mythemecs-1">MyTheme.cs</h5>
-<pre><code class="lang-c#">public class MyTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="245">In this case we have the code for the theme and the settings - typically in a separate file.</p>
+<h5 id="mythemecs-1" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="247">MyTheme.cs</h5>
+<pre><code class="lang-c#" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="249">public class MyTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
 {
   /// &lt;summary&gt;
   /// Set the ThemePackage, so the system has all it needs.
@@ -364,8 +364,8 @@ So if only a ThemePackage is defined, this is the default.</p>
   // ...
 }
 </code></pre>
-<h5 id="mythemesettingscs">MyThemeSettings.cs</h5>
-<pre><code class="lang-c#">internal class MyThemeSettings
+<h5 id="mythemesettingscs" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="264">MyThemeSettings.cs</h5>
+<pre><code class="lang-c#" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="266">internal class MyThemeSettings
 {
   public static MagicBook Book =&gt; new()
   {
@@ -397,9 +397,9 @@ So if only a ThemePackage is defined, this is the default.</p>
 </section>
 <section id="tabpanel_4_theme-with-variations" role="tabpanel" data-tab="theme-with-variations" aria-hidden="true" hidden="hidden">
 
-<p>If your theme has multiple configurations, you may also want to specify
+<p sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="299">If your theme has multiple configurations, you may also want to specify
 a name so that the system will retrieve the correct settings.</p>
-<pre><code class="lang-c#">public class MyDefaultTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
+<pre><code class="lang-c#" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="302">public class MyDefaultTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
 {
   /// &lt;summary&gt;
   /// Set the ThemePackage, so the system has all it needs.
@@ -410,7 +410,7 @@ a name so that the system will retrieve the correct settings.</p>
   // ...
 }
 </code></pre>
-<pre><code class="lang-c#">public class MyGreenTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
+<pre><code class="lang-c#" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="315">public class MyGreenTheme : ToSic.Cre8magic.OqtaneBs5.MagicTheme
 {
   /// &lt;summary&gt;
   /// Set the ThemePackage, so the system has all it needs.
@@ -423,20 +423,20 @@ a name so that the system will retrieve the correct settings.</p>
 </code></pre>
 </section>
 </div>
-<hr>
-<h2 id="missing-features">Missing Features</h2>
-<ol>
-<li>TODO:</li>
+<hr sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="333">
+<h2 id="missing-features" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="335">Missing Features</h2>
+<ol sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="337">
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="337">TODO:</li>
 </ol>
-<h2 id="history">History</h2>
-<ol>
-<li>Added in v0.05 2024-10</li>
+<h2 id="history" sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="339">History</h2>
+<ol sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="341">
+<li sourcefile="pages/library/magic-act/index.md" sourcestartlinenumber="341">Added in v0.05 2024-10</li>
 </ol>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/magic-act/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/magic-act/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

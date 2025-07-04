@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/how-it-works.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/how-it-works.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,18 +85,18 @@
         </div>
 
         <article data-uid="Cre8magic.Library.HowItWorks.Index">
-<h1 id="cre8magic--how-it-works">cre8magic – How It Works</h1>
+<h1 id="cre8magic--how-it-works" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="5">cre8magic – How It Works</h1>
 
-<p>Below we'll give you an example of what you would normally have, and how it would be done with cre8magic.</p>
-<h2 id="example-problem-smart-module-containers">Example Problem: Smart Module Containers</h2>
-<p>Let's assume you have a container which is a bunch of <code>div</code> tags and a bit of CSS.
+<p sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="7">Below we'll give you an example of what you would normally have, and how it would be done with cre8magic.</p>
+<h2 id="example-problem-smart-module-containers" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="9">Example Problem: Smart Module Containers</h2>
+<p sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="11">Let's assume you have a container which is a bunch of <code sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="11">div</code> tags and a bit of CSS.
 In this example we have two features we are using</p>
-<ol>
-<li>a special ID for CSS targeting (for special cases where we wish to have CSS for a very specific module)</li>
-<li>some CSS classes which could vary depending on certain factors - such as if it's unpublished to show something is wrong</li>
+<ol sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="14">
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="14">a special ID for CSS targeting (for special cases where we wish to have CSS for a very specific module)</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="15">some CSS classes which could vary depending on certain factors - such as if it's unpublished to show something is wrong</li>
 </ol>
-<h2 id="classic-solution">Classic Solution</h2>
-<pre><code class="lang-razor">@inherits Oqtane.Themes.ContainerBase
+<h2 id="classic-solution" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="17">Classic Solution</h2>
+<pre><code class="lang-razor" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="19">@inherits Oqtane.Themes.ContainerBase
 &lt;div id='module-@ModuleState.ModuleId' class='to-shine-background-container py-4 @(CheckIfModulePublished() ? &quot;&quot; : &quot;module-unpublished&quot;) @(ModuleState.UseAdminContainer ? &quot;to-shine-admin-container&quot; : &quot;...&quot;)'&gt;
     &lt;div class=&quot;container&quot;&gt;
         &lt;Oqtane.Themes.Controls.ModuleActions/&gt;
@@ -111,16 +111,16 @@ In this example we have two features we are using</p>
   }
 }
 </code></pre>
-<p>Based on this example you can see, that there is a mix of logic and design which is</p>
-<ol>
-<li>hard to read</li>
-<li>hard for a designer to develop</li>
-<li>error prone</li>
-<li>hard to maintain</li>
+<p sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="36">Based on this example you can see, that there is a mix of logic and design which is</p>
+<ol sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="38">
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="38">hard to read</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="39">hard for a designer to develop</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="40">error prone</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="41">hard to maintain</li>
 </ol>
-<h2 id="simple-with-cre8magic">Simple with cre8magic</h2>
-<p>Here's how it works with cre8magic:</p>
-<pre><code class="lang-razor">@inherits MagicContainer
+<h2 id="simple-with-cre8magic" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="43">Simple with cre8magic</h2>
+<p sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="45">Here's how it works with cre8magic:</p>
+<pre><code class="lang-razor" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="47">@inherits MagicContainer
 &lt;div id='@Value(&quot;Id&quot;)' class='@Classes(&quot;div&quot;)'&gt;
     &lt;div class=&quot;container&quot;&gt;
         &lt;Oqtane.Themes.Controls.ModuleActions/&gt;
@@ -128,9 +128,9 @@ In this example we have two features we are using</p>
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>For the system to know what it should do, there are <strong>Magic Settings</strong> which are easy to manage.
+<p sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="57">For the system to know what it should do, there are <strong sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="57">Magic Settings</strong> which are easy to manage.
 Below we're only showing the settings relevant to this example, there are of course more:</p>
-<pre><code class="lang-jsonc">{
+<pre><code class="lang-jsonc" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="60">{
 &quot;themeDesigns&quot;: {
   &quot;Default&quot;: {
       // ...a lot of settings not relevant for this example...
@@ -147,52 +147,52 @@ Below we're only showing the settings relevant to this example, there are of cou
   }
 }
 </code></pre>
-<h2 id="the-magic-in-the-background">The Magic in the Background</h2>
-<p>cre8magic will do a bunch of things in the background, such as:</p>
-<ol>
-<li>Load configuration from
-<ol>
-<li>the DB targeting the page (WIP)</li>
-<li>the DB targeting a branch in the menu (WIP)</li>
-<li>the DB targeting the site (WIP)</li>
-<li>JSON targeting all kinds of scenarios</li>
-<li><del>defaults in your code</del> (not recommended)</li>
-<li>final defaults in cre8magic</li>
+<h2 id="the-magic-in-the-background" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="79">The Magic in the Background</h2>
+<p sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="81">cre8magic will do a bunch of things in the background, such as:</p>
+<ol sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="83">
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="83">Load configuration from
+<ol sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="84">
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="84">the DB targeting the page (WIP)</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="85">the DB targeting a branch in the menu (WIP)</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="86">the DB targeting the site (WIP)</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="87">JSON targeting all kinds of scenarios</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="88"><del sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="88">defaults in your code</del> (not recommended)</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="89">final defaults in cre8magic</li>
 </ol>
 </li>
-<li>Flatten configurations to match the current theme
-<ol>
-<li>Use names to find the configuration for the theme</li>
-<li>Use further names to find the configuration for each part, such as Menus, Breadcrumbs etc.</li>
-<li>Flatten all to the current scenario</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="90">Flatten configurations to match the current theme
+<ol sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="91">
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="91">Use names to find the configuration for the theme</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="92">Use further names to find the configuration for each part, such as Menus, Breadcrumbs etc.</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="93">Flatten all to the current scenario</li>
 </ol>
 </li>
-<li>Broadcast these flattened <a class="xref" href="settings/index.html">Magic Settings</a> from the Theme to all Controls
-<ol>
-<li>Initialize the proper settings</li>
-<li>Broadcast these settings to all controls that are somewhere within the theme object tree</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="94">Broadcast these flattened <a class="xref" href="settings/index.html" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber=94>Magic Settings</a> from the Theme to all Controls
+<ol sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="95">
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="95">Initialize the proper settings</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="96">Broadcast these settings to all controls that are somewhere within the theme object tree</li>
 </ol>
 </li>
-<li>Provide simple accessors
-<ol>
-<li>The <code>MagicTheme</code>, <code>MagicContainer</code>, <code>MagicControl</code> etc. all pick up the settings automatically</li>
-<li>...and have special APIs such as <code>@Classes(...)</code> helpers to retrieve the values</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="97">Provide simple accessors
+<ol sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="98">
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="98">The <code sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="98">MagicTheme</code>, <code sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="98">MagicContainer</code>, <code sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="98">MagicControl</code> etc. all pick up the settings automatically</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="99">...and have special APIs such as <code sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="99">@Classes(...)</code> helpers to retrieve the values</li>
 </ol>
 </li>
-<li>Process Tokens
-<ol>
-<li>Settings can contain tokens such as <code>[Module.Id]</code> which will be rendered into the final result</li>
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="100">Process Tokens
+<ol sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="101">
+<li sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="101">Settings can contain tokens such as <code sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="101">[Module.Id]</code> which will be rendered into the final result</li>
 </ol>
 </li>
 </ol>
-<h2 id="tldr">TL;DR</h2>
-<p>You got this far? Let's go back to home and start designing!</p>
-<p>👉🏾 <a href="../index.html">Home</a></p>
+<h2 id="tldr" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="103">TL;DR</h2>
+<p sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="105">You got this far? Let's go back to home and start designing!</p>
+<p sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="107">👉🏾 <a href="../index.html" sourcefile="pages/library/how-it-works.md" sourcestartlinenumber="107">Home</a></p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/how-it-works.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/how-it-works.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

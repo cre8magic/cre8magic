@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,13 +87,13 @@
         <article data-uid="Cre8magic.MagicTools.TemplateGenerator.Index">
 
 <img src="../../pages/magic-tools/template-generator/assets/logo-400.webp" class="float-right">
-<h1 id="cre8magic--template-generator">cre8magic ♾️ Template Generator</h1>
-<p>The cre8magic Template Generator will help you convert an existing themes into Oqtane templates.
+<h1 id="cre8magic--template-generator" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="7">cre8magic ♾️ Template Generator</h1>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="9">The cre8magic Template Generator will help you convert an existing themes into Oqtane templates.
 These can then be placed inside Oqtane so that users can develop their own themes based on your template.</p>
-<h2 id="what-is-an-oqtane-template">What is an Oqtane Template?</h2>
-<p>An Oqtane template is basically a set of source files containing a lot of placeholders.
-For example, a <code>ThemeInfo.cs</code> might look like this:</p>
-<pre><code class="lang-csharp">namespace [Owner].Theme.[Theme]; // &lt;-- This cannot compile
+<h2 id="what-is-an-oqtane-template" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="12">What is an Oqtane Template?</h2>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="14">An Oqtane template is basically a set of source files containing a lot of placeholders.
+For example, a <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="15">ThemeInfo.cs</code> might look like this:</p>
+<pre><code class="lang-csharp" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="17">namespace [Owner].Theme.[Theme]; // &lt;-- This cannot compile
 
 public class ThemeInfo : ITheme
 {
@@ -110,64 +110,64 @@ public class ThemeInfo : ITheme
   };
 }
 </code></pre>
-<p>This is difficult to develop, since it cannot be tested with the placeholders.</p>
-<div class="TIP">
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="36">This is difficult to develop, since it cannot be tested with the placeholders.</p>
+<div class="TIP" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="38">
 <h5>Tip</h5>
-<p>What we need is a way to work on a Theme without having to deal with the placeholders.
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="39">What we need is a way to work on a Theme without having to deal with the placeholders.
 Then we need a magic converter to take the latest version of the theme and convert it into a template.</p>
-<p>The <strong>cre8magic ♾️ Template Generator</strong> will help you convert your existing themes into templates.
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="42">The <strong sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="42">cre8magic ♾️ Template Generator</strong> will help you convert your existing themes into templates.
 You can use it again and again, as your theme evolves.</p>
 </div>
-<p>The <strong>cre8magic ♾️ Template Generator</strong> takes a) an existing theme and b) a <a class="xref" href="config.html">configuration file</a>,
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="45">The <strong sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="45">cre8magic ♾️ Template Generator</strong> takes a) an existing theme and b) a <a class="xref" href="config.html" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber=45>configuration file</a>,
 and generates all the files you need to create a theme template.</p>
-<p>The converter is being used extensively by the <strong>cre8magic ♾️</strong> team to create new themes.</p>
-<p>We expect to release the first version of the converter in 2025-Q3.</p>
-<h2 id="what-the-template-generator-does">What the Template Generator Does</h2>
-<p>The template generator will run 3 distinct tasks:</p>
-<ol>
-<li>Select files based on specific patterns in the configuration file.
-<ul>
-<li>For example, it will select all assets in the <code>wwwroot</code> folder and all <code>.cs</code> files in the <code>Client</code> folder.</li>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="48">The converter is being used extensively by the <strong sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="48">cre8magic ♾️</strong> team to create new themes.</p>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="50">We expect to release the first version of the converter in 2025-Q3.</p>
+<h2 id="what-the-template-generator-does" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="52">What the Template Generator Does</h2>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="54">The template generator will run 3 distinct tasks:</p>
+<ol sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="56">
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="56">Select files based on specific patterns in the configuration file.
+<ul sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="57">
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="57">For example, it will select all assets in the <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="57">wwwroot</code> folder and all <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="57">.cs</code> files in the <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="57">Client</code> folder.</li>
 </ul>
 </li>
-<li>Rename files and folders based on the configuration file.
-<ul>
-<li>For example, it will rename <code>ToSic.Cre8magic.Theme.Basic.sln</code> to <code>[Owner].Theme.[Theme].sln</code>.</li>
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="58">Rename files and folders based on the configuration file.
+<ul sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="59">
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="59">For example, it will rename <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="59">ToSic.Cre8magic.Theme.Basic.sln</code> to <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="59">[Owner].Theme.[Theme].sln</code>.</li>
 </ul>
 </li>
-<li>Replace placeholders in the selected files with the actual values from the configuration file.
-<ul>
-<li>For example, it would replace <code>namespace ToSic.Cre8magic.Theme.Basic;</code> with <code>namespace [Owner].Theme.[Theme];</code> in the <code>ThemeInfo.cs</code> file.</li>
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="60">Replace placeholders in the selected files with the actual values from the configuration file.
+<ul sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="61">
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="61">For example, it would replace <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="61">namespace ToSic.Cre8magic.Theme.Basic;</code> with <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="61">namespace [Owner].Theme.[Theme];</code> in the <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="61">ThemeInfo.cs</code> file.</li>
 </ul>
 </li>
 </ol>
-<h2 id="how-to-use-the-generator">How to Use the Generator</h2>
-<ol>
-<li>Create a theme any way you want, test it, develop it, etc.</li>
-<li>Add a <a class="xref" href="../../oqtane-theme-guides/theme-templates/index.html"><code>template.json</code> file</a> TODO: @STV PLS EXPLAIN IT ON THAT PAGE - this will be used by Oqtane to describe the Template to the user.</li>
-<li>Add a <code>template-generator.config.json</code> <a class="xref" href="config.html">configuration</a> file to the theme folder.</li>
-<li>Run the converter, which will generate a new folder with the template files.
-<ol>
-<li>During testing, you will deploy it to ... ???</li>
-<li>To release it as a nuget package, you will ...</li>
+<h2 id="how-to-use-the-generator" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="64">How to Use the Generator</h2>
+<ol sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="66">
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="66">Create a theme any way you want, test it, develop it, etc.</li>
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="67">Add a <a class="xref" href="../../oqtane-theme-guides/theme-templates/index.html" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber=67><code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="67">template.json</code> file</a> TODO: @STV PLS EXPLAIN IT ON THAT PAGE - this will be used by Oqtane to describe the Template to the user.</li>
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="68">Add a <code sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="68">template-generator.config.json</code> <a class="xref" href="config.html" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber=68>configuration</a> file to the theme folder.</li>
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="69">Run the converter, which will generate a new folder with the template files.
+<ol sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="70">
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="70">During testing, you will deploy it to ... ???</li>
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="71">To release it as a nuget package, you will ...</li>
 </ol>
 </li>
-<li>Use the generated files to create an installable NuGet package.</li>
-<li>Deploy directly or through the Oqtane Marketplace.</li>
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="72">Use the generated files to create an installable NuGet package.</li>
+<li sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="73">Deploy directly or through the Oqtane Marketplace.</li>
 </ol>
-<h2 id="how-to-install-the-generator">How to Install the Generator</h2>
-<p>The generator is a command line tool that you can run from the terminal or command prompt.</p>
-<p>Download the latest version from the <a href="https://github.com/cre8magic/oqtane-template-generator/releases">releases page</a>
+<h2 id="how-to-install-the-generator" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="75">How to Install the Generator</h2>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="77">The generator is a command line tool that you can run from the terminal or command prompt.</p>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="79">Download the latest version from the <a href="https://github.com/cre8magic/oqtane-template-generator/releases" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="79">releases page</a>
 and place it anywhere you want - it's a standalone executable.</p>
-<h2 id="how-to-use-the-generator-todo-">How to Use the Generator TODO: @stv</h2>
-<p>...</p>
-<p>...</p>
-<p>➡️ See the <a class="xref" href="config.html">Configuration File</a> for details on how to configure the generator.</p>
+<h2 id="how-to-use-the-generator-todo-" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="82">How to Use the Generator TODO: @stv</h2>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="84">...</p>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="86">...</p>
+<p sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber="88">➡️ See the <a class="xref" href="config.html" sourcefile="pages/magic-tools/template-generator/index.md" sourcestartlinenumber=88>Configuration File</a> for details on how to configure the generator.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

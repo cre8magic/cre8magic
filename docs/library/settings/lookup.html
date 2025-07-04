@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/settings/lookup.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/settings/lookup.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,85 +85,85 @@
         </div>
 
         <article data-uid="Cre8magic.Library.MagicSettings.SettingsLookupWithName">
-<h1 id="cre8magic---magic-settings-lookup-with-name-wip">cre8magic - Magic Settings Lookup With Name WIP</h1>
+<h1 id="cre8magic---magic-settings-lookup-with-name-wip" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="5">cre8magic - Magic Settings Lookup With Name WIP</h1>
 
-<p>WIP trying to document how the settings are looked up.</p>
-<h2 id="named-parts">Named Parts</h2>
-<p>Every part <em>can</em> have a name.
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="7">WIP trying to document how the settings are looked up.</p>
+<h2 id="named-parts" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="9">Named Parts</h2>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="11">Every part <em sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="11">can</em> have a name.
 This name is used to look up the settings for the part.</p>
-<h2 id="goals">Goals</h2>
-<ol>
-<li>Every part is named / identified</li>
-<li>...and if not, a default name/identifier is used...</li>
-<li>The name is used to look up the spell</li>
-<li>The name is used to look up the blueprints</li>
-<li>Theme Variants can &quot;redirect&quot; the name(s)</li>
-<li>The settings can be reused and expanded by another name (<code>@inherits</code>) - maybe change to <code>@import</code> to also allow partial imports?</li>
+<h2 id="goals" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="14">Goals</h2>
+<ol sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="16">
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="16">Every part is named / identified</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="17">...and if not, a default name/identifier is used...</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="18">The name is used to look up the spell</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="19">The name is used to look up the blueprints</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="20">Theme Variants can &quot;redirect&quot; the name(s)</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="21">The settings can be reused and expanded by another name (<code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="21">@inherits</code>) - maybe change to <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="21">@import</code> to also allow partial imports?</li>
 </ol>
-<h2 id="simple-use-case">Simple Use Case</h2>
-<p>Let's look at a theme which has the name <code>MainMenu</code>.</p>
-<pre><code class="lang-html">&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;
+<h2 id="simple-use-case" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="24">Simple Use Case</h2>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="26">Let's look at a theme which has the name <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="26">MainMenu</code>.</p>
+<pre><code class="lang-html" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="28">&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;
 </code></pre>
-<p>The system will then use the <strong>MagicBook</strong> in the <strong>MagicThemePackage</strong> and look for:</p>
-<ul>
-<li>Menus (Settings) with the name <code>MainMenu</code></li>
-<li>MenuBlueprints with the name <code>MainMenu</code></li>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="32">The system will then use the <strong sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="32">MagicBook</strong> in the <strong sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="32">MagicThemePackage</strong> and look for:</p>
+<ul sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="34">
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="34">Menus (Settings) with the name <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="34">MainMenu</code></li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="35">MenuBlueprints with the name <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="35">MainMenu</code></li>
 </ul>
-<p>These will then be used to create the menu.</p>
-<h2 id="advanced-use-case-with-multiple-theme-variants">Advanced Use Case with Multiple Theme Variants</h2>
-<p>Let's say you have a theme with multiple variants, such as <code>FixedWidth</code> and <code>FullScreen</code>.
-In this case it could be that the <code>MainMenu</code> is different for each variant - and some things such as the <code>SideMenu</code> may not even appear.</p>
-<p>In most of these cases, the Razor will actually stay the same:</p>
-<pre><code class="lang-html">&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="37">These will then be used to create the menu.</p>
+<h2 id="advanced-use-case-with-multiple-theme-variants" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="39">Advanced Use Case with Multiple Theme Variants</h2>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="41">Let's say you have a theme with multiple variants, such as <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="41">FixedWidth</code> and <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="41">FullScreen</code>.
+In this case it could be that the <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="42">MainMenu</code> is different for each variant - and some things such as the <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="42">SideMenu</code> may not even appear.</p>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="44">In most of these cases, the Razor will actually stay the same:</p>
+<pre><code class="lang-html" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="46">&lt;MagicMenu Name=&quot;MainMenu&quot; /&gt;
 </code></pre>
-<p>...but the Settings-Lookup <em>can</em> have an additional step:</p>
-<ol>
-<li>Check the <strong>ThemeSettings</strong> in the <strong>Book</strong> and look at the Parts-Map</li>
-<li>If the <code>MainMenu</code> is found in the Map, then check if there are renames. Let's assume that
-<ol>
-<li>The <code>FixedWidth</code> theme maps the design to <code>MainMenuFixedWidth</code> and leaves the Settings as is</li>
-<li>The <code>FullScreen</code> leaves everything as is</li>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="50">...but the Settings-Lookup <em sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="50">can</em> have an additional step:</p>
+<ol sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="52">
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="52">Check the <strong sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="52">ThemeSettings</strong> in the <strong sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="52">Book</strong> and look at the Parts-Map</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="53">If the <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="53">MainMenu</code> is found in the Map, then check if there are renames. Let's assume that
+<ol sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="54">
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="54">The <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="54">FixedWidth</code> theme maps the design to <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="54">MainMenuFixedWidth</code> and leaves the Settings as is</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="55">The <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="55">FullScreen</code> leaves everything as is</li>
 </ol>
 </li>
-<li>The new names are then used to find the Settings and Blueprints</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="56">The new names are then used to find the Settings and Blueprints</li>
 </ol>
-<h2 id="notes--wip">Notes / WIP</h2>
-<h3 id="scenario-no-lookup---probably-no-name-should-be-provided">Scenario: No Lookup - probably no name should be provided?</h3>
-<p>Code contains all settings</p>
-<ol>
-<li>No lookup is desired!</li>
-<li>Fallback values should be applied if anything is missing</li>
+<h2 id="notes--wip" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="60">Notes / WIP</h2>
+<h3 id="scenario-no-lookup---probably-no-name-should-be-provided" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="62">Scenario: No Lookup - probably no name should be provided?</h3>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="64">Code contains all settings</p>
+<ol sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="66">
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="66">No lookup is desired!</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="67">Fallback values should be applied if anything is missing</li>
 </ol>
-<h3 id="scenario-lookup-main-name-and-maybe-merge---probably-name-should-be-provided">Scenario: Lookup Main Name and maybe Merge - probably name should be provided</h3>
-<ol>
-<li>Lookup is desired, by main name</li>
-<li>If not found, just use empty</li>
-<li>Fallback values should be applied if anything is missing</li>
+<h3 id="scenario-lookup-main-name-and-maybe-merge---probably-name-should-be-provided" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="69">Scenario: Lookup Main Name and maybe Merge - probably name should be provided</h3>
+<ol sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="71">
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="71">Lookup is desired, by main name</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="72">If not found, just use empty</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="73">Fallback values should be applied if anything is missing</li>
 </ol>
-<h3 id="scenario-lookup-every-section-with-exact-names-and-maybe-merge---probably-all-names-should-be-provided">Scenario: Lookup every section with Exact Names and maybe Merge - probably all names should be provided</h3>
-<ol>
-<li>Lookup is desired, by exact names - Settings &amp; Blueprint</li>
-<li>If section name not provided, use main-name...</li>
-<li>If not found, just use empty</li>
-<li>Fallback values should be applied if anything is missing</li>
+<h3 id="scenario-lookup-every-section-with-exact-names-and-maybe-merge---probably-all-names-should-be-provided" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="75">Scenario: Lookup every section with Exact Names and maybe Merge - probably all names should be provided</h3>
+<ol sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="77">
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="77">Lookup is desired, by exact names - Settings &amp; Blueprint</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="78">If section name not provided, use main-name...</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="79">If not found, just use empty</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="80">Fallback values should be applied if anything is missing</li>
 </ol>
-<h2 id="how-to">How To</h2>
-<h3 id="theme-variations">Theme Variations</h3>
-<h4 id="one-variation-only">One variation only</h4>
-<p>todo</p>
-<h4 id="multiple-variations-with-same-settings">Multiple Variations with Same Settings</h4>
-<p>todo</p>
-<h4 id="multiple-variations-with-only-a-different-blueprint">Multiple Variations with only a different Blueprint</h4>
-<ol>
-<li>Create the default configuration</li>
-<li>For each name, make sure you create a theme with <code>@inherits</code> and the default configuration</li>
+<h2 id="how-to" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="84">How To</h2>
+<h3 id="theme-variations" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="86">Theme Variations</h3>
+<h4 id="one-variation-only" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="88">One variation only</h4>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="90">todo</p>
+<h4 id="multiple-variations-with-same-settings" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="92">Multiple Variations with Same Settings</h4>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="94">todo</p>
+<h4 id="multiple-variations-with-only-a-different-blueprint" sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="96">Multiple Variations with only a different Blueprint</h4>
+<ol sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="98">
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="98">Create the default configuration</li>
+<li sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="99">For each name, make sure you create a theme with <code sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="99">@inherits</code> and the default configuration</li>
 </ol>
-<p>This will ensure that the &quot;new&quot; name is preserved.</p>
+<p sourcefile="pages/library/settings/lookup.md" sourcestartlinenumber="101">This will ensure that the &quot;new&quot; name is preserved.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/settings/lookup.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/settings/lookup.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

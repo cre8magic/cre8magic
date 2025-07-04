@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/settings/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/settings/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,122 +85,122 @@
         </div>
 
         <article data-uid="Cre8magic.Library.MagicSettings.Index">
-<h1 id="cre8magic---magic-settings-overview">cre8magic - Magic Settings Overview</h1>
+<h1 id="cre8magic---magic-settings-overview" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="5">cre8magic - Magic Settings Overview</h1>
 
-<p><strong>Magic Settings</strong> are a core building block of cre8magic.
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="7"><strong sourcefile="pages/library/settings/index.md" sourcestartlinenumber="7">Magic Settings</strong> are a core building block of cre8magic.
 Basically anything you do, will start of with some settings - or some invisible defaults.</p>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="10">
 <h5>Tip</h5>
-<p><strong>Magic Settings</strong> allow you to move 95% of the theme code into some kind of configuration.</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="11"><strong sourcefile="pages/library/settings/index.md" sourcestartlinenumber="11">Magic Settings</strong> allow you to move 95% of the theme code into some kind of configuration.</p>
 </div>
-<h2 id="quick-introduction">Quick Introduction</h2>
-<p>Magic Settings are a way to provide settings to the various parts of cre8magic.
-Let's say you want to create a footer-menu, which only shows <strong>Home</strong> and <strong>Login</strong>.</p>
-<pre><code class="lang-html">&lt;!-- This is what you would do --&gt;
+<h2 id="quick-introduction" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="13">Quick Introduction</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="15">Magic Settings are a way to provide settings to the various parts of cre8magic.
+Let's say you want to create a footer-menu, which only shows <strong sourcefile="pages/library/settings/index.md" sourcestartlinenumber="16">Home</strong> and <strong sourcefile="pages/library/settings/index.md" sourcestartlinenumber="16">Login</strong>.</p>
+<pre><code class="lang-html" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="18">&lt;!-- This is what you would do --&gt;
 `&lt;MagicMenu Settings='new () { Nodes = &quot;/, 5&quot; }' /&gt;`
 
 &lt;!-- Note that the previous is just a shorthand for --&gt;
 `&lt;MagicMenu Settings='new MagicMenuSettings() { Nodes = &quot;/, 5&quot; }' /&gt;`
 </code></pre>
-<p>Settings can also be provided in a central location, and just use the name of the settings:</p>
-<pre><code class="lang-html">&lt;!-- Get menu-settings called &quot;footer&quot; --&gt;
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="26">Settings can also be provided in a central location, and just use the name of the settings:</p>
+<pre><code class="lang-html" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="28">&lt;!-- Get menu-settings called &quot;footer&quot; --&gt;
 `&lt;MagicMenu Name=&quot;footer&quot; /&gt;`
 
 &lt;!-- Get all settings for the part &quot;footer-menu&quot; --&gt;
 `&lt;MagicMenu Name=&quot;footer-menu&quot; /&gt;`
 </code></pre>
-<p>Settings are also used to get <strong>Kits</strong> so you can write your own code to do things, like this:</p>
-<pre><code class="lang-csharp">var menuKit = MagicAct.MenuKit(new () { Nodes = &quot;/, 5&quot; });
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="36">Settings are also used to get <strong sourcefile="pages/library/settings/index.md" sourcestartlinenumber="36">Kits</strong> so you can write your own code to do things, like this:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="38">var menuKit = MagicAct.MenuKit(new () { Nodes = &quot;/, 5&quot; });
 </code></pre>
-<p>Settings are also used when you don't provide them, in which case some minimal defaults are used:</p>
-<pre><code class="lang-csharp">var menuKit = MagicAct.MenuKit();
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="42">Settings are also used when you don't provide them, in which case some minimal defaults are used:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="44">var menuKit = MagicAct.MenuKit();
 </code></pre>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="48">
 <h5>Note</h5>
-<p>Settings are used to specify what you want to do, and how you want to do it.
-On the other hand, <strong>Blueprints</strong> are used to customize the output
-using <strong>Tailors</strong>.
-So you could think of <strong>Blueprints</strong> as <em>Design Settings</em> but they are treated differently.</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="49">Settings are used to specify what you want to do, and how you want to do it.
+On the other hand, <strong sourcefile="pages/library/settings/index.md" sourcestartlinenumber="50">Blueprints</strong> are used to customize the output
+using <strong sourcefile="pages/library/settings/index.md" sourcestartlinenumber="51">Tailors</strong>.
+So you could think of <strong sourcefile="pages/library/settings/index.md" sourcestartlinenumber="52">Blueprints</strong> as <em sourcefile="pages/library/settings/index.md" sourcestartlinenumber="52">Design Settings</em> but they are treated differently.</p>
 </div>
-<h2 id="overview">Overview</h2>
-<p>These are the things you should probably know:</p>
-<ol>
-<li>What settings can be used for each scenario</li>
-<li>How to provide settings in a central location</li>
-<li>How to provide settings by name or theme part name (TODO:)</li>
-<li>How to provide design settings (TODO:)</li>
-<li>How to provide PageState (TODO:)</li>
-<li>How settings work internally</li>
+<h2 id="overview" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="54">Overview</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="56">These are the things you should probably know:</p>
+<ol sourcefile="pages/library/settings/index.md" sourcestartlinenumber="58">
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="58">What settings can be used for each scenario</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="59">How to provide settings in a central location</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="60">How to provide settings by name or theme part name (TODO:)</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="61">How to provide design settings (TODO:)</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="62">How to provide PageState (TODO:)</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="63">How settings work internally</li>
 </ol>
-<h2 id="settings-for-each-scenario">Settings for each Scenario</h2>
-<p>Settings will differ depending on if you're creating a menu, a breadcrumb, a Magic Context, or something else.
+<h2 id="settings-for-each-scenario" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="65">Settings for each Scenario</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="67">Settings will differ depending on if you're creating a menu, a breadcrumb, a Magic Context, or something else.
 So for this you should look at the respective documentation.</p>
-<p>TODO: list all relevant parts</p>
-<h2 id="providing-settings">Providing Settings</h2>
-<p>Settings can be used directly in the code, like:</p>
-<pre><code class="lang-csharp">var breadcrumbKit = MagicAct.BreadcrumbKit(new MagicBreadcrumbSettings
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="70">TODO: list all relevant parts</p>
+<h2 id="providing-settings" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="72">Providing Settings</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="74">Settings can be used directly in the code, like:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="76">var breadcrumbKit = MagicAct.BreadcrumbKit(new MagicBreadcrumbSettings
 {
   PageState = PageState,
   WithActive = true,
   WithHome = false,
 });
 </code></pre>
-<p>Or you can have settings prepared in a central location, and just use the name of the settings:</p>
-<pre><code class="lang-csharp">var breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="85">Or you can have settings prepared in a central location, and just use the name of the settings:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="87">var breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 </code></pre>
-<p>The second way is especially useful when the <em>identical</em> code and components should result in different outputs
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="91">The second way is especially useful when the <em sourcefile="pages/library/settings/index.md" sourcestartlinenumber="91">identical</em> code and components should result in different outputs
 depending on the scenario, since it allows you to change the settings in one place.</p>
-<p>For example, you could define that certain menus don't appear or look different within certain parts of your site.</p>
-<p>For this, see</p>
-<ul>
-<li><a href="provide-settings.html">Providing Settings</a>.</li>
-<li>Providing Named Settings TODO:</li>
-<li>Providing Settings by Theme Part Name TODO:</li>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="94">For example, you could define that certain menus don't appear or look different within certain parts of your site.</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="96">For this, see</p>
+<ul sourcefile="pages/library/settings/index.md" sourcestartlinenumber="98">
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="98"><a href="provide-settings.html" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="98">Providing Settings</a>.</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="99">Providing Named Settings TODO:</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="100">Providing Settings by Theme Part Name TODO:</li>
 </ul>
-<h2 id="how-settings-work-internally">How Settings Work Internally</h2>
-<p>TODO: explain how settings are used internally</p>
-<p>Settings have a 2-level hierarchy, shown by the example of a breadcrumb:</p>
-<p><code>MagicBreadcrumbSettings</code> would be the main settings which are used in your code.
+<h2 id="how-settings-work-internally" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="102">How Settings Work Internally</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="104">TODO: explain how settings are used internally</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="106">Settings have a 2-level hierarchy, shown by the example of a breadcrumb:</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="108"><code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="108">MagicBreadcrumbSettings</code> would be the main settings which are used in your code.
 These settings have all the possible options, but also some properties which
 can only be set by code.</p>
-<p>For example, you can set a <code>Designer</code> which is a special object that can create some HTML.</p>
-<p>The <code>MagicBreadcrumbSettingsData</code> is the underlying class behind the <code>MagicBreadcrumbSettings</code>.
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="112">For example, you can set a <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="112">Designer</code> which is a special object that can create some HTML.</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="114">The <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="114">MagicBreadcrumbSettingsData</code> is the underlying class behind the <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="114">MagicBreadcrumbSettings</code>.
 It contains all the properties which can be stored externally, like in a JSON file or database.</p>
-<h2 id="levels-of-indirection-wip">Levels of Indirection WIP</h2>
-<ol>
-<li>Theme Variant</li>
-<li>Part in that Theme Variant</li>
-<li>Settings</li>
-<li>Design Settings</li>
-<li>Inheritance on every level</li>
+<h2 id="levels-of-indirection-wip" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="119">Levels of Indirection WIP</h2>
+<ol sourcefile="pages/library/settings/index.md" sourcestartlinenumber="121">
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="121">Theme Variant</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="122">Part in that Theme Variant</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="123">Settings</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="124">Design Settings</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="125">Inheritance on every level</li>
 </ol>
-<h2 id="overview---old-json-file">Overview - old, json file...</h2>
-<p>Basically the magic settings let you put a bunch of parameters in a JSON file.
+<h2 id="overview---old-json-file" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="128">Overview - old, json file...</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="130">Basically the magic settings let you put a bunch of parameters in a JSON file.
 This file is then used by your Theme and it's Controls to</p>
-<ul>
-<li>determine what Blazor files to use (like what Template should be used for the menu)</li>
-<li>what to do with <code>class=&quot;...&quot;</code> or <code>id=&quot;...&quot;</code> in the HTML</li>
-<li>and much more 😉</li>
+<ul sourcefile="pages/library/settings/index.md" sourcestartlinenumber="133">
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="133">determine what Blazor files to use (like what Template should be used for the menu)</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="134">what to do with <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="134">class=&quot;...&quot;</code> or <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="134">id=&quot;...&quot;</code> in the HTML</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="135">and much more 😉</li>
 </ul>
-<blockquote>
-<p>This basic principle allows you to create and tweak amazing designs
+<blockquote sourcefile="pages/library/settings/index.md" sourcestartlinenumber="137">
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="137">This basic principle allows you to create and tweak amazing designs
 without ever recompiling the Theme.</p>
-<p>It also allows you to create variations of your theme with the same Blazor files.</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="140">It also allows you to create variations of your theme with the same Blazor files.</p>
 </blockquote>
-<h2 id="example-json">Example JSON</h2>
-<p>See <a class="xref" href="../theme-settings/theme-json.html">settings-json</a> to see an example file.</p>
-<h2 id="the-configuration-file">The Configuration File</h2>
-<p>The system works by creating a json file such as <code>theme-settings.json</code>.</p>
-<p>This is placed in your themes <code>wwwroot</code> folder like this:</p>
-<p><code>wwwroot/ToSic.Themes.BlazorCms/theme-settings.json</code></p>
-<p><em>Note that we don't use <code>...Client</code> in the path, just the real namespace.</em></p>
-<p>Which file to use can be configured in the theme.
+<h2 id="example-json" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="142">Example JSON</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="144">See <a class="xref" href="../theme-settings/theme-json.html" sourcefile="pages/library/settings/index.md" sourcestartlinenumber=144>settings-json</a> to see an example file.</p>
+<h2 id="the-configuration-file" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="146">The Configuration File</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="148">The system works by creating a json file such as <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="148">theme-settings.json</code>.</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="150">This is placed in your themes <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="150">wwwroot</code> folder like this:</p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="152"><code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="152">wwwroot/ToSic.Themes.BlazorCms/theme-settings.json</code></p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="154"><em sourcefile="pages/library/settings/index.md" sourcestartlinenumber="154">Note that we don't use <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="154">...Client</code> in the path, just the real namespace.</em></p>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="156">Which file to use can be configured in the theme.
 Normally you would use the same file for all variations of your theme, but the important thing is that the theme
 must give some initial configuration object to the cre8magic Services.</p>
-<p>Here's how:</p>
-<h3 id="create-the-magicpackagesettings">Create the MagicPackageSettings</h3>
-<p>This could be done anywhere, but I would place the code in the <code>ThemeInfo.cs</code> file:</p>
-<pre><code class="lang-c#">    /// &lt;summary&gt;
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="160">Here's how:</p>
+<h3 id="create-the-magicpackagesettings" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="162">Create the MagicPackageSettings</h3>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="164">This could be done anywhere, but I would place the code in the <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="164">ThemeInfo.cs</code> file:</p>
+<pre><code class="lang-c#" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="166">    /// &lt;summary&gt;
     /// Default settings used in this package.
     /// They are defined here and given as initial values to the ThemeSettingsService in the Default Razor file.
     /// &lt;/summary&gt;
@@ -213,12 +213,12 @@ must give some initial configuration object to the cre8magic Services.</p>
         SettingsJsonFile = &quot;theme-settings.json&quot;,
     };
 </code></pre>
-<h3 id="tell-the-theme-to-use-these-settings">Tell the Theme to Use these Settings</h3>
-<p>Then in the theme, you should inherit from the <code>MagicTheme</code> base class and set the ThemePackageSettings like this:</p>
-<pre><code class="lang-c#">public override MagicPackageSettings ThemePackageSettings =&gt; ThemeInfo.ThemePackageDefaults;
+<h3 id="tell-the-theme-to-use-these-settings" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="181">Tell the Theme to Use these Settings</h3>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="183">Then in the theme, you should inherit from the <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="183">MagicTheme</code> base class and set the ThemePackageSettings like this:</p>
+<pre><code class="lang-c#" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="185">public override MagicPackageSettings ThemePackageSettings =&gt; ThemeInfo.ThemePackageDefaults;
 </code></pre>
-<p>This would usually look a bit like this:</p>
-<pre><code class="lang-c#">public abstract class MyThemeBase : MagicTheme
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="189">This would usually look a bit like this:</p>
+<pre><code class="lang-c#" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="191">public abstract class MyThemeBase : MagicTheme
 {
     public override List&lt;Resource&gt; Resources =&gt; new()
     {
@@ -235,37 +235,37 @@ must give some initial configuration object to the cre8magic Services.</p>
     public override string Panes =&gt; string.Join(&quot;,&quot;, PaneNames.Default, PaneNameHeader);
 }
 </code></pre>
-<p>that's it ✌🏽</p>
-<h2 id="how-the-settings-work">How the Settings Work</h2>
-<p>Internally the <code>MagicSettingsService</code> will be initialized automatically by the <code>MagicTheme</code> base class.
-It will then go and pick up the JSON file, parse it, do a bunch of magic and come back with a final <code>MagicSettings</code> object.
-This <code>MagicSettings</code> will then contain all the important settings for the current page/theme.
-It will also keep a reference to other settings such as <code>Menus</code> for which many configurations can exist.</p>
-<h2 id="how-the-settings-are-broadcast">How the Settings are Broadcast</h2>
-<p>A key feature of this system is that the settings are initially loaded in the theme,
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="210">that's it ✌🏽</p>
+<h2 id="how-the-settings-work" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="212">How the Settings Work</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="214">Internally the <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="214">MagicSettingsService</code> will be initialized automatically by the <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="214">MagicTheme</code> base class.
+It will then go and pick up the JSON file, parse it, do a bunch of magic and come back with a final <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="215">MagicSettings</code> object.
+This <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="216">MagicSettings</code> will then contain all the important settings for the current page/theme.
+It will also keep a reference to other settings such as <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="217">Menus</code> for which many configurations can exist.</p>
+<h2 id="how-the-settings-are-broadcast" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="219">How the Settings are Broadcast</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="221">A key feature of this system is that the settings are initially loaded in the theme,
 and then broadcast to all controls used in that theme.</p>
-<p>To make this happen, the theme must wrap everything in a <code>MagicContextAndSettings</code> tag:</p>
-<pre><code class="lang-razor">&lt;MagicContextAndSettings Settings=&quot;Settings&quot;&gt;
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="224">To make this happen, the theme must wrap everything in a <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="224">MagicContextAndSettings</code> tag:</p>
+<pre><code class="lang-razor" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="226">&lt;MagicContextAndSettings Settings=&quot;Settings&quot;&gt;
   Content
 &lt;/MagicContextAndSettings&gt;
 </code></pre>
-<p>This will do a few things</p>
-<ol>
-<li>Make sure that the inner content is only shown if Settings are loaded - otherwise show a <code>loading settings...</code> text</li>
-<li>Broadcast the <code>MagicSettings</code> with the name <code>Settings</code> to all child controls using <code>CascadingValue</code>.</li>
-<li>It will also ensure that the <a class="xref" href="../page-context/index.html">Magic Page Context</a> is set on the page</li>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="232">This will do a few things</p>
+<ol sourcefile="pages/library/settings/index.md" sourcestartlinenumber="234">
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="234">Make sure that the inner content is only shown if Settings are loaded - otherwise show a <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="234">loading settings...</code> text</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="235">Broadcast the <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="235">MagicSettings</code> with the name <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="235">Settings</code> to all child controls using <code sourcefile="pages/library/settings/index.md" sourcestartlinenumber="235">CascadingValue</code>.</li>
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="236">It will also ensure that the <a class="xref" href="../page-context/index.html" sourcefile="pages/library/settings/index.md" sourcestartlinenumber=236>Magic Page Context</a> is set on the page</li>
 </ol>
-<p>TODO:</p>
-<ol>
-<li>EXPLAIN SETTINGS MORE</li>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="238">TODO:</p>
+<ol sourcefile="pages/library/settings/index.md" sourcestartlinenumber="240">
+<li sourcefile="pages/library/settings/index.md" sourcestartlinenumber="240">EXPLAIN SETTINGS MORE</li>
 </ol>
-<h2 id="continue">Continue...</h2>
-<p>Then continue back to the 👉🏾 <a href="../index.html">Home</a></p>
+<h2 id="continue" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="242">Continue...</h2>
+<p sourcefile="pages/library/settings/index.md" sourcestartlinenumber="244">Then continue back to the 👉🏾 <a href="../index.html" sourcefile="pages/library/settings/index.md" sourcestartlinenumber="244">Home</a></p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/settings/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/settings/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

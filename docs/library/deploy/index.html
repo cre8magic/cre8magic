@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/deploy/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/deploy/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,153 +85,153 @@
         </div>
 
         <article data-uid="Cre8magic.Library.Deploy.Index">
-<h1 id="cre8magic--package-and-deploy-your-theme">cre8magic – Package and Deploy Your Theme</h1>
+<h1 id="cre8magic--package-and-deploy-your-theme" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="5">cre8magic – Package and Deploy Your Theme</h1>
 
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="7">
 <h5>Tip</h5>
-<p>This explains how to package your theme with all the necessary assets and libraries from cre8magic ♾️.</p>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="8">This explains how to package your theme with all the necessary assets and libraries from cre8magic ♾️.</p>
 </div>
-<h2 id="introduction">Introduction</h2>
-<p>A theme inside Oqtane consists a combination of</p>
-<ol>
-<li>DLL files</li>
-<li>JavaScript files</li>
-<li>CSS files</li>
-<li>Images</li>
+<h2 id="introduction" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="10">Introduction</h2>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="12">A theme inside Oqtane consists a combination of</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="14">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="14">DLL files</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="15">JavaScript files</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="16">CSS files</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="17">Images</li>
 </ol>
-<p>The way these are placed in your Oqtane is different during development and during deployment.
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="19">The way these are placed in your Oqtane is different during development and during deployment.
 This should help you understand what is happening under the hood, to ensure your theme works as expected.</p>
-<h2 id="development-setup">Development Setup</h2>
-<p>During development of your theme, you will usually have a setup which does things such as:</p>
-<ol>
-<li>Compile your theme code and deploy to your development Oqtane</li>
-<li>Deploy any additional theme assets in a <code>wwwroot/[your-theme-name]/</code> folder</li>
-<li>Include all necessary DLLs, including dependent cre8magic libraries</li>
-<li>Include all necessary JavaScript files from cre8magic</li>
+<h2 id="development-setup" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="22">Development Setup</h2>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="24">During development of your theme, you will usually have a setup which does things such as:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="26">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="26">Compile your theme code and deploy to your development Oqtane</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="27">Deploy any additional theme assets in a <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="27">wwwroot/[your-theme-name]/</code> folder</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="28">Include all necessary DLLs, including dependent cre8magic libraries</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="29">Include all necessary JavaScript files from cre8magic</li>
 </ol>
-<p>All this is usually handled by your <strong>Packaging</strong> project, called <code>[YourCompany].Theme.[YourTheme].Package</code>.</p>
-<p>Basic deployment of your theme and its assets happens through the <code>debug.cmd</code> in that project,
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="31">All this is usually handled by your <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="31">Packaging</strong> project, called <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="31">[YourCompany].Theme.[YourTheme].Package</code>.</p>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="33">Basic deployment of your theme and its assets happens through the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="33">debug.cmd</code> in that project,
 which was probably generated by Oqtane when the theme-project was created.</p>
-<h2 id="include-cre8magic-dlls-and-js-during-development">Include cre8magic DLLs and JS During Development</h2>
-<p>When developing your theme within the cre8magic solution, you need to configure your project to properly reference and deploy the cre8magic components:</p>
-<ol>
-<li><p>Add a direct project reference to the <code>ToSic.Cre8Magic.OqtaneBs5.Client</code>:</p>
-<ul>
-<li>Open your theme's Client project file (<code>[YourCompany].Theme.[YourTheme]/Client/[YourCompany].Theme.[YourTheme].Client.csproj</code>)</li>
-<li>Add the project reference with the correct relative path:</li>
+<h2 id="include-cre8magic-dlls-and-js-during-development" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="36">Include cre8magic DLLs and JS During Development</h2>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="38">When developing your theme within the cre8magic solution, you need to configure your project to properly reference and deploy the cre8magic components:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="40">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="40"><p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="40">Add a direct project reference to the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="40">ToSic.Cre8Magic.OqtaneBs5.Client</code>:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="41">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="41">Open your theme's Client project file (<code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="41">[YourCompany].Theme.[YourTheme]/Client/[YourCompany].Theme.[YourTheme].Client.csproj</code>)</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="42">Add the project reference with the correct relative path:</li>
 </ul>
-<pre><code class="lang-xml">&lt;ItemGroup&gt;
+<pre><code class="lang-xml" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="44">&lt;ItemGroup&gt;
     &lt;ProjectReference Include=&quot;..\..\ToSic.Cre8Magic.OqtaneBs5.Client\ToSic.Cre8magic.OqtaneBs5.Client.csproj&quot; /&gt;
 &lt;/ItemGroup&gt;
 </code></pre>
 </li>
-<li><p>Configure the debug deployment script to include cre8magic DLLs:</p>
-<ul>
-<li>Edit your theme's debug script (<code>[YourCompany].Theme.[YourTheme]/Package/debug.cmd</code>)</li>
-<li>Add these commands to copy the required cre8magic libraries to your Oqtane server:</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="50"><p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="50">Configure the debug deployment script to include cre8magic DLLs:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="51">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="51">Edit your theme's debug script (<code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="51">[YourCompany].Theme.[YourTheme]/Package/debug.cmd</code>)</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="52">Add these commands to copy the required cre8magic libraries to your Oqtane server:</li>
 </ul>
-<pre><code class="lang-cmd">XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8magic.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
+<pre><code class="lang-cmd" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="54">XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8magic.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
 XCOPY &quot;..\Client\bin\Debug\%TargetFramework%\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; &quot;..\..\..\oqtane.framework\Oqtane.Server\bin\Debug\%TargetFramework%\&quot; /Y
 </code></pre>
 </li>
 </ol>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="59">
 <h5>Note</h5>
-<p>These commands ensure that when you build your theme in debug mode, both the core cre8magic and the Bootstrap 5 implementation dlls are deployed to your Oqtane development environment also including cre8mgaic static web assets, enabling your theme to use all cre8magic features.</p>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="60">These commands ensure that when you build your theme in debug mode, both the core cre8magic and the Bootstrap 5 implementation dlls are deployed to your Oqtane development environment also including cre8mgaic static web assets, enabling your theme to use all cre8magic features.</p>
 </div>
-<h3 id="build-and-verify-that-it-works-in-your-oqtane-development-environment">Build and Verify that it Works in your Oqtane development environment</h3>
-<p>When you select <strong>Debug</strong> configuration and you build the <em>Package</em> project, it automatically deploys your Oqtane theme to your Oqtane Server development environment:</p>
-<ol>
-<li>Select <strong>Debug</strong> configuration in Visual Studio.</li>
-<li>Build the <em>Package</em> project (<code>[YourCompany].Theme.[YourTheme]/Package/[YourCompany].Theme.[YourTheme].Package.csproj</code>)</li>
-<li>The build process runs the <code>debug.cmd</code> script, which copies relevant files to your Oqtane development environment</li>
-<li>Theme-related DLL files will be placed in the <code>oqtane\oqtane.framework\Oqtane.Server\bin\Debug\net9.0</code> folder</li>
-<li>Theme static assets will be copied to the <code>oqtane\oqtane.framework\Oqtane.Server\wwwroot\Themes\[YourCompany].Theme.[YourTheme]</code> folder and <code>oqtane\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane</code> folder</li>
+<h3 id="build-and-verify-that-it-works-in-your-oqtane-development-environment" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="63">Build and Verify that it Works in your Oqtane development environment</h3>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="65">When you select <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="65">Debug</strong> configuration and you build the <em sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="65">Package</em> project, it automatically deploys your Oqtane theme to your Oqtane Server development environment:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="67">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="67">Select <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="67">Debug</strong> configuration in Visual Studio.</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="68">Build the <em sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="68">Package</em> project (<code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="68">[YourCompany].Theme.[YourTheme]/Package/[YourCompany].Theme.[YourTheme].Package.csproj</code>)</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="69">The build process runs the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="69">debug.cmd</code> script, which copies relevant files to your Oqtane development environment</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="70">Theme-related DLL files will be placed in the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="70">oqtane\oqtane.framework\Oqtane.Server\bin\Debug\net9.0</code> folder</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="71">Theme static assets will be copied to the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="71">oqtane\oqtane.framework\Oqtane.Server\wwwroot\Themes\[YourCompany].Theme.[YourTheme]</code> folder and <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="71">oqtane\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane</code> folder</li>
 </ol>
-<p>To verify it works:</p>
-<ol>
-<li>Run the Oqtane development environment (<code>Oqtane.Server</code> project).</li>
-<li>Oqtane will automatically detect and install your theme during startup.</li>
-<li>Log in to your Oqtane admin account</li>
-<li>Navigate to any page and access its <code>Page Management</code> settings.</li>
-<li>Go to the &quot;Appearance&quot; section .</li>
-<li>Your theme should be available in the dropdown list of themes and containers.</li>
-<li>Select your theme and verify it renders correctly</li>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="73">To verify it works:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="74">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="74">Run the Oqtane development environment (<code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="74">Oqtane.Server</code> project).</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="75">Oqtane will automatically detect and install your theme during startup.</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="76">Log in to your Oqtane admin account</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="77">Navigate to any page and access its <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="77">Page Management</code> settings.</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="78">Go to the &quot;Appearance&quot; section .</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="79">Your theme should be available in the dropdown list of themes and containers.</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="80">Select your theme and verify it renders correctly</li>
 </ol>
-<p>If the theme doesn't appear in the list or doesn't render correctly, check the theme's <em>Package</em> project <strong>Build</strong> log in Visual Studio's <strong>Output</strong> window.</p>
-<h3 id="test-an-updated-version-in-your-oqtane-development-environment">Test an Updated Version in your Oqtane development environment</h3>
-<p>After making changes to your theme you can quickly test the updates:</p>
-<ol>
-<li>Select <strong>Debug</strong> configuration in Visual Studio if is not selected.</li>
-<li><strong>Rebuild</strong> the <em>Package</em> project (<code>[YourCompany].Theme.[YourTheme].Package.csproj</code>).</li>
-<li>The updated files will automatically deploy to your Oqtane Server development environment.</li>
-<li>Run the Oqtane development environment (<code>Oqtane.Server</code> project).</li>
-<li>Navigate to a page using your theme and verify the changes are visible</li>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="82">If the theme doesn't appear in the list or doesn't render correctly, check the theme's <em sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="82">Package</em> project <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="82">Build</strong> log in Visual Studio's <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="82">Output</strong> window.</p>
+<h3 id="test-an-updated-version-in-your-oqtane-development-environment" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="84">Test an Updated Version in your Oqtane development environment</h3>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="86">After making changes to your theme you can quickly test the updates:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="88">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="88">Select <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="88">Debug</strong> configuration in Visual Studio if is not selected.</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="89"><strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="89">Rebuild</strong> the <em sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="89">Package</em> project (<code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="89">[YourCompany].Theme.[YourTheme].Package.csproj</code>).</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="90">The updated files will automatically deploy to your Oqtane Server development environment.</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="91">Run the Oqtane development environment (<code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="91">Oqtane.Server</code> project).</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="92">Navigate to a page using your theme and verify the changes are visible</li>
 </ol>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="94">
 <h5>Note</h5>
-<p>If your changes don't appear:</p>
-<ul>
-<li>Make sure your browser isn't caching the page (try a hard refresh with Ctrl+F5)</li>
-<li>Examine the theme's <em>Package</em> project <strong>Build</strong> log in Visual Studio's <strong>Output</strong> window for any errors</li>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="95">If your changes don't appear:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="96">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="96">Make sure your browser isn't caching the page (try a hard refresh with Ctrl+F5)</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="97">Examine the theme's <em sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="97">Package</em> project <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="97">Build</strong> log in Visual Studio's <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="97">Output</strong> window for any errors</li>
 </ul>
 </div>
-<h2 id="include-cre8magic-dlls-and-js-in-package-deployment">Include cre8magic DLLs and JS in Package (Deployment)</h2>
-<p>When you are ready to deploy your theme to a production server,
+<h2 id="include-cre8magic-dlls-and-js-in-package-deployment" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="100">Include cre8magic DLLs and JS in Package (Deployment)</h2>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="102">When you are ready to deploy your theme to a production server,
 you will need to create a NuGet package containing all these resources.
 It will contain things like:</p>
-<ol>
-<li>Your theme DLLs</li>
-<li>Your theme JavaScript files</li>
-<li>Your theme CSS files</li>
-<li>Your theme images</li>
-<li>All necessary DLLs, including dependent cre8magic libraries</li>
-<li>All necessary JavaScript files from cre8magic in the <code>/wwwroot/_content/ToSic.Cre8magic.Oqtane/</code> folder</li>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="106">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="106">Your theme DLLs</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="107">Your theme JavaScript files</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="108">Your theme CSS files</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="109">Your theme images</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="110">All necessary DLLs, including dependent cre8magic libraries</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="111">All necessary JavaScript files from cre8magic in the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="111">/wwwroot/_content/ToSic.Cre8magic.Oqtane/</code> folder</li>
 </ol>
-<p>This is also handled by your <strong>Packaging</strong> project, called <code>[YourCompany].Theme.[YourTheme].Package</code>.</p>
-<p>The part that makes it happen is the <code>release.cmd</code> in that project,
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="113">This is also handled by your <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="113">Packaging</strong> project, called <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="113">[YourCompany].Theme.[YourTheme].Package</code>.</p>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="115">The part that makes it happen is the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="115">release.cmd</code> in that project,
 which was probably generated by Oqtane when the theme-project was created.</p>
-<div class="IMPORTANT">
+<div class="IMPORTANT" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="118">
 <h5>Important</h5>
-<p>The default <code>release.cmd</code> is not smart enough to handle additional libraries and resources,
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="119">The default <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="119">release.cmd</code> is not smart enough to handle additional libraries and resources,
 so you might need to adjust it to include the cre8magic resources.</p>
 </div>
-<h2 id="changes-to-ensure-cre8magic-assets-and-dlls-are-included">Changes to Ensure cre8magic Assets and DLLs are Included</h2>
-<p>To properly package your theme with cre8magic dependencies for production deployment, follow these steps:</p>
-<ol>
-<li><p><strong>Switch from project references to NuGet package references</strong>:</p>
-<ul>
-<li>Open your theme's client project file: <code>[YourCompany].Theme.[YourTheme]/Client/[YourCompany].Theme.[YourTheme].Client.csproj</code></li>
-<li>Remove the previous <code>ProjectReference</code> to cre8magic projects (used during development) so we can add a <code>PackageReference</code> to the cre8magic NuGet package instead later.</li>
+<h2 id="changes-to-ensure-cre8magic-assets-and-dlls-are-included" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="122">Changes to Ensure cre8magic Assets and DLLs are Included</h2>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="124">To properly package your theme with cre8magic dependencies for production deployment, follow these steps:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="126">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="126"><p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="126"><strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="126">Switch from project references to NuGet package references</strong>:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="127">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="127">Open your theme's client project file: <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="127">[YourCompany].Theme.[YourTheme]/Client/[YourCompany].Theme.[YourTheme].Client.csproj</code></li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="128">Remove the previous <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="128">ProjectReference</code> to cre8magic projects (used during development) so we can add a <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="128">PackageReference</code> to the cre8magic NuGet package instead later.</li>
 </ul>
 </li>
-<li><p><strong>Configure the static assets path</strong>:</p>
-<ul>
-<li>Add this property to the first <code>&lt;PropertyGroup&gt;</code> section:</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="130"><p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="130"><strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="130">Configure the static assets path</strong>:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="131">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="131">Add this property to the first <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="131">&lt;PropertyGroup&gt;</code> section:</li>
 </ul>
-<pre><code class="lang-xml">&lt;OqtaneStaticAssetsPath&gt;../../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane&lt;/OqtaneStaticAssetsPath&gt;
+<pre><code class="lang-xml" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="133">&lt;OqtaneStaticAssetsPath&gt;../../../oqtane.framework/Oqtane.Server/wwwroot/_content/ToSic.Cre8magic.Oqtane&lt;/OqtaneStaticAssetsPath&gt;
 </code></pre>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="137">
 <h5>Note</h5>
-<p>This property defines where cre8magic assets will be copied during build. The path follows ASP.NET Core conventions for static assets from Razor Class Libraries.</p>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="138">This property defines where cre8magic assets will be copied during build. The path follows ASP.NET Core conventions for static assets from Razor Class Libraries.</p>
 </div>
 </li>
-<li><p><strong>Add the cre8magic package reference with path generation</strong>:</p>
-<ul>
-<li>Add this to your package references section (replace N.N.N with the actual version):</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="140"><p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="140"><strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="140">Add the cre8magic package reference with path generation</strong>:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="141">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="141">Add this to your package references section (replace N.N.N with the actual version):</li>
 </ul>
-<pre><code class="lang-xml">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;N.N.N&quot; GeneratePathProperty=&quot;true&quot; /&gt;
+<pre><code class="lang-xml" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="143">&lt;PackageReference Include=&quot;ToSic.Cre8magic.Oqtane&quot; Version=&quot;N.N.N&quot; GeneratePathProperty=&quot;true&quot; /&gt;
 </code></pre>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="147">
 <h5>Tip</h5>
-<p>The <code>GeneratePathProperty=&quot;true&quot;</code> attribute creates an MSBuild property (<code>$(PkgToSic_Cre8magic_Oqtane)</code>) that points to the installed package location, allowing access to its assets during the build process.</p>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="148">The <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="148">GeneratePathProperty=&quot;true&quot;</code> attribute creates an MSBuild property (<code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="148">$(PkgToSic_Cre8magic_Oqtane)</code>) that points to the installed package location, allowing access to its assets during the build process.</p>
 </div>
 </li>
-<li><p><strong>Add a build task to copy the static assets</strong>:</p>
-<ul>
-<li>Add this target to your project file:</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="150"><p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="150"><strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="150">Add a build task to copy the static assets</strong>:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="151">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="151">Add this target to your project file:</li>
 </ul>
-<pre><code class="lang-xml">&lt;Target Name=&quot;CopyStaticWebAssets&quot; AfterTargets=&quot;Build&quot;&gt;
+<pre><code class="lang-xml" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="153">&lt;Target Name=&quot;CopyStaticWebAssets&quot; AfterTargets=&quot;Build&quot;&gt;
   &lt;ItemGroup&gt;
     &lt;StaticAssets Include=&quot;$(PkgToSic_Cre8magic_Oqtane)\staticwebassets\**\*&quot; /&gt;
   &lt;/ItemGroup&gt;
@@ -241,68 +241,68 @@ so you might need to adjust it to include the cre8magic resources.</p>
         SkipUnchangedFiles=&quot;true&quot; /&gt;
 &lt;/Target&gt;
 </code></pre>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="165">
 <h5>Note</h5>
-<p>For Oqtane themes, this build task ensures that cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code>ToSic.Cre8magic.Oqtane</code> package are copied during the build process, which is essential for proper theme rendering.</p>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="166">For Oqtane themes, this build task ensures that cre8magic shared static web assets (like CSS, JavaScript, images, etc.) from the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="166">ToSic.Cre8magic.Oqtane</code> package are copied during the build process, which is essential for proper theme rendering.</p>
 </div>
 </li>
-<li><p>Open the <code>[YourCompany].Theme.[YourTheme]/Package/[YourCompany].Theme.[YourTheme].nuspec</code> file and add the following lines to include cre8magic DLLs and static web assets in the package:</p>
-<pre><code class="lang-xml">&lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="169"><p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="169">Open the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="169">[YourCompany].Theme.[YourTheme]/Package/[YourCompany].Theme.[YourTheme].nuspec</code> file and add the following lines to include cre8magic DLLs and static web assets in the package:</p>
+<pre><code class="lang-xml" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="171">&lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8magic.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
 &lt;file src=&quot;..\Client\bin\Release\$targetframework$\ToSic.Cre8Magic.OqtaneBs5.Client.Oqtane.dll&quot; target=&quot;lib\$targetframework$&quot; /&gt;
 &lt;file src=&quot;..\..\..\oqtane.framework\Oqtane.Server\wwwroot\_content\ToSic.Cre8magic.Oqtane\**\*.*&quot; target=&quot;wwwroot\_content\ToSic.Cre8magic.Oqtane&quot; /&gt;
 </code></pre>
 </li>
 </ol>
-<h3 id="build-and-test-in-a-standalone-oqtane-installation">Build and Test in a Standalone Oqtane Installation</h3>
-<p>To create a deployable package for production-like environment:</p>
-<ol>
-<li>Select <strong>Release</strong> configuration in Visual Studio</li>
-<li>Ensure you've incremented the version in <code>[YourCompany].Theme.[YourTheme].nuspec</code> (in <code>[YourCompany].Theme.[YourTheme]/Package</code> folder) if making changes</li>
-<li>Build the <em>Package</em> project (e.g., <code>[YourCompany].Theme.[YourTheme].Package.csproj</code>)</li>
-<li>The build process runs <code>release.cmd</code>, which creates a NuGet package</li>
-<li>The resulting theme package (e.g., <code>[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code>) will be in the <code>Package</code> folder</li>
+<h3 id="build-and-test-in-a-standalone-oqtane-installation" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="177">Build and Test in a Standalone Oqtane Installation</h3>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="179">To create a deployable package for production-like environment:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="180">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="180">Select <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="180">Release</strong> configuration in Visual Studio</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="181">Ensure you've incremented the version in <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="181">[YourCompany].Theme.[YourTheme].nuspec</code> (in <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="181">[YourCompany].Theme.[YourTheme]/Package</code> folder) if making changes</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="182">Build the <em sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="182">Package</em> project (e.g., <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="182">[YourCompany].Theme.[YourTheme].Package.csproj</code>)</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="183">The build process runs <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="183">release.cmd</code>, which creates a NuGet package</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="184">The resulting theme package (e.g., <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="184">[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code>) will be in the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="184">Package</code> folder</li>
 </ol>
-<p>To install and test your theme in a standalone Oqtane installation:</p>
-<ol>
-<li>Copy the <code>[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code> file to your Oqtane server's <code>Packages</code> folder, or use the <strong>Admin Dashboard &gt; Theme Management &gt; Install Theme</strong> option</li>
-<li>In Oqtane, go to <strong>Admin Dashboard &gt; System Info</strong> and click <strong>Restart Application</strong></li>
-<li>After restart, verify the theme was installed in <strong>Admin Dashboard &gt; Theme Management</strong></li>
-<li>Navigate to any page and open its <strong>Page Management</strong> settings</li>
-<li>In the <strong>Appearance</strong> section, your theme should be available in the dropdown list</li>
-<li>Select your theme and verify it renders correctly</li>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="186">To install and test your theme in a standalone Oqtane installation:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="187">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="187">Copy the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="187">[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code> file to your Oqtane server's <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="187">Packages</code> folder, or use the <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="187">Admin Dashboard &gt; Theme Management &gt; Install Theme</strong> option</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="188">In Oqtane, go to <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="188">Admin Dashboard &gt; System Info</strong> and click <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="188">Restart Application</strong></li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="189">After restart, verify the theme was installed in <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="189">Admin Dashboard &gt; Theme Management</strong></li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="190">Navigate to any page and open its <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="190">Page Management</strong> settings</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="191">In the <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="191">Appearance</strong> section, your theme should be available in the dropdown list</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="192">Select your theme and verify it renders correctly</li>
 </ol>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="194">
 <h5>Tip</h5>
-<p>If your theme doesn't appear or doesn't render properly:</p>
-<ul>
-<li>Check Oqtane logs in the <code>Packages</code> and <code>wwwroot/Logs</code> folder</li>
-<li>Verify the package was properly created by examining it with a tool like NuGet Package Explorer</li>
-<li>Ensure all required dependencies are available in the target environment</li>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="195">If your theme doesn't appear or doesn't render properly:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="196">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="196">Check Oqtane logs in the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="196">Packages</code> and <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="196">wwwroot/Logs</code> folder</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="197">Verify the package was properly created by examining it with a tool like NuGet Package Explorer</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="198">Ensure all required dependencies are available in the target environment</li>
 </ul>
 </div>
-<h3 id="testing-theme-updates-in-production">Testing Theme Updates in Production</h3>
-<p>When updating an existing theme installation:</p>
-<ol>
-<li>Select <strong>Release</strong> configuration in Visual Studio</li>
-<li><strong>Important</strong>: Increment the version in the <code>[YourCompany].Theme.[YourTheme].nuspec</code> file to ensure Oqtane recognizes it as an update</li>
-<li>Rebuild the <em>Package</em> project to generate the updated package</li>
-<li>Copy the new <code>[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code> file to the Oqtane server's <code>Packages</code> folder</li>
-<li>In Oqtane, go to <strong>Admin Dashboard &gt; System Info</strong> and click <strong>Restart Application</strong></li>
-<li>The updated theme will be automatically detected and installed</li>
-<li>Navigate to a page using your theme and verify your changes are visible</li>
+<h3 id="testing-theme-updates-in-production" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="200">Testing Theme Updates in Production</h3>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="202">When updating an existing theme installation:</p>
+<ol sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="203">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="203">Select <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="203">Release</strong> configuration in Visual Studio</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="204"><strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="204">Important</strong>: Increment the version in the <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="204">[YourCompany].Theme.[YourTheme].nuspec</code> file to ensure Oqtane recognizes it as an update</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="205">Rebuild the <em sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="205">Package</em> project to generate the updated package</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="206">Copy the new <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="206">[YourCompany].Theme.[YourTheme].N.N.N.nupkg</code> file to the Oqtane server's <code sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="206">Packages</code> folder</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="207">In Oqtane, go to <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="207">Admin Dashboard &gt; System Info</strong> and click <strong sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="207">Restart Application</strong></li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="208">The updated theme will be automatically detected and installed</li>
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="209">Navigate to a page using your theme and verify your changes are visible</li>
 </ol>
-<div class="NOTE">
+<div class="NOTE" sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="211">
 <h5>Note</h5>
-<p>Oqtane caches themes aggressively. If you don't see your changes after restarting, you may need to:</p>
-<ul>
-<li>Clear browser cache (Ctrl+F5)</li>
+<p sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="212">Oqtane caches themes aggressively. If you don't see your changes after restarting, you may need to:</p>
+<ul sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="213">
+<li sourcefile="pages/library/deploy/index.md" sourcestartlinenumber="213">Clear browser cache (Ctrl+F5)</li>
 </ul>
 </div>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/deploy/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/deploy/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

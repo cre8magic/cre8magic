@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/blazor/dependency-injection/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/blazor/dependency-injection/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,18 +85,18 @@
         </div>
 
         <article data-uid="OqtaneThemes.Blazor.DependencyInjection.Index">
-<h1 id="oqtane-blazor-theme-creation---dependency-injection-guide">Oqtane Blazor Theme Creation - Dependency Injection Guide</h1>
+<h1 id="oqtane-blazor-theme-creation---dependency-injection-guide" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="5">Oqtane Blazor Theme Creation - Dependency Injection Guide</h1>
 
-<p>Modern best practices in Blazor development encourage the use of Dependency Injection (DI) to manage dependencies and pass parameters between components.
+<p sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="7">Modern best practices in Blazor development encourage the use of Dependency Injection (DI) to manage dependencies and pass parameters between components.
 This guide will help you understand how to effectively use DI in your Oqtane themes.</p>
-<h2 id="what-is-dependency-injection">What is Dependency Injection?</h2>
-<p>Dependency Injection is a design pattern that allows you to inject dependencies into a class rather than hard-coding them within the class.
+<h2 id="what-is-dependency-injection" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="10">What is Dependency Injection?</h2>
+<p sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="12">Dependency Injection is a design pattern that allows you to inject dependencies into a class rather than hard-coding them within the class.
 This promotes loose coupling and makes your code more testable and maintainable.
 In Blazor, you can use DI to pass services and parameters to your components, making them more flexible and reusable.</p>
-<h2 id="how-to-use-dependency-injection-in-oqtane-themes">How to Use Dependency Injection in Oqtane Themes</h2>
-<h3 id="step-1-create-a-service">Step 1: Create a Service</h3>
-<p>First you need to create a service that you want to inject into your components. This service can be anything from a simple data provider to a more complex business logic handler.</p>
-<pre><code class="lang-csharp">public class MyService
+<h2 id="how-to-use-dependency-injection-in-oqtane-themes" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="16">How to Use Dependency Injection in Oqtane Themes</h2>
+<h3 id="step-1-create-a-service" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="18">Step 1: Create a Service</h3>
+<p sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="20">First you need to create a service that you want to inject into your components. This service can be anything from a simple data provider to a more complex business logic handler.</p>
+<pre><code class="lang-csharp" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="22">public class MyService
 {
     public string GetData()
     {
@@ -104,9 +104,9 @@ In Blazor, you can use DI to pass services and parameters to your components, ma
     }
 }
 </code></pre>
-<h3 id="step-2-register-services">Step 2: Register Services</h3>
-<p>In Oqtane, you can register services in the <code>ThemeStartup.cs</code> file of your theme project.</p>
-<pre><code class="lang-csharp">using Microsoft.Extensions.DependencyInjection;
+<h3 id="step-2-register-services" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="32">Step 2: Register Services</h3>
+<p sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="34">In Oqtane, you can register services in the <code sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="34">ThemeStartup.cs</code> file of your theme project.</p>
+<pre><code class="lang-csharp" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="36">using Microsoft.Extensions.DependencyInjection;
 
 namespace ToSic.Cre8magic.Theme.Basic;
 
@@ -122,9 +122,9 @@ public class ThemeStartup : Oqtane.Services.IClientStartup
     }
 }
 </code></pre>
-<h3 id="step-3-inject-services-into-components">Step 3: Inject Services into Components</h3>
-<p>You can inject the service into your Blazor components using the <code>[Inject]</code> attribute or the <code>@inject</code> directive.</p>
-<pre><code class="lang-razor">@inject MyService MyService
+<h3 id="step-3-inject-services-into-components" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="54">Step 3: Inject Services into Components</h3>
+<p sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="56">You can inject the service into your Blazor components using the <code sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="56">[Inject]</code> attribute or the <code sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="56">@inject</code> directive.</p>
+<pre><code class="lang-razor" sourcefile="pages/oqtane-theme-guides/blazor/dependency-injection/index.md" sourcestartlinenumber="58">@inject MyService MyService
 
 &lt;h3&gt;Data from MyService:&lt;/h3&gt;
 &lt;p&gt;@MyService.GetData()&lt;/p&gt;
@@ -133,7 +133,7 @@ public class ThemeStartup : Oqtane.Services.IClientStartup
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/blazor/dependency-injection/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/blazor/dependency-injection/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

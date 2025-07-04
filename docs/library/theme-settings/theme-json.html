@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/theme-settings/theme-json.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/theme-settings/theme-json.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,22 +85,22 @@
         </div>
 
         <article data-uid="Cre8magic.Library.ThemeSettings.Index">
-<h1 id="cre8magic--magic-settings--json-settings-file">cre8magic – Magic Settings – JSON Settings File</h1>
+<h1 id="cre8magic--magic-settings--json-settings-file" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="6">cre8magic – Magic Settings – JSON Settings File</h1>
 
-<p>cre8magic uses JSON to enable fast and flexible configuration of your theme.
-It is used by <a class="xref" href="../settings/index.html">Magic Settings</a> to load all the initial information.</p>
-<p>This document explains the json file and everything you must know, such as:</p>
-<ol>
-<li>Special tricks to make work easier such as comments</li>
-<li>The general file format and sections</li>
-<li>Named configurations</li>
-<li>What can be configured in each section</li>
-<li>Special nodes which can accept string or more complex data</li>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="8">cre8magic uses JSON to enable fast and flexible configuration of your theme.
+It is used by <a class="xref" href="../settings/index.html" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber=9>Magic Settings</a> to load all the initial information.</p>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="11">This document explains the json file and everything you must know, such as:</p>
+<ol sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="13">
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="13">Special tricks to make work easier such as comments</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="14">The general file format and sections</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="15">Named configurations</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="16">What can be configured in each section</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="17">Special nodes which can accept string or more complex data</li>
 </ol>
-<h2 id="example-json">Example JSON</h2>
-<p>Here's a brief extract of such a configuration file
-(here's a <a href="https://github.com/2sic/oqtane-theme-2shine-bs5/blob/main/Client/src/theme.json">live example</a>):</p>
-<pre><code class="lang-jsonc">{
+<h2 id="example-json" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="19">Example JSON</h2>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="21">Here's a brief extract of such a configuration file
+(here's a <a href="https://github.com/2sic/oqtane-theme-2shine-bs5/blob/main/Client/src/theme.json" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="22">live example</a>):</p>
+<pre><code class="lang-jsonc" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="24">{
   // By specifying a schema we get intellisense in this JSON
   &quot;$schema&quot;: &quot;https://2sic.github.io/cre8magic/schemas/2022-10/theme.json&quot;,
 
@@ -137,30 +137,30 @@ It is used by <a class="xref" href="../settings/index.html">Magic Settings</a> t
   // ...more stuff here...
 }
 </code></pre>
-<h2 id="special-tricks-in-the-file">Special Tricks in the File</h2>
-<p>The file will be parsed by .net, but we've activated some special features to make life easier:</p>
-<ol>
-<li>Comments are allowed</li>
-<li>Trailing commas are allowed</li>
-<li>Almost all node names are case insensitive, so <code>&quot;Default&quot;</code> and <code>&quot;default&quot;</code> are treated the same</li>
-<li>Make sure you add the <code>&quot;$schema&quot;</code> node as you see above, to get help and instructions editing the JSON</li>
+<h2 id="special-tricks-in-the-file" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="64">Special Tricks in the File</h2>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="66">The file will be parsed by .net, but we've activated some special features to make life easier:</p>
+<ol sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="68">
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="68">Comments are allowed</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="69">Trailing commas are allowed</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="70">Almost all node names are case insensitive, so <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="70">&quot;Default&quot;</code> and <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="70">&quot;default&quot;</code> are treated the same</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="71">Make sure you add the <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="71">&quot;$schema&quot;</code> node as you see above, to get help and instructions editing the JSON</li>
 </ol>
-<h2 id="general-file-format-and-sections">General File Format and Sections</h2>
-<h3 id="sections">Sections</h3>
-<p>The <code>theme-settings.json</code> contains these primary nodes:</p>
-<ol>
-<li><code>version</code> <em>*</em> (just version information)</li>
-<li><code>debug</code> <em>*</em> for showing additional debug buttons on the page</li>
-<li><code>themes</code> for the main settings of a specific theme such as Logo, breadcrumbs on/off, etc.</li>
-<li><code>themeDesigns</code> has the configuration for CSS classes to be used in various places</li>
-<li><code>languages</code> contains configuration for languages to show in the menu</li>
-<li><code>menus</code> contains configuration for what menus show what nodes, like top-level with sub-level, etc.</li>
-<li><code>menuBlueprints</code> contains a bunch of rules for how menus should be styled, such as classes to use on the active node etc.</li>
+<h2 id="general-file-format-and-sections" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="74">General File Format and Sections</h2>
+<h3 id="sections" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="76">Sections</h3>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="78">The <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="78">theme-settings.json</code> contains these primary nodes:</p>
+<ol sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="80">
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="80"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="80">version</code> <em sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="80">*</em> (just version information)</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="81"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="81">debug</code> <em sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="81">*</em> for showing additional debug buttons on the page</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="82"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="82">themes</code> for the main settings of a specific theme such as Logo, breadcrumbs on/off, etc.</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="83"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="83">themeDesigns</code> has the configuration for CSS classes to be used in various places</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="84"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="84">languages</code> contains configuration for languages to show in the menu</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="85"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="85">menus</code> contains configuration for what menus show what nodes, like top-level with sub-level, etc.</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="86"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="86">menuBlueprints</code> contains a bunch of rules for how menus should be styled, such as classes to use on the active node etc.</li>
 </ol>
-<h3 id="named-configurations">Named Configurations</h3>
-<p>All of the nodes above (except those marked with <em>*</em>) can have many different, named configurations.
+<h3 id="named-configurations" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="88">Named Configurations</h3>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="90">All of the nodes above (except those marked with <em sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="90">*</em>) can have many different, named configurations.
 So you'll see something like this:</p>
-<pre><code class="lang-jsonc">{
+<pre><code class="lang-jsonc" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="93">{
   &quot;themes&quot;: {
     // The default configuration is taken if no other configuration is used
     &quot;Default&quot;: {
@@ -173,10 +173,10 @@ So you'll see something like this:</p>
   }
 }
 </code></pre>
-<p>This means that there is a configuration called <code>Default</code> and one called <code>Sidebar</code> which will do something different.</p>
-<h3 id="-does-exactly-what-it-says">@inherits Does Exactly What it Says</h3>
-<p>Example from the <code>menuBlueprints</code></p>
-<pre><code class="lang-json">{
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="108">This means that there is a configuration called <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="108">Default</code> and one called <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="108">Sidebar</code> which will do something different.</p>
+<h3 id="-does-exactly-what-it-says" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="111">@inherits Does Exactly What it Says</h3>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="113">Example from the <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="113">menuBlueprints</code></p>
+<pre><code class="lang-json" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="115">{
   &quot;mobile&quot;: {
     &quot;ul&quot;: {
       &quot;byLevel&quot;: {
@@ -211,40 +211,40 @@ So you'll see something like this:</p>
   }
 }
 </code></pre>
-<h3 id="short-and-long-notations-for-truefalse-settings">Short and Long Notations for True/False settings</h3>
-<p>Most properties which indicate a binary true/false value like <code>isActive</code> or <code>hasChildren</code> can be configured two ways:</p>
-<ul>
-<li><code>&quot;isActive&quot;: &quot;some-class-when-active&quot;</code></li>
-<li><code>&quot;isActive&quot;: [&quot;active-class&quot;, &quot;not-active-class&quot;]</code></li>
-<li><code>&quot;isActive&quot;: [null, &quot;not-active-class&quot;]</code></li>
+<h3 id="short-and-long-notations-for-truefalse-settings" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="153">Short and Long Notations for True/False settings</h3>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="155">Most properties which indicate a binary true/false value like <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="155">isActive</code> or <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="155">hasChildren</code> can be configured two ways:</p>
+<ul sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="157">
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="157"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="157">&quot;isActive&quot;: &quot;some-class-when-active&quot;</code></li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="158"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="158">&quot;isActive&quot;: [&quot;active-class&quot;, &quot;not-active-class&quot;]</code></li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="159"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="159">&quot;isActive&quot;: [null, &quot;not-active-class&quot;]</code></li>
 </ul>
-<h3 id="short-and-long-notations-for-complex-objects">Short and Long Notations for Complex Objects</h3>
-<p>Certain objects have a long notation, but can be shortened to just a string or bool if it's obvious what is meant. For example, the <code>parts</code> in the <code>themes</code> section would be:</p>
-<pre><code class="lang-json">&quot;breadcrumbs&quot;: {
+<h3 id="short-and-long-notations-for-complex-objects" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="162">Short and Long Notations for Complex Objects</h3>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="164">Certain objects have a long notation, but can be shortened to just a string or bool if it's obvious what is meant. For example, the <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="164">parts</code> in the <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="164">themes</code> section would be:</p>
+<pre><code class="lang-json" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="166">&quot;breadcrumbs&quot;: {
   &quot;show&quot;: true,
   &quot;design&quot;: &quot;special-design-name&quot;,
   &quot;configuration&quot;: &quot;special-config-name&quot;
 }
 </code></pre>
-<p>But this can be abbreviated to:</p>
-<ul>
-<li><code>&quot;breadcrumbs&quot;: true</code> - assumes show=true and design/configuration use the current name</li>
-<li><code>&quot;breadcrumbs&quot;: &quot;name&quot;</code> - assumes show=true and the design/config use the specified name</li>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="174">But this can be abbreviated to:</p>
+<ul sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="176">
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="176"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="176">&quot;breadcrumbs&quot;: true</code> - assumes show=true and design/configuration use the current name</li>
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="177"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="177">&quot;breadcrumbs&quot;: &quot;name&quot;</code> - assumes show=true and the design/config use the specified name</li>
 </ul>
-<p>This setup also works for all the design settings where you can do:</p>
-<ul>
-<li><code>&quot;container&quot;: &quot;some string&quot;</code> - in this case, classes/value get this, everyhing else is empty</li>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="179">This setup also works for all the design settings where you can do:</p>
+<ul sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="181">
+<li sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="181"><code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="181">&quot;container&quot;: &quot;some string&quot;</code> - in this case, classes/value get this, everyhing else is empty</li>
 </ul>
-<h2 id="intellisense-using-schema">Intellisense using $schema</h2>
-<p>To get help editing the file, add the <code>$schema</code> to your document.
+<h2 id="intellisense-using-schema" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="184">Intellisense using $schema</h2>
+<p sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="186">To get help editing the file, add the <code sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="186">$schema</code> to your document.
 Your editor (at least VS Code) will then help you fill in everything you need.</p>
-<pre><code class="lang-json">&quot;$schema&quot;: &quot;https://2sic.github.io/cre8magic/schemas/2022-10/theme-configurations.schema.json&quot;
+<pre><code class="lang-json" sourcefile="pages/library/theme-settings/theme-json.md" sourcestartlinenumber="189">&quot;$schema&quot;: &quot;https://2sic.github.io/cre8magic/schemas/2022-10/theme-configurations.schema.json&quot;
 </code></pre>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/theme-settings/theme-json.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/theme-settings/theme-json.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

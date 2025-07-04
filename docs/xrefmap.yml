@@ -91,15 +91,27 @@ references:
 - uid: Cre8magic.Roadmap.Index
   name: Roadmap
   href: library/roadmap/index.html
+- uid: OqtaneThemes.Assing.Index
+  name: Assing Theme Guide
+  href: oqtane-theme-guides/assing/index.html
 - uid: OqtaneThemes.Blazor.DependencyInjection.Index
   name: Oqtane Blazor Theme Creation - Dependency Injection Guide
   href: oqtane-theme-guides/blazor/dependency-injection/index.html
 - uid: OqtaneThemes.Blazor.Parameters.Index
   name: Oqtane Blazor Theme Creation - Component Parameters Guide
   href: oqtane-theme-guides/blazor/parameters/index.html
+- uid: OqtaneThemes.Configuration.Index
+  name: Configuration Theme Guide
+  href: oqtane-theme-guides/configuration/index.html
 - uid: OqtaneThemes.Index
   name: Oqtane Blazor Theme Creation Guide
   href: oqtane-theme-guides/index.html
+- uid: OqtaneThemes.Installation.Index
+  name: Install Theme Guide
+  href: oqtane-theme-guides/installation/index.html
+- uid: OqtaneThemes.PublishTheme.Index
+  name: Publish Theme Guide
+  href: oqtane-theme-guides/publish-theme/index.html
 - uid: OqtaneThemes.Recommendations.Index
   name: Oqtane Theme Recommendations and Best Practices
   href: oqtane-theme-guides/recommendations/index.html
@@ -4729,119 +4741,6 @@ references:
   fullName.vb: ToSic.Cre8magic.Utils.CacheByPage(Of T).Get
   nameWithType: CacheByPage<T>.Get
   nameWithType.vb: CacheByPage(Of T).Get
-- uid: ToSic.Cre8magic.Utils.DictionaryExtensions
-  name: DictionaryExtensions
-  href: api/ToSic.Cre8magic.Utils.DictionaryExtensions.html
-  commentId: T:ToSic.Cre8magic.Utils.DictionaryExtensions
-  fullName: ToSic.Cre8magic.Utils.DictionaryExtensions
-  nameWithType: DictionaryExtensions
-- uid: ToSic.Cre8magic.Utils.GetKeepByPageId`1
-  name: GetKeepByPageId<T>
-  href: api/ToSic.Cre8magic.Utils.GetKeepByPageId-1.html
-  commentId: T:ToSic.Cre8magic.Utils.GetKeepByPageId`1
-  name.vb: GetKeepByPageId(Of T)
-  fullName: ToSic.Cre8magic.Utils.GetKeepByPageId<T>
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeepByPageId(Of T)
-  nameWithType: GetKeepByPageId<T>
-  nameWithType.vb: GetKeepByPageId(Of T)
-- uid: ToSic.Cre8magic.Utils.GetKeepByPageId`1.Get(Oqtane.UI.PageState,System.Func{`0})
-  name: Get(PageState, Func<T>)
-  href: api/ToSic.Cre8magic.Utils.GetKeepByPageId-1.html#ToSic_Cre8magic_Utils_GetKeepByPageId_1_Get_Oqtane_UI_PageState_System_Func__0__
-  commentId: M:ToSic.Cre8magic.Utils.GetKeepByPageId`1.Get(Oqtane.UI.PageState,System.Func{`0})
-  name.vb: Get(PageState, Func(Of T))
-  fullName: ToSic.Cre8magic.Utils.GetKeepByPageId<T>.Get(Oqtane.UI.PageState, System.Func<T>)
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeepByPageId(Of T).Get(Oqtane.UI.PageState, System.Func(Of T))
-  nameWithType: GetKeepByPageId<T>.Get(PageState, Func<T>)
-  nameWithType.vb: GetKeepByPageId(Of T).Get(PageState, Func(Of T))
-- uid: ToSic.Cre8magic.Utils.GetKeepByPageId`1.Get*
-  name: Get
-  href: api/ToSic.Cre8magic.Utils.GetKeepByPageId-1.html#ToSic_Cre8magic_Utils_GetKeepByPageId_1_Get_
-  commentId: Overload:ToSic.Cre8magic.Utils.GetKeepByPageId`1.Get
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Utils.GetKeepByPageId<T>.Get
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeepByPageId(Of T).Get
-  nameWithType: GetKeepByPageId<T>.Get
-  nameWithType.vb: GetKeepByPageId(Of T).Get
-- uid: ToSic.Cre8magic.Utils.GetKeepByPageId`1.GetAsync(Oqtane.UI.PageState,System.Func{System.Threading.Tasks.Task{`0}})
-  name: GetAsync(PageState, Func<Task<T>>)
-  href: api/ToSic.Cre8magic.Utils.GetKeepByPageId-1.html#ToSic_Cre8magic_Utils_GetKeepByPageId_1_GetAsync_Oqtane_UI_PageState_System_Func_System_Threading_Tasks_Task__0___
-  commentId: M:ToSic.Cre8magic.Utils.GetKeepByPageId`1.GetAsync(Oqtane.UI.PageState,System.Func{System.Threading.Tasks.Task{`0}})
-  name.vb: GetAsync(PageState, Func(Of Task(Of T)))
-  fullName: ToSic.Cre8magic.Utils.GetKeepByPageId<T>.GetAsync(Oqtane.UI.PageState, System.Func<System.Threading.Tasks.Task<T>>)
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeepByPageId(Of T).GetAsync(Oqtane.UI.PageState, System.Func(Of System.Threading.Tasks.Task(Of T)))
-  nameWithType: GetKeepByPageId<T>.GetAsync(PageState, Func<Task<T>>)
-  nameWithType.vb: GetKeepByPageId(Of T).GetAsync(PageState, Func(Of Task(Of T)))
-- uid: ToSic.Cre8magic.Utils.GetKeepByPageId`1.GetAsync*
-  name: GetAsync
-  href: api/ToSic.Cre8magic.Utils.GetKeepByPageId-1.html#ToSic_Cre8magic_Utils_GetKeepByPageId_1_GetAsync_
-  commentId: Overload:ToSic.Cre8magic.Utils.GetKeepByPageId`1.GetAsync
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Utils.GetKeepByPageId<T>.GetAsync
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeepByPageId(Of T).GetAsync
-  nameWithType: GetKeepByPageId<T>.GetAsync
-  nameWithType.vb: GetKeepByPageId(Of T).GetAsync
-- uid: ToSic.Cre8magic.Utils.GetKeep`2
-  name: GetKeep<TResult, TCompare>
-  href: api/ToSic.Cre8magic.Utils.GetKeep-2.html
-  commentId: T:ToSic.Cre8magic.Utils.GetKeep`2
-  name.vb: GetKeep(Of TResult, TCompare)
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare)
-  nameWithType: GetKeep<TResult, TCompare>
-  nameWithType.vb: GetKeep(Of TResult, TCompare)
-- uid: ToSic.Cre8magic.Utils.GetKeep`2.Get(System.Func{System.ValueTuple{`0,`1}},System.Func{`0,`1,System.Boolean})
-  name: Get(Func<(TResult Result, TCompare Compare)>, Func<TResult?, TCompare?, bool>)
-  href: api/ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_Get_System_Func_System_ValueTuple__0__1___System_Func__0__1_System_Boolean__
-  commentId: M:ToSic.Cre8magic.Utils.GetKeep`2.Get(System.Func{System.ValueTuple{`0,`1}},System.Func{`0,`1,System.Boolean})
-  name.vb: Get(Func(Of (Result As TResult, Compare As TCompare)), Func(Of TResult, TCompare, Boolean))
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.Get(System.Func<(TResult Result, TCompare Compare)>, System.Func<TResult?, TCompare?, bool>)
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).Get(System.Func(Of (Result As TResult, Compare As TCompare)), System.Func(Of TResult, TCompare, Boolean))
-  nameWithType: GetKeep<TResult, TCompare>.Get(Func<(TResult Result, TCompare Compare)>, Func<TResult?, TCompare?, bool>)
-  nameWithType.vb: GetKeep(Of TResult, TCompare).Get(Func(Of (Result As TResult, Compare As TCompare)), Func(Of TResult, TCompare, Boolean))
-- uid: ToSic.Cre8magic.Utils.GetKeep`2.Get*
-  name: Get
-  href: api/ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_Get_
-  commentId: Overload:ToSic.Cre8magic.Utils.GetKeep`2.Get
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.Get
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).Get
-  nameWithType: GetKeep<TResult, TCompare>.Get
-  nameWithType.vb: GetKeep(Of TResult, TCompare).Get
-- uid: ToSic.Cre8magic.Utils.GetKeep`2.GetAsync(System.Func{System.Threading.Tasks.Task{System.ValueTuple{`0,`1}}},System.Func{`0,`1,System.Boolean})
-  name: GetAsync(Func<Task<(TResult Result, TCompare Compare)>>, Func<TResult?, TCompare?, bool>)
-  href: api/ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_GetAsync_System_Func_System_Threading_Tasks_Task_System_ValueTuple__0__1____System_Func__0__1_System_Boolean__
-  commentId: M:ToSic.Cre8magic.Utils.GetKeep`2.GetAsync(System.Func{System.Threading.Tasks.Task{System.ValueTuple{`0,`1}}},System.Func{`0,`1,System.Boolean})
-  name.vb: GetAsync(Func(Of Task(Of (Result As TResult, Compare As TCompare))), Func(Of TResult, TCompare, Boolean))
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.GetAsync(System.Func<System.Threading.Tasks.Task<(TResult Result, TCompare Compare)>>, System.Func<TResult?, TCompare?, bool>)
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).GetAsync(System.Func(Of System.Threading.Tasks.Task(Of (Result As TResult, Compare As TCompare))), System.Func(Of TResult, TCompare, Boolean))
-  nameWithType: GetKeep<TResult, TCompare>.GetAsync(Func<Task<(TResult Result, TCompare Compare)>>, Func<TResult?, TCompare?, bool>)
-  nameWithType.vb: GetKeep(Of TResult, TCompare).GetAsync(Func(Of Task(Of (Result As TResult, Compare As TCompare))), Func(Of TResult, TCompare, Boolean))
-- uid: ToSic.Cre8magic.Utils.GetKeep`2.GetAsync*
-  name: GetAsync
-  href: api/ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_GetAsync_
-  commentId: Overload:ToSic.Cre8magic.Utils.GetKeep`2.GetAsync
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.GetAsync
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).GetAsync
-  nameWithType: GetKeep<TResult, TCompare>.GetAsync
-  nameWithType.vb: GetKeep(Of TResult, TCompare).GetAsync
-- uid: ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated
-  name: IsValueCreated
-  href: api/ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_IsValueCreated
-  commentId: P:ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.IsValueCreated
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).IsValueCreated
-  nameWithType: GetKeep<TResult, TCompare>.IsValueCreated
-  nameWithType.vb: GetKeep(Of TResult, TCompare).IsValueCreated
-- uid: ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated*
-  name: IsValueCreated
-  href: api/ToSic.Cre8magic.Utils.GetKeep-2.html#ToSic_Cre8magic_Utils_GetKeep_2_IsValueCreated_
-  commentId: Overload:ToSic.Cre8magic.Utils.GetKeep`2.IsValueCreated
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>.IsValueCreated
-  fullName.vb: ToSic.Cre8magic.Utils.GetKeep(Of TResult, TCompare).IsValueCreated
-  nameWithType: GetKeep<TResult, TCompare>.IsValueCreated
-  nameWithType.vb: GetKeep(Of TResult, TCompare).IsValueCreated
 - uid: ToSic.Cre8magic.Utils.IgnoreEquals`1
   name: IgnoreEquals<TValue>
   href: api/ToSic.Cre8magic.Utils.IgnoreEquals-1.html
@@ -4939,105 +4838,3 @@ references:
   fullName.vb: ToSic.Cre8magic.Utils.IgnoreEquals(Of TValue).Value
   nameWithType: IgnoreEquals<TValue>.Value
   nameWithType.vb: IgnoreEquals(Of TValue).Value
-- uid: ToSic.Cre8magic.Utils.Logging
-  name: ToSic.Cre8magic.Utils.Logging
-  href: api/ToSic.Cre8magic.Utils.Logging.html
-  commentId: N:ToSic.Cre8magic.Utils.Logging
-  fullName: ToSic.Cre8magic.Utils.Logging
-  nameWithType: ToSic.Cre8magic.Utils.Logging
-- uid: ToSic.Cre8magic.Utils.Logging.CodeRef
-  name: CodeRef
-  href: api/ToSic.Cre8magic.Utils.Logging.CodeRef.html
-  commentId: T:ToSic.Cre8magic.Utils.Logging.CodeRef
-  fullName: ToSic.Cre8magic.Utils.Logging.CodeRef
-  nameWithType: CodeRef
-- uid: ToSic.Cre8magic.Utils.Logging.CodeRef.#ctor(System.Boolean,System.String,System.String,System.Int32)
-  name: CodeRef(bool, string, string, int)
-  href: api/ToSic.Cre8magic.Utils.Logging.CodeRef.html#ToSic_Cre8magic_Utils_Logging_CodeRef__ctor_System_Boolean_System_String_System_String_System_Int32_
-  commentId: M:ToSic.Cre8magic.Utils.Logging.CodeRef.#ctor(System.Boolean,System.String,System.String,System.Int32)
-  name.vb: New(Boolean, String, String, Integer)
-  fullName: ToSic.Cre8magic.Utils.Logging.CodeRef.CodeRef(bool, string, string, int)
-  fullName.vb: ToSic.Cre8magic.Utils.Logging.CodeRef.New(Boolean, String, String, Integer)
-  nameWithType: CodeRef.CodeRef(bool, string, string, int)
-  nameWithType.vb: CodeRef.New(Boolean, String, String, Integer)
-- uid: ToSic.Cre8magic.Utils.Logging.CodeRef.#ctor(System.String,System.String,System.Int32)
-  name: CodeRef(string, string, int)
-  href: api/ToSic.Cre8magic.Utils.Logging.CodeRef.html#ToSic_Cre8magic_Utils_Logging_CodeRef__ctor_System_String_System_String_System_Int32_
-  commentId: M:ToSic.Cre8magic.Utils.Logging.CodeRef.#ctor(System.String,System.String,System.Int32)
-  name.vb: New(String, String, Integer)
-  fullName: ToSic.Cre8magic.Utils.Logging.CodeRef.CodeRef(string, string, int)
-  fullName.vb: ToSic.Cre8magic.Utils.Logging.CodeRef.New(String, String, Integer)
-  nameWithType: CodeRef.CodeRef(string, string, int)
-  nameWithType.vb: CodeRef.New(String, String, Integer)
-- uid: ToSic.Cre8magic.Utils.Logging.CodeRef.#ctor*
-  name: CodeRef
-  href: api/ToSic.Cre8magic.Utils.Logging.CodeRef.html#ToSic_Cre8magic_Utils_Logging_CodeRef__ctor_
-  commentId: Overload:ToSic.Cre8magic.Utils.Logging.CodeRef.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: ToSic.Cre8magic.Utils.Logging.CodeRef.CodeRef
-  fullName.vb: ToSic.Cre8magic.Utils.Logging.CodeRef.New
-  nameWithType: CodeRef.CodeRef
-  nameWithType.vb: CodeRef.New
-- uid: ToSic.Cre8magic.Utils.Logging.CodeRef.Line
-  name: Line
-  href: api/ToSic.Cre8magic.Utils.Logging.CodeRef.html#ToSic_Cre8magic_Utils_Logging_CodeRef_Line
-  commentId: F:ToSic.Cre8magic.Utils.Logging.CodeRef.Line
-  fullName: ToSic.Cre8magic.Utils.Logging.CodeRef.Line
-  nameWithType: CodeRef.Line
-- uid: ToSic.Cre8magic.Utils.Logging.CodeRef.Name
-  name: Name
-  href: api/ToSic.Cre8magic.Utils.Logging.CodeRef.html#ToSic_Cre8magic_Utils_Logging_CodeRef_Name
-  commentId: F:ToSic.Cre8magic.Utils.Logging.CodeRef.Name
-  fullName: ToSic.Cre8magic.Utils.Logging.CodeRef.Name
-  nameWithType: CodeRef.Name
-- uid: ToSic.Cre8magic.Utils.Logging.CodeRef.Path
-  name: Path
-  href: api/ToSic.Cre8magic.Utils.Logging.CodeRef.html#ToSic_Cre8magic_Utils_Logging_CodeRef_Path
-  commentId: F:ToSic.Cre8magic.Utils.Logging.CodeRef.Path
-  fullName: ToSic.Cre8magic.Utils.Logging.CodeRef.Path
-  nameWithType: CodeRef.Path
-- uid: ToSic.Cre8magic.Utils.Logging.LogRoot
-  name: LogRoot
-  href: api/ToSic.Cre8magic.Utils.Logging.LogRoot.html
-  commentId: T:ToSic.Cre8magic.Utils.Logging.LogRoot
-  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot
-  nameWithType: LogRoot
-- uid: ToSic.Cre8magic.Utils.Logging.LogRoot.Depth
-  name: Depth
-  href: api/ToSic.Cre8magic.Utils.Logging.LogRoot.html#ToSic_Cre8magic_Utils_Logging_LogRoot_Depth
-  commentId: P:ToSic.Cre8magic.Utils.Logging.LogRoot.Depth
-  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot.Depth
-  nameWithType: LogRoot.Depth
-- uid: ToSic.Cre8magic.Utils.Logging.LogRoot.Depth*
-  name: Depth
-  href: api/ToSic.Cre8magic.Utils.Logging.LogRoot.html#ToSic_Cre8magic_Utils_Logging_LogRoot_Depth_
-  commentId: Overload:ToSic.Cre8magic.Utils.Logging.LogRoot.Depth
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot.Depth
-  nameWithType: LogRoot.Depth
-- uid: ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
-  name: Entries
-  href: api/ToSic.Cre8magic.Utils.Logging.LogRoot.html#ToSic_Cre8magic_Utils_Logging_LogRoot_Entries
-  commentId: P:ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
-  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
-  nameWithType: LogRoot.Entries
-- uid: ToSic.Cre8magic.Utils.Logging.LogRoot.Entries*
-  name: Entries
-  href: api/ToSic.Cre8magic.Utils.Logging.LogRoot.html#ToSic_Cre8magic_Utils_Logging_LogRoot_Entries_
-  commentId: Overload:ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
-  isSpec: "True"
-  fullName: ToSic.Cre8magic.Utils.Logging.LogRoot.Entries
-  nameWithType: LogRoot.Entries
-- uid: ToSic.Cre8magic.Utils.PageStateSecurityExtensions
-  name: PageStateSecurityExtensions
-  href: api/ToSic.Cre8magic.Utils.PageStateSecurityExtensions.html
-  commentId: T:ToSic.Cre8magic.Utils.PageStateSecurityExtensions
-  fullName: ToSic.Cre8magic.Utils.PageStateSecurityExtensions
-  nameWithType: PageStateSecurityExtensions
-- uid: ToSic.Cre8magic.Utils.StringExtensions
-  name: StringExtensions
-  href: api/ToSic.Cre8magic.Utils.StringExtensions.html
-  commentId: T:ToSic.Cre8magic.Utils.StringExtensions
-  fullName: ToSic.Cre8magic.Utils.StringExtensions
-  nameWithType: StringExtensions

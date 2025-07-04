@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Publish Theme Guide | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Publish Theme Guide | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/publish-theme/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="OqtaneThemes.PublishTheme.Index">
+<h1 id="publish-theme-guide" sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="4">Publish Theme Guide</h1>
+
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="6">This guide shows you how to prepare and publish your Oqtane theme so it can be reused or shared through the official Marketplace.<br>
+Whether you’ve built a custom theme for your own use or want to share it with the community, this step-by-step guide will help you get it ready.</p>
+<div class="TIP" sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="9">
+<h5>Tip</h5>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="10">Before publishing, make sure your theme builds without errors.<br>
+After publishing, make sure to test the installation of your theme from the Marketplace to verify that everything works correctly.</p>
+</div>
+<hr sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="13">
+<h2 id="create-a-nuget-package" sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="15">Create a NuGet Package</h2>
+<div gallery="gallery01">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_1.webp" data-caption="Visual Studio,<br />Switch to a Release Build">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_2.webp" data-caption="Visual Studio,<br />Build your project">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_3.webp" data-caption="File Explorer,<br />Your NuGet package is now available">
+</div>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="23">To prepare your theme for distribution, you first need to create a <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="23">Release</strong> build of your project.</p>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="25">Refer to the screenshots above.</p>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="27">Was your build successful?<br>
+Great!</p>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="30">Want to test your theme locally before publishing it?<br>
+Check out <a class="xref" href="../installation/index.html" sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber=31>How to Install a NuGet Theme</a></p>
+<hr sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="33">
+<h2 id="upload-to-github" sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="35">Upload to GitHub</h2>
+<div gallery="gallery02">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_1.webp" data-caption="GitHub,<br />Create a new release">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_2.webp" data-caption="GitHub,<br />Upload the NuGet package">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_3.webp" data-caption="GitHub,<br />Copy the download link">
+</div>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="43">After a successful build, your <code sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="43">.nupkg</code> file will be ready.<br>
+Now it's time to upload it to <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="44">GitHub</strong>:</p>
+<ol sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="46">
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="46">Create a <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="46">new release</strong></li>
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="47">Upload your NuGet package (<code sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="47">.nupkg</code>)</li>
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="48">Once published, copy the <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="48">direct download link</strong> – this link will be needed to install the theme in Oqtane</li>
+</ol>
+<hr sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="50">
+<h2 id="publish-to-the-oqtane-marketplace" sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="52">Publish to the Oqtane Marketplace</h2>
+<div gallery="gallery03">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_1.webp" data-caption="Oqtane Marketplace,<br />Create a new product">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_2.webp" data-caption="Oqtane Marketplace,<br />Fill in the product info">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_3.webp" data-caption="Oqtane Marketplace,<br />Add a new release">
+  <img src="../../pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_4.webp" data-caption="Oqtane Marketplace,<br />Provide release details">
+</div>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="61">To publish your theme:</p>
+<ol sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="63">
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="63">Go to <a href="https://www.oqtane.net" sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="63">Oqtane.net</a> and log in.</li>
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="64">Navigate to <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="64">Products</strong> and create a new product.</li>
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="65">Enter a <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="65">Package Name</strong> and a <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="65">GitHub repository link</strong> (not a direct release link).</li>
+</ol>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="67">Then:</p>
+<ol sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="69">
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="69">Click <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="69">Add Release</strong></li>
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="70">Upload or link your <code sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="70">.nupkg</code> file</li>
+<li sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="71">Save – your theme is now available in the <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="71">Oqtane Marketplace</strong></li>
+</ol>
+<p sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="73">Your theme will be listed and available in the <strong sourcefile="pages/oqtane-theme-guides/publish-theme/index.md" sourcestartlinenumber="73">Oqtane Marketplace</strong> for others to install</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/publish-theme/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/config.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/config.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,40 +87,40 @@
         <article data-uid="Cre8magic.MagicTools.TemplateGenerator.Configuration">
 
 <img src="../../pages/magic-tools/template-generator/assets/logo-400.webp" class="float-right">
-<h1 id="cre8magic--template-generator---configuration-file">cre8magic ♾️ Template Generator - Configuration File</h1>
-<p>This explains the configuration file for the <strong>cre8magic ♾️ Template Generator</strong>.</p>
-<p>The file itself is a JSON file named <code>template-generator.config.json</code>
+<h1 id="cre8magic--template-generator---configuration-file" sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="7">cre8magic ♾️ Template Generator - Configuration File</h1>
+<p sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="9">This explains the configuration file for the <strong sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="9">cre8magic ♾️ Template Generator</strong>.</p>
+<p sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="11">The file itself is a JSON file named <code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="11">template-generator.config.json</code>
 It contains various sections to define how the template generator should behave.</p>
-<h2 id="the-template-generator-configuration-file">The Template Generator Configuration File</h2>
-<p>The file is called: <code>template-generator.config.json</code></p>
-<p>It should be located in the root of the theme <strong>solution</strong> folder (not the theme folder).
+<h2 id="the-template-generator-configuration-file" sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="14">The Template Generator Configuration File</h2>
+<p sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="16">The file is called: <code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="16">template-generator.config.json</code></p>
+<p sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="18">It should be located in the root of the theme <strong sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="18">solution</strong> folder (not the theme folder).
 This is a typical repository structure:</p>
-<ul>
-<li><code>C:\Projects\cre8magic\theme-basic\cre8magic-oqtane-theme-basic</code> (root / git-repo)
-<ul>
-<li><code>Client</code> (the code for the theme)
-<ul>
-<li><code>Containers</code></li>
-<li><code>Resources</code></li>
-<li><code>Themes</code></li>
-<li><code>wwwroot</code> (the static files)</li>
-<li>...</li>
+<ul sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="21">
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="21"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="21">C:\Projects\cre8magic\theme-basic\cre8magic-oqtane-theme-basic</code> (root / git-repo)
+<ul sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="22">
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="22"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="22">Client</code> (the code for the theme)
+<ul sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="23">
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="23"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="23">Containers</code></li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="24"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="24">Resources</code></li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="25"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="25">Themes</code></li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="26"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="26">wwwroot</code> (the static files)</li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="27">...</li>
 </ul>
 </li>
-<li><code>Package</code></li>
-<li><code>LICENSE.md</code></li>
-<li><code>README.md</code></li>
-<li><code>template-generator.config.json</code> (this is the file)</li>
-<li><code>ToSic.Cre8magic.Theme.Basic.sln</code> (solution file)</li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="28"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="28">Package</code></li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="29"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="29">LICENSE.md</code></li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="30"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="30">README.md</code></li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="31"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="31">template-generator.config.json</code> (this is the file)</li>
+<li sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="32"><code sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="32">ToSic.Cre8magic.Theme.Basic.sln</code> (solution file)</li>
 </ul>
 </li>
 </ul>
-<h2 id="example-configuration-file">Example Configuration File</h2>
-<div class="TIP">
+<h2 id="example-configuration-file" sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="34">Example Configuration File</h2>
+<div class="TIP" sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="36">
 <h5>Tip</h5>
-<p>The file support CJSON, so you can use comments to explain the configuration.</p>
+<p sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="37">The file support CJSON, so you can use comments to explain the configuration.</p>
 </div>
-<pre><code class="lang-json">{
+<pre><code class="lang-json" sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="39">{
   &quot;destinationPath&quot;: &quot;..\\..\\2Templates&quot;,
   &quot;template&quot;: &quot;cre8magic&quot;,
   &quot;source&quot;: [
@@ -213,12 +213,12 @@ This is a typical repository structure:</p>
   ]
 }
 </code></pre>
-<h2 id="configuration-sections-explained-todo-">Configuration Sections Explained TODO: @STV</h2>
+<h2 id="configuration-sections-explained-todo-" sourcefile="pages/magic-tools/template-generator/config.md" sourcestartlinenumber="134">Configuration Sections Explained TODO: @STV</h2>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/config.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-tools/template-generator/config.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

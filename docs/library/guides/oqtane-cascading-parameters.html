@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/guides/oqtane-cascading-parameters.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/guides/oqtane-cascading-parameters.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -85,14 +85,14 @@
         </div>
 
         <article data-uid="Cre8magic.Library.Guides.OqtaneCascadingParameters">
-<h1 id="oqtane-cascading-parameter-and-how-to-use-it">Oqtane Cascading Parameter and How to Use it</h1>
+<h1 id="oqtane-cascading-parameter-and-how-to-use-it" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="5">Oqtane Cascading Parameter and How to Use it</h1>
 
-<p>Blazor uses a concept called <strong>Cascading Parameters</strong> to pass data from a parent component to a child component.</p>
-<p>Here you'll learn how this works, how Oqtane uses it, and how this affects your work with cre8magic.</p>
-<h2 id="cascading-parameters-in-blazor">Cascading Parameters in Blazor</h2>
-<p>In short, a parent component can prepare an object and pass it down to a child component.
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="7">Blazor uses a concept called <strong sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="7">Cascading Parameters</strong> to pass data from a parent component to a child component.</p>
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="9">Here you'll learn how this works, how Oqtane uses it, and how this affects your work with cre8magic.</p>
+<h2 id="cascading-parameters-in-blazor" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="11">Cascading Parameters in Blazor</h2>
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="13">In short, a parent component can prepare an object and pass it down to a child component.
 The parent would do something like this:</p>
-<pre><code class="lang-csharp">// ParentComponent.razor
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="16">// ParentComponent.razor
 @code {
   private ThemeInfo theme = new() { ButtonClass = &quot;btn-success&quot; };
 
@@ -105,65 +105,65 @@ The parent would do something like this:</p>
     &lt;ChildComponent /&gt;
 &lt;/CascadingValue&gt;
 </code></pre>
-<p>And the child component would receive it like this:</p>
-<pre><code class="lang-csharp">// ChildComponent.razor
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="31">And the child component would receive it like this:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="33">// ChildComponent.razor
 @code {
     [CascadingParameter] ThemeInfo Theme { get; set; }
 }
 </code></pre>
-<p>➡️ For in-depth understanding, read the official docs on <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/components/cascading-values-and-parameters">Cascading Parameters</a>.</p>
-<h2 id="oqtane-and-cascading-parameters">Oqtane and Cascading Parameters</h2>
-<p>Oqtane uses this specifically to tell components about the current page, site, module and other context information.
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="40">➡️ For in-depth understanding, read the official docs on <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/components/cascading-values-and-parameters" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="40">Cascading Parameters</a>.</p>
+<h2 id="oqtane-and-cascading-parameters" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="43">Oqtane and Cascading Parameters</h2>
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="45">Oqtane uses this specifically to tell components about the current page, site, module and other context information.
 Specifically</p>
-<ol>
-<li>The <code>PageState</code> object is passed down to all components in the page</li>
-<li>The <code>ModuleState</code> object is passed down to all things module related - like the container or the module itself</li>
+<ol sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="48">
+<li sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="48">The <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="48">PageState</code> object is passed down to all components in the page</li>
+<li sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="49">The <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="49">ModuleState</code> object is passed down to all things module related - like the container or the module itself</li>
 </ol>
-<p>Note that <code>SiteState</code> is not passed down, as it's provided as a service using dependency injection.</p>
-<p>So any component which wants to know the PageState <em>must</em> do this:</p>
-<pre><code class="lang-csharp">@code {
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="51">Note that <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="51">SiteState</code> is not passed down, as it's provided as a service using dependency injection.</p>
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="53">So any component which wants to know the PageState <em sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="53">must</em> do this:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="55">@code {
     [CascadingParameter] PageState PageState { get; set; }
 }
 </code></pre>
-<div class="TIP">
+<div class="TIP" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="61">
 <h5>Tip</h5>
-<p>It's important to be aware that this value can change,
-and that it's not available before <code>OnParametersSet</code> is called.</p>
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="62">It's important to be aware that this value can change,
+and that it's not available before <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="63">OnParametersSet</code> is called.</p>
 </div>
-<h2 id="oqtane-and-inheritance-over-composition">Oqtane and Inheritance over Composition</h2>
-<p>Oqtane started with a design where components would inherit from a base class.
-So if you inherit from a typical Oqtane component, you'll get the <code>PageState</code> (and sometimes <code>ModuleState</code>) properties for free.
+<h2 id="oqtane-and-inheritance-over-composition" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="65">Oqtane and Inheritance over Composition</h2>
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="67">Oqtane started with a design where components would inherit from a base class.
+So if you inherit from a typical Oqtane component, you'll get the <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="68">PageState</code> (and sometimes <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="68">ModuleState</code>) properties for free.
 This is the case for components which inherit from:</p>
-<ol>
-<li><code>ThemeBase</code> and all derived components</li>
-<li><code>ModuleBase</code> and all derived components</li>
-<li><code>ContainerBase</code> and derived components such as <code>ModuleTitle</code>, <code>ModuleActions</code>, <code>DefaultContainer</code> etc.</li>
-<li><code>ThemeControlBase</code> (inherits <code>ThemeBase</code>) and derived components such as <code>ControlPanel</code>, <code>Login</code>, <code>MenuBase</code> etc.</li>
+<ol sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="71">
+<li sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="71"><code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="71">ThemeBase</code> and all derived components</li>
+<li sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="72"><code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="72">ModuleBase</code> and all derived components</li>
+<li sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="73"><code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="73">ContainerBase</code> and derived components such as <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="73">ModuleTitle</code>, <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="73">ModuleActions</code>, <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="73">DefaultContainer</code> etc.</li>
+<li sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="74"><code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="74">ThemeControlBase</code> (inherits <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="74">ThemeBase</code>) and derived components such as <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="74">ControlPanel</code>, <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="74">Login</code>, <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="74">MenuBase</code> etc.</li>
 </ol>
-<h2 id="get-pagestate-when-inheriting-from-componentbase">Get PageState when Inheriting from ComponentBase</h2>
-<div class="TIP">
+<h2 id="get-pagestate-when-inheriting-from-componentbase" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="76">Get PageState when Inheriting from ComponentBase</h2>
+<div class="TIP" sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="5">
 <h5>Tip</h5>
-<p>cre8magic ♾️ strongly believes in
-<a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">Composition over Inheritance</a>
+<p sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="6">cre8magic ♾️ strongly believes in
+<a href="https://en.wikipedia.org/wiki/Composition_over_inheritance" sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="7">Composition over Inheritance</a>
 as the pattern of choice.
-This means that you should <em>not inherit</em> from an Oqtane base class
-but instead inherit from <code>ComponentBase</code>.</p>
+This means that you should <em sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="9">not inherit</em> from an Oqtane base class
+but instead inherit from <code sourcefile="pages/library/shared/do-inherit-from-componentbase.md" sourcestartlinenumber="10">ComponentBase</code>.</p>
 </div>
 
-<p>If you inherit from <code>ComponentBase</code> your code will look like this:</p>
-<pre><code class="lang-csharp">// Note: this next line is not necessary, but we recommend it for clarity
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="80">If you inherit from <code sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="80">ComponentBase</code> your code will look like this:</p>
+<pre><code class="lang-csharp" sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="82">// Note: this next line is not necessary, but we recommend it for clarity
 @inherits ComponentBase
 @code {
     [CascadingParameter] PageState PageState { get; set; }
 }
 </code></pre>
-<hr>
-<p>Updated 2024-11-29 / Oqtane 6.0</p>
+<hr sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="90">
+<p sourcefile="pages/library/guides/oqtane-cascading-parameters.md" sourcestartlinenumber="92">Updated 2024-11-29 / Oqtane 6.0</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/library/guides/oqtane-cascading-parameters.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/library/guides/oqtane-cascading-parameters.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
