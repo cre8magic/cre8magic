@@ -4,7 +4,8 @@ uid: OqtaneThemes.Templates.Index
 
 # Oqtane Theme Templates Guide
 
-Theme templates are a bunch of files with placeholders, which Oqtane can use to generate a new theme.
+> [!TIP]
+> Theme templates are a bunch of files with placeholders, which Oqtane can use to generate a new theme.
 
 They are located in the `wwwroot/Themes/Templates` folder of the Oqtane installation.
 
