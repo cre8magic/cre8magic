@@ -65,10 +65,10 @@ The transformer will run 3 distinct tasks:
 ## How to Use the cre8magic ♾️ Transformer
 
 1. Create a theme any way you want, test it, develop it, etc.
-1. Add a [`template.json` file](xref:OqtaneThemes.Templates.Index) TODO: @STV PLS EXPLAIN IT ON THAT PAGE - this will be used by Oqtane to describe the Template to the user.
+1. Add a [`template.json` file](xref:OqtaneThemes.Templates.Index) - this will be used by Oqtane to describe the Template to the user.
 1. Add a `cre8magic-transformer.config.json` [configuration](xref:Cre8magic.MagicTools.Transformer.Configuration) file to the theme folder.
 1. Run the converter, which will generate a new folder with the template files.
-    1. During testing, you will deploy it to ... ???
+    1. During testing, you will deploy it to your Oqtane `Oqtane.Server/wwwroot/Themes/Templates` folder.
     1. To release it as a nuget package, you will ...
 1. Use the generated files to create an installable NuGet package.
 1. Deploy directly or through the Oqtane Marketplace.
@@ -80,13 +80,35 @@ The transformer is a command line tool that you can run from the terminal or com
 Download the latest version from the [releases page](https://github.com/cre8magic/cre8magic-transformer/releases)
 and place it anywhere you want - it's a standalone executable.
 
-## How to Use the Transformer TODO: @stv
+## How to Use the Transformer
 
-...
+The **cre8magic ♾️ Transformer** CLI tool (`cre8magicTransformer.exe`) simplifies the process of converting themes into templates.
 
-...
+### CLI Arguments
 
-➡️ See the [Configuration File](xref:Cre8magic.MagicTools.Transformer.Configuration) for details on how to configure the transformer.
+- `-s`, `--source <path>`: Path to the source directory containing the Oqtane theme (required).
+- `-d`, `--destination <path>`: Path to the output directory for the generated template. Defaults to the location specified in `cre8magic-transformer.config.json`.
+- `-c`, `--config <path>`: Path to the JSON configuration file. Defaults to `cre8magic-transformer.config.json` in the source directory.
+- `-h`, `--help`: Displays usage information.
+
+### Example Workflow
+
+1. Ensure the theme source folder contains a valid `cre8magic-transformer.config.json` file.
+1. Open a terminal and navigate to the directory containing `cre8magicTransformer.exe`.
+1. Run the tool with the required `--source` argument:
+
+   ```cmd
+   cre8magicTransformer -s "a:\2shine-oqtane\oqtane-theme-basic"
+   ```
+
+1. The tool processes the theme, renames files, replaces tokens, and generates the template in the specified destination directory.
+
+   ![Transformation Example](./assets/cre8magicTransformer.png)
+
+1. Upon successful conversion, a message `Conversion completed successfully!` is displayed.
+1. Since destination path is on expected place in local oqtane installation for theme template (e.g., `a:\2shine-oqtane\oqtane.framework\Oqtane.Server\wwwroot\Themes\Templates\cre8magic`) start the oqtane and use the generated template to create new theme source code solution.
+
+➡️ For configuration details, see [Configuration File](xref:Cre8magic.MagicTools.Transformer.Configuration).
 
 ---
 
