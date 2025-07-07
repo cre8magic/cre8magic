@@ -29,7 +29,6 @@ In **Page Management**, you can configure layout options for the current page:
 <div gallery="gallery02">
   <img src="./assets/oqtane-setting-theme_3.webp" data-caption="Open Theme Settings">
   <img src="./assets/oqtane-setting-theme_4.webp" data-caption="Preview the changes">
-  <img src="./assets/oqtane-setting-theme_5.webp" data-caption="Scope settings showing custom data">
 </div>
 
 In **Theme Settings**, you can customize options for the current page or the entire site.
