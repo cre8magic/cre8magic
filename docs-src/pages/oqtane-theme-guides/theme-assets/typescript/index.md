@@ -23,6 +23,3 @@ TypeScript files (`.ts`) are compiled to plain JavaScript by Vite during the bui
 You can find more information on how Vite compiles TypeScript and SCSS in the [Vite documentation](https://vitejs.dev).
 
   📘 [How to Install Vite](xref:OqtaneThemes.ThemeAssets.Vite.Index)
-  
----
-
