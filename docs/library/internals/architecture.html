@@ -85,127 +85,127 @@
         </div>
 
         <article data-uid="">
-<h1 id="cre8magic-internal-architecture" sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="1">cre8magic Internal Architecture</h1>
+<h1 id="cre8magic-internal-architecture">cre8magic Internal Architecture</h1>
 
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="3">This document should explain the internal structures of cre8magic, so that developers can understand how it works and how to extend it.</p>
-<h2 id="overview" sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="5">Overview</h2>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="7">For the architecture there are a few things to consider:</p>
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="9">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="9">Stable external APIs</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="10">Consistent internal APIs to make this fairly complex thing easy to understand</li>
+<p>This document should explain the internal structures of cre8magic, so that developers can understand how it works and how to extend it.</p>
+<h2 id="overview">Overview</h2>
+<p>For the architecture there are a few things to consider:</p>
+<ol>
+<li>Stable external APIs</li>
+<li>Consistent internal APIs to make this fairly complex thing easy to understand</li>
 </ol>
-<h2 id="main-paradigms-for-the-internal-architecture" sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="12">Main Paradigms For the Internal Architecture</h2>
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="14">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="14"><p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="14"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="14">Composition over Inheritance</strong></p>
-<ul sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="15">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="15">We try to avoid inheritance as much as possible, and instead use composition.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="16">This makes it easier to understand and extend the system.</li>
+<h2 id="main-paradigms-for-the-internal-architecture">Main Paradigms For the Internal Architecture</h2>
+<ol>
+<li><p><strong>Composition over Inheritance</strong></p>
+<ul>
+<li>We try to avoid inheritance as much as possible, and instead use composition.</li>
+<li>This makes it easier to understand and extend the system.</li>
 </ul>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="18"><p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="18"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="18">Plain Vanilla Blazor Components</strong></p>
-<ul sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="19">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="19">We use <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="19">ComponentBase</code> instead of <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="19">ThemeBase</code> etc.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="20">This is a consequence of Composition over Inheritance.</li>
+<li><p><strong>Plain Vanilla Blazor Components</strong></p>
+<ul>
+<li>We use <code>ComponentBase</code> instead of <code>ThemeBase</code> etc.</li>
+<li>This is a consequence of Composition over Inheritance.</li>
 </ul>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="23"><p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="23"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="23">Read-Only Record Objects</strong></p>
-<ul sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="24">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="24">We use read-only <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="24">record</code> objects for state management.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="25">For example, a <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="25">MagicSettings</code> object is a read-only record object.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="26">This has many benefits, especially that it will be immutable and not cause side-effects.</li>
+<li><p><strong>Read-Only Record Objects</strong></p>
+<ul>
+<li>We use read-only <code>record</code> objects for state management.</li>
+<li>For example, a <code>MagicSettings</code> object is a read-only record object.</li>
+<li>This has many benefits, especially that it will be immutable and not cause side-effects.</li>
 </ul>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="28"><p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="28"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="28">Interfaces instead of Objects</strong></p>
-<ul sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="29">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="29">We prefer to use interfaces instead of objects.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="30">This makes it easier to understand and extend the system.</li>
+<li><p><strong>Interfaces instead of Objects</strong></p>
+<ul>
+<li>We prefer to use interfaces instead of objects.</li>
+<li>This makes it easier to understand and extend the system.</li>
 </ul>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="32"><p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="32"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="32">Structure by Topic, not by Type</strong></p>
-<ul sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="33">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="33">We structure the code by topic, not by type.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="34">This makes it easier to understand and extend the system.</li>
+<li><p><strong>Structure by Topic, not by Type</strong></p>
+<ul>
+<li>We structure the code by topic, not by type.</li>
+<li>This makes it easier to understand and extend the system.</li>
 </ul>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="36"><p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="36"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="36">Autocaching in the Service</strong></p>
-<ul sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="37">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="37">We use autocaching in the service to make it faster and more efficient.</li>
+<li><p><strong>Autocaching in the Service</strong></p>
+<ul>
+<li>We use autocaching in the service to make it faster and more efficient.</li>
 </ul>
 </li>
 </ol>
-<h2 id="things-to-consider" sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="40">Things to Consider</h2>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="42">We want developers to be able to use the services without having to use the Components.</p>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="44">In addition, the settings mechanisms should be seamless, magical but still very easy to understand.</p>
-<h2 id="sample-best-practice-setup-by-example-of-the-menu" sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="46">Sample Best Practice Setup by Example of the Menu</h2>
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="48">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="48"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="48">IMagicMenuKit</strong> will be the object that contains everything to do with the menu.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="49"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="49">Internal.IMagicMenuService</strong> will be the service that contains the logic to get the Kit.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="50"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="50">IMagicAct</strong> is the main entry point which is usually used to call the service.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="51"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="51">MagicMenuSettingsData</strong> (<code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="51">record</code>) is the data object that is used for settings which can be stored.
-This object is usually not used the outside, as the outside will use the <strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="52">MagicMenuSettings</strong> (without the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="52">Data</code>).</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="53"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="53">MagicMenuSettings</strong> (<code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="53">record</code>) will be the settings object that is used to configure what the service should provide.
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="54">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="54">It extends the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="54">MagicMenuSettingsData</code> and adds some additional properties, like the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="54">PartName</code> which would be used to retrieve named settings.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="55">This object will usually be provided to the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="55">MagicAct</code> to get everything set up.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="56">After the setup it will also be found on the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="56">.Settings</code> property of the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="56">MagicMenuKit</code>.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="57">After the setup it will have more values filled (from the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="57">MagicMenuSettingsData</code>).</li>
+<h2 id="things-to-consider">Things to Consider</h2>
+<p>We want developers to be able to use the services without having to use the Components.</p>
+<p>In addition, the settings mechanisms should be seamless, magical but still very easy to understand.</p>
+<h2 id="sample-best-practice-setup-by-example-of-the-menu">Sample Best Practice Setup by Example of the Menu</h2>
+<ol>
+<li><strong>IMagicMenuKit</strong> will be the object that contains everything to do with the menu.</li>
+<li><strong>Internal.IMagicMenuService</strong> will be the service that contains the logic to get the Kit.</li>
+<li><strong>IMagicAct</strong> is the main entry point which is usually used to call the service.</li>
+<li><strong>MagicMenuSettingsData</strong> (<code>record</code>) is the data object that is used for settings which can be stored.
+This object is usually not used the outside, as the outside will use the <strong>MagicMenuSettings</strong> (without the <code>Data</code>).</li>
+<li><strong>MagicMenuSettings</strong> (<code>record</code>) will be the settings object that is used to configure what the service should provide.
+<ol>
+<li>It extends the <code>MagicMenuSettingsData</code> and adds some additional properties, like the <code>PartName</code> which would be used to retrieve named settings.</li>
+<li>This object will usually be provided to the <code>MagicAct</code> to get everything set up.</li>
+<li>After the setup it will also be found on the <code>.Settings</code> property of the <code>MagicMenuKit</code>.</li>
+<li>After the setup it will have more values filled (from the <code>MagicMenuSettingsData</code>).</li>
 </ol>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="58">Design
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="59">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="59"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="59">MagicMenuBlueprints</strong> ...</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="60"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="60">MagicMenuBlueprintPart</strong> ... TODO: NAMING NOT FINAL</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="61"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="61">MagicMenuTailor</strong> ...</li>
+<li>Design
+<ol>
+<li><strong>MagicMenuBlueprints</strong> ...</li>
+<li><strong>MagicMenuBlueprintPart</strong> ... TODO: NAMING NOT FINAL</li>
+<li><strong>MagicMenuTailor</strong> ...</li>
 </ol>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="62">The <strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="62">/Menus/Components/MagicMenu</strong> is a primary or sample component for using the menu.
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="63">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="63">It will expect a <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="63">Settings</code> parameter which is the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="63">MagicMenuSettings</code>.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="64">It will usually use the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="64">MagicAct</code> to prepare the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="64">MagicMenuKit</code></li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="65">It will then use the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="65">MagicMenuKit</code> to iterate the data, and render the menu.</li>
+<li>The <strong>/Menus/Components/MagicMenu</strong> is a primary or sample component for using the menu.
+<ol>
+<li>It will expect a <code>Settings</code> parameter which is the <code>MagicMenuSettings</code>.</li>
+<li>It will usually use the <code>MagicAct</code> to prepare the <code>MagicMenuKit</code></li>
+<li>It will then use the <code>MagicMenuKit</code> to iterate the data, and render the menu.</li>
 </ol>
 </li>
 </ol>
-<h2 id="settings-structures" sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="67">Settings Structures</h2>
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="69">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="69"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="69">IMagicSettingsService</strong> is the internal object which manages/provides the settings.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="70"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="70">IMagicSettingsSource</strong> (of which there are many) is the object that <em sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="70">can</em> provide settings.
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="71">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="71">The <strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="71">MagicSettingsSourceJson</strong> is an example of this.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="72">Sources contain a <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="72">Catalog(...)</code> method to retrieve the <strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="72">MagicSettingsCatalog</strong></li>
+<h2 id="settings-structures">Settings Structures</h2>
+<ol>
+<li><strong>IMagicSettingsService</strong> is the internal object which manages/provides the settings.</li>
+<li><strong>IMagicSettingsSource</strong> (of which there are many) is the object that <em>can</em> provide settings.
+<ol>
+<li>The <strong>MagicSettingsSourceJson</strong> is an example of this.</li>
+<li>Sources contain a <code>Catalog(...)</code> method to retrieve the <strong>MagicSettingsCatalog</strong></li>
 </ol>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="73"><strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="73">MagicSettingsCatalogsLoader</strong> will collect all the <em sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="73">Sources</em> and provide them to the <strong sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="73">IMagicSettingsService</strong>.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="74">...</li>
+<li><strong>MagicSettingsCatalogsLoader</strong> will collect all the <em>Sources</em> and provide them to the <strong>IMagicSettingsService</strong>.</li>
+<li>...</li>
 </ol>
-<h2 id="settings-catalog-and-structure" sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="76">Settings Catalog and Structure</h2>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="78">A Catalog contain all the settings which can be requested by any part of the system.</p>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="80">It follows two important conventions:</p>
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="82">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="82">Flat Structure with Topic first (e.g. <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="82">Themes</code>, <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="82">ThemeDesigns</code> <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="82">Menus</code>, <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="82">MenuBlueprints</code>, <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="82">Breadcrumbs</code>, ...)</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="83">Each of these Settings Groups will have a dictionary of settings, so each section can contain multiple named settings.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="84">Everything is a <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="84">record</code> object, so it's immutable and can't cause side-effects.</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="85">Everything inside the catalog should support the <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="85">ICanClone&lt;T&gt;</code> interface, so these records can be duplicated &amp; modified easily.</li>
+<h2 id="settings-catalog-and-structure">Settings Catalog and Structure</h2>
+<p>A Catalog contain all the settings which can be requested by any part of the system.</p>
+<p>It follows two important conventions:</p>
+<ol>
+<li>Flat Structure with Topic first (e.g. <code>Themes</code>, <code>ThemeDesigns</code> <code>Menus</code>, <code>MenuBlueprints</code>, <code>Breadcrumbs</code>, ...)</li>
+<li>Each of these Settings Groups will have a dictionary of settings, so each section can contain multiple named settings.</li>
+<li>Everything is a <code>record</code> object, so it's immutable and can't cause side-effects.</li>
+<li>Everything inside the catalog should support the <code>ICanClone&lt;T&gt;</code> interface, so these records can be duplicated &amp; modified easily.</li>
 </ol>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="87">The catalog always follows the following conventions</p>
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="89">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="89">A <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="89">ThemeSettings</code> (of which there can be many) is used
-<ol sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="90">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="90">to configure a theme</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="91">and (for example) determine which parts should be shown and where they can find their settings.</li>
+<p>The catalog always follows the following conventions</p>
+<ol>
+<li>A <code>ThemeSettings</code> (of which there can be many) is used
+<ol>
+<li>to configure a theme</li>
+<li>and (for example) determine which parts should be shown and where they can find their settings.</li>
 </ol>
 </li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="92"><code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="92">Menus</code> contains menu settings</li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="93"><code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="93">MenuBlueprints</code> contains menu design settings</li>
+<li><code>Menus</code> contains menu settings</li>
+<li><code>MenuBlueprints</code> contains menu design settings</li>
 </ol>
-<h2 id="settings-json" sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="95">Settings Json</h2>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="97">...usually <code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="97">theme.json</code></p>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="99">Specials like</p>
-<ul sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="101">
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="101"><code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="101">=</code></li>
-<li sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="102"><code sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="102">inherits</code></li>
+<h2 id="settings-json">Settings Json</h2>
+<p>...usually <code>theme.json</code></p>
+<p>Specials like</p>
+<ul>
+<li><code>=</code></li>
+<li><code>inherits</code></li>
 </ul>
-<p sourcefile="pages/library/internals/architecture.md" sourcestartlinenumber="104">Internally</p>
+<p>Internally</p>
 
 </article>
 

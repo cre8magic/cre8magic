@@ -85,61 +85,61 @@
         </div>
 
         <article data-uid="">
-<h1 id="patterns" sourcefile="pages/library/patterns.md" sourcestartlinenumber="1">Patterns</h1>
+<h1 id="patterns">Patterns</h1>
 
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="3">cre8magic strives to follow the best practices of software development.
+<p>cre8magic strives to follow the best practices of software development.
 This includes the use of patterns and principles that have been proven to work well in the past.</p>
-<div class="TIP" sourcefile="pages/library/patterns.md" sourcestartlinenumber="6">
+<div class="TIP">
 <h5>Tip</h5>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="7">Some of these patterns are very different from the patterns used in Oqtane.
+<p>Some of these patterns are very different from the patterns used in Oqtane.
 There are good reasons for this, which are explained in the respective sections.</p>
 </div>
-<h2 id="settings--service--kit--work" sourcefile="pages/library/patterns.md" sourcestartlinenumber="10">Settings &gt; Service &gt; Kit &gt; Work</h2>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="12">...</p>
-<h2 id="composition-over-inheritance" sourcefile="pages/library/patterns.md" sourcestartlinenumber="16">Composition over Inheritance</h2>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="18">cre8magic prefers composition over inheritance.</p>
-<div class="WARNING" sourcefile="pages/library/patterns.md" sourcestartlinenumber="20">
+<h2 id="settings--service--kit--work">Settings &gt; Service &gt; Kit &gt; Work</h2>
+<p>...</p>
+<h2 id="composition-over-inheritance">Composition over Inheritance</h2>
+<p>cre8magic prefers composition over inheritance.</p>
+<div class="WARNING">
 <h5>Warning</h5>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="21"><strong sourcefile="pages/library/patterns.md" sourcestartlinenumber="21">♾️ vs. 💧</strong>
+<p><strong>♾️ vs. 💧</strong>
 This pattern used by cre8magic is seen as a best practice by the cre8magic team
 and by many experts in the community.
 Oqtane currently uses a different pattern, which is prioritizes inheritance.</p>
 </div>
-<h2 id="plain-vanilla-blazor-components" sourcefile="pages/library/patterns.md" sourcestartlinenumber="26">Plain Vanilla Blazor Components</h2>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="28">...<code sourcefile="pages/library/patterns.md" sourcestartlinenumber="28">ComponentBase</code> instead of <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="28">ThemeBase</code> etc.</p>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="30">...consequence of Composition over Inheritance.</p>
-<h2 id="read-only-record-objects" sourcefile="pages/library/patterns.md" sourcestartlinenumber="32">Read-Only Record Objects</h2>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="34">cre8magic uses read-only <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="34">record</code> objects for state management.
-For example, a <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="35">MagicSettings</code> object is a read-only record object.</p>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="37">This has many benefits, especially that it will be immutable and not cause side-effects.</p>
-<div class="WARNING" sourcefile="pages/library/patterns.md" sourcestartlinenumber="39">
+<h2 id="plain-vanilla-blazor-components">Plain Vanilla Blazor Components</h2>
+<p>...<code>ComponentBase</code> instead of <code>ThemeBase</code> etc.</p>
+<p>...consequence of Composition over Inheritance.</p>
+<h2 id="read-only-record-objects">Read-Only Record Objects</h2>
+<p>cre8magic uses read-only <code>record</code> objects for state management.
+For example, a <code>MagicSettings</code> object is a read-only record object.</p>
+<p>This has many benefits, especially that it will be immutable and not cause side-effects.</p>
+<div class="WARNING">
 <h5>Warning</h5>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="40"><strong sourcefile="pages/library/patterns.md" sourcestartlinenumber="40">♾️ vs. 💧</strong>
+<p><strong>♾️ vs. 💧</strong>
 This pattern used by cre8magic is seen as a best practice by the cre8magic team
 and by many experts in the community.
 Oqtane currently uses a different pattern, which has mutable classes.</p>
 </div>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="45">Example of ♾️ vs. 💧</p>
-<ul sourcefile="pages/library/patterns.md" sourcestartlinenumber="47">
-<li sourcefile="pages/library/patterns.md" sourcestartlinenumber="47">Oqtane's <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="47">Page</code> <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="47">object</code> is mutable, and can be changed at any time.
+<p>Example of ♾️ vs. 💧</p>
+<ul>
+<li>Oqtane's <code>Page</code> <code>object</code> is mutable, and can be changed at any time.
 You should never do this, and it can have severe side-effects.
 But the API doesn't prevent you from doing it.</li>
-<li sourcefile="pages/library/patterns.md" sourcestartlinenumber="50">cre8magic's <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="50">MagicPage</code> <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="50">record</code> is immutable, and can never be changed.
+<li>cre8magic's <code>MagicPage</code> <code>record</code> is immutable, and can never be changed.
 You can create new copies of it, but the original will always stay the same.</li>
 </ul>
-<h2 id="interfaces-instead-of-objects" sourcefile="pages/library/patterns.md" sourcestartlinenumber="53">Interfaces instead of Objects</h2>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="55">...</p>
-<h2 id="structure-by-topic-not-by-type" sourcefile="pages/library/patterns.md" sourcestartlinenumber="57">Structure by Topic, not by Type</h2>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="59">todo: diff than Oqtane</p>
-<h2 id="section" sourcefile="pages/library/patterns.md" sourcestartlinenumber="61">...</h2>
-<h2 id="auto-caching-in-the-service" sourcefile="pages/library/patterns.md" sourcestartlinenumber="63"><del sourcefile="pages/library/patterns.md" sourcestartlinenumber="63">Auto-Caching in the service...</del></h2>
-<h2 id="plural-namespaces" sourcefile="pages/library/patterns.md" sourcestartlinenumber="66">Plural Namespaces</h2>
-<p sourcefile="pages/library/patterns.md" sourcestartlinenumber="68">cre8magic uses plural namespaces for all services and objects.
-For example, <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="69">Breadcrumbs</code> or <code sourcefile="pages/library/patterns.md" sourcestartlinenumber="69">Languages</code></p>
-<h2 id="records-as-function-parameters" sourcefile="pages/library/patterns.md" sourcestartlinenumber="72">Records as Function Parameters</h2>
-<ul sourcefile="pages/library/patterns.md" sourcestartlinenumber="74">
-<li sourcefile="pages/library/patterns.md" sourcestartlinenumber="74">API stability</li>
-<li sourcefile="pages/library/patterns.md" sourcestartlinenumber="75">update-safe
+<h2 id="interfaces-instead-of-objects">Interfaces instead of Objects</h2>
+<p>...</p>
+<h2 id="structure-by-topic-not-by-type">Structure by Topic, not by Type</h2>
+<p>todo: diff than Oqtane</p>
+<h2 id="section">...</h2>
+<h2 id="auto-caching-in-the-service"><del>Auto-Caching in the service...</del></h2>
+<h2 id="plural-namespaces">Plural Namespaces</h2>
+<p>cre8magic uses plural namespaces for all services and objects.
+For example, <code>Breadcrumbs</code> or <code>Languages</code></p>
+<h2 id="records-as-function-parameters">Records as Function Parameters</h2>
+<ul>
+<li>API stability</li>
+<li>update-safe
 ...</li>
 </ul>
 

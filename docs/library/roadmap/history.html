@@ -85,76 +85,76 @@
         </div>
 
         <article data-uid="Cre8magic.Roadmap.History">
-<h1 id="roadmap" sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="5">Roadmap</h1>
+<h1 id="roadmap">Roadmap</h1>
 
-<h2 id="working-on-v002-2024-11" sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="8">Working on v0.02 2024-11</h2>
-<p sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="10">Here we want to make it more architecturally sound, and more modular.</p>
-<p sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="12">Goal is that some developers may only want to use certain services to make their life easier.
+<h2 id="working-on-v002-2024-11">Working on v0.02 2024-11</h2>
+<p>Here we want to make it more architecturally sound, and more modular.</p>
+<p>Goal is that some developers may only want to use certain services to make their life easier.
 These people may not care about the settings system, projections or even styling system.</p>
-<p sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="15">But those automations should still exist for most projects that just want to get things done.</p>
-<p sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="17">So the goal is kind of the following - based on an example of the menu system:</p>
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="19">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="19">Services
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="20">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="20">We probably need some primary service which will do most of the work,
+<p>But those automations should still exist for most projects that just want to get things done.</p>
+<p>So the goal is kind of the following - based on an example of the menu system:</p>
+<ol>
+<li>Services
+<ol>
+<li>We probably need some primary service which will do most of the work,
 To ensure that our startup logic is able to retrieve other services as well...</li>
 </ol>
 </li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="22">Factories
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="23">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="23">Have a service - probably called <code sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="23">ToSic.Cre8Magic.Pages.MagicPagesService</code> - which is used to prepare the data for various use cases such as:
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="24">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="24">Menu</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="25">Breadcrumbs</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="26">Sitemap</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="27">Single pages which are smarter</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="28">etc.</li>
+<li>Factories
+<ol>
+<li>Have a service - probably called <code>ToSic.Cre8Magic.Pages.MagicPagesService</code> - which is used to prepare the data for various use cases such as:
+<ol>
+<li>Menu</li>
+<li>Breadcrumbs</li>
+<li>Sitemap</li>
+<li>Single pages which are smarter</li>
+<li>etc.</li>
 </ol>
 </li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="29">These services should have a simple API but be able to do &quot;everything&quot;
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="30">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="30">This should either be a named-params system</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="31">Or a fluent API (TBD)</li>
+<li>These services should have a simple API but be able to do &quot;everything&quot;
+<ol>
+<li>This should either be a named-params system</li>
+<li>Or a fluent API (TBD)</li>
 </ol>
 </li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="32">Samples which just use the service, and custom Razor to do everything else.</li>
+<li>Samples which just use the service, and custom Razor to do everything else.</li>
 </ol>
 </li>
 </ol>
-<h3 id="more-thoughts" sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="34">More Thoughts</h3>
-<ul sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="36">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="36">Probably remove the &quot;Client&quot; part in the namespace</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="37">Probably make a topic based namespace system, not a model/services/controls system ? or the other way around?</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="38">Unit tests?</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="39">Possibly make smaller DLLs?, like a Core, A pages, etc.</li>
+<h3 id="more-thoughts">More Thoughts</h3>
+<ul>
+<li>Probably remove the &quot;Client&quot; part in the namespace</li>
+<li>Probably make a topic based namespace system, not a model/services/controls system ? or the other way around?</li>
+<li>Unit tests?</li>
+<li>Possibly make smaller DLLs?, like a Core, A pages, etc.</li>
 </ul>
-<h2 id="version-0" sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="43">Version 0</h2>
-<h3 id="2022-10-07-v002" sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="45">2022-10-07 v0.0.2</h3>
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="47">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="47">Made menu design settings support inherit</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="48">Added json schema and published to <a href="https://2sic.github.io/cre8magic/schemas/2022-10/theme.json" sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="48">https://2sic.github.io/cre8magic/schemas/2022-10/theme.json</a></li>
+<h2 id="version-0">Version 0</h2>
+<h3 id="2022-10-07-v002">2022-10-07 v0.0.2</h3>
+<ol>
+<li>Made menu design settings support inherit</li>
+<li>Added json schema and published to <a href="https://2sic.github.io/cre8magic/schemas/2022-10/theme.json">https://2sic.github.io/cre8magic/schemas/2022-10/theme.json</a></li>
 </ol>
-<h3 id="first-beta-v001-2022-10-05" sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="50">First Beta v0.01 2022-10-05</h3>
-<p sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="52">This was the first internal release of the project.
+<h3 id="first-beta-v001-2022-10-05">First Beta v0.01 2022-10-05</h3>
+<p>This was the first internal release of the project.
 It was made to test various concepts such as:</p>
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="55">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="55">Initial release for use on blazor-cms.org</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="56">Named settings for layouts, breadcrumbs, menus</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="57">Named settings for the design of layouts, breadcrumbs, menus</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="58">A bunch of base classes for Razor</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="59">A bunch of services to make it happen</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="60">MagicContext, MagicSettings, MagicConfigurations etc.</li>
+<ol>
+<li>Initial release for use on blazor-cms.org</li>
+<li>Named settings for layouts, breadcrumbs, menus</li>
+<li>Named settings for the design of layouts, breadcrumbs, menus</li>
+<li>A bunch of base classes for Razor</li>
+<li>A bunch of services to make it happen</li>
+<li>MagicContext, MagicSettings, MagicConfigurations etc.</li>
 </ol>
-<p sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="62">Basically...</p>
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="64">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="64">Simple Bootstrap 5 Themes which can be easily customized without recompiling.</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="65">Settings-System which projects the configuration(s) to the various themes and components.</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="66">Creating various &quot;standard&quot; components that just do everything right.</li>
+<p>Basically...</p>
+<ol>
+<li>Simple Bootstrap 5 Themes which can be easily customized without recompiling.</li>
+<li>Settings-System which projects the configuration(s) to the various themes and components.</li>
+<li>Creating various &quot;standard&quot; components that just do everything right.</li>
 </ol>
-<p sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="68">This system had some important shortcomings, such as:</p>
-<ol sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="70">
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="70">Black box - things magically worked - or didn't</li>
-<li sourcefile="pages/library/roadmap/history.md" sourcestartlinenumber="71">We tried to compensate a lot of this with logging, but that only helped if you already knew a lot of the systems internals.</li>
+<p>This system had some important shortcomings, such as:</p>
+<ol>
+<li>Black box - things magically worked - or didn't</li>
+<li>We tried to compensate a lot of this with logging, but that only helped if you already knew a lot of the systems internals.</li>
 </ol>
 
 </article>

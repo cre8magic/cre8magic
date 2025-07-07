@@ -85,44 +85,44 @@
         </div>
 
         <article data-uid="">
-<h1 id="contributing-code" sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="1">Contributing Code</h1>
+<h1 id="contributing-code">Contributing Code</h1>
 
-<div class="TIP" sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="3">
+<div class="TIP">
 <h5>Tip</h5>
-<p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="4">This is still a work in progress.</p>
+<p>This is still a work in progress.</p>
 </div>
-<h2 id="setup" sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="6">Setup</h2>
-<p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="8">The Solution is a Visual Studio 2022 solution.</p>
-<p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="10">It has a few special things to know:</p>
-<ol sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="12">
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="12">The core project is <code sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="12">ToSic.Cre8magic.Client</code></li>
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="13">Most UI tests are found in the Module <code sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="13">ToSic.Module.Cre8magicTests</code>.</li>
+<h2 id="setup">Setup</h2>
+<p>The Solution is a Visual Studio 2022 solution.</p>
+<p>It has a few special things to know:</p>
+<ol>
+<li>The core project is <code>ToSic.Cre8magic.Client</code></li>
+<li>Most UI tests are found in the Module <code>ToSic.Module.Cre8magicTests</code>.</li>
 </ol>
-<h2 id="testing-in-the-browser" sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="16">Testing in the Browser</h2>
-<p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="18">Place the module on a page and select various tests.</p>
-<p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="20">If you are logged in, you can also save the configuration so the same test will be shown when you revisit the page.</p>
-<p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="22">The reason we're doing this is because various tests will behave differently,
+<h2 id="testing-in-the-browser">Testing in the Browser</h2>
+<p>Place the module on a page and select various tests.</p>
+<p>If you are logged in, you can also save the configuration so the same test will be shown when you revisit the page.</p>
+<p>The reason we're doing this is because various tests will behave differently,
 depending on the theme around it.</p>
-<p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="25">So this allows us to place the module on pages with different themes and see how it behaves.</p>
-<h2 id="important-conventions" sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="27">Important Conventions</h2>
-<h3 id="group-by-topic" sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="29">Group by Topic</h3>
-<ol sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="31">
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="31">Each topic should have its own folder. eg. <code sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="31">Menus</code>, <code sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="31">Breadcrumbs</code> etc.</li>
+<p>So this allows us to place the module on pages with different themes and see how it behaves.</p>
+<h2 id="important-conventions">Important Conventions</h2>
+<h3 id="group-by-topic">Group by Topic</h3>
+<ol>
+<li>Each topic should have its own folder. eg. <code>Menus</code>, <code>Breadcrumbs</code> etc.</li>
 </ol>
-<h3 id="internal-as-much-as-possible" sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="33">Internal as Much as Possible</h3>
-<p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="35">Anything that is really not needed for the public use should be as internal as possible.</p>
-<ol sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="37">
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="37"><p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="37">Anything internal that can be internal should be marked as <code sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="37">internal</code><br>
+<h3 id="internal-as-much-as-possible">Internal as Much as Possible</h3>
+<p>Anything that is really not needed for the public use should be as internal as possible.</p>
+<ol>
+<li><p>Anything internal that can be internal should be marked as <code>internal</code><br>
 ...to really protect the public API surface.</p>
 </li>
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="40"><p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="40">Anything internal should be in a folder <code sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="40">Internal</code> in the root or any topic based folder.<br>
+<li><p>Anything internal should be in a folder <code>Internal</code> in the root or any topic based folder.<br>
 ...this will be filtered out by the docs. (TODO)</p>
 </li>
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="43"><p sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="43">Really internal objects should not be named <code sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="43">Magic...</code></p>
-<ul sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="44">
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="44">it's shorter</li>
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="45">and we can spot internal stuff + spot leaks in the docs.</li>
-<li sourcefile="pages/library/contribute/index.md" sourcestartlinenumber="46">Note that this doesn't apply to internal implementations of interfaces, which should be named after the interface.</li>
+<li><p>Really internal objects should not be named <code>Magic...</code></p>
+<ul>
+<li>it's shorter</li>
+<li>and we can spot internal stuff + spot leaks in the docs.</li>
+<li>Note that this doesn't apply to internal implementations of interfaces, which should be named after the interface.</li>
 </ul>
 </li>
 </ol>

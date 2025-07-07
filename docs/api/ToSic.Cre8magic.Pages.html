@@ -96,22 +96,22 @@ Classes
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageEditService.html">MagicPageEditService</a></dt>
-      <dd><p sourcefile="api-generated/ToSic.Cre8magic.Pages.MagicPageEditService.yml" sourcestartlinenumber="1">Helper to remove the logic/code from the razor file.
+      <dd><p>Helper to remove the logic/code from the razor file.
 It's just meant to support the AdminButtons,
 without placing the logic code inside that.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageTailorBase.html">MagicPageTailorBase</a></dt>
-      <dd><p sourcefile="api-generated/ToSic.Cre8magic.Pages.MagicPageTailorBase.yml" sourcestartlinenumber="1">Base class for page designers.
+      <dd><p>Base class for page designers.
 Can be used as a foundation for creating your custom designers.</p>
-<p sourcefile="api-generated/ToSic.Cre8magic.Pages.MagicPageTailorBase.yml" sourcestartlinenumber="4">This is a bit safer than just implementing the interface, as future enhancements
+<p>This is a bit safer than just implementing the interface, as future enhancements
 would appear on this class so your implementation would work even on an upgrade.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Pages.MagicPageTailorBasic.html">MagicPageTailorBasic</a></dt>
-      <dd><p sourcefile="api-generated/ToSic.Cre8magic.Pages.MagicPageTailorBasic.yml" sourcestartlinenumber="1">Simple page designer for breadcrumbs or menus.
+      <dd><p>Simple page designer for breadcrumbs or menus.
 If no lookups are specified, the Classes(...) and Data(...) methods will return empty strings.</p>
 </dd>
     </dl>
@@ -120,27 +120,27 @@ Interfaces
 </h3>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></dt>
-      <dd><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Magic Pages are smart wrappers around Oqtane Pages.
+      <dd><p>Magic Pages are smart wrappers around Oqtane Pages.
 They offer many benefits such as:</p>
-<ol sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="4">
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="4">Read-only properties (no accidental writing properties with unexpected side effects)</li>
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="5">Improved naming, e.g. <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="5">.Id</code> instead of <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="5">.PageId</code></li>
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="6">Calculated properties such as <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="6">Target</code> (which becomes <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="6">&quot;_blank&quot;</code> for external links or <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="6">null</code> for normal links)</li>
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="7">Corrected values - e.g. the <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="7">Link</code> property will be <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="7">javascript:void(0)</code> if the page is not clickable</li>
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="8">Navigation properties such as <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="8">Parent</code> and <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="8">Breadcrumb</code></li>
+<ol>
+<li>Read-only properties (no accidental writing properties with unexpected side effects)</li>
+<li>Improved naming, e.g. <code>.Id</code> instead of <code>.PageId</code></li>
+<li>Calculated properties such as <code>Target</code> (which becomes <code>&quot;_blank&quot;</code> for external links or <code>null</code> for normal links)</li>
+<li>Corrected values - e.g. the <code>Link</code> property will be <code>javascript:void(0)</code> if the page is not clickable</li>
+<li>Navigation properties such as <code>Parent</code> and <code>Breadcrumb</code></li>
 </ol>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageSetSettings.html">IMagicPageSetSettings</a></dt>
-      <dd><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPageSetSettings.yml" sourcestartlinenumber="1">WIP
+      <dd><p>WIP
 TODO: naming not final</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPageTailor.html">IMagicPageTailor</a></dt>
-      <dd><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPageTailor.yml" sourcestartlinenumber="1">Interface for a designer of a magic page.</p>
-<p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPageTailor.yml" sourcestartlinenumber="3">Anything implementing this interface can be used as a designer for a magic page,
+      <dd><p>Interface for a designer of a magic page.</p>
+<p>Anything implementing this interface can be used as a designer for a magic page,
 providing custom classes and values when generating the HTML for the page.</p>
 </dd>
     </dl>

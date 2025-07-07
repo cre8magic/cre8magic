@@ -97,14 +97,14 @@ Interface IMagicPage  <a class="header-action link-secondary" title="View source
   <dl><dt>Assembly</dt><dd>ToSic.Cre8Magic.Client.Oqtane.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Magic Pages are smart wrappers around Oqtane Pages.
+  <div class="markdown summary"><p>Magic Pages are smart wrappers around Oqtane Pages.
 They offer many benefits such as:</p>
-<ol sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="4">
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="4">Read-only properties (no accidental writing properties with unexpected side effects)</li>
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="5">Improved naming, e.g. <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="5">.Id</code> instead of <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="5">.PageId</code></li>
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="6">Calculated properties such as <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="6">Target</code> (which becomes <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="6">&quot;_blank&quot;</code> for external links or <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="6">null</code> for normal links)</li>
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="7">Corrected values - e.g. the <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="7">Link</code> property will be <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="7">javascript:void(0)</code> if the page is not clickable</li>
-<li sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="8">Navigation properties such as <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="8">Parent</code> and <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="8">Breadcrumb</code></li>
+<ol>
+<li>Read-only properties (no accidental writing properties with unexpected side effects)</li>
+<li>Improved naming, e.g. <code>.Id</code> instead of <code>.PageId</code></li>
+<li>Calculated properties such as <code>Target</code> (which becomes <code>&quot;_blank&quot;</code> for external links or <code>null</code> for normal links)</li>
+<li>Corrected values - e.g. the <code>Link</code> property will be <code>javascript:void(0)</code> if the page is not clickable</li>
+<li>Navigation properties such as <code>Parent</code> and <code>Breadcrumb</code></li>
 </ol>
 </div>
   <div class="markdown conceptual"></div>
@@ -136,7 +136,7 @@ They offer many benefits such as:</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">The current pages bread-crumb, going from the top-level to the current page.
+  <div class="markdown level1 summary"><p>The current pages bread-crumb, going from the top-level to the current page.
 Note that the &quot;Home&quot; page is usually not a parent, so it's not included.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -200,7 +200,7 @@ Note that the &quot;Home&quot; page is usually not a parent, so it's not include
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L119"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Determines if there are sub-pages.
+  <div class="markdown level1 summary"><p>Determines if there are sub-pages.
 Note that this information will vary by user (because of permissions) and scenario.
 For example, when creating a menu which should only show 1 level, all pages will declare they have no children.</p>
 </div>
@@ -234,7 +234,7 @@ For example, when creating a menu which should only show 1 level, all pages will
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">ID of this Page</p>
+  <div class="markdown level1 summary"><p>ID of this Page</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -266,7 +266,7 @@ For example, when creating a menu which should only show 1 level, all pages will
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L31"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">True if this page is the active / current page which the user is viewing.</p>
+  <div class="markdown level1 summary"><p>True if this page is the active / current page which the user is viewing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -298,7 +298,7 @@ For example, when creating a menu which should only show 1 level, all pages will
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L93"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Link in site navigation is enabled or disabled.</p>
+  <div class="markdown level1 summary"><p>Link in site navigation is enabled or disabled.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -330,7 +330,7 @@ For example, when creating a menu which should only show 1 level, all pages will
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L36"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">True if this is the home page.</p>
+  <div class="markdown level1 summary"><p>True if this is the home page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -362,7 +362,7 @@ For example, when creating a menu which should only show 1 level, all pages will
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L57"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Determine if the menu page is in the breadcrumb.</p>
+  <div class="markdown level1 summary"><p>Determine if the menu page is in the breadcrumb.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -394,7 +394,7 @@ For example, when creating a menu which should only show 1 level, all pages will
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L99"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Current page level from the top of the Menu.
+  <div class="markdown level1 summary"><p>Current page level from the top of the Menu.
 As in Oqtane, it's 0 based.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -427,7 +427,7 @@ As in Oqtane, it's 0 based.</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L41"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Link to this page.</p>
+  <div class="markdown level1 summary"><p>Link to this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -459,10 +459,10 @@ As in Oqtane, it's 0 based.</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Level in the menu, starting from 1.
+  <div class="markdown level1 summary"><p>Level in the menu, starting from 1.
 As different menus may start at other depths, this is not always the same as the Oqtane level.</p>
-<p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="4">Note that when building menus or breadcrumbs, this menu-level is recalculated to fit the current menu.
-So if the menu itself starts at another level (e.g. showing only all pages under <code sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="5">Products</code>), then
+<p>Note that when building menus or breadcrumbs, this menu-level is recalculated to fit the current menu.
+So if the menu itself starts at another level (e.g. showing only all pages under <code>Products</code>), then
 these pages would declare they are MenuLevel=1</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -495,7 +495,7 @@ these pages would declare they are MenuLevel=1</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L83"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Page Name.</p>
+  <div class="markdown level1 summary"><p>Page Name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -527,7 +527,7 @@ these pages would declare they are MenuLevel=1</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">The parent page of this page.</p>
+  <div class="markdown level1 summary"><p>The parent page of this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -542,7 +542,7 @@ these pages would declare they are MenuLevel=1</p>
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="ToSic.Cre8magic.Pages.IMagicPage.html">IMagicPage</a></dt>
-    <dd><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">The parent page, or null if the page is on the top level and doesn't have a parent page.</p>
+    <dd><p>The parent page, or null if the page is on the top level and doesn't have a parent page.</p>
 </dd>
   </dl>
 
@@ -560,7 +560,7 @@ these pages would declare they are MenuLevel=1</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L73"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Reference to the parent <span class="xref">Oqtane.Models.Page</span> if it has one.</p>
+  <div class="markdown level1 summary"><p>Reference to the parent <span class="xref">Oqtane.Models.Page</span> if it has one.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -592,7 +592,7 @@ these pages would declare they are MenuLevel=1</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L78"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Path of the page.</p>
+  <div class="markdown level1 summary"><p>Path of the page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -624,7 +624,7 @@ these pages would declare they are MenuLevel=1</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Original Oqtane page wrapped in MagicPage.
+  <div class="markdown level1 summary"><p>Original Oqtane page wrapped in MagicPage.
 Can be used to access additional properties of the Oqtane page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -657,7 +657,7 @@ Can be used to access additional properties of the Oqtane page.</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L46"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Target for link to this page.</p>
+  <div class="markdown level1 summary"><p>Target for link to this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -689,7 +689,7 @@ Can be used to access additional properties of the Oqtane page.</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L88"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Full URL to this page.</p>
+  <div class="markdown level1 summary"><p>Full URL to this page.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -725,7 +725,7 @@ Can be used to access additional properties of the Oqtane page.</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L124"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Get css class for something - typically a tag.</p>
+  <div class="markdown level1 summary"><p>Get css class for something - typically a tag.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -762,7 +762,7 @@ Can be used to access additional properties of the Oqtane page.</p>
   <a class="header-action link-secondary" title="View source" href="https://github.com/cre8magic/cre8magic/blob/main/ToSic.Cre8Magic.Client/Pages/IMagicPage.cs/#L127"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p sourcefile="api-generated/ToSic.Cre8magic.Pages.IMagicPage.yml" sourcestartlinenumber="1">Get some value - often for an attribute or something similar.</p>
+  <div class="markdown level1 summary"><p>Get some value - often for an attribute or something similar.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 

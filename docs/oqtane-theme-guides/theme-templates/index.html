@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-templates/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-templates/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,10 +87,20 @@
         <article data-uid="OqtaneThemes.Templates.Index">
 <h1 id="oqtane-theme-templates-guide">Oqtane Theme Templates Guide</h1>
 
+<div class="TIP">
+<h5>Tip</h5>
 <p>Theme templates are a bunch of files with placeholders, which Oqtane can use to generate a new theme.</p>
-<p>They are located in the <code>wwwroot/templates/themes</code> folder of the Oqtane installation.</p>
+</div>
+<p>They are located in the <code>wwwroot/Themes/Templates</code> folder of the Oqtane installation.</p>
 <h2 id="how-do-theme-templates-work">How do Theme Templates Work?</h2>
-<p>TODO: @STV short explanation of how theme templates work, with a link to</p>
+<p>Oqtane provides functionality to generate a source code solution for a new custom theme based on the <code>Owner Name</code>, <code>Theme Name</code> input by the developer, and the selected theme template from <code>wwwroot/Themes/Templates/</code>.</p>
+<p>Once the theme solution is generated, the developer can open it in Visual Studio. The solution includes:</p>
+<ul>
+<li>A fully functional source code for the Oqtane theme in the <code>Client</code> project.</li>
+<li>A <code>Package</code> project to deploy the theme in <code>Oqtane.Server</code> or package it into a <code>.nupkg</code> file. This <code>.nupkg</code> file can be used to deploy the theme to other Oqtane installations or distribute it on the Oqtane Market.</li>
+</ul>
+<p>For an example of theme templates, see <a href="https://github.com/oqtane/oqtane.framework/tree/dev/Oqtane.Server/wwwroot/Themes/Templates/External"><code>Oqtane.Server/wwwroot/Themes/Templates/External</code></a>. Note that this example exists only in the <code>oqtane.framework</code> source code and is not included in the Oqtane release package.</p>
+<p>➡️ For more details, refer to the <a href="https://www.oqtane.org/documentation/themes">Oqtane Themes Documentation</a>.</p>
 <h2 id="how-to-use-them">How to Use Them</h2>
 <p>TODO: @2dg walkthrough with images, short description</p>
 <h2 id="how-to-create-a-new-theme-template">How to Create a New Theme Template</h2>
@@ -106,12 +116,29 @@ This involves creating a new folder in the <code>wwwroot/templates/themes</code>
 </li>
 </ol>
 <h2 id="the-templatejson-file">The <code>template.json</code> File</h2>
-<p>TODO: @STV explain the template.json file, which is used by Oqtane to describe the Template to the user.</p>
+<p>An example of the <code>template.json</code> file can be found in the <a href="https://github.com/oqtane/oqtane.framework/blob/dev/Oqtane.Server/wwwroot/Themes/Templates/External/template.json"><code>External</code></a> theme template provided in the Oqtane source code.</p>
+<pre><code class="lang-json">{
+  &quot;Title&quot;: &quot;Default Theme Template&quot;,
+  &quot;Type&quot;: &quot;External&quot;,
+  &quot;Version&quot;: &quot;5.2.0&quot;,
+  &quot;Namespace&quot;: &quot;[Owner].Theme.[Theme]&quot;
+}
+</code></pre>
+<p>The <code>template.json</code> file contains metadata that is used by Oqtane during runtime to display theme templates in the <code>Theme Management &gt; Create Theme</code> screen. It is also utilized when generating the theme's source code. Each theme template must include this file.</p>
+<h3 id="properties">Properties</h3>
+<ul>
+<li><strong><code>Title</code></strong>: The name displayed in the theme template dropdown list, allowing users to select it to generate a new theme from the template.</li>
+<li><strong><code>Type</code></strong>: Always set to <code>External</code>. In the past, there was also an <code>Internal</code> type, but this is no longer used. The <code>External</code> type generates a standalone source code solution outside of the <code>oqtane.framework</code> source code structure.</li>
+<li><strong><code>Version</code></strong>: Specifies the required Oqtane.Framework version that the new theme depends on.</li>
+<li><strong><code>Namespace</code></strong>: Provides a tokenized pattern used to generate the root namespace for the theme in the source code.</li>
+</ul>
+<p>This file is essential for ensuring that the theme template integrates seamlessly with Oqtane's theme creation functionality. Themes generated from a template will include a <code>template.json</code> file in their source code.</p>
+<p>Although the <code>template.json</code> file is not required for an Oqtane theme to function properly, developers should avoid deleting it. If the file is missing, it will cause issues later if the theme is used as a source to generate a new theme template. To address this, the <a class="xref" href="../../magic-tools/cre8magic-transformer/index.html">cre8magic ♾️ Transformer</a> tool automatically creates a <code>template.json</code> file if it is missing in the theme source.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-templates/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-templates/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

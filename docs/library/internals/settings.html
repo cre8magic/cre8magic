@@ -85,57 +85,57 @@
         </div>
 
         <article data-uid="Cre8magic.Library.Internals.Settings">
-<h1 id="cre8magic--internals-of-settings" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="6">cre8magic – Internals of Settings</h1>
+<h1 id="cre8magic--internals-of-settings">cre8magic – Internals of Settings</h1>
 
-<p sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="8">These documents should explain the internal workings / architecture of <strong sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="8">cre8magic</strong>.</p>
-<p sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="10">The purpose is to ensure that we have clear conventions and that everybody who works on this does it the same way.</p>
-<h2 id="overview" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="12">Overview</h2>
-<p sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="14">Settings have a few important challenges, such as:</p>
-<ol sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="16">
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="16">They should be optional in their entirety - so no settings should still result in a error free system.</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="17">Every setting should be optional - so if a setting is not there, the system should still work.</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="18">Settings should allow merging with other settings, so that they can be combined / enhanced step by step.</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="19">When a service needs a setting, it should be able to just access it, and not worry about the setting not being there.</li>
+<p>These documents should explain the internal workings / architecture of <strong>cre8magic</strong>.</p>
+<p>The purpose is to ensure that we have clear conventions and that everybody who works on this does it the same way.</p>
+<h2 id="overview">Overview</h2>
+<p>Settings have a few important challenges, such as:</p>
+<ol>
+<li>They should be optional in their entirety - so no settings should still result in a error free system.</li>
+<li>Every setting should be optional - so if a setting is not there, the system should still work.</li>
+<li>Settings should allow merging with other settings, so that they can be combined / enhanced step by step.</li>
+<li>When a service needs a setting, it should be able to just access it, and not worry about the setting not being there.</li>
 </ol>
-<h2 id="basic-architecture" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="21">Basic Architecture</h2>
-<ul sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="23">
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="23">Settings are all <strong sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="23">record</strong> objects</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="24">Settings are all <strong sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="24">read-only</strong> objects</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="25">All properties are init-only</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="26">All properties should be nullable, to clearly indicate that they have not been specified (WIP)</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="27">settings should be constructable through JSON (so they must have an empty public constructor)</li>
+<h2 id="basic-architecture">Basic Architecture</h2>
+<ul>
+<li>Settings are all <strong>record</strong> objects</li>
+<li>Settings are all <strong>read-only</strong> objects</li>
+<li>All properties are init-only</li>
+<li>All properties should be nullable, to clearly indicate that they have not been specified (WIP)</li>
+<li>settings should be constructable through JSON (so they must have an empty public constructor)</li>
 </ul>
-<h2 id="reading-stabilized-settings" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="29">Reading Stabilized Settings</h2>
-<ul sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="31">
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="31">Reading the settings for final use should happen through a <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="31">Stabilized</code> class, which provides defaults where necessary</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="32">Every settings record must have a <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="32">GetStable()</code> method that returns a <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="32">Stabilized</code> object
-<ul sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="33">
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="33">it must be a method, not a property, to ensure that it's not used as a record property, incl. <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="33">GetHashCode()</code> / <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="33">Equality(...)</code> access and that it won't be serialized.</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="34">because of this, it may also <em sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="34">not</em> have a backing <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="34">_stable</code> field, but must create a new instance every time</li>
+<h2 id="reading-stabilized-settings">Reading Stabilized Settings</h2>
+<ul>
+<li>Reading the settings for final use should happen through a <code>Stabilized</code> class, which provides defaults where necessary</li>
+<li>Every settings record must have a <code>GetStable()</code> method that returns a <code>Stabilized</code> object
+<ul>
+<li>it must be a method, not a property, to ensure that it's not used as a record property, incl. <code>GetHashCode()</code> / <code>Equality(...)</code> access and that it won't be serialized.</li>
+<li>because of this, it may also <em>not</em> have a backing <code>_stable</code> field, but must create a new instance every time</li>
 </ul>
 </li>
 </ul>
-<h2 id="merging-settings" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="36">Merging Settings</h2>
-<p sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="38">Settings should be able to be merged with other settings.
+<h2 id="merging-settings">Merging Settings</h2>
+<p>Settings should be able to be merged with other settings.
 In general, this means that there are these concepts:</p>
-<ol sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="41">
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="41">There is a <strong sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="41">primary</strong> settings object, whose properties have precedence</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="42">There is a <strong sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="42">secondary</strong> settings object, whose properties are used if the primary does not have them</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="43">If neither of the settings has a specific property, the resulting setting should be <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="43">null</code></li>
+<ol>
+<li>There is a <strong>primary</strong> settings object, whose properties have precedence</li>
+<li>There is a <strong>secondary</strong> settings object, whose properties are used if the primary does not have them</li>
+<li>If neither of the settings has a specific property, the resulting setting should be <code>null</code></li>
 </ol>
-<p sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="45">The way this is implemented is like this:</p>
-<ol sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="47">
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="47">Every settings object has an internal constructor that takes two settings objects and will merge their properties</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="48">This <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="48">private protected</code> constructor will do the property merging</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="49">Since most settings inherit from <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="49">MagicSettings</code> and from <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="49">MagicInheritsBase</code>, they will call their base constructors to handle all their properties</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="50">For triggering a merge, every merge happens from an instance of the settings object and will call <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="50">CloneUnder(other)</code> to return a new merged object</li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="51">To ensure that all settings have such a CloneUnder, they must all implement <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="51">ICanClone&lt;[OwnType]&gt;</code></li>
-<li sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="52">The <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="52">ICanClone&lt;T&gt;</code> is done as an explicit implementation, so that it does not appear in the docs and is &quot;harder&quot; to access</li>
+<p>The way this is implemented is like this:</p>
+<ol>
+<li>Every settings object has an internal constructor that takes two settings objects and will merge their properties</li>
+<li>This <code>private protected</code> constructor will do the property merging</li>
+<li>Since most settings inherit from <code>MagicSettings</code> and from <code>MagicInheritsBase</code>, they will call their base constructors to handle all their properties</li>
+<li>For triggering a merge, every merge happens from an instance of the settings object and will call <code>CloneUnder(other)</code> to return a new merged object</li>
+<li>To ensure that all settings have such a CloneUnder, they must all implement <code>ICanClone&lt;[OwnType]&gt;</code></li>
+<li>The <code>ICanClone&lt;T&gt;</code> is done as an explicit implementation, so that it does not appear in the docs and is &quot;harder&quot; to access</li>
 </ol>
-<h2 id="sample-implementation" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="54">Sample Implementation</h2>
-<p sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="56">As of now, the latest implementation of this best-practices is the <code sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="56">MagicAnalyticsSettings</code> - use this as a reference.</p>
-<h3 id="magicanalyticssettings" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="58">MagicAnalyticsSettings</h3>
-<pre><code class="lang-csharp" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="60">using ToSic.Cre8magic.Settings;
+<h2 id="sample-implementation">Sample Implementation</h2>
+<p>As of now, the latest implementation of this best-practices is the <code>MagicAnalyticsSettings</code> - use this as a reference.</p>
+<h3 id="magicanalyticssettings">MagicAnalyticsSettings</h3>
+<pre><code class="lang-csharp">using ToSic.Cre8magic.Settings;
 using ToSic.Cre8magic.Settings.Internal;
 using ToSic.Cre8magic.Utils;
 
@@ -227,8 +227,8 @@ public record MagicAnalyticsSettings : MagicSettings, ICanClone&lt;MagicAnalytic
     #endregion
 
 }
-</code></pre><h3 id="base-class-magicsettings" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="62">Base Class MagicSettings</h3>
-<pre><code class="lang-csharp" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="64">using System.Text.Json.Serialization;
+</code></pre><h3 id="base-class-magicsettings">Base Class MagicSettings</h3>
+<pre><code class="lang-csharp">using System.Text.Json.Serialization;
 using Oqtane.UI;
 using ToSic.Cre8magic.Settings.Debug;
 using ToSic.Cre8magic.Settings.Debug.Internal;
@@ -323,8 +323,8 @@ public abstract record MagicSettings: MagicInheritsBase, ISettingsForCodeUse, IH
 
     #endregion
 }
-</code></pre><h3 id="root-base-class-magicinheritsbase" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="66">Root Base Class MagicInheritsBase</h3>
-<pre><code class="lang-csharp" sourcefile="pages/library/internals/settings.md" sourcestartlinenumber="68">using System.Text.Json.Serialization;
+</code></pre><h3 id="root-base-class-magicinheritsbase">Root Base Class MagicInheritsBase</h3>
+<pre><code class="lang-csharp">using System.Text.Json.Serialization;
 
 namespace ToSic.Cre8magic.Settings;
 

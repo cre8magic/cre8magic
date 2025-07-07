@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Projects/cre8magic/cre8magic/docs-src",
+  "source_base_path": "C:/Users/2dg/Projects/cre8magic/cre8magic/docs-src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1328,48 +1328,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.DictionaryExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Utils.DictionaryExtensions.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "ToSic.Cre8magic.Utils.DictionaryExtensions",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.GetKeep-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Utils.GetKeep-2.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "ToSic.Cre8magic.Utils.GetKeep<TResult, TCompare>",
-      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.GetKeep-2.yml\" sourcestartlinenumber=\"1\">Get-or-Keep helper.\nWill expect a second return value when generating the value, which it will ask for comparison\nevery time it's accessed again.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.GetKeepByPageId-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Utils.GetKeepByPageId-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "ToSic.Cre8magic.Utils.GetKeepByPageId<T>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml",
       "output": {
         ".html": {
@@ -1381,76 +1339,6 @@
       "IsMRef": true,
       "Title": "ToSic.Cre8magic.Utils.IgnoreEquals<TValue>",
       "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml\" sourcestartlinenumber=\"1\">Special helper to store a value on a record but not include it in the Equality contract.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml\" sourcestartlinenumber=\"3\">Typical use case is calculated properties which contain the record itself, which would result in infinite loops.</p>\n<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml\" sourcestartlinenumber=\"5\"><a href=\"https://github.com/dotnet/csharplang/discussions/4257#discussioncomment-11263857\" sourcefile=\"api-generated/ToSic.Cre8magic.Utils.IgnoreEquals-1.yml\" sourcestartlinenumber=\"5\">https://github.com/dotnet/csharplang/discussions/4257#discussioncomment-11263857</a></p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.Logging.CodeRef.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Utils.Logging.CodeRef.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "ToSic.Cre8magic.Utils.Logging.CodeRef",
-      "Summary": "<p sourcefile=\"api-generated/ToSic.Cre8magic.Utils.Logging.CodeRef.yml\" sourcestartlinenumber=\"1\">Reference to code - containing the path to the file, the method name and the line in the code.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.Logging.LogRoot.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Utils.Logging.LogRoot.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "ToSic.Cre8magic.Utils.Logging.LogRoot",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.Logging.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Utils.Logging.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "ToSic.Cre8magic.Utils.Logging",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.PageStateSecurityExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Utils.PageStateSecurityExtensions.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "ToSic.Cre8magic.Utils.PageStateSecurityExtensions",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api-generated/ToSic.Cre8magic.Utils.StringExtensions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/ToSic.Cre8magic.Utils.StringExtensions.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "ToSic.Cre8magic.Utils.StringExtensions",
-      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1569,26 +1457,6 @@
       "output": {
         "resource": {
           "relative_path": "assets/logos/vcurrent/cre8magic_gray.png"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "node_modules/@gerrit0/mini-shiki/static/mini-shiki-dependency-tree.svg",
-      "output": {
-        "resource": {
-          "relative_path": "node_modules/@gerrit0/mini-shiki/static/mini-shiki-dependency-tree.svg"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "node_modules/@gerrit0/mini-shiki/static/shiki-dependency-tree.svg",
-      "output": {
-        "resource": {
-          "relative_path": "node_modules/@gerrit0/mini-shiki/static/shiki-dependency-tree.svg"
         }
       },
       "version": ""
@@ -2097,6 +1965,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "pages/magic-tools/cre8magic-transformer/assets/cre8magicTransformer.png",
+      "output": {
+        "resource": {
+          "relative_path": "pages/magic-tools/cre8magic-transformer/assets/cre8magicTransformer.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "pages/magic-tools/cre8magic-transformer/assets/logo-400.webp",
       "output": {
         "resource": {
@@ -2149,6 +2027,56 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/assing/assets/oqtane-assing-theme_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/assing/assets/oqtane-assing-theme_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/assing/assets/oqtane-assing-theme_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/assing/assets/oqtane-assing-theme_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/assing/assets/oqtane-assing-theme_3.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/assing/assets/oqtane-assing-theme_3.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/assing/assets/oqtane-assing-theme_4.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/assing/assets/oqtane-assing-theme_4.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-theme-guides/assing/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-theme-guides/assing/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "pages/oqtane-theme-guides/blazor/dependency-injection/index.md",
       "output": {
@@ -2169,11 +2097,321 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_3.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_3.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_4.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_4.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_5.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-page-theme_5.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_3.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_3.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_4.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_4.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_5.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_5.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-theme-guides/configuration/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-theme-guides/configuration/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "pages/oqtane-theme-guides/index.md",
       "output": {
         ".html": {
           "relative_path": "oqtane-theme-guides/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_3.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/installation/assets/marketplace-install-theme_3.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/assets/nuget-install-theme_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/installation/assets/nuget-install-theme_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/assets/nuget-install-theme_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/installation/assets/nuget-install-theme_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/assets/shared-install-theme_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/installation/assets/shared-install-theme_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/assets/shared-install-theme_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/installation/assets/shared-install-theme_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/assets/shared-install-theme_3.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/installation/assets/shared-install-theme_3.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-theme-guides/installation/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-theme-guides/installation/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_3.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/github-release_theme_3.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_3.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_3.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_4.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/marketplace-publish_theme_4.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_1.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_1.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_2.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_2.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_3.webp",
+      "output": {
+        "resource": {
+          "relative_path": "pages/oqtane-theme-guides/publish-theme/assets/vs-code-release_3.webp"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "pages/oqtane-theme-guides/publish-theme/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "oqtane-theme-guides/publish-theme/index.html"
         }
       },
       "version": ""

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/cre8magic-transformer/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-tools/cre8magic-transformer/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -145,11 +145,11 @@ and generates all the files you need to create a theme template.</p>
 <h2 id="how-to-use-the-cre8magic--transformer">How to Use the cre8magic ♾️ Transformer</h2>
 <ol>
 <li>Create a theme any way you want, test it, develop it, etc.</li>
-<li>Add a <a class="xref" href="../../oqtane-theme-guides/theme-templates/index.html"><code>template.json</code> file</a> TODO: @STV PLS EXPLAIN IT ON THAT PAGE - this will be used by Oqtane to describe the Template to the user.</li>
+<li>Add a <a class="xref" href="../../oqtane-theme-guides/theme-templates/index.html"><code>template.json</code> file</a> - this will be used by Oqtane to describe the Template to the user.</li>
 <li>Add a <code>cre8magic-transformer.config.json</code> <a class="xref" href="config.html">configuration</a> file to the theme folder.</li>
 <li>Run the converter, which will generate a new folder with the template files.
 <ol>
-<li>During testing, you will deploy it to ... ???</li>
+<li>During testing, you will deploy it to your Oqtane <code>Oqtane.Server/wwwroot/Themes/Templates</code> folder.</li>
 <li>To release it as a nuget package, you will ...</li>
 </ol>
 </li>
@@ -160,17 +160,41 @@ and generates all the files you need to create a theme template.</p>
 <p>The transformer is a command line tool that you can run from the terminal or command prompt.</p>
 <p>Download the latest version from the <a href="https://github.com/cre8magic/cre8magic-transformer/releases">releases page</a>
 and place it anywhere you want - it's a standalone executable.</p>
-<h2 id="how-to-use-the-transformer-todo-">How to Use the Transformer TODO: @stv</h2>
-<p>...</p>
-<p>...</p>
-<p>➡️ See the <a class="xref" href="config.html">Configuration File</a> for details on how to configure the transformer.</p>
+<h2 id="how-to-use-the-transformer">How to Use the Transformer</h2>
+<p>The <strong>cre8magic ♾️ Transformer</strong> CLI tool (<code>cre8magicTransformer.exe</code>) simplifies the process of converting themes into templates.</p>
+<h3 id="cli-arguments">CLI Arguments</h3>
+<ul>
+<li><code>-s</code>, <code>--source &lt;path&gt;</code>: Path to the source directory containing the Oqtane theme (required).</li>
+<li><code>-d</code>, <code>--destination &lt;path&gt;</code>: Path to the output directory for the generated template. Defaults to the location specified in <code>cre8magic-transformer.config.json</code>.</li>
+<li><code>-c</code>, <code>--config &lt;path&gt;</code>: Path to the JSON configuration file. Defaults to <code>cre8magic-transformer.config.json</code> in the source directory.</li>
+<li><code>-h</code>, <code>--help</code>: Displays usage information.</li>
+</ul>
+<h3 id="example-workflow">Example Workflow</h3>
+<ol>
+<li><p>Ensure the theme source folder contains a valid <code>cre8magic-transformer.config.json</code> file.</p>
+</li>
+<li><p>Open a terminal and navigate to the directory containing <code>cre8magicTransformer.exe</code>.</p>
+</li>
+<li><p>Run the tool with the required <code>--source</code> argument:</p>
+<pre><code class="lang-cmd">cre8magicTransformer -s &quot;a:\2shine-oqtane\oqtane-theme-basic&quot;
+</code></pre>
+</li>
+<li><p>The tool processes the theme, renames files, replaces tokens, and generates the template in the specified destination directory.</p>
+<p><img src="../../pages/magic-tools/cre8magic-transformer/assets/cre8magicTransformer.png" alt="Transformation Example"></p>
+</li>
+<li><p>Upon successful conversion, a message <code>Conversion completed successfully!</code> is displayed.</p>
+</li>
+<li><p>Since destination path is on expected place in local oqtane installation for theme template (e.g., <code>a:\2shine-oqtane\oqtane.framework\Oqtane.Server\wwwroot\Themes\Templates\cre8magic</code>) start the oqtane and use the generated template to create new theme source code solution.</p>
+</li>
+</ol>
+<p>➡️ For configuration details, see <a class="xref" href="config.html">Configuration File</a>.</p>
 <hr>
 <p>Permanent link: <a href="https://go.cre8magic.org/tf">https://go.cre8magic.org/tf</a></p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/cre8magic-transformer/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-tools/cre8magic-transformer/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/cre8magic-transformer/config.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-tools/cre8magic-transformer/config.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -111,6 +111,7 @@ This is a typical repository structure:</p>
 <li><code>LICENSE.md</code></li>
 <li><code>README.md</code></li>
 <li><code>cre8magic-transformer.config.json</code> (this is the file)</li>
+<li><code>template.json</code> (oqtane template metadata)</li>
 <li><code>ToSic.Cre8magic.Theme.Basic.sln</code> (solution file)</li>
 </ul>
 </li>
@@ -118,11 +119,10 @@ This is a typical repository structure:</p>
 <h2 id="example-configuration-file">Example Configuration File</h2>
 <div class="TIP">
 <h5>Tip</h5>
-<p>The file support CJSON, so you can use comments to explain the configuration.</p>
+<p>The file support JSONC, so you can use comments to explain the configuration.</p>
 </div>
 <pre><code class="lang-json">{
-  &quot;destinationPath&quot;: &quot;..\\..\\2Templates&quot;,
-  &quot;template&quot;: &quot;cre8magic&quot;,
+  &quot;destinationPath&quot;: &quot;..\\oqtane.framework\\Oqtane.Server\\wwwroot\\Themes\\Templates\\cre8magic&quot;,
   &quot;source&quot;: [
     {
       &quot;include&quot;: [
@@ -206,19 +206,147 @@ This is a typical repository structure:</p>
         &quot;ToSic.Cre8magic.Theme.Basic&quot;: &quot;[Owner].Theme.[Theme]&quot;,
         &quot;ToSic&quot;: &quot;[Owner]&quot;,
         &quot;Basic&quot;: &quot;[Theme]&quot;,
-        &quot;6.1.2&quot;: &quot;[FrameworkVersion]&quot;,
         &quot;6.1.3&quot;: &quot;[FrameworkVersion]&quot;
       }
     }
   ]
 }
 </code></pre>
-<h2 id="configuration-sections-explained-todo-">Configuration Sections Explained TODO: @STV</h2>
+<h2 id="configuration-sections-explained">Configuration Sections Explained</h2>
+<h3 id="1-sourcepath">1. <code>sourcePath</code></h3>
+<ul>
+<li><strong>Purpose:</strong> Specifies where is theme solution source code.</li>
+<li><strong>Details:</strong> Can be an absolute or relative path. If the <code>--source</code> is not provided as a <code>cre8magic ♾️ Transformer</code> CLI argument, it will use this as fallback value.</li>
+</ul>
+<h3 id="2-destinationpath">2. <code>destinationPath</code></h3>
+<ul>
+<li><strong>Purpose:</strong> Specifies where the generated templates will be placed.</li>
+<li><strong>Details:</strong> Can be an absolute or relative path. If the <code>--destination</code> is not provided as a <code>cre8magic ♾️ Transformer</code> CLI argument, it will use this as fallback value. If generating templates inside Oqtane.Server folders, ensure Oqtane is stopped to avoid conflicts.</li>
+</ul>
+<h3 id="3-source">3. <code>source</code></h3>
+<ul>
+<li><strong>Purpose:</strong> Defines rules for selecting source files to include or exclude in the template generation.</li>
+<li><strong>Structure:</strong> An array of rule objects, each with <code>include</code> and <code>exclude</code> file globbing patterns.</li>
+</ul>
+<h3 id="4-rename">4. <code>rename</code></h3>
+<ul>
+<li><strong>Purpose:</strong> Specifies rules for renaming files and folders during the template generation process.</li>
+<li><strong>Structure:</strong> An array of rule objects with <code>include</code>, <code>exclude</code> file globbing patterns and a <code>replace</code> dictionary.</li>
+</ul>
+<h3 id="5-process">5. <code>process</code></h3>
+<ul>
+<li><strong>Purpose:</strong> Defines how file contents are processed, including which files to process and what token replacements to perform.</li>
+<li><strong>Structure:</strong> An array of rule objects with:
+<ul>
+<li><code>include</code>: File patterns to process (e.g., <code>.cs</code>, <code>.csproj</code>, <code>.json</code>, etc.).</li>
+<li><code>exclude</code>: File patterns to skip (e.g., <code>readme.md</code>, <code>template.json</code>).</li>
+<li><code>replace</code>: Dictionary of tokens to replace with template variables (e.g., <code>ToSic</code> → <code>[Owner]</code>, <code>Basic</code> → <code>[Theme]</code>, <code>6.1.3</code> → <code>[FrameworkVersion]</code>).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The configuration supports multiple rules for flexibility.</li>
+<li>Token replacement allows for dynamic template customization.</li>
+<li>Exclusion patterns help prevent unwanted modifications to certain files.</li>
+</ul>
+<h2 id="file-globbing-pattern-formats">File Globbing Pattern Formats</h2>
+<p>The patterns specified in the <code>include</code> and <code>exclude</code> arrays can use the following formats to match multiple files or directories.</p>
+<h3 id="exact-directory-or-file-name">Exact Directory or File Name</h3>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><code>some-file.txt</code></li>
+<li><code>path/to/file.txt</code></li>
+</ul>
+<h3 id="wildcards">Wildcards</h3>
+<p>Wildcards (<code>*</code>) in file and directory names represent zero to many characters, excluding separator characters.</p>
+<p><strong>Examples:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*.txt</code></td>
+<td>All files with <code>.txt</code> file extension.</td>
+</tr>
+<tr>
+<td><code>*.*</code></td>
+<td>All files with an extension.</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>All files in the top-level directory.</td>
+</tr>
+<tr>
+<td><code>.*</code></td>
+<td>File names beginning with <code>.</code>.</td>
+</tr>
+<tr>
+<td><code>*word*</code></td>
+<td>All files with <code>word</code> in the filename.</td>
+</tr>
+<tr>
+<td><code>readme.*</code></td>
+<td>All files named <code>readme</code> with any file extension.</td>
+</tr>
+<tr>
+<td><code>styles/*.css</code></td>
+<td>All files with extension <code>.css</code> in the directory <code>styles/</code>.</td>
+</tr>
+<tr>
+<td><code>scripts/*/*</code></td>
+<td>All files in <code>scripts/</code> or one level of subdirectory under <code>scripts/</code>.</td>
+</tr>
+<tr>
+<td><code>images*/*</code></td>
+<td>All files in a folder with a name that is or begins with <code>images</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="arbitrary-directory-depth-">Arbitrary Directory Depth (<code>/**/</code>)</h3>
+<p><strong>Examples:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>**/*</code></td>
+<td>All files in any subdirectory.</td>
+</tr>
+<tr>
+<td><code>dir/</code></td>
+<td>All files in any subdirectory under <code>dir/</code>.</td>
+</tr>
+<tr>
+<td><code>dir/**/*</code></td>
+<td>All files in any subdirectory under <code>dir/</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="template-variables">Template variables</h2>
+<p>Property <code>replace</code> is dictionary of tokens to replace with <code>template variables</code>. Following <code>template variables</code> are recognized by oqtane <a href="https://github.com/oqtane/oqtane.framework/blob/b24e3252d9e68071b6726344edd328c31b3d7932/Oqtane.Server/Controllers/ThemeController.cs#L254">ThemeController</a> template <code>ITokenReplace</code> engine:</p>
+<ul>
+<li><code>[Owner]</code></li>
+<li><code>[Theme]</code></li>
+<li><code>[FrameworkVersion]</code></li>
+<li><code>[ClientReference]</code></li>
+<li><code>[SharedReference]</code></li>
+<li><code>[RootPath]</code></li>
+<li><code>[RootFolder]</code></li>
+</ul>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/2sic/oqtane-cre8magic/blob/main/docs-src/pages/magic-tools/cre8magic-transformer/config.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-tools/cre8magic-transformer/config.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

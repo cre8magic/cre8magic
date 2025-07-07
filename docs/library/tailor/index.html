@@ -85,36 +85,36 @@
         </div>
 
         <article data-uid="Cre8magic.Library.MagicTailor.Index">
-<h1 id="cre8magic--magic-tailor" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="5">cre8magic – Magic Tailor</h1>
+<h1 id="cre8magic--magic-tailor">cre8magic – Magic Tailor</h1>
 
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="7">The Magic Tailor system allows you to fine-tune the HTML output of Magic Components.</p>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="9">It allows simple, generic components to be used in all kinds of scenarios,
-since the tailor can be configured using <strong sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="10">Blueprints</strong>.</p>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="12">The <strong sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="12">Tailor</strong> will then take the <strong sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="12">Blueprints</strong> which apply to the current use case,
-and give you a simple API such as <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="13">...Classes(&quot;ul&quot;)</code> which will give you the classes for a <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="13">ul</code> tag.</p>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="16">TODO:</p>
-<h2 id="how-the-magic-tailor-works" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="19">How the Magic Tailor Works</h2>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="21">TODO:</p>
-<h1 id="cre8magic--magic-values-classes-and-more" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="24">cre8magic – Magic Values, Classes and More</h1>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="26">Almost all design work is done using very few changes to the HTML.
+<p>The Magic Tailor system allows you to fine-tune the HTML output of Magic Components.</p>
+<p>It allows simple, generic components to be used in all kinds of scenarios,
+since the tailor can be configured using <strong>Blueprints</strong>.</p>
+<p>The <strong>Tailor</strong> will then take the <strong>Blueprints</strong> which apply to the current use case,
+and give you a simple API such as <code>...Classes(&quot;ul&quot;)</code> which will give you the classes for a <code>ul</code> tag.</p>
+<p>TODO:</p>
+<h2 id="how-the-magic-tailor-works">How the Magic Tailor Works</h2>
+<p>TODO:</p>
+<h1 id="cre8magic--magic-values-classes-and-more">cre8magic – Magic Values, Classes and More</h1>
+<p>Almost all design work is done using very few changes to the HTML.
 The only thing we usually must do, is:</p>
-<ol sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="29">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="29">set some <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="29">id</code> properties</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="30">set some <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="30">class</code> properties - often based on the context (so the pane may need <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="30">pane-is-empty</code>)</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="31">set some values - such as <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="31">data-bs-toggle</code></li>
+<ol>
+<li>set some <code>id</code> properties</li>
+<li>set some <code>class</code> properties - often based on the context (so the pane may need <code>pane-is-empty</code>)</li>
+<li>set some values - such as <code>data-bs-toggle</code></li>
 </ol>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="33"><strong sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="33">cre8magic</strong> makes this happen using these parts:</p>
-<ol sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="35">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="35">The <a class="xref" href="../theme-settings/theme-json.html" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber=35>theme.json</a> which has all the configurations</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="36">The <a class="xref" href="../settings/index.html" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber=36>Magic Settings</a> which will parse the json and provide the parts we need</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="37">Various <em sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="37">Desiger</em> helpers which will do some magic and add context</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="38">TODO: Tailors / Blueprints</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="39">The <a href="#magic-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="39">Magic Tokens</a> which will replace things such as <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="39">[Page.Id]</code> if it was used in class strings</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="40">Simple helper methods such as <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="40">Classes(name)</code>, <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="40">Value(name)</code> or <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="40">Id(name)</code> on all the Magic Razor base classes like the MagicMenu, MagicBreadcrumbs or MagicContainer</li>
+<p><strong>cre8magic</strong> makes this happen using these parts:</p>
+<ol>
+<li>The <a class="xref" href="../theme-settings/theme-json.html">theme.json</a> which has all the configurations</li>
+<li>The <a class="xref" href="../settings/index.html">Magic Settings</a> which will parse the json and provide the parts we need</li>
+<li>Various <em>Desiger</em> helpers which will do some magic and add context</li>
+<li>TODO: Tailors / Blueprints</li>
+<li>The <a href="#magic-tokens">Magic Tokens</a> which will replace things such as <code>[Page.Id]</code> if it was used in class strings</li>
+<li>Simple helper methods such as <code>Classes(name)</code>, <code>Value(name)</code> or <code>Id(name)</code> on all the Magic Razor base classes like the MagicMenu, MagicBreadcrumbs or MagicContainer</li>
 </ol>
-<h2 id="how-to-use" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="42">How to Use</h2>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="44">Basically all your controls must usually do is write HTML along these lines:</p>
-<pre><code class="lang-html" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="46">@inherits MagicContainer
+<h2 id="how-to-use">How to Use</h2>
+<p>Basically all your controls must usually do is write HTML along these lines:</p>
+<pre><code class="lang-html">@inherits MagicContainer
 &lt;!-- some code parts skipped for brevity --&gt;
 &lt;div id='@Id(&quot;container&quot;)' class='@Classes(&quot;container&quot;)'&gt;
     &lt;div class=&quot;container&quot;&gt;
@@ -123,86 +123,86 @@ The only thing we usually must do, is:</p>
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="57">...and of course make sure the values for the above mentioned <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="57">container</code> exist in the <a class="xref" href="../theme-settings/theme-json.html" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber=57>theme.json</a>.</p>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="59">Everything else just works magically.</p>
-<h2 id="razor-api" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="61">Razor API</h2>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="63">All the <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="63">Magic*</code> Razor controls have the following methods to make like easier:</p>
-<ol sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="65">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="65">Classes(name)</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="66">Value(name)</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="67">Id(name)</li>
+<p>...and of course make sure the values for the above mentioned <code>container</code> exist in the <a class="xref" href="../theme-settings/theme-json.html">theme.json</a>.</p>
+<p>Everything else just works magically.</p>
+<h2 id="razor-api">Razor API</h2>
+<p>All the <code>Magic*</code> Razor controls have the following methods to make like easier:</p>
+<ol>
+<li>Classes(name)</li>
+<li>Value(name)</li>
+<li>Id(name)</li>
 </ol>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="69">A few have some extra methods, such as these:</p>
-<ol sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="71">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="71">The <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="71">MagicTheme</code> also has a <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="71">PaneClasses(name)</code> to also add something to change styling if the pane is empty</li>
+<p>A few have some extra methods, such as these:</p>
+<ol>
+<li>The <code>MagicTheme</code> also has a <code>PaneClasses(name)</code> to also add something to change styling if the pane is empty</li>
 </ol>
-<h2 id="magic-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="75">Magic Tokens</h2>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="77">Most settings will be parsed through a tokens-engine which will convert all kinds of tokens such as <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="77">[Page.Id]</code> into their respective value.</p>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="79">Note that each context is different.
-For example, when parsing settings at the page level, <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="80">[Page...]</code> tokens will work, but <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="80">[Module...]</code> tokens will not work.</p>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="82"><em sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="82">Note: The list of tokens is still work in progress</em></p>
-<h3 id="purpose-of-magic-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="84">Purpose of Magic Tokens</h3>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="86">The purpose of these tokens is for use in configurable values - such as classes on HTML tags.</p>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="88">They are currently not going to give you all possible values, for eg. there is no <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="88">[Module.Title]</code> token
+<h2 id="magic-tokens">Magic Tokens</h2>
+<p>Most settings will be parsed through a tokens-engine which will convert all kinds of tokens such as <code>[Page.Id]</code> into their respective value.</p>
+<p>Note that each context is different.
+For example, when parsing settings at the page level, <code>[Page...]</code> tokens will work, but <code>[Module...]</code> tokens will not work.</p>
+<p><em>Note: The list of tokens is still work in progress</em></p>
+<h3 id="purpose-of-magic-tokens">Purpose of Magic Tokens</h3>
+<p>The purpose of these tokens is for use in configurable values - such as classes on HTML tags.</p>
+<p>They are currently not going to give you all possible values, for eg. there is no <code>[Module.Title]</code> token
 since there is no good reason to use this in such scenarios.</p>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="91">If you need those values in your HTML (eg. to create special hover-labels) you would just do that in Razor code.</p>
-<h3 id="site-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="93">Site Tokens</h3>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="95">Site tokens work everywhere.
+<p>If you need those values in your HTML (eg. to create special hover-labels) you would just do that in Razor code.</p>
+<h3 id="site-tokens">Site Tokens</h3>
+<p>Site tokens work everywhere.
 As of now we have these site tokens:</p>
-<ul sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="98">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="98"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="98">[Site.Id]</code> - ID of the current site</li>
+<ul>
+<li><code>[Site.Id]</code> - ID of the current site</li>
 </ul>
-<h3 id="theme-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="100">Theme Tokens</h3>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="102">Assets tokens work everywhere.
+<h3 id="theme-tokens">Theme Tokens</h3>
+<p>Assets tokens work everywhere.
 As of now we have these assets tokens:</p>
-<ul sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="105">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="105"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="105">[Theme.Url]</code> - the  url like <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="105">Themes/your-theme-name</code> for where your files should be
-note: it doesn't have leading or trailing slash, so you would use <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="106">[Theme.Path]/Assets/logo.svg</code>
-note: it also doesn't have <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="107">wwwroot</code> as that is never in the public URL</li>
+<ul>
+<li><code>[Theme.Url]</code> - the  url like <code>Themes/your-theme-name</code> for where your files should be
+note: it doesn't have leading or trailing slash, so you would use <code>[Theme.Path]/Assets/logo.svg</code>
+note: it also doesn't have <code>wwwroot</code> as that is never in the public URL</li>
 </ul>
-<h3 id="page-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="109">Page Tokens</h3>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="111">Page tokens work everywhere.
+<h3 id="page-tokens">Page Tokens</h3>
+<p>Page tokens work everywhere.
 They are especially useful in creating menus.
 As of now we have these page tokens:</p>
-<ul sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="115">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="115"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="115">[Page.Id]</code> - ID of the current page</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="116"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="116">[Page.ParentId]</code> - ID of the pages parent page or <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="116">none</code></li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="117"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="117">[Page.RootId]</code> - ID of the root page in the tree leading to this page or <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="117">none</code></li>
+<ul>
+<li><code>[Page.Id]</code> - ID of the current page</li>
+<li><code>[Page.ParentId]</code> - ID of the pages parent page or <code>none</code></li>
+<li><code>[Page.RootId]</code> - ID of the root page in the tree leading to this page or <code>none</code></li>
 </ul>
-<h3 id="module-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="119">Module Tokens</h3>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="121">Module Tokens work on <strong sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="121">Containers</strong> only.
+<h3 id="module-tokens">Module Tokens</h3>
+<p>Module Tokens work on <strong>Containers</strong> only.
 As of now we have these module tokens:</p>
-<ul sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="124">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="124"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="124">[Module.Id]</code> - ID of the current module</li>
+<ul>
+<li><code>[Module.Id]</code> - ID of the current module</li>
 </ul>
-<h3 id="module-type-information" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="126">Module Type Information</h3>
-<ul sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="128">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="128"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="128">[Module.Namespace]</code> - the name like <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="128">Oqtane.Modules.HtmlText</code> of the current module
+<h3 id="module-type-information">Module Type Information</h3>
+<ul>
+<li><code>[Module.Namespace]</code> - the name like <code>Oqtane.Modules.HtmlText</code> of the current module
 ideal to add to containers where you wish to have special styling for special types of modules
-<em sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="130">this uses the namespace, without the final control name</em></li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="131"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="131">[Module.Control]</code> - the control name like <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="131">Index</code> of the current module
+<em>this uses the namespace, without the final control name</em></li>
+<li><code>[Module.Control]</code> - the control name like <code>Index</code> of the current module
 ideal to specify even more specific styling
-<em sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="133">from the namespace the final control name</em></li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="134">~<code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="134">[Module.Name]</code>~ - the name like <code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="134">HtmlText</code> of the current module (from the namespace, without the final control name)
-<em sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="135">impossible to implement because each module will have different namespace conventions, so finding the real name isn't possible</em></li>
+<em>from the namespace the final control name</em></li>
+<li>~<code>[Module.Name]</code>~ - the name like <code>HtmlText</code> of the current module (from the namespace, without the final control name)
+<em>impossible to implement because each module will have different namespace conventions, so finding the real name isn't possible</em></li>
 </ul>
-<h3 id="layout-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="137">Layout Tokens</h3>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="139">TODO:</p>
-<h3 id="menu-tokens" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="141">Menu Tokens</h3>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="143">Menu Tokens work on <strong sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="143">Menus</strong> only.
+<h3 id="layout-tokens">Layout Tokens</h3>
+<p>TODO:</p>
+<h3 id="menu-tokens">Menu Tokens</h3>
+<p>Menu Tokens work on <strong>Menus</strong> only.
 As of now we have these menu tokens:</p>
-<ul sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="146">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="146"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="146">[Menu.Id]</code> - ID of the menu which is normally randomly generated to ensure that each menu is unique for collapse/uncollapse</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="147"><code sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="147">[Menu.Level]</code> - level of the menu which can be different for the page level, as menus that start at level 2 still have the first items on menu level 1</li>
+<ul>
+<li><code>[Menu.Id]</code> - ID of the menu which is normally randomly generated to ensure that each menu is unique for collapse/uncollapse</li>
+<li><code>[Menu.Level]</code> - level of the menu which can be different for the page level, as menus that start at level 2 still have the first items on menu level 1</li>
 </ul>
-<h3 id="how-it-works" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="149">How it Works</h3>
-<p sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="151">As of v0.1 2022-Q3 it's still a simple search-and-replace.
+<h3 id="how-it-works">How it Works</h3>
+<p>As of v0.1 2022-Q3 it's still a simple search-and-replace.
 We plan to use a more powerfull RegEx in the near future.</p>
-<hr sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="154">
-<h2 id="history" sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="156">History</h2>
-<ol sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="158">
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="158">Magic Values were created in v0.1.0 2022-10</li>
-<li sourcefile="pages/library/tailor/index.md" sourcestartlinenumber="159">Magic Values were completely overhauled in v0.6 in 2024-12</li>
+<hr>
+<h2 id="history">History</h2>
+<ol>
+<li>Magic Values were created in v0.1.0 2022-10</li>
+<li>Magic Values were completely overhauled in v0.6 in 2024-12</li>
 </ol>
 
 </article>

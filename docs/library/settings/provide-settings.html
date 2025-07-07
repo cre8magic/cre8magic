@@ -85,28 +85,28 @@
         </div>
 
         <article data-uid="Cre8magic.MagicSettings.Provide.Index">
-<h1 id="cre8magic---magic-settings-and-prepared-settings" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="5">cre8magic - Magic Settings and Prepared Settings</h1>
+<h1 id="cre8magic---magic-settings-and-prepared-settings">cre8magic - Magic Settings and Prepared Settings</h1>
 
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="7"><strong sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="7">Magic Settings</strong> are a core building block of cre8magic.
+<p><strong>Magic Settings</strong> are a core building block of cre8magic.
 There are two basic ways to work with Magic Settings:</p>
-<ol sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="10">
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="10">With <strong sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="10">Direct Settings</strong>, you will specify the settings in your code to get some specific data from a service.</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="11">Or you can have <strong sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="11">Prepared/Provided Settings</strong> in a central location, and just use these.</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="12">Or you can have <strong sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="12">Named Settings</strong> in a central location, and just use the name of the settings.</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="13">Or you can have <strong sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="13">Settings by Theme Part Name</strong> in a central location, and just use the name of the part.</li>
+<ol>
+<li>With <strong>Direct Settings</strong>, you will specify the settings in your code to get some specific data from a service.</li>
+<li>Or you can have <strong>Prepared/Provided Settings</strong> in a central location, and just use these.</li>
+<li>Or you can have <strong>Named Settings</strong> in a central location, and just use the name of the settings.</li>
+<li>Or you can have <strong>Settings by Theme Part Name</strong> in a central location, and just use the name of the part.</li>
 </ol>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="15">The scenarios above each add more levels of indirection.
+<p>The scenarios above each add more levels of indirection.
 This could be confusing to start with, but very powerful once you understand it.</p>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="18">Before we explain the details, let's look at some examples.</p>
-<h2 id="example-direct-settings-vs-prepared-settings" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="20">Example Direct Settings vs. Prepared Settings</h2>
-<h3 id="1-direct-settings" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="22">1. Direct Settings</h3>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="24">This example assumes you want to create a Breadcrumb, with all the code directly in your Blazor component.</p>
-<ol sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="26">
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="26">going from the home page to the current page</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="27">you want the home page to be shown as the first node</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="28">and you want the current page to be shown as the last node, but not as a link</li>
+<p>Before we explain the details, let's look at some examples.</p>
+<h2 id="example-direct-settings-vs-prepared-settings">Example Direct Settings vs. Prepared Settings</h2>
+<h3 id="1-direct-settings">1. Direct Settings</h3>
+<p>This example assumes you want to create a Breadcrumb, with all the code directly in your Blazor component.</p>
+<ol>
+<li>going from the home page to the current page</li>
+<li>you want the home page to be shown as the first node</li>
+<li>and you want the current page to be shown as the last node, but not as a link</li>
 </ol>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="30">@{
+<pre><code class="lang-csharp">@{
     var breadcrumbKit = MagicAct.BreadcrumbKit(PageState, new MagicBreadcrumbSettings
     {
         WithActive = true,
@@ -120,13 +120,13 @@ This could be confusing to start with, but very powerful once you understand it.
     }
 &lt;/ol&gt;
 </code></pre>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="46">Or when using a MagicBreadcrumb component:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="48">&lt;MagicBreadcrumb Settings=&quot;new MagicBreadcrumbSettings { WithActive = true, WithHome = false }&quot; /&gt;
+<p>Or when using a MagicBreadcrumb component:</p>
+<pre><code class="lang-csharp">&lt;MagicBreadcrumb Settings=&quot;new MagicBreadcrumbSettings { WithActive = true, WithHome = false }&quot; /&gt;
 </code></pre>
-<h3 id="2-loaded-settings" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="52">2. Loaded Settings</h3>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="54">This example assumes that settings have been prepare for this control to use.
+<h3 id="2-loaded-settings">2. Loaded Settings</h3>
+<p>This example assumes that settings have been prepare for this control to use.
 So the code is simply:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="57">@* Breadcrumb using the settings from the catalog *@
+<pre><code class="lang-csharp">@* Breadcrumb using the settings from the catalog *@
 @{
     breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 }
@@ -137,45 +137,45 @@ So the code is simply:</p>
     }
 &lt;/ol&gt;
 </code></pre>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="70">Or when using a MagicBreadcrumb component:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="72">&lt;MagicBreadcrumb /&gt;
+<p>Or when using a MagicBreadcrumb component:</p>
+<pre><code class="lang-csharp">&lt;MagicBreadcrumb /&gt;
 </code></pre>
-<h3 id="3-loaded-settings-by-name" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="76">3. Loaded Settings by Name</h3>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="78">The previous example didn't specify anything when retrieving the data.
-Now there are cases where the <strong sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="79">Prepared Settings</strong> use names.
+<h3 id="3-loaded-settings-by-name">3. Loaded Settings by Name</h3>
+<p>The previous example didn't specify anything when retrieving the data.
+Now there are cases where the <strong>Prepared Settings</strong> use names.
 This may not be common for breadcrumbs, but typical for menus where you would have:</p>
-<ul sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="82">
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="82">a <code sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="82">main</code> menu showing all items starting from the home page</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="83">a <code sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="83">footer</code> menu showing only a few pre-specified items</li>
+<ul>
+<li>a <code>main</code> menu showing all items starting from the home page</li>
+<li>a <code>footer</code> menu showing only a few pre-specified items</li>
 </ul>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="85">In this case, you should know that these two things are equivalent:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="87">@{
+<p>In this case, you should know that these two things are equivalent:</p>
+<pre><code class="lang-csharp">@{
     breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
     breadcrumbKit = = MagicAct.BreadcrumbKit(PageState, new() { Name = &quot;default&quot; });
 }
 </code></pre>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="94">Or when using a MagicBreadcrumb component:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="96">&lt;MagicBreadcrumb /&gt;
+<p>Or when using a MagicBreadcrumb component:</p>
+<pre><code class="lang-csharp">&lt;MagicBreadcrumb /&gt;
 &lt;MagicBreadcrumb Name=&quot;default&quot; /&gt;
 </code></pre>
-<h2 id="preparing--providing-default-settings" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="101">Preparing / Providing Default Settings</h2>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="103">The settings are prepared and provided in a central location.</p>
-<div class="TIP" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="105">
+<h2 id="preparing--providing-default-settings">Preparing / Providing Default Settings</h2>
+<p>The settings are prepared and provided in a central location.</p>
+<div class="TIP">
 <h5>Tip</h5>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="106">Since each Theme can have its own settings,
+<p>Since each Theme can have its own settings,
 the central location to prepare settings is in the Theme code.</p>
 </div>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="109">There are different ways to provide settings:</p>
-<ol sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="111">
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="111">You could just write your own code to keep all settings in one place.</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="112">The theme code can setup the <a class="xref" href="../../api/ToSic.Cre8magic.Act.IMagicAct.html" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber=112>MagicAct</a> with the settings.</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="113">The theme code can load settings from a JSON file into the <a class="xref" href="../../api/ToSic.Cre8magic.Act.IMagicAct.html" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber=113>MagicAct</a></li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="114"><em sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="114">The theme code could load settings from a database (not supported yet).</em></li>
+<p>There are different ways to provide settings:</p>
+<ol>
+<li>You could just write your own code to keep all settings in one place.</li>
+<li>The theme code can setup the <a class="xref" href="../../api/ToSic.Cre8magic.Act.IMagicAct.html">MagicAct</a> with the settings.</li>
+<li>The theme code can load settings from a JSON file into the <a class="xref" href="../../api/ToSic.Cre8magic.Act.IMagicAct.html">MagicAct</a></li>
+<li><em>The theme code could load settings from a database (not supported yet).</em></li>
 </ol>
-<h3 id="option-1-just-write-some-shared-code" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="116">Option 1: Just Write Some Shared Code</h3>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="118">This variant is not recommended, but included just for completeness.
+<h3 id="option-1-just-write-some-shared-code">Option 1: Just Write Some Shared Code</h3>
+<p>This variant is not recommended, but included just for completeness.
 You could just have a class which provides the settings:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="121">namespace MyCompany.MyTheme.Ui
+<pre><code class="lang-csharp">namespace MyCompany.MyTheme.Ui
 
 public class MySettingsProvider
 {
@@ -186,18 +186,18 @@ public class MySettingsProvider
     };
 }
 </code></pre>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="134">And then use it like this:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="136">@{
+<p>And then use it like this:</p>
+<pre><code class="lang-csharp">@{
     breadcrumbKit = MagicAct.BreadcrumbKit(PageState, MySettingsProvider.BreadcrumbSettings);
 }
 </code></pre>
-<h3 id="option-2-broadcast-from-theme" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="142">Option 2: Broadcast from Theme</h3>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="144">This is the first recommended way to provide settings.
+<h3 id="option-2-broadcast-from-theme">Option 2: Broadcast from Theme</h3>
+<p>This is the first recommended way to provide settings.
 The settings can be managed centrally, but are still part of the Theme.
 In terms of Separation of Concerns, we still recommend placing the code which has the settings
 in it's own class (similar to the previous example).</p>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="149">This is the code you would use in your theme:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="151">/// &lt;summary&gt;
+<p>This is the code you would use in your theme:</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
 /// OnInitialized, make ure that cre8magic knows what settings this theme wants.
 /// &lt;/summary&gt;
 protected override void OnInitialized()
@@ -210,21 +210,21 @@ protected override void OnInitialized()
     );
 }
 </code></pre>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="166">And then use it like this:</p>
-<pre><code class="lang-csharp" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="168">@{
+<p>And then use it like this:</p>
+<pre><code class="lang-csharp">@{
     breadcrumbKit = MagicAct.BreadcrumbKit(PageState);
 }
 </code></pre>
-<h3 id="3-load-settings-from-json" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="174">3. Load Settings from JSON</h3>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="176">This is the most flexible way to provide settings.
+<h3 id="3-load-settings-from-json">3. Load Settings from JSON</h3>
+<p>This is the most flexible way to provide settings.
 It's quite nice, because you can change settings without recompiling your theme.
 This provides for a much nicer developer / designer experience.</p>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="180">The setup requires these things:</p>
-<ol sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="182">
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="182">A JSON file in your theme's <code sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="182">wwwroot</code> folder.</li>
-<li sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="183">A <a class="xref" href="../../api/ToSic.Cre8magic.Themes.MagicThemePackage.html" sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber=183>MagicThemePackage</a> object in your theme.</li>
+<p>The setup requires these things:</p>
+<ol>
+<li>A JSON file in your theme's <code>wwwroot</code> folder.</li>
+<li>A <a class="xref" href="../../api/ToSic.Cre8magic.Themes.MagicThemePackage.html">MagicThemePackage</a> object in your theme.</li>
 </ol>
-<p sourcefile="pages/library/settings/provide-settings.md" sourcestartlinenumber="185">TODO:</p>
+<p>TODO:</p>
 
 </article>
 
