@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Oqtane Blazor Theme Assets | cre8magic </title>
+      <title> | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Oqtane Blazor Theme Assets | cre8magic ">
+      <meta name="title" content=" | cre8magic ">
       
       
-      <link rel="icon" href="../../assets/favicon.ico">
-      <link rel="stylesheet" href="../../public/docfx.min.css">
-      <link rel="stylesheet" href="../../public/main.css">
-      <meta name="docfx:navrel" content="../../toc.html">
-      <meta name="docfx:tocrel" content="../toc.html">
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
       
-      <meta name="docfx:rel" content="../../">
+      <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-assets/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-assets/typescript/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../../public/docfx.min.js"></script>
+      <script type="module" src="./../../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -43,8 +43,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../../index.html">
-            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
             
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,41 +84,28 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.ThemeAssets.Index">
-<h1 id="oqtane-blazor-theme-assets">Oqtane Blazor Theme Assets</h1>
+        <article data-uid="OqtaneThemes.ThemeAssets.Typescript.Index">
 
-<p>Every theme needs assets, such as images, stylesheets, and scripts.
-This guide will help you understand how to manage and use assets in your Oqtane themes effectively.</p>
-<div class="TIP">
-<h5>Tip</h5>
-<p>A core aspect of modern css and javascript is the use of SASS and TypeScript.
-This guide will help you understand how to use these technologies in your Oqtane themes.</p>
-</div>
-<h2 id="all-about-theme-assets">All About Theme Assets</h2>
-<p>Each theme can define its own CSS classes and variables. When creating a new theme, the default Oqtane CSS definitions are already included in the <code>theme.css</code> file.</p>
-<p>In our case, however, we moved these CSS definitions into a separate file called <code>oqtane.css</code>. The reason for this is that the default CSS files may change with Oqtane updates. By outsourcing them to a custom file, we can easily copy and reuse the original styles without overwriting them directly.</p>
-<p>To ensure that a new CSS file is included in the final theme, it must be placed in the following directory during compilation:</p>
-<p><code>wwwroot/themes/YOUR_THEME_NAME</code></p>
-<p>Your CSS file should be located here.</p>
-<div gallery="gallery01">
-  <img src="../../pages/oqtane-theme-guides/theme-assets/assets/theme_assets_main_1.webp" data-caption="Visual Studio ThemeInfo.cs">
-</div>
-<p>To make sure the CSS file is loaded in the final theme, it must be declared in the <code>ThemeInfo.cs</code> file. During the build process, the file will then be automatically copied to the<br>
-<code>wwwroot/themes/YOUR_THEME_NAME</code> folder and will be included when the theme is loaded.</p>
-<p>Bootstrap 5 is loaded via CDN by default.</p>
-<p>TODO: @2dg explain what they are, where they are located at runtime, etc.</p>
-<h2 id="stylesheets-using-sass">Stylesheets using SASS</h2>
-<p>TODO: @2dg explain how to use SASS in Oqtane themes, including how to set up the project, write SASS code, and compile it to CSS.</p>
-<h2 id="javascript-using-typescript">JavaScript using TypeScript</h2>
-<p>TODO: @2dg explain how to use TypeScript in Oqtane themes, including how to set up the project, write TypeScript code, and compile it to JavaScript.</p>
-<h2 id="running-vite-to-compile-styles-and-scripts">Running Vite to Compile Styles and Scripts</h2>
-<p>TODO: @2dg explain how to run Vite to compile styles and scripts, including how to set up the project, configure Vite, and run the build process.
-don't forget to mention how it works, and how it runs automatically when you build...</p>
+<h2 id="what-is-typescript-and-why-is-it-used-in-oqtane-themes">What is TypeScript and why is it used in Oqtane Themes?</h2>
+<p>TypeScript is a strongly typed superset of JavaScript that adds static types, interfaces, and modern language features to standard JavaScript. This helps developers write cleaner, more reliable, and maintainable code by catching errors early during development instead of at runtime.</p>
+<h3 id="why-use-typescript-instead-of-plain-javascript">Why use TypeScript instead of plain JavaScript?</h3>
+<ul>
+<li><strong>Static typing:</strong> TypeScript’s type system helps prevent common bugs by checking types at compile time.</li>
+<li><strong>Modern language features:</strong> TypeScript supports upcoming ECMAScript features and compiles them down to browser-compatible JavaScript.</li>
+<li><strong>Improved code readability:</strong> Clear type annotations make it easier to understand complex code and APIs.</li>
+</ul>
+<h3 id="how-is-typescript-used-in-oqtane-themes">How is TypeScript used in Oqtane Themes?</h3>
+<p>In Oqtane themes, TypeScript is mainly used to write client-side logic such as event handling, animations, or interaction with DOM elements. This allows themes to be more dynamic and interactive.</p>
+<h3 id="how-does-typescript-fit-into-the-build-process">How does TypeScript fit into the build process?</h3>
+<p>TypeScript files (<code>.ts</code>) are compiled to plain JavaScript by Vite during the build process. Vite handles bundling, optimizing, and hot-reloading of your TypeScript and SCSS files to ensure fast and efficient development.</p>
+<p>You can find more information on how Vite compiles TypeScript and SCSS in the <a href="https://vitejs.dev">Vite documentation</a>.</p>
+<p>📘 <a class="xref" href="../vite/index.html">How to Install Vite</a></p>
+<hr>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-assets/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-assets/typescript/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | cre8magic ">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-assets/vite/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="OqtaneThemes.ThemeAssets.Vite.Index">
+
+<h2 id="what-is-vite">What is Vite?</h2>
+<p><a href="https://vitejs.dev">Vite</a> is a modern build tool and development server, designed for
+fast and efficient workflows in web projects using JavaScript, TypeScript, Vue, React,
+or even plain SCSS/CSS.
+Compared to older tools like Webpack, Vite offers significantly faster startup and compilation times
+thanks to its use of native ES modules and efficient hot module replacement (HMR).</p>
+<h3 id="what-is-vite-used-for-in-oqtane">What is Vite used for in Oqtane?</h3>
+<p>In Oqtane themes, we use Vite to:</p>
+<ul>
+<li><strong>Compile SCSS files into CSS</strong></li>
+<li><strong>Bundle and optimize JavaScript or TypeScript code</strong></li>
+</ul>
+<hr>
+<h2 id="vite-setup--schritt-für-schritt">Vite Setup – Schritt-für-Schritt</h2>
+<div gallery="gallery02">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_vite_1.webp" data-caption="Visual Studio">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_vite_2.webp" data-caption="Visual Studio">
+</div>
+<h3 id="1-create-packagejson">1. Create <code>package.json</code></h3>
+<p>In the root directory of your theme project, create (or update) a <code>package.json</code> file with the necessary dependencies. Example:</p>
+<pre><code class="lang-json">{
+  &quot;name&quot;: &quot;ToSic.Cre8magic-Theme-Basic&quot;, // Change Name
+  &quot;version&quot;: &quot;01.00.00&quot;,
+  &quot;main&quot;: &quot;(none)&quot;,
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;vite build --mode dev&quot;,
+    &quot;build&quot;: &quot;vite build&quot;,
+    &quot;watch&quot;: &quot;vite build --watch&quot;
+  },
+  &quot;author&quot;: &quot;2sic internet solutions&quot;, // Change Author
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;dependencies&quot;: {
+    &quot;bootstrap&quot;: &quot;^5.3.3&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;autoprefixer&quot;: &quot;^10.4.7&quot;,
+    &quot;rollup-plugin-copy&quot;: &quot;^3.5.0&quot;,
+    &quot;sass&quot;: &quot;^1.58.0&quot;,
+    &quot;typescript&quot;: &quot;^5.0.0&quot;,
+    &quot;vite&quot;: &quot;^6.1.0&quot;,
+    &quot;vite-plugin-static-copy&quot;: &quot;^2.3.0&quot;
+  }
+}
+</code></pre>
+<hr>
+<h3 id="2-prepare-theme-file">2. Prepare Theme File</h3>
+<p>In your <code>.csproj</code> file or in the <code>ThemeInfo.cs</code>, ensure that the compiled files<br>
+(e.g., <code>styles.min.css</code>, <code>bundle.js</code>) are automatically copied to the folder <code>wwwroot/themes/YOUR_THEME</code> during the build process.<br>
+You can find an example on GitHub here (adjust the link if needed).</p>
+<hr>
+<h3 id="3-example-viteconfigts">3. Example vite.config.ts</h3>
+<p>The configuration file <code>vite.config.ts</code> controls how Vite handles your SCSS and JS files.</p>
+<p>Here is an example of a simple Vite configuration:<br>
+<a href="https://github.com/cre8magic/oqtane-theme-basic/blob/main/Client/vite.config.js">Simple Vite config on GitHub</a></p>
+<h3 id="4-adjusting-the-client-code">4. Adjusting the Client Code</h3>
+<p>After a successful setup, you can build your theme by running the command <code>npm run build</code>.<br>
+This will compile your SCSS files into an optimized CSS file (<code>styles.min.css</code>) and copy it to the correct directory.<br>
+The same applies for your JS/TS files.</p>
+<pre><code class="lang-xml">  &lt;!-- This target ensures that `node_modules` exists before building.
+  If it doesn't exist, it checks for `package-lock.json` and runs `npm ci` (clean install),
+  otherwise it falls back to `npm install`. --&gt;
+  &lt;Target Name=&quot;RunNpmInstallOrCi&quot; BeforeTargets=&quot;Build&quot; Condition=&quot;!Exists('node_modules')&quot;&gt;
+    &lt;Exec Command=&quot;if exist package-lock.json (npm ci) else (npm install)&quot; /&gt;
+  &lt;/Target&gt;
+
+  &lt;!--This target builds the frontend (e.g. compiles JS and SCSS via Vite) using `npm run build`.
+  It only runs during the Release configuration.
+  It depends on `RunNpmInstallOrCi` to ensure all dependencies are installed first.--&gt;
+  &lt;Target Name=&quot;BuildFrontend&quot; BeforeTargets=&quot;Build&quot;
+    DependsOnTargets=&quot;RunNpmInstallOrCi&quot;
+    Condition=&quot;'$(Configuration)' == 'Release'&quot;&gt;
+    &lt;Exec Command=&quot;npm run build&quot; /&gt;
+  &lt;/Target&gt;
+
+  &lt;!-- This target runs the frontend development server (e.g. Vite's dev mode) using `npm run dev`.
+  It only runs during the Debug configuration.
+  It also depends on `RunNpmInstallOrCi` to ensure dependencies are available --&gt;
+  &lt;Target Name=&quot;BuildFrontendDebug&quot; BeforeTargets=&quot;Build&quot;
+    DependsOnTargets=&quot;RunNpmInstallOrCi&quot;
+    Condition=&quot;'$(Configuration)' == 'Debug'&quot;&gt;
+    &lt;Exec Command=&quot;npm run dev&quot; /&gt;
+  &lt;/Target&gt;
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-assets/vite/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
