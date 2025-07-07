@@ -99,23 +99,30 @@ thanks to its use of native ES modules and efficient hot module replacement (HMR
 <li><strong>Bundle and optimize JavaScript or TypeScript code</strong></li>
 </ul>
 <hr>
-<h2 id="vite-setup--schritt-für-schritt">Vite Setup – Schritt-für-Schritt</h2>
-<div gallery="gallery02">
-  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_vite_1.webp" data-caption="Visual Studio">
-  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_vite_2.webp" data-caption="Visual Studio">
-</div>
-<h3 id="1-create-packagejson">1. Create <code>package.json</code></h3>
-<p>In the root directory of your theme project, create (or update) a <code>package.json</code> file with the necessary dependencies. Example:</p>
+<h2 id="what-do-you-need-for-vite">What do you need for Vite?</h2>
+<p>To get started with Vite, follow these basic steps:</p>
+<ol>
+<li><strong>Install the required Node modules</strong><br>
+Begin by installing all necessary dependencies for your project.</li>
+<li><strong>Add the Vite configuration</strong><br>
+Once the modules are installed, copy or create your Vite config file and run the build process.<br>
+You should now see outputs like <code>style.min.css</code> being generated.</li>
+<li><strong>Verify automatic builds</strong><br>
+Confirm that Vite correctly generates new files or updates them after every build or when you change your source code.</li>
+</ol>
+<hr>
+<h2 id="node-module-setup-create-first-packagejson">Node Module Setup Create first <code>package.json</code></h2>
+<p>In the root directory of your theme project, create (or update) a <code>package.json</code> file with the required dependencies. For example:</p>
+<p>&quot;Adjust the name and author in the JSON. Make sure you have the correct <code>devDependencies</code>, and update them if necessary.&quot;</p>
 <pre><code class="lang-json">{
-  &quot;name&quot;: &quot;ToSic.Cre8magic-Theme-Basic&quot;, // Change Name
+  &quot;name&quot;: &quot;ToSic.Cre8magic-Theme-Basic&quot;,
   &quot;version&quot;: &quot;01.00.00&quot;,
-  &quot;main&quot;: &quot;(none)&quot;,
   &quot;scripts&quot;: {
     &quot;dev&quot;: &quot;vite build --mode dev&quot;,
     &quot;build&quot;: &quot;vite build&quot;,
     &quot;watch&quot;: &quot;vite build --watch&quot;
   },
-  &quot;author&quot;: &quot;2sic internet solutions&quot;, // Change Author
+  &quot;author&quot;: &quot;2sic internet solutions&quot;,
   &quot;license&quot;: &quot;MIT&quot;,
   &quot;dependencies&quot;: {
     &quot;bootstrap&quot;: &quot;^5.3.3&quot;
@@ -130,20 +137,41 @@ thanks to its use of native ES modules and efficient hot module replacement (HMR
   }
 }
 </code></pre>
+<h3 id="after-running-npm-install-you-should-see-node_modules-and-package-lockjson">After running <code>npm install</code>, you should see <code>node_modules</code> and <code>package-lock.json</code></h3>
+<p>Check that these files and folders appear in your project. This confirms the dependencies were installed correctly.</p>
+<div gallery="gallery02">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_npm_1.webp" data-caption="Copy Package Json">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_npm_2.webp" data-caption="Open Terminal in VS">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_npm_3.webp" data-caption="Change cd </br> Npm Install Package">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_npm_4.webp" data-caption="Check Node and lock.json">
+</div>
 <hr>
-<h3 id="2-prepare-theme-file">2. Prepare Theme File</h3>
-<p>In your <code>.csproj</code> file or in the <code>ThemeInfo.cs</code>, ensure that the compiled files<br>
-(e.g., <code>styles.min.css</code>, <code>bundle.js</code>) are automatically copied to the folder <code>wwwroot/themes/YOUR_THEME</code> during the build process.<br>
-You can find an example on GitHub here (adjust the link if needed).</p>
-<hr>
-<h3 id="3-example-viteconfigts">3. Example vite.config.ts</h3>
-<p>The configuration file <code>vite.config.ts</code> controls how Vite handles your SCSS and JS files.</p>
-<p>Here is an example of a simple Vite configuration:<br>
+<h2 id="next-create-the-vite-configuration">Next, create the Vite configuration</h2>
+<p>The configuration file <code>vite.config.ts</code> (or <code>vite.config.js</code>) defines how Vite processes your SCSS and JS files.</p>
+<p>You can also start the watcher so that every change to your SCSS files is automatically compiled into CSS.</p>
+<p>Here is a simple example Vite configuration:<br>
 <a href="https://github.com/cre8magic/oqtane-theme-basic/blob/main/Client/vite.config.js">Simple Vite config on GitHub</a></p>
-<h3 id="4-adjusting-the-client-code">4. Adjusting the Client Code</h3>
-<p>After a successful setup, you can build your theme by running the command <code>npm run build</code>.<br>
-This will compile your SCSS files into an optimized CSS file (<code>styles.min.css</code>) and copy it to the correct directory.<br>
-The same applies for your JS/TS files.</p>
+<p>A Vite watcher (or simply &quot;watch&quot; in Vite) is a feature that continuously monitors your source files (such as SCSS, JS, or TS).<br>
+Whenever you change and save a file, the watcher automatically detects the change and restarts the build process—without you having to run any commands manually.</p>
+<ul>
+<li>Saves time: No need to manually rebuild after every change.</li>
+<li>Perfect for development, as you get immediate feedback when you make adjustments.</li>
+</ul>
+<h3 id="check-changes-build-vite">Check Changes, build Vite</h3>
+<p>Make sure that your configuration works as expected and that changes to your files trigger the build process.</p>
+<div gallery="gallery02">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_vite_1.webp" data-caption="Visual Studio">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/vite/assets/theme_assets_vite_2.webp" data-caption="Visual Studio">
+</div>
+<hr>
+<h2 id="use-the-new-compile-css-code">Use the new Compile CSS Code</h2>
+<p>If you want to youse the css file, check the <code>ThemeInfo.cs</code><br>
+<a class="xref" href="../sass/index.html">Show Compile SASS Code</a></p>
+<hr>
+<h2 id="set-up-vite-to-run-on-every-build">Set up Vite to run on every build</h2>
+<p>After the setup is complete, you can build your theme by running <code>npm run build</code>.<br>
+This will compile your SCSS files into optimized CSS (such as <code>styles.min.css</code>) and place them in the appropriate directory.<br>
+The same process applies to your JS/TS files.</p>
 <pre><code class="lang-xml">  &lt;!-- This target ensures that `node_modules` exists before building.
   If it doesn't exist, it checks for `package-lock.json` and runs `npm ci` (clean install),
   otherwise it falls back to `npm install`. --&gt;

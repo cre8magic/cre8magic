@@ -13,40 +13,23 @@ This guide will help you understand how to manage and use assets in your Oqtane 
 
 ## All About Theme Assets
 
-Each theme can define its own CSS classes and variables. When creating a new theme, the default Oqtane CSS definitions are already included in the `theme.css` file.
+Each theme in Oqtane can define its own set of assets such as stylesheets (CSS/SASS), images, and JavaScript files. These assets are essential for customizing the look and feel of a theme, as well as for adding interactive behavior through JavaScript or TypeScript.
 
-In our case, however, we moved these CSS definitions into a separate file called `oqtane.css`. The reason for this is that the default CSS files may change with Oqtane updates. By outsourcing them to a custom file, we can easily copy and reuse the original styles without overwriting them directly.
+Organizing theme assets properly ensures a modular and maintainable theme structure that is easy to develop, test, and update.
 
-To ensure that a new CSS file is included in the final theme, it must be placed in the following directory during compilation:
+## Stylesheets using CSS / SASS
 
-`wwwroot/themes/YOUR_THEME_NAME`
+To customize the appearance of your theme, you can use traditional CSS or the more powerful and maintainable SASS preprocessor. SASS allows you to use variables, nested rules, mixins, and more—making your styles more modular and easier to manage.
 
-Your CSS file should be located here.
-
-<div gallery="gallery01">
-  <img src="./assets/theme_assets_main_1.webp" data-caption="Visual Studio ThemeInfo.cs">
-</div>
-
-To make sure the CSS file is loaded in the final theme, it must be declared in the `ThemeInfo.cs` file. During the build process, the file will then be automatically copied to the  
-`wwwroot/themes/YOUR_THEME_NAME` folder and will be included when the theme is loaded.
-
-Bootstrap 5 is loaded via CDN by default.
-
-
-TODO: @2dg explain what they are, where they are located at runtime, etc.
-
-
-## Stylesheets using SASS
-
-TODO: @2dg explain how to use SASS in Oqtane themes, including how to set up the project, write SASS code, and compile it to CSS.
-
+For more details on working with SASS in Oqtane themes, see the following guide:  
+[More About Styles](xref:OqtaneThemes.ThemeAssets.Sass.Index)
 
 ## JavaScript using TypeScript
 
-TODO: @2dg explain how to use TypeScript in Oqtane themes, including how to set up the project, write TypeScript code, and compile it to JavaScript.
-
+If your theme requires dynamic behavior or interaction, you can include JavaScript.  
+[More About TypeScript](xref:OqtaneThemes.ThemeAssets.Typescript.Index)
 
 ## Running Vite to Compile Styles and Scripts
 
-TODO: @2dg explain how to run Vite to compile styles and scripts, including how to set up the project, configure Vite, and run the build process.
-don't forget to mention how it works, and how it runs automatically when you build...
+Vite is a fast modern build tool used in Oqtane themes to compile SASS (into CSS) and TypeScript (into JavaScript). It provides a smooth development experience with instant hot module replacement, and a fast production build.  
+[More About Vite](xref:OqtaneThemes.ThemeAssets.Vite.Index)
