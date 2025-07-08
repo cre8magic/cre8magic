@@ -84,7 +84,7 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.ThemeAssets.Sass.Index">
+        <article data-uid="OqtaneThemes.ThemeAssets.Styles.Index">
 <h1 id="styles">Styles</h1>
 
 <h2 id="using-css-in-oqtane-themes">Using CSS in Oqtane Themes</h2>
@@ -123,7 +123,7 @@
 <li>Create a folder structure for your SASS or styles, for example:</li>
 </ul>
 <p>In <code>style.scss</code>, all other SCSS files should be imported to ensure they are loaded correctly.</p>
-<div gallery="gallery01">
+<div gallery="gallery02">
   <img src="../../../pages/oqtane-theme-guides/theme-assets/sass/assets/theme_assets_sass_1.webp" data-caption="Visual Studio Src">
 </div>
 <hr>
@@ -148,19 +148,20 @@ body {
 </code></pre>
 <hr>
 <h3 id="compile-sass-code">Compile SASS Code</h3>
-<p>FLOW CHART:
-flowchart LR
-A([&quot;VS Build Starts&quot;]) --&gt; B[&quot;Run Vite Build&quot;]
-B --&gt; C[&quot;Vite Compiles SASS to CSS&quot;]
-C --&gt; D[&quot;Vite Copies CSS to /wwwroot/themes/YOUR_THEME&quot;]
-D --&gt; E[&quot;Oqtane Loads Compiled CSS at Runtime&quot;]
-E --&gt; F([&quot;Done&quot;])</p>
-<p>Run &gt; X CODE</p>
-<p>Resultat in wwwroot</p>
+<pre><code class="lang-mermaid">flowchart LR
+    A([&quot;VS Build Starts&quot;]) --&gt; B[&quot;Run Vite Build&quot;]
+    B --&gt; C[&quot;Vite Compiles SASS to CSS&quot;]
+    C --&gt; D[&quot;Vite Copies CSS to /wwwroot/themes/YOUR_THEME&quot;]
+    D --&gt; E[&quot;Oqtane Loads Compiled CSS at Runtime&quot;]
+</code></pre>
+<div gallery="gallery03">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/sass/assets/theme_assets_vite_1.webp" data-caption="Visual Studio Build vite">
+</div>
+<p>Result in <code>wwwroot/themes/YOUR_THEME_NAME</code> as <code>styles.min.css</code></p>
 <hr>
 <h2 id="show-compile-sass-code">Show Compile SASS Code</h2>
-<div gallery="gallery02">
-  <img src="../../../pages/oqtane-theme-guides/theme-assets/sass/assets/theme_assets_sass_2.webp" data-caption="Visual Studio ThemeInfo.cs">
+<div gallery="gallery04">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/sass/assets/theme_compile_sass_1.webp" data-caption="Visual Studio ThemeInfo.cs">
 </div>
 <p>Refer to the <strong>Vite</strong> section to see how to configure the build process correctly.</p>
 <p>Once everything is set up properly, a <code>styles.min.css</code> file will be generated in the <code>wwwroot/themes/YOUR_THEME_NAME</code> directory after rebuilding the project.</p>

@@ -1,5 +1,5 @@
 ---
-uid: OqtaneThemes.ThemeAssets.Sass.Index
+uid: OqtaneThemes.ThemeAssets.Styles.Index
 ---
 
 # Styles
@@ -54,7 +54,7 @@ To use SASS in your Oqtane theme, make sure your project supports `.scss` files 
 
 In `style.scss`, all other SCSS files should be imported to ensure they are loaded correctly.
 
-<div gallery="gallery01">
+<div gallery="gallery02">
   <img src="./assets/theme_assets_sass_1.webp" data-caption="Visual Studio Src">
 </div>
 
@@ -91,24 +91,26 @@ body {
 
 ### Compile SASS Code
 
-FLOW CHART: 
+```mermaid
 flowchart LR
     A(["VS Build Starts"]) --> B["Run Vite Build"]
     B --> C["Vite Compiles SASS to CSS"]
     C --> D["Vite Copies CSS to /wwwroot/themes/YOUR_THEME"]
     D --> E["Oqtane Loads Compiled CSS at Runtime"]
-    E --> F(["Done"])
+```
 
-Run > X CODE 
+<div gallery="gallery03">
+  <img src="./assets/theme_assets_vite_1.webp" data-caption="Visual Studio Build vite">
+</div>
 
-Resultat in wwwroot
+Result in `wwwroot/themes/YOUR_THEME_NAME` as `styles.min.css`
 
 ---
 
 ## Show Compile SASS Code
 
-<div gallery="gallery02">
-  <img src="./assets/theme_assets_sass_2.webp" data-caption="Visual Studio ThemeInfo.cs">
+<div gallery="gallery04">
+  <img src="./assets/theme_compile_sass_1.webp" data-caption="Visual Studio ThemeInfo.cs">
 </div>
 
 Refer to the **Vite** section to see how to configure the build process correctly.
