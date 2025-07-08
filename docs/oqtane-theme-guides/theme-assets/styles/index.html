@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Styles | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Styles | cre8magic ">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-assets/styles/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="OqtaneThemes.ThemeAssets.Styles.Index">
+<h1 id="styles">Styles</h1>
+
+<h2 id="using-css-in-oqtane-themes">Using CSS in Oqtane Themes</h2>
+<p>Each Oqtane theme can define its own CSS classes, variables, and component-specific styles. When you create a new theme, the default styling from the Oqtane framework is typically included via a <code>theme.css</code> file. This provides a solid base that ensures consistency and compatibility with built-in modules and layout components.</p>
+<p>However, in many projects, it's a good idea to separate the original framework styles from your customizations. For example, we moved the default Oqtane CSS into a separate file named <code>oqtane.css</code>. This approach offers two key benefits:</p>
+<ul>
+<li>It protects your custom theme from breaking changes when Oqtane is updated.</li>
+<li>It allows you to copy and reference the original styles without directly modifying them.</li>
+</ul>
+<h3 id="including-css-files-in-your-theme">Including CSS Files in Your Theme</h3>
+<p>To include your custom CSS file in the final output, it must be placed in the following directory during the build process: <code>wwwroot/themes/YOUR_THEME_NAME</code></p>
+<div gallery="gallery01">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/styles/assets/theme_assets_main_1.webp" data-caption="Visual Studio ThemeInfo.cs">
+</div>
+<p>To make sure the CSS file is loaded in the final theme, it must be declared in the <code>ThemeInfo.cs</code> file. During the build process, the file will then be automatically copied to the<br>
+<code>wwwroot/themes/YOUR_THEME_NAME</code> folder and will be included when the theme is loaded.</p>
+<p>Bootstrap 5 is loaded via CDN by default.</p>
+<hr>
+<h2 id="using-sass-in-oqtane-themes">Using SASS in Oqtane Themes</h2>
+<p>SASS (Syntactically Awesome Stylesheets) is a CSS extension that provides powerful features like variables, nesting, mixins, and more — making it easier and more structured to manage your stylesheets. You can easily use SASS in Oqtane themes, provided that your development setup is properly configured.</p>
+<ul>
+<li>Variables</li>
+<li>Nesting</li>
+<li>Functions</li>
+<li>Mixins</li>
+<li>Imports</li>
+</ul>
+<p>Using SASS can significantly improve your development workflow by keeping your styles modular, readable, and easier to maintain.</p>
+<hr>
+<h2 id="project-setup-for-sass">Project Setup for SASS</h2>
+<p>To use SASS in your Oqtane theme, make sure your project supports <code>.scss</code> files and compiles them into regular CSS during the build process. Here's how to get started:</p>
+<ul>
+<li>Ensure your theme project is a web project with access to tools like <code>sass</code>, <code>vite</code>, or <code>gulp</code>.</li>
+<li>Install the SASS compiler using Vite.<br>
+📘 <a class="xref" href="../vite/index.html">How to Install Vite</a></li>
+<li>Create a folder structure for your SASS or styles, for example:</li>
+</ul>
+<p>In <code>style.scss</code>, all other SCSS files should be imported to ensure they are loaded correctly.</p>
+<div gallery="gallery02">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/styles/assets/theme_assets_sass_1.webp" data-caption="Visual Studio Src">
+</div>
+<hr>
+<h2 id="writing-sass-code">Writing SASS Code</h2>
+<p>SASS allows you to write modular and maintainable styles. You can define variables and reuse them across multiple files:</p>
+<h4 id="scss-code">SCSS-Code</h4>
+<pre><code class="lang-scss">// _variables.scss
+$primary-color: #007bff;
+$font-stack: 'Segoe UI', sans-serif;
+
+// _layout.scss
+body {
+  font-family: $font-stack;
+  background-color: $primary-color;
+}
+</code></pre>
+<h4 id="generated-css">Generated CSS</h4>
+<pre><code class="lang-css">body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #007bff;
+}
+</code></pre>
+<hr>
+<h3 id="compile-sass-code">Compile SASS Code</h3>
+<pre><code class="lang-mermaid">flowchart LR
+    A([&quot;VS Build Starts&quot;]) --&gt; B[&quot;Run Vite Build&quot;]
+    B --&gt; C[&quot;Vite Compiles SASS to CSS&quot;]
+    C --&gt; D[&quot;Vite Copies CSS to /wwwroot/themes/YOUR_THEME&quot;]
+    D --&gt; E[&quot;Oqtane Loads Compiled CSS at Runtime&quot;]
+</code></pre>
+<div gallery="gallery03">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/styles/assets/theme_assets_vite_1.webp" data-caption="Visual Studio Build vite">
+</div>
+<p>Result in <code>wwwroot/themes/YOUR_THEME_NAME</code> as <code>styles.min.css</code></p>
+<hr>
+<h2 id="show-compile-sass-code">Show Compile SASS Code</h2>
+<div gallery="gallery04">
+  <img src="../../../pages/oqtane-theme-guides/theme-assets/styles/assets/theme_compile_sass_1.webp" data-caption="Visual Studio ThemeInfo.cs">
+</div>
+<p>Refer to the <strong>Vite</strong> section to see how to configure the build process correctly.</p>
+<p>Once everything is set up properly, a <code>styles.min.css</code> file will be generated in the <code>wwwroot/themes/YOUR_THEME_NAME</code> directory after rebuilding the project.</p>
+<p>If changes are not visible, check the <code>styles.mini.css</code> file's timestamp to make sure it is correct.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-assets/styles/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

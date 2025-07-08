@@ -105,7 +105,7 @@ Make sure that your configuration works as expected and that changes to your fil
 ## Use the new Compile CSS Code
 
 If you want to youse the css file, check the `ThemeInfo.cs`  
-[Show Compile SASS Code](xref:OqtaneThemes.ThemeAssets.Sass.Index)
+[Show Compile SASS Code](xref:OqtaneThemes.ThemeAssets.Styles.Index)
 
 ---
 

@@ -22,7 +22,7 @@ Organizing theme assets properly ensures a modular and maintainable theme struct
 To customize the appearance of your theme, you can use traditional CSS or the more powerful and maintainable SASS preprocessor. SASS allows you to use variables, nested rules, mixins, and more—making your styles more modular and easier to manage.
 
 For more details on working with SASS in Oqtane themes, see the following guide:  
-[More About Styles](xref:OqtaneThemes.ThemeAssets.Sass.Index)
+[More About Styles](xref:OqtaneThemes.ThemeAssets.Styles.Index)
 
 ## JavaScript using TypeScript
 
