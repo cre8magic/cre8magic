@@ -63,7 +63,8 @@ It's great for a quick-start, but if you want to further customize it to your ne
 Just use the built-in marketplace in the theme manager to install the theme.
 
 1. Walkthrough in the Oqtane documentation: [Install a Theme](https://docs.oqtane.org/manuals/system/theme-management.html#installing-themes)
-1. Or you can manually download it from the Marketplace TODO:
+or got to the Cre8magic instal documentation [Install](xref:OqtaneThemes.Installation.Index)
+1. Or you can manually download it from the Marketplace:
 
 ### Via Theme Generator in Oqtane
 
@@ -84,7 +85,9 @@ To customize the theme, you can:
 
 - use Bootstrap 5 CSS Variables
 - specify custom footers per site or page
-- if you generated the source code, you can customize anything you want
+- if you generated the source code, you can customize anything you want  
+
+[More About Theme Assets](xref:OqtaneThemes.ThemeAssets.Index)
 
 ### Bootstrap 5 CSS Variables
 
