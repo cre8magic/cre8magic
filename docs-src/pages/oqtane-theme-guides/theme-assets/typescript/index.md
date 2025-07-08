@@ -1,6 +1,8 @@
 --- 
-uid: OqtaneThemes.ThemeAssets.Typescript.Index
+uid: OqtaneThemes.ThemeAssets.TypeScript.Index
 ---
+
+TODO: @2dg first title should always be `#` and not `##`
 
 ## What is TypeScript and why is it used in Oqtane Themes?
 

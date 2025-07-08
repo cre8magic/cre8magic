@@ -2,20 +2,30 @@
 uid: OqtaneThemes.ThemeAssets.Vite.Index
 ---
 
-## What is Vite?
+# What is Vite?
 
 [Vite](https://vitejs.dev) is a modern build tool and development server, designed for
-fast and efficient workflows in web projects using JavaScript, TypeScript, Vue, React,
-or even plain SCSS/CSS. 
+fast and efficient workflows in web projects using JavaScript, TypeScript TODO:LINK, Vue, React,
+or even plain SCSS/CSS TODO:LINK.
+
 Compared to older tools like Webpack, Vite offers significantly faster startup and compilation times
 thanks to its use of native ES modules and efficient hot module replacement (HMR).
 
-### What is Vite used for in Oqtane?
-
 In Oqtane themes, we use Vite to:
 
-- **Compile SCSS files into CSS**
+- **Compile SASS/SCSS files into CSS**
 - **Bundle and optimize JavaScript or TypeScript code**
+
+When properly configured, vite will automatically build your source assets into optimized files
+whenever you build your Oqtane theme.
+This is how it works:
+
+```mermaid
+graph LR;
+    A["📄 Many Source Files <br> (TypeScript, SASS, ...)"] --> B["⚙️ Vite"]
+    B --> C["🎁 Optimized Files <br> (.min.css, .min.js)"]
+    C --> D["🩸 Oqtane Theme"]
+```
 
 ---
 
@@ -33,11 +43,11 @@ To get started with Vite, follow these basic steps:
 
 ---
 
-## Node Module Setup Create first `package.json`
+## 1. Setup Node Modules
+
+### 1.1 Create `package.json`
 
 In the root directory of your theme project, create (or update) a `package.json` file with the required dependencies. For example:
-
-"Adjust the name and author in the JSON. Make sure you have the correct `devDependencies`, and update them if necessary."
 
 ```json
 {
@@ -64,8 +74,26 @@ In the root directory of your theme project, create (or update) a `package.json`
 }
 ```
 
-### After running `npm install`, you should see `node_modules` and `package-lock.json`
+TODO: @2dg explain in what folder this should be created, maybe w/a screenshot
 
+> [!TIP]
+> Don't forget to adjust the name and author in the JSON.
+> Make sure you have the latest `devDependencies` or use a newer version  if necessary.
+
+### 1.2 Install Node Modules
+
+> [!TIP]
+> Make sure you run this in the correct folder, where your `package.json` file is located.
+
+Open a terminal in Visual Studio or your preferred code editor, and run the following command:
+
+```bash
+npm install
+```
+
+This command will read the `package.json` file and install all the required dependencies into a `node_modules` folder in your project directory.
+
+You should now see `node_modules` and `package-lock.json`.
 Check that these files and folders appear in your project. This confirms the dependencies were installed correctly.
 <div gallery="gallery02">
   <img src="./assets/theme_assets_npm_1.webp" data-caption="Copy Package Json">
@@ -76,9 +104,17 @@ Check that these files and folders appear in your project. This confirms the dep
 
 ---
 
-## Next, create the Vite configuration
+## 2. Create the Vite configuration
 
 The configuration file `vite.config.ts` (or `vite.config.js`) defines how Vite processes your SCSS and JS files.
+
+TODO: @2dg
+- this is confusing. the order of instructions is not clear.
+- first add vite
+- then add some test-source to verify vite works
+- then tell the user how to run it from the terminal
+- then explain watcher (not watcher first)
+- use chapter numbering for easier reading
 
 You can also start the watcher so that every change to your SCSS files is automatically compiled into CSS.
 
@@ -95,6 +131,7 @@ Whenever you change and save a file, the watcher automatically detects the chang
 ### Check Changes, build Vite
 
 Make sure that your configuration works as expected and that changes to your files trigger the build process.
+
 <div gallery="gallery02">
   <img src="./assets/theme_assets_vite_1.webp" data-caption="Visual Studio">
   <img src="./assets/theme_assets_vite_2.webp" data-caption="Visual Studio">
@@ -104,7 +141,7 @@ Make sure that your configuration works as expected and that changes to your fil
 
 ## Use the new Compile CSS Code
 
-If you want to youse the css file, check the `ThemeInfo.cs`  
+If you want to see the css file, check the `ThemeInfo.cs`  
 [Show Compile SASS Code](xref:OqtaneThemes.ThemeAssets.Styles.Index)
 
 ---
@@ -114,6 +151,8 @@ If you want to youse the css file, check the `ThemeInfo.cs`
 After the setup is complete, you can build your theme by running `npm run build`.  
 This will compile your SCSS files into optimized CSS (such as `styles.min.css`) and place them in the appropriate directory.  
 The same process applies to your JS/TS files.
+
+TODO: WHERE SHOULD THIS BE?
 
 ```xml
   <!-- This target ensures that `node_modules` exists before building.

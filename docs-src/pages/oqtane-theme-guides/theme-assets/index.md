@@ -27,7 +27,7 @@ For more details on working with SASS in Oqtane themes, see the following guide:
 ## JavaScript using TypeScript
 
 If your theme requires dynamic behavior or interaction, you can include JavaScript.  
-[More About TypeScript](xref:OqtaneThemes.ThemeAssets.Typescript.Index)
+[More About TypeScript](xref:OqtaneThemes.ThemeAssets.TypeScript.Index)
 
 ## Running Vite to Compile Styles and Scripts
 
