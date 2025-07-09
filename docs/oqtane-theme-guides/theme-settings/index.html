@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Theme Settings in Oqtane | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Theme Settings in Oqtane | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-settings/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="OqtaneThemes.ThemeSettings.Index">
+<h1 id="theme-settings-in-oqtane">Theme Settings in Oqtane</h1>
+
+<p>In diesem Abschnitt wird erklärt, was Theme Settings in Oqtane sind, wo sie sich befinden, wie sie gespeichert und geladen werden und wie sie sich auf Site- und Page-Ebene unterscheiden.</p>
+<hr>
+<h2 id="was-sind-theme-settings">Was sind Theme Settings?</h2>
+<p>Theme Settings sind konfigurierbare Einstellungen, die es erlauben, das Aussehen und Verhalten eines Themes in Oqtane individuell anzupassen. Sie ermöglichen es Administratoren, Design- und Layout-Optionen zentral oder seitenbezogen zu steuern, ohne direkt in den Code eingreifen zu müssen.</p>
+<hr>
+<h2 id="theme-settings-im-überblick">Theme Settings im Überblick</h2>
+<p><strong>Wo befinden sich Theme Settings im UI?</strong></p>
+<ul>
+<li>Theme Settings sind über das Oqtane-Admin-Panel erreichbar.</li>
+<li>Navigiere zu „Site Management“ → „Themes“.</li>
+<li>Bei Auswahl eines aktiven Themes findest du einen Bereich für Theme-spezifische Einstellungen.</li>
+<li>Zusätzlich können Theme Settings oft auch direkt auf einer Seite im „Page Settings“-Dialog angepasst werden, sofern das Theme dies unterstützt.</li>
+</ul>
+<p><strong>Wo befinden sich Theme Settings im Code?</strong></p>
+<ul>
+<li>Theme Settings werden in der <code>Theme.razor</code> oder einer spezifischen <code>Settings.razor</code>-Datei des Themes definiert.</li>
+<li>Die Einstellungen werden häufig über Klassen wie <code>ThemeSettings</code>, ein POCO-Objekt, im Theme-Projekt modelliert.</li>
+<li>Zugriff auf die Settings erfolgt im Theme-Code über Dependency Injection oder über das Settings-API von Oqtane.</li>
+</ul>
+<p><strong>Beispiel:</strong></p>
+<pre><code class="lang-csharp">public class ThemeSettings
+{
+    public string PrimaryColor { get; set; }
+    public bool ShowLogo { get; set; }
+}
+</code></pre>
+<p><strong>Was kann man mit Theme Settings alles machen?</strong></p>
+<ul>
+<li>Farben, Schriftarten, Abstände und weitere Styles anpassen.</li>
+<li>Sichtbarkeit von Komponenten (z.B. Logo, Navigation) steuern.</li>
+<li>Custom CSS/JS einbinden.</li>
+<li>Individuelle Optionen für spezielle Theme-Funktionalität bereitstellen.</li>
+</ul>
+<hr>
+<h2 id="speicherung-von-theme-settings">Speicherung von Theme Settings</h2>
+<p><strong>UI-Änderungen</strong></p>
+<ul>
+<li>Änderungen werden direkt im UI vorgenommen (z.B. Farbauswahl, Checkboxen).</li>
+<li>Nach einer Änderung muss auf „Speichern“ geklickt werden.</li>
+</ul>
+<p><strong>Speicherung in der Datenbank</strong></p>
+<ul>
+<li>Theme Settings werden nach dem Speichern in der Oqtane-Datenbank abgelegt.</li>
+<li>Die Datenbank speichert die Einstellungen entweder auf Site- oder Page-Ebene, je nach Kontext.</li>
+</ul>
+<p><strong>Namespace – keine Duplikate</strong></p>
+<ul>
+<li>Jede Theme Setting erhält einen eindeutigen Namespace (z.B. <code>Theme.MyTheme.SettingName</code>), um Kollisionen mit anderen Modulen oder Themes zu vermeiden.</li>
+<li>Dies gewährleistet, dass die Einstellungen eindeutig zugeordnet werden können.</li>
+</ul>
+<hr>
+<h2 id="wie-und-wo-werden-theme-settings-geladen">Wie und wo werden Theme Settings geladen?</h2>
+<ul>
+<li>Beim Laden einer Seite werden die Theme Settings zunächst aus der Datenbank gelesen.</li>
+<li>Die Werte werden anhand des Namespaces dem korrekten Theme zugeordnet.</li>
+<li>Im Theme-Code können die Einstellungen über das Settings-API oder per Injection geladen und genutzt werden.</li>
+</ul>
+<p><strong>Beispiel:</strong></p>
+<pre><code class="lang-csharp">// Zugriff auf Theme Settings
+var themeSettings = Settings.Get&lt;ThemeSettings&gt;(&quot;Theme.MyTheme&quot;);
+</code></pre>
+<hr>
+<h2 id="site-vs-page-settings">Site vs. Page Settings</h2>
+<p><strong>Unterschied zwischen Site Settings und Page Settings</strong></p>
+<ul>
+<li><strong>Site Settings</strong>: Gelten global für die gesamte Website. Änderungen wirken sich auf alle Seiten aus.</li>
+<li><strong>Page Settings</strong>: Gelten nur für eine bestimmte Seite. Überschreiben ggf. die Site Settings für diese Seite.</li>
+</ul>
+<p><strong>Wie werden diese gemerged?</strong></p>
+<ul>
+<li>Beim Rendern einer Seite werden zunächst die Site Settings geladen.</li>
+<li>Falls für die aktuelle Seite Page Settings existieren, überschreiben diese die entsprechenden Werte aus den Site Settings (Merge-Mechanismus).</li>
+<li>Das resultierende Setting-Objekt kombiniert also globale und seitenbezogene Einstellungen.</li>
+</ul>
+<hr>
+<h2 id="beispiel-custom-theme-settings-im-oqtane-theme-basic">Beispiel: Custom Theme Settings im Oqtane Theme Basic</h2>
+<p>Im Oqtane Theme Basic haben wir den Code refactored und eigene Custom Settings eingeführt. Beispiel:</p>
+<pre><code class="lang-csharp">public class BasicThemeSettings
+{
+    public string BackgroundImageUrl { get; set; }
+    public bool EnableDarkMode { get; set; }
+}
+</code></pre>
+<p>Im UI können nun ein Hintergrundbild und ein Dark Mode für das Theme aktiviert werden. Die Speicherung erfolgt wie oben beschrieben, mit einem Namespace wie <code>Theme.Basic.BackgroundImageUrl</code>.</p>
+<hr>
+<p><strong>Zusammenfassung:</strong><br>
+Theme Settings in Oqtane ermöglichen eine flexible Anpassung des Aussehens und Verhaltens eines Themes – global oder seitenbezogen. Sie sind sowohl im UI als auch im Code konfigurierbar und werden eindeutig per Namespace identifiziert und verwaltet.</p>
+<h2 id="example-refaktorisierte-custom-settings-im-oqtane-basic-theme">Example: Refaktorisierte Custom Settings im Oqtane Basic Theme</h2>
+<p>Im Oqtane Basic Theme wurde der Umgang mit Theme Settings überarbeitet und um eigene Custom Settings erweitert. Dies bietet eine flexible Möglichkeit, Design-Optionen und spezielle Features direkt über das Oqtane-UI zu steuern.</p>
+<p><a class="xref" href="../../magic-themes/settings/index.html">Oqtane Basic</a></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/theme-settings/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
