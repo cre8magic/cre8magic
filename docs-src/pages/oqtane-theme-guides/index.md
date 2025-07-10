@@ -18,22 +18,22 @@ and show you a bunch of tricks to make things better.
 
 Expected contents
 
-1. [home] what are themes, goals, etc.
+1. [home] what are themes, goals, etc.⏳
 2. Create Your First Theme
     1. Walkthrough Create Theme (preparation etc.)
     2. Build Your First Theme
 3. How Themes Work
-    1. Project Structure (Client, Shared, Server)
+    1. ✔️ Project Structure (Client, Shared, Server) (Solution Explained)
     2. Blazor & Blazor Components
     3. Theme
     4. Container
-    5. ThemeInfo
-    6. Panes
-    7. Containers
-    8. wwwroot
+    5. ✔️ ThemeInfo
+    6. ✔️ Panes
+    7. ✔️ Containers
+    8. ✔️ wwwroot
     9. Blazor Events
     10. Navigation
-    11. ...Settings
+    11. ⏳ ...Settings
     12. Packaging...
 4. Menus & Breadcrumbs
     1. Main Menu
@@ -56,7 +56,7 @@ Expected contents
     3. Use TypeScript
 8. Mastering Bootstrap5
     1. Background
-    2. ...sass & Webpack
+    2. ✔️...sass & Webpack
 9. Mastering Context and CSS Variations
 10. Analytics and GTM
 11. Oqtane Theme SEO

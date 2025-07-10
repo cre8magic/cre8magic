@@ -4,7 +4,7 @@
 
 # What is a Pane
 
-A ***Pane** is a designated area or placeholder within a page layout where modules can be placed.
+A **Pane** is a designated area or placeholder within a page layout where modules can be placed.
 Common examples include DefaultPane, HeaderPane, and others.
 
 Each theme or layout can define its own set of panes. The names and number of panes depend on how the layout was built by the designer.

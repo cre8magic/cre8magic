@@ -1,6 +1,7 @@
 ---
  uid: OqtaneThemes.HowThemesWork.Index
 ---
+
 # How Themes Work
 
 In Oqtane, a Theme controls the visual layout and structure of your pages.

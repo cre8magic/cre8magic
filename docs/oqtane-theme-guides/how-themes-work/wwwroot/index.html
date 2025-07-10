@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Oqtane Blazor Theme Creation Guide | cre8magic </title>
+      <title>The wwwroot Folder | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Oqtane Blazor Theme Creation Guide | cre8magic ">
+      <meta name="title" content="The wwwroot Folder | cre8magic ">
       
       
-      <link rel="icon" href="../assets/favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
       
-      <meta name="docfx:rel" content="../">
+      <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/wwwroot/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js"></script>
+      <script type="module" src="./../../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -43,8 +43,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
             
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,108 +84,47 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.Index">
-<h1 id="oqtane-blazor-theme-creation-guide">Oqtane Blazor Theme Creation Guide</h1>
+        <article data-uid="OqtaneThemes.wwwroot.Index">
+<h1 id="the-wwwroot-folder">The <code>wwwroot</code> Folder</h1>
 
-<div class="WARNING">
-<h5>Warning</h5>
-<p>This guide is a work in progress and will be updated over time.</p>
-</div>
-<p>This guide will walk you through the process of creating a new theme for Oqtane.
-It will explain all the basics of how themes work and how to create them,
-and show you a bunch of tricks to make things better.</p>
 <div class="TIP">
 <h5>Tip</h5>
-<p>This guide is for developers who want to create a new theme for Oqtane.
-It's general purpose for all kinds of themes, not limited to cre8magic themes.</p>
+<p>If you use external libraries like Bootstrap, FontAwesome, or custom JS scripts, place them in
+<code>wwwroot</code> and reference them using the <code>Resources</code> list in your <code>ThemeInfo</code>.</p>
 </div>
-<p>Expected contents</p>
-<ol>
-<li>[home] what are themes, goals, etc.⏳</li>
-<li>Create Your First Theme
-<ol>
-<li>Walkthrough Create Theme (preparation etc.)</li>
-<li>Build Your First Theme</li>
-</ol>
-</li>
-<li>How Themes Work
-<ol>
-<li>✔️ Project Structure (Client, Shared, Server) (Solution Explained)</li>
-<li>Blazor &amp; Blazor Components</li>
-<li>Theme</li>
-<li>Container</li>
-<li>✔️ ThemeInfo</li>
-<li>✔️ Panes</li>
-<li>✔️ Containers</li>
-<li>✔️ wwwroot</li>
-<li>Blazor Events</li>
-<li>Navigation</li>
-<li>⏳ ...Settings</li>
-<li>Packaging...</li>
-</ol>
-</li>
-<li>Menus &amp; Breadcrumbs
-<ol>
-<li>Main Menu</li>
-<li>Footer Menu</li>
-<li>Side Menu</li>
-<li>Mobile Menu</li>
-<li>Breadcrumb</li>
-<li>Language Menu</li>
-<li>Floating To-Top Button</li>
-</ol>
-</li>
-<li>Logos and Buttons
-<ol>
-<li>Logo in Oqtane Theme</li>
-<li>Custom Edit / Settings Buttons</li>
-<li>Favicon</li>
-</ol>
-</li>
-<li>Theme Components
-<ol>
-<li>Create your own</li>
-<li>Use Library</li>
-</ol>
-</li>
-<li>Theme JavaScripts
-<ol>
-<li>Include Libraries / ensure startup</li>
-<li>Create your own</li>
-<li>Use TypeScript</li>
-</ol>
-</li>
-<li>Mastering Bootstrap5
-<ol>
-<li>Background</li>
-<li>✔️...sass &amp; Webpack</li>
-</ol>
-</li>
-<li>Mastering Context and CSS Variations</li>
-<li>Analytics and GTM</li>
-<li>Oqtane Theme SEO</li>
-<li>Advanced Themes
-<ol>
-<li>Multiple Themes and Containers</li>
-<li>Customizable Themes</li>
-<li>Inherit Blazor Component</li>
-<li>Theme Settings</li>
-</ol>
-</li>
-<li>Upgrade Theme to New Oqtane</li>
-<li>Theme Distribution
-<ol>
-<li>NuGet Package with libraries, dependencies etc.</li>
-<li>Install Theme</li>
-<li>Upgrade existing Theme</li>
-</ol>
-</li>
-</ol>
+<p>The <code>wwwroot</code> folder is the <strong>web root directory</strong> of an Oqtane theme or web application. All files that should be publicly accessible via the browser are placed here.</p>
+<div gallery="gallery01">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/wwwroot/assets/oqtane-wwwroot_1.webp" data-caption="Output wwwroot Folder">
+</div>
+<p>Typical contents include:</p>
+<ul>
+<li><strong>CSS files</strong> (<code>.css</code>)</li>
+<li><strong>JavaScript files</strong> (<code>.js</code>)</li>
+<li><strong>Images</strong> (<code>.png</code>, <code>.jpg</code>, <code>.svg</code>, etc.)</li>
+<li><strong>Fonts</strong> (<code>.woff</code>, <code>.ttf</code>, etc.)</li>
+</ul>
+<p>For example, if you place a file called <code>styles.min.css</code> inside your theme’s <code>wwwroot</code> folder, you can reference it in your <code>ThemeInfo.cs</code> like this:</p>
+<pre><code class="lang-csharp">Resources =
+ [
+  new Stylesheet(&quot;~/styles.min.css&quot;)
+ ]
+</code></pre>
+<p>Here, the ~ refers to the root of the <code>wwwroot</code> folder of the current theme or module.</p>
+<h2 id="important-notes">Important Notes</h2>
+<ul>
+<li>Only files inside the wwwroot folder are directly accessible via URL.</li>
+<li>Logic files, Razor components, or C# code should not be placed in this folder.</li>
+<li>The structure and naming inside wwwroot should be consistent and well organized.</li>
+<li>In Debug Build, copy the Output to the Oqtane Server</li>
+</ul>
+<div gallery="gallery02">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/wwwroot/assets/oqtane-wwwroot_2.webp" data-caption="Debug, copy to the Oqtane Solution">
+</div>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/wwwroot/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
