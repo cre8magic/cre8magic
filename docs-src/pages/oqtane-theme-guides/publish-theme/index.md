@@ -71,3 +71,5 @@ Then:
 3. Save – your theme is now available in the **Oqtane Marketplace**
 
 Your theme will be listed and available in the **Oqtane Marketplace** for others to install
+
+<iframe src="https://azing.org/oqtane/r/kFsv_Vty?embed=1" width="100%" height="400" frameborder="0" allowfullscreen style="box-shadow: 0 1px 3px rgba(60,64,67,.3), 0 4px 8px 3px rgba(60,64,67,.15)"></iframe>

@@ -6,24 +6,6 @@
 This guide explains how to configure your installed theme in Oqtane – both globally for the entire site and individually per page  
 You’ll learn how to change Theme on a Page, Theme Settings and fine-tune pane and container placement for better layout control.
 
-## Set Theme on a Page
-
-<div gallery="gallery01">
-  <img src="./assets/oqtane-setting-theme_1.webp" data-caption="Page Settings – open to change layout">
-  <img src="./assets/oqtane-setting-theme_2.webp" data-caption="Set a Theme and Default Container for this page">
-</div>
-
-To apply a theme to a specific page:
-
-1. Open the **Page Settings**
-
-In **Page Management**, you can configure layout options for the current page:
-
-- Change the **Theme** (e.g., Fullscreen or Centered)  
-- Change the **Container** (e.g., Default or Header)
-
----
-
 ## Change Themes Settings
 
 <div gallery="gallery02">

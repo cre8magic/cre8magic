@@ -1,24 +1,22 @@
 ---
- uid: OqtaneThemes.Assing.Index
+ uid: OqtaneThemes.Assign.Index
 ---
-# Assing Theme Guide
+# Assign to Site or Page
 
 This guide explains how to configure your installed theme in Oqtane – both globally for the entire site and individually per page  
 You’ll learn how to assign a theme and set defaults.
 
-## Assing the Theme and Default
+## Assign the Theme and set the Container Default
+
+Apply the theme to all pages. Also, add the default container.
 
 <div gallery="gallery01">
-  <img src="./assets/oqtane-assing-theme_1.webp" data-caption="Assign the theme globally">
   <img src="./assets/oqtane-assing-theme_2.webp" data-caption="Theme appears in Theme Management and Configuration">
   <img src="./assets/oqtane-assing-theme_3.webp" data-caption="Save your settings to apply changes">
   <img src="./assets/oqtane-assing-theme_4.webp" data-caption="View the active theme in action">
 </div>
 
-Once your theme is installed:
-
-1. Go to **Theme Management** – your theme should be listed  
-2. Click **Assign** to apply it to all pages
+Once your theme is installed
 
 To set it as default:
 
@@ -27,3 +25,27 @@ To set it as default:
 3. Click **Save Site Settings**
 
 That’s it — your theme is now active across the site!
+
+> [!WARNING]
+> If a theme has already been defined on a page, the global settings will not apply to that page.
+
+---
+
+## Set Theme on a Page
+
+To apply a theme to a specific page:
+
+<div gallery="gallery02">
+  <img src="./assets/oqtane-setting-theme_1.webp" data-caption="Page Settings – open to change layout">
+  <img src="./assets/oqtane-setting-theme_2.webp" data-caption="Set a Theme and Default Container for this page">
+</div>
+
+
+1. Open the **Page Settings**
+
+In **Page Management**, you can configure layout options for the current page:
+
+- Change the **Theme** (e.g., Fullscreen or Centered)  
+- Change the **Container** (e.g., Default or Header)
+
+---
