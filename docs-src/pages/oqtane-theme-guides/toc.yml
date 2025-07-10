@@ -36,7 +36,7 @@
 
 - name: Theme Blazor TODO
 
-- name: Theme Assets
+- name: Theme Assets and Resources
   uid: OqtaneThemes.ThemeAssets.Index
   items:
   - name: Styles
@@ -45,6 +45,8 @@
     uid: OqtaneThemes.ThemeAssets.TypeScript.Index  
   - name: Vite
     uid: OqtaneThemes.ThemeAssets.Vite.Index
+  - name: Load Resources in Browser
+    uid: OqtaneThemes.ThemeAssets.LoadResources.Index
 
 - name: Panes (Placeholders) TODO
 

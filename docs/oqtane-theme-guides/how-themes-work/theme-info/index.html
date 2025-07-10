@@ -95,12 +95,17 @@
 <li>How theme and container settings should be handled</li>
 </ul>
 <h2 id="code-example">Code Example</h2>
-<pre><code class="lang-csharp">public class ThemeInfo : ITheme
+<pre><code class="lang-csharp">namespace ToSic.Cre8magic.Theme.Basic;
+
+public class ThemeInfo : ITheme
 {
+    /// &lt;summary&gt;
+    /// The Theme will let Oqtane know what theme this is, and how it should be loaded / rendered etc.
+    /// &lt;/summary&gt;
     public Oqtane.Models.Theme Theme =&gt; new()
     {
         Name = &quot;Cre8magic Basic&quot;,
-        Version = &quot;1.0.0&quot;,
+        Version = &quot;1.0.1&quot;,
         PackageName = &quot;ToSic.Cre8magic.Theme.Basic&quot;,
         ThemeSettingsType = ThemeSettingsType,
         ContainerSettingsType = ContainerSettingsType,
@@ -108,10 +113,37 @@
         [
             new Stylesheet(&quot;~/Theme.css&quot;),
             new Stylesheet(&quot;~/Oqtane.css&quot;),
-            new Stylesheet(&quot;~/styles.min.css&quot;), // Sass build with vite
+            new Stylesheet (&quot;~/styles.min.css&quot;), // Sass build with vite
             new Script(&quot;~/bootstrap.bundle.min.js&quot;), // Bootstrap build with vite
         ]
     };
+
+    #region Settings Type Names for Oqtane to Auto-Inject in the Theme/Module Settings Dialogs
+
+    /// &lt;summary&gt;
+    /// The assembly name, used to construct the full type names for settings.
+    /// &lt;/summary&gt;
+    /// &lt;remarks&gt;
+    /// The assembly name should not provide version etc. because it will be stored in the database, and future updates would result in a mismatch.
+    /// &lt;/remarks&gt;
+    private static readonly string AssemblyName = typeof(ContainerSettings).Assembly.GetName().Name!;
+
+    /// &lt;summary&gt;
+    /// The Theme Settings Type will let Oqtane know what control to show in the page settings, and it will also be used to load language resources.
+    /// &lt;/summary&gt;
+    public static readonly string ThemeSettingsType = $&quot;{typeof(ThemeSettings).FullName}, {AssemblyName}&quot;;
+
+    /// &lt;summary&gt;
+    /// The Container Settings Type will let Oqtane know what control to show in the module settings, and it will also be used to load language resources.
+    /// &lt;/summary&gt;
+    public static readonly string ContainerSettingsType = $&quot;{typeof(ContainerSettings).FullName}, {AssemblyName}&quot;;
+
+    #endregion
+
+    /// &lt;summary&gt;
+    /// Prefix used for all keys/settings in this theme.
+    /// &lt;/summary&gt;
+    internal static string KeyPrefix = typeof(ThemeInfo).Namespace!;
 }
 </code></pre>
 <h3 id="themeinfo-load"><code>ThemeInfo</code> Load</h3>
@@ -124,10 +156,16 @@
 <div class="TIP">
 <h5>Tip</h5>
 <ul>
-<li><strong>Path Reference:</strong> Resource paths like <code>~/Theme.css</code> are relative to the root of the theme.</li>
-<li><strong>Load Order Matters:</strong> The order of resources can be important (e.g., load Bootstrap first, then custom styles).</li>
-<li><strong>Versioning:</strong> When making changes, be sure to update the <code>Version</code>—especially when deploying via NuGet.</li>
+<li><strong>Path Reference:</strong> Resource paths like <code>~/Theme.css</code> are relative to the <code>wwwroot</code> of the theme. TODO: Resources</li>
+<li><strong>Load Order Matters:</strong> The order of resources can be important (e.g., load Bootstrap first, then custom styles). TODO: Resources</li>
+<li><strong>Versioning:</strong> When making changes, be sure to update the <code>Version</code>—especially when deploying via NuGet. <a class="xref" href="../../publish-theme/index.html">Change Version</a></li>
 </ul>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The container must be in the same namespace as the theme.</p>
+<pre><code class="lang-xml">@namespace ToSic.Cre8magic.Theme.Basic
+</code></pre>
 </div>
 
 </article>
