@@ -91,36 +91,26 @@
 Common examples include DefaultPane, HeaderPane, and others.</p>
 <p>Each theme or layout can define its own set of panes. The names and number of panes depend on how the layout was built by the designer.</p>
 <div gallery="gallery01">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-pane_1.webp" data-caption="Default Theme">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-pane_2.webp" data-caption="Cre8magic">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-pane_1.webp" data-caption="Cre8magic">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-pane_2.webp" data-caption="Default Theme with many Panes">
 </div>
 <div class="TIP">
 <h5>Tip</h5>
-<p>Only create the panes that are necessary for your layout.</p>
+<p>We recommend using one, or at most two, panes to make it easy for users to understand and work with.</p>
 </div>
-<p>Themes &gt; <code>Default.razor</code></p>
-<pre><code class="lang-xml">public override string Panes =&gt; PaneNames.Default + &quot;,Header&quot;; // Add for Dropdown Menu
+<p>Show a short example in <code>Themes &gt; Default.razor</code> to demonstrate how it works in the code.</p>
+<pre><code class="lang-csharp">public override string Panes =&gt; PaneNames.Default + &quot;,Header&quot;; // Add for Dropdown Menu
+</code></pre>
+<pre><code class="lang-html">&lt;div data-bs-theme =&quot;default-theme&quot; data-theme-variant=&quot;@Variant&quot;&gt;
+@* Pane for Header content *@
+ &lt;div id=&quot;theme-page-header-pane&quot; class=&quot;container-xxl px-0&quot;&gt;
+   &lt;Pane Name=&quot;Header&quot; /&gt;  
+ &lt;/div&gt;
 
-&lt;div data-bs-theme =&quot;default-theme&quot; data-theme-variant=&quot;@Variant&quot;&gt;
-   @* FYI: data-bs-theme is for colors/fonts; data-theme-variant is for sizing etc. *@
-   &lt;nav id=&quot;theme-page-navigation&quot; class=&quot;navbar navbar-dark bg-primary sticky-top&quot;&gt;
-       &lt;Logo /&gt;&lt;Menu Orientation=&quot;Horizontal&quot; /&gt;
-       &lt;div class=&quot;controls ms-auto&quot;&gt;
-           &lt;div class=&quot;controls-group&quot;&gt;
-               &lt;UserProfile ShowRegister=&quot;@Settings.ShowRegister&quot; /&gt;
-               &lt;Login ShowLogin=&quot;@Settings.ShowLogin&quot;  /&gt;
-               &lt;ControlPanel ButtonClass=&quot;btn-outline-light&quot; /&gt;
-           &lt;/div&gt;
-       &lt;/div&gt;
-   &lt;/nav&gt;
-
-   &lt;div id=&quot;theme-page-header-pane&quot; class=&quot;container-xxl px-0&quot;&gt;
-       &lt;Pane Name=&quot;Header&quot; /&gt;  @* Pane for Header content *@
-   &lt;/div&gt;
-
-   &lt;main role=&quot;main&quot; id=&quot;theme-page-main&quot;&gt;
-       &lt;Pane Name=&quot;@PaneNames.Default&quot; /&gt; @* Default pane for main content *@
-   &lt;/main&gt;
+ @* Default pane for main content *@
+ &lt;main role=&quot;main&quot; id=&quot;theme-page-main&quot;&gt;
+   &lt;Pane Name=&quot;@PaneNames.Default&quot; /&gt; 
+ &lt;/main&gt;
 &lt;/div&gt;
 </code></pre>
 <h2 id="why-panes-matter">Why Panes Matter</h2>

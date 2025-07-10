@@ -9,6 +9,12 @@ It defines the module's appearance — including spacing, borders, background, t
 
 While the [Pane](xref:OqtaneThemes.WhatArePanes.Index) determines where a module appears, the **Container** defines how it appears.
 
+<div gallery="gallery01">
+  <img src="./assets/oqtane-differences-container_1.webp" data-caption="Show Title and a hr Line">
+  <img src="./assets/oqtane-differences-container_2.webp" data-caption="Show only the Content">
+
+</div>
+
 ## Examples of Container Use
 
 Different containers can be used to give modules a unique visual style. For instance:
@@ -20,13 +26,17 @@ Different containers can be used to give modules a unique visual style. For inst
 The available containers depend on the theme you're using.
 Some themes (like Cre8Magic) may only include one container, while others offer multiple style options.
 
-<div gallery="gallery01">
-  <img src="./assets/oqtane-setting-container_1.webp" data-caption="Code Example from a Container">
+<div gallery="gallery02">
+  <img src="./assets/oqtane-vs-container_1.webp" data-caption="Code Example from a Container">
 </div>
 
 > [!TIP]
 > Containers should not include a title directly.  
 > Containers can have settings (e.g., "Show Title" as default).
+
+<div gallery="gallery03">
+  <img src="./assets/oqtane-settings-container_1.webp" data-caption="Container Settings">
+</div>
 
 > [!TIP]
 > Create only one container – this simplifies usage.

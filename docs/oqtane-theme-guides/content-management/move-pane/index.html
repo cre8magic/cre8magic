@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>What is a Container | cre8magic </title>
+      <title>Move Module to other Pane | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="What is a Container | cre8magic ">
+      <meta name="title" content="Move Module to other Pane | cre8magic ">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/container/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/content-management/move-pane/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,52 +84,41 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.WhatIsAContainer.Index">
-<h1 id="what-is-a-container">What is a Container</h1>
+        <article data-uid="OqtaneThemes.MoveModuleToOtherPane.Index">
+<h1 id="move-module-to-other-pane">Move Module to other Pane</h1>
 
-<p>A <strong>Container</strong> is the visual wrapper around a module that controls how it looks on the page.
-It defines the module's appearance — including spacing, borders, background, titles, and other styling elements.</p>
-<p>While the <a class="xref" href="../pane/index.html">Pane</a> determines where a module appears, the <strong>Container</strong> defines how it appears.</p>
+<p>This section explains how to move a module to a different Pane on a page.</p>
 <div gallery="gallery01">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-differences-container_1.webp" data-caption="Show Title and a hr Line">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-differences-container_2.webp" data-caption="Show only the Content">
+  <img src="../../../pages/oqtane-theme-guides/content-management/move-pane/assets/oqtane-setting-page_1.webp" data-caption="Open the page and enter edit mode">
+  <img src="../../../pages/oqtane-theme-guides/content-management/move-pane/assets/oqtane-setting-page_2.webp" data-caption="Open module dropdown and select Manage Settings">
+  <img src="../../../pages/oqtane-theme-guides/content-management/move-pane/assets/oqtane-setting-page-pane_2.webp" data-caption="Change the Pane">
+  <img src="../../../pages/oqtane-theme-guides/content-management/move-pane/assets/oqtane-setting-page-pane_3.webp" data-caption="After saving, see the module in the Header Pane">
 </div>
-<h2 id="examples-of-container-use">Examples of Container Use</h2>
-<p>Different containers can be used to give modules a unique visual style. For instance:</p>
-<ul>
-<li>A simple container with just a title and padding</li>
-<li>A framed container with a border and background color</li>
-<li>A minimal container with no visible decoration</li>
-</ul>
-<p>The available containers depend on the theme you're using.
-Some themes (like Cre8Magic) may only include one container, while others offer multiple style options.</p>
-<div gallery="gallery02">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-vs-container_1.webp" data-caption="Code Example from a Container">
-</div>
-<div class="TIP">
-<h5>Tip</h5>
-<p>Containers should not include a title directly.<br>
-Containers can have settings (e.g., &quot;Show Title&quot; as default).</p>
-</div>
-<div gallery="gallery03">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-settings-container_1.webp" data-caption="Container Settings">
-</div>
-<div class="TIP">
-<h5>Tip</h5>
-<p>Create only one container – this simplifies usage.
-Within the container, you can apply different CSS classes based on the pane (e.g., if it's the <code>HeaderPane</code>, add a <code>header-specific CSS</code> class)</p>
-</div>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>The container must be in the same namespace as the theme.</p>
-<pre><code class="lang-xml">@namespace ToSic.Cre8magic.Theme.Basic
-</code></pre>
-</div>
+<p>Follow these steps to move a module to a different pane:</p>
+<ol>
+<li>Navigate to the page containing the module and click the Edit icon (pencil) to enter edit mode.</li>
+</ol>
+<p>You’ll see that the module is currently placed in the default pane.</p>
+<blockquote>
+<p>If you're not using the Cre8Magic Theme, your layout may include additional panes.</p>
+</blockquote>
+<p>To change the pane:</p>
+<ol>
+<li>Click the <strong>dropdown arrow</strong> next to the module and choose <strong>Manage Settings</strong>.</li>
+</ol>
+<p>In the module settings dialog:</p>
+<ol>
+<li>In the module settings dialog, select a different Pane (e.g., <code>HeaderPane</code>).</li>
+</ol>
+<p>After saving:</p>
+<ol>
+<li>The module will now appear in the selected pane (e.g., <code>HeaderPane</code>)</li>
+</ol>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/container/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/content-management/move-pane/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
