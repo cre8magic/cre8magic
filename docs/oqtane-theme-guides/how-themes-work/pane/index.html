@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Configuration Theme Guide | cre8magic </title>
+      <title>What is a Pane | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Configuration Theme Guide | cre8magic ">
+      <meta name="title" content="What is a Pane | cre8magic ">
       
       
-      <link rel="icon" href="../../assets/favicon.ico">
-      <link rel="stylesheet" href="../../public/docfx.min.css">
-      <link rel="stylesheet" href="../../public/main.css">
-      <meta name="docfx:navrel" content="../../toc.html">
-      <meta name="docfx:tocrel" content="../toc.html">
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
       
-      <meta name="docfx:rel" content="../../">
+      <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/configuration/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/pane/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../../public/docfx.min.js"></script>
+      <script type="module" src="./../../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -43,8 +43,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../../index.html">
-            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
             
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,31 +84,55 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.Configuration.Index">
-<h1 id="configuration-theme-guide">Configuration Theme Guide</h1>
+        <article data-uid="OqtaneThemes.WhatArePanes.Index">
+<h1 id="what-is-a-pane">What is a Pane</h1>
 
-<p>This guide explains how to configure your installed theme in Oqtane – both globally for the entire site and individually per page<br>
-You’ll learn how to change Theme on a Page, Theme Settings and fine-tune pane and container placement for better layout control.</p>
-<h2 id="change-themes-settings">Change Themes Settings</h2>
-<div gallery="gallery02">
-  <img src="../../pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_3.webp" data-caption="Open Theme Settings">
-  <img src="../../pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_4.webp" data-caption="Preview the changes">
+<p>A *<strong>Pane</strong> is a designated area or placeholder within a page layout where modules can be placed.
+Common examples include DefaultPane, HeaderPane, and others.</p>
+<p>Each theme or layout can define its own set of panes. The names and number of panes depend on how the layout was built by the designer.</p>
+<h2 id="why-panes-matter">Why Panes Matter</h2>
+<p>Using panes allows you to control the placement of your modules without writing any code.
+You can visually arrange content to match your site's design, whether you're adding navigation, banners, or content blocks.</p>
+<p><strong>For example:</strong></p>
+<ul>
+<li>You might place a Menu module in the HeaderPane</li>
+<li>A News module in the DefaultPane</li>
+</ul>
+<p>This flexible structure helps keep your site organized and easy to manage.</p>
+<hr>
+<h2 id="how-to-change-the-pane">How to Change the Pane</h2>
+<p>This section explains how to move a module to a different Pane on a page.</p>
+<div gallery="gallery03">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-page_1.webp" data-caption="Open the page and enter edit mode">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-page_2.webp" data-caption="Open module dropdown and select Manage Settings">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-page-pane_2.webp" data-caption="Change the Pane">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-page-pane_3.webp" data-caption="After saving, see the module in the Header Pane">
 </div>
-<p>In <strong>Theme Settings</strong>, you can customize options for the current page or the entire site.</p>
+<p>Follow these steps to move a module to a different pane:</p>
 <ol>
-<li>Select the <strong>Scope</strong> – choose <strong>Site</strong> to apply changes globally.</li>
-<li>You can also modify custom settings specific to the theme here.</li>
-<li>For example, in the Cre8magic Basic theme, you can optionally update the <strong>Footer HTML</strong> and <strong>Bootstrap 5 Theme CSS</strong>.</li>
+<li>Navigate to the page containing the module and click the Edit icon (pencil) to enter edit mode.</li>
 </ol>
-<p>Click <strong>Save</strong> to apply your changes.</p>
-<p>If you updated the <strong>Site Settings</strong>, the <strong>Site Default</strong> will be shown as a preview on other pages.</p>
-<p><a class="xref" href="../how-themes-work/pane/index.html">Learn more about Pane</a></p>
-<p><a class="xref" href="../how-themes-work/container/index.html">Learn more about Container</a></p>
+<p>You’ll see that the module is currently placed in the default pane.</p>
+<blockquote>
+<p>If you're not using the Cre8Magic Theme, your layout may include additional panes.</p>
+</blockquote>
+<p>To change the pane:</p>
+<ol>
+<li>Click the <strong>dropdown arrow</strong> next to the module and choose <strong>Manage Settings</strong>.</li>
+</ol>
+<p>In the module settings dialog:</p>
+<ol>
+<li>In the module settings dialog, select a different Pane (e.g., <code>HeaderPane</code>).</li>
+</ol>
+<p>After saving:</p>
+<ol>
+<li>The module will now appear in the selected pane (e.g., <code>HeaderPane</code>)</li>
+</ol>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/configuration/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/pane/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

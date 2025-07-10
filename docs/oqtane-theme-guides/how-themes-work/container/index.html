@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Configuration Theme Guide | cre8magic </title>
+      <title>What is a Container | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Configuration Theme Guide | cre8magic ">
+      <meta name="title" content="What is a Container | cre8magic ">
       
       
-      <link rel="icon" href="../../assets/favicon.ico">
-      <link rel="stylesheet" href="../../public/docfx.min.css">
-      <link rel="stylesheet" href="../../public/main.css">
-      <meta name="docfx:navrel" content="../../toc.html">
-      <meta name="docfx:tocrel" content="../toc.html">
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
       
-      <meta name="docfx:rel" content="../../">
+      <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/configuration/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/container/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../../public/docfx.min.js"></script>
+      <script type="module" src="./../../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -43,8 +43,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../../index.html">
-            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
             
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,31 +84,47 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.Configuration.Index">
-<h1 id="configuration-theme-guide">Configuration Theme Guide</h1>
+        <article data-uid="OqtaneThemes.WhatIsAContainer.Index">
+<h1 id="what-is-a-container">What is a Container</h1>
 
-<p>This guide explains how to configure your installed theme in Oqtane – both globally for the entire site and individually per page<br>
-You’ll learn how to change Theme on a Page, Theme Settings and fine-tune pane and container placement for better layout control.</p>
-<h2 id="change-themes-settings">Change Themes Settings</h2>
-<div gallery="gallery02">
-  <img src="../../pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_3.webp" data-caption="Open Theme Settings">
-  <img src="../../pages/oqtane-theme-guides/configuration/assets/oqtane-setting-theme_4.webp" data-caption="Preview the changes">
+<p>A <strong>Container</strong> is the visual wrapper around a module that controls how it looks on the page.
+It defines the module's appearance — including spacing, borders, background, titles, and other styling elements.</p>
+<p>While the <a class="xref" href="../pane/index.html">Pane</a> determines where a module appears, the <strong>Container</strong> defines how it appears.</p>
+<h2 id="examples-of-container-use">Examples of Container Use</h2>
+<p>Different containers can be used to give modules a unique visual style. For instance:</p>
+<ul>
+<li>A simple container with just a title and padding</li>
+<li>A framed container with a border and background color</li>
+<li>A minimal container with no visible decoration</li>
+</ul>
+<p>The available containers depend on the theme you're using.
+Some themes (like Cre8Magic) may only include one container, while others offer multiple style options.</p>
+<hr>
+<h2 id="how-to-change-the-container">How to Change the Container</h2>
+<p>This section shows how to change the *<strong>Container</strong> for a module on a page.</p>
+<div gallery="gallery03">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-page_1.webp" data-caption="Open the page and enter edit mode">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-page_2.webp" data-caption="Open module dropdown and select Manage Settings">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-page-container_1.webp" data-caption="Change the Container settings">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-page-container_2.webp" data-caption="See the Changes">
 </div>
-<p>In <strong>Theme Settings</strong>, you can customize options for the current page or the entire site.</p>
+<p>Steps to Change the Container</p>
 <ol>
-<li>Select the <strong>Scope</strong> – choose <strong>Site</strong> to apply changes globally.</li>
-<li>You can also modify custom settings specific to the theme here.</li>
-<li>For example, in the Cre8magic Basic theme, you can optionally update the <strong>Footer HTML</strong> and <strong>Bootstrap 5 Theme CSS</strong>.</li>
+<li><p>Go to the page containing your module and click the <strong>Edit icon</strong> (pencil) to enter edit mode.</p>
+</li>
+<li><p>Click the <strong>dropdown arrow</strong> next to the module, then select <strong>Manage Settings</strong>.</p>
+</li>
+<li><p>In the module settings dialog, choose a different <strong>Container</strong> from the dropdown list.
+This will affect how the module is displayed visually.</p>
+</li>
+<li><p>Click save and close the Dialog to see the Changes</p>
+</li>
 </ol>
-<p>Click <strong>Save</strong> to apply your changes.</p>
-<p>If you updated the <strong>Site Settings</strong>, the <strong>Site Default</strong> will be shown as a preview on other pages.</p>
-<p><a class="xref" href="../how-themes-work/pane/index.html">Learn more about Pane</a></p>
-<p><a class="xref" href="../how-themes-work/container/index.html">Learn more about Container</a></p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/configuration/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/container/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
