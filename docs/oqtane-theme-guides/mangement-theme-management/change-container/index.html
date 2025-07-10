@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>What is a Pane | cre8magic </title>
+      <title>How to Change the Container | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="What is a Pane | cre8magic ">
+      <meta name="title" content="How to Change the Container | cre8magic ">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/pane/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/mangement-theme-management/change-container/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,60 +84,33 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.WhatArePanes.Index">
-<h1 id="what-is-a-pane">What is a Pane</h1>
+        <article data-uid="OqtaneThemes.ChangeContainer.Index">
+<h1 id="how-to-change-the-container">How to Change the Container</h1>
 
-<p>A *<strong>Pane</strong> is a designated area or placeholder within a page layout where modules can be placed.
-Common examples include DefaultPane, HeaderPane, and others.</p>
-<p>Each theme or layout can define its own set of panes. The names and number of panes depend on how the layout was built by the designer.</p>
+<p>This section shows how to change the *<strong>Container</strong> for a module on a page.</p>
 <div gallery="gallery01">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-pane_1.webp" data-caption="Default Theme">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/pane/assets/oqtane-setting-pane_2.webp" data-caption="Cre8magic">
+  <img src="../../../pages/oqtane-theme-guides/mangement-theme-management/change-container/assets/oqtane-setting-page_1.webp" data-caption="Open the page and enter edit mode">
+  <img src="../../../pages/oqtane-theme-guides/mangement-theme-management/change-container/assets/oqtane-setting-page_2.webp" data-caption="Open module dropdown and select Manage Settings">
+  <img src="../../../pages/oqtane-theme-guides/mangement-theme-management/change-container/assets/oqtane-setting-page-container_1.webp" data-caption="Change the Container settings">
+  <img src="../../../pages/oqtane-theme-guides/mangement-theme-management/change-container/assets/oqtane-setting-page-container_2.webp" data-caption="See the Changes">
 </div>
-<div class="TIP">
-<h5>Tip</h5>
-<p>Only create the panes that are necessary for your layout.</p>
-</div>
-<p>Themes &gt; <code>Default.razor</code></p>
-<pre><code class="lang-xml">
-public override string Panes =&gt; PaneNames.Default + &quot;,Header&quot;; // Add for Dropdown Menu
-
-&lt;div data-bs-theme =&quot;default-theme&quot; data-theme-variant=&quot;@Variant&quot;&gt;
-   @* FYI: data-bs-theme is for colors/fonts; data-theme-variant is for sizing etc. *@
-   &lt;nav id=&quot;theme-page-navigation&quot; class=&quot;navbar navbar-dark bg-primary sticky-top&quot;&gt;
-       &lt;Logo /&gt;&lt;Menu Orientation=&quot;Horizontal&quot; /&gt;
-       &lt;div class=&quot;controls ms-auto&quot;&gt;
-           &lt;div class=&quot;controls-group&quot;&gt;
-               &lt;UserProfile ShowRegister=&quot;@Settings.ShowRegister&quot; /&gt;
-               &lt;Login ShowLogin=&quot;@Settings.ShowLogin&quot;  /&gt;
-               &lt;ControlPanel ButtonClass=&quot;btn-outline-light&quot; /&gt;
-           &lt;/div&gt;
-       &lt;/div&gt;
-   &lt;/nav&gt;
-
-   &lt;div id=&quot;theme-page-header-pane&quot; class=&quot;container-xxl px-0&quot;&gt;
-       &lt;Pane Name=&quot;Header&quot; /&gt;  @* Pane for Header content *@
-   &lt;/div&gt;
-
-   &lt;main role=&quot;main&quot; id=&quot;theme-page-main&quot;&gt;
-       &lt;Pane Name=&quot;@PaneNames.Default&quot; /&gt; @* Default pane for main content *@
-   &lt;/main&gt;
-&lt;/div&gt;
-</code></pre>
-<h2 id="why-panes-matter">Why Panes Matter</h2>
-<p>Using panes allows you to control the placement of your modules without writing any code.
-You can visually arrange content to match your site's design, whether you're adding navigation, banners, or content blocks.</p>
-<p><strong>For example:</strong></p>
-<ul>
-<li>You might place a Menu module in the HeaderPane</li>
-<li>A News module in the DefaultPane</li>
-</ul>
-<p>This flexible structure helps keep your site organized and easy to manage.</p>
+<p>Steps to Change the Container</p>
+<ol>
+<li><p>Go to the page containing your module and click the <strong>Edit icon</strong> (pencil) to enter edit mode.</p>
+</li>
+<li><p>Click the <strong>dropdown arrow</strong> next to the module, then select <strong>Manage Settings</strong>.</p>
+</li>
+<li><p>In the module settings dialog, choose a different <strong>Container</strong> from the dropdown list.
+This will affect how the module is displayed visually.</p>
+</li>
+<li><p>Click save and close the Dialog to see the Changes</p>
+</li>
+</ol>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/pane/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/mangement-theme-management/change-container/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

@@ -99,27 +99,25 @@ It defines the module's appearance — including spacing, borders, background, t
 </ul>
 <p>The available containers depend on the theme you're using.
 Some themes (like Cre8Magic) may only include one container, while others offer multiple style options.</p>
-<hr>
-<h2 id="how-to-change-the-container">How to Change the Container</h2>
-<p>This section shows how to change the *<strong>Container</strong> for a module on a page.</p>
-<div gallery="gallery03">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-page_1.webp" data-caption="Open the page and enter edit mode">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-page_2.webp" data-caption="Open module dropdown and select Manage Settings">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-page-container_1.webp" data-caption="Change the Container settings">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-page-container_2.webp" data-caption="See the Changes">
+<div gallery="gallery01">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/container/assets/oqtane-setting-container_1.webp" data-caption="Code Example from a Container">
 </div>
-<p>Steps to Change the Container</p>
-<ol>
-<li><p>Go to the page containing your module and click the <strong>Edit icon</strong> (pencil) to enter edit mode.</p>
-</li>
-<li><p>Click the <strong>dropdown arrow</strong> next to the module, then select <strong>Manage Settings</strong>.</p>
-</li>
-<li><p>In the module settings dialog, choose a different <strong>Container</strong> from the dropdown list.
-This will affect how the module is displayed visually.</p>
-</li>
-<li><p>Click save and close the Dialog to see the Changes</p>
-</li>
-</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Containers should not include a title directly.<br>
+Containers can have settings (e.g., &quot;Show Title&quot; as default).</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Create only one container – this simplifies usage.
+Within the container, you can apply different CSS classes based on the pane (e.g., if it's the <code>HeaderPane</code>, add a <code>header-specific CSS</code> class)</p>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The container must be in the same namespace as the theme.</p>
+<pre><code class="lang-xml">@namespace ToSic.Cre8magic.Theme.Basic
+</code></pre>
+</div>
 
 </article>
 

@@ -3,11 +3,6 @@
   uid: OqtaneThemes.Index
 
 
-- name: How Themes Work (WIP)
-  uid: OqtaneThemes.HowThemesWork.Index
-  href: how-themes-work/toc.yml
-
-
 - name: Get started using Theme
   items:
   - name: Installation
@@ -16,6 +11,18 @@
     uid: OqtaneThemes.Assign.Index
   - name: Configuration
     uid: OqtaneThemes.Configuration.Index
+
+- name: How Themes Work (WIP)
+  uid: OqtaneThemes.HowThemesWork.Index
+  href: how-themes-work/toc.yml
+
+- name: Management Theme Management
+  items:
+  - name: Move Module to other Pane 
+    uid: OqtaneThemes.MoveModuleToOtherPane.Index
+  - name: Change Container
+    uid: OqtaneThemes.ChangeContainer.Index
+
 
 - name: Publish Theme
   uid: OqtaneThemes.PublishTheme.Index

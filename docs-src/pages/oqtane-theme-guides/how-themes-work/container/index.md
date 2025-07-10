@@ -20,24 +20,22 @@ Different containers can be used to give modules a unique visual style. For inst
 The available containers depend on the theme you're using.
 Some themes (like Cre8Magic) may only include one container, while others offer multiple style options.
 
----
-
-## How to Change the Container
-
-This section shows how to change the ***Container** for a module on a page.
-
-<div gallery="gallery03">
-  <img src="./assets/oqtane-setting-page_1.webp" data-caption="Open the page and enter edit mode">
-  <img src="./assets/oqtane-setting-page_2.webp" data-caption="Open module dropdown and select Manage Settings">
-  <img src="./assets/oqtane-setting-page-container_1.webp" data-caption="Change the Container settings">
-  <img src="./assets/oqtane-setting-page-container_2.webp" data-caption="See the Changes">
+<div gallery="gallery01">
+  <img src="./assets/oqtane-setting-container_1.webp" data-caption="Code Example from a Container">
 </div>
 
-Steps to Change the Container
+> [!TIP]
+> Containers should not include a title directly.  
+> Containers can have settings (e.g., "Show Title" as default).
 
-1. Go to the page containing your module and click the **Edit icon** (pencil) to enter edit mode.
+> [!TIP]
+> Create only one container – this simplifies usage.
+> Within the container, you can apply different CSS classes based on the pane (e.g., if it's the `HeaderPane`, add a `header-specific CSS` class)
 
-2. Click the **dropdown arrow** next to the module, then select **Manage Settings**.
-3. In the module settings dialog, choose a different **Container** from the dropdown list.
-This will affect how the module is displayed visually.
-4. Click save and close the Dialog to see the Changes
+
+> [!WARNING]
+> The container must be in the same namespace as the theme.
+>
+> ```xml
+> @namespace ToSic.Cre8magic.Theme.Basic
+> ```
