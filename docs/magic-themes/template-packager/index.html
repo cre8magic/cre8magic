@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>cre8magic-template-packager | cre8magic </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="cre8magic-template-packager | cre8magic ">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-themes/template-packager/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../assets/logos/vcurrent/cre8magic-logo50-auto-color.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Cre8magic.MagicThemes.TemplatePackager.Index">
+<h1 id="cre8magic-template-packager">cre8magic-template-packager</h1>
+
+<p>The <code>cre8magic-template-packager</code> is a specialized template designed to:</p>
+<ul>
+<li>Deploy all theme templates within a local Oqtane.Server installation.</li>
+<li>Create a package for distributing theme templates.</li>
+</ul>
+<p>Developers can use this template to easily generate and share their own Oqtane theme templates, streamlining the process of templates development and distribution.</p>
+<h2 id="how-to-package-a-single-theme-template">How to Package a Single Theme Template</h2>
+<p>The goal is to create a package containing a single theme template, which can be used to deploy the template in Oqtane.Server or share it with others.</p>
+<p>In this example, we will demonstrate how to prepare and package the <code>cre8magic-basic</code> theme template.</p>
+<h3 id="creating-a-visual-studio-solution-for-the-theme-template">Creating a Visual Studio Solution for the Theme Template</h3>
+<ol>
+<li><p>Ensure that <code>ToSic.Cre8magic.Theme.Templates.1.0.0.nupkg</code> is already installed in your local Oqtane development environment. If not, refer to <a class="xref" href="../theme-templates/index.html">this guide</a> for installation instructions.</p>
+</li>
+<li><p><strong>Access Theme Management</strong>:<br>
+In the Oqtane Admin UI, navigate to the <strong>Themes Management</strong> section and click <strong>Create Theme</strong>.</p>
+</li>
+<li><p><strong>Fill in Details</strong>:<br>
+Provide the following information:</p>
+<ul>
+<li><code>Owner Name</code></li>
+<li><code>Theme Name</code></li>
+<li>Select the template: <code>[Theme] Theme Templates</code> from the list.</li>
+<li>Choose the <code>Framework</code>.</li>
+</ul>
+<p>Then, click <strong>Create Theme</strong>.<br>
+<img src="../../pages/magic-themes/template-packager/assets/generate-theme-template-solution.png" alt="Create Theme"></p>
+</li>
+<li><p><strong>Locate the Solution</strong>:<br>
+A Visual Studio solution for your new theme is created near the <code>oqtane.framework</code> folder.<br>
+<img src="../../pages/magic-themes/template-packager/assets/root-folder.png" alt="Folder with Visual Studio solution for new templates"></p>
+</li>
+</ol>
+<h3 id="converting-theme-source-code-to-a-theme-template">Converting Theme Source Code to a Theme Template</h3>
+<ol>
+<li><p>Ensure that <code>cre8magicTransformer.exe</code> is in the root folder. If not, download it from <a href="https://github.com/cre8magic/cre8magic-transformer/releases">here</a>.</p>
+</li>
+<li><p>Ensure that you have the <code>oqtane-theme-basic</code> folder with <code>cre8magic-basic</code> theme source code.<br>
+<img src="../../pages/magic-themes/template-packager/assets/folder-with-cre8magic-basic.png" alt="Folder with cre8magic-basic theme source code"></p>
+</li>
+<li><p>Ensure that <code>cre8magic-transformer.config.json</code> and <code>template.json</code> files are present in the theme source code folder. Learn more about the <a class="xref" href="../../magic-tools/cre8magic-transformer/config.html">Configuration File</a> and <a class="xref" href="../../magic-tools/cre8magic-transformer/index.html">Template File</a>.</p>
+</li>
+<li><p>Open a terminal and navigate to the folder containing the <code>cre8magic-transformer.exe</code> file.</p>
+</li>
+<li><p>Run the transformer with the following command:</p>
+<pre><code class="lang-cmd">cre8magicTransformer -s &quot;oqtane-theme-basic&quot; -d &quot;YourCompany.Theme.ThemeTemplates/Client/wwwroot/Themes/Templates/yourcompany-basic&quot;
+</code></pre>
+<p><img src="../../pages/magic-themes/template-packager/assets/cre8magic-transformer-part1.png" alt="Generate theme template, start"></p>
+<p><img src="../../pages/magic-themes/template-packager/assets/cre8magic-transformer-part2.png" alt="Generate theme template, end"></p>
+</li>
+</ol>
+<h3 id="deploying-theme-templates-to-local-oqtane">Deploying Theme Templates to Local Oqtane</h3>
+<ol>
+<li><p>Open the <code>YourCompany.Theme.ThemeTemplates/YourCompany.Theme.Templates.sln</code> solution in Visual Studio and switch to the <code>Debug</code> configuration.</p>
+</li>
+<li><p>Select the <code>YourCompany.Theme.Templates.Package</code> project and build it as usual.<br>
+<img src="../../pages/magic-themes/template-packager/assets/vs-package-debug.png" alt="Visual Studio Solution"></p>
+</li>
+<li><p>The <code>yourcompany-basic</code> folder containing your custom theme template will be deployed to <code>oqtane.framework\Oqtane.Server\wwwroot\Themes\Templates\</code>. You can now test it in Oqtane.<br>
+<img src="../../pages/magic-themes/template-packager/assets/template-in-oqtane.png" alt="Template in Oqtane"></p>
+</li>
+</ol>
+<h3 id="packaging-theme-templates-into-a-nuget-package">Packaging Theme Templates into a NuGet Package</h3>
+<ol>
+<li><p>Open the <code>YourCompany.Theme.ThemeTemplates/YourCompany.Theme.Templates.sln</code> solution in Visual Studio and switch to the <code>Release</code> configuration.</p>
+</li>
+<li><p>Select the <code>YourCompany.Theme.Templates.Package</code> project and build it as usual.<br>
+<img src="../../pages/magic-themes/template-packager/assets/vs-package-release.png" alt="Visual Studio Solution"></p>
+</li>
+<li><p>A new package, <code>YourCompany.Theme.Templates.1.0.0.nupkg</code>, will be generated in the <code>YourCompany.Theme.ThemeTemplates/Package/</code> folder.<br>
+<img src="../../pages/magic-themes/template-packager/assets/package.png" alt="New package is generated"></p>
+</li>
+</ol>
+<h2 id="how-to-package-multiple-theme-templates-in-the-same-nuget-package">How to Package Multiple Theme Templates in the Same NuGet Package</h2>
+<p>To create a package containing multiple theme templates for deployment in Oqtane.Server or sharing:</p>
+<ul>
+<li>Ensure each theme template has a unique name.</li>
+<li>Follow the same steps as for a single theme template.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/magic-themes/template-packager/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
