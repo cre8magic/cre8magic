@@ -15,7 +15,6 @@ and show you a bunch of tricks to make things better.
 > This guide is for developers who want to create a new theme for Oqtane.
 > It's general purpose for all kinds of themes, not limited to cre8magic themes.
 
-
 Expected contents
 
 1. [home] what are themes, goals, etc.⏳
@@ -53,7 +52,7 @@ Expected contents
 7. Theme JavaScripts
     1. Include Libraries / ensure startup
     2. Create your own
-    3. Use TypeScript
+    3. ✔️ Use TypeScript
 8. Mastering Bootstrap5
     1. Background
     2. ✔️...sass & Webpack
@@ -68,5 +67,5 @@ Expected contents
 13. Upgrade Theme to New Oqtane
 14. Theme Distribution
     1. NuGet Package with libraries, dependencies etc.
-    2. Install Theme
+    2. ✔️ Install Theme
     3. Upgrade existing Theme
