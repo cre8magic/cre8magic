@@ -84,3 +84,11 @@ To create a package containing multiple theme templates for deployment in Oqtane
 
 - Ensure each theme template has a unique name.
 - Follow the same steps as for a single theme template.
+
+---
+
+## History
+
+- Released 2025-07-11.
+
+Permanent link: <https://go.cre8magic.org/packager>

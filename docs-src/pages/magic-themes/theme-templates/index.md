@@ -63,3 +63,10 @@ Follow these steps to install the `cre8magic ♾️ - Oqtane Theme Templates`:
    Open the solution in Visual Studio and start customizing it. Building and packaging work as usual.  
    ![Visual Studio Solution](./assets/visual-studio-solution.png)
 
+---
+
+## History
+
+- Released 2025-07-11.
+
+Permanent link: <https://go.cre8magic.org/templates>
