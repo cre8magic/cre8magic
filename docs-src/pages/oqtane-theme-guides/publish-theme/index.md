@@ -32,9 +32,28 @@ Check out [How to Install a NuGet Theme](xref:OqtaneThemes.Installation.Index)
 
 ---
 
-## Upload to GitHub
+## Change .nupkg Version
+
+> [!TIP]
+> The version information in `ThemeInfo.cs` has no effect on the actual package version.
+
+To change the version of the `.nupkg` file, follow these steps:
+
+1. Go to the package file
+2. Increase the version number
+3. Build the package
 
 <div gallery="gallery02">
+  <img src="./assets/change-version_1.webp" data-caption="Go to Package and change Version">
+  <img src="./assets/change-version_2.webp" data-caption="Build the Package">
+  <img src="./assets/change-version_3.webp" data-caption="See the Changes from nupkg file">
+</div>
+
+---
+
+## Upload to GitHub
+
+<div gallery="gallery03">
   <img src="./assets/github-release_theme_1.webp" data-caption="GitHub,<br />Create a new release">
   <img src="./assets/github-release_theme_2.webp" data-caption="GitHub,<br />Upload the NuGet package">
   <img src="./assets/github-release_theme_3.webp" data-caption="GitHub,<br />Copy the download link">
@@ -51,7 +70,7 @@ Now it's time to upload it to **GitHub**:
 
 ## Publish to the Oqtane Marketplace
 
-<div gallery="gallery03">
+<div gallery="gallery04">
   <img src="./assets/marketplace-publish_theme_1.webp" data-caption="Oqtane Marketplace,<br />Create a new product">
   <img src="./assets/marketplace-publish_theme_2.webp" data-caption="Oqtane Marketplace,<br />Fill in the product info">
   <img src="./assets/marketplace-publish_theme_3.webp" data-caption="Oqtane Marketplace,<br />Add a new release">
