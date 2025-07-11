@@ -47,7 +47,7 @@ To get started with Vite, follow these basic steps:
 
 ### 1.1 Create `package.json`
 
-In the root directory of your theme project, create (or update) a `package.json` file with the required dependencies. For example:
+In the `Client` directory of your theme project, create (or update) a `package.json` file with the required dependencies. For example:
 
 ```json
 {
@@ -90,6 +90,8 @@ In the root directory of your theme project, create (or update) a `package.json`
 Open a terminal in Visual Studio or your preferred code editor, and run the following command:
 
 ```bash
+cd .\Client\
+
 npm install
 ```
 
@@ -141,15 +143,11 @@ Add a file named `styles.scss` to that folder.
 Once all the steps above are complete, you're ready to run Vite.  
 You’ll see the output in your project directory after the command finishes.
 
-Open the terminal and navigate to the `Client` folder:
+Open the terminal and navigate to the `Client` folder and then run the `dev` command:
 
 ```bash
 cd .\Client\
-```
 
-Then run:
-
-```bash
 npm run dev
 ```
 
