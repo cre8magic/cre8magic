@@ -85,40 +85,40 @@
         </div>
 
         <article data-uid="Cre8magic.Library.MagicPageContext.Index">
-<h1 id="cre8magic--magic-page-context">cre8magic – Magic Page Context</h1>
+<h1 id="cre8magic--magic-page-context" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="6">cre8magic – Magic Page Context</h1>
 
-<p>The Magic Context adds a bunch of classes to the <code>&lt;body&gt;</code> or a wrapper <code>&lt;div&gt;</code> tag
+<p sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="8">The Magic Context adds a bunch of classes to the <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="8">&lt;body&gt;</code> or a wrapper <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="8">&lt;div&gt;</code> tag
 which contain information about the current state.</p>
-<p>This allows you to then write CSS rules, which change the look / feel of the page based on certain aspects.</p>
-<h2 id="example">Example</h2>
-<p>The wrapper <code>&lt;div&gt;</code> could look like this:</p>
-<pre><code class="lang-html">&lt;div id=&quot;cre8magic-root&quot; class=&quot;page-35 page-root-29 page-parent-33 site-1 nav-level-3 theme-mainnav-variation-right theme-variation-centered&quot;&gt;
+<p sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="11">This allows you to then write CSS rules, which change the look / feel of the page based on certain aspects.</p>
+<h2 id="example" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="13">Example</h2>
+<p sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="15">The wrapper <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="15">&lt;div&gt;</code> could look like this:</p>
+<pre><code class="lang-html" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="17">&lt;div id=&quot;cre8magic-root&quot; class=&quot;page-35 page-root-29 page-parent-33 site-1 nav-level-3 theme-mainnav-variation-right theme-variation-centered&quot;&gt;
   &lt;!-- the contents of the page--&gt;
 &lt;/div&gt;
 </code></pre>
-<p>This tells you a bunch of things such as:</p>
-<ol>
-<li>This is page <code>#35</code> - allows you to do things like special colors for exactly this page</li>
-<li>The page is in the tree of the root <code>#29</code> - so you could use special colors for all the pages in this branch</li>
-<li>The pages parent is <code>#33</code> - again letting you write custom CSS</li>
-<li>We are on site <code>#1</code> - in case you have different styles based on the site number</li>
-<li>We are currently on the nav-level <code>3</code> - this could affect your breadcrumb or something</li>
-<li>We are in a specific layout type and navigation type</li>
+<p sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="23">This tells you a bunch of things such as:</p>
+<ol sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="25">
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="25">This is page <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="25">#35</code> - allows you to do things like special colors for exactly this page</li>
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="26">The page is in the tree of the root <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="26">#29</code> - so you could use special colors for all the pages in this branch</li>
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="27">The pages parent is <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="27">#33</code> - again letting you write custom CSS</li>
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="28">We are on site <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="28">#1</code> - in case you have different styles based on the site number</li>
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="29">We are currently on the nav-level <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="29">3</code> - this could affect your breadcrumb or something</li>
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="30">We are in a specific layout type and navigation type</li>
 </ol>
-<h2 id="sample---testing">Sample - TESTING</h2>
-<h3 id="body">Body</h3>
-<pre><code class="lang-xml">&lt;MagicPageContext&gt;&lt;/MagicPageContext&gt;
-</code></pre><h3 id="div">Div</h3>
-<pre><code class="lang-xml">&lt;MagicPageContext Settings=&quot;new() { UseBodyTag = false }&quot;&gt;
+<h2 id="sample---testing" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="32">Sample - TESTING</h2>
+<h3 id="body" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="34">Body</h3>
+<pre><code class="lang-xml" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="36">&lt;MagicPageContext&gt;&lt;/MagicPageContext&gt;
+</code></pre><h3 id="div" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="38">Div</h3>
+<pre><code class="lang-xml" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="40">&lt;MagicPageContext Settings=&quot;new() { UseBodyTag = false }&quot;&gt;
 </code></pre>
-<pre><code class="lang-c#">  &lt;div&gt;
+<pre><code class="lang-c#" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="42">  &lt;div&gt;
     ...
   &lt;/div&gt;
 </code></pre>
-<pre><code class="lang-xml">&lt;/MagicPageContext&gt;
-</code></pre><h2 id="how-this-works">How this Works</h2>
-<p>Basically all this happens automatically, if your <a class="xref" href="../theme-settings/theme-json.html">json configuration</a> has <code>magicContext</code> of something like this:</p>
-<pre><code class="lang-jsonc">{
+<pre><code class="lang-xml" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="48">&lt;/MagicPageContext&gt;
+</code></pre><h2 id="how-this-works" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="50">How this Works</h2>
+<p sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="52">Basically all this happens automatically, if your <a class="xref" href="../theme-settings/theme-json.html" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber=52>json configuration</a> has <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="52">magicContext</code> of something like this:</p>
+<pre><code class="lang-jsonc" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="54">{
   &quot;magicContext&quot;: [
     &quot;page-[Page.Id]&quot;,
     &quot;page-root-[Page.RootId]&quot;,
@@ -130,29 +130,29 @@ which contain information about the current state.</p>
   ]
 }
 </code></pre>
-<p>You can of course add your own rules with other placeholders to make this happen.</p>
-<h2 id="configuration">Configuration</h2>
-<ol>
-<li>You can determine if this will be added to a <code>&lt;div&gt;</code> or the <code>&lt;body&gt;</code> using the setting <code>magicContextInBody</code>
-<ul>
-<li>If it's on the body, it will be put there using JavaScript, so there may be a minimal flash-of-unexpected-styling</li>
-<li>if you put it in the div, it will always be there</li>
+<p sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="68">You can of course add your own rules with other placeholders to make this happen.</p>
+<h2 id="configuration" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="70">Configuration</h2>
+<ol sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="72">
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="72">You can determine if this will be added to a <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="72">&lt;div&gt;</code> or the <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="72">&lt;body&gt;</code> using the setting <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="72">magicContextInBody</code>
+<ul sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="73">
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="73">If it's on the body, it will be put there using JavaScript, so there may be a minimal flash-of-unexpected-styling</li>
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="74">if you put it in the div, it will always be there</li>
 </ul>
 </li>
-<li>You can also change the <code>id</code> of the <code>&lt;div&gt;</code> tag if you want to change how your CSS behaves. The <code>id</code> can be set on the <code>magicContextTagId</code></li>
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="75">You can also change the <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="75">id</code> of the <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="75">&lt;div&gt;</code> tag if you want to change how your CSS behaves. The <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="75">id</code> can be set on the <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="75">magicContextTagId</code></li>
 </ol>
-<h2 id="missing-features">Missing Features</h2>
-<p>As of 2022-10 there are no magic context classes for languages yet, as Oqtane doesn't fully support Multi-Language.
+<h2 id="missing-features" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="77">Missing Features</h2>
+<p sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="79">As of 2022-10 there are no magic context classes for languages yet, as Oqtane doesn't fully support Multi-Language.
 We'll add it as soon as possible.</p>
-<h2 id="pending-tasks">Pending Tasks</h2>
-<ol>
-<li>Final naming not quite clear, if <code>PageContext</code> is really good for describing this</li>
-<li>There is a built-in variant-for-menu which doesn't feel quite right in the defaults</li>
+<h2 id="pending-tasks" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="82">Pending Tasks</h2>
+<ol sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="84">
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="84">Final naming not quite clear, if <code sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="84">PageContext</code> is really good for describing this</li>
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="85">There is a built-in variant-for-menu which doesn't feel quite right in the defaults</li>
 </ol>
-<hr>
-<h2 id="history">History</h2>
-<ol>
-<li>Added in v0.0.1 2022-10</li>
+<hr sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="87">
+<h2 id="history" sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="89">History</h2>
+<ol sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="91">
+<li sourcefile="pages/library/page-context/index.md" sourcestartlinenumber="91">Added in v0.0.1 2022-10</li>
 </ol>
 
 </article>
