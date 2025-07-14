@@ -120,7 +120,7 @@ Confirm that Vite correctly generates new files or updates them after every buil
 <hr>
 <h2 id="1-setup-node-modules">1. Setup Node Modules</h2>
 <h3 id="11-create-packagejson">1.1 Create <code>package.json</code></h3>
-<p>In the root directory of your theme project, create (or update) a <code>package.json</code> file with the required dependencies. For example:</p>
+<p>In the <code>Client</code> directory of your theme project, create (or update) a <code>package.json</code> file with the required dependencies. For example:</p>
 <pre><code class="lang-json">{
   &quot;name&quot;: &quot;ToSic.Cre8magic-Theme-Basic&quot;,
   &quot;version&quot;: &quot;01.00.00&quot;,
@@ -158,7 +158,9 @@ Make sure you have the latest <code>devDependencies</code> or use a newer versio
 <p>Make sure you run this in the correct folder, where your <code>package.json</code> file is located.</p>
 </div>
 <p>Open a terminal in Visual Studio or your preferred code editor, and run the following command:</p>
-<pre><code class="lang-bash">npm install
+<pre><code class="lang-bash">cd .\Client\
+
+npm install
 </code></pre>
 <p>This command will read the <code>package.json</code> file and install all the required dependencies into a <code>node_modules</code> folder in your project directory.</p>
 <p>You should now see <code>node_modules</code> and <code>package-lock.json</code>.
@@ -194,11 +196,10 @@ Add a file named <code>styles.scss</code> to that folder.</p>
 <h3 id="23-run-vite-in-the-terminal">2.3 Run Vite in the Terminal</h3>
 <p>Once all the steps above are complete, you're ready to run Vite.<br>
 You’ll see the output in your project directory after the command finishes.</p>
-<p>Open the terminal and navigate to the <code>Client</code> folder:</p>
+<p>Open the terminal and navigate to the <code>Client</code> folder and then run the <code>dev</code> command:</p>
 <pre><code class="lang-bash">cd .\Client\
-</code></pre>
-<p>Then run:</p>
-<pre><code class="lang-bash">npm run dev
+
+npm run dev
 </code></pre>
 <p>Now, you will see the output in <code>wwwroot/themes/YOUR_THEME_NAME</code> as <code>styles.min.css</code>.</p>
 <div gallery="gallery06">
