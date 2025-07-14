@@ -38,47 +38,6 @@ Theme Settings are configurable options that allow you to customize the appearan
 
 ---
 
-## Storage of Theme Settings
-
-<div gallery="gallery02">
-  <img src="./assets/theme-settings_2.webp" data-caption="Db Changes">
-</div>
-
-**UI Changes**
-
-- Changes are made directly in the UI (e.g., color pickers, checkboxes).
-- After making changes, you must click "Save" to apply them.
-
-**Storage in the Database**
-
-- Once saved, Theme Settings are stored in the Oqtane database.
-- The database stores the settings either at the site level or page level, depending on the context.
-
-**Namespace – Avoiding Duplicates**
-
-- Each Theme Setting is assigned a unique namespace (e.g., `Theme.MyTheme.SettingName`) to prevent conflicts with other modules or themes.
-- This ensures that the settings can be uniquely identified and assigned.
-
----
-
-## How and Where Are Theme Settings Loaded?
-
-- When a page is loaded, the Theme Settings are first read from the database.
-- The values are assigned to the correct theme based on their namespace.
-- In the theme code, the settings can be loaded and used via the Settings API or through dependency injection.
-
-<div gallery="gallery03">
-  <img src="./assets/theme-settings_3.webp" data-caption="Load Settings">
-</div>
-
-
-```csharp
-    var settings = SettingService.MergeSettings(PageState.Site.Settings, PageState.Page.Settings);
-    _login = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + ":Login", "true"));
-```
-
----
-
 ## Site vs. Page Settings
 
 **Difference Between Site Settings and Page Settings**

@@ -87,13 +87,59 @@
         <article data-uid="Cre8magic.MagicThemes.Settings.Index">
 <h1 id="settings">Settings</h1>
 
-<p>Mehr Infos über die Basic der Settings: URL: <a class="xref" href="../../oqtane-theme-guides/how-themes-work/theme-settings/index.html">Settings</a>.</p>
-<p>Hier erklären</p>
+<p><a class="xref" href="../../oqtane-theme-guides/how-themes-work/theme-settings/index.html">More about Theme Settings</a></p>
+<h2 id="add-a-new-theme-setting">Add a new Theme Setting</h2>
+<p>To add a new setting to your theme, follow these steps. You’ll create a new input field in the settings UI, bind it to a key in your code, and make sure it saves and loads correctly from the database. Once that's done, you can use the setting in your HTML to control behavior like visibility or styles.</p>
+<div gallery="gallery03">
+  <img src="../../pages/magic-themes/settings/assets/theme-settings-add_1.webp" data-caption="Add new Html">
+  <img src="../../pages/magic-themes/settings/assets/theme-settings-add_2.webp" data-caption="Add the new Key">
+  <img src="../../pages/magic-themes/settings/assets/theme-settings-add_3.webp" data-caption="Show in the UI">
+</div>
+<ol>
+<li>Open the file <code>ThemeSettings.razor</code></li>
+<li>In the HTML section, under the appropriate scope, insert your new input field.</li>
+<li>Open <code>MyThemeSettings.cs</code> and create a new key for your setting (this defines the database field and allows data binding to the HTML).</li>
+<li>Bind the new key to your input field in the HTML using <code>@bind</code>.</li>
+<li>Build and run the project.</li>
+<li>Navigate to the Theme Settings UI in your site.</li>
+<li>Test your new input field: enter a value, save, and try clearing it or resetting to the default.</li>
+<li>Check the database to confirm your new value is being saved correctly.</li>
+<li>You're now ready to use this setting in your theme's HTML—for example, to show or hide content, adjust styles, or change layout behavior.</li>
+</ol>
+<hr>
+<h2 id="storage-of-theme-settings">Storage of Theme Settings</h2>
+<p>Changes to the Theme Settings are stored in the <code>Setting</code> table in the database.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p><strong>Namespace – Avoiding Duplicates</strong><br>
+Each Theme Setting is assigned a unique namespace (e.g., <code>Theme.MyTheme.SettingName</code>) to prevent conflicts with other modules or themes.<br>
+These changes are saved and persist through deployments by being stored in the database.<br>
+This ensures that the settings can be uniquely identified and reliably assigned.</p>
+</div>
+<div gallery="gallery02">
+  <img src="../../pages/magic-themes/settings/assets/theme-settings-db.webp" data-caption="Db Changes">
+</div>
+<p><strong>UI Changes</strong></p>
 <ul>
-<li>Wie werden sie geladen</li>
-<li>Wie werden sie gespeichert</li>
-<li>Wie kann man neue hinzufügen</li>
+<li>Changes are made directly in the UI (e.g., color pickers, checkboxes).</li>
+<li>After making changes, you must click &quot;Save&quot; to apply them.</li>
 </ul>
+<p><strong>Storage in the Database</strong></p>
+<ul>
+<li>Once saved, Theme Settings are stored in the Oqtane database.</li>
+<li>The database stores the settings either at the site level or page level, depending on the context.</li>
+</ul>
+<hr>
+<h2 id="how-and-where-are-theme-settings-loaded">How and Where Are Theme Settings Loaded?</h2>
+<ul>
+<li>When a page is loaded, the Theme Settings are first read from the database.</li>
+<li>The values are assigned to the correct theme based on their namespace.</li>
+<li>In the theme code, the settings can be loaded and used via the Settings API or through dependency injection.</li>
+</ul>
+<div gallery="gallery01">
+  <img src="../../pages/magic-themes/settings/assets/theme-settings-load_1.webp" data-caption="Load Settings">
+  <img src="../../pages/magic-themes/settings/assets/theme-settings-load_2.webp" data-caption="Show ThemeSettings Type">
+</div>
 
 </article>
 

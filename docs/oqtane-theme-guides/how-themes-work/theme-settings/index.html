@@ -115,39 +115,6 @@
 <li>Provide custom options for specific theme functionality.</li>
 </ul>
 <hr>
-<h2 id="storage-of-theme-settings">Storage of Theme Settings</h2>
-<div gallery="gallery02">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/theme-settings/assets/theme-settings_2.webp" data-caption="Db Changes">
-</div>
-<p><strong>UI Changes</strong></p>
-<ul>
-<li>Changes are made directly in the UI (e.g., color pickers, checkboxes).</li>
-<li>After making changes, you must click &quot;Save&quot; to apply them.</li>
-</ul>
-<p><strong>Storage in the Database</strong></p>
-<ul>
-<li>Once saved, Theme Settings are stored in the Oqtane database.</li>
-<li>The database stores the settings either at the site level or page level, depending on the context.</li>
-</ul>
-<p><strong>Namespace – Avoiding Duplicates</strong></p>
-<ul>
-<li>Each Theme Setting is assigned a unique namespace (e.g., <code>Theme.MyTheme.SettingName</code>) to prevent conflicts with other modules or themes.</li>
-<li>This ensures that the settings can be uniquely identified and assigned.</li>
-</ul>
-<hr>
-<h2 id="how-and-where-are-theme-settings-loaded">How and Where Are Theme Settings Loaded?</h2>
-<ul>
-<li>When a page is loaded, the Theme Settings are first read from the database.</li>
-<li>The values are assigned to the correct theme based on their namespace.</li>
-<li>In the theme code, the settings can be loaded and used via the Settings API or through dependency injection.</li>
-</ul>
-<div gallery="gallery03">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/theme-settings/assets/theme-settings_3.webp" data-caption="Load Settings">
-</div>
-<pre><code class="lang-csharp">    var settings = SettingService.MergeSettings(PageState.Site.Settings, PageState.Page.Settings);
-    _login = bool.Parse(SettingService.GetSetting(settings, GetType().Namespace + &quot;:Login&quot;, &quot;true&quot;));
-</code></pre>
-<hr>
 <h2 id="site-vs-page-settings">Site vs. Page Settings</h2>
 <p><strong>Difference Between Site Settings and Page Settings</strong></p>
 <ul>
