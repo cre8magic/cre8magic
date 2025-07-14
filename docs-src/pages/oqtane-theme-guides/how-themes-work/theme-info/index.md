@@ -74,11 +74,9 @@ public class ThemeInfo : ITheme
 - The provided information tells Oqtane how to render the theme and which resources to load.
 - The defined resources (CSS, JS) are automatically injected into the `<head>` or before the `</body>` tag of each page.
 
-
 > [!Tip]
-> - **Path Reference:** Resource paths like `~/Theme.css` are relative to the `wwwroot` of the theme. TODO: Resources
-> - **Load Order Matters:** The order of resources can be important (e.g., load Bootstrap first, then custom styles). TODO: Resources
-> - **Versioning:** When making changes, be sure to update the `Version`—especially when deploying via NuGet. [Change Version](xref:OqtaneThemes.PublishTheme.Index)
+> - [More about Load Resoruces](xref:OqtaneThemes.ThemeAssets.LoadResources.Index)
+> - **Versioning:** In the `ThemeInfo.cs` Version change Version have no Effects [How to change nuget Version](xref:OqtaneThemes.PublishTheme.Index)
 
 > [!WARNING]
 > The container must be in the same namespace as the theme.

@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> | cre8magic </title>
+      <title>Load Resources in the Browser | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" | cre8magic ">
+      <meta name="title" content="Load Resources in the Browser | cre8magic ">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -85,9 +85,32 @@
         </div>
 
         <article data-uid="OqtaneThemes.ThemeAssets.LoadResources.Index">
+<h1 id="load-resources-in-the-browser">Load Resources in the Browser</h1>
 
-
-<p>TODO:</p>
+<p>Resources can include <strong>images</strong>, <strong>CSS files</strong>, <strong>JavaScript files</strong>, <strong>fonts</strong>, and more.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<ul>
+<li><strong>Path Reference:</strong> Resource paths like <code>~/Theme.css</code> are relative to the <code>wwwroot</code> of the theme. TODO: Resources</li>
+<li><strong>Load Order Matters:</strong> The order of resources can be important (e.g., load Bootstrap first, then custom styles). TODO: Resources</li>
+</ul>
+</div>
+<hr>
+<h2 id="global-resources--themeinfocs">Global Resources – <code>ThemeInfo.cs</code></h2>
+<p>Global resources can be defined in the <code>ThemeInfo.cs</code> file. These are <strong>always</strong>
+loaded as soon as the theme is used – regardless of which variant is currently active.</p>
+<p><a class="xref" href="../../how-themes-work/theme-info/index.html">Show Example from ThemeInfo.cs</a></p>
+<h2 id="theme-specific-resources">Theme-Specific Resources</h2>
+<p>Alternatively, you can define resources directly in the Razor file of your theme (e.g., in <code>Fullscreen.razor</code> or <code>Theme.cshtml</code>). These resources are only loaded when the corresponding theme is active.</p>
+<p>This helps reduce load times and is ideal when different theme variants require different styles or scripts.</p>
+<p>Link to Code: <a href="https://github.com/cre8magic/cre8magic/blob/fa9922b81e8e0d97e428f272306010f335a16b3b/ToSic.Cre8Magic.Seo.Client/Modules/ToSic.Cre8magic.Seo/Index.razor#L22-L27">https://github.com/cre8magic/cre8magic/blob/fa9922b81e8e0d97e428f272306010f335a16b3b/ToSic.Cre8Magic.Seo.Client/Modules/ToSic.Cre8magic.Seo/Index.razor#L22-L27</a></p>
+<!-- <div gallery="gallery01">
+  <img src="./assets/theme-resources_2.webp" data-caption="Example Fullscreen Theme">
+</div> -->
+<h2 id="how-resources-are-loaded">How Resources Are Loaded</h2>
+<ul>
+<li>Global resources (<code>ThemeInfo.cs</code>) are automatically loaded when a theme is loaded – regardless of the Razor component being used.</li>
+</ul>
 
 </article>
 

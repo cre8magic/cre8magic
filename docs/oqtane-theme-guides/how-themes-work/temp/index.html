@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Theme Info Configuration Class for Themes | cre8magic </title>
+      <title>How to Reference Another yml File | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Theme Info Configuration Class for Themes | cre8magic ">
+      <meta name="title" content="How to Reference Another yml File | cre8magic ">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/theme-info/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/temp/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,93 +84,31 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.ThemeInfo.Index">
-<h1 id="theme-info-configuration-class-for-themes">Theme Info Configuration Class for Themes</h1>
+        <article data-uid="OqtaneThemes.Temp.Index">
+<h1 id="how-to-reference-another-yml-file">How to Reference Another <code>yml</code> File</h1>
 
-<p>The <code>ThemeInfo.cs</code> file is a central C# class used to define and register a theme in Oqtane. It tells Oqtane:</p>
-<ul>
-<li>What the theme is called</li>
-<li>What version it has</li>
-<li>Which resources (CSS, JS) should be loaded</li>
-<li>How theme and container settings should be handled</li>
-</ul>
-<h2 id="code-example">Code Example</h2>
-<pre><code class="lang-csharp">namespace ToSic.Cre8magic.Theme.Basic;
-
-public class ThemeInfo : ITheme
-{
-    /// &lt;summary&gt;
-    /// The Theme will let Oqtane know what theme this is, and how it should be loaded / rendered etc.
-    /// &lt;/summary&gt;
-    public Oqtane.Models.Theme Theme =&gt; new()
-    {
-        Name = &quot;Cre8magic Basic&quot;,
-        Version = &quot;1.0.1&quot;,
-        PackageName = &quot;ToSic.Cre8magic.Theme.Basic&quot;,
-        ThemeSettingsType = ThemeSettingsType,
-        ContainerSettingsType = ContainerSettingsType,
-        Resources =
-        [
-            new Stylesheet(&quot;~/Theme.css&quot;),
-            new Stylesheet(&quot;~/Oqtane.css&quot;),
-            new Stylesheet (&quot;~/styles.min.css&quot;), // Sass build with vite
-            new Script(&quot;~/bootstrap.bundle.min.js&quot;), // Bootstrap build with vite
-        ]
-    };
-
-    #region Settings Type Names for Oqtane to Auto-Inject in the Theme/Module Settings Dialogs
-
-    /// &lt;summary&gt;
-    /// The assembly name, used to construct the full type names for settings.
-    /// &lt;/summary&gt;
-    /// &lt;remarks&gt;
-    /// The assembly name should not provide version etc. because it will be stored in the database, and future updates would result in a mismatch.
-    /// &lt;/remarks&gt;
-    private static readonly string AssemblyName = typeof(ContainerSettings).Assembly.GetName().Name!;
-
-    /// &lt;summary&gt;
-    /// The Theme Settings Type will let Oqtane know what control to show in the page settings, and it will also be used to load language resources.
-    /// &lt;/summary&gt;
-    public static readonly string ThemeSettingsType = $&quot;{typeof(ThemeSettings).FullName}, {AssemblyName}&quot;;
-
-    /// &lt;summary&gt;
-    /// The Container Settings Type will let Oqtane know what control to show in the module settings, and it will also be used to load language resources.
-    /// &lt;/summary&gt;
-    public static readonly string ContainerSettingsType = $&quot;{typeof(ContainerSettings).FullName}, {AssemblyName}&quot;;
-
-    #endregion
-
-    /// &lt;summary&gt;
-    /// Prefix used for all keys/settings in this theme.
-    /// &lt;/summary&gt;
-    internal static string KeyPrefix = typeof(ThemeInfo).Namespace!;
+<p>There are cases where you might want to reference another DocFX project.<br>
+You could do this by using a direct URL — however, this is not recommended, as URLs can change easily.<br>
+A better approach is to reference the <code>yml</code> file of the DocFX project directly.</p>
+<p>In this example, we reference the <code>xrefmap.yml</code> file of the Oqtane documentation:<br>
+<a href="https://docs.oqtane.org/xrefmap.yml">File: xrefmap.yml</a></p>
+<h2 id="how-to-include-it-in-your-project">How to Include It in Your Project</h2>
+<ol>
+<li>Open your <code>docfx.json</code> file.</li>
+<li>Locate the <code>&quot;build&quot;</code> section.</li>
+<li>Add the link to the <code>xrefmap.yml</code> file under the <code>&quot;xref&quot;</code> property.</li>
+</ol>
+<pre><code class="lang-json">&quot;build&quot;: {
+  &quot;xref&quot;: [
+    &quot;https://docs.oqtane.org/xrefmap.yml&quot; // Oqtane xref map
+  ]
 }
 </code></pre>
-<h3 id="themeinfo-load"><code>ThemeInfo</code> Load</h3>
-<ul>
-<li>On application startup, Oqtane scans for all classes that implement the <code>ITheme</code> interface.</li>
-<li>The <code>Theme</code> property of each class is automatically read.</li>
-<li>The provided information tells Oqtane how to render the theme and which resources to load.</li>
-<li>The defined resources (CSS, JS) are automatically injected into the <code>&lt;head&gt;</code> or before the <code>&lt;/body&gt;</code> tag of each page.</li>
-</ul>
-<div class="TIP">
-<h5>Tip</h5>
-<ul>
-<li><a class="xref" href="../../theme-assets/load-resources/index.html">More about Load Resoruces</a></li>
-<li><strong>Versioning:</strong> In the <code>ThemeInfo.cs</code> Version change Version have no Effects <a class="xref" href="../../publish-theme/index.html">How to change nuget Version</a></li>
-</ul>
-</div>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>The container must be in the same namespace as the theme.</p>
-<pre><code class="lang-xml">@namespace ToSic.Cre8magic.Theme.Basic
-</code></pre>
-</div>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/theme-info/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/temp/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
