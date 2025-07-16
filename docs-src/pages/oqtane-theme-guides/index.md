@@ -31,11 +31,11 @@ Expected contents
     7. ✔️ Containers
     8. ✔️ wwwroot
     9. Blazor Events
-    10. Navigation
-    11. ⏳ ...Settings
+    10. ⏳ Navigation
+    11. ✔️...Settings
     12. Packaging...
 4. Menus & Breadcrumbs
-    1. Main Menu
+    1. ⏳ Main Menu
     2. Footer Menu
     3. Side Menu
     4. Mobile Menu

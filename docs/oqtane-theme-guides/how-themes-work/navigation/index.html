@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Theme Settings in Oqtane | cre8magic </title>
+      <title>What is Navigation | cre8magic </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Theme Settings in Oqtane | cre8magic ">
+      <meta name="title" content="What is Navigation | cre8magic ">
       
       
       <link rel="icon" href="../../../assets/favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/theme-settings/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/navigation/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,64 +84,46 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="OqtaneThemes.ThemeSettings.Index">
-<h1 id="theme-settings-in-oqtane">Theme Settings in Oqtane</h1>
+        <article data-uid="OqtaneThemes.Navigation.Index">
+<h1 id="what-is-navigation">What is Navigation</h1>
 
-<p>This section explains what Theme Settings in Oqtane are, where they are located, how they are stored and loaded, and how they differ between site and page level.</p>
-<p>Theme Settings are configurable options that allow you to customize the appearance and behavior of a theme in Oqtane. They enable administrators to centrally or page-specifically manage design and layout options without having to directly modify the code.</p>
+<p><strong>Navigation</strong> refers to the main bar at the top area (header) of an Oqtane page. It allows users to navigate between different subpages.</p>
+<p>The navigation typically includes links to the <strong>homepage and various defined pages</strong>, <strong>login/logout</strong>,
+and – if a user is logged in – buttons like <strong>&quot;Edit Page&quot;</strong> or <strong>&quot;Admin Dashboard&quot;</strong>.</p>
 <hr>
-<h2 id="overview-of-theme-settings">Overview of Theme Settings</h2>
-<p><strong>Where are Theme Settings located in the UI?</strong></p>
-<ul>
-<li>Theme Settings can be accessed via the Oqtane admin panel.</li>
-<li>Navigate to &quot;Site Management&quot; → &quot;Themes&quot;.</li>
-<li>When selecting an active theme, you will find a section for theme-specific settings.</li>
-<li>Additionally, Theme Settings can often be adjusted directly on a page in the &quot;Page Settings&quot; dialog, if supported by the theme.</li>
-</ul>
-<p><strong>Where are Theme Settings located in the code?</strong></p>
-<ul>
-<li>Theme Settings are defined in the <code>Theme.razor</code> or a specific <code>Settings.razor</code> file of the theme.</li>
-<li>The settings are often modeled via classes like <code>ThemeSettings</code>, a POCO object, within the theme project.</li>
-<li>Access to the settings in the theme code is done via Dependency Injection or through Oqtane’s Settings API.</li>
-</ul>
+<h2 id="what-can-the-navigation-look-like">What can the navigation look like</h2>
+<p>For that, I'll show you the default and a custom one so you understand what I mean by navigation and how to customize it.</p>
+<h3 id="default-example-in-the-cre8magic-theme">Default Example in the Cre8magic Theme</h3>
+<p>The theme shows how a simple and functional navigation can look, e.g., as a horizontal bar with links.</p>
 <div gallery="gallery01">
-  <img src="../../../pages/oqtane-theme-guides/how-themes-work/theme-settings/assets/theme-settings_1.webp" data-caption="Show in Code">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/navigation/assets/navigation-cre8magic.webp" data-caption="Show Nav form Cre8magic">
 </div>
-<p><strong>What can you do with Theme Settings?</strong></p>
+<h3 id="custom">Custom</h3>
+<p>The navigation can be customized in many ways. For example:</p>
 <ul>
-<li>Customize colors, fonts, spacing, and other styles.</li>
-<li>Control the visibility of components (e.g., logo, navigation).</li>
-<li>Include custom CSS/JS.</li>
-<li>Provide custom options for specific theme functionality.</li>
+<li>Placing the logo differently</li>
+<li>Adding a search bar in the header</li>
+<li>Making it mobile-friendly (responsive), e.g., with a burger menu</li>
 </ul>
+<div gallery="gallery02">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/navigation/assets/navigation-custom.webp" data-caption="Show Custom Nav">
+</div>
 <hr>
-<h2 id="site-vs-page-settings">Site vs. Page Settings</h2>
-<p><strong>Difference Between Site Settings and Page Settings</strong></p>
-<ul>
-<li><strong>Site Settings</strong>: Apply globally to the entire website. Changes affect all pages.</li>
-<li><strong>Page Settings</strong>: Apply only to a specific page and may override the Site Settings for that page.</li>
-</ul>
-<p><strong>How Are These Merged?</strong></p>
-<ul>
-<li>When rendering a page, the Site Settings are loaded first.</li>
-<li>If Page Settings exist for the current page, they override the corresponding values from the Site Settings (merge mechanism).</li>
-<li>The resulting settings object is a combination of global and page-specific settings.</li>
-</ul>
-<hr>
-<p><strong>Summary:</strong><br>
-Theme Settings in Oqtane provide flexible customization of a theme's appearance and behavior—globally or per page. They can be configured both in the UI and in code, and are uniquely identified and managed via namespaces.</p>
-<hr>
-<h2 id="example-refactored-custom-settings-in-the-oqtane-basic-theme">Example: Refactored Custom Settings in the Oqtane Basic Theme</h2>
-<p>In the Oqtane Basic Theme, the handling of Theme Settings has been refactored and extended with custom settings. This provides a flexible way to manage design options and special features directly through the Oqtane UI.</p>
+<h2 id="where-is-the-navigation-defined-in-the-code">Where is the navigation defined in the code</h2>
+<p>The navigation is defined in the theme, typically in the following file:</p>
+<div gallery="gallery03">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/navigation/assets/navigation-code_1.webp" data-caption="Show in Custom Theme">
+  <img src="../../../pages/oqtane-theme-guides/how-themes-work/navigation/assets/navigation-code_2.webp" data-caption="Show in Oqtane Themes">
+</div>
 <div class="TIP">
 <h5>Tip</h5>
-<p><a class="xref" href="../../../magic-themes/settings/index.html">Oqtane Basic Settings</a></p>
+<p><a href="xref:OqtaneThemes.Menu.Index">More about Menu</a></p>
 </div>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/theme-settings/index.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/cre8magic/cre8magic/blob/main/docs-src/pages/oqtane-theme-guides/how-themes-work/navigation/index.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

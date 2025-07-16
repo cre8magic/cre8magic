@@ -62,4 +62,6 @@ Theme Settings in Oqtane provide flexible customization of a theme's appearance 
 
 In the Oqtane Basic Theme, the handling of Theme Settings has been refactored and extended with custom settings. This provides a flexible way to manage design options and special features directly through the Oqtane UI.
 
-[Oqtane Basic](xref:Cre8magic.MagicThemes.Settings.Index)
+
+> [!TIP]
+> [Oqtane Basic Settings](xref:Cre8magic.MagicThemes.Settings.Index)
