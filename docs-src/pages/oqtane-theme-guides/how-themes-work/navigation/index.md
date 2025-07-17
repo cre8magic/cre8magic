@@ -48,5 +48,5 @@ The navigation is defined in the theme, typically in the following file:
 </div>
 
 > [!TIP]
-> [More about Menu](xref:OqtaneThemes.Menu.Index)
+> [More about Menu](xref:OqtaneThemes.MenuAndBreadcrumbs.Index)
 
